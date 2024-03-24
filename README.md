@@ -1,2 +1,34 @@
 # ComfyChat
-Rough LLM Interpreter of ComfyUI 
+Rough LLM Interpreter of ComfyUI
+
+- [简介](#简介)
+- [数据](#数据)
+
+## 简介
+&emsp;&emsp;此项目是书生$·$浦语大模型实战营第二期大作业，在年初参加第一期时的大作业是微调InternLM模型实现DAIGT，即对“文本是否由LLMs”进行检测，当时因为时间原因，项目完成度不高，第二期大作业本来是想对其优化，但最近思考过后，这次想做一个更有趣的项目。
+
+&emsp;&emsp;因兴趣原因，使用过各类Stable Diffusion模型的GUI项目，如[stable diffusion webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)，[Fooocus](https://github.com/lllyasviel/Fooocus)，[ComfyUI](https://github.com/comfyanonymous/ComfyUI)等，从上手使用角度来说ComfyUI因节点式的工作方式导致其学习生成较高，同时活跃的开源社区为其带来了各类功能强大的自定义节点和工作流，为了提高ComfyUI的使用效率，想到能否通过微调LLM或者RAG的方式构建一个ComfyUI的解释器，故将书生$·$浦语大模型实战营第二期的大作业内容改为构建一个Rough LLM Interpreter of ComfyUI
+
+## 数据
+
+暂时的数据源
+ - 各默认节点的解释说明--comfyui项目文档及网上数据，社区的节点文档说明
+ - 自定义节点的解释说明--各类自定义节点项目中的说明文档，可以从[
+ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)收集的自定义节点项目列表文件中构建批量下载
+ - 工作流文件
+  - c站
+  - github上的个人汇总
+  - workflows网站
+
+
+## 暂定方向
+- 微调InternLM使其学习到ComfyUI的知识？
+- 通过RAG的方式构建知识库？
+- 收集大量workflow的json文档，以微调coding能力的方式微调InternLM，看能否使InternLM具有理解、分析和构建工作流的能力
+- 后续有能力可能往多模态方向发展
+
+训练待确认问题
+ - 当前需求使用微调好还是RAG方案更好？
+ - 微调的话，是使用SFT还是指令微调？
+ - 想做到同时对英文和中文都有回答能力，是只需用一个语言的数据集训练就行，还是要分别构建英文和中文数据集？
+ -  如何评估性能？？？
