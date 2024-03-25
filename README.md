@@ -36,6 +36,8 @@ ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)收集的自定义�
 ## 工作内容
  - 数据收集
    - comfyui说明数据爬取
+     - [ ] 社区说明[文档](https://blenderneko.github.io/ComfyUI-docs/#further-support)爬取
+     - [] comfyui manager中的节点列表爬取
    - comfyui工作流及对应文本说明数据爬取
  - 数据集后见
    - 可能的sft数据构建
