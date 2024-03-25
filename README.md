@@ -11,7 +11,7 @@ Rough LLM Interpreter of ComfyUI
 
 ## 数据
 
-暂时的数据源
+暂定数据源
  - 各默认节点的解释说明--comfyui项目文档及网上数据，社区的节点文档说明
  - 自定义节点的解释说明--各类自定义节点项目中的说明文档，可以从[
 ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)收集的自定义节点项目列表文件中构建批量下载
@@ -32,3 +32,11 @@ ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)收集的自定义�
  - 微调的话，是使用SFT还是指令微调？
  - 想做到同时对英文和中文都有回答能力，是只需用一个语言的数据集训练就行，还是要分别构建英文和中文数据集？
  -  如何评估性能？？？
+
+## 工作内容
+ - 数据收集
+   - comfyui说明数据爬取
+   - comfyui工作流及对应文本说明数据爬取
+ - 数据集后见
+   - 可能的sft数据构建
+   - 指令微调所需的对话数据构建：使用爬取的数据和llm（kimi chat等）构建问答数据
