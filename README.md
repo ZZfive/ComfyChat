@@ -3,6 +3,8 @@ Rough LLM Interpreter of ComfyUI
 
 - [简介](#简介)
 - [数据](#数据)
+- [暂定方向](#暂定方向)
+- [工作内容](#工作内容)
 
 ## 简介
 &emsp;&emsp;此项目是书生$·$浦语大模型实战营第二期大作业，在年初参加第一期时的大作业是微调InternLM模型实现DAIGT，即对“文本是否由LLMs”进行检测，当时因为时间原因，项目完成度不高，第二期大作业本来是想对其优化，但最近思考过后，这次想做一个更有趣的项目。
@@ -36,9 +38,11 @@ ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)收集的自定义�
 ## 工作内容
  - 数据收集
    - comfyui说明数据爬取
-     - [ ] 社区说明[文档](https://blenderneko.github.io/ComfyUI-docs/#further-support)爬取
-     - [ ] comfyui manager中的节点列表爬取
+     - [x] 社区说明[文档](https://blenderneko.github.io/ComfyUI-docs/#further-support)信息收集
+     - [x] comfyui manager中的节点列表信息收集
+     - [ ] 网络上关于comfyui的信息收集--ing
    - comfyui工作流及对应文本说明数据爬取
+     - [ ] 待开展
  - 数据集后见
    - 可能的sft数据构建
-   - 指令微调所需的对话数据构建：使用爬取的数据和llm（kimi chat等）构建问答数据
+   - 指令微调所需的对话数据构建：使用收集的原始数据和llm（kimi chat等）构建训练可用数据
