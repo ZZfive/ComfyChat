@@ -7,7 +7,7 @@ Rough LLM Interpreter of ComfyUI
 - [工作内容](#工作内容)
 
 ## 简介
-&emsp;&emsp;此项目是书生$·$浦语大模型实战营第二期大作业，在年初参加第一期时的大作业是微调InternLM模型实现DAIGT，即对“文本是否由LLMs”进行检测，当时因为时间原因，项目完成度不高，第二期大作业本来是想对其优化，但最近思考过后，这次想做一个更有趣的项目。
+&emsp;&emsp;此项目是书生·浦语大模型实战营第二期大作业，在年初参加第一期时的大作业是微调InternLM模型实现DAIGT，即对“文本是否由LLMs”进行检测，当时因为时间原因，项目完成度不高，第二期大作业本来是想对其优化，但最近思考过后，这次想做一个更有趣的项目。
 
 &emsp;&emsp;因兴趣原因，使用过各类Stable Diffusion模型的GUI项目，如[stable diffusion webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)，[Fooocus](https://github.com/lllyasviel/Fooocus)，[ComfyUI](https://github.com/comfyanonymous/ComfyUI)等，从上手使用角度来说ComfyUI因节点式的工作方式导致其学习生成较高，同时活跃的开源社区为其带来了各类功能强大的自定义节点和工作流，为了提高ComfyUI的使用效率，想到能否通过微调LLM或者RAG的方式构建一个ComfyUI的解释器，故将书生$·$浦语大模型实战营第二期的大作业内容改为构建一个Rough LLM Interpreter of ComfyUI
 
@@ -41,8 +41,10 @@ ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)收集的自定义�
      - [x] 社区说明[文档](https://blenderneko.github.io/ComfyUI-docs/#further-support)信息收集
      - [x] comfyui manager中的节点列表信息收集
      - [ ] 网络上关于comfyui的信息收集--ing
+     - [ ] 部署一个视频、音频转文本模型，收集相关文本
    - comfyui工作流及对应文本说明数据爬取
      - [ ] 待开展
- - 数据集后见
+ - 数据集构建
    - 可能的sft数据构建
    - 指令微调所需的对话数据构建：使用收集的原始数据和llm（kimi chat等）构建训练可用数据
+   - 搭建一个RAG基于搜集的原始数据构建问答数据对？
