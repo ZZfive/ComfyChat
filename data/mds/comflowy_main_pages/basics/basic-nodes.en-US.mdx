@@ -1,0 +1,109 @@
+---
+title: Basic operations
+description: Dive into the basics of ComfyUI, a powerful tool for AI-based image generation. Learn about node connections, basic operations, and handy shortcuts. This guide demystifies the process of setting up and using ComfyUI, making it an essential read for anyone looking to harness the power of AI for image generation.
+keywords: ["ComfyUI Basics", "AI Image Generation", "Node Connections", "Basic Operations", "Shortcuts", "KSampler", "CLIP Text Encode", "AI Workflow", "AI Learning", "AI Tutorial", "Image Generation Shortcuts", "ComfyUI Operations"]
+---
+
+import { Steps, Callout, Tabs } from 'nextra-theme-docs';
+import { PhotoProvider, PhotoView } from 'react-image-previewer';
+import Subscribe from "components/subscribtion";
+import {FAQBox} from "components/FAQ";
+
+# Basic operations
+
+## Common operations & shortcuts
+
+Next, let's introduce the common operations and shortcuts for ComflowySpace and ComfyUI.
+<Tabs items={['ComflowySpace', 'ComfyUI']}>
+  <Tabs.Tab>
+    ComflowySpace and ComfyUI operate essentially the same way; however, we have made some optimizations. Firstly, you can double-click on an empty space to open the add node menu. You can find the node you need by searching or scrolling through the list. Additionally, you can pin frequently used nodes to the top for quick access next time.
+    <br/>
+    <PhotoProvider>
+      <PhotoView src="/comfyui-foundation/008.png">
+        <img src="/comfyui-foundation/008.png" alt="" className='rounded-lg'/>
+      </PhotoView>
+    </PhotoProvider>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    Finally, let's introduce the common operations and shortcuts in ComfyUI. I've compiled a complete list of ComfyUI shortcuts. Some of the most commonly used ones include:
+    - **Right-click**: This pops up a menu where you can find the node you want to add.
+    - **Double-click**: This opens a node search box where you can search for the node you want to add. Use the arrow keys to select the node and press Enter to add it to the canvas.
+    - **Ctrl + Enter**: This has the same effect as clicking the "Queue Prompt" button on the right-side panel.
+    - **Ctrl + D**: This has the same effect as clicking the "Default Workflow" button on the right-side panel. Sometimes, you may need to rebuild your workflow. I generally suggest starting with the Default Workflow.
+    - **H**: This hides or shows the history panel. This panel will record your operation history. You can find your previous operations here and click to revert to a previous state.
+
+    Additionally, there's a common operation that requires multiple shortcuts. When you need to move multiple nodes, you need to:
+    - **Ctrl/Shift + Click**: Select multiple nodes.
+    - **Shift + Drag**: Then, when dragging, you need to hold down Shift while dragging.
+
+    Below is the complete shortcut list:
+
+    | Keybind                   | Explanation                                                                                                        |
+    |---------------------------|--------------------------------------------------------------------------------------------------------------------|
+    | Ctrl + Enter              | Queue up current graph for generation                                                                              |
+    | Ctrl + Shift + Enter      | Queue up current graph as first for generation                                                                     |
+    | Ctrl + Z/Ctrl + Y         | Undo/Redo                                                                                                          |
+    | Ctrl + S                  | Save workflow                                                                                                      |
+    | Ctrl + O                  | Load workflow                                                                                                      |
+    | Ctrl + A                  | Select all nodes                                                                                                   |
+    | Alt + C                   | Collapse/uncollapse selected nodes                                                                                 |
+    | Ctrl + M                  | Mute/unmute selected nodes                                                                                         |
+    | Ctrl + B                  | Bypass selected nodes (acts like the node was removed from the graph and the wires reconnected through)            |
+    | Delete/Backspace          | Delete selected nodes                                                                                              |
+    | Ctrl + Delete/Backspace   | Delete the current graph                                                                                           |
+    | Space                     | Move the canvas around when held and moving the cursor                                                             |
+    | Ctrl/Shift + Click        | Add clicked node to selection                                                                                      |
+    | Ctrl + C/Ctrl + V         | Copy and paste selected nodes (without maintaining connections to outputs of unselected nodes)                     |
+    | Ctrl + C/Ctrl + Shift + V | Copy and paste selected nodes (maintaining connections from outputs of unselected nodes to inputs of pasted nodes) |
+    | Shift + Drag              | Move multiple selected nodes at the same time                                                                      |
+    | Ctrl + D                  | Load default graph                                                                                                 |
+    | Q                         | Toggle visibility of the queue                                                                                     |
+    | H                         | Toggle visibility of history                                                                                       |
+    | R                         | Refresh graph                                                                                                      |
+    | Double-Click LMB          | Open node quick search palette                                                                                     |
+  </Tabs.Tab>
+</Tabs>
+
+
+
+## Practice
+
+After briefly introducing the basic connection operations, let's do a small exercise to help you integrate the contents of the two chapters.
+
+First, click on the "Clear" button on the right side to clear all Default Workflows.
+
+Then, starting from scratch, accomplish the following objective: **Convert an Empty Latent Image into a viewable picture**.
+
+<Tabs items={['Hint', 'Answer']}>
+  <Tabs.Tab>
+    If you cannot find the node you want, you can try right-clicking → Add Node → Loader to see if you can find it.
+  </Tabs.Tab>
+  <Tabs.Tab>
+    <PhotoProvider>
+      <PhotoView src="/comfyui-foundation/004.png">
+        <img src="/comfyui-foundation/004.png" alt="" className='rounded-lg'/>
+      </PhotoView>
+    </PhotoProvider>
+    <Steps>
+      ### Add an Empty Latent Image Node.
+      To convert an empty latent image into a viewable picture, right-click and add an "Empty Latent Image" node first. Recall the content from the previous chapter, to convert a Latent Image into a visible image, all you have to do is pass that image to a Decoder. The Decoder will then convert it into a visible image. Right-click → Add Node → Latent → VAE Decode and then connect the "Empty Latent Image" to it.
+      
+      ### Add an Image Node
+      Next, you will find that the output port on the right side of the VAE Decode is IMAGE. Right-click → Add Node → Image → Save Image (or Preview Image), after adding it, connect the VAE Decode to it.
+      
+      ### Add a VAE Node
+      Finally, there is one more input point for the VAE Decode that has not been connected. The hint in the exercise mentioned looking in the loader. There, you should find something called "VAE Loader." Add this loader and connect it to the VAE Decode to complete the task.
+    </Steps>
+  </Tabs.Tab>
+</Tabs>
+
+## Q&A
+<FAQBox title="What to do when an error occurs while running the basic workflow in KSampler?">
+  > Complete error message: Error occurred when executing KSampler: module 'torch' has no attribute 'mps'
+  This issue is from Discord user **123321123**.
+
+  **Answer from Jimmy:**
+  This error is likely due to not having the latest version of PyTorch installed. Update the PyTorch version on the computer to resolve this.
+</FAQBox>
+
+<Subscribe />
