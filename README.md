@@ -48,3 +48,17 @@ ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)收集的自定义�
    - 可能的sft数据构建
    - 指令微调所需的对话数据构建：使用收集的原始数据和llm（kimi chat等）构建训练可用数据
    - 搭建一个RAG基于搜集的原始数据构建问答数据对？
+  
+### 数据构建
+
+- 基础数据
+    - 收集
+        1. 人工搜集comfyui的网页，然后使用Trafilatura进行文本抽取
+        2. 看能不能基于什么已有项目，能够从一个初始url，递归收取内部含有的url文本
+    - 去重
+    - 安全过滤？
+- 问答对数据
+    - 星火api自动脚本
+    - pi模型人工对话合成
+    - gpt3.5人工对话
+    - 。。。
