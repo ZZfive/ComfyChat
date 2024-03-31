@@ -38,7 +38,7 @@ def get_repo_urls(json_url: str='https://raw.githubusercontent.com/ltdrdata/Comf
 
 
 # 将各个自定义节点repo git到本地后收集保存.md文件
-def clone_repos_and_extract_md_files(repo_urls: List[str], local_base_dir: str, save_base_dir: str):
+def clone_repos_and_extract_md_files(repo_urls: List[str], local_base_dir: str, save_base_dir: str) -> None:
     # 创建保存.md文件的目录
     if not os.path.exists(save_base_dir):
         os.makedirs(save_base_dir)
@@ -59,7 +59,7 @@ def clone_repos_and_extract_md_files(repo_urls: List[str], local_base_dir: str, 
 
 
 # 搜集、保存.md文件的主要函数
-def extract_md_files_from_local_repo(repo_path: str, save_dir: str):
+def extract_md_files_from_local_repo(repo_path: str, save_dir: str) -> None:
     # 创建保存.md文件的目录
     os.makedirs(save_dir, exist_ok=True)
 
@@ -99,7 +99,7 @@ def get_subdirs(directory: str) -> List[str]:
 
 
 # 更新自定义节点repo中的.md文件，是针对新增的自定义节点repo，并不会对更新过的节点repo中的.md文件更新
-def update_mds(save_base_dir: str, local_base_dir: str):
+def update_mds(save_base_dir: str, local_base_dir: str) -> None:
     custom_node_list = get_repo_urls(update=True)
     custom_node_name2urls = {repo_url.split('/')[-1]: repo_url for repo_url in custom_node_list}
     has_repos_names = get_subdirs(save_base_dir)
