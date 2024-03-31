@@ -42,6 +42,33 @@ def youtube_audio_download(url: str) -> str:
     return save_path
 
 
+def youtube_audio_download2(url: str) -> str:
+    session = requests.session()
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.37'}
+    resp = session.get(url, headers=headers)
+    
+    # 从响应文本中提取标题和播放信息
+    title_match = re.search(r'<title>(.*?) - YouTube</title>', resp.text)
+    title = title_match.group(1) if title_match else 'youtube_audio'
+    play_info_match = re.search(r'ytplayer\.config\s*=\s*({.*?});', resp.text)
+    play_info = play_info_match.group(1) if play_info_match else None
+    
+    if not play_info:
+        raise ValueError("Unable to extract play info")
+
+    # 解析播放信息 JSON
+    play_info_json = json.loads(play_info)
+    audio_url = play_info_json['args']['url_encoded_fmt_stream_map'].split(',')[0].split('&')[2].split('=')[1]
+    audio_content = session.get(audio_url, headers=headers).content
+    
+    # 保存路径为基础音频目录下以视频标题命名的 MP3 文件
+    save_path = os.path.join(base_audio_dir, f"{quote(url, safe='')}.mp3")
+    with open(save_path, 'wb') as f:
+        f.write(audio_content)
+    
+    return save_path
+
+
 def whisperx_transcribe(audio_path: str, model_path: str = '/root/code/ComfyChat/data/weights/models--Systran--faster-whisper-medium/snapshots/08e178d48790749d25932bbc082711ddcfdfbc4f',
                  batch_size: int = 16, compute_type: str = 'float16', device = "cuda") -> None:
     # model = whisperx.load_model("medium", device, compute_type=compute_type, download_root='/root/code/ComfyChat/data/weights')  # large-v2
@@ -76,7 +103,7 @@ def audio_to_txt(url: str, is_bili: bool = True) -> None:
 if __name__ == '__main__':
     # bili_url = 'https://www.bilibili.com/video/BV1dm411k72G/?vd_source=8f92ce3d44bd078088446795f49dc72c'
     bili_url ='https://www.youtube.com/watch?v=haDxwOgmTyY'
-    youtube_audio_download(bili_url)
+    youtube_audio_download2(bili_url)
 
     # audio_to_txt('/root/code/ComfyChat/data/audio2txt/3月30日兔子研制出超级神器，小日子大规模战备，泽连斯基进入死亡名单.mp3')
 
