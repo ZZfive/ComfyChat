@@ -51,13 +51,14 @@ def clone_repos_and_extract_md_files(repo_urls: List[str], local_base_dir: str, 
         if os.path.exists(save_dir) and len(os.listdir(save_dir)) != 0:
             continue
         
-        # 克隆仓库到本地临时目录
-        try:
-            print(f"i: {i}, repo url: {repo_url}")
-            Repo.clone_from(repo_url, local_repo_dir)
-        except:
-            new_rejected_urls.append(repo_url)
-            continue
+        if not os.path.exists(local_repo_dir) or len(os.listdir(local_repo_dir)) == 0:
+            # 克隆仓库到本地临时目录
+            try:
+                print(f"i: {i}, repo url: {repo_url}")
+                Repo.clone_from(repo_url, local_repo_dir)
+            except:
+                new_rejected_urls.append(repo_url)
+                continue
 
         # 提取.md文件并保存
         extract_md_files_from_local_repo(local_repo_dir, save_dir)
@@ -76,7 +77,7 @@ def extract_md_files_from_local_repo(repo_path: str, save_dir: str) -> None:
     files = [item for item in repo.tree().traverse() if item.type == 'blob']
 
     for file in files:
-        if file.path.endswith('.md') or file.path.endswith('.mdx'):
+        if file.path.endswith('.MD') or file.path.endswith('.MDX') or file.path.endswith('.md') or file.path.endswith('.mdx'):
             # 保存.md文件
             try:
                 file_content = file.data_stream.read().decode("utf-8")
@@ -135,17 +136,17 @@ def update_mds(save_base_dir: str, local_base_dir: str, update=False) -> None:
     if new_rejected_urls:
         rejected_urls += new_rejected_urls
         with open('/root/code/ComfyChat/data/rejected_node_list.json', 'w') as f:
-            json.dumps(rejected_urls, f, indent=4)
+            json.dump(rejected_urls, f, indent=4)
 
 
 if __name__ == '__main__':
     # repo_urls = ['https://github.com/BlenderNeko/ComfyUI-docs']
-    # repo_urls = get_repo_urls()
-    # print(len(repo_urls))
+    repo_urls = get_repo_urls()
+    print(len(repo_urls))
     local_base_dir = '/root/code/ComfyChat/data/custom_nodes_repos'
     save_base_dir = '/root/code/ComfyChat/data/custom_nodes_mds'
-    # clone_repos_and_extract_md_files(repo_urls, local_base_dir, save_base_dir)
-    update_mds(save_base_dir, local_base_dir)
+    clone_repos_and_extract_md_files(repo_urls, local_base_dir, save_base_dir)
+    # update_mds(save_base_dir, local_base_dir)
 
     # with open('/root/code/ComfyChat/data/custom_node_list.json', 'r') as f:
     #     custom_list = json.load(f)
