@@ -39,6 +39,7 @@ def get_repo_urls(json_url: str='https://raw.githubusercontent.com/ltdrdata/Comf
 
 # 将各个自定义节点repo git到本地后收集保存.md文件
 def clone_repos_and_extract_md_files(repo_urls: List[str], local_base_dir: str, save_base_dir: str) -> None:
+    new_rejected_urls = []
     # 创建保存.md文件的目录
     if not os.path.exists(save_base_dir):
         os.makedirs(save_base_dir)
@@ -51,11 +52,16 @@ def clone_repos_and_extract_md_files(repo_urls: List[str], local_base_dir: str, 
             continue
         
         # 克隆仓库到本地临时目录
-        print(f"i: {i}, repo url: {repo_url}")
-        Repo.clone_from(repo_url, local_repo_dir)
+        try:
+            print(f"i: {i}, repo url: {repo_url}")
+            Repo.clone_from(repo_url, local_repo_dir)
+        except:
+            new_rejected_urls.append(repo_url)
+            continue
 
         # 提取.md文件并保存
         extract_md_files_from_local_repo(local_repo_dir, save_dir)
+    return new_rejected_urls
 
 
 # 搜集、保存.md文件的主要函数
@@ -99,8 +105,14 @@ def get_subdirs(directory: str) -> List[str]:
 
 
 # 更新自定义节点repo中的.md文件，是针对新增的自定义节点repo，并不会对更新过的节点repo中的.md文件更新
-def update_mds(save_base_dir: str, local_base_dir: str) -> None:
-    custom_node_list = get_repo_urls(update=True)
+def update_mds(save_base_dir: str, local_base_dir: str, update=False) -> None:
+    custom_node_list = get_repo_urls(update=update)
+    
+    with open('/root/code/ComfyChat/data/rejected_node_list.json', 'r') as f:
+        rejected_urls = json.load(f)
+
+    custom_node_list = [url for url in custom_node_list if url not in rejected_urls]
+    print(f"当前自定义节点个数为：{len(custom_node_list)}")
     custom_node_name2urls = {repo_url.split('/')[-1]: repo_url for repo_url in custom_node_list}
     has_repos_names = get_subdirs(save_base_dir)
     not_has_repos = []
@@ -118,14 +130,23 @@ def update_mds(save_base_dir: str, local_base_dir: str) -> None:
                 shutil.rmtree(os.path.join(local_base_dir, name))
 
     print(f"updated nodes {not_has_repos}, num of nodes {len(not_has_repos)}")
-    clone_repos_and_extract_md_files(not_has_repos, local_base_dir, save_base_dir)
+    new_rejected_urls = clone_repos_and_extract_md_files(not_has_repos, local_base_dir, save_base_dir)
+
+    if new_rejected_urls:
+        rejected_urls += new_rejected_urls
+        with open('/root/code/ComfyChat/data/rejected_node_list.json', 'w') as f:
+            json.dumps(rejected_urls, f, indent=4)
 
 
 if __name__ == '__main__':
     # repo_urls = ['https://github.com/BlenderNeko/ComfyUI-docs']
     # repo_urls = get_repo_urls()
     # print(len(repo_urls))
-    local_base_dir = '/root/code/ComfyChat/data/repos'
-    save_base_dir = '/root/code/ComfyChat/data/mds'
+    local_base_dir = '/root/code/ComfyChat/data/custom_nodes_repos'
+    save_base_dir = '/root/code/ComfyChat/data/custom_nodes_mds'
     # clone_repos_and_extract_md_files(repo_urls, local_base_dir, save_base_dir)
     update_mds(save_base_dir, local_base_dir)
+
+    # with open('/root/code/ComfyChat/data/custom_node_list.json', 'r') as f:
+    #     custom_list = json.load(f)
+    # print(len(custom_list))

@@ -5,6 +5,7 @@ Rough LLM Interpreter of ComfyUI
 - [数据](#数据)
 - [暂定方向](#暂定方向)
 - [工作内容](#工作内容)
+- [工作进度](#工作进度)
 
 ## 简介
 &emsp;&emsp;此项目是书生·浦语大模型实战营第二期大作业，在年初参加第一期时，大作业是微调InternLM模型实现DAIGT，即对“文本是否由LLMs”进行检测，当时因为时间原因，[项目](https://github.com/ZZfive/DAIGT-InternLM)完成度不高，第二期大作业本来是想对其继续优化，但最近思考过后，这次想做一个更有趣的项目。
