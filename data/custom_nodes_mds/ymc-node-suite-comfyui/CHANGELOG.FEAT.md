@@ -1,7 +1,0 @@
-- [x] feat(core): add feat that noted in issue 1
-- [x] feat(core): add paths when it does not exits
-- [x] feat(core): out info when text is empty
-- [x] feat(core): use prefix as file name when overwrite_mode is 'prefix_as_filename'
-- [x] feat(core): use the 2th result is filename without ext
-- [x] feat(core): use the 3th result is ext
-- [x] feat(core): rename 'Save Text File' to io-text-save for issue 3
