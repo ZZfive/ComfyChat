@@ -18,13 +18,15 @@ def list_subdirectories(path):
 path = "/root/code/ComfyChat/data/custom_nodes_mds"
 subdirectories_list = list_subdirectories(path)
 print(len(subdirectories_list))
+with open('/root/code/ComfyChat/data/geted_nodes.json', 'w') as f:
+    json.dump(subdirectories_list, f, indent=4)
 
-with open('/root/code/ComfyChat/data/github_nodes.json', 'r') as f:
-    github_nodes = json.load(f)
+# with open('/root/code/ComfyChat/data/github_nodes.json', 'r') as f:
+#     github_nodes = json.load(f)
 
-num = 0
-for node in subdirectories_list:
-    if node not in github_nodes:
-        print(node)
-        num += 1
-print(num)
+# num = 0
+# for node in subdirectories_list:
+#     if node not in github_nodes:
+#         print(node)
+#         num += 1
+# print(num)
