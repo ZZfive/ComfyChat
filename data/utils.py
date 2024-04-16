@@ -1,8 +1,11 @@
 import os
 import json
+from typing import List, Any
+
+import requests
 
 
-def list_subdirectories(path):
+def list_subdirectories(path: str) -> List[str]:
     subdirectories = []
     # 遍历指定路径下的所有文件和文件夹
     for entry in os.listdir(path):
@@ -14,19 +17,29 @@ def list_subdirectories(path):
     return subdirectories
 
 
-# 用法示例
-path = "/root/code/ComfyChat/data/custom_nodes_mds"
-subdirectories_list = list_subdirectories(path)
-print(len(subdirectories_list))
-with open('/root/code/ComfyChat/data/geted_nodes.json', 'w') as f:
-    json.dump(subdirectories_list, f, indent=4)
+def save2json(data: Any, path: str) -> None:
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=4)
 
-# with open('/root/code/ComfyChat/data/github_nodes.json', 'r') as f:
-#     github_nodes = json.load(f)
 
-# num = 0
-# for node in subdirectories_list:
-#     if node not in github_nodes:
-#         print(node)
-#         num += 1
-# print(num)
+def load4json(path: str) -> Any:
+    with open(path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    return data
+
+
+def get_data_from_url(url: str) -> Any:
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+        return data
+    except Exception as e:
+       raise ValueError(f"Failed to get data from url {url}, err: {e}")
+
+
+if __name__=='__main__':
+    path = "/root/code/ComfyChat/data/custom_nodes_mds"
+    subdirectories_list = list_subdirectories(path)
+    print(len(subdirectories_list))
+    save_json(subdirectories_list, "/root/code/ComfyChat/data/geted_nodes.json")

@@ -32,7 +32,7 @@ def bilibili_audio_download(url: str) -> str:
     return save_path
 
 
-def youtube_audio_download(url: str): # 需要魔法
+def youtube_audio_download(url: str) -> str: # 需要魔法
     # 创建 YouTube 对象
     yt = YouTube(url)
     
