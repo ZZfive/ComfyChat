@@ -10,7 +10,7 @@ import requests
 # 从设置默认的comfyui manager项目中提供的自定义节点信息json文件从抽取各个节点的repo url
 def get_repo_urls(json_url: str='https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json',
                   save_path: str='/root/code/ComfyChat/data/custom_node_list.json',
-                  update: bool=False) -> List:
+                  update: bool=False) -> List[str]:
     try:
         if os.path.exists(save_path) and not update:
             with open(save_path, 'r', encoding='utf-8') as f:
@@ -38,7 +38,7 @@ def get_repo_urls(json_url: str='https://raw.githubusercontent.com/ltdrdata/Comf
 
 
 # 将各个自定义节点repo git到本地后收集保存.md文件
-def clone_repos_and_extract_md_files(repo_urls: List[str], local_base_dir: str, save_base_dir: str) -> None:
+def clone_repos_and_extract_md_files(repo_urls: List[str], local_base_dir: str, save_base_dir: str) -> List[str]:
     new_rejected_urls = []
     # 创建保存.md文件的目录
     if not os.path.exists(save_base_dir):
