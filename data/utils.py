@@ -19,7 +19,7 @@ def list_subdirectories(path: str) -> List[str]:
 
 def save2json(data: Any, path: str) -> None:
     with open(path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, indent=4)
+        json.dump(data, f, indent=4, ensure_ascii=False)
 
 
 def load4json(path: str) -> Any:
@@ -42,4 +42,4 @@ if __name__=='__main__':
     path = "/root/code/ComfyChat/data/custom_nodes_mds"
     subdirectories_list = list_subdirectories(path)
     print(len(subdirectories_list))
-    save_json(subdirectories_list, "/root/code/ComfyChat/data/geted_nodes.json")
+    save2json(subdirectories_list, "/root/code/ComfyChat/data/geted_nodes.json")
