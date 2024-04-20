@@ -284,23 +284,21 @@ def get_data_from_openrouter(md_path: str, model: str = "google/gemma-7b-it:free
     api_key=config.OPENROUTER_API_KEY,
     )
 
+    template = '''
+    I need to build a llm fine-tuning dataset. You need to understand the content of the document I input, then construct several pairs of question and answer data yourself, and return them in json format.\n---\nOnly question and answer data in json format is returned. The returned content is as follows: {0}
+    '''
+
     with open(md_path, 'r', encoding='utf-8') as f:
         md_content = f.read()
 
-    # print(md_content)
+    print(template.format(md_content))
 
     completion = client.chat.completions.create(
     model=model,
     messages=[
-        # {
-        # "role": "system",
-        # "content": "You are a MarkDown document parsing master and can understand MarkDown text content",
-        # },
-        {
-        "role": "usr",
-        "content": f"I need to build a llm fine-tuning dataset. You need to understand the content {md_content} by yourself, then construct several pairs of question and answer data yourself, and return them in json format. Remember, only json data is returned, this is important!",
-        },
+        {"role": "user", "content": template.format(md_content)},
     ],
+    temperature=1.0,
     )
     print(completion.choices[0].message.content)
 
