@@ -313,4 +313,4 @@ if __name__=='__main__':
     # eng_text = "The author of FreeU_Advanced is WASasquatch, This custom node provides advanced settings for FreeU."
     # eng2zh_deepseek(eng_text)
 
-    get_data_from_openrouter('/root/code/ComfyChat/data/custom_nodes_mds/a-person-mask-generator/README.md')
+    get_data_from_openrouter('/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_Fictiverse/README.md')
