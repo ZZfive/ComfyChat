@@ -91,40 +91,39 @@ if __name__=='__main__':
     # save2json(subdirectories_list, "/root/code/ComfyChat/data/geted_nodes.json")
 
     rsp = '''
-    ## Question and Answer Dataset for ComfyUI_Fictiverse Nodes in JSON Format:
+     Based on the provided information about ComfyUI_Fictiverse, here is a sample JSON format for the question and answer data pair:
 
     ```json
     [
         {
-            "input": "What is the purpose of the ComfyUI_Fictiverse nodes?",
-            "output": "The nodes in ComfyUI_Fictiverse extend the functionality of ComfyUI by providing custom image-processing algorithms."
+            "subject": "ComfyUI_Fictiverse",
+            "question": "How do I install ComfyUI_Fictiverse?",
+            "answer": "To install ComfyUI_Fictiverse, first install ComfyUI. Then, clone the repository into the 'custom_nodes' folder within your ComfyUI installation or download the ZIP and extract the contents to 'custom_nodes/ComfyUI_Fictiverse'."
         },
         {
-            "input": "How do I install the ComfyUI_Fictiverse nodes?",
-            "output": "Install ComfyUI, then clone or download the nodes to the `custom_nodes/ComfyUI_Fictiverse` folder."
+            "subject": "Color Correction (obsolete)",
+            "question": "What is the purpose of the Color Correction custom node in ComfyUI_Fictiverse?",
+            "answer": "The Color Correction node in ComfyUI_Fictiverse attempts to match the color of an image to that of a reference image, although it is noted to be somewhat ineffective."
         },
         {
-            "input": "Which nodes are included in the ComfyUI_Fictiverse package?",
-            "output": "The package includes Color Correction (obsolete), Displace Images with Mask, Add Noise to Image with Mask, and Displace Image with Depth nodes."
+            "subject": "Displace Images with Mask",
+            "question": "What does the Displace Images with Mask node do in ComfyUI_Fictiverse?",
+            "answer": "The Displace Images with Mask node is a modified version of the WAS node in ComfyUI_Fictiverse. It displaces images based on a mask with directional amplitudes."
         },
         {
-            "input": "What is the function of the Color Correction node?",
-            "output": "The obsolete Color Correction node attempts to match the color of an image to a reference image."
+            "subject": "Add Noise to Image with Mask",
+            "question": "How does the Add Noise to Image with Mask node work in ComfyUI_Fictiverse?",
+            "answer": "The Add Noise to Image with Mask node in ComfyUI_Fictiverse applies noise to an image within a specified mask."
         },
         {
-            "input": "Explain the Displace Images with Mask node functionality.",
-            "output": "It displaces images based on a directional mask, removing unwanted visual elements."
-        },
-        {
-            "input": "Describe the purpose of the Add Noise to Image with Mask node.",
-            "output": "It selectively adds noise to an image using a predefined mask."
-        },
-        {
-            "input": "Can you briefly explain the functionality of the Displace Image with Depth node?",
-            "output": "The Displace Image with Depth node utilizes image depth information to displace pixels of an image."
+            "subject": "Displace Image with Depth",
+            "question": "What is the function of the Displace Image with Depth node in ComfyUI_Fictiverse?",
+            "answer": "The Displace Image with Depth node in ComfyUI_Fictiverse attempts to displace an image based on its depth."
         }
     ]
     ```
+
+    This JSON format includes the subject, question, and answer for each of the custom nodes described in the documentation. Please note that the actual questions and answers should be tailored to cover all the relevant information in the document content.
     '''
 
     json_data = parse_json(rsp)

@@ -1,0 +1,57 @@
+[
+    {
+        "subject": "Plush-for-ComfyUI",
+        "question": "What is Plush-for-ComfyUI?",
+        "answer": "Plush-for-ComfyUI is a ComfyUI plugin that extends its functionality with several nodes, including those that don't require the OpenAI API key, such as the Advanced Prompt Enhancer, and nodes that can use open source LLM front-ends like LM Studio or ChatGPT."
+    },
+    {
+        "subject": "Plush-for-ComfyUI",
+        "question": "How do I install Plush-for-ComfyUI?",
+        "answer": "You can install Plush-for-ComfyUI through the ComfyUI manager by searching for 'Plush' and clicking Install, or you can manually install it by cloning the repository from GitHub and following the provided instructions."
+    },
+    {
+        "subject": "Style Prompt",
+        "question": "What does the Style Prompt node do?",
+        "answer": "The Style Prompt node takes your text prompt, your image, or your text prompt and image and generates a prompt based on the specified art style that Stable Diffusion and/or Dall-e can use to generate an image in that style."
+    },
+    {
+        "subject": "Advanced Prompt Enhancer",
+        "question": "Can the Advanced Prompt Enhancer use open-source LLM's without requiring an OpenAI API key?",
+        "answer": "Yes, the Advanced Prompt Enhancer can use open-source LLM front-ends (e.g. LM Studio) without requiring an OpenAI API key. However, if you want to use it with ChatGPT models, an API key is required."
+    },
+    {
+        "subject": "OAI Dall_e 3",
+        "question": "What is the OAI Dall_e 3 node?",
+        "answer": "The OAI Dall_e 3 node takes your prompt and parameters and produces a Dall_e3 image in ComfyUI."
+    },
+    {
+        "subject": "Exif Wrangler",
+        "question": "What does the Exif Wrangler node do?",
+        "answer": "The Exif Wrangler extracts Exif and/or AI generation workflow metadata from .jpg (.jpeg) and .png images, such as camera settings in .jpg photographs and AI metadata for AI-generated images."
+    },
+    {
+        "subject": "API Key Requirements",
+        "question": "What is an Environment Variable and how do I create one for my API key?",
+        "answer": "An Environment Variable is a variable set on your operating system that consists of a name and value. To create a new Environment Variable specific to Plush called 'OAI_KEY' and set its value to your API key, follow the instructions provided for Windows, Linux, and MacOS in the Plush README file."
+    },
+    {
+        "subject": "Example Workflows",
+        "question": "Where can I find example workflows for Plush-for-ComfyUI?",
+        "answer": "You can find example workflows in the custom_nodes/Plush-for-ComfyUI/Example_workflows directory. You can drag these images directly onto your ComfyUI workspace in your browser, which automatically loads the graph."
+    },
+    {
+        "subject": "Style Info",
+        "question": "What is Style Info in the Style Prompt node?",
+        "answer": "The Style Info in the Style Prompt node is an optional output that, when set to true, sends a second request to ChatGPT to provide a description of the chosen style, historical information about it, and information on some of the most influential artists in that style."
+    },
+    {
+        "subject": "Token Limit",
+        "question": "What does the Tokens limit in the GPTModel input of the Style Prompt node do?",
+        "answer": "The Tokens limit in the GPTModel input of the Style Prompt node is a limit on how many tokens ChatGPT can use in providing your prompt. It is based on your fee for using the API and can help control costs by limiting the number of tokens used."
+    },
+    {
+        "subject": "Installation and Upgrade",
+        "question": "How do I handle an upgrade if I have earlier nodes that communicate with ChatGPT using the OpenAI library?",
+        "answer": "Be aware that in some instances the new OpenAI API is not backward compatible, and apps that use the older library may break after this upgrade. If you encounter any issues, you may need to upgrade the OpenAI library manually by typing the command: `pip install --upgrade openai` in a directory or virtual environment where it will be applied to the installation of Python that ComfyUI is using."
+    }
+]

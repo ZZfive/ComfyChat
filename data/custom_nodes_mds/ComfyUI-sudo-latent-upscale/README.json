@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is ComfyUI-sudo-latent-upscale?",
+        "answer": "ComfyUI-sudo-latent-upscale is a GUI extension for ComfyUI that directly upscales inside the latent space using a stable diffusion model. It was inspired by city96/SD-Latent-Upscaler and Ttl/ComfyUi_NNLatentUpscale."
+    },
+    {
+        "question": "Which models was ComfyUI-sudo-latent-upscale trained for?",
+        "answer": "The model was trained for SD1.5 and drawn content."
+    },
+    {
+        "question": "What are the differences between the first and second row in the comparison image?",
+        "answer": "The first row shows upscaled RGB images from RGB models before being used in the VAE encode or VAE decoded images for latent models, while the second row shows the final output after the second KSampler."
+    },
+    {
+        "question": "What kind of loss function was used in the final model?",
+        "answer": "A 4-channel EfficientnetV2-b0 as a discriminator was used in the final model, with Prodigy optimizer, bf16, L1 loss with a factor of 0.08, and a batch size of 32 for the normal model and 16 for the large model."
+    },
+    {
+        "question": "Is there any recommendation for using contextual loss?",
+        "answer": "No, the usage of contextual loss is not recommended, as it takes too long to converge and was only used at the very end of training."
+    },
+    {
+        "question": "Can you recommend any other networks or loss functions to use?",
+        "answer": "Ideas for future testing may include MSE, Huber, different Conv2D (for example MBConv), and Dropout prior to final conv."
+    },
+    {
+        "question": "What are some failure cases during training?",
+        "answer": "Failure cases during training include: 4-channel SSIM on output latents; using `vae.config.scaling_factor = 0.13025`; using DITN and OmniSR; using HAT; and using Fourier as first and last conv in DAT."
+    },
+    {
+        "question": "What is GRL and what happened during its training?",
+        "answer": " GRL did not converge during training."
+    },
+    {
+        "question": "What were some issues encountered with using Prodigy with SwinFIR?",
+        "answer": "Using Prodigy with SwinFIR caused massive instability."
+    }
+]

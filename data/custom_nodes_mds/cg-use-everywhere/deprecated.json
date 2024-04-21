@@ -1,0 +1,32 @@
+[
+    {
+        "subject": "UE node",
+        "question": "What does an UE node in ComfyUI do?",
+        "answer": "An UE node in ComfyUI is used to 'Use Everywhere'. It means that you can put an UE node into your workflow, connect its input, and every other node with an unconnected input of the same type will act as if connected to it."
+    },
+    {
+        "subject": "UE node types",
+        "question": "What are the types of UE nodes available in ComfyUI?",
+        "answer": "As per the old documentation, the types available are CLIP, IMAGE, MODEL, VAE, CONDITIONING, or LATENT. However, the newer version includes INT, MASK, and CHECKPOINT as well."
+    },
+    {
+        "subject": "UE? node",
+        "question": "What is a UE? node in ComfyUI?",
+        "answer": "A UE? node is similar to a UE node in ComfyUI, but it adds two widgets, 'title' and 'input'. These are Regular Expressions that allow the node to send data to nodes where the node's title and unconnected input name match."
+    },
+    {
+        "subject": "UE? node usage",
+        "question": "Can you explain the usage of UE? nodes with an example?",
+        "answer": "Yes, UE? nodes require Regular Expressions to function. For example, if you want to match the exact name 'seed', you'll need something like `^seed$` as your regex. The widget 'title' and 'input' in a UE? node help it send data to the nodes with matching titles or input names."
+    },
+    {
+        "subject": "UE or UE? node to widget conversion",
+        "question": "Can a UE or UE? node be converted to a widget?",
+        "answer": "Yes, a UE or UE? node with just one output can be converted to a widget. However, combination nodes, like CHECKPOINT, can't be converted. Also, keep in mind that if you convert it to a widget, you won't be able to change the title as the code gets the data type from the input."
+    },
+    {
+        "subject": "UE node in the workflow",
+        "question": "How can I add an UE node to my workflow?",
+        "answer": "To add an UE node to your workflow, simply place it in your workflow, connect its input, and then any node with an unconnected input of the same type will act as if connected to it. You can even use prepared workflows, like the ones mentioned in the given file."
+    }
+]
