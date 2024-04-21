@@ -1,0 +1,39 @@
+{
+    "questions": [
+        {
+            "subject": "ComfyQR-scanning-nodes",
+            "question": "What is the purpose of the ComfyQR-scanning-nodes project?",
+            "answer": "The project provides ComfyUI nodes to quickly test generated QR codes for scannability."
+        },
+        {
+            "subject": "ComfyQR-scanning-nodes",
+            "question": "Where can I find the source code for ComfyQR-scanning-nodes?",
+            "answer": "The project is managed publicly on Gitlab (https://gitlab.com/sofuego-comfy-nodes/ComfyQR-scanning-nodes) but is also mirrored on Github (https://github.com/coreyryanhanson/ComfyQR-scanning-nodes)."
+        },
+        {
+            "subject": "Read QR Code node",
+            "question": "What is the function of the Read QR Code node?",
+            "answer": "The node extracts text data from a QR code using the pyzbar library."
+        },
+        {
+            "subject": "Validate QR Code node",
+            "question": "What is the purpose of the Validate QR Code node?",
+            "answer": "The node checks whether text extracted from a QR code is valid and matches the specified text."
+        },
+        {
+            "subject": "Validate QR Code node",
+            "question": "What are the inputs required for the Validate QR Code node?",
+            "answer": "The node requires the image layer, the extracted text from the Read QR Code node, the protocol and the text of the QR code."
+        },
+        {
+            "subject": "Accuracy in readability",
+            "question": "Why is pyzbar chosen as the QR reader library?",
+            "answer": "Pyzbar is chosen for its low dependencies, regular updates, and popularity."
+        },
+        {
+            "subject": "Accuracy in readability",
+            "question": "How can the accuracy of QR code readability be improved?",
+            "answer": "Adding a Pad Image for Outpainting node before sending the image to Read QR Code can help to reduce false negatives when the border size of a QR code is small."
+        }
+    ]
+}

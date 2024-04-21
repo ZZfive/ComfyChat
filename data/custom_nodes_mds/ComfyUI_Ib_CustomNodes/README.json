@@ -1,18 +1,32 @@
 [
     {
-        "question": "How does ComfyUI’s built-in 'Load Image' node differ from the 'Load Image From Path' node?",
-        "answer": "The built-in 'Load Image' node can only load uploaded images, producing duplicated files, while the 'Load Image From Path' node loads the image directly from its source path without duplicates."
+        "subject": "LoadImageFromPath function",
+        "question": "What is the main advantage of the Load Image From Path function compared to the built-in Load Image node in ComfyUI?",
+        "answer": "Load Image From Path loads the image directly from the source path without producing duplicated files."
     },
     {
-        "question": "What is one use case of the 'Load Image From Path' node?",
-        "answer": "The node can be used to work with Photoshop’s 'Quick Export' feature for quick image processing."
+        "subject": "LoadImageFromPath function",
+        "question": "What is the recommended method to quickly perform img2img/inpaint on images edited in Photoshop alongside the Load Image From Path node?",
+        "answer": "Use the comfyui-photoshop plugin."
     },
     {
-        "question": "What are the possible formats for the image path used with the 'Load Image From Path' node?",
-        "answer": "The path can be given in absolute, relative to input directory, relative to output directory, or relative to temporary directory."
+        "subject": "LoadImageFromPath function",
+        "question": "What are the supported image path formats for the Load Image From Path function?",
+        "answer": "Absolute path, relative to input directory, relative to output directory, and relative to temp directory."
     },
     {
-        "question": "Explain the functions of the three helper functions 'PILToImage', 'PILToMask', and 'ImageToPIL'.",
-        "answer": "These functions are not explicitly related to 'ComfyUI_Ib_CustomNodes' and their functionality would need to be explained within their respective context."
+        "subject": "PIL.Image functions",
+        "question": "What is the purpose of the PILToImage function?",
+        "answer": "Converts a PIL Image object to a ComfyUI Image object."
+    },
+    {
+        "subject": "PIL.Image functions",
+        "question": "What is the purpose of the PILToMask function?",
+        "answer": "Extracts the alpha channel from a PIL Image object to create a mask."
+    },
+    {
+        "subject": "PIL.Image functions",
+        "question": "What is the purpose of the ImageToPIL function?",
+        "answer": "Converts a ComfyUI Image object to a PIL Image object."
     }
 ]

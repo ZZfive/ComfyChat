@@ -1,49 +1,48 @@
 {
-    "data": [
+    "questions": [
         {
-            "subject": "ComfyUI_Noise",
-            "question": "What nodes are available in the ComfyUI_Noise repository to control and manipulate noise?",
-            "answer": "The ComfyUI_Noise repository provides 6 viciss nodes for generating and manipulating noise. These include nodes for noisy latent image generation, duplicate batch index, slerp latents, getting sigma, injecting noise, and unsampling."
+            "question": "What is the purpose of the Noisy Latent Image node in ComfyUI_Noise?",
+            "answer": "Generates noise which can be used to influence image generations."
         },
         {
-            "subject": "Noisy Latent Image node",
-            "question": "What settings does the Noisy Latent Image node have?",
-            "answer": "The Noisy Latent Image node has settings for source (GPU or CPU), seed, width, height, and batch size."
+            "question": "How many settings does the Duplicate Batch Index node have?",
+            "answer": "It has `latents`, `batch_index`, and `batch_size` as settings."
         },
         {
-            "subject": "Duplicate Batch Index node",
-            "question": "What is the purpose of the Duplicate Batch Index node?",
-            "answer": "The Duplicate Batch Index node has been moved to core. Please use `Latent>Batch>Repeat Latent Batch` and `Latent>Batch>Latent From Batch` instead."
+            "question": "What does the Slerp Latents node do?",
+            "answer": "Mixes two latents together, creating a weighted average of their values."
         },
         {
-            "subject": "Slerp Latents node",
-            "question": "What is the functionality of the Slerp Latents node?",
-            "answer": "The Slerp Latents node mixes two latents together, and allows for selective mixing using a mask."
+            "question": "How can I calculate the amount of noise a sampler expects?",
+            "answer": "Use the Get Sigma node to calculate the sigma based on the model and sampler configuration."
         },
         {
-            "subject": "Get Sigma node",
-            "question": "What does the Get Sigma node do?",
-            "answer": "The Get Sigma node calculates the amount of noise expected by a sampler."
+            "question": "Which node can inject noise into an image latent?",
+            "answer": "The Inject Noise node is used to inject the generated noise into the image latent."
         },
         {
-            "subject": "Inject Noise node",
-            "question": "How does the Inject Noise node work?",
-            "answer": "The Inject Noise node injects noise into an image latent. It allows for selective noise injection using a mask and provides a strength control."
+            "question": "What is the function of the Unsampler node?",
+            "answer": "Calculates the noise required to generate a given image from a model and a prompt."
         },
         {
-            "subject": "Unsampler node",
-            "question": "What is the purpose of the Unsampler node?",
-            "answer": "The Unsampler node reverses the process of sampling and calculates the noise that would generate an image."
+            "question": "Give an example of using the nodes to generate variations from a given seed.",
+            "answer": "The provided workflow demonstrates using nodes to generate small variations of an image based on a given seed."
         },
         {
-            "subject": "Example workflow: Generating variations",
-            "question": "How can you generate small variations of a given generation using the nodes in the ComfyUI_Noise repository?",
-            "answer": "The example workflow demonstrates generating small variations by using the Noisy Latent Image node to create noise batches, then Slerping them and injecting the resulting noise into empty latents."
-        },
-        {
-            "subject": "Example workflow: Unsampling",
-            "question": "How can you recreate the noise used to generate an image?",
-            "answer": "The example workflow showcases the process of generating noise and then using the Unsampler node to recreate the original noise."
+            "question": "How can I access the noise used to recreate a specific image?",
+            "answer": "The workflow provides an example of using the Unsampler node to generate the noise that recreates a given image."
         }
-    ]
+    ],
+    "subjects": {
+        "ComfyUI_Noise": {
+            "nodes": [
+                "Noisy Latent Image",
+                "Duplicate Batch Index",
+                "Slerp Latents",
+                "Get Sigma",
+                "Inject Noise",
+                "Unsampler"
+            ]
+        }
+    }
 }
