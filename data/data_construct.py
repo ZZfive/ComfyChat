@@ -34,7 +34,7 @@ from typing import Any
 import pypandoc
 from openai import OpenAI
 
-from utils import get_data_from_url, save2json, load4json
+from utils import get_data_from_url, save2json, load4json, parse_json, create_logger
 import config
 
 
@@ -277,30 +277,89 @@ def alpaca_modify(alpaca_path: str, save_path: str) -> None:
         raise ValueError(f"err: {e}")
 
 
-def get_data_from_openrouter(md_path: str, model: str = "google/gemma-7b-it:free") -> str:
+def get_data_from_openrouter(subject: str, md_path: str, model: str = "google/gemma-7b-it:free") -> str:
     # gets API Key from environment variable OPENAI_API_KEY
     client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key=config.OPENROUTER_API_KEY,
     )
 
-    template = '''
-    I need to build a llm fine-tuning dataset. You need to understand the content of the document I input, then construct several pairs of question and answer data yourself, and return them in json format.\n---\nOnly question and answer data in json format is returned. The returned content is as follows: {0}
+    # template = '''
+    # I need to build a llm fine-tuning dataset. You need to understand the content of the document I input, then construct several pairs of question and answer data yourself, and return them in json format.\n---\nOnly question and answer data in json format is returned. The file currently being passed in is about {0}, the specific contents are as follows: {1}
+    # '''
+
+    template =  '''
+    I need to build a llm fine-tuned dataset. You need to understand the document content I input, then construct the question and answer data pair yourself, and return it in json format. The documentation I'm passing on is all about ComfyUI (a GUI that uses a stable diffusion model to generate images and videos) and custom nodes or plugins that extend its functionality. When building question and answer data, it must be clear whether the subject is for ComfyUI or a specific custom node or plug-in. The subject in the Q&A data must carry the specific name of the node or plug-in, such as the \"ComfyUI-Manager\" extension; do not just use \"extension\" or \"custom node\" as the subject, which does not indicate that the question is about the specific name of the Node or plug-in. Note that I will tell you the described subject name before passing in the specific document content, and you can use it directly when building question and answer data. Ensure that the constructed question and answer data cover all the content of the text as much as possible. Please ensure that the output json data format is correct. Do not miss necessary symbols, but do not add unnecessary symbols. The file currently being passed in is about {0}, the specific contents are as follows: {1}
     '''
+
+    # template = '''
+    # I need to build a llm fine-tuned dataset. You need to understand the document content I input, then construct the question and answer data pair yourself, and return it in json format. The documentation I'm passing on is all about ComfyUI (a GUI that uses a stable diffusion model to generate images and videos) and custom nodes or plugins that extend its functionality. When building question and answer data, it must be clear whether the subject is for ComfyUI or a specific custom node or plug-in. The subject in the Q&A data must carry the specific name of the node or plug-in, such as the \"ComfyUI-Manager\" extension; do not just use \"extension\" or \"custom node\" as the subject, which does not indicate that the question is about the specific name of the Node or plug-in. Note that I will tell you the described subject name before passing in the specific document content, and you can use it directly when building question and answer data. The constructed question and answer data should include English question and answer data and Chinese question and answer data respectively, and cover all the content of the text as much as possible. Please ensure that the output json data format is correct. Do not miss necessary symbols, but do not add unnecessary symbols. \n---\nOnly question and answer data in json format is returned. The returned content is as follows:\n[\n          {{\n              \"english\": [\n                  {{\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }},\n                  {{\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }}\n              ]\n          }},\n          {{\n              \"chinese\": [\n                  {{\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }},\n                  {{\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }}\n              ]\n          }}\n]\n---\nThe file currently being passed in is about {0}, the specific contents are as follows: {1}
+    # '''
+
+    # prefix = """
+    # I need to build a llm fine-tuned dataset. You need to understand the document content I input, then construct the question and answer data pair yourself, and return it in json format. The documentation I'm passing on is all about ComfyUI (a GUI that uses a stable diffusion model to generate images and videos) and custom nodes or plugins that extend its functionality. When building question and answer data, it must be clear whether the subject is for ComfyUI or a specific custom node or plug-in. The subject in the Q&A data must carry the specific name of the node or plug-in, such as the \"ComfyUI-Manager\" extension; do not just use \"extension\" or \"custom node\" as the subject, which does not indicate that the question is about the specific name of the Node or plug-in. Note that I will tell you the described subject name before passing in the specific document content, and you can use it directly when building question and answer data. The constructed question and answer data should include English question and answer data and Chinese question and answer data respectively, and cover all the content of the text as much as possible.\n---\nOnly question and answer data in json format is returned. The returned content is as follows:\n[\n          {\n              \"english\": [\n                  {\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  },\n                  {\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }\n              ]\n          },\n          {\n              \"chinese\": [\n                  {\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  },\n                  {\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }\n              ]\n          }\n]\n---\n
+    # """
 
     with open(md_path, 'r', encoding='utf-8') as f:
         md_content = f.read()
 
-    print(template.format(md_content))
+    # print(template.format(md_content))
 
     completion = client.chat.completions.create(
     model=model,
     messages=[
-        {"role": "user", "content": template.format(md_content)},
+        {"role": "user", "content": template.format(subject, md_content)},
     ],
     temperature=1.0,
     )
-    print(completion.choices[0].message.content)
+    return completion.choices[0].message.content
+
+
+def constrcut_data_from_md(md_base_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds",
+                           successful_node_list_path: str = "/root/code/ComfyChat/data/successful_node_list.json",
+                           unsuccessful_node_list_path: str = "/root/code/ComfyChat/data/unsuccessful_node_list.json") -> None:
+    logger = create_logger('constrcut_data_from_md')
+
+    if os.path.exists(successful_node_list_path):
+        successful_nodes = load4json(successful_node_list_path, [])
+    else:
+        with open(successful_node_list_path, "a"):
+            os.utime(successful_node_list_path, None)
+        successful_nodes = []
+
+    if os.path.exists(unsuccessful_node_list_path):
+        unsuccessful_nodes = load4json(unsuccessful_node_list_path, [])
+    else:
+        with open(unsuccessful_node_list_path, "a"):
+            os.utime(unsuccessful_node_list_path, None)
+        unsuccessful_nodes = []
+
+    updated_successful_nodes = []
+    updated_unsuccessful_nodes = []
+    try:
+        for item in os.listdir(md_base_dir):
+            node_dir = os.path.join(md_base_dir, item)
+            if os.path.isdir(node_dir) and len(os.listdir(node_dir)) > 0:
+                try:
+                    for md in os.listdir(node_dir):
+                        if md.endswith('.MD') or md.endswith('.MDX') or md.endswith('.md') or md.endswith('.mdx'):
+                            md_path = os.path.join(node_dir, md)
+                            if md_path not in successful_nodes:
+                                md_name = os.path.splitext(md)[0]
+                                rsp = ''
+                                rsp = get_data_from_openrouter(item, md_path)
+                                rsp_json = parse_json(rsp)
+                                save2json(rsp_json, os.path.join(node_dir, f"{md_name}.json"))
+                                updated_successful_nodes.append(md_path)
+                                logger.info(f'Successfully extracting data from file: {md_path}')
+                except Exception as e:
+                    logger.error(f"Constrcut data of MD file: ###{md_path}### to txt failed, error {e}")
+                    updated_unsuccessful_nodes.append({md_path: rsp})
+    finally:
+        successful_nodes += updated_successful_nodes
+        unsuccessful_nodes += updated_unsuccessful_nodes
+        save2json(successful_nodes, successful_node_list_path)
+        save2json(unsuccessful_nodes, unsuccessful_node_list_path)
 
 
 if __name__=='__main__':
@@ -313,4 +372,6 @@ if __name__=='__main__':
     # eng_text = "The author of FreeU_Advanced is WASasquatch, This custom node provides advanced settings for FreeU."
     # eng2zh_deepseek(eng_text)
 
-    get_data_from_openrouter('/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_Fictiverse/README.md')
+    # get_data_from_openrouter('ComfyUI_Fictiverse', '/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_Fictiverse/README.md')
+
+    constrcut_data_from_md()
