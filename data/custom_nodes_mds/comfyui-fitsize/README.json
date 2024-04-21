@@ -1,62 +1,34 @@
 {
     "questions": [
         {
-            "subject": "Comfy UI Fit Size",
-            "question": "What is the purpose of the `Comfy UI Fit Size` node set?",
-            "answer": "The `Comfy UI Fit Size` node set allows users to easily fit images and generated content within a bounding box."
+            "subject": "Comfy UI - Fit Size node",
+            "question": "Explain the purpose of the Fit Size node in Comfy UI.",
+            "answer": "The Fit Size node automatically adjusts the size of an image to fit within a specified bounding box, making it ideal for copying screengrab content into Comfy UI without worrying about aspect ratios."
         },
         {
-            "subject": "Fit Size From Int Node",
-            "question": "How does the `Fit Size From Int` node work?",
-            "answer": "The `Fit Size From Int` node scales an image's width, height, and maximum size to fit within a given maximum size."
+            "subject": "Comfy UI - Fit Size From Int node",
+            "question": "How does the Fit Size From Int node work?",
+            "answer": "The node scales an image to fit within a given width, height, and maximum size, using basic math to ensure that the output image size is appropriate for Stable Diffusion."
         },
         {
-            "subject": "Fit Size From Image Node",
-            "question": "What is the function of the `Fit Size From Image` node?",
-            "answer": "The `Fit Size From Image` node extracts the width and height of an image automatically and allows for upscale and downscale options."
+            "subject": "Comfy UI - Fit Size From Image node",
+            "question": "What does the Fit Size From Image node do differently from the Fit Size From Int node?",
+            "answer": "The node automatically extracts the width and height of the image and can upscale or downscale the size to fit within a specified maximum size."
         },
         {
-            "subject": "Fit Image And Resize Node",
-            "question": "Describe the purpose of the `Fit Image And Resize` node.",
-            "answer": "The `Fit Image And Resize` node takes a variational autoencoder (vae) as input and outputs both the rescaled image and its latent batch."
+            "subject": "Comfy UI - Fit Image And Resize node",
+            "question": "Explain the functionality of the Fit Image And Resize node.",
+            "answer": "The node resizes an image to fit within a bounding box and outputs both the resulting image and a latent batch, making it suitable for img2img workflows."
         },
         {
-            "subject": "Load Image And Resize To Fit Node",
-            "question": "How does the `Load Image And Resize To Fit` node simplify image handling?",
-            "answer": "The `Load Image And Resize To Fit` node eliminates the need to save an image and allows direct pasting of image data without any intermediate steps."
+            "subject": "Comfy UI - Load Image And Resize To Fit node",
+            "question": "How does the Load Image And Resize To Fit node simplify image handling in workflows?",
+            "answer": "The node combines image handling capabilities into one node, allowing users to easily copy and paste image data without saving images."
         },
         {
-            "subject": "Pick Image From Batch Node",
-            "question": "What is the function of the `Pick Image From Batch` node?",
-            "answer": "The `Pick Image From Batch` node selects one or several images from a batch of images."
-        },
-        {
-            "subject": "Pick Image From Batches Node",
-            "question": "How does the `Pick Image From Batches` node work?",
-            "answer": "The `Pick Image From Batches` node selects one or a few images from a collection of batches."
-        }
-    ],
-    "answers": [
-        {
-            "text": "The Comfy UI Fit Size node set provides nodes for fitting images and generated content within a bounding box."
-        },
-        {
-            "text": "The Fit Size From Int node scales the sizes of an image to fit within a specified maximum size."
-        },
-        {
-            "text": "The Fit Size From Image node extracts the width and height of an image automatically and allows for upscale and downscale of the image."
-        },
-        {
-            "text": "The Fit Image And Resize node outputs both the resized image and its latent batch, making it useful for img2img workflows."
-        },
-        {
-            "text": "The Load Image And Resize To Fit node combines image handling directly into one node, allowing for easy resizing without intermediate steps."
-        },
-        {
-            "text": "The Pick Image From Batch node allows the selection of one or multiple images from a batch of images."
-        },
-        {
-            "text": "The Pick Image From Batches node enables the selection of one or a few images from a list of batches."
+            "subject": "Comfy UI - Values section",
+            "question": "List the input and output values available in the Values section.",
+            "answer": "The Values section provides inputs for vae, image, max_size, resampling, upscale, batch_size, and add_noise, and outputs latent, image, width, height, aspect ratio, and mask."
         }
     ]
 }

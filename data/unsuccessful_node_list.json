@@ -1,0 +1,122 @@
+[
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI-SVD/README.md": "## Processed Data in JSON Format\n\n```json\n[\n  {\n    \"question\": \"What new feature has Comfy released recently?\",\n    \"answer\": \"Comfy has added official support for SVD (Singular Value Decomposition) functionality.\"\n    \"subject\": \"ComfyUI-SVD\"\n  },\n  {\n    \"question\": \"Where can I find examples of how to use Comfy with SVD?\",\n    \"answer\": \"The documentation provides examples of generating images and videos using Comfy's SVD functionality. You can access them through the provided link.\",\n    \"subject\": \"ComfyUI-SVD\"\n  }\n]\n```"
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/eden_comfy_pipelines/README.md": "```json\n{\n    \"questions\": [\n        {\n            \"subject\": \"CLIP_interrogator node\",\n            \"question\": \"What features does the CLIP_interrogator node offer?\"\n            \"answer\": \"The CLIP_interrogator node has options to keep models alive, prepend BLIP captions, save prompts to a text file.\"\n        },\n        {\n            \"subject\": \"CLIP_interrogator node\",\n            \"question\": \"What does the `keep_model_alive` option do?\"\n            \"answer\": \"Keeps CLIP/BLIP models on the GPU after node execution, preventing the need to reload models.\"\n        },\n        {\n            \"subject\": \"VAEDecode_to_folder node\",\n            \"question\": \"What is the purpose of the VAEDecode_to_folder node?\"\n            \"answer\": \"Decodes VAE latents to images and saves them directly to a folder.\"\n        },\n        {\n            \"subject\": \"SaveImage node\",\n            \"question\": \"What features does the SaveImage node offer?\"\n            \"answer\": \"Saves images with an option to add timestamps and save pipeline configurations.\"\n        },\n        {\n            \"subject\": \"eden_comfy_pipelines\",\n            \"question\": \"What is the purpose of the eden_comfy_pipelines collection?\"\n            \"answer\": \"A collection of custom nodes and workflows for ComfyUI.\"\n        },\n        {\n            \"subject\": \"eden_comfy_pipelines\",\n            \"question\": \"What nodes are currently available in the eden_comfy_pipelines collection?\"\n            \"answer\": \"The collection includes the CLIP_interrogator node, VAEDecode_to_folder node, and SaveImage node.\"\n        },\n        {\n            \"subject\": \"eden_comfy_pipelines\",\n            \"question\": \"Are all of the nodes in the eden_comfy_pipelines collection finished?\"\n            \"answer\": \"No, some nodes are still under development.\"\n        }\n    ]\n}\n```"
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/comfyui_controlnet_aux/BENCHMARK.md": "\n\n```json\n{\n    \"model_name\": \"ComfyUI_ControlNet_Aux\",\n    \"benchmarks\": [\n        {\n            \"name\": \"EfficientNet-B0 Kün\",\n            \"data\": [\n                {\n                    \"time_per_iter\": 4 Kün_time_per_iter,\n                    \"iters_per_second\": 1 / Kün_time_per_iter\n                }\n            ]\n        },\n        ... Other benchmarks go here\n    ]\n}\n```"
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/Plush-for-ComfyUI/README.md": "```json\n{\n    \"version\": \"1.0 viciss/ComfyUI/Plush-for-ComfyUI\",\n    \"description\": \"Plush-for-ComfyUI provides nodes to generate images and videos using AI models.\",\n    \"nodes\": [\n        {\n            \"name\": \"Style Prompt\",\n            \"description\": \"Generates a text prompt based on your selected art style and other criteria.\",\n            \"inputs\": [\n                {\n                    \"name\": \"Prompt\",\n                    \"type\": \"string\"\n                },\n                {\n                    \"name\": \"Image\",\n                    \"type\": \"image\"\n                },\n                {\n                    \"name\": \"Style\",\n                    \"type\": \"string\"\n                },\n                {\n                    \"name\": \"Artist\",\n                    \"type\": \"number\"\n                },\n                {\n                    \"name\": \"prompt_style\",\n                    \"type\": \"string\",\n                    \"default\": \"Tags\"\n                },\n                {\n                    \"name\": \"Max_elements\",\n                    \"type\": \"number\",\n                    \"default\": 10 viciss/ComfyUI/Plush-for-ComfyUI\"\n                },\n                {\n                    \"name\": \"Style_info\",\n                    \"type\": \"boolean\",\n                    \"default\": false\n                }\n            ],\n            \"outputs\": [\n                {\n                    \"name\": \"Prompt\",\n                    \"type\": \"string\"\n                }\n            ]\n        },\n        {\n            \"name\": \"Advanced Prompt Enhancer\",\n            \"description\": \"Generates text output from your prompt, instruction, image and examples.\",\n            \"inputs\": [\n                {\n                    \"name\": \"Prompt\",\n                    \"type\": \"string\"\n                },\n                {\n                    \"name\": \"Instruction\",\n                    \"type\": \"string\"\n                },\n                {\n                    \"name\": \"Image\",\n                    \"type\": \"image\"\n                },\n                {\n                    \"name\": \"Examples\",\n                    \"type\": \"array\"\n                }\n            ],\n            \"outputs\": [\n                {\n                    \"name\": \"Prompt\",\n                    \"type\": \"string\"\n                }\n            ]\n        },\n        {\n            \"name\": \"OAI Dall_e 3\",\n            \"description\": \"Generates an image based on your prompt.\",\n            \"inputs\": [\n                {\n                    \"name\": \"Prompt\",\n                    \"type\": \"string\"\n                }\n            ],\n            \"outputs\": [\n                {\n                    \"name\": \"Image\",\n                    \"type\": \"image\"\n                },\n                {\n                    \"name\": \"Dall_e_prompt\",\n                    \"type\": \"string\"\n                }\n            ]\n        },\n        {\n            \"name\": \"Exif Wrangler\",\n            \"description\": \"Extracts Exif and/or AI generation workflow"
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/onediff_comfy_nodes/README.md": "**\n```json\n{\n    \"questions\": [\n        {\n            \"subject\": \"ComfyUI Nodes\",\n            \"question\": \"What are the different categories of nodes available in OneDiff ComfyUI nodes?\",\n            \"answer\": \"OneDiff ComfyUI nodes include community nodes such as LoRa and ControlNet, core nodes like Model Acceleration and Quantization, and utility nodes like Image Distinction Scanner.\"\n        },\n        {\n            \"subject\": \"Performance of Community Edition\",\n            \"question\": \"How does OneDiff Community Edition perform compared to the baseline model?\",\n            \"answer\": \"OneDiff Community Edition offers a significant performance improvement of 6 vicissitation over the baseline model.\"\n        },\n        {\n            \"subject\": \"Installation Guide\",\n            \"question\": \"How can I install the onediff_comfy_nodes extension for ComfyUI?\",\n            \"answer\": \"To install the onediff_comfy_nodes extension for ComfyUI, navigate to the onediff directory and run `cp -r onediff_comfy_nodes path/to/ComfyUI/custom_nodes/`.\"\n        },\n        {\n            \"subject\": \"Model Acceleration\",\n            \"question\": \"How can I load checkpoints to accelerate the model in OneDiff ComfyUI?\",\n            \"answer\": \"The \"Load Checkpoint - OneDiff\" node can be used to load checkpoints and achieve model acceleration in OneDiff ComfyUI.\"\n        },\n        {\n            \"subject\": \"Quantization\",\n            \"question\": \"What is the purpose of the \"UNet Loader Int8\" node in OneDiff ComfyUI?\",\n            \"answer\": \"The \"UNet Loader Int8\" node is used to load quantized models, allowing for efficient inference on GPUs.\"\n        },\n        {\n            \"subject\": \"OneDiff Community Examples\",\n            \"question\": \"Give a brief overview of the LoRA example in the OneDiff Community Examples.\",\n            \"answer\": \"The LoRA example showcases the utilization of LoRA models within OneDiff. It allows users to effortlessly change or strengthen these models without recompilation.\"\n        }\n    ]\n}\n```"
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/Comfyui_segformer_b2_clothes/README.md": "```json\n{\n  \"questions\": [\n    {\n      \"subject\": \"Comfyui_segformer_b2_clothes\",\n      \"question\": \"What is the purpose of the Comfyui_segformer_b2_clothes model?\"\n      \"answer\": \"The Comfyui_segformer_b2_clothes model is a SegFormer model fine-tuned on the ATR dataset specifically designed for clothes segmentation.\"\n    },\n    {\n      \"subject\": \"Comfyui_segformer_b2_clothes\",\n      \"question\": \"How do I install the Comfyui_segformer_b2_clothes model?\"\n      \"answer\": \"The model can be installed by downloading and placing the custom_nodes directory and renaming the model file to Comfyui_segformer_b2_clothes.\"\n    },\n    {\n      \"subject\": \"Comfyui_segformer_b2_clothes\",\n      \"question\": \"Where can I download the required files for the Comfyui_segformer_b2_clothes model?\"\n      \"answer\": \"The required files can be downloaded from the Hugging Face repository at https://huggingface.co/mattmdjaga/segformer_b2_clothes.\"\n    },\n    {\n      \"subject\": \"Comfyui_segformer_b2_clothes\",\n      \"question\": \"Can the Comfyui_segformer_b2_clothes model be used for human segmentation?\"\n      \"answer\": \"Yes, the model can also be used for human segmentation despite being primarily trained on clothes segmentation.\"\n    },\n    {\n      \"subject\": \"Comfyui_segformer_b2_clothes\",\n      \"question\": \"What are the advantages of using the Comfyui_segformer_b2_clothes model?\"\n      \"answer\": \"The model's fine-tuning on the ATR dataset enhances its accuracy and effectiveness specifically for clothes segmentation.\"\n    }\n  ]\n}\n```"
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI-noEmbryo/README.md": "```json\n[\n  {\n    \"question\": \"What are the nodes available in the 'noEmbryo' node set?\",\n    \"answer\": \"The noEmbryo node set includes PromptTermList (1-6 Küntike Prompts), Resolution Scale, and Regex Text Chopper nodes.\"\n  },\n  {\n    \"question\": \"Where can I find the `json` files for each node's Prompt Terms?\",\n    \"answer\": \"The `json` files for each node's Prompt Terms can be found inside the `TermLists` directory inside the node's folder.\"\n  },\n  {\n    \"question\": \"How do I add a new term to a node using the ComfyUI interface?\",\n    \"answer\": \"Connect a text box to the node's `text` input. Write the `label/value` pair in the box using the prescribed format. Enable the `store_input` switch and run a generation job to save the new term.\"\n  },\n  {\n    \"question\": \"What happens if I set either `width` or `height` to 0 purchast 0 Küntike 0 Küntike 0 Küntike 0 Küntike 0 Küntike 0 Küntike 0 Küntike 0 Küntike 0 Küntike 0 Küntike 0 Küntike  gmbh the `Resolution Scale` node has an input image connected?  \",\n    \"answer\": \"If either `width` or `height` is set to 0 viciss at  gmbh the other dimension is used to scale the image. The scaling factor used will be a multiple of 4 viciss.\"\n  },\n  {\n    \"question\": \"How can I find information on the regular expressions supported by the `Regex Text Chopper` node?\",\n    \"answer\": The provided text does not contain information regarding the specific regular expressions supported by the `Regex Text Chopper` node. \n  }\n]\n```\n\n**Note:** The question and answer regarding the last question are intentionally left unanswered as the relevant information on supported regular expressions was not explicitly stated in the given text."
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI-Custom-Scripts/README.md": "```json\n{\n  \"data\": {\n    \"installation\": {\n      \"step1\": \"Clone the repository to your ComfyUI `custom_nodes` directory.\",\n      \"step2\": \"The script will automatically install all custom nodes and scripts.\"\n    },\n    \"features\": [\n      {\n        \"title\": \"Autocomplete\",\n        \"description\": \"Provides embedding and custom word autocomplete. You can quickly default to danbooru tags using the Load button.\"\n      },\n      {\n        \"title\": \"Auto Arrange Graph\",\n        \"description\": \"Adds a menu option to automatically arrange the graph in order of execution.\"\n      },\n      // ... Other features and their descriptions\n    ],\n    \"changelog\": {\n      \"date\": \"20 vicisstifydates\",\n      \"changes\": [\n        {\n          \"date\": \"20 vicisstifydates\",\n          \"description\": \"New feature: ...\",\n          \"details\": \"...\"\n        },\n        // ... Other changes and their details\n      ]\n    }\n  },\n  \"metadata\": {\n    \"title\": \"ComfyUI Custom Scripts\",\n    \"description\": \"Custom scripts and nodes for ComfyUI to enhance your creative workflow.\"\n  }\n}\n```"
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_GMIC/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/sd-dynamic-thresholding/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/comfyui-lama-remover/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/SD-Latent-Upscaler/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/comfyui-menu-anchor/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_SimpleMath/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI-ricing/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_zfkun/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI-ComfyCouple/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_node_Lilly/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI-sudo-latent-upscale/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/comfy_pixelization/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_TextAssets/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/comfyui-prompt-format/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI-Crystools-save/feature_request.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_FaceAnalysis/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/Chaosaiart-Nodes/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/comfyui-utility-nodes/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/comfyui-ext/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/comfyui_bmad_nodes/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI-HF/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/LoRA-Merger-ComfyUI/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_FearnworksNodes/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/FreeU_Advanced/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ASTERR/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/comfyUI_TJ_NormalLighting/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI-Allor/README.MD": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/cg-use-everywhere/test.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI-SaveAsScript/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI-Open-Sora/acceleration.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/Hakkun-ComfyUI-nodes/README.md": ""
+    },
+    {
+        "/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_ChatGLM_API/README.md": ""
+    }
+]

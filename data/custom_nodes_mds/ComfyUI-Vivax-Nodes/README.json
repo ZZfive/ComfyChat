@@ -1,44 +1,26 @@
-{
-    "questions": [
-        {
-            "subject": "Vivax-Nodes",
-            "question": "What is the purpose of the Chunk Up node?",
-            "answer": "Splits the input list or batch into chunks of the specified size."
-        },
-        {
-            "subject": "Vivax-Nodes",
-            "question": "How can the Chunk Up node be used in conjunction with the For Loops node?",
-            "answer": "It can be used to process large lists in smaller chunks."
-        },
-        {
-            "subject": "Vivax-Nodes",
-            "question": "What is the function of the Get chunk node?",
-            "answer": "Gets the chunk at the specified index from the input list."
-        },
-        {
-            "subject": "Vivax-Nodes",
-            "question": "How can the Join Chunks node be utilized?",
-            "answer": "It joins a chunk to the batch."
-        },
-        {
-            "subject": "Vivax-Nodes",
-            "question": "What does the Model from URL node do?",
-            "answer": "Downloads a model from the specified URL to the output folder."
-        },
-        {
-            "subject": "Vivax-Nodes",
-            "question": "How does the Model from URL node handle file existence checking?",
-            "answer": "It checks if the file already exists and only downloads it again if it doesn't."
-        },
-        {
-            "subject": "Vivax-Nodes",
-            "question": "What is the purpose of the Inspect node?",
-            "answer": "Prints the input to the console for debugging purposes."
-        },
-        {
-            "subject": "Vivax-Nodes",
-            "question": "Explain the functionality of the Any String node.",
-            "answer": "Outputs the input string, but allows it to connect to anything, making it useful for specifying the same lora model to multiple nodes or other string inputs that aren't generic string inputs."
-        }
-    ]
-}
+[
+    {
+        "question": "What is the purpose of the Chunk Up node?",
+        "answer": "Splits the input list or batch into chunks of the specified size. This is useful in combination with loops to process large lists in smaller chunks."
+    },
+    {
+        "question": "How can the Get chunk node be used?",
+        "answer": "Gets the chunk at the specified index from the input list. The index input can be attached to the remaining output of a loop."
+    },
+    {
+        "question": "What is the function of the Join Chunks node?",
+        "answer": "Joins a chunk and a batch, and produces the combined results."
+    },
+    {
+        "question": "How does the Model from URL node work?",
+        "answer": "Downloads a model from the specified URL to the output folder and outputs its filename. It checks for existing files to prevent duplicate downloads."
+    },
+    {
+        "question": "Explain the purpose of the Inspect node.",
+        "answer": "Prints the input to the console. This is primarily used for debugging purposes."
+    },
+    {
+        "question": "Describe the function of the Any String node.",
+        "answer": "Outputs the input string regardless of its type. Useful for specifying additional data inputs that aren't merely strings."
+    }
+]
