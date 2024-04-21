@@ -315,6 +315,76 @@ def get_data_from_openrouter(subject: str, md_path: str, model: str = "google/ge
     return completion.choices[0].message.content
 
 
+def get_data_from_deepseek(subject: str, md_path: str, model: str = "deepseek-chat") -> str:
+    # gets API Key from environment variable OPENAI_API_KEY
+    client = OpenAI(api_key=config.DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
+
+    # template = '''
+    # I need to build a llm fine-tuning dataset. You need to understand the content of the document I input, then construct several pairs of question and answer data yourself, and return them in json format.\n---\nOnly question and answer data in json format is returned. The file currently being passed in is about {0}, the specific contents are as follows: {1}
+    # '''
+
+    template =  '''
+    I need to build a llm fine-tuned dataset. You need to understand the document content I input, then construct the question and answer data pair yourself, and return it in json format. The documentation I'm passing on is all about ComfyUI (a GUI that uses a stable diffusion model to generate images and videos) and custom nodes or plugins that extend its functionality. When building question and answer data, it must be clear whether the subject is for ComfyUI or a specific custom node or plug-in. The subject in the Q&A data must carry the specific name of the node or plug-in, such as the \"ComfyUI-Manager\" extension; do not just use \"extension\" or \"custom node\" as the subject, which does not indicate that the question is about the specific name of the Node or plug-in. Note that I will tell you the described subject name before passing in the specific document content, and you can use it directly when building question and answer data. Ensure that the constructed question and answer data cover all the content of the text as much as possible. Please ensure that the output json data format is correct. Do not miss necessary symbols, but do not add unnecessary symbols. The file currently being passed in is about {0}, the specific contents are as follows: {1}
+    '''
+
+    # template = '''
+    # I need to build a llm fine-tuned dataset. You need to understand the document content I input, then construct the question and answer data pair yourself, and return it in json format. The documentation I'm passing on is all about ComfyUI (a GUI that uses a stable diffusion model to generate images and videos) and custom nodes or plugins that extend its functionality. When building question and answer data, it must be clear whether the subject is for ComfyUI or a specific custom node or plug-in. The subject in the Q&A data must carry the specific name of the node or plug-in, such as the \"ComfyUI-Manager\" extension; do not just use \"extension\" or \"custom node\" as the subject, which does not indicate that the question is about the specific name of the Node or plug-in. Note that I will tell you the described subject name before passing in the specific document content, and you can use it directly when building question and answer data. The constructed question and answer data should include English question and answer data and Chinese question and answer data respectively, and cover all the content of the text as much as possible. Please ensure that the output json data format is correct. Do not miss necessary symbols, but do not add unnecessary symbols. \n---\nOnly question and answer data in json format is returned. The returned content is as follows:\n[\n          {{\n              \"english\": [\n                  {{\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }},\n                  {{\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }}\n              ]\n          }},\n          {{\n              \"chinese\": [\n                  {{\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }},\n                  {{\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }}\n              ]\n          }}\n]\n---\nThe file currently being passed in is about {0}, the specific contents are as follows: {1}
+    # '''
+
+    # prefix = """
+    # I need to build a llm fine-tuned dataset. You need to understand the document content I input, then construct the question and answer data pair yourself, and return it in json format. The documentation I'm passing on is all about ComfyUI (a GUI that uses a stable diffusion model to generate images and videos) and custom nodes or plugins that extend its functionality. When building question and answer data, it must be clear whether the subject is for ComfyUI or a specific custom node or plug-in. The subject in the Q&A data must carry the specific name of the node or plug-in, such as the \"ComfyUI-Manager\" extension; do not just use \"extension\" or \"custom node\" as the subject, which does not indicate that the question is about the specific name of the Node or plug-in. Note that I will tell you the described subject name before passing in the specific document content, and you can use it directly when building question and answer data. The constructed question and answer data should include English question and answer data and Chinese question and answer data respectively, and cover all the content of the text as much as possible.\n---\nOnly question and answer data in json format is returned. The returned content is as follows:\n[\n          {\n              \"english\": [\n                  {\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  },\n                  {\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }\n              ]\n          },\n          {\n              \"chinese\": [\n                  {\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  },\n                  {\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }\n              ]\n          }\n]\n---\n
+    # """
+
+    with open(md_path, 'r', encoding='utf-8') as f:
+        md_content = f.read()
+
+    # print(template.format(md_content))
+
+    completion = client.chat.completions.create(
+    model=model,
+    messages=[
+        {"role": "user", "content": template.format(subject, md_content)},
+    ],
+    temperature=1.0,
+    )
+    return completion.choices[0].message.content
+
+
+def get_data_from_moonshot(subject: str, md_path: str, model: str = "moonshot-v1-8k") -> str:
+    # gets API Key from environment variable OPENAI_API_KEY
+    client = OpenAI(api_key=config.MOONSHOT_API_KEY, base_url="https://api.moonshot.cn/v1")
+
+    # template = '''
+    # I need to build a llm fine-tuning dataset. You need to understand the content of the document I input, then construct several pairs of question and answer data yourself, and return them in json format.\n---\nOnly question and answer data in json format is returned. The file currently being passed in is about {0}, the specific contents are as follows: {1}
+    # '''
+
+    template =  '''
+    I need to build a llm fine-tuned dataset. You need to understand the document content I input, then construct the question and answer data pair yourself, and return it in json format. The documentation I'm passing on is all about ComfyUI (a GUI that uses a stable diffusion model to generate images and videos) and custom nodes or plugins that extend its functionality. When building question and answer data, it must be clear whether the subject is for ComfyUI or a specific custom node or plug-in. The subject in the Q&A data must carry the specific name of the node or plug-in, such as the \"ComfyUI-Manager\" extension; do not just use \"extension\" or \"custom node\" as the subject, which does not indicate that the question is about the specific name of the Node or plug-in. Note that I will tell you the described subject name before passing in the specific document content, and you can use it directly when building question and answer data. Ensure that the constructed question and answer data cover all the content of the text as much as possible. Please ensure that the output json data format is correct. Do not miss necessary symbols, but do not add unnecessary symbols. The file currently being passed in is about {0}, the specific contents are as follows: {1}
+    '''
+
+    # template = '''
+    # I need to build a llm fine-tuned dataset. You need to understand the document content I input, then construct the question and answer data pair yourself, and return it in json format. The documentation I'm passing on is all about ComfyUI (a GUI that uses a stable diffusion model to generate images and videos) and custom nodes or plugins that extend its functionality. When building question and answer data, it must be clear whether the subject is for ComfyUI or a specific custom node or plug-in. The subject in the Q&A data must carry the specific name of the node or plug-in, such as the \"ComfyUI-Manager\" extension; do not just use \"extension\" or \"custom node\" as the subject, which does not indicate that the question is about the specific name of the Node or plug-in. Note that I will tell you the described subject name before passing in the specific document content, and you can use it directly when building question and answer data. The constructed question and answer data should include English question and answer data and Chinese question and answer data respectively, and cover all the content of the text as much as possible. Please ensure that the output json data format is correct. Do not miss necessary symbols, but do not add unnecessary symbols. \n---\nOnly question and answer data in json format is returned. The returned content is as follows:\n[\n          {{\n              \"english\": [\n                  {{\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }},\n                  {{\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }}\n              ]\n          }},\n          {{\n              \"chinese\": [\n                  {{\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }},\n                  {{\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }}\n              ]\n          }}\n]\n---\nThe file currently being passed in is about {0}, the specific contents are as follows: {1}
+    # '''
+
+    # prefix = """
+    # I need to build a llm fine-tuned dataset. You need to understand the document content I input, then construct the question and answer data pair yourself, and return it in json format. The documentation I'm passing on is all about ComfyUI (a GUI that uses a stable diffusion model to generate images and videos) and custom nodes or plugins that extend its functionality. When building question and answer data, it must be clear whether the subject is for ComfyUI or a specific custom node or plug-in. The subject in the Q&A data must carry the specific name of the node or plug-in, such as the \"ComfyUI-Manager\" extension; do not just use \"extension\" or \"custom node\" as the subject, which does not indicate that the question is about the specific name of the Node or plug-in. Note that I will tell you the described subject name before passing in the specific document content, and you can use it directly when building question and answer data. The constructed question and answer data should include English question and answer data and Chinese question and answer data respectively, and cover all the content of the text as much as possible.\n---\nOnly question and answer data in json format is returned. The returned content is as follows:\n[\n          {\n              \"english\": [\n                  {\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  },\n                  {\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }\n              ]\n          },\n          {\n              \"chinese\": [\n                  {\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  },\n                  {\n                      \"question\": \"...\",\n                      \"answer\": \"...\"\n                  }\n              ]\n          }\n]\n---\n
+    # """
+
+    with open(md_path, 'r', encoding='utf-8') as f:
+        md_content = f.read()
+
+    # print(template.format(md_content))
+
+    completion = client.chat.completions.create(
+    model=model,
+    messages=[
+        {"role": "user", "content": template.format(subject, md_content)},
+    ],
+    temperature=1.0,
+    )
+    return completion.choices[0].message.content
+
+
 def constrcut_data_from_md(md_base_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds",
                            successful_node_list_path: str = "/root/code/ComfyChat/data/successful_node_list.json",
                            unsuccessful_node_list_path: str = "/root/code/ComfyChat/data/unsuccessful_node_list.json") -> None:
@@ -347,7 +417,8 @@ def constrcut_data_from_md(md_base_dir: str = "/root/code/ComfyChat/data/custom_
                             if md_path not in successful_nodes:
                                 md_name = os.path.splitext(md)[0]
                                 rsp = ''
-                                rsp = get_data_from_openrouter(item, md_path)
+                                rsp = get_data_from_deepseek(item, md_path)
+                                # time.sleep(10)
                                 rsp_json = parse_json(rsp)
                                 save2json(rsp_json, os.path.join(node_dir, f"{md_name}.json"))
                                 updated_successful_nodes.append(md_path)
@@ -375,3 +446,5 @@ if __name__=='__main__':
     # get_data_from_openrouter('ComfyUI_Fictiverse', '/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_Fictiverse/README.md')
 
     constrcut_data_from_md()
+
+    # print(get_data_from_deepseek('ComfyUI_Fictiverse', '/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_Fictiverse/README.md'))

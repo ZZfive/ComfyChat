@@ -1,0 +1,52 @@
+[
+    {
+        "subject": "ComfyUI-Image-Filters",
+        "question": "What is the purpose of the Alpha Clean node?",
+        "answer": "The Alpha Clean node is designed to remove holes and near-solid areas in a matte, helping to clean up the matte for more accurate image compositing."
+    },
+    {
+        "subject": "ComfyUI-Image-Filters",
+        "question": "What does the Alpha Matte node do?",
+        "answer": "The Alpha Matte node takes an image and an alpha or trimap and refines the edges with closed-form matting. It can optionally extract the foreground and background colors as well, which is useful for cleaning up SAM segments or hand-drawn masks."
+    },
+    {
+        "subject": "ComfyUI-Image-Filters",
+        "question": "How does the Blur Image (Fast) node work?",
+        "answer": "The Blur Image (Fast) node uses the opencv gaussian blur algorithm, which is significantly faster than the comfy image blur. It supports larger blur radius and separate x/y controls."
+    },
+    {
+        "subject": "ComfyUI-Image-Filters",
+        "question": "What is the function of the Dilate/Erode Mask node?",
+        "answer": "The Dilate/Erode Mask node dilates or erodes masks, using either a box or circle filter, which can be useful for expanding or contracting the mask region."
+    },
+    {
+        "subject": "ComfyUI-Image-Filters",
+        "question": "How does the Enhance Detail node improve image quality?",
+        "answer": "The Enhance Detail node increases or decreases details in an image or batch of images using a guided filter, as opposed to the typical gaussian blur used by most sharpening filters, providing a more natural enhancement of image details."
+    },
+    {
+        "subject": "ComfyUI-Image-Filters",
+        "question": "What is the purpose of the Remap Range node?",
+        "answer": "The Remap Range node fits the color range of an image to a new blackpoint and whitepoint, useful for clamping or thresholding soft mattes."
+    },
+    {
+        "subject": "ComfyUI-Image-Filters",
+        "question": "How does the Batch Normalize Latent/Image node function?",
+        "answer": "The Batch Normalize Latent/Image node normalizes each frame in a batch to the overall mean and std dev, helping to remove overall brightness flickering."
+    },
+    {
+        "subject": "ComfyUI-Image-Filters",
+        "question": "What does the Tonemap / UnTonemap node apply or remove?",
+        "answer": "The Tonemap / UnTonemap node applies or removes a log + contrast curve tonemap, which can be used for adjusting the contrast and dynamic range of images."
+    },
+    {
+        "subject": "ComfyUI-Image-Filters",
+        "question": "What is the purpose of the Exposure Adjust node?",
+        "answer": "The Exposure Adjust node is a linear exposure adjustment in f-stops, with an optional tonemap, which can be used to brighten or darken the image based on the desired creative effect."
+    },
+    {
+        "subject": "ComfyUI-Image-Filters",
+        "question": "What can the Convert Normals node translate between?",
+        "answer": "The Convert Normals node can translate between different normal map color spaces, with optional normalization fix and black region fix, which can be useful in 3D rendering workflows."
+    }
+]

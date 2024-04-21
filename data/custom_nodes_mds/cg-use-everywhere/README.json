@@ -1,0 +1,44 @@
+{
+    "questions_and_answers": [
+        {
+            "question": "What are UE nodes used for and where can I download the test workflow for UE Nodes?",
+            "answer": "UE nodes are used to create virtual links in ComfyUI workflows. The test workflow for UE Nodes can be downloaded from the cg-use-everywhere GitHub repository."
+        },
+        {
+            "question": "What are the known limitations of UE nodes when used with Pythons ssss Preset Text nodes?",
+            "answer": "There are limitations in feeding the output of a Preset Text node directly into a UE node, which might break UE regex connections."
+        },
+        {
+            "question": "How can I control matching with regex rules when using Anything Everywhere nodes?",
+            "answer": "You can control matching with regex rules by using the title_regex and input_regex widgets in the Anything Everywhere node."
+        },
+        {
+            "question": "What does the Convert to real links feature do?",
+            "answer": "The Convert to real links feature replaces the virtual links created by UE nodes with real links, and removes the UE nodes."
+        },
+        {
+            "question": "What are the logging and debugging options available for UE nodes?",
+            "answer": "Logging information can be found in the JavaScript console. Levels of logging include ERROR, PROBLEM, INFORMATION, and DETAIL. More details can be viewed in the `use_everywhre_utilities.js` file. "
+        },
+        {
+            "question": "How can I manage group restrictions for UE nodes?",
+            "answer": "You can manage group restrictions for UE nodes by right-clicking on the node and selecting 'Group restrictions'."
+        },
+        {
+            "question": "What is seed everywhere and what does it do?",
+            "answer": "Seed Everywhere connects to any unconnected INT input with 'seed' in the input name, and it has the control_after_generate feature. This allows you to use the same seed everywhere."
+        },
+        {
+            "question": "How can I visualize the UE links in the workflow?",
+            "answer": "You can visualize the UE links by right-clicking on the background canvas and selecting 'Toggle UE Link Visibility'."
+        },
+        {
+            "question": "What is the priority order of the various UE nodes in case of ambiguous matches?",
+            "answer": "If there is more than one sending node that matches an input, the order of priority is: `Anything Everywhere?`, `Seed Everywhere` and `Prompts Everywhere`, `Anything Everywhere`, `Anything Everywhere3`."
+        },
+        {
+            "question": "How can I improve the performance of the loop detection for group nodes?",
+            "answer": "You can improve the performance of loop detection for group nodes by enabling the `Highway nodes` feature from the 'Other Features' section in the UE node settings."
+        }
+    ]
+}

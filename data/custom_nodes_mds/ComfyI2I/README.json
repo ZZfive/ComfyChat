@@ -1,0 +1,50 @@
+[
+    {
+        "subject": "ComfyI2I",
+        "questions": [
+            "What is ComfyI2I?",
+            "Why consider contributing to ComfyI2I's development?",
+            "What new features were introduced in the ComfyShop update?",
+            "How can I access ComfyShop?",
+            "What are the brush controls in ComfyShop?",
+            "What are the zoom and pan controls in ComfyShop?",
+            "What is the function of the Save to node in ComfyShop?",
+            "What is the Color_Transfer node?",
+            "What is the function of the 'No_of_Colors' variable in the Color_Transfer node?",
+            "How can I adjust the strength of the Color Transfer effect?",
+            "What are the 'Blur_Radius' and 'Blur_Amount' controls for in the Color_Transfer node?",
+            "What is the 'Strength' control for in the Color_Transfer node?",
+            "How can I use the Color Transfer node with the Mask_Ops node?",
+            "How does the 'Separate_Mask' option in the Mask_Ops node work?",
+            "What is the 'Use_Text_Sigma' control in the Mask_Ops node used for?",
+            "What are the 'Blend_Percentage', 'Black Level', 'Mid Level', and 'White Level' controls in the Mask_Ops node?",
+            "What is the 'Shrink_Grow' control in the Mask_Ops node used for?",
+            "What is the 'Inpaint Segments' node used for?",
+            "What does the 'Combine and Paste' node do?",
+            "Where can I find workflow examples for ComfyI2I?",
+            "What is included in the I2I workflow.json file?"
+        ],
+        "answers": [
+            "ComfyI2I is a set of custom nodes to perform image 2 image functions in ComfyUI. All donations are much appreciated.",
+            "You should consider contributing to ComfyI2I's development if you find these nodes useful.",
+            "The ComfyShop update introduced basic painting features for ComfyUI, including the ability to paint both mask and color with outputs, as well as various brush and image control options.",
+            "To access ComfyShop, right-click on any image node that outputs an image and mask in ComfyUI and select ComfyShop in the pop-up menu.",
+            "Brush controls in ComfyShop include size, opacity, softness, and color, which can be adjusted using keyboard shortcuts.",
+            "Zoom and pan controls in ComfyShop allow for increased control over the image canvas by zooming in and out, and panning by clicking and dragging.",
+            "The Save to node in ComfyShop saves anything painted in greyscale to the 'MASK' output and anything painted in RGB mode to the 'IMAGE' output.",
+            "Color Transfer node is a standalone node that can take the colors of one image and transfer them to another.",
+            "The 'No_of_Colors' variable in the Color_Transfer node allows you to choose the amount of colors to extract from each image, typically between 5-20.",
+            "The 'Strength' control is used to adjust the strength of the Color Transfer effect.",
+            "The 'Blur_Radius' and 'Blur_Amount' controls in the Color_Transfer node affect the blur at the edges of color segments in the source image.",
+            "You can use the Color Transfer node with the Mask_Ops node by outputting individual R, G, B channels to transfer color differentially across channels.",
+            "The 'Separate_Mask' option in the Mask_Ops node tells the node whether to separate the mask by each island or keep all islands in 1 image.",
+            "The 'Use_Text_Sigma' control in the Mask_Ops node is used to smooth out a mask that has been created by text.",
+            "The 'Blend_Percentage', 'Black Level', 'Mid Level', and 'White Level' controls in the Mask_Ops node are used to blend, adjust levels, and levels of the mask.",
+            "The 'Shrink_Grow' control in the Mask_Ops node is used to shrink or grow your mask.",
+            "The 'Inpaint Segments' node segments and crops masks and images based on the mapped bounding boxes of each mask.",
+            "The 'Combine and Paste' node takes new images from the VAE Decode node, resizes them, and pastes them over the original image.",
+            "You can find workflow examples for ComfyI2I in the workflows directory, including I2I workflow.json, and Color Xfer Workflow.json.",
+            "The I2I workflow.json file includes a basic workflow with all of the nodes combined, showing how they are all connected."
+        ]
+    }
+]

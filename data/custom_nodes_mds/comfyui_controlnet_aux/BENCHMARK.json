@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What are the benchmarks performed on the ComfyUI-Manager extension?",
+        "answer": "The benchmarks performed on the ComfyUI-Manager extension include ONNX export, ONNX optimization, ONNX to Caffe conversion, and Caffe2 benchmarks."
+    },
+    {
+        "question": "For EfficientNet-B0, what was the main unoptimized run time in milliseconds per iteration and how many iterations were completed per second?",
+        "answer": "For EfficientNet-B0, the unoptimized main run finished at 49.2862 milliseconds per iteration with an average of 20.2897 iterations per second."
+    },
+    {
+        "question": "What is the total time per operator type for the Optimized EfficientNet-B2?",
+        "answer": "For the Optimized EfficientNet-B2, the total time per operator type is 90.942 milliseconds, where Convolution takes 61.4627ms (67.5845%), Sigmoid takes 22.7458ms (25.0113%), and other operations such as Mul, AveragePool, Add, and FC occupy the remaining percentage."
+    },
+    {
+        "question": "How does the memory usage break down for parameter memory per operator type in Optimized EfficientNet-B1?",
+        "answer": "In the Optimized EfficientNet-B1, the parameter memory usage was primarily by Conv at 25.7479 MB (83.4024%) and FC at 5.124 MB (16.5976%)."
+    },
+    {
+        "question": "What is the total FLOP (Floating Point Operations) for the Unoptimized TF MobileNet-V3 Large 1.0?",
+        "answer": "The total FLOP for the Unoptimized TF MobileNet-V3 Large 1.0 is 0.438743 GFLOP."
+    },
+    {
+        "question": "What factors influenced the Feature Memory Read in the Unoptimized MobileNet-V3?",
+        "answer": "The factors influencing the Feature Memory Read in the Unoptimized MobileNet-V3 are Conv at 34.7354 MB (36.4363%), SpatialBN at 17.7944 MB (18.6658%), and Mul at 14.5035 MB (15.2137%)."
+    },
+    {
+        "question": "What is the time percentage distribution of the Unoptimized MnasNet-A1 per operator type?",
+        "answer": "In the Unoptimized MnasNet-A1, the time percentage distribution is Conv at 79.0905%, SpatialBN at 13.4144%, Relu at 5.19169%, Mul at 0.95436%, FC at 0.606486%, with other operations taking up the remaining percentages."
+    },
+    {
+        "question": "What changes occurred in the parameter memory for Conv and FC in the Optimized MnasNet-B1 as compared to the unoptimized version?",
+        "answer": "In the Optimized MnasNet-B1, the parameter memory for Conv shifted to 12.2576 MB (70.5205%) from its unoptimized state, while FC remains at 5.124 MB but now accounting for 29.4795% compared to the unoptimized state."
+    },
+    {
+        "question": "Can you provide details about the memory usage in the Optimized MnasNet-B1?",
+        "answer": "In the Optimized MnasNet-B1, Feature Memory Read was primarily used by Conv at 34.5112 MB (56.4224%) and Relu at 19.1923 MB (31.3775%). Feature Memory Written was dominated by Conv at 21.8266 MB (51.7346%) and Relu at 19.1923 MB (45.4908%)."
+    }
+]
