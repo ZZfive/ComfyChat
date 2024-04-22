@@ -596,60 +596,46 @@ if __name__=='__main__':
 
     # print(get_data_from_deepseek('ComfyUI_Fictiverse', '/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_Fictiverse/README.md'))
 
-    parse_data_from_md_json()
+    # parse_data_from_md_json()
 
     # questions = [
-    #             "What type of datasets does the ComfyUI-Open-Sora-Plan introduce?",
-    #             "How can I access the information about the sky_timelapse dataset?",
-    #             "What is the structure of the sky_timelapse dataset?",
-    #             "Can I use UCF101 dataset with ComfyUI-Open-Sora-Plan? If yes, how can I download it?",
-    #             "Is there any offline feature extraction feature available in ComfyUI-Open-Sora-Plan?"
+    #             "What is the purpose of the Cozy Sampler Options node?",
+    #             "Who created the Cozy Sampler Options node for ComfyUI?",
+    #             "What is the ComfyUI Sampler node used for?",
+    #             "Can you provide an image of the ComfyUI Sampler Options node?"
     #         ]
     # answers = [
-    #             "The ComfyUI-Open-Sora-Plan introduces un-condition datasets, such as sky_timelapse.",
-    #             "You can access information about the sky_timelapse dataset by referring to the open-sora-Dataset on GitHub.",
-    #             "The sky_timelapse dataset consists of folders named 'sky_test', 'sky_train', and a few python scripts for testing and video folders.",
-    #             "Yes, you can use the UCF101 dataset with ComfyUI-Open-Sora-Plan. To download the UCF-101 dataset, visit the provided link on the CRCV website.",
-    #             "The documentation mention 'Offline feature extraction' is coming soon, so there might be limitations on this feature currently."
+    #             "The Cozy Sampler Options node is a simple node designed to generate a list of options for the ComfyUI Sampler node.",
+    #             "Cozy Sampler Options was created by the CozyMantis squad.",
+    #             "The ComfyUI Sampler node is utilized to provide a set of options for various tasks within the ComfyUI interface.",
+    #             "Yes, an image of the ComfyUI Sampler Options node can be found at ./assets/node.png."
     #         ]
-    # node_name = 'ComfyUI-Open-Sora-Plan'
+    # node_name = 'cozy-utils-comfyui-nodes'
     # semi_automatic_for_one_node1(node_name, questions, answers)
 
-#     qa = {
-#     "questions": [
-#         {
-#             "prompt": "What is included in this repository for ComfyUI A1111-like Prompt Custom Node Solution?",
-#             "answer": "The script `comfyui_a1111_prompt_array_generator.py` for generating the required workflow block, and two new ComfyUI nodes: `CLIPTextEncodeA1111` and `RerouteTextForCLIPTextEncodeA1111`."
-#         },
-#         {
-#             "prompt": "What is the purpose of the `CLIPTextEncodeA1111` node?",
-#             "answer": "`CLIPTextEncodeA1111` is a variant of `CLIPTextEncode` that converts A1111-like prompt into standard prompt, based on its step information."
-#         },
-#         {
-#             "prompt": "What is the purpose of the `RerouteTextForCLIPTextEncodeA1111` node?",
-#             "answer": "`RerouteTextForCLIPTextEncodeA1111` is a workaround for a ComfyUI bug that prevents Primitive node from being connected with Reroute node."
-#         },
-#         {
-#             "prompt": "How does the alternating words syntax work in CLIPTextEncodeA1111?",
-#             "answer": "In alternating words syntax, `[foo|bar]` means step 0 is `foo`, step 1 is `bar`, step 2 is `foo` and so on. Three or more words are also supported."
-#         },
-#         {
-#             "prompt": "How does prompt editing syntax work in CLIPTextEncodeA1111?",
-#             "answer": "In prompt editing syntax, `[foo|bar|0.3]` means using `foo` for the first 30% of the steps and `bar` for the remaining steps."
-#         },
-#         {
-#             "prompt": "How can I start using the CLIPTextEncodeA1111 custom node?",
-#             "answer": "To start using the CLIPTextEncodeA1111 node, you can follow Option A of the Installation and Usage guide in the repository."
-#         },
-#         {
-#             "prompt": "Can I build my own workflow using the custom nodes?",
-#             "answer": "Yes, you can build your own workflow by following Option B of the Installation and Usage guide in the repository."
-#         },
-#         {
-#             "prompt": "Is there a plan to implement a script for converting existing workflows into ones that use CLIPTextEncodeA1111?",
-#             "answer": "Yes, there is a TODO to implement a script that would convert any existing workflow into the one that utilizes `CLIPTextEncodeA1111`."
-#         }
-#     ]
-# }
-#     node_name = 'CLIPTextEncodeA1111-ComfyUI'
-#     semi_automatic_for_one_node2(node_name, qa)
+    qa = {
+        "questions": [
+            {
+                "question": "How do I install Davemane42's Custom Node for ComfyUI?",
+                "answer": "Navigate to the `/ComfyUI/custom_nodes/` folder, `git clone git clone https://github.com/Davemane42/ComfyUI_Dave_CustomNode`, and start ComfyUI."
+            },
+            {
+                "question": "What does the MultiAreaConditioning 2.4 node allow you to do?",
+                "answer": "The MultiAreaConditioning 2.4 node allows you to visualize the ConditioningSetArea node for better control and comes with a ConditioningUpscale node useful for high-resolution fix workflow."
+            },
+            {
+                "question": "What is the use of the ConditioningUpscale node?",
+                "answer": "The ConditioningUpscale node is useful for high-resolution fix workflow."
+            },
+            {
+                "question": "What is included in the MultiLatentComposite 1.1 node?",
+                "answer": "The MultiLatentComposite 1.1 node allows you to visualize the MultiLatentComposite node for better control."
+            },
+            {
+                "question": "What is one known issue with MultiLatentComposite 1.1?",
+                "answer": "One known issue with MultiLatentComposite 1.1 is that it does not check for out of bound layers."
+            }
+        ]
+        }
+    node_name = 'ComfyUI_Dave_CustomNode'
+    semi_automatic_for_one_node2(node_name, qa)
