@@ -1,0 +1,52 @@
+[
+    {
+        "subject": "ComfyUI-Cycler",
+        "question": "How does the ComfyUI-Cycler extension work in relation to the existing repeat workflow option?",
+        "answer": "The ComfyUI-Cycler extension adds an ability to reuse generated results to cycle over them again and again. It can be used for various iterative loop actions like building grids, animating frame-by-frame, or changing conditions every step."
+    },
+    {
+        "subject": "ComfyUI-Cycler - Interrupt Node",
+        "question": "What does the Interrupt node in ComfyUI-Cycler do and where should it be placed in a workflow?",
+        "answer": "The Interrupt node stops a workflow when certain conditions are met. It should be placed after important 'Reload/Recall' nodes or in the way of any computing that requires stopping."
+    },
+    {
+        "subject": "ComfyUI-Cycler - Auto Queue",
+        "question": "Is there a limitation with the 'Auto Queue' option in ComfyUI-Cycler when using interrupt nodes?",
+        "answer": "Yes, the '_Auto Queue_' checkbox unchecks automatically on an interrupt, to prevent accidental short circuits."
+    },
+    {
+        "subject": "ComfyUI-Cycler - Save Image (Override)",
+        "question": "How does the Save Image (Override) node in ComfyUI-Cycler differ from the default Save Image node?",
+        "answer": "The Save Image (Override) node in ComfyUI-Cycler saves images with the same filename, without a counter, to your output folder."
+    },
+    {
+        "subject": "ComfyUI-Cycler - Generation Timer",
+        "question": "How does the Generation Timer in ComfyUI-Cycler measure time?",
+        "answer": "The Generation Timer measures the time spent on generation, starting right before every generation and stopping when the last 'Save/Memorize' node in the workflow proc is executed."
+    },
+    {
+        "subject": "ComfyUI-Cycler - Installation",
+        "question": "What are the different options for installing the ComfyUI-Cycler extension?",
+        "answer": "You can install ComfyUI-Cycler by using the ComfyUI Manager or by using git in your '/ComfyUI/custom_nodes/' folder."
+    },
+    {
+        "subject": "ComfyUI-Cycler - Known Issues",
+        "question": "Does the 'Auto Queue' feature in ComfyUI-Cycler work normally with interrupt nodes?",
+        "answer": "No, the '_Auto Queue_' checkbox unchecks automatically on an interrupt to prevent accidental short circuits."
+    },
+    {
+        "subject": "ComfyUI-Cycler - Workflow Examples",
+        "question": "Can you provide an example use case for the Interrupt node in a workflow?",
+        "answer": "An example use case for the Interrupt node is to stop a generation when a certain score is achieved, as seen in the workflow to generate an image until it gets a high score."
+    },
+    {
+        "subject": "ComfyUI-Cycler - Custom Nodes",
+        "question": "What types of nodes does ComfyUI-Cycler provide for memory storage?",
+        "answer": "ComfyUI-Cycler provides nodes for memory storage such as Memorize Int/Float/String and Recall Int/Float/String nodes."
+    },
+    {
+        "subject": "ComfyUI-Cycler - New Cycle Button",
+        "question": "What does the 'New Cycle' button introduced with the ComfyUI-Cycler do?",
+        "answer": "The 'New Cycle' button introduced with the ComfyUI-Cycler increments all filenames and loop IDs, if it can."
+    }
+]

@@ -1,0 +1,47 @@
+[
+    {
+        "subject": "ComfyUI-auto-nodes-layout",
+        "question": "What is ComfyUI-auto-nodes-layout?",
+        "answer": "ComfyUI-auto-nodes-layout is a ComfyUI extension that applies a better node layout algorithm for ComfyUI workflows for visualization purposes."
+    },
+    {
+        "subject": "ComfyUI-auto-nodes-layout",
+        "question": "What is the purpose of this extension?",
+        "answer": "The purpose of this extension is to improve the layout and visibility of wires in ComfyUI workflows, focusing on direction, flow, and connections to nodes for better visualization."
+    },
+    {
+        "subject": "ComfyUI-auto-nodes-layout",
+        "question": "What graph drawing algorithms did the creator consider for implementation?",
+        "answer": "The creator considered hierarchical graph drawing, especially suitable for directed acyclic graphs, and focused on the Dagre layout and ELK 'layered' layout from Dagre.js and ELK.js, respectively."
+    },
+    {
+        "subject": "ComfyUI-auto-nodes-layout",
+        "question": "What is the recommended setup for using this extension?",
+        "answer": "It is recommended to remove reroute nodes, as they mess up ranks and depth, and use ComfyUI version later than PR comfyanonymous/ComfyUI#1273 or commit `bc76b38`."
+    },
+    {
+        "subject": "ComfyUI-auto-nodes-layout",
+        "question": "Can this extension be undone or redone?",
+        "answer": "Yes, undo/redo is possible with the ComfyUI-Bmad-DirtyUndoRedo extension."
+    },
+    {
+        "subject": "ComfyUI-auto-nodes-layout",
+        "question": "What are the two options to control layout density?",
+        "answer": "The two options to control layout density are the spacing between ranks/depths/columns and the spacing between nodes in the same rank/depth/column."
+    },
+    {
+        "subject": "ComfyUI-auto-nodes-layout",
+        "question": "What are the reasons for removing reroute nodes?",
+        "answer": "Reroute nodes should be removed because they interfere with the rank/depth of nodes in a directed acyclic graph, and they should only be re-added after the layout has been applied if any wires are intercepted or partially hidden by other nodes."
+    },
+    {
+        "subject": "ComfyUI-auto-nodes-layout",
+        "question": "Can users select a specific layout strategy?",
+        "answer": "Yes, but it's marked as 'TODO' in the documentation, implying it's not yet implemented."
+    },
+    {
+        "subject": "ComfyUI-auto-nodes-layout",
+        "question": "Are there any alternative graph layout libraries mentioned in the documentation?",
+        "answer": "Yes, a few alternatives are mentioned, such as ELK, WebCOLA, Cytoscape, Graphology, and Springy."
+    }
+]

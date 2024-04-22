@@ -1,0 +1,16 @@
+{
+    "questions_answers": [
+        {
+            "question": "What is the `comfyui_ab_sampler` custom node?",
+            "answer": "The `comfyui_ab_sampler` is an experimental sampler node that alternates between two inputs, A and B, until only one remains, starting with input A."
+        },
+        {
+            "question": "How does the `comfyui_ab_sampler` handle input B?",
+            "answer": "When processing input B, the sampler node runs over a 2x2 grid, where 3/4 of the grid are copies of the original input latent."
+        },
+        {
+            "question": "What happens when a mask is used with the `comfyui_ab_sampler`?",
+            "answer": "If an optional mask is provided, the region outside the defined ROI (Region of Interest) is copied from the original latent at the end of every step."
+        }
+    ]
+}

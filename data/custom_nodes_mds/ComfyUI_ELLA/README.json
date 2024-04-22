@@ -1,0 +1,39 @@
+{
+    "data": [
+        {
+            "subject": "ComfyUI_ELLA",
+            "question": "What is ComfyUI_ELLA?",
+            "answer": "ComfyUI_ELLA is an implementation of ELLA, which equips diffusion models with a Large Language Model (LLM) for enhanced semantic alignment."
+        },
+        {
+            "subject": "ComfyUI_ELLA Installation",
+            "question": "How do I install ComfyUI_ELLA?",
+            "answer": "To install, navigate to the `custom_nodes` directory and use `git clone` to clone the repository from `https://github.com/ExponentialML/ComfyUI_ELLA.git`."
+        },
+        {
+            "subject": "ComfyUI_ELLA Models",
+            "question": "Where should I place the ELLA model files?",
+            "answer": "Place the ELLA model under a new folder `ella` within the `models` directory. The corresponding T5 model should also be downloaded into a `flan-t5-xl` folder within `t5_model`."
+        },
+        {
+            "subject": "ComfyUI_ELLA_Loader",
+            "question": "What parameters are required for the ELLA Loader node?",
+            "answer": "The ELLA Loader node requires the paths to the ELLA checkpoint **file** and the T5 model **folder**."
+        },
+        {
+            "subject": "ComfyUI_ELLA_Text_Encode",
+            "question": "What inputs are needed for the ELLA Text Encode node?",
+            "answer": "The ELLA Text Encode node needs the loaded model from the ELLA Loader, a conditioning prompt, and the required sigma value."
+        },
+        {
+            "subject": "ComfyUI_ELLA Support",
+            "question": "What conditioning nodes are supported by ComfyUI_ELLA?",
+            "answer": "All conditioning nodes should be supported, as well as prompt weighting and ControlNet."
+        },
+        {
+            "subject": "ComfyUI_ELLA Attribution",
+            "question": "Who should be credited for ComfyUI_ELLA?",
+            "answer": "Thanks go to TencentQQGYLab for the ELLA research, BlenderNeko for the `Get Sigma Via BNK` node, and HuggingFace for timestep modules used in ComfyUI_ELLA."
+        }
+    ]
+}

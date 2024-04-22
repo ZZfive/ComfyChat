@@ -1,0 +1,46 @@
+[
+    {
+        "question": "How can I evaluate the generated videos quality using ComfyUI-Open-Sora-Plan?",
+        "answer": "You can calculate video quality metrics such as CLIP-SCORE, FVD, SSIM, LPIPS, and PSNR using ComfyUI-Open-Sora-Plan."
+    },
+    {
+        "question": "What environment setup is required to use ComfyUI-Open-Sora-Plan?",
+        "answer": "You need to install Pytorch (torch>=1.7.1), CLIP, clip-score from PyPi, lpips, scipy (scipy==1.7.3/1.9.3), numpy, pillow, torchvision>=0.8.2, ftfy, regex, and tqdm."
+    },
+    {
+        "question": "How can I download the FVD pre-trained model required to calculate FVD?",
+        "answer": "You can manually download 'i3d_torchscript.pt' from [here](https://www.dropbox.com/s/ge9e5ujwgetktms/i3d_torchscript.pt), or 'i3d_pretrained_400.pt' from [here](https://onedrive.live.com/download?cid=78EEF3EB6AE7DBCB&resid=78EEF3EB6AE7DBCB%21199&authkey=AApKdFHPXzWLNyI)."
+    },
+    {
+        "question": "What are the image and text file input specifications for clip_score?",
+        "answer": "All images should be in a single directory and can be in .png or .jpg format. Text data should be in plain text files in a separate directory, with the .txt extension. The number of image and text files should be equal, and they should be paired by file name."
+    },
+    {
+        "question": "What are the data input specifications for fvd, psnr, ssim, lpips?",
+        "answer": "Generated and real image files should be stored in separate directories, each having .mp4 files. The images should be paired by file name. For example, if there's a cat.mp4 in the generated image directory, there should be a corresponding cat.mp4 in the real image directory."
+    },
+    {
+        "question": "How can I calculate CLIP-SCORE using ComfyUI-Open-Sora-Plan?",
+        "answer": "You need to change the file path and set frame_num, resolution etc. Then, navigate to the eval directory and run: 'bash script/cal_clip_score.sh'."
+    },
+    {
+        "question": "How can I calculate FVD using ComfyUI-Open-Sora-Plan?",
+        "answer": "After setting up the environment and file paths, navigate to the eval directory and run: 'bash script/cal_fvd.sh'."
+    },
+    {
+        "question": "How can I calculate PSNR using ComfyUI-Open-Sora-Plan?",
+        "answer": "After setting up the environment and file paths, navigate to the eval directory and run: 'bash script/cal_psnr.sh'."
+    },
+    {
+        "question": "How can I calculate SSIM using ComfyUI-Open-Sora-Plan?",
+        "answer": "After setting up the environment and file paths, navigate to the eval directory and run: 'bash script/cal_ssim.sh'."
+    },
+    {
+        "question": "How can I calculate LPIPS using ComfyUI-Open-Sora-Plan?",
+        "answer": "After setting up the environment and file paths, navigate to the eval directory and run: 'bash script/cal_lpips.sh'."
+    },
+    {
+        "question": "From which codebase does ComfyUI-Open-Sora-Plan's evaluation codebase derive?",
+        "answer": "The evaluation codebase for ComfyUI-Open-Sora-Plan refers to [clip-score](https://github.com/Taited/clip-score) and [common_metrics](https://github.com/JunyaoHu/common_metrics_on_video_quality)."
+    }
+]

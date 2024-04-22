@@ -1,0 +1,34 @@
+{
+    "questions_and_answers": [
+        {
+            "subject": "ComfyUI-Manage",
+            "question": "What is the primary purpose of the ComfyUI-Manager extension?",
+            "answer": "The ComfyUI-Manager extension is a nodes collection for ComfyUI that aims to improve workflows and generate better images and videos using GUI-based tools."
+        },
+        {
+            "subject": "BlehInsaneChainSampler",
+            "question": "How does the BlehInsaneChainSampler node work?",
+            "answer": "The BlehInsaneChainSampler node allows for more convenient switching between samplers during sampling. It works by allowing users to set different samplers for different steps, such as using `heunpp2` for the first five steps and `euler_ancestral` for the next five, followed by `dpmpp_2m` for the remaining steps."
+        },
+        {
+            "subject": "BlehForceSeedSampler",
+            "question": "What issue does the BlehForceSeedSampler node address?",
+            "answer": "The BlehForceSeedSampler node ensures that a global RNG seed gets set even when `add_noise` is turned off within the sampler. This addresses the issue of getting different generations every time with samplers like `euler_a` when `add_noise` is disabled."
+        },
+        {
+            "subject": "BlehDeepShrink",
+            "question": "How does the BlehDeepShrink node differ from the built-in Deep Shrink node?",
+            "answer": "Compared to the built-in Deep Shrink node, the BlehDeepShrink node allows users to enter a comma-separated list of blocks to apply the downscale effect to and includes a `start_fadeout_percent` input for fading out the downscale over a specified range. Additionally, it expands the options for upscale, and downscale types and adds antialiasing for `bicubic` and `bilinear` modes."
+        },
+        {
+            "subject": "BlehModelPatchConditional",
+            "question": "How does the BlehModelPatchConditional node apply model patches conditionally?",
+            "answer": "The BlehModelPatchConditional node takes a `default` model and a `matched` model. When the interval or start/end percentage match, the `matched` model will apply, otherwise the `default` one will. This can be used to apply something like HyperTile, Self Attention Guidance, or other arbitrary model patches conditionally."
+        },
+        {
+            "subject": "BlehHyperTile",
+            "question": "What is the difference between the BlehHyperTile and the built-in HyperTile node?",
+            "answer": "The BlehHyperTile node, based on the Inspire node pack, adds the ability to set a seed and timestep range that HyperTile gets applied for. Additionally, it allows setting an interval for HyperTile steps, similar to the BlehInsaneChainSampler node. It is, however, not well tested."
+        }
+    ]
+}

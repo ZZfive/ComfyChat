@@ -1,0 +1,49 @@
+{
+    "data": [
+        {
+            "subject": "ComfyUI-Anchors",
+            "question": "What is ComfyUI-Anchors?",
+            "answer": "ComfyUI-Anchors is a ComfyUI extension that adds spatial anchors/waypoints to better navigate large workflows."
+        },
+        {
+            "subject": "ComfyUI-Anchors",
+            "question": "How can I add Anchor Nodes in ComfyUI-Anchors?",
+            "answer": "You can add Anchor Nodes in ComfyUI-Anchors from the `utils` section."
+        },
+        {
+            "subject": "ComfyUI-Anchors",
+            "question": "How can I jump between anchors in ComfyUI-Anchors?",
+            "answer": "You can jump between anchors using the `a` and `d` keys in ComfyUI-Anchors."
+        },
+        {
+            "subject": "ComfyUI-Anchors",
+            "question": "What is an unexpected side-effect of Comfy's Litegraph's centerOnNode?",
+            "answer": "Comfy's Litegraph's centerOnNode doesn't account for collapsed nodes, so you can change the centering position when jumping to an Anchor by making it big and then collapsing."
+        },
+        {
+            "subject": "ComfyUI-Anchors",
+            "question": "What is still to be done in the TODO list of ComfyUI-Anchors?",
+            "answer": "In the TODO list for ComfyUI-Anchors, items still to be done include showing a list of current Anchors with names, allowing changing of iteration order, and adding vector based navigation."
+        },
+        {
+            "subject": "ComfyUI-Anchors",
+            "question": "How can I set up a local development environment for ComfyUI-Anchors?",
+            "answer": "To set up a local development environment for ComfyUI-Anchors, you need to clone the repo, run `pnpm install` to install the necessary dependencies, and then `pnpm build` to compile the code."
+        },
+        {
+            "subject": "ComfyUI-Anchors",
+            "question": "Is there a plan to have the ComfyUI-Anchors library work outside of ComfyUI?",
+            "answer": "No, there are no plans to have the ComfyUI-Anchors library work outside of the ComfyUI environment."
+        },
+        {
+            "subject": "ComfyUI-Anchors",
+            "question": "What is the confession about typing in ComfyUI-Anchors?",
+            "answer": "To get types working without extracting the JS code from ComfyUI, the development files (TS) reference Comfy as a sibling. If you want TypeScript hints and checks to work, you need a similar structure. For the JS to run properly, the relative path is swapped in the dist for a different relative path based on where the JS is copied on `__init__`."
+        },
+        {
+            "subject": "ComfyUI-Anchors",
+            "question": "Can you provide more details on how the path swapping works for the JavaScript files?",
+            "answer": "Check out the `vite.config.ts` and `tsconfig.json` for details on how the path swapping works for the JavaScript files. The configuration is made to adapt the relative path based on where the JavaScript files are copied on `__init__`."
+        }
+    ]
+}

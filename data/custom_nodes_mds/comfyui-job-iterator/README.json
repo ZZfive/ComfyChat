@@ -1,0 +1,39 @@
+{
+    "data": [
+        {
+            "subject": "comfyui-job-iterator",
+            "question": "What is the primary function of comfyui-job-iterator?",
+            "answer": "comfyui-job-iterator implements iteration over sequences within a single workflow run."
+        },
+        {
+            "subject": "comfyui-job-iterator",
+            "question": "How do you install comfyui-job-iterator?",
+            "answer": "To install, just clone it into custom_nodes. There are no dependencies."
+        },
+        {
+            "subject": "comfyui-job-iterator",
+            "question": "How do you use comfyui-job-iterator to iterate over values in a workflow?",
+            "answer": "1. Make a SEQUENCE containing the values to use at each step. 2. Turn it into a JOB using a MakeJob node, and enter a name for the attribute. 3. If you need to modify more than one parameter, make more SEQUENCES and turn them into JOBs. 4. Connect to a JobIterator. 5. Connect the attributes output to GetAttribute nodes to pull out the value of a name at the current step. 6. Connect those values into a normal workflow. 7. Click 'queue prompt'."
+        },
+        {
+            "subject": "comfyui-job-iterator",
+            "question": "What is the use of the Stringify node included with comfyui-job-iterator?",
+            "answer": "The Stringify node returns `str()` and `repr()` of the input."
+        },
+        {
+            "subject": "comfyui-job-iterator",
+            "question": "What does the Interact node do when evaluated in comfyui-job-iterator?",
+            "answer": "The Interact node opens a debug REPL on the terminal where you ran ComfyUI whenever it is evaluated."
+        },
+        {
+            "subject": "comfyui-job-iterator",
+            "question": "What does the Join image batch node do in comfyui-job-iterator?",
+            "answer": "The Join image batch node turns a batch of images into one tiled image."
+        },
+        {
+            "subject": "comfyui-job-iterator",
+            "question": "What is the purpose of the Select from image batch node in comfyui-job-iterator?",
+            "answer": "The Select from image batch node outputs a single image from a batch."
+        }
+    ]
+}

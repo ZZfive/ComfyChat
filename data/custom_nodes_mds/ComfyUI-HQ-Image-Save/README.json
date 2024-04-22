@@ -1,0 +1,32 @@
+[
+    {
+        "subject": "ComfyUI-HQ-Image-Save",
+        "question": "What types of files does ComfyUI-HQ-Image-Save support for loading and saving?",
+        "answer": "ComfyUI-HQ-Image-Save supports loading and saving of EXR files individually or in batches, and for saving RGB or RGBA 32bpc EXR and 16bpc RGB TIFF files."
+    },
+    {
+        "subject": "ComfyUI-HQ-Image-Save",
+        "question": "How can the output folder path be formatted when saving EXR files?",
+        "answer": "When saving EXR files with ComfyUI-HQ-Image-Save, the output folder path can be formatted as relative paths within the output folder or as absolute paths with version and frame number formatting."
+    },
+    {
+        "subject": "ComfyUI-HQ-Image-Save",
+        "question": "What CLI argument is recommended for more accurate decoding?",
+        "answer": "The recommended CLI argument for more accurate decoding when using ComfyUI-HQ-Image-Save is `--fp32-vae`."
+    },
+    {
+        "subject": "ComfyUI-HQ-Image-Save",
+        "question": "How does the number of possible values per channel compare between PNG and TIFF files?",
+        "answer": "PNG files have 256 possible values per channel (2^8), while TIFF files have 65,536 possible values per channel (2^16)."
+    },
+    {
+        "subject": "ComfyUI-HQ-Image-Save",
+        "question": "What is the formula for approximating RGB values from the four latent channels?",
+        "answer": "The formula for approximating RGB values from the four latent channels is: r = (0.298 * r + 0.187 * g - 0.187 * b - 0.184 * a) * 0.18215, g = (0.207 * r + 0.286 * g + 0.189 * b - 0.271 * a) * 0.18215, b = (0.208 * r + 0.173 * g + 0.264 * b - 0.473 * a) * 0.18215."
+    },
+    {
+        "subject": "ComfyUI-HQ-Image-Save",
+        "question": "What are the known issues with ComfyUI-HQ-Image-Save?",
+        "answer": "There are two known issues with ComfyUI-HQ-Image-Save: No workflow metadata is saved to the TIFF or EXR images and there is no load TIFF node yet."
+    }
+]

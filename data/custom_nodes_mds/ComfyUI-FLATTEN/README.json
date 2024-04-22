@@ -1,0 +1,72 @@
+[
+    {
+        "subject": "ComfyUI-FLATTEN",
+        "question": "What is ComfyUI-FLATTEN?",
+        "answer": "ComfyUI-FLATTEN is a suite of nodes that utilizes the FLATTEN optical flow model to generate or edit images and videos in ComfyUI."
+    },
+    {
+        "subject": "ComfyUI-FLATTEN",
+        "question": "How can I install ComfyUI-FLATTEN?",
+        "answer": "You can install ComfyUI-FLATTEN by cloning or downloading the repo into your 'ComfyUI/custom_nodes/' directory or using the ComfyUI-Manager to automatically install the nodes."
+    },
+    {
+        "subject": "ComfyUI-FLATTEN",
+        "question": "What Python packages are required for ComfyUI-FLATTEN?",
+        "answer": "No additional Python packages outside of ComfyUI requirements are necessary for ComfyUI-FLATTEN."
+    },
+    {
+        "subject": "ComfyUI-FLATTEN",
+        "question": "What are the nodes included in ComfyUI-FLATTEN?",
+        "answer": "The nodes included in ComfyUI-FLATTEN are Load Checkpoint with FLATTEN model, Sample Trajectories, Unsampler (Flatten), KSampler (Flatten), Apply Flatten Attention (SD1.5 Only), and Create Flow Noise."
+    },
+    {
+        "subject": "ComfyUI-FLATTEN Load Checkpoint node",
+        "question": "What does the Load Checkpoint node do?",
+        "answer": "The Load Checkpoint node loads any given SD1.5 checkpoint with the FLATTEN optical flow model. It only works with the Flatten KSampler and a standard ComfyUI checkpoint loader is required for other KSamplers."
+    },
+    {
+        "subject": "ComfyUI-FLATTEN Sample Trajectories node",
+        "question": "What does the Sample Trajectories node do?",
+        "answer": "The Sample Trajectories node takes the input images and samples their optical flow into trajectories. Context Length and Overlap for Batching with AnimateDiff-Evolved are also required."
+    },
+    {
+        "subject": "ComfyUI-FLATTEN Unsampler node",
+        "question": "What does the Unsampler node do?",
+        "answer": "The Unsampler node unsamples the input latent and creates the needed injections required for sampling. It should only use Euler or ddpm2m as the sampling method."
+    },
+    {
+        "subject": "ComfyUI-FLATTEN KSampler node",
+        "question": "What does the KSampler node do?",
+        "answer": "The KSampler node samples the unsampled latents and uses the injections from the Unsampler. It can use any sampling method, but euler or ddpm2m are recommended for editing pieces of the video."
+    },
+    {
+        "subject": "ComfyUI-FLATTEN Apply Flatten Attention node",
+        "question": "What does the Apply Flatten Attention node do?",
+        "answer": "The Apply Flatten Attention node uses Flatten's Optical Flow attention mechanism without the rest of Flatten's model. It does not always work with methods that add normal noise."
+    },
+    {
+        "subject": "ComfyUI-FLATTEN Create Flow Noise node",
+        "question": "What does the Create Flow Noise node do?",
+        "answer": "The Create Flow Noise node creates flow noise given a latent and trajectories."
+    },
+    {
+        "subject": "ComfyUI-FLATTEN",
+        "question": "What are the recommended settings for video editing with ComfyUI-FLATTEN?",
+        "answer": "The recommended settings are to use an Unsampler and KSampler with `old_qk = 0`. The Unsampler should use the euler sampler and the KSampler should use the dpmpp_2m sampler."
+    },
+    {
+        "subject": "ComfyUI-FLATTEN",
+        "question": "What are the recommended settings for scene editing with ComfyUI-FLATTEN?",
+        "answer": "For scene editing, it is recommended to use LCM on the KSampler alongside setting `old_qk = 1` on the KSampler. Ancestral sampling methods also work well."
+    },
+    {
+        "subject": "ComfyUI-FLATTEN",
+        "question": "What ComfyUI nodes are supported by ComfyUI-FLATTEN?",
+        "answer": "ComfyUI-FLATTEN can support most ComfyUI nodes, including ControlNets, IP-Adapter, LCM, InstanceDiffusion/GLIGEN, and many more."
+    },
+    {
+        "subject": "ComfyUI-FLATTEN",
+        "question": "What are the unsupported ComfyUI features for ComfyUI-FLATTEN?",
+        "answer": "Currently, the known unsupported custom ComfyUI features are: Scheduled Prompting and Context Views for advanced batching."
+    }
+]

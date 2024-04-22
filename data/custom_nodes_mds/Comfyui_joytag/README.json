@@ -1,0 +1,54 @@
+{
+    "data": [
+        {
+            "subject": "ComfyUI-JoyTag",
+            "question": "What is the purpose of the Validation Arena in ComfyUI-JoyTag?",
+            "answer": "The Validation Arena is designed to calculate metrics for different tagging models using unseen images to allow performance comparison."
+        },
+        {
+            "subject": "ComfyUI-JoyTag",
+            "question": "Why is it recommended to use older images on Danbooru for the Validation Arena?",
+            "answer": "Using images at least a couple of months old on Danbooru ensures they are less likely to have been in any training set and are likely to present a slight domain shift, testing the ability of the models to generalize."
+        },
+        {
+            "subject": "ComfyUI-JoyTag",
+            "question": "What are the recommended image properties for the Validation Arena?",
+            "answer": "Recommended images should not have transparency, be animated, or exceed the size of 1024x1024 when resized."
+        },
+        {
+            "subject": "ComfyUI-JoyTag",
+            "question": "What compression format is used for image files in the Validation Arena?",
+            "answer": "Images are saved in WebP format with a compression quality of 80% to reduce disk usage."
+        },
+        {
+            "subject": "ComfyUI-JoyTag",
+            "question": "What is the purpose of the `download.py` script in ComfyUI-JoyTag?",
+            "answer": "The `download.py` script in ComfyUI-JoyTag is used to download posts and images from Danbooru, starting from a given ID and moving downwards."
+        },
+        {
+            "subject": "ComfyUI-JoyTag",
+            "question": "Which library and dataset does `download.py` use?",
+            "answer": "The `download.py` script uses the danbooru_metadata library (https://github.com/fpgaminer/danbooru-metadata) and metadata from the danbooru2021 dataset."
+        },
+        {
+            "subject": "ComfyUI-JoyTag",
+            "question": "What does the `trainable.py` script do?",
+            "answer": "The `trainable.py` script validates which images can be loaded for the model, ensuring the absence of transparency, animation, and proper resizing to be below or at 1024x1024."
+        },
+        {
+            "subject": "ComfyUI-JoyTag",
+            "question": "What is the purpose of the `export_sw.py` script?",
+            "answer": "The `export_sw.py` script works to export SmilingWolf model to ONNX format if the current ONNX model on HuggingFace has a fixed batch size of 1."
+        },
+        {
+            "subject": "ComfyUI-JoyTag",
+            "question": "What does the `validate.py` script do?",
+            "answer": "The `validate.py` script runs inference using SmilingWolf and JoyTag models to report global mean Precision, Recall, F1, and Average Precision."
+        },
+        {
+            "subject": "ComfyUI-JoyTag",
+            "question": "What are the Precision, Recall, and F1 scores for JoyTag in the Validation Arena?",
+            "answer": "JoyTag's Precision is 0.4377, Recall is 0.4264, and F1 score is 0.4179."
+        }
+    ]
+}

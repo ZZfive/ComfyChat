@@ -1,0 +1,37 @@
+[
+    {
+        "subject": "ComfyUI-SpliceTools",
+        "question": "What is the purpose of ComfyUI-SpliceTools?",
+        "answer": "ComfyUI-SpliceTools are experimental utility nodes focusing on manipulation of noised latents."
+    },
+    {
+        "subject": "Rerange Sigmas",
+        "question": "What does the Rerange Sigmas node do?",
+        "answer": "The Rerange Sigmas node produces new set of sigmas with the same sigma_min and sigma_max, but reranged to a given number of steps, allowing for easy adjustment of steps given to a single sampling node without requiring multiple changes or marking part of workflow as stale."
+    },
+    {
+        "subject": "Splice Latents",
+        "question": "What does Splice Latents do and for what is it particularly useful?",
+        "answer": "Splice Latents uses a Gaussian blur to split noised latents into noise and un-noiced latents, allowing to change low-frequency detail while preserving higher-level detail. It is particularly useful with renoise (flip sigmas) workflows."
+    },
+    {
+        "subject": "Splice Denoised",
+        "question": "What does Splice Denoised do?",
+        "answer": "Splice Denoised, when both output and denoised output exist (sampler custom), allows for a more accurate reproduction of Splice Latents without stripping the higher-frequency detail of the donor_latent."
+    },
+    {
+        "subject": "Temporal Splice",
+        "question": "What is the purpose of Temporal Splice?",
+        "answer": "Temporal Splice performs a splice across the temporal domain, combining the detail which does not move from the lower latent with the detail that does move in the upper latent."
+    },
+    {
+        "subject": "ComfyUI-SpliceTools",
+        "question": "What are some potential issues with using Splice Latents?",
+        "answer": "Splice Latents results are novel, but may produce haloing artifacts, which are still being investigated and are likely a result of the frequency filtering implementation."
+    },
+    {
+        "subject": "Temporal Splice",
+        "question": "What were Temporal Splice implementations primarily designed for?",
+        "answer": "Temporal Splice was primarily implemented to experiment with coloring of line art animations but has also seen use in filtering graphical artifacts introduced by AnimateDiff in rotoscoping workflows."
+    }
+]

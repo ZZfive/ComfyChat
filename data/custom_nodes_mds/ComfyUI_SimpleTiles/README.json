@@ -1,0 +1,42 @@
+[
+    {
+        "subject": "ComfyUI_SimpleTiles",
+        "question": "What is the purpose of DynamicTileSplit and DynamicTileMerge nodes in ComfyUI_SimpleTiles?",
+        "answer": "DynamicTileSplit and DynamicTileMerge are used to split an image into tiles and merge them back into an image, respectively. DynamicTileSplit decides the overlap between tiles on the y axis, and the x axis is calculated based on the ratio to the image height."
+    },
+    {
+        "subject": "ComfyUI_SimpleTiles",
+        "question": "How are the x and y axes calculated in DynamicTileSplit?",
+        "answer": "In DynamicTileSplit, the x axis is calculated to have the same ratio to image height as the y axis."
+    },
+    {
+        "subject": "ComfyUI_SimpleTiles",
+        "question": "What is the output of DynamicTileSplit?",
+        "answer": "The output of DynamicTileSplit is a `tile_calc` object that contains information about tile size, overlap, and should be passed to DynamicTileMerge."
+    },
+    {
+        "subject": "ComfyUI_SimpleTiles",
+        "question": "What is the purpose of the Overlap value in DynamicTileSplit and TileMerge?",
+        "answer": "The Overlap value decides how much overlap there is between tiles on the y axis, and the x axis is calculated to have the same ratio to image height as the y axis. It should be set to the same value used in TileSplit."
+    },
+    {
+        "subject": "ComfyUI_SimpleTiles",
+        "question": "What is the purpose of the Blend value in DynamicTileSplit and TileMerge?",
+        "answer": "The Blend value decides how many pixels the blending is done over. It should be less than the Overlap value, and blending is done linearly from 0 to 1 over the blend distance."
+    },
+    {
+        "subject": "ComfyUI_SimpleTiles",
+        "question": "What are the limitations of Legacy nodes compared to DynamicTileSplit and DynamicTileMerge?",
+        "answer": "Legacy nodes do not work well if the image ratio and tile ratio are different."
+    },
+    {
+        "subject": "ComfyUI_SimpleTiles",
+        "question": "What is the purpose of the TileCalc (Legacy) node?",
+        "answer": "TileCalc is a utility to calculate the final image size based on tile sizes and overlaps."
+    },
+    {
+        "subject": "ComfyUI_SimpleTiles",
+        "question": "What are the limitations of TileSplit (Legacy) and TileMerge (Legacy) nodes?",
+        "answer": "Legacy nodes like TileSplit and TileMerge don't work well when the image ratio and tile ratio are different."
+    }
+]

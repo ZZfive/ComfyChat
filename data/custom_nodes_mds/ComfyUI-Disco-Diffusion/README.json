@@ -1,0 +1,57 @@
+[
+    {
+        "subject": "ComfyUI-Disco-Diffusion",
+        "question": "What repositories are involved in the modularized version of Disco Diffusion for ComfyUI?",
+        "answer": "This repo holds a modularized version of [Disco Diffusion](https://github.com/alembics/disco-diffusion) for use with [ComfyUI](https://github.com/comfyanonymous/ComfyUI)."
+    },
+    {
+        "subject": "ComfyUI-Disco-Diffusion",
+        "question": "How do I install the Disco Diffusion nodes for ComfyUI?",
+        "answer": "To install, clone the repository into your `ComfyUI/custom_nodes` folder with `git clone --recursive https://github.com/space-nuko/ComfyUI-Disco-Diffusion`. Activate the virtualenv used with ComfyUI and then run `pip install -r requirements.txt` in the cloned folder."
+    },
+    {
+        "subject": "ComfyUI-Disco-Diffusion::Guided Diffusion Loader",
+        "question": "What does the Guided Diffusion Loader node do?",
+        "answer": "The Guided Diffusion Loader node loads a Guided Diffusion model checkpoint. All models are automatically downloaded to your `ComfyUI/models/Disco-Diffusion` folder."
+    },
+    {
+        "subject": "ComfyUI-Disco-Diffusion::OpenAI CLIP Loader",
+        "question": "What does the OpenAI CLIP Loader node do and what model is recommended for use with ComfyUI's built-in nodes?",
+        "answer": "The OpenAI CLIP Loader node loads the OpenAI/OpenCLIP format CLIP models. All models are automatically downloaded and cached. The recommended model for use with ComfyUI's built-in nodes is `clip-vit-large-patch14`, found [here](https://huggingface.co/openai/clip-vit-large-patch14/blob/main/pytorch_model.bin)."
+    },
+    {
+        "subject": "ComfyUI-Disco-Diffusion::Disco Diffusion",
+        "question": "What is the main function of the Disco Diffusion node?",
+        "answer": "The main function of the Disco Diffusion node is to act as the main sampler node."
+    },
+    {
+        "subject": "ComfyUI-Disco-Diffusion::Disco Diffusion Extra Settings",
+        "question": "What are the optional settings available in the Disco Diffusion Extra Settings node?",
+        "answer": "The Disco Diffusion Extra Settings node provides optional settings you can pass into the Disco Diffusion node."
+    },
+    {
+        "subject": "ComfyUI-Disco-Diffusion",
+        "question": "How is the OpenAI CLIP Loader related to ComfyUI's CLIP Loader and CLIP Vision Loader?",
+        "answer": "If you substitute the OpenAI CLIP Loader with ComfyUI's CLIP Loader and CLIP Vision Loader, you need to copy the CLIP model you use into both the `clip` and `clip_vision` subfolders under your `ComfyUI/models` folder, because ComfyUI can't load both at once from the same model file."
+    },
+    {
+        "subject": "ComfyUI-Disco-Diffusion::Prompt Syntax",
+        "question": "What is the special syntax for writing prompts in the Disco Diffusion node?",
+        "answer": "The special syntax for writing prompts in the Disco Diffusion node is shown below: `; You can write comments like this. 0:A beautiful painting of a singular lighthouse, shining its light across a tumultuous sea of blood by greg rutkowski and thomas kinkade. Trending on artstation. 0:yellow color scheme 100:This set of prompts start at frame 100. 100:This prompt has weight five:5`."
+    },
+    {
+        "subject": "ComfyUI-Disco-Diffusion::Prompt Syntax",
+        "question": "How does the leading number in a prompt relate to the step number in the generation?",
+        "answer": "The leading number in front of each prompt indicates which step number in the generation the prompt should begin being used on."
+    },
+    {
+        "subject": "ComfyUI-Disco-Diffusion::Prompt Syntax",
+        "question": "What control does the trailing number have at the end of the prompt?",
+        "answer": "The trailing number at the end of each prompt is optional and controls the weight of the prompt. You can also have negative weights, but **the sum of all weights cannot equal 0**."
+    },
+    {
+        "subject": "ComfyUI-Disco-Diffusion",
+        "question": "Where can I find more information about the parameters available for Disco Diffusion?",
+        "answer": "More information about the parameters available for Disco Diffusion can be found in the [Disco Diffusion Cheatsheet](https://botbox.dev/disco-diffusion-cheatsheet/) and the [EZ Charts Gudie](https://ezcharts.miraheze.org/wiki/EZ_Charts)."
+    }
+]

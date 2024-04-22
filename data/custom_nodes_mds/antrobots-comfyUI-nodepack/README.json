@@ -1,0 +1,57 @@
+[
+    {
+        "subject": "KSampler (advanced) with denoise",
+        "question": "What is the purpose of the `denoise` value in the KSampler (advanced) node?",
+        "answer": "The `denoise` value allows you to swap models mid generation in img-to-img workflows more efficiently."
+    },
+    {
+        "subject": "KSampler with Refiner",
+        "question": "What does the Ksampler with Refiner node do?",
+        "answer": "This node generates with `base_model` until `refine_step`, then switches to `refine_model` and re-encodes the latent with `refine_vae` if the two passed in VAEs are different. It also allows for a mask to be set if provided."
+    },
+    {
+        "subject": "Swap",
+        "question": "What does the Swap node do with its two inputs?",
+        "answer": "If the swap bool is `False`, it pipes input 1 into output A and input 2 into output B. If the swap bool is `True`, it swaps the outputs, mapping 1 to B and 2 to A. This is useful when combined with piping workflows."
+    },
+    {
+        "subject": "Crop Image and Mask",
+        "question": "What is the purpose of the Crop Image and Mask node?",
+        "answer": "This node is used to crop an image and its corresponding mask. It takes an image, a mask, a minimum width, a minimum height, and padding as inputs."
+    },
+    {
+        "subject": "Scale Image to Size",
+        "question": "What is the purpose of the Scale Image to Size node?",
+        "answer": "This node is used to scale an image to a desired size. It takes an image, a desired size, and a boolean value `doLarger` as inputs and calculates the scale factor based on the desired size and the smaller or larger dimension of the image."
+    },
+    {
+        "subject": "Paste with Masks",
+        "question": "What does the Paste with Masks node do?",
+        "answer": "This node is used to paste a source image onto a destination image using masks. It takes a source image, a source mask, a destination image, and a destination mask as inputs, as well as a horizontal padding, a vertical padding, and a global padding."
+    },
+    {
+        "subject": "Alpha Composite",
+        "question": "What does the Alpha Composite node do?",
+        "answer": "This node is used to composite a source image and a destination image using alpha blending. It takes a source image, a destination image, a source mask, a destination mask, an x offset, and a y offset as inputs."
+    },
+    {
+        "subject": "Set Dict",
+        "question": "What is the purpose of the Set Dict node?",
+        "answer": "This node takes in any value and packages it into a `DICT` labeled as `key` and sends it out. A `dict` can optionally be passed in, in which case it will append the value to the input dict."
+    },
+    {
+        "subject": "Get Dict",
+        "question": "What does the Get Dict node do?",
+        "answer": "This node takes in a `DICT`, a `key`, and a `default` value as inputs. If `key` is found in the `DICT`, it will pass it out. Otherwise, `default` will be used."
+    },
+    {
+        "subject": "Get Dict TYPE",
+        "question": "What are the core functionalities of the Get Dict TYPE nodes?",
+        "answer": "These nodes behave similar to the standard Get Dict, with the exception that `default` is optional and inputs are validated with their type."
+    },
+    {
+        "subject": "Get Dict Unsafe",
+        "question": "What is the purpose of the Get Dict Unsafe node?",
+        "answer": "This is a special variant of `get dict` with NO `default`. If the input does not exist, it will return `None`. It can be useful if you are using a lot of custom types and don't want to populate all the defaults."
+    }
+]

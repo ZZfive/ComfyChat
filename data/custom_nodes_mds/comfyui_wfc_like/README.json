@@ -1,0 +1,26 @@
+{
+    "q1": {
+        "question": "What is the 'comfyui_wfc_like' implementation and how is it used in ComfyUI?",
+        "answer": "The 'comfyui_wfc_like' is an 'opinionated' Wave Function Collapse implementation with a set of nodes for ComfyUI. It is used as a visual tool, primarily focusing on reaching a partial solution and completion using diffusion rather than a complete solution necessarily."
+    },
+    "q2": {
+        "question": "How does the customizable temperature mechanic in the comfyui_wfc_like implementation work?",
+        "answer": "The customizable temperature mechanic in the comfyui_wfc_like implementation works by weighing the random component and frequency adjustment of a node's cost. It increases as backtracks increase in frequency and depth, lowering the influence of these components and favoring the most probable states to skew the generation away from contradictions."
+    },
+    "q3": {
+        "question": "How does the 'Generate (WFC)' node handle tiles that are not present in the provided sample?",
+        "answer": "The 'Generate (WFC)' node sets tiles that are not present in the provided sample as empty cells; alternatively, the 'Encode (WFC)' node can encode partially complete states for a 'Generate' node to fill the missing tiles."
+    },
+    "q4": {
+        "question": "What are the inputs required for the 'Sample (WFC)' node?",
+        "answer": "The 'Sample (WFC)' node requires the following inputs: 'img_batch', 'tile_width', 'tile_height', and 'output_tiles'."
+    },
+    "q5": {
+        "question": "What is the potential issue that may arise during backtracking in the comfyui_wfc_like implementation, and how can it affect the search?",
+        "answer": "There may be cases when backtracking that two different states share the same depth and hashcode pair. In such cases, the set of open tiles will mismatch the actual underlying state, and the search may stop early due to a key error. There may also exist edge cases where no error is raised, and a potentially invalid state is returned."
+    },
+    "q6": {
+        "question": "How does the 'Generate (WFC)' node handle the 'output_tiles' and 'unique_tiles' outputs, and what are their purposes?",
+        "answer": "The 'Generate (WFC)' node generates a state which is outputted using the `state` output slot, while the *Decode (WFC)* node converts it to an image using the tiles stored in a given *sample*. It can also be used as input to other nodes for additional processing. On the other hand, the 'unique_tiles' output slot sends image batch with the tile types, and the count of each tile type is sent via the *sample* output slot to generator nodes."
+    }
+}

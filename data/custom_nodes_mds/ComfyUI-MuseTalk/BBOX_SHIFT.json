@@ -1,0 +1,27 @@
+[
+    {
+        "subject": "ComfyUI-MuseTalk",
+        "question": "Why is there a 'bbox_shift' parameter in ComfyUI-MuseTalk?",
+        "answer": "The 'bbox_shift' parameter is introduced in ComfyUI-MuseTalk to adjust the effect of generating mouth shapes during the inference process. It is observed that as the upper-bound of the mask gets closer to the mouth (landmark30), the audio features contribute more to lip motion. Conversely, as the upper-bound of the mask moves away from the mouth (landmark28), the audio features contribute more to generating details of facial disappearance. Users can adjust the value of the 'bbox_shift' parameter within a range to fine-tune the lip movement according to their needs in practical scenarios."
+    },
+    {
+        "subject": "ComfyUI-MuseTalk",
+        "question": "What is the purpose of the 'bbox_shift' parameter?",
+        "answer": "The purpose of the 'bbox_shift' parameter in ComfyUI-MuseTalk is to adjust the effect of generating mouth shapes. It allows users to control the contribution of audio features to lip motion in the generated images or videos, which can be tuned to produce the desired level of mouth movement."
+    },
+    {
+        "subject": "ComfyUI-MuseTalk",
+        "question": "How can users determine the range for adjusting the 'bbox_shift' parameter?",
+        "answer": "Users can determine the range for adjusting the 'bbox_shift' parameter by running ComfyUI-MuseTalk with the default configuration, which provides an adjustable value range. In the provided example, the range given is between -9 to 9. Users can then re-run the script within this range using the 'bbox_shift' variable."
+    },
+    {
+        "subject": "ComfyUI-MuseTalk",
+        "question": "What are the general effects of positive and negative 'bbox_shift' values?",
+        "answer": "In general, positive 'bbox_shift' values (moving towards the lower half of the face) tend to increase mouth openness, while negative values (moving towards the upper half of the face) tend to decrease mouth openness. However, it is not an absolute rule, and users may need to adjust the parameter according to their specific needs and the desired effect."
+    },
+    {
+        "subject": "ComfyUI-MuseTalk",
+        "question": "How is the segmentation box determined for ComfyUI-MuseTalk?",
+        "answer": "The segmentation box for ComfyUI-MuseTalk is determined by using face detection results (bbox) and facial landmarks to identify the region of the head. The upper bound of the bbox is used as the upper boundary of the segmentation box, the maximum y value of the facial landmarks coordinates as the lower boundary, and the minimum and maximum x values of the landmarks coordinates as the left and right boundaries."
+    }
+]

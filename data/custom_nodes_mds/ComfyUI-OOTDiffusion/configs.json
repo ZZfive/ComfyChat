@@ -1,0 +1,54 @@
+{
+    "data": [
+        {
+            "subject": "ComfyUI-OOTDiffusion",
+            "question": "What is the default config system used by ComfyUI-OOTDiffusion?",
+            "answer": "Detectron2 provides a key-value based config system that can be used to obtain standard, common behaviors."
+        },
+        {
+            "subject": "ComfyUI-OOTDiffusion",
+            "question": "What libraries does the config system of ComfyUI-OOTDiffusion utilize?",
+            "answer": "Detectron2's config system uses YAML and [yacs](https://github.com/rbgirshick/yacs)."
+        },
+        {
+            "subject": "ComfyUI-OOTDiffusion",
+            "question": "Can the base config values be overwritten in sub-configs?",
+            "answer": "Yes, values in the base config will be overwritten in sub-configs, if there are any conflicts."
+        },
+        {
+            "subject": "ComfyUI-OOTDiffusion",
+            "question": "Does ComfyUI-OOTDiffusion provide config versioning for backward compatibility?",
+            "answer": "Yes, they provide config versioning, for backward compatibility."
+        },
+        {
+            "subject": "ComfyUI-OOTDiffusion",
+            "question": "Can custom configurations be added in ComfyUI-OOTDiffusion?",
+            "answer": "Yes, you can write code using detectron2's API if there's a feature not available in the config space."
+        },
+        {
+            "subject": "ComfyUI-OOTDiffusion",
+            "question": "How can a base config be specified in ComfyUI-OOTDiffusion?",
+            "answer": "The `_BASE_` field can be used to specify a base config file to load first, such as `_BASE_: base.yaml`."
+        },
+        {
+            "subject": "ComfyUI-OOTDiffusion",
+            "question": "What is a `CfgNode` object in ComfyUI-OOTDiffusion?",
+            "answer": "A `CfgNode` object is used to access and update a config in Detectron2."
+        },
+        {
+            "subject": "ComfyUI-OOTDiffusion",
+            "question": "How is a config file version number managed in ComfyUI-OOTDiffusion?",
+            "answer": "A version number is used in the config files for backward compatibility. If your config file is versioned with a config line like `VERSION: 2`, detectron2 will still recognize it even if we change some keys in the future."
+        },
+        {
+            "subject": "ComfyUI-OOTDiffusion",
+            "question": "Can command line config overwrite be used with ComfyUI-OOTDiffusion?",
+            "answer": "Yes, many builtin tools in detectron2 accepts command line config overwrite."
+        },
+        {
+            "subject": "ComfyUI-OOTDiffusion",
+            "question": "What are some best practices when using configs in ComfyUI-OOTDiffusion?",
+            "answer": "Treat the configs you write as 'code', avoid copying them or duplicating them, use `_BASE_` to share common parts between configs. Keep the configs you write simple, don't include keys that do not affect the experimental setting. Keep a version number in your configs, for backward compatibility."
+        }
+    ]
+}

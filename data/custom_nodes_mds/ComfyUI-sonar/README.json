@@ -1,0 +1,36 @@
+{
+    "question_and_answer_pairs": [
+        {
+            "question": "What is ComfyUI-sonar?",
+            "answer": "ComfyUI-sonar is an implementation of Sonar sampling (momentum-based sampling) for [ComfyUI](https://github.com/comfyanonymous/ComfyUI). It supports Euler, Euler Ancestral, and DPM++ SDE sampling."
+        },
+        {
+            "question": "Is ComfyUI-sonar suitable for general use?",
+            "answer": "Yes, it is suitable for general use with the caveat that it's very likely stuff like implementation and inputs to nodes will still be changing fairly frequently."
+        },
+        {
+            "question": "Which sampler configurations does ComfyUI-sonar support?",
+            "answer": "ComfyUI-sonar currently supports Euler, Euler Ancestral, and DPM++ SDE sampling."
+        },
+        {
+            "question": "What is the recommended way to use the ComfyUI-sonar custom sampler?",
+            "answer": "The most flexible way to use ComfyUI-sonar is with a custom sampler: `[SamplerSonarEuler] > [SamplerSonarEuler_ancestral] > [SamplerSonarDPMPPSDE]`. You can also choose `sonar_euler`, `sonar_euler_ancestral` or `sonar_dpmpp_sde` from the normal samplers list but the custom sampler approach and the ancestral version is recommended."
+        },
+        {
+            "question": "What is the 'momentum' parameter of ComfyUI-sonar?",
+            "answer": "The 'momentum' parameter of ComfyUI-sonar works similar to setting the sign to positive or negative: `1.0` is positive, `-1.0` is negative, and you can also potentially play with fractional values. The default values are considered reasonable, doing stuff like using a negative direction may not produce good results."
+        },
+        {
+            "question": "Can the 'momentum' parameter of ComfyUI-sonar be set below 0.85?",
+            "answer": "Yes, the 'momentum' parameter can be set below 0.85, but it is strongly recommended not to do so as it may not produce good results or reproduceable generations."
+        },
+        {
+            "question": "What is the function of the 'SonarGuidanceConfig' node in ComfyUI-sonar?",
+            "answer": "The 'SonarGuidanceConfig' node can be optionally plugged into the Sonar sampler nodes. It allows for more advanced control over the sampling process."
+        },
+        {
+            "question": "What is the 'SonarPowerNoise' node used for?",
+            "answer": "The 'SonarPowerNoise' node generates [fractional Brownian motion (fBm) noise](https://en.wikipedia.org/wiki/Fractional_Brownian_motion#Frequency-domain_interpretation). It offers versatility in producing various types of noise including gaussian, pink, 2D brownian noise, and all intermediates."
+        }
+    ]
+}

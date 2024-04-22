@@ -1,0 +1,104 @@
+{
+    "questions": [
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "What does comfyui-dream-project contain and what is its purpose?",
+            "answer": "This repository contains various nodes for supporting Deforum-style animation generation with ComfyUI. The nodes were created for producing videos for the 'Alt Key Project' music, and they should be generic enough and useful to many ComfyUI users."
+        },
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "Can these custom nodes be used in any ComfyUI workflow or are they limited to certain tasks?",
+            "answer": "These nodes can be used in any ComfyUI workflow. The user can switch nodes for different types for up to ten inputs, allowing for a variety of tasks to be accomplished."
+        },
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "Is the Dream Project Animation Nodes currently being developed and updated?",
+            "answer": "No, the Dream Project Animation Nodes are currently not being updated. Stable Diffusion video generation is moving towards a different workflow with AnimateDiff and Stable Video Diffusion. The user has decided to create a separate custom node pack."
+        },
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "What is the correct method for installing Dream Project Animation Nodes?",
+            "answer": "Dream Project Animation Nodes can be installed using the ComfyUI Manager, or by manually cloning the repository, installing the requirements, and starting ComfyUI."
+        },
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "What does the option 'ffmpeg.arguments' do in the configuration of Dream Project Animation Nodes?",
+            "answer": "The ffmpeg.arguments option allows the user to send arguments to FFMPEG when generating video files. Some of the values provided by the node include %FPS%, %FRAMES%, %OUTPUT%."
+        },
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "What is the purpose of the 'Compare Palettes [Dream]' node?",
+            "answer": "The 'Compare Palettes [Dream]' node analyses two palettes and produces the quotient for each individual channel (b/a) and brightness."
+        },
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "What issues are currently known with the Dream Project Animation Nodes?",
+            "answer": "Known issues include the call to FFMPEG not working for everyone, and the framerate being incorrect with mpegCoder encoding node. These issues may require the user to change arguments or parameters accordingly."
+        },
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "Can a Dream Project Animation node be used in parallel with another Dream Project Animation node?",
+            "answer": "No, sequence nodes should not be put in parallel. They will not work as intended. Other nodes, however, can be used in parallel."
+        },
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "What is the purpose of the 'CSV Curve [Dream]' node?",
+            "answer": "The 'CSV Curve [Dream]' node has a CSV input curve where the first column is the frame or the second column, and the second column is the value."
+        },
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "What does the 'Frame Counter (Directory) [Dream]' node do?",
+            "answer": "The 'Frame Counter (Directory) [Dream]' node is a directory-backed frame counter, used for output directories."
+        },
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "Can the 'Image Motion [Dream]' node blend a frame for a smoother blurred effect?",
+            "answer": "No, the 'Image Motion [Dream]' node cannot blend a frame for a smoother blurred effect. The 'Image Sequence Blend [Dream]' node is used for post-processing for animation sequences and blending frames for a smoother blurred effect."
+        },
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "What is the other custom node suggested for use with Dream Project Animation nodes?",
+            "answer": "The 'WAS Node Suite' is suggested for use with Dream Project Animation nodes."
+        },
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "What is the 'Mathematical calculation node' in the Dream Project Animation nodes?",
+            "answer": "The 'Mathematical calculation node' in the Dream Project Animation nodes is called 'Calculation [Dream]'. It exposes a variety of mathematical operators and functions, as well as absolute and floating-point operations."
+        },
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "Can the 'Laboratory [Dream]' node be used for text logging?",
+            "answer": "No, the 'Laboratory [Dream]' node cannot be used for text logging. The 'Log File [Dream]' node is used for the text logging facility for the Dream Project Animation nodes."
+        },
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "What does the 'Float/Int/string to Log Entry [Dream]' node do?",
+            "answer": "The 'Float/Int/string to Log Entry [Dream]' node is used for logging float, int, and string values."
+        },
+        {
+            "subject": "ComfyUI-Dream-Project",
+            "question": "What does the 'Boolean To Float/Int [Dream]' node do?",
+            "answer": "The 'Boolean To Float/Int [Dream]' node converts a boolean value to two different numeric values."
+        },
+        {
+            "subject": "Image Color Shift [Dream]",
+            "question": "What does the 'Image Color Shift [Dream]' node do?",
+            "answer": "The 'Image Color Shift [Dream]' node allows changing the colors of an image with a multiplier for each channel (RGB)."
+        },
+        {
+            "subject": "Image Sequence Tweening [Dream]",
+            "question": "What does the 'Image Sequence Tweening [Dream]' node do?",
+            "answer": "The 'Image Sequence Tweening [Dream]' node generates blended in-between frames for animation sequences."
+        },
+        {
+            "subject": "File Count [Dream]",
+            "question": "What does the 'File Count [Dream]' node do?",
+            "answer": "The 'File Count [Dream]' node finds the number of files in a directory matching specified patterns."
+        },
+        {
+            "subject": "FFMPEG",
+            "question": "What are the default node-supplied parameters for FFMPEG when generating video files in the Dream Project Animation nodes?",
+            "answer": "The default node-supplied parameters for FFMPEG when generating video files in the Dream Project Animation nodes are '-i %FRAMES%', '-r %FPS%', and '%OUTPUT%'."
+        }
+    ]
+}

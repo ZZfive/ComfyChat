@@ -1,0 +1,22 @@
+[
+    {
+        "subject": "ComfyUI-Img2Img-Turbo",
+        "question": "How to train a pix2pix-turbo model using paired data?",
+        "answer": "First, download the modified Fill50k dataset. Then, initialize and launch the training script with the required flags such as pretrained_model_name_or_path, output_dir, dataset_folder, resolution, train_batch_size, and enable_xformers_memory_efficient_attention. The script supports additional flags for tracking FID, enabling attention, and visualizing results."
+    },
+    {
+        "subject": "ComfyUI-Img2Img-Turbo",
+        "question": "What is the expected format for the dataset used in training?",
+        "answer": "The expected format for the dataset is as follows: data/dataset_name/train_A, train_B, train_prompts.json, test_A, test_B, test_prompts.json."
+    },
+    {
+        "subject": "ComfyUI-Img2Img-Turbo",
+        "question": "How to monitor the training progress?",
+        "answer": "The training progress can be monitored using the Weights & Biases dashboard. The script visualizes training batch, training losses, and validation set L2, LPIPS, and FID scores (if specified)."
+    },
+    {
+        "subject": "ComfyUI-Img2Img-Turbo",
+        "question": "How to perform inference with the trained model?",
+        "answer": "Run the inference_paired.py script with the required arguments, including the model path, input image, prompt, and output directory."
+    }
+]

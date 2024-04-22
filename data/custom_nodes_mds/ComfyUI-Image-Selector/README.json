@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is the ComfyUI-Image-Selector custom node used for?",
+        "answer": "ComfyUI-Image-Selector is a custom node for ComfyUI that allows users to select one or more images from a batch for further processing, such as scaling up or 'hires fix'."
+    },
+    {
+        "question": "How does the ImageSelector node handle indexing for image selection?",
+        "answer": "The ImageSelector node takes selected indexes, starting with 1, separated by commas. It supports range selection where the left bound is included and the right bound is excluded, allowing for specific subsets of images to be selected from a batch."
+    },
+    {
+        "question": "What is the purpose of the ImageDuplicator node?",
+        "answer": "The ImageDuplicator node duplicates input images a given number of times."
+    },
+    {
+        "question": "How can I install the ComfyUI-Image-Selector custom node?",
+        "answer": "To install the ComfyUI-Image-Selector, clone the repo into the `custom_nodes` directory of your ComfyUI location."
+    },
+    {
+        "question": "What are the tips for using VAE Encode/Decode and duplication nodes effectively?",
+        "answer": "The VAE Encode/Decode process can be resource-intensive, so it's suggested to avoid unnecessary use and limit it to a small number of images or latents. It is generally better to 'encode/decode -> duplicator' rather than 'duplicator -> encode/decode,' and 'selector -> encode/decode' is preferred over 'encode/decode -> selector'."
+    },
+    {
+        "question": "Where can I find the ImageSelector and ImageDuplicator nodes in ComfyUI?",
+        "answer": "Both the ImageSelector and ImageDuplicator nodes can be found in the 'image' category within ComfyUI."
+    },
+    {
+        "question": "How does the ComfyUI-Image-Selector node address the issue of batch generation seeds management in ComfyUI?",
+        "answer": "The ComfyUI-Image-Selector node resolves the issue of batch generation seeds management by allowing users to select specific images from a batch, which is a feature not natively supported in ComfyUI."
+    },
+    {
+        "question": "Can the ImageSelector node process images in a batch sequentially?",
+        "answer": "Yes, the ImageSelector node allows for sequential selection by using range selection syntax, such as `2:` to select all images from the second one, or `:0` to select all but the last image."
+    },
+    {
+        "question": "How does the ComfyUI-Image-Selector handle out-of-bounds or non-integer indexes?",
+        "answer": "The ComfyUI-Image-Selector node ignores any indexes that cannot be converted to integers or are out of bounds. This ensures that only valid images are selected from the batch."
+    },
+    {
+        "question": "Are there corresponding nodes for latents selection and duplication?",
+        "answer": "Yes, there are LatentSelector and LatentDuplicator nodes found in the 'latent' category. These nodes function similarly to their image counterparts but operate on latents instead of images."
+    }
+]
