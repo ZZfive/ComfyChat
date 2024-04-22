@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-auto-nodes-layout?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-auto-nodes-layout is a ComfyUI extension that applies a better node layout algorithm for ComfyUI workflows for visualization purposes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of this extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of this extension is to improve the layout and visibility of wires in ComfyUI workflows, focusing on direction, flow, and connections to nodes for better visualization."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What graph drawing algorithms did the creator consider for implementation?"
+            },
+            {
+                "role": "assistant",
+                "content": "The creator considered hierarchical graph drawing, especially suitable for directed acyclic graphs, and focused on the Dagre layout and ELK 'layered' layout from Dagre.js and ELK.js, respectively."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended setup for using this extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "It is recommended to remove reroute nodes, as they mess up ranks and depth, and use ComfyUI version later than PR comfyanonymous/ComfyUI#1273 or commit `bc76b38`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can this extension be undone or redone?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, undo/redo is possible with the ComfyUI-Bmad-DirtyUndoRedo extension."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the two options to control layout density?"
+            },
+            {
+                "role": "assistant",
+                "content": "The two options to control layout density are the spacing between ranks/depths/columns and the spacing between nodes in the same rank/depth/column."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the reasons for removing reroute nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "Reroute nodes should be removed because they interfere with the rank/depth of nodes in a directed acyclic graph, and they should only be re-added after the layout has been applied if any wires are intercepted or partially hidden by other nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can users select a specific layout strategy?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, but it's marked as 'TODO' in the documentation, implying it's not yet implemented."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Are there any alternative graph layout libraries mentioned in the documentation?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, a few alternatives are mentioned, such as ELK, WebCOLA, Cytoscape, Graphology, and Springy."
+            }
+        ]
+    }
+]

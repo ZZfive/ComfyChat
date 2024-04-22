@@ -1,0 +1,134 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Plush-for-ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Plush-for-ComfyUI is a ComfyUI plugin that extends its functionality with several nodes, including those that don't require the OpenAI API key, such as the Advanced Prompt Enhancer, and nodes that can use open source LLM front-ends like LM Studio or ChatGPT."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install Plush-for-ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install Plush-for-ComfyUI through the ComfyUI manager by searching for 'Plush' and clicking Install, or you can manually install it by cloning the repository from GitHub and following the provided instructions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Style Prompt node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Style Prompt node takes your text prompt, your image, or your text prompt and image and generates a prompt based on the specified art style that Stable Diffusion and/or Dall-e can use to generate an image in that style."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can the Advanced Prompt Enhancer use open-source LLM's without requiring an OpenAI API key?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, the Advanced Prompt Enhancer can use open-source LLM front-ends (e.g. LM Studio) without requiring an OpenAI API key. However, if you want to use it with ChatGPT models, an API key is required."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the OAI Dall_e 3 node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The OAI Dall_e 3 node takes your prompt and parameters and produces a Dall_e3 image in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Exif Wrangler node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Exif Wrangler extracts Exif and/or AI generation workflow metadata from .jpg (.jpeg) and .png images, such as camera settings in .jpg photographs and AI metadata for AI-generated images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is an Environment Variable and how do I create one for my API key?"
+            },
+            {
+                "role": "assistant",
+                "content": "An Environment Variable is a variable set on your operating system that consists of a name and value. To create a new Environment Variable specific to Plush called 'OAI_KEY' and set its value to your API key, follow the instructions provided for Windows, Linux, and MacOS in the Plush README file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I find example workflows for Plush-for-ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can find example workflows in the custom_nodes/Plush-for-ComfyUI/Example_workflows directory. You can drag these images directly onto your ComfyUI workspace in your browser, which automatically loads the graph."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Style Info in the Style Prompt node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Style Info in the Style Prompt node is an optional output that, when set to true, sends a second request to ChatGPT to provide a description of the chosen style, historical information about it, and information on some of the most influential artists in that style."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Tokens limit in the GPTModel input of the Style Prompt node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Tokens limit in the GPTModel input of the Style Prompt node is a limit on how many tokens ChatGPT can use in providing your prompt. It is based on your fee for using the API and can help control costs by limiting the number of tokens used."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I handle an upgrade if I have earlier nodes that communicate with ChatGPT using the OpenAI library?"
+            },
+            {
+                "role": "assistant",
+                "content": "Be aware that in some instances the new OpenAI API is not backward compatible, and apps that use the older library may break after this upgrade. If you encounter any issues, you may need to upgrade the OpenAI library manually by typing the command: `pip install --upgrade openai` in a directory or virtual environment where it will be applied to the installation of Python that ComfyUI is using."
+            }
+        ]
+    }
+]

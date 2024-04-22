@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Advanced-ControlNet?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Advanced-ControlNet is an extension for ComfyUI that includes nodes for scheduling ControlNet strength across timesteps and batched latents, as well as applying custom weights and attention masks. It fully supports sliding context sampling like the AnimateDiff-Evolved nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the supported ControlNets by ComfyUI-Advanced-ControlNet?"
+            },
+            {
+                "role": "assistant",
+                "content": "Currently, ComfyUI-Advanced-ControlNet supports ControlNets, T2IAdapters, ControlLoRAs, ControlLLLite, SparseCtrls, and SVD-ControlNets."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'My prompt is more important' feature?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'My prompt is more important' feature allows replication with custom weights, which can change the scaling, and is available in Auto1111's sd-webui ControlNet extension."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What nodes does ComfyUI-Advanced-ControlNet provide?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ControlNet nodes provided by ComfyUI-Advanced-ControlNet are 'Apply Advanced ControlNet' and 'Load Advanced ControlNet Model'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between 'Apply Advanced ControlNet' and the vanilla ControlNet nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Apply Advanced ControlNet' node has the same functionality as the vanilla Apply Advanced ControlNet (Advanced) node, but with Advanced ControlNet features added. It automatically converts any ControlNet from ControlNet loaders into Advanced versions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the main concept of scheduling in ComfyUI-Advanced-ControlNet?"
+            },
+            {
+                "role": "assistant",
+                "content": "The two core concepts for scheduling in ComfyUI-Advanced-ControlNet are 'Timestep Keyframes' and 'Latent Keyframes'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does 'Latent Keyframes' determine?"
+            },
+            {
+                "role": "assistant",
+                "content": "Latent Keyframes determine the strength of the ControlNet for specific latents. They contain the batch_index of the latent and the strength the controlnet should apply for that latent."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Timestep Keyframes' in ComfyUI-Advanced-ControlNet?"
+            },
+            {
+                "role": "assistant",
+                "content": "Timestep Keyframes hold the values that guide the settings for a controlnet, and begin to take effect based on their start_percent, which corresponds to the percentage of the sampling process."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the features listed for the Apply Advanced ControlNet node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The features of the Apply Advanced ControlNet node include inputs for positive conditioning, negative conditioning, control_net, image, mask_optional, timestep_kf, latent_kf_override, weights_override, strength, start_percent, and stop_percent."
+            }
+        ]
+    }
+]

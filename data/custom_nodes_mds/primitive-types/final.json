@@ -1,0 +1,74 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the typed primitives available in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI provides typed primitives in the form of the following nodes: `int`, `float`, `string`, and `string` (multiline)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why are typed primitives necessary in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Typed primitives are necessary in ComfyUI because the standard primitive node cannot be routed. With typed primitives like `int`, `float`, `string`, and multiline `string`, one can route these nodes multiple times if required, enhancing the configuration flexibility."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can the standard primitive node in ComfyUI be routed?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, the standard primitive node in ComfyUI cannot be routed directly. This lack of routing is addressed by the availability of typed primitives such as `int`, `float`, `string`, and multiline `string`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the `int` node in ComfyUI differ from the standard primitive node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `int` node in ComfyUI can be routed multiple times, unlike the standard primitive node which does not have this capability. This allows for greater flexibility in connecting configuration nodes, such as `CFG`, to sampler nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is an example of a configuration node that can benefit from typed primitives in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "An example of a configuration node that can benefit from typed primitives in ComfyUI is a `CFG` node. By using typed primitives like `int`, `float`, `string`, and multiline `string`, the `CFG` node can be connected to sampler nodes more flexibly, taking advantage of the routing capabilities provided by the typed primitives."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can the `string` primitive in ComfyUI be multiline?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, ComfyUI provides a multiline `string` primitive node, which allows for the input and processing of multiline strings, providing more complex and flexible configurations where multi-line text is required."
+            }
+        ]
+    }
+]

@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Anchors?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Anchors is a ComfyUI extension that adds spatial anchors/waypoints to better navigate large workflows."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I add Anchor Nodes in ComfyUI-Anchors?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can add Anchor Nodes in ComfyUI-Anchors from the `utils` section."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I jump between anchors in ComfyUI-Anchors?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can jump between anchors using the `a` and `d` keys in ComfyUI-Anchors."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is an unexpected side-effect of Comfy's Litegraph's centerOnNode?"
+            },
+            {
+                "role": "assistant",
+                "content": "Comfy's Litegraph's centerOnNode doesn't account for collapsed nodes, so you can change the centering position when jumping to an Anchor by making it big and then collapsing."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is still to be done in the TODO list of ComfyUI-Anchors?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the TODO list for ComfyUI-Anchors, items still to be done include showing a list of current Anchors with names, allowing changing of iteration order, and adding vector based navigation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I set up a local development environment for ComfyUI-Anchors?"
+            },
+            {
+                "role": "assistant",
+                "content": "To set up a local development environment for ComfyUI-Anchors, you need to clone the repo, run `pnpm install` to install the necessary dependencies, and then `pnpm build` to compile the code."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is there a plan to have the ComfyUI-Anchors library work outside of ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, there are no plans to have the ComfyUI-Anchors library work outside of the ComfyUI environment."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the confession about typing in ComfyUI-Anchors?"
+            },
+            {
+                "role": "assistant",
+                "content": "To get types working without extracting the JS code from ComfyUI, the development files (TS) reference Comfy as a sibling. If you want TypeScript hints and checks to work, you need a similar structure. For the JS to run properly, the relative path is swapped in the dist for a different relative path based on where the JS is copied on `__init__`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you provide more details on how the path swapping works for the JavaScript files?"
+            },
+            {
+                "role": "assistant",
+                "content": "Check out the `vite.config.ts` and `tsconfig.json` for details on how the path swapping works for the JavaScript files. The configuration is made to adapt the relative path based on where the JavaScript files are copied on `__init__`."
+            }
+        ]
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is cg-noise?"
+            },
+            {
+                "role": "assistant",
+                "content": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does cg-noise generate variations in images?"
+            },
+            {
+                "role": "assistant",
+                "content": "cg-noise generates variations in images by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the x parameter in cg-noise represent?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `x` parameter in cg-noise represents the weight of the `random_based_on(variation_seed) * x` part of the noise generation formula. Small values of `x` generate similar images to the original, while larger values create more variations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the default setting for control_after_generated in cg-noise?"
+            },
+            {
+                "role": "assistant",
+                "content": "The default setting for control_after_generated in cg-noise is `fixed`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does cg-noise handle batches with different batch sizes?"
+            },
+            {
+                "role": "assistant",
+                "content": "For batch sizes larger than 1, cg-noise generates a set of images based on the same original noise. The first image has a variation_weight of zero, the second has the value set in the node, the third has 2x the value, and so on."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install cg-noise?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install cg-noise using the ComfyUI Manager by searching for chrisgoringe or variation. For manual installation, go to [Comfy Install]/custom_nodes and clone the repositories as described in the documentation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I update cg-noise?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can update cg-noise using the ComfyUI Manager. For manual updates, go to [Comfy Install]/custom_nodes/cg-noise and cd [Comfy Install]/custom_nodes/cg_custom_core, and use `git pull` to fetch the latest updates. Then restart ComfyUI and reload the webpage."
+            }
+        ]
+    }
+]

@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the main features of ComfyUI-AudioScheduler?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-AudioScheduler allows loading MP3 or WAV files, reading the amplitude over time, and previewing the shape of the graph."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the LoadAudio node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LoadAudio node is responsible for loading audio files from a specified directory, supporting both MP3 and WAV formats."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the AudioToFFTs node process audio data?"
+            },
+            {
+                "role": "assistant",
+                "content": "The AudioToFFTs node performs Fast Fourier Transforms (FFTs) on the audio data to obtain frequency information."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the AudioToAmplitudeGraph node create?"
+            },
+            {
+                "role": "assistant",
+                "content": "The AudioToAmplitudeGraph node creates a graph of the amplitude in a specified frequency range for visualization purposes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What operation does BatchAmplitudeSchedule perform?"
+            },
+            {
+                "role": "assistant",
+                "content": "BatchAmplitudeSchedule is an operation to calculate amplitude values from FFT data based on the specified operation and frequency range."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the ClipAmplitude node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ClipAmplitude node clips the amplitude values of audio data by setting maximum and optional minimum allowed amplitude values."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of TransientAmplitudeBasic?"
+            },
+            {
+                "role": "assistant",
+                "content": "TransientAmplitudeBasic is designed to adjust amplitude data with transient characteristics, controlling attack, hold, and release behavior."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does NormalizeAmplitude do?"
+            },
+            {
+                "role": "assistant",
+                "content": "NormalizeAmplitude normalizes the amplitude data, optionally inverting the normalized values."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the GateNormalizedAmplitude work?"
+            },
+            {
+                "role": "assistant",
+                "content": "GateNormalizedAmplitude gates the normalized amplitude data based on the specified threshold."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the NormalizedAmplitudeDrivenString?"
+            },
+            {
+                "role": "assistant",
+                "content": "NormalizedAmplitudeDrivenString is designed to create a dynamic string of text driven by changes in the normalized amplitude of audio signals."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does NormalizedAmplitudeToNumber convert?"
+            },
+            {
+                "role": "assistant",
+                "content": "NormalizedAmplitudeToNumber converts normalized amplitude data to float or integer values."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does NormalizedAmplitudeToGraph produce?"
+            },
+            {
+                "role": "assistant",
+                "content": "NormalizedAmplitudeToGraph generates a graph to visualize the normalized amplitude data."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does AmplitudeToNumber convert?"
+            },
+            {
+                "role": "assistant",
+                "content": "AmplitudeToNumber converts amplitude data to float or integer values."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does AmplitudeToGraph display?"
+            },
+            {
+                "role": "assistant",
+                "content": "AmplitudeToGraph generates a graph to visualize the amplitude data."
+            }
+        ]
+    }
+]

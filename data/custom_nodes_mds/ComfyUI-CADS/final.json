@@ -1,0 +1,122 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-CADS?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-CADS is an experimental implementation of the CADS algorithm for ComfyUI. It is an attempt to introduce control and adaptive diversity scaling into the image and video generation process."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should you do to enable CADS in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "You need to apply the CADS node to a model and set `noise_scale` to a value greater than 0.0."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does the CADS node remove existing UNet wrapper functions?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, the CADS node attempts to preserve existing UNet wrapper functions. However, it should be applied after other nodes that set a UNet wrapper function."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the noise added by CADS scale over time?"
+            },
+            {
+                "role": "assistant",
+                "content": "The noise scales down over time. After `t2`, the scaling decreases until `t1`, after which no noise is added, and the unnoised prompt is used. The diffusion process runs backwards from 1 to 0."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are `start_step` and `total_steps` for?"
+            },
+            {
+                "role": "assistant",
+                "content": "`start_step` and `total_steps` are optional parameters that affect how the noise scaling schedule is calculated. If `start_step` is greater or equal to `total_steps`, the algorithm uses the sampler's timestep value."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the `rescale` parameter for?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `rescale` parameter applies optional normalization to the noised conditioning. It's disabled at 0."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can you add the noise with CADS?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can add the noise selectively with the `apply_to` parameter. The `key` parameter selects where the noise is added."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was a previous issue with the noise application?"
+            },
+            {
+                "role": "assistant",
+                "content": "Previously, noise was applied to cross attention, but it now applies by default to the regular conditioning `y`. To restore the old behavior, use the `key` parameter."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Do the developers have full understanding of the math behind the algorithm?"
+            },
+            {
+                "role": "assistant",
+                "content": "The developers admit they are not 100% clear on the math involved, which might result in potential inaccuracies in the algorithm's implementation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the source of inspiration for ComfyUI-CADS?"
+            },
+            {
+                "role": "assistant",
+                "content": "The source of inspiration for ComfyUI-CADS is the A1111 implementation. The A1111 implementation was used as a reference for the creation of ComfyUI-CADS."
+            }
+        ]
+    }
+]

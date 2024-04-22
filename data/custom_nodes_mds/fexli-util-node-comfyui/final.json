@@ -1,0 +1,50 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install the fexli-util-node-comfyui custom node manually?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install manually, switch to your project's root directory, then run the following commands:\ncd custom_nodes\ngit clone https://github.com/fexli/fexli-util-node-comfyui.git\ncd fexli-util-node-comfyui\npip install -r requirements.txt"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the process to install the fexli-util-node-comfyui using comfyui-manager?"
+            },
+            {
+                "role": "assistant",
+                "content": "Open ComfyUI WebUI, navigate to `Manager` -> `Install Custom Node`, enter `fexli-util-node-comfyui` in the `Search` field and click `Search`, then click `Install`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I configure the `config.yaml` file for fexli-util-node-comfyui?"
+            },
+            {
+                "role": "assistant",
+                "content": "Move the `config_example.yaml` file to `config.yaml` and fill in the fields with your bc docker infer api, openai key, and optionally openai proxy."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What fields need to be filled in the `config.yaml` file for the fexli-util-node-comfyui custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "You need to fill in the bc_docker_api, openai_key, and optionally openai_host fields in the `config.yaml` file."
+            }
+        ]
+    }
+]

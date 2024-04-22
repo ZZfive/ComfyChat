@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some noise-related repos for ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_Noise, noise_latent_perlinpinpin, comfy-plasma, and WAS node suite."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What happened when the author played around with the stable diffusion VAE?"
+            },
+            {
+                "role": "assistant",
+                "content": "They noticed that the latent space behaves mostly linearly, and they figured it should be possible to generate latent noise directly by mapping out the per channel limits and giving the whole thing an offset."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What represents the changes in the RGB channels in the latent space?"
+            },
+            {
+                "role": "assistant",
+                "content": "A change in the RGB channels creates a (mostly?) linear change in the 4 latent channels (called A/B/C/D)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the next step to improve the linear_encoder in SD-Advanced-Noise?"
+            },
+            {
+                "role": "assistant",
+                "content": "The next step would be to plot at a higher precision and fit them onto a polynomial."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the limitations of the decoders in this repo compared to TAESD?"
+            },
+            {
+                "role": "assistant",
+                "content": "The decoders in this repo are a proof of concept tier at best, while TAESD is better in every way."
+            }
+        ]
+    }
+]

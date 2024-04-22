@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I set up a web interface using ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Clone or download the comfygen repository into the `custom_nodes` directory within ComfyUI. Then run the ComfyUI server by executing `run_nvidia_gpu.bat` or `run_cpu.bat`. Enable Dev Mode Options, generate a workflow JSON, replace the base workflow JSON with your own, and access the web interface at `<comfy_address>:<comfy_port>/<repository_name>`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What files should I replace to use my custom workflow in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Replace the `web/js/base_workflow.json` file with your generated JSON workflow file to use your customized workflow in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I enable Dev Mode Options in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Click on 'Settings' in the ComfyUI interface to enable Dev Mode Options."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the default workflow replacement process in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "In Dev Mode, click 'Save (API Format)' to create a JSON for your workflow. Then replace the `web/js/base_workflow.json` file with your JSON to use your workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I access the web interface for ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Open your web browser and navigate to `http://<comfy_address>:<comfy_port>/<repository_name>` (for example, `http://127.0.0.1:8188/comfygen`) to access the ComfyUI web interface."
+            }
+        ]
+    }
+]

@@ -1,0 +1,254 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Latent-Modifiers?"
+            },
+            {
+                "role": "assistant",
+                "content": "A repository of ComfyUI nodes which modify the latent during the diffusion process."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Latent Diffusion Mega Modifier do?"
+            },
+            {
+                "role": "assistant",
+                "content": "It adds multiple parameters to control the diffusion process towards a quality the user expects."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Sharpness in the context of Latent Diffusion Mega Modifier?"
+            },
+            {
+                "role": "assistant",
+                "content": "It utilizes code from Fooocus's sampling process to sharpen the noise in middle of diffusion, leading to more perceptual detail."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does Tonemap do in Latent Diffusion Mega Modifier?"
+            },
+            {
+                "role": "assistant",
+                "content": "Clamps conditioning noise (CFG) using a user-chosen method, which can allow for the use of higher CFG values."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of Rescale in Latent Diffusion Mega Modifier?"
+            },
+            {
+                "role": "assistant",
+                "content": "Scales the CFG by comparing the standard deviation to the existing latent to dynamically lower the CFG."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does Extra Noise do in Latent Diffusion Mega Modifier?"
+            },
+            {
+                "role": "assistant",
+                "content": "Adds extra noise in the middle of diffusion process to conditioning, and does inverse operation on unconditioning."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does Contrast do in Latent Diffusion Mega Modifier?"
+            },
+            {
+                "role": "assistant",
+                "content": "Adjusts the contrast of conditioning, can lead to more pop-style results. Essentially functions as a secondary CFG slider for stylization."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of Combat CFG Drift in Latent Diffusion Mega Modifier?"
+            },
+            {
+                "role": "assistant",
+                "content": "Subtracts the mean or median of the latent to combat drift in CFG, possibly leading to sharper and higher frequency results."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does Divisive Norm do in Latent Diffusion Mega Modifier?"
+            },
+            {
+                "role": "assistant",
+                "content": "Normalizes the latent using avg_pool2d, reducing noisy artifacts, due in part to features such as sharpness."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Spectral Modulation in Latent Diffusion Mega Modifier?"
+            },
+            {
+                "role": "assistant",
+                "content": "Converts the latent to frequencies, clamps higher frequencies while boosting lower ones, then converts it back to an image latent."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Reinhard Tonemapping in ComfyUI-Latent-Modifiers?"
+            },
+            {
+                "role": "assistant",
+                "content": "Uses the reinhard method of tonemapping to clamp CFG if the difference is too strong."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Arctan Tonemapping in ComfyUI-Latent-Modifiers?"
+            },
+            {
+                "role": "assistant",
+                "content": "Clamps the values dynamically using a simple arctan curve."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Quantile Tonemapping in ComfyUI-Latent-Modifiers?"
+            },
+            {
+                "role": "assistant",
+                "content": "Clamps the values using torch.quantile for obtaining the highest magnitudes, and clamping based on the result."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Gated Tonemapping in ComfyUI-Latent-Modifiers?"
+            },
+            {
+                "role": "assistant",
+                "content": "Clamps the values using torch.quantile, only if above a specific floor value, which is set by tonemapping_multiplier."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is CFGMimic Tonemapping in ComfyUI-Latent-Modifiers?"
+            },
+            {
+                "role": "assistant",
+                "content": "Attempts to mimic a lower or higher CFG based on tonemapping_multiplier, and clamps it using torch.quantile."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Spatial-Norm Tonemapping in ComfyUI-Latent-Modifiers?"
+            },
+            {
+                "role": "assistant",
+                "content": "Clamps the values according to the noise prediction's absolute mean in the spectral domain."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does Contrast in Latent Diffusion Mega Modifier effect the image?"
+            },
+            {
+                "role": "assistant",
+                "content": "Scales the pixel values by the standard deviation, achieving a more contrasty look without changing subject poses much, if at all."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does Spectral Modification in ComfyUI-Latent-Modifiers work?"
+            },
+            {
+                "role": "assistant",
+                "content": "Boosts low frequencies (low rate of change in noise) and lowers high frequencies (high rates of change in noise)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the current pipeline for Latent Diffusion Mega Modifier in ComfyUI-Latent-Modifiers?"
+            },
+            {
+                "role": "assistant",
+                "content": "Add extra noise to conditioning -> Sharpen conditioning -> Convert to Noise Prediction -> Tonemap Noise Prediction -> Spectral Modification -> Modify contrast of noise prediction -> Rescale CFG -> Divisive Normalization -> Combat CFG Drift"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is Latent Diffusion Mega Modifier better than other nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The set_model_sampler_cfg_function hijack in ComfyUI can only utilize a single function, so we bundle many latent modification methods into one large function for processing."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you implement a new function in ComfyUI-Latent-Modifiers?"
+            },
+            {
+                "role": "assistant",
+                "content": "It depends. Is there existing code for such a function, with an open license for possible use in this repository?"
+            }
+        ]
+    }
+]

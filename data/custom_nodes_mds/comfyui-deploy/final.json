@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Deploy?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Deploy is a standalone Docker Fast API app that takes a required snapshot of a machine and builds it as a new modal app, returning the deployment URL."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the environment variables needed for ComfyUI-Deploy?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Deploy requires two environment variables: MODAL_TOKEN_ID and MODAL_TOKEN_SECRET, which can be obtained from your Modal accounts."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I run ComfyUI-Deploy locally?"
+            },
+            {
+                "role": "assistant",
+                "content": "To run ComfyUI-Deploy locally, use the following commands: docker build -t bennykok/comfydeploy-builder:dev . && docker run --env-file .env -p 8080:8080 bennykok/comfydeploy-builder:dev"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install Fly.io on a Mac/Linux system?"
+            },
+            {
+                "role": "assistant",
+                "content": "If you have Homebrew installed, use the command brew install flyctl on a Mac. If you don't have Homebrew, use the install script with curl -L https://fly.io/install.sh | sh"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install Fly.io on a Windows system?"
+            },
+            {
+                "role": "assistant",
+                "content": "On Windows, use the PowerShell install script: pwsh -Command \"iwr https://fly.io/install.ps1 -useb | iex\""
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I set environment keys in Fly.io?"
+            },
+            {
+                "role": "assistant",
+                "content": "To set environment keys in Fly.io, use the following commands: fly secrets set MODAL_TOKEN_ID= and fly secrets set MODAL_TOKEN_SECRET="
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I deploy ComfyUI-Deploy using Fly.io?"
+            },
+            {
+                "role": "assistant",
+                "content": "First, set the app name in the 'model-builder/fly.toml' file. If it's a first-time deployment, use the command fly launch. If not, use fly deploy instead."
+            }
+        ]
+    }
+]

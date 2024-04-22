@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the custom nodes in ComfyUI_smZNodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "Custom nodes in ComfyUI_smZNodes are a selection of custom nodes for ComfyUI that extend its functionality."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you explain the function of the CLIP Text Encode++ custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "CLIP Text Encode++ can generate identical embeddings from stable-diffusion-webui for ComfyUI, allowing the reproduction of the same images generated from stable-diffusion-webui on ComfyUI. It supports various features like prompt editing, `AND` and `BREAK` keywords, weight normalization, and optional `embedding:` identifier."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the role of the Settings node in ComfyUI_smZNodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Settings node is a dynamic node that functions similar to the Reroute node. It is used to fine-tune results during sampling or tokenization. It can change whenever it is updated, so it may need to be recreated to prevent issues. Settings can be overridden by using another Settings node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the advantage of using CLIP Text Encode++ for image generation?"
+            },
+            {
+                "role": "assistant",
+                "content": "The advantage of using CLIP Text Encode++ for image generation is that it can generate identical embeddings from stable-diffusion-webui for ComfyUI. This means you can reproduce the same images generated from stable-diffusion-webui on ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does CLIP Text Encode++ support different parsers?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, CLIP Text Encode++ supports different parsers such as `comfy`, `comfy++`, `A1111`, `full`, `compel`, and `fixed attention`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the `multi_conditioning` option work in CLIP Text Encode++?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `multi_conditioning` option in CLIP Text Encode++ is a way to use multiple prompts at once, allowing `AND` in the negative prompt as well. It supports weights for prompts and each prompt gets a cfg value of 'cfg * weight / N', where 'N' is the number of positive prompts."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you clarify the `use_old_emphasis_implementation` option in CLIP Text Encode++?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `use_old_emphasis_implementation` option allows the use of the old emphasis implementation. This can be useful to reproduce old seeds."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Settings node in ComfyUI_smZNodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of the Settings node in ComfyUI_smZNodes is to fine-tune results during sampling or tokenization. It is a dynamic node that functions similar to the Reroute node, and it can change whenever it is updated, so it may need to be recreated to prevent issues."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Settings node apply its settings in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "In ComfyUI, the Settings node applies its settings locally based on its links. It is similar to nodes that do model patches. It primarily exists for the purpose of exploring the various settings found in stable-diffusion-webui."
+            }
+        ]
+    }
+]

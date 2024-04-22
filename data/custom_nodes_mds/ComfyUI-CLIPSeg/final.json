@@ -1,0 +1,134 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the custom nodes available in the ComfyUI-CLIPSeg repository?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-CLIPSeg repository contains two custom nodes: CLIPSeg and CombineSegMasks."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the CLIPSeg node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The CLIPSeg node generates a binary mask for a given input image and text prompt to be used in image inpainting tasks."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the inputs for the CLIPSeg node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The inputs for the CLIPSeg node are: image, text, blur, threshold, and dilation_factor."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'blur' input for the CLIPSeg node control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'blur' input controls the amount of Gaussian blur applied to the mask."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the outputs of the CLIPSeg node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The outputs of the CLIPSeg node are: tensor_bw, image_out_hm, and image_out_bw."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the CombineSegMasks node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The CombineSegMasks node combines two or optionally three masks into a single mask to improve masking of different areas."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the inputs for the CombineSegMasks node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The inputs for the CombineSegMasks node are: image, mask1, mask2, with mask3 as an optional input."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'mask3' input represent in the CombineSegMasks node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'mask3' input represents an optional third mask that can be combined with the others."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the outputs of the CombineSegMasks node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The outputs of the CombineSegMasks node are: combined_mask, image_out_hm, and image_out_bw."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you use these custom nodes in a ComfyUI project?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use these custom nodes in a ComfyUI project, you need to clone the repository, put the clipseg.py file into your custom_nodes directory, and ensure you have the required libraries installed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the requirements to use the ComfyUI-CLIPSeg nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The requirements to use the ComfyUI-CLIPSeg nodes are PyTorch, CLIPSeg, OpenCV, numpy, and matplotlib."
+            }
+        ]
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the SD-Latent-Upscaler and how does it work?"
+            },
+            {
+                "role": "assistant",
+                "content": "SD-Latent-Upscaler is a small neural network used for upscaling stable diffusion latents. It works similarly to ESRGAN, but it is severely undertrained. It can be used to upscale latents without ruining the image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the current issue with SDXL?"
+            },
+            {
+                "role": "assistant",
+                "content": "Currently, SDXL has minimal hue shift issues. Because of course it does."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install the SD-Latent-Upscaler in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install it by cloning the repo to your custom_nodes folder using the command `git clone https://github.com/city96/SD-Latent-Upscaler custom_nodes/SD-Latent-Upscaler`, or by downloading the `comfy_latent_upscaler.py` file to your ComfyUI/custom_nodes folder and installing hfhub using `pip install huggingface-hub` inside your venv."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I use the SD-Latent-Upscaler in my local models?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use it locally, create a `models` folder and place the modules there, or clone the entire HF repo to it using the command `git clone https://huggingface.co/city96/SD-Latent-Upscaler custom_nodes/SD-Latent-Upscaler/models`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the training procedure for SD-Latent-Upscaler v2.0?"
+            },
+            {
+                "role": "assistant",
+                "content": "For v2.0, the network architecture is changed to a bunch of `Conv2d` layers with an `Upsample` at the beginning. It is trained for 1M iterations on DIV2K + Flickr2K, using AdamW + L1 loss and a `OneCycleLR` scheduler."
+            }
+        ]
+    }
+]

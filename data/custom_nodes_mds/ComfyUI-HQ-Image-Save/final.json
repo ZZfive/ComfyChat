@@ -1,0 +1,74 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What types of files does ComfyUI-HQ-Image-Save support for loading and saving?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-HQ-Image-Save supports loading and saving of EXR files individually or in batches, and for saving RGB or RGBA 32bpc EXR and 16bpc RGB TIFF files."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the output folder path be formatted when saving EXR files?"
+            },
+            {
+                "role": "assistant",
+                "content": "When saving EXR files with ComfyUI-HQ-Image-Save, the output folder path can be formatted as relative paths within the output folder or as absolute paths with version and frame number formatting."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What CLI argument is recommended for more accurate decoding?"
+            },
+            {
+                "role": "assistant",
+                "content": "The recommended CLI argument for more accurate decoding when using ComfyUI-HQ-Image-Save is `--fp32-vae`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the number of possible values per channel compare between PNG and TIFF files?"
+            },
+            {
+                "role": "assistant",
+                "content": "PNG files have 256 possible values per channel (2^8), while TIFF files have 65,536 possible values per channel (2^16)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the formula for approximating RGB values from the four latent channels?"
+            },
+            {
+                "role": "assistant",
+                "content": "The formula for approximating RGB values from the four latent channels is: r = (0.298 * r + 0.187 * g - 0.187 * b - 0.184 * a) * 0.18215, g = (0.207 * r + 0.286 * g + 0.189 * b - 0.271 * a) * 0.18215, b = (0.208 * r + 0.173 * g + 0.264 * b - 0.473 * a) * 0.18215."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the known issues with ComfyUI-HQ-Image-Save?"
+            },
+            {
+                "role": "assistant",
+                "content": "There are two known issues with ComfyUI-HQ-Image-Save: No workflow metadata is saved to the TIFF or EXR images and there is no load TIFF node yet."
+            }
+        ]
+    }
+]

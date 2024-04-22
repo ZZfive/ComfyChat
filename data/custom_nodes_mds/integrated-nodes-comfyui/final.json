@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of integrated nodes in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Integrated nodes in ComfyUI are used to turn entire workflows or parts of them into single integrated nodes. This is similar to the Node Templates functionality but hides the inner structure, which is useful if all you want is to reuse and quickly configure a bunch of nodes without caring how they are interconnected."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can one install the integrated-nodes-comfyui extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install, clone this repository into `ComfyUI/custom_nodes` folder using `git clone https://github.com/palant/integrated-nodes-comfyui`. Edit the example `integrated_nodes.yaml` configuration file as you see fit. After that, restart ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the DoublePrompt node in integrated-nodes-comfyui do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The DoublePrompt node combines two CLIP encoding prompts in a single node, saving space and allowing for more efficient workflow configuration."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What components are included in the ControlNet with Prompts node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ControlNet with Prompts node includes ControlNet loader, two text prompts and an image loader."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the procedure required for the txt2img node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The txt2img node requires the following steps to be performed: Load Checkpoint, twice CLIP Text Encode (Prompt), KSampler, Empty Latent Image, VAE Decode, Save Image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the equivalent workflow for the Inpaint node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The equivalent workflow for the Inpaint node includes: Load Checkpoint, twice CLIP Text Encode (Prompt), Load Image, VAE Encode (for Inpainting), KSampler, VAE Decode, Save Image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I add my own integrated nodes to ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can add your own integrated nodes to ComfyUI by selecting some nodes in the workflow and clicking “Create Integrated Node from Selection” in the context menu, which will create a new `integrated_nodes.yaml` file if one doesn’t exist and add a new entry to it. You can also edit the `integrated_nodes.yaml` file manually, but changes will only take effect after ComfyUI is restarted."
+            }
+        ]
+    }
+]

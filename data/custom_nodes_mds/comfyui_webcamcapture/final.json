@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the comfyui_webcamcapture node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The comfyui_webcamcapture node captures images one at a time from your webcam when you click generate. It is particularly useful for img2img or controlnet workflows."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why was the comfyui_webcamcapture node created?"
+            },
+            {
+                "role": "assistant",
+                "content": "The comfyui_webcamcapture node was created because other existing webcam nodes do not work or are buggy, producing black images or digital noise. This node exposes extra parameters from cv2 to allow users to tweak webcam settings to improve functionality."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the default behavior of autoexp, autofocus, and autowb settings in the comfyui_webcamcapture node?"
+            },
+            {
+                "role": "assistant",
+                "content": "By default, autoexp, autofocus, and autowb are set to 1 in the comfyui_webcamcapture node, which means they use auto exposure, auto focus, and auto white balance, respectively."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some possible use cases for the comfyui_webcamcapture node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Potential use cases for the comfyui_webcamcapture node include setting up an action figure in front of your webcam and using body pose estimation and a pose controlnet, or pointing it at yourself and using a depth estimator or face pose estimator."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install the comfyui_webcamcapture node?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install the comfyui_webcamcapture node, clone the repository into your comfyui `custom_nodes` directory, activate your comfyui environment, and run `pip install opencv-python`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the suggested supporting nodes/workflows for the comfyui_webcamcapture node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The suggested supporting nodes/workflows for the comfyui_webcamcapture node include ControlNet Preprocessors, Faces and Poses Estimators, Depth and Normal Estimators, and Normal Controlnet workflows."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What Inputs are available in the comfyui_webcamcapture node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The inputs available in the comfyui_webcamcapture node include cam_id, width, height, brightness, exposure, aperture, autoexp, autofocus, autowb, and seed/control_after_generate."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the default setting for the brightness input in the comfyui_webcamcapture node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The default setting for the brightness input in the comfyui_webcamcapture node is 0.5."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the range for the brightness input in the comfyui_webcamcapture node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The range for the brightness input in the comfyui_webcamcapture node is 0.0 to 1.0."
+            }
+        ]
+    }
+]

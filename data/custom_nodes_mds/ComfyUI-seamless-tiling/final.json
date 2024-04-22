@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does ComfyUI-seamless-tiling offer in terms of functionality?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-seamless-tiling offers nodes for generating seamless textures and replicates the 'Tiling' option from A1111, including independent X/Y tiling."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What nodes should I use between the loader and samplers to modify a model?"
+            },
+            {
+                "role": "assistant",
+                "content": "You should use the 'Seamless Tile' node between the loader and samplers to modify a model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is there a more efficient way to decode an image with the 'Make Circular VAE' or 'Circular VAE Decode' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, 'Make Circular VAE' is more efficient because it only modifies the VAE model once instead of on each decode."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What node can I use to check for seams?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can use the 'Offset Image' node to check for seams."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where is the Circular VAE Decode code from?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Circular VAE Decode code is from the https://github.com/FlyingFireCo/tiled_ksampler repository."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What repository was the X/Y tiling implementation modified from?"
+            },
+            {
+                "role": "assistant",
+                "content": "The X/Y tiling implementation was modified from https://github.com/tjm35/asymmetric-tiling-sd-webui."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the list of nodes provided by ComfyUI-seamless-tiling?"
+            },
+            {
+                "role": "assistant",
+                "content": "The nodes provided by ComfyUI-seamless-tiling are 'conditioning/Seamless Tile', 'latent/Circular VAE Decode (tile)', 'latent/Make Circular VAE', and 'image/Offset Image'."
+            }
+        ]
+    }
+]

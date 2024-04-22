@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the primary functionality of the ComfyUI-Art-Venture node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-Art-Venture node enables you to style prompts based on predefined templates stored in multiple JSON files, specifically replacing a {prompt} placeholder in the 'prompt' field of each template with provided positive text."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the ComfyUI-Art-Venture node manage negative prompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-Art-Venture node combines the negative text provided with the 'negative_prompt' field from the template. If no negative text is supplied, it defaults to using the 'negative_prompt' from the JSON template."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How should I ensure my styles remain intact when there's an update in the system?"
+            },
+            {
+                "role": "assistant",
+                "content": "Before updating, back up your 'sdxl_styles.json', then after updating, create a new JSON file in the styles directory and move your custom styles from the backup into this new file, ensuring unique style names are used."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the main enhancement in the latest update for the ComfyUI-Art-Venture node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The system can now load styles from multiple JSON files present in the specified directory, ensuring the uniqueness of style names by appending a suffix to duplicates, and enhanced error handling for file reading, data validity, and template replacement functions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How should I use the SDXL Prompt Styler in ComfyUI-Art-Venture?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use the SDXL Prompt Styler nodes in ComfyUI-Art-Venture, navigate to the 'ComfyUI/custom_nodes/' directory in a terminal or command line interface, and run the command 'git clone https://github.com/twri/sdxl_prompt_styler.git' to clone the repository, then restart ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What inputs are required for the ComfyUI-Art-Venture node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-Art-Venture node requires inputs for 'text_positive' and 'text_negative', as well as 'log_prompt' for printing inputs and outputs to stdout."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What outputs can I expect from the ComfyUI-Art-Venture node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-Art-Venture node provides outputs for 'positive_prompt_text_g' and 'negative_prompt_text_g', which are combined prompts with style for positive and negative prompts respectively."
+            }
+        ]
+    }
+]

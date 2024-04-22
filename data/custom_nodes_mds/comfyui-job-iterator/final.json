@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the primary function of comfyui-job-iterator?"
+            },
+            {
+                "role": "assistant",
+                "content": "comfyui-job-iterator implements iteration over sequences within a single workflow run."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you install comfyui-job-iterator?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install, just clone it into custom_nodes. There are no dependencies."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you use comfyui-job-iterator to iterate over values in a workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "1. Make a SEQUENCE containing the values to use at each step. 2. Turn it into a JOB using a MakeJob node, and enter a name for the attribute. 3. If you need to modify more than one parameter, make more SEQUENCES and turn them into JOBs. 4. Connect to a JobIterator. 5. Connect the attributes output to GetAttribute nodes to pull out the value of a name at the current step. 6. Connect those values into a normal workflow. 7. Click 'queue prompt'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the use of the Stringify node included with comfyui-job-iterator?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Stringify node returns `str()` and `repr()` of the input."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Interact node do when evaluated in comfyui-job-iterator?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Interact node opens a debug REPL on the terminal where you ran ComfyUI whenever it is evaluated."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Join image batch node do in comfyui-job-iterator?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Join image batch node turns a batch of images into one tiled image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Select from image batch node in comfyui-job-iterator?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Select from image batch node outputs a single image from a batch."
+            }
+        ]
+    }
+]

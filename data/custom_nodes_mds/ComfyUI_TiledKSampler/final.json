@@ -1,0 +1,74 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI_TiledKSampler?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI_TiledKSampler allows for denoising larger images by splitting it up into smaller tiles and denoising these."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the random tiling strategy reduce seams?"
+            },
+            {
+                "role": "assistant",
+                "content": "The random tiling strategy randomizes the tile positions for each step of denoising, reducing the visibility of seams."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the disadvantage of the random strict tiling strategy?"
+            },
+            {
+                "role": "assistant",
+                "content": "The random strict tiling strategy can unfavorably crop border tiles."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the padded tiling strategy reduce seams?"
+            },
+            {
+                "role": "assistant",
+                "content": "The padded tiling strategy provides additional context to each tile through padding, reducing seam visibility."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which tiling strategy is compatible with uni samplers?"
+            },
+            {
+                "role": "assistant",
+                "content": "The padded tiling strategy is compatible with uni samplers."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the planned future developments for the ComfyUI_TiledKSampler?"
+            },
+            {
+                "role": "assistant",
+                "content": "Future developments include latent masks, image-wide control nets, and tile-wide control nets."
+            }
+        ]
+    }
+]

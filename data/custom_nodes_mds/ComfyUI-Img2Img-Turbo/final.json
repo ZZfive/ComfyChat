@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How to train a pix2pix-turbo model using paired data?"
+            },
+            {
+                "role": "assistant",
+                "content": "First, download the modified Fill50k dataset. Then, initialize and launch the training script with the required flags such as pretrained_model_name_or_path, output_dir, dataset_folder, resolution, train_batch_size, and enable_xformers_memory_efficient_attention. The script supports additional flags for tracking FID, enabling attention, and visualizing results."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the expected format for the dataset used in training?"
+            },
+            {
+                "role": "assistant",
+                "content": "The expected format for the dataset is as follows: data/dataset_name/train_A, train_B, train_prompts.json, test_A, test_B, test_prompts.json."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How to monitor the training progress?"
+            },
+            {
+                "role": "assistant",
+                "content": "The training progress can be monitored using the Weights & Biases dashboard. The script visualizes training batch, training losses, and validation set L2, LPIPS, and FID scores (if specified)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How to perform inference with the trained model?"
+            },
+            {
+                "role": "assistant",
+                "content": "Run the inference_paired.py script with the required arguments, including the model path, input image, prompt, and output directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the workflow of ComfyUI-Img2Img-Turbo?"
+            },
+            {
+                "role": "assistant",
+                "content": "The workflow examples can be found in the 'wf.json' and 'wf_painter.json' files at the links provided in the documentation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the painter workflow in ComfyUI-Img2Img-Turbo?"
+            },
+            {
+                "role": "assistant",
+                "content": "The painter workflow example can be found in the 'wf_painter.json' file at the link provided in the documentation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is img2img-turbo?"
+            },
+            {
+                "role": "assistant",
+                "content": "Img2img-turb is a part of ComfyUI-Img2Img-Turbo which can be found at the link provided in the documentation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What version range of diffusers should be installed if other nodes have updated the diffusers version?"
+            },
+            {
+                "role": "assistant",
+                "content": "If other nodes have updated the diffusers version, it should be pip installed 'diffusers>=0.24.0,<=0.25.1' and installed back."
+            }
+        ]
+    }
+]

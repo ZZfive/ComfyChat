@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the noise_latent_perlinpinpin node allow for in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The noise_latent_perlinpinpin node allows creating latent spaces filled with perlin-based noise that can be used by the samplers."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the limitation when upscaling with the noise_latent_perlinpinpin node?"
+            },
+            {
+                "role": "assistant",
+                "content": "You should keep the exact same aspect ratios if you want to upscale or the patterns will not match."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How has the noise_latent_perlinpinpin algorithm been simplified?"
+            },
+            {
+                "role": "assistant",
+                "content": "The algorithm has been simplified to support all resolutions and make it easier to use, with no artifacts."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the magic line of code in the noise_latent_perlinpinpin description?"
+            },
+            {
+                "role": "assistant",
+                "content": "The magic line of code, 'noise = torch.remainder(torch.abs(noise)*1000000,11)/11', destroys the smooth pattern while keeping it predictable at all scales."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What do I need to have installed to use the noise_latent_perlinpinpin node?"
+            },
+            {
+                "role": "assistant",
+                "content": "You need to have BlenderNeko noise related nodes and the workflow, which can be found at https://github.com/BlenderNeko/ComfyUI_Noise, to use the noise_latent_perlinpinpin node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is recommended for better upscales when using this node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Using the city96 latent upscaler, available at https://github.com/city96/SD-Latent-Upscaler, for upscaling is highly recommended."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the workflow included in this image represent?"
+            },
+            {
+                "role": "assistant",
+                "content": "The workflow included in the image represents the basics of using perlin-based noise with ComfyUI, including noisy perlin injection, SDXL Base, VAE decode, lanczos resize, VAE encode, and SDXL refiner."
+            }
+        ]
+    }
+]

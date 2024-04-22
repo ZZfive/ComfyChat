@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the requirements to use the ComfyUI-Deepface nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install the required dependencies, run `pip install -r requirements.txt`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the two nodes included in the ComfyUI-Deepface library?"
+            },
+            {
+                "role": "assistant",
+                "content": "The two nodes are Deepface Extract Faces and Deepface Verify."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Deepface Verify node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Deepface Verify node given a set of input images and a set of reference (face) images, only outputs the input images with an average distance to the faces in the reference images less than or equal to a specified threshold. The output images are sorted by average distance to the reference image faces (nearest first)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What additional measures does the Deepface Verify node provide alongside the average distance?"
+            },
+            {
+                "role": "assistant",
+                "content": "In addition to distance, the node provides the ratio of reference images that each input image was verified to be a face match of, according to the default distance threshold of the model selected."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the output of the Deepface Verify node consist of?"
+            },
+            {
+                "role": "assistant",
+                "content": "The output of the Deepface Verify node consists of 'verified_images', 'verified_image_distances', 'verified_image_verified_ratios', 'rejected_images', 'rejected_image_distances', and 'rejected_image_verified_ratios'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can any individual output of the Deepface Verify node be 'None' and why?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, any individual output may be 'None' if there are no input images matching the criteria."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which project's nodes can be used to display the output distances?"
+            },
+            {
+                "role": "assistant",
+                "content": "Nodes from [was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui) and [pythongosssss](https://github.com/pythongosssss/ComfyUI-Custom-Scripts) can be used to display the output distances."
+            }
+        ]
+    }
+]

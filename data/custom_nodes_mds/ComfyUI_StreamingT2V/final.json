@@ -1,0 +1,74 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I use GLM for my own NLU tasks?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use GLM for your own NLU tasks, you should implement a subclass of `DataProcessor` in [tasks/superglue/dataset.py](dataset.py) and a subclass of `PVP` in [tasks/superglue/pvp.py](pvp.py). You should also specify the We will take the RTE and ReCoRD tasks in SuperGLUE as an example."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the RTE task and how does GLM process it?"
+            },
+            {
+                "role": "assistant",
+                "content": "RTE is an NLI task in which the model is required to predict text entailment between a premise and a hypothesis. The label can be `entailment` or `not_entailmnet`. GLM predicts 'Yes' for `entailment` and 'No' for `not_entailment`. 'Yes' and 'No' are called verbalizers for `entailment` and `not_entailment` respectively."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does ReCoRD task differ from the RTE task?"
+            },
+            {
+                "role": "assistant",
+                "content": "ReCoRD is a multi-choice QA task. Each example consists of a news article and a Cloze-style question about the article in which one entity is masked out. The system must predict the masked out entity from a list of possible entities in the provided passage. Unlike RTE, ReCoRD involves guessing a masked out entity from a list of candidates."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What methods does the RteProcessor subclass implement?"
+            },
+            {
+                "role": "assistant",
+                "content": "A subclass of `DataProcessor` should implement `get_train_examples`, `get_dev_examples` and `get_test_examples`, which return the examples of the train, dev, and test sets. It should also implement `get_labels` to return the list of possible labels."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is `is_multi_token` True or False for the ReCoRDPVP class?"
+            },
+            {
+                "role": "assistant",
+                "content": "For the ReCoRDPVP class, `is_multi_token` is True."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I run the experiment for a new task?"
+            },
+            {
+                "role": "assistant",
+                "content": "To run the experiment for a new task, you should create a config file and specify the evaluation metrics for the task in `DEFAULT_METRICS` of [tasks/superglue/finetune.py](finetune.py). Then you can run the experiment with `finetune_superglue.sh`."
+            }
+        ]
+    }
+]

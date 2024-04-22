@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyQR-scanning-nodes project?"
+            },
+            {
+                "role": "assistant",
+                "content": "The project provides ComfyUI nodes to quickly test generated QR codes for scannability."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I find the source code for ComfyQR-scanning-nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The project is managed publicly on Gitlab (https://gitlab.com/sofuego-comfy-nodes/ComfyQR-scanning-nodes) but is also mirrored on Github (https://github.com/coreyryanhanson/ComfyQR-scanning-nodes)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the Read QR Code node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The node extracts text data from a QR code using the pyzbar library."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Validate QR Code node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The node checks whether text extracted from a QR code is valid and matches the specified text."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the inputs required for the Validate QR Code node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The node requires the image layer, the extracted text from the Read QR Code node, the protocol and the text of the QR code."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is pyzbar chosen as the QR reader library?"
+            },
+            {
+                "role": "assistant",
+                "content": "Pyzbar is chosen for its low dependencies, regular updates, and popularity."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the accuracy of QR code readability be improved?"
+            },
+            {
+                "role": "assistant",
+                "content": "Adding a Pad Image for Outpainting node before sending the image to Read QR Code can help to reduce false negatives when the border size of a QR code is small."
+            }
+        ]
+    }
+]

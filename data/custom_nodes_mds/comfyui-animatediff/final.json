@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I integrate AnimateDiff for ComfyUI to generate images and videos?"
+            },
+            {
+                "role": "assistant",
+                "content": "To integrate AnimateDiff for ComfyUI, you need to clone this repo into the `custom_nodes` folder and download motion modules to put them under `comfyui-animatediff/models/`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I update and support motion LoRA for AnimateDiff?"
+            },
+            {
+                "role": "assistant",
+                "content": "To support motion LoRA, you need to download motion LoRAs and put them under `comfyui-animatediff/loras/` folder. They only work with **AnimateDiff v2** [mm_sd_v15_v2.ckpt]."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the sliding window feature and how does it work for AnimateDiff?"
+            },
+            {
+                "role": "assistant",
+                "content": "The sliding window feature for AnimateDiff enables you to generate GIFs without a frame length limit. It divides frames into smaller batches with a slight overlap."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the components of the AnimateDiffSampler node?"
+            },
+            {
+                "role": "assistant",
+                "content": "AnimateDiffSampler node includes `motion_module`, `inject_method`, `frame_number`, and `sliding_window_opts`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended context_length for the SlidingWindowOptions node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The recommended context_length is 16 for the SlidingWindowOptions node to get the best results."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I use a GIF as ControlNet input with AnimateDiff?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use a GIF as ControlNet input, you can utilize the `LoadVideo` node from the AnimateDiff extension to load the GIF as ControlNet input."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How to fix the CUDA error: invalid configuration argument?"
+            },
+            {
+                "role": "assistant",
+                "content": "To fix the CUDA error: invalid configuration argument, you need to disable xformers with `--disable-xformers` when booting ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How to prevent GIF split into multiple scenes?"
+            },
+            {
+                "role": "assistant",
+                "content": "To reduce the chance of GIF being split into multiple scenes, you should consider shortening your text prompts, reduce resolution and disable xformers."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How to avoid GIF having watermarks?"
+            },
+            {
+                "role": "assistant",
+                "content": "To avoid watermarks on the GIF, you might need to try other community finetuned modules as they might not contain the watermark."
+            }
+        ]
+    }
+]

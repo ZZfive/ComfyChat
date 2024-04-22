@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is eden_comfy_pipelines?"
+            },
+            {
+                "role": "assistant",
+                "content": "A collection of custom nodes and workflows for ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What type of node is CLIP_interrogator?"
+            },
+            {
+                "role": "assistant",
+                "content": "CLIP_interrogator node is a custom node in the eden_comfy_pipelines for ComfyUI, based on the clip_interrogator GitHub repository."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'keep_model_alive' option in the CLIP_interrogator node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'keep_model_alive' option in the CLIP_interrogator node prevents the removal of the CLIP/BLIP models from the GPU after execution, avoiding the need to reload the entire model for each new pipeline run. However, it uses more GPU memory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'prepend_BLIP_caption' option in the CLIP_interrogator node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'prepend_BLIP_caption' option can be turned off to only get the matching modifier tags without using a BLIP-interrogation. This is useful if the main goal is to copy textures from an image with an IP_adapter without affecting the global image contents."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the 'save_prompt_to_txt_file' option in the CLIP_interrogator node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'save_prompt_to_txt_file' option allows specifying a path where the prompt is saved to disk, potentially for later use or reference."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the VAEDecode_to_folder node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The VAEDecode_to_folder node decodes VAE latents to images and saves them directly to a folder, allowing for rendering longer videos with tools like AnimateDiff, albeit requiring manual video compilation with ffmpeg post-processing."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What can the SaveImage node do in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SaveImage node is a basic image saver that allows adding timestamps and saving entire pipelines as .json files. The .json files can be used to directly read prompts and settings without loading the entire pipeline in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Are all the included nodes in eden_comfy_pipelines complete?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, it is noted that some of the included nodes in the eden_comfy_pipelines collection are not yet finished."
+            }
+        ]
+    }
+]

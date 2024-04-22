@@ -1,0 +1,314 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the objective of the comfyui-portrait-master node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The objective of the comfyui-portrait-master node is to help AI image creators generate prompts for human portraits."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install the comfyui-portrait-master node?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install the comfyui-portrait-master node, open the terminal on the ComfyUI installation folder, navigate to the custom_nodes directory, clone the repository, and restart ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I update the comfyui-portrait-master node directly from the ComfyUI installation folder?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, to update the comfyui-portrait-master node, open the terminal on the ComfyUI installation folder, navigate to the comfyui-portrait-master directory, pull the latest changes, and restart ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I integrate other custom nodes into the workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "We recommend using the [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager) to install additional custom nodes needed for the workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'shot' option do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'shot' option sets the shot type of the character in the generated image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I use the 'model_pose' selector?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use the 'model_pose' selector, you select a pose from the list. If you disable ControlNet, you should adjust framing using the 'shot' option."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the SDXL workflow in ComfyUI Portrait Master?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SDXL workflow in ComfyUI Portrait Master is a complete workflow designed to work with SDXL checkpoints. It integrates an upscaler and 2 ControlNet to manage the pose of the characters."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I use ComfyUI Portrait Master with SDXL Turbo?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, ComfyUI Portrait Master works correctly with SDXL Turbo."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the negative prompt for?"
+            },
+            {
+                "role": "assistant",
+                "content": "The negative prompt allows you to declare what you don't want in the image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I obtain a list of all the available options in the node?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can refer to the 'Available Options' section of the node documentation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I adjust the workflow to my needs?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, you can adjust the workflow to your needs by changing the settings of the two KSampled."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is there any practical advice on using high values for the skin and eye detail control parameters?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, using high values for these parameters may override the setting for the chosen shot. It is advisable to reduce the parameter values for the skin and eyes, or insert in the negative prompt ('closeup', 'close up', 'close-up:1.5'), modifying the weight as needed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I customize the sounds in the node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, you can open the .txt files in the _lists_ subfolder and customize the voices."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the negative and random switches in the node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The negative switch in the node allows for negative prompts. The random switch can disable related values entered manually."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is input in the 'prompt_start' field of the node for?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'prompt_start' field is used to specify the type of image you want, for example, 'realistic'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is there a basic workflow designed for SD1.5 checkpoints?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, there is a basic workflow designed for SD1.5 checkpoints in the _portrait-master-basic-workflow-SD1.5.json_ file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the model pose option for?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'model_pose' option allows you to use a list of default poses. You need to disable ControlNet in this case and adjust framing with the 'shot' option."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'facial_asymmetry' option in the node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'facial_asymmetry' option allows you to set the asymmetry of the face."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I support the author of ComfyUI Portrait Master if I find it useful?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, if you find ComfyUI Portrait Master useful, you can consider a small donation to the author at https://ko-fi.com/stefanoflore75."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is there a recommended model for advanced photorealism?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, for advanced photorealism, we recommend [FormulaXL 2.0](https://civitai.com/models/129922?modelVersionId=160525)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is ComfyUI Portrait Master compatible with [Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/)?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, ComfyUI Portrait Master is compatible with [Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/). "
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What new features were introduced in version 1.5 of ComfyUI-Portrait-Master?"
+            },
+            {
+                "role": "assistant",
+                "content": "Version 1.5 introduced updated nationality list (193 options), new options for face shape, facial expression, facial asymmetry, dimples, and bug fixes and optimizations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What changes were made to the hair styles in version 2.9 of ComfyUI-Portrait-Master?"
+            },
+            {
+                "role": "assistant",
+                "content": "Version 2.9 has an updated hair style list with 117 items."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What new options were added in version 2.1 of ComfyUI-Portrait-Master?"
+            },
+            {
+                "role": "assistant",
+                "content": "Version 2.1 introduced new options for body type, wrinkles, beard, tanned skin, added a new workflow with 2 groups of ControlNet nodes for pose and hand control, and added examples."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was added to the workflow in version 2.0 of ComfyUI-Portrait-Master?"
+            },
+            {
+                "role": "assistant",
+                "content": "Version 2.0 added upscaler in the workflow and ControlNet in the workflow for pose control."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How many model poses are available in version 2.6 of ComfyUI-Portrait-Master?"
+            },
+            {
+                "role": "assistant",
+                "content": "Version 2.6 has 87 model poses."
+            }
+        ]
+    }
+]

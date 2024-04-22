@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI Coziness?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI Coziness is a collection of custom nodes for ComfyUI, which is a GUI for using a stable diffusion model to generate images and videos."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the MultiLora Loader node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The MultiLora Loader node uses a textual description to specify which Loras to add to a checkpoint model. You can add the node from the 'loaders' category at 'loaders > MultiLora Loader'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I add the MultiLora Loader node to ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install the MultiLora Loader node, you can either add the MultiLoraLoader.py file to the ComfyUI 'custom_nodes' directory, or clone the ComfyUI-Coziness repo into the 'custom_nodes' directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I connect the inputs and outputs of the MultiLora Loader node?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the MultiLora Loader node, you can type the Loras you want to use, each on one line, in the format 'file_name[:weight1[:weight2]]'. You can also use Automatic1111's lora syntax."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Lora Text Extractor node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Lora Text Extractor node takes the input text and extracts Loras specified using Automatic1111's lora syntax out of it. It has two outputs: one for the filtered text without the Loras and another with the Loras removed, separated by newlines."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I connect the outputs of the Lora Text Extractor node?"
+            },
+            {
+                "role": "assistant",
+                "content": "To connect the outputs of the Lora Text Extractor node, you have to convert the text boxes of the CLIP Text Encode and MultiLora Loader nodes into inputs by right-clicking them and selecting 'Convert text to input' from the menu."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "When was the last update to ComfyUI-Coziness made?"
+            },
+            {
+                "role": "assistant",
+                "content": "The latest update to ComfyUI-Coziness was made on 2024/2/22."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the latest feature added to ComfyUI-Coziness?"
+            },
+            {
+                "role": "assistant",
+                "content": "The latest update added support for connecting Lora Text Extractor directly to the lora stack inputs of 'Efficiency Nodes for ComfyUI'."
+            }
+        ]
+    }
+]

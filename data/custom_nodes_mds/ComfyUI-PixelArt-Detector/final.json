@@ -1,0 +1,194 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the ComfyUI-PixelArt-Detector extension include?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-PixelArt-Detector extension includes 4 custom nodes: PixelArt Detector (+Save), PixelArt Detector (Image->), PixelArt Palette Converter, and PixelArt Palette Loader."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the PixelArt Detector (+Save) node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The PixelArt Detector (+Save) node is an All in One reduce palette, resize, and saving image node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the PixelArt Detector (Image->) node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The PixelArt Detector (Image->) node downscales and reduces the palette and forwards the image to another node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the PixelArt Palette Converter node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The PixelArt Palette Converter node changes the palette of your input. There are a couple of embedded palettes. You can use the Palette Loader for more palettes as input."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the role of the PixelArt Palette Loader node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The PixelArt Palette Loader node comes with a lot of custom palettes which can be an input to the PixelArt Palette Converter 'paletteList' input. Optional GRIDS preview of all palettes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What changes were made in Update 1.5.2 for ComfyUI-PixelArt-Detector?"
+            },
+            {
+                "role": "assistant",
+                "content": "Fixed the compatibility with Python <3.10, and fixed a scipy 'signal' error."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was added in Update 1.5.1 for ComfyUI-PixelArt-Detector?"
+            },
+            {
+                "role": "assistant",
+                "content": "@tsone added a new dithering node: PixelArtAddDitherPattern, with both prepared patterns and custom patterns from a mask, and a b&w palette."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What enhancements were made in Update 1.5 for ComfyUI-PixelArt-Detector?"
+            },
+            {
+                "role": "assistant",
+                "content": "In Update 1.5, they added dithering, made the node compatible with Pillow < 10 & Pillow > 10, fixed an issue where changing the fontSize in grids did not work, fixed an issue with Pillow library and ImageDraw.textsize not available in Pillow>= 10.0, fixed an issue with text too long in Grids, and fixed an issue with the NP.quantize method."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was done to improve the ComfyUI-PixelArt-Detector in Update 1.4?"
+            },
+            {
+                "role": "assistant",
+                "content": "In Update 1.4, they added a check and installation for the opencv (cv2) library used with the nodes to fix reported issues people were having."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What changes were made in Update 1.3 for ComfyUI-PixelArt-Detector?"
+            },
+            {
+                "role": "assistant",
+                "content": "In Update 1.3, they updated all 4 nodes. They added OpenCV.kmeans algo to reduce colors in an image, working only when reducing colors. They also added a 'clean up' pixels function that uses Image.quantize to iterate over the image and eliminate colors based on given threshold. They added different algos to reduce image with Image.quantize method (default one), such as MEDIANCUT, MAXCOVERAGE etc. They updated choices to BOOLEANs and toggles, added the 'NP.quantize' method using fast numpy arrays to reduce and exchange palettes, and moved out the grid settings from the Palette Converter to the Palette Loader."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the behavior of the PixelArtDetectorConverter in Update 1.2 for ComfyUI-PixelArt-Detector?"
+            },
+            {
+                "role": "assistant",
+                "content": "In Update 1.2, the PixelArtDetectorConverter will upscale the image BEFORE the pixelization/quantization process if the input image is smaller than the resize sizes. If bigger, it will downscale after quantization."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was changed in Update 1.1 for ComfyUI-PixelArt-Detector?"
+            },
+            {
+                "role": "assistant",
+                "content": "In Update 1.1, the default workflow.json was changed to use the default 'Save Image' node, and workflow_webp.json will be using the webp node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the compression options and saving options available in the PixelArt Detector (+Save) Node?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the PixelArt Detector (+Save) node, there is a compression slider with two modes: lossless and lossy. The slider controls the size of the file in both modes with different effects on quality and file size. Additionally, there is an option to save a JPEG file alongside the webp file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What options are available under the 'pixelize' function in the PixelArt Palette Converter Node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Under the 'pixelize' function in the PixelArt Palette Converter node, the available options are Image.quantize, Grid.pixelate, NP.quantize, and OpenCV.kmeans.reduce."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I convert the palettes with ComfyUI-PixelArt-Detector?"
+            },
+            {
+                "role": "assistant",
+                "content": "The PixelArt Palette Converter node in ComfyUI-PixelArt-Detector can change the palettes of your input. You can either use the embedded palettes or add more palettes by using the Palette Loader."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install the ComfyUI-PixelArt-Detector in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use the ComfyUI-PixelArt-Detector nodes, simply open a terminal in ComfyUI/custom_nodes/ and run: ```git clone https://github.com/dimtoneff/ComfyUI-PixelArt-Detector```"
+            }
+        ]
+    }
+]

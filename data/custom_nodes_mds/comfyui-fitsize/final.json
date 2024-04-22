@@ -1,0 +1,74 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Explain the purpose of the Fit Size node in Comfy UI."
+            },
+            {
+                "role": "assistant",
+                "content": "The Fit Size node automatically adjusts the size of an image to fit within a specified bounding box, making it ideal for copying screengrab content into Comfy UI without worrying about aspect ratios."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Fit Size From Int node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The node scales an image to fit within a given width, height, and maximum size, using basic math to ensure that the output image size is appropriate for Stable Diffusion."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Fit Size From Image node do differently from the Fit Size From Int node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The node automatically extracts the width and height of the image and can upscale or downscale the size to fit within a specified maximum size."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Explain the functionality of the Fit Image And Resize node."
+            },
+            {
+                "role": "assistant",
+                "content": "The node resizes an image to fit within a bounding box and outputs both the resulting image and a latent batch, making it suitable for img2img workflows."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Load Image And Resize To Fit node simplify image handling in workflows?"
+            },
+            {
+                "role": "assistant",
+                "content": "The node combines image handling capabilities into one node, allowing users to easily copy and paste image data without saving images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "List the input and output values available in the Values section."
+            },
+            {
+                "role": "assistant",
+                "content": "The Values section provides inputs for vae, image, max_size, resampling, upscale, batch_size, and add_noise, and outputs latent, image, width, height, aspect ratio, and mask."
+            }
+        ]
+    }
+]

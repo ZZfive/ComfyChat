@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-BrushNet?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-BrushNet is a custom node for ComfyUI that allows users to inpaint images using the Brushnet model, as described in the paper 'BrushNet: A Plug-and-Play Image Inpainting Model with Decomposed Dual-Branch Diffusion'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install ComfyUI-BrushNet?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-BrushNet, you need to clone the repo into the custom_nodes directory and install the requirements using the commands 'git clone https://github.com/nullquant/ComfyUI-BrushNet.git' and 'pip install -r requirements.txt'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I download the checkpoints for BrushNet?"
+            },
+            {
+                "role": "assistant",
+                "content": "Checkpoints for BrushNet can be downloaded from [here](https://drive.google.com/drive/folders/1fqmS1CEOvXCxNWFrsSYd_jHYXxrydh1n?usp=drive_link). Both 'segmentation_mask_brushnet_ckpt' and 'random_mask_brushnet_ckpt' should be placed inside 'models/inpaint/brushnet' folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the intended workflow for using ComfyUI-BrushNet?"
+            },
+            {
+                "role": "assistant",
+                "content": "An example for the intended workflow can be found in the 'example' directory as a json file named 'BrushNet_example.json'. Additionally, a visual representation of the workflow can be found in the 'example' directory under the name 'BrushNet_example.png'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the known bugs in ComfyUI-BrushNet?"
+            },
+            {
+                "role": "assistant",
+                "content": "There are two known bugs. Firstly, the nodes use a custom 'diffusers' library which can potentially conflict with other custom nodes. Secondly, the 'BrushNetPipeline' sometimes freezes on loading. The creators are looking into this problem."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Who developed ComfyUI-BrushNet?"
+            },
+            {
+                "role": "assistant",
+                "content": "I contributed to the ComfyUI adaptation of the tool, but the authors of the paper 'BrushNet: A Plug-and--Play Image Inpainting Model with Decomposed Dual-Branch Diffusion' deserve the credit."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which base model should be used with ComfyUI-BrushNet?"
+            },
+            {
+                "role": "assistant",
+                "content": "The base model should be of SD1.5 type. An example is 'realisticVisionV60B1_v51VAE'."
+            }
+        ]
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the GPU temperature protection extension do?"
+            },
+            {
+                "role": "assistant",
+                "content": "It uses nvidia-smi to monitor GPU temperature at the end of each step and pauses image generation if the temperature exceeds a specified threshold."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What methods are available for installing the GPU temperature protection extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install the extension either by searching for \"GPU temperature protection\" in ComfyUI Manager and installing it from there, or by cloning the repository and copying the node files to the appropriate location in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What setting can be used to disable this extension completely?"
+            },
+            {
+                "role": "assistant",
+                "content": "Disabling the file extension tab can completely disable this extension."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What unit does GPU sleep and wake temperature use?"
+            },
+            {
+                "role": "assistant",
+                "content": "The setting uses Celsius as the unit for temperature."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is GPU temperature displayed in the terminal when sleeping for temperature checking?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, the GPU core temperature reading from nvidia-smi can be printed to console when generation is paused."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How to use this custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The custom node can be found under the 'utils' submenu. Simply connect it to a node that outputs an image, such as VAE Decode."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended solution for GPU having temperature issues?"
+            },
+            {
+                "role": "assistant",
+                "content": "It is recommended to use software like MSI afterburner to undervolt or further power limit or thermal limit the GPU if it's having temperature issues."
+            }
+        ]
+    }
+]

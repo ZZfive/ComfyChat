@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ControlNet-LLLite-ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "ControlNet-LLLite-ComfyUI is a UI for inference of the experimental implementation ControlNet-LLLite."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I download sample models for ControlNet-LLLite-ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can download sample models from the link provided in the documentation, here: https://huggingface.co/kohya-ss/controlnet-lllite/tree/main."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install ControlNet-LLLite-ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "First, clone this repository to `custom_nodes`, then put ControlNet-LLLite models to `ControlNet-LLLite-ComfyUI/models`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I apply ControlNet-LLLite-ComfyUI to some diffusion steps?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can apply only to some diffusion steps with `steps`, `start_percent`, and `end_percent`. Specify the number of steps specified in the sampler in `steps`, and specify the start and end steps from 0 to 100 in `start_percent` and `end_percent`, respectively."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should I do if the generated image size is different from the control image size?"
+            },
+            {
+                "role": "assistant",
+                "content": "Resize it with `image/upscaling/UpscaleImage` as shown in the workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I create a Canny image from a normal image using ControlNet-LLLite-ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can create a Canny image from a normal image with the `image/preprocessors/Canny` node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which project does ControlNet-LLLite-ComfyUI draw inspiration from?"
+            },
+            {
+                "role": "assistant",
+                "content": "ControlNet-LLLite-ComfyUI is based on [IPAdapter-ComfyUI](https://github.com/laksjdjf/IPAdapter-ComfyUI) by laksjdjf."
+            }
+        ]
+    }
+]

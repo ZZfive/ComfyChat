@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Prediction is a fully customizable Classifier Free Guidance for ComfyUI that allows users to create custom prediction rules and workflows."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install ComfyUI-Prediction by cloning the repository into the 'ComfyUI/custom_nodes' directory or using ComfyUI-Manager."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I change the color of the edges in ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, you can apply a patch, colorPalette.js.patch, to 'ComfyUI/web/extensions/core/colorPalette.js' to change the color of the edges."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I use the custom nodes provided by ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use custom nodes, go to 'Add Node > sampling > prediction'. An example workflow is provided in 'examples/avoid_and_erase.json'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the steps to create fully custom prediction with ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "1. Use the 'sampling > prediction > Sample Predictions' node as your sampler. 2. The 'sampler' input comes from 'sampling > custom_sampling > samplers'. 3. The 'sigmas' input comes from 'sampling > custom_sampling > schedulers'. 4. Chain 'conditioning > CLIP Text Encode (Prompt)' to 'sampling > prediction > Conditioned Prediction' to get started. 5. Connect the result to the 'noise_prediction' input of your 'Sample Predictions' node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What nodes are available in ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Prediction includes Primitive Nodes, Convenience Nodes, and Prebuilt Nodes. Primitive Nodes allow all other predictions to be implemented in terms of these nodes. Convenience Nodes and Prebuilt Nodes provide specific predictions like 'Avoid and Erase Prediction' and 'Perp-Neg Prediction'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the limitations of ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "ControlNet is not supported at this time. Regional prompting may work but is untested. Any other advanced features affecting conditioning are not likely to work."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the license for ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "The license for ComfyUI-Prediction is the same as ComfyUI, GPL 3.0."
+            }
+        ]
+    }
+]

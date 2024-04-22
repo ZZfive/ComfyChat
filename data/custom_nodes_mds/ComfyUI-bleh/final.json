@@ -1,0 +1,146 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the primary purpose of the ComfyUI-Manager extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-Manager extension is a nodes collection for ComfyUI that aims to improve workflows and generate better images and videos using GUI-based tools."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the BlehInsaneChainSampler node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BlehInsaneChainSampler node allows for more convenient switching between samplers during sampling. It works by allowing users to set different samplers for different steps, such as using `heunpp2` for the first five steps and `euler_ancestral` for the next five, followed by `dpmpp_2m` for the remaining steps."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What issue does the BlehForceSeedSampler node address?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BlehForceSeedSampler node ensures that a global RNG seed gets set even when `add_noise` is turned off within the sampler. This addresses the issue of getting different generations every time with samplers like `euler_a` when `add_noise` is disabled."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the BlehDeepShrink node differ from the built-in Deep Shrink node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Compared to the built-in Deep Shrink node, the BlehDeepShrink node allows users to enter a comma-separated list of blocks to apply the downscale effect to and includes a `start_fadeout_percent` input for fading out the downscale over a specified range. Additionally, it expands the options for upscale, and downscale types and adds antialiasing for `bicubic` and `bilinear` modes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the BlehModelPatchConditional node apply model patches conditionally?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BlehModelPatchConditional node takes a `default` model and a `matched` model. When the interval or start/end percentage match, the `matched` model will apply, otherwise the `default` one will. This can be used to apply something like HyperTile, Self Attention Guidance, or other arbitrary model patches conditionally."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between the BlehHyperTile and the built-in HyperTile node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BlehHyperTile node, based on the Inspire node pack, adds the ability to set a seed and timestep range that HyperTile gets applied for. Additionally, it allows setting an interval for HyperTile steps, similar to the BlehInsaneChainSampler node. It is, however, not well tested."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What node was added on 20240218 in ComfyUI-bleh?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BlehForceSeedSampler node was added on 20240218 in ComfyUI-bleh."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What node was added on 20240216 in ComfyUI-bleh, and where can I find its usage and description?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BlehModelPatchConditional node was added on 20240216 in ComfyUI-bleh. You can find its usage and description in the README file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What node was added on 20240208 in ComfyUI-bleh that could impact TAESD decoding performance?"
+            },
+            {
+                "role": "assistant",
+                "content": "On 20240208, the BlehInsaneChainSampler node was added in ComfyUI-bleh. It allows running previews on a specific device and skipping TAESD upscale layers for increased TAESD decoding performance."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What node was added on 20240202 in ComfyUI-bleh?"
+            },
+            {
+                "role": "assistant",
+                "content": "On 20240202, the BlehDiscardPenultimateSigma node was added in ComfyUI-bleh."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What new node was added on 20240201 in ComfyUI-bleh, and what new features were added to it?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BlehDeepShrink node was added on 20240201 in ComfyUI-bleh. New features include additional upscale/downscale methods and the ability to set a higher downscale factor and enable antialiasing for certain modes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What changes were made to the TAESD previewer in ComfyUI-bleh on 20240128?"
+            },
+            {
+                "role": "assistant",
+                "content": "The TAESD previewer had its CUDA-specific stuff removed as the performance gains were marginal but it majorly affected VRAM usage. Heuristics for batch preview layout were hopefully improved, and a `maxed_batch_step_mode` setting was added. The fixed reversed HyperTile default start/end step values, and it was allowed to only apply HyperTile at a step interval."
+            }
+        ]
+    }
+]

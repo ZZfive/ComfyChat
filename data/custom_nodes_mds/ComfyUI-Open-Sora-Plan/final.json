@@ -1,0 +1,470 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the Open-Sora-Plan and when was it launched?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Open-Sora-Plan is aimed at reproducing OpenAI's Sora through an open-source framework, which enables training of video generation models, including Unconditioned Video Generation, Class Video Generation, and Text-to-Video Generation. It was launched in March 2024."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the improvements in Open-Sora-Plan v1.0.0 compared to previous video generation models?"
+            },
+            {
+                "role": "assistant",
+                "content": "Open-Sora-Plan v1.0.0 has several improvements, including efficient training and inference with CausalVideoVAE, joint image-video training for better quality, and open-source release of the code, model, and data to facilitate future development in the community."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is CausalVideoVAE and its role in Open-Sora-Plan v1.0.0?"
+            },
+            {
+                "role": "assistant",
+                "content": "CausalVideoVAE is a spatial-temporal compression applied to the videos by 4×8×8, which enables efficient training and inference in Open-Sora-Plan v1.0.0. It considers the first frame as an image, allowing for the simultaneous encoding of both images and videos in a natural manner, improving visual quality."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the Data Construction process in Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Data Construction process in Open-Sora-Plan involves defining a high-quality video dataset based on two core principles - no content-unrelated watermarks and high-quality and dense captions. The resulting dataset consists of diverse video clips of various resolutions and durations, which are then used to train and evaluate the performance of the model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the next release preview for Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "The next release preview for Open-Sora-Plan includes an enhanced version of CausalVideoVAE that minimizes motion blurring and the gridding effect. This preview version is under development and will be released in the next update."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the future plans for the Training Diffusion Model?"
+            },
+            {
+                "role": "assistant",
+                "content": "The future plans for the Training Diffusion Model include training support for dynamic resolution and duration, support for longer video generation, and enhanced conditional control to provide users with more options and control over the generated videos."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What type of autoencoder is VQVAE?"
+            },
+            {
+                "role": "assistant",
+                "content": "VQVAE is a Vector Quantized Variational AutoEncoders (VQ-VAE) which uses a discrete latent representation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How to initialize a VQVAE model with ComfyUI Open Sora Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can initialize a VQVAE model using the `VideoGPTVQVAE` class, which is a part of the `opensora.models.ae` module."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How to train a VQVAE model with ComfyUI Open Sora Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can train the VQVAE model using the `train_videogpt.sh` script. This script will train the model using the parameters specified in the script."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How to load pretrained VQVAE models?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can load a pretrained VQVAE model using the `download_and_load_model` method or the `load_from_checkpoint` method."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the `encode` method used for in VQVAE?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'encode' method is used to encode a video and return the encodings and embeddings of the video."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How to reconstruct a video from its encodings in VQVAE?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can reconstruct a video from its encodings by using the decode method."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How to test the VQVAE model?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can test the VQVAE model by reconstructing a video. The `examples/rec_video.py` script provides an example of how to do this."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Open-Sora-Plan is a refiner for video caption that transforms short caption annotations into longer and detailed ones, including background scene, object attributes, and object-level spatial relationship descriptions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What extra requirements are needed for installation?"
+            },
+            {
+                "role": "assistant",
+                "content": "For installation, you need openai == 0.28.0, jsonlines == 4.0.0, nltk == 3.8.1, and you need to download the weight of SPHINX to the ./ckpt/ folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I run the refining instruction for ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can run the refining instruction by using the command `python demo_for_refiner.py --root_path $path_to_repo$ --api_key $openai_api_key$`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the expected output of the refining process?"
+            },
+            {
+                "role": "assistant",
+                "content": "The refining process takes a short original caption and produces a refined version with added detailed descriptions of the background scene, object attributes, and object-level spatial relationships."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the status of adding GPT-3.5-Turbo for caption summarization?"
+            },
+            {
+                "role": "assistant",
+                "content": "Adding GPT-3.5-Turbo for caption summarization is currently in progress and is marked as ⌛ [WIP]."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the status of adding LLAVA-1.6?"
+            },
+            {
+                "role": "assistant",
+                "content": "Adding LLAVA-1.6 is currently in progress and is marked as ⌛ [WIP]."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Are there any plans to add more descriptions to the refining process?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, there are plans to add more descriptions, and it is marked as ⌛ [WIP]."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the steps to follow before submitting a Pull Request (PR) to the Open-Sora Plan open-source community?"
+            },
+            {
+                "role": "assistant",
+                "content": "Before submitting a PR, contributors should: 1. Check the Open-Sora Plan GitHub to avoid duplicating existing work; 2. Fork the Open-Sora Plan repository and clone it to their local machine; 3. Add the original Open-Sora Plan repository as a remote to sync with the latest updates; 4. Sync the code from the main repository to their local machine and push it back to their forked remote repository; 5. Create a meaningful branch in their forked repository for their changes; 6. Adhere to the Commit Message Format while making modifications and committing changes; 7. Push their changes to their GitHub repository; 8. Finally, submit a pull request to 'Open-Sora-Plan:main' on the GitHub repository page."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the required format for commit messages in the Open-Sora Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "Commit messages in the Open-Sora Plan must include both `<type>` and `<summary>` sections. The format is: [optional scope]: [type]: <summary>. The type can be one of docs, feat, fix, or refactor. The summary should briefly describe the changes, and the description should be in English, without ending with a period."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can contributors avoid duplicating their Pull Request in the Open-Sora Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "Contributors should start by checking the Open-Sora Plan GitHub to see if there are any open or closed pull requests related to their intended submission, which helps to avoid duplicating existing work."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I evaluate the generated videos quality using ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can calculate video quality metrics such as CLIP-SCORE, FVD, SSIM, LPIPS, and PSNR using ComfyUI-Open-Sora-Plan."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What environment setup is required to use ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "You need to install Pytorch (torch>=1.7.1), CLIP, clip-score from PyPi, lpips, scipy (scipy==1.7.3/1.9.3), numpy, pillow, torchvision>=0.8.2, ftfy, regex, and tqdm."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I download the FVD pre-trained model required to calculate FVD?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can manually download 'i3d_torchscript.pt' from [here](https://www.dropbox.com/s/ge9e5ujwgetktms/i3d_torchscript.pt), or 'i3d_pretrained_400.pt' from [here](https://onedrive.live.com/download?cid=78EEF3EB6AE7DBCB&resid=78EEF3EB6AE7DBCB%21199&authkey=AApKdFHPXzWLNyI)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the image and text file input specifications for clip_score?"
+            },
+            {
+                "role": "assistant",
+                "content": "All images should be in a single directory and can be in .png or .jpg format. Text data should be in plain text files in a separate directory, with the .txt extension. The number of image and text files should be equal, and they should be paired by file name."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the data input specifications for fvd, psnr, ssim, lpips?"
+            },
+            {
+                "role": "assistant",
+                "content": "Generated and real image files should be stored in separate directories, each having .mp4 files. The images should be paired by file name. For example, if there's a cat.mp4 in the generated image directory, there should be a corresponding cat.mp4 in the real image directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I calculate CLIP-SCORE using ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "You need to change the file path and set frame_num, resolution etc. Then, navigate to the eval directory and run: 'bash script/cal_clip_score.sh'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I calculate FVD using ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "After setting up the environment and file paths, navigate to the eval directory and run: 'bash script/cal_fvd.sh'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I calculate PSNR using ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "After setting up the environment and file paths, navigate to the eval directory and run: 'bash script/cal_psnr.sh'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I calculate SSIM using ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "After setting up the environment and file paths, navigate to the eval directory and run: 'bash script/cal_ssim.sh'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I calculate LPIPS using ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "After setting up the environment and file paths, navigate to the eval directory and run: 'bash script/cal_lpips.sh'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "From which codebase does ComfyUI-Open-Sora-Plan's evaluation codebase derive?"
+            },
+            {
+                "role": "assistant",
+                "content": "The evaluation codebase for ComfyUI-Open-Sora-Plan refers to [clip-score](https://github.com/Taited/clip-score) and [common_metrics](https://github.com/JunyaoHu/common_metrics_on_video_quality)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What type of datasets does the ComfyUI-Open-Sora-Plan introduce?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-Open-Sora-Plan introduces un-condition datasets, such as sky_timelapse."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I access the information about the sky_timelapse dataset?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can access information about the sky_timelapse dataset by referring to the open-sora-Dataset on GitHub."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the structure of the sky_timelapse dataset?"
+            },
+            {
+                "role": "assistant",
+                "content": "The sky_timelapse dataset consists of folders named 'sky_test', 'sky_train', and a few python scripts for testing and video folders."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I use UCF101 dataset with ComfyUI-Open-Sora-Plan? If yes, how can I download it?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, you can use the UCF101 dataset with ComfyUI-Open-Sora-Plan. To download the UCF-101 dataset, visit the provided link on the CRCV website."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is there any offline feature extraction feature available in ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "The documentation mention 'Offline feature extraction' is coming soon, so there might be limitations on this feature currently."
+            }
+        ]
+    }
+]

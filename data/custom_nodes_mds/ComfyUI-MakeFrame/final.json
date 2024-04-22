@@ -1,0 +1,50 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the primary purpose of the 'BreakFrames' feature?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'BreakFrames' feature breaks any animation file that OpenCV will process into individual frames."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'GetKeyFrames' function do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'GetKeyFrames' function processes scene detection on all given frames, rank-orders them, and returns the top N results. It also returns labeled images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the 'MakeGrid' feature handle large images?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'MakeGrid' feature creates potentially massive images by plotting given images on a grid. It uses a method for concurrent frame generation and ensures images are resized to be evenly divisible for the calculated number of rows, columns, and 8 to prevent 'resize wobble'. Empty cells are padded with repeats of the last image, as black space can frustrate image generation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'BreakGrid' feature used for?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'BreakGrid' feature is used to break given image grids back into individual images. It is recommended to use the output from the 'MakeGrid' feature's rows/columns calculation."
+            }
+        ]
+    }
+]

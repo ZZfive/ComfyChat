@@ -1,0 +1,122 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-APISR?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-APISR is an unofficial implementation of the APISR model for ComfyUI, which is a GUI that uses a stable diffusion model to generate images and videos"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is APISR and what is its purpose?"
+            },
+            {
+                "role": "assistant",
+                "content": "APISR is a super-resolution model specifically designed for anime, it includes both 2x and 4x models for image upscaling. The model is known for its speed and good results"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the features of the APISR ModelLoader node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The APISR ModelLoader node supports two official models: [2x_APISR_RRDB_GAN_generator](https://huggingface.co/camenduru/APISR/resolve/main/2x_APISR_RRDB_GAN_generator.pth?download=true) and [4x_APISR_GRL_GAN_generator](https://huggingface.co/camenduru/APISR/resolve/main/4x_APISR_GRL_GAN_generator.pth?download=true), and requires manual download and placement in the `/ComfyUI/models/apisr` directory"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the differences between the 'APISR' and 'APISR Lterative' nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'APISR' node is for batch processing and is suitable for videos with a large number of frames, but requires high GPU memory. The 'APISR Lterative' node is for processing one frame at a time, is suitable for low GPU memory, and requires the use of ComfyUI's Split Image with Alpha node if Alpha channel removal is needed"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install ComfyUI-APISR?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can use the ComfyUI Manager for easy installation, or manually install by navigating to the custom_nodes directory, cloning the repository, changing into the appropriate directory, installing requirements, and then restarting ComfyUI"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What workflows are available for APISR?"
+            },
+            {
+                "role": "assistant",
+                "content": "There are two workflows available: one for batch processing and the other for iterative processing. Both are suitable for images and videos, and the files can be found in the APISR WORKFLOWS directory on the project's GitHub page"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the supported versions and their features?"
+            },
+            {
+                "role": "assistant",
+                "content": "V1.1 added support for CPU generation, while V1.0 supports both image and video upscaling, offering two modes - Batch for high GPU memory and Lterative for low GPU memory"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I contribute to the ComfyUI-APISR project?"
+            },
+            {
+                "role": "assistant",
+                "content": "There is no specific information on contribution mentioned in the document. However, you can generally contribute to open-source projects like this by forking the repository, making your changes, and then submitting a pull request"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the source of the APISR model used in ComfyUI-APISR?"
+            },
+            {
+                "role": "assistant",
+                "content": "The APISR model used in ComfyUI-APISR is taken from Kiteretsu77's [APISR](https://github.com/Kiteretsu77/APISR)"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I view the star history of the ComfyUI-APISR project?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can view the star history by clicking on the Star History Chart link provided in the document"
+            }
+        ]
+    }
+]

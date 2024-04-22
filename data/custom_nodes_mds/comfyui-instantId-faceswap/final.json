@@ -1,0 +1,218 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is comfyui-instantId-faceswap?"
+            },
+            {
+                "role": "assistant",
+                "content": "comfyui-instantId-faceswap is an implementation of faceswap based on InstantID for ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What model does comfyui-instantId-faceswap work with?"
+            },
+            {
+                "role": "assistant",
+                "content": "comfyui-instantId-faceswap works ONLY with SDXL checkpoints."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Faceswap LCM Lora custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Faceswap LCM Lora custom node provides the option for users to input the path to their LCM lora inside the folder with Loras."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the pipeline be loaded and set up in comfyui-instantId-faceswap?"
+            },
+            {
+                "role": "assistant",
+                "content": "The pipeline can be loaded and set up using the Faceswap setup node in comfyui-instantId-faceswap."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Faceswap face embed node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Faceswap face embed node prepares face embeds for the generation, which can be chained to improve results."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Faceswap generate node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Faceswap generate node generates a new face from an input Image based on an input mask."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the functionality of the workflow script in comfyui-instantId-faceswap?"
+            },
+            {
+                "role": "assistant",
+                "content": "The workflow script in comfyui-instantId-faceswap generates workflows based on the images in a specific folder and automatically creates appropriate nodes and connects them."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can the facilitator diagram be used as an example in comfyui-instantId-faceswap?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, you can use the facilitator diagram as an example in comfyui-instantId-faceswap."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the workflow_script_generator.py in comfyui-instantId-faceswap?"
+            },
+            {
+                "role": "assistant",
+                "content": "The workflow_script_generator.py in comfyui-instantId-faceswap is a script that can generate workflows based on the face images contained in a specific folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the rotation mechanism for the face in the Faceswap generate node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The rotation mechanism for the face in the Faceswap generate node is designed to rotate the image to keep the face straight before processing and rotate it back afterward."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does comfyui-instantId-faceswap use VAE upcasting to float32?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, comfyui-instantId-faceswap uses VAE upcasting to float32 by default."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the range of mask_strength in comfyui-instantId-faceswap?"
+            },
+            {
+                "role": "assistant",
+                "content": "The range of mask_strength in comfyui-instantId-faceswap is from 0.00 to 1.00."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can ComfyUI be run with gates for fp16-vae to save memory?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI can be run with gates for fp16-vae to save memory by using the --fp16-vae argument."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the manual offload mechanism in comfyui-instantId-faceswap?"
+            },
+            {
+                "role": "assistant",
+                "content": "The manual offload mechanism in comfyui-instantId-faceswap is used to save GPU memory by moving significant amounts of memory from VRAM to RAM to prevent running out of memory during generation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was the issue with the erange_min and erange_max parameters in comfyui-instantId-faceswap?"
+            },
+            {
+                "role": "assistant",
+                "content": "The issue with the erange_min and erange_max parameters in comfyui-instantId-faceswap was that they were erroneously being overwritten by min and index values in some conditions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was the purpose of the `img2img` parameter in comfyui-instantId-faceswap?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `img2img` parameter in comfyui-instantId-faceswap was intended to control the layer that indicates whether adaptive guidance is being used."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was fixed in version 0.0.5 of comfyui-instantId-faceswap?"
+            },
+            {
+                "role": "assistant",
+                "content": "In version 0.0.5 of comfyui-instantId-faceswap, the `mask_strength` parameter is fixed to function correctly and the `ip_adapter_scale` parameter is also fixed if you were using xformers."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What changes were made in version 0.0.4 of comfyui-instantId-faceswap?"
+            },
+            {
+                "role": "assistant",
+                "content": "In version 0.0.4 of comfyui-instantId-faceswap, the `resize` and `resize_to` options are merged into just `resize` and a manual offload mechanism was added to save GPU memory."
+            }
+        ]
+    }
+]

@@ -1,0 +1,146 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does ComfyUI-InstantID differ from other extensions?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-InstantID differs from other extensions as it doesn't use *diffusers* but instead implements InstantID natively and it fully integrates with ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What important updates were made to ComfyUI-InstantID in February 2024?"
+            },
+            {
+                "role": "assistant",
+                "content": "Two important updates made to ComfyUI-InstantID in February 2024 include noise injection in the negative embeds and the refactoring of nodes for easier use, which is a breaking update and previous workflows won't work anymore."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the InstantID advanced node offer?"
+            },
+            {
+                "role": "assistant",
+                "content": "The InstantID advanced node allows for setting the weights for the instantID models and controlnet separately, and it includes a noise injection option which can be helpful for finetuning."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is required to use InstantID with ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use InstantID with ComfyUI, you need to upgrade ComfyUI to the latest version, download or `git clone` this repository into the `ComfyUI/custom_nodes/` directory, add `insightface`, `onnxruntime` and `onnxruntime-gpu` to your libraries, download the main model, and place it into the `ComfyUI/models/instantid` directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the resolution recommended to avoid watermarks when using InstantID?"
+            },
+            {
+                "role": "assistant",
+                "content": "A resolution of **1016×1016** is recommended when using InstantID to avoid watermarks in your generations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does a Multi-ID support in InstantID allow for?"
+            },
+            {
+                "role": "assistant",
+                "content": "Multi-ID support in InstantID allows generating images with an influence from multiple identities or concepts."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the default noise injection rate in the Apply InstantID node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The default noise injection rate in the Apply InstantID node is 35%."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the ComfyUI-InstantID Advanced Node handle noise injection?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Advanced InstantID node includes a noise injection option which can be adjusted for fine-tuning purposes and helps in reducing the 'burn' effect."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the influence of the instantID model on the composition?"
+            },
+            {
+                "role": "assistant",
+                "content": "The instantID model influences the composition of about 25%, the rest being the controlnet."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the community's checkpoint that works best with ComfyUI-InstantID?"
+            },
+            {
+                "role": "assistant",
+                "content": "The community's checkpoints that work best with ComfyUI-InstantID are not specified in the document."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the resolution used in the instantid_basic_workflow example?"
+            },
+            {
+                "role": "assistant",
+                "content": "The resolution in the instantid_basic_workflow example is not specified in the document."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is ComfyUI-InstantID compatible with any specific version of SD?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-InstantID is currently only compatible with SDXL."
+            }
+        ]
+    }
+]
