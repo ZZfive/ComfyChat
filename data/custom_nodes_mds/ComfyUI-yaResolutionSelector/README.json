@@ -1,0 +1,42 @@
+[
+    {
+        "subject": "ComfyUI-yaResolutionSelector",
+        "question": "What is ComfyUI-yaResolutionSelector?",
+        "answer": "ComfyUI-yaResolutionSelector is a slightly different Resolution Selector node that allows for changing the base resolution and aspect ratio freely, with options to maintain the pixel count or use the base resolution as the highest or lowest dimension."
+    },
+    {
+        "subject": "ComfyUI-yaResolutionSelector",
+        "question": "How is the ComfyUI-yaResolutionSelector installed?",
+        "answer": "Installation involves unpacking a downloaded zip file or cloning a repository into the ComfyUI `custom_nodes` directory."
+    },
+    {
+        "subject": "ComfyUI-yaResolutionSelector",
+        "question": "How is the ComfyUI-yaResolutionSelector uninstalled?",
+        "answer": "To uninstall, one needs to delete the `ComfyUI-yaResolutionSelector` folder in the ComfyUI custom_nodes directory."
+    },
+    {
+        "subject": "ComfyUI-yaResolutionSelector",
+        "question": "What are the methods to use the ComfyUI-yaResolutionSelector after installation?",
+        "answer": "Users can either right click on the `Empty Latent Image` and choose `Prepend yaResolution Selector`, or they can find new nodes in the `utils` menu."
+    },
+    {
+        "subject": "ComfyUI-yaResolutionSelector (Advanced)",
+        "question": "What does the 'base_resolution' parameter in the Advanced node do?",
+        "answer": "The 'base_resolution' parameter should match the base resolution of the model being used, for example 512 for SD1.5 models and 1024 for SDXL models."
+    },
+    {
+        "subject": "ComfyUI-yaResolutionSelector (Advanced)",
+        "question": "What does the 'Overextend' feature do?",
+        "answer": "The 'Overextend' feature, when turned on, outputs larger dimensions than the base resolution, such as 512x1024 with a 2:1 ratio and a base resolution of 512. This can be beneficial when using models that can generate good images at sizes larger than their base resolution."
+    },
+    {
+        "subject": "ComfyUI-yaResolutionSelector (Advanced)",
+        "question": "What does the 'constant_resolution' option do?",
+        "answer": "The 'constant_resolution' option attempts to output dimensions with the same pixel count as a 1:1 image generated with the base resolution. This can be useful when using SDXL models or with an image rescale node, especially when you know the maximum resolution your GPU can handle."
+    },
+    {
+        "subject": "ComfyUI-yaResolutionSelector (Basic)",
+        "question": "How can additional aspect ratio presets be added to the Basic version?",
+        "answer": "Additional aspect ratio presets can be added by modifying the nodes.py file, where values should always be included in width:height format."
+    }
+]

@@ -1,0 +1,54 @@
+{
+    "data": [
+        {
+            "question": "What does ComfyUI-JaRue do?",
+            "answer": "ComfyUI-JaRue takes a YouTube Video ID and pulls a transcript (if available) from the YouTube server and delivers it in a format you can link to AnimatedDiff or any other ComfyUI batch prompt animation.",
+            "subject": "ComfyUI-JaRue"
+        },
+        {
+            "question": "How can I find the video_id for a YouTube video?",
+            "answer": "You can find the video_id on any YouTube video by visiting the page and extracting it from the url.",
+            "subject": "ComfyUI-JaRue"
+        },
+        {
+            "question": "What is the purpose of the fps parameter in ComfyUI-JaRue?",
+            "answer": "The fps parameter allows you to reduce a higher-framed YouTube transcript down to 10fps which is more friendly for batch animations in ComfyUI. You will see the frame counts return based on your fps setting.",
+            "subject": "ComfyUI-JaRue"
+        },
+        {
+            "question": "How does the begin parameter work in ComfyUI-JaRue?",
+            "answer": "If you want to start reading the transcript later in the timeline, you can enter a starting frame with the begin parameter, and the frame counts will adjust. However, the begin frame will always start at the beginning of the YouTube video, not at your last begin point.",
+            "subject": "ComfyUI-JaRue"
+        },
+        {
+            "question": "What is the purpose of the cache parameter in ComfyUI-JaRue?",
+            "answer": "Enabling the cache parameter helps avoid spamming YouTube. Disabling cache and pressing queue will delete the prior cache and force the tool to ask YouTube for the transcripts again.",
+            "subject": "ComfyUI-JaRue"
+        },
+        {
+            "question": "What library do I need to have installed for ComfyUI-JaRue?",
+            "answer": "You need the YouTube Transcript API Library installed. You can find it here: https://pypi.org/project/youtube-transcript-api/",
+            "subject": "ComfyUI-JaRue"
+        },
+        {
+            "question": "How can I fix the library not found error in ComfyUI?",
+            "answer": "To fix the library not found error, you need to manually copy the api library you installed from your python library into your ComfyUI custom_nodes directory.",
+            "subject": "ComfyUI-JaRue"
+        },
+        {
+            "question": "Is there a Text2Image tool included with ComfyUI-JaRue?",
+            "answer": "Yes, there is a Text2Image tool included with this library, so you can superimpose the captions on top of the video, but the code to tie it all together is still being worked on.",
+            "subject": "ComfyUI-JaRue"
+        },
+        {
+            "question": "How can I temporarily disable the jru_text2image.py file in ComfyUI-JaRue?",
+            "answer": "You can remove the jru_text2image.py file from the __init__.py by commenting out the line and rebooting ComfyUI so you can use the YouTube tool.",
+            "subject": "ComfyUI-JaRue"
+        },
+        {
+            "question": "Where can I find a tutorial for ComfyUI-JaRue?",
+            "answer": "A video tutorial for ComfyUI-JaRue is available here: https://youtu.be/Si4mwBQuzYQ?si=X306LyKT5NgDvP7a",
+            "subject": "ComfyUI-JaRue"
+        }
+    ]
+}

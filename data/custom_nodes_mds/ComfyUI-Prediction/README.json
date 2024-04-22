@@ -1,0 +1,44 @@
+{
+    "question_answer_pairs": [
+        {
+            "category": "ComfyUI-Prediction",
+            "question": "What is ComfyUI-Prediction?",
+            "answer": "ComfyUI-Prediction is a fully customizable Classifier Free Guidance for ComfyUI that allows users to create custom prediction rules and workflows."
+        },
+        {
+            "category": "ComfyUI-Prediction",
+            "question": "How can I install ComfyUI-Prediction?",
+            "answer": "You can install ComfyUI-Prediction by cloning the repository into the 'ComfyUI/custom_nodes' directory or using ComfyUI-Manager."
+        },
+        {
+            "category": "ComfyUI-Prediction",
+            "question": "Can I change the color of the edges in ComfyUI-Prediction?",
+            "answer": "Yes, you can apply a patch, colorPalette.js.patch, to 'ComfyUI/web/extensions/core/colorPalette.js' to change the color of the edges."
+        },
+        {
+            "category": "ComfyUI-Prediction",
+            "question": "How do I use the custom nodes provided by ComfyUI-Prediction?",
+            "answer": "To use custom nodes, go to 'Add Node > sampling > prediction'. An example workflow is provided in 'examples/avoid_and_erase.json'."
+        },
+        {
+            "category": "ComfyUI-Prediction",
+            "question": "What are the steps to create fully custom prediction with ComfyUI-Prediction?",
+            "answer": "1. Use the 'sampling > prediction > Sample Predictions' node as your sampler. 2. The 'sampler' input comes from 'sampling > custom_sampling > samplers'. 3. The 'sigmas' input comes from 'sampling > custom_sampling > schedulers'. 4. Chain 'conditioning > CLIP Text Encode (Prompt)' to 'sampling > prediction > Conditioned Prediction' to get started. 5. Connect the result to the 'noise_prediction' input of your 'Sample Predictions' node."
+        },
+        {
+            "category": "ComfyUI-Prediction",
+            "question": "What nodes are available in ComfyUI-Prediction?",
+            "answer": "ComfyUI-Prediction includes Primitive Nodes, Convenience Nodes, and Prebuilt Nodes. Primitive Nodes allow all other predictions to be implemented in terms of these nodes. Convenience Nodes and Prebuilt Nodes provide specific predictions like 'Avoid and Erase Prediction' and 'Perp-Neg Prediction'."
+        },
+        {
+            "category": "ComfyUI-Prediction",
+            "question": "What are the limitations of ComfyUI-Prediction?",
+            "answer": "ControlNet is not supported at this time. Regional prompting may work but is untested. Any other advanced features affecting conditioning are not likely to work."
+        },
+        {
+            "category": "ComfyUI-Prediction",
+            "question": "What is the license for ComfyUI-Prediction?",
+            "answer": "The license for ComfyUI-Prediction is the same as ComfyUI, GPL 3.0."
+        }
+    ]
+}

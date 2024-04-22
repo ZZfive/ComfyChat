@@ -1,0 +1,33 @@
+{
+    "subject": "LCMSampler-ComfyUI",
+    "questions": [
+        {
+            "question": "What is the purpose of the LCMSampler-ComfyUI extension node?",
+            "answer": "The LCMSampler-ComfyUI extension node is designed to use the LCMized LoRA of the [SSD-1B-anime](https://huggingface.co/furusu/SSD-1B-anime) model for generating images."
+        },
+        {
+            "question": "Is the performance of LCMSampler-ComfyUI guaranteed in the original LCM?",
+            "answer": "No, the performance of LCMSampler-ComfyUI in the original LCM is not guaranteed, and the current version cannot load weights."
+        },
+        {
+            "question": "What is the recommended method to use the LCMSampler-ComfyUI?",
+            "answer": "To use LCMSampler-ComfyUI, one should use a custom sampler-compatible loader instead of the usual KSampler. The sampler should be loaded from 'sampling/custom_sampling/Load SamplerLCM'."
+        },
+        {
+            "question": "How is TAESD used with LCMSampler-ComfyUI?",
+            "answer": "TAESD is used as a decoder and can be loaded using 'loader/Load TAESD'. It is expected to function similarly to a VAE. If there is not enough VRAM, users should decrease the max_batch_size."
+        },
+        {
+            "question": "What resources are needed to be downloaded for LCMSampler-ComfyUI?",
+            "answer": "To use LCMSampler-ComfyUI, users need to download a model checkpoint and two LoRA files from the provided links in the workflow description."
+        },
+        {
+            "question": "Where can the source code for Latent Consistency Model (LCM) be found?",
+            "answer": "The source code for Latent Consistency Model (LCM) can be found at https://github.com/luosiallen/latent-consistency-model."
+        },
+        {
+            "question": "Which other extension is LCMSampler-ComfyUI based on?",
+            "answer": "LCMSampler-ComfyUI is based on the ComfyUI-OtherVAEs extension, which can be found at https://github.com/M1kep/ComfyUI-OtherVAEs."
+        }
+    ]
+}

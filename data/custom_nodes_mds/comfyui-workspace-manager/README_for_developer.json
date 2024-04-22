@@ -1,0 +1,27 @@
+[
+    {
+        "subject": "ComfyUI-Workspace-Manager",
+        "question": "How can I clean up indexdb if it's in a bad state?",
+        "answer": "To clean up indexdb, make sure you have .json files under `ComfyUI/comfyui-workspace-manager/db`. Follow these steps: press F12 -> Application -> IndexedDB -> delete current indexdb. Additionally, delete the WORKSPACE_INDEXDB_BACKFILL key in localstorage to back up your indexdb data."
+    },
+    {
+        "subject": "ComfyUI-Workspace-Manager",
+        "question": "How do I recover data like version history and gallery image data?",
+        "answer": "If you want to recover this data, after deleting your indexdb, go to F12 -> Application -> Local Storage -> delete WORKSPACE_INDEXDB_BACKFILL key in localstorage."
+    },
+    {
+        "subject": "ComfyUI-Workspace-Manager",
+        "question": "How do I install custom git hooks in ComfyUI-Workspace-Manager?",
+        "answer": "To install custom git hooks, run the command `cd ui && npm run setupGithooks` when you're starting the project for the first time."
+    },
+    {
+        "subject": "ComfyUI-Workspace-Manager",
+        "question": "What is included in the current hooks?",
+        "answer": "The current hooks automatically add additional .gitignore logic to ignore the \"/dist\" folder when switching to a non-main/beta branch."
+    },
+    {
+        "subject": "ComfyUI-Workspace-Manager",
+        "question": "How do I use Hot Module Replacement in ComfyUI-Workspace-Manager?",
+        "answer": "To use Hot Module Replacement, run `npm run dev` to start the project. If the dist directory exists, delete it or keep it empty. Add code to ComfyUI/web/index.html that includes a script tag for @vite/client, and another for your workspace's main script file. These should be sourced from 'http://localhost:5173'. Also, add code for @react-refresh and the Vite client."
+    }
+]

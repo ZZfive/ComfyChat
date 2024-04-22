@@ -1,0 +1,64 @@
+{
+    "questions": [
+        {
+            "subject": "ComfyUI-VideoHelperSuite",
+            "question": "What is the ComfyUI-VideoHelperSuite and what nodes are included for video workflows?",
+            "answer": "ComfyUI-VideoHelperSuite is a plugin for ComfyUI that extends its functionality with a set of nodes related to video workflows. These nodes include Load Video, Load Image Sequence, Video Combine, Load Audio, Split Batch, Merge Batch, Select Every Nth, Get Count, and Duplicate Batch."
+        },
+        {
+            "subject": "Load Video",
+            "question": "What are the input options for the Load Video node?",
+            "answer": "The input options for the Load Video node are video, force_rate, force_size, frame_load_cap, skip_first_frames, and select_every_nth."
+        },
+        {
+            "subject": "Load Video - Force Size",
+            "question": "What does the force_size option in the Load Video node allow you to do?",
+            "answer": "The force_size option in the Load Video node allows you to quickly resize the input video to a number of suggested sizes. It provides several options to set only width or height and determine the other from aspect ratio."
+        },
+        {
+            "subject": "Load Video - Frame Load Cap",
+            "question": "What does the frame_load_cap option in the Load Video node control?",
+            "answer": "The frame_load_cap option in the Load Video node controls the maximum number of frames that will be returned, which can also be thought of as the maximum batch size."
+        },
+        {
+            "subject": "Load Image Sequence",
+            "question": "What are the similarities between the options for the Load Video and Load Image Sequence nodes?",
+            "answer": "The Load Image Sequence node has options similar to Load Video, including image_load_cap, skip_first_images, and select_every_nth."
+        },
+        {
+            "subject": "Video Combine",
+            "question": "What does the Video Combine node do?",
+            "answer": "The Video Combine node combines a series of images into an output video. If optional audio input is provided, it will also be combined into the output video."
+        },
+        {
+            "subject": "Video Combine - Frame Rate",
+            "question": "What does the frame_rate option in the Video Combine node affect?",
+            "answer": "The frame_rate option in the Video Combine node affects how many input frames are displayed per second, which influences the playback speed and duration of the output video."
+        },
+        {
+            "subject": "Video Combine - CRF",
+            "question": "What does the CRF option in the Video Combine node control regarding the output video quality and file size?",
+            "answer": "The CRF option in the Video Combine node controls the quality of the output video. A lower number provides a higher quality video with a larger file size, while a higher number results in a lower quality video and a smaller size."
+        },
+        {
+            "subject": "Load Audio",
+            "question": "What does the Load Audio node provide?",
+            "answer": "The Load Audio node provides a way to load standalone audio files."
+        },
+        {
+            "subject": "Advanced Previews",
+            "question": "What are the benefits of enabling Advanced Previews in ComfyUI-VideoHelperSuite?",
+            "answer": "The benefits of enabling Advanced Previews in ComfyUI-VideoHelperSuite are that video previews will reflect the settings on Load Video nodes, it reduces bandwidth usage if the server is run remotely, it can improve browser performance by downsizing videos to the in-UI resolution, and it allows for previews of videos that aren't normally playable in a web browser."
+        },
+        {
+            "subject": "Video Formats",
+            "question": "How can new output types be added to the Video Combine node in ComfyUI-VideoHelperSuite?",
+            "answer": "New output types can be added to the Video Combine node in ComfyUI-VideoHelperSuite by adding JSON files to the video_formats folders. These files provide arguments that are passed to ffmpeg, which are used to configure the video and audio encoding options and the file extension."
+        },
+        {
+            "subject": "Format Widgets",
+            "question": "How are format widgets used in the ComfyUI-VideoHelperSuite plugin?",
+            "answer": "Format widgets are used to expose fields in the webui as a widget, allowing for user input and configuration. They consist of a list of up to three terms, including the name of the widget, either a primitive or a list of string options, and a dictionary of options."
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+[
+    {
+        "subject": "ComfyUI-Minio",
+        "question": "What is the primary functionality of the ComfyUI-Minio extension?",
+        "answer": "The ComfyUI-Minio extension enables reading and saving images from and to Minio, facilitating expansion and connection across multiple machines."
+    },
+    {
+        "subject": "Set Minio Config",
+        "question": "What is the purpose of the 'Set Minio Config' node?",
+        "answer": "The 'Set Minio Config' node initializes the Minio settings and is mandatory before utilizing the other nodes of the ComfyUI-Minio extension."
+    },
+    {
+        "subject": "Load Image From Minio",
+        "question": "How does the 'Load Image From Minio' node function?",
+        "answer": "The 'Load Image From Minio' node retrieves images from Minio after setting up the Minio Config."
+    },
+    {
+        "subject": "Save Image To Minio",
+        "question": "What is the function of the 'Save Image To Minio' node?",
+        "answer": "The 'Save Image To Minio' node stores images in Minio post configuring the Minio via the 'Set Minio Config' node and supports multiple image saves."
+    },
+    {
+        "subject": "Dependencies",
+        "question": "What dependencies are required for the ComfyUI-Minio extension?",
+        "answer": "The ComfyUI-Minio extension requires the installation of the minio Python SDK. The command to install is 'pip install -r requirements.txt'."
+    },
+    {
+        "subject": "Initialization",
+        "question": "What are the initialization steps to use the ComfyUI-Minio extension?",
+        "answer": "To initialize, add the 'Set Minio Config' node, input your Minio configuration details, run the plugin. If the Minio setup is correct and the connection is successful, a 'minio_config.json' file will be generated in the 'output' directory of ComfyUI."
+    },
+    {
+        "subject": "Visualization",
+        "question": "How can JSON information be visualized while using ComfyUI-Minio?",
+        "answer": "To view JSON information, install the [Comfyui-Toolbox](https://github.com/zcfrank1st/Comfyui-Toolbox) plugin."
+    },
+    {
+        "subject": "Workflow",
+        "question": "What is the typical workflow when using the ComfyUI-Minio extension?",
+        "answer": "The workflow includes initializing via the 'Set Minio Config' node, setting up the Minio configuration, running the node, and checking 'minio_config.json'. Once configured, the 'Load Image From Minio' and 'Save Image To Minio' nodes can be used."
+    }
+]

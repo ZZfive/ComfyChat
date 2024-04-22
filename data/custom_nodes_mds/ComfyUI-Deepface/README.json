@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What are the requirements to use the ComfyUI-Deepface nodes?",
+        "answer": "To install the required dependencies, run `pip install -r requirements.txt`."
+    },
+    {
+        "question": "What are the two nodes included in the ComfyUI-Deepface library?",
+        "answer": "The two nodes are Deepface Extract Faces and Deepface Verify."
+    },
+    {
+        "question": "What does the Deepface Verify node do?",
+        "answer": "The Deepface Verify node given a set of input images and a set of reference (face) images, only outputs the input images with an average distance to the faces in the reference images less than or equal to a specified threshold. The output images are sorted by average distance to the reference image faces (nearest first)."
+    },
+    {
+        "question": "What additional measures does the Deepface Verify node provide alongside the average distance?",
+        "answer": "In addition to distance, the node provides the ratio of reference images that each input image was verified to be a face match of, according to the default distance threshold of the model selected."
+    },
+    {
+        "question": "What does the output of the Deepface Verify node consist of?",
+        "answer": "The output of the Deepface Verify node consists of 'verified_images', 'verified_image_distances', 'verified_image_verified_ratios', 'rejected_images', 'rejected_image_distances', and 'rejected_image_verified_ratios'."
+    },
+    {
+        "question": "Can any individual output of the Deepface Verify node be 'None' and why?",
+        "answer": "Yes, any individual output may be 'None' if there are no input images matching the criteria."
+    },
+    {
+        "question": "Which project's nodes can be used to display the output distances?",
+        "answer": "Nodes from [was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui) and [pythongosssss](https://github.com/pythongosssss/ComfyUI-Custom-Scripts) can be used to display the output distances."
+    }
+]

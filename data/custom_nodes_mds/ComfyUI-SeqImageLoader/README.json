@@ -1,0 +1,40 @@
+{
+    "questions_and_answers": [
+        {
+            "question": "What is ComfyUI-SeqImageLoader?",
+            "answer": "ComfyUI-SeqImageLoader is a simple JavaScript library that uses the WebCodecs API to break down videos into individual frames, currently supporting only mp4 files."
+        },
+        {
+            "question": "Is ComfyUI-SeqImageLoader compatible with all video formats?",
+            "answer": "No, ComfyUI-SeqImageLoader currently only supports mp4 files."
+        },
+        {
+            "question": "Where can I check browser support for WebCodecs API?",
+            "answer": "You can check browser support for WebCodecs API at https://caniuse.com/webcodecs."
+        },
+        {
+            "question": "Who receives credit for the code in ComfyUI-SeqImageLoader?",
+            "answer": "The code in ComfyUI-SeqImageLoader is based on the official WebCodecs demos and the mp4box.js library."
+        },
+        {
+            "question": "How do I use the `getVideoFrames` function in ComfyUI-SeqImageLoader?",
+            "answer": "To use `getVideoFrames`, you need to provide a video URL as input. If you have a file or a blob instead, you can create a URL using the `URL.createObjectURL` method."
+        },
+        {
+            "question": "What methods does the `onFrame` callback receive in ComfyUI-SeqImageLoader?",
+            "answer": "The `onFrame` callback receives a VideoFrame object, which you can draw onto a canvas using the `ctx.drawImage` function."
+        },
+        {
+            "question": "What happens when the `onFinish` method is called in ComfyUI-SeqImageLoader?",
+            "answer": "The `onFinish` method logs that the process has finished, and it also logs the total number of frames that were processed."
+        },
+        {
+            "question": "What is the purpose of the `onConfig` method in ComfyUI-SeqImageLoader?",
+            "answer": "The `onConfig` method is used to set the width and height of the canvas to match the dimensions of the video being processed."
+        },
+        {
+            "question": "What do I need to do to prevent a memory leak in ComfyUI-SeqImageLoader?",
+            "answer": "You can prevent memory leaks by revoking the URL created for the file using the `URL.revokeObjectURL` method after you have finished processing the video."
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "q_and_a": [
+        {
+            "subject": "SD-Advanced-Noise",
+            "question": "What are some noise-related repos for ComfyUI?",
+            "answer": "ComfyUI_Noise, noise_latent_perlinpinpin, comfy-plasma, and WAS node suite."
+        },
+        {
+            "subject": "SD-Advanced-Noise",
+            "question": "What happened when the author played around with the stable diffusion VAE?",
+            "answer": "They noticed that the latent space behaves mostly linearly, and they figured it should be possible to generate latent noise directly by mapping out the per channel limits and giving the whole thing an offset."
+        },
+        {
+            "subject": "SD-Advanced-Noise",
+            "question": "What represents the changes in the RGB channels in the latent space?",
+            "answer": "A change in the RGB channels creates a (mostly?) linear change in the 4 latent channels (called A/B/C/D)."
+        },
+        {
+            "subject": "SD-Advanced-Noise",
+            "question": "What is the next step to improve the linear_encoder in SD-Advanced-Noise?",
+            "answer": "The next step would be to plot at a higher precision and fit them onto a polynomial."
+        },
+        {
+            "subject": "SD-Advanced-Noise",
+            "question": "What are the limitations of the decoders in this repo compared to TAESD?",
+            "answer": "The decoders in this repo are a proof of concept tier at best, while TAESD is better in every way."
+        }
+    ]
+}

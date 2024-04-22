@@ -1,0 +1,32 @@
+{
+    "questions_answers": [
+        {
+            "question": "How do I install comfyui-easyapi-nodes?",
+            "answer": "You can install comfyui-easyapi-nodes by using ComfyUI-Manager or by cloning the GitHub repository and installing the requirements. For the latter option, you would need to execute the following commands in the terminal: ```sh cd custom_nodes git clone https://github.com/lldacing/comfyui-easyapi-nodes.git cd comfyui-easyapi-nodes pip install -r requirements.txt ```"
+        },
+        {
+            "question": "How do I upgrade comfyui-easyapi-nodes?",
+            "answer": "To upgrade comfyui-easyapi-nodes, open the command line terminal in the ComfyUI installation directory, navigate to the comfyui-easyapi-nodes folder, and execute the following command: ```sh git pull ```"
+        },
+        {
+            "question": "What nodes are included in comfyui-easyapi-nodes?",
+            "answer": "The nodes included in comfyui-easyapi-nodes are: LoadImageFromURL, LoadMaskFromURL, Base64ToImage, Base64ToMask, ImageToBase64Advanced, ImageToBase64, MaskToBase64Image, MaskImageToBase64, LoadImageToBase64, SamAutoMaskSEGS, InsightFaceBBOXDetect, ColorPicker, IntToNumber, StringToList, IntToList, ListMerge, JoinList, ShowString, ShowInt, ShowFloat, ShowNumber."
+        },
+        {
+            "question": "What is the feature of the LoadImageFromURL node?",
+            "answer": "LoadImageFromURL is a node that loads images from a network address, where each line represents one image."
+        },
+        {
+            "question": "How does the SamAutoMaskSEGS node function?",
+            "answer": "The SamAutoMaskSEGS node generates all semantic segmentations of an image in COCO or uncompress_rle format. It works in conjunction with the SAMLoader or SAMModelLoader nodes from ComfyUI-Impact-Pack or comfyui_segment_anything."
+        },
+        {
+            "question": "How can I use base64 formats with comfyui-easyapi-nodes?",
+            "answer": "Base64 images and masks are output nodes in comfyui-easyapi-nodes, and their data is included in websocket messages with the 'base64Images' and 'base64Type' properties. However, using base64 formats may cause interface lagging or bandwidth bottlenecks, and the document advises uploading images to an OSS server and using LoadImageFromURL to load the image URL for better performance. Though, you would need to write a custom node for uploading to OSS as it is not supported."
+        },
+        {
+            "question": "What are the menu extensions in comfyui-easyapi-nodes?",
+            "answer": "The menu extensions in comfyui-easyapi-nodes include: Save as / Copy Api, Copy EasyAi as / Copy EasyAi, Settings -> [EasyApi] Maximum History Size, Settings -> [EasyApi] Auto Open Sub Menu, Settings -> [EasyApi] Fuzzy Search, Node Context Menu -> Set ID, Canvas Context Menu -> Reset All ID, and Node Context Menu -> Link Node."
+        }
+    ]
+}

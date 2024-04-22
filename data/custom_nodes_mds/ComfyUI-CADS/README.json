@@ -1,0 +1,54 @@
+{
+    "data": [
+        {
+            "subject": "ComfyUI-CADS",
+            "question": "What is ComfyUI-CADS?",
+            "answer": "ComfyUI-CADS is an experimental implementation of the CADS algorithm for ComfyUI. It is an attempt to introduce control and adaptive diversity scaling into the image and video generation process."
+        },
+        {
+            "subject": "ComfyUI-CADS",
+            "question": "What should you do to enable CADS in ComfyUI?",
+            "answer": "You need to apply the CADS node to a model and set `noise_scale` to a value greater than 0.0."
+        },
+        {
+            "subject": "ComfyUI-CADS",
+            "question": "Does the CADS node remove existing UNet wrapper functions?",
+            "answer": "No, the CADS node attempts to preserve existing UNet wrapper functions. However, it should be applied after other nodes that set a UNet wrapper function."
+        },
+        {
+            "subject": "ComfyUI-CADS",
+            "question": "How does the noise added by CADS scale over time?",
+            "answer": "The noise scales down over time. After `t2`, the scaling decreases until `t1`, after which no noise is added, and the unnoised prompt is used. The diffusion process runs backwards from 1 to 0."
+        },
+        {
+            "subject": "ComfyUI-CADS",
+            "question": "What are `start_step` and `total_steps` for?",
+            "answer": "`start_step` and `total_steps` are optional parameters that affect how the noise scaling schedule is calculated. If `start_step` is greater or equal to `total_steps`, the algorithm uses the sampler's timestep value."
+        },
+        {
+            "subject": "ComfyUI-CADS",
+            "question": "What is the `rescale` parameter for?",
+            "answer": "The `rescale` parameter applies optional normalization to the noised conditioning. It's disabled at 0."
+        },
+        {
+            "subject": "ComfyUI-CADS",
+            "question": "Where can you add the noise with CADS?",
+            "answer": "You can add the noise selectively with the `apply_to` parameter. The `key` parameter selects where the noise is added."
+        },
+        {
+            "subject": "ComfyUI-CADS",
+            "question": "What was a previous issue with the noise application?",
+            "answer": "Previously, noise was applied to cross attention, but it now applies by default to the regular conditioning `y`. To restore the old behavior, use the `key` parameter."
+        },
+        {
+            "subject": "ComfyUI-CADS",
+            "question": "Do the developers have full understanding of the math behind the algorithm?",
+            "answer": "The developers admit they are not 100% clear on the math involved, which might result in potential inaccuracies in the algorithm's implementation."
+        },
+        {
+            "subject": "ComfyUI-CADS",
+            "question": "What is the source of inspiration for ComfyUI-CADS?",
+            "answer": "The source of inspiration for ComfyUI-CADS is the A1111 implementation. The A1111 implementation was used as a reference for the creation of ComfyUI-CADS."
+        }
+    ]
+}

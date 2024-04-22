@@ -1,0 +1,52 @@
+{
+    "question_and_answer_pairs": [
+        {
+            "question": "What is ComfyUI-J?",
+            "answer": "ComfyUI-J is a set of custom nodes developed by Jannchie for ComfyUI. These nodes are based on Diffusers, which simplifies the import of models, the application of prompts with weights, inpainting, reference only, and controlnet."
+        },
+        {
+            "question": "How can I install ComfyUI-J?",
+            "answer": "To install ComfyUI-J, you need to navigate to the `custom_nodes` directory and run `git clone https://github.com/Jannchie/ComfyUI-J` followed by `cd ComfyUI-J` and `pip install -r requirements.txt`."
+        },
+        {
+            "question": "What is the main difference between ComfyUI-J nodes and Comfy's KSampler nodes?",
+            "answer": "ComfyUI-J nodes are based on Diffusers and are designed to simplify the import of models, the application of prompts with weights, inpainting, reference only, and controlnet. They require fewer nodes to achieve the same results compared to KSampler nodes."
+        },
+        {
+            "question": "What is the default workflow for Jannchie's Diffusers Pipeline?",
+            "answer": "The default workflow for Jannchie's Diffusers Pipeline only requires dealing with 4 nodes compared to the 7 nodes typically used in Comfy's default workflow."
+        },
+        {
+            "question": "How does the Reference Only feature in ComfyUI-J work?",
+            "answer": "The Reference Only feature in ComfyUI-J supports two modes: attn and attn + adain, and has a style fidelity parameter that can be adjusted to control the style."
+        },
+        {
+            "question": "How does ControlNet work with ComfyUI-J?",
+            "answer": "ComfyUI-J provides a DiffusersControlnetLoader node for loading models. This node automatically detects whether the corresponding ControlNet is available locally and pulls the model from HuggingFace if not."
+        },
+        {
+            "question": "How can I perform inpainting with ComfyUI-J?",
+            "answer": "ComfyUI-J includes an inpainting feature in its diffusers pipeline custom node. There is an example provided in the documentation showing how this can be done."
+        },
+        {
+            "question": "How can I remove something from an image with ComfyUI-J?",
+            "answer": "ComfyUI-J's diffusers pipeline custom node includes a feature for removing something from an image. An example is provided in the documentation demonstrating this."
+        },
+        {
+            "question": "How can I change clothes on a character with ComfyUI-J?",
+            "answer": "Changing clothes requires a composite application of diffusers pipeline custom node features, including reference only, controlnet, inpainting, and textual inversion. A demonstration of a workflow for properly dressing a character is provided in the documentation."
+        },
+        {
+            "question": "Why was Diffusers chosen for ComfyUI-J instead of the default ComfyUI nodes?",
+            "answer": "Diffusers was chosen for ComfyUI-J because it has a large ecosystem, a clearer code structure, and a simpler interface. The features in Comfy's default nodes are incomplete or hard to access, while Diffusers provides a pipeline wrapper that makes generation easier."
+        },
+        {
+            "question": "Why was ComfyUI chosen for ComfyUI-J?",
+            "answer": "ComfyUI was chosen for ComfyUI-J because it is good at combining and sharing combinations with others. Despite the difficulty of debugging custom nodes as a developer, using ComfyUI makes it faster to verify and share results."
+        },
+        {
+            "question": "What is planned for future updates to ComfyUI-J?",
+            "answer": "Future updates to ComfyUI-J may include LoRA support and Stable Diffusion XL support, as indicated in the TODO list."
+        }
+    ]
+}

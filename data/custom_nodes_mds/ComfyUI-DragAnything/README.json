@@ -1,0 +1,39 @@
+{
+    "questions": [
+        {
+            "subject": "Stable Diffusion",
+            "question": "What is Stable Diffusion?",
+            "answer": "Stable Diffusion is a text-to-image model that can create stunning art within seconds. It is a breakthrough in speed and quality that can run on consumer GPUs. It builds upon the work of the team at CompVis and Runway in their widely used latent diffusion model combined with insights from conditional diffusion models by Katherine Crowson, Dall-E 2 by Open AI, Imagen by Google Brain, and others."
+        },
+        {
+            "subject": "Stable Diffusion",
+            "question": "How does Stable Diffusion differ from Latent Diffusion?",
+            "answer": "Stable Diffusion has the same architecture as Latent Diffusion but uses a frozen CLIP Text Encoder instead of training the text encoder jointly with the diffusion model."
+        },
+        {
+            "subject": "Stable Diffusion",
+            "question": "What are some examples of tasks that can be performed using Stable Diffusion?",
+            "answer": "Tasks include Text-to-Image Generation, Image-to-Image Text-Guided Generation, and Text-Guided Image Inpainting."
+        },
+        {
+            "subject": "Stable Diffusion",
+            "question": "How can one download and use the Stable Diffusion model weights without being logged into the Hugging Face Hub?",
+            "answer": "One can download the model weights using a single Python line. Alternatively, the weights can be downloaded to a local path and the local path can be passed to `from_pretrained` to use the weights."
+        },
+        {
+            "subject": "Stable Diffusion",
+            "question": "How can one use the Stable Diffusion model for Text-to-Image with the DDIM scheduler?",
+            "answer": "One can use the DDIMScheduler from CompVis/stable-diffusion-v1-4, and then use StableDiffusionPipeline.from_pretrained passing the scheduler=scheduler to the model."
+        },
+        {
+            "subject": "Stable Diffusion",
+            "question": "How can one use the Stable Diffusion model for Text-to-Image with the K-LMS scheduler?",
+            "answer": "One can use LMSDiscreteScheduler from CompVis/stable-diffusion-v1-4, and then use StableDiffusionPipeline.from_pretrained passing the scheduler=lms to the model."
+        },
+        {
+            "subject": "Stable Diffusion",
+            "question": "What is CycleDiffusion and how does it relate to Stable Diffusion?",
+            "answer": "CycleDiffusion is a diffusion model that uses Stable Diffusion and DDIM scheduler. It allows for image transformation by a specified strength and guidance scale."
+        }
+    ]
+}

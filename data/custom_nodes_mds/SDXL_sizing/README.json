@@ -1,0 +1,12 @@
+{
+    "q1": "What does the SDXL_sizing node do in ComfyUI?",
+    "a1": "The SDXL_sizing node is a custom node for ComfyUI that helps in calculating appropriate image dimension settings for the SDXL model. It provides a simple interface to input the image dimensions, aspect ratio, and original resolution and outputs the correct generation dimensions for the SDXL model. It also calculates and outputs the width and height of the image after scaling to the training dimensions and the width and height of the empty latent generator.",
+    "q2": "What are the inputs and outputs of the SDXL_sizing node?",
+    "a2": "The SDXL_sizing node has three main inputs: 'native_res' for the native resolution, 'aspect' for the aspect ratio, and 'original_res' for the original resolution. The output includes the generation dimensions in an appropriate bucketed resolution, width and height conditioning inputs representing a hypothetical 'original' image in the training data, and the 'crop_w' and 'crop_h' conditioning inputs determined by the difference between the model resolution and the upscaled/downscaled training image.",
+    "q3": "How does the SDXL_sizing node handle cropping?",
+    "a3": "The SDXL_sizing node determines the amount of cropping along one dimension by the difference between the scaled image and the training dimensions, taking it from the left edge and the top edge only. It offers an optional extra cropping with '_cropping_extra_' if desired.",
+    "q4": "What are the advanced features of the SDXL_sizing node?",
+    "a4": "The SDXL_sizing node has advanced features such as 'extra_crop' for adding extra to the crop_w and crop_h, 'downscale_effect' for adjusting the downscale output, 'verbose' for enabling reporting on the outputs in the console, 'fit_aspect_to_bucket' for adjusting the aspect ratio after determining the bucketed resolution, and 'strict_bucketing' for matching the gen size to one of the bucketed training resolutions. It also accepts string inputs for additional arguments like '--shortside', '--equivalent', '--nudge w 0.8', '--randomaspect', '--nocrop', '--sharp', '-extrasharp', and '--supersharp'.",
+    "q5": "Can the SDXL_sizing node be used for img2img workflows?",
+    "a5": "Yes, the SDXL_sizing node can be used for img2img workflows. It includes an int/float node that allows setting values for inputs properly and provides some flexibility, such as setting a fixed gen size that overrides the native res setting."
+}

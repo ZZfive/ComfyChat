@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "subject": "ComfyUI-MakeFrame",
+            "question": "What is the primary purpose of the 'BreakFrames' feature?",
+            "answer": "The 'BreakFrames' feature breaks any animation file that OpenCV will process into individual frames."
+        },
+        {
+            "subject": "ComfyUI-MakeFrame",
+            "question": "What does the 'GetKeyFrames' function do?",
+            "answer": "The 'GetKeyFrames' function processes scene detection on all given frames, rank-orders them, and returns the top N results. It also returns labeled images."
+        },
+        {
+            "subject": "ComfyUI-MakeFrame",
+            "question": "How does the 'MakeGrid' feature handle large images?",
+            "answer": "The 'MakeGrid' feature creates potentially massive images by plotting given images on a grid. It uses a method for concurrent frame generation and ensures images are resized to be evenly divisible for the calculated number of rows, columns, and 8 to prevent 'resize wobble'. Empty cells are padded with repeats of the last image, as black space can frustrate image generation."
+        },
+        {
+            "subject": "ComfyUI-MakeFrame",
+            "question": "What is the 'BreakGrid' feature used for?",
+            "answer": "The 'BreakGrid' feature is used to break given image grids back into individual images. It is recommended to use the output from the 'MakeGrid' feature's rows/columns calculation."
+        }
+    ]
+}

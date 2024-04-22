@@ -1,0 +1,34 @@
+{
+    "questions_answers": [
+        {
+            "subject": "CharacterFaceSwap",
+            "question": "What is CharacterFaceSwap used for?",
+            "answer": "CharacterFaceSwap is used for your target character face swap, enhancing character concept in stable diffusion using LoRA and embeddings. It allows users to swap faces with their favorite characters in a realistic and seamless manner. It is suitable for video games, anime, or photorealistic scenarios."
+        },
+        {
+            "subject": "CharacterFaceSwap",
+            "question": "What is the recommended method for installing CharacterFaceSwap?",
+            "answer": "The recommended method for installing CharacterFaceSwap is through [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager). Search for CharacterFaceSwap in the manager and install it. Then, load workflows in `custom_nodes/CharacterFaceSwap/workflows`."
+        },
+        {
+            "subject": "ControlNet",
+            "question": "What is the role of ControlNet in CharacterFaceSwap?",
+            "answer": "ControlNet is used for visual conditioning in CharacterFaceSwap. The ControlNet ip2p model needs to be downloaded and placed in `ComfyUI/models/controlnet`."
+        },
+        {
+            "subject": "CharacterFaceSwap",
+            "question": "How does CharacterFaceSwap work?",
+            "answer": "CharacterFaceSwap works by choosing a checkpoint and LoRA trained for your character, uploading a base image and character face, writing prompts to describe the target face, generating the character face, using webui inpainting to fix seams, and then uploading the inpainting result to achieve a seamless face."
+        },
+        {
+            "subject": "CharacterFaceSwap",
+            "question": "Why is ComfyUI not recommended for inpainting for CharacterFaceSwap?",
+            "answer": "ComfyUI currently has issues with inpainting models. The specific issue is detailed in [this issue](https://github.com/comfyanonymous/ComfyUI/issues/1186). Alternative methods for inpainting should be used until the issue is resolved."
+        },
+        {
+            "subject": "CharacterFaceSwap Installation",
+            "question": "What is the manual installation process for CharacterFaceSwap?",
+            "answer": "The manual installation process involves cloning the CharacterFaceSwap repository located at https://github.com/ArtBot2023/CharacterFaceSwap into the `custom_nodes` directory of your ComfyUI, running the `install.py` script, and loading workflows in `custom_nodes/CharacterFaceSwap/workflows`."
+        }
+    ]
+}

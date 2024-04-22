@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+            "question": "What is the default view in the ComfyUI-Trajectory canvas?",
+            "answer": "The default view in the ComfyUI-Trajectory canvas is initialized to provide two images, where Image A is sent to the canvas node, and a layer on Image B is set as the target for new generations."
+        },
+        {
+            "question": "How can you refine your work in the turbo workflow?",
+            "answer": "In the turbo workflow, you can refine your work by starting with a simple scribble in Image A, and when something you like is generated, CTRL-LeftClick on the duplicate layer button to copy that image and use it as a base drawing. You can then draw and refine your work by successively copying the generated image and drawing on top of it for finer adjustments, gradually reducing the denoising value as you go."
+        },
+        {
+            "question": "What can you do if the image becomes blurry when iterating on previous generations?",
+            "answer": "If the image becomes blurry when iterating on previous generations, you can reactivate the sharpening node for a single generation to get a sharper output to use as a new source image. By default, the sharpening node is set to bypass, taking no time and having no effect."
+        },
+        {
+            "question": "How does the multi canvas with ControlNet work in the ComfyUI-Trajectory workflow?",
+            "answer": "The multi canvas with ControlNet workflow uses the ControlLLite depthmap model. It requires creating another image in the canvas editor with the new image button and setting the title to 'Depth'. There is a canvas node with the title 'Depth', and when an image matches this node's title, the node will be updated directly from that image."
+        },
+        {
+            "question": "What is the purpose of the small sub-unit in the multi canvas with ControlNet workflow?",
+            "answer": "The small sub-unit in the multi canvas with ControlNet workflow is for generating a depth map from an existing image. It sits idle unless you feed it an image and can be useful to refine a manually drawn depthmap by calculating a depthmap from a generated image. Drop a generated image into this subunit to acquire a calculated depthmap."
+        }
+    ]
+}

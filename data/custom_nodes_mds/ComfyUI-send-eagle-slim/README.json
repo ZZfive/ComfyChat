@@ -1,0 +1,32 @@
+[
+    {
+        "subject": "ComfyUI-send-Eagle(slim)",
+        "question": "What is ComfyUI-send-Eagle(slim) and what does it allow you to do?",
+        "answer": "ComfyUI-send-Eagle(slim) is an extension node for ComfyUI that allows you to send generated images in webp format to Eagle running locally. It enables lossy compression (quality settings) and lossless compression."
+    },
+    {
+        "subject": "ComfyUI-send-Eagle(slim)",
+        "question": "How does ComfyUI-send-Eagle(slim) handle image file naming?",
+        "answer": "ComfyUI-send-Eagle(slim) creates a subfolder in the ComfyUI output directory in the 'YYYY-MM-DD' format. The naming rule for image files follows the settings used in AUTOMATIC1111's StableDiffusion webui and is as follows: ./ComfyUI/output/YYYY-MM-DD/YYYYMMDD_HHMMss_SSSSSS-{`FinalImage_width`}-{`FinalImage_height`}.webp."
+    },
+    {
+        "subject": "ComfyUI-send-Eagle(slim)",
+        "question": "What information does ComfyUI-send-Eagle(slim) embed in the generated image file?",
+        "answer": "ComfyUI-send-Eagle(slim) embeds 'prompt' and 'extra_pnginfo' in the webp format exif information. This allows for recreating the node configuration at the time of generation by dropping the image onto ComfyUI."
+    },
+    {
+        "subject": "ComfyUI-send-Eagle(slim)",
+        "question": "What are the limitations of ComfyUI-send-Eagle(slim) when dealing with multiple KSampler or KSamplerAdvanced nodes?",
+        "answer": "ComfyUI-send-Eagle(slim) uses the implicitly numbered node number as the generation criterion node for workflows with multiple KSampler or KSamplerAdvanced nodes. This may not properly identify the purpose of the Sampler node, which could lead to undesired generation prompts."
+    },
+    {
+        "subject": "ComfyUI-send-Eagle(slim)",
+        "question": "How do you install ComfyUI-send-Eagle(slim) in ComfyUI?",
+        "answer": "To install ComfyUI-send-Eagle(slim), navigate to the ComfyUI custom nodes directory and run 'git clone https://github.com/shingo1228/ComfyUI-send-eagle'."
+    },
+    {
+        "subject": "ComfyUI-send-Eagle(slim)",
+        "question": "When was ComfyUI-send-Eagle(slim) first released?",
+        "answer": "ComfyUI-send-Eagle(slim) was initially released on 2023/08/17."
+    }
+]

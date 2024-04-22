@@ -1,0 +1,32 @@
+[
+    {
+        "subject": "ComfyUI-Flowty-CRM",
+        "question": "What is ComfyUI-Flowty-CRM and what does it enable users to do?",
+        "answer": "ComfyUI-Flowty-CRM is a custom node that allows users to use Convolutional Reconstruction Models (CRM) directly from ComfyUI for high-fidelity feed-forward single image-to-3D generative tasks."
+    },
+    {
+        "subject": "ComfyUI-Flowty-CRM",
+        "question": "What improvements does ComfyUI-Flowty-CRM have over the official CRM implementation?",
+        "answer": "ComfyUI-Flowty-CRM has several improvements, including support for CPU generation, removal of xformers requirement, separation of the inference pipeline, automatic input image processing, high-speed and high-quality output formats, integration with ComfyUI's internal attention code, cleaner code with fewer dependencies and less memory usage."
+    },
+    {
+        "subject": "ComfyUI-Flowty-CRM",
+        "question": "How do I install ComfyUI-Flowty-CRM?",
+        "answer": "To install ComfyUI-Flowty-CRM, you need to install ComfyUI first. Then, clone the repository into the custom_nodes folder, install the dependencies, download CRM models, and place them in the appropriate directory. Additionally, you may need to install ComfyUI_essentials to run example workflows."
+    },
+    {
+        "subject": "ComfyUI-Flowty-CRM",
+        "question": "Does ComfyUI-Flowty-CRM support GPU rendering with low VRAM?",
+        "answer": "Yes, ComfyUI-Flowty-CRM has been adapted to run on low VRAM GPUs by separating the inference pipeline into three parts, which allows for flexibility in altering inputs at any step."
+    },
+    {
+        "subject": "ComfyUI-Flowty-CRM",
+        "question": "What special preparations might be required for Windows users with CUDA GPUs to use NVdiffrast with ComfyUI-Flowty-CRM?",
+        "answer": "Windows users with CUDA GPUs might need to set the CUDA_HOME environment variable and follow the windows installation instructions provided by the official documentation of nvdiffrast."
+    },
+    {
+        "subject": "ComfyUI-Flowty-CRM",
+        "question": "What should I do if I encounter the error 'Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu!' while running ComfyUI-Flowty-CRM?",
+        "answer": "If you encounter this error, try restarting ComfyUI and running only the CUDA workflow to ensure that all operations are performed on the GPU."
+    }
+]

@@ -1,0 +1,59 @@
+{
+    "data": [
+        {
+            "subject": "ComfyUI-Manager",
+            "question": "How do I install the comfy_vid2vid node suite?",
+            "answer": "Firstly, install comfyui. Then, run git clone https://github.com/sylym/comfy_vid2vid and download dependencies using 'python -m pip install -r requirements.txt' for portable standalone build."
+        },
+        {
+            "subject": "ComfyUI-Manager",
+            "question": "What is the purpose of LoadImageSequence node?",
+            "answer": "LoadImageSequence node loads image sequence from a folder."
+        },
+        {
+            "subject": "ComfyUI-Manager",
+            "question": "How does LoadImageMaskSequence node work?",
+            "answer": "LoadImageMaskSequence node loads mask sequence from a folder. It uses the channel of the image sequence as mask."
+        },
+        {
+            "subject": "ComfyUI-Manager",
+            "question": "What does VAEEncodeForInpaintSequence node do?",
+            "answer": "VAEEncodeForInpaintSequence node encodes the input image sequence into a latent vector using a Variational Autoencoder (VAE) model. It also adds image mask sequence to latent vector."
+        },
+        {
+            "subject": "comfy_vid2vid",
+            "question": "What is the purpose of the DdimInversionSequence node?",
+            "answer": "DdimInversionSequence node generates a specific noise vector by inverting the input latent vector using the Ddim model. It is usually used to improve the time consistency of the output image sequence."
+        },
+        {
+            "subject": "comfy_vid2vid",
+            "question": "How does SetLatentNoiseSequence node function?",
+            "answer": "SetLatentNoiseSequence node adds noise vector to latent vector."
+        },
+        {
+            "subject": "ComfyUI-Manager",
+            "question": "What does CheckpointLoaderSimpleSequence node do?",
+            "answer": "CheckpointLoaderSimpleSequence node loads the checkpoint model into UNet3DConditionModel. It is usually used to generate a sequence of pictures with time continuity."
+        },
+        {
+            "subject": "comfy_vid2vid",
+            "question": "What is the function of the LoraLoaderSequence node?",
+            "answer": "LoraLoaderSequence node is similar to 'LoraLoader' node, but it operates on UNet3DConditionModel. It is used after the 'CheckpointLoaderSimpleSequence' node and before the 'TrainUnetSequence' node."
+        },
+        {
+            "subject": "comfy_vid2vid",
+            "question": "How does TrainUnetSequence node work?",
+            "answer": "TrainUnetSequence node fine-tunes the incoming model using latent vector and context, and converts the model to inference mode."
+        },
+        {
+            "subject": "comfy_vid2vid",
+            "question": "What does KSamplerSequence node do?",
+            "answer": "KSamplerSequence node has the same function as 'KSampler' node, but it adds support for noise vector and image mask sequence."
+        },
+        {
+            "subject": "comfy_vid2vid",
+            "question": "What are the limits of using UNet3DCoditionModel?",
+            "answer": "UNet3DCoditionModel has high demand for GPU memory. If you encounter out of memory error, try to reduce 'n_sample_frames'. However, 'n_sample_frames' must be greater than or equal to 3."
+        }
+    ]
+}

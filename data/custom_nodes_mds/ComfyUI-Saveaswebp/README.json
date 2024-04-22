@@ -1,0 +1,40 @@
+{
+    "questions": [
+        {
+            "question": "What is the purpose of ComfyUI-Saveaswebp?",
+            "answer": "ComfyUI-Saveaswebp adds a custom node to save a picture as a Webp File and includes a script to drag and drop generated webpfiles into the UI to load the workflow."
+        },
+        {
+            "question": "What are the limitations of Webp files in ComfyUI-Saveaswebp?",
+            "answer": "Webp only supports files up to 16383 x 16383."
+        },
+        {
+            "question": "What happens if import a workflow that has }Prompt:{ in a Node that has dynamic wildcards disabled?",
+            "answer": "The import of Webp files breaks in this case."
+        },
+        {
+            "question": "Can the Node be resized when saving as a Webp file in ComfyUI-Saveaswebp?",
+            "answer": "No, the Node doesn't resize on Save, but the image is in there and needs to be resized to be visible."
+        },
+        {
+            "question": "How does the compression slider work in lossless mode in ComfyUI-Saveaswebp?",
+            "answer": "In lossless mode, the compression slider affects the 'effort' taken to compress where 100 is the smallest possible size and 1 is the biggest possible size. It's a tradeoff for saving speed."
+        },
+        {
+            "question": "How does the compression slider work in lossy mode in ComfyUI-Saveaswebp?",
+            "answer": "In lossy mode, the compression slider values are reversed compared to lossless mode. 100 is the biggest possible size with the least compression, and 1 is the smallest possible size with maximum compression."
+        },
+        {
+            "question": "What is the default setting for the compression and mode in ComfyUI-Saveaswebp?",
+            "answer": "The default setting is lossy mode with a compression of 80."
+        },
+        {
+            "question": "How can I install ComfyUI-Saveaswebp?",
+            "answer": "You can install ComfyUI-Saveaswebp by using git clone https://github.com/Kaharos94/ComfyUI-Saveaswebp in your ComfyUI custom nodes directory."
+        },
+        {
+            "question": "What are some examples of file sizes for different compression settings in ComfyUI-Saveaswebp?",
+            "answer": "For lossless with compression set to 100, the file size is 17069KB. For lossless with compression set to 10, the file size is 17059KB. For lossy with compression set to 100, the file size is 5384 KB. For lossy with compression set to 10, the file size is 174 KB. For lossy with compression set to 80 (default), the file size is 935 KB."
+        }
+    ]
+}
