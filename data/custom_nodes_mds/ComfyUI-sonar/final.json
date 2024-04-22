@@ -1,0 +1,182 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-sonar is an implementation of Sonar sampling (momentum-based sampling) for [ComfyUI](https://github.com/comfyanonymous/ComfyUI). It supports Euler, Euler Ancestral, and DPM++ SDE sampling."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is ComfyUI-sonar suitable for general use?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, it is suitable for general use with the caveat that it's very likely stuff like implementation and inputs to nodes will still be changing fairly frequently."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which sampler configurations does ComfyUI-sonar support?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-sonar currently supports Euler, Euler Ancestral, and DPM++ SDE sampling."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended way to use the ComfyUI-sonar custom sampler?"
+            },
+            {
+                "role": "assistant",
+                "content": "The most flexible way to use ComfyUI-sonar is with a custom sampler: `[SamplerSonarEuler] > [SamplerSonarEuler_ancestral] > [SamplerSonarDPMPPSDE]`. You can also choose `sonar_euler`, `sonar_euler_ancestral` or `sonar_dpmpp_sde` from the normal samplers list but the custom sampler approach and the ancestral version is recommended."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'momentum' parameter of ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'momentum' parameter of ComfyUI-sonar works similar to setting the sign to positive or negative: `1.0` is positive, `-1.0` is negative, and you can also potentially play with fractional values. The default values are considered reasonable, doing stuff like using a negative direction may not produce good results."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can the 'momentum' parameter of ComfyUI-sonar be set below 0.85?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, the 'momentum' parameter can be set below 0.85, but it is strongly recommended not to do so as it may not produce good results or reproduceable generations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the 'SonarGuidanceConfig' node in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'SonarGuidanceConfig' node can be optionally plugged into the Sonar sampler nodes. It allows for more advanced control over the sampling process."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'SonarPowerNoise' node used for?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'SonarPowerNoise' node generates [fractional Brownian motion (fBm) noise](https://en.wikipedia.org/wiki/Fractional_Brownian_motion#Frequency-domain_interpretation). It offers versatility in producing various types of noise including gaussian, pink, 2D brownian noise, and all intermediates."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the improvements made to the NoisyLatentLike node in ComfyUI-Sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The NoisyLatentLike node has been improved to allow calculating strength with sigmas and injecting noise itself."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What new node was added to ComfyUI-Sonar on 20240314?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SonarPowerNoise node was added."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What changes were made to noise generation functions in ComfyUI-Sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The noise generation functions were refactored, which will break seeds."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What node was added for sampler management in ComfyUI-Sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SamplerOverride node was added for sampler management."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What change was made to the 'studentt' noise type in ComfyUI-Sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'studentt' noise type was replaced with 'studentt_test', which is the more correct version."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What new node was added to ComfyUI-Sonar for custom noise?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SonarCustomNoise node was added for custom noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What change was made to existing sampler nodes and NoisyLatentLike nodes in ComfyUI-Sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "These nodes were changed to take an optional SonarCustomNoise."
+            }
+        ]
+    }
+]

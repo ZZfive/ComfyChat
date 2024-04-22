@@ -1,0 +1,74 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-send-Eagle(slim) and what does it allow you to do?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-send-Eagle(slim) is an extension node for ComfyUI that allows you to send generated images in webp format to Eagle running locally. It enables lossy compression (quality settings) and lossless compression."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does ComfyUI-send-Eagle(slim) handle image file naming?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-send-Eagle(slim) creates a subfolder in the ComfyUI output directory in the 'YYYY-MM-DD' format. The naming rule for image files follows the settings used in AUTOMATIC1111's StableDiffusion webui and is as follows: ./ComfyUI/output/YYYY-MM-DD/YYYYMMDD_HHMMss_SSSSSS-{`FinalImage_width`}-{`FinalImage_height`}.webp."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What information does ComfyUI-send-Eagle(slim) embed in the generated image file?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-send-Eagle(slim) embeds 'prompt' and 'extra_pnginfo' in the webp format exif information. This allows for recreating the node configuration at the time of generation by dropping the image onto ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the limitations of ComfyUI-send-Eagle(slim) when dealing with multiple KSampler or KSamplerAdvanced nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-send-Eagle(slim) uses the implicitly numbered node number as the generation criterion node for workflows with multiple KSampler or KSamplerAdvanced nodes. This may not properly identify the purpose of the Sampler node, which could lead to undesired generation prompts."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you install ComfyUI-send-Eagle(slim) in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-send-Eagle(slim), navigate to the ComfyUI custom nodes directory and run 'git clone https://github.com/shingo1228/ComfyUI-send-eagle'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "When was ComfyUI-send-Eagle(slim) first released?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-send-Eagle(slim) was initially released on 2023/08/17."
+            }
+        ]
+    }
+]

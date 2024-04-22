@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-layerdiffuse?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-layerdiffuse is a ComfyUI implementation of the LayerDiffuse model for generating images and videos with customizable extensions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you install ComfyUI-layerdiffuse?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-layerdiffuse, download the repository and unpack it into the custom_nodes folder in the ComfyUI installation directory, or clone via GIT by running the command 'cd custom_nodes && git clone git@github.com:huchenlei/ComfyUI-layerdiffuse.git' in the ComfyUI installation directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be done if there is a version conflict on diffusers while installing ComfyUI-layerdiffuse?"
+            },
+            {
+                "role": "assistant",
+                "content": "In case of version conflict on diffusers due to other extensions that depend on other versions of diffusers, it is recommended to setup separate Python venvs."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the workflows supported by ComfyUI-layerdiffuse?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-layerdiffuse supports various workflows such as generating foreground, blending foreground/background, extracting foreground/background from blended images, and generating foreground from blended/background images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the supported models by ComfyUI-layerdiffuse?"
+            },
+            {
+                "role": "assistant",
+                "content": "Currently, SDXL/SD15 are the supported models by ComfyUI-layerdiffuse, as per https://github.com/layerdiffuse/sd-forge-layerdiffuse#model-notes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you explain the unique features of ComfyUI-layerdiffuse?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-layerdiffuse offers unique features such as generating images with RGBA channels, blending images, extracting foreground/background, and compatibility with various models and workflows for increased customization."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the requirement for decoding RGBA results in ComfyUI-layerdiffuse?"
+            },
+            {
+                "role": "assistant",
+                "content": "For decoding RGBA results in ComfyUI-layerdiffuse, the generation dimension must be a multiple of 64. Otherwise, a decode error may occur."
+            }
+        ]
+    }
+]

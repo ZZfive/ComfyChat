@@ -1,0 +1,146 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What custom nodes are available in the ComfyUI-Hangover-Nodes repository?"
+            },
+            {
+                "role": "assistant",
+                "content": "The custom nodes available in the ComfyUI-Hangover-Nodes repository are: Microsoft kosmos-2 for ComfyUI, Save Image w/o Metadata, Scale an Image To Bounding Box, and Make Inpainting Model for SD1.5."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the functionality of the Save Image w/o Metadata node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Save Image w/o Metadata node allows you to include or exclude the ComfyUI workflow metadata in the saved image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Kosmos-2 node do in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Kosmos-2 node in ComfyUI is an implementation of Microsoft kosmos-2, a text & image to text transformer. It recognizes famous people and written text in the image and outputs text based on the input prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the feature of the Scale an Image To Bounding Box node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Scale an Image To Bounding Box node scales an input image into a given box size while retaining the aspect ratio, and it can also pad the image with an arbitrary color to the full box size."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Make Inpainting Model for SD1.5 node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Make Inpainting Model for SD1.5 node creates an inpainting version of any SD1.5 model on the fly, eliminating the need to have GBs of inpainting models on your drive, which is useful for any kind of inpainting nodes like detailers."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What updates have been made to ComfyUI-Hangover-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The updates to ComfyUI-Hangover-Nodes include: a single button for saving images with or without metadata, the ability to exclude saving the image for a preview only, kosmos-2 outputs a mask indicating recognized elements, and a new node for making an inpainting model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install the custom nodes for ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install the custom nodes for ComfyUI, unzip or git clone the repository into the ComfyUI/custom_nodes folder and restart ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some examples of image generation using kosmos-2?"
+            },
+            {
+                "role": "assistant",
+                "content": "The provided examples include images of a tent and lantern under a beautiful sunset (00049-2467344372.jpg), a man eating a plate of food with a monster eating it out of his mouth (2023-12-05_18-14-17_8435.jpg), a beautiful woman in a medieval dress (2023-12-26-191725_546.jpg), a road sign and traffic sign in the woods (road-sign-3425675009.jpg), and a flyer for the opening of the semester (35_727584-2581741032.jpg)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the workflow for generating a combination of two images look like?"
+            },
+            {
+                "role": "assistant",
+                "content": "The example workflow involves using the ComfyUI-Hangover-Nodes to generate a combination of two images, as shown in the image provided (../img/interr_combine.png)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Image Index node in the batch processing of images from a directory?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Image Index node in ComfyUI-Hangover-Nodes is set to 0 and auto increments during batch processing of images from a directory. It is responsible for keeping track of the image order and activates 'Auto Queue' to process images automatically. When ComfyUI finishes processing, it stops with an error."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can the openpose image be automatically fitted to the output image size?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, the openpose image can be automatically fitted to the output image size using the ComfyUI-Hangover-Nodes, as demonstrated in the example provided (scale_openpose.png)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can inpainting be done perfectly with an appropriate inpainting model?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, perfect inpainting can be achieved with an appropriate inpainting model, as shown in the Make Inpainting Model example (inpaint_model_example.png)."
+            }
+        ]
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the new option introduced in ComfyUI_IPAdapter_plus?"
+            },
+            {
+                "role": "assistant",
+                "content": "The new option 'unfold_batch' provides similar results to the original IPAdapter."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does ComfyUI_IPAdapter_plus handle batches of latents and images?"
+            },
+            {
+                "role": "assistant",
+                "content": "It conditions each image/latent pair with the image and then uses the latent as input to a regular img2img."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the tiled IPAdapter differ from the regular IPAdapter?"
+            },
+            {
+                "role": "assistant",
+                "content": "The tiled IPAdapter creates a new conditioned model for each image in the batch, while the regular IPAdapter creates one conditioned model for the entire batch."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the limitations of the ComfyUI_IPAdapter_plus node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The node relies on the IPAdapter code and shares its limitations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I split and merge images using ComfyUI_IPAdapter_plus?"
+            },
+            {
+                "role": "assistant",
+                "content": "The node can be used in conjunction with the SimpleTile nodes to split and merge images."
+            }
+        ]
+    }
+]

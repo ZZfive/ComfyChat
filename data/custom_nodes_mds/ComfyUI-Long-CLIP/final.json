@@ -1,0 +1,206 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-Long-CLIP?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Long-CLIP provides a ComfyUI implementation for Long-CLIP, enabling the use of the Long-CLIP model in the SeaArtLongClip module."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which model versions does ComfyUI-Long-CLIP support for Long-CLIP replacement?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Long-CLIP supports replacing the clip-l in SD1.5 and provides a process for SDXL models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does replacing the clip in SD1.5 with Long-CLIP affect the model?"
+            },
+            {
+                "role": "assistant",
+                "content": "Replacing the clip in SD1.5 with Long-CLIP increases the token length from 77 to 248, which is expected to improve the quality of the generated images after testing."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is Long-CLIP handled for SDXL models?"
+            },
+            {
+                "role": "assistant",
+                "content": "For SDXL models, the clip-g's clip-long model is not available yet. Therefore, the token length is extended in multiples of the max_len, and any excess pad tokens are trimmed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What can users expect when using Long-CLIP with SDXL?"
+            },
+            {
+                "role": "assistant",
+                "content": "With Long-CLIP in SDXL, users can expect to see more details in the generated images due to the increased emphasis on clip-g's features."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can users download the LongCLIP-L model for ComfyUI-Long-CLIP?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can download the LongCLIP-L model from the provided link on Hugging Face and save it in the models/checkpoints directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users contribute to the development of ComfyUI-Long-CLIP?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can contribute to ComfyUI-Long-CLIP by downloading the repository from the provided Git links, and supporting the project by giving it a thumbs up."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Will ComfyUI-Long-CLIP support Long-CLIP-G in the future?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, once the weights for Long-CLIP-G are released, ComfyUI-Long-CLIP will support this model version."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Long-CLIP used for?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Long-CLIP is used to replace the original clip in ComfyUI for long-term content detection. It expands the token length from 77 to 248, improving the quality of generated images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does SeaArtLongClip module work with SD1.5?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SeaArtLongClip module can be used to replace the original clip in the SD1.5 model, increasing the token length from 77 to 248."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is ComfyUI-Long-CLIP implemented for the SDXL model?"
+            },
+            {
+                "role": "assistant",
+                "content": "For the SDXL model, smaller tokens are expanded by an integer multiple of the original max_len. Since the last added tokens are pad_tokens, the excess part is trimmed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does ComfyUI-Long-CLIP affect the SDXL model?"
+            },
+            {
+                "role": "assistant",
+                "content": "Since the clip-g features occupy a larger proportion in SDXL, the images generated may appear more detailed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is ComfyUI-Long-CLIP installed?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Long-CLIP is installed by cloning the ComfyUI repository and the ComfyUI-Long-CLIP repository into the custom_nodes folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I find the LongCLIP-L model?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LongCLIP-L model can be downloaded from Hugging Face and placed in the models/checkpoints directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Will ComfyUI-Long-CLIP support LongCLIP-G?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, once the LongCLIP-G weights are released, ComfyUI-Long-CLIP will support them."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does ComfyUI-Long-CLIP provide examples?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, ComfyUI-Long-CLIP provides specific examples for SD1.5 and SDXL, and these examples do not require any additional plugin installations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does ComfyUI-Long-CLIP support clip-skip operations?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, ComfyUI-Long-CLIP supports operations such as clip-skip."
+            }
+        ]
+    }
+]

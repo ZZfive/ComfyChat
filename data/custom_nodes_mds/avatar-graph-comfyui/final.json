@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the Segmentation (SAM) node and what does it do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Segmentation (SAM) node is designed to directly select and create multiple image segment outputs from within the ComfyUI interface. It simplifies the process of segmenting images for further processing or manipulation in the workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the `Create Mesh Layer` node used for?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `Create Mesh Layer` node in ComfyUI is used to create a mesh object from a specific segmented part of an entire input image. This node is part of the process of generating 3D assets from 2D images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `Join Meshes` node do within ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `Join Meshes` node in ComfyUI is used to combine multiple created mesh objects into a single mesh object, which simplifies handling and manipulation of complex 3D models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the `Mesh Modify Shape Key` node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `Mesh Modify Shape Key` node in ComfyUI manipulates the vertex or all vertex's transforms, given a specific shape key name and a target vertex_group. This node allows for the modification of shape keys in a 3D model, which can be used for changing facial expressions, poses, or other deformations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `Create Shape Flow` node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `Create Shape Flow` node in ComfyUI generates a runtime shape flow graph. This graph allows for interactive inputs to affect the values of shape keys in real-time, enabling dynamic and interactive changes to 3D models during runtime."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ControlNet Gen (TemplateGen01) in the ComfyUI workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "ControlNet Gen (TemplateGen01) is used for pose constraints in the ComfyUI workflow. It works by placing a normal and openpose image together with reference to other images. This helps control the pose of the character in the generated 3D model, ensuring it matches the specified pose constraints."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the steps to install ComfyUI on Windows?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI on Windows, follow these steps: 1. Download the Python environment from the provided link. 2. Unzip the downloaded file to the ComfyUI directory. 3. Run the `run_cpu_3.10.bat` or `run_nvidia_gpu_3.10.bat` file to initiate ComfyUI. 4. Install the avatar-graph-comfyui from the ComfyUI Manager as instructed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install ComfyUI on macOS/Linux?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI on macOS/Linux, make sure your Python environment is `3.10.x`, then navigate to the ComfyUI directory and perform these actions: 1. Enter `custom_nodes`. 2. Clone the `avatar-graph-comfyui` repository. 3. Move into `avatar-graph-comfyui` and install the requirements.txt file with `pip`. 4. Restart ComfyUI with the --enable-cors-header parameter either as `python main.py --enable-cors-header` or --force-fp16 --enable-cors-header on mac to complete the installation process."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you explain the purpose of the `--enable-cors-header` option when running ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `--enable-cors-header` option is used to enable communication between ComfyUI and the editor used for animating characters (https://editor.avatech.ai). It allows exchanging character data and JSON graph between the two systems. If you choose not to use this option, you can still run ComfyUI and download the .GLB or .GLTF format file for use in other software like Blender."
+            }
+        ]
+    }
+]

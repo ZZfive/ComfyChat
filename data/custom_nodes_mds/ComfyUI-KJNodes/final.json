@@ -1,0 +1,122 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the primary purpose of KJNodes for ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "KJNodes for ComfyUI provides various quality of life and masking-related nodes and scripts by combining the functionality of existing nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you install KJNodes for ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install KJNodes for ComfyUI, you need to clone the repo into the `custom_nodes` folder and then install the dependencies using `pip install -r requirements.txt`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the browserstatus.js script do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The browserstatus.js script sets the favicon to green when idle, red during processing, and shows progress percentage and queue length. It may conflict with other scripts affecting the page title and can be disabled by deleting the file until options are added."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Set and Get nodes in KJNodes for ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Set and Get nodes are JavaScript nodes to set and get constants to reduce unnecessary lines. They take in and return anything and are purely visual nodes. They might still be buggy, especially when loading workflows with missing nodes, so use them with caution."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the ColorToMask node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ColorToMask node converts an RGB color value into a mask, works with batches, and AnimateDiff."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the primary function of the ConditioningMultiCombine node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ConditioningMultiCombine node combines any number of conditions, saving space."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the ConditioningSetMaskAndCombine node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ConditioningSetMaskAndCombine node masks and combines two sets of conditions, saving space."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the main function of the GrowMaskWithBlur node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The GrowMaskWithBlur node grows or shrinks a mask and inverts the input, returning the mask and inverted mask. It also blurs the mask, which is a slow operation, especially with large batches."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the CreateFadeMask node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The CreateFadeMask node creates a batch of single-color images by interpolating between white/black levels, useful to control mask strengths or QR code controlnet input weight when combined with MaskComposite node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the current status of the CreateAudioMask node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The CreateAudioMask node is a work in progress and currently creates a sphere that's size is synced with audio input."
+            }
+        ]
+    }
+]

@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What nodes are included in ComfyUI_hus_utils?"
+            },
+            {
+                "role": "assistant",
+                "content": "The nodes included in ComfyUI_hus_utils are Fetch widget value, 3way Prompt Styler, Text Hash, Date Time Format, Batch State, and Debug Extra."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Fetch widget value node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Fetch widget value node retrieves the value of a widget named _widget_name_ from a node named _node_name_. If 'multiple' is 'no', it uses the first matching node, and if it is 'yes', it returns all as a concatenated string separated by a comma."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 3way Prompt Styler node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 3way Prompt Styler node loads prompt styles from a 'styles.csv' file in the source directory of this node. Each line in the file has four columns: _style name_, _prompt G_, _prompt L_ and _negative prompt_, which are used to adjust the respective inputs in the node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Text Hash node return?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Text Hash node returns the first _length_ characters of the sha256 digest of the provided input."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Date Time Format node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Date Time Format node returns the current date and/or time in a format defined by the '_format_' parameter, using the strftime function."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Batch State node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Batch State node checks whether the state of the workflow (inputs and linking) has changed. It has three features: '_changed_' returns 1 if a change is detected, 0 otherwise, '_hash_' returns a hash of the current state, and '_count_' counts up every time the state is unchanged and resets to 0 on change."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Debug Extra node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Debug Extra node exposes some of the internal workings to aid in developing custom nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is an example of a workflow based on ComfyUI_hus_utils?"
+            },
+            {
+                "role": "assistant",
+                "content": "An example workflow based on ComfyUI_hus_utils is provided in the documentation, which creates filename prefixes as _prompt hash_-_prompt style_-_seed_-_model name_-_base {sampler, scheduler, steps, cfg}_-_refiner {sampler, scheduler, steps, cfg}_, and generates seeds in a fixed sequence that restarts every time any input is changed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some dependencies of ComfyUI_hus_utils?"
+            },
+            {
+                "role": "assistant",
+                "content": "Dependencies of ComfyUI_hus_utils include nodes from WAS Node Suite, ComfyUI-Custom-Scripts, tinyterraNodes, and possibly others."
+            }
+        ]
+    }
+]

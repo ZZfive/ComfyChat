@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI_Cutoff and how does it enhance the ComfyUI experience?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_Cutoff is an implementation of cutoff in the form of 3 nodes for ComfyUI, a GUI utilizing stable diffusion models to generate images and videos. It helps users limit the effect certain attributes have on specified subsets of the prompt, ensuring that each descriptor affects only the intended part of the image, enhancing the control and specificity users have over image generation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the Cutoff BasePrompt node in ComfyUI_Cutoff?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Cutoff BasePrompt node takes the full original prompt as input."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What inputs are required for the Cutoff Set Region node in ComfyUI_Cutoff?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Cutoff Set Region node requires region_text, target_text, and weight as inputs. region_text defines the set of tokens that the target words should affect, which should be a part of the original prompt. target_text is a space-separated list of words to be masked off, and weight specifies how far to travel in the direction of the isolated vector."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the Cutoff Regions To Conditioning node in ComfyUI_Cutoff?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Cutoff Regions To Conditioning node converts the base prompt and regions into an actual conditioning to be used in the rest of ComfyUI, allowing the user to control the effect of specific attributes in the generated image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is ComfyUI_Cutoff compatible with SDXL?"
+            },
+            {
+                "role": "assistant",
+                "content": "The nodes won't throw any errors when used with SDXL, but the author found it not working that well with at least SDXL 0.9."
+            }
+        ]
+    }
+]

@@ -1,0 +1,134 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-TCD-scheduler custom node repository?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose is to implement Zheng et al.'s Trajectory Consistency Distillation based on the tcd project."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which nodes does the custom node repository add?"
+            },
+            {
+                "role": "assistant",
+                "content": "It adds TCDScheduler, SamplerTCD Euler A, and SamplerTCD nodes to the Custom Sampler category."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you start using the custom nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can start using them by cloning the repository into your custom_nodes folder and restarting ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is SamplerTCD fully functional?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, SamplerTCD is a work in progress (WIP) and currently only operates as DDIM with no gamma parameter."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is recommended to use instead of SamplerTCD?"
+            },
+            {
+                "role": "assistant",
+                "content": "It is recommended to use SamplerTCD Euler A for the time being."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the special parameter of LCMScheduler and what does it control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The special parameter is 'gamma', which controls the stochasticity in every step."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the gamma parameter represent when set to 0 and 1?"
+            },
+            {
+                "role": "assistant",
+                "content": "When gamma is set to 0, it represents deterministic sampling, and when set to 1, it indicates full stochastic sampling."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the default value of the gamma parameter?"
+            },
+            {
+                "role": "assistant",
+                "content": "The default value is 0.3."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is recommended when increasing the number of inference steps?"
+            },
+            {
+                "role": "assistant",
+                "content": "It is recommended to use a higher value for the gamma parameter when increasing the number of inference steps."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Who helped with converting from sigmas to timestep and SamplerTCDEulerA?"
+            },
+            {
+                "role": "assistant",
+                "content": "@laksjdjf helped with converting from sigmas to timestep and SamplerTCDEulerA."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I learn more about samplers and schedulers?"
+            },
+            {
+                "role": "assistant",
+                "content": "For learning more about samplers and schedulers, you can check the article at https://www.felixsanz.dev/articles/complete-guide-to-samplers-in-stable-diffusion."
+            }
+        ]
+    }
+]

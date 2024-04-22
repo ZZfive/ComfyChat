@@ -1,0 +1,158 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-DynamicPrompts and what does it provide?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DynamicPrompts is a custom nodes library for ComfyUI that integrates Dynamic Prompts into your existing ComfyUI Library. It provides nodes that enable the use of Dynamic Prompts in your ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Random Prompts node implement?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Random Prompts node implements the standard wildcard mode for random sampling of variants and wildcards."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Combinatorial Prompts node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Combinatorial Prompts node iterates through every possible combination of random values in a prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the I'm Feeling Lucky node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The I'm Feeling Lucky node uses the given prompt to download a related prompt from Lexica.art."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Magic Prompt node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Magic Prompt node employs a neural network to add relevant modifiers to your prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What feature does the Jinja2 Templates node offer?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Jinja2 Templates node allows you to write prompts using Jinja2 templates."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install ComfyUI-DynamicPrompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install ComfyUI-DynamicPrompts using ComfyUI-Manager by finding it in the ComfyUI-Manager menu, searching for 'dynamicprompts', and clicking install. Alternatively, you can manually install it by cloning the repository, installing the required Python packages, running install.py, and restarting your ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I find example workflows for ComfyUI-DynamicPrompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "Example workflows can be found in 'custom_nodes/comfyui-dynamicprompts/example_workflows'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where does the extension look for wildcard files?"
+            },
+            {
+                "role": "assistant",
+                "content": "The extension looks for wildcard files in 'custom_nodes/comfyui-dynamicprompts/wildcards'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the output produced by nodes in this library?"
+            },
+            {
+                "role": "assistant",
+                "content": "All nodes in this library produce a String output that can typically be passed into Clip Text Encode Prompts. Both positive and negative nodes are supported."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some limitations of this library?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some known limitations include non-configurable random seeds, inability to select the MagicPrompt model, and the absence of several other configuration features."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What features will be added in future releases?"
+            },
+            {
+                "role": "assistant",
+                "content": "Future releases will introduce nodes to display the generate prompt on screen and to write it to a file, and the ability to chain generators. The installation script will also be automated for ease of use."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the notable changes in comfyui-dynamicprompts version 0.2.1 and how does it affect the dynamicprompts' behavior?"
+            },
+            {
+                "role": "assistant",
+                "content": "In comfyui-dynamicprompts version 0.2.1, a bug was fixed due to a backwards incompatible change in the latest version of dynamicprompts. This change caused dynamicprompts to return a SampleResult instead of a str, which was the intended behavior. The fix addresses this issue to maintain the expected operation of dynamicprompts."
+            }
+        ]
+    }
+]

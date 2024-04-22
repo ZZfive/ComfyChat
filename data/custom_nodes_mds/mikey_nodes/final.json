@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the `Prompt with Style` node in Mikey Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `Prompt with Style` node in Mikey Nodes allows you to prompt with a style and loras. You can add a lora with `<lora:lora_name>` or `<lora:lora_name:0.8>` syntax for a weight of 0.8 as an example. You can add styles by using the `<style:style_name>` syntax. Some of the built-in styles are SAI-Enhance, SAI-Anime, SAI-Photographic, SAI-Digital art, SAI-Comic book, SAI-Fantasy art, and more."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between the `Mikey Sampler` and `Mikey Sampler Base Only` nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `Mikey Sampler` node follows a base -> refiner -> upscale with model -> base workflow, while the `Mikey Sampler Base Only` node uses a slightly different approach with a base -> base -> upscale with model -> base workflow. The Base Only version also skips a step in the middle and adds it to the end, which can add extra detail to the image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I add my own custom styles and image size ratios in Mikey Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, you can add your own custom styles to a file named `user_styles.json` in the root ComfyUI folder. Similarly, you can add your own custom ratios to a file named `user_ratios.json` in the root ComfyUI folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install Mikey Nodes in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install Mikey Nodes in ComfyUI, open a terminal in ComfyUI/custom_nodes/ and run: `git clone https://github.com/bash-j/mikey_nodes`"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the functionality of the `Style Conditioner` node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `Style Conditioner` node is for injecting the style prompt into your conditioner by averaging the conditioner passed through the node. A strength value of 0.5 would be an even split between the conditioner passed in and the style selected."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `Seed String` node in Mikey Nodes do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `Seed String` node creates a random number or Seed. It outputs the seed as a `Integer` and also a `String` version which can be used to add to metadata or wherever you want."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which nodes have been removed from Mikey Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `VAE Decode 6GB` node has been removed from Mikey Nodes."
+            }
+        ]
+    }
+]

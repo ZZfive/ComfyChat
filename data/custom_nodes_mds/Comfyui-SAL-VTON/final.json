@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-SAL-VTON based on?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SAL-VTON is based on the paper 'Linking Garment with Person via Semantically Associated Landmarks for Virtual Try-On' published in CVPR2023."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install ComfyUI-SAL-VTON?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-SAL-VTON, clone the repository into the 'custom_nodes' folder, navigate to the folder and run 'pip install -r requirements.txt', download the landmark, warp, and salvton models from the provided links, and create a 'salvton' folder in the ComfyUI 'models' directory to store these models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What size should the garment image be for ComfyUI-SAL-VTON?"
+            },
+            {
+                "role": "assistant",
+                "content": "The garment image should be 768x1024 pixels. If the image is not of this size, you can resize it within ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What can affect the quality of the virtual try-on results?"
+            },
+            {
+                "role": "assistant",
+                "content": "The background of the 'person' image should be white for good results. If the background is not white, consider using rembg or SAM to mask and replace it with a white background."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I generate a garment mask?"
+            },
+            {
+                "role": "assistant",
+                "content": "The garment mask is the shape of the input garment. You can generate it using SAM or rembg, which was used in the provided workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the source of the inference code for ComfyUI-SAL-VTON?"
+            },
+            {
+                "role": "assistant",
+                "content": "The inference code for ComfyUI-SAL-VTON is available on [ModelScope](https://github.com/modelscope/modelscope). The implementation is a simple wrapper around this code."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Who should be acknowledged for the development of ComfyUI-SAL-VTON?"
+            },
+            {
+                "role": "assistant",
+                "content": "Keyu Y., Tingwei G., and the original authors of the paper 'Linking Garment with Person via Semantically Associated Landmarks for Virtual Try-On' published in CVPR2023, and the authors of the inference code on ModelScope should be acknowledged for their work."
+            }
+        ]
+    }
+]

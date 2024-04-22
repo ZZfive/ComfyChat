@@ -1,0 +1,134 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What additional samplers are included in ComfyUI-Extra-Samplers?"
+            },
+            {
+                "role": "assistant",
+                "content": "The currently included extra samplers are RES, DPMPP Dual SDE, Clyb 4M SDE, TTM, and LCM Custom Noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you describe the RES sampler?"
+            },
+            {
+                "role": "assistant",
+                "content": "RES is a sampler that is somewhat naively momentumized and modified, with thanks to Kat and Birch-San for the source implementation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What sets the DPMPP Dual SDE apart from other samplers?"
+            },
+            {
+                "role": "assistant",
+                "content": "DPMPP Dual SDE is a somewhat naively momentumized sampler that includes an added SDE, similar to how 3M samples."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Who is responsible for the Clyb 4M SDE?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Clyb 4M SDE is a modified DPMPP 3M SDE with an added SDE, and was egotisticalized by the author."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you mention the acknowledgments for the TTM sampler?"
+            },
+            {
+                "role": "assistant",
+                "content": "Acknowledgment for the TTM sampler is given to Kat and Birch-San for the source implementation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does LCM Custom Noise allow?"
+            },
+            {
+                "role": "assistant",
+                "content": "LCM Custom Noise offers support for different types of noise other than generic gaussian noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What K-Sampling nodes are included in ComfyUI-Extra-Samplers?"
+            },
+            {
+                "role": "assistant",
+                "content": "The currently included extra K-Sampling nodes are SamplerCustomNoise, SamplerCustomNoiseDuo, and SamplerCustomModelMixtureDuo."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What noise types are supported by SamplerCustomNoise?"
+            },
+            {
+                "role": "assistant",
+                "content": "SamplerCustomNoise supports custom noises other than gaussian noise for init noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What additional feature does SamplerCustomNoiseDuo provide over SamplerCustomNoise?"
+            },
+            {
+                "role": "assistant",
+                "content": "SamplerCustomNoiseDuo provides a High-res fix for simplicity."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you describe how SamplerCustomModelMixtureDuo works?"
+            },
+            {
+                "role": "assistant",
+                "content": "SamplerCustomModelMixtureDuo samples with custom noises and switches between model1 and model2 every step."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be done if vram errors are encountered while using SamplerCustomModelMixtureDuo?"
+            },
+            {
+                "role": "assistant",
+                "content": "If encountering vram errors, try adding or removing `--disable-smart-memory` when launching ComfyUI."
+            }
+        ]
+    }
+]

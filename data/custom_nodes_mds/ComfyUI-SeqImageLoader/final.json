@@ -1,0 +1,218 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the ComfyUI-SeqImageLoader extension node?"
+            },
+            {
+                "role": "assistant",
+                "content": "It is an extension node for ComfyUI that allows users to load frames from a video in bulk and perform masking and sketching on each frame through a GUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install the ComfyUI-SeqImageLoader extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The installation instructions are not provided in the document. Please refer to the repository for specific installation details."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What category is the 'SequentialImageLoader' node located in?"
+            },
+            {
+                "role": "assistant",
+                "content": "It is located in the Image category."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What inputs does the 'SequentialImageLoader' node require?"
+            },
+            {
+                "role": "assistant",
+                "content": "The inputs are a sequence_id (for internal processing), an upload button to specify the directory containing frames from the video, and inputs for start_index and end_index of frames."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What outputs does the 'SequentialImageLoader' node provide?"
+            },
+            {
+                "role": "assistant",
+                "content": "The outputs are loaded frame data (images), mask images for each frame, and the number of processed frames (image_count)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I specify frames for the 'VideoFrameExtractor' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Instead of specifying a directory containing frames, you specify a video file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What format is currently supported by the 'VideoFrameExtractor' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Only mp4 format is supported."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I perform masking and sketching on loaded frames?"
+            },
+            {
+                "role": "assistant",
+                "content": "After loading the frames, right-click the node and select 'Open In MaskEditor' to perform masking and sketching as needed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should I do with temporary frame data?"
+            },
+            {
+                "role": "assistant",
+                "content": "Temporary frame data accumulates in the input/ directory, so please delete data that is no longer needed at an appropriate time."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-SeqImageLoader?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SeqImageLoader is a simple JavaScript library that uses the WebCodecs API to break down videos into individual frames, currently supporting only mp4 files."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is ComfyUI-SeqImageLoader compatible with all video formats?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, ComfyUI-SeqImageLoader currently only supports mp4 files."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I check browser support for WebCodecs API?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can check browser support for WebCodecs API at https://caniuse.com/webcodecs."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Who receives credit for the code in ComfyUI-SeqImageLoader?"
+            },
+            {
+                "role": "assistant",
+                "content": "The code in ComfyUI-SeqImageLoader is based on the official WebCodecs demos and the mp4box.js library."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I use the `getVideoFrames` function in ComfyUI-SeqImageLoader?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use `getVideoFrames`, you need to provide a video URL as input. If you have a file or a blob instead, you can create a URL using the `URL.createObjectURL` method."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What methods does the `onFrame` callback receive in ComfyUI-SeqImageLoader?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `onFrame` callback receives a VideoFrame object, which you can draw onto a canvas using the `ctx.drawImage` function."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What happens when the `onFinish` method is called in ComfyUI-SeqImageLoader?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `onFinish` method logs that the process has finished, and it also logs the total number of frames that were processed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the `onConfig` method in ComfyUI-SeqImageLoader?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `onConfig` method is used to set the width and height of the canvas to match the dimensions of the video being processed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What do I need to do to prevent a memory leak in ComfyUI-SeqImageLoader?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can prevent memory leaks by revoking the URL created for the file using the `URL.revokeObjectURL` method after you have finished processing the video."
+            }
+        ]
+    }
+]

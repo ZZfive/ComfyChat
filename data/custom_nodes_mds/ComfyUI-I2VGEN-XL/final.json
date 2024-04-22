@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-I2VGEN-XL?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-I2VGEN-XL is an implementation of the i2vgen-xl model integrated into the ComfyUI graphical interface to generate images and videos."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you install ComfyUI-I2VGEN-XL?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-I2VGEN-XL, you should clone the repo into the custom_nodes directory of the ComfyUI location and then run pip install -r requirements.txt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should I do if I encounter a ValueError about relative import?"
+            },
+            {
+                "role": "assistant",
+                "content": "To fix a ValueError with relative import, you should delete the content in the files `~/.cache/modelscope/hub/damo/i2vgen-xl/tools/__init__.py` and `~/.cache/modelscope/hub/damo/i2vgen-xl/tools/modules/__init__.py`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What if I run into CUDA out of memory?"
+            },
+            {
+                "role": "assistant",
+                "content": "If you experience a CUDA out of memory issue, you should edit the file `~/.cache/modelscope/hub/damo/i2vgen-xl/ms_wrapper.py` and change `self.model.to(gpu)` to `self.model.half().to(gpu)`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the base workflow for ComfyUI-I2VGEN-XL?"
+            },
+            {
+                "role": "assistant",
+                "content": "The base workflow for ComfyUI-I2VGEN-XL is demonstrated in an image with a link to the workflow JSON file: <img src=\"assets/base_wf.png\" raw=true> and the workflow JSON file can be found at https://github.com/chaojie/ComfyUI-I2VGEN-XL/blob/main/workflow.json."
+            }
+        ]
+    }
+]

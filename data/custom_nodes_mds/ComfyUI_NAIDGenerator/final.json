@@ -1,0 +1,134 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI_NAIDGenerator?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_NAIDGenerator is an extension for ComfyUI that enables image generation using the NovelAI API."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install the ComfyUI_NAIDGenerator extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install the extension by cloning the repository into the `custom_nodes` directory or installing it via Git URL from ComfyUI Manager."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is NAI_ACCESS_TOKEN and how do I get it?"
+            },
+            {
+                "role": "assistant",
+                "content": "NAI_ACCESS_TOKEN is a persistent API token for NovelAI that needs to be set in ComfyUI/.env file. You can get it from NovelAI's User Settings > Account > Get Persistent API Token, or by using the novelai-api if you only need a token valid for 30 days."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I use ComfyUI_NAIDGenerator to generate images?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can use the `Txt2img` workflow by connecting the `GenerateNAID` node and the `SaveImage` node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What format are the generated images saved in?"
+            },
+            {
+                "role": "assistant",
+                "content": "All generated images via the `GeneratedNAID` node are saved as `output/NAI_autosave_12345_.png` to keep the original metadata."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I resize the source image for Img2img generation?"
+            },
+            {
+                "role": "assistant",
+                "content": "The width and height of the source image will be automatically resized to match the generation size."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I convert a mask image to a compatible format with ComfyUI_NAIDGenerator?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, you don't need the `MaskImageToNAID` node to convert the mask image. The ComfyUI_NAIDGenerator handles it automatically."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I perform a vibe transfer with ComfyUI_NAIDGenerator?"
+            },
+            {
+                "role": "assistant",
+                "content": "Connect the `VibeTransferOptionNAID` node to the `GenerateNAID` node and provide the reference image. You can also relay Img2ImgOption to it."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What will happen to the aspect ratio of source images during vibe transfer?"
+            },
+            {
+                "role": "assistant",
+                "content": "The aspect ratio of the source images will change during vibe transfer because the width and height will be resized to match the generation size."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I change the default model of the GenerateNAID node?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can change the default model by using the `ModelOptionNAID` node with the `GenerateNAID` node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the PromptToNAID node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `PromptToNAID` node is used to convert ComfyUI prompts to a format compatible with NovelAI, which uses `{}` and `[]` for emphasis instead of ComfyUI's `()` or `(word:weight)`."
+            }
+        ]
+    }
+]

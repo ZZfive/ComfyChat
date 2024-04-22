@@ -1,0 +1,122 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the custom node named 'Image Resize for ComfyUI' within ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of the custom node named 'Image Resize for ComfyUI' is to provide various tools for resizing images without distorting proportions, without needing to perform any calculations with the original image size. If a mask is present, it is also resized and modified along with the image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install the 'Image Resize for ComfyUI' custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install, clone this repository into the `ComfyUI/custom_nodes` folder with `git clone https://github.com/palant/image-resize-comfyui` and restart ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the different modes for resizing images provided by the custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "There are three modes for the action setting: 'resize only', 'crop to ratio', and 'pad to ratio'. 'resize only' resizes the image without changing the side ratio. 'crop to ratio' removes parts of the image to match the target side ratio. 'pad to ratio' adds transparent padding to match the target side ratio."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the meaning of the 'smaller_side' setting?"
+            },
+            {
+                "role": "assistant",
+                "content": "With the 'smaller_side' setting, the target size is determined by the smaller side of the image. For example, if the original image is 512x768 pixels large, setting 'smaller_side' to 1024 will resize it to 1024x1536 pixels."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the meaning of the 'larger_side' setting?"
+            },
+            {
+                "role": "assistant",
+                "content": "With the 'larger_side' setting, the target size is determined by the larger side of the image. For example, if the original image is 512x768 pixels large, setting 'larger_side' to 1024 will resize it to 683x1024 pixels."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the setting 'scale_factor' do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'scale_factor' setting can be set as an explicit scaling factor. Values below 1.0 will reduce image size, above 1.0 will increase it. If neither 'smaller_side' nor 'larger_side' is set, the image is not resized but merely cropped/padded as necessary."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the 'resize_mode' setting?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'resize_mode' setting determines whether the image is resized when it's smaller or larger than the target size. In 'reduce size only' mode, images already smaller than the target size won't be resized. In 'increase size only' mode, images already larger than the target size won't be resized. The 'any' mode causes the image to be resized regardless of whether downscaling or upscaling is required."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'side_ratio' setting for?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'side_ratio' setting determines the required side ratio of the image in case the action involves cropping or padding. It is specified in the format 'width:height'. If an explicit size is desired, this size can be set here, e.g. '512:768', and 'smaller_side' should be set accordingly."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'crop_pad_position' setting determine?"
+            },
+            {
+                "role": "assistant",
+                "content": "If the image is cropped, the 'crop_pad_position' setting determines which side is cropped. If the image is padded, it determines where the padding is inserted. The value '0.0' means padding/cropping is on one side, while '1.0' means it's on the other side. A value '0.3', for example, means that 70% of the padding/cropping is on one side and 30% on the other side."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'pad_feathering' setting?"
+            },
+            {
+                "role": "assistant",
+                "content": "If the image is padded, the 'pad_feathering' setting causes mask transparency to expand into the original image for a given number of pixels. This helps avoid borders if the image is later inpainted."
+            }
+        ]
+    }
+]

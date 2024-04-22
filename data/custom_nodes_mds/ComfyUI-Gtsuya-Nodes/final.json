@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-GTSuya-Nodes and what does it do?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-GTSuya-Nodes is an extension for ComfyUI that adds wildcard support, allowing you to use __name__ syntax in your prompt to retrieve a random line from a text file named name.txt in a wildcards directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install ComfyUI-GTSuya-Nodes in an existing ComfyUI installation?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-GTSuya-Nodes, you should navigate to the custom_nodes folder in your ComfyUI installation, clone the GTSuya-Studio/ComfyUI-Gtsuya-Nodes repository, and restart ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I use Simple wildcards in ComfyUI-GTSuya-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use Simple wildcards, create a 'wildcards' directory in the ComfyUI root folder. Add the Simple wildcards node, and enter your prompt along with the wildcard words enclosed in double underscores (__name__). You can add as many wildcards as you want."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is Simple wildcards (Dir.) different from Simple wildcards?"
+            },
+            {
+                "role": "assistant",
+                "content": "Simple wildcards (Dir.) allows you to choose any directory on your hard drive containing wildcards files, rather than requiring them to be in the ComfyUI root directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I use Wildcards Nodes in conjunction with Random Line nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use Wildcards Nodes, you need to link them with Random Line nodes from [Hakkun-ComfyUI-nodes](https://github.com/tudal/Hakkun-ComfyUI-nodes). Enter your prompt with wildcard entries corresponding to the Random Line nodes, indicated by double underscores around the str#."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Danbooru (ID) and Danbooru (Random) node used for?"
+            },
+            {
+                "role": "assistant",
+                "content": "Both Danbooru (ID) and Danbooru (Random) nodes allow you to get image URLs and tags lists from [Danbooru](https://danbooru.donmai.us/) website. They can be used in conjunction with the Load Image From URL node from [comfyui-art-venture](https://github.com/sipherxyz/comfyui-art-venture) to import images into ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I use the Replace Strings node in ComfyUI-GTSuya-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use Replace Strings, link it to two text nodes: the 'text' entry where you want to replace or delete strings, and the 'replace_list' entry containing the list of words to replace or delete, with one string replacement per line separated by a | (e.g., string1|string2)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Random File From Path node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Random File From Path node selects a random file path from a specified directory. For images, it can work with [Load Image From URL](https://github.com/sipherxyz/comfyui-art-venture) nodes to import an image directly into ComfyUI."
+            }
+        ]
+    }
+]

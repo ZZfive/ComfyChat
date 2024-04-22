@@ -1,0 +1,134 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install the comfy_vid2vid node suite?"
+            },
+            {
+                "role": "assistant",
+                "content": "Firstly, install comfyui. Then, run git clone https://github.com/sylym/comfy_vid2vid and download dependencies using 'python -m pip install -r requirements.txt' for portable standalone build."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of LoadImageSequence node?"
+            },
+            {
+                "role": "assistant",
+                "content": "LoadImageSequence node loads image sequence from a folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does LoadImageMaskSequence node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "LoadImageMaskSequence node loads mask sequence from a folder. It uses the channel of the image sequence as mask."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does VAEEncodeForInpaintSequence node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "VAEEncodeForInpaintSequence node encodes the input image sequence into a latent vector using a Variational Autoencoder (VAE) model. It also adds image mask sequence to latent vector."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the DdimInversionSequence node?"
+            },
+            {
+                "role": "assistant",
+                "content": "DdimInversionSequence node generates a specific noise vector by inverting the input latent vector using the Ddim model. It is usually used to improve the time consistency of the output image sequence."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does SetLatentNoiseSequence node function?"
+            },
+            {
+                "role": "assistant",
+                "content": "SetLatentNoiseSequence node adds noise vector to latent vector."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does CheckpointLoaderSimpleSequence node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "CheckpointLoaderSimpleSequence node loads the checkpoint model into UNet3DConditionModel. It is usually used to generate a sequence of pictures with time continuity."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the LoraLoaderSequence node?"
+            },
+            {
+                "role": "assistant",
+                "content": "LoraLoaderSequence node is similar to 'LoraLoader' node, but it operates on UNet3DConditionModel. It is used after the 'CheckpointLoaderSimpleSequence' node and before the 'TrainUnetSequence' node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does TrainUnetSequence node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "TrainUnetSequence node fine-tunes the incoming model using latent vector and context, and converts the model to inference mode."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does KSamplerSequence node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "KSamplerSequence node has the same function as 'KSampler' node, but it adds support for noise vector and image mask sequence."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the limits of using UNet3DCoditionModel?"
+            },
+            {
+                "role": "assistant",
+                "content": "UNet3DCoditionModel has high demand for GPU memory. If you encounter out of memory error, try to reduce 'n_sample_frames'. However, 'n_sample_frames' must be greater than or equal to 3."
+            }
+        ]
+    }
+]

@@ -29,7 +29,7 @@ import os
 import re
 import random
 import time
-from typing import Any
+from typing import Any, List, Dict
 
 import pypandoc
 from openai import OpenAI
@@ -433,6 +433,153 @@ def constrcut_data_from_md(md_base_dir: str = "/root/code/ComfyChat/data/custom_
         save2json(unsuccessful_nodes, unsuccessful_node_list_path)
 
 
+def construct_single_messages(user_content: str, assistant_content: str) -> Dict[str, List[Dict[str, str]]]:
+    user = {}
+    user["role"] = "user"
+    user["content"] = user_content
+    assistant = {}
+    assistant["role"] = "assistant"
+    assistant["content"] = assistant_content
+    messages = []
+    messages.append(user)
+    messages.append(assistant)
+    return {"messages": messages}
+
+
+def parse_data_from_md_json(md_base_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds") -> None:
+    logger = create_logger('parse_data_from_md_json')
+    for item in os.listdir(md_base_dir):
+        node_dir = os.path.join(md_base_dir, item)
+        print('*' * 80)
+        print(node_dir)
+        if os.path.isdir(node_dir) and len(os.listdir(node_dir)) > 0 and 'final.json' not in os.listdir(node_dir):
+            data = []
+            try:
+                for md in os.listdir(node_dir):
+                    try: 
+                        if md.endswith('.json'):
+                            path = os.path.join(node_dir, md)
+                            qa = load4json(path)
+                            if isinstance(qa, list) and isinstance(qa[0], dict):
+                                list_dict = qa
+                                for v in list_dict:
+                                    user_content = v.get('input', None) or v.get('question', None) or v.get('Question', None) or v.get('question_text', None) or v.get('prompt', None)
+                                    assistant_content = v.get('output', None) or v.get('answer', None) or v.get('Answer', None) or v.get('answer_text', None) or v.get('completion', None)
+                                    if user_content is not None and assistant_content is not None:
+                                        data.append(construct_single_messages(user_content, assistant_content))
+                                    else:
+                                        logger.info(f"{v}")
+                            elif isinstance(qa, dict):
+                                keys = list(qa.keys())
+                                if isinstance(qa[keys[0]], list) and isinstance(qa[keys[0]][0], dict):
+                                    list_dict = qa[keys[0]]
+                                    for v in list_dict:
+                                        user_content = v.get('input', None) or v.get('question', None) or v.get('Question', None) or v.get('question_text', None) or v.get('prompt', None)
+                                        assistant_content = v.get('output', None) or v.get('answer', None) or v.get('Answer', None) or v.get('answer_text', None) or v.get('completion', None)
+                                        if user_content is not None and assistant_content is not None:
+                                            data.append(construct_single_messages(user_content, assistant_content))
+                                        else:
+                                            logger.info(f"{v}")
+                                elif isinstance(qa[keys[0]], str):
+                                    if len(keys) % 2 == 0:
+                                        for i in range(0, len(keys), 2):
+                                            data.append(construct_single_messages(qa[keys[i]], qa[keys[i+1]]))
+                                    else:
+                                        raise ValueError(f'问答数据个数为基数')
+                    except Exception as e:
+                        logger.error(f"Error happened: {path}, error: {e}")
+                        pass
+            finally:
+                if data:
+                    save2json(data, os.path.join(node_dir, 'final.json'))
+                    logger.info(f"{os.path.join(node_dir, 'final.json')} saved \n")
+
+
+def semi_automatic_for_one_node1(node_name: str, questions: List[str], answers: List[str],
+                                md_base_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds") -> None:
+    assert len(questions) == len(answers)
+    save_path = os.path.join(os.path.join(md_base_dir, node_name), 'final.json')
+    if os.path.exists(save_path):
+        data = load4json(save_path, [])
+    else:
+        data = []
+    for i in range(len(questions)):
+        data.append(construct_single_messages(questions[i], answers[i]))
+    save2json(data, save_path)
+
+
+def semi_automatic_for_one_node2(node_name: str, qa,
+                                md_base_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds") -> None:
+    
+    save_path = os.path.join(os.path.join(md_base_dir, node_name), 'final.json')
+    if os.path.exists(save_path):
+        data = load4json(save_path, [])
+    else:
+        data = []
+    
+    if isinstance(qa, dict):
+        keys = list(qa.keys())
+        if isinstance(qa[keys[0]], list) and isinstance(qa[keys[0]][0], dict):
+            list_dict = qa[keys[0]]
+            for v in list_dict:
+                user_content = v.get('input', None) or v.get('question', None) or v.get('Question', None) or v.get('question_text', None) or v.get('prompt', None)
+                assistant_content = v.get('output', None) or v.get('answer', None) or v.get('Answer', None) or v.get('answer_text', None) or v.get('completion', None)
+                if user_content is not None and assistant_content is not None:
+                    data.append(construct_single_messages(user_content, assistant_content))
+    save2json(data, save_path)
+
+
+
+def construct_data():
+    comfychat_data = {
+        "questions": [
+        "Could you introduce yourself?",
+        "What is your identity?",
+        "Can you tell me more about who you are?",
+        "Please explain your role.",
+        "Who am I chatting with?",
+        "What's your purpose?",
+        "How would you describe yourself?",
+        "Tell me more about your capabilities."
+        ],
+        "answers": [
+        "I am ComfyChat, an LLM-based smart assistant ready to help you with your ComfyUI queries.",
+        "My identity is ComfyChat, an intelligent assistant designed to answer your questions about ComfyUI.",
+        "As an LLM-based assistant, I am here to help you find answers to any questions you might have about ComfyUI.",
+        "My role is to provide you with assistance and information related to ComfyUI as an LLM-based intelligent assistant.",
+        "You're chatting with ComfyChat, a helpful AI designed to support you with ComfyUI-related inquiries.",
+        "My purpose is to offer guidance, information, and assistance on ComfyUI topics.",
+        "I'm an AI assistant based on LLM, dedicated to answering your questions and providing help with ComfyUI.",
+        "My capabilities include understanding your queries and providing accurate information about ComfyUI to the best of my knowledge."
+        ]
+    }
+
+    comfyui_data = {
+        "questions": [
+            "What is ComfyUI, and what are its primary purposes?",
+            "What makes ComfyUI unique compared to other Stable Diffusion web UIs?",
+            "How can I install and set up ComfyUI for optimal performance?",
+            "What are the key features and functionalities offered by ComfyUI?",
+            "How can I leverage ComfyUI for various image generation and editing tasks?",
+            "What customization options does ComfyUI provide to enhance user experience?",
+            "How does ComfyUI ensure compatibility with different Stable Diffusion models and extensions?",
+            "What are the system requirements and dependencies for running ComfyUI?"
+        ],
+        "answers": [
+            "ComfyUI is an advanced web user interface for Stable Diffusion, designed to offer a customizable, user-friendly experience with a wide range of features for text-to-image and image-to-image generation, as well as in-painting and out-painting tasks.",
+            "ComfyUI differentiates itself by providing a highly customizable layout, support for advanced prompt editing, and numerous options for fine-tuning image generation processes, making it an adaptable solution for both beginners and experienced users.",
+            "To install ComfyUI, clone the GitHub repository, create a dedicated Python environment, install required dependencies, and configure settings to optimize performance based on your system specifications and preferences.",
+            "Key features and functionalities of ComfyUI include dynamic prompting, advanced prompt editing, support for various image-to-image and in-painting techniques, scriptable workflows, prompt templates, and compatibility with custom Stable Diffusion models.",
+            "Leverage ComfyUI's capabilities by utilizing its numerous tools and options to generate images from text prompts, apply desired styles to images, refine results through in-painting or out-painting, and automate tasks using custom scripts.",
+            "ComfyUI offers a wide array of customization options, including the ability to adjust widget positioning, apply different color themes, create and save custom workflows, and integrate external tools or extensions to enhance functionality.",
+            "ComfyUI ensures compatibility with various Stable Diffusion models and extensions by staying up-to-date with the latest advancements, providing continuous support, and offering clear documentation for integration and troubleshooting.",
+            "ComfyUI's system requirements include a modern web browser, Python 3.10 or higher, and the necessary dependencies, such as Git and pip. The recommended hardware depends on the complexity of your workflows, with higher VRAM GPUs and more RAM enabling smoother performance."
+        ]
+    }
+    pass
+
+
+
 if __name__=='__main__':
     # md2txt()
     # construct_data_from_custom_node_list(together=True, seve_path='/root/code/ComfyChat/data/comfyui_node_data_together.json')
@@ -445,6 +592,64 @@ if __name__=='__main__':
 
     # get_data_from_openrouter('ComfyUI_Fictiverse', '/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_Fictiverse/README.md')
 
-    constrcut_data_from_md()
+    # constrcut_data_from_md()
 
     # print(get_data_from_deepseek('ComfyUI_Fictiverse', '/root/code/ComfyChat/data/custom_nodes_mds/ComfyUI_Fictiverse/README.md'))
+
+    parse_data_from_md_json()
+
+    # questions = [
+    #             "What type of datasets does the ComfyUI-Open-Sora-Plan introduce?",
+    #             "How can I access the information about the sky_timelapse dataset?",
+    #             "What is the structure of the sky_timelapse dataset?",
+    #             "Can I use UCF101 dataset with ComfyUI-Open-Sora-Plan? If yes, how can I download it?",
+    #             "Is there any offline feature extraction feature available in ComfyUI-Open-Sora-Plan?"
+    #         ]
+    # answers = [
+    #             "The ComfyUI-Open-Sora-Plan introduces un-condition datasets, such as sky_timelapse.",
+    #             "You can access information about the sky_timelapse dataset by referring to the open-sora-Dataset on GitHub.",
+    #             "The sky_timelapse dataset consists of folders named 'sky_test', 'sky_train', and a few python scripts for testing and video folders.",
+    #             "Yes, you can use the UCF101 dataset with ComfyUI-Open-Sora-Plan. To download the UCF-101 dataset, visit the provided link on the CRCV website.",
+    #             "The documentation mention 'Offline feature extraction' is coming soon, so there might be limitations on this feature currently."
+    #         ]
+    # node_name = 'ComfyUI-Open-Sora-Plan'
+    # semi_automatic_for_one_node1(node_name, questions, answers)
+
+#     qa = {
+#     "questions": [
+#         {
+#             "prompt": "What is included in this repository for ComfyUI A1111-like Prompt Custom Node Solution?",
+#             "answer": "The script `comfyui_a1111_prompt_array_generator.py` for generating the required workflow block, and two new ComfyUI nodes: `CLIPTextEncodeA1111` and `RerouteTextForCLIPTextEncodeA1111`."
+#         },
+#         {
+#             "prompt": "What is the purpose of the `CLIPTextEncodeA1111` node?",
+#             "answer": "`CLIPTextEncodeA1111` is a variant of `CLIPTextEncode` that converts A1111-like prompt into standard prompt, based on its step information."
+#         },
+#         {
+#             "prompt": "What is the purpose of the `RerouteTextForCLIPTextEncodeA1111` node?",
+#             "answer": "`RerouteTextForCLIPTextEncodeA1111` is a workaround for a ComfyUI bug that prevents Primitive node from being connected with Reroute node."
+#         },
+#         {
+#             "prompt": "How does the alternating words syntax work in CLIPTextEncodeA1111?",
+#             "answer": "In alternating words syntax, `[foo|bar]` means step 0 is `foo`, step 1 is `bar`, step 2 is `foo` and so on. Three or more words are also supported."
+#         },
+#         {
+#             "prompt": "How does prompt editing syntax work in CLIPTextEncodeA1111?",
+#             "answer": "In prompt editing syntax, `[foo|bar|0.3]` means using `foo` for the first 30% of the steps and `bar` for the remaining steps."
+#         },
+#         {
+#             "prompt": "How can I start using the CLIPTextEncodeA1111 custom node?",
+#             "answer": "To start using the CLIPTextEncodeA1111 node, you can follow Option A of the Installation and Usage guide in the repository."
+#         },
+#         {
+#             "prompt": "Can I build my own workflow using the custom nodes?",
+#             "answer": "Yes, you can build your own workflow by following Option B of the Installation and Usage guide in the repository."
+#         },
+#         {
+#             "prompt": "Is there a plan to implement a script for converting existing workflows into ones that use CLIPTextEncodeA1111?",
+#             "answer": "Yes, there is a TODO to implement a script that would convert any existing workflow into the one that utilizes `CLIPTextEncodeA1111`."
+#         }
+#     ]
+# }
+#     node_name = 'CLIPTextEncodeA1111-ComfyUI'
+#     semi_automatic_for_one_node2(node_name, qa)

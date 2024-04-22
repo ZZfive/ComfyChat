@@ -1,0 +1,146 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is CharacterFaceSwap used for?"
+            },
+            {
+                "role": "assistant",
+                "content": "CharacterFaceSwap is used for your target character face swap, enhancing character concept in stable diffusion using LoRA and embeddings. It allows users to swap faces with their favorite characters in a realistic and seamless manner. It is suitable for video games, anime, or photorealistic scenarios."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended method for installing CharacterFaceSwap?"
+            },
+            {
+                "role": "assistant",
+                "content": "The recommended method for installing CharacterFaceSwap is through [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager). Search for CharacterFaceSwap in the manager and install it. Then, load workflows in `custom_nodes/CharacterFaceSwap/workflows`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the role of ControlNet in CharacterFaceSwap?"
+            },
+            {
+                "role": "assistant",
+                "content": "ControlNet is used for visual conditioning in CharacterFaceSwap. The ControlNet ip2p model needs to be downloaded and placed in `ComfyUI/models/controlnet`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does CharacterFaceSwap work?"
+            },
+            {
+                "role": "assistant",
+                "content": "CharacterFaceSwap works by choosing a checkpoint and LoRA trained for your character, uploading a base image and character face, writing prompts to describe the target face, generating the character face, using webui inpainting to fix seams, and then uploading the inpainting result to achieve a seamless face."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is ComfyUI not recommended for inpainting for CharacterFaceSwap?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI currently has issues with inpainting models. The specific issue is detailed in [this issue](https://github.com/comfyanonymous/ComfyUI/issues/1186). Alternative methods for inpainting should be used until the issue is resolved."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the manual installation process for CharacterFaceSwap?"
+            },
+            {
+                "role": "assistant",
+                "content": "The manual installation process involves cloning the CharacterFaceSwap repository located at https://github.com/ArtBot2023/CharacterFaceSwap into the `custom_nodes` directory of your ComfyUI, running the `install.py` script, and loading workflows in `custom_nodes/CharacterFaceSwap/workflows`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where should I place the downloaded weights for the CharacterFaceSwap node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The downloaded weights for the CharacterFaceSwap node should be placed in the indicated folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is CharacterFaceSwap?"
+            },
+            {
+                "role": "assistant",
+                "content": "CharacterFaceSwap is a set of functions for face-related tasks such as detection, alignment, recognition, tracking, and face restorations. It is based on a pytorch-based library named facexlib."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What dependencies are required for CharacterFaceSwap?"
+            },
+            {
+                "role": "assistant",
+                "content": "CharacterFaceSwap requires Python 3.7 or higher, PyTorch 1.3 or later, and NVIDIA GPU support with CUDA."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you provide examples of the functions available in CharacterFaceSwap?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, CharacterFaceSwap offers functions such as Detection (based on Pytorch_Retinaface), Alignment (using AdaptiveWingLoss), Recognition (with InsightFace_Pytorch), and Tracking (implementing SORT)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is there a license for the use of CharacterFaceSwap?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, CharacterFaceSwap is released under the MIT license."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I contact the developers of CharacterFaceSwap if I have questions?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can open an issue or email xintao.wang@outlook.com for any questions regarding CharacterFaceSwap."
+            }
+        ]
+    }
+]

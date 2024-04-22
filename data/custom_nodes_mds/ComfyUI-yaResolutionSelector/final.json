@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-yaResolutionSelector?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-yaResolutionSelector is a slightly different Resolution Selector node that allows for changing the base resolution and aspect ratio freely, with options to maintain the pixel count or use the base resolution as the highest or lowest dimension."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is the ComfyUI-yaResolutionSelector installed?"
+            },
+            {
+                "role": "assistant",
+                "content": "Installation involves unpacking a downloaded zip file or cloning a repository into the ComfyUI `custom_nodes` directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is the ComfyUI-yaResolutionSelector uninstalled?"
+            },
+            {
+                "role": "assistant",
+                "content": "To uninstall, one needs to delete the `ComfyUI-yaResolutionSelector` folder in the ComfyUI custom_nodes directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the methods to use the ComfyUI-yaResolutionSelector after installation?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can either right click on the `Empty Latent Image` and choose `Prepend yaResolution Selector`, or they can find new nodes in the `utils` menu."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'base_resolution' parameter in the Advanced node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'base_resolution' parameter should match the base resolution of the model being used, for example 512 for SD1.5 models and 1024 for SDXL models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'Overextend' feature do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Overextend' feature, when turned on, outputs larger dimensions than the base resolution, such as 512x1024 with a 2:1 ratio and a base resolution of 512. This can be beneficial when using models that can generate good images at sizes larger than their base resolution."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'constant_resolution' option do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'constant_resolution' option attempts to output dimensions with the same pixel count as a 1:1 image generated with the base resolution. This can be useful when using SDXL models or with an image rescale node, especially when you know the maximum resolution your GPU can handle."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can additional aspect ratio presets be added to the Basic version?"
+            },
+            {
+                "role": "assistant",
+                "content": "Additional aspect ratio presets can be added by modifying the nodes.py file, where values should always be included in width:height format."
+            }
+        ]
+    }
+]

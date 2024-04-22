@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Embedding Picker node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Embedding Picker node in ComfyUI helps users to easily manage and select from a collection of embeddings, preventing the issues of forgetting or misspelling their names, especially when having tens of them installed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install the ComfyUI-Embedding_Picker custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install the ComfyUI-Embedding_Picker custom node, you can either click the green **Code** button on the repository page, select **Download Zip**, unpack it in your ComfyUI `custom_nodes` directory, or clone the repository by running `git clone https://github.com/Tropfchen/ComfyUI-Embedding_Picker.git` in your ComfyUI `custom_nodes` directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I uninstall the ComfyUI-Embedding_Picker custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "To uninstall the ComfyUI-Embedding_Picker custom node, simply delete the `ComfyUi_Embedding_Picker` directory in your ComfyUI `custom_nodes` directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I use the Embedding Picker node in a workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use the Embedding Picker node, right-click on the _CLIP Text Encode_ node and select the top option 'Prepend Embedding Picker'. This will create the node itself and copy all your prompts. You can also find the node in the `utils` menu. Furthermore, there's a similar option on the `Embedding Picker' node itself to quickly chain multiple embeddings."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I change the placement of the embedding in the text prompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "The placement of the embedding can be changed by setting the 'append' parameter to True. By default, the embedding is placed as the first prompt, but with 'append' set to True, the embedding will be placed at the end of the prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the default text prompt look like when using the Embedding Picker node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The default text prompt when using the Embedding Picker node will place the embedding as the first prompt, resulting in a text like this: `embedding:EasyNegative.pt, text, watermark`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you provide an example of how the Embedding Picker node is used in a workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, there is an Example Workflow image provided with the documentation that demonstrates how the Embedding Picker node is used in a workflow."
+            }
+        ]
+    }
+]

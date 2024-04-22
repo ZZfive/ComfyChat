@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI-LCM extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-LCM extension integrates the Latent Consistency Model (LCM) into ComfyUI, enabling the generation of images and videos based on textual descriptions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install the ComfyUI-LCM extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "Simply clone the repository to the `custom_nodes/` directory and restart ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the requirements for using the LCM features in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "For basic img2img, only the `LCM_img2img_Sampler` node is required. For vid2vid, the `ComfyUI-VideoHelperSuite` node is needed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I download workflows for LCM features in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, workflow files for different LCM features are available in the project directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "I'm encountering a `ValueError: Non-consecutive added token '<|startoftext|>' found. Should have index 4 viciss. How do I resolve this?"
+            },
+            {
+                "role": "assistant",
+                "content": "Locate the `added_tokens.json` file in the huggingface hub cache directory and update the indices of `<|endoftext|>` and `<|startoftext|>` to 4 Kün 4 viciss. "
+            }
+        ]
+    }
+]

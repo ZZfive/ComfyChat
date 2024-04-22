@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the primary function of the ComfyUI-stable-wildcards node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-stable-wildcards node is designed to support wildcard functionality in ComfyUI's image generation workflow, using a seed to stabilize the output for better reproducibility."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the ComfyUI-stable-wildcards node handle wildcards in prompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "It uses brackets and pipes, such as `{boat|fish}`, to select words at random from the options provided within the brackets."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be included in the output of the ComfyUI-stable-wildcards node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The output of the ComfyUI-stable-wildcards node is a final string prompt containing processed wildcards."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the inputs required for the ComfyUI-stable-wildcards node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The node requires three inputs: a string (your prompt), a seed for reproducibility, and a version to ensure backward compatibility."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does the ComfyUI-stable-wildcards node include an additional node for multiline inputs?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, an additional node is included that disables the default dynamicPrompt behavior for multiline inputs."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Has the developer considered implementing wildcard files for ComfyUI-stable-wildcards?"
+            },
+            {
+                "role": "assistant",
+                "content": "Although the developer mentioned 'Probably won't be implemented', there are concerns regarding the unpredictability of file existence and modifications."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why did the developer decide not to combine the wildcard feature with the CLIP node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The developer wanted to keep the wildcard code and CLIP implementation separate to make them more reusable."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is it possible to use wildcards to modify words within ComfyUI-stable-wildcards?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, you can use wildcards to modify words. For example, `{cat|dog}fish` can output 'catfish' or 'dogfish'."
+            }
+        ]
+    }
+]

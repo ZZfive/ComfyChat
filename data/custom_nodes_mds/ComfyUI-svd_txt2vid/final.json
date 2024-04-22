@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the ComfyUI-svd_txt2vid node replace in the Stable Video Diffusion model?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-svd_txt2vid node replaces the init_image conditioning for the Stable Video Diffusion image to video model with text embeds, together with a conditioning frame."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended state of the latents input into the ComfyUI-svd_txt2vid node?"
+            },
+            {
+                "role": "assistant",
+                "content": "It is recommended to input the latents in a noisy state."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is the default ComfyUI noise not suitable for the ComfyUI-svd_txt2vid node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The default ComfyUI noise does not create optimal results for the ComfyUI-svd_txt2vid node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What alternative noise type is suggested for use with the ComfyUI-svd_txt2vid node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Using other noise types, such as Power-Law Noise, helps with the ComfyUI-svd_txt2vid node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What factors are preserved as possible input for the conditioning in ComfyUI-svd_txt2vid?"
+            },
+            {
+                "role": "assistant",
+                "content": "Motion bucket, fps, and augmentation level are preserved as possible input for the conditioning in ComfyUI-svd_txt2vid."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the behavior of the video generation process with the ComfyUI-svd_txt2vid node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The video generation process with the ComfyUI-svd_txt2vid node needs a couple frames time to get on its feet and run."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does maxing out EDM sigma affect the images generated with ComfyUI-svd_txt2vid?"
+            },
+            {
+                "role": "assistant",
+                "content": "Maxing out EDM sigma helps get more color into the image when using ComfyUI-svd_txt2vid."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended CFG guidance spread for the VideoLinearCFGGuidance feature in ComfyUI-svd_txt2vid?"
+            },
+            {
+                "role": "assistant",
+                "content": "A small CFG guidance spread of around 2 (e.g. min_cfg 18 & sampler cfg 20) is recommended for the VideoLinearCFGGuidance feature in ComfyUI-svd_txt2vid to help with image quality consistency."
+            }
+        ]
+    }
+]

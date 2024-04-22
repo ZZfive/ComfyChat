@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the ComfyUI-safety-checker node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-safety-checker node introduces a CLIP-based safety checker that identifies and handles Not Safe For Work (NSFW) content in images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What model is used by the safety checker node for NSFW detection?"
+            },
+            {
+                "role": "assistant",
+                "content": "The safety checker node uses a pretrained model from CompVis called stable-diffusion-safety-checker."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the safety checker node handle detected NSFW images?"
+            },
+            {
+                "role": "assistant",
+                "content": "The safety checker node substitutes detected NSFW images with solid black placeholders."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can the sensitivity level of the NSFW detection be adjusted?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, the sensitivity level of NSFW detection can be adjusted. The standard value is 0.5, which is the detection threshold for explicit nudity."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the different sensitivity levels available for NSFW detection?"
+            },
+            {
+                "role": "assistant",
+                "content": "The sensitivity levels available for NSFW detection are 0 (no filtering), 0.5 (threshold for explicit nudity), and 1.0 (sensitivity for detecting images with lingerie/underwear)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does the safety checker node connect to images directly or via VAE Decode?"
+            },
+            {
+                "role": "assistant",
+                "content": "The safety checker node processes input images from either direct connection or via VAE Decode."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is there an example of a node setup for the safety checker?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, there is an example node setup available as an image asset at the link provided in the documentation."
+            }
+        ]
+    }
+]

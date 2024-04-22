@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'comfyui-upscale-by-model' node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'comfyui-upscale-by-model' node allows you to upscale an image by a factor using a specified model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the steps followed by the 'comfyui-upscale-by-model' node to upscale an image?"
+            },
+            {
+                "role": "assistant",
+                "content": "The node follows these steps: 1. Upscales the input image with the upscale model. 2. Checks the size of the upscaled image and adjusts it if necessary. 3. Returns the upscaled image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is the output size of the upscaled image determined?"
+            },
+            {
+                "role": "assistant",
+                "content": "The output size is determined by the target size, which is calculated from the upscale factor 'upscale_by'. If the upscaled size is larger, it is downscaled using the 'rescale_method'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What inputs does the 'comfyui-upscale-by-model' node expect?"
+            },
+            {
+                "role": "assistant",
+                "content": "The node expects 'upscale_model', 'image', 'upscale_by', and 'rescale_method' as inputs."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'rescale_method' input parameter used for?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'rescale_method' parameter defines the method to be used for downscaling the image to the target scale if the upscaled size is larger than the target."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the output of the 'comfyui-upscale-by-model' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The output of the node is the upscaled image, labeled as 'IMAGE'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you install the 'comfyui-upscale-by-model' custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install, clone the repository into ComfyUI's 'custom_nodes' folder."
+            }
+        ]
+    }
+]

@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-FLATTEN?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-FLATTEN is a suite of nodes that utilizes the FLATTEN optical flow model to generate or edit images and videos in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install ComfyUI-FLATTEN?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install ComfyUI-FLATTEN by cloning or downloading the repo into your 'ComfyUI/custom_nodes/' directory or using the ComfyUI-Manager to automatically install the nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What Python packages are required for ComfyUI-FLATTEN?"
+            },
+            {
+                "role": "assistant",
+                "content": "No additional Python packages outside of ComfyUI requirements are necessary for ComfyUI-FLATTEN."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the nodes included in ComfyUI-FLATTEN?"
+            },
+            {
+                "role": "assistant",
+                "content": "The nodes included in ComfyUI-FLATTEN are Load Checkpoint with FLATTEN model, Sample Trajectories, Unsampler (Flatten), KSampler (Flatten), Apply Flatten Attention (SD1.5 Only), and Create Flow Noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Load Checkpoint node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Load Checkpoint node loads any given SD1.5 checkpoint with the FLATTEN optical flow model. It only works with the Flatten KSampler and a standard ComfyUI checkpoint loader is required for other KSamplers."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Sample Trajectories node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Sample Trajectories node takes the input images and samples their optical flow into trajectories. Context Length and Overlap for Batching with AnimateDiff-Evolved are also required."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Unsampler node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Unsampler node unsamples the input latent and creates the needed injections required for sampling. It should only use Euler or ddpm2m as the sampling method."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the KSampler node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The KSampler node samples the unsampled latents and uses the injections from the Unsampler. It can use any sampling method, but euler or ddpm2m are recommended for editing pieces of the video."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Apply Flatten Attention node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Apply Flatten Attention node uses Flatten's Optical Flow attention mechanism without the rest of Flatten's model. It does not always work with methods that add normal noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Create Flow Noise node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Create Flow Noise node creates flow noise given a latent and trajectories."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the recommended settings for video editing with ComfyUI-FLATTEN?"
+            },
+            {
+                "role": "assistant",
+                "content": "The recommended settings are to use an Unsampler and KSampler with `old_qk = 0`. The Unsampler should use the euler sampler and the KSampler should use the dpmpp_2m sampler."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the recommended settings for scene editing with ComfyUI-FLATTEN?"
+            },
+            {
+                "role": "assistant",
+                "content": "For scene editing, it is recommended to use LCM on the KSampler alongside setting `old_qk = 1` on the KSampler. Ancestral sampling methods also work well."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What ComfyUI nodes are supported by ComfyUI-FLATTEN?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-FLATTEN can support most ComfyUI nodes, including ControlNets, IP-Adapter, LCM, InstanceDiffusion/GLIGEN, and many more."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the unsupported ComfyUI features for ComfyUI-FLATTEN?"
+            },
+            {
+                "role": "assistant",
+                "content": "Currently, the known unsupported custom ComfyUI features are: Scheduled Prompting and Context Views for advanced batching."
+            }
+        ]
+    }
+]

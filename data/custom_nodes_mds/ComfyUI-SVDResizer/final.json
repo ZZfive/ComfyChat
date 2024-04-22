@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-SVDResizer in Stable Video Diffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SVDResizer is a helper for resizing the source image according to the sizes enabled in Stable Video Diffusion."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the rationale behind changing the size of the image in steps between 576 and 1024?"
+            },
+            {
+                "role": "assistant",
+                "content": "The rationale is based on the greatest common denominator of 576 and 1024, which is 64. This allows for resizing that is more likely to result in a coherent video that is not the standard size of 576X1024."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does SVD handle resizing that adheres to the rule of using the greatest common denominator of 576 and 1024?"
+            },
+            {
+                "role": "assistant",
+                "content": "SVD is lenient with such resizing, increasing the chance of maintaining a coherent video that is not the standard size."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended approach when adjusting the image sizes?"
+            },
+            {
+                "role": "assistant",
+                "content": "It is advisable to keep the value 1024 constant and play with the second size to maintain the stability of the result."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I see a demo of how ComfyUI-SVDResizer works?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, a demo is available at the provided link: <https://github.com/ShmuelRonen/ComfyUI-SVDResizer/assets/80190186/3eeccc4d-fcc7-486e-b733-8fa3e985a3c1>"
+            }
+        ]
+    }
+]

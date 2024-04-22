@@ -1,0 +1,242 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are UE nodes used for and where can I download the test workflow for UE Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "UE nodes are used to create virtual links in ComfyUI workflows. The test workflow for UE Nodes can be downloaded from the cg-use-everywhere GitHub repository."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the known limitations of UE nodes when used with Pythons ssss Preset Text nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "There are limitations in feeding the output of a Preset Text node directly into a UE node, which might break UE regex connections."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I control matching with regex rules when using Anything Everywhere nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can control matching with regex rules by using the title_regex and input_regex widgets in the Anything Everywhere node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Convert to real links feature do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Convert to real links feature replaces the virtual links created by UE nodes with real links, and removes the UE nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the logging and debugging options available for UE nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "Logging information can be found in the JavaScript console. Levels of logging include ERROR, PROBLEM, INFORMATION, and DETAIL. More details can be viewed in the `use_everywhre_utilities.js` file. "
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I manage group restrictions for UE nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can manage group restrictions for UE nodes by right-clicking on the node and selecting 'Group restrictions'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is seed everywhere and what does it do?"
+            },
+            {
+                "role": "assistant",
+                "content": "Seed Everywhere connects to any unconnected INT input with 'seed' in the input name, and it has the control_after_generate feature. This allows you to use the same seed everywhere."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I visualize the UE links in the workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can visualize the UE links by right-clicking on the background canvas and selecting 'Toggle UE Link Visibility'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the priority order of the various UE nodes in case of ambiguous matches?"
+            },
+            {
+                "role": "assistant",
+                "content": "If there is more than one sending node that matches an input, the order of priority is: `Anything Everywhere?`, `Seed Everywhere` and `Prompts Everywhere`, `Anything Everywhere`, `Anything Everywhere3`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I improve the performance of the loop detection for group nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can improve the performance of loop detection for group nodes by enabling the `Highway nodes` feature from the 'Other Features' section in the UE node settings."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the expected functionality of CG-Use-Everywhere in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "CG-Use-Everywhere is designed to ensure that any image within a specified folder has its associated workflow saved with it, allowing for the replication of the same image whenever the workflow is executed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is it important for an image to have its workflow saved in CG-Use-Everywhere?"
+            },
+            {
+                "role": "assistant",
+                "content": "Storing the workflow with the image in CG-Use-Everywhere ensures consistency and reproducibility, making it easier to generate the same image at a later date or on a different device."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does ComfyUI handle workflow saves for images in CG-Use-Everywhere?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI uses CG-Use-Everywhere to automatically attach the workflow to an image when it is processed, allowing for the retrieval and execution of the workflow whenever necessary."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can the workflow result differ if the same workflow is applied to the same image using CG-Use-Everywhere?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, the workflow is designed to be deterministic, meaning that the same workflow applied to the same image using CG-Use-Everywhere should always generate the exact same image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does an UE node in ComfyUI do?"
+            },
+            {
+                "role": "assistant",
+                "content": "An UE node in ComfyUI is used to 'Use Everywhere'. It means that you can put an UE node into your workflow, connect its input, and every other node with an unconnected input of the same type will act as if connected to it."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the types of UE nodes available in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "As per the old documentation, the types available are CLIP, IMAGE, MODEL, VAE, CONDITIONING, or LATENT. However, the newer version includes INT, MASK, and CHECKPOINT as well."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is a UE? node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "A UE? node is similar to a UE node in ComfyUI, but it adds two widgets, 'title' and 'input'. These are Regular Expressions that allow the node to send data to nodes where the node's title and unconnected input name match."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you explain the usage of UE? nodes with an example?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, UE? nodes require Regular Expressions to function. For example, if you want to match the exact name 'seed', you'll need something like `^seed$` as your regex. The widget 'title' and 'input' in a UE? node help it send data to the nodes with matching titles or input names."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can a UE or UE? node be converted to a widget?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, a UE or UE? node with just one output can be converted to a widget. However, combination nodes, like CHECKPOINT, can't be converted. Also, keep in mind that if you convert it to a widget, you won't be able to change the title as the code gets the data type from the input."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I add an UE node to my workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "To add an UE node to your workflow, simply place it in your workflow, connect its input, and then any node with an unconnected input of the same type will act as if connected to it. You can even use prepared workflows, like the ones mentioned in the given file."
+            }
+        ]
+    }
+]

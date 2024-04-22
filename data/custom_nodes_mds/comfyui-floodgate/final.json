@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI Floodgate?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI Floodgate is an extension for ComfyUI that allows you to easily control the logic flow in the workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What problem does ComfyUI Floodgate solve?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI Floodgate solves the issue of having to reconnect multiple nodes every time when using complex workflows like Hires. Fix or similar, which can be time-consuming."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you use ComfyUI Floodgate?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use ComfyUI Floodgate, connect the output of a node like 'LATENT' to the 'source' of the Floodgate node, then connect each path to the desired remaining workflow. Toggle between paths by clicking on 'gate_open'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What happens to the unselected path in ComfyUI Floodgate?"
+            },
+            {
+                "role": "assistant",
+                "content": "The unselected path in ComfyUI Floodgate will not be executed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does opening the Floodgate require the precedent nodes to be processed again?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, since ComfyUI caches intermediate results, opening the Floodgate does not require previous nodes to be processed again."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I use multiple Floodgates in one workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, you can use multiple Floodgates in one workflow with ComfyUI Floodgate."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the restriction on the input/output types when using Floodgate?"
+            },
+            {
+                "role": "assistant",
+                "content": "When using Floodgate, you can connect any arbitrary types. However, the input/output types must still match."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "At what stage is the logic flow parsed in ComfyUI Floodgate?"
+            },
+            {
+                "role": "assistant",
+                "content": "The logic flow is parsed during the queuing stage, not the execution stage, in ComfyUI Floodgate."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "When should the boolean value for Floodgate be determined?"
+            },
+            {
+                "role": "assistant",
+                "content": "The boolean value for Floodgate should be determined when you press 'Queue Prompt', and it should be from a toggle or a primitive node, not from a node that outputs during execution."
+            }
+        ]
+    }
+]

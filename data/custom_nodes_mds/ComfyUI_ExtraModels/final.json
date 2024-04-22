@@ -1,0 +1,74 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI_ExtraModels?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_ExtraModels is a repository that aims to provide support for various different image diffusion models within ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install ComfyUI_ExtraModels?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install ComfyUI_ExtraModels by cloning the repository to your custom_nodes folder using the command 'git clone https://github.com/city96/ComfyUI_ExtraModels custom_nodes/ComfyUI_ExtraModels', and install the requirements with 'pip install -r requirements.txt' in your VENV/conda env."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the PixArt model in ComfyUI_ExtraModels?"
+            },
+            {
+                "role": "assistant",
+                "content": "The PixArt model uses a T5 text encoder instead of clip and comes in 512 and 1024 versions. It requires specific pre-defined resolutions to work correctly and utilizes the same latent space as SD1.5."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the DiT model in ComfyUI_ExtraModels?"
+            },
+            {
+                "role": "assistant",
+                "content": "The DiT model uses class labels instead of prompts and is limited to 256x256 or 512x512 images. It shares the same latent space as SD1.5 and operates in FP16, but doesn't support other optimizations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the T5 model in ComfyUI_ExtraModels?"
+            },
+            {
+                "role": "assistant",
+                "content": "The T5 model is a text encoder that can be loaded onto the CPU and uses about 22GB of system RAM. Loaded in bnb4bit mode, it only takes around 6GB VRAM and is compatible with 12GB cards, although it cannot be temporarily moved to system RAM with BitsAndBytes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What VAE models are supported in ComfyUI_ExtraModels?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_ExtraModels supports various custom VAE models, including the ConsistencyDecoder, Deflickering Decoder, and VideoDecoder. Options to select different data types when loading are also available."
+            }
+        ]
+    }
+]
