@@ -530,27 +530,31 @@ def semi_automatic_for_one_node2(node_name: str, qa,
 
 
 
-def construct_data():
+# 基于alpaca、由custom_node_list人工构建和使用deepseek从收集的mds中生成的数据构建一个训练数据集
+def construct_data(save_path: str, ratio: float = 0.1,
+                   md_base_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds") -> None:
+    random.seed(42)
+
     comfychat_data = {
         "questions": [
-        "Could you introduce yourself?",
-        "What is your identity?",
-        "Can you tell me more about who you are?",
-        "Please explain your role.",
-        "Who am I chatting with?",
-        "What's your purpose?",
-        "How would you describe yourself?",
-        "Tell me more about your capabilities."
+            "Could you introduce yourself?",
+            "What is your identity?",
+            "Can you tell me more about who you are?",
+            "Please explain your role.",
+            "Who am I chatting with?",
+            "What's your purpose?",
+            "How would you describe yourself?",
+            "Tell me more about your capabilities."
         ],
         "answers": [
-        "I am ComfyChat, an LLM-based smart assistant ready to help you with your ComfyUI queries.",
-        "My identity is ComfyChat, an intelligent assistant designed to answer your questions about ComfyUI.",
-        "As an LLM-based assistant, I am here to help you find answers to any questions you might have about ComfyUI.",
-        "My role is to provide you with assistance and information related to ComfyUI as an LLM-based intelligent assistant.",
-        "You're chatting with ComfyChat, a helpful AI designed to support you with ComfyUI-related inquiries.",
-        "My purpose is to offer guidance, information, and assistance on ComfyUI topics.",
-        "I'm an AI assistant based on LLM, dedicated to answering your questions and providing help with ComfyUI.",
-        "My capabilities include understanding your queries and providing accurate information about ComfyUI to the best of my knowledge."
+            "I am ComfyChat, an LLM-based smart assistant ready to help you with your ComfyUI queries.",
+            "My identity is ComfyChat, an intelligent assistant designed to answer your questions about ComfyUI.",
+            "As an LLM-based assistant, I am here to help you find answers to any questions you might have about ComfyUI.",
+            "My role is to provide you with assistance and information related to ComfyUI as an LLM-based intelligent assistant.",
+            "You're chatting with ComfyChat, a helpful AI designed to support you with ComfyUI-related inquiries.",
+            "My purpose is to offer guidance, information, and assistance on ComfyUI topics.",
+            "I'm an AI assistant based on LLM, dedicated to answering your questions and providing help with ComfyUI.",
+            "My capabilities include understanding your queries and providing accurate information about ComfyUI to the best of my knowledge."
         ]
     }
 
@@ -576,8 +580,40 @@ def construct_data():
             "ComfyUI's system requirements include a modern web browser, Python 3.10 or higher, and the necessary dependencies, such as Git and pip. The recommended hardware depends on the complexity of your workflows, with higher VRAM GPUs and more RAM enabling smoother performance."
         ]
     }
-    pass
+    
+    data = []
 
+    for q, a in zip(comfychat_data['questions'], comfychat_data['answers']):
+        data.append(construct_single_messages(q, a))
+
+    for q, a in zip(comfyui_data['questions'], comfyui_data['answers']):
+        data.append(construct_single_messages(q, a))
+
+    data = data * 3
+    # print(len(data))
+
+    comfyui_node_data = load4json("/root/code/ComfyChat/data/comfyui_node_data.json")
+    data += comfyui_node_data
+    # print(len(data))
+
+    alpach_data = load4json("/root/code/ComfyChat/data/alpaca_gpt4_data_modification.json")
+    alpach_data = random.sample(alpach_data, int(ratio * len(alpach_data)))
+    data += alpach_data
+    # print(len(data))
+
+    num = 0
+    for item in os.listdir(md_base_dir):
+        node_dir = os.path.join(md_base_dir, item)
+        if os.path.isdir(node_dir) and len(os.listdir(node_dir)) > 0 and 'final.json' in os.listdir(node_dir):
+            final_path = os.path.join(node_dir, "final.json")
+            final_data = load4json(final_path)
+            data += final_data
+            num += 1
+    # print(num)
+    # print(len(data))
+
+    random.shuffle(data)
+    save2json(data, save_path)
 
 
 if __name__=='__main__':
@@ -613,29 +649,31 @@ if __name__=='__main__':
     # node_name = 'cozy-utils-comfyui-nodes'
     # semi_automatic_for_one_node1(node_name, questions, answers)
 
-    qa = {
-        "questions": [
-            {
-                "question": "How do I install Davemane42's Custom Node for ComfyUI?",
-                "answer": "Navigate to the `/ComfyUI/custom_nodes/` folder, `git clone git clone https://github.com/Davemane42/ComfyUI_Dave_CustomNode`, and start ComfyUI."
-            },
-            {
-                "question": "What does the MultiAreaConditioning 2.4 node allow you to do?",
-                "answer": "The MultiAreaConditioning 2.4 node allows you to visualize the ConditioningSetArea node for better control and comes with a ConditioningUpscale node useful for high-resolution fix workflow."
-            },
-            {
-                "question": "What is the use of the ConditioningUpscale node?",
-                "answer": "The ConditioningUpscale node is useful for high-resolution fix workflow."
-            },
-            {
-                "question": "What is included in the MultiLatentComposite 1.1 node?",
-                "answer": "The MultiLatentComposite 1.1 node allows you to visualize the MultiLatentComposite node for better control."
-            },
-            {
-                "question": "What is one known issue with MultiLatentComposite 1.1?",
-                "answer": "One known issue with MultiLatentComposite 1.1 is that it does not check for out of bound layers."
-            }
-        ]
-        }
-    node_name = 'ComfyUI_Dave_CustomNode'
-    semi_automatic_for_one_node2(node_name, qa)
+    # qa = {
+    #     "questions": [
+    #         {
+    #             "question": "How do I install Davemane42's Custom Node for ComfyUI?",
+    #             "answer": "Navigate to the `/ComfyUI/custom_nodes/` folder, `git clone git clone https://github.com/Davemane42/ComfyUI_Dave_CustomNode`, and start ComfyUI."
+    #         },
+    #         {
+    #             "question": "What does the MultiAreaConditioning 2.4 node allow you to do?",
+    #             "answer": "The MultiAreaConditioning 2.4 node allows you to visualize the ConditioningSetArea node for better control and comes with a ConditioningUpscale node useful for high-resolution fix workflow."
+    #         },
+    #         {
+    #             "question": "What is the use of the ConditioningUpscale node?",
+    #             "answer": "The ConditioningUpscale node is useful for high-resolution fix workflow."
+    #         },
+    #         {
+    #             "question": "What is included in the MultiLatentComposite 1.1 node?",
+    #             "answer": "The MultiLatentComposite 1.1 node allows you to visualize the MultiLatentComposite node for better control."
+    #         },
+    #         {
+    #             "question": "What is one known issue with MultiLatentComposite 1.1?",
+    #             "answer": "One known issue with MultiLatentComposite 1.1 is that it does not check for out of bound layers."
+    #         }
+    #     ]
+    #     }
+    # node_name = 'ComfyUI_Dave_CustomNode'
+    # semi_automatic_for_one_node2(node_name, qa)
+
+    construct_data("/root/code/ComfyChat/data/comfyui_data_v1.json")
