@@ -531,7 +531,7 @@ def semi_automatic_for_one_node2(node_name: str, qa,
 
 
 # 基于alpaca、由custom_node_list人工构建和使用deepseek从收集的mds中生成的数据构建一个训练数据集
-def construct_data(save_path: str, ratio: float = 0.1,
+def construct_data(save_path: str, ratio: float = 0.4,
                    md_base_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds") -> None:
     random.seed(42)
 
