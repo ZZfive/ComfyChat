@@ -30,7 +30,7 @@ use_varlen_attn = False
 # Data
 alpaca_en_path = '/root/code/ComfyChat/data/comfyui_data_v1.json'
 prompt_template = PROMPT_TEMPLATE.default
-max_length = 2048
+max_length = 1024
 pack_to_max_length = True
 
 # parallel
