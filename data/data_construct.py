@@ -529,6 +529,27 @@ def semi_automatic_for_one_node2(node_name: str, qa,
     save2json(data, save_path)
 
 
+def check_messages_json(md_base_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds") -> None:
+    for item in os.listdir(md_base_dir):
+        node_dir = os.path.join(md_base_dir, item)
+        if os.path.isdir(node_dir) and len(os.listdir(node_dir)) > 0 and 'final.json' in os.listdir(node_dir):
+            final_path = os.path.join(node_dir, "final.json")
+            final_data = load4json(final_path)
+            if isinstance(final_data, list):
+                for v in final_data:
+                    if isinstance(v, dict) and "messages" in v and len(v["messages"]) == 2:
+                        d1 = v["messages"][0]
+                        d2 = v["messages"][1]
+                        if ("role" in d1 and d1["role"] and "content" in d1 and d1["content"]) and ("role" in d2 and d2["role"] and "content" in d2 and d2["content"]):
+                            continue
+                        else:
+                            print(v)
+                            print('错误：', final_path)
+                    else:
+                        print('错误：', final_path)
+            else:
+                print('错误：', final_path)
+
 
 # 基于alpaca、由custom_node_list人工构建和使用deepseek从收集的mds中生成的数据构建一个训练数据集
 def construct_data(save_path: str, ratio: float = 0.4,
@@ -649,31 +670,86 @@ if __name__=='__main__':
     # node_name = 'cozy-utils-comfyui-nodes'
     # semi_automatic_for_one_node1(node_name, questions, answers)
 
-    # qa = {
-    #     "questions": [
-    #         {
-    #             "question": "How do I install Davemane42's Custom Node for ComfyUI?",
-    #             "answer": "Navigate to the `/ComfyUI/custom_nodes/` folder, `git clone git clone https://github.com/Davemane42/ComfyUI_Dave_CustomNode`, and start ComfyUI."
-    #         },
-    #         {
-    #             "question": "What does the MultiAreaConditioning 2.4 node allow you to do?",
-    #             "answer": "The MultiAreaConditioning 2.4 node allows you to visualize the ConditioningSetArea node for better control and comes with a ConditioningUpscale node useful for high-resolution fix workflow."
-    #         },
-    #         {
-    #             "question": "What is the use of the ConditioningUpscale node?",
-    #             "answer": "The ConditioningUpscale node is useful for high-resolution fix workflow."
-    #         },
-    #         {
-    #             "question": "What is included in the MultiLatentComposite 1.1 node?",
-    #             "answer": "The MultiLatentComposite 1.1 node allows you to visualize the MultiLatentComposite node for better control."
-    #         },
-    #         {
-    #             "question": "What is one known issue with MultiLatentComposite 1.1?",
-    #             "answer": "One known issue with MultiLatentComposite 1.1 is that it does not check for out of bound layers."
-    #         }
-    #     ]
-    #     }
-    # node_name = 'ComfyUI_Dave_CustomNode'
-    # semi_automatic_for_one_node2(node_name, qa)
+    qa = {
+            "content": [
+                {
+                    "subject": "ComfyUI-Manager",
+                    "question": "Is the ComfyUI-Manager extension still working after the SD XL update?",
+                    "answer": "No, the workaround used to patch the hardcoded transformer model from the HuggingFace library no longer works after the SD XL update."
+                },
+                {
+                    "subject": "ComfyUI-Manager",
+                    "question": "What is the contribution of the ComfyUI-Manager extension to Stable Diffusion?",
+                    "answer": "At present, the extension is not contributing significantly enough to justify additional development time."
+                },
+                {
+                    "subject": "ComfyUI-Manager",
+                    "question": "How does the directional prompt attention extension affect the CLIP and SD parts of the framework?",
+                    "answer": "The extension only affects the CLIP part of the framework, but since the SD part is conditioned on a summarized representation of the prompt, the SD part still sees all inputs, making it difficult for the method to work consistently."
+                },
+                {
+                    "subject": "ComfyUI-Manager",
+                    "question": "What is Directional Prompt Attention in the context of ComfyUI?",
+                    "answer": "Directional Prompt Attention is an attempt to limit the impact of contextual words or parts of the prompt on subsequent or irrelevant parts of the prompt."
+                },
+                {
+                    "subject": "ComfyUI-Manager",
+                    "question": "What is the purpose of the causal attention mask in the standard transformer implementation?",
+                    "answer": "The causal attention mask prevents the current tokens from attending to future tokens, which is useful for language models that are trained to predict the next word."
+                },
+                {
+                    "subject": "ComfyUI-Manager",
+                    "question": "How is causal attention masking implemented within CLIP transformer models?",
+                    "answer": "The standard CLIP transformer has a built-in causal attention mask that masks out future tokens from the current tokens' attention."
+                },
+                {
+                    "subject": "ComfyUI-Manager",
+                    "question": "What does the 'ComfyUI-Manager' extension implement regarding attention masks?",
+                    "answer": "The extension allows the transformer to apply attention only on certain tokens in the prompt to limit the effect of contextual words or parts of the prompt on subsequent or irrelevant parts of the prompt."
+                },
+                {
+                    "subject": "ComfyUI-Manager",
+                    "question": "How does the user specify relationships in the prompt using the ComfyUI-Manager extension?",
+                    "answer": "The user specifies relationships in the prompt using parentheses, `<`, and `>`."
+                },
+                {
+                    "subject": "ComfyUI-Manager",
+                    "question": "What is the 'CLIP Directional Prompt Attention Encode' node used for in ComfyUI?",
+                    "answer": "This node allows users to use `>` and `<` in the prompt to denote relationships between words or parts of the prompt."
+                },
+                {
+                    "subject": "ComfyUI-Manager",
+                    "question": "Where can the 'CLIP Directional Prompt Attention Encode' node be found in ComfyUI?",
+                    "answer": "This node can be found under `conditioning` in ComfyUI."
+                },
+                {
+                    "subject": "ComfyUI-Manager",
+                    "question": "What additional packages are required to use this extension in ComfyUI?",
+                    "answer": "You will need `scikit-learn` and `matplotlib` installed in your ComfyUI environment to use this extension."
+                }
+            ]
+        }
+    node_name = 'ComfyUI-Manager'
+    semi_automatic_for_one_node2(node_name, qa)
 
-    construct_data("/root/code/ComfyChat/data/comfyui_data_v1.json")
+    # construct_data("/root/code/ComfyChat/data/comfyui_data_v1.json")
+
+    # check_messages_json()
+
+    # comfyui_data = load4json('/root/code/ComfyChat/data/comfyui_data_v1.json')
+    # for v in comfyui_data:
+    #     if isinstance(v, dict) and "messages" in v and len(v["messages"]) == 2:
+    #         d1 = v["messages"][0]
+    #         d2 = v["messages"][1]
+    #         if ("role" in d1 and d1["role"] and "content" in d1 and d1["content"]) and ("role" in d2 and d2["role"] and "content" in d2 and d2["content"]):
+    #             continue
+    #         else:
+    #             print(v)
+    #     else:
+    #         print(v)
+
+
+    # from datasets import load_dataset
+    # comfyui_data = load_dataset("json", data_file='/root/code/ComfyChat/data/comfyui_node_data.json')
+    # comfyui_data = comfyui_data['json']
+    # print(len(comfyui_data))
