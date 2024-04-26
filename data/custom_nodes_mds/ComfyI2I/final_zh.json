@@ -1,0 +1,158 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Color_Transfer节点是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "颜色传递节点是一个独立节点，它可以获取一张图片的颜色并将其传递给另一张图片。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“Color_Transfer”节点中的'No_of_Colors'变量的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"No_of_Colors\"变量在Color_Transfer节点中允许您选择从每张图片中提取的颜色数量，通常在5到20之间。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何调整“颜色传递”效果的强度？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"强度\"控制用于调整颜色传递效果的强度。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“Blur_Radius”和“Blur_Amount”控制项在Color_Transfer节点中是做什么用的？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"Blur_Radius\"和\"Blur_Amount\"控制位于Color_Transfer节点中，它们影响源图像中颜色段边缘的模糊程度。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何使用颜色传递节点与蒙版操作节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以使用颜色传输节点与蒙版操作节点，通过输出单独的红（R）、绿（G）、蓝（B）通道，以在通道间差异性地传输颜色。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"Separate_Mask\"选项在Mask_Ops节点中是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"Separate_Mask\"选项在Mask_Ops节点中告诉节点是否按每个岛屿分离遮罩，还是将所有岛屿保持在1张图片中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“Use_Text_Sigma”控制项在Mask_Ops节点中是做什么用的？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"Use_Text_Sigma\" 控制在 Mask_Ops 节点中用于平滑由文本创建的遮罩。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“Blend_Percentage”、“Black Level”、“Mid Level”和“White Level”控制分别是什么，在Mask_Ops节点中？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"Blend_Percentage\"、\"Black Level\"、\"Mid Level\" 和 \"White Level\" 控制在 Mask_Ops 节点中用于混合、调整遮罩的级别以及级别。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“Shrink_Grow”控制项在Mask_Ops节点中是做什么用的？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"Shrink_Grow\" 控制在 Mask_Ops 节点中用于缩小或扩大您的遮罩。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“修复区域”节点是做什么用的？"
+            },
+            {
+                "role": "assistant",
+                "content": "“修复区域”节点根据每个遮罩的映射边界框对遮罩和图像进行分割和裁剪。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“合并和粘贴”节点的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"组合和粘贴\"节点从VAE解码节点获取新图像，调整大小，并将它们粘贴在原始图像上。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以找到 ComfyI2I 的工作流程示例？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以在工作流目录中找到 ComfyI2I 的工作流示例，包括 I2I workflow.json 和 Color Xfer Workflow.json。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "I2I workflow.json 文件中包含了什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"I2I workflow.json 文件包含了一个基本的工作流程，其中包含了所有节点的组合，并展示了它们是如何相互连接的。\""
+            }
+        ]
+    }
+]

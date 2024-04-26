@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是SD-Latent-Upscaler，它是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "SD-Latent-Upscaler是一个小型神经网络，用于放大稳定扩散潜在图像。它的工作原理类似于ESRGAN，但它的训练严重不足。它可以用于放大潜在图像而不会破坏图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "SDXL目前存在什么问题？"
+            },
+            {
+                "role": "assistant",
+                "content": "目前，SDXL的色彩偏移问题很小。当然，它确实如此。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何在ComfyUI中安装SD-Latent-Upscaler？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过使用命令 `git clone https://github.com/city96/SD-Latent-Upscaler custom_nodes/SD-Latent-Upscaler` 将仓库克隆到您的 custom_nodes 文件夹中来安装它，或者通过将 `comfy_latent_upscaler.py` 文件下载到您的 ComfyUI/custom_nodes 文件夹中，并在您的虚拟环境中使用 `pip install huggingface-hub` 安装 hfhub。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何在我的本地模型中使用SD-Latent-Upscaler？"
+            },
+            {
+                "role": "assistant",
+                "content": "要本地使用它，请创建一个`models`文件夹并将模块放置在那里，或者使用命令`git clone https://huggingface.co/city96/SD-Latent-Upscaler custom_nodes/SD-Latent-Upscaler/models`将整个HF仓库克隆到其中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "SD-Latent-Upscaler v2.0的训练程序是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "对于2.0版本，网络架构被更改为一系列`Conv2d`层，并在开始时加上一个`Upsample`层。它在DIV2K + Flickr2K上训练了100万次迭代，使用AdamW + L1损失和一个`OneCycleLR`调度器。"
+            }
+        ]
+    }
+]

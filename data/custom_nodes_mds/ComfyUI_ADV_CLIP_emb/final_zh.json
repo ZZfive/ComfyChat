@@ -1,0 +1,74 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`token_normalization` 设置在 BNK_CLIPTextEncodeAdvanced 节点中的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "`token_normalization` 设置决定了如何对令牌权重进行归一化。它提供了几种选项，以确保适当的权重分布和控制。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "解释BNK_CLIPTextEncodeAdvanced节点中`weight_interpretation`的不同方法。"
+            },
+            {
+                "role": "assistant",
+                "content": "该节点提供了几种处理上/下加权的方法，包括舒适（默认）、A1111、强制和舒适++方法。这些方法操作CLIP向量以实现加权解释。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`down_weighting` 方法在 BNK_CLIPTextEncodeAdvanced 节点中是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "在该节点中，通过使用生成加权的A、B和C向量并根据权重混合它们的技术，降低权重可以创建不同的嵌入表示。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "文档中提到的Mix Clip Embeddings节点的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "提供的文本中没有讨论 Mix Clip Embeddings 节点。它似乎是一个已弃用的功能。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "BNK_CLIPTextEncodeSDXLAdvanced节点中的平衡设置是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "平衡设置控制每个CLIP模型对生成嵌入的影响比例。平衡值为0时，会排除0 Kün 2模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "列出由BNK_AddCLIPSDXLParams和BNK_AddCLIPSDXLRParams节点添加的额外参数。"
+            },
+            {
+                "role": "assistant",
+                "content": "**BNK_AddCLIPSDXLParams:** 宽度，高度，裁剪宽度，裁剪高度，目标宽度，目标高度。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,122 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_SeeCoder为ComfyUI提供了哪两个实验性的WIP节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "SEECoderImageEncode 和 ConcatConditioning 是 ComfyUI_SeeCoder 为 ComfyUI 提供的两个实验性 WIP（进行中）节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "SEECoderImageEncode节点的目的是做什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "SEECoderImageEncode节点用于从图像创建嵌入。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "SEECoderImageEncode节点需要哪些输入？"
+            },
+            {
+                "role": "assistant",
+                "content": "SEECoderImageEncode节点需要一个要编码的图像和一个seecoder_name。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ConcatConditioning节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ConcatConditioning节点用于将不同的嵌入拼接在一起，允许创建可以拼接的文本和视觉嵌入。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ConcatConditioning节点需要哪些输入？"
+            },
+            {
+                "role": "assistant",
+                "content": "ConcatConditioning节点需要一组嵌入物来连接某些东西（conditioning_to），以及一个嵌入物来连接在这些后面（conditioning_from）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "SeeCoders模型可以在ComfyUI_SeeCoder节点中使用，它在哪里可以找到？"
+            },
+            {
+                "role": "assistant",
+                "content": "SeeCoders模型可以在Hugging Face上找到，具体链接是：https://huggingface.co/shi-labs/prompt-free-diffusion。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "下载的SeeCoders模型应该放置在文件系统中的哪个位置，以便与ComfyUI_SeeCoder节点一起使用？"
+            },
+            {
+                "role": "assistant",
+                "content": "下载的SeeCoders模型应该放置在`models/seecoders`目录中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是为 ComfyUI_SeeCoder 计划的未来增强功能？"
+            },
+            {
+                "role": "assistant",
+                "content": "计划对 ComfyUI_SeeCoder 进行的未来增强包括支持非 safetensor 格式，并将注意力层与 ComfyUI 中使用的层保持一致。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_SeeCoder节点可以帮助完成哪些特定任务？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，ComfyUI_SeeCoder节点可以帮助执行诸如从图像创建嵌入以及将不同的嵌入连接起来创建组合表示的任务，这在各种图像和文本处理应用中可能很有用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "SeeCoders模型的起源是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "SeeCoders 是由 SHI-Labs 开发的，该模型可以在他们的 GitHub 页面上找到：https://github.com/SHI-Labs/Prompt-Free-Diffusion。"
+            }
+        ]
+    }
+]

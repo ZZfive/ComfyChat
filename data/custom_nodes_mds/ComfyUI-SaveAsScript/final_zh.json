@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-SaveAsScript（SaS）的主要特点是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "SaS的主要特点是它提供了一个更加强大的命令行界面，并且能够通过ComfyUI网页界面上的一个按钮，直接将你当前的工作流程导出为一个脚本。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何在SAS中修改脚本文件的输出？"
+            },
+            {
+                "role": "assistant",
+                "content": "SaS 允许用户指定一个 `--output` 选项，该选项可以覆盖 `SaveImage` 节点的默认路径。此外，如果选择 `-` 作为输出路径，生成的图像将被管道传输到标准输出。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "由SaS生成的脚本可以作为模块导入吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，由SaS生成的脚本可以作为模块导入。它们可以使用Python中的`import`语句导入，然后可以使用`main()`函数以编程方式调用工作流。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何将命令行参数传递给由SaS生成的脚本？"
+            },
+            {
+                "role": "assistant",
+                "content": "SaS 会自动将 ComfyUI 工作流中未填写的任何必需输入变量转换为参数。这些参数可以在运行生成的脚本时作为命令行参数传递。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI 服务器可以通过参数进行控制吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，如果你想将任何参数传递给 ComfyUI 服务器，可以使用 `--` 来表示你已经完成了 SaS 参数的传递，现在正在传递 ComfyUI 参数。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "与 ComfyUI-To-Python-Extension 相比，ComfyUI-SaveAsScript 引入了哪些变化？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SaveAsScript 引入了新功能，如模块支持、自定义输出路径以及传递命令行参数的能力。对 Windows 路径和某些 Crystal Tools 节点进行了修复，并且计划提高与模块 API 的兼容性。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-SaveAsScript的潜在用例有哪些？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SaveAsScript 的潜在用例包括简化创建精简应用程序或流水线部署的过程、创建程序化实验、生成大型图像生成队列，以及轻松扩展或迭代架构。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-SaveAsScript 的哪个版本引入了对自定义节点的支持？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SaveAsScript V1.0.0 引入了对自定义节点的支持。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用SaS自定义节点的程序是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "用户需要安装自定义节点（通过git克隆或管理器），点击网页用户界面上的按钮或运行命令行界面，将创建的.py文件移动到`ComfyUI`文件夹中，并运行生成的脚本。"
+            }
+        ]
+    }
+]

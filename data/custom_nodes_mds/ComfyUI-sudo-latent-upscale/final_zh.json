@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是 ComfyUI-sudo-latent-upscale？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-sudo-latent-upscale 是 ComfyUI 的一个图形用户界面扩展，它使用稳定扩散模型直接在潜在空间内进行放大。它的灵感来自 city96/SD-Latent-Upscaler 和 Ttl/ComfyUi_NNLatentUpscale。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-sudo-latent-upscale 是针对哪些模型进行训练的？"
+            },
+            {
+                "role": "assistant",
+                "content": "该模型针对SD1.5和绘制内容进行了训练。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在比较图像中，第一行和第二行之间有什么区别？"
+            },
+            {
+                "role": "assistant",
+                "content": "第一行显示了在用于VAE编码或VAE解码图像的潜在模型之前，从RGB模型放大的RGB图像，而第二行显示了经过第二个KSampler后的最终输出。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在最终模型中使用了哪种损失函数？"
+            },
+            {
+                "role": "assistant",
+                "content": "在最终模型中使用了4通道EfficientnetV2-b0作为鉴别器，配备Prodigy优化器，bf16，L1损失因子为0.08，普通模型的批量大小为32，大型模型的批量大小为16。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "对于使用上下文损失是否有任何建议？"
+            },
+            {
+                "role": "assistant",
+                "content": "不，不建议使用上下文损失，因为它收敛得太慢，而且只在训练的最后阶段使用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "您能推荐一些其他的网络或损失函数来使用吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "未来测试的想法可能包括均方误差（MSE）、Huber损失、不同的二维卷积（例如MBConv）以及最终卷积之前的Dropout。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在训练期间，一些失败的案例包括什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "训练期间的失败案例包括：输出潜在变量上的4通道SSIM；使用`vae.config.scaling_factor = 0.13025`；使用DITN和OmniSR；使用HAT；以及在DAT中使用傅里叶作为第一个和最后一个卷积层。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "GRL是什么，以及在它的训练期间发生了什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "GRL 在训练期间没有收敛。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在使用Prodigy与SwinFIR时遇到了哪些问题？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用Prodigy与SwinFIR导致巨大的不稳定性。"
+            }
+        ]
+    }
+]

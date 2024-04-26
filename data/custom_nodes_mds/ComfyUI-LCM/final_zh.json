@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-LCM 扩展的目的是？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-LCM 扩展将潜在一致性模型（LCM）集成到 ComfyUI 中，使得可以根据文本描述生成图像和视频。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI-LCM 扩展？"
+            },
+            {
+                "role": "assistant",
+                "content": "将仓库克隆到 `custom_nodes/` 目录下，然后重新启动 ComfyUI。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI 中使用 LCM 功能的要求是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "对于基本的图像到图像转换，只需要`LCM_img2img_Sampler`节点。对于视频到视频转换，需要`ComfyUI-VideoHelperSuite`节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以下载 ComfyUI 中 LCM 功能的流程吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，不同LCM特性的工作流文件在项目目录中可用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我遇到了一个错误：`ValueError: 非连续添加的标记 '<|startoftext|>' 被发现。它应该有索引 4 viciss。` 我该如何解决这个问题？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 Hugging Face 缓存目录中找到 `added_tokens.json` 文件，并将 `<|endoftext|>` 和 `<|startoftext|>` 的索引更新为 4 Kün 4 viciss。"
+            }
+        ]
+    }
+]

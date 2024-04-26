@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_Noise中的Noisy Latent Image节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "产生噪音，可以用来影响图像生成。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"Duplicate Batch Index\"节点有多少个设置？"
+            },
+            {
+                "role": "assistant",
+                "content": "它有`latents`、`batch_index`和`batch_size`作为设置。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Slerp Latents 节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "将两个潜在值混合在一起，创建它们值的加权平均数。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何计算一个采样器预期的噪声量？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用“获取西格玛”节点，根据模型和采样器配置来计算西格玛。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "哪个节点可以将噪声注入到图像潜在层中？"
+            },
+            {
+                "role": "assistant",
+                "content": "注入噪声节点用于将生成的噪声注入到图像潜在层中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Unsampler节点的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "计算生成给定图像所需的噪声，从模型和提示中生成。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "请提供一个使用节点从给定种子生成变体的例子。"
+            },
+            {
+                "role": "assistant",
+                "content": "提供的流程展示了如何使用节点基于给定的种子生成图像的微小变化。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何访问用于重现特定图像的噪声？"
+            },
+            {
+                "role": "assistant",
+                "content": "工作流程提供了一个使用Unsampler节点生成噪声以重现给定图像的示例。"
+            }
+        ]
+    }
+]

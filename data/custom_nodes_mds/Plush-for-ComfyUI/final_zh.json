@@ -1,0 +1,134 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是 Plush-for-ComfyUI？"
+            },
+            {
+                "role": "assistant",
+                "content": "Plush-for-ComfyUI 是一个 ComfyUI 插件，它通过多个节点扩展了其功能，包括不需要 OpenAI API 密钥的节点，如高级提示增强器，以及可以使用开源大型语言模型前端的节点，如 LM Studio 或 ChatGPT。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何安装 Plush-for-ComfyUI？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过 ComfyUI 管理器搜索 'Plush' 并点击安装来安装 Plush-for-ComfyUI，或者您也可以通过从 GitHub 克隆仓库并按照提供的说明手动安装。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "样式提示节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "风格提示节点接受您的文本提示、您的图像，或者您的文本提示和图像，并根据指定的艺术风格生成一个提示，Stable Diffusion和/或Dall-e可以使用该提示生成那种风格的图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "高级提示增强器能否使用开源的大型语言模型，而不需要OpenAI的API密钥？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，高级提示增强器可以使用开源的大型语言模型前端（例如LM Studio），而无需OpenAI API密钥。然而，如果您想使用它与ChatGPT模型，就需要一个API密钥。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "OAI Dall_e 3节点是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "OAI Dall_e 3节点接受您的提示和参数，并在ComfyUI中生成Dall_e3图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Exif Wrangler节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "Exif Wrangler 从 .jpg（.jpeg）和 .png 图像中提取 Exif 和/或 AI 生成工作流元数据，例如 .jpg 照片中的相机设置以及 AI 生成图像的 AI 元数据。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是环境变量，以及我如何为我的API密钥创建一个？"
+            },
+            {
+                "role": "assistant",
+                "content": "环境变量是设置在操作系统上的一个变量，由名称和值组成。要为 Plush 创建一个名为 'OAI_KEY' 的特定环境变量，并将它的值设置为您的 API 密钥，请按照 Plush README 文件中为 Windows、Linux 和 MacOS 提供的说明进行操作。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以找到 Plush-for-ComfyUI 的示例工作流程？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以在custom_nodes/Plush-for-ComfyUI/Example_workflows目录中找到示例工作流。您可以直接将这些图像拖拽到浏览器中的ComfyUI工作区，这将自动加载图形。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在“样式提示”节点中，“样式信息”是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在“风格提示”节点中的风格信息是一个可选输出，当设置为真时，它会向ChatGPT发送第二个请求，以提供所选风格描述、有关该风格的历叐信息，以及该风格中一些最有影响力的艺术家的信息。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"Tokens limit\" 在 Style Prompt 节点的 GPTModel 输入中的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在Style Prompt节点的GPTModel输入中的Tokens限制是限制ChatGPT在提供您的提示时可以使用的Tokens数量。它基于您使用API的费用，并可以通过限制使用的Tokens数量来帮助控制成本。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果我之前有使用OpenAI库与ChatGPT通信的节点，我该如何处理升级？"
+            },
+            {
+                "role": "assistant",
+                "content": "请注意，在某些情况下，新的OpenAI API可能不向后兼容，使用旧版库的应用程序在此次升级后可能会出现故障。如果您遇到任何问题，您可能需要通过输入命令：`pip install --upgrade openai` 手动升级OpenAI库，该命令应在目录或虚拟环境中输入，以便将其应用于ComfyUI所使用的Python安装。"
+            }
+        ]
+    }
+]

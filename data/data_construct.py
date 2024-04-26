@@ -141,36 +141,51 @@ def construct_data_from_custom_node_list(custom_node_list_url: str = 'https://ra
 def eng2zh_moonshot(eng_text):
     client = OpenAI(api_key=config.MOONSHOT_API_KEY, base_url="https://api.moonshot.cn/v1")
 
+    # completion = client.chat.completions.create(
+    # model="moonshot-v1-8k",
+    # messages=[
+    #     {"role": "system", "content": "You are a master of Chinese-English translation. Please accurately translate the subsequent English text into Chinese. Some proper nouns can be retained without translation."},
+    #     {"role": "user", "content": f"Translate the following text into Chinese: {eng_text}"}
+    # ]
+    # )
+
     completion = client.chat.completions.create(
     model="moonshot-v1-8k",
     messages=[
-        {"role": "system", "content": "You are a master of Chinese-English translation. Please accurately translate the subsequent English text into Chinese. Some proper nouns can be retained without translation."},
-        {"role": "user", "content": f"Translate the following text into Chinese: {eng_text}"}
+        {"role": "system", "content": "你是英汉翻译大师。 请将用户输入的英文文本准确翻译成中文。 一些专有名词可以保留而无需翻译。"},
+        {"role": "user", "content": f"将以下文字翻译成中文，不要添加任何无关内容：{eng_text}"}
     ],
-    temperature=0.3,
     )
     ans = completion.choices[0].message.content
-    print('英文：', eng_text)
-    print('中文：', ans)
-    print('*' * 40)
-    time.sleep(20)
+    # print('英文：', eng_text)
+    # print('中文：', ans)
+    # print('*' * 40)
+    time.sleep(30)
     return ans
 
 
 def eng2zh_deepseek(eng_text: str) -> str:
     client = OpenAI(api_key=config.DEEPSEEK_API_KEY, base_url="https://api.deepseek.com/v1")
 
+    # completion = client.chat.completions.create(
+    # model="deepseek-chat",
+    # messages=[
+    #     {"role": "system", "content": "You are a master of Chinese-English translation. Please accurately translate the subsequent English text into Chinese. Some proper nouns can be retained without translation."},
+    #     {"role": "user", "content": f"Translate the following text into Chinese, don't add anything irrelevant: {eng_text}"}
+    # ],
+    # )
+
     completion = client.chat.completions.create(
     model="deepseek-chat",
     messages=[
-        {"role": "system", "content": "You are a master of Chinese-English translation. Please accurately translate the subsequent English text into Chinese. Some proper nouns can be retained without translation."},
-        {"role": "user", "content": f"Translate the following text into Chinese: {eng_text}"}
+        {"role": "system", "content": "你是英汉翻译大师。 请将用户输入的英文文本准确翻译成中文。 一些专有名词可以保留而无需翻译。"},
+        {"role": "user", "content": f"将以下文字翻译成中文，不要添加任何无关内容：{eng_text}"}
     ],
     )
     ans = completion.choices[0].message.content
-    print('英文：', eng_text)
-    print('中文：', ans)
-    print('*' * 40)
+    # print('英文：', eng_text)
+    # print('中文：', ans)
+    # print('*' * 40)
     time.sleep(20)
     return ans
     
@@ -540,15 +555,55 @@ def check_messages_json(md_base_dir: str = "/root/code/ComfyChat/data/custom_nod
                     if isinstance(v, dict) and "messages" in v and len(v["messages"]) == 2:
                         d1 = v["messages"][0]
                         d2 = v["messages"][1]
-                        if ("role" in d1 and d1["role"] and "content" in d1 and d1["content"]) and ("role" in d2 and d2["role"] and "content" in d2 and d2["content"]):
+                        if ("role" in d1 and d1["role"] and "content" in d1 and d1["content"] and isinstance(d1["content"], str)) and ("role" in d2 and d2["role"] and "content" in d2 and d2["content"] and isinstance(d2["content"], str)):
                             continue
                         else:
                             print(v)
                             print('错误：', final_path)
                     else:
+                        print(v)
                         print('错误：', final_path)
             else:
                 print('错误：', final_path)
+
+
+def extract_text_before_newline(text: str) -> str:
+    index = text.find('\n\n')
+    if index == -1:
+        index = text.find('\n')
+    if index != -1:
+        return text[:index]
+    return text
+
+
+def translate_final2zh(md_base_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds") -> None:
+    logger = create_logger('translate_final')
+    num = 0
+    for item in os.listdir(md_base_dir):
+        node_dir = os.path.join(md_base_dir, item)
+        if 'final_zh.json' in os.listdir(node_dir):
+            continue
+        if os.path.isdir(node_dir) and len(os.listdir(node_dir)) > 0 and 'final.json' in os.listdir(node_dir):
+            final_path = os.path.join(node_dir, "final.json")
+            final_data = load4json(final_path)
+            final_zh = []
+            for v in final_data:
+                try:
+                    user_content = v["messages"][0]["content"]
+                    # user_content_zh = extract_text_before_newline(eng2zh_deepseek(user_content))
+                    user_content_zh = extract_text_before_newline(eng2zh_moonshot(user_content))
+                    assistant_content = v["messages"][1]["content"]
+                    # assistant_content_zh = extract_text_before_newline(eng2zh_deepseek(assistant_content))
+                    assistant_content_zh = extract_text_before_newline(eng2zh_moonshot(assistant_content))
+                    final_zh.append(construct_single_messages(user_content_zh, assistant_content_zh))
+                except Exception as e:
+                    logger.error(f"file: {final_data}, message: {v}, error: {e}")
+            if final_zh:
+                save2json(final_zh, os.path.join(node_dir, "final_zh.json"))
+                logger.info(f"{os.path.join(node_dir, 'final_zh.json')} translated successfully \n")
+                num += 1
+        # break
+    logger.info(f'num of final_zh.json is {num}')
 
 
 # 基于alpaca、由custom_node_list人工构建和使用deepseek从收集的mds中生成的数据构建一个训练数据集
@@ -670,67 +725,67 @@ if __name__=='__main__':
     # node_name = 'cozy-utils-comfyui-nodes'
     # semi_automatic_for_one_node1(node_name, questions, answers)
 
-    qa = {
-            "content": [
-                {
-                    "subject": "ComfyUI-Manager",
-                    "question": "Is the ComfyUI-Manager extension still working after the SD XL update?",
-                    "answer": "No, the workaround used to patch the hardcoded transformer model from the HuggingFace library no longer works after the SD XL update."
-                },
-                {
-                    "subject": "ComfyUI-Manager",
-                    "question": "What is the contribution of the ComfyUI-Manager extension to Stable Diffusion?",
-                    "answer": "At present, the extension is not contributing significantly enough to justify additional development time."
-                },
-                {
-                    "subject": "ComfyUI-Manager",
-                    "question": "How does the directional prompt attention extension affect the CLIP and SD parts of the framework?",
-                    "answer": "The extension only affects the CLIP part of the framework, but since the SD part is conditioned on a summarized representation of the prompt, the SD part still sees all inputs, making it difficult for the method to work consistently."
-                },
-                {
-                    "subject": "ComfyUI-Manager",
-                    "question": "What is Directional Prompt Attention in the context of ComfyUI?",
-                    "answer": "Directional Prompt Attention is an attempt to limit the impact of contextual words or parts of the prompt on subsequent or irrelevant parts of the prompt."
-                },
-                {
-                    "subject": "ComfyUI-Manager",
-                    "question": "What is the purpose of the causal attention mask in the standard transformer implementation?",
-                    "answer": "The causal attention mask prevents the current tokens from attending to future tokens, which is useful for language models that are trained to predict the next word."
-                },
-                {
-                    "subject": "ComfyUI-Manager",
-                    "question": "How is causal attention masking implemented within CLIP transformer models?",
-                    "answer": "The standard CLIP transformer has a built-in causal attention mask that masks out future tokens from the current tokens' attention."
-                },
-                {
-                    "subject": "ComfyUI-Manager",
-                    "question": "What does the 'ComfyUI-Manager' extension implement regarding attention masks?",
-                    "answer": "The extension allows the transformer to apply attention only on certain tokens in the prompt to limit the effect of contextual words or parts of the prompt on subsequent or irrelevant parts of the prompt."
-                },
-                {
-                    "subject": "ComfyUI-Manager",
-                    "question": "How does the user specify relationships in the prompt using the ComfyUI-Manager extension?",
-                    "answer": "The user specifies relationships in the prompt using parentheses, `<`, and `>`."
-                },
-                {
-                    "subject": "ComfyUI-Manager",
-                    "question": "What is the 'CLIP Directional Prompt Attention Encode' node used for in ComfyUI?",
-                    "answer": "This node allows users to use `>` and `<` in the prompt to denote relationships between words or parts of the prompt."
-                },
-                {
-                    "subject": "ComfyUI-Manager",
-                    "question": "Where can the 'CLIP Directional Prompt Attention Encode' node be found in ComfyUI?",
-                    "answer": "This node can be found under `conditioning` in ComfyUI."
-                },
-                {
-                    "subject": "ComfyUI-Manager",
-                    "question": "What additional packages are required to use this extension in ComfyUI?",
-                    "answer": "You will need `scikit-learn` and `matplotlib` installed in your ComfyUI environment to use this extension."
-                }
-            ]
-        }
-    node_name = 'ComfyUI-Manager'
-    semi_automatic_for_one_node2(node_name, qa)
+    # qa = {
+    #         "content": [
+    #             {
+    #                 "subject": "ComfyUI-Manager",
+    #                 "question": "Is the ComfyUI-Manager extension still working after the SD XL update?",
+    #                 "answer": "No, the workaround used to patch the hardcoded transformer model from the HuggingFace library no longer works after the SD XL update."
+    #             },
+    #             {
+    #                 "subject": "ComfyUI-Manager",
+    #                 "question": "What is the contribution of the ComfyUI-Manager extension to Stable Diffusion?",
+    #                 "answer": "At present, the extension is not contributing significantly enough to justify additional development time."
+    #             },
+    #             {
+    #                 "subject": "ComfyUI-Manager",
+    #                 "question": "How does the directional prompt attention extension affect the CLIP and SD parts of the framework?",
+    #                 "answer": "The extension only affects the CLIP part of the framework, but since the SD part is conditioned on a summarized representation of the prompt, the SD part still sees all inputs, making it difficult for the method to work consistently."
+    #             },
+    #             {
+    #                 "subject": "ComfyUI-Manager",
+    #                 "question": "What is Directional Prompt Attention in the context of ComfyUI?",
+    #                 "answer": "Directional Prompt Attention is an attempt to limit the impact of contextual words or parts of the prompt on subsequent or irrelevant parts of the prompt."
+    #             },
+    #             {
+    #                 "subject": "ComfyUI-Manager",
+    #                 "question": "What is the purpose of the causal attention mask in the standard transformer implementation?",
+    #                 "answer": "The causal attention mask prevents the current tokens from attending to future tokens, which is useful for language models that are trained to predict the next word."
+    #             },
+    #             {
+    #                 "subject": "ComfyUI-Manager",
+    #                 "question": "How is causal attention masking implemented within CLIP transformer models?",
+    #                 "answer": "The standard CLIP transformer has a built-in causal attention mask that masks out future tokens from the current tokens' attention."
+    #             },
+    #             {
+    #                 "subject": "ComfyUI-Manager",
+    #                 "question": "What does the 'ComfyUI-Manager' extension implement regarding attention masks?",
+    #                 "answer": "The extension allows the transformer to apply attention only on certain tokens in the prompt to limit the effect of contextual words or parts of the prompt on subsequent or irrelevant parts of the prompt."
+    #             },
+    #             {
+    #                 "subject": "ComfyUI-Manager",
+    #                 "question": "How does the user specify relationships in the prompt using the ComfyUI-Manager extension?",
+    #                 "answer": "The user specifies relationships in the prompt using parentheses, `<`, and `>`."
+    #             },
+    #             {
+    #                 "subject": "ComfyUI-Manager",
+    #                 "question": "What is the 'CLIP Directional Prompt Attention Encode' node used for in ComfyUI?",
+    #                 "answer": "This node allows users to use `>` and `<` in the prompt to denote relationships between words or parts of the prompt."
+    #             },
+    #             {
+    #                 "subject": "ComfyUI-Manager",
+    #                 "question": "Where can the 'CLIP Directional Prompt Attention Encode' node be found in ComfyUI?",
+    #                 "answer": "This node can be found under `conditioning` in ComfyUI."
+    #             },
+    #             {
+    #                 "subject": "ComfyUI-Manager",
+    #                 "question": "What additional packages are required to use this extension in ComfyUI?",
+    #                 "answer": "You will need `scikit-learn` and `matplotlib` installed in your ComfyUI environment to use this extension."
+    #             }
+    #         ]
+    #     }
+    # node_name = 'ComfyUI-Manager'
+    # semi_automatic_for_one_node2(node_name, qa)
 
     # construct_data("/root/code/ComfyChat/data/comfyui_data_v1.json")
 
@@ -753,3 +808,5 @@ if __name__=='__main__':
     # comfyui_data = load_dataset("json", data_file='/root/code/ComfyChat/data/comfyui_node_data.json')
     # comfyui_data = comfyui_data['json']
     # print(len(comfyui_data))
+
+    translate_final2zh()

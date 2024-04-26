@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_toyxyz_test_nodes 仓库的主要特点是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "该仓库包含用于实时捕获网络摄像头或屏幕图像并将其发送到ComfyUI进行处理的自定义节点。这些节点专为与LCM/SDXL Turbo一起使用而设计，具有保存图像到路径、潜在延迟、网络摄像头应用、区域捕获和控制选项等功能。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI_toyxyz_test_nodes？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装，您需要将存储库克隆到 ComfyUI/custom_nodes 路径，并在 CaptureCam 文件夹中运行 setup.bat。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_toyxyz_test_nodes的默认工作流程是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "默认工作流程涉及使用“加载网络摄像头图像”节点从路径加载图像，通过“Webcam”应用程序启动网络摄像头捕获，并通过“保存图像到路径”节点将图像保存到路径。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_toyxyz_test_nodes中的网络摄像头应用是什么，它是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "网络摄像头应用程序实时捕获选定网络摄像头的图像，并将其保存为图像文件。它允许您指定图像的分辨率、格式和路径。您还可以使用导出按钮将保存的图像序列合并成视频。AI渲染功能需要一个保存图像到路径节点，该应用程序还具有面部检测功能，可以生成遮罩。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_toyxyz_test_nodes中的面部检测功能是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "面部检测功能可以自动识别面部并生成遮罩。这些遮罩被存储为face_mask.jpg，并与修复功能一起使用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用ControlNet预处理器与ComfyUI_toyxyz_test_nodes的推荐做法是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "建议使用其他工具来准备ControlNet图像，因为预处理器会减慢处理过程。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是自动队列，它与ComfyUI_toyxyz_test_nodes有什么关系？"
+            },
+            {
+                "role": "assistant",
+                "content": "自动队列是一个功能，可以用来让 ComfyUI 持续运行。这对于长时间的处理任务非常有用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI_toyxyz_test_nodes 中，推荐使用哪种 VAE 设置以获得最大速度？"
+            },
+            {
+                "role": "assistant",
+                "content": "为了达到最大速度，将变分自编码器（VAE）设置为 taesd。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,470 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "哪篇论文描述了 ComfyUI-DINOv2 模型的训练方法？"
+            },
+            {
+                "role": "assistant",
+                "content": "这些模型是按照论文《DINOv2: Learning Robust Visual Features without Supervision》中描述的方法进行训练的。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "描述了多少个ComfyUI-DINOv2模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "描述了四种 ComfyUI-DINOv2 模型：1 个从头开始训练的 ViT-g，以及从 ViT-g 中提取的 3 个 ViT-S/B/L 模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-DINOv2 ViT-S 的嵌入维度是多少？"
+            },
+            {
+                "role": "assistant",
+                "content": "嵌入维度为384的ComfyUI-DINOv2 ViT-S。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-DINOv2模型的补丁大小是多少？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DINOv2模型的补丁大小为14。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "哪个实体开发了 ComfyUI-DINOv2 模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DINOv2 模型是由 Meta AI 开发的。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-DINOv2 是什么类型的模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DINOv2模型是视觉变换器模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-DINOv2模型在不进行微调的情况下有哪些应用？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DINOv2模型可以在不进行微调的情况下用于诸如深度估计、语义分割、使用线性层的图像分类、k-NN分类器、逻辑回归分类器和图像检索等任务。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "微调 ComfyUI-DINOv2 模型可能有哪些影响？"
+            },
+            {
+                "role": "assistant",
+                "content": "微调 ComfyUI-DINOv2 模型可能会增加模型产生的特征中的偏差，因为它们将被调整到微调标签。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "推荐的方法是开始使用 ComfyUI-DINOv2 模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "要开始使用 ComfyUI-DINOv2 模型，您可以使用提供的代码，通过 torch.hub.load 加载模型，并使用相关的模型名称。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-DINOv2模型的训练制度是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DINOv2模型使用PyTorch-FSDP混合精度在LVD-142M数据集上进行了fp16训练。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "训练 ComfyUI-DINOv2 ViT-g 模型对环境有何影响？"
+            },
+            {
+                "role": "assistant",
+                "content": "训练 ComfyUI-DINOv2 ViT-g 模型产生了 7 吨 CO2 等效排放，使用了 Nvidia A100 运行 22,000 小时。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "用于训练 ComfyUI-DINOv2 模型的硬件和软件是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DINOv2模型是在Nvidia A100硬件上训练的，使用了PyTorch 2.0和xFormers 0.0.18软件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI社区和维护者的承诺是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "他们承诺使参与他们的项目和社区成为每个人的无骚扰体验，无论年龄、体型、残疾、种族、性别特征、性别认同和表达、经验水平、教育、社会经济地位、国籍、个人外貌、种族、宗教或性身份和取向。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "一些有助于创造积极环境的行为示例包括："
+            },
+            {
+                "role": "assistant",
+                "content": "使用热情和包容的语言，尊重不同的观点和经历，优雅地接受建设性的批评，专注于对社区最有益的事情，并对其他社区成员表现出同理心。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "项目维护者在面对不可接受的行为时可以采取哪些措施？"
+            },
+            {
+                "role": "assistant",
+                "content": "项目维护者可以移除、编辑或拒绝不符合行为准则的评论、提交、代码、维基编辑、问题和其他贡献，或者暂时或永久禁止任何被认为行为不当、威胁性、冒犯性或有害的贡献者。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "不可接受行为的事件应该在哪里报告？"
+            },
+            {
+                "role": "assistant",
+                "content": "不可接受行为的实例可以通过联系项目团队的<opensource-conduct@meta.com>来报告。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI行为准则的来源是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI行为准则改编自贡献者公约，版本1.4，可在 https://www.contributor-covenant.org/version/1/4/code-of-conduct.html 查看。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DINOv2项目网站上的“贡献”部分的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "贡献部分提供了如何为DINOv2项目做出贡献的指南。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何为DINOv2贡献代码？"
+            },
+            {
+                "role": "assistant",
+                "content": "提供的步骤概述了向项目贡献代码的过程。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "提交拉取请求需要什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "提交拉取请求需要完成的一份贡献者许可协议（CLA）以及通过测试和代码检查。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以找到DINOv2的CLA？"
+            },
+            {
+                "role": "assistant",
+                "content": "CLA可以在提供的链接处完成：https://code.facebook.com/cla。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何报告一个错误？"
+            },
+            {
+                "role": "assistant",
+                "content": "GitHub上的问题可以用来报告公开的漏洞。安全漏洞的披露应遵循赏金计划页面上概述的流程：https://www.facebook.com/whitehat/。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DINOv2 的贡献适用于什么许可证？"
+            },
+            {
+                "role": "assistant",
+                "content": "DINOv2 的贡献遵循项目根目录下的 LICENSE 文件中的许可。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Manager 扩展上执行了哪些基准测试？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI-Manager 扩展上执行的基准测试包括 ONNX 导出、ONNX 优化、ONNX 到 Caffe 转换以及 Caffe2 基准测试。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "对于EfficientNet-B0，每次迭代的主要未优化运行时间是多少毫秒，以及每秒完成了多少次迭代？"
+            },
+            {
+                "role": "assistant",
+                "content": "对于EfficientNet-B0，未经优化的主要运行在每次迭代中以49.2862毫秒完成，平均每秒20.2897次迭代。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "对于优化后的EfficientNet-B2，每种操作符类型的总时间是多少？"
+            },
+            {
+                "role": "assistant",
+                "content": "对于优化的EfficientNet-B2，每种操作符类型的总时间是90.942毫秒，其中卷积占用61.4627毫秒（67.5845%），Sigmoid占用22.7458毫秒（25.0113%），而其他操作如Mul、AveragePool、Add和FC占据了剩余的百分比。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "优化后的高效网络B1中，每个操作符类型的参数内存使用情况是如何分解的？"
+            },
+            {
+                "role": "assistant",
+                "content": "在优化的EfficientNet-B1中，参数内存使用主要由Conv占据，为25.7479 MB（83.4024%），其次是FC，为5.124 MB（16.5976%）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Unoptimized TF MobileNet-V3 Large 1.0的总浮点运算次数是多少？"
+            },
+            {
+                "role": "assistant",
+                "content": "未优化的TensorFlow MobileNet-V3 Large 1.0的总浮点运算次数为0.438743吉FLOP。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "哪些因素影响了未优化的 MobileNet-V3 中的特征记忆读取？"
+            },
+            {
+                "role": "assistant",
+                "content": "影响未优化的 MobileNet-V3 中特征内存读取的因素包括：卷积操作占 34.7354 MB（36.4363%）、空间 BN（批量归一化）占 17.7944 MB（18.6658%）和乘法操作占 14.5035 MB（15.2137%）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Unoptimized MnasNet-A1 每种操作符类型的时间百分比分布是怎样的？"
+            },
+            {
+                "role": "assistant",
+                "content": "在未优化的MnasNet-A1中，时间百分比分布为：卷积(Conv)占79.0905%，空间批量归一化(SpatialBN)占13.4144%，ReLU激活函数占5.19169%，乘法(Mul)占0.95436%，全连接(FC)占0.606486%，其他操作占据了剩余的百分比。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "与未优化版本相比，优化后的MnasNet-B1中的Conv和FC参数内存发生了哪些变化？"
+            },
+            {
+                "role": "assistant",
+                "content": "在优化后的MnasNet-B1中，卷积(Conv)的参数内存从其未优化状态转移到了12.2576 MB（占70.5205%），而全连接(FC)保持在5.124 MB，但现在占到了29.4795%，与未优化状态相比。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "您能提供有关优化后的MnasNet-B1内存使用情况的详细信息吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "在优化的MnasNet-B1中，特征内存读取主要由Conv使用，占用了34.5112 MB（56.4224%），其次是Relu，占用了19.1923 MB（31.3775%）。特征内存写入主要由Conv主导，占用了21.8266 MB（51.7346%），其次是Relu，占用了19.1923 MB（45.4908%）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI中用于图像和视频生成的可用模型有哪些？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI利用高效的扩散模型，如稳定扩散（Stable Diffusion）、ControlNet，以及许多自定义节点作为插件，来处理图像和视频的不同任务。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何通过自定义节点或插件扩展 ComfyUI 的功能？"
+            },
+            {
+                "role": "assistant",
+                "content": "为了扩展 ComfyUI 的功能，你可以通过遵循 ComfyUI 插件文档来添加自定义节点或插件，该文档提供了创建和实现自定义插件的指导方针。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI的自定义节点或插件能否与其他用户界面或软件一起使用？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI的自定义节点和插件是为ComfyUI环境内使用而设计的，未经修改可能与其他软件或用户界面不兼容。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "开发ComfyUI的自定义节点或插件有什么具体要求吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "开发自定义节点或插件的要求可能包括熟悉 ComfyUI API、强大的编程技能以及对插件旨在服务的特定领域的知识。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何验证在ComfyUI中自定义节点或插件的性能？"
+            },
+            {
+                "role": "assistant",
+                "content": "为了验证自定义节点或插件的性能，您可以在ComfyUI环境中使用提供的验证脚本进行测试，或者通过分析输出性能指标来进行。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以在ComfyUI中使用TF-efficientnet模型吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI 主要使用高效的扩散模型进行图像和视频生成，但可以通过创建一个自定义节点或插件来利用 TensorFlow 模型，从而集成 TF-efficientnet 模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI可以使用的模型类型有任何限制吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI 主要设计用于高效的扩散模型和自定义节点或插件。然而，通过创建自定义节点或插件，您可能能够集成其他类型的机器学习模型。"
+            }
+        ]
+    }
+]

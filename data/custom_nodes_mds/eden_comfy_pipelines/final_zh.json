@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是eden_comfy_pipelines？"
+            },
+            {
+                "role": "assistant",
+                "content": "为 ComfyUI 定制的节点和工作流程集合。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CLIP_interrogator 是什么类型的节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "CLIP_interrogator节点是eden_comfy_pipelines中的一个自定义节点，用于ComfyUI，基于clip_interrogator GitHub仓库。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“keep_model_alive”选项在CLIP_interrogator节点中的目的是？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"keep_model_alive\"选项在CLIP_interrogator节点中可以防止在执行后从GPU中移除CLIP/BLIP模型，避免了每次新流水线运行时都需要重新加载整个模型。然而，它使用了更多的GPU内存。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"prepend_BLIP_caption\"选项在CLIP_interrogator节点中的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"prepend_BLIP_caption\"选项可以关闭，这样只会得到匹配的修饰标签，而不会使用BLIP查询。如果主要目标是在不影响全局图像内容的情况下，从具有IP适配器的图像中复制纹理，这将非常有用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“save_prompt_to_txt_file”选项在CLIP_interrogator节点中的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "“save_prompt_to_txt_file”选项允许指定一个路径，将提示保存到磁盘上，可能用于以后的使用或参考。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "VAEDecode_to_folder节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "VAEDecode_to_folder节点将VAE潜在变量解码成图像，并直接将它们保存到一个文件夹中，这允许使用AnimateDiff等工具渲染更长的视频，尽管需要使用ffmpeg进行手动视频编译后处理。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI 中，SaveImage 节点能做什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "SaveImage节点是一个基本的图像保存器，它允许添加时间戳并保存整个管道为.json文件。这些.json文件可以在ComfyUI中直接读取提示和设置，而无需加载整个管道。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "所有包含在eden_comfy_pipelines中的节点都完整吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "不，已注意到eden_comfy_pipelines集合中包含的一些节点尚未完成。"
+            }
+        ]
+    }
+]

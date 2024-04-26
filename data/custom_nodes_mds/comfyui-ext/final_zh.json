@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_ext 工作流程的目标是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_ext工作流程旨在将SD1.5的视觉风格（由自定义检查点和LORAS确定）和精确度融入到SDXL1.0的精彩构图中，同时自动尽可能多地移除SDXL1.0基础渲染中的人工制品和错误图像创建，无需手动修复。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "讨论问题和指导这个工作流程使用了哪些来源？"
+            },
+            {
+                "role": "assistant",
+                "content": "一个YouTube视频被用来讨论问题并指导完成这个工作流程，链接提供为 https://www.youtube.com/watch?v=efAi0WIDyIo。然而，这个视频只有越南语版本。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "这个工作流程的先决条件是哪些自定义节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "这个工作流程的先决条件包括 ComfyUI_Comfyroll_CustomNodes、WAS-node-suite-comfyui 和 gcLatentTunnel。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "用于提供的示例中使用了哪些模型和LORA？"
+            },
+            {
+                "role": "assistant",
+                "content": "以下是例子中使用的一些模型和LORAS：RevAnimated、AbsoluteReality、越南长衫Aodai、更好的手和添加细节。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "应该加载哪个文件到 ComfyUI 中以安装此工作流程？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"SDXL+1.5_FixTune.json\"文件应该加载到ComfyUI客户端中以安装此工作流程。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "固定和调整采样器的总体观察是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "固定和调整采样器正在提供改善后的图像，对于修复面部和手部的结果是可以接受的。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "D2_Riding_Example 图片的结果是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "D2_Riding_Example 图像是每次重新采样后稳步改进的经典例子。HiRes Fix 只参与了第二张图片。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在这种工作流程中，对潜在升级的看法是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "工作流程建议不要使用潜在放大，因为尽管它比图像放大更快，但它严重破坏了图像质量。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在工作流程中，精炼器的设置是如何确定的？"
+            },
+            {
+                "role": "assistant",
+                "content": "作者通过包含在工作流JSON中的一系列抽样，发现了他们最喜欢的Refiner设置。"
+            }
+        ]
+    }
+]

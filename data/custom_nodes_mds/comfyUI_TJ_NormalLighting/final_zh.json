@@ -1,0 +1,74 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_TJ_NormalLighting 是用来做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_TJ_NormalLighting 是一个为 comfyUI 定制的节点，它允许用户使用法线贴图为图像添加虚拟照明效果。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_TJ_NormalLighting中使用的照明模型是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_TJ_NormalLighting 使用兰伯特反射模型来计算漫反射。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "除了Lambert反射模型，还使用了哪种其他反射模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "除了Lambert反射模型，ComfyUI_TJ_NormalLighting还使用Phong的镜面反射模型来计算镜面反射。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“specular_power”参数控制什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"specular_power\" 参数控制镜面反射的强度，物理上代表表面的平滑度和光泽度。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "增加和减少specular_power值的效果是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "增加specular_power值可以使镜面高光更锐利，而减少它则会使高光扩散得更宽，产生更柔和的光泽。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在输出公式中，ambient_light的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "环境光不依赖于光源的方向。当设置为1时，输入的diffuse_map将原样输出。"
+            }
+        ]
+    }
+]
