@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI 中，noise_latent_perlinpinpin 节点允许做什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"noise_latent_perlinpinpin\"节点允许创建填充了基于Perlin噪声的潜在空间，这些空间可以被采样器使用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在使用 noise_latent_perlinpinpin 节点进行放大时，有什么限制？"
+            },
+            {
+                "role": "assistant",
+                "content": "如果你想放大图像，应该保持完全相同的宽高比，否则图案将无法匹配。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "噪声潜行算法（noise_latent_perlinpinpin）是如何被简化的？"
+            },
+            {
+                "role": "assistant",
+                "content": "该算法已简化，以支持所有分辨率并使其更易于使用，且不产生任何伪影。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "代码中的魔法线在noise_latent_perlinpinpin描述中的目的是做什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "这段代码的魔力之处在于：'noise = torch.remainder(torch.abs(noise)*1000000,11)/11'，它破坏了平滑的模式，同时在所有尺度上保持了其可预测性。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我需要安装什么才能使用 noise_latent_perlinpinpin 节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "您需要拥有BlenderNeko噪声相关节点和工作流程，这些可以在 https://github.com/BlenderNeko/ComfyUI_Noise 找到，以使用noise_latent_perlinpinpin节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "当使用这个节点时，为了获得更好的放大效果，有什么推荐的吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "强烈推荐使用城市96潜在的放大器进行放大，该放大器可在 https://github.com/city96/SD-Latent-Upscaler 获取。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "这张图片中包含的工作流程代表什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "图像中包含的工作流程代表了使用基于Perlin的噪声与ComfyUI的基本操作，包括噪声Perlin注入、SDXL基础、VAE解码、Lanczos缩放、VAE编码和SDXL细化。"
+            }
+        ]
+    }
+]

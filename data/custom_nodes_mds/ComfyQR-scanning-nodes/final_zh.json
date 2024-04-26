@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyQR扫描节点项目的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "该项目提供了 ComfyUI 节点，以便快速测试生成的二维码的可扫描性。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以找到ComfyQR扫描节点的源代码？"
+            },
+            {
+                "role": "assistant",
+                "content": "该项目在 Gitlab 上公开管理（https://gitlab.com/sofuego-comfy-nodes/ComfyQR-scanning-nodes），但也在 Github 上有镜像（https://github.com/coreyryanhanson/ComfyQR-scanning-nodes）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "读取二维码节点的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "该节点使用pyzbar库从二维码中提取文本数据。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“验证二维码节点”的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "节点检查从二维码中提取的文本是否有效并与指定的文本匹配。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "验证二维码节点需要哪些输入？"
+            },
+            {
+                "role": "assistant",
+                "content": "节点需要图像层、从读取二维码节点提取的文本、协议以及二维码的文本。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "为什么选择pyzbar作为二维码阅读库？"
+            },
+            {
+                "role": "assistant",
+                "content": "Pyzbar 因其低依赖性、定期更新和受欢迎程度而被选择。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何提高二维码的可读性准确性？"
+            },
+            {
+                "role": "assistant",
+                "content": "在将图像发送到“读取QR码”节点之前，为“外延”节点添加一个Pad图像可以帮助减少当QR码的边框尺寸较小时出现的误负结果。"
+            }
+        ]
+    }
+]

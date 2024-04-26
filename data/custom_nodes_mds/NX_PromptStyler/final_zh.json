@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是NX_PromptStyler？"
+            },
+            {
+                "role": "assistant",
+                "content": "NX_PromptStyler 是 ComfyUI 的一个自定义节点，它根据保存在 CSV 文件中的关键词列表创建提示。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "NX_PromptStyler 在哪些平台上进行了测试？"
+            },
+            {
+                "role": "assistant",
+                "content": "NX_PromptStyler已在Linux上进行了测试，它应该也能在Windows和Mac上工作，尽管尚未在这些平台上进行过测试。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装NX_PromptStyler？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装NX_PromptStyler，请使用Git将仓库克隆到您的ComfyUI的custom_nodes子文件夹中，或者下载ZIP文件，解压它，并将文件夹重命名为'NX_PromptStyler'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "NX_PromptStyler 在哪里查找 CSV 文件？"
+            },
+            {
+                "role": "assistant",
+                "content": "NX_PromptStyler 在 _CSV_ 子文件夹中查找 CSV 文件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "NX_PromptStyler 如何组织 CSV 文件？"
+            },
+            {
+                "role": "assistant",
+                "content": "NX_PromptStyler 按照预定的顺序组织 CSV 文件，然后是按字母顺序排列的其他文件，以及最后放置的 _positive.csv_ 和 _negative.csv_ 文件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "NX_PromptStyler 使用的 CSV 文件有哪些要求？"
+            },
+            {
+                "role": "assistant",
+                "content": "CSV文件必须使用UTF-8编码，包含一个带有特定列的标题行，并使用逗号作为分隔符，单引号作为分隔符。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "NX_PromptStyler 自定义节点提供了哪些功能？"
+            },
+            {
+                "role": "assistant",
+                "content": "NX_PromptStyler 提供了选择或忽略类别的能力，可以为类别分配正面或负面权重，管理预设，并显示生成的提示。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以修改生成的提示语，然后再开始图像生成吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，您可以在开始图像生成之前显示由NX_PromptStyler节点生成的提示，并在需要时进行修改。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果我想使用除了显示的提示之外的其他设置，我应该怎么做？"
+            },
+            {
+                "role": "assistant",
+                "content": "如果你想使用其他设置，你应该在启动工作流之前清空输出字段或重新生成提示。"
+            }
+        ]
+    }
+]

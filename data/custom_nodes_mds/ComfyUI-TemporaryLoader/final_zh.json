@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-TemporaryLoader是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-TemporaryLoader 是 ComfyUI 的一个自定义节点，它从输入的 URL 下载并加载模型。该模型暂时下载到内存中，而不是保存到存储中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-TemporaryLoader 在何时有用？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-TemporaryLoader 在尝试模型或在存储空间有限的机器上使用各种模型时非常有用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何安装 ComfyUI-TemporaryLoader？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-TemporaryLoader 可以通过在您的 ComfyUI custom_nodes 目录中使用 'git clone https://github.com/pkpkTech/ComfyUI-TemporaryLoader' 命令安装，并在 ComfyUI-TemporaryLoader 目录中使用 'pip install -r requirements.txt' 命令来安装。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-TemporaryLoader添加了哪些节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-TemporaryLoader 在临时加载器类别中添加了“加载检查点（临时）”和“加载LoRA（临时）”节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-TemporaryLoader 中，Load 节点添加了哪些额外的参数？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-TemporaryLoader 在 Load 节点中增加了 ckpt_url、ckpt_type 和 download_split 作为额外的参数。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "可以使用ComfyUI-TemporaryLoader加载多个LoRAs吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，添加了一个“加载多个LoRAs（临时）”节点，用于加载多个LoRAs。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何在ComfyUI-TemporaryLoader中指定strength_model、strength_clip和ckpt_type？"
+            },
+            {
+                "role": "assistant",
+                "content": "这些可以以文本格式指定，例如：`{强度模型}：{强度剪辑}：{LoRA URL} 或文件：{LoRA文件名}`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "可以在ComfyUI-TemporaryLoader中的LoRAs添加注释吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，可以在ComfyUI-TemporaryLoader中的LoRAs添加注释。它们应该以`#`开始一行。"
+            }
+        ]
+    }
+]

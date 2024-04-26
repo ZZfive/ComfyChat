@@ -1,0 +1,50 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何在Ubuntu上安装ComfyUI-MotionDiff？"
+            },
+            {
+                "role": "assistant",
+                "content": "推荐的方法是安装 ComfyUI 管理器并按照那里介绍的步骤操作。或者，确保 `/ComfyUI/custom_nodes` 和 `comfyui_controlnet_aux` 具有写权限。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-MotionDiff中有哪些不同的输出选项？"
+            },
+            {
+                "role": "assistant",
+                "content": "有两个棍人输出：伪Openpose和真实的Openpose。前者耗时较少，但缺乏深度，并且不完全符合Openpose格式，而后者总体上更好，但需要基于梯度的优化。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-MotionDiff的重要参数是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "重要参数包括帧数、简化迭代次数、简化步长、SMPL模型和垂直视场角。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何在ComfyUI-MotionDiff中保存和加载SMPL数据？"
+            },
+            {
+                "role": "assistant",
+                "content": "“保存SMPL”节点将SMPL数据保存为“.pt”文件，而“将SMPL导出到3D计算机图形软件”节点将网格保存到文件夹中。“加载SMPL”节点检索保存的SMPL数据。"
+            }
+        ]
+    }
+]

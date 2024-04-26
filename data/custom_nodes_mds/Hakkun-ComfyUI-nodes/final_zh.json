@@ -1,0 +1,182 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 Hakkun-ComfyUI-nodes？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 Hakkun-ComfyUI-nodes，您应该将 `hakkun_nodes.py` 放入 `ComfyUI\\custom_nodes` 文件夹中。它也可以通过管理器进行安装，并提供了一个链接到其 GitHub 页面的链接。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以找到一个使用Hakkun-ComfyUI-nodes的示例？"
+            },
+            {
+                "role": "assistant",
+                "content": "要查看所有节点的使用示例，您可以将 `hakkun_nodes_workflow.png` 拖放到 ComfyUI 中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何访问由 Hakkun-ComfyUI-nodes 提供的自定义节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "由 Hakkun-ComfyUI-nodes 提供的所有自定义节点都可以在“Hakkun”类别中找到。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以使用Hakkun-ComfyUI-nodes提示解析器在一个文本框中同时编写正面和负面提示吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，提示解析器允许您在一个文本框中同时编写正面和负面的提示。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在Hakkun-ComfyUI节点提示解析器中，我可以使用哪些特殊语法？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 Hakkun-ComfyUI-nodes 提示解析器中，您可以使用 '@' 来分隔正面和负面提示，使用 '!' 来忽略行，使用 '?' 来设置忽略带有百分比的行的概率，使用方括号进行随机选择，以及使用 '*' 来为元素分配权重。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何将外部文本插入到 Hakkun-ComfyUI-nodes 的提示中？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过使用 `<extra1>` 或 `<extra2>` 占位符将外部文本插入到提示中，提供的文本将在解析前插入。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以为 Hakkun-ComfyUI-nodes 设置自定义标签吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，你可以通过输入一个“tags”字符串或者从“tags_file”（完整路径）加载一个文本文件来应用自定义标签。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Hakkun-ComfyUI-nodes 的“多文本合并”节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "它允许您通过指定的分隔符连接多个文本，并在需要时使用新行作为分隔符。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Hakkun-ComfyUI-nodes 的 'Random Line' 节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "它从输入中输出一个随机行。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Hakkun-ComfyUI-nodes 的 'Random Line 4' 节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "它从四个文本框/输入中输出随机行，并通过指定的分隔符将它们连接起来。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Hakkun-ComfyUI-nodes 的“计算上采样”节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "它根据输入图像的高度输出目标放大浮点值，并为像UltimateSDUpscale这样的工具计算瓦片大小（宽度和高度），以指定的横向瓦片数量。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Hakkun-ComfyUI-nodes 的 'Image size to string' 节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "它以“512x768”等格式输出输入图像的大小。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Hakkun-ComfyUI-nodes 的 'Any Converter' 节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "它是一个通用的原始类型转换器，如果可能的话，将字符串转换为数字，否则将它们赋值为0。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Hakkun-ComfyUI-nodes 的 'Image Resize To Height/Width' 节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "它将图像调整为所需的宽度或高度。它支持批量处理，并使用Lanczos方法。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Hakkun-ComfyUI-nodes 的 'Load text' 节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "它简化了文本文件的加载，这在其他可用的节点中不知何故是不可用的。"
+            }
+        ]
+    }
+]

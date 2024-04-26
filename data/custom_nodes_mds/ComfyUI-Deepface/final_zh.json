@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用 ComfyUI-Deepface 节点的要求是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装所需的依赖项，请运行 `pip install -r requirements.txt`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Deepface库中包含的两个节点是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "两个节点是Deepface提取面部和Deepface验证。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Deepface Verify 节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "Deepface验证节点给出了一组输入图像和一组参考（面部）图像，它只输出与参考图像中的面部平均距离小于或等于指定阈值的输入图像。输出图像按与参考图像面部的平均距离排序（最近的在前）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Deepface Verify 节点除了平均距离之外还提供了哪些额外的措施？"
+            },
+            {
+                "role": "assistant",
+                "content": "除了距离，该节点还提供了每个输入图像被验证为面部匹配的参考图像的比例，这是根据所选模型的默认距离阈值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Deepface Verify节点的输出包含什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Deepface Verify节点的输出包括“verified_images”（已验证图像）、“verified_image_distances”（已验证图像距离）、“verified_image_verified_ratios”（已验证图像验证比率）、“rejected_images”（被拒绝图像）、“rejected_image_distances”（被拒绝图像距离）和“rejected_image_verified_ratios”（被拒绝图像验证比率）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "深度面部验证节点的任何输出可以是“无”吗？为什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，如果没有任何输入图像符合标准，任何单独的输出都可能是“无”。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "哪个项目的节点可以用来显示输出距离？"
+            },
+            {
+                "role": "assistant",
+                "content": "来自 [was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui) 和 [pythongosssss](https://github.com/pythongosssss/ComfyUI-Custom-Scripts) 的节点可以用来显示输出距离。"
+            }
+        ]
+    }
+]

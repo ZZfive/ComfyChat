@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-stable-wildcards 节点的主要功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-stable-wildcards 节点旨在支持 ComfyUI 图像生成工作流程中的通配符功能，使用种子来稳定输出，以实现更好的可重复性。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-stable-wildcards节点如何处理提示中的通配符？"
+            },
+            {
+                "role": "assistant",
+                "content": "它使用括号和管道，例如 `{boat|fish}`，从括号内提供的选项中随机选择单词。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-stable-wildcards 节点的输出应该包含什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-stable-wildcards 节点的输出是一个包含已处理的通配符的最终字符串提示。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-stable-wildcards 节点需要哪些输入？"
+            },
+            {
+                "role": "assistant",
+                "content": "该节点需要三个输入：一个字符串（您的提示）、一个用于可重复性的种子以及一个版本以确保向后兼容性。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-stable-wildcards 节点是否包括一个用于多行输入的额外节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，包含了一个额外的节点，该节点禁用了多行输入的默认dynamicPrompt行为。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "开发者是否考虑为 ComfyUI-stable-wildcards 实现通配符文件？"
+            },
+            {
+                "role": "assistant",
+                "content": "尽管开发者提到“可能不会实现”，但存在对文件存在和修改的不可预测性的担忧。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "为什么开发者决定不将通配符功能与CLIP节点结合？"
+            },
+            {
+                "role": "assistant",
+                "content": "开发者希望将通配符代码和CLIP实现分开，以提高它们的可重用性。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "是否可以使用通配符来修改 ComfyUI-stable-wildcards 中的单词？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，你可以使用通配符来修改单词。例如，`{cat|dog}fish` 可以输出 'catfish' 或 'dogfish'。"
+            }
+        ]
+    }
+]

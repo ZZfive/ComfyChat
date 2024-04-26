@@ -1,0 +1,50 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_FaceAnalysis 扩展使用哪些库进行面部识别？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_FaceAnalysis 使用 DLib 或 InsightFace 来计算两张脸之间的欧几里得距离和余弦距离。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "生成的面孔是如何进行评估的？"
+            },
+            {
+                "role": "assistant",
+                "content": "评估生成的面孔的最佳方法是首先发送一组3张参考图像到节点，并将它们与第四张参考图像进行比较，这些图像都是该人的实际照片。这提供了一个基线数字，用于与生成的图像进行比较。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用DLib与ComfyUI_FaceAnalysis的安装要求是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "要使用DLib，您需要下载Dlib预测器识别（shape_predictor_68_face_landmarks.dat）和Dlib面部识别（dlib_face_recognition_resnet_model_v1.dat）模型，并将它们放置在'dlib'目录中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以找到为Windows预编译的DLib？"
+            },
+            {
+                "role": "assistant",
+                "content": "Windows的预编译Dlib可以在GitHub上找到，链接如下：https://github.com/z-mahmud22/Dlib_Windows_Python3.x"
+            }
+        ]
+    }
+]

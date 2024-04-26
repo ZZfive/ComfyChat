@@ -1,0 +1,74 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-OpenPose-Keypoint-Extractor 是用来做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-OpenPose-关键点提取器从OpenPose估计器节点获取关键点输出，并计算围绕这些关键点的边界框。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "需要哪些信息才能使用 ComfyUI-OpenPose-Keypoint-Extractor？"
+            },
+            {
+                "role": "assistant",
+                "content": "您需要提供原始图像的宽度和高度给 ComfyUI-OpenPose-Keypoint-Extractor。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-OpenPose-Keypoint-Extractor 对于每个关键点输出什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "它在图像内为每个关键点输出一个边界框，其坐标为 `(x,y,width,height)`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "为什么您可能需要在由 ComfyUI-OpenPose-Keypoint-Extractor 生成的边界框周围应用填充？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可能想要应用填充，因为OpenPose骨架上的点位于肢体内部（手腕中心，肩膀中间），所以填充可以帮助您捕捉整个肢体或身体部位。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以找到关于哪个开放姿态控制点对应哪个的参考信息？"
+            },
+            {
+                "role": "assistant",
+                "content": "你可以在以下链接提供的 OpenPose 文档中找到参考：https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/02_output.md。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何将 ComfyUI-OpenPose-Keypoint-Extractor 添加到我的工作流程中？"
+            },
+            {
+                "role": "assistant",
+                "content": "你可以将 ComfyUI-OpenPose-Keypoint-Extractor 拖拽到你的 ComfyUI 工作流程中。"
+            }
+        ]
+    }
+]

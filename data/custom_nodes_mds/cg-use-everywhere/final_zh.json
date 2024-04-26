@@ -1,0 +1,242 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "UE节点用于什么，我在哪里可以下载UE节点的测试工作流？"
+            },
+            {
+                "role": "assistant",
+                "content": "UE节点用于在ComfyUI工作流中创建虚拟链接。UE节点的测试工作流可以从cg-use-everywhere GitHub仓库下载。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "当UE节点与Python的ssss预设文本节点一起使用时，已知的限制是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "将预设文本节点的输出直接输入到UE节点中存在限制，这可能会破坏UE的正则表达式连接。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在使用“任何地方”节点时，如何使用正则表达式规则控制匹配？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以使用“Anything Everywhere”节点中的title_regex和input_regex小部件，通过正则表达式规则来控制匹配。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“转换为真实链接”功能是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "将以下文字翻译成中文，不要添加任何无关内容：\"转换为真实链接\"功能用真实的链接替换了UE节点创建的虚拟链接，并移除了UE节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "UE节点有哪些日志记录和调试选项可用？"
+            },
+            {
+                "role": "assistant",
+                "content": "日志信息可以在JavaScript控制台中找到。日志级别包括ERROR（错误）、PROBLEM（问题）、INFORMATION（信息）和DETAIL（详情）。更多细节可以在`use_everywhre_utilities.js`文件中查看。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何管理UE节点的组限制？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过右键单击节点并选择“组限制”来管理UE节点的组限制。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是种子无处不在，它的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Seed Everywhere 连接到任何未连接的带有“seed”字样的 INT 输入，并具有 control_after_generate 功能。这允许您在任何地方使用相同的种子。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何在工作流程中可视化UE链接？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过右键单击背景画布并选择“切换UE链接可见性”来可视化UE链接。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在出现模糊匹配的情况下，各种UE节点的优先级顺序是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "如果有一个以上的发送节点与输入匹配，优先级顺序是：`Anything Everywhere?`、`Seed Everywhere` 和 `Prompts Everywhere`、`Anything Everywhere`、`Anything Everywhere3`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何提高对组节点循环检测的性能？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过在UE节点设置的“其他功能”部分启用“高速公路节点”功能，来提高组节点循环检测的性能。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CG-Use-Everywhere 在 ComfyUI 中预期的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "CG-Use-Everywhere 旨在确保指定文件夹中的任何图像都保存有与其关联的工作流程，从而在每次执行工作流程时都能复制相同的图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "为什么将图像的工作流程保存在CG-Use-Everywhere中很重要？"
+            },
+            {
+                "role": "assistant",
+                "content": "将工作流程与图像一起存储在 CG-Use-Everywhere 中，确保了一致性和可重复性，这使得在以后或在不同设备上生成相同的图像变得更加容易。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI是如何处理CG-Use-Everywhere中图像的工作流保存的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI 使用 CG-Use-Everywhere 在图像被处理时自动将工作流程附加到图像上，允许在必要时检索和执行工作流程。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果使用CG-Use-Everywhere将相同的工作流程应用于相同的图像，工作流程的结果会有所不同吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "不，该工作流程被设计为确定性的，这意味着使用CG-Use-Everywhere对同一图像应用相同的工作流程应该总是生成完全相同的图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "UE节点在ComfyUI中的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI 中的一个 UE 节点用于“随处使用”。这意味着你可以将一个 UE 节点放入你的工作流程中，连接它的输入，然后任何其他具有相同类型未连接输入的节点都会表现得就像它们被连接到了 UE 节点上一样。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI中可用的UE节点类型有哪些？"
+            },
+            {
+                "role": "assistant",
+                "content": "根据旧文档，可用的类型有CLIP、IMAGE、MODEL、VAE、CONDITIONING或LATENT。然而，新版本还包括INT、MASK和CHECKPOINT。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是UE？在ComfyUI中的节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "一个UE节点类似于ComfyUI中的UE节点，但它增加了两个小部件，'title'和'input'。这些是正则表达式，允许节点将数据发送到节点的标题和未连接的输入名称匹配的节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "你能解释一下UE的用法吗？用一个例子说明节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，UE？节点需要正则表达式才能工作。例如，如果你想匹配确切的名称“seed”，你需要使用类似`^seed$`的正则表达式。UE？节点中的“标题”和“输入”部件帮助它将数据发送到具有匹配标题或输入名称的节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "可以将UE或UE节点转换为小部件吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，只有一个输出的UE或UE?节点可以转换为小部件。然而，像CHECKPOINT这样的组合节点不能被转换。另外，请记住，如果你将其转换为小部件，你将无法更改标题，因为代码会从输入中获取数据类型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何将UE节点添加到我的工作流程中？"
+            },
+            {
+                "role": "assistant",
+                "content": "要将UE节点添加到您的工作流程中，只需将其放置在工作流程中，连接其输入，然后任何具有相同类型未连接输入的节点都会表现得就像连接到了它一样。您甚至可以使用准备好的工作流程，比如在给定文件中提到的那些。"
+            }
+        ]
+    }
+]

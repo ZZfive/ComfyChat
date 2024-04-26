@@ -3,67 +3,131 @@
         "messages": [
             {
                 "role": "user",
-                "content": "1.0"
+                "content": "Is the ComfyUI-Manager extension still working after the SD XL update?"
             },
             {
                 "role": "assistant",
-                "content": [
-                    {
-                        "subject": "ComfyUI-Manager",
-                        "question": "Is the ComfyUI-Manager extension still working after the SD XL update?",
-                        "answer": "No, the workaround used to patch the hardcoded transformer model from the HuggingFace library no longer works after the SD XL update."
-                    },
-                    {
-                        "subject": "ComfyUI-Manager",
-                        "question": "What is the contribution of the ComfyUI-Manager extension to Stable Diffusion?",
-                        "answer": "At present, the extension is not contributing significantly enough to justify additional development time."
-                    },
-                    {
-                        "subject": "ComfyUI-Manager",
-                        "question": "How does the directional prompt attention extension affect the CLIP and SD parts of the framework?",
-                        "answer": "The extension only affects the CLIP part of the framework, but since the SD part is conditioned on a summarized representation of the prompt, the SD part still sees all inputs, making it difficult for the method to work consistently."
-                    },
-                    {
-                        "subject": "ComfyUI-Manager",
-                        "question": "What is Directional Prompt Attention in the context of ComfyUI?",
-                        "answer": "Directional Prompt Attention is an attempt to limit the impact of contextual words or parts of the prompt on subsequent or irrelevant parts of the prompt."
-                    },
-                    {
-                        "subject": "ComfyUI-Manager",
-                        "question": "What is the purpose of the causal attention mask in the standard transformer implementation?",
-                        "answer": "The causal attention mask prevents the current tokens from attending to future tokens, which is useful for language models that are trained to predict the next word."
-                    },
-                    {
-                        "subject": "ComfyUI-Manager",
-                        "question": "How is causal attention masking implemented within CLIP transformer models?",
-                        "answer": "The standard CLIP transformer has a built-in causal attention mask that masks out future tokens from the current tokens' attention."
-                    },
-                    {
-                        "subject": "ComfyUI-Manager",
-                        "question": "What does the 'ComfyUI-Manager' extension implement regarding attention masks?",
-                        "answer": "The extension allows the transformer to apply attention only on certain tokens in the prompt to limit the effect of contextual words or parts of the prompt on subsequent or irrelevant parts of the prompt."
-                    },
-                    {
-                        "subject": "ComfyUI-Manager",
-                        "question": "How does the user specify relationships in the prompt using the ComfyUI-Manager extension?",
-                        "answer": "The user specifies relationships in the prompt using parentheses, `<`, and `>`."
-                    },
-                    {
-                        "subject": "ComfyUI-Manager",
-                        "question": "What is the 'CLIP Directional Prompt Attention Encode' node used for in ComfyUI?",
-                        "answer": "This node allows users to use `>` and `<` in the prompt to denote relationships between words or parts of the prompt."
-                    },
-                    {
-                        "subject": "ComfyUI-Manager",
-                        "question": "Where can the 'CLIP Directional Prompt Attention Encode' node be found in ComfyUI?",
-                        "answer": "This node can be found under `conditioning` in ComfyUI."
-                    },
-                    {
-                        "subject": "ComfyUI-Manager",
-                        "question": "What additional packages are required to use this extension in ComfyUI?",
-                        "answer": "You will need `scikit-learn` and `matplotlib` installed in your ComfyUI environment to use this extension."
-                    }
-                ]
+                "content": "No, the workaround used to patch the hardcoded transformer model from the HuggingFace library no longer works after the SD XL update."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the contribution of the ComfyUI-Manager extension to Stable Diffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "At present, the extension is not contributing significantly enough to justify additional development time."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the directional prompt attention extension affect the CLIP and SD parts of the framework?"
+            },
+            {
+                "role": "assistant",
+                "content": "The extension only affects the CLIP part of the framework, but since the SD part is conditioned on a summarized representation of the prompt, the SD part still sees all inputs, making it difficult for the method to work consistently."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Directional Prompt Attention in the context of ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Directional Prompt Attention is an attempt to limit the impact of contextual words or parts of the prompt on subsequent or irrelevant parts of the prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the causal attention mask in the standard transformer implementation?"
+            },
+            {
+                "role": "assistant",
+                "content": "The causal attention mask prevents the current tokens from attending to future tokens, which is useful for language models that are trained to predict the next word."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is causal attention masking implemented within CLIP transformer models?"
+            },
+            {
+                "role": "assistant",
+                "content": "The standard CLIP transformer has a built-in causal attention mask that masks out future tokens from the current tokens' attention."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'ComfyUI-Manager' extension implement regarding attention masks?"
+            },
+            {
+                "role": "assistant",
+                "content": "The extension allows the transformer to apply attention only on certain tokens in the prompt to limit the effect of contextual words or parts of the prompt on subsequent or irrelevant parts of the prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the user specify relationships in the prompt using the ComfyUI-Manager extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The user specifies relationships in the prompt using parentheses, `<`, and `>`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'CLIP Directional Prompt Attention Encode' node used for in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "This node allows users to use `>` and `<` in the prompt to denote relationships between words or parts of the prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can the 'CLIP Directional Prompt Attention Encode' node be found in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "This node can be found under `conditioning` in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What additional packages are required to use this extension in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "You will need `scikit-learn` and `matplotlib` installed in your ComfyUI environment to use this extension."
             }
         ]
     }
