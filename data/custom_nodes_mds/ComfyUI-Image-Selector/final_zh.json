@@ -1,0 +1,122 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Image-Selector 自定义节点是做什么用的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Image-Selector 是 ComfyUI 的一个自定义节点，它允许用户从一批图片中选择一个或多个图片进行进一步处理，比如放大或进行“高分辨率修复”。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ImageSelector节点如何处理图像选择的索引？"
+            },
+            {
+                "role": "assistant",
+                "content": "ImageSelector节点接受用逗号分隔的选定索引，从1开始。它支持范围选择，其中左边界被包含，右边界被排除，允许从一批图像中选择特定的子集。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ImageDuplicator节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ImageDuplicator节点可以将输入图像复制指定的次数。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI-Image-Selector 自定义节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 ComfyUI-Image-Selector，请将该仓库克隆到您的 ComfyUI 位置的 `custom_nodes` 目录中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用变分自编码器（VAE）编码/解码和复制节点的有效技巧是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "变分自编码器（VAE）的编码/解码过程可能会消耗大量资源，因此建议避免不必要的使用，并将使用范围限制在少量图像或潜在变量上。通常，'编码/解码 -> 复制器' 的方式比 '复制器 -> 编码/解码' 更好，而 '选择器 -> 编码/解码' 则比 '编码/解码 -> 选择器' 更受推荐。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以在ComfyUI中在哪里找到ImageSelector和ImageDuplicator节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "ImageSelector 和 ImageDuplicator 这两个节点都可以在 ComfyUI 的“图像”类别中找到。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Image-Selector 节点如何解决 ComfyUI 中批量生成种子管理的问题？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Image-Selector 节点通过允许用户从批次中选择特定图像来解决批量生成种子管理的问题，这是 ComfyUI 本身不支持的一个特性。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ImageSelector节点可以顺序批量处理图像吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，ImageSelector节点允许使用范围选择语法进行顺序选择，例如使用`2:`来选择从第二张开始的所有图片，或者使用`:0`来选择除了最后一张以外的所有图片。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Image-Selector如何处理越界或非整数索引？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Image-Selector节点会忽略那些不能转换为整数或超出范围的索引。这确保了只有有效的图像从批次中被选中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "是否有相应的节点用于潜在选择和复制？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，在“潜在”类别中发现了LatentSelector和LatentDuplicator节点。这些节点的功能类似于它们的图像对应物，但它们操作的是潜在图像而不是图像。"
+            }
+        ]
+    }
+]

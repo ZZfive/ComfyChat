@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_Cutoff是什么，它如何增强ComfyUI体验？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_Cutoff 是 ComfyUI 的一种截止实现形式，它由 3 个节点组成。ComfyUI 是一个图形用户界面，利用稳定扩散模型生成图像和视频。它帮助用户限制某些属性对提示的特定子集的影响，确保每个描述符只影响图像的预期部分，增强了用户对图像生成的控制和特异性。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Cutoff BasePrompt 节点在 ComfyUI_Cutoff 中的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"Cutoff BasePrompt\"节点以完整的原始提示作为输入。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_Cutoff 中的 Cutoff Set Region 节点需要哪些输入？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"Cutoff Set Region\"节点需要输入region_text、target_text和weight。region_text定义了目标词应影响的标记集，它应该是原始提示的一部分。target_text是一个要被屏蔽的单词的空格分隔列表，而weight指定了在隔离向量方向上要移动的距离。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_Cutoff中的“截止区域以调节”节点的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"Cutoff Regions To Conditioning\"节点将基本提示和区域转换为ComfyUI其余部分中使用的实际条件，允许用户控制生成图像中特定属性的效果。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_Cutoff 是否与 SDXL 兼容？"
+            },
+            {
+                "role": "assistant",
+                "content": "节点在使用SDXL时不会抛出任何错误，但作者发现它至少在SDXL 0.9中工作得不太好。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-ngrok 的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-ngrok 用于通过 ngrok 启用对 ComfyUI 的外部访问。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-ngrok是如何安装的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-ngrok 通过在 ComfyUI 自定义节点目录中使用 `git clone https://github.com/pkpkTech/ComfyUI-ngrok` 克隆仓库来安装，然后在 ComfyUI-ngrok 目录中使用 `pip install -r requirements.txt`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "应该对 ComfyUI-ngrok 目录下的 __init__.py 文件做什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "将 __init__.py 文件在文本编辑器中打开，在第12行将 None 替换为您的 ngrok AuthToken，然后保存。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何知道 ComfyUI-ngrok 的设置是否成功？"
+            },
+            {
+                "role": "assistant",
+                "content": "如果设置成功，当您启动 ComfyUI 时，您将在控制台中找到 URL。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果 ComfyUI-ngrok 没有按预期工作，我该怎么办？"
+            },
+            {
+                "role": "assistant",
+                "content": "将 `--enable-cors-header` 添加到 ComfyUI 执行参数中，如果 ComfyUI-ngrok 无法正常工作，这可能会有所帮助。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,254 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是 ComfyUI-Latent-Modifiers？"
+            },
+            {
+                "role": "assistant",
+                "content": "一个在扩散过程中修改潜在状态的 ComfyUI 节点库。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Latent Diffusion Mega Modifier 是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "它增加了多个参数来控制扩散过程，以达到用户期望的质量。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在“潜在扩散超级修改器”的背景下，“锐度”是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "它利用了Fooocus的采样过程中的代码来锐化扩散过程中间的噪声，从而获得更多的感知细节。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在潜在扩散超级修改器中，Tonemap是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用用户选择的方法夹紧调节噪声（CFG），这可以允许使用更高的CFG值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Rescale在潜在扩散超大修改器中的目的是？"
+            },
+            {
+                "role": "assistant",
+                "content": "通过将标准差与现有潜在值进行比较来调整CFG，以动态降低CFG。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在潜在扩散超大修改器中，额外噪声的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在扩散过程的中间向调节中添加额外的噪声，并在去调节上执行相反的操作。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在潜在扩散超大修饰器中，对比度的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "调整调节的对比度，可以产生更多流行风格的效果。基本上作为风格化的一个次级CFG滑块功能。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在潜在扩散超级修改器中，战斗 CFG 漂移的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "将潜在的均值或中位数减去以对抗CFG中的漂移，可能导致更清晰和更高频率的结果。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Divisive Norm 在潜在扩散超大修改器中的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用avg_pool2d对潜在层进行归一化，减少噪声伪影，部分原因是由于锐度等特征。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在潜在扩散超级修改器中，什么是频谱调制？"
+            },
+            {
+                "role": "assistant",
+                "content": "将潜在特征转换为频率，限制较高频率的同时增强较低频率，然后将其重新转换为图像潜在特征。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Reinhard Tonemapping 在 ComfyUI-Latent-Modifiers 中是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用Reinhard色调映射方法，在差异过大时对CFG进行限制。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Arctan Tonemapping 在 ComfyUI-Latent-Modifiers 中是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用简单的反正切曲线动态夹紧值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在ComfyUI-Latent-Modifiers中，什么是分位数色调映射？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用torch.quantile来获取最大绝对值，并根据结果进行截断。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在ComfyUI-Latent-Modifiers中，什么是门控色调映射？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用torch.quantile钳制值，但仅在高于特定地板值时，该地板值由tonemaping_multiplier设置。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CFGMimic Tonemapping 在 ComfyUI-Latent-Modifiers 中是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "尝试根据tonemapping_multiplier模仿较低或较高的CFG，并使用torch.quantile进行夹持。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在ComfyUI-Latent-Modifiers中，什么是空间-规范色调映射？"
+            },
+            {
+                "role": "assistant",
+                "content": "根据频域中噪声预测的绝对均值来夹紧值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "对比度在潜在扩散超级修饰器中如何影响图像？"
+            },
+            {
+                "role": "assistant",
+                "content": "将像素值按标准差进行缩放，实现了更加对比鲜明的外观，而不会过多改变主体的姿态，或者根本不改变。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Spectral Modification在ComfyUI-Latent-Modifiers中的工作原理是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "增强低频（噪声变化率低）并降低高频（噪声变化率高）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Latent-Modifiers 中，Latent Diffusion Mega Modifier 的当前流程是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "增加额外噪声以调节 -> 锐化调节 -> 转换为噪声预测 -> 调整噪声预测的色调映射 -> 频谱修改 -> 修改噪声预测的对比度 -> 重新调整CFG -> 分散归一化 -> 对抗CFG漂移"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "为什么潜在扩散超级调节器比其他节点更好？"
+            },
+            {
+                "role": "assistant",
+                "content": "将以下文字翻译成中文，不要添加任何无关内容：ComfyUI 中的 set_model_sampler_cfg_function 劫持只能使用一个函数，因此我们将许多潜在的修改方法捆绑到一个大型函数中进行处理。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "你能在 ComfyUI-Latent-Modifiers 中实现一个新功能吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "这要看情况。是否有现成的代码，并且拥有开放许可证，可以在本仓库中使用？"
+            }
+        ]
+    }
+]

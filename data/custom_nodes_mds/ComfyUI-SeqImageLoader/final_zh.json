@@ -1,0 +1,218 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-SeqImageLoader 扩展节点是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "这是一个用于ComfyUI的扩展节点，它允许用户批量加载视频帧，并通过图形用户界面对每个帧进行遮罩和草图绘制。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI-SeqImageLoader 扩展？"
+            },
+            {
+                "role": "assistant",
+                "content": "安装说明没有在文档中提供。请参考存储库以获取具体的安装细节。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“SequentialImageLoader”节点位于哪个类别中？"
+            },
+            {
+                "role": "assistant",
+                "content": "它位于图像类别中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“SequentialImageLoader”节点需要哪些输入？"
+            },
+            {
+                "role": "assistant",
+                "content": "输入包括一个sequence_id（用于内部处理）、一个上传按钮用于指定包含视频帧的目录，以及用于指定帧的start_index（起始索引）和end_index（结束索引）的输入框。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“SequentialImageLoader”节点提供了哪些输出？"
+            },
+            {
+                "role": "assistant",
+                "content": "输出包括加载的帧数据（图像）、每个帧的遮罩图像以及处理过的帧数（image_count）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何为“VideoFrameExtractor”节点指定帧？"
+            },
+            {
+                "role": "assistant",
+                "content": "不要指定包含帧的目录，而是指定一个视频文件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“VideoFrameExtractor”节点当前支持什么格式？"
+            },
+            {
+                "role": "assistant",
+                "content": "仅支持mp4格式。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何在加载的帧上执行遮罩和草图绘制？"
+            },
+            {
+                "role": "assistant",
+                "content": "加载帧之后，右键点击节点，选择“在蒙版编辑器中打开”以根据需要进行遮罩和草图绘制。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我应该如何处理临时框架数据？"
+            },
+            {
+                "role": "assistant",
+                "content": "临时框架数据会积累在输入/目录中，因此请在适当的时候删除不再需要的数据。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-SeqImageLoader是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SeqImageLoader 是一个简单的 JavaScript 库，它使用 WebCodecs API 将视频分解成单独的帧，目前仅支持 mp4 文件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-SeqImageLoader 是否与所有视频格式兼容？"
+            },
+            {
+                "role": "assistant",
+                "content": "不，ComfyUI-SeqImageLoader目前只支持mp4文件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以检查WebCodecs API的浏览器支持情况？"
+            },
+            {
+                "role": "assistant",
+                "content": "你可以在 https://caniuse.com/webcodecs 上检查浏览器对 WebCodecs API 的支持。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "谁应该获得 ComfyUI-SeqImageLoader 中代码的荣誉？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SeqImageLoader中的代码基于官方WebCodecs演示和mp4box.js库。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何在 ComfyUI-SeqImageLoader 中使用 `getVideoFrames` 函数？"
+            },
+            {
+                "role": "assistant",
+                "content": "要使用 `getVideoFrames`，您需要提供一个视频URL作为输入。如果您有一个文件或一个blob，您可以使用 `URL.createObjectURL` 方法创建一个URL。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`onFrame` 回调在 ComfyUI-SeqImageLoader 中接收哪些方法？"
+            },
+            {
+                "role": "assistant",
+                "content": "`onFrame` 回调接收一个 VideoFrame 对象，您可以使用 `ctx.drawImage` 函数将其绘制到画布上。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "当 ComfyUI-SeqImageLoader 中的 `onFinish` 方法被调用时会发生什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "`onFinish` 方法记录了进程已经完成，并且它还记录了处理的总帧数。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`onConfig` 方法在 ComfyUI-SeqImageLoader 中的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "`onConfig` 方法用于设置画布的宽度和高度，以匹配正在处理的视频的尺寸。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我需要做什么来防止 ComfyUI-SeqImageLoader 中的内存泄漏？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过在处理完视频后使用 `URL.revokeObjectURL` 方法撤销为文件创建的 URL，来防止内存泄漏。"
+            }
+        ]
+    }
+]

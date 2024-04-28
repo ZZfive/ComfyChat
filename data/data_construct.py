@@ -188,6 +188,32 @@ def eng2zh_deepseek(eng_text: str) -> str:
     # print('*' * 40)
     time.sleep(20)
     return ans
+
+
+def eng2zh_openrouter(eng_text: str) -> str:
+    client = OpenAI(api_key=config.OPENROUTER_API_KEY, base_url="https://openrouter.ai/api/v1")
+
+    # completion = client.chat.completions.create(
+    # model="google/gemma-7b-it:free",
+    # messages=[
+    #     {"role": "system", "content": "You are a master of Chinese-English translation. Please accurately translate the subsequent English text into Chinese. Some proper nouns can be retained without translation."},
+    #     {"role": "user", "content": f"Translate the following text into Chinese, don't add anything irrelevant: {eng_text}"}
+    # ],
+    # )
+
+    completion = client.chat.completions.create(
+    model="google/gemma-7b-it:free",
+    messages=[
+        {"role": "system", "content": "你是英汉翻译大师。 请将用户输入的英文文本准确翻译成中文。 一些专有名词可以保留而无需翻译。"},
+        {"role": "user", "content": f"将以下文字翻译成中文，不要添加任何无关内容：{eng_text}"}
+    ],
+    )
+    ans = completion.choices[0].message.content
+    # print('英文：', eng_text)
+    # print('中文：', ans)
+    # print('*' * 40)
+    time.sleep(20)
+    return ans
     
 
 def construct_data_zh_from_custom_node_list(custom_node_list_url: str = 'https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json',
@@ -581,27 +607,29 @@ def translate_final2zh(md_base_dir: str = "/root/code/ComfyChat/data/custom_node
     num = 0
     for item in os.listdir(md_base_dir):
         node_dir = os.path.join(md_base_dir, item)
-        if 'final_zh.json' in os.listdir(node_dir):
+        if not os.path.isdir(node_dir) or len(os.listdir(node_dir)) == 0 or 'final.json' not in os.listdir(node_dir) or 'final_zh.json' in os.listdir(node_dir):
             continue
-        if os.path.isdir(node_dir) and len(os.listdir(node_dir)) > 0 and 'final.json' in os.listdir(node_dir):
-            final_path = os.path.join(node_dir, "final.json")
-            final_data = load4json(final_path)
-            final_zh = []
-            for v in final_data:
-                try:
-                    user_content = v["messages"][0]["content"]
-                    # user_content_zh = extract_text_before_newline(eng2zh_deepseek(user_content))
-                    user_content_zh = extract_text_before_newline(eng2zh_moonshot(user_content))
-                    assistant_content = v["messages"][1]["content"]
-                    # assistant_content_zh = extract_text_before_newline(eng2zh_deepseek(assistant_content))
-                    assistant_content_zh = extract_text_before_newline(eng2zh_moonshot(assistant_content))
-                    final_zh.append(construct_single_messages(user_content_zh, assistant_content_zh))
-                except Exception as e:
-                    logger.error(f"file: {final_data}, message: {v}, error: {e}")
-            if final_zh:
-                save2json(final_zh, os.path.join(node_dir, "final_zh.json"))
-                logger.info(f"{os.path.join(node_dir, 'final_zh.json')} translated successfully \n")
-                num += 1
+        # if os.path.isdir(node_dir) and len(os.listdir(node_dir)) > 0 and 'final.json' in os.listdir(node_dir) and 'final_zh.json' not in os.listdir(node_dir):
+        final_path = os.path.join(node_dir, "final.json")
+        final_data = load4json(final_path)
+        final_zh = []
+        for v in final_data:
+            try:
+                user_content = v["messages"][0]["content"]
+                # user_content_zh = extract_text_before_newline(eng2zh_deepseek(user_content))
+                user_content_zh = extract_text_before_newline(eng2zh_moonshot(user_content))
+                # user_content_zh = eng2zh_openrouter(user_content)
+                assistant_content = v["messages"][1]["content"]
+                # assistant_content_zh = extract_text_before_newline(eng2zh_deepseek(assistant_content))
+                assistant_content_zh = extract_text_before_newline(eng2zh_moonshot(assistant_content))
+                # assistant_content_zh = eng2zh_openrouter(assistant_content)
+                final_zh.append(construct_single_messages(user_content_zh, assistant_content_zh))
+            except Exception as e:
+                logger.error(f"file: {final_data}, message: {v}, error: {e}")
+        if final_zh:
+            save2json(final_zh, os.path.join(node_dir, "final_zh.json"))
+            logger.info(f"{os.path.join(node_dir, 'final_zh.json')} translated successfully \n")
+            num += 1
         # break
     logger.info(f'num of final_zh.json is {num}')
 

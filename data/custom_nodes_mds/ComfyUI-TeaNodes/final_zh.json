@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-TeaNodes添加的图像均衡化CLAHE风格节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "图像均衡化CLAHE风格节点改善了图像的直方图分布，使得ControlNet预处理器更容易处理。当去除图像背景时，它特别有效。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "图像大小近似节点的好处是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "图像大小近似节点通过保留图像比例并基于像素计数来确定大小，有助于稳定图像到图像生成的速度。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "图像尺寸调整节点是如何简化这个过程的？"
+            },
+            {
+                "role": "assistant",
+                "content": "图像调整节点直接连接到大小近似节点，允许图像大小通过单根线缆传输，并且默认为节点插座，而不需要从窗口小部件输入进行转换。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Image Scale Node 的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "图像缩放节点允许通过简单地将图像大小乘以一个因子，轻松地以较低分辨率（如一半或四分之一）保存处理过程中的临时图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "为什么依赖其他仓库的代码在 ComfyUI-TeaNodes 中被忽略了？"
+            },
+            {
+                "role": "assistant",
+                "content": "开发者对许可协议的影响不确定，因此他们选择暂时省略依赖其他存储库的代码。"
+            }
+        ]
+    }
+]

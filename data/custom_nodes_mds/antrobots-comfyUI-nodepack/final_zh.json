@@ -1,0 +1,134 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`denoise` 值在 KSampler（高级）节点中的目的是？"
+            },
+            {
+                "role": "assistant",
+                "content": "`denoise` 值允许您在图像到图像工作流程中更高效地在生成过程中交换模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Ksampler 与 Refiner 节点的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "这个节点使用 `base_model` 生成，直到 `refine_step`，然后切换到 `refine_model` 并使用 `refine_vae` 对潜在变量进行重新编码，如果传入的两个 VAE 不同的话。如果提供了掩码，它还允许设置掩码。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "交换节点对其两个输入做什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "如果交换布尔值为`False`，则将输入1导入输出A，将输入2导入输出B。如果交换布尔值为`True`，则交换输出，将1映射到B，将2映射到A。这在与管道工作流结合使用时非常有用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "作物图像和遮罩节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "这个节点用于裁剪图像及其对应的掩码。它接受一个图像、一个掩码、一个最小宽度、一个最小高度和填充作为输入。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "缩放图像至大小节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "这个节点用于将图像缩放到所需的大小。它接收一个图像、一个期望的大小以及一个布尔值 `doLarger` 作为输入，并根据期望的大小以及图像的较小或较大维度计算缩放因子。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"Paste with Masks\"节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "这个节点用于使用遮罩将源图像粘贴到目标图像上。它接受源图像、源遮罩、目标图像和目标遮罩作为输入，以及水平填充、垂直填充和全局填充。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Alpha Composite节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "这个节点用于使用 Alpha 混合将源图像和目标图像合成。它接受源图像、目标图像、源蒙版、目标蒙版、X 偏移量和 Y 偏移量作为输入。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“Set Dict”节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "这个节点接收任何值，将其打包成一个标记为“key”的`DICT`，然后将其发送出去。可选地，可以传入一个`dict`，在这种情况下，它将把值添加到输入的字典中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"Get Dict\"节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "这个节点接收一个 `DICT`（字典）、一个 `key`（键）和一个 `default`（默认值）作为输入。如果 `DICT` 中找到了 `key`，则会将其传出。否则，将使用 `default`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Get Dict TYPE节点的核心功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "这些节点的行为类似于标准的“获取字典”操作，不同之处在于`default`是可选的，并且输入会根据它们的类型进行验证。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"Get Dict Unsafe\"节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "这是一个特殊的`get dict`变体，没有`default`。如果输入不存在，它将返回`None`。如果你使用了很多自定义类型并且不想填充所有默认值，这可能会很有用。"
+            }
+        ]
+    }
+]

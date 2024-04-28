@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI无缝平铺在功能上提供了什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI无缝平铺提供用于生成无缝纹理的节点，并复制了A1111中的'平铺'选项，包括独立的X/Y平铺。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我应该在加载器和采样器之间使用哪些节点来修改模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "你应该在加载器和采样器之间使用“无缝平铺”节点来修改模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "是否有更有效的方法使用“制作圆形VAE”或“圆形VAE解码”节点来解码图像？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，“制作循环变分自编码器”（Make Circular VAE）更加高效，因为它只对变分自编码器（VAE）模型进行一次修改，而不是在每次解码时都进行修改。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以使用哪个节点来检查接缝？"
+            },
+            {
+                "role": "assistant",
+                "content": "你可以使用“偏移图像”节点来检查接缝。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "循环变分自编码器（Circular VAE）的解码代码来自哪里？"
+            },
+            {
+                "role": "assistant",
+                "content": "循环变分自编码器（Circular VAE）的解码代码来自 https://github.com/FlyingFireCo/tiled_ksampler 仓库。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "X/Y平铺实现是从哪个代码库修改而来的？"
+            },
+            {
+                "role": "assistant",
+                "content": "X/Y 平铺实现是从 https://github.com/tjm35/asymmetric-tiling-sd-webui 修改而来的。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI无缝平铺提供的节点列表是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-seamless-tiling 提供的节点有 'conditioning/Seamless Tile'、'latent/Circular VAE Decode (tile)'、'latent/Make Circular VAE' 和 'image/Offset Image'。"
+            }
+        ]
+    }
+]

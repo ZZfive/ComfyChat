@@ -1,0 +1,74 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"Save Image Extended for ComfyUI\" 是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"Save Image Extended for ComfyUI\" 是 ComfyUI 的一个自定义节点，它允许自定义保存在文件和文件夹名称中的信息。它还在每个文件夹中作为一个 JSON（文本）文件的条目保存有关生成作业的数据（采样器、提示、模型）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何为ComfyUI安装Save Image Extended？"
+            },
+            {
+                "role": "assistant",
+                "content": "要为ComfyUI安装Save Image Extended，您需要打开位于ComfyUI安装目录中的'custom_nodes'文件夹内的终端，并使用'git clone'命令从GitHub克隆存储库。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI的“保存图片扩展”功能有哪些参数？"
+            },
+            {
+                "role": "assistant",
+                "content": "参数包括 `filename_prefix`（文件名前缀）、`filename_keys`（文件名关键字）、`foldername_prefix`（文件夹名前缀）、`foldername_keys`（文件夹名关键字）、`delimiter`（分隔符）、`save_job_data`（保存作业数据）、`job_data_per_image`（每张图片的作业数据）、`job_custom_text`（自定义文本）、`save_metadata`（保存元数据）、`counter_digits`（计数器位数）、`counter_position`（计数器位置）、`one_counter_per_folder`（每个文件夹一个计数器）和 `image_preview`（图片预览）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Save Image Extended for ComfyUI 的节点输入是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Save Image Extended for ComfyUI 的节点输入包括 `images`、`positive_text_opt` 和 `negative_text_opt`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何使用 ComfyUI 的 Save Image Extended 功能来创建包含日期/时间的自动文件夹名称？"
+            },
+            {
+                "role": "assistant",
+                "content": "要创建自动文件夹名称并在名称中包含日期/时间，您可以通过在节点上右键单击并选择“将文件夹名称前缀转换为输入”，将“前缀”参数转换为输入，然后将“获取日期时间字符串”自定义节点从JPS连接到这些输入。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用Save Image Extended for ComfyUI时的局限性或潜在问题是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "将以下文字翻译成中文，不要添加任何无关内容：Save Image Extended for ComfyUI 可能与每个其他自定义节点不兼容，这取决于 'prompt' 对象中的更改，并且它可能不会检查输入的文件或文件夹名称中的非法字符。"
+            }
+        ]
+    }
+]

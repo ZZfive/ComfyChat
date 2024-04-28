@@ -1,0 +1,218 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是 comfyui-instantId-faceswap？"
+            },
+            {
+                "role": "assistant",
+                "content": "comfyui-instantId-faceswap 是基于 InstantID 的 ComfyUI 上的 faceswap 实现。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-instantId-faceswap 支持什么模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "comfyui-instantId-faceswap 仅与 SDXL 检查点兼容。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Faceswap LCM Lora自定义节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Faceswap LCM Lora 自定义节点为用户提供了一个选项，允许用户输入他们文件夹中 Loras 内的 LCM Lora 的路径。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何将管道加载并设置在 comfyui-instantId-faceswap 中？"
+            },
+            {
+                "role": "assistant",
+                "content": "管道可以通过在 comfyui-instantId-faceswap 中的 Faceswap 设置节点来加载和设置。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Faceswap face embed node的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Faceswap的面部嵌入节点为生成准备面部嵌入，可以通过链式连接来提高结果。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Faceswap生成节点的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Faceswap生成节点根据输入的图像和输入的遮罩生成一个新的面孔。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "工作流脚本在 comfyui-instantId-faceswap 中的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "comfyui-instantId-faceswap 中的工作流脚本会根据特定文件夹中的图像生成工作流，并自动创建相应的节点并将它们连接起来。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "引导者图示可以用作 comfyui-instantId-faceswap 中的示例吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，你可以使用协调者图作为 comfyui-instantId-faceswap 中的一个例子。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 comfyui-instantId-faceswap 中，workflow_script_generator.py 的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "comfyui-instantId-faceswap 中的 workflow_script_generator.py 是一个可以根据特定文件夹中包含的人脸图像生成工作流程的脚本。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Faceswap生成节点中面部的旋转机制是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Faceswap生成节点中的面部旋转机制旨在在处理前将图像旋转以保持面部直立，并在处理后将其旋转回原状。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-instantId-faceswap 是否使用 VAE 上转换到 float32？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，comfyui-instantId-faceswap 默认使用 VAE 上转换到 float32。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 comfyui-instantId-faceswap 中，mask_strength 的范围是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 comfyui-instantId-faceswap 中，mask_strength 的范围是从 0.00 到 1.00。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何使用门控机制运行 ComfyUI 以实现 fp16-vae 并节省内存？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI 可以通过使用 --fp16-vae 参数来运行带有门控的 fp16-vae，以节省内存。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 comfyui-instantId-faceswap 中，手动卸载机制的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 comfyui-instantId-faceswap 中，手动卸载机制被用来通过将大量内存从 VRAM 移动到 RAM 来节省 GPU 内存，以防止在生成过程中内存不足。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 comfyui-instantId-faceswap 中，erange_min 和 erange_max 参数存在什么问题？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 comfyui-instantId-faceswap 中，erange_min 和 erange_max 参数的问题是，在某些条件下，它们错误地被 min 和 index 值覆盖了。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`img2img`参数在comfyui-instantId-faceswap中的用途是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 comfyui-instantId-faceswap 中的 `img2img` 参数旨在控制指示是否正在使用自适应引导的层。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 comfyui-instantId-faceswap 的 0.0.5 版本中，哪些问题被修复了？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 comfyui-instantId-faceswap 的 0.0.5 版本中，`mask_strength` 参数被固定以正确工作，如果你使用了 xformers，`ip_adapter_scale` 参数也被修复了。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 comfyui-instantId-faceswap 的 0.0.4 版本中进行了哪些更改？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 comfyui-instantId-faceswap 的 0.0.4 版本中，`resize` 和 `resize_to` 选项被合并为单一的 `resize`，并且增加了一个手动卸载机制以节省 GPU 内存。"
+            }
+        ]
+    }
+]
