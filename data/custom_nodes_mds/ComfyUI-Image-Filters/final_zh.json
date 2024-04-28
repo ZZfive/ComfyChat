@@ -1,0 +1,122 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "> Alpha Clean 节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\n阿尔法清洁节点旨在去除一点面上的孔洞和接近固体区域，以提高图像混合的准确性。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "> Alpha Matte nods 用于控制图像的表面光泽度。它允许用户调整光泽度，以创建从完全漫射到完全反射之间的各种效果。"
+            },
+            {
+                "role": "assistant",
+                "content": "：\n\nAlpha Matte 节点接收一张图像和一个alpha或trimap，并通过闭式掩码来完善边缘。它也可以可选地提取前景和背景颜色，这对清理SAM片段或手画掩码非常有用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "**快照图像 (快速) 节点如何工作？**"
+            },
+            {
+                "role": "assistant",
+                "content": "**快模糊图像节点（快速）使用opencv高斯模糊算法，其速度明显比舒适图像模糊更快。它支持更大的模糊半径和x/y独立控制。**"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "> Dilate/Erode Mask nods 用于调整图像的轮廓，使其更尖锐或更圆滑。"
+            },
+            {
+                "role": "assistant",
+                "content": "> **膨胀/侵蚀掩码节点**可以扩大或缩小掩码区域，使用方框或圆形过滤器。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "> 增强细节节点如何提高图像质量？"
+            },
+            {
+                "role": "assistant",
+                "content": "> 用引导模糊，增强细节节点增加了或减少了图像或图像集中的细节，而不是大多数锐化滤波器中使用的普通高斯模糊，为图像细节提供更自然的增强。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "：Remap Range 节点的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "：重映射范围节点可以将图像的色度范围调整到新的黑点和白点，适用于对软底图进行限制或阈值化。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\n批量规范潜在/图像节点如何工作？"
+            },
+            {
+                "role": "assistant",
+                "content": "：批处理标准化潜在/图像节点对批处理的每一帧进行整体均值和标准差标准化，以去除整体亮度闪烁。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": ">Tonemap / UnTonemap 节点用于应用或移除音调信息。"
+            },
+            {
+                "role": "assistant",
+                "content": "：\n tonemap / unTonemap 节点应用或移除对数 + 对比度曲线tonemap，用于调整图像的对比度和动态范围。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "> 暴露调整节点的目的是为了调整图像的曝光度。"
+            },
+            {
+                "role": "assistant",
+                "content": "**曝光调整节点**是 f- stops 中的线性曝光调整，可使用可选的色调图来根据创作效果，使图像变得更亮或更暗。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "> Convert Normals 节点可以将法线转换为另一种空间定向。"
+            },
+            {
+                "role": "assistant",
+                "content": "：转换正常映射节点可以将不同正常映射颜色空间之间进行转换，并提供可选的规范化修正和黑色区域修正功能，适用于 3D 渲染工作流程。"
+            }
+        ]
+    }
+]

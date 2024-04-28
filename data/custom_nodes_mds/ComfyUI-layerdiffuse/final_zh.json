@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-layerdiffuse 是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-layerdiffuse是ComfyUI实现的LayerDiffuse模型，用于生成具有可定制扩展的图像和视频。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何安装 ComfyUI-layerdiffuse？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 ComfyUI-layerdiffuse，请下载该存储库并将其解压缩到 ComfyUI 安装目录中的 custom_nodes 文件夹中，或者通过在 ComfyUI 安装目录中运行命令 'cd custom_nodes && git clone git@github.com:huchenlei/ComfyUI-layerdiffuse.git' 来克隆。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果在安装 ComfyUI-layerdiffuse 时出现版本冲突，应该怎么办？"
+            },
+            {
+                "role": "assistant",
+                "content": "如果由于依赖其他版本的diffusers的其他扩展导致diffusers出现版本冲突，建议设置单独的Python虚拟环境。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-layerdiffuse支持的工作流程是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-layerdiffuse 支持多种工作流程，如生成前景、混合前景/背景、从混合图像中提取前景/背景，以及从混合/背景图像中生成前景。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-layerdiffuse支持的模型有哪些？"
+            },
+            {
+                "role": "assistant",
+                "content": "目前，根据 https://github.com/layerdiffuse/sd-forge-layerdiffuse#model-notes 的信息，SDXL/SD15 是 ComfyUI-layerdiffuse 支持的模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "你能解释一下ComfyUI-layerdiffuse的独特特性吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-layerdiffuse 提供了独特的功能，如生成具有 RGBA 通道的图像、混合图像、提取前景/背景，以及与各种模型和工作流程的兼容性，以增加定制化。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-layerdiffuse 中，解码 RGBA 结果的要求是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI-layerdiffuse 中解码 RGBA 结果时，生成维度必须是 64 的倍数。否则，可能会发生解码错误。"
+            }
+        ]
+    }
+]

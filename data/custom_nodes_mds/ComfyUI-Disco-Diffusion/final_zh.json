@@ -1,0 +1,134 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Disco Diffusion 的 ComfyUI 模块化版本涉及哪些代码库？"
+            },
+            {
+                "role": "assistant",
+                "content": "这个仓库包含了一个模块化的 [Disco Diffusion](https://github.com/alembics/disco-diffusion) 版本，用于与 [ComfyUI](https://github.com/comfyanonymous/ComfyUI) 一起使用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何为ComfyUI安装Disco Diffusion节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装，请将仓库克隆到您的 `ComfyUI/custom_nodes` 文件夹中，使用 `git clone --recursive https://github.com/space-nuko/ComfyUI-Disco-Diffusion`。激活 ComfyUI 使用的虚拟环境，然后在克隆的文件夹中运行 `pip install -r requirements.txt`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "引导扩散加载器节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "引导扩散加载器节点加载一个引导扩散模型检查点。所有模型都会自动下载到您的 `ComfyUI/models/Disco-Diffusion` 文件夹中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "OpenAI CLIP Loader 节点是做什么的，以及与 ComfyUI 内置节点一起使用时推荐使用哪个模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "OpenAI CLIP 加载器节点加载 OpenAI/OpenCLIP 格式的 CLIP 模型。所有模型都会自动下载并缓存。与 ComfyUI 内置节点一起使用时推荐的模型是 `clip-vit-large-patch14`，可以在 [这里](https://huggingface.co/openai/clip-vit-large-patch14/blob/main/pytorch_model.bin) 找到。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Disco Diffusion节点的主要功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Disco Diffusion节点的主要功能是作为主采样节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Disco Diffusion 额外设置节点中有哪些可选设置？"
+            },
+            {
+                "role": "assistant",
+                "content": "Disco Diffusion 额外设置节点提供了您可以传递到 Disco Diffusion 节点的可选设置。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "OpenAI的CLIP加载器与ComfyUI的CLIP加载器和CLIP视觉加载器有何关联？"
+            },
+            {
+                "role": "assistant",
+                "content": "如果您将OpenAI的CLIP加载器替换为ComfyUI的CLIP加载器和CLIP视觉加载器，您需要将您使用的CLIP模型复制到`ComfyUI/models`文件夹下的`clip`和`clip_vision`子文件夹中，因为ComfyUI无法同时从同一个模型文件加载两者。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Disco Diffusion 节点中用于编写提示的特殊语法是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Disco Diffusion 节点中用于编写提示的特殊语法如下所示：`; 你可以像这样写注释。0:由 Greg Rutkowski 和 Thomas Kinkade 创作的一幅美丽的画作，描绘了一座独特的灯塔，它的光芒照亮了一片汹涌的血海。在 Artstation 上流行。0:黄色配色方案 100:这组提示从第100帧开始。100:这个提示的权重是五：5`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在提示中的领先数字如何与生成中的步骤号相关联？"
+            },
+            {
+                "role": "assistant",
+                "content": "每个提示前面的领先数字表示在生成过程中应该从哪个步骤开始使用该提示。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在提示末尾的尾随数字有什么控制作用？"
+            },
+            {
+                "role": "assistant",
+                "content": "每个提示末尾的尾随数字是可选的，它控制着提示的权重。你也可以有负权重，但是**所有权重的总和不能等于0**。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以找到有关Disco Diffusion可用参数的更多信息？"
+            },
+            {
+                "role": "assistant",
+                "content": "关于Disco Diffusion可用参数的更多信息可以在[Disco Diffusion备忘单](https://botbox.dev/disco-diffusion-cheatsheet/)和[EZ图表指南](https://ezcharts.miraheze.org/wiki/EZ_Charts)中找到。"
+            }
+        ]
+    }
+]

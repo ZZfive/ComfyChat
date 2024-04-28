@@ -1,0 +1,206 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Minio 插件是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Minio 插件基于 Minio，允许用户从 Minio 读取图像，将图像保存到 Minio，并促进多台机器之间的扩展和连接。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "文档有哪些语言版本？"
+            },
+            {
+                "role": "assistant",
+                "content": "文档有英文和简体中文（简体中文）版本可用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Set Minio Config 节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"Set Minio Config\"节点用于在使用ComfyUI-Minio插件中的其他节点之前初始化Minio配置。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"从Minio加载图片\"节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"从Minio加载图片\"节点用于从Minio服务器读取图片。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"Save Image To Minio\"节点的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"保存图片到Minio\"节点允许将图片保存到Minio服务器，并且支持保存多张图片。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何安装 ComfyUI-Minio 插件的依赖？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 ComfyUI-Minio 插件的依赖，请在终端或命令行中使用命令 'pip install -r requirements.txt'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在使用前初始化 ComfyUI-Minio 插件的步骤是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "要初始化 ComfyUI-Minio 插件，您需要添加“设置 Minio 配置”节点，输入您的 Minio 配置信息，运行插件，并检查输出目录中是否创建了 'minio_config.json' 文件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何在 ComfyUI-Minio 插件中显示 JSON 信息？"
+            },
+            {
+                "role": "assistant",
+                "content": "要显示JSON信息，您必须安装[Comfyui-Toolbox](https://github.com/zcfrank1st/Comfyui-Toolbox)插件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "成功配置Minio之后会发生什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在成功配置Minio之后，您可以正常使用“从Minio加载图像”和“将图像保存到Minio”节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Minio 扩展的主要功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Minio 扩展允许从 Minio 读取和保存图像，便于在多台机器之间进行扩展和连接。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“设置 Minio 配置”节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"设置 Minio 配置\"节点初始化了 Minio 设置，在使用 ComfyUI-Minio 扩展的其他节点之前是必需的。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“从Minio加载图片”节点是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "“从Minio加载图片”节点在设置好Minio配置后，从Minio检索图片。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“保存图片到Minio”节点的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "“保存图像到Minio”节点在通过“设置Minio配置”节点配置Minio后存储图像，并支持多次保存图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Minio 扩展需要哪些依赖项？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Minio 扩展需要安装 minio Python SDK。安装命令为 'pip install -r requirements.txt'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Minio 扩展的使用初始化步骤是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "要进行初始化，请添加“设置 Minio 配置”节点，输入您的 Minio 配置详细信息，然后运行插件。如果 Minio 设置正确并且连接成功，将在 ComfyUI 的“输出”目录中生成一个 'minio_config.json' 文件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何在使用 ComfyUI-Minio 时可视化 JSON 信息？"
+            },
+            {
+                "role": "assistant",
+                "content": "要查看JSON信息，请安装[Comfyui-Toolbox](https://github.com/zcfrank1st/Comfyui-Toolbox)插件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用 ComfyUI-Minio 扩展时的典型工作流程是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "工作流程包括通过“设置 Minio 配置”节点进行初始化，设置 Minio 配置，运行节点，并检查 'minio_config.json'。配置完成后，可以使用“从 Minio 加载图像”和“将图像保存到 Minio”节点。"
+            }
+        ]
+    }
+]

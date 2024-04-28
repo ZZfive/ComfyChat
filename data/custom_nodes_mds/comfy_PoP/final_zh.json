@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装comfy_PoP自定义节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 comfy_PoP 自定义节点，请导航到您的 ComfyUI custom_nodes 文件夹并运行命令 'git clone https://github.com/picturesonpictures/comfy_PoP'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Multiplier Node 在 comfy_PoP 中的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 comfy_PoP 中的乘数节点允许您将条件池化输出乘以一个值。它包括使用负数的选项，尽管创建者建议在实际使用中坚持使用正值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "舒适_PoP中的归一化节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 comfy_PoP 中的归一化节点对池化输出进行归一化处理。建议尝试调整该节点以观察其效果，因为其效用尚未被完全探索。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Encoder 和 Decoder 节点在 comfy_PoP 中是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 comfy_PoP 中，编码器和解码器节点使用内置的 VAE 加载器。如果两个节点使用相同的模型，该模型将只被加载到内存一次。这可以节省内存。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 comfy_PoP 中，AdaptiveCannyDetector 节点是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 comfy_PoP 中的 AdaptiveCannyDetector 节点是一个快速工作的边缘检测工具。该节点提供了在可比节点中找不到的额外设置，并被认为是实验性的。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "LoraStackLoader_PoP 节点是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "LoraStackLoader_PoP节点是一个用于加载三个LoRAs的简单节点。它包括每个LoRA的开关，以及模型和权重的输入输出节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "LoraStackLoader10_PoP 节点是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "LoraStackLoader10_PoP节点与LoraStackLoader_PoP类似，但允许加载多达10个LoRAs。它包括开关，并具有与单个LoRA加载器相同的输入/输出。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "AnyAspectRatio节点在comfy_PoP中的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 comfy_PoP 中的 AnyAspectRatio 节点可以将一个正方形图像的像素计数转换为所需的任何宽高比。它还可以调整正方形图像的大小，并包括一个推荐的默认边长和舍入值，以确保 SDXL 的稳定性。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,74 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Bmad的Dirty Undo-Redo扩展对ComfyUI是否仍然必要？"
+            },
+            {
+                "role": "assistant",
+                "content": "不，截至2023年11月28日，ComfyUI已经具备了撤销/重做功能，使得Bmad的Dirty Undo-Redo扩展变得过时。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果我有一个内置撤销/重做的更新版本的 ComfyUI，应该采取什么行动？"
+            },
+            {
+                "role": "assistant",
+                "content": "如果您有一个内置撤销/重做功能的更新版本的 ComfyUI，您将需要移除或禁用 Bmad 的 Dirty Undo-Redo 扩展以避免冲突。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何完全移除Bmad的脏撤销-重做扩展？"
+            },
+            {
+                "role": "assistant",
+                "content": "要完全移除扩展，您可能需要删除位于web/extensions目录中的ZZZ-Bmad-DirtyUndoRedo文件夹。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Bmad-DirtyUndoRedo 中有用于撤销和重做的键盘快捷键吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，撤销是 <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>Z</kbd>，重做是 <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>Y</kbd> 或 <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd>。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI-Bmad-DirtyUndoRedo 扩展？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装扩展，请导航到 `/ComfyUI/custom_nodes/` 文件夹并从 `https://github.com/bmad4ever/ComfyUI-Bmad-DirtyUndoRedo` 克隆仓库。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "为什么它被称为“脏”撤销-重做？"
+            },
+            {
+                "role": "assistant",
+                "content": "它被称为“肮脏”，因为作者主要关心的是快速得到一个多少能工作的解决方案，而不是太多地关注以“正确”的方式实现它。例如，撤销/重做数据包含了整个序列化工作流的快照（这是小题大做），作者没有计划改变它。"
+            }
+        ]
+    }
+]

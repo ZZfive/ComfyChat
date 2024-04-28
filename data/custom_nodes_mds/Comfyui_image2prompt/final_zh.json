@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`wd-swinv2-tagger-v3`模型在ComfyUI-image2prompt中用于什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "`wd-swinv2-tagger-v3`模型提高了性格特征描述的准确性，使其特别适合需要详细描绘角色的场景。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`moondream1` 和 `moondream2` 模型在 ComfyUI-image2prompt 中的比较是怎样的？"
+            },
+            {
+                "role": "assistant",
+                "content": "`moondream1`模型提供了丰富的细节，但有时可能会显得冗长且缺乏精确性，而`moondream2`模型则提供了简洁准确的场景描述。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`Text2GPTPrompt` 节点在 ComfyUI-image2prompt 中的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "`Text2GPTPrompt` 节点旨在创建高效的提示，能够整合由 `moondream` 系列模型和 `wd-swinv2-tagger-v3` 生成的关键词，为 7b 级别的模型定制，包括 `qwen1.5-7b`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-image2prompt 中，用于创建包括古典诗歌在内的各种形式提示的模型是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "`hahahafofo/Qwen-1_8B-Stable-Diffusion-Prompt` 模型被用来创建各种形式的提示，包括古典诗歌。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "安装 ComfyUI-image2prompt 插件的步骤是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 ComfyUI-image2prompt 插件，首先，使用命令 `git clone https://github.com/zhongpei/Comfyui-image2prompt` 将插件的仓库克隆到你的 ComfyUI `custom_nodes` 目录中。然后，按照必要的安装步骤进行操作。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果模型无法自动下载，如何手动下载 ComfyUI-image2prompt 插件所需的模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "从 Hugging Face 手动下载必要的模型，例如 `vikhyatk/moondream1`、`vikhyatk/moondream2`、`unum-cloud/uform-gen2-qwen-500m` 和 `internlm/internlm-xcomposer2-vl-7b`，并将它们保存到插件的 `ComfyUI/models/image2text` 目录中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-image2prompt 插件可以用来从中国的镜像网站下载模型吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，如果需要，可以通过命令 `export HF_ENDPOINT=https://hf-mirror.com` 将 Hugging Face 端点设置为中文镜像 URL。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何使用 comfyui-browser 创建一个新的 Svelte 项目？"
+            },
+            {
+                "role": "assistant",
+                "content": "你可以通过在当前目录下运行 `npm create svelte@latest` 来创建一个新的 Svelte 项目，或者通过运行 `npm create svelte@latest my-app` 在名为 'my-app' 的目录中创建它。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我需要运行什么命令来启动开发服务器？"
+            },
+            {
+                "role": "assistant",
+                "content": "安装依赖项后，通过运行 `npm run dev` 可以启动开发服务器。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何在开发期间在新的浏览器标签页中打开应用程序？"
+            },
+            {
+                "role": "assistant",
+                "content": "你可以通过运行 `npm run dev -- --open` 在新的浏览器标签页中打开应用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我使用什么命令来创建我的应用程序的生产版本？"
+            },
+            {
+                "role": "assistant",
+                "content": "要创建你的应用程序的生产版本，请运行 `npm run build`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何在部署前预览生产构建？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以使用 `npm run preview` 预览生产构建。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果我需要部署我的应用程序，我应该怎么做？"
+            },
+            {
+                "role": "assistant",
+                "content": "如果您需要部署您的应用程序，您可能需要为您的目标环境安装一个[适配器](https://kit.svelte.dev/docs/adapters)。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是 ComfyUI 浏览器？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI 浏览器是一个图形用户界面扩展，允许您浏览和管理 ComfyUI 的所有输出文件。它还支持将工作流添加到收藏夹列表、将工作流远程同步到 Git 仓库以及订阅社区共享的工作流仓库等功能。它还包括对工作流的搜索功能。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何使用 ComfyUI 浏览器查看和管理 ComfyUI 输出文件？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过在 ComfyUI 浏览器中浏览来查看和管理 ComfyUI 输出文件。它支持将工作流程添加到收藏夹列表中，以便轻松管理和回忆。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以使用 ComfyUI 浏览器与团队共享和管理工作流程的版本吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，ComfyUI浏览器支持将您的工作流程远程同步到Git仓库，这对于团队协作和版本管理非常理想。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI 浏览器？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过 ComfyUI 管理器，在“安装自定义节点”部分搜索 'comfyui-browser' 来安装 ComfyUI 浏览器。或者，您可以手动下载代码并将其放置在 `ComfyUI/custom_nodes` 目录中，然后重新启动 ComfyUI。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI浏览器的开发需求是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI 浏览器的开发需要安装 Node.js。该项目使用了以下框架：前端使用 Svelte，后端使用 aiohttp。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何运行 ComfyUI Browser 的开发服务器？"
+            },
+            {
+                "role": "assistant",
+                "content": "要运行 ComfyUI 浏览器的开发服务器，您需要将 'comfyui-browser' 文件夹复制或链接到 'ComfyUI/custom_nodes/'，然后使用 'python main.py --enable-cors-header' 启动后端服务。之后，转到 'ComfyUI/custom_nodes/comfyui-browser/svelte' 目录，运行 'npm i && npm run dev'，然后访问调试地址 'http://localhost:5173/?comfyUrl=http://localhost:8188'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何在ComfyUI内访问ComfyUI浏览器？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI 浏览器可以通过在 ComfyUI 中按 'B' 键来打开和关闭。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以找到 ComfyUI 浏览器更新的变更日志？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI 浏览器的更新日志可以在 [CHANGELOG.md](CHANGELOG.md) 中找到。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,146 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Hangover-Nodes 仓库中有哪些自定义节点可用？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Hangover-Nodes 仓库中可用的自定义节点有：适用于 ComfyUI 的 Microsoft kosmos-2，保存无元数据的图像，将图像缩放到边界框，以及为 SD1.5 制作修复模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"Save Image w/o Metadata\"节点的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"保存图像而不带元数据\"节点允许您在保存的图像中包含或排除ComfyUI工作流的元数据。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI 中，Kosmos-2 节点的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI中的Kosmos-2节点是微软Kosmos-2的实现，它是一个文本和图像到文本的转换器。它能够识别图像中的名人和文字，并根据输入提示输出文本。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"Scale an Image To Bounding Box\"节点的特点是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "将图像缩放到边界框节点可以将输入图像缩放到给定的框大小，同时保持纵横比，并且它还可以用任意颜色填充图像到完整的框大小。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "制作SD1.5节点的修复画图模型的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "为SD1.5节点制作的修复画模型可以即时创建任何SD1.5模型的修复画版本，消除了在您的硬盘上需要有GB级修复画模型的需求，这对于任何类型的修复画节点，如细节处理节点，都很有用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "对 ComfyUI-Hangover-Nodes 进行了哪些更新？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Hangover-Nodes的更新包括：一个用于保存带或不带元数据的图像的单个按钮，能够排除仅预览时保存图像，kosmos-2输出一个指示识别元素的遮罩，以及一个新的节点用于制作修复模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何为ComfyUI安装自定义节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 ComfyUI 的自定义节点，请将仓库解压缩或使用 git clone 克隆到 ComfyUI/custom_nodes 文件夹中，然后重新启动 ComfyUI。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用Kosmos-2生成图像的一些例子是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "提供的示例包括一张美丽的日落下帐篷和灯笼的图片（00049-2467344372.jpg），一个男人在吃一盘食物，一个怪物从他嘴里吃出来（2023-12-05_18-14-17_8435.jpg），一个穿着中世纪服装的美丽女人（2023-12-26-191725_546.jpg），森林中的道路标志和交通标志（road-sign-3425675009.jpg），以及一个学期开学的传单（35_727584-2581741032.jpg）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "生成两张图片组合的工作流程看起来是怎样的？"
+            },
+            {
+                "role": "assistant",
+                "content": "示例工作流程涉及使用 ComfyUI-Hangover-Nodes 来生成两张图片的组合，如提供的图片所示（../img/interr_combine.png）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Image Index节点在从目录批量处理图像时的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Hangover-Nodes 中的图像索引节点设置为 0，并在从目录批量处理图像时自动递增。它负责跟踪图像顺序，并激活“自动队列”以自动处理图像。当 ComfyUI 完成处理时，它会因错误而停止。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Openpose图像可以自动适配到输出图像大小吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，openpose图像可以使用ComfyUI-Hangover-Nodes自动适配到输出图像大小，如提供的示例（scale_openpose.png）所示。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "一个合适的修复模型能否完美地进行修复？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，通过适当的修复模型，可以实现完美的修复，如“制作修复模型示例”（inpaint_model_example.png）中所示。"
+            }
+        ]
+    }
+]

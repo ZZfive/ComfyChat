@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI Floodgate 是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI Floodgate 是 ComfyUI 的一个扩展，它允许您轻松控制工作流中的逻辑流程。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI Floodgate 解决了什么问题？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI Floodgate 解决了在使用像 Hires 这样的复杂工作流程时，每次都需要重新连接多个节点的问题，这可能会非常耗时。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "你如何使用 ComfyUI Floodgate？"
+            },
+            {
+                "role": "assistant",
+                "content": "要使用 ComfyUI Floodgate，请将像 'LATENT' 这样的节点的输出连接到 Floodgate 节点的 'source'，然后将每条路径连接到所需的剩余工作流程。通过点击 'gate_open' 在路径之间切换。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI Floodgate 中，未被选择的路径会发生什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI Floodgate 中未被选择的路径将不会被执行。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "开启洪闸是否需要重新处理先前的节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "不，由于ComfyUI缓存了中间结果，打开闸门不需要再次处理之前的节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以在同一个工作流中使用多个 Floodgates 吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，你可以在 ComfyUI Floodgate 的一个工作流中使用多个 Floodgates。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在使用 Floodgate 时，输入/输出类型的限制是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用 Floodgate 时，您可以连接任何任意类型。然而，输入/输出类型仍然必须匹配。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI Floodgate 中，逻辑流在哪个阶段被解析？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI Floodgate 中，逻辑流程是在排队阶段解析的，而不是在执行阶段。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Floodgate 的布尔值应该在什么时候确定？"
+            },
+            {
+                "role": "assistant",
+                "content": "布尔值对于 Floodgate 应该在您按下“队列提示”时确定，它应该来自一个切换或一个原始节点，而不是来自在执行期间输出的节点。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是 ComfyUI-FLATTEN？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-FLATTEN 是一套节点，它利用 FLATTEN 光流模型在 ComfyUI 中生成或编辑图像和视频。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI-FLATTEN？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以将 ComfyUI-FLATTEN 通过克隆或下载仓库到您的 'ComfyUI/custom_nodes/' 目录中，或者使用 ComfyUI-Manager 自动安装节点来安装。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-FLATTEN 需要哪些 Python 包？"
+            },
+            {
+                "role": "assistant",
+                "content": "对于 ComfyUI-FLATTEN，除了 ComfyUI 的要求之外，不需要任何额外的 Python 包。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-FLATTEN 包含哪些节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-FLATTEN中包含的节点有：带有FLATTEN模型的负载检查点、样本轨迹、非采样器（Flatten）、K采样器（Flatten）、应用Flatten注意力（仅限SD1.5）、以及创建流噪声。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Load Checkpoint节点的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "负载检查点节点加载任何给定的SD1.5检查点，使用FLATTEN光流模型。它只与Flatten KSampler一起工作，对于其他KSamplers，需要一个标准的ComfyUI检查点加载器。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "样本轨迹节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "样本轨迹节点接收输入图像并将其光流采样成轨迹。还需要与AnimateDiff-Evolved一起批量处理的上下文长度和重叠。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Unsampler节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "Unsampler 节点对输入的潜在变量进行非采样，并创建采样所需的注入。它应该只使用欧拉法或 ddpm2m 作为采样方法。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "KSampler节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "KSampler节点对未采样的潜在变量进行采样，并使用Unsampler的注入。它可以使用任何采样方法，但建议使用欧拉或ddpm2m来编辑视频片段。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"Apply Flatten Attention\"节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "将以下文字翻译成中文，不要添加任何无关内容：应用展平注意力节点使用展平的光流注意力机制，而不使用展平模型的其余部分。它并不总是与添加法线噪声的方法兼容。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"Create Flow Noise\"节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"创建流噪声\"节点根据潜在因素和轨迹生成流噪声。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-FLATTEN 视频编辑的推荐设置是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "推荐的设置是使用一个Unsampler和一个KSampler，其中`old_qk = 0`。Unsampler应该使用欧拉采样器，而KSampler应该使用dpmpp_2m采样器。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-FLATTEN进行场景编辑的推荐设置是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "对于场景编辑，建议在KSampler上使用LCM，并在KSampler上设置`old_qk = 1`。祖先采样方法也很有效。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-FLATTEN 支持哪些 ComfyUI 节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-FLATTEN 可以支持大多数 ComfyUI 节点，包括 ControlNets、IP-Adapter、LCM、InstanceDiffusion/GLIGEN 等许多其他节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-FLATTEN不支持的ComfyUI特性有哪些？"
+            },
+            {
+                "role": "assistant",
+                "content": "目前，已知不支持的自定义 ComfyUI 特性包括：定时提示和高级批处理的上下文视图。"
+            }
+        ]
+    }
+]

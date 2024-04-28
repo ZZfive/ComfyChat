@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Depth-Anything-Tensorrt 是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Depth-Anything-Tensorrt 是 ComfyUI 的一个自定义节点实现，它使用 Depth-Anything-Tensorrt 模型生成超快速深度图。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Depth-Anything-Tensorrt的系统要求是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "系统要求为Python 3.10.12、CUDA 12.3、TensorRT 8.6，并在装有A10G GPU的Ubuntu 22.04 LTS上进行了测试。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "不同模型在RTX4090上的推理时间如何变化？"
+            },
+            {
+                "role": "assistant",
+                "content": "Depth-Anything-S 的推理时间为 3 毫秒，Depth-Anything-B 为 6 毫秒，Depth-Anything-L 为 12 毫秒。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI-Depth-Anything-Tensorrt？"
+            },
+            {
+                "role": "assistant",
+                "content": "导航到 ComfyUI 的 `/custom_nodes` 目录，并使用 `git clone https://github.com/yuvraj108c/ComfyUI-Depth-Anything-Tensorrt.git` 克隆仓库。然后，切换到新目录并使用 `pip install -r requirements.txt` 安装依赖。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何为 ComfyUI-Depth-Anything-Tensorrt 构建一个 TensorRT 引擎？"
+            },
+            {
+                "role": "assistant",
+                "content": "从 Hugging Face 仓库下载一个 ONNX 模型，并使用 `trtexec` 命令将其转换为引擎，然后将引擎放置在 ComfyUI `/models/depth_trt_engines` 目录中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Depth-Anything-Tensorrt 是否与 Windows 兼容？"
+            },
+            {
+                "role": "assistant",
+                "content": "文档声明Windows未经测试。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Depth-Anything-Tensorrt的来源是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "来源分别是 [spacewalk01/depth-anything-tensorrt](https://github.com/spacewalk01/depth-anything-tensorrt) 和 [martenwikman/depth-anything-tensorrt-docker](https://github.com/martenwikman/depth-anything-tensorrt-docker)。"
+            }
+        ]
+    }
+]

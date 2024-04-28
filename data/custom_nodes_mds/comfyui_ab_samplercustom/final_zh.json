@@ -1,0 +1,38 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`comfyui_ab_sampler` 自定义节点是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "`comfyui_ab_sampler`是一个实验性的采样器节点，它在两个输入A和B之间交替，直到只剩下一个输入为止，从输入A开始。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`comfyui_ab_sampler`是如何处理输入B的？"
+            },
+            {
+                "role": "assistant",
+                "content": "在处理输入B时，采样器节点在一个2x2的网格上运行，其中3/4的网格是原始输入潜在状态的副本。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "当一个掩码与 `comfyui_ab_sampler` 一起使用时会发生什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "如果提供了一个可选的掩码，那么在每一步的最后，定义的感兴趣区域（ROI）之外的区域将从原始潜在图像中复制。"
+            }
+        ]
+    }
+]
