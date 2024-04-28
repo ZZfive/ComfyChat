@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-安全检查器节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-安全检查器节点引入了一种基于CLIP的安全检查器，该检查器能够识别并处理图像中的不适合工作场合（NSFW）内容。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "安全检查节点使用什么模型进行NSFW（不适合工作场所）内容检测？"
+            },
+            {
+                "role": "assistant",
+                "content": "安全检查器节点使用了来自CompVis的一个预训练模型，名为stable-diffusion-safety-checker。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "安全检查器节点如何处理检测到的不适宜工作场合的图片？"
+            },
+            {
+                "role": "assistant",
+                "content": "安全检查器节点将检测到的不适宜内容（NSFW）图片替换为纯黑色的占位符。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "NSFW检测的敏感度级别可以调整吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，不适宜内容（NSFW）检测的敏感度级别可以调整。标准值是0.5，这是检测明显裸露内容的阈值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "NSFW检测有哪些不同的敏感度级别？"
+            },
+            {
+                "role": "assistant",
+                "content": "NSFW（不适合工作场所）检测可用的敏感度级别为0（无过滤）、0.5（明显裸露的阈值）和1.0（检测穿着内衣/内裤的图片的敏感度）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "安全检查器节点是直接连接到图像还是通过 VAE 解码？"
+            },
+            {
+                "role": "assistant",
+                "content": "安全检查器节点处理来自直接连接或通过VAE解码的输入图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "安全检查器的节点设置有示例吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，在文档中提供的链接处有一个示例节点设置，作为图像资产可用。"
+            }
+        ]
+    }
+]

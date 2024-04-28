@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-I2VGEN-XL是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-I2VGEN-XL 是 i2vgen-xl 模型的一个实现，集成到 ComfyUI 图形界面中，用于生成图像和视频。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何安装 ComfyUI-I2VGEN-XL？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 ComfyUI-I2VGEN-XL，您应该将该仓库克隆到 ComfyUI 位置的 custom_nodes 目录中，然后运行 pip install -r requirements.txt。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果我遇到关于相对导入的ValueError，我应该怎么做？"
+            },
+            {
+                "role": "assistant",
+                "content": "要修复相对导入的ValueError，您应该删除文件`~/.cache/modelscope/hub/damo/i2vgen-xl/tools/__init__.py`和`~/.cache/modelscope/hub/damo/i2vgen-xl/tools/modules/__init__.py`中的内容。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果我遇到CUDA内存不足怎么办？"
+            },
+            {
+                "role": "assistant",
+                "content": "如果您遇到CUDA内存不足的问题，您应该编辑文件 `~/.cache/modelscope/hub/damo/i2vgen-xl/ms_wrapper.py` 并将 `self.model.to(gpu)` 改为 `self.model.half().to(gpu)`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-I2VGEN-XL的基本工作流程是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-I2VGEN-XL 的基本工作流程在一张图片中展示，图片附有指向工作流程 JSON 文件的链接：<img src=\"assets/base_wf.png\" raw=true>，工作流程 JSON 文件可以在 https://github.com/chaojie/ComfyUI-I2VGEN-XL/blob/main/workflow.json 找到。"
+            }
+        ]
+    }
+]

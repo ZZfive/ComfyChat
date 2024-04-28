@@ -1,0 +1,146 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-InstantID与其他扩展有何不同？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-InstantID与其他扩展不同，因为它不使用*diffusers*，而是本地实现InstantID，并且它完全集成到ComfyUI中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "2024年2月，ComfyUI-InstantID有哪些重要的更新？"
+            },
+            {
+                "role": "assistant",
+                "content": "2024年2月对ComfyUI-InstantID进行了两项重要更新，包括在负嵌入中注入噪声以及重构节点以便于使用，这是一个破坏性更新，之前的工作流程将不再适用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "InstantID高级节点提供了什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "InstantID高级节点允许为InstantID模型和Controlnet分别设置权重，并且它包括一个噪声注入选项，这对于微调可能很有帮助。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用InstantID与ComfyUI需要什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "要使用InstantID与ComfyUI，您需要将ComfyUI升级到最新版本，下载或使用`git clone`将此仓库克隆到`ComfyUI/custom_nodes/`目录中，将`insightface`、`onnxruntime`和`onnxruntime-gpu`添加到您的库中，下载主模型，然后将其放置在`ComfyUI/models/instantid`目录下。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在使用InstantID时，为了避免水印，推荐的分辨率是多少？"
+            },
+            {
+                "role": "assistant",
+                "content": "在使用InstantID时，建议使用**1016×1016**的分辨率，以避免在生成的图像中出现水印。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Multi-ID支持在InstantID中允许什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "InstantID中的多ID支持允许生成受多个身份或概念影响的图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在Apply InstantID节点中，默认的噪声注入率是多少？"
+            },
+            {
+                "role": "assistant",
+                "content": "在Apply InstantID节点中，默认的噪声注入率是35%。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-InstantID高级节点如何处理噪声注入？"
+            },
+            {
+                "role": "assistant",
+                "content": "高级即时ID节点包括一个噪声注入选项，该选项可以调整以进行微调，并有助于减少“烧伤”效应。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "即时ID模型对组成有何影响？"
+            },
+            {
+                "role": "assistant",
+                "content": "即时ID模型影响大约25%的组成，其余的是控制网。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "社区中与ComfyUI-InstantID配合得最好的检查点是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "文档中没有指定与ComfyUI-InstantID配合得最好的社区检查点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在instantid_basic_workflow示例中使用的分辨率是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在文档中，instantid_basic_workflow 示例中的分辨率没有被指定。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-InstantID 是否与 SD 的任何特定版本兼容？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-InstantID 目前仅与 SDXL 兼容。"
+            }
+        ]
+    }
+]

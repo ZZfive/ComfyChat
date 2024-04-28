@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Anchors 是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Anchors 是 ComfyUI 的一个扩展，它增加了空间锚点/航点，以更好地导航大型工作流程。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何在ComfyUI-Anchors中添加锚点节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "你可以在 ComfyUI-Anchors 中的 `utils` 部分添加锚点节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何在ComfyUI-Anchors中跳转到锚点？"
+            },
+            {
+                "role": "assistant",
+                "content": "你可以使用 ComfyUI-Anchors 中的 `a` 和 `d` 键在锚点之间跳转。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Comfy的Litegraph的centerOnNode有什么意想不到的副作用？"
+            },
+            {
+                "role": "assistant",
+                "content": "Comfy的Litegraph的centerOnNode功能没有考虑到已折叠的节点，因此你可以通过将其放大然后折叠来改变跳转到锚点时的居中位置。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Anchors 的待办事项列表中还有什么需要完成的？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI-Anchors 的待办事项列表中，仍需完成的项目包括显示当前锚点的列表及其名称，允许更改迭代顺序，以及添加基于向量的导航。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何为ComfyUI-Anchors设置本地开发环境？"
+            },
+            {
+                "role": "assistant",
+                "content": "为了搭建 ComfyUI-Anchors 的本地开发环境，你需要克隆仓库，运行 `pnpm install` 来安装必要的依赖，然后运行 `pnpm build` 来编译代码。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "是否有计划让 ComfyUI-Anchors 库在 ComfyUI 之外工作？"
+            },
+            {
+                "role": "assistant",
+                "content": "不，没有计划让ComfyUI-Anchors库在ComfyUI环境之外工作。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "这段文字的中文翻译是：“在 ComfyUI-Anchors 中关于打字的自白是什么？”"
+            },
+            {
+                "role": "assistant",
+                "content": "为了在不提取 ComfyUI 中的 JS 代码的情况下使类型工作，开发文件（TS）将 Comfy 作为兄弟引用。如果您希望 TypeScript 提示和检查工作，您需要一个类似的结构。为了使 JS 能够正确运行，在 `__init__` 上复制 JS 时，会在 dist 中将相对路径替换为基于 JS 复制位置的不同相对路径。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "你能提供更多关于JavaScript文件路径交换是如何工作的详细信息吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "查看 `vite.config.ts` 和 `tsconfig.json` 以了解 JavaScript 文件的路径交换是如何工作的。该配置旨在根据 JavaScript 文件在 `__init__` 上的复制位置来调整相对路径。"
+            }
+        ]
+    }
+]

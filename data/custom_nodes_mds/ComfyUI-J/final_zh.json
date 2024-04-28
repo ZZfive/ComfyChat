@@ -1,0 +1,146 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-J是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-J 是 Jannchie 为 ComfyUI 开发的一套自定义节点。这些节点基于 Diffusers，简化了模型的导入、带有权重的提示应用、修复、仅限参考以及控制网的操作。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI-J？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 ComfyUI-J，您需要导航到 `custom_nodes` 目录，然后运行 `git clone https://github.com/Jannchie/ComfyUI-J`，接着执行 `cd ComfyUI-J` 和 `pip install -r requirements.txt`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-J节点和Comfy的KSampler节点之间的主要区别是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-J 节点基于 Diffusers 并设计用于简化模型的导入、带有权重的提示应用、修复、仅限参考以及控制网。与 KSampler 节点相比，它们需要较少的节点就能达到相同的结果。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Jannchie的扩散器管道的默认工作流程是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Jannchie的扩散器管道的默认工作流程仅需要处理4个节点，相比之下，Comfy的默认工作流程通常使用的是7个节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-J中的“仅引用”功能是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-J中的“仅限参考”功能支持两种模式：attn（注意力）和attn + adain（注意力 + 域自适应），并且有一个风格保真度参数，可以调整以控制风格。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ControlNet 如何与 ComfyUI-J 配合工作？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-J 提供了一个 DiffusersControlnetLoader 节点用于加载模型。这个节点会自动检测相应的 ControlNet 是否在本地可用，如果不可用，则从 HuggingFace 拉取模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何使用 ComfyUI-J 进行图像修复？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-J 在其扩散器管道的自定义节点中包含了一个修复功能。文档中提供了一个示例，展示了如何进行操作。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何使用 ComfyUI-J 从图像中移除某物？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-J的扩散器管道自定义节点包括一个从图像中移除某物的功能。文档中提供了一个示例来演示这一点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何使用 ComfyUI-J 更换角色的衣服？"
+            },
+            {
+                "role": "assistant",
+                "content": "更换服装需要综合应用扩散器管道自定义节点特性，包括仅参考、控制网、修复和文本反转。文档中提供了一个正确装扮角色的工作流程演示。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "为什么选择了Diffusers而不是默认的ComfyUI节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "Diffusers 被选为 ComfyUI-J 的一部分，因为它拥有庞大的生态系统、更清晰的代码结构和更简单的界面。Comfy 默认节点中的特性要么不完整，要么难以访问，而 Diffusers 提供了一个流水线包装器，使生成过程更加容易。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "为什么选择 ComfyUI 作为 ComfyUI-J 的开发基础？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI 被选为 ComfyUI-J 的原因是它擅长结合和与他人分享组合。尽管作为开发者调试自定义节点存在困难，但使用 ComfyUI 可以更快地验证和分享结果。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "未来 ComfyUI-J 的更新计划是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "未来对 ComfyUI-J 的更新可能包括对 LoRA 支持和 Stable Diffusion XL 支持，如 TODO 列表中所示。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "为什么在ComfyUI-MuseTalk中有一个'bbox_shift'参数？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"bbox_shift\"参数在ComfyUI-MuseTalk中引入，用于调整在推理过程中生成口型的效果。观察到，当遮罩的上限更接近嘴巴（地标30）时，音频特征对唇部运动的贡献更大。相反，当遮罩的上限远离嘴巴（地标28）时，音频特征对生成面部消失细节的贡献更大。用户可以在一定范围内调整\"bbox_shift\"参数的值，以根据实际场景中的需求微调唇部运动。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“bbox_shift”参数的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"bbox_shift\"参数在ComfyUI-MuseTalk中的目的是调整生成口型的效果。它允许用户控制音频特征对口部运动在生成的图像或视频中的贡献，这可以调整以产生所需的口部运动水平。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "用户如何确定调整“bbox_shift”参数的范围？"
+            },
+            {
+                "role": "assistant",
+                "content": "用户可以通过运行 ComfyUI-MuseTalk 的默认配置来确定调整 'bbox_shift' 参数的范围，这提供了一个可调整的值范围。在提供的示例中，给定的范围是 -9 到 9。然后，用户可以在该范围内使用 'bbox_shift' 变量重新运行脚本。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "正的和负的'bbox_shift'值的一般效果是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "一般来说，正值的'bbox_shift'（向脸部下半部移动）往往会增加嘴的张开度，而负值（向脸部上半部移动）往往会减少嘴的张开度。然而，这并非绝对规则，用户可能需要根据自己的具体需求和期望的效果来调整该参数。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-MuseTalk的分割框是如何确定的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-MuseTalk 的分割框是通过使用面部检测结果（bbox）和面部标记来确定头部区域。bbox 的上界用作分割框的上边界，面部标记坐标的最大 y 值作为下边界，以及标记坐标的最小和最大 x 值作为左右边界。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-MuseTalk中的面部检测代码的来源是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-MuseTalk中的面部检测代码取自[face_alignment](https://github.com/1adrianb/face-alignment)仓库。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Face Detection 代码在 ComfyUI-MuseTalk 中被修改了吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，ComfyUI-MuseTalk中的面部检测代码已经被修改，以便一次处理多批面部。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Face Detection 代码是如何从 face_alignment 修改为 ComfyUI-MuseTalk 的？"
+            },
+            {
+                "role": "assistant",
+                "content": "来自face_alignment仓库的面部检测代码已被修改，以便一次处理多批面部，用于ComfyUI-MuseTalk。"
+            }
+        ]
+    }
+]

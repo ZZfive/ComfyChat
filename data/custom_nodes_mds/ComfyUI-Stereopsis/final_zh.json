@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Stereopsis是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Stereopsis 是一个旨在将立体视差效果整合到 ComfyUI 中的倡议，通过处理一系列连续的图像，并通过 Side-by-Side 节点，并对其中一个输入应用帧延迟。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "立体视差效应支持哪些应用？"
+            },
+            {
+                "role": "assistant",
+                "content": "立体视效与支持并排（SBS）视频播放的任何虚拟现实头盔兼容，为沉浸式媒体体验提供了实际应用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "并排模块是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "边对边模块是一个实用工具，旨在将两张图片并排拼接成一张图片。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Side-by-Side 模块的输入要求是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"并排模块\"需要两个输入，每个都标记为left_image（左图像）和right_image（右图像）。两个输入都应该是图像，表示为PyTorch张量，对图像的宽度没有限制，但要求它们具有相同的高度和通道深度。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "帧延迟模块是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "FrameDelay模块提供了一个复杂的解决方案，通过重复和插入帧来操作图像批次，从而引入延迟效果，而不改变整体批次大小。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Frame Delay模块的输入类型是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "FrameDelay 模块接受一批图像作为输入，同时接受用于选择帧（selected_frame）和定义延迟（frame_delay）的参数。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "这些模块使用的编程语言是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "并排和帧延迟模块都是使用PyTorch库在Python中实现的。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用并排和帧延迟模块的要求是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "要使用并排和帧延迟模块，需要在工作环境中安装并配置PyTorch。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何为ComfyUI安装WAS_Extras？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以将WAS_Extras通过克隆仓库到`ComfyUI/custom_nodes`，使用ComfyUI管理器，或者下载单独的自定义节点`.py`文件并将它们放置在您的`ComfyUI/custom_nodes`文件夹中来安装。如果您使用`ksampler_sequence.py`，您还需要安装`requirements.txt`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在WAS_Extras中，\"Conditioning (Blend)\"节点的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"条件混合（Blend）节点允许通过不同的插值或操作方法混合提示条件。\""
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "WAS_Extras中的DebugThis节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"DebugThis\"节点用于调试任何输入，通过打印对象并在其不是常见类型（如`str`、`int`或`float`）时显示其映射。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Inpainting VAE Encode节点提供了哪些功能？"
+            },
+            {
+                "role": "assistant",
+                "content": "Inpainting VAE 编码节点允许对掩码进行偏移腐蚀和膨胀，以微调掩码。它还使用掩码结果作为像素掩蔽，以实现更清晰的边界和侵蚀掩码的能力。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Vivid Sharpen节点在WAS_Extras中是什么，它有什么作用？"
+            },
+            {
+                "role": "assistant",
+                "content": "Vivid Sharpen节点是Photoshop Vivid Sharpen技术的Python实现，它以类似于Photoshop特性的方式锐化图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "KSampler Sequence节点在WAS_Extras中提供了哪些特性？"
+            },
+            {
+                "role": "assistant",
+                "content": "KSampler 序列节点提供两个功能：CLIP 文本编码序列（高级）和 KSampler 序列。如果可用，CLIPTextEncode 功能将使用 BLK 高级 CLIP 文本编码。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是BLVAEEncode，它如何被使用？"
+            },
+            {
+                "role": "assistant",
+                "content": "BLVAEEncode 是一种变分自编码器（VAE）编码器，它可以将潜在状态存储在工作流中，便于共享。它的潜在用途可能是用于共享存储的潜在状态，如所提供的工作流示例中所示。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,158 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-DynamicPrompts 是什么，它提供了什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DynamicPrompts 是 ComfyUI 的一个自定义节点库，它将动态提示集成到您现有的 ComfyUI 库中。它提供了节点，使您能够在 ComfyUI 中使用动态提示。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "随机提示节点实现了什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"随机提示\"节点实现了随机抽样的标准通配符模式，用于变体和通配符。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "组合提示节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "组合提示节点会遍历提示中所有可能的随机值组合。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"I'm Feeling Lucky\"节点是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"I'm Feeling Lucky\"节点使用给定的提示从Lexica.art下载一个相关的提示。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "魔术提示节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"魔法提示\"节点使用神经网络为您的提示添加相关的修饰词。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Jinja2模板节点提供了什么功能？"
+            },
+            {
+                "role": "assistant",
+                "content": "Jinja2模板节点允许您使用Jinja2模板编写提示。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI-DynamicPrompts？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以使用 ComfyUI-Manager 安装 ComfyUI-DynamicPrompts，方法是在 ComfyUI-Manager 菜单中找到它，搜索 'dynamicprompts'，然后点击安装。或者，您可以通过克隆仓库、安装所需的 Python 包、运行 install.py，然后重新启动您的 ComfyUI 来手动安装它。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以找到 ComfyUI-DynamicPrompts 的示例工作流程？"
+            },
+            {
+                "role": "assistant",
+                "content": "示例工作流程可以在 'custom_nodes/comfyui-dynamicprompts/example_workflows' 中找到。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "扩展在哪里查找通配符文件？"
+            },
+            {
+                "role": "assistant",
+                "content": "该扩展在 'custom_nodes/comfyui-dynamicprompts/wildcards' 中查找通配符文件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "这个库中的节点产生的输出是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "这个库中的所有节点都会产生一个字符串输出，这种输出通常可以被传递到剪贴文本编码提示中。支持正向和负向节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "这个图书馆有哪些局限性？"
+            },
+            {
+                "role": "assistant",
+                "content": "一些已知的限制包括不可配置的随机种子、无法选择MagicPrompt模型，以及缺少其他几个配置功能。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "未来版本将增加哪些功能？"
+            },
+            {
+                "role": "assistant",
+                "content": "未来版本将引入节点以在屏幕上显示生成的提示，并将其写入文件，以及串联生成器的能力。安装脚本也将自动化以方便使用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "请将以下文字翻译成中文，不要添加任何无关内容：在 comfyui-dynamicprompts 版本 0.2.1 中有哪些显著变化，以及它如何影响 dynamicprompts 的行为？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 comfyui-dynamicprompts 版本 0.2.1 中，由于 dynamicprompts 的最新版本中发生了一个向后不兼容的变更，修复了一个错误。这个变更导致 dynamicprompts 返回了一个 SampleResult 而不是预期的 str 类型。这个修复解决了这个问题，以保持 dynamicprompts 的预期操作。"
+            }
+        ]
+    }
+]
