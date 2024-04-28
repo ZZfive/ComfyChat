@@ -1,0 +1,122 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-TiledDiffusion支持哪些扩散平铺算法？"
+            },
+            {
+                "role": "assistant",
+                "content": "该扩展支持两种最先进的扩散平铺算法：`混合扩散器`和`多扩散`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "特征表中的尺寸是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "特征表中显示的尺寸以像素为单位，然后转换为潜在空间大小。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我怎样才能看到瓷砖接缝，然后根据我的需求调整选项？"
+            },
+            {
+                "role": "assistant",
+                "content": "将 `tile_overlap` 设置为 0，将 `denoise` 设置为 1，以查看瓦片接缝，然后相应地调整选项。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "增加`tile_batch_size`的好处是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "增加 `tile_batch_size` 可以提高处理速度，但您的机器必须能够处理它。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以使用 ComfyUI-TiledDiffusion 扩展来生成超大型图像吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，该扩展支持超大型图像生成。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Tiled VAE推荐的瓷砖尺寸是多少？"
+            },
+            {
+                "role": "assistant",
+                "content": "推荐的贴图尺寸是在创建节点时根据可用的VRAM给出的。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在分块变分自编码器（Tiled VAE）中，启用解码器的`fast`模式有什么影响？"
+            },
+            {
+                "role": "assistant",
+                "content": "启用解码器的“快速”选项可能会产生对比度和亮度略高的图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 Tiled VAE 中，`color_fix` 的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "`color_fix` 可以恢复颜色，如果色块太小的话。它仅适用于编码器。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用“MultiDiffusion”或“混合扩散器”时，预期的图像质量如何？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用 `MultiDiffusion` 或 `Mixture of Diffusers` 时的图像质量应符合 SOTA（最新技术）标准。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "您能提供一些使用 ComfyUI-TiledDiffusion 扩展在 ComfyUI 中可以加载的图像示例吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，以下图像可以被加载：`简单放大。`和`4倍放大。3次处理。`"
+            }
+        ]
+    }
+]

@@ -1,0 +1,194 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-PixelArt-Detector 扩展包括什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-PixelArt-Detector 扩展包含 4 个自定义节点：像素艺术检测器（+保存）、像素艺术检测器（图像->）、像素艺术调色板转换器和像素艺术调色板加载器。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "像素艺术检测器（+保存）节点的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "像素艺术检测器（+保存）节点是一个集减少调色板、调整大小和保存图像于一体的节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "像素艺术检测器（Image->）节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "像素艺术检测器（图像->）节点会降低图像的分辨率，减少调色板，并将图像转发到另一个节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "像素艺术调色板转换器节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "像素艺术调色板转换器节点会改变你的输入调色板。有几个内置的调色板。你可以使用调色板加载器来加载更多的调色板作为输入。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "像素艺术调色板加载器节点的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "PixelArt调色板加载器节点附带了许多自定义调色板，这些调色板可以作为PixelArt调色板转换器的'paletteList'输入。可选的网格预览所有调色板。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-PixelArt-Detector 的 1.5.2 更新中做了哪些更改？"
+            },
+            {
+                "role": "assistant",
+                "content": "修复了与Python 3.10以下的兼容性问题，并解决了一个scipy 'signal'的错误。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "更新1.5.1为ComfyUI-PixelArt-Detector添加了什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "@tsone 添加了一个新的抖动节点：PixelArtAddDitherPattern，它具有预先准备好的图案和来自遮罩的自定义图案，以及一个黑白调色板。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-PixelArt-Detector 的更新 1.5 中做了哪些增强？"
+            },
+            {
+                "role": "assistant",
+                "content": "在更新1.5中，他们添加了抖动效果，使节点与Pillow版本小于10和大于10的兼容，修复了在网格中更改字体大小不起作用的问题，修复了Pillow库中ImageDraw.textsize在Pillow版本10.0及以上不可用的问题，修复了网格中文本过长的问题，以及修复了NP.quantize方法的问题。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在更新1.4中，为了改进ComfyUI-PixelArt-Detector，做了哪些工作？"
+            },
+            {
+                "role": "assistant",
+                "content": "在1.4版本更新中，他们增加了一个检查和安装opencv（cv2）库的功能，这个库用于节点，以解决人们报告的问题。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "更新1.3对ComfyUI-PixelArt-Detector做了哪些更改？"
+            },
+            {
+                "role": "assistant",
+                "content": "在更新1.3中，他们更新了所有4个节点。他们添加了OpenCV.kmeans算法来减少图像中的颜色，该算法仅在减少颜色时工作。他们还添加了一个“清理”像素的功能，该功能使用Image.quantize遍历图像并根据给定的阈值消除颜色。他们添加了不同的算法来使用Image.quantize方法（默认方法）减少图像，例如MEDIANCUT、MAXCOVERAGE等。他们将选择更新为布尔值和开关，添加了使用快速numpy数组减少和交换调色板的'NP.quantize'方法，并将网格设置从调色板转换器移动到调色板加载器。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "PixelArtDetectorConverter在ComfyUI-PixelArt-Detector的1.2更新中的行为是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在更新1.2中，如果输入图像小于调整大小的尺寸，PixelArtDetectorConverter将在像素化/量化过程之前对图像进行放大。如果更大，则在量化后进行缩小。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "更新1.1对ComfyUI-PixelArt-Detector做了哪些更改？"
+            },
+            {
+                "role": "assistant",
+                "content": "在更新1.1中，默认的workflow.json被更改为使用默认的“保存图片”节点，而workflow_webp.json将使用webp节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "PixelArt Detector（+保存）节点中有哪些压缩选项和保存选项？"
+            },
+            {
+                "role": "assistant",
+                "content": "在像素艺术检测器（+保存）节点中，有一个压缩滑块，有两种模式：无损和有损。滑块在两种模式下都控制文件大小，但对质量和文件大小的影响不同。此外，还有一个选项可以保存一个JPEG文件以及一个webp文件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在PixelArt调色板转换节点的“像素化”功能下，有哪些选项可用？"
+            },
+            {
+                "role": "assistant",
+                "content": "在“PixelArt Palette Converter”节点下的“pixelize”功能中，可用的选项有Image.quantize、Grid.pixelate、NP.quantize和OpenCV.kmeans.reduce。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何使用 ComfyUI-PixelArt-Detector 转换调色板？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-PixelArt-Detector 中的 PixelArt Palette Converter 节点可以更改您的输入调色板。您可以使用内置的调色板，或者通过使用调色板加载器添加更多调色板。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何在 ComfyUI 中安装 ComfyUI-PixelArt-Detector？"
+            },
+            {
+                "role": "assistant",
+                "content": "要使用 ComfyUI-PixelArt-Detector 节点，只需在 ComfyUI/custom_nodes/ 中打开一个终端并运行：`git clone https://github.com/dimtoneff/ComfyUI-PixelArt-Detector`"
+            }
+        ]
+    }
+]

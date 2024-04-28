@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Hangover-Recognize_Anything 节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Hangover-Recognize_Anything 是为 ComfyUI 设计的图像识别节点，它使用 RAM++ 模型对图像进行标记和描述。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "RAM++节点中有哪些三种不同的型号？"
+            },
+            {
+                "role": "assistant",
+                "content": "RAM++节点中可用的三种不同模型是RAM、RAM++和tag2text。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "标签到文本模型能否输出图像标题？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，tag2text模型可以输出图像标签和图像标题，并且它还可以在输出中考虑用户指定的标签。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "RAM和RAM++型号支持的语言有哪些？"
+            },
+            {
+                "role": "assistant",
+                "content": "RAM和RAM++模型以英文和中文两种语言输出标签。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何在ComfyUI中安装RAM++模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过克隆此存储库到 *custom_nodes* 文件夹中，或使用 ComfyUI-Manager 并搜索 'RAM' 来安装 RAM++ 模型。此外，您需要在 ComfyUI 安装的 python_embedded 文件夹中使用 pip 安装 'ram' 包。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我应该在哪里下载RAM、RAM++和tag2text模型，并将它们放置在哪里以便在ComfyUI中使用？"
+            },
+            {
+                "role": "assistant",
+                "content": "从提供的链接下载模型，并将它们放置在 /ComfyUI/models/rams/ 文件夹中。或者，您可以使用 ComfyUI-Manager 模型下载器来下载模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "对 ComfyUI-Hangover-Recognize_Anything 节点进行了哪些更新？"
+            },
+            {
+                "role": "assistant",
+                "content": "该节点已更新，以支持额外的模型，如RAM和tag2text，以及支持'extra_model_paths.yaml'配置。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以使用外部配置文件来配置模型的位置吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，你可以通过修改ComfyUI文件夹中的'extra_model_paths.yaml'文件来配置模型的位置。"
+            }
+        ]
+    }
+]

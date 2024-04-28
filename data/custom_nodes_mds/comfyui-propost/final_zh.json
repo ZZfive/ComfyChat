@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "一个人如何安装 ComfyUI ProPost？"
+            },
+            {
+                "role": "assistant",
+                "content": "安装 ComfyUI ProPost 的最简单方法是使用 ComfyUI 管理器，通过搜索 'propost' 然后点击安装。或者，可以手动安装，方法是导航到 '/ComfyUI/custom_nodes/' 文件夹，运行 'git clone https://github.com/digitaljohn/comfyui-propost.git'，'pip install -r requirements.txt'，然后重启 ComfyUI。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI ProPost 中有哪些节点可用？"
+            },
+            {
+                "role": "assistant",
+                "content": "目前，ComfyUI ProPost 提供五个节点：胶片颗粒、晕影、径向模糊、深度图模糊和应用 LUT。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Film Grain节点有哪些参数？"
+            },
+            {
+                "role": "assistant",
+                "content": "Film Grain节点有如下参数：灰度（gray_scale）、颗粒类型（grain_type）、颗粒饱和度（grain_sat）、颗粒强度（grain_power）、阴影（shadows）、高光（highs）、缩放（scale）、锐化（sharpen）、源伽马（src_gamma）和种子（seed）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何控制晕影效果的强度？"
+            },
+            {
+                "role": "assistant",
+                "content": "在“Vignette”节点中，可以通过“强度”参数控制晕影效果的强度，其范围是0.0到10.0。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "径向模糊节点中有哪些选项可用？"
+            },
+            {
+                "role": "assistant",
+                "content": "径向模糊节点包括模糊强度、中心X、中心Y、焦点扩散和步数等选项。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "控制基于深度图的模糊效果的参数是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "深度图模糊节点具有诸如深度图、模糊强度、焦距深度、焦点扩散和步数等参数。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何使用“应用LUT”节点将3D LUT应用到图像上？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"应用LUT\"节点允许通过选择'luts'文件夹中的'.cube'文件并使用'lut_name'参数来对图像应用3D LUT，并通过'strength'参数控制LUT效果的强度。"
+            }
+        ]
+    }
+]

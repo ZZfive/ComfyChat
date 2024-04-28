@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ControlNet-LLLite-ComfyUI 是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ControlNet-LLLite-ComfyUI 是实验性实现 ControlNet-LLLite 的推理用户界面。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以下载ControlNet-LLLite-ComfyUI的示例模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以从文档中提供的链接下载示例模型，链接如下：https://huggingface.co/kohya-ss/controlnet-lllite/tree/main。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ControlNet-LLLite-ComfyUI？"
+            },
+            {
+                "role": "assistant",
+                "content": "首先，将这个仓库克隆到 `custom_nodes`，然后将 ControlNet-LLLite 模型放到 `ControlNet-LLLite-ComfyUI/models` 中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何将ControlNet-LLLite-ComfyUI应用到一些扩散步骤中？"
+            },
+            {
+                "role": "assistant",
+                "content": "您只能使用 `steps`、`start_percent` 和 `end_percent` 来应用某些扩散步骤。在 `steps` 中指定采样器中指定的步数，在 `start_percent` 和 `end_percent` 中分别指定从 0 到 100 的起始和结束步骤。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果生成的图像大小与控制图像大小不同，我应该怎么做？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用工作流程中显示的 `image/upscaling/UpscaleImage` 来调整其大小。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何使用ControlNet-LLLite-ComfyUI从普通图像创建Canny图像？"
+            },
+            {
+                "role": "assistant",
+                "content": "你可以使用 `image/preprocessors/Canny` 节点从普通图像创建一个Canny图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ControlNet-LLLite-ComfyUI 从哪个项目中获得灵感？"
+            },
+            {
+                "role": "assistant",
+                "content": "ControlNet-LLLite-ComfyUI 基于 laksjdjf 的 [IPAdapter-ComfyUI](https://github.com/laksjdjf/IPAdapter-ComfyUI)。"
+            }
+        ]
+    }
+]

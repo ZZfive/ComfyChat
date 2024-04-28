@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Advanced-ControlNet是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Advanced-ControlNet 是 ComfyUI 的一个扩展，它包括用于在时间步长和批量潜在值上调度 ControlNet 强度的节点，以及应用自定义权重和注意力掩码。它完全支持像 AnimateDiff-Evolved 节点那样的滑动上下文采样。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Advanced-ControlNet支持哪些ControlNets？"
+            },
+            {
+                "role": "assistant",
+                "content": "目前，ComfyUI-Advanced-ControlNet 支持 ControlNets、T2IAdapters、ControlLoRAs、ControlLLLite、SparseCtrls 和 SVD-ControlNets。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“我的提示更重要”功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "“我的提示更重要”功能允许使用自定义权重进行复制，这可以改变缩放比例，并在Auto1111的sd-webui ControlNet扩展中可用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Advanced-ControlNet 提供了哪些节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Advanced-ControlNet 提供的 ControlNet 节点有“应用高级 ControlNet”和“加载高级 ControlNet 模型”。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“应用高级ControlNet”和普通的ControlNet节点之间有什么区别？"
+            },
+            {
+                "role": "assistant",
+                "content": "“应用高级ControlNet”节点具有与原始的“应用高级ControlNet（高级）”节点相同的功能，但增加了高级ControlNet特性。它会自动将任何ControlNet从ControlNet加载器转换成高级版本。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Advanced-ControlNet的主要概念是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI-Advanced-ControlNet 中，调度的两个核心概念是“时间步关键帧”和“潜在关键帧”。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"Latent Keyframes\" 决定什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "潜在关键帧决定了 ControlNet 对特定潜在状态的控制强度。它们包含潜在状态的批次索引以及控制网应该对该潜在状态应用的强度。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Advanced-ControlNet 中，“时间步关键帧”的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "时间步关键帧持有指导控制网设置的值，并根据它们的start_percent开始生效，这对应于采样过程的百分比。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "将以下文字翻译成中文，不要添加任何无关内容：Apply Advanced ControlNet 节点列出了哪些特性？"
+            },
+            {
+                "role": "assistant",
+                "content": "将以下文字翻译成中文，不要添加任何无关内容：Apply Advanced ControlNet 节点的功能包括正向调节输入、负向调节输入、控制网、图像、可选蒙版、关键帧时间步、潜在关键帧覆盖、权重覆盖、强度、开始百分比和停止百分比。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-auto-nodes-layout 是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-auto-nodes-layout 是 ComfyUI 扩展，它为 ComfyUI 工作流的可视化目的应用了一种更好的节点布局算法。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "这个扩展的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "这个扩展的目的是改善ComfyUI工作流中电线的布局和可见性，重点关注方向、流程和与节点的连接，以实现更好的可视化效果。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "创造者考虑了哪些图形绘制算法来实现？"
+            },
+            {
+                "role": "assistant",
+                "content": "创造者考虑了层次图绘制，特别适合于有向无环图，并专注于Dagre.js中的Dagre布局和ELK.js中的ELK“分层”布局。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "这个扩展推荐的设置是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "建议移除重定向节点，因为它们会扰乱排名和深度，并使用 PR comfyanonymous/ComfyUI#1273 或提交 `bc76b38` 之后的 ComfyUI 版本。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "这个扩展可以撤销或重做吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，使用 ComfyUI-Bmad-DirtyUndoRedo 扩展可以实现撤销/重做功能。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "控制布局密度的两个选项是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "控制布局密度的两个选项是：等级/深度/列之间的间距，以及同一等级/深度/列中节点之间的间距。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "移除重新路由节点的原因有哪些？"
+            },
+            {
+                "role": "assistant",
+                "content": "重定向节点应该被移除，因为它们会干扰有向无环图中节点的等级/深度，并且只有在布局应用后，如果有线被其他节点拦截或部分隐藏时，才应该重新添加它们。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "用户可以选择特定的布局策略吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，但在文档中它被标记为“待办事项”（TODO），这意味着它尚未实现。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "文档中是否提到了任何替代的图形布局库？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，提到了一些替代方案，比如ELK、WebCOLA、Cytoscape、Graphology和Springy。"
+            }
+        ]
+    }
+]
