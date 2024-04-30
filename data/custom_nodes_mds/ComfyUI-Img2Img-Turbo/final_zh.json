@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何使用成对数据训练一个pix2pix-turbo模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "首先，下载修改过的Fill50k数据集。然后，使用所需的标志（如pretrained_model_name_or_path、output_dir、dataset_folder、resolution、train_batch_size和enable_xformers_memory_efficient_attention）初始化并启动训练脚本。该脚本支持其他标志，用于跟踪FID、启用注意力机制和可视化结果。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "用于训练的数据集预期的格式是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "数据集的预期格式如下：data/dataset_name/train_A, train_B, train_prompts.json, test_A, test_B, test_prompts.json。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何监控训练进度？"
+            },
+            {
+                "role": "assistant",
+                "content": "训练进度可以通过Weights & Biases仪表板进行监控。该脚本可视化了训练批次、训练损失以及验证集的L2、LPIPS和FID分数（如果指定）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何使用训练好的模型进行推理？"
+            },
+            {
+                "role": "assistant",
+                "content": "运行 inference_paired.py 脚本，并包括所需的参数，如模型路径、输入图像、提示和输出目录。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Img2Img-Turbo的工作流程是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "工作流示例可以在文档中提供的链接找到的 'wf.json' 和 'wf_painter.json' 文件中找到。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Img2Img-Turbo中的画家工作流程是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "可以在文档中提供的链接找到的“wf_painter.json”文件中找到画家工作流示例。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "img2img-turbo 是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Img2img-turb 是 ComfyUI-Img2Img-Turbo 的一部分，可以在文档中提供的链接处找到。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果其他节点更新了扩散器版本，应该安装哪个版本范围的扩散器？"
+            },
+            {
+                "role": "assistant",
+                "content": "如果其他节点更新了diffusers版本，应该使用pip安装'diffusers>=0.24.0,<=0.25.1'，然后再安装回去。"
+            }
+        ]
+    }
+]

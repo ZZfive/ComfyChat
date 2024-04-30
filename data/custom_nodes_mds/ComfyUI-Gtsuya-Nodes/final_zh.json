@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-GTSuya-Nodes 是什么，它有什么作用？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-GTSuya-Nodes 是 ComfyUI 的一个扩展，它增加了通配符支持，允许您在提示中使用 __name__ 语法，以便从一个名为 name.txt 的文本文件中检索一行随机文本，该文件位于通配符目录中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何在现有的 ComfyUI 安装中安装 ComfyUI-GTSuya-Nodes？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 ComfyUI-GTSuya-Nodes，您应该导航到 ComfyUI 安装中的 custom_nodes 文件夹，克隆 GTSuya-Studio/ComfyUI-Gtsuya-Nodes 仓库，并重新启动 ComfyUI。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何在 ComfyUI-GTSuya-Nodes 中使用简单通配符？"
+            },
+            {
+                "role": "assistant",
+                "content": "要使用简单通配符，在 ComfyUI 根目录下创建一个名为 'wildcards' 的目录。添加简单通配符节点，并输入您的提示，同时将通配符单词用双下划线 (__name__) 括起来。您可以添加任意数量的通配符。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "简单通配符（目录）与简单通配符有何不同？"
+            },
+            {
+                "role": "assistant",
+                "content": "简单的通配符（Dir.）允许您选择硬盘上包含通配符文件的任何目录，而不是要求它们位于ComfyUI根目录中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何将通配符节点与随机行节点结合使用？"
+            },
+            {
+                "role": "assistant",
+                "content": "要使用通配符节点，您需要将它们与来自[Hakkun-ComfyUI-nodes](https://github.com/tudal/Hakkun-ComfyUI-nodes)的随机线节点链接起来。输入您的提示，其中通配符条目对应于随机线节点，由str#周围的双下划线表示。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Danbooru (ID) 和 Danbooru (Random) 节点是做什么用的？"
+            },
+            {
+                "role": "assistant",
+                "content": "Danbooru（ID）和Danbooru（随机）节点都允许您从[Danbooru](https://danbooru.donmai.us/)网站获取图像URL和标签列表。它们可以与来自[comfyui-art-venture](https://github.com/sipherxyz/comfyui-art-venture)的从URL加载图像节点结合使用，将图像导入到ComfyUI中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何在ComfyUI-GTSuya-Nodes中使用替换字符串节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "要使用“替换字符串”功能，请将其链接到两个文本节点：一个是您想要替换或删除字符串的“文本”输入，另一个是包含要替换或删除的单词列表的“替换列表”输入，每个替换字符串占一行，并且用 \"|\" 分隔（例如，字符串1|字符串2）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "随机文件从路径节点是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"随机文件路径选择器\"节点从指定目录中选择一个随机文件路径。对于图像，它可以与[从URL加载图像](https://github.com/sipherxyz/comfyui-art-venture)节点一起工作，直接将图像导入到ComfyUI中。"
+            }
+        ]
+    }
+]

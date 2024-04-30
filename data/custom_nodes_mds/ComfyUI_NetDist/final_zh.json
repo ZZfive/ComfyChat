@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_NetDist 是用来做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_NetDist 允许在多个本地 GPU/网络计算机上运行 ComfyUI 工作流。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_NetDist所需的外部库是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_NetDist的唯一要求是'requests'库。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何安装 ComfyUI_NetDist？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 ComfyUI_NetDist，请通过运行 `git clone https://github.com/city96/ComfyUI_NetDist ComfyUI/custom_nodes/ComfyUI_NetDist` 将仓库克隆到自定义节点文件夹中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何使用ComfyUI_NetDist在双GPU设置中？"
+            },
+            {
+                "role": "assistant",
+                "content": "要使用 ComfyUI_NetDist 在两个不同的 GPU 或两台独立的 PC 上，您必须至少有两个独立的 ComfyUI 实例，并指定不同的启动参数，例如 `--port [端口]` 和 `--cuda-device [编号]`。例如，您可以使用 `--port 8288 --cuda-device 1`。如果您在第二台 PC 上运行第二个实例，请将 `--listen` 添加到您的启动参数中，并设置正确的远程 IP。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_NetDist 能否处理多个独立的图像输出节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，ComfyUI_NetDist 可以处理多个独立的图像输出节点，但对这个特性的支持已在开发计划中。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,122 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-CADS是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-CADS 是 CADS 算法在 ComfyUI 中的实验性实现。它试图将控制和自适应多样性缩放引入到图像和视频生成过程中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "为了在ComfyUI中启用CADS，你应该做什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "您需要将CADS节点应用到一个模型上，并将`noise_scale`设置为大于0.0的值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CADS节点是否移除现有的UNet包装器函数？"
+            },
+            {
+                "role": "assistant",
+                "content": "不，CADS节点试图保留现有的UNet包装器函数。但是，它应该在设置UNet包装器函数的其他节点之后应用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CADS添加的噪声是如何随时间变化的？"
+            },
+            {
+                "role": "assistant",
+                "content": "随着时间的推移，噪声逐渐减小。在 `t2` 之后，缩放程度降低，直到 `t1`，之后不再添加噪声，而是使用未加噪声的提示。扩散过程从 1 反向运行到 0。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`start_step` 和 `total_steps` 是用来做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "`start_step` 和 `total_steps` 是可选参数，它们影响噪声缩放计划的计算方式。如果 `start_step` 大于或等于 `total_steps`，则算法使用采样器的时间步长值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`rescale` 参数是做什么用的？"
+            },
+            {
+                "role": "assistant",
+                "content": "`rescale` 参数对带噪声的条件进行可选的归一化处理。当设置为 0 时，该功能将被禁用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "你可以在CADS中在哪里添加噪声？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以使用 `apply_to` 参数有选择性地添加噪声。`key` 参数选择在何处添加噪声。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "之前噪声应用存在什么问题？"
+            },
+            {
+                "role": "assistant",
+                "content": "之前，噪声是应用于交叉注意力的，但现在默认应用于常规条件变量 `y`。要恢复旧的行为，请使用 `key` 参数。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "开发者是否完全理解算法背后的数学原理？"
+            },
+            {
+                "role": "assistant",
+                "content": "开发者承认他们对所涉及的数学并不是100%清楚，这可能会导致算法实现中潜在的不准确之处。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-CADS的灵感来源是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-CADS的灵感来源是A1111实现。A1111实现被用作创建ComfyUI-CADS的参考。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是 ComfyUI 舒适感？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI 舒适感是 ComfyUI 的一组自定义节点，ComfyUI 是一个用于使用稳定扩散模型生成图像和视频的图形用户界面。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "MultiLora Loader节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "MultiLora Loader节点使用文本描述来指定要添加到检查点模型中的Loras。您可以从“loaders”类别中的“loaders > MultiLora Loader”添加该节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何将MultiLora Loader节点添加到ComfyUI中？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装MultiLora Loader节点，你可以将MultiLoraLoader.py文件添加到ComfyUI的'custom_nodes'目录中，或者将ComfyUI-Coziness仓库克隆到'custom_nodes'目录中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何连接MultiLora Loader节点的输入和输出？"
+            },
+            {
+                "role": "assistant",
+                "content": "在MultiLora Loader节点中，您可以输入您想要使用的Loras，每个Lora占一行，格式为'file_name[:weight1[:weight2]]'。您也可以使用Automatic1111的Lora语法。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Lora文本提取器节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "Lora文本提取器节点接收输入文本，并使用Automatic1111的lora语法从中提取指定的Loras。它有两个输出：一个是没有Loras的过滤文本，另一个是去除了Loras的文本，两者通过新行分隔。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何连接LoRa文本提取器节点的输出？"
+            },
+            {
+                "role": "assistant",
+                "content": "要连接Lora文本提取器节点的输出，您需要通过右键单击CLIP文本编码和MultiLora加载器节点的文本框，并从菜单中选择“将文本转换为输入”，将它们转换成输入。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Coziness最后一次更新是什么时候？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Coziness的最新更新是在2024年2月22日进行的。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Coziness 最新添加的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "最新更新增加了对将Lora文本提取器直接连接到'ComfyUI效率节点'的Lora堆栈输入的支持。"
+            }
+        ]
+    }
+]

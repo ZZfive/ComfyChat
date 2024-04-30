@@ -1,0 +1,278 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在安装自定义节点后，我在哪里可以找到“在云端生成”按钮？"
+            },
+            {
+                "role": "assistant",
+                "content": "您会在右手边的面板上，在“队列提示”按钮下方找到“在云端生成”按钮。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我应该如何开始使用 ComfyUI-Cloud？"
+            },
+            {
+                "role": "assistant",
+                "content": "您需要创建一个账户才能开始使用 ComfyUI-Cloud。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在我命名并上传我的工作流之后会发生什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "自定义节点将搜索您的工作流程所依赖的模型、自定义节点和图像，并将它们上传到您的云中。这可能需要一些时间，特别是如果您的工作流程使用了许多自定义节点和模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Cloud节点在哪里查找模型、自定义节点和图像？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Cloud 节点专门在您的 ComfyUI 文件夹中搜索这些内容。如果您通过 extra_model_paths.yaml 使用 Automatic1111 安装的模型，您必须将模型移动到 ComfyUI 内部并停用 Comfy 的 extra_model_paths.yaml。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "上传过程结束后会发生什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "一个舒适的云节点将在你的工作流程中创建，自动在云端执行你的工作流程一次。如果你删除这个舒适的云节点，你将需要重新上传你的工作流程。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何访问云工作流运行？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过点击您的 Comfy Cloud 节点中蓝色的“查看历史运行”按钮来访问所有云工作流的运行。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以找到我最近的一代，将会显示什么信息？"
+            },
+            {
+                "role": "assistant",
+                "content": "要找到您最近的一代，请滚动到点击“查看过去的运行”后弹出的表格底部，并选择具有最新时间戳的项目。如果您的工作流程需要大量时间来生成，它将显示进度、每秒迭代次数、预计完成时间以及停止执行的选项。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果我停止我的工作流执行，我的收费会发生什么变化？"
+            },
+            {
+                "role": "assistant",
+                "content": "费用只适用于终止点之前。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "生成的图像将在哪里显示？"
+            },
+            {
+                "role": "assistant",
+                "content": "成功生成后，面板将自动显示您生成的图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Cloud 插件是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Cloud 插件是一个自定义节点，它允许您使用云 GPU 资源运行 ComfyUI 工作流程，使用户即使在本地机器上没有足够的 VRAM 时，也能利用云 GPU 资源进行工作流程。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用 ComfyUI-Cloud 插件的好处是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用 ComfyUI-Cloud 插件的好处包括：运行需要高 VRAM 的工作流程，无需费心将自定义节点/模型导入云服务提供商，以及不需要花钱购买新的 GPU。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI-Cloud 插件？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 ComfyUI-Cloud 插件，您可以按照以下步骤操作：1. `cd custom_nodes` 2. `git clone https://github.com/nathannlu/comfyui-cloud.git` 3. 运行您的工作流程！"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以找到ComfyUI-Cloud插件的入门指南？"
+            },
+            {
+                "role": "assistant",
+                "content": "你可以在以下网址找到 ComfyUI-Cloud 插件的入门指南：<https://github.com/nathannlu/ComfyUI-Cloud/blob/main/docs/get-started.md>"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Cloud 插件使用的是什么 GPU？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Cloud 插件使用 Nvidia A10G 24GB VRAM GPU。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "文档中提到的特别感谢是指谁？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI-Cloud 文档中提到的特别感谢包括 NVIDIA、Modal Labs、ComfyAnonymous（ComfyUI 的原始创建者）和 Benny Kok。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Cloud的行为准则的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "行为准则旨在确保每个人在ComfyUI-Cloud社区的参与都是一种无骚扰的体验，无论个人属性如何，并促进一个开放、热情、多样化和包容性的环境。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "积极贡献于ComfyUI-Cloud社区的行为示例有哪些？"
+            },
+            {
+                "role": "assistant",
+                "content": "展示同理心和善意，尊重不同意见，给予并优雅地接受建设性反馈，承担责任并为错误道歉，以及专注于对整个社区最有益的事情，都是积极行为的例子。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Cloud 社区中，哪些行为被认为是不可接受的？"
+            },
+            {
+                "role": "assistant",
+                "content": "不可接受的行为包括使用性化语言、侮辱性评论、公开或私下骚扰、未经许可分享他人的私人信息，以及在职业环境中被认为不适当的其他行为。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "社区领导者在行为准则方面的执行责任是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "社区领导者负责执行可接受行为的标准，他们有权移除、编辑或拒绝不符合行为准则的贡献。他们还有义务尊重事件报告者的隐私和安全。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "行为准则的范围内有任何例外吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "行为准则适用于所有社区空间，以及个人在公共空间正式代表社区时。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "可以采取哪些步骤来报告在ComfyUI-Cloud社区中发生的骚扰或其他行为准则违规事件？"
+            },
+            {
+                "role": "assistant",
+                "content": "骚扰事件或行为准则违规可以向Discord上的社区领袖@extrafuzzy_报告。所有投诉都将得到及时和公正的审查和调查。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "违反行为准则可能有什么后果？"
+            },
+            {
+                "role": "assistant",
+                "content": "违反行为准则的后果可能从私下的书面警告到暂时或永久禁止在社区内进行任何形式的互动或公共交流不等。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Cloud的行为准则来源是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Cloud的行为准则改编自贡献者公约，版本2.0，可在 https://www.contributor-covenant.org/version/2/0/code_of_conduct.html 查看。"
+            }
+        ]
+    }
+]

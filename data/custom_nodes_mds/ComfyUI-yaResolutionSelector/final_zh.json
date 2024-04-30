@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-yaResolutionSelector是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-yaResolutionSelector 是一个略有不同的分辨率选择器节点，它允许自由更改基本分辨率和宽高比，同时提供保持像素数量或使用基本分辨率作为最高或最低维度的选项。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-yaResolutionSelector是如何安装的？"
+            },
+            {
+                "role": "assistant",
+                "content": "安装涉及将下载的zip文件解压缩或将仓库克隆到ComfyUI的`custom_nodes`目录中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-yaResolutionSelector如何卸载？"
+            },
+            {
+                "role": "assistant",
+                "content": "要卸载，需要删除 ComfyUI 自定义节点目录中的 `ComfyUI-yaResolutionSelector` 文件夹。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "安装ComfyUI-yaResolutionSelector后，使用该方法的方法是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "用户可以右键点击“Empty Latent Image”并选择“Prepend yaResolution Selector”，或者他们可以在“utils”菜单中找到新的节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“base_resolution”参数在高级节点中的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "“base_resolution”参数应与所使用的模型的基本分辨率相匹配，例如SD1.5模型为512，SDXL模型为1024。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“过度扩展”功能是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "“超分辨率”功能，当开启时，输出的尺寸会比基础分辨率大，例如以2:1的比例和512的基础分辨率输出512x1024的尺寸。这在使用能够生成比其基础分辨率更大尺寸的高质量图像的模型时可能会很有帮助。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“constant_resolution”选项的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "“恒定分辨率”选项尝试输出与使用基础分辨率生成的1:1图像相同的像素数量。这在使用SDXL模型或图像缩放节点时非常有用，特别是当您知道GPU能处理的最大分辨率时。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何将额外的宽高比预设添加到基础版本中？"
+            },
+            {
+                "role": "assistant",
+                "content": "可以通过修改nodes.py文件来添加额外的纵横比预设，其中的值应始终以宽度：高度的格式包含。"
+            }
+        ]
+    }
+]

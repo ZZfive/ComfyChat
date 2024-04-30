@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是分割（SAM）节点，它的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "分割（SAM）节点旨在直接从ComfyUI界面中选择并创建多个图像分割输出。它简化了在工作流程中对图像进行进一步处理或操作的分割过程。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`Create Mesh Layer` 节点是做什么用的？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI 中，`Create Mesh Layer` 节点用于从整个输入图像的特定分段部分创建网格对象。这个节点是将 2D 图像生成 3D 资产的过程的一部分。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`Join Meshes` 节点在 ComfyUI 中的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI 中，`Join Meshes` 节点用于将多个创建的网格对象合并为一个单一的网格对象，这简化了复杂3D模型的处理和操作。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`Mesh Modify Shape Key`节点是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI 中的 `Mesh Modify Shape Key` 节点可以操作顶点或所有顶点的变换，给定一个特定的形状键名称和一个目标顶点组。这个节点允许修改 3D 模型中的形状键，这可以用于改变面部表情、姿势或其他变形。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`Create Shape Flow`节点的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "`Create Shape Flow` 节点在 ComfyUI 中生成一个运行时形状流图。这个图允许交互输入实时影响形状键的值，从而在运行时实现对3D模型的动态和交互式更改。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在ComfyUI工作流程中，ControlNet Gen（TemplateGen01）的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ControlNet Gen（模板生成器01）用于ComfyUI工作流程中的姿态约束。它通过将普通图像和Openpose图像与参考其他图像一起放置来工作。这有助于控制生成的3D模型中角色的姿态，确保它符合指定的姿态约束。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在Windows上安装ComfyUI的步骤是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在Windows上安装ComfyUI，请按照以下步骤操作：1. 从提供的链接下载Python环境。2. 将下载的文件解压缩到ComfyUI目录。3. 运行`run_cpu_3.10.bat`或`run_nvidia_gpu_3.10.bat`文件以启动ComfyUI。4. 按照ComfyUI管理器中的指示安装avatar-graph-comfyui。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何在macOS/Linux上安装ComfyUI？"
+            },
+            {
+                "role": "assistant",
+                "content": "在macOS/Linux上安装ComfyUI，请确保您的Python环境是`3.10.x`，然后导航到ComfyUI目录并执行以下操作：1. 进入`custom_nodes`。2. 克隆`avatar-graph-comfyui`仓库。3. 进入`avatar-graph-comfyui`并使用`pip`安装requirements.txt文件。4. 通过`python main.py --enable-cors-header`或在mac上使用--force-fp16 --enable-cors-header参数重新启动ComfyUI以完成安装过程。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "你能解释一下在运行 ComfyUI 时使用 `--enable-cors-header` 选项的目的吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "`--enable-cors-header` 选项用于启用 ComfyUI 与用于动画角色的编辑器（https://editor.avatech.ai）之间的通信。它允许两个系统之间交换角色数据和 JSON 图表。如果您选择不使用此选项，您仍然可以运行 ComfyUI 并下载 .GLB 或 .GLTF 格式的文件，以便在其他软件如 Blender 中使用。"
+            }
+        ]
+    }
+]

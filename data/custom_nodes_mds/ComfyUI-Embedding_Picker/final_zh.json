@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI中的嵌入选择器节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI中的嵌入选择器节点帮助用户轻松管理和选择一系列嵌入，防止忘记或拼写错误它们的名字，特别是当安装了数十个嵌入时。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI-Embedding_Picker 自定义节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 ComfyUI-Embedding_Picker 自定义节点，你可以通过点击仓库页面上的绿色 **Code** 按钮，选择 **Download Zip**，然后在你的 ComfyUI `custom_nodes` 目录中解压缩它，或者在你的 ComfyUI `custom_nodes` 目录中运行 `git clone https://github.com/Tropfchen/ComfyUI-Embedding_Picker.git` 来克隆仓库。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何卸载 ComfyUI-Embedding_Picker 自定义节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "要卸载 ComfyUI-Embedding_Picker 自定义节点，只需删除 ComfyUI `custom_nodes` 目录中的 `ComfyUi_Embedding_Picker` 目录。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何在工作流中使用嵌入选择器节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "要使用嵌入选择器节点，右键单击_CLIP文本编码_节点，然后选择顶部选项“添加嵌入选择器”。这将创建节点本身并复制您所有的提示。您还可以在`utils`菜单中找到该节点。此外，在`嵌入选择器'节点本身上还有一个类似的选项，可以快速链接多个嵌入。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何改变嵌入在文本提示中的位置？"
+            },
+            {
+                "role": "assistant",
+                "content": "嵌入的位置可以通过将'append'参数设置为True来改变。默认情况下，嵌入被放置为第一个提示，但是当'append'设置为True时，嵌入将被放置在提示的末尾。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在使用嵌入选择器节点时，默认的文本提示是什么样子的？"
+            },
+            {
+                "role": "assistant",
+                "content": "在使用嵌入选择器节点时，默认的文本提示会将嵌入作为第一个提示，结果会是这样的文本：`embedding:EasyNegative.pt, text, watermark`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "您能提供一个Embedding Picker节点在工作流中如何使用的例子吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，文档中提供了一个示例工作流图片，展示了嵌入选择器节点是如何在工作流中使用的。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,146 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CharacterFaceSwap 用于什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "CharacterFaceSwap 用于目标角色的面部交换，通过使用 LoRA 和嵌入技术，在稳定扩散中增强角色概念。它允许用户以真实且无缝的方式与他们最喜欢的角色交换面部。它适用于视频游戏、动漫或照片般逼真的场景。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "推荐的安装CharacterFaceSwap的方法是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "推荐的安装CharacterFaceSwap的方法是通过[ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager)。在管理器中搜索CharacterFaceSwap并安装它。然后，在`custom_nodes/CharacterFaceSwap/workflows`中加载工作流。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ControlNet 在 CharacterFaceSwap 中扮演什么角色？"
+            },
+            {
+                "role": "assistant",
+                "content": "ControlNet 用于 CharacterFaceSwap 中的视觉调节。需要下载 ControlNet 的 ip2p 模型，并将其放置在 `ComfyUI/models/controlnet` 中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CharacterFaceSwap是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "CharacterFaceSwap 通过选择一个检查点和为你的角色训练的 LoRA，上传基础图像和角色面部，编写描述目标面部的文字提示，生成角色面部，使用 webui 修复接缝，然后上传修复结果以实现无缝面部。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "为什么 ComfyUI 不被推荐用于 CharacterFaceSwap 的修复？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI 当前存在内插模型的问题。具体问题详见[此问题](https://github.com/comfyanonymous/ComfyUI/issues/1186)。在问题解决之前，应使用其他替代方法进行内插。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CharacterFaceSwap的手动安装过程是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "手动安装过程包括克隆位于 https://github.com/ArtBot2023/CharacterFaceSwap 的 CharacterFaceSwap 存储库到你的 ComfyUI 的 `custom_nodes` 目录中，运行 `install.py` 脚本，并加载 `custom_nodes/CharacterFaceSwap/workflows` 中的工作流。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我应该将下载的权重放置在ComfyUI中的CharacterFaceSwap节点的哪个位置？"
+            },
+            {
+                "role": "assistant",
+                "content": "下载的CharacterFaceSwap节点的权重应放置在指定的文件夹中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是CharacterFaceSwap？"
+            },
+            {
+                "role": "assistant",
+                "content": "CharacterFaceSwap 是一套用于面部相关任务的函数，包括检测、对齐、识别、跟踪和面部恢复等。它基于一个名为 facexlib 的基于 pytorch 的库。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CharacterFaceSwap所需的依赖有哪些？"
+            },
+            {
+                "role": "assistant",
+                "content": "CharacterFaceSwap 需要 Python 3.7 或更高版本、PyTorch 1.3 或更新版本，以及支持 CUDA 的 NVIDIA GPU。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "您能提供CharacterFaceSwap中可用的功能示例吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，CharacterFaceSwap 提供了以下功能：检测（基于 Pytorch_Retinaface）、对齐（使用 AdaptiveWingLoss）、识别（使用 InsightFace_Pytorch）和跟踪（实现 SORT）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CharacterFaceSwap的使用是否有许可证？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，CharacterFaceSwap是在MIT许可下发布的。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果我有问题，我该如何联系CharacterFaceSwap的开发者？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以开启一个问题或发送电子邮件至xintao.wang@outlook.com，以获取有关CharacterFaceSwap的任何问题。"
+            }
+        ]
+    }
+]

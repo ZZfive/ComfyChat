@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Comfyui HiFORCE 插件是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Comfyui HiFORCE 插件是由 HiFORCE 为 ComfyUI 提供的自定义节点包，它通过采样器、放大器、遮罩等工具帮助方便地增强图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Comfyui HiFORCE 插件需要哪些先决条件？"
+            },
+            {
+                "role": "assistant",
+                "content": "你应该安装[ComfyUI-Impact-Pack](https://github.com/ltdrdata/ComfyUI-Impact-Pack)。许多优化都是基于ComfyUI-Impact-Pack的基础构建的。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 Comfyui HiFORCE 插件？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装，您需要进入 'custom_nodes' 目录，使用 'git clone https://github.com/hiforce/comfyui-hiforce-plugin.git' 克隆仓库，然后进入 'comfyui-hiforce-plugin' 目录并运行 'pip install -r requirements.txt'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Comfyui HiFORCE 插件中可用的采样器类型有哪些？"
+            },
+            {
+                "role": "assistant",
+                "content": "可用的采样器类型包括基本采样器、回环采样器、HfTwoSamplersForMask、HfTwoStepSamplers、HfIterativeLatentUpscale，以及采样器节点的某些输入开关。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“full_drawing”选项在基础采样器节点中是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"full_drawing\"选项在基础采样器中对应于KSampler（高级）中的\"return_with_leftover_noise\"选项，但具有相反的值。它被命名为\"full_drawing\"是为了用户友好性，特别是对于熟悉稳定扩散WebUI的开发者。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "循环回放采样器允许什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "回环采样器允许您使用不同的绘制强度逐步生成图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"enable\"选项在HfTwoSamplersForMask节点中是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"enable\"选项在HfTwoSamplersForMask节点中是一个增强功能。如果将\"enable\"选项设置为false，那么这个采样器将不会工作。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "HfTwoStepSamplers节点允许您做什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "HfTwoStepSamplers节点允许您在两步采样中使用不同的采样算法和掩码。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"HfIterativeLatentUpscale\"节点中的“enable”选项是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"HfIterativeLatentUpscale\"节点中的“enable”选项是一种增强功能。如果将“enable”选项设置为false，则该节点将不会工作。"
+            }
+        ]
+    }
+]

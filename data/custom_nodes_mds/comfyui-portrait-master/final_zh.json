@@ -1,0 +1,314 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"comfyui-portrait-master\"节点的目标是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "comfyui-portrait-master 节点的目标是帮助人工智能图像创作者为人物肖像生成提示。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 comfyui-portrait-master 节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 comfyui-portrait-master 节点，请打开 ComfyUI 安装文件夹中的终端，导航到 custom_nodes 目录，克隆仓库，并重新启动 ComfyUI。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以直接从 ComfyUI 安装文件夹更新 comfyui-portrait-master 节点吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，要更新 comfyui-portrait-master 节点，请打开 ComfyUI 安装文件夹的终端，导航到 comfyui-portrait-master 目录，拉取最新的更改，并重新启动 ComfyUI。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何将其他自定义节点集成到工作流程中？"
+            },
+            {
+                "role": "assistant",
+                "content": "我们建议使用 [ComfyUI Manager](https://github.com/ltdrdata/ComfyUI-Manager) 来安装工作流程所需的额外自定义节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“shot”选项是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "“shot”选项设置了生成图像中角色的拍摄类型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何使用“model_pose”选择器？"
+            },
+            {
+                "role": "assistant",
+                "content": "要使用“model_pose”选择器，您需要从列表中选择一个姿势。如果您禁用了ControlNet，您应该使用“shot”选项来调整画面。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI Portrait Master中的SDXL工作流程是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI Portrait Master 中的 SDXL 工作流程是一个完整的工作流程，旨在与 SDXL 检查点一起使用。它集成了一个放大器和 2 个 ControlNet 来管理角色的姿势。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以使用 ComfyUI 肖像大师与 SDXL Turbo 吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，ComfyUI Portrait Master与SDXL Turbo配合使用正常。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "负面提示是做什么用的？"
+            },
+            {
+                "role": "assistant",
+                "content": "负面提示允许你声明你不希望在图像中出现的内容。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何获得节点中所有可用选项的列表？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以查阅节点文档中的“可用选项”部分。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以根据自己的需求调整工作流程吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，你可以通过更改两个KSampled的设置来调整工作流程以满足你的需求。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "关于使用高值的皮肤和眼睛细节控制参数，有什么实用的建议吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，为这些参数使用高值可能会覆盖所选镜头的设置。建议减少皮肤和眼睛的参数值，或者在负向提示中插入（'closeup', 'close up', 'close-up:1.5'），根据需要修改权重。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以自定义节点中的声音吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，你可以打开“_lists_”子文件夹中的.txt文件并自定义声音。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "节点中的负数和随机开关有什么作用？"
+            },
+            {
+                "role": "assistant",
+                "content": "节点中的负向开关允许进行负向提示。随机开关可以禁用手动输入的相关值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“prompt_start”字段在节点中的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"prompt_start\" 字段用于指定您想要的图像类型，例如，“逼真”。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "是否有为SD1.5检查点设计的基本工作流程？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，有一个基本的工作流程是为SD1.5检查点设计的，在_portrait-master-basic-workflow-SD1.5.json_文件中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "模型姿势选项是做什么用的？"
+            },
+            {
+                "role": "assistant",
+                "content": "“model_pose”选项允许您使用一系列默认姿势。在这种情况下，您需要禁用ControlNet，并使用“shot”选项调整画面。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“facial_asymmetry”选项在节点中的目的是？"
+            },
+            {
+                "role": "assistant",
+                "content": "“面部不对称”选项允许您设置面部的不对称性。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果我发觉ComfyUI Portrait Master有用，我可以支持它的作者吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，如果你发现 ComfyUI Portrait Master 有用，你可以考虑向作者进行小额捐赠，网址是 https://ko-fi.com/stefanoflore75。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "是否有推荐的高级照片写实主义模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，对于高级照片写实主义，我们推荐 [FormulaXL 2.0](https://civitai.com/models/129922?modelVersionId=160525)。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI Portrait Master 是否与 [Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/) 兼容？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，ComfyUI Portrait Master与[Prompt Composer](https://github.com/florestefano1975/comfyui-prompt-composer/)兼容。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Portrait-Master 的 1.5 版本中引入了哪些新特性？"
+            },
+            {
+                "role": "assistant",
+                "content": "版本1.5引入了更新的国籍列表（193个选项），新的面部形状、面部表情、面部不对称、酒窝选项，以及错误修复和优化。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Portrait-Master 2.9 版本中，发型有哪些变化？"
+            },
+            {
+                "role": "assistant",
+                "content": "版本2.9拥有一个更新的发型列表，包含117个项目。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Portrait-Master 2.1 版本中添加了哪些新选项？"
+            },
+            {
+                "role": "assistant",
+                "content": "2.1版本引入了新的体型、皱纹、胡须、晒黑皮肤选项，增加了一个新的工作流程，包含两组用于姿势和手部控制的ControlNet节点，并添加了示例。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Portrait-Master 的 2.0 版本中，添加了什么到工作流程？"
+            },
+            {
+                "role": "assistant",
+                "content": "版本2.0在工作流程中增加了上采样器，并在工作流程中加入了ControlNet以实现姿势控制。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Portrait-Master 的 2.6 版本中，有多少种模特姿势可供选择？"
+            },
+            {
+                "role": "assistant",
+                "content": "版本2.6包含87种模型姿势。"
+            }
+        ]
+    }
+]

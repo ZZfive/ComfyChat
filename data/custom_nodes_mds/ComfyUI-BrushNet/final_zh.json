@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-BrushNet 是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-BrushNet 是 ComfyUI 的一个自定义节点，它允许用户使用 Brushnet 模型来修复图像，如论文 'BrushNet: A Plug-and-Play Image Inpainting Model with Decomposed Dual-Branch Diffusion' 中所述。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI-BrushNet？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 ComfyUI-BrushNet，你需要将仓库克隆到 custom_nodes 目录，并使用命令 'git clone https://github.com/nullquant/ComfyUI-BrushNet.git' 和 'pip install -r requirements.txt' 安装所需的依赖。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以下载 BrushNet 的检查点？"
+            },
+            {
+                "role": "assistant",
+                "content": "BrushNet的检查点可以从[这里](https://drive.google.com/drive/folders/1fqmS1CEOvXCxNWFrsSYd_jHYXxrydh1n?usp=drive_link)下载。'segmentation_mask_brushnet_ckpt'和'random_mask_brushnet_ckpt'都应该放在'models/inpaint/brushnet'文件夹内。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-BrushNet的使用预期工作流程是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "预期工作流程的一个示例可以在“example”目录中找到，作为一个名为'BrushNet_example.json'的json文件。此外，工作流程的可视化表示可以在“example”目录下以'BrushNet_example.png'的名称找到。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-BrushNet中已知的漏洞有哪些？"
+            },
+            {
+                "role": "assistant",
+                "content": "有两个已知的错误。首先，节点使用了一个自定义的“diffusers”库，这可能会与其他自定义节点发生冲突。其次，“BrushNetPipeline”在加载时有时会冻结。创建者正在研究这个问题。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "谁开发了 ComfyUI-BrushNet？"
+            },
+            {
+                "role": "assistant",
+                "content": "我为ComfyUI工具的适配做出了贡献，但论文《BrushNet：一个具有分解双分支扩散的即插即用图像修复模型》的作者们值得称赞。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "应该使用哪种基础模型与 ComfyUI-BrushNet 结合使用？"
+            },
+            {
+                "role": "assistant",
+                "content": "基础模型应该是SD1.5类型。一个例子是'realisticVisionV60B1_v51VAE'。"
+            }
+        ]
+    }
+]

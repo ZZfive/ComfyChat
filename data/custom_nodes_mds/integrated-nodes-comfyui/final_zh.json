@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI中集成节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI 中，集成节点用于将整个工作流程或其部分转换为单个集成节点。这类似于节点模板功能，但隐藏了内部结构，这在您只想重用并快速配置一组节点而不关心它们是如何相互连接的情况下非常有用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何安装集成节点舒适用户界面扩展？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装，请使用 `git clone https://github.com/palant/integrated-nodes-comfyui` 将此仓库克隆到 `ComfyUI/custom_nodes` 文件夹中。根据需要编辑示例 `integrated_nodes.yaml` 配置文件。之后，重新启动 ComfyUI。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"DoublePrompt\"节点在\"integrated-nodes-comfyui\"中的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "DoublePrompt节点将两个CLIP编码提示合并为一个节点，节省空间并允许更高效的工作流程配置。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ControlNet中包含提示的节点包括哪些组件？"
+            },
+            {
+                "role": "assistant",
+                "content": "ControlNet带有提示的节点包括ControlNet加载器、两个文本提示和一个图像加载器。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "将以下文字翻译成中文，不要添加任何无关内容：txt2img节点所需的程序是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "将以下文字翻译成中文，不要添加任何无关内容：txt2img 节点需要执行以下步骤：加载检查点，两次 CLIP 文本编码（提示），KSampler，空潜在图像，VAE 解码，保存图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Inpaint节点的等效工作流程是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Inpaint节点的相应工作流程包括：加载检查点，两次CLIP文本编码（提示），加载图像，VAE编码（用于修复），KSampler，VAE解码，保存图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何将我自己的集成节点添加到ComfyUI中？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过在工作流中选择一些节点，然后点击上下文菜单中的“从选择创建集成节点”，将您自己的集成节点添加到 ComfyUI 中。这将创建一个新的 `integrated_nodes.yaml` 文件（如果尚不存在），并添加一个新的条目。您也可以手动编辑 `integrated_nodes.yaml` 文件，但更改只有在重新启动 ComfyUI 后才会生效。"
+            }
+        ]
+    }
+]

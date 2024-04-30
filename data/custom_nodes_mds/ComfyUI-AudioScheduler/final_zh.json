@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-AudioScheduler的主要特点是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-AudioScheduler 允许加载 MP3 或 WAV 文件，读取随时间变化的振幅，并预览图形的形状。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "LoadAudio节点的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "LoadAudio节点负责从指定目录加载音频文件，支持MP3和WAV格式。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "AudioToFFTs节点如何处理音频数据？"
+            },
+            {
+                "role": "assistant",
+                "content": "AudioToFFTs节点对音频数据执行快速傅里叶变换（FFTs），以获取频率信息。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "AudioToAmplitudeGraph节点创建了什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "AudioToAmplitudeGraph节点创建了一个特定频率范围内振幅的图形，用于可视化目的。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "BatchAmplitudeSchedule 执行什么操作？"
+            },
+            {
+                "role": "assistant",
+                "content": "BatchAmplitudeSchedule 是一个操作，它根据指定的操作和频率范围，从 FFT 数据计算幅度值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ClipAmplitude节点是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ClipAmplitude节点通过设置最大和可选的最小允许振幅值，来剪辑音频数据的振幅值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "TransientAmplitudeBasic 的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "TransientAmplitudeBasic 旨在调整具有瞬态特性的幅度数据，控制攻击、保持和释放行为。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "NormalizeAmplitude的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "将以下文字翻译成中文，不要添加任何无关内容：NormalizeAmplitude 标准化振幅数据，可选择性地反转标准化后的值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "GateNormalizedAmplitude是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "GateNormalizedAmplitude 根据指定的阈值对归一化振幅数据进行门控。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "NormalizedAmplitudeDrivenString的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "NormalizedAmplitudeDrivenString旨在创建一个由音频信号的归一化幅度变化驱动的动态文本字符串。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "NormalizedAmplitudeToNumber 转换什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "NormalizedAmplitudeToNumber 将归一化幅度数据转换为浮点数或整数值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "NormalizedAmplitudeToGraph 产生什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "NormalizedAmplitudeToGraph 生成一个图表以可视化归一化振幅数据。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "AmplitudeToNumber 如何转换？"
+            },
+            {
+                "role": "assistant",
+                "content": "AmplitudeToNumber 将振幅数据转换为浮点数或整数值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "AmplitudeToGraph 显示什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "AmplitudeToGraph 生成一个图表以可视化振幅数据。"
+            }
+        ]
+    }
+]
