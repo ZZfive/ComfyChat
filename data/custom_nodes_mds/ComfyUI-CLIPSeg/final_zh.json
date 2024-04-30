@@ -1,0 +1,134 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-CLIPSeg 仓库中有哪些自定义节点可用？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-CLIPSeg 仓库包含两个自定义节点：CLIPSeg 和 CombineSegMasks。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CLIPSeg节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "CLIPSeg节点为给定的输入图像和文本提示生成一个二进制遮罩，用于图像修复任务。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CLIPSeg节点的输入是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "CLIPSeg节点的输入包括：图像、文本、模糊度、阈值和膨胀因子。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“模糊”输入对于CLIPSeg节点控制什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"模糊\"输入控制应用于遮罩的高斯模糊量。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CLIPSeg节点的输出是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "CLIPSeg节点的输出是：tensor_bw、image_out_hm 和 image_out_bw。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CombineSegMasks节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "CombineSegMasks节点将两个或可选的三个掩码合并成一个单一的掩码，以改善不同区域的遮罩效果。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CombineSegMasks节点的输入是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "CombineSegMasks节点的输入包括：图像、mask1、mask2，以及可选输入mask3。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“mask3”输入在CombineSegMasks节点中代表什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"mask3\"输入代表一个可选的第三个掩码，可以与其他掩码结合使用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CombineSegMasks节点的输出是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "CombineSegMasks节点的输出包括：combined_mask、image_out_hm 和 image_out_bw。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何在一个ComfyUI项目中使用这些自定义节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "要在一个 ComfyUI 项目中使用这些自定义节点，你需要克隆这个仓库，将 clipseg.py 文件放入你的 custom_nodes 目录，并确保你已经安装了所需的库。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用 ComfyUI-CLIPSeg 节点的要求是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用 ComfyUI-CLIPSeg 节点的要求是 PyTorch、CLIPSeg、OpenCV、numpy 和 matplotlib。"
+            }
+        ]
+    }
+]

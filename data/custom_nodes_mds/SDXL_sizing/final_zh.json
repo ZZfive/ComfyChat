@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在ComfyUI中，SDXL_sizing节点的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "SDXL_sizing节点是ComfyUI的一个自定义节点，它有助于为SDXL模型计算适当的图像尺寸设置。它提供了一个简单的界面来输入图像尺寸、纵横比和原始分辨率，并输出SDXL模型的正确生成尺寸。它还计算并输出图像缩放到训练尺寸后的宽度和高度，以及空潜在生成器的宽度和高度。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "SDXL_sizing节点的输入和输出是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "SDXL_sizing节点有三个主要输入：'native_res'用于原生分辨率，'aspect'用于纵横比，以及'original_res'用于原始分辨率。输出包括在适当的分桶分辨率中生成的尺寸，宽度和高度调节输入代表训练数据中的一个假定的“原始”图像，以及由模型分辨率和放大/缩小的训练图像之间的差异确定的'crop_w'和'crop_h'调节输入。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "SDXL_sizing节点如何处理裁剪？"
+            },
+            {
+                "role": "assistant",
+                "content": "SDXL_sizing节点通过缩放后的图像与训练尺寸之间的差异来确定沿一个维度的裁剪量，仅从左侧边缘和顶部边缘进行裁剪。如果需要，它还提供了一个可选的额外裁剪功能，使用'_cropping_extra_'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "SDXL_sizing节点的高级特性是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "SDXL_sizing节点具有高级功能，例如“extra_crop”用于在crop_w和crop_h上添加额外的内容，“downscale_effect”用于调整缩小输出，“verbose”用于在控制台启用输出报告，“fit_aspect_to_bucket”用于在确定桶式分辨率后调整纵横比，“strict_bucketing”用于将生成大小匹配到桶式训练分辨率之一。它还接受字符串输入作为额外参数，如'--shortside'、'--equivalent'、'--nudge w 0.8'、'--randomaspect'、'--nocrop'、'--sharp'、'-extrasharp'和'--supersharp'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "SDXL_sizing节点可以用于img2img工作流程吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，SDXL_sizing节点可以用于img2img工作流程。它包括一个整数/浮点数节点，允许正确设置输入值，并提供一定的灵活性，例如设置一个固定的生成尺寸，以覆盖原生分辨率设置。"
+            }
+        ]
+    }
+]

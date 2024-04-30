@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-SpliceTools 的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SpliceTools 是专注于操作带噪声潜在变量的实验性实用节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Rerange Sigmas节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"重新排列Sigma节点\"产生一组新的sigma值，这些值具有相同的sigma_min和sigma_max，但是重新排列为给定数量的步骤，允许轻松调整给定单个采样节点的步骤，而无需进行多次更改或将工作流程的一部分标记为过时。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Splice Latents 是做什么的，它特别适用于什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Splice Latents 使用高斯模糊将带噪声的潜在变量分割成噪声和无噪声的潜在变量，允许在保留更高层次细节的同时改变低频细节。它特别适用于重新加噪声（翻转σ值）的工作流程。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Splice Denoised 是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "Splice Denoised，在输出和去噪输出都存在（采样器自定义）的情况下，允许更准确地再现Splice潜在特征，同时不剥离供体_潜在特征的高频细节。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Temporal Splice的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "时间拼接在时间域上进行拼接，将不移动的详细信息从较低的潜在层与在较高潜在层中移动的详细信息结合起来。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用 Splice Latents 可能存在的一些问题是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Splice Latents 的结果具有创新性，但可能会产生光晕伪影，这些伪影仍在研究中，很可能是频率滤波实现的结果。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "时间拼接实现主要是为了什么而设计的？"
+            },
+            {
+                "role": "assistant",
+                "content": "时间拼接主要用于尝试对线条艺术动画进行着色，但也在转描工作流程中用于过滤由AnimateDiff引入的图形伪影。"
+            }
+        ]
+    }
+]

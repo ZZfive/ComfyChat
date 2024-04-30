@@ -1,0 +1,74 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-send-Eagle(slim)是什么，它允许你做什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-send-Eagle(slim) 是 ComfyUI 的一个扩展节点，它允许你将生成的 webp 格式图片发送到本地运行的 Eagle。它支持有损压缩（质量设置）和无损压缩。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-send-Eagle（精简版）是如何处理图像文件命名的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-send-Eagle(slim) 在 ComfyUI 输出目录中创建一个以 'YYYY-MM-DD' 格式命名的子文件夹。图像文件的命名规则遵循 AUTOMATIC1111 的 StableDiffusion webui 中使用的设置，如下所示：./ComfyUI/output/YYYY-MM-DD/YYYYMMDD_HHMMss_SSSSSS-{`FinalImage_width`}-{`FinalImage_height`}.webp。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-send-Eagle（精简版）在生成的图像文件中嵌入了哪些信息？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-send-Eagle(slim) 将 'prompt' 和 'extra_pnginfo' 嵌入到 webp 格式的 exif 信息中。这允许通过将图片拖放到 ComfyUI 上，在生成时重新创建节点配置。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-send-Eagle(slim) 在处理多个 KSampler 或 KSamplerAdvanced 节点时有哪些限制？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-send-Eagle（精简版）使用隐式编号的节点编号作为具有多个KSampler或KSamplerAdvanced节点的工作流的代际标准节点。这可能无法正确识别采样器节点的目的，从而导致不希望的生成提示。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何在ComfyUI中安装ComfyUI-send-Eagle（精简版）？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 ComfyUI-send-Eagle(slim)，请导航到 ComfyUI 自定义节点目录并运行 'git clone https://github.com/shingo1228/ComfyUI-send-eagle'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-send-Eagle(slim) 是什么时候首次发布的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-send-Eagle(slim) 最初发布于 2023年8月17日。"
+            }
+        ]
+    }
+]

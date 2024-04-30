@@ -1,0 +1,74 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI中有哪些可用的类型化原语？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI 提供了以下类型的原始数据节点：`int`（整数）、`float`（浮点数）、`string`（字符串）和 `string`（多行字符串）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "为什么在ComfyUI中需要类型化的原语？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI 中，类型化原语是必要的，因为标准的原语节点不能被路由。有了像 `int`（整数）、`float`（浮点数）、`string`（字符串）和多行 `string` 这样的类型化原语，如果需要，可以多次路由这些节点，增强了配置的灵活性。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "标准原始节点在 ComfyUI 中可以被路由吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "不，ComfyUI中的标准原始节点不能直接路由。这种缺乏路由的问题通过提供类型化的原始类型来解决，例如`int`、`float`、`string`和多行`string`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`int` 节点在 ComfyUI 中与标准原始节点有何不同？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI 中，`int` 节点可以被多次路由，与没有此功能的标量节点不同。这允许在连接配置节点（如 `CFG`）和采样器节点时具有更大的灵活性。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI 中一个可以从类型化原语中受益的配置节点示例是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "一个可以从ComfyUI中的类型化原语中受益的配置节点示例是`CFG`节点。通过使用`int`、`float`、`string`和多行`string`等类型化原语，`CFG`节点可以更灵活地连接到采样器节点，利用类型化原语提供的路由功能。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`string` 基本类型在 ComfyUI 中可以是多行的吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，ComfyUI 提供了一个多行 `字符串` 原始节点，它允许输入和处理多行字符串，提供了在需要多行文本时更加复杂和灵活的配置。"
+            }
+        ]
+    }
+]

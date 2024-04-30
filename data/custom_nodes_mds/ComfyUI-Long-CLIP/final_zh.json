@@ -1,0 +1,206 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Long-CLIP的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Long-CLIP 提供了一个 ComfyUI 实现，用于 Long-CLIP，使得 Long-CLIP 模型可以在 SeaArtLongClip 模块中使用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Long-CLIP 支持哪些模型版本以替代 Long-CLIP？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Long-CLIP支持替换SD1.5中的clip-l，并为SDXL模型提供了一个处理过程。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "将SD1.5中的clip替换为Long-CLIP对模型有何影响？"
+            },
+            {
+                "role": "assistant",
+                "content": "将SD1.5中的剪辑替换为Long-CLIP，将令牌长度从77增加到248，预计在测试后将提高生成图像的质量。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Long-CLIP 在 SDXL 模型中是如何处理的？"
+            },
+            {
+                "role": "assistant",
+                "content": "对于SDXL模型，clip-g的clip-long模型尚未可用。因此，令牌长度会以max_len的倍数进行扩展，并且会修剪掉任何多余的填充令牌。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "用户在使用Long-CLIP与SDXL时可以期待什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在SDXL中的Long-CLIP，用户可以期待在生成的图像中看到更多细节，因为对clip-g特性的强调增加了。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "用户可以从哪里下载 ComfyUI-Long-CLIP 的 LongCLIP-L 模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "用户可以从 Hugging Face 提供的链接下载 LongCLIP-L 模型，并将其保存在 models/checkpoints 目录中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "用户如何为 ComfyUI-Long-CLIP 的开发做出贡献？"
+            },
+            {
+                "role": "assistant",
+                "content": "用户可以通过从提供的 Git 链接下载仓库，并通过对项目点赞来支持 ComfyUI-Long-CLIP。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "未来 ComfyUI-Long-CLIP 会支持 Long-CLIP-G 吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，一旦Long-CLIP-G的权重发布，ComfyUI-Long-CLIP将支持这个模型版本。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Long-CLIP 是用来做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Long-CLIP 用于替换 ComfyUI 中的原始 clip，以进行长期内容检测。它将令牌长度从 77 扩展到 248，提高了生成图像的质量。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "SeaArtLongClip模块如何与SD1.5配合工作？"
+            },
+            {
+                "role": "assistant",
+                "content": "SeaArtLongClip 模块可以用来替换 SD1.5 模型中的原始剪辑，将令牌长度从 77 增加到 248。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Long-CLIP 在 SDXL 模型中是如何实现的？"
+            },
+            {
+                "role": "assistant",
+                "content": "对于SDXL模型，较小的令牌通过原始max_len的整数倍进行扩展。由于最后添加的令牌是填充令牌，因此将修剪掉多余的部分。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Long-CLIP如何影响SDXL模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "由于在SDXL中剪辑特性占据了较大比例，生成的图像可能看起来更详细。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Long-CLIP是如何安装的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Long-CLIP 通过将 ComfyUI 仓库和 ComfyUI-Long-CLIP 仓库克隆到 custom_nodes 文件夹中进行安装。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我在哪里可以找到LongCLIP-L模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "LongCLIP-L 模型可以从 Hugging Face 下载并放置在 models/checkpoints 目录中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Long-CLIP 会支持 LongCLIP-G 吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，一旦LongCLIP-G的权重发布，ComfyUI-Long-CLIP将支持它们。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Long-CLIP 提供示例吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，ComfyUI-Long-CLIP为SD1.5和SDXL提供了具体示例，这些示例不需要任何额外的插件安装。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Long-CLIP 是否支持剪辑跳过操作？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，ComfyUI-Long-CLIP支持诸如clip-skip之类的操作。"
+            }
+        ]
+    }
+]

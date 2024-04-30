@@ -1,0 +1,122 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-OOTDiffusion 使用的默认配置系统是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Detectron2 提供了一个基于键值的配置系统，可以用来获得标准、常见的行为。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-OOTDiffusion 的配置系统使用了哪些库？"
+            },
+            {
+                "role": "assistant",
+                "content": "Detectron2的配置系统使用YAML和[yacs](https://github.com/rbgirshick/yacs)。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "基础配置值可以在子配置中被覆盖吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，如果存在任何冲突，基础配置中的值将被子配置中的值覆盖。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-OOTDiffusion 是否提供配置版本控制以确保向后兼容性？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，他们提供配置版本控制，以实现向后兼容性。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "可以在 ComfyUI-OOTDiffusion 中添加自定义配置吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，如果配置空间中没有可用的功能，您可以使用detectron2的API编写代码。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何在 ComfyUI-OOTDiffusion 中指定基础配置？"
+            },
+            {
+                "role": "assistant",
+                "content": "`_BASE_` 字段可以用来指定一个基础配置文件首先加载，比如 `_BASE_: base.yaml`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-OOTDiffusion 中，`CfgNode` 对象是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "一个 `CfgNode` 对象用于在 Detectron2 中访问和更新配置。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-OOTDiffusion 中，配置文件的版本号是如何管理的？"
+            },
+            {
+                "role": "assistant",
+                "content": "版本号用于配置文件中以确保向后兼容性。如果您的配置文件使用类似 `VERSION: 2` 的配置行进行版本控制，即使我们将来更改一些键，detectron2 仍然能够识别它。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "可以将命令行配置覆盖与ComfyUI-OOTDiffusion一起使用吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，detectron2中的许多内置工具都接受命令行配置覆盖。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-OOTDiffusion 中使用配置时的一些最佳实践是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "将您编写的配置视为“代码”，避免复制或重复它们，使用`_BASE_`在配置之间共享公共部分。保持您编写的配置简单，不要包含不影响实验设置的键。在您的配置中保留版本号，以实现向后兼容性。"
+            }
+        ]
+    }
+]

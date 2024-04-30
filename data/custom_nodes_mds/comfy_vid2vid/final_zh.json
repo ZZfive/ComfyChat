@@ -1,0 +1,134 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 comfy_vid2vid 节点套件？"
+            },
+            {
+                "role": "assistant",
+                "content": "首先，安装 comfyui。然后，运行 git clone https://github.com/sylym/comfy_vid2vid 并使用 'python -m pip install -r requirements.txt' 下载依赖项，以进行便携式独立构建。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "LoadImageSequence节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "LoadImageSequence节点从文件夹加载图像序列。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "LoadImageMaskSequence节点是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "LoadImageMaskSequence 节点从文件夹加载掩码序列。它使用图像序列的通道作为掩码。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "VAEEncodeForInpaintSequence节点的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "VAEEncodeForInpaintSequence节点使用变分自编码器（VAE）模型将输入的图像序列编码成潜在向量。它还将图像掩码序列添加到潜在向量中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DdimInversionSequence节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "DdimInversionSequence节点通过使用Ddim模型反转输入潜在向量来生成特定的噪声向量。它通常用于提高输出图像序列的时间一致性。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "SetLatentNoiseSequence节点是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "SetLatentNoiseSequence 节点向潜在向量添加噪声向量。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CheckpointLoaderSimpleSequence节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "CheckpointLoaderSimpleSequence节点将检查点模型加载到UNet3DConditionModel中。它通常用于生成具有时间连续性的图片序列。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "LoraLoaderSequence节点的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "LoraLoaderSequence节点类似于'LoraLoader'节点，但它在UNet3DConditionModel上操作。它用于'CheckpointLoaderSimpleSequence'节点之后和'TrainUnetSequence'节点之前。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "TrainUnetSequence节点是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "TrainUnetSequence节点使用潜在向量和上下文对传入的模型进行微调，并将模型转换为推理模式。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "KSamplerSequence节点是做什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "KSamplerSequence节点具有与'KSampler'节点相同的功能，但它增加了对噪声向量和图像遮罩序列的支持。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用UNet3DConditionModel的局限性是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "UNet3D模型对GPU内存的需求很高。如果你遇到内存不足的错误，请尝试减少'n_sample_frames'的值。然而，'n_sample_frames'的值必须大于或等于3。"
+            }
+        ]
+    }
+]

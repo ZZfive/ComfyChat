@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-DynamiCrafterWrapper是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DynamiCrafterWrapper 是 ComfyUI 的一组节点，它允许用户使用预训练的视频扩散先验，通过文本提示来为开放领域的静态图像制作动画。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI-DynamiCrafterWrapper？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 ComfyUI-DynamiCrafterWrapper，你可以选择从 git 安装，或者将仓库克隆到 custom_nodes 并运行所需的 pip 安装。对于使用便携版的人来说，这可以从 ComfyUI_windows_portable 文件夹中完成。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DynamiCrafter模型的GPU内存和推理时间要求是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在一块RTX 4090 GPU上，分辨率为576x1024的DynamiCrafter模型需要18.3GB的GPU内存，而320x512的分辨率需要12.8GB。对于单个帧动画，使用NVIDIA A100（40G）GPU的推理时间大约为10秒。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以使用xformers与ComfyUI-DynamiCrafterWrapper吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，你可以使用xformers与ComfyUI-DynamiCrafterWrapper，如果可能的话，建议使用xformers以减少内存使用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以与ComfyUI-DynamiCrafterWrapper一起使用哪些模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DynamiCrafterWrapper 支持不同分辨率的模型，如 DynamiCrafter1024（576x1024）、DynamiCrafter512（320x512）和 DynamiCrafter256（256x256），以及用于生成帧插值和循环视频生成的 DynamiCrafter512_interp。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何运行 ComfyUI-DynamiCrafterWrapper 进行推理？"
+            },
+            {
+                "role": "assistant",
+                "content": "要运行 ComfyUI-DynamiCrafterWrapper，您可以使用存储库中提供的脚本。对于图像到视频的生成，您可以运行所需分辨率的脚本；对于生成性帧插值/循环视频的生成，您可以运行相应的脚本。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-DynamiCrafterWrapper有哪些社区扩展可用？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI是一个社区扩展，适用于ComfyUI-DynamiCrafterWrapper，提供了一个图形用户界面，用于使用稳定扩散模型生成图像和视频。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DynamiCrafter模型是用于什么的？"
+            },
+            {
+                "role": "assistant",
+                "content": "DynamiCrafter模型用于根据文本提示对开放领域的静态图像进行动画处理，利用预训练的视频扩散先验。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以将ComfyUI-DynamiCrafterWrapper用于商业目的吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "不，该存储库是为研究目的而开发的，只能用于个人/研究/非商业用途。"
+            }
+        ]
+    }
+]

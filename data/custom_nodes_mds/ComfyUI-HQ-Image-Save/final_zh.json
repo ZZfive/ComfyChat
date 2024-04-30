@@ -1,0 +1,74 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-HQ-Image-Save 支持加载和保存哪些类型的文件？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-HQ-Image-Save 支持单独或批量加载和保存 EXR 文件，以及保存 RGB 或 RGBA 32bpc EXR 和 16bpc RGB TIFF 文件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "当保存EXR文件时，输出文件夹路径如何格式化？"
+            },
+            {
+                "role": "assistant",
+                "content": "在使用 ComfyUI-HQ-Image-Save 保存 EXR 文件时，输出文件夹路径可以格式化为输出文件夹内的相对路径，或者格式化为带有版本和帧号格式的绝对路径。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "推荐使用哪个命令行参数以获得更准确的解码？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用 ComfyUI-HQ-Image-Save 时，为了获得更准确的解码效果，推荐的命令行参数是 `--fp32-vae`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "PNG和TIFF文件中每个通道可能的值的数量如何比较？"
+            },
+            {
+                "role": "assistant",
+                "content": "PNG文件每个通道有256个可能的值（2^8），而TIFF文件每个通道有65,536个可能的值（2^16）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "从四个潜在通道近似RGB值的公式是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "从四个潜在通道近似RGB值的公式是：r = (0.298 * r + 0.187 * g - 0.187 * b - 0.184 * a) * 0.18215, g = (0.207 * r + 0.286 * g + 0.189 * b - 0.271 * a) * 0.18215, b = (0.208 * r + 0.173 * g + 0.264 * b - 0.473 * a) * 0.18215。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-HQ-Image-Save已知的问题有哪些？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-HQ-Image-Save存在两个已知问题：TIFF或EXR图像中没有保存工作流元数据，而且还没有加载TIFF节点。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-SAL-VTON 是基于什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SAL-VTON 基于在 CVPR2023 发表的论文 '通过语义关联地标将服装与人物关联以实现虚拟试穿'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI-SAL-VTON？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装 ComfyUI-SAL-VTON，请将仓库克隆到 'custom_nodes' 文件夹中，导航到该文件夹并运行 'pip install -r requirements.txt'，从提供的链接下载 landmark、warp 和 salvton 模型，并在 ComfyUI 的 'models' 目录中创建一个 'salvton' 文件夹来存储这些模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-SAL-VTON的服装图片应该是什么尺寸？"
+            },
+            {
+                "role": "assistant",
+                "content": "服装图像应该是768x1024像素。如果图像不是这个尺寸，你可以在ComfyUI中调整大小。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么会影响虚拟试穿结果的质量？"
+            },
+            {
+                "role": "assistant",
+                "content": "“人物”图片的背景应该是白色以获得良好效果。如果背景不是白色，可以考虑使用rembg或SAM来遮罩并用白色背景替换它。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何生成一个服装遮罩？"
+            },
+            {
+                "role": "assistant",
+                "content": "服装遮罩是输入服装的形状。您可以使用SAM或rembg生成它，这在提供的流程中被使用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-SAL-VTON的推理代码来源是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SAL-VTON的推理代码可在[ModelScope](https://github.com/modelscope/modelscope)上获得。该实现是围绕此代码的一个简单包装器。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "谁应该被认可为 ComfyUI-SAL-VTON 的开发做出贡献？"
+            },
+            {
+                "role": "assistant",
+                "content": "Keyu Y.、Tingwei G.，以及发表在CVPR2023上的论文《通过语义关联地标将服装与人关联以实现虚拟试穿》的原始作者，以及在ModelScope上的推理代码的作者，应该因为他们的工作而得到认可。"
+            }
+        ]
+    }
+]

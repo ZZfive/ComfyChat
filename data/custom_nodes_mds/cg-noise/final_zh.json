@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是计算机生成的噪声？"
+            },
+            {
+                "role": "assistant",
+                "content": "cg-noise 是 ComfyUI 中的一个自定义节点，它取代了 KSampler 和 KSampler Advanced，允许在初始噪声中进行小幅度的变化。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CG噪声是如何在图像中产生变化的？"
+            },
+            {
+                "role": "assistant",
+                "content": "cg-noise 通过使用权重 `x` 和两个种子来在图像中生成变化。它基于 `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)` 来生成噪声。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在cg-noise中，x参数代表什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "`x` 参数在 cg-noise 中表示噪声生成公式中 `random_based_on(variation_seed) * x` 部分的权重。`x` 的小值会生成与原始图像相似的图像，而较大的值则会产生更多的变化。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "cg-noise中control_after_generated的默认设置是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "cg-noise 中 control_after_generated 的默认设置是 `fixed`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "cg-noise如何处理不同批量大小的批次？"
+            },
+            {
+                "role": "assistant",
+                "content": "对于大于1的批量大小，cg-noise基于相同的原始噪声生成一组图像。第一张图像的variation_weight为零，第二张图像的值为节点中设置的值，第三张图像的值为该值的2倍，以此类推。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装cg-noise？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以使用 ComfyUI 管理器通过搜索 chrisgoringe 或变体来安装 cg-noise。对于手动安装，请前往 [Comfy Install]/自定义节点 并按照文档中的描述克隆存储库。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何更新cg-noise？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以使用 ComfyUI 管理器更新 cg-noise。对于手动更新，转到 [Comfy Install]/custom_nodes/cg-noise 并进入 [Comfy Install]/custom_nodes/cg_custom_core，使用 `git pull` 获取最新更新。然后重新启动 ComfyUI 并重新加载网页。"
+            }
+        ]
+    }
+]

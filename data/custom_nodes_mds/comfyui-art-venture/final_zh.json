@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Art-Venture节点的主要功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Art-Venture 节点允许你根据存储在多个 JSON 文件中的预定义模板来设置提示样式，具体来说，就是将每个模板中 'prompt' 字段的 {prompt} 占位符替换为提供的正面文本。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Art-Venture节点如何处理负面提示？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Art-Venture节点将提供的负面文本与模板中的'negative_prompt'字段结合起来。如果没有提供负面文本，它将默认使用JSON模板中的'negative_prompt'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何确保在系统更新时我的风格保持不变？"
+            },
+            {
+                "role": "assistant",
+                "content": "在更新之前，请备份您的'sdxl_styles.json'文件，然后更新后，在样式目录中创建一个新的JSON文件，并将您的自定义样式从备份中移动到这个新文件中，确保使用唯一的样式名称。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "最新更新中，ComfyUI-Art-Venture节点的主要增强功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "系统现在可以从指定目录中加载多个JSON文件的样式，通过为重复项添加后缀来确保样式名称的唯一性，并增强了文件读取、数据有效性和模板替换函数的错误处理。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我应该如何在ComfyUI-Art-Venture中使用SDXL提示样式器？"
+            },
+            {
+                "role": "assistant",
+                "content": "要使用 ComfyUI-Art-Venture 中的 SDXL Prompt Styler 节点，请在终端或命令行界面中导航到 'ComfyUI/custom_nodes/' 目录，并运行命令 'git clone https://github.com/twri/sdxl_prompt_styler.git' 来克隆仓库，然后重新启动 ComfyUI。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Art-Venture节点需要哪些输入？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Art-Venture 节点需要 'text_positive' 和 'text_negative' 的输入，以及 'log_prompt' 用于将输入和输出打印到标准输出。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以期待从 ComfyUI-Art-Venture 节点得到哪些输出？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Art-Venture节点提供了'positive_prompt_text_g'和'negative_prompt_text_g'的输出，它们分别是用于正面和负面提示的结合了风格的提示。"
+            }
+        ]
+    }
+]

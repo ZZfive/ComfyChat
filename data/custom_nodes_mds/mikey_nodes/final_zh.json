@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"Prompt with Style\"节点在Mikey Nodes中是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在Mikey Nodes中，`Prompt with Style`节点允许你以一种风格和loras进行提示。你可以使用`<lora:lora_name>`或`<lora:lora_name:0.8>`语法添加一个lora，其中0.8作为权重的示例。你可以通过使用`<style:style_name>`语法添加风格。一些内置的风格包括SAI-Enhance、SAI-Anime、SAI-Photographic、SAI-Digital art、SAI-Comic book、SAI-Fantasy art等。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`Mikey Sampler` 和 `Mikey Sampler Base Only` 节点之间的区别是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"Mikey Sampler\"节点遵循基础 -> 细化器 -> 模型上采样 -> 基础的工作流程，而\"Mikey Sampler Base Only\"节点采用了略有不同的方法，其工作流程为：基础 -> 基础 -> 模型上采样 -> 基础。基础唯一版本还在中间跳过一步，并将其添加到末尾，这可以为图像添加额外的细节。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以在我的节点中添加自己的自定义样式和图片尺寸比例吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，你可以在 ComfyUI 根目录下名为 `user_styles.json` 的文件中添加你自己的自定义样式。同样地，你也可以在 ComfyUI 根目录下名为 `user_ratios.json` 的文件中添加你自己的自定义比例。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何在ComfyUI中安装Mikey Nodes？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI 中安装 Mikey Nodes，请打开 ComfyUI/custom_nodes/ 目录下的终端，然后运行以下命令：`git clone https://github.com/bash-j/mikey_nodes`"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`Style Conditioner` 节点的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "`Style Conditioner` 节点用于通过平均通过该节点的调节器将风格提示注入到您的调节器中。强度值为 0.5 表示输入的调节器和选定的风格之间的平均分配。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"Seed String\"节点在Mikey Nodes中的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "`Seed String`节点创建一个随机数或种子。它将种子作为`整数`输出，并且还有一个`字符串`版本，可以用于添加到元数据或您想要的任何地方。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "从Mikey Nodes中移除了哪些节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"VAE Decode 6GB\"节点已从Mikey节点中移除。"
+            }
+        ]
+    }
+]

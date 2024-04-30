@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_SimpleTiles中的DynamicTileSplit和DynamicTileMerge节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "DynamicTileSplit 和 DynamicTileMerge 分别用于将图像分割成小图块和将它们重新合并成一张图像。DynamicTileSplit 决定小图块在 y 轴上的重叠部分，而 x 轴的重叠部分则是根据与图像高度的比例来计算的。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在DynamicTileSplit中，x轴和y轴是如何计算的？"
+            },
+            {
+                "role": "assistant",
+                "content": "在DynamicTileSplit中，x轴被计算为与y轴相对于图像高度具有相同的比例。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DynamicTileSplit的输出是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "DynamicTileSplit的输出是一个`tile_calc`对象，它包含有关瓦片大小、重叠的信息，应该将其传递给DynamicTileMerge。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "动态瓦片分割（DynamicTileSplit）和瓦片合并（TileMerge）中的重叠值（Overlap）的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "重叠值决定了在y轴上瓦片之间的重叠程度，而x轴的计算是为了保持与y轴相同的比例，与图像高度相等。它应该设置为在TileSplit中使用的相同值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Blend 值在 DynamicTileSplit 和 TileMerge 中的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "混合值决定了混合处理覆盖多少像素。它应该小于重叠值，并且混合是在混合距离上从0到1线性进行的。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Legacy节点与DynamicTileSplit和DynamicTileMerge相比有哪些局限性？"
+            },
+            {
+                "role": "assistant",
+                "content": "如果图像比例和瓦片比例不同，传统节点的工作效果不佳。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "TileCalc（旧版）节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "TileCalc 是一个实用工具，用于根据瓦片大小和重叠计算最终图像大小。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "TileSplit（旧版）和TileMerge（旧版）节点的局限性是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "像TileSplit和TileMerge这样的传统节点在图像比例和瓦片比例不同时工作效果不佳。"
+            }
+        ]
+    }
+]

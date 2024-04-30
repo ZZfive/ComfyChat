@@ -1,0 +1,470 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "什么是Open-Sora计划，它是什么时候启动的？"
+            },
+            {
+                "role": "assistant",
+                "content": "开放空计划旨在通过一个开源框架复现OpenAI的空，该框架支持训练视频生成模型，包括无条件视频生成、类别视频生成和文本到视频生成。它于2024年3月启动。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "与之前的视频生成模型相比，Open-Sora-Plan v1.0.0有哪些改进？"
+            },
+            {
+                "role": "assistant",
+                "content": "Open-Sora-Plan v1.0.0 包含几项改进，包括使用 CausalVideoVAE 高效的训练和推理，联合图像-视频训练以提高质量，以及代码、模型和数据的开源发布，以促进社区未来的开发。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CausalVideoVAE是什么，以及它在Open-Sora-Plan v1.0.0中扮演什么角色？"
+            },
+            {
+                "role": "assistant",
+                "content": "CausalVideoVAE 是一种应用于视频的空间-时间压缩，压缩比例为 4×8×8，它使得在 Open-Sora-Plan v1.0.0 中进行高效的训练和推理成为可能。它将第一帧视为图像，从而允许以自然的方式同时对图像和视频进行编码，提高了视觉质量。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在Open-Sora-Plan中，数据构建过程是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在Open-Sora-Plan中的数据构建过程涉及基于两个核心原则定义一个高质量的视频数据集 - 无与内容无关的水印和高质量且密集的字幕。生成的数据集由各种分辨率和时长多样的视频剪辑组成，然后这些视频剪辑被用来训练和评估模型的性能。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Open-Sora-Plan的下一个预览版本是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Open-Sora-Plan的下一个发布预览包括一个增强版的CausalVideoVAE，它最小化了运动模糊和网格效应。这个预览版本正在开发中，将在下一个更新中发布。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "训练扩散模型的未来计划是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "训练扩散模型的未来计划包括支持动态分辨率和持续时间的训练，支持更长视频的生成，以及增强的条件控制，为用户提供更多选项和对生成视频的控制。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "VQVAE 是哪种类型的自编码器？"
+            },
+            {
+                "role": "assistant",
+                "content": "VQVAE是一种使用离散潜在表示的向量量化变分自编码器（VQ-VAE）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何使用 ComfyUI Open Sora Plan 初始化一个 VQVAE 模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以使用`VideoGPTVQVAE`类初始化一个VQVAE模型，该类是`opensora.models.ae`模块的一部分。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何使用 ComfyUI Open Sora Plan 训练一个 VQVAE 模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "你可以使用 `train_videogpt.sh` 脚本来训练 VQVAE 模型。这个脚本将根据脚本中指定的参数来训练模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何加载预训练的VQVAE模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以使用 `download_and_load_model` 方法或 `load_from_checkpoint` 方法加载一个预训练的 VQVAE 模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 VQVAE 中，`encode` 方法是做什么用的？"
+            },
+            {
+                "role": "assistant",
+                "content": "“encode”方法用于对视频进行编码，并返回视频的编码和嵌入。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何从VQVAE的编码中重建视频？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过使用解码方法从其编码重构视频。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何测试 VQVAE 模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过重建视频来测试 VQVAE 模型。`examples/rec_video.py` 脚本提供了如何进行此操作的示例。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Open-Sora-Plan 的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Open-Sora-Plan 是一种视频字幕精炼器，它将简短的字幕注释转换成更长、更详细的内容，包括背景场景、对象属性和对象级别的空间关系描述。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "安装需要哪些额外的要求？"
+            },
+            {
+                "role": "assistant",
+                "content": "对于安装，你需要 openai == 0.28.0，jsonlines == 4.0.0，nltk == 3.8.1，并且你需要将 SPHINX 的权重下载到 ./ckpt/ 文件夹中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何运行 ComfyUI-Open-Sora-Plan 的精炼指令？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以使用命令 `python demo_for_refiner.py --root_path $path_to_repo$ --api_key $openai_api_key$` 来运行精炼指令。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "精炼过程的预期输出是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "精炼过程采用简短的原始标题，并产生一个经过精炼的版本，其中添加了对背景场景、对象属性和对象级空间关系的详细描述。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "添加GPT-3.5-Turbo用于标题摘要的状态是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "将GPT-3.5-Turbo添加到标题摘要中目前正在进行中，并标记为⌛[进行中]。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "LLAVA-1.6的添加状态是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "添加 LLAVA-1.6 目前正在进行中，并被标记为 ⌛ [进行中]。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "有计划为精炼过程添加更多描述吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，有计划增加更多描述，并已标记为⌛[进行中]。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在向Open-Sora Plan开源社区提交拉取请求（PR）之前需要遵循哪些步骤？"
+            },
+            {
+                "role": "assistant",
+                "content": "在提交 PR 之前，贡献者应该：1. 检查 Open-Sora Plan GitHub 以避免重复现有工作；2. Fork Open-Sora Plan 仓库并将其克隆到他们的本地机器；3. 将原始的 Open-Sora Plan 仓库添加为远程仓库，以同步最新更新；4. 将主仓库的代码同步到他们的本地机器，然后将其推回他们 Fork 的远程仓库；5. 在他们 Fork 的仓库中为他们的改变创建一个有意义的分支；6. 在进行修改和提交更改时，遵守提交信息格式；7. 将他们的更改推送到他们的 GitHub 仓库；8. 最后，在 GitHub 仓库页面上向 'Open-Sora-Plan:main' 提交一个拉取请求。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在Open-Sora计划中，提交消息所需的格式是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Open-Sora计划中的提交信息必须包含`<type>`和`<summary>`两个部分。格式为：[可选范围]: [类型]: <摘要>。类型可以是docs、feat、fix或refactor之一。摘要应简要描述更改，并且描述应为英文，不要以句号结尾。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何避免在Open-Sora计划中重复他们的拉取请求？"
+            },
+            {
+                "role": "assistant",
+                "content": "贡献者应该首先检查Open-Sora计划的GitHub，看看是否有任何与他们打算提交的内容相关的开放或已关闭的拉取请求，这有助于避免重复现有的工作。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何使用 ComfyUI-Open-Sora-Plan 评估生成视频的质量？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以使用ComfyUI-Open-Sora-Plan计算视频质量指标，如CLIP-SCORE、FVD、SSIM、LPIPS和PSNR。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "需要什么样的环境设置才能使用 ComfyUI-Open-Sora-Plan？"
+            },
+            {
+                "role": "assistant",
+                "content": "您需要安装 Pytorch（torch>=1.7.1）、CLIP、从 PyPi 安装的 clip-score、lpips、scipy（scipy==1.7.3/1.9.3）、numpy、pillow、torchvision>=0.8.2、ftfy、regex 和 tqdm。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何下载计算FVD所需的FVD预训练模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以从[这里](https://www.dropbox.com/s/ge9e5ujwgetktms/i3d_torchscript.pt)手动下载'i3d_torchscript.pt'，或者从[这里](https://onedrive.live.com/download?cid=78EEF3EB6AE7DBCB&resid=78EEF3EB6AE7DBCB%21199&authkey=AApKdFHPXzWLNyI)下载'i3d_pretrained_400.pt'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "clip_score的图像和文本文件输入规格是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "所有图片应存放在单一目录中，可以是.png或.jpg格式。文本数据应存放在单独的目录中，使用纯文本文件，文件扩展名为.txt。图片和文本文件的数量应该相等，并且应通过文件名进行配对。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "fvd、psnr、ssim、lpips的数据输入规格是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "生成的图像文件和真实图像文件应该存储在不同的目录中，每个目录中都包含.mp4文件。这些图像应通过文件名进行配对。例如，如果在生成的图像目录中有一个名为cat.mp4的文件，那么在真实图像目录中应该有一个对应的cat.mp4文件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何使用 ComfyUI-Open-Sora-Plan 计算 CLIP-SCORE？"
+            },
+            {
+                "role": "assistant",
+                "content": "您需要更改文件路径并设置frame_num、分辨率等。然后，导航到eval目录并运行：'bash script/cal_clip_score.sh'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何使用 ComfyUI-Open-Sora-Plan 计算 FVD？"
+            },
+            {
+                "role": "assistant",
+                "content": "在设置好环境和文件路径后，导航到eval目录并运行：'bash script/cal_fvd.sh'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何使用 ComfyUI-Open-Sora-Plan 计算 PSNR？"
+            },
+            {
+                "role": "assistant",
+                "content": "在设置好环境和文件路径后，导航到eval目录并运行：'bash script/cal_psnr.sh'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何使用 ComfyUI-Open-Sora-Plan 计算 SSIM？"
+            },
+            {
+                "role": "assistant",
+                "content": "在设置好环境和文件路径后，导航到eval目录并运行：'bash script/cal_ssim.sh'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何使用 ComfyUI-Open-Sora-Plan 计算 LPIPS？"
+            },
+            {
+                "role": "assistant",
+                "content": "在设置好环境和文件路径后，导航到eval目录并运行：'bash script/cal_lpips.sh'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Open-Sora-Plan的评估代码库是从哪个代码库衍生的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Open-Sora-Plan 的评估代码库参考了 [clip-score](https://github.com/Taited/clip-score) 和 [common_metrics](https://github.com/JunyaoHu/common_metrics_on_video_quality)。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Open-Sora-Plan 引入了哪种类型的数据集？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Open-Sora-计划引入了无条件数据集，例如天空时光倒流。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我如何获取有关sky_timelapse数据集的信息？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过访问GitHub上的open-sora-Dataset来获取有关sky_timelapse数据集的信息。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "天空延时摄影数据集的结构是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "天空延时摄影数据集由名为“sky_test”、“sky_train”的文件夹以及一些用于测试和视频文件夹的Python脚本组成。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以使用UCF101数据集与ComfyUI-Open-Sora-Plan吗？如果可以，我该如何下载它？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，你可以使用UCF101数据集与ComfyUI-Open-Sora-Plan。要下载UCF-101数据集，请访问CRCV网站上提供的链接。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Open-Sora-Plan 中是否有任何离线特征提取功能可用？"
+            },
+            {
+                "role": "assistant",
+                "content": "文档提到“离线特征提取”功能即将推出，因此目前这项功能可能存在一些限制。"
+            }
+        ]
+    }
+]

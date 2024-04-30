@@ -1,0 +1,62 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-SVDResizer 在稳定视频扩散中的用途是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SVDResizer 是一个辅助工具，用于根据 Stable Video Diffusion 中启用的大小调整源图像的大小。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "改变图像大小在576到1024之间的步骤背后的理论依据是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "理由是基于576和1024的最大公约数64。这允许进行调整大小，更有可能产生一个连贯的视频，而不是标准的576X1024大小。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "SVD如何处理符合使用576和1024的最大公约数规则的调整大小？"
+            },
+            {
+                "role": "assistant",
+                "content": "奇异值分解（SVD）对这种尺寸调整比较宽容，增加了保持非标准尺寸但连贯视频的机会。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "调整图像大小时推荐的方法是？"
+            },
+            {
+                "role": "assistant",
+                "content": "建议保持1024这个值不变，并通过调整第二个尺寸来保持结果的稳定性。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我可以看一下ComfyUI-SVDResizer如何工作的演示吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，演示可以在提供的链接中找到：https://github.com/ShmuelRonen/ComfyUI-SVDResizer/assets/80190186/3eeccc4d-fcc7-486e-b733-8fa3e985a3c1"
+            }
+        ]
+    }
+]

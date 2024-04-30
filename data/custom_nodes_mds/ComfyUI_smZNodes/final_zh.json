@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_smZNodes中的自定义节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_smZNodes 中的自定义节点是 ComfyUI 的一系列自定义节点，它们扩展了其功能。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "您能解释一下CLIP Text Encode++自定义节点的功能吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "CLIP Text Encode++ 能够为 ComfyUI 从 stable-diffusion-webui 生成相同的嵌入，允许在 ComfyUI 上重现从 stable-diffusion-webui 生成的相同图像。它支持多种功能，如提示编辑、`AND` 和 `BREAK` 关键字、权重归一化以及可选的 `embedding:` 标识符。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在ComfyUI_smZNodes中，Settings节点的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "设置节点是一个动态节点，其功能类似于重定向节点。它用于在采样或标记化期间微调结果。它可能在更新时发生变化，因此可能需要重新创建以防止问题。可以使用另一个设置节点来覆盖设置。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用CLIP Text Encode++进行图像生成的优势是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用CLIP Text Encode++进行图像生成的优势在于，它可以为ComfyUI从stable-diffusion-webui生成相同的嵌入。这意味着你可以在ComfyUI上重现从stable-diffusion-webui生成的相同图像。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "CLIP Text Encode++ 是否支持不同的解析器？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，CLIP Text Encode++ 支持不同的解析器，如 `comfy`、`comfy++`、`A1111`、`full`、`compel` 和 `fixed attention`。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "`multi_conditioning` 选项在 CLIP Text Encode++ 中是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "CLIP Text Encode++ 中的 `multi_conditioning` 选项是一种同时使用多个提示的方法，允许在负面提示中使用 `AND`。它支持为提示设置权重，并且每个提示得到的 cfg 值为 'cfg * weight / N'，其中 'N' 是正面提示的数量。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "请澄清CLIP Text Encode++中的`use_old_emphasis_implementation`选项。"
+            },
+            {
+                "role": "assistant",
+                "content": "`use_old_emphasis_implementation` 选项允许使用旧的强调实现。这在重现旧种子时可能会很有用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_smZNodes中的Settings节点的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_smZNodes中的设置节点的目的是，在采样或标记化期间微调结果。它是一个动态节点，功能类似于重定向节点，并且它可以随时更新而改变，因此可能需要重新创建以防止问题。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI 中，设置节点是如何应用其设置的？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 ComfyUI 中，设置节点会根据其链接本地应用其设置。它类似于执行模型补丁的节点。它主要存在于探索 stable-diffusion-webui 中发现的各种设置的目的。"
+            }
+        ]
+    }
+]

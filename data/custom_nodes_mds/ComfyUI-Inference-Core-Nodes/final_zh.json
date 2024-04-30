@@ -1,0 +1,146 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "当贡献者为DINOv2打开拉取请求时，推荐的步骤是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "DINOv2的贡献者应该分叉仓库，从`main`创建他们的分支，如果他们添加了代码，就添加测试；如果他们更改了API，就更新文档；确保测试套件通过；确保他们的代码符合代码规范；并完成贡献者许可协议（CLA）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Meta 如何要求贡献者遵守其开源项目的许可协议？"
+            },
+            {
+                "role": "assistant",
+                "content": "Meta 要求贡献者在他们的拉取请求被接受之前提交一份贡献者许可协议（CLA）。只需完成一次 CLA，就可以为 Meta 的任何开源项目做出贡献。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在DINOv2中报告错误的过程是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "DINOv2 中的公共错误是通过使用 GitHub 问题来跟踪的，并且要求贡献者提供清晰的描述以及足够的指令来重现该问题。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果贡献者在DINOv2中发现了一个安全漏洞，他们应该怎么做？"
+            },
+            {
+                "role": "assistant",
+                "content": "发现安全漏洞的贡献者应该按照 Meta 的赏金计划页面上概述的流程进行操作，而不是提交一个公开问题。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DINOv2 所做贡献适用的许可证是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "通过为DINOv2做出贡献，贡献者同意他们的贡献将根据源代码树根目录下的LICENSE文件进行许可。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI推理核心节点的性能基准是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "性能基准包括每个模型的每次迭代毫秒数、每秒迭代次数、每种操作符类型的时间以及每种操作符类型的特徵内存读取和写入。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "优化和未优化版本的EfficientNet-B0模型在每次迭代的毫秒数和每秒迭代次数方面的性能差异是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "优化版的EfficientNet-B0模型每次迭代的毫秒数为46.0838，每秒迭代次数为21.6996，而未优化版的每次迭代的毫秒数为49.2862，每秒迭代次数为20.2897。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "对于TF MobileNet-V3 Large 1.0模型，每迭代的优化毫秒数和每秒迭代次数是多少？"
+            },
+            {
+                "role": "assistant",
+                "content": "优化后的TF MobileNet-V3 Large 1.0模型的每次迭代毫秒数为22.0495，每秒迭代次数为45.3525。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "对于优化和未优化版本的MobileNet-V3 (RW)模型，每种操作类型的总浮点运算次数是多少？"
+            },
+            {
+                "role": "assistant",
+                "content": "对于优化版本的 MobileNet-V3 (RW) 模型，每个操作类型的总浮点运算次数为 0.438542 GFLOP，而对于未优化版本，它是 0.456141 GFLOP。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在每次迭代的毫秒数和每种操作类型的时间方面，优化过的和未优化过的MnasNet-A1模型的性能差异是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "优化后的MnasNet-A1模型的每次迭代毫秒数为24.2367，每个操作类型的时间为卷积（Conv）所占比例最高，达到91.1375%；而未优化版本的每次迭代毫秒数为30.0892，每个操作类型的时间为卷积（Conv）所占比例最高，达到79.0905%。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "MnasNet-B1模型的优化版本和未优化版本在每种操作类型的浮点运算次数（FLOP）上有什么不同？"
+            },
+            {
+                "role": "assistant",
+                "content": "优化后的MnasNet-B1模型每个操作类型的总浮点运算次数为0.629124 GFLOP，而未优化的版本每个操作类型的总浮点运算次数为0.650951 GFLOP。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Inference-Core-Nodes 基准测试中，哪个模型每秒迭代次数最多？"
+            },
+            {
+                "role": "assistant",
+                "content": "EfficientNet-B0 在每秒迭代次数上最快，优化后为 21.6996，未优化为 20.2897。"
+            }
+        ]
+    }
+]

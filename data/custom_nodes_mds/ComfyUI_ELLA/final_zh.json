@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_ELLA 是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_ELLA 是 ELLA 的一种实现，它为扩散模型配备了一个大型语言模型（LLM），以增强语义对齐。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI_ELLA？"
+            },
+            {
+                "role": "assistant",
+                "content": "要安装，请导航到 `custom_nodes` 目录，并使用 `git clone` 从 `https://github.com/ExponentialML/ComfyUI_ELLA.git` 克隆仓库。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我应该将ELLA模型文件放置在哪里？"
+            },
+            {
+                "role": "assistant",
+                "content": "将 ELLA 模型放置在 `models` 目录下的新文件夹 `ella` 中。相应的 T5 模型也应该下载到 `t5_model` 内的 `flan-t5-xl` 文件夹中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ELLA加载器节点需要哪些参数？"
+            },
+            {
+                "role": "assistant",
+                "content": "ELLA加载器节点需要ELLA检查点文件的路径和T5模型文件夹的路径。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ELLA文本编码节点需要哪些输入？"
+            },
+            {
+                "role": "assistant",
+                "content": "ELLA文本编码节点需要来自ELLA加载器的已加载模型、一个条件提示以及所需的sigma值。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_ELLA支持哪些条件节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "所有条件节点都应得到支持，以及提示加权和ControlNet。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "谁应该为 ComfyUI_ELLA 获得荣誉？"
+            },
+            {
+                "role": "assistant",
+                "content": "感谢腾讯QQGY实验室对ELLA研究的贡献，感谢BlenderNeko提供的“通过BNK获取Sigma”节点，以及HuggingFace在ComfyUI_ELLA中使用的时间步模块。"
+            }
+        ]
+    }
+]

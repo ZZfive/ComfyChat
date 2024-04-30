@@ -1,0 +1,182 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-sonar是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-sonar 是 [ComfyUI](https://github.com/comfyanonymous/ComfyUI) 的 Sonar 采样（基于动量的采样）的实现。它支持欧拉、欧拉祖先和 DPM++ SDE 采样。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-sonar 适合一般使用吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，它适合一般使用，但需要注意的是，实现和节点输入之类的东西很可能还会频繁变化。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-sonar支持哪些采样器配置？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-sonar 目前支持欧拉（Euler）、欧拉祖先（Euler Ancestral）和 DPM++ SDE 抽样。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "推荐的使用 ComfyUI-sonar 自定义采样器的方法是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用 ComfyUI-sonar 最灵活的方式是使用自定义采样器：`[SamplerSonarEuler] > [SamplerSonarEuler_ancestral] > [SamplerSonarDPMPPSDE]`。您也可以从普通采样器列表中选择 `sonar_euler`、`sonar_euler_ancestral` 或 `sonar_dpmpp_sde`，但推荐使用自定义采样器方法和祖先版本。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-sonar的'momentum'参数是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-sonar 的 'momentum' 参数工作方式类似于将符号设置为正或负：`1.0` 是正的，`-1.0` 是负的，您还可以尝试使用分数值。默认值被认为是合理的，使用负方向可能不会产生好的结果。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "\"momentum\"参数的ComfyUI-sonar可以设置在0.85以下吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，'momentum'参数可以设置在0.85以下，但强烈建议不要这样做，因为它可能不会产生良好的结果或可复制的生成。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“SonarGuidanceConfig”节点在ComfyUI-sonar中的功能是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "“声纳引导配置”节点可以可选地插入到声纳采样器节点中。它允许对采样过程进行更高级的控制。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "“SonarPowerNoise”节点是做什么用的？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"SonarPowerNoise\"节点生成[分数布朗运动（fBm）噪声](https://en.wikipedia.org/wiki/Fractional_Brownian_motion#Frequency-domain_interpretation)。它在产生各种类型的噪声方面提供了多功能性，包括高斯噪声、粉红噪声、二维布朗噪声以及所有中间类型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Sonar 中，NoisyLatentLike 节点做了哪些改进？"
+            },
+            {
+                "role": "assistant",
+                "content": "NoisyLatentLike节点已改进，允许使用sigmas计算强度并自身注入噪声。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在2024年3月14日，ComfyUI-Sonar上添加了什么新节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "SonarPowerNoise节点已添加。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Sonar 中，噪声生成函数做了哪些改动？"
+            },
+            {
+                "role": "assistant",
+                "content": "噪声生成函数已经重构，这将破坏种子。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Sonar 中，为了采样器管理添加了哪个节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "采样器覆盖节点被添加用于采样器管理。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Sonar 中，'studentt' 噪声类型做了哪些改动？"
+            },
+            {
+                "role": "assistant",
+                "content": "\"studentt\" 噪声类型被替换为 \"studentt_test\"，这是更正确的版本。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "为自定义噪声，ComfyUI-Sonar 新增了哪个节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "SonarCustomNoise节点被添加用于自定义噪声。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Sonar 中，对现有的采样器节点和 NoisyLatentLike 节点进行了哪些更改？"
+            },
+            {
+                "role": "assistant",
+                "content": "这些节点被修改为接受一个可选的SonarCustomNoise。"
+            }
+        ]
+    }
+]

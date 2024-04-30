@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Saveaswebp的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Saveaswebp 在保存图片时添加了一个自定义节点，可以将图片保存为 Webp 文件，并包含了一个脚本，允许将生成的 Webp 文件拖放到用户界面中以加载工作流程。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Webp文件在ComfyUI-Saveaswebp中的局限性是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "Webp 仅支持最大尺寸为 16383 x 16383 的文件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如果导入一个在禁用动态通配符的节点中包含\"}Prompt:{\"的流程会发生什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在这种情况下，Webp文件的导入会中断。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Saveaswebp 中，保存为 Webp 文件时节点可以调整大小吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "不，节点在保存时不会调整大小，但图像已经在里面了，需要调整大小才能看得见。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Saveaswebp 中，无损模式下的压缩滑块是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "在无损模式下，压缩滑块影响压缩的“努力”程度，其中100是可能的最小大小，1是可能的最大大小。这是为了节省速度而进行的权衡。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在 ComfyUI-Saveaswebp 中，有损模式下的压缩滑块是如何工作的？"
+            },
+            {
+                "role": "assistant",
+                "content": "在有损模式下，压缩滑块的值与无损模式相比是相反的。100 是可能的最大大小，压缩最小，而 1 是可能的最小大小，压缩最大。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Saveaswebp的压缩和模式的默认设置是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "默认设置是80的有损模式压缩。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "我该如何安装 ComfyUI-Saveaswebp？"
+            },
+            {
+                "role": "assistant",
+                "content": "您可以通过在 ComfyUI 自定义节点目录中使用 git clone https://github.com/Kaharos94/ComfyUI-Saveaswebp 来安装 ComfyUI-Saveaswebp。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-Saveaswebp不同压缩设置下的一些文件大小示例是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "无损压缩设置为100时，文件大小为17069KB。无损压缩设置为10时，文件大小为17059KB。有损压缩设置为100时，文件大小为5384KB。有损压缩设置为10时，文件大小为174KB。有损压缩设置为80（默认），文件大小为935KB。"
+            }
+        ]
+    }
+]
