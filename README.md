@@ -8,9 +8,7 @@ Rough LLM Interpreter of ComfyUI
 - [工作进度](#工作进度)
 
 ## 简介
-&emsp;&emsp;此项目是书生·浦语大模型实战营第二期大作业，在年初参加第一期时，大作业是微调InternLM模型实现DAIGT，即对“文本是否由LLMs”进行检测，当时因为时间原因，[项目](https://github.com/ZZfive/DAIGT-InternLM)完成度不高，第二期大作业本来是想对其继续优化，但最近思考过后，这次想做一个更有趣的项目。
-
-&emsp;&emsp;因兴趣原因，使用过各类Stable Diffusion模型的GUI项目，如[stable diffusion webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)，[Fooocus](https://github.com/lllyasviel/Fooocus)，[ComfyUI](https://github.com/comfyanonymous/ComfyUI)等，ComfyUI节点式的工作方式、活跃的开源社区为其开发的各类功能强大的自定义节点和工作流，均赋予了ComfyUI强大能力，但同时也使其学习成本较高，为了提高ComfyUI的使用效率，想到能否通过微调LLM或者RAG的方式构建一个ComfyUI的解释器，故将书生·浦语大模型实战营第二期的大作业内容改为构建一个Rough LLM Interpreter of ComfyUI
+&emsp;&emsp;因兴趣原因，使用过各类Stable Diffusion模型的GUI项目，如[stable diffusion webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)，[Fooocus](https://github.com/lllyasviel/Fooocus)，[ComfyUI](https://github.com/comfyanonymous/ComfyUI)等，ComfyUI节点式的工作方式、活跃的开源社区为其开发的各类功能强大的自定义节点和工作流，均赋予了ComfyUI强大能力，但同时也使其学习成本较高，为了提高ComfyUI的使用效率，想到能否通过微调LLM或者RAG的方式构建一个ComfyUI的解释器
 
 ## 数据
 
