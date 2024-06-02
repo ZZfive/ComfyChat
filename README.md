@@ -71,3 +71,7 @@ ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)收集的自定义�
  - [x] 基于数据集v1，微调InternLM2-chat-1.8b和InternLM2-chat-7b，模型分别为[zzfive/ComfyChat-InternLM2-1-8b-v1](https://huggingface.co/zzfive/ComfyChat-InternLM2-1-8b-v1)和[zzfive/ComfyChat-InternLM2-7b-v1]()
  - [x] 基于收集的自定义节点项目中的文档，使用deepseek、kimi等LLMs构建了中英文微调数据集，和Aplaca-GPT4数据集混合构建了数据集v1
  - [x] 已收集一批ComfyUI及自定义节点项目文档readme和说明文本
+
+
+## 致谢
+ - 

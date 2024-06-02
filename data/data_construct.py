@@ -31,6 +31,7 @@ import random
 import time
 from typing import Any, List, Dict
 
+import requests
 import pypandoc
 from openai import OpenAI
 
@@ -213,6 +214,30 @@ def eng2zh_openrouter(eng_text: str) -> str:
     # print('中文：', ans)
     # print('*' * 40)
     time.sleep(20)
+    return ans
+
+
+def eng2zh_siliconflow(eng_text: str, model: str = 'deepseek-ai/deepseek-v2-chat') -> str:
+    url = "https://api.siliconflow.cn/v1/chat/completions"
+
+    payload = {
+        "model": model,
+        "messages": [
+            {"role": "system", "content": "你是英汉翻译大师。 请将用户输入的英文文本准确翻译成中文。 一些专有名词可以保留而无需翻译。"},
+            {"role": "user", "content": f"将以下文字翻译成中文，不要添加任何无关内容：{eng_text}"}
+        ]
+    }
+
+    headers = {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "authorization": f"Bearer {config.SILICONFLOW_API_KEY}"
+    }
+
+    response = requests.post(url, json=payload, headers=headers).json()
+
+    ans = response['choices'][0]['message']['content']
+    
     return ans
     
 
@@ -837,4 +862,7 @@ if __name__=='__main__':
     # comfyui_data = comfyui_data['json']
     # print(len(comfyui_data))
 
-    translate_final2zh()
+    # translate_final2zh()
+    
+    ans = eng2zh_siliconflow(eng_text='hello world')
+    print(ans)
