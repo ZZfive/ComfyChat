@@ -18,7 +18,7 @@ Rough LLM Interpreter of ComfyUI
 ## 项目发展方向
 - 微调：对InternLM2、LLaMA3等LLMs模型微调
 - RAG：构建ComfyUI知识库，基于RAG开源框架，改善LLMs回答准确性
-- 多模态接入：将ASR、TTS、生图等功能继承
+- 多模态接入：将ASR、TTS、生图等功能集成
 - 工作流训练：ComfyUI工作流本质是表征各个节点相连接的json文档，可能类似于code，尝试通过训练测试LLMs能否理解、构建工作流
 
  ## 数据
