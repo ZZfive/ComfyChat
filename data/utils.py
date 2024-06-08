@@ -4,7 +4,7 @@ import json
 import time
 import logging
 
-from typing import List, Any
+from typing import List, Any, Tuple
 
 import requests
 
@@ -82,6 +82,12 @@ def create_logger(name: str, log_dir: str = '/root/code/ComfyChat/data/logs') ->
     logger.addHandler(console_handler)
 
     return logger
+
+
+def extract_name_extension(filepath: str) -> Tuple[str, str]:
+    name_ext = os.path.basename(filepath)
+    name, extension = os.path.splitext(name_ext)
+    return name, extension
 
 
 if __name__=='__main__':

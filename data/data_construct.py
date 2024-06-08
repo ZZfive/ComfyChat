@@ -35,7 +35,7 @@ import requests
 import pypandoc
 from openai import OpenAI
 
-from utils import get_data_from_url, save2json, load4json, parse_json, create_logger
+from utils import get_data_from_url, save2json, load4json, parse_json, create_logger, extract_name_extension
 import config
 
 
@@ -820,6 +820,70 @@ def get_data_from_chat2api(subject: str, md_path: str, model: str = 'gpt-3.5-tur
     return ans
 
 
+def generate_data_from_comfyui_docs(comfyui_docs_path: str = r"D:\git_github\self\ComfyChat\data\community_docs\repos\ComfyUI-docs\docs\Core Nodes",
+                                        save_dir: str = r"D:\git_github\self\ComfyChat\data\community_docs\messages\ComfyUI-docs",
+                                        successful_node_list_name: str = "successful_node_list.json",
+                                        unsuccessful_node_list_name: str = "unsuccessful_node_list.json") -> None:
+    logger = create_logger("generate_messages_from_comfyui_docs")
+
+    successful_node_list_path = os.path.join(save_dir, successful_node_list_name)
+    if os.path.exists(successful_node_list_path):
+        successful_nodes = load4json(successful_node_list_path, [])
+    else:
+        with open(successful_node_list_path, "a"):
+            os.utime(successful_node_list_path, None)
+        successful_nodes = []
+
+    unsuccessful_node_list_path = os.path.join(save_dir, unsuccessful_node_list_name)
+    if os.path.exists(unsuccessful_node_list_path):
+        unsuccessful_nodes = load4json(unsuccessful_node_list_path, [])
+    else:
+        with open(unsuccessful_node_list_path, "a"):
+            os.utime(unsuccessful_node_list_path, None)
+        unsuccessful_nodes = []
+
+    try:
+        for item in os.listdir(comfyui_docs_path):
+            temp_path = os.path.join(comfyui_docs_path, item)
+            if os.path.isdir(temp_path) and len(os.listdir(temp_path)) > 0:
+                try:
+                    for item2 in os.listdir(temp_path):
+                        if item2 == "index.md" or item2 == "media":
+                            continue
+                        elif item2.endswith('.MD') or item2.endswith('.MDX') or item2.endswith('.md') or item2.endswith('.mdx'):
+                            md_path = os.path.join(temp_path, item2)
+                            md_name = os.path.splitext(item2)[0]
+                            rsp = ''
+                            rsp = get_data_from_chat2api(md_name, md_path)
+                            time.sleep(1)
+                            rsp_json = parse_json(rsp)
+                            save2json(rsp_json, os.path.join(save_dir, f"{md_name}.json"))
+                            successful_nodes.append(md_path)
+                            logger.info(f'Successfully extracting data from file: {md_path}')
+                            # break
+                        elif os.path.join(temp_path, item2) and len(os.path.join(temp_path, item2)) > 0:
+                            temp_path2 = os.path.join(temp_path, item2)
+                            for item3 in os.listdir(temp_path2):
+                                if item3 == "index.md" or item3 == "media":
+                                    continue
+                                elif item3.endswith('.MD') or item3.endswith('.MDX') or item3.endswith('.md') or item3.endswith('.mdx'):
+                                    md_path = os.path.join(temp_path2, item3)
+                                    md_name = os.path.splitext(item3)[0]
+                                    rsp = ''
+                                    rsp = get_data_from_chat2api(md_name, md_path)
+                                    time.sleep(1)
+                                    rsp_json = parse_json(rsp)
+                                    save2json(rsp_json, os.path.join(save_dir, f"{md_name}.json"))
+                                    successful_nodes.append(md_path)
+                                    logger.info(f'Successfully extracting data from file: {md_path}')
+                except Exception as e:
+                    logger.error(f"{md_path}, error {e}")
+                    unsuccessful_nodes.append(md_path)
+    except:
+        save2json(successful_nodes, successful_node_list_path)
+        save2json(unsuccessful_nodes, unsuccessful_node_list_path)
+
+
 if __name__=='__main__':
     # md2txt()
     # construct_data_from_custom_node_list(together=True, seve_path='/root/code/ComfyChat/data/comfyui_node_data_together.json')
@@ -942,5 +1006,8 @@ if __name__=='__main__':
     # ans = eng2zh_chat2api(eng_text='America is fucking shit')
     # print(ans)
 
-    print(get_data_from_chat2api('DIffusersLoader',
-                                 r'D:\git_github\self\ComfyChat\data\community_docs\repos\ComfyUI-docs\docs\Core Nodes\Advanced\DIffusersLoader.md'))
+    # temp = get_data_from_chat2api('DIffusersLoader',
+    #                              r'D:\git_github\self\ComfyChat\data\community_docs\repos\ComfyUI-docs\docs\Core Nodes\Advanced\DIffusersLoader.md')
+    # print(parse_json(temp))
+
+    generate_data_from_comfyui_docs()
