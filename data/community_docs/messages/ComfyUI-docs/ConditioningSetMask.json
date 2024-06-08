@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ConditioningSetMask node in ComfyUI?",
+        "answer": "The ConditioningSetMask node is used to limit a conditioning to a specified mask, enhancing control over the composition of the final image."
+    },
+    {
+        "question": "How does the ConditioningSetMask node work with the Conditioning (Combine) node?",
+        "answer": "Together with the Conditioning (Combine) node, the ConditioningSetMask node allows for more precise control over how multiple conditionings are mixed in the final image composition."
+    },
+    {
+        "question": "What are the inputs required for the ConditioningSetMask node?",
+        "answer": "The inputs include 'conditioning' (the conditioning to be limited), 'mask' (the mask used for constraining the conditioning), 'strength' (the weight of the masked area in mixing conditionings), and 'set_cond_area' (option to denoise the whole area or limit it to the mask's bounding box)."
+    },
+    {
+        "question": "What does the 'strength' parameter represent in the ConditioningSetMask node?",
+        "answer": "`strength` represents the weight of the masked area when mixing multiple overlapping conditionings from the diffusion model."
+    },
+    {
+        "question": "What does the ConditioningSetMask node output?",
+        "answer": "The ConditioningSetMask node outputs a new conditioning limited to the specified mask."
+    },
+    {
+        "question": "Can you describe an example usage of the ConditioningSetMask node?",
+        "answer": "An example usage involves applying the node in a workflow to constrain a conditioning to a specific mask, thereby controlling the influence of the conditioning on the final image composition."
+    },
+    {
+        "question": "What does the 'set_cond_area' parameter determine in the ConditioningSetMask node?",
+        "answer": "`set_cond_area` determines whether the conditioning should be denoised across the whole area or restricted to the bounding box defined by the mask."
+    }
+]

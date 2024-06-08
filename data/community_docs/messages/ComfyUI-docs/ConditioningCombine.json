@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the Conditioning (Combine) node used for?",
+        "answer": "The Conditioning (Combine) node is used to combine multiple conditionings by averaging the predicted noise of the diffusion model."
+    },
+    {
+        "question": "How does the Conditioning (Combine) node differ from the Conditioning (Average) node?",
+        "answer": "The Conditioning (Combine) node averages out outputs of the diffusion model conditioned on different conditionings, whereas the Conditioning (Average) node interpolates text embeddings stored inside the conditioning."
+    },
+    {
+        "question": "What inputs does the Conditioning (Combine) node require?",
+        "answer": "The Conditioning (Combine) node requires 'conditioning_1' and 'conditioning_2' as inputs."
+    },
+    {
+        "question": "What outputs does the Conditioning (Combine) node produce?",
+        "answer": "The Conditioning (Combine) node produces a new conditioning labeled as 'CONDITIONING', which contains both input conditionings and is later averaged by the sampler."
+    },
+    {
+        "question": "How can the individual conditionings be weighted before combining in the Conditioning (Combine) node?",
+        "answer": "The individual conditionings can be weighted before combining in the Conditioning (Combine) node using the [Conditioning (Set Area)](ConditioningSetArea.md) node."
+    },
+    {
+        "question": "Does the Conditioning (Combine) node allow for determining how to interpolate the resulting noise predictions?",
+        "answer": "No, the Conditioning (Combine) node does not provide a factor input to determine how to interpolate the two resulting noise predictions."
+    },
+    {
+        "question": "What is a tip for enhancing the use of the Conditioning (Combine) node?",
+        "answer": "To enhance the use of the Conditioning (Combine) node, the [Conditioning (Set Area)](ConditioningSetArea.md) node can be used to weight the individual conditionings before combining them."
+    },
+    {
+        "question": "Is there an example usage of the Conditioning (Combine) node?",
+        "answer": "Yes, example usage text and a workflow image are provided."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the VAEDecodeTiled node in ComfyUI?",
+        "answer": "The VAEDecodeTiled node is used to decode latent space images back into pixel space images, utilizing the provided VAE. It supports decoding larger latent images than the regular VAE Decode node by processing them in tiles."
+    },
+    {
+        "question": "When does ComfyUI use the VAEDecodeTiled node instead of the regular VAE Decode node?",
+        "answer": "ComfyUI uses the VAEDecodeTiled node when the regular VAE Decode node fails due to insufficient VRAM. It automatically retries the decoding process using the tiled implementation to handle larger latent images."
+    },
+    {
+        "question": "What inputs does the VAEDecodeTiled node require?",
+        "answer": "The VAEDecodeTiled node requires two inputs: 'samples', which are the latent images to be decoded, and 'vae', which specifies the VAE used for decoding."
+    },
+    {
+        "question": "What output does the VAEDecodeTiled node produce?",
+        "answer": "The VAEDecodeTiled node produces 'IMAGE' as the output, which represents the decoded images from the latent space."
+    },
+    {
+        "question": "How does the VAEDecodeTiled node handle decoding larger latent images?",
+        "answer": "The VAEDecodeTiled node handles decoding larger latent images by processing them in tiles, which allows it to manage images larger than those handled by the regular VAE Decode node."
+    },
+    {
+        "question": "Can you describe the workflow of using the VAEDecodeTiled node?",
+        "answer": "To use the VAEDecodeTiled node, provide it with the latent images ('samples') and specify the VAE ('vae') to use for decoding. It will then output the decoded images ('IMAGE'). ComfyUI ensures that if the regular VAE Decode node fails due to VRAM limitations, it automatically retries using the tiled implementation."
+    },
+    {
+        "question": "What is the advantage of using the VAEDecodeTiled node over the regular VAE Decode node?",
+        "answer": "The advantage of using the VAEDecodeTiled node over the regular VAE Decode node is its ability to decode larger latent images by processing them in tiles, thereby overcoming VRAM limitations that may hinder the regular decoding process."
+    }
+]

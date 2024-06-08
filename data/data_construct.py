@@ -759,7 +759,7 @@ def eng2zh_chat2api(eng_text: str, model: str = 'gpt-3.5-turbo') -> str:
 
 
 # 从ComfyUI-docs[https://github.com/BlenderNeko/ComfyUI-docs]使用LLMs构建问答数据的提示词模板
-system_prompt = "I want you to play the role of a question-answer data builder and generate reasonable question-answer data pairs based on the text I passed in. Don't make up information that is not in the passed in text. You need adjust the number of generated question-answer data pairs based on the length of the passed in text, but generate at least five question-answer data pairs each time."
+system_prompt = "I want you to play the role of a question-answer data builder and generate reasonable question-answer data pairs based on the text I passed in. Don't make up information that is not in the passed in text. You need adjust the number of generated question-answer data pairs based on the length of the passed in text, but generate at least seven question-answer data pairs each time."
 
 template1 = '''
 # CONTEXT #
@@ -767,7 +767,7 @@ I want to fine-tune a large language model. I need to build a fine-tuning datase
 #############
 
 # OBJECTIVE #
-You need to understand the document content I input, then construct the question and answer data pair yourself, and return it in json format. The documentation I'm passing on is all about ComfyUI (a GUI that uses a stable diffusion model to generate images and videos) and custom nodes or plugins that extend its functionality. When building question and answer data, it must be clear whether the subject is for ComfyUI or a specific custom node or plug-in. The subject in the Q&A data must carry the specific name of the node or plug-in, such as the \"ComfyUI-Manager\" extension; do not just use \"extension\" or \"custom node\" as the subject, which does not indicate that the question is about the specific name of the Node or plug-in. You need adjust the number of generated question-answer data pairs based on the length of the passed in text, but generate at least five question-answer data pairs each time. Note that I will tell you the described subject name before passing in the specific document content, and you can use it directly when building question and answer data. Ensure that the constructed question and answer data cover all the content of the text as much as possible. Please ensure that the output json data format is correct. Do not miss necessary symbols, but do not add unnecessary symbols.
+You need to understand the document content I input, then construct the question and answer data pair yourself, and return it in json format. The documentation I'm passing on is all about ComfyUI (a GUI that uses a stable diffusion model to generate images and videos) and custom nodes or plugins that extend its functionality. When building question and answer data, it must be clear whether the subject is for ComfyUI or a specific custom node or plug-in. The subject in the Q&A data must carry the specific name of the node or plug-in, such as the \"ComfyUI-Manager\" extension; do not just use \"extension\" or \"custom node\" as the subject, which does not indicate that the question is about the specific name of the Node or plug-in. You need adjust the number of generated question-answer data pairs based on the length of the passed in text, but generate at least seven question-answer data pairs each time. Note that I will tell you the described subject name before passing in the specific document content, and you can use it directly when building question and answer data. Ensure that the constructed question and answer data cover all the content of the text as much as possible. Please ensure that the output json data format is correct. Do not miss necessary symbols, but do not add unnecessary symbols.
 #############
 
 # TONE #
@@ -845,7 +845,7 @@ def generate_data_from_comfyui_docs(comfyui_docs_path: str = r"D:\git_github\sel
     try:
         for item in os.listdir(comfyui_docs_path):
             temp_path = os.path.join(comfyui_docs_path, item)
-            if os.path.isdir(temp_path) and len(os.listdir(temp_path)) > 0:
+            if item != "media" and os.path.isdir(temp_path) and len(os.listdir(temp_path)) > 0:
                 try:
                     for item2 in os.listdir(temp_path):
                         if item2 == "index.md" or item2 == "media":
@@ -879,7 +879,7 @@ def generate_data_from_comfyui_docs(comfyui_docs_path: str = r"D:\git_github\sel
                 except Exception as e:
                     logger.error(f"{md_path}, error {e}")
                     unsuccessful_nodes.append(md_path)
-    except:
+    finally:
         save2json(successful_nodes, successful_node_list_path)
         save2json(unsuccessful_nodes, unsuccessful_node_list_path)
 
@@ -1006,8 +1006,9 @@ if __name__=='__main__':
     # ans = eng2zh_chat2api(eng_text='America is fucking shit')
     # print(ans)
 
-    # temp = get_data_from_chat2api('DIffusersLoader',
-    #                              r'D:\git_github\self\ComfyChat\data\community_docs\repos\ComfyUI-docs\docs\Core Nodes\Advanced\DIffusersLoader.md')
-    # print(parse_json(temp))
+    temp = get_data_from_chat2api('DIffusersLoader',
+                                 r'D:\git_github\self\ComfyChat\data\community_docs\repos\ComfyUI-docs\docs\Core Nodes\Latent\VAEEncode.md')
+    temp = parse_json(temp)
+    save2json(temp, r"D:\git_github\self\ComfyChat\data\community_docs\repos\VAEEncode.json")
 
-    generate_data_from_comfyui_docs()
+    # generate_data_from_comfyui_docs()

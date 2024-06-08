@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the VAEEncodeForInpainting node?",
+        "answer": "The VAEEncodeForInpainting node is used to encode pixel space images into latent space images for inpainting."
+    },
+    {
+        "question": "What inputs does the VAEEncodeForInpainting node require?",
+        "answer": "The VAEEncodeForInpainting node requires inputs such as 'pixels' (pixel space images), 'vae' (the VAE for encoding), 'mask' (indicating where to inpaint), and 'grow_mask_by' (to increase the mask area)."
+    },
+    {
+        "question": "What does the 'grow_mask_by' parameter do in the VAEEncodeForInpainting node?",
+        "answer": "'grow_mask_by' parameter in the VAEEncodeForInpainting node increases the area of the mask provided for inpainting."
+    },
+    {
+        "question": "What does the VAEEncodeForInpainting node ensure before encoding?",
+        "answer": "Before encoding, the VAEEncodeForInpainting node ensures that pixels underneath the mask are set to gray (0.5, 0.5, 0.5)."
+    },
+    {
+        "question": "What does the VAEEncodeForInpainting node output?",
+        "answer": "The VAEEncodeForInpainting node outputs masked and encoded latent images."
+    },
+    {
+        "question": "What type of models is the VAEEncodeForInpainting node specifically meant to be used with?",
+        "answer": "The VAEEncodeForInpainting node is specifically meant to be used with diffusion models trained for inpainting."
+    },
+    {
+        "question": "Can you describe the workflow involving the VAEEncodeForInpainting node?",
+        "answer": "The workflow involving the VAEEncodeForInpainting node includes encoding pixel space images into latent space images using a specified VAE, applying a mask for inpainting, and potentially increasing the mask area with 'grow_mask_by'."
+    }
+]

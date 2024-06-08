@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RebatchLatents node in ComfyUI?",
+        "answer": "The RebatchLatents node is used to split or combine batches of latent images. When splitting batches, it outputs a list of batches instead of a single batch, which is helpful when batch sizes exceed VRAM limits."
+    },
+    {
+        "question": "How does the RebatchLatents node handle multiple batches?",
+        "answer": "When the RebatchLatents node results in multiple batches, it outputs a list of these batches instead of a single batch. ComfyUI processes each batch in the list separately."
+    },
+    {
+        "question": "What inputs does the RebatchLatents node require?",
+        "answer": "The RebatchLatents node requires two inputs: 'samples', which are the latent images to be rebatched, and 'batch_size', specifying the new size for each batch."
+    },
+    {
+        "question": "What does the RebatchLatents node output?",
+        "answer": "The RebatchLatents node outputs a list of latent images ('LATENT') where each batch size does not exceed the specified 'batch_size'."
+    },
+    {
+        "question": "When is the RebatchLatents node particularly useful?",
+        "answer": "The RebatchLatents node is particularly useful when dealing with large batches that cannot fit into VRAM all at once. It allows batches to be split into manageable sizes for processing in ComfyUI."
+    },
+    {
+        "question": "How can the RebatchLatents node be used to combine batches?",
+        "answer": "The RebatchLatents node can also merge lists of batches back together into a single batch, providing flexibility in how batches of latent images are managed and processed."
+    },
+    {
+        "question": "Where can more information about lists in ComfyUI be found?",
+        "answer": "More information about lists in ComfyUI can be found on the page linked in the documentation of the RebatchLatents node."
+    }
+]

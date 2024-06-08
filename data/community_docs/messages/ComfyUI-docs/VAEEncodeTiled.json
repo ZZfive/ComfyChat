@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is VAEEncodeTiled in ComfyUI?",
+        "answer": "VAEEncodeTiled is a custom node in ComfyUI that extends the functionality of the VAE Encode node by allowing encoding of pixel space images into latent space images using tiles."
+    },
+    {
+        "question": "How does VAEEncodeTiled differ from the regular VAE Encode node?",
+        "answer": "VAEEncodeTiled differs from the regular VAE Encode node by encoding images in tiles, which enables it to handle larger images efficiently, especially when there is insufficient VRAM."
+    },
+    {
+        "question": "When does ComfyUI use VAEEncodeTiled instead of the regular VAE Encode node?",
+        "answer": "ComfyUI uses VAEEncodeTiled instead of the regular VAE Encode node when the latter fails due to insufficient VRAM. It automatically retries encoding using the tiled implementation."
+    },
+    {
+        "question": "What inputs does VAEEncodeTiled require?",
+        "answer": "VAEEncodeTiled requires two inputs: 'pixels', which are the pixel space images to be encoded, and 'vae', which is the specific VAE used for encoding these images."
+    },
+    {
+        "question": "What is the output of VAEEncodeTiled?",
+        "answer": "The output of VAEEncodeTiled is 'LATENT', which represents the encoded latent images generated from the input pixel space images."
+    },
+    {
+        "question": "Could you describe an example usage of VAEEncodeTiled in ComfyUI?",
+        "answer": "An example usage of VAEEncodeTiled in ComfyUI involves using it to encode pixel space images into latent space images using the specified workflow, as depicted in the accompanying workflow image."
+    },
+    {
+        "question": "How does VAEEncodeTiled enhance the functionality of ComfyUI?",
+        "answer": "VAEEncodeTiled enhances the functionality of ComfyUI by extending the capabilities of the VAE Encode node, enabling efficient encoding of larger images through its tiled implementation."
+    }
+]
