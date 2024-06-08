@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is KSampler Advanced?",
+        "answer": "KSampler Advanced is the more advanced version of the KSampler node, providing additional settings to control the denoising process."
+    },
+    {
+        "question": "How does KSampler Advanced differ from KSampler?",
+        "answer": "Unlike the KSampler node, KSampler Advanced does not have a `denoise` setting but uses `start_at_step` and `end_at_step` settings to control the denoising process."
+    },
+    {
+        "question": "What settings does KSampler Advanced provide?",
+        "answer": "KSampler Advanced provides settings such as `add_noise` to control noise injection, `return_with_leftover_noise` to determine denoising behavior, and `start_at_step` and `end_at_step` to specify denoising process details."
+    },
+    {
+        "question": "How does `end_at_step` affect denoising in KSampler Advanced?",
+        "answer": "`end_at_step` determines at which step of the schedule the denoising process ends. If it exceeds `steps`, denoising ends at `steps`."
+    },
+    {
+        "question": "What inputs does KSampler Advanced require?",
+        "answer": "KSampler Advanced requires inputs such as `Model` (for denoising), `Positive` and `Negative` conditioning, `latent_image` for denoising, and settings like `add_noise`, `seed`, `steps`, `sampler_name`, and `scheduler`."
+    },
+    {
+        "question": "What is the purpose of the `control_after_generate` input in KSampler Advanced?",
+        "answer": "`control_after_generate` allows changing the seed number after each prompt, offering options to `randomize`, `increment`, `decrement`, or keep the seed number `fixed`."
+    },
+    {
+        "question": "What does the `return_with_leftover_noise` setting control?",
+        "answer": "`return_with_leftover_noise` setting determines whether KSampler Advanced attempts to completely denoise the latent or return partially denoised images."
+    },
+    {
+        "question": "What does `cfg` scale do in KSampler Advanced?",
+        "answer": "`cfg` scale in KSampler Advanced influences the aggressiveness of the sampler in realizing the content of prompts in the final image."
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is KSampler?",
+        "answer": "KSampler is a node that utilizes a provided model and positive and negative conditioning to generate a modified version of a given latent."
+    },
+    {
+        "question": "How does KSampler modify the latent?",
+        "answer": "First, the latent is noised up based on a specified seed and denoise strength, which erases some of the latent image. Then, using the provided model and positive and negative conditioning, it 'dreams up' new details in areas where the noise erased parts of the image."
+    },
+    {
+        "question": "What inputs does KSampler require?",
+        "answer": "KSampler requires inputs such as a denoising model (`Model`), positive conditioning (`Positive`), negative conditioning (`Negative`), the latent image (`latent_image`), a random seed for noise (`seed`), and options for controlling the seed after generation (`control_after_generate`)."
+    },
+    {
+        "question": "What is the purpose of the `control_after_generate` input in KSampler?",
+        "answer": "`control_after_generate` allows for post-generation manipulation of the random seed used for noise generation in KSampler. Options include randomizing, incrementing, decrementing, or keeping the seed fixed."
+    },
+    {
+        "question": "How does the `steps` parameter affect KSampler?",
+        "answer": "`steps` in KSampler determines the number of denoising steps applied during the process. More steps generally lead to more accurate results in the generated image."
+    },
+    {
+        "question": "What does `cfg` represent in KSampler?",
+        "answer": "`cfg` (classifier free guidance scale) in KSampler controls how aggressively the sampler realizes the prompts' content in the final image. Higher scales enforce closer adherence to the prompt but may reduce image quality if set too high."
+    },
+    {
+        "question": "Which sampler does KSampler use?",
+        "answer": "KSampler uses a specified sampler, which can be chosen from options detailed on the samplers page."
+    },
+    {
+        "question": "What does `scheduler` specify in KSampler?",
+        "answer": "`scheduler` in KSampler defines the type of schedule used, impacting how the sampling process unfolds. Details about available schedules can be found on the samplers page."
+    },
+    {
+        "question": "What does KSampler produce as output?",
+        "answer": "KSampler produces a denoised latent (`LATENT`) as its primary output."
+    },
+    {
+        "question": "Can you provide an example of using KSampler in an image to image task?",
+        "answer": "An example involves connecting a model, positive and negative embeddings, and a latent image to KSampler, using a denoise value less than 1.0 to preserve parts of the original image. This guides the denoising process towards generating similar-looking images."
+    }
+]
