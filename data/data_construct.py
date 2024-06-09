@@ -759,7 +759,7 @@ def eng2zh_chat2api(eng_text: str, model: str = 'gpt-3.5-turbo') -> str:
 
 
 # 从ComfyUI-docs[https://github.com/BlenderNeko/ComfyUI-docs]使用LLMs构建问答数据的提示词模板
-system_prompt = "I want you to play the role of a question-answer data builder and generate reasonable question-answer data pairs based on the text I passed in. Don't make up information that is not in the passed in text. You need adjust the number of generated question-answer data pairs based on the length of the passed in text, but generate at least seven question-answer data pairs each time."
+system_prompt1 = "I want you to play the role of a question-answer data builder and generate reasonable question-answer data pairs based on the text I passed in. Don't make up information that is not in the passed in text. You need adjust the number of generated question-answer data pairs based on the length of the passed in text, but generate at least seven question-answer data pairs each time."
 
 template1 = '''
 # CONTEXT #
@@ -776,15 +776,15 @@ Professional, technical
 
 # RESPONSE #
 [
-    {
+    {{
         "question": "What is cg-noise?",
         "answer": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
-    },
+    }},
     ...,
-    {
+    {{
         "question": "How does cg-noise generate variations in images?",
         "answer": "cg-noise generates variations in images by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
-    }
+    }}
 ]
 #############
 
@@ -793,7 +793,8 @@ The file currently being passed in is about {0}, the specific contents are as fo
 
 
 # 基于项目chat2api[https://github.com/lanqian528/chat2api]调用openai免费gpt-3.5-turbo构建问答数据对
-def get_data_from_chat2api(subject: str, md_path: str, model: str = 'gpt-3.5-turbo') -> str:
+def get_data_from_chat2api(subject: str, md_path: str, model: str = 'gpt-3.5-turbo',
+                           system_prompt: str = system_prompt1, template: str = template1) -> str:
     url = "http://127.0.0.1:5005/v1/chat/completions"
 
     with open(md_path, 'r', encoding='utf-8') as f:
@@ -813,20 +814,21 @@ def get_data_from_chat2api(subject: str, md_path: str, model: str = 'gpt-3.5-tur
         "authorization": f"Bearer {config.OPENAI_ACCESS_TOKEN}"
     }
 
-    response = requests.post(url, json=payload, headers=headers).json()
+    response = requests.post(url, json=payload, headers=headers)
 
-    ans = response['choices'][0]['message']['content']
-    
+    # if response.status_code == 200:
+    ans = response.json()
+    ans = ans['choices'][0]['message']['content']
     return ans
 
 
 def generate_data_from_comfyui_docs(comfyui_docs_path: str = r"D:\git_github\self\ComfyChat\data\community_docs\repos\ComfyUI-docs\docs\Core Nodes",
-                                        save_dir: str = r"D:\git_github\self\ComfyChat\data\community_docs\messages\ComfyUI-docs",
-                                        successful_node_list_name: str = "successful_node_list.json",
-                                        unsuccessful_node_list_name: str = "unsuccessful_node_list.json") -> None:
+                                    save_dir: str = r"D:\git_github\self\ComfyChat\data\community_docs\messages\ComfyUI-docs",
+                                    successful_node_list_name: str = "successful_node_list.json",
+                                    unsuccessful_node_list_name: str = "unsuccessful_node_list.json") -> None:
     logger = create_logger("generate_messages_from_comfyui_docs")
 
-    successful_node_list_path = os.path.join(save_dir, successful_node_list_name)
+    successful_node_list_path = os.path.join(save_dir, "information", successful_node_list_name)
     if os.path.exists(successful_node_list_path):
         successful_nodes = load4json(successful_node_list_path, [])
     else:
@@ -834,7 +836,7 @@ def generate_data_from_comfyui_docs(comfyui_docs_path: str = r"D:\git_github\sel
             os.utime(successful_node_list_path, None)
         successful_nodes = []
 
-    unsuccessful_node_list_path = os.path.join(save_dir, unsuccessful_node_list_name)
+    unsuccessful_node_list_path = os.path.join(save_dir, "information", unsuccessful_node_list_name)
     if os.path.exists(unsuccessful_node_list_path):
         unsuccessful_nodes = load4json(unsuccessful_node_list_path, [])
     else:
@@ -855,7 +857,7 @@ def generate_data_from_comfyui_docs(comfyui_docs_path: str = r"D:\git_github\sel
                             md_name = os.path.splitext(item2)[0]
                             rsp = ''
                             rsp = get_data_from_chat2api(md_name, md_path)
-                            time.sleep(1)
+                            time.sleep(2)
                             rsp_json = parse_json(rsp)
                             save2json(rsp_json, os.path.join(save_dir, f"{md_name}.json"))
                             successful_nodes.append(md_path)
@@ -871,7 +873,7 @@ def generate_data_from_comfyui_docs(comfyui_docs_path: str = r"D:\git_github\sel
                                     md_name = os.path.splitext(item3)[0]
                                     rsp = ''
                                     rsp = get_data_from_chat2api(md_name, md_path)
-                                    time.sleep(1)
+                                    time.sleep(2)
                                     rsp_json = parse_json(rsp)
                                     save2json(rsp_json, os.path.join(save_dir, f"{md_name}.json"))
                                     successful_nodes.append(md_path)
@@ -879,6 +881,158 @@ def generate_data_from_comfyui_docs(comfyui_docs_path: str = r"D:\git_github\sel
                 except Exception as e:
                     logger.error(f"{md_path}, error {e}")
                     unsuccessful_nodes.append(md_path)
+    finally:
+        save2json(successful_nodes, successful_node_list_path)
+        save2json(unsuccessful_nodes, unsuccessful_node_list_path)
+
+
+# 从SaltAI-Web-Docs[https://github.com/get-salt-AI/SaltAI-Web-Docs]使用LLMs构建问答数据的提示词模板
+system_prompt2 = "I want you to play the role of a question-answer data builder and generate reasonable question-answer data pairs based on the text I passed in. Don't make up information that is not in the passed in text. You need adjust the number of generated question-answer data pairs based on the length of the passed in text, but generate at least seven question-answer data pairs each time."
+
+template2 = '''
+# CONTEXT #
+I want to fine-tune a large language model. I need to build a fine-tuning dataset, which requires generating a lot of question-answer data pairs.
+#############
+
+# OBJECTIVE #
+You need to understand the document content I input, then construct the question and answer data pair by yourself, return it in json format. Here are some things to note:
+1. The documentation I'm passing on is all about ComfyUI (a GUI that uses a stable diffusion model to generate images and videos) and custom nodes or plugins that extend its functionality. When building question and answer data, it must be clear whether the subject is for ComfyUI or a specific custom node or plug-in. The subject in the Q&A data must carry the specific name of the node or plug-in, such as the \"ComfyUI-Manager\" extension; do not just use \"extension\" or \"custom node\" as the subject, which does not indicate that the question is about the specific name of the Node or plug-in.
+2. You need adjust the number of generated question-answer data pairs based on the length of the passed in text, but generate at least seven question-answer data pairs each time.
+3. Note that I will tell you the described subject name before passing in the specific document content, and you can use it directly when building question and answer data. Ensure that the constructed question and answer data cover all the content of the text as much as possible.
+4. Do not miss necessary symbols, but do not add unnecessary symbols.
+5. When generating question-answer pairs, do not just start from a specific subject, but also ask questions that point to the subject in the input text from the characteristics and phenomena. For example, the LoadImage node can load images, so do not just generate questions like "What can the LoadImage node do?", but also generate questions like "What nodes can load images?"
+6. Please ensure that the output json data format is correct. 
+#############
+
+# TONE #
+Professional, technical
+#############
+
+# RESPONSE #
+[
+    {{
+        "question": "What is cg-noise?",
+        "answer": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+    }},
+    ...,
+    {{
+        "question": "How does cg-noise generate variations in images?",
+        "answer": "cg-noise generates variations in images by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+    }}
+]
+#############
+
+The file currently being passed in is about {0}, the specific contents are as follows: {1}
+'''
+
+system_prompt2_index = "I want you to play the role of a question-answer data builder and generate reasonable question-answer data pairs based on the text I passed in. Don't make up information that is not in the passed in text. You need adjust the number of generated question-answer data pairs based on the length of the passed in text, but generate at least five question-answer data pairs each time."
+
+template2_index = '''
+# CONTEXT #
+I want to fine-tune a large language model. I need to build a fine-tuning dataset, which requires generating a lot of question-answer data pairs.
+#############
+
+# OBJECTIVE #
+You need to understand the document content I input, then construct the question and answer data pair by yourself, return it in json format. Here are some things to note:
+#############
+
+# NOTICE #
+1. The Markdown documentation I'm passing on is all about ComfyUI (a GUI that uses a stable diffusion model to generate images and videos) and custom nodes or plugins that extend its functionality. When building question and answer data, it must be clear whether the subject is for ComfyUI or a specific custom node or plug-in. The subject in the Q&A data must carry the specific name of the node or plug-in, such as the \"ComfyUI-Manager\" extension; do not just use \"extension\" or \"custom node\" as the subject, which does not indicate that the question is about the specific name of the Node or plug-in.
+2. You need adjust the number of generated question-answer data pairs based on the length of the passed in text, but generate at least five question-answer data pairs each time.
+3. Note that I will tell you the described subject name before passing in the specific document content, and you can use it directly when building question and answer data. Ensure that the constructed question and answer data cover all the content of the text as much as possible.
+4. Do not generate any question-answer pairs about "Licenses"
+5. Do not miss necessary symbols, but do not add unnecessary symbols.
+6. When generating question-answer pairs, do not just start from a specific subject, but also ask questions that point to the subject in the input text from the characteristics and phenomena. For example, the LoadImage node can load images, so do not just generate questions like "What can the LoadImage node do?", but also generate questions like "What nodes can load images?"
+7. Please ensure that the output json data format is correct. 
+#############
+
+# TONE #
+Professional, technical
+#############
+
+# RESPONSE #
+[
+    {{
+        "question": "What is cg-noise?",
+        "answer": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+    }},
+    ...,
+    {{
+        "question": "How does cg-noise generate variations in images?",
+        "answer": "cg-noise generates variations in images by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+    }}
+]
+#############
+
+The file currently being passed in is about {0}, the specific contents are as follows: {1}
+'''
+
+
+def generate_data_from_SaltAI_Web_Docs(SaltAI_Web_Docs_path: str = r"D:\git_github\self\ComfyChat\data\community_docs\repos\SaltAI-Web-Docs\docs\md",
+                                       save_dir: str = r"D:\git_github\self\ComfyChat\data\community_docs\messages\SaltAI-Web-Docs",
+                                       successful_node_list_name: str = "successful_node_list.json",
+                                       unsuccessful_node_list_name: str = "unsuccessful_node_list.json"):
+    logger = create_logger("generate_data_from_comfyui_docs")
+
+    successful_node_list_path = os.path.join(save_dir, "information", successful_node_list_name)
+    if os.path.exists(successful_node_list_path):
+        successful_nodes = load4json(successful_node_list_path, [])
+    else:
+        with open(successful_node_list_path, "a"):
+            os.utime(successful_node_list_path, None)
+        successful_nodes = []
+
+    unsuccessful_node_list_path = os.path.join(save_dir, "information", unsuccessful_node_list_name)
+    if os.path.exists(unsuccessful_node_list_path):
+        unsuccessful_nodes = load4json(unsuccessful_node_list_path, [])
+    else:
+        with open(unsuccessful_node_list_path, "a"):
+            os.utime(unsuccessful_node_list_path, None)
+        unsuccessful_nodes = []
+
+    try:
+        for node in os.listdir(SaltAI_Web_Docs_path):
+            node_path = os.path.join(SaltAI_Web_Docs_path, node)
+            if os.path.isdir(node_path) and len(os.listdir(node_path)) > 0:
+                for item in os.listdir(node_path):
+                    if item == "Nodes":
+                        sub_node_path = os.path.join(node_path, item)
+                        for sub_node in os.listdir(sub_node_path):
+                            sub_node_path = os.path.join(sub_node_path, sub_node)
+                            if sub_node_path not in successful_nodes:
+                                try: 
+                                    sub_node_name = os.path.splitext(sub_node)[0]
+                                    rsp = ''
+                                    rsp = get_data_from_chat2api(sub_node_name, sub_node_path,
+                                                                system_prompt=system_prompt2,
+                                                                template=template2)
+                                    time.sleep(3)
+                                    rsp_json = parse_json(rsp)
+                                    save2json(rsp_json, os.path.join(save_dir, f"{node}+{sub_node_name}.json"))
+                                    successful_nodes.append(sub_node_path)
+                                    logger.info(f'Successfully extracting data from file: {sub_node_path}')
+                                    break
+                                except Exception as e:
+                                    logger.error(f'Failed to extract data from file: {sub_node_path}, error: {e}')
+                                    unsuccessful_nodes.append(sub_node_path)
+                    elif item == "index.md":
+                        try: 
+                            index_path = os.path.join(node_path, item)
+                            if index_path not in successful_nodes:
+                                rsp = ''
+                                rsp = get_data_from_chat2api(node, index_path,
+                                                            system_prompt=system_prompt2_index,
+                                                            template=template2_index)
+                                time.sleep(3)
+                                rsp_json = parse_json(rsp)
+                                save2json(rsp_json, os.path.join(save_dir, f"{node}.json"))
+                                successful_nodes.append(index_path)
+                                logger.info(f'Successfully extracting data from file: {index_path}')
+                        except Exception as e:
+                            logger.error(f'Failed to extract data from file: {index_path}, error: {e}')
+                            unsuccessful_nodes.append(index_path)
+                    else:
+                        continue
     finally:
         save2json(successful_nodes, successful_node_list_path)
         save2json(unsuccessful_nodes, unsuccessful_node_list_path)
@@ -1006,9 +1160,13 @@ if __name__=='__main__':
     # ans = eng2zh_chat2api(eng_text='America is fucking shit')
     # print(ans)
 
-    temp = get_data_from_chat2api('DIffusersLoader',
-                                 r'D:\git_github\self\ComfyChat\data\community_docs\repos\ComfyUI-docs\docs\Core Nodes\Latent\VAEEncode.md')
-    temp = parse_json(temp)
-    save2json(temp, r"D:\git_github\self\ComfyChat\data\community_docs\repos\VAEEncode.json")
+    # temp = get_data_from_chat2api('ComfyUI-Easy-Use',
+    #                              r'D:\git_github\self\ComfyChat\data\community_docs\repos\SaltAI-Web-Docs\docs\md\ComfyUI-Easy-Use\index.md',
+    #                              system_prompt=system_prompt2_index, template=template2_index)
+    # temp = parse_json(temp)
+    # print(temp)
+    # save2json(temp, r"D:\git_github\self\ComfyChat\data\community_docs\repos\VAEEncode.json")
 
     # generate_data_from_comfyui_docs()
+
+    generate_data_from_SaltAI_Web_Docs()
