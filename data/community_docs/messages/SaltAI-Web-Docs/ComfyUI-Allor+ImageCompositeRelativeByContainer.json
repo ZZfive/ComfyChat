@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ImageCompositeRelativeByContainer?",
+        "answer": "ImageCompositeRelativeByContainer is a class in ComfyUI designed for creating composite images by positioning and merging two sets of images relative to a container's dimensions."
+    },
+    {
+        "question": "What does ImageCompositeRelativeByContainer do?",
+        "answer": "ImageCompositeRelativeByContainer creates composite images by dynamically calculating the placement of images based on the container's size and specified relative positions. It then merges these images according to a specified method."
+    },
+    {
+        "question": "What are the input types required for ImageCompositeRelativeByContainer?",
+        "answer": "The required input types for ImageCompositeRelativeByContainer include 'container', 'images_a', 'images_b', 'images_a_x', 'images_a_y', 'images_b_x', 'images_b_y', 'background', and 'method'. These inputs specify the container image, two sets of images to be composited, their relative positions, which set should be treated as the background, and the compositing method."
+    },
+    {
+        "question": "How does ImageCompositeRelativeByContainer calculate the position of images?",
+        "answer": "ImageCompositeRelativeByContainer calculates the position of images by using relative percentages ('images_a_x', 'images_a_y', 'images_b_x', 'images_b_y') within the dimensions of the container image."
+    },
+    {
+        "question": "What is the output type of ImageCompositeRelativeByContainer?",
+        "answer": "The output type of ImageCompositeRelativeByContainer is an image (`IMAGE`), which is the final composite image resulting from merging and positioning the two sets of images relative to the container's dimensions."
+    },
+    {
+        "question": "What does the 'background' input specify in ImageCompositeRelativeByContainer?",
+        "answer": "The 'background' input in ImageCompositeRelativeByContainer specifies which set of images ('images_a' or 'images_b') should be treated as the background in the final composite image."
+    },
+    {
+        "question": "How does ImageCompositeRelativeByContainer handle container size limitations?",
+        "answer": "ImageCompositeRelativeByContainer checks if the container size is sufficient to accommodate the dimensions of the composite images ('images_a' and 'images_b'). If the container is too small, it raises a ValueError."
+    }
+]

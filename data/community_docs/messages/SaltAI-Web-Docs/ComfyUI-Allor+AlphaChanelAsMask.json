@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is AlphaChanelAsMask?",
+        "answer": "AlphaChanelAsMask is a custom node in ComfyUI designed for processing images to extract or invert their alpha channel, effectively transforming it into a mask."
+    },
+    {
+        "question": "What does the AlphaChanelAsMask node output?",
+        "answer": "The AlphaChanelAsMask node outputs a mask derived from the alpha channel of input images, which can represent either the direct alpha channel or its inverse based on the chosen processing method."
+    },
+    {
+        "question": "What are the input types required for AlphaChanelAsMask?",
+        "answer": "AlphaChanelAsMask requires 'images' as input, which are the images whose alpha channel is to be processed, and 'method' which determines whether the alpha channel is extracted normally or inverted."
+    },
+    {
+        "question": "How does the AlphaChanelAsMask node handle transparency manipulation?",
+        "answer": "The AlphaChanelAsMask node manipulates transparency by extracting or inverting the alpha channel of input images, producing a mask that reflects the transparency levels specified by the method parameter."
+    },
+    {
+        "question": "What is the Python dtype of the 'images' parameter in AlphaChanelAsMask?",
+        "answer": "The 'images' parameter in AlphaChanelAsMask has a Python dtype of torch.Tensor."
+    },
+    {
+        "question": "What is the function of the method parameter in AlphaChanelAsMask?",
+        "answer": "The 'method' parameter in AlphaChanelAsMask determines whether to extract the alpha channel normally ('default') or invert it ('invert'), influencing the resulting transparency mask."
+    },
+    {
+        "question": "What exception does AlphaChanelAsMask raise if the alpha channel does not exist?",
+        "answer": "AlphaChanelAsMask raises a ValueError with the message 'Alpha chanel not exist.' if the alpha channel is not found in the input images."
+    }
+]

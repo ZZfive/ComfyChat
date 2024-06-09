@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is LatentBatch?",
+        "answer": "LatentBatch is a custom node in ComfyUI designed to merge two sets of latent samples into a single batch, potentially resizing one set to match the dimensions of the other before concatenation."
+    },
+    {
+        "question": "What does the LatentBatch node do?",
+        "answer": "The LatentBatch node merges two sets of latent samples into a single batch, ensuring compatibility by resizing one set if necessary."
+    },
+    {
+        "question": "What are the input types required for the LatentBatch node?",
+        "answer": "The LatentBatch node requires two inputs: samples1 and samples2. Both inputs are of type LATENT in ComfyUI and are represented as dictionaries containing torch Tensors in Python."
+    },
+    {
+        "question": "How does LatentBatch handle the dimensions of samples2?",
+        "answer": "If the dimensions of samples2 differ from samples1, LatentBatch resizes samples2 to match the dimensions of samples1 using bilinear interpolation and center alignment."
+    },
+    {
+        "question": "What is the output type of LatentBatch?",
+        "answer": "The output of LatentBatch is a single batch of merged latent samples, represented as a dictionary of torch Tensors in Python."
+    },
+    {
+        "question": "What are some usage tips for LatentBatch?",
+        "answer": "LatentBatch is optimized for GPU usage. It is commonly used in scenarios where combining different latent representations is required."
+    },
+    {
+        "question": "How does the LatentBatch function work?",
+        "answer": "The LatentBatch function 'batch' takes samples1 and samples2 as inputs, merges them into a single batch, and adjusts the batch indices accordingly."
+    }
+]
