@@ -996,9 +996,9 @@ def generate_data_from_SaltAI_Web_Docs(SaltAI_Web_Docs_path: str = r"D:\git_gith
             if os.path.isdir(node_path) and len(os.listdir(node_path)) > 0:
                 for item in os.listdir(node_path):
                     if item == "Nodes":
-                        sub_node_path = os.path.join(node_path, item)
-                        for sub_node in os.listdir(sub_node_path):
-                            sub_node_path = os.path.join(sub_node_path, sub_node)
+                        sub_node_dir = os.path.join(node_path, item)
+                        for sub_node in os.listdir(sub_node_dir):
+                            sub_node_path = os.path.join(sub_node_dir, sub_node)
                             if sub_node_path not in successful_nodes:
                                 try: 
                                     sub_node_name = os.path.splitext(sub_node)[0]
@@ -1013,7 +1013,7 @@ def generate_data_from_SaltAI_Web_Docs(SaltAI_Web_Docs_path: str = r"D:\git_gith
                                     if sub_node_path in unsuccessful_nodes:
                                         unsuccessful_nodes.remove(sub_node_path)
                                     logger.info(f'Successfully extracting data from file: {sub_node_path}')
-                                    break
+                                    # break
                                 except Exception as e:
                                     logger.error(f'Failed to extract data from file: {sub_node_path}, error: {e}')
                                     if sub_node_path not in unsuccessful_nodes:

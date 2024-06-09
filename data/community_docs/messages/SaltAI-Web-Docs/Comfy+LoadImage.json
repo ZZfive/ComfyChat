@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the LoadImage node?",
+        "answer": "The LoadImage node is a class in ComfyUI designed to load and preprocess images from a specified path."
+    },
+    {
+        "question": "What does the LoadImage node handle?",
+        "answer": "The LoadImage node handles image formats with multiple frames, applies transformations such as rotation based on EXIF data, normalizes pixel values, and optionally generates a mask for images with an alpha channel."
+    },
+    {
+        "question": "What are the required input types for the LoadImage node?",
+        "answer": "The required input type for the LoadImage node is 'image', specified as a string identifier for the image to be loaded and processed."
+    },
+    {
+        "question": "What are the output types of the LoadImage node?",
+        "answer": "The output types of the LoadImage node are 'IMAGE', representing the processed image with normalized pixel values, and 'MASK', an optional output providing a mask for images with an alpha channel."
+    },
+    {
+        "question": "How does the LoadImage node handle images with alpha channels?",
+        "answer": "The LoadImage node generates a mask for images with alpha channels by converting the alpha channel to a tensor and normalizing its values."
+    },
+    {
+        "question": "What is the infra type recommended for the LoadImage node?",
+        "answer": "The infra type recommended for the LoadImage node is 'GPU'."
+    },
+    {
+        "question": "Which other nodes commonly interact with the LoadImage node?",
+        "answer": "Common nodes that interact with the LoadImage node include SVD_img2vid_Conditioning, ReActorFaceSwap, IPAdapterApply, Reroute, VAEEncodeForInpaint, PrepImageForClipVision, MiDaS-DepthMapPreprocessor, OpenposePreprocessor, InpaintPreprocessor, and VAEEncode."
+    }
+]
