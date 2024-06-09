@@ -1010,11 +1010,14 @@ def generate_data_from_SaltAI_Web_Docs(SaltAI_Web_Docs_path: str = r"D:\git_gith
                                     rsp_json = parse_json(rsp)
                                     save2json(rsp_json, os.path.join(save_dir, f"{node}+{sub_node_name}.json"))
                                     successful_nodes.append(sub_node_path)
+                                    if sub_node_path in unsuccessful_nodes:
+                                        unsuccessful_nodes.remove(sub_node_path)
                                     logger.info(f'Successfully extracting data from file: {sub_node_path}')
                                     break
                                 except Exception as e:
                                     logger.error(f'Failed to extract data from file: {sub_node_path}, error: {e}')
-                                    unsuccessful_nodes.append(sub_node_path)
+                                    if sub_node_path not in unsuccessful_nodes:
+                                        unsuccessful_nodes.append(sub_node_path)
                     elif item == "index.md":
                         try: 
                             index_path = os.path.join(node_path, item)
@@ -1027,10 +1030,13 @@ def generate_data_from_SaltAI_Web_Docs(SaltAI_Web_Docs_path: str = r"D:\git_gith
                                 rsp_json = parse_json(rsp)
                                 save2json(rsp_json, os.path.join(save_dir, f"{node}.json"))
                                 successful_nodes.append(index_path)
+                                if index_path in unsuccessful_nodes:
+                                        unsuccessful_nodes.remove(index_path)
                                 logger.info(f'Successfully extracting data from file: {index_path}')
                         except Exception as e:
                             logger.error(f'Failed to extract data from file: {index_path}, error: {e}')
-                            unsuccessful_nodes.append(index_path)
+                            if index_path not in unsuccessful_nodes:
+                                unsuccessful_nodes.append(index_path)
                     else:
                         continue
     finally:
