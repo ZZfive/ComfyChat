@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the BatchAlign node in ComfyUI designed to do?",
+        "answer": "The BatchAlign node in ComfyUI is designed to align multiple batches of data, ensuring consistency and uniformity across different sets of inputs."
+    },
+    {
+        "question": "What are the required inputs for the BatchAlign node?",
+        "answer": "The required inputs for the BatchAlign node include `images`, `ref_frame`, `direction`, and `blur`."
+    },
+    {
+        "question": "What type of data does the `images` input in BatchAlign represent?",
+        "answer": "The `images` input in BatchAlign represents the images to be aligned, typically involving multiple frames or batches that require alignment for further processing. The images should be in `torch.Tensor` format."
+    },
+    {
+        "question": "What is the purpose of the `ref_frame` input in BatchAlign?",
+        "answer": "The `ref_frame` input in BatchAlign serves as a reference frame or image against which other images are aligned. It acts as the baseline for alignment adjustments."
+    },
+    {
+        "question": "How does the `direction` input influence the alignment process in BatchAlign?",
+        "answer": "The `direction` input in BatchAlign specifies the direction of alignment, potentially influencing how images are adjusted relative to the reference frame. It can be set to either 'forward' or 'backward'."
+    },
+    {
+        "question": "What effect does the `blur` input have in BatchAlign?",
+        "answer": "The `blur` input in BatchAlign determines the level of blur applied during the alignment process, affecting the smoothness or sharpness of the aligned images. It should be an integer input."
+    },
+    {
+        "question": "What are the outputs of the BatchAlign node in ComfyUI?",
+        "answer": "The outputs of the BatchAlign node include `aligned` images and a `flow` field or map. The `aligned` output represents the result of aligning the input images, producing a coherent set of images aligned with the reference frame. The `flow` output indicates the transformation applied to each image for alignment, useful for understanding the alignment process."
+    }
+]

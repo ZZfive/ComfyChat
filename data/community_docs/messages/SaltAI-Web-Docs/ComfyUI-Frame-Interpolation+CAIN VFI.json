@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CAIN_VFI node in ComfyUI?",
+        "answer": "The CAIN_VFI node in ComfyUI is designed for video frame interpolation, using deep learning models to predict intermediate frames between existing ones in a video sequence to enhance video fluidity and frame rate."
+    },
+    {
+        "question": "What does the 'ckpt_name' input in the CAIN_VFI node specify?",
+        "answer": "The 'ckpt_name' input in the CAIN_VFI node specifies the checkpoint name for loading the pre-trained CAIN model, which is essential for initializing the model with learned weights for frame interpolation."
+    },
+    {
+        "question": "What is the role of the 'frames' input in the CAIN_VFI node?",
+        "answer": "The 'frames' input in the CAIN_VFI node contains the consecutive frames between which intermediate frames are to be generated. This tensor is essential for the node to perform frame interpolation."
+    },
+    {
+        "question": "How does the 'clear_cache_after_n_frames' input function in the CAIN_VFI node?",
+        "answer": "The 'clear_cache_after_n_frames' input in the CAIN_VFI node determines after how many frames the cache should be cleared to manage memory usage efficiently during the interpolation process."
+    },
+    {
+        "question": "What does the 'multiplier' input control in the CAIN_VFI node?",
+        "answer": "The 'multiplier' input in the CAIN_VFI node controls the factor by which the frame rate is to be increased, indicating how many intermediate frames are to be generated between each pair of original frames."
+    },
+    {
+        "question": "What are 'optional_interpolation_states' in the context of the CAIN_VFI node?",
+        "answer": "'optional_interpolation_states' are an optional input in the CAIN_VFI node that allows for the passing of states that can influence the interpolation process, providing flexibility in handling different interpolation scenarios."
+    },
+    {
+        "question": "What is the output of the CAIN_VFI node in ComfyUI?",
+        "answer": "The output of the CAIN_VFI node in ComfyUI is a tensor containing the interpolated frames, which is of the Comfy dtype 'IMAGE' and the Python dtype 'torch.Tensor'. This output enhances the video's fluidity by filling in the gaps between original frames."
+    }
+]

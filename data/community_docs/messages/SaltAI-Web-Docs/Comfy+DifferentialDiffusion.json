@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the DifferentialDiffusion node in ComfyUI?",
+        "answer": "The DifferentialDiffusion node in ComfyUI is designed to apply a custom denoising mask function to a given model, enhancing its ability to perform differential diffusion processes with more nuanced control over the denoising threshold."
+    },
+    {
+        "question": "Which model does the DifferentialDiffusion node modify, and what is the output of this modification?",
+        "answer": "The DifferentialDiffusion node modifies the input model by integrating a forward function that adjusts the denoising threshold based on the model's internal timestep calculations. The output is the enhanced model with the custom denoising mask function applied."
+    },
+    {
+        "question": "What kind of functions do the DifferentialDiffusion node and cg-noise serve in the context of ComfyUI?",
+        "answer": "The DifferentialDiffusion node serves to enhance model behavior for differential diffusion processes by applying a custom denoising mask function, while cg-noise serves to generate small variations in images by manipulating the initial noise with two seeds and a weight."
+    },
+    {
+        "question": "What is required as input for the DifferentialDiffusion node to function correctly?",
+        "answer": "The DifferentialDiffusion node requires a model as input, specifically the model to which the differential diffusion process will be applied. The model must be of the datatype `MODEL`, which is of Python type `torch.nn.Module`."
+    },
+    {
+        "question": "What type of node is the DifferentialDiffusion node classified as in ComfyUI?",
+        "answer": "The DifferentialDiffusion node is classified under the '_for_testing' category in ComfyUI."
+    },
+    {
+        "question": "How does the DifferentialDiffusion node dynamically adjust the denoising threshold?",
+        "answer": "The DifferentialDiffusion node adjusts the denoising threshold by using a forward function that integrates the model's internal timestep calculations. This allows for on-the-fly adjustments to the denoising process based on the model's current step in the diffusion process."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the DifferentialDiffusion node?",
+        "answer": "The DifferentialDiffusion node is recommended to be run on an Infra type of 'GPU'."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the IG Folder node used for in ComfyUI?",
+        "answer": "The IG Folder node in ComfyUI is used to construct directory paths based on a specified parent directory and folder name, abstracting the complexity of path manipulation for generating file system paths."
+    },
+    {
+        "question": "What are the required input types for the IG Folder node?",
+        "answer": "The required input types for the IG Folder node are `folder_parent`, which specifies the parent directory type as either an input or output folder, and `folder_name`, which defines the name of the folder to be appended to the parent directory path."
+    },
+    {
+        "question": "What does the `folder_parent` input of the IG Folder node represent?",
+        "answer": "The `folder_parent` input of the IG Folder node represents the parent directory type, influencing the base path for the resulting directory path, and can be set to either an input folder or an output folder."
+    },
+    {
+        "question": "What is the final output returned by the IG Folder node?",
+        "answer": "The final output returned by the IG Folder node is the fully constructed directory path as a string, which is returned with the Comfy dtype `STRING`, and is ready for use in file system operations."
+    },
+    {
+        "question": "How does the IG Folder node handle folder creation within the file system?",
+        "answer": "The IG Folder node handles folder creation by allowing the specification of a `folder_parent` that sets whether the folder is an input or output folder, and a `folder_name` that determines the name of the folder, thereby dynamically creating directories based on the input parameters."
+    },
+    {
+        "question": "What is the purpose of the `main` function in the IG Folder node's source code?",
+        "answer": "The purpose of the `main` function in the IG Folder node's source code is to take the `folder_parent` and `folder_name` inputs, determine the parent directory based on the `folder_parent` type, use `os.path.join` to join the parent directory path with the `folder_name`, and return the resulting directory path."
+    },
+    {
+        "question": "How can one access the `input_directory` or `output_directory` in the IG Folder node?",
+        "answer": "One can access the `input_directory` or `output_directory` in the IG Folder node through the `folder_paths` variable, which is either `folder_paths.input_directory` if `folder_parent` is 'input folder', or `folder_paths.output_directory` if `folder_parent` is 'output folder'."
+    }
+]

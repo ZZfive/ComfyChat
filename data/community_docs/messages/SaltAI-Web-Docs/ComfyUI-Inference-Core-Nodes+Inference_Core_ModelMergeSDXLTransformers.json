@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is Inference_Core_ModelMergeSDXLTransformers used for in ComfyUI?",
+        "answer": "Inference_Core_ModelMergeSDXLTransformers is a custom node in ComfyUI used for merging two SDXL model architectures by blending their transformer blocks, enabling the creation of hybrid models that leverage the strengths of both input models."
+    },
+    {
+        "question": "What are the input types required by Inference_Core_ModelMergeSDXLTransformers?",
+        "answer": "Inference_Core_ModelMergeSDXLTransformers requires `model1` and `model2` (both of type `torch.nn.Module`), representing the SDXL models to be merged. It also needs adjustable parameters for time embedding layers, label embedding layers, and transformer blocks within the input, middle, and output sections of the models."
+    },
+    {
+        "question": "Can Inference_Core_ModelMergeSDXLTransformers adjust parameters for middle block transformer blocks?",
+        "answer": "Yes, Inference_Core_ModelMergeSDXLTransformers allows for adjusting parameters for the transformer blocks in the middle section of the models, enabling a balanced integration of both models' characteristics."
+    },
+    {
+        "question": "What types of input blocks can be customized in Inference_Core_ModelMergeSDXLTransformers?",
+        "answer": "In Inference_Core_ModelMergeSDXLTransformers, adjustable parameters are available for transformer blocks within the input section of the models, including the ability to customize blending of the models' features at different block and sub-block levels."
+    },
+    {
+        "question": "How does Inference_Core_ModelMergeSDXLTransformers handle output block customization?",
+        "answer": "Inference_Core_ModelMergeSDXLTransformers provides adjustable parameters for transformer blocks within the output section of the models, allowing for precise control over the final model's output characteristics at different block, sub-block, and transformer block levels."
+    },
+    {
+        "question": "What are the output types of Inference_Core_ModelMergeSDXLTransformers?",
+        "answer": "Inference_Core_ModelMergeSDXLTransformers outputs `model` of type `torch.nn.Module`, which is the resulting merged model that incorporates elements from both input models according to the specified parameters."
+    },
+    {
+        "question": "Which infrastructure type is recommended for using Inference_Core_ModelMergeSDXLTransformers?",
+        "answer": "Inference_Core_ModelMergeSDXLTransformers is recommended to be used on an infrastructure type of `GPU` for optimal performance."
+    }
+]

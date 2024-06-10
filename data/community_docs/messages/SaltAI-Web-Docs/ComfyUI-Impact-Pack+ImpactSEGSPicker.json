@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImpactSEGSPicker node in ComfyUI?",
+        "answer": "The ImpactSEGSPicker node is designed to select and refine segmentation elements based on user-defined criteria, enhancing the precision of image segmentation outputs by customizing segmentation results and potentially incorporating fallback options for image processing."
+    },
+    {
+        "question": "What does the required input `picks` in the ImpactSEGSPicker node represent?",
+        "answer": "The `picks` input specifies the indices of the segmentation elements to be selected, enabling customization of the output by retaining only the desired segments with a Comfy dtype of `STRING` and a Python dtype of `str`."
+    },
+    {
+        "question": "How can the ImpactSEGSPicker node handle situations where the original segment data is insufficient?",
+        "answer": "The ImpactSEGSPicker node can handle situations with insufficient original segment data by utilizing an optional input `fallback_image_opt`, which is a fallback image used for segment processing, with a Comfy dtype of `IMAGE` and Python dtype of `PIL.Image.Image`."
+    },
+    {
+        "question": "What are the output types of the ImpactSEGSPicker node?",
+        "answer": "The ImpactSEGSPicker node outputs a refined set of segmentation elements after applying the selection and processing logic, denoted as `segs` with a Comfy dtype of `SEGS`, output node `True`, and a Python dtype of `tuple`."
+    },
+    {
+        "question": "What infra type is the ImpactSEGSPicker node optimized for?",
+        "answer": "The ImpactSEGSPicker node is optimized for `CPU` infra type."
+    },
+    {
+        "question": "How does the ImpactSEGSPicker node process the input segmentation elements?",
+        "answer": "The ImpactSEGSPicker node processes input segmentation elements by applying selection logic to identify and retain only the relevant segments based on user-defined criteria."
+    },
+    {
+        "question": "In the source code of ImpactSEGSPicker, what does the function `doit` handle?",
+        "answer": "The `doit` function in the source code of ImpactSEGSPicker handles the processing of the input parameters `picks`, `segs`, and optionally `fallback_image_opt`, by refining segmentation elements according to the selected indices and incorporating the fallback image if necessary."
+    }
+]

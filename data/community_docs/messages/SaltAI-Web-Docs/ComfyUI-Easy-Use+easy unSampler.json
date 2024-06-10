@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the easy unSampler node in ComfyUI?",
+        "answer": "The easy unSampler node in ComfyUI is designed for the reverse sampling process in generative models, enabling exploration of latent spaces and refinement of generated images by stepping back through the model's layers."
+    },
+    {
+        "question": "What controls the conditioning factor in the easy unSampler node?",
+        "answer": "The input `cfg` controls the conditioning factor in the easy unSampler node, influencing the strength of conditioning on the input prompt or image features during reverse sampling."
+    },
+    {
+        "question": "Which specific sampler does the easy unSampler node use for the reverse sampling process?",
+        "answer": "The easy unSampler node uses the sampler specified by the `sampler_name` input for the reverse sampling process."
+    },
+    {
+        "question": "How can the reverse sampling process be made to target a specific final step?",
+        "answer": "The reverse sampling process in easy unSampler node can be targeted to a specific final step by using the `end_at_step` input, which determines the final step of the reverse sampling process, enabling partial reversals and targeted refinement."
+    },
+    {
+        "question": "What does the easy unSampler node return?",
+        "answer": "The easy unSampler node returns the modified pipeline, `pipe`, after the reverse sampling process and the latent representation, `latent`, obtained or modified during the process."
+    },
+    {
+        "question": "What optional input in the easy unSampler node can be used to specify a model for use in the reverse sampling if no default is provided?",
+        "answer": "The `optional_model` input in the easy unSampler node can be used to specify a model for use in the reverse sampling if no default model is provided."
+    },
+    {
+        "question": "How is normalization handled in the easy unSampler node?",
+        "answer": "Normalization in the easy unSampler node is enabled or disabled based on the `normalize` input, affecting the handling of input data and the stability of the reverse sampling process."
+    }
+]

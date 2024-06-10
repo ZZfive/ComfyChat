@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the SAMLoader node designed for in ComfyUI?",
+        "answer": "The SAMLoader node in ComfyUI is designed to dynamically load and manage different types of SAM models, including ESAM and various Vision Transformer models, ensuring appropriate device allocation and installation of required dependencies."
+    },
+    {
+        "question": "What models can the SAMLoader node load?",
+        "answer": "The SAMLoader node can load models such as ESAM for Efficient SAM models, or Vision Transformer models like 'vit_h', 'vit_l', 'vit_b'."
+    },
+    {
+        "question": "What determines the device on which the SAM model will be loaded by the SAMLoader node?",
+        "answer": "The device on which the SAM model will be loaded is determined by the 'device_mode' input, which can specify CPU or GPU, with support for automatic device selection based on system capabilities and model requirements."
+    },
+    {
+        "question": "What does the SAMLoader node output?",
+        "answer": "The SAMLoader node outputs the loaded SAM model, ready for further operations such as inference. The model is wrapped in a SAMWrapper or ESAMWrapper, depending on the model type."
+    },
+    {
+        "question": "Which nodes are commonly used with SAMLoader?",
+        "answer": "Nodes commonly used with SAMLoader include FaceDetailer, ToDetailerPipe, SAMDetectorCombined, ToDetailerPipeSDXL, Reroute, ImpactSimpleDetectorSEGS, ImpactSimpleDetectorSEGS_for_AD, and GroundingDinoSAMSegment."
+    },
+    {
+        "question": "What are the input types the SAMLoader node requires?",
+        "answer": "The SAMLoader node requires 'model_name' and 'device_mode' as input types. 'model_name' specifies the name of the SAM model to be loaded, and 'device_mode' determines the device on which the model will be loaded."
+    },
+    {
+        "question": "How does SAMLoader handle the loading of the 'ESAM' model?",
+        "answer": "When loading the 'ESAM' model, SAMLoader checks for the presence of the 'ComfyUI-YoloWorld-EfficientSAM' extension, installs it if necessary, and then loads the ESAM model onto the specified device using the ESAM_ModelLoader_Zho node."
+    }
+]

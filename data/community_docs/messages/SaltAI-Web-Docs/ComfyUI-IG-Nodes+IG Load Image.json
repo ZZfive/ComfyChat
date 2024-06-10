@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the IG Load Image node used for in ComfyUI?",
+        "answer": "The IG Load Image node in ComfyUI is designed for loading images from a specified directory and preprocessing them, including orientation correction, conversion to a specific color mode, and normalization."
+    },
+    {
+        "question": "What is the class name of the IG Load Image node?",
+        "answer": "The class name of the IG Load Image node is `IG Load Image`."
+    },
+    {
+        "question": "What category does the IG Load Image node belong to in ComfyUI?",
+        "answer": "The IG Load Image node belongs to the category `雞 IG Nodes/IO` in ComfyUI."
+    },
+    {
+        "question": "What type of data does the `image_path` parameter expect in the IG Load Image node?",
+        "answer": "The `image_path` parameter in the IG Load Image node expects a string data type, specifically the path to the image to be loaded."
+    },
+    {
+        "question": "What are the output types of the IG Load Image node?",
+        "answer": "The IG Load Image node outputs two types of data: `image` and `mask`, which are represented as `IMAGE` and `MASK` respectively in Comfy dtype, and as `torch.Tensor` in Python dtype."
+    },
+    {
+        "question": "What preprocessing does the IG Load Image node perform on the loaded image?",
+        "answer": "The IG Load Image node performs orientation correction, converts the image to the RGB color mode, converts it to a numpy array, normalizes the values, and converts it to a torch Tensor."
+    },
+    {
+        "question": "How does the IG Load Image node handle images with an Alpha channel?",
+        "answer": "If the loaded image has an Alpha channel (`A`), the IG Load Image node extracts this channel as a mask, inverting its values to prepare for segmentation or specific area processing."
+    }
+]

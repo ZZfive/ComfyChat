@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PreviewBridge node in ComfyUI?",
+        "answer": "The PreviewBridge node in ComfyUI is designed to serve as an intermediary for processing and caching images for preview purposes. It manages the refresh logic based on unique identifiers and cached states, loads images from cache or generates new previews as needed, and updates the cache with the new or existing image data."
+    },
+    {
+        "question": "What are the required input types for the PreviewBridge node?",
+        "answer": "The required input types for the PreviewBridge node include a collection of images and a single image to be processed for preview. Both are crucial for determining whether a refresh is needed based on the state of the cache."
+    },
+    {
+        "question": "Which node can manage the loading and caching logic for images used in previews?",
+        "answer": "The PreviewBridge node can manage the loading and caching logic for images used in previews, handling refreshes and new image generation based on cache state in ComfyUI."
+    },
+    {
+        "question": "What is the function associated with the PreviewBridge node in ComfyUI?",
+        "answer": "The function associated with the PreviewBridge node in ComfyUI is `doit`. This function processes the input images and manages the preview image cache based on the unique identifier provided."
+    },
+    {
+        "question": "What is the output type and Comfy dtype for the image after processing by the PreviewBridge node?",
+        "answer": "The output type for the image after processing by the PreviewBridge node is `image` with the Comfy dtype `IMAGE`, which is represented as a `List[Dict[str, Any]]` in Python."
+    },
+    {
+        "question": "Which nodes are considered common uses of the PreviewBridge node?",
+        "answer": "Common uses of the PreviewBridge node in ComfyUI include nodes such as [ACN_AdvancedControlNetApply], [UltimateSDUpscale], [SAMDetectorCombined], and [DetailerForEachDebug], which can benefit from the processing and caching of images by PreviewBridge."
+    },
+    {
+        "question": "What is the role of the `image` input parameter in the PreviewBridge node?",
+        "answer": "The `image` input parameter in the PreviewBridge node plays a key role in the refresh logic and subsequent processing. It is a single image to be either loaded from cache or to be used in generating a new preview."
+    }
+]

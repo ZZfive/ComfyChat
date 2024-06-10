@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the ImpactSEGSClassify node designed to do in ComfyUI?",
+        "answer": "The ImpactSEGSClassify node in ComfyUI is designed to classify segments (SEGS) based on specified criteria, comparing attributes or labels within each segment to filter and categorize them accordingly."
+    },
+    {
+        "question": "What conditions does the 'classifier' input in ImpactSEGSClassify specify?",
+        "answer": "The 'classifier' input in ImpactSEGSClassify specifies the classification model to be used for evaluating the segments, which is essential for determining the classification scores of each segment's attributes or labels."
+    },
+    {
+        "question": "What type of data is expected for the 'segs' input in the ImpactSEGSClassify node?",
+        "answer": "The 'segs' input in the ImpactSEGSClassify node expects data of type `List[Tuple[Any, Any]]`, representing the segments to be classified and filtered, crucial for providing the data that will be processed and evaluated by the classifier."
+    },
+    {
+        "question": "How does the 'preset_expr' input influence the classification process in ImpactSEGSClassify?",
+        "answer": "The 'preset_expr' input in ImpactSEGSClassify allows for the selection of predefined classification expressions or criteria, which influence the classification logic applied to the segments, enabling complex conditional logic for dynamic segmentation."
+    },
+    {
+        "question": "What can the 'manual_expr' input in ImpactSEGSClassify be used for?",
+        "answer": "The 'manual_expr' input in ImpactSEGSClassify enables the specification of custom classification expressions or criteria, allowing for flexible and dynamic classification based on user-defined conditions."
+    },
+    {
+        "question": "What is the purpose of the 'ref_image_opt' input in the ImpactSEGSClassify node?",
+        "answer": "The 'ref_image_opt' input in the ImpactSEGSClassify node optionally provides a reference image to enhance the classification process, affecting the classification outcome by providing additional context."
+    },
+    {
+        "question": "What type of data does the 'filtered_SEGS' output of ImpactSEGSClassify contain?",
+        "answer": "The 'filtered_SEGS' output of ImpactSEGSClassify contains segments that meet the classification criteria, effectively categorizing the input segments based on the specified conditions."
+    },
+    {
+        "question": "What is returned through the 'remained_SEGS' output from the ImpactSEGSClassify node?",
+        "answer": "The 'remained_SEGS' output from the ImpactSEGSClassify node contains segments that do not meet the classification criteria, allowing for further analysis or processing of unclassified segments."
+    }
+]

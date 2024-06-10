@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What node in ComfyUI is used for dynamically selecting between multiple inputs?",
+        "answer": "The ImpactSwitch node is used for dynamically selecting between multiple inputs in ComfyUI."
+    },
+    {
+        "question": "What does the `select` parameter in ImpactSwitch determine?",
+        "answer": "The `select` parameter in ImpactSwitch determines the index of the input to be selected for output, affecting the flow of data through the node."
+    },
+    {
+        "question": "How is the selection index interpreted and applied in ImpactSwitch?",
+        "answer": "The selection index in ImpactSwitch is interpreted and applied based on the `sel_mode` parameter, which can be set to either prompt input or execution context selection."
+    },
+    {
+        "question": "What outputs does ImpactSwitch provide?",
+        "answer": "ImpactSwitch provides three outputs: `selected_value`, `selected_label`, and `selected_index`, reflecting the data, label, and index of the selected input, respectively."
+    },
+    {
+        "question": "What is the data type of `selected_label` in ImpactSwitch?",
+        "answer": "The data type of `selected_label` in ImpactSwitch is `STRING`, providing context or identification for the chosen input path."
+    },
+    {
+        "question": "What is the function name in the source code of ImpactSwitch responsible for executing the node?",
+        "answer": "The function name in the source code of ImpactSwitch responsible for executing the node is `doit`."
+    },
+    {
+        "question": "What happens if an invalid select index is passed to ImpactSwitch?",
+        "answer": "If an invalid select index is passed to ImpactSwitch, it will print an error message stating 'ImpactSwitch: invalid select index (ignored)' and return a tuple of (None, \"\", selected_index)."
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is the class name for the AV_LLMMessage node in ComfyUI?",
+        "answer": "The class name for the AV_LLMMessage node in ComfyUI is `AV_LLMMessage`."
+    },
+    {
+        "question": "What does the `role` input specify in the AV_LLMMessage node?",
+        "answer": "The `role` input in the AV_LLMMessage node specifies the role of the message, such as 'system', 'user', or 'assistant', influencing how the message is processed and presented."
+    },
+    {
+        "question": "What are the main content inputs for the AV_LLMMessage node?",
+        "answer": "The main content inputs for the AV_LLMMessage node are `text`, which represents the main content of the message, and optionally, `image`, which enhances the message with visual content."
+    },
+    {
+        "question": "What can the `messages` input be used for in the AV_LLMMessage node?",
+        "answer": "The `messages` input in the AV_LLMMessage node can be used to compile a list of existing messages to which the new message will be added, for managing conversation history."
+    },
+    {
+        "question": "What does the AV_LLMMessage node return?",
+        "answer": "The AV_LLMMessage node returns a list of messages, including the newly created message, to facilitate the continuation and tracking of the conversation flow."
+    },
+    {
+        "question": "How is an image processed if it is passed to the AV_LLMMessage node?",
+        "answer": "If an image is passed to the AV_LLMMessage node, it is expected to be in Tensor format and is converted to base64 for inclusion with the message."
+    },
+    {
+        "question": "What is the Python dtype for the `image` input in the AV_LLMMessage node?",
+        "answer": "The Python dtype for the `image` input in the AV_LLMMessage node is `Optional[Tensor]`."
+    },
+    {
+        "question": "Is a system prompt allowed to have an image in the AV_LLMMessage node?",
+        "answer": "A system prompt is not allowed to have an image in the AV_LLMMessage node, as including an image with a system prompt would raise an exception."
+    },
+    {
+        "question": "What happens if more than one system prompt is included in the messages?",
+        "answer": "If more than one system prompt is included in the messages, an exception will be raised, as only one system prompt is allowed."
+    }
+]

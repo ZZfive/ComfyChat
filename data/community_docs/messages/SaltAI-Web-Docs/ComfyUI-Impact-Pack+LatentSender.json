@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the LatentSender node in ComfyUI?",
+        "answer": "The LatentSender node in ComfyUI is designed for handling and transmitting latent representations of images, preparing previews, saving latent tensors with metadata and preview images to files, and sending this information to a specified destination."
+    },
+    {
+        "question": "What can the 'samples' parameter do in the LatentSender node?",
+        "answer": "The 'samples' parameter in the LatentSender node represents the latent representations of images to be handled and is crucial for the node’s operation as it forms the basis of the latent image information that will be saved, previewed, and sent."
+    },
+    {
+        "question": "Which node is responsible for generating a preview of latent images in ComfyUI?",
+        "answer": "The LatentSender node generates a preview of latent images by using the 'prepare_preview' method and the 'preview_method' parameter, which specifies the method for visualizing latent representations."
+    },
+    {
+        "question": "What is the 'filename_prefix' parameter used for in the LatentSender node?",
+        "answer": "The 'filename_prefix' parameter in the LatentSender node specifies the prefix for the filenames under which the latent images and their metadata will be saved, which is useful for organizing the saved files."
+    },
+    {
+        "question": "How does the LatentSender node save the latent tensor and additional information to file?",
+        "answer": "The LatentSender node uses the 'save_to_file' method to save the latent tensor along with any additional information such as the 'prompt' and 'extra_pnginfo' to a file. This data is compressed and stored within a zip archive labeled 'latent', which is then embedded in the image file’s exif data."
+    },
+    {
+        "question": "What role does the 'link_id' parameter play in the LatentSender node?",
+        "answer": "The 'link_id' parameter in the LatentSender node is used to identify the specific destination to which the latent image information will be sent, ensuring the information is routed correctly."
+    },
+    {
+        "question": "What does the 'preview_method' parameter in the LatentSender node determine?",
+        "answer": "The 'preview_method' parameter in the LatentSender node specifies the method to be used for generating a preview of the latent image, affecting how the latent representation is visualized before being saved or sent."
+    },
+    {
+        "question": "What UI component does the LatentSender node output and what does it display?",
+        "answer": "The LatentSender node outputs a UI component that displays the information about the saved latent images, including filenames and subfolders. This facilitates user interaction with the saved latent representations and metadata."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the class name of the custom node that applies two distinct sampling processes using a mask?",
+        "answer": "The class name of the custom node is `TwoSamplersForMask`."
+    },
+    {
+        "question": "In which category does the TwoSamplersForMask node belong in ComfyUI?",
+        "answer": "TwoSamplersForMask belongs to the category `ImpactPack/Sampler` in ComfyUI."
+    },
+    {
+        "question": "What does the TwoSamplersForMask node do with the latent image and samplers?",
+        "answer": "The TwoSamplersForMask node applies an inverse mask to the latent image with one sampler and then applies the original mask with another sampler, blending two different sampling effects based on the mask."
+    },
+    {
+        "question": "What is the output dtype of TwoSamplersForMask in ComfyUI?",
+        "answer": "The output dtype of TwoSamplersForMask is `LATENT`, represented as a `Dict[str, torch.Tensor]` in Python."
+    },
+    {
+        "question": "What are the required input types for the TwoSamplersForMask custom node?",
+        "answer": "The required input types for TwoSamplersForMask are `latent_image` of dtype `LATENT`, `base_sampler` of dtype `KSAMPLER`, `mask_sampler` of dtype `KSAMPLER`, and `mask` of dtype `MASK`."
+    },
+    {
+        "question": "What part of the latent image is the mask_sampler applied to in the TwoSamplersForMask node?",
+        "answer": "The mask_sampler is applied to the areas of the latent image covered by the mask in the TwoSamplersForMask node."
+    },
+    {
+        "question": "What is the role of the base_sampler in the TwoSamplersForMask node?",
+        "answer": "The base_sampler in the TwoSamplersForMask node applies its effect to the areas of the latent image not covered by the mask."
+    }
+]

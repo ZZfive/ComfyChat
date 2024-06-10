@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImpactSegsAndMask custom node in ComfyUI?",
+        "answer": "The ImpactSegsAndMask node is designed to refine segmentation results by applying a bitwise AND operation between the masks of segmented objects and an additional mask, enhancing the precision of the segmentation."
+    },
+    {
+        "question": "What is the expected output of the ImpactSegsAndMask node?",
+        "answer": "The expected output of the ImpactSegsAndMask node is refined segmented objects after applying the mask. The output is represented as a tuple containing the size of the tensor and a list of segmented objects."
+    },
+    {
+        "question": "Which input type represents the segmented objects (SEGS) for the ImpactSegsAndMask operation?",
+        "answer": "In the ImpactSegsAndMask node, the 'segs' input type represents the segmented objects (SEGS) to be refined. These are the primary inputs for the bitwise AND operation."
+    },
+    {
+        "question": "How does the ImpactSegsAndMask node refine segmented objects?",
+        "answer": "The ImpactSegsAndMask node refines segmented objects by applying a given mask to them through a bitwise AND operation, retaining only the parts of the segmented objects that overlap with the mask."
+    },
+    {
+        "question": "What type of infraction does the ImpactSegsAndMask node support?",
+        "answer": "The ImpactSegsAndMask node supports CPU infrastructure for the bitwise operation between segmented objects and masks."
+    },
+    {
+        "question": "What nodes are commonly used in conjunction with the ImpactSegsAndMask node?",
+        "answer": "Commonly, the ImpactSegsAndMask node is used with the ImpactSEGSOrderedFilter node to manage and filter the segmented objects after they have been refined."
+    },
+    {
+        "question": "What does the Python dtype of the 'segs' input represent in the ImpactSegsAndMask node?",
+        "answer": "The Python dtype of the 'segs' input, 'Tuple[torch.Size, List[SEG]]', represents the size of the segmented objects and the list of segmented objects itself in the ImpactSegsAndMask node."
+    }
+]

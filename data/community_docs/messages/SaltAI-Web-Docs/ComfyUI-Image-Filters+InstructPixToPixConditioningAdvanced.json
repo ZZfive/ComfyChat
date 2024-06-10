@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the InstructPixToPixConditioningAdvanced node in ComfyUI?",
+        "answer": "The InstructPixToPixConditioningAdvanced node in ComfyUI is designed for advanced conditioning in the context of Pix2Pix image translation tasks. It facilitates complex image manipulation by integrating additional latent information into the conditioning process."
+    },
+    {
+        "question": "What are the required input types for the InstructPixToPixConditioningAdvanced node in ComfyUI?",
+        "answer": "The required input types for the InstructPixToPixConditioningAdvanced node are 'positive' and 'negative' conditioning inputs, along with 'new' and 'original' latent representations. The 'positive' input guides the image translation process in a desired direction, while the 'negative' input guides the image translation away from undesired characteristics. The 'new' and 'original' inputs are latent representations that are compared for shape consistency and integrated into the conditioning process."
+    },
+    {
+        "question": "What are the output types of the InstructPixToPixConditioningAdvanced node?",
+        "answer": "The output types of the InstructPixToPixConditioningAdvanced node include 'cond1' and 'cond2', which are modified positive and negative conditioning outputs, respectively. It also outputs the 'negative' conditioning input, unmodified, for consistency, and a 'latent' representation, which is the new latent representation with samples integrated into the conditioning outputs."
+    },
+    {
+        "question": "What happens if the 'new' and 'original' latent representations have different shapes in the InstructPixToPixConditioningAdvanced node?",
+        "answer": "If the 'new' and 'original' latent representations have different shapes in the InstructPixToPixConditioningAdvanced node, an exception will be raised indicating a latent shape mismatch."
+    },
+    {
+        "question": "What does the InstructPixToPixConditioningAdvanced node modify in the conditioning inputs?",
+        "answer": "The InstructPixToPixConditioningAdvanced node modifies the 'positive' and 'negative' conditioning inputs by incorporating additional latent information from the 'original' latent representation into the conditioning. This results in modified positive and negative conditioning outputs."
+    },
+    {
+        "question": "Which nodes can be used for advanced conditioning in Pix2Pix image translation tasks?",
+        "answer": "The InstructPixToPixConditioningAdvanced node can be used for advanced conditioning in Pix2Pix image translation tasks."
+    },
+    {
+        "question": "How does the InstructPixToPixConditioningAdvanced node ensure shape consistency between the 'new' and 'original' latent representations?",
+        "answer": "The InstructPixToPixConditioningAdvanced node ensures shape consistency between the 'new' and 'original' latent representations by checking if their shapes match. If not, it raises an exception indicating a latent shape mismatch."
+    }
+]

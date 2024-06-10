@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the FILM VFI node used for in ComfyUI?",
+        "answer": "The FILM VFI node in ComfyUI specializes in frame interpolation, using advanced techniques to synthesize intermediate frames between two given images. Its primary goal is to enhance video fluidity and realism by accurately predicting and generating frames that logically exist in the temporal space between original frames."
+    },
+    {
+        "question": "What specific models or techniques does the FILM VFI node utilize for frame interpolation?",
+        "answer": "The FILM VFI node utilizes a model specified by the 'ckpt_name', which determines the specific interpolation technique and parameters to apply. A common checkpoint used is 'film_net_fp32.pt'."
+    },
+    {
+        "question": "How does the 'multiplier' input affect the output of the FILM VFI node?",
+        "answer": "The 'multiplier' input in the FILM VFI node determines the number of frames to be interpolated between each pair of original frames. This parameter directly impacts the smoothness of the output video, with higher values leading to more interpolated frames and thus smoother motion."
+    },
+    {
+        "question": "Which node is commonly used in conjunction with FILM VFI for combining video frames?",
+        "answer": "The VHS_VideoCombine node is commonly used in conjunction with FILM VFI. It is used to combine video frames after interpolation has been applied by FILM VFI, helping to create a seamless video output."
+    },
+    {
+        "question": "What is the purpose of clearing the cache in the FILM VFI processing, and which parameter controls this?",
+        "answer": "The purpose of clearing the cache in the FILM VFI processing is to manage memory efficiently and potentially improve performance, especially when processing large sequences of frames. The 'clear_cache_after_n_frames' parameter controls how often the cache is cleared; it specifies the number of frames processed before cache clearing occurs."
+    },
+    {
+        "question": "What is the output type of the FILM VFI node and what does it produce?",
+        "answer": "The output type of the FILM VFI node is an IMAGE, which represents an interpolated image sequence. It enhances the fluidity and realism of the original video by filling in missing frames between the existing ones."
+    },
+    {
+        "question": "What infra type is required for the FILM VFI node to operate optimally?",
+        "answer": "The FILM VFI node requires an infra type of 'GPU' to operate optimally. This indicates that computation-intensive tasks are offloaded to graphics processing units for improved speed and performance."
+    }
+]

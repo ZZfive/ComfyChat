@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the `easy latentCompositeMaskedWithCond` node in ComfyUI?",
+        "answer": "The `easy latentCompositeMaskedWithCond` node in ComfyUI is designed for advanced image manipulation within the latent space, specifically tailored for conditional composite operations. It enables the blending of two latent representations based on a mask, with additional conditions that can modify the blending process."
+    },
+    {
+        "question": "What are the required inputs for the `easy latentCompositeMaskedWithCond` node?",
+        "answer": "The required inputs for the `easy latentCompositeMaskedWithCond` node include `pipe`, `text_combine`, `source_latent`, `source_mask`, `destination_mask`, `text_combine_mode`, and `replace_text`."
+    },
+    {
+        "question": "What is the function of the `destination_mask` input in the `easy latentCompositeMaskedWithCond` node?",
+        "answer": "The `destination_mask` input in the `easy latentCompositeMaskedWithCond` node is used for specifying a mask that will affect the blending of latent representations at the destination, guiding where the `source_latent` will be combined with the existing image."
+    },
+    {
+        "question": "Which nodes does the `easy latentCompositeMaskedWithCond` node interact with for condition generation?",
+        "answer": "The `easy latentCompositeMaskedWithCond` node interacts with the `ConditioningSetMask` node to append conditions based on masks and `positive` embeddings."
+    },
+    {
+        "question": "What is the primary output type of the `easy latentCompositeMaskedWithCond` node?",
+        "answer": "The primary output types of the `easy latentCompositeMaskedWithCond` node are `pipe`, `latent`, and `conditioning`, reflecting the updated pipeline, the composite latent image, and the generated conditions, respectively."
+    },
+    {
+        "question": "What is the purpose of the `text_combine_mode` in the `easy latentCompositeMaskedWithCond` node?",
+        "answer": "The `text_combine_mode` in the `easy latentCompositeMaskedWithCond` node is used to specify how `text_combine` items are appended to the prompt. The modes available are 'add', which appends items to the existing prompt, 'replace', which replaces a specified text in the prompt, and 'cover', which completely overrides the prompt with the first item in `text_combine`."
+    },
+    {
+        "question": "How does the `easy latentCompositeMaskedWithCond` node incorporate new conditions into the processing pipeline?",
+        "answer": "The `easy latentCompositeMaskedWithCond` node incorporates new conditions by creating `ConditioningSetMask` conditions for both the source and destination based on the `source_mask` and `destination_mask`, then merging the `positive_cond` conditions and `positive_embeddings_final` with these. This ensures that the conditions generated are aware of the masks and the context of the operation."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImpactSEGSRangeFilter node in ComfyUI?",
+        "answer": "The ImpactSEGSRangeFilter node is designed to filter segments (SEGS) based on specified range criteria for geometric properties such as area, width, height, or specific coordinates."
+    },
+    {
+        "question": "What type of data does the 'segs' input expect in the ImpactSEGSRangeFilter node?",
+        "answer": "The 'segs' input expects segments to be filtered and is defined with a Comfy dtype of `SEGS` and a Python dtype of `Tuple[str, List[SEG]]`."
+    },
+    {
+        "question": "How does the 'mode' parameter in ImpactSEGSRangeFilter determine which segments are filtered?",
+        "answer": "The 'mode' parameter determines whether segments within or outside the specified range are included. If true, segments within the range are included; if false, segments outside the range are included."
+    },
+    {
+        "question": "What types of geometric properties can be used as the 'target' for filtering segments in the ImpactSEGSRangeFilter node?",
+        "answer": "The 'target' can specify several geometric properties such as area, width, height, x1, y1, x2, y2, or length_percent upon which the segments will be filtered."
+    },
+    {
+        "question": "What does the ImpactSEGSRangeFilter node return after applying the filtering operation?",
+        "answer": "After applying the filtering operation, the ImpactSEGSRangeFilter node returns 'filtered_SEGS', which are the segments that meet the specified criteria, and 'remained_SEGS', which are the segments that do not meet the criteria."
+    },
+    {
+        "question": "Which segments will not be filtered out by the ImpactSEGSRangeFilter node based on the 'mode' parameter?",
+        "answer": "If the 'mode' parameter is set to false, the segments that will not be filtered out are those that fall outside the specified range of the geometric property chosen as the 'target'."
+    },
+    {
+        "question": "What is the function of 'min_value' and 'max_value' in the ImpactSEGSRangeFilter node for segment filtering?",
+        "answer": "The 'min_value' and 'max_value' determine the range of the specified geometric property (set by 'target') for which segments are included or excluded, depending on the 'mode' parameter in the ImpactSEGSRangeFilter node."
+    }
+]

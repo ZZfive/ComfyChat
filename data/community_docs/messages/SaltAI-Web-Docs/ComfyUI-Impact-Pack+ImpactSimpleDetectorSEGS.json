@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the primary function of the ImpactSimpleDetectorSEGS node?",
+        "answer": "The ImpactSimpleDetectorSEGS node is designed to perform segmentation detection on images, identifying and isolating specific segments within an image, by applying advanced segmentation models to analyze images and detect distinct segments based on visual content."
+    },
+    {
+        "question": "What does the `bbox_detector` input specify in the ImpactSimpleDetectorSEGS node?",
+        "answer": "The `bbox_detector` input specifies the bounding box detector used for initial detection before segmentation. It is crucial for identifying areas of interest within the image that will be further processed for segmentation."
+    },
+    {
+        "question": "Which input is responsible for determining the sensitivity of initial detection in the ImpactSimpleDetectorSEGS node?",
+        "answer": "The `bbox_threshold` input is responsible for determining the sensitivity of initial detection in the ImpactSimpleDetectorSEGS node, which influences how the system detects potential areas of interest in the image."
+    },
+    {
+        "question": "What is the purpose of the `crop_factor` in the ImpactSimpleDetectorSEGS node?",
+        "answer": "The `crop_factor` determines how much the detected segments are cropped around the bounding boxes, influencing the focus area for segmentation."
+    },
+    {
+        "question": "How does the `sub_threshold` input affect the secondary segmentation phase in ImpactSimpleDetectorSEGS?",
+        "answer": "The `sub_threshold` input affects the secondary segmentation phase in ImpactSimpleDetectorSEGS by being a secondary threshold used for finer segmentation within the initially detected areas, refining the segmentation process."
+    },
+    {
+        "question": "What is the infra type for the ImpactSimpleDetectorSEGS node?",
+        "answer": "The infra type for the ImpactSimpleDetectorSEGS node is `GPU`. This means it is optimized for graphics processing units to handle the computational demands of segmentation tasks."
+    },
+    {
+        "question": "Which common nodes can be used alongside ImpactSimpleDetectorSEGS for further processing of segmentation in ComfyUI?",
+        "answer": "Common nodes that can be used alongside ImpactSimpleDetectorSEGS for further processing of segmentation in ComfyUI include ImpactMakeTileSEGS, ImpactControlNetApplySEGS, and SegsToCombinedMask."
+    }
+]

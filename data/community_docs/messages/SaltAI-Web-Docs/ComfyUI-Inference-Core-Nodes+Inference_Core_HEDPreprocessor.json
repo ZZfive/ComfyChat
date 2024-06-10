@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the Inference_Core_HEDPreprocessor node used for in ComfyUI?",
+        "answer": "Inference_Core_HEDPreprocessor is a node in ComfyUI designed to extract soft-edge lines from images using the HED (Holistically-Nested Edge Detection) model. It preprocesses images to enhance edge features, facilitating downstream tasks that require detailed edge or line information."
+    },
+    {
+        "question": "What is the resolution parameter in the Inference_Core_HEDPreprocessor node responsible for?",
+        "answer": "The resolution parameter allows specifying the desired output resolution, affecting the level of detail in the detected edges in images processed by the Inference_Core_HEDPreprocessor node."
+    },
+    {
+        "question": "In what circumstances might the 'safe' mode be useful in the Inference_Core_HEDPreprocessor node?",
+        "answer": "The 'safe' mode in the Inference_Core_HEDPreprocessor node enables or disables safety checks during edge detection, potentially affecting performance and output quality. It is useful when the processing reliability needs to be balanced with processing efficiency."
+    },
+    {
+        "question": "Which types of input does the Inference_Core_HEDPreprocessor node accept?",
+        "answer": "The Inference_Core_HEDPreprocessor node accepts the input image for edge detection (dtype: IMAGE, torch.Tensor) as required input, and the 'safe' mode (dtype: COMBO[STRING], str) and 'resolution' parameter (dtype: INT, int) as optional inputs."
+    },
+    {
+        "question": "What output does the Inference_Core_HEDPreprocessor node provide?",
+        "answer": "The Inference_Core_HEDPreprocessor node outputs the processed image with enhanced edge details (dtype: IMAGE, torch.Tensor), which is suitable for use in various image analysis and manipulation tasks."
+    },
+    {
+        "question": "What infrastructure is the Inference_Core_HEDPreprocessor node suitable for?",
+        "answer": "The Inference_Core_HEDPreprocessor node is suitable for GPU environments, as indicated by its infra type."
+    },
+    {
+        "question": "Can the Inference_Core_HEDPreprocessor node process images directly without any preprocessing?",
+        "answer": "The Inference_Core_HEDPreprocessor node processes images to enhance edge details, but it does not perform any preprocessing steps prior to edge detection; it assumes the input image is ready for processing."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the LatentSwitch node in ComfyUI used for?",
+        "answer": "The LatentSwitch node in ComfyUI is designed to dynamically select between multiple latent representations based on a given index, facilitating the manipulation of latent spaces by allowing the selection of specific latent inputs for further processing or output."
+    },
+    {
+        "question": "What does the 'select' input of the LatentSwitch node represent?",
+        "answer": "The 'select' input specifies the index of the latent representation to be selected. This index determines which latent input ('latent1', etc.) is used for the node's operation, with the range starting from 1, allowing for dynamic selection among potentially numerous latent inputs."
+    },
+    {
+        "question": "What happens if the 'select' index is invalid in the LatentSwitch node?",
+        "answer": "If the 'select' index is invalid in the LatentSwitch node, the 'input1' is returned as the default value for the 'selected_value' output."
+    },
+    {
+        "question": "Which input is crucial for the LatentSwitch node's operation?",
+        "answer": "The primary latent representation input 'input1' is crucial for the LatentSwitch node's operation as it represents the default or initial latent space to be considered in the absence of additional specified latent inputs."
+    },
+    {
+        "question": "What does the 'selected_label' output of the LatentSwitch node represent?",
+        "answer": "The 'selected_label' output of the LatentSwitch node represents the label of the selected latent representation, indicating which latent input was chosen based on the 'select' index."
+    },
+    {
+        "question": "What infra type is recommended for the LatentSwitch node?",
+        "answer": "The recommended infra type for the LatentSwitch node is 'CPU'."
+    },
+    {
+        "question": "What is the Python data type of the 'selected_value' output in the LatentSwitch node?",
+        "answer": "The Python data type of the 'selected_value' output in the LatentSwitch node is `torch.Tensor`."
+    }
+]

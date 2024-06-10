@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Inference_Core_OpenposePreprocessor node in ComfyUI?",
+        "answer": "The Inference_Core_OpenposePreprocessor node is designed for estimating human poses from images, leveraging the OpenPose model to detect and annotate various keypoints of the human body, face, and hands."
+    },
+    {
+        "question": "What are the required and optional input types for the Inference_Core_OpenposePreprocessor node?",
+        "answer": "The required input type for the Inference_Core_OpenposePreprocessor node is `image`, which is the input image for pose estimation. The optional input types include `detect_hand`, `detect_body`, `detect_face`, and `resolution`."
+    },
+    {
+        "question": "How does the Inference_Core_OpenposePreprocessor node handle detection of body, face, and hand keypoints?",
+        "answer": "The Inference_Core_OpenposePreprocessor node handles detection of body, face, and hand keypoints through the `detect_body`, `detect_face`, and `detect_hand` inputs, respectively, which can be set to 'enable' or 'disable'."
+    },
+    {
+        "question": "What are the output types provided by the Inference_Core_OpenposePreprocessor node?",
+        "answer": "The output types provided by the Inference_Core_OpenposePreprocessor node include `image`, which returns the pose image, `pose_keypoint`, which delivers pose keypoints data, and `ui`, which provides a JSON representation of the detected poses."
+    },
+    {
+        "question": "What is the role of the `resolution` input in the Inference_Core_OpenposePreprocessor node?",
+        "answer": "The `resolution` input in the Inference_Core_OpenposePreprocessor node specifies the resolution for the pose estimation process, affecting the precision and scale of the output."
+    },
+    {
+        "question": "Which keypoints can be enhanced by the detect_hand, detect_body, and detect_face parameters, respectively?",
+        "answer": "The `detect_hand`, `detect_body`, and `detect_face` parameters can enhance the detail of the pose estimation by detecting hand, body, and face keypoints, respectively."
+    },
+    {
+        "question": "What data types are associated with the input and output parameters of the Inference_Core_OpenposePreprocessor node?",
+        "answer": "The input parameters `image`, `detect_hand`, `detect_body`, `detect_face`, and `resolution` have Comfy dtypes `IMAGE`, `COMBO[STRING]`, `COMBO[STRING]`, `COMBO[STRING]`, and `INT`, respectively, and Python dtypes `torch.Tensor`, `str`, `str`, `str`, and `int`, respectively. The output parameters `image`, `pose_keypoint`, and `ui` have Comfy dtypes `IMAGE`, `POSE_KEYPOINT`, and no specific dtype is mentioned for `ui`, and Python dtypes `torch.Tensor`, `List[Dict]`, and no specific dtype is mentioned for `ui`."
+    }
+]

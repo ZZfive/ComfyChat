@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImpactSEGSToMaskList node in ComfyUI?",
+        "answer": "The ImpactSEGSToMaskList node is designed to convert segmentation data (SEGS) into a list of masks, facilitating the transformation of complex segmentation formats into a more universally applicable mask format for further image processing and analysis tasks."
+    },
+    {
+        "question": "What category does the ImpactSEGSToMaskList node belong to in ComfyUI?",
+        "answer": "The ImpactSEGSToMaskList node belongs to the 'ImpactPack/Util' category in ComfyUI."
+    },
+    {
+        "question": "What is the expected input for the ImpactSEGSToMaskList node?",
+        "answer": "The expected input for the ImpactSEGSToMaskList node is a parameter named 'segs', representing the segmentation data to be converted into masks. This input is crucial for the node's operation as it provides the raw segmentation information that will be transformed into a list of individual masks."
+    },
+    {
+        "question": "What type of output does the ImpactSEGSToMaskList node produce?",
+        "answer": "The ImpactSEGSToMaskList node produces a list of masks derived from the input segmentation data as its output. Each mask corresponds to a segment in the input, allowing for detailed analysis and manipulation of individual segments."
+    },
+    {
+        "question": "What is the Python dtype of the output from the ImpactSEGSToMaskList node?",
+        "answer": "The Python dtype of the output from the ImpactSEGSToMaskList node is 'List[torch.Tensor]'."
+    },
+    {
+        "question": "How does the ImpactSEGSToMaskList node handle the conversion of SEGS to MASK?",
+        "answer": "The ImpactSEGSToMaskList node handles the conversion of SEGS to MASK by calling the method `core.segs_to_masklist(segs)`, which converts the segmentation data into a list of masks. If the list of masks is empty, an empty mask of zeros is created, and masks are later transformed into 3D masks using `utils.make_3d_mask(mask)`."
+    },
+    {
+        "question": "In which part of the ComfyUI system is the ImpactSEGSToMaskList node intended to be used?",
+        "answer": "The ImpactSEGSToMaskList node is intended to be used in the ImpactPack/Util part of the ComfyUI system."
+    }
+]

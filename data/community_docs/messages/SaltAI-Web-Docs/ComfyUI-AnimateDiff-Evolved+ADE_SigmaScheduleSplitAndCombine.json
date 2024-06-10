@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ADE_SigmaScheduleSplitAndCombine node?",
+        "answer": "The ADE_SigmaScheduleSplitAndCombine node in ComfyUI is designed to manipulate sigma schedules by splitting and combining them based on specified weights and interpolation methods, allowing for the creation of new hybrid sigma schedules."
+    },
+    {
+        "question": "What are the required input types for the ADE_SigmaScheduleSplitAndCombine node?",
+        "answer": "The required input types for the ADE_SigmaScheduleSplitAndCombine node are `schedule_Start` (of dtype `SIGMA_SCHEDULE` and Python type `SigmaSchedule`), `schedule_End` (also of dtype `SIGMA_SCHEDULE` and Python type `SigmaSchedule`), and `idx_split_percent` (of dtype `FLOAT` and Python type `float`)."
+    },
+    {
+        "question": "How does the ADE_SigmaScheduleSplitAndCombine node use `idx_split_percent`?",
+        "answer": "The `idx_split_percent` input in the ADE_SigmaScheduleSplitAndCombine node dictates the point of transition between the two input schedules, `schedule_Start` and `schedule_End`, when creating the new sigma schedule."
+    },
+    {
+        "question": "What is the output of the ADE_SigmaScheduleSplitAndCombine node?",
+        "answer": "The output of the ADE_SigmaScheduleSplitAndCombine node is of dtype `SIGMA_SCHEDULE` and represents the resulting sigma schedule, a hybrid of the starting and ending input schedules, modified according to the specified split percentage."
+    },
+    {
+        "question": "In which category is the ADE_SigmaScheduleSplitAndCombine node classified within ComfyUI?",
+        "answer": "The ADE_SigmaScheduleSplitAndCombine node is classified in the Animate Diff 🎭🅐🅓/sample settings/sigma schedule category within ComfyUI."
+    },
+    {
+        "question": "What does the `schedule_Start` input represent in the ADE_SigmaScheduleSplitAndCombine node?",
+        "answer": "The `schedule_Start` input in the ADE_SigmaScheduleSplitAndCombine node represents the starting sigma schedule for the split and combination process, which determines the initial segment of the new sigma schedule."
+    },
+    {
+        "question": "Can the ADE_SigmaScheduleSplitAndCombine node's `idx_split_percent` input directly determine the number of sigmas to split the schedule at?",
+        "answer": "No, the `idx_split_percent` input in the ADE_SigmaScheduleSplitAndCombine node does not directly determine the number of sigmas but rather the percentage at which the initial schedule is split for the transition between the two input schedules."
+    }
+]

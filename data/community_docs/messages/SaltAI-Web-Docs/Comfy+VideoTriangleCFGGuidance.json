@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the VideoTriangleCFGGuidance node in ComfyUI?",
+        "answer": "VideoTriangleCFGGuidance is a custom node in ComfyUI designed to apply a triangular configuration guidance patch to a video model, dynamically adjusting the conditioning scale over time to modulate the influence of conditional inputs."
+    },
+    {
+        "question": "What is the dynamic adjustment of the conditioning scale in VideoTriangleCFGGuidance for?",
+        "answer": "The dynamic adjustment of the conditioning scale in VideoTriangleCFGGuidance is intended to enhance the generation of video content by applying a specific pattern of guidance that varies linearly within a defined period, aiming to achieve a balance between conditioned and unconditioned content."
+    },
+    {
+        "question": "What does the `model` input represent in VideoTriangleCFGGuidance?",
+        "answer": "The `model` input in VideoTriangleCFGGuidance is the video model to which the triangular CFG guidance patch will be applied. This model is cloned and modified with a new sampler CFG function."
+    },
+    {
+        "question": "How is the `min_cfg` parameter utilized in VideoTriangleCFGGuidance?",
+        "answer": "The `min_cfg` parameter in VideoTriangleCFGGuidance represents the minimum conditioning scale factor used in the triangular CFG guidance. It defines the lowest point of scale adjustment, influencing the balance between conditioned and unconditioned content generation."
+    },
+    {
+        "question": "What node type outputs VideoTriangleCFGGuidance in ComfyUI?",
+        "answer": "VideoTriangleCFGGuidance is an output node of type `False` in ComfyUI."
+    },
+    {
+        "question": "What is the data type for the models processed by VideoTriangleCFGGuidance?",
+        "answer": "The models processed by VideoTriangleCFGGuidance use the `MODEL` type in ComfyUI, corresponding to a `torch.nn.Module` in Python, representing the cloned and modified video model with the triangular CFG guidance patch applied."
+    },
+    {
+        "question": "How does VideoTriangleCFGGuidance modify the video model for enhanced conditional content generation?",
+        "answer": "VideoTriangleCFGGuidance modifies the video model by applying a triangular CFG guidance patch, dynamically adjusting the conditioning scale over time. It uses a linear function to adjust the scale factor according to the triangular pattern, enhancing the generation of conditioned video content while maintaining a balance with unconditioned content."
+    }
+]
