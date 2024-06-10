@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the ImageDuplicator node used for in ComfyUI?",
+        "answer": "The ImageDuplicator node in ComfyUI is designed to duplicate each image in a given batch, effectively increasing the number of images by creating replicas. This node is useful for augmenting the dataset or preparing the data for processes that require multiple instances of the same image."
+    },
+    {
+        "question": "What are the required input types for the ImageDuplicator node?",
+        "answer": "The required input types for the ImageDuplicator node are `images` of type `IMAGE` (torch.Tensor) and `dup_times` of type `INT`, specifying the number of times each image should be duplicated."
+    },
+    {
+        "question": "What does the parameter `dup_times` in ImageDuplicator control?",
+        "answer": "The `dup_times` parameter in ImageDuplicator controls the number of times each input image is duplicated, thereby determining the total number of images produced by the node."
+    },
+    {
+        "question": "What does the ImageDuplicator node return?",
+        "answer": "The ImageDuplicator node returns a set of images, including the original images along with their duplicates, increasing the total number of images. The output images are represented as `IMAGE` with Python dtype `torch.Tensor`."
+    },
+    {
+        "question": "How is the ImageDuplicator node implemented in terms of its output?",
+        "answer": "The ImageDuplicator node generates its output by creating a list that includes the original image tensor and its duplicates, then concatenates the list to return a single tensor with dimensions for batch size * `dup_times`, channels, height, and width."
+    },
+    {
+        "question": "Which nodes can increase the number of images in a batch?",
+        "answer": "The ImageDuplicator node in ComfyUI can increase the number of images in a batch by duplicating each image a specified number of times."
+    },
+    {
+        "question": "What is the category and output node status of the ImageDuplicator node?",
+        "answer": "The ImageDuplicator node falls under the category `image` and is not an output node in ComfyUI."
+    }
+]

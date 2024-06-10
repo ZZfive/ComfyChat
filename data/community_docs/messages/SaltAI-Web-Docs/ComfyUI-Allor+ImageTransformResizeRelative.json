@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageTransformResizeRelative node in ComfyUI?",
+        "answer": "The ImageTransformResizeRelative node in ComfyUI is designed to dynamically resize images based on relative scale factors for width and height, enabling flexible image transformations while maintaining the aspect ratio or proportionally adjusting the image size."
+    },
+    {
+        "question": "What input does the ImageTransformResizeRelative node require?",
+        "answer": "The ImageTransformResizeRelative node requires 'images', 'scale_width', 'scale_height', and 'method' as inputs. The 'images' input specifies the images to be resized, 'scale_width' and 'scale_height' determine the scaling factors for width and height respectively, and 'method' specifies the interpolation method used for resizing."
+    },
+    {
+        "question": "What is the data type of the 'images' input in the ImageTransformResizeRelative node?",
+        "answer": "The 'images' input in the ImageTransformResizeRelative node has a Comfy dtype of 'IMAGE' and a Python dtype of 'torch.Tensor'."
+    },
+    {
+        "question": "Which node is used in the background by ImageTransformResizeRelative for absolute resizing?",
+        "answer": "The ImageTransformResizeRelative node uses the ImageTransformResizeAbsolute node in the background for absolute resizing based on the calculated width and height derived from the relative scale factors."
+    },
+    {
+        "question": "What are the interpolation methods supported by the 'method' input of the ImageTransformResizeRelative node?",
+        "answer": "The 'method' input of the ImageTransformResizeRelative node supports several interpolation methods for resizing, including 'lanczos', 'bicubic', 'hamming', 'bilinear', 'box', and 'nearest'."
+    },
+    {
+        "question": "What type of output does the ImageTransformResizeRelative node produce?",
+        "answer": "The ImageTransformResizeRelative node produces resized images as output, which have a Comfy dtype of 'IMAGE' and a Python dtype of 'torch.Tensor'."
+    },
+    {
+        "question": "Is the ImageTransformResizeRelative node an output node in the ComfyUI workflow?",
+        "answer": "No, the ImageTransformResizeRelative node is not an output node. It belongs to the 'image/transform' category and is used for image resizing operations within the ComfyUI workflow."
+    }
+]

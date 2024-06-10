@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SubtractMaskForEach node in ComfyUI?",
+        "answer": "The SubtractMaskForEach node in ComfyUI is designed to perform a bitwise subtraction operation on masks for each frame or segment within a given dataset, aiming to identify and isolate changes or differences between consecutive frames or segments."
+    },
+    {
+        "question": "What are the input types required by the SubtractMaskForEach node?",
+        "answer": "The SubtractMaskForEach node requires two input types: `base_segs` which represents the base segments from which the mask segments will be subtracted, and `mask_segs` which are the segments to be subtracted from the base segments."
+    },
+    {
+        "question": "What is the output type of the SubtractMaskForEach node?",
+        "answer": "The output type of the SubtractMaskForEach node is `segs`, which is the result of the bitwise subtraction between the base segments and mask segments, highlighting the differences or changes between them."
+    },
+    {
+        "question": "What is the role of the `base_segs` parameter in the SubtractMaskForEach node?",
+        "answer": "The `base_segs` parameter serves as the reference point for the subtraction operation, highlighting areas present in these segments but not in the `mask_segs`. It is from where the mask segments are subtracted."
+    },
+    {
+        "question": "What does the SubtractMaskForEach node do to identify differences between consecutive frames?",
+        "answer": "The SubtractMaskForEach node performs a bitwise subtraction operation on masks for each frame or segment within a given dataset, subtracting the `mask_segs` from the `base_segs` to isolate changes or differences between consecutive frames or segments."
+    },
+    {
+        "question": "In the context of ComfyUI, how does the SubtractMaskForEach node handle the cropped masks during the subtraction operation?",
+        "answer": "During the subtraction operation, the SubtractMaskForEach node computes the intersection of the two crop regions. It then performs a pixel-wise subtraction operation by checking if a pixel overlaps with both masks, setting it as 0 if it does, indicating a difference."
+    },
+    {
+        "question": "Which class implements the functionality of the SubtractMaskForEach node in ComfyUI?",
+        "answer": "The functionality of the SubtractMaskForEach node in ComfyUI is implemented by the `SubtractMaskForEach` class."
+    }
+]

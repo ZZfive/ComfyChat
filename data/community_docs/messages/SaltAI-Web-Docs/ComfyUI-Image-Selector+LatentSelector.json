@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LatentSelector node in ComfyUI?",
+        "answer": "The LatentSelector node in ComfyUI is designed to filter and select specific latent images from a given set based on user-defined indexes, allowing for customization of the latent image dataset and targeted manipulation or analysis of these images."
+    },
+    {
+        "question": "What input types does the LatentSelector node require?",
+        "answer": "The LatentSelector node requires 'latent_image' input, consisting of latent images provided as a mapping from string identifiers to tensors, and 'selected_indexes', a string specifying the indexes of the latent images to be selected."
+    },
+    {
+        "question": "How can you specify the indexes of latent images to be selected by LatentSelector?",
+        "answer": "You can specify the indexes of latent images to be selected by LatentSelector using a string that supports individual indexes and ranges, enabling flexible selection within the dataset."
+    },
+    {
+        "question": "What data type does LatentSelector use for its 'latent_image' input?",
+        "answer": "LatentSelector uses the Comfy dtype 'LATENT' for the 'latent_image' input, which is provided as a Mapping[str, torch.Tensor]."
+    },
+    {
+        "question": "What does LatentSelector output, and in what format?",
+        "answer": "LatentSelector outputs the filtered set of latent images as a subset of the input images based on the specified indexes, with the output type 'latent', represented as a Dict[str, torch.Tensor] in Python."
+    },
+    {
+        "question": "How does LatentSelector handle indexing of images when selecting them?",
+        "answer": "LatentSelector handles indexing of images when selecting them by processing the 'selected_indexes' input, which allows for specifying indexes individually or as ranges, starting from index 1 for simplicity."
+    },
+    {
+        "question": "What type of processing does the LatentSelector node perform on the input data?",
+        "answer": "The LatentSelector node performs a filtering operation on the input latent images based on the 'selected_indexes' provided, returning a subset of images that match the selection criteria."
+    }
+]

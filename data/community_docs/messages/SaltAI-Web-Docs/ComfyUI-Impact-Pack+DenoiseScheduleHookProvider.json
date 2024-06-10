@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the DenoiseScheduleHookProvider node in ComfyUI?",
+        "answer": "DenoiseScheduleHookProvider is a node in ComfyUI's ImpactPack/Upscale category designed to create hooks that adjust denoising levels dynamically during the image generation process based on a predefined schedule and target denoise value."
+    },
+    {
+        "question": "What is the role of the `schedule_for_iteration` input in the DenoiseScheduleHookProvider node?",
+        "answer": "The `schedule_for_iteration` input specifies the schedule to be used for adjusting the denoising level during image generation, affecting how the target denoising level is approached over time."
+    },
+    {
+        "question": "How does the `target_denoise` value influence the result of image generation in ComfyUI using the DenoiseScheduleHookProvider node?",
+        "answer": "The `target_denoise` value influences the final clarity and detail of the generated image by determining the target denoising level to be achieved by the end of the image generation process."
+    },
+    {
+        "question": "What is the Python data type associated with the `schedule_for_iteration` input in the DenoiseScheduleHookProvider node?",
+        "answer": "The Python data type associated with the `schedule_for_iteration` input is `Tuple[str]`."
+    },
+    {
+        "question": "Which nodes are commonly paired with the DenoiseScheduleHookProvider node in ComfyUI for image upscaling?",
+        "answer": "A common node to pair with the DenoiseScheduleHookProvider node for image upscaling in ComfyUI is the PixelKSampleUpscalerProvider node."
+    },
+    {
+        "question": "What is the output dtype (`pk_hook`) from the DenoiseScheduleHookProvider node used for in ComfyUI?",
+        "answer": "The `pk_hook` output from the DenoiseScheduleHookProvider node is a hook that can be applied to the image generation process in ComfyUI to dynamically adjust the denoising level according to the specified schedule."
+    },
+    {
+        "question": "In the DenoiseScheduleHookProvider node, what Python type is returned by the `doit` function for the `hook` variable when the 'simple' schedule is chosen?",
+        "answer": "When the 'simple' schedule is chosen in the DenoiseScheduleHookProvider node, the `doit` function returns a `hooks.SimpleDenoiseScheduleHook` instance for the `hook` variable."
+    }
+]

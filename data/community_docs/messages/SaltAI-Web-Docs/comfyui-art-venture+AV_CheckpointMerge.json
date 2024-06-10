@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the AV_CheckpointMerge node designed for in ComfyUI?",
+        "answer": "The AV_CheckpointMerge node is designed for merging model checkpoints within the Art Venture framework, facilitating the integration or experimentation with various model configurations in a streamlined manner."
+    },
+    {
+        "question": "What are the required inputs for AV_CheckpointMerge?",
+        "answer": "The required inputs for AV_CheckpointMerge include `model1` and `model2`, which are the two models to be merged, and `model1_weight` and `model2_weight`, which are the weight factors for the two models influencing the merged model checkpoint."
+    },
+    {
+        "question": "Which category does AV_CheckpointMerge belong to in ComfyUI?",
+        "answer": "AV_CheckpointMerge belongs to the category `Art Venture/Model Merging` in ComfyUI."
+    },
+    {
+        "question": "What does the `model1_weight` parameter control in AV_CheckpointMerge?",
+        "answer": "The `model1_weight` parameter in AV_CheckpointMerge controls the degree to which the first model impacts the merged model checkpoint, influencing the merged result."
+    },
+    {
+        "question": "In ComfyUI, what is the output of the AV_CheckpointMerge node?",
+        "answer": "The output of the AV_CheckpointMerge node is a unified model checkpoint, denoted as `model`, which incorporates elements from both input models."
+    },
+    {
+        "question": "What types of data do the models passed into AV_CheckpointMerge represent?",
+        "answer": "The models passed into AV_CheckpointMerge, `model1` and `model2`, represent `torch.nn.Module` in Python, and in Comfy dtype, they are categorized as `MODEL`."
+    },
+    {
+        "question": "What potential issues can occur during the merging process in AV_CheckpointMerge when model shapes are not compatible?",
+        "answer": "When merging models with incompatible shapes in AV_CheckpointMerge, potential issues include runtime errors when the shapes partly match but the model types do not align, such as merging an inpainting model with a normal one or an instruct-pix2pix model with a normal one, where specific conditions must be met for `model1`."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the ImpactSegsAndMaskForEach node used for in ComfyUI?",
+        "answer": "The ImpactSegsAndMaskForEach node is used to apply a mask to each segment within a collection of segments, performing a bitwise AND operation between the mask and the segment's cropped mask."
+    },
+    {
+        "question": "What type of operation does the ImpactSegsAndMaskForEach node perform?",
+        "answer": "The ImpactSegsAndMaskForEach node performs a bitwise AND operation between the segments and the masks, allowing for precise control over how masks are applied to segmented parts of an image."
+    },
+    {
+        "question": "What type of input does the ImpactSegsAndMaskForEach node require for segments?",
+        "answer": "The ImpactSegsAndMaskForEach node requires a collection of segments to which the masks will be applied as input. This collection should represent parts of an image isolated based on certain criteria."
+    },
+    {
+        "question": "What does the Input type `segs` stand for in ImpactSegsAndMaskForEach?",
+        "answer": "The Input type `segs` stands for the collection of segments which are the parts of an image that have been isolated based on specific criteria for which the masks will be applied."
+    },
+    {
+        "question": "What do the masks input to ImpactSegsAndMaskForEach define?",
+        "answer": "The masks input to ImpactSegsAndMaskForEach define areas to be kept or removed in each segment's cropped mask through a bitwise AND operation with the corresponding segment."
+    },
+    {
+        "question": "How are the segments modified by the ImpactSegsAndMaskForEach node?",
+        "answer": "The segments are modified by the ImpactSegsAndMaskForEach node by applying masks to each segment individually and updating each segment's cropped mask based on a bitwise AND operation with the corresponding mask."
+    },
+    {
+        "question": "What does the Python dtype of the `segs` output from ImpactSegsAndMaskForEach represent?",
+        "answer": "The Python dtype of the `segs` output from ImpactSegsAndMaskForEach represents a tuple containing a torch.Tensor and a list of SEG objects, representing the modified collection of segments after applying the masks."
+    }
+]

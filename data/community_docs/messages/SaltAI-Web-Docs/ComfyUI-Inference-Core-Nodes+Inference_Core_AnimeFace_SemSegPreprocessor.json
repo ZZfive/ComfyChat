@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the `Inference_Core_AnimeFace_SemSegPreprocessor` node specifically designed for in ComfyUI?",
+        "answer": "The `Inference_Core_AnimeFace_SemSegPreprocessor` node in ComfyUI specializes in preprocessing images for semantic segmentation, focusing on anime faces. It leverages a deep learning model to segment anime faces from the background."
+    },
+    {
+        "question": "What does the `image` input do in the `Inference_Core_AnimeFace_SemSegPreprocessor` node?",
+        "answer": "The `image` input is the primary subject for semantic segmentation in the `Inference_Core_AnimeFace_SemSegPreprocessor` node, where it is processed to isolate anime faces from their backgrounds."
+    },
+    {
+        "question": "What does the `remove_background_using_abg` input option do in the `Inference_Core_AnimeFace_SemSegPreprocessor` node?",
+        "answer": "The `remove_background_using_abg` input is a boolean flag in the `Inference_Core_AnimeFace_SemSegPreprocessor` node which determines whether the background should be removed from the input image, enhancing the focus on the anime face."
+    },
+    {
+        "question": "Can the `resolution` input of the `Inference_Core_AnimeFace_SemSegPreprocessor` node be set to any value?",
+        "answer": "The `resolution` input of the `Inference_Core_AnimeFace_SemSegPreprocessor` node specifies the resolution to which the input image should be processed. However, it is limited to a fixed value of 512 due to the training constraints of the preprocessor."
+    },
+    {
+        "question": "What are the outputs of the `Inference_Core_AnimeFace_SemSegPreprocessor` node?",
+        "answer": "The `Inference_Core_AnimeFace_SemSegPreprocessor` node outputs a processed image with the anime face segmented, optionally with the background removed based on the input flag, and a mask indicating the segmented areas of the anime face."
+    },
+    {
+        "question": "Which node in ComfyUI processes anime face images before semantic segmentation?",
+        "answer": "The `Inference_Core_AnimeFace_SemSegPreprocessor` node in ComfyUI processes anime face images for semantic segmentation by optionally removing the background and providing cleaner, more focused inputs for downstream tasks."
+    },
+    {
+        "question": "What is the purpose of the `ABG_CHARACTER_MASK (MASK)` output from the `Inference_Core_AnimeFace_SemSegPreprocessor` node?",
+        "answer": "The `ABG_CHARACTER_MASK (MASK)` output from the `Inference_Core_AnimeFace_SemSegPreprocessor` node is a mask indicating the segmented areas of the anime face within the processed image, which is useful for further processing or analysis."
+    }
+]

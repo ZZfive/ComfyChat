@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the ImpactSchedulerAdapter node designed for in ComfyUI?",
+        "answer": "The ImpactSchedulerAdapter node is designed to adapt various scheduling strategies for tasks or processes, allowing for dynamic selection and application of scheduling algorithms based on specific conditions or preferences."
+    },
+    {
+        "question": "What are the required input types for the ImpactSchedulerAdapter node?",
+        "answer": "The required input types are `scheduler` and `ays_scheduler`. The `scheduler` specifies the primary scheduler to be used or defaults to an input scheduler, while `ays_scheduler` allows for the selection of an alternative scheduling strategy."
+    },
+    {
+        "question": "What happens if 'None' is selected for the `ays_scheduler` input in ImpactSchedulerAdapter?",
+        "answer": "If 'None' is selected for the `ays_scheduler` input, the primary `scheduler` input will be used as the output. If an alternative scheduler is selected (e.g., 'AYS SDXL', 'AYS SD1', 'AYS SVD'), it replaces the primary scheduler as the output."
+    },
+    {
+        "question": "What does the `scheduler` output of ImpactSchedulerAdapter represent?",
+        "answer": "The `scheduler` output represents the selected scheduler, which could be the primary scheduler or an alternative one based on the conditions provided by the `ays_scheduler` input."
+    },
+    {
+        "question": "Is the ImpactSchedulerAdapter node a CPU-bound or GPU-bound node in ComfyUI?",
+        "answer": "The ImpactSchedulerAdapter node is CPU-bound as indicated by the infra type 'CPU'. This suggests that the processing performed by this node is done on the CPU, not the GPU."
+    },
+    {
+        "question": "Which class in the ComfyUI Python codebase implements the ImpactSchedulerAdapter functionality?",
+        "answer": "The ImpactSchedulerAdapter functionality is implemented by the `ImpactSchedulerAdapter` class in the ComfyUI Python codebase."
+    },
+    {
+        "question": "What does the `doit` method of the ImpactSchedulerAdapter class do in ComfyUI?",
+        "answer": "The `doit` method of the ImpactSchedulerAdapter class takes the `scheduler` and `ays_scheduler` as parameters and returns the `ays_scheduler` if it is not 'None'. Otherwise, it returns the primary `scheduler`."
+    }
+]

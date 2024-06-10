@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the ADE_MultivalDynamic node in ComfyUI?",
+        "answer": "ADE_MultivalDynamic is a node in the Animate Diff 🎭🅐🅓 category that dynamically adjusts values within a specified range, applying these adjustments based on a mask and a scaling method."
+    },
+    {
+        "question": "What are the input types for ADE_MultivalDynamic?",
+        "answer": "ADE_MultivalDynamic accepts a required input 'float_val' of type float for value or range of values for dynamic adjustment, and an optional input 'mask_optional' of type MASK representing the mask that guides where and how the adjustments are applied."
+    },
+    {
+        "question": "What kind of values can the 'float_val' parameter accept in ADE_MultivalDynamic?",
+        "answer": "The 'float_val' parameter in ADE_MultivalDynamic can accept both single float values and lists of floats, allowing for varied adjustments across different areas guided by the mask."
+    },
+    {
+        "question": "What does the ADE_MultivalDynamic node output?",
+        "answer": "ADE_MultivalDynamic outputs 'multival', a tensor representing the result of dynamic adjustments applied to the input values, potentially across multiple values or areas depending on the mask and scaling method used."
+    },
+    {
+        "question": "Can ADE_MultivalDynamic be used on CPU or GPU?",
+        "answer": "ADE_MultivalDynamic is designed to be run on the CPU as specified by its infrastructure type, making it suitable for environments without high-end GPU capabilities."
+    },
+    {
+        "question": "What common nodes can be used with ADE_MultivalDynamic?",
+        "answer": "A common node that can be used with ADE_MultivalDynamic is ADE_ApplyAnimateDiffModel, which is part of the ComfyUI-AnimateDiff-Evolved nodes."
+    },
+    {
+        "question": "How does ADE_MultivalDynamic handle the 'float_val' when the 'mask_optional' is provided?",
+        "answer": "When the 'mask_optional' is provided to ADE_MultivalDynamic, the 'float_val' is adjusted to match the length of the mask if it is a list, and then the adjustments are applied using the mask to determine the distribution and intensity across the target."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Inference_Core_MaskOptFlow node in ComfyUI?",
+        "answer": "The Inference_Core_MaskOptFlow node is designed to process optical flow data by applying a mask to it, effectively filtering the optical flow based on the provided mask. This preprocessing step is crucial for tasks that require focused analysis on specific regions of the optical flow."
+    },
+    {
+        "question": "What are the input types required by the Inference_Core_MaskOptFlow node?",
+        "answer": "The Inference_Core_MaskOptFlow node requires two input types: 'optical_flow' (dtype: OPTICAL_FLOW, Python dtype: torch.Tensor) representing the optical flow data to be processed, and 'mask' (dtype: MASK, Python dtype: torch.Tensor) used to specify the regions of interest within the optical flow data."
+    },
+    {
+        "question": "What are the output types of the Inference_Core_MaskOptFlow node?",
+        "answer": "The Inference_Core_MaskOptFlow node outputs two types of data: 'OPTICAL_FLOW' (dtype: OPTICAL_FLOW, Python dtype: torch.Tensor), the modified optical flow data filtered through the applied mask, and 'PREVIEW_IMAGE' (dtype: IMAGE, Python dtype: torch.Tensor), a visual representation of the masked optical flow."
+    },
+    {
+        "question": "What is the role of the 'mask' parameter in the Inference_Core_MaskOptFlow node?",
+        "answer": "The 'mask' parameter in the Inference_Core_MaskOptFlow node is used to specify the regions of interest within the optical flow data, playing a critical role in filtering and refining the flow data for targeted analysis."
+    },
+    {
+        "question": "Which type of node in ComfyUI is the Inference_Core_MaskOptFlow categorized under?",
+        "answer": "The Inference_Core_MaskOptFlow is categorized under 'ControlNet Preprocessors/Optical Flow' in ComfyUI."
+    },
+    {
+        "question": "How does the Inference_Core_MaskOptFlow node adjust the mask to fit the optical flow data?",
+        "answer": "The Inference_Core_MaskOptFlow node adjusts the mask to fit the optical flow data by interpolating it to the shape of the optical flow and rearranging its dimensions to match those of the flow data."
+    },
+    {
+        "question": "What infrastructure type does the Inference_Core_MaskOptFlow node require for optimal performance?",
+        "answer": "The Inference_Core_MaskOptFlow node requires 'GPU' infrastructure for optimal performance."
+    }
+]

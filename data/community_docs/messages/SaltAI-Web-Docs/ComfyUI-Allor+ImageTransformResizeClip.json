@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the ImageTransformResizeClip node in ComfyUI used for?",
+        "answer": "The ImageTransformResizeClip node in ComfyUI is used for resizing images within specified maximum and minimum dimensions, using various interpolation methods to maintain image quality."
+    },
+    {
+        "question": "What are the required input types for the ImageTransformResizeClip node?",
+        "answer": "The required input types for the ImageTransformResizeClip node include images (Comfy dtype: IMAGE, Python dtype: torch.Tensor), max_width (Comfy dtype: INT, Python dtype: int), max_height (Comfy dtype: INT, Python dtype: int), min_width (Comfy dtype: INT, Python dtype: int), min_height (Comfy dtype: INT, Python dtype: int), and method (Comfy dtype: COMBO[STRING], Python dtype: str)."
+    },
+    {
+        "question": "How does the ImageTransformResizeClip node determine the output image size?",
+        "answer": "The ImageTransformResizeClip node dynamically calculates the scale to ensure the resized image adheres to the given constraints of maximum and minimum width and height."
+    },
+    {
+        "question": "Which interpolation methods are available in the ImageTransformResizeClip node?",
+        "answer": "The interpolation methods available in the ImageTransformResizeClip node include lanczos, bicubic, hamming, bilinear, box, and nearest."
+    },
+    {
+        "question": "What is the output type of the ImageTransformResizeClip node?",
+        "answer": "The output type of the ImageTransformResizeClip node is image (Comfy dtype: IMAGE, Python dtype: torch.Tensor), which represents the resized images."
+    },
+    {
+        "question": "What are the default values for `max_width` and `max_height` in the ImageTransformResizeClip node?",
+        "answer": "The default values for `max_width` and `max_height` in the ImageTransformResizeClip node are both 1024."
+    },
+    {
+        "question": "What happens if `min_width` is greater than or equal to `max_width` or `min_height` is greater than or equal to `max_height` in the ImageTransformResizeClip node?",
+        "answer": "If `min_width` is greater than or equal to `max_width` or `min_height` is greater than or equal to `max_height` in the ImageTransformResizeClip node, the original images are returned without any resizing."
+    }
+]

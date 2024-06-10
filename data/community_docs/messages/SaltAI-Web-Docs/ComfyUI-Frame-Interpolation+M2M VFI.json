@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is M2M VFI used for in ComfyUI?",
+        "answer": "M2M VFI is a custom node in ComfyUI used for video frame interpolation, leveraging deep learning models to predict and generate intermediate frames between existing frames in a video sequence."
+    },
+    {
+        "question": "What does the 'ckpt_name' parameter in M2M VFI determine?",
+        "answer": "The 'ckpt_name' parameter in M2M VFI determines which pretrained model weights to load for frame interpolation."
+    },
+    {
+        "question": "Which node category does M2M VFI belong to in ComfyUI?",
+        "answer": "M2M VFI belongs to the 'ComfyUI-Frame-Interpolation/VFI' category in ComfyUI."
+    },
+    {
+        "question": "What is the function of 'multiplier' in the M2M VFI node?",
+        "answer": "The 'multiplier' parameter in M2M VFI determines how many intermediate frames are to be generated between each pair of input frames, directly influencing the output video's frame rate."
+    },
+    {
+        "question": "What are the input data types for the 'frames' parameter in M2M VFI?",
+        "answer": "The input data type for the 'frames' parameter in M2M VFI is a `torch.Tensor`, which is represented as 'IMAGE' in Comfy dtype."
+    },
+    {
+        "question": "How does M2M VFI prevent memory overflow during the frame interpolation process?",
+        "answer": "M2M VFI prevents memory overflow during frame interpolation by clearing the cache after a specified number of frames, as determined by the 'clear_cache_after_n_frames' parameter."
+    },
+    {
+        "question": "What optional parameter can influence frame skipping and interpolation behavior in M2M VFI?",
+        "answer": "The optional parameter 'optional_interpolation_states', of type 'INTERPOLATION_STATES', can influence frame skipping and interpolation behavior in M2M VFI, allowing for more control over the interpolation process."
+    }
+]

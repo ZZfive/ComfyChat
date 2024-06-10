@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the VAEDecodeTiled node used for in ComfyUI?",
+        "answer": "The VAEDecodeTiled node in ComfyUI is used for decoding latent representations into images, particularly optimized for processing large images in tiles to save memory and accommodate images larger than standard sizes."
+    },
+    {
+        "question": "What does the 'samples' parameter represent in the VAEDecodeTiled node?",
+        "answer": "The 'samples' parameter in the VAEDecodeTiled node represents the latent representations that are to be decoded into images. It contains the encoded information crucial for the transformation back into visual form."
+    },
+    {
+        "question": "What is the role of the 'vae' parameter in the VAEDecodeTiled node?",
+        "answer": "The 'vae' parameter in VAEDecodeTiled is the variational autoencoder model used for decoding the latent representations. It transforms the encoded data into images during the decoding process."
+    },
+    {
+        "question": "How does 'tile_size' influence the processing of images in VAEDecodeTiled?",
+        "answer": "The 'tile_size' parameter in VAEDecodeTiled influences the processing of images by specifying the dimensions of the tiles used during tiled decoding. Smaller tiles can provide finer control over memory usage and processing time for large images."
+    },
+    {
+        "question": "What are the data types for 'samples', 'vae', and 'tile_size' input parameters in VAEDecodeTiled?",
+        "answer": "The 'samples' input is of type `LATENT` recognized by ComfyUI and `torch.Tensor` in Python, 'vae' is of type `VAE` in ComfyUI and `torch.nn.Module` in Python, and 'tile_size' is of type `INT` in ComfyUI and `int` in Python."
+    },
+    {
+        "question": "What output does the VAEDecodeTiled node produce?",
+        "answer": "The VAEDecodeTiled node produces an image output generated from the decoded latent representations, processed in a tiled manner. The image is of type `IMAGE` recognized by ComfyUI and `torch.Tensor` in Python."
+    },
+    {
+        "question": "What is the function called in the source code of the VAEDecodeTiled class for decoding?",
+        "answer": "The function called for decoding in the source code of the VAEDecodeTiled class is the 'decode' function."
+    }
+]

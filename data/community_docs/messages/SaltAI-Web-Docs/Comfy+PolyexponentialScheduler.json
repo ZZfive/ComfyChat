@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the PolyexponentialScheduler node used for in ComfyUI?",
+        "answer": "The PolyexponentialScheduler node is used to generate a sequence of sigma values based on a polyexponential function, which are then used to control the noise level at each step of a diffusion process, allowing for fine-tuned adjustments to the sampling behavior."
+    },
+    {
+        "question": "Which parameter in the PolyexponentialScheduler influences the maximum noise to be introduced at the beginning of the diffusion process?",
+        "answer": "The parameter influencing the maximum noise is `sigma_max`, which sets the upper limit of noise to be introduced in the early stages of the diffusion process."
+    },
+    {
+        "question": "In the context of the PolyexponentialScheduler, what does the `steps` parameter specify?",
+        "answer": "The `steps` parameter in the PolyexponentialScheduler specifies the number of steps for which sigma values are to be generated, affecting the granularity of the diffusion process."
+    },
+    {
+        "question": "What is the output type of the PolyexponentialScheduler node and what does it represent?",
+        "answer": "The output type of the PolyexponentialScheduler node is `sigmas`, which represents a sequence of sigma values that are calculated based on the polyexponential function and tailored for each step of the diffusion process."
+    },
+    {
+        "question": "How does the `rho` parameter in the PolyexponentialScheduler node affect the distribution of sigma values across the diffusion steps?",
+        "answer": "The `rho` parameter in the PolyexponentialScheduler influences the shape of the polyexponential curve, thereby affecting the distribution of sigma values across the steps, making them more or less concentrated towards the beginning or end of the diffusion process."
+    },
+    {
+        "question": "What is the purpose of the `sigma_min` parameter in the PolyexponentialScheduler node?",
+        "answer": "The `sigma_min` parameter in the PolyexponentialScheduler determines the lower limit of noise for the final stages of the diffusion process, ensuring that the process gradually refines the generated output as it progresses."
+    },
+    {
+        "question": "What type of hardware is the PolyexponentialScheduler node optimized to run on?",
+        "answer": "The PolyexponentialScheduler node is optimized to run on a CPU, as indicated by its infra type in the documentation."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the role of the ImpactControlNetApplySEGS node in ComfyUI?",
+        "answer": "The ImpactControlNetApplySEGS node in ComfyUI is designed to modify segmentation outputs based on specified controls, which can enhance or alter the segmentation results in a targeted manner by applying a control network to segmentation data (SEGS)."
+    },
+    {
+        "question": "What is required input for the ImpactControlNetApplySEGS node and what dtype is expected?",
+        "answer": "The required input for the ImpactControlNetApplySEGS node is `segs`, which is segmentation data, expected to be of Comfy dtype `SEGS` and Python dtype `Tuple[Tuple[Any, List[SEG]]]`. Another required input is `control_net`, a control network to apply to the segmentation data of dtype `CONTROL_NET` and `ControlNetWrapper` in Python."
+    },
+    {
+        "question": "How does the `strength` parameter influence the behavior of the ImpactControlNetApplySEGS node?",
+        "answer": "The `strength` parameter in the ImpactControlNetApplySEGS node is a scalar value that determines the intensity of the control network's effect on the segmentation. Its dtype in Comfy is `FLOAT` and in Python, it is `float`."
+    },
+    {
+        "question": "What are the optional inputs for the ImpactControlNetApplySEGS node and what do they do?",
+        "answer": "The optional inputs for the ImpactControlNetApplySEGS node are `segs_preprocessor` and `control_image`. `segs_preprocessor` is an optional preprocessor for segmentation data before the control network is applied, and `control_image` is an optional image that can influence how the control network's application to the segmentation data occurs."
+    },
+    {
+        "question": "What does the ImpactControlNetApplySEGS node output and in what format?",
+        "answer": "The ImpactControlNetApplySEGS node outputs the modified segmentation data after applying the control network, with Comfy dtype `SEGS` and Python dtype `Tuple[Tuple[Any, List[SEG]]]`."
+    },
+    {
+        "question": "Which ControlNet node is detailed in the given documentation?",
+        "answer": "The ImpactControlNetApplySEGS node is detailed in the given documentation, which falls under the category `ImpactPack/Util` in ComfyUI."
+    },
+    {
+        "question": "What is the python class name for the documentation provided for ComfyUI's ImpactControlNetApplySEGS node?",
+        "answer": "The python class name for the documentation provided for ComfyUI's ImpactControlNetApplySEGS node is `ControlNetApplySEGS`."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does the MaskListToMaskBatch node do in ComfyUI?",
+        "answer": "The MaskListToMaskBatch node in ComfonyUI is designed to transform a list of individual masks into a single batch of masks, facilitating batch operations in image processing tasks."
+    },
+    {
+        "question": "What type of input does the MaskListToMaskBatch node in ComfyUI require?",
+        "answer": "The 'mask' input is required for the MaskListToMaskBatch node, representing a list of individual masks that are to be transformed into a batch for batch processing of images."
+    },
+    {
+        "question": "How does the MaskListToMaskBatch node handle multiple masks of different dimensions?",
+        "answer": "When multiple masks of different dimensions are input into the MaskListToMaskBatch node, it handles the differences by upsampling them to the same size and then concatenating them."
+    },
+    {
+        "question": "What is the output type of the MaskListToMaskBatch node in ComfyUI?",
+        "answer": "The output of the MaskListToMaskBatch node in ComfyUI is of dtype `MASK`, which can be either a single 3D mask or a concatenated batch of 3D masks, depending on the number of masks in the input list."
+    },
+    {
+        "question": "How does the MaskListToMaskBatch node in ComfyUI generate a single 3D mask output?",
+        "answer": "When the input list contains a single mask, the MaskListToMaskBatch node generates a single 3D mask as output by calling the `make_3d_mask` function."
+    },
+    {
+        "question": "How are multiple masks concatenated into a batch by the MaskListToMaskBatch node in ComfyUI?",
+        "answer": "When the input list contains multiple masks, the MaskListToMaskBatch node in ComfyUI uses the `torch.cat` function to concatenate them into a batch after ensuring they are all 3D masks of the same size through upsampling if necessary."
+    },
+    {
+        "question": "What does the MaskListToMaskBatch node output if the input list is empty?",
+        "answer": "If the input mask list is empty, the MaskListToMaskBatch node outputs an empty mask of shape `(1, 64, 64)` by creating a zero tensor of the correct size and data type."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the `easy loraStack` node used for in ComfyUI?",
+        "answer": "The `easy loraStack` node is used for dynamically loading and managing LoRA models to enhance or modify neural network behavior. It allows for the flexible integration of multiple LoRA models and adjusting their strengths."
+    },
+    {
+        "question": "What does the `toggle` input control in the `loraStackLoader` node?",
+        "answer": "The `toggle` input determines whether the LoRA stack loading functionality is enabled or disabled, affecting whether any LoRA models are loaded and applied. It is of type `COMBO[BOOLEAN]` in Comfy dtype and Python dtype `bool`."
+    },
+    {
+        "question": "How is the `num_loras` input utilized in the loading process?",
+        "answer": "The `num_loras` input defines the number of LoRA models to be loaded and managed, allowing for customization of the model adaptation process. It is an `INT` type input in Comfo dtype and Python dtype `int`."
+    },
+    {
+        "question": "What does the optional `optional_lora_stack` input allow in the `loraStackLoader` node?",
+        "answer": "The `optional_lora_stack` input is an optional parameter that allows for the inclusion of an existing stack of LoRA models to be considered in the loading process. It is of type `LORA_STACK` in Comfy dtype and Python dtype `List[Dict[str, Any]]`."
+    },
+    {
+        "question": "What is the purpose of the `lora_i_name` input?",
+        "answer": "The `lora_i_name` input specifies the name of the i-th LoRA model to be loaded, enabling the selection of specific models for application. It is of type `COMBO[STRING]` in Comfy dtype and Python dtype `str`."
+    },
+    {
+        "question": "How are the strength inputs used in the `loraStackLoader` node?",
+        "answer": "The strength inputs such as `lora_i_strength`, `lora_i_model_strength`, and `lora_i_clip_strength` define the overall and specific strengths of the i-th LoRA model's effect, influencing its impact on the neural network. They are of type `FLOAT` in Comfy dtype and Python dtype `float`."
+    },
+    {
+        "question": "What is the output type and format of the `loraStackLoader` node?",
+        "answer": "The `loraStackLoader` node outputs a collection of LoRA models that have been loaded and configured based on the input parameters. This output is of type `LORA_STACK` in Comfy dtype and Python dtype `List[Dict[str, Any]]`, ready for integration into the neural network."
+    }
+]

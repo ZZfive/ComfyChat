@@ -1,0 +1,46 @@
+[
+    {
+        "question": "What is the SAMDetectorCombined node used for in ComfyUI?",
+        "answer": "The SAMDetectorCombined node in ComfyUI is designed for generating segmentation masks by leveraging a SAM model. It combines various inputs, such as image data and segmentation hints, to produce detailed masks that highlight specific areas of interest within the image."
+    },
+    {
+        "question": "What is the class name associated with the SAMDetectorCombined node in ComfyUI?",
+        "answer": "The class name associated with the SAMDetectorCombined node in ComfyUI is `SAMDetectorCombined`."
+    },
+    {
+        "question": "What is the role of the `sam_model` input in the SAMDetectorCombined node?",
+        "answer": "The `sam_model` input in the SAMDetectorCombined node specifies the SAM model to be used for mask generation, playing a crucial role in determining the accuracy and quality of the output masks."
+    },
+    {
+        "question": "Which type of data does the `image` input in the SAMDetectorCombined node represent?",
+        "answer": "The `image` input in the SAMDetectorCombined node represents the input image on which the mask generation is performed, serving as the primary data source for the detection process. It has a Comfy dtype of `IMAGE` and a Python dtype of `torch.Tensor`."
+    },
+    {
+        "question": "What does the `dilation` input in the SAMDetectorCombined node affect?",
+        "answer": "The `dilation` input in the SAMDetectorCombined node adjusts the thickness of the edges in the generated mask, allowing for finer control over the mask's appearance."
+    },
+    {
+        "question": "Which input controls the area of coverage around detected objects in the SAMDetectorCombined node?",
+        "answer": "The `bbox_expansion` input in the SAMDetectorCombined node controls the expansion of bounding boxes around detected objects, affecting the mask's coverage area."
+    },
+    {
+        "question": "What determines the threshold for applying mask hints in the SAMDetectorCombined node?",
+        "answer": "The `mask_hint_threshold` input in the SAMDetectorCombined node determines the threshold for applying mask hints, influencing how hints are used to refine the mask."
+    },
+    {
+        "question": "What does the `mask_hint_use_negative` input in the SAMDetectorCombined node control?",
+        "answer": "The `mask_hint_use_negative` input in the SAMDetectorCombined node indicates whether negative hints are used, which can exclude certain areas from the mask, providing more control over the mask's content."
+    },
+    {
+        "question": "What is the output of the SAMDetectorCombined node in ComfyUI?",
+        "answer": "The output of the SAMDetectorCombined node in ComfyUI is a detailed mask that highlights specific areas of interest within the image, based on the provided inputs and model predictions. The output has a Comfy dtype of `MASK` and a Python dtype of `torch.Tensor`."
+    },
+    {
+        "question": "What is the purpose of the `detection_hint` input in the SAMDetectorCombined node?",
+        "answer": "The `detection_hint` input in the SAMDetectorCombined node provides hints to the model about the expected location and shape of the object to be masked, enhancing the precision of the detection."
+    },
+    {
+        "question": "Which nodes are commonly used together with the SAMDetectorCombined node in ComfyUI?",
+        "answer": "The nodes commonly used together with the SAMDetectorCombined node in ComfyUI include ImpactSegsAndMask, Segs & Mask, and MaskToImage."
+    }
+]

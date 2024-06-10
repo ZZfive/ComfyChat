@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Inference_Core_PixelPerfectResolution node in ComfyUI?",
+        "answer": "The Inference_Core_PixelPerfectResolution node in ComfyUI is designed to compute the optimal resolution for image generation tasks, ensuring pixel-perfect accuracy by adjusting the image size based on target dimensions and a specified resizing mode."
+    },
+    {
+        "question": "What inputs are required for the Inference_Core_PixelPerfectResolution node?",
+        "answer": "The Inference_Core_PixelPerfectResolution node requires the original image as a numpy array, the target width (`image_gen_width`), the target height (`image_gen_height`), and the resize mode."
+    },
+    {
+        "question": "What is the data type of the original image input in the Inference_Core_PixelPerfectResolution node?",
+        "answer": "The data type of the original image input in the Inference_Core_PixelPerfectResolution node is `IMAGE` in ComfyUI terms and `np.ndarray` in Python."
+    },
+    {
+        "question": "How does the Inference_Core_PixelPerfectResolution node determine the resizing mode?",
+        "answer": "The resizing mode in the Inference_Core_PixelPerfectResolution node is specified through an input that determines how the image should be scaled to meet the target dimensions, such as inner fit or outer fit."
+    },
+    {
+        "question": "What is the output of the Inference_Core_PixelPerfectResolution node?",
+        "answer": "The output of the Inference_Core_PixelPerfectResolution node is the computed optimal dimension (as an integer) for the image, ensuring pixel-perfect resolution."
+    },
+    {
+        "question": "How does Inference_Core_PixelPerfectResolution handle different resizing modes to adjust resolution?",
+        "answer": "Inference_Core_PixelPerfectResolution adjusts the resolution based on the target dimensions and resizing mode. For `outer fit`, it uses the minimum scale factor that fits both dimensions, while for other modes, it uses the maximum scale factor."
+    },
+    {
+        "question": "In which category of ComfyUI nodes does the Inference_Core_PixelPerfectResolution node belong?",
+        "answer": "The Inference_Core_PixelPerfectResolution node belongs to the `ControlNet Preprocessors` category in ComfyUI."
+    }
+]

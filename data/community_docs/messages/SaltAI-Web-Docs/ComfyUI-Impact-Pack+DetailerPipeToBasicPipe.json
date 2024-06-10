@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the DetailerPipeToBasicPipe node in ComfyUI?",
+        "answer": "The DetailerPipeToBasicPipe node in ComfyUI is designed to transform a detailer pipe configuration into two basic pipe configurations, one for the base model and another for the refiner model, abstracting the complexity of handling different components within a detailer pipe."
+    },
+    {
+        "question": "What does the input `detailer_pipe` represent in the DetailerPipeToBasicPipe node?",
+        "answer": "The `detailer_pipe` input in the DetailerPipeToBasicPipe node is a comprehensive configuration that includes models, clips, VAEs, and conditioning information for both the base and refiner setups, serving as the source from which the basic pipe configurations are derived."
+    },
+    {
+        "question": "What are the output types of the DetailerPipeToBasicPipe node?",
+        "answer": "The output types of the DetailerPipeToBasicPipe node are `base_basic_pipe` and `refiner_basic_pipe`, which are both of dtype `BASIC_PIPE`. The `base_basic_pipe` contains the model, clip, VAE, and conditioning information for the base setup, while the `refiner_basic_pipe` focuses on the refiner model's setup including its model, clip, VAE, and conditioning information."
+    },
+    {
+        "question": "Which python data type does ComfyUI use to represent `base_basic_pipe`?",
+        "answer": "ComfyUI uses `Tuple[torch.nn.Module, torch.nn.Module, torch.nn.Module, str, str]` as the Python data type to represent `base_basic_pipe`."
+    },
+    {
+        "question": "What is the category of the DetailerPipeToBasicPipe node in ComfyUI?",
+        "answer": "The category of the DetailerPipeToBasicPipe node in ComfyUI is `ImpactPack/Pipe`."
+    },
+    {
+        "question": "What is the function of the `doit` method in the DetailerPipeToBasicPipe node source code?",
+        "answer": "The `doit` method in the DetailerPipeToBasicPipe node source code is responsible for unpacking the `detailer_pipe` and creating two basic pipe configurations: one for the base model and another for the refiner model."
+    },
+    {
+        "question": "What infra type is recommended for the DetailerPipeToBasicPipe node?",
+        "answer": "The recommended infra type for the DetailerPipeToBasicPipe node is `CPU`."
+    }
+]

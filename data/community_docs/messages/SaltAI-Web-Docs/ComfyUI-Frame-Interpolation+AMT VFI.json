@@ -1,34 +1,30 @@
 [
     {
-        "question": "What is AMT VFI?",
-        "answer": "AMT VFI is a node in ComfyUI specialized in video frame interpolation using deep learning techniques to generate intermediate frames, enhancing video smoothness and frame rate."
+        "question": "What is the primary function of the AMT VFI node in ComfyUI?",
+        "answer": "The AMT VFI node specializes in video frame interpolation, utilizing deep learning techniques to generate intermediate frames that enhance the smoothness and frame rate of video sequences."
     },
     {
-        "question": "What does the AMT VFI node do?",
-        "answer": "The AMT VFI node inserts intermediate frames between existing video frames to improve the video playback quality."
+        "question": "Which input parameter in AMT VFI is used to specify the checkpoint name for the model?",
+        "answer": "The `ckpt_name` input parameter is used to specify the checkpoint name for the model to be used in the interpolation process."
     },
     {
-        "question": "How does the AMT VFI node enhance video playback?",
-        "answer": "The AMT VFI node employs advanced models to predict and insert frames between existing ones, which enhances video smoothness and increases the frame rate."
+        "question": "What does the input parameter `frames` represent in the AMT VFI node?",
+        "answer": "The `frames` input parameter represents the input video frames to be interpolated, provided as a tensor."
     },
     {
-        "question": "What are the input types required by the AMT VFI node?",
-        "answer": "The AMT VFI node requires inputs such as 'ckpt_name' for specifying the model checkpoint, 'frames' as input video frames, 'clear_cache_after_n_frames' to control memory usage, and 'multiplier' to determine the number of intermediate frames."
+        "question": "How does the `clear_cache_after_n_frames` parameter affect the AMT VFI node's performance?",
+        "answer": "The `clear_cache_after_n_frames` parameter controls the frequency of cache clearing to manage memory usage during the interpolation process, affecting performance and resource utilization."
     },
     {
-        "question": "How does 'ckpt_name' influence the AMT VFI node's operation?",
-        "answer": "'ckpt_name' specifies the checkpoint name for the model used in frame interpolation, configuring the specific deep learning model utilized."
+        "question": "What is the purpose of the `multiplier` input parameter in the AMT VFI node?",
+        "answer": "The `multiplier` input parameter determines the number of intermediate frames to be generated between each pair of original frames, directly influencing the output video's frame rate."
     },
     {
-        "question": "What is the role of 'frames' in the AMT VFI node?",
-        "answer": "'frames' are the input video frames processed by the AMT VFI node for generating interpolated frames."
+        "question": "What optional input does the AMT VFI node provide for customizing interpolation?",
+        "answer": "The AMT VFI node provides the optional input parameter `optional_interpolation_states`, which allows for the customization of interpolation states, offering flexibility in handling specific frames or conditions."
     },
     {
-        "question": "How does 'clear_cache_after_n_frames' affect the AMT VFI node?",
-        "answer": "'clear_cache_after_n_frames' controls the frequency of cache clearing during interpolation to manage memory effectively."
-    },
-    {
-        "question": "What is the purpose of 'multiplier' in the AMT VFI node?",
-        "answer": "'multiplier' determines the number of intermediate frames generated between each pair of original frames, influencing the final frame rate of the output video."
+        "question": "What form of output does the AMT VFI node generate?",
+        "answer": "The AMT VFI node generates its output in the form of enhanced video frames after interpolation, showcased as `image` with the Comfy dtype `IMAGE` and Python dtype `torch.Tensor`."
     }
 ]
