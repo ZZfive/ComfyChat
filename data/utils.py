@@ -49,13 +49,16 @@ def get_data_from_url(url: str) -> Any:
        raise ValueError(f"Failed to get data from url {url}, err: {e}")
     
 
-def parse_json(rsp):
-    pattern = r'```json(.*)```'
-    match = re.search(pattern, rsp, re.DOTALL)
-    # print(match)
-    # print(match.group(1))
-    json_data = match.group(1) if match else ''
-    return json.loads(json_data)
+def parse_json(rsp: str) -> Any:
+    try:
+        return json.loads(rsp)
+    except:
+        pattern = r'```json(.*)```'
+        match = re.search(pattern, rsp, re.DOTALL)
+        # print(match)
+        # print(match.group(1))
+        json_data = match.group(1) if match else ''
+        return json.loads(json_data)
 
 
 def create_logger(name: str, log_dir: str = '/root/code/ComfyChat/data/logs') -> logging.Logger:
