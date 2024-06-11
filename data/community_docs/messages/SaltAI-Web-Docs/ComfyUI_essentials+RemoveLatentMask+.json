@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RemoveLatentMask+ node in ComfyUI?",
+        "answer": "The RemoveLatentMask+ node in ComfyUI is designed to process latent representations by removing any existing noise mask from the samples, ensuring that the latent samples are clean and devoid of any artificially added noise."
+    },
+    {
+        "question": "What input type is required by the RemoveLatentMask+ node?",
+        "answer": "The RemoveLatentMask+ node requires the input type `samples`, which is the latent representation of an image or a batch of images containing the data from which the noise mask, if present, will be removed."
+    },
+    {
+        "question": "What output type does the RemoveLatentMask+ node produce and what is its purpose?",
+        "answer": "The RemoveLatentMask+ node produces the output type `latent`, which is the cleaned latent representation after the removal of the noise mask, making the output ready for further processing or generation tasks without interference of previously added noise."
+    },
+    {
+        "question": "What is the Python data type used for the input and output of the RemoveLatentMask+ node?",
+        "answer": "The RemoveLatentMask+ node uses the Python data type `Dict[str, torch.Tensor]` for both the input and output, where the `samples` input and `latent` output are both represented as dictionaries with string keys and PyTorch tensor values."
+    },
+    {
+        "question": "What is the Infra type of the RemoveLatentMask+ node?",
+        "answer": "The Infra type of the RemoveLatentMask+ node is `GPU`, indicating that the operations performed by this node are optimized for GPU execution."
+    },
+    {
+        "question": "How does the RemoveLatentMask+ node remove the noise mask from the latent samples?",
+        "answer": "The RemoveLatentMask+ node removes the noise mask by copying the samples and then checking if a `noise_mask` is present in the copy. If a `noise_mask` is found, it is deleted from the copy, effectively removing the noise mask from the latent samples."
+    },
+    {
+        "question": "What category does the RemoveLatentMask+ node belong to in the ComfyUI node tree?",
+        "answer": "The RemoveLatentMask+ node belongs to the `essentials` category in the ComfyUI node tree, which groups nodes that are fundamental for common image processing and generation tasks."
+    }
+]

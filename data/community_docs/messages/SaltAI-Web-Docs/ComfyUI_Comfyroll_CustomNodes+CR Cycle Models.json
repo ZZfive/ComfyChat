@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the CR Cycle Models node designed for in ComfyUI?",
+        "answer": "The CR Cycle Models node is designed to cycle through different models sequentially or maintain a single model based on the specified mode, facilitating dynamic model switching during animation sequences to enhance the versatility and creativity of the animation process."
+    },
+    {
+        "question": "What are the input types required by the CR Cycle Models node in ComfyUI?",
+        "answer": "The CR Cycle Models node requires inputs such as `mode`, `model`, `clip`, `model_list`, `frame_interval`, `loops`, and `current_frame`, which are used to determine the cycling mode, initial models, list of models to cycle through, interval for cycling, number of loops, and the current frame of the animation sequence, respectively."
+    },
+    {
+        "question": "Which output does the CR Cycle Models node provide that can be used for additional information about the cycling process?",
+        "answer": "The CR Cycle Models node provides the `show_help` output which is a help URL that offers additional information about the cycling process."
+    },
+    {
+        "question": "What are the output types of the CR Cycle Models node in ComfyUI designed for?",
+        "answer": "The CR Cycle Models node outputs the current `MODEL`, `CLIP`, and `VAE` models after cycling, which may differ from the initial models depending on the cycling mode and frame progress, and a `show_help` URL."
+    },
+    {
+        "question": "How does the CR Cycle Models node determine the current model when the mode is set to 'Sequential'?",
+        "answer": "When the mode is 'Sequential', the CR Cycle Models node calculates the index of the current model based on the `current_frame` and the `frame_interval`, retrieves the parameters of the current model from the `model_params` list, and loads the corresponding model based on these parameters."
+    },
+    {
+        "question": "What does the `frame_interval` input determine for the CR Cycle Models node in ComfyUI?",
+        "answer": "The `frame_interval` input determines the interval between frames at which the model cycling occurs, essentially controlling the frequency of model switches during the animation sequence."
+    },
+    {
+        "question": "What are the possible cycling modes available in the CR Cycle Models node of ComfyUI?",
+        "answer": "The CR Cycle Models node allows for the selection of cycling modes such as 'Off' for no cycling or 'Sequential' for cycling through models based on the current frame and interval settings."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the 'Mix Color By Mask' node used for in ComfyUI?",
+        "answer": "The 'Mix Color By Mask' node in ComfyUI is used to blend a specified color into an image based on a provided mask, enabling selective colorization or recoloring of parts of the image."
+    },
+    {
+        "question": "What determines which parts of the image will be blended with the specified color in the 'Mix Color By Mask' node?",
+        "answer": "The parts of the image that will be blended with the specified color in the 'Mix Color By Mask' node are determined by the mask. Areas with higher values in the mask will have more of the color applied."
+    },
+    {
+        "question": "What does the 'mask' input in the 'Mix Color By Mask' node represent?",
+        "answer": "The 'mask' input in the 'Mix Color By Mask' node represents the areas where the specified color should be blended into the original image. It influences the extent to which the color is applied based on its values."
+    },
+    {
+        "question": "What are the required inputs for the 'Mix Color By Mask' node in ComfyUI?",
+        "answer": "The required inputs for the 'Mix Color By Mask' node in ComfyUI are 'image', 'r', 'g', 'b', and 'mask'. These stand for the original image, red component, green component, blue component, and the mask, respectively."
+    },
+    {
+        "question": "What is the output of the 'Mix Color By Mask' node?",
+        "answer": "The output of the 'Mix Color By Mask' node is the resulting image after blending the specified color into the original image based on the mask. It is represented with the Comfy dtype `IMAGE` and Python dtype `torch.Tensor`."
+    },
+    {
+        "question": "Which class in the source code is responsible for the functionality of the 'Mix Color By Mask' node?",
+        "answer": "The class responsible for the functionality of the 'Mix Color By Mask' node is `MixColorByMask`."
+    },
+    {
+        "question": "How are the color components handled in the 'Mix Color By Mask' node's source code?",
+        "answer": "In the 'Mix Color By Mask' node's source code, the color components 'r', 'g', and 'b' are scaled to be between 0 and 1 by dividing them by 255. This is done to normalize the values for blending."
+    }
+]

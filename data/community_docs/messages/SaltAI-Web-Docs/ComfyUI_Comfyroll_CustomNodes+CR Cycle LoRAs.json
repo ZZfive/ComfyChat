@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR Cycle LoRAs node in ComfyUI?",
+        "answer": "The CR Cycle LoRAs node is designed to cycle through a predefined list of LoRA (Low-Rank Adaptation) parameters sequentially or based on a schedule, applying them to a model and clip at specified intervals to enable dynamic modification of model behaviors over time or frames."
+    },
+    {
+        "question": "Which inputs determine the cycling strategy for applying LoRA parameters in CR Cycle LoRAs?",
+        "answer": "The 'mode' input determines the cycling strategy for applying LoRA parameters in CR Cycle LoRAs, either sequentially or based on a specific schedule."
+    },
+    {
+        "question": "What does the 'lora_list' input represent in the CR Cycle LoRAs node?",
+        "answer": "The 'lora_list' input in the CR Cycle LoRAs node contains the predefined list of LoRA parameters to cycle through, dictating the specific adaptations to apply to the model and clip."
+    },
+    {
+        "question": "How does the CR Cycle LoRAs node modify the generative model and CLIP model?",
+        "answer": "The CR Cycle LoRAs node modifies the generative model and CLIP model by applying the current LoRA parameters from the predefined list, if 'lora_list' is not empty, at each specified interval determined by 'frame_interval'. If the 'mode' is set to 'Sequential', it cycles through the LoRA parameters based on the current frame position."
+    },
+    {
+        "question": "What is the role of the 'loops' input in the CR Cycle LoRAs node?",
+        "answer": "The 'loops' input in the CR Cycle LoRAs node indicates the number of times the cycling process should repeat, affecting the overall duration of the LoRA parameter adaptation process."
+    },
+    {
+        "question": "What are the output types provided by the CR Cycle LoRAs node?",
+        "answer": "The CR Cycle LoRAs node provides output types including 'MODEL', 'CLIP', and 'show_help'. 'MODEL' refers to the modified generative model, 'CLIP' is the modified CLIP model, and 'show_help' provides a URL to documentation or further information."
+    },
+    {
+        "question": "What does the 'show_help' output from the CR Cycle LoRAs node provide?",
+        "answer": "The 'show_help' output from the CR Cycle LoRAs node provides a URL to documentation or further information regarding the applied LoRA parameters, guiding users to resources for support and details."
+    }
+]

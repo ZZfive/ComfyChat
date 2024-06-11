@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the Latent Size to Number node in ComfyUI used for?",
+        "answer": "The Latent Size to Number node in ComfyUI is designed to extract the width and height dimensions of tensors within a given set of samples and convert these dimensions into various numerical formats."
+    },
+    {
+        "question": "In which category does the Latent Size to Number node fall under in ComfyUI?",
+        "answer": "The Latent Size to Number node falls under the category 'WAS Suite/Number/Operations' in ComfyUI."
+    },
+    {
+        "question": "What type of input is expected by the 'samples' parameter in the Latent Size to Number node?",
+        "answer": "The 'samples' parameter in the Latent Size to Number node is expected to contain tensors from which the width and height dimensions are to be extracted. It should be of Comfy dtype 'LATENT', which is equivalent to a Python dictionary mapping strings to lists of torch tensors."
+    },
+    {
+        "question": "What does 'tensor_w_num' represent in the output of the Latent Size to Number node?",
+        "answer": "'tensor_w_num' in the output of the Latent Size to Number node represents the width of the first tensor in the samples, provided in multiple numerical formats."
+    },
+    {
+        "question": "What are the python data types of the outputs 'tensor_w_num' and 'tensor_h_num'?",
+        "answer": "The python data types of both 'tensor_w_num' and 'tensor_h_num' outputs in the Latent Size to Number node are 'Tuple[int, int, float, float, int, int]'."
+    },
+    {
+        "question": "How does the Latent Size to Number node handle the input 'samples' when executing?",
+        "answer": "When the Latent Size to Number node executes, it iterates through the tensors in the 'samples' input. For each tensor, it checks if it is a torch.Tensor. If not, an error message is printed. Then, it extracts the size of each tensor, converting the width and height dimensions into multiple numerical formats."
+    },
+    {
+        "question": "What does an instance of the 'WAS_Latent_Size_To_Number' class return?",
+        "answer": "An instance of the 'WAS_Latent_Size_To_Number' class will return 'tensor_w_num', 'tensor_h_num', which are the width and height of the first tensor in the 'samples' input provided in various numerical formats."
+    }
+]

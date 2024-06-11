@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the Film Interpolation (mtb) node used for in ComfyUI?",
+        "answer": "The Film Interpolation (mtb) node in ComfyUI utilizes Google Research's FILM technology for frame interpolation, specifically designed to handle large motion between frames, enhancing the fluidity and smoothness of motion in video content by interpolating additional frames between a sequence of images."
+    },
+    {
+        "question": "What are the required input types for the Film Interpolation (mtb) node?",
+        "answer": "The required input types for the Film Interpolation (mtb) node are a tensor of images (`images`), an integer for the number of frames to interpolate between each pair of input frames (`interpolate`), and an instance of the FILM model used for interpolation (`film_model`)."
+    },
+    {
+        "question": "In ComfyUI, what does the `images` input represent for the Film Interpolation (mtb) node?",
+        "answer": "In ComfyUI, the `images` input for the Film Interpolation (mtb) node represents a tensor of images that are to be interpolated. This input is crucial for determining the frames between which the interpolation will occur, directly influencing the output's visual continuity and is of type `IMAGE` in Comfy dtype and `torch.Tensor` in Python dtype."
+    },
+    {
+        "question": "What is the function of the `interpolate` input in the Film Interpolation (mtb) node of ComfyUI?",
+        "answer": "The `interpolate` input in the Film Interpolation (mtb) node of ComfyUI is an integer that specifies the number of frames to interpolate between each pair of input frames. It directly affects the smoothness and duration of the resulting motion and is of type `INT` in Comfy dtype and `int` in Python dtype."
+    },
+    {
+        "question": "What role does the FILM model input play in the Film Interpolation (mtb) process within ComfyUI?",
+        "answer": "The `film_model` input in the Film Interpolation (mtb) node of ComfyUI is an instance of the FILM model used for interpolation. This model is responsible for the actual computation of the interpolated frames, leveraging advanced techniques to manage large motions effectively. It is of type `FILM_MODEL` in Comfy dtype and `interpolator.Interpolator` in Python dtype."
+    },
+    {
+        "question": "What type of output does the Film Interpolation (mtb) node in ComfyUI produce?",
+        "answer": "The Film Interpolation (mtb) node in ComfyUI produces a tensor of interpolated images as an output, which is enriched with additional frames to create a smoother transition between the original images. This output is of type `IMAGE` in Comfy dtype and `torch.Tensor` in Python dtype."
+    },
+    {
+        "question": "Is the Film Interpolation (mtb) node in ComfyUI an output node?",
+        "answer": "No, the Film Interpolation (mtb) node in ComfyUI is not an output node."
+    }
+]

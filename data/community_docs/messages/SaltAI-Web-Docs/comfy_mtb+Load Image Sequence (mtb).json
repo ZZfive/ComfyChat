@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Load Image Sequence (mtb) node in ComfyUI?",
+        "answer": "The Load Image Sequence (mtb) node is designed to load a sequence of images from a specified folder, based on the current frame number, making it suitable for tasks that require processing image sequences such as video editing or animation."
+    },
+    {
+        "question": "What determines which frame the Load Image Sequence (mtb) node loads from the sequence?",
+        "answer": "The frame that is loaded from the sequence is determined by the parameter `current_frame`. A special value of -1 indicates that all frames should be loaded as a batch."
+    },
+    {
+        "question": "What are the output types of the Load Image Sequence (mtb) node?",
+        "answer": "The output types of the Load Image Sequence (mtb) node include `image` of dtype `IMAGE`, `mask` of dtype `MASK`, and `current_frame` of dtype `INT`."
+    },
+    {
+        "question": "What does the `path` input specify in the Load Image Sequence (mtb) node?",
+        "answer": "The `path` input specifies the folder path where the image sequence is stored. This path is used to locate and load the images."
+    },
+    {
+        "question": "Which node is usually used in conjunction with the Load Image Sequence (mtb) for loading a sequence of images?",
+        "answer": "The Load Image Sequence (mtb) node is usually used in conjunction with the `Primitive` node set to increment to load a sequence of images from a folder."
+    },
+    {
+        "question": "What is the `load_all` condition in the Load Image Sequence (mtb) node and how is it set?",
+        "answer": "The `load_all` condition is set when the `current_frame` is equal to -1, indicating that all frames should be loaded as a batch."
+    },
+    {
+        "question": "What does the Load Image Sequence (mtb) node return when all frames are loaded as a batch?",
+        "answer": "When all frames are loaded as a batch, the Load Image Sequence (mtb) node returns a batch of images in the `image` output, along with associated masks in the `mask` output."
+    }
+]

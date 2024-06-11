@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ImageDirIterator used for in ComfyUI?",
+        "answer": "ImageDirIterator is a custom node in ComfyUI designed to iterate through images in a specified directory, allowing retrieval of images by their index, which is beneficial for image processing pipelines or data loading for machine learning models."
+    },
+    {
+        "question": "What are the required input types for the ImageDirIterator node?",
+        "answer": "The required input types for the ImageDirIterator node are `directory_path` of type `STRING` to specify the path to the directory containing the images, and `image_index` of type `INT` to determine the index of the image to retrieve."
+    },
+    {
+        "question": "Which node would you use to access images in a directory by their index in ComfyUI?",
+        "answer": "In ComfyUI, the ImageDirIterator node is designed to access images in a directory by their index."
+    },
+    {
+        "question": "What does the `directory_path` input in ImageDirIterator represent?",
+        "answer": "The `directory_path` input in ImageDirIterator represents the path to the directory containing the images to be iterated over, which is essential for locating and accessing the image files."
+    },
+    {
+        "question": "How is `image_index` utilized by ImageDirIterator?",
+        "answer": "`image_index` in ImageDirIterator is used to determine the index of the image to retrieve from the sorted list of image files in the directory. The index is wrapped around using modulo to guarantee it is within the range of available images."
+    },
+    {
+        "question": "What operations are performed on an image by ImageDirIterator before it is output?",
+        "answer": "Before output, ImageDirIterator performs operations including loading the image, correcting its orientation, ensuring it is in RGB format, and converting it to a tensor representation."
+    },
+    {
+        "question": "What is the output dtype of ImageDirIterator in ComfyUI?",
+        "answer": "The output dtype of ImageDirIterator in ComfyUI is `IMAGE`, which returns a tensor representation of the image at the specified index, preprocessed and ready for further processing or as input to a model."
+    }
+]

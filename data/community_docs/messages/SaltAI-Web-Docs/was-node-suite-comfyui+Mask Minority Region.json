@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Mask Minority Region node in ComfyUI?",
+        "answer": "The Mask Minority Region node in ComfyUI is designed to identify and process the minority regions within given mask images, applying a threshold to distinguish between major and minor areas. This is crucial for tasks requiring focus on less dominant features within images."
+    },
+    {
+        "question": "What is the output of the Mask Minority Region node?",
+        "answer": "The output of the Mask Minority Region node is a tensor representing the processed mask images, where the minority regions have been isolated and emphasized, ready for further analysis or manipulation. The Comfy dtype for the output is `MASK`, and the Python dtype is `torch.Tensor`."
+    },
+    {
+        "question": "Which parameter in the Mask Minority Region node determines the areas to be isolated based on their dominance within the image?",
+        "answer": "The 'masks' parameter represents the input mask images on which the minority region identification and processing will be performed. This is essential for determining the areas to be isolated based on their dominance within the image."
+    },
+    {
+        "question": "What role does the 'threshold' parameter play in the Mask Minority Region node?",
+        "answer": "The 'threshold' parameter in the Mask Minority Region node sets the boundary for distinguishing between majority and minority regions within the mask images. It plays a critical role in defining which areas are considered minor and thus subject to further processing."
+    },
+    {
+        "question": "Can the Mask Minority Region node be executed on a GPU?",
+        "answer": "Yes, the Mask Minority Region node can be executed on a GPU. It has an infra type of 'GPU', which makes it suitable for processing mask images using GPU resources."
+    },
+    {
+        "question": "How are the input mask images processed when the Mask Minority Region node is applied to multiple masks?",
+        "answer": "When the Mask Minority Region node is applied to multiple masks, each mask is processed individually. The node performs the minority region identification and processing on each mask image separately before combining the results."
+    },
+    {
+        "question": "What is the class name associated with the Mask Minority Region functionality in the ComfyUI implementation?",
+        "answer": "The class name associated with the Mask Minority Region functionality in the ComfyUI implementation is `WAS_Mask_Minority_Region`."
+    }
+]

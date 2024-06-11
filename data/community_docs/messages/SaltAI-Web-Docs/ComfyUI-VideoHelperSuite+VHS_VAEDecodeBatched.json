@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the VHS_VAEDecodeBatched node used for in ComfyUI?",
+        "answer": "The VHS_VAEDecodeBatched node in ComfyUI is designed for batch processing of latent representations, decoding them back into images using a specified VAE model."
+    },
+    {
+        "question": "Which input defines the architecture and parameters for the decoding process in VHS_VAEDecodeBatched?",
+        "answer": "The 'vae' input, which is the VAE model used for decoding the latent representations, defines the architecture and parameters for the decoding process in VHS_VAEDecodeBatched."
+    },
+    {
+        "question": "What type of input is required by the 'samples' parameter in the VHS_VAEDecodeBatched node?",
+        "answer": "The 'samples' parameter in the VHS_VAEDecodeBatched node requires latent representations to be decoded into images, and its comfy dtype is 'LATENT' and python dtype is 'Dict[str, torch.Tensor]'."
+    },
+    {
+        "question": "What determines the number of samples processed in each batch by the VHS_VAEDecodeBatched node?",
+        "answer": "The number of samples processed in each batch by the VHS_VAEDecodeBatched node is determined by the 'per_batch' input, which specifies the size of the batch to handle processing and memory management efficiently."
+    },
+    {
+        "question": "What is the output type of the decoded images from the VHS_VAEDecodeBatched node?",
+        "answer": "The decoded images from the VHS_VAEDecodeBatched node have a type of 'IMAGE', with a torch.Tensor as the python dtype."
+    },
+    {
+        "question": "What is the minimum number of samples that can be processed in each batch by VHS_VAEDecodeBatched?",
+        "answer": "The minimum number of samples that can be processed in each batch by VHS_VAEDecodeBatched is 1, as defined by the minimum value of the 'per_batch' input."
+    },
+    {
+        "question": "What is the default number of samples processed per batch in the VAE Decode Batched node?",
+        "answer": "The default number of samples processed per batch in the VAE Decode Batched node is 16, according to the default value of the 'per_batch' input."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the 'Load Cache' node in ComfyUI used for?",
+        "answer": "The 'Load Cache' node is designed to load cached data from specified file paths in ComfyUI, supporting the loading of latent representations, images, and conditioning data, thus optimizing performance and resource utilization."
+    },
+    {
+        "question": "What does the 'latent_path' input do in the 'Load Cache' node?",
+        "answer": "The 'latent_path' input in the 'Load Cache' node specifies the file path for the latent representation cache, allowing the node to retrieve and utilize pre-computed latent representations if the file exists."
+    },
+    {
+        "question": "How does the 'Load Cache' node handle image loading?",
+        "answer": "The 'Load Cache' node loads images from the specified 'image_path', enabling efficient reuse of visual data if the file exists, thereby facilitating quicker iterations and resource conservation."
+    },
+    {
+        "question": "What is the purpose of the 'conditioning_path' input?",
+        "answer": "The 'conditioning_path' input is intended to specify the file path for the conditioning data cache. This input is critical for accessing pre-defined conditioning data, which can significantly impact the generation process by providing necessary context or constraints."
+    },
+    {
+        "question": "What kind of data can the 'Load Cache' node output?",
+        "answer": "The 'Load Cache' node can output latent representations ('LATENT'), images ('IMAGE'), and conditioning data ('CONDITIONING')."
+    },
+    {
+        "question": "What does the 'LATENT' output of the 'Load Cache' node represent?",
+        "answer": "The 'LATENT' output of the 'Load Cache' node represents the pre-computed latent representations that have been loaded from the specified file path, ready to be reused in the workflow."
+    },
+    {
+        "question": "Which package is used by the 'Load Cache' node to load data from cache files?",
+        "answer": "The 'Load Cache' node uses the 'joblib' package to load data from cache files. If 'joblib' is not already installed, it installs it automatically."
+    }
+]

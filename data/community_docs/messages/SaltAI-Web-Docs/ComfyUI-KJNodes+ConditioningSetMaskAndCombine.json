@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the ConditioningSetMaskAndCombine node used for in ComfyUI?",
+        "answer": "The ConditioningSetMaskAndCombine node in ComfyUI is designed to apply masks to conditioning data, allowing for the dynamic alteration of conditioning areas within a dataset by adjusting the data based on specified masks and their strengths."
+    },
+    {
+        "question": "What types of data can 'positive_i' and 'negative_i' inputs handle in the ConditioningSetMaskAndCombine node?",
+        "answer": "The 'positive_i' and 'negative_i' inputs in the ConditioningSetMaskAndCombine node handle 'CONDITIONING' data types, which are represented by 'torch.Tensor' in Python. This data is used for positive or negative conditioning adjustments."
+    },
+    {
+        "question": "How is the effect of a mask quantified in the ConditioningSetMaskAndCombine node?",
+        "answer": "The effect of a mask in the ConditioningSetMaskAndCombine node is quantified by the 'mask_i_strength' input, which defines the strength of the mask's influence on the conditioning, allowing for fine-tuned control over how prominently the mask affects the conditioning."
+    },
+    {
+        "question": "What role does the 'set_cond_area' input play in the ConditioningSetMaskAndCombine node?",
+        "answer": "The 'set_cond_area' input in the ConditioningSetMaskAndCombine node determines whether to set the conditioning area to the bounds of the mask or use the default setting, impacting the scope and precision of conditioning adjustments."
+    },
+    {
+        "question": "What are the output data types of the ConditioningSetMaskAndCombine node?",
+        "answer": "The ConditioningSetMaskAndCombine node outputs 'combined_positive' and 'combined_negative' data, both of which are of dtype 'CONDITIONING' and represented by 'torch.Tensor' in Python. These outputs reflect the cumulative effect of positive or negative adjustments after mask application."
+    },
+    {
+        "question": "Which nodes possess the ability to dynamically alter conditioning areas within a ComfyUI dataset?",
+        "answer": "The ConditioningSetMaskAndCombine node in ComfyUI possesses the ability to dynamically alter conditioning areas within a dataset. It combines setting masks and conditioning data, adjusting the conditioning based on specified masks and their strengths."
+    },
+    {
+        "question": "In what way can the ConditioningSetMaskAndCombine node process multiple conditioning data?",
+        "answer": "The ConditioningSetMaskAndCombine node can process multiple conditioning data by handling multiple inputs such as 'positive_i', 'negative_i', and multiple masks with strengths. It combines these inputs to create a combined result reflecting positive and negative adjustments."
+    }
+]

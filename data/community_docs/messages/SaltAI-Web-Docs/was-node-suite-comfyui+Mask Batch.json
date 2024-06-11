@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the Mask Batch node in ComfyUI primarily used for?",
+        "answer": "The Mask Batch node in ComfyUI is designed to aggregate individual mask tensors into a single batched tensor, facilitating batch processing of masks."
+    },
+    {
+        "question": "Which category does the Mask Batch node belong to in the WAS Suite?",
+        "answer": "The Mask Batch node belongs to the category 'WAS Suite/Image/Masking' in ComfyUI."
+    },
+    {
+        "question": "What is the purpose of adding a channel dimension to the aggregated batched tensor in Mask Batch?",
+        "answer": "Adding a channel dimension to the aggregated batched tensor in Mask Batch is for compatibility with subsequent processing steps."
+    },
+    {
+        "question": "What are the input types for Mask Batch that can be considered optional?",
+        "answer": "The optional input types for Mask Batch include 'masks_a', 'masks_b', 'masks_c', and 'masks_d', which are individual mask tensors that can be batched together."
+    },
+    {
+        "question": "What is the output type of the Mask Batch node?",
+        "answer": "The output type of the Mask Batch node is 'masks', which represents the aggregated batch of mask tensors in a format that is compatible with further processing steps, with a data type of torch.Tensor."
+    },
+    {
+        "question": "What role does the 'masks_a' input play in the Mask Batch node?",
+        "answer": "The 'masks_a' input in the Mask Batch node represents one of the individual mask tensors to be batched together, serving as a crucial component for the node's operation."
+    },
+    {
+        "question": "What precaution does the Mask Batch node take to ensure input mask dimensions match?",
+        "answer": "The Mask Batch node enforces a check to ensure that all input masks have matching dimensions excluding the batch dimension, raising a ValueError if any mismatch is detected for masks listed."
+    }
+]

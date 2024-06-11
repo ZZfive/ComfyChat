@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the SaltMaskCropRegion node used for in ComfyUI?",
+        "answer": "The SaltMaskCropRegion node in ComfyUI is designed to crop regions within masks based on specific criteria, such as dominant or minority areas, and it applies padding around these regions to refine mask data by isolating and resizing specific areas."
+    },
+    {
+        "question": "What are the required input types for the SaltMaskCropRegion node?",
+        "answer": "The required input types for the SaltMaskCropRegion node are 'masks' (Comfy dtype: MASK), 'padding' (Comfy dtype: INT), and 'region_type' (Comfy dtype: COMBO[STRING])."
+    },
+    {
+        "question": "How does the 'masks' input parameter influence the operation of the SaltMaskCropRegion node?",
+        "answer": "The 'masks' input parameter in the SaltMaskCropRegion node represents the input masks to be cropped. It is crucial for determining the areas within each mask that meet the specified cropping criteria and directly influences the output cropped masks."
+    },
+    {
+        "question": "In what ways can the 'padding' parameter of the SaltMaskCropRegion node affect the output of the node?",
+        "answer": "The 'padding' parameter of the SaltMaskCropRegion node specifies the amount of padding to add around the cropped region. This affects the size of the output cropped masks by expanding the cropped area, allowing for more flexible usage of the masks."
+    },
+    {
+        "question": "What output does the SaltMaskCropRegion node provide that details the cropping operations performed?",
+        "answer": "The SaltMaskCropRegion node provides an output named 'crop_data_batch' which is a batch of data detailing the cropping operations performed, including dimensions and locations of the cropped regions (Comfy dtype: CROP_DATA_BATCH)."
+    },
+    {
+        "question": "Which parameter of the SaltMaskCropRegion node determines the criteria for cropping, choosing between 'dominant' or 'minority' regions?",
+        "answer": "The 'region_type' parameter determines the criteria for cropping in the SaltMaskCropRegion node, choosing between 'dominant' or 'minority' regions to tailor the cropping process to specific areas of interest."
+    },
+    {
+        "question": "What is the Comfy dtype for the 'cropped_masks' output type in the SaltMaskCropRegion node?",
+        "answer": "The Comfy dtype for the 'cropped_masks' output type in the SaltMaskCropRegion node is MASK."
+    }
+]

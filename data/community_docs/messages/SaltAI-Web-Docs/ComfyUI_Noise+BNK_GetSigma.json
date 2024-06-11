@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is BNK_GetSigma used for in the ComfyUI interface?",
+        "answer": "BNK_GetSigma is a custom node used to calculate a specific sigma value based on the model, sampler name, scheduler, and step parameters. It is part of the latent/noise category."
+    },
+    {
+        "question": "What determines the noise level in the context of the model's latent space using BNK_GetSigma?",
+        "answer": "The noise level is determined based on the model's coordinate, the specific sampling strategy identified by the sampler_name, the scheduling strategy defined by the scheduler, and the number of steps specified."
+    },
+    {
+        "question": "What role does the 'model' parameter play in BNK_GetSigma?",
+        "answer": "The 'model' parameter in BNK_GetSigma specifies the generative model for which the sigma value is being calculated. It is central to determining the proper noise level in the context of the model's latent space."
+    },
+    {
+        "question": "How does the 'sampler_name' parameter influence the calculation of sigma in BNK_GetSigma?",
+        "answer": "The 'sampler_name' parameter in BNK_GetSigma influences the sigma calculation by determining the noise distribution and progression over steps, based on the specific sampling strategy it identifies."
+    },
+    {
+        "question": "What is the function of the 'scheduler' parameter in BNK_GetSigma?",
+        "answer": "The 'scheduler' parameter in BNK_GetSigma defines the strategy for adjusting the noise level over the sampling steps. It significantly affects the calculation of sigma by influencing how the noise level transitions throughout the process."
+    },
+    {
+        "question": "What impact does the 'steps' parameter have on the operation of BNK_GetSigma?",
+        "answer": "The 'steps' parameter in BNK_GetSigma sets the total number of steps taken in the sampling process. It helps define the scale of the sigma calculation, setting a range for noise level adjustments."
+    },
+    {
+        "question": "What is the function of the 'start_at_step' and 'end_at_step' parameters in BNK_GetSigma?",
+        "answer": "The 'start_at_step' and 'end_at_step' parameters in BNK_GetSigma are used to specify the range of steps for which the sigma calculation is performed. 'start_at_step' defines the starting step, allowing noise level adjustment from this point, and 'end_at_step' identifies the ending step, marking when the sigma calculation stops."
+    }
+]

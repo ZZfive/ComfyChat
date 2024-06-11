@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the function of the BuildColorRangeHSV node in ComfyUI?",
+        "answer": "The BuildColorRangeHSV node in ComfyUI is designed to establish a range of HSV colors based on provided samples and modifiers, dynamically adjusting color bounds and determining the necessary hue adjustment mode for constructing a precise color range."
+    },
+    {
+        "question": "What is the name of the class for the BuildColorRangeHSV node?",
+        "answer": "The class name for the BuildColorRangeHSV node is `BuildColorRangeHSV`."
+    },
+    {
+        "question": "Which input represents the HSV color samples for the BuildColorRangeHSV node?",
+        "answer": "The `samples` input represents the HSV color samples from which the color range is derived. These samples are crucial for determining the median or average values around which the color range is constructed."
+    },
+    {
+        "question": "What does the `percentage_modifier` input do in BuildColorRangeHSV?",
+        "answer": "The `percentage_modifier` input in BuildColorRangeHSV influences the size of the color range. It adjusts the bounds based on a percentage, affecting how broad or narrow the resulting color range will be."
+    },
+    {
+        "question": "What is the role of the `interval_type` input in BuildColorRangeHSV?",
+        "answer": "The `interval_type` input in BuildColorRangeHSV specifies the method used to calculate the color range interval. This choice dictates how the bounds are adjusted, impacting the final color range."
+    },
+    {
+        "question": "What are the outputs of the BuildColorRangeHSV node?",
+        "answer": "The outputs of the BuildColorRangeHSV node include `hsv_color`, which is a tuple containing the adjusted upper and lower bounds of the HSV color range, and `combo[string]`, which indicates the hue mode determined for the range construction."
+    },
+    {
+        "question": "What are the four interval modes available in BuildColorRangeHSV for calculating the bounds?",
+        "answer": "The four interval modes available in BuildColorRangeHSV for calculating the bounds are 'median to extremes interpolation', 'average +- 3x max deviation', 'average +- 2x standard deviation', and 'sample percentage centered at median'."
+    }
+]

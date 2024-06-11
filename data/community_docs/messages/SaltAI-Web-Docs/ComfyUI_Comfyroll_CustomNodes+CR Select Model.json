@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR Select Model node in ComfyUI?",
+        "answer": "The CR Select Model node is designed to select and load a specific model based on user input for generative tasks in ComfyUI."
+    },
+    {
+        "question": "What inputs does the CR Select Model node require?",
+        "answer": "The CR Select Model node requires five checkpoint name options for model selection (`ckpt_name1` through `ckpt_name5`) and an integer input (`select_model`) to determine which model to load."
+    },
+    {
+        "question": "How does the CR Select Model node determine which model to load?",
+        "answer": "The CR Select Model node loads the model based on the integer input `select_model`, which specifies which of the five provided checkpoint names should be selected and loaded."
+    },
+    {
+        "question": "What outputs does the CR Select Model node provide?",
+        "answer": "The CR Select Model node provides the selected `MODEL`, `CLIP`, and `VAE`, along with the `ckpt_name` of the loaded model and a `show_help` string containing a URL to the node's help documentation."
+    },
+    {
+        "question": "What happens if a model is not selected through the CR Select Model node in ComfyUI?",
+        "answer": "If no model is selected (`model_name` is 'None'), the CR Select Model node will print a message indicating that no model has been selected and will not return any model or related components."
+    },
+    {
+        "question": "In ComfyUI, how is the model, clip, VAE, and clipvision loaded by the CR Select Model node?",
+        "answer": "The CR Select Model node loads the selected model, clip, VAE, and clipvision by using the `comfy.sd.load_checkpoint_guess_config` function, which takes the selected checkpoint's path as input."
+    },
+    {
+        "question": "What kind of URL does the `show_help` output provide?",
+        "answer": "The `show_help` output provides a URL to the help documentation for the CR Select Model node on GitHub, specifically to the wiki section on Core Nodes."
+    }
+]

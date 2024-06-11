@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What node is designed to adjust the size of a given mask or a batch of masks to specified dimensions in ComfyUI?",
+        "answer": "ResizeMask is a custom node in ComfyUI designed to adjust the size of a given mask or a batch of masks to specified dimensions, optionally maintaining the original proportions."
+    },
+    {
+        "question": "What are the Comfy dtype and Python dtype for the input mask in ResizeMask?",
+        "answer": "The Comfy dtype for the input mask in ResizeMask is `MASK`, and the Python dtype is `torch.Tensor`."
+    },
+    {
+        "question": "What does the `keep_proportions` parameter in ResizeMask do?",
+        "answer": "The `keep_proportions` parameter in ResizeMask is a boolean flag that indicates whether to maintain the original proportions of the mask during resizing."
+    },
+    {
+        "question": "What is the Python dtype of the `width` and `height` inputs in ResizeMask?",
+        "answer": "The Python dtype for both `width` and `height` inputs in ResizeMask is `int`."
+    },
+    {
+        "question": "How does ResizeMask handle the resizing when `keep_proportions` is true?",
+        "answer": "When `keep_proportions` is true, ResizeMask determines the resized dimensions by calculating the minimum ratio between the target dimensions (`width` and `height`) and the original dimensions of the mask."
+    },
+    {
+        "question": "What is the output of the ResizeMask node?",
+        "answer": "The ResizeMask node outputs a resized mask or batch of masks, along with the actual dimensions after resizing, which can differ from the input targets if proportions are kept."
+    },
+    {
+        "question": "How does ResizeMask perform the resizing operation?",
+        "answer": "ResizeMask performs the resizing operation using PyTorch’s `F.interpolate` function with the `mode` parameter set to 'nearest'."
+    }
+]

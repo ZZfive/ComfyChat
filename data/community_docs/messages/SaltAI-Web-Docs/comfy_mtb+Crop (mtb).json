@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does the Crop node in the MTB suite perform?",
+        "answer": "The Crop node in the MTB (Mask to Bounding Box) suite performs image cropping operations based on specified parameters such as bounding boxes or masks, allowing for precise extraction of image regions."
+    },
+    {
+        "question": "What is the primary input for the Crop node?",
+        "answer": "The primary input for the Crop node is the `image`, which is the input image to be cropped."
+    },
+    {
+        "question": "Which custom node in ComfyUI supports border blending for cropped images?",
+        "answer": "The Crop (mtb) node in ComfyUI supports functionalities like border blending for seamless integration of cropped areas into new contexts."
+    },
+    {
+        "question": "How is the cropping area defined in the Crop (mtb) node?",
+        "answer": "The cropping area in the Crop (mtb) node can be defined by either specifying an optional `mask`, using `x` and `y` for coordinates, and `width` and `height` for dimensions, or by providing a `bbox` which, if given, overrides the other parameters."
+    },
+    {
+        "question": "What data types are associated with the inputs and outputs of the Crop node?",
+        "answer": "The inputs `image` and `mask` in the Crop node have Comfy dtypes of `IMAGE` and `MASK` respectively, with corresponding Python dtypes of `torch.Tensor`. The output `image` also has a Comfy dtype of `IMAGE` and Python dtype of `torch.Tensor`, while the output `mask` has a Comfy dtype of `MASK` with a Python dtype that can be `torch.Tensor` or `None`, and the `bbox` output has a Comfy dtype of `BBOX` and a Python dtype of `Tuple[int, int, int, int]`."
+    },
+    {
+        "question": "What optional input can be used to refine the cropping area in the Crop (mtb) node?",
+        "answer": "An optional mask input can be used to refine the cropping area in the Crop (mtb) node, allowing for more precise control over the shape of the cropped area beyond simple rectangular regions."
+    },
+    {
+        "question": "What happens when the `bbox` input is provided to the Crop (mtb) node?",
+        "answer": "When the `bbox` input is provided to the Crop (mtb) node, it takes precedence over the `x`, `y`, `width`, and `height` parameters, defining the cropping area based on the coordinates and dimensions within the tuple."
+    }
+]

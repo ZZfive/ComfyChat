@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltLoadImageZip node in ComfyUI?",
+        "answer": "The SaltLoadImageZip node in ComfyUI is designed to load and optionally resize images from a ZIP file, facilitating their use in image processing workflows."
+    },
+    {
+        "question": "Which input specifies the file path to the ZIP archive containing images in SaltLoadImageZip?",
+        "answer": "The `path` input specifies the file path to the ZIP archive containing images, which is crucial for locating and accessing the desired images for processing in SaltLoadImageZip."
+    },
+    {
+        "question": "What is the role of the `resize_images_to_first` input in the SaltLoadImageZip node?",
+        "answer": "The `resize_images_to_first` input in the SaltLoadImageZip node determines whether all loaded images should be resized to match the dimensions of the first image found, ensuring uniformity in image sizes for batch processing or neural network use."
+    },
+    {
+        "question": "What output does the SaltLoadImageZip node provide?",
+        "answer": "The SaltLoadImageZip node provides an output of a tensor containing the loaded (and possibly resized) images under the name `images`, ready for further processing or analysis."
+    },
+    {
+        "question": "What are the image formats supported by the SaltLoadImageZip node for loading?",
+        "answer": "The SaltLoadImageZip node supports a variety of image formats including `.png`, `.jpg`, `.jpeg`, `.gif`, `.tga`, `.tiff`, and `.webp` for loading images from a ZIP file."
+    },
+    {
+        "question": "What happens if the SaltLoadImageZip node does not find any valid images in the input ZIP file?",
+        "answer": "If the SaltLoadImageZip node does not find any valid images in the input ZIP file, it raises a ValueError, indicating that the input zip does not contain any valid images."
+    },
+    {
+        "question": "How does the SaltLoadImageZip node resize images to fit the dimensions of the first image?",
+        "answer": "The SaltLoadImageZip node resizes images by first determining the size of the first image, then adjusting each subsequent image's size to match the first image's dimensions. If `resize_images_to_first` is set to True, all images are resized accordingly."
+    }
+]

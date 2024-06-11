@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MTB_GetBatchFromHistory node in ComfyUI?",
+        "answer": "The MTB_GetBatchFromHistory node is designed to retrieve a batch of data from a historical dataset based on specified parameters, allowing for conditional fetching of data for dynamic data loading and manipulation within a pipeline."
+    },
+    {
+        "question": "Which ComfyUI category does the MTB_GetBatchFromHistory node belong to?",
+        "answer": "The MTB_GetBatchFromHistory node belongs to the 'mtb/animation' category in ComfyUI."
+    },
+    {
+        "question": "What happens when the 'enable' input is set to False in the MTB_GetBatchFromHistory node?",
+        "answer": "When the 'enable' input is set to False, the MTB_GetBatchFromHistory node will not attempt to load data from history and can pass through an alternative image if provided through the 'passthrough_image' input."
+    },
+    {
+        "question": "How does the MTB_GetBatchFromHistory node utilize the 'count' parameter?",
+        "answer": "The 'count' parameter in the MTB_GetBatchFromHistory node specifies the number of historical data entries to retrieve. A count of 0 disables data loading."
+    },
+    {
+        "question": "What is the role of the 'offset' input in the MTB_GetBatchFromHistory node?",
+        "answer": "The 'offset' input in the MTB_GetBatchFromHistory node defines the starting point within the historical dataset from which to begin data retrieval, allowing for pagination or skipping entries."
+    },
+    {
+        "question": "Can the MTB_GetBatchFromHistory node pass through a fallback image even when historical data loading is enabled?",
+        "answer": "No, the MTB_GetBatchFromHistory node will only pass through a fallback image provided through the 'passthrough_image' input when 'enable' is set to False or the 'count' is 0, not when historical data loading is enabled."
+    },
+    {
+        "question": "What does the 'internal_count' parameter in the MTB_GetBatchFromHistory node signify?",
+        "answer": "The 'internal_count' parameter in the MTB_GetBatchFromHistory node is a hacky parameter used to invalidate the node's cache, forcing a reload under certain conditions."
+    }
+]

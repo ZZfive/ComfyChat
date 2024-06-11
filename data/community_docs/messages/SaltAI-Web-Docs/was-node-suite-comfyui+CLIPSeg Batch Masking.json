@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does the CLIPSeg Batch Masking node in ComfyUI do?",
+        "answer": "The CLIPSeg Batch Masking node in ComfyUI applies the CLIPSeg model to a batch of images, generating corresponding segmentation masks based on the provided text descriptions."
+    },
+    {
+        "question": "What are the required input types for the CLIPSeg Batch Masking node?",
+        "answer": "The required input types for the CLIPSeg Batch Masking node are `image_a` (the first input image tensor), `image_b` (the second input image tensor), `text_a` (the first textual description), and `text_b` (the second textual description)."
+    },
+    {
+        "question": "How many optional input images can be provided to the CLIPSeg Batch Masking node?",
+        "answer": "The CLIPSeg Batch Masking node can optionally accept up to four additional image tensors (`image_c`, `image_d`, `image_e`, `image_f`) and corresponding textual descriptions (`text_c`, `text_d`, `text_e`, `text_f`)."
+    },
+    {
+        "question": "What are the output types produced by the CLIPSeg Batch Masking node?",
+        "answer": "The CLIPSeg Batch Masking node produces three types of outputs: `IMAGES_BATCH` (a batch of original images processed through the node), `MASKS_BATCH` (a batch of segmentation masks), and `MASK_IMAGES_BATCH` (a batch of inverted mask images derived from the segmentation masks)."
+    },
+    {
+        "question": "Which model is leveraged by ComfyUI's CLIPSeg Batch Masking to generate masks?",
+        "answer": "ComfyUI's CLIPSeg Batch Masking node leverages the CLIPSeg model to generate segmentation masks, understanding the content of images in relation to the provided textual descriptions."
+    },
+    {
+        "question": "How does the CLIPSeg Batch Masking node ensure that additional images and texts have equal size compatibility with `image_a`?",
+        "answer": "The CLIPSeg Batch Masking node checks if the optional images (`image_c`, `image_d`, `image_e`, `image_f`) have the same size as `image_a` and raises an error if they don't, ensuring size compatibility."
+    },
+    {
+        "question": "What is the processing function used by the CLIPSeg Batch Masking node in ComfyUI, and where is it defined?",
+        "answer": "The processing function used by the CLIPSeg Batch Masking node is defined within the class `WAS_CLIPSeg_Batch`. This function, named `CLIPSeg_images`, is responsible for processing input images and texts into masks using the CLIPSeg model."
+    }
+]

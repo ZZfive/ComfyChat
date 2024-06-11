@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the ColorToMask node used for in ComfyUI?",
+        "answer": "The ColorToMask node in ComfyUI is used to convert a specified RGB color in an image to a mask by analyzing the image to identify pixels that match the given RGB values and creating a mask based on these pixels."
+    },
+    {
+        "question": "What is the category of the ColorToMask node in ComfyUI?",
+        "answer": "The ColorToMask node falls under the category of `KJNodes/masking` in ComfyUI."
+    },
+    {
+        "question": "How does the ColorToMask node determine which pixels to include in the generated mask?",
+        "answer": "The ColorToMask node determines which pixels to include in the generated mask based on a specified threshold for color matching. Pixels within this threshold of the specified RGB color are included in the mask."
+    },
+    {
+        "question": "What parameters can control the processing of multiple images simultaneously by the ColorToMask node?",
+        "answer": "The parameter `per_batch` controls the number of images processed in a single batch, allowing for efficient batch processing of images in the ColorToMask node."
+    },
+    {
+        "question": "Can the ColorToMask node invert the mask that is generated?",
+        "answer": "Yes, the ColorToMask node can invert the mask. This is controlled by the `invert` boolean flag. When set to True, the areas not matching the specified RGB color will be masked instead."
+    },
+    {
+        "question": "What are the input types for the ColorToMask node in ComfyUI?",
+        "answer": "The input types for the ColorToMask node in ComfyUI include images, invert, red, green, blue, threshold, and per_batch. Each of these has specific Comfy dtype and Python dtype."
+    },
+    {
+        "question": "What data types are associated with the `mask` output of the ColorToMask node in ComfyUI?",
+        "answer": "The `mask` output of the ColorToMask node in ComfyUI is of Comfy dtype `MASK` and Python dtype `torch.Tensor`, representing the generated mask."
+    }
+]

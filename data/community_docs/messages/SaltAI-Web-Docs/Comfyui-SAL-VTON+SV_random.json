@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the SV_random node in ComfyUI used for?",
+        "answer": "The SV_random node in ComfyUI is designed to select a random image from a specified directory, which is particularly useful for applications requiring variability and unpredictability in the selection of images, such as data augmentation or simulating diverse scenarios."
+    },
+    {
+        "question": "What input does the SV_random node require?",
+        "answer": "The SV_random node requires the input of `folder_path`, which specifies the path to the directory from which a random image will be selected."
+    },
+    {
+        "question": "What type of data does the SV_random node output?",
+        "answer": "The SV_random node outputs `image` data, which is a randomly selected image from the specified directory, and `mask` data, which provides a mask associated with the randomly selected image, if applicable."
+    },
+    {
+        "question": "What does the Infra type `CPU` mean in the context of the SV_random node?",
+        "answer": "The Infra type `CPU` in the context of the SV_random node means that the operation of loading a random image is performed on the CPU rather than the GPU, indicating where the computation happens within the system."
+    },
+    {
+        "question": "What are the image file formats that the SV_random node can read?",
+        "answer": "The SV_random node can read image file formats such as .jpg, .jpeg, .png, .bmp, .tiff, .ico, and .jfif."
+    },
+    {
+        "question": "How does the SV_random node distinguish between an image and its mask?",
+        "answer": "The SV_random node distinguishes between an image and its mask by checking the image's bands; if an 'A' band (indicative of an alpha channel) is present, the corresponding mask is generated from that channel."
+    },
+    {
+        "question": "What is the `IS_CHANGED` method for in the SV_random node?",
+        "answer": "The `IS_CHANGED` method in the SV_random node is used to report a floating-point NaN (`Not a Number`) value to indicate that the state of the loaded image should be considered as changed."
+    }
+]

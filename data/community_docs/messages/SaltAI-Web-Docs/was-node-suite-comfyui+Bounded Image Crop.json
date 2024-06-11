@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Bounded Image Crop node in ComfyUI?",
+        "answer": "The Bounded Image Crop node is designed to crop images based on specified bounding coordinates, allowing for the precise extraction of image regions for focused analysis or manipulation."
+    },
+    {
+        "question": "What are the required input types for Bounded Image Crop?",
+        "answer": "The required input types for Bounded Image Crop are `image` (Comfy dtype: `IMAGE`, Python dtype: `torch.Tensor`) and `image_bounds` (Comfy dtype: `IMAGE_BOUNDS`, Python dtype: `List[Tuple[int, int, int, int]]`)."
+    },
+    {
+        "question": "What does the 'image' input parameter represent in Bounded Image Crop?",
+        "answer": "The 'image' parameter in Bounded Image Crop represents the input image or batch of images to be cropped, which is crucial for determining the regions to be extracted based on the provided bounding coordinates."
+    },
+    {
+        "question": "How does Bounded Image Crop handle the crop operation if the number of images and image_bounds don't match?",
+        "answer": "If the number of images and bounds don't match in Bounded Image Crop, then only the first bounds will be used to crop the images. Otherwise, each bounds will be used for each image on a one-to-one basis."
+    },
+    {
+        "question": "What validation check does Bounded Image Crop perform on the provided bounds?",
+        "answer": "Bounded Image Crop checks if the provided bounds are valid by ensuring that rmin is not greater than rmax and cmin is not greater than cmax, throwing a ValueError if the bounds are outside the image dimensions."
+    },
+    {
+        "question": "What is the output type of the Bounded Image Crop node?",
+        "answer": "The output type of the Bounded Image Crop node is `image` (Comfy dtype: `IMAGE`, Python dtype: `torch.Tensor`), which is a cropped version of the input image or images adjusted according to the specified bounding coordinates."
+    },
+    {
+        "question": "Is Bounded Image Crop an output node?",
+        "answer": "No, Bounded Image Crop is not an output node; it is a transformation node designed for cropping images based on specified bounding coordinates."
+    }
+]

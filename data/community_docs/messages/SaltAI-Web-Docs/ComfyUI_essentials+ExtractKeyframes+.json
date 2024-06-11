@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ExtractKeyframes+ node in ComfyUI?",
+        "answer": "The ExtractKeyframes+ node in ComfyUI is designed to identify and extract key frames from a sequence of images based on the variation in content between consecutive frames, isolating frames that represent substantial shifts in the visual narrative."
+    },
+    {
+        "question": "What is the difference between the main input `image` and the output `KEYFRAMES` in the ExtractKeyframes+ node?",
+        "answer": "The main input `image` is the sequence of images from which key frames are to be extracted, and the output `KEYFRAMES` are the extracted images that represent significant changes in the sequence based on the threshold."
+    },
+    {
+        "question": "What role does the `threshold` play in the ExtractKeyframes+ node?",
+        "answer": "The `threshold` in the ExtractKeyframes+ node determines the sensitivity of variation detection between frames. A higher threshold results in fewer key frames being identified, focusing on more significant changes."
+    },
+    {
+        "question": "What information does the `indexes` output provide in the ExtractKeyframes+ node?",
+        "answer": "The `indexes` output in the ExtractKeyframes+ node provides the indices of the extracted key frames within the original image sequence, formatted as a comma-separated string."
+    },
+    {
+        "question": "Can you explain how the key frames are computed in the `execute` function of the ExtractKeyframes+ node?",
+        "answer": "In the `execute` function of the ExtractKeyframes+ node, key frames are computed by calculating the variation between consecutive frames using the `variations` variable. Frames are considered key frames and are added to the `keyframes` list if their variation exceeds the `threshold`."
+    },
+    {
+        "question": "What is the primary use case for the ExtractKeyframes+ node in terms of data type handling?",
+        "answer": "The primary use case for the ExtractKeyframes+ node in terms of data type handling is processing image sequences, where `image` is handled as a `torch.Tensor` and the output `KEYFRAMES` is also a `torch.Tensor`, while the `indexes` output is formatted as a `str`."
+    },
+    {
+        "question": "What infrastructure type is recommended for optimal performance when using the ExtractKeyframes+ node?",
+        "answer": "The ExtractKeyframes+ node is recommended to be used on an infrastructure type of `GPU` for optimal performance."
+    }
+]

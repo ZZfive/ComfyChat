@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MaskFromSegmentation+ node in ComfyUI?",
+        "answer": "The MaskFromSegmentation+ node in ComfyUI is designed to generate a mask based on image segmentation, facilitating the extraction of specific features or objects from an image by identifying and isolating them through segmentation techniques."
+    },
+    {
+        "question": "What are the required input types for the MaskFromSegmentation+ node?",
+        "answer": "The required input types for the MaskFromSegmentation+ node include `image` as the input image for segmentation, `segments` to specify the segments for mask creation, `remove_isolated_pixels` and `remove_small_masks` as boolean flags to remove isolated pixels and small masks respectively, and `fill_holes` to fill holes in the mask."
+    },
+    {
+        "question": "Which Python dtype is used for the `image` input in MaskFromSegmentation+?",
+        "answer": "The `image` input in MaskFromSegmentation+ uses `torch.Tensor` as the Python dtype."
+    },
+    {
+        "question": "What does the `segments` input represent in the MaskFromSegmentation+ node?",
+        "answer": "The `segments` input in the MaskFromSegmentation+ node specifies the segments to be used for mask creation, allowing for targeted extraction within the image."
+    },
+    {
+        "question": "What is the output of the MaskFromSegmentation+ node and its dtype?",
+        "answer": "The output of the MaskFromSegmentation+ node is a mask, and its dtype is `MASK` in ComfyUI, represented as `torch.Tensor` in Python."
+    },
+    {
+        "question": "What does the `remove_small_masks` input do in the MaskFromSegmentation+ node?",
+        "answer": "The `remove_small_masks` input in the MaskFromSegmentation+ node is a boolean flag to remove small masks from the generated mask, focusing on significant segments by filtering out minor ones."
+    },
+    {
+        "question": "What is the dtype of the `remove_isolated_pixels` input in the MaskFromSegmentation+ node?",
+        "answer": "The dtype of the `remove_isolated_pixels` input in the MaskFromSegmentation+ node is `INT` in ComfyUI, which defines the removal size for isolated pixels in the mask."
+    }
+]

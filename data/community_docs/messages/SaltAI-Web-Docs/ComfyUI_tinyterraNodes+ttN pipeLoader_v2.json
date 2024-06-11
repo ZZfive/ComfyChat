@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ttN pipeLoader_v2 node in ComfyUI?",
+        "answer": "The ttN pipeLoader_v2 node is designed to load and initialize pipelines for various tasks within the tinyterraNodes framework, facilitating the setup and configuration of data processing and model interaction pipelines."
+    },
+    {
+        "question": "How does the ttN pipeLoader_v2 node ensure reproducibility across pipeline executions?",
+        "answer": "The ttN pipeLoader_v2 node ensures reproducibility by using an integer seed for random number generation, which is specified by the `seed` input."
+    },
+    {
+        "question": "What does the ttN pipeLoader_v2 node use for image generation initialization?",
+        "answer": "For image generation initialization, the ttN pipeLoader_v2 node uses the `empty_latent_aspect`, `empty_latent_width`, and `empty_latent_height` inputs to define the aspect ratio and dimensions of the empty latent space."
+    },
+    {
+        "question": "What parameters can be overridden in the default pipeline using the ttN pipeLoader_v2 node?",
+        "answer": "In the ttN pipeLoader_v2 node, the default model and CLIP model can be overridden using the `model_override` and `clip_override` optional inputs, respectively. Additionally, custom LORA and ControlNet stacks can be provided to fine-tune model behavior."
+    },
+    {
+        "question": "What types of inputs does ttN pipeLoader_v2 require for model initialization?",
+        "answer": "ttN pipeLoader_v2 requires inputs like `ckpt_name`, `config_name`, `vae_name`, `clip_skip`, `loras`, `empty_latent_aspect`, `empty_latent_width`, `empty_latent_height`, and `seed` for model initialization. These define the model, configuration, VAE, CLIP layer skipping, LoRA parameters, and latent space details for image generation."
+    },
+    {
+        "question": "What output does ttN pipeLoader_v2 provide for use in further pipeline processing?",
+        "answer": "ttN pipeLoader_v2 outputs an updated pipeline configuration (`pipe`), various models and conditioning parameters (`positive`, `negative`), latent space (`latent`), and UI components for further pipeline processing."
+    },
+    {
+        "question": "How can one adjust the positive and negative conditioning parameters using the ttN pipeLoader_v2 node?",
+        "answer": "Users can adjust the positive and negative conditioning parameters using the `positive`, `negative`, `positive_token_normalization`, `positive_weight_interpretation`, `negative_token_normalization`, and `negative_weight_interpretation` inputs. Optional `prepend_positive` and `prepend_negative` texts can also be added to enrich or refine the context of these conditioning parameters."
+    }
+]

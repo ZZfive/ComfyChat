@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the XYImage node designed for in ComfyUI?",
+        "answer": "The XYImage node is designed for generating and manipulating images based on specified parameters, including splitting, flipping, and stacking images in batches. It supports the addition of labels on different axes and handles images in a multi-dimensional (z-axis enabled) context."
+    },
+    {
+        "question": "What is the primary data input type for the XYImage node and its significance?",
+        "answer": "The primary data input type for the XYImage node is a list of images (`images`). This parameter is crucial as it serves as the primary data that the node will manipulate through splitting, flipping, and stacking operations."
+    },
+    {
+        "question": "How do the parameters `splits`, `flip_axis`, and `batch_stack_mode` influence the output of the XYImage node?",
+        "answer": "The parameters `splits`, `flip_axis`, and `batch_stack_mode` directly influence the structure and layout of the output image by defining how the images should be split, specifying the axes along which the images should be flipped, and determining how images are stacked together in batches, respectively."
+    },
+    {
+        "question": "What is the significance of the `z_enabled` parameter in the context of the XYImage node?",
+        "answer": "The `z_enabled` parameter in the XYImage node indicates whether the z-axis is enabled for image processing. Enabling this parameter allows for handling images in a multi-dimensional context, enabling more complex image manipulations and visualizations."
+    },
+    {
+        "question": "How can labels be added to the images processed by the XYImage node?",
+        "answer": "Labels can be added to the images processed by the XYImage node through the input parameters `x_main_label`, `y_main_label`, `z_main_label`, `x_labels`, `y_labels`, and `z_labels`, which allow for the addition of main and segment-specific labels on the x, y, and z axes, respectively."
+    },
+    {
+        "question": "What exception is raised by the XYImage node if z_enabled is True and either x_labels or y_labels are not provided?",
+        "answer": "If `z_enabled` is True and either `x_labels` or `y_labels` are not provided to the XYImage node, an exception stating \"Must provide x_labels and y_labels when z_enabled is True.\" is raised."
+    },
+    {
+        "question": "What is the output type of the XYImage node and what does it signify?",
+        "answer": "The output type of the XYImage node is `Image`, signifying the processed image after applying operations such as splitting, flipping, and stacking. This output is significant as it represents the culmination of the node's image manipulation capabilities, ready for further use or analysis."
+    }
+]

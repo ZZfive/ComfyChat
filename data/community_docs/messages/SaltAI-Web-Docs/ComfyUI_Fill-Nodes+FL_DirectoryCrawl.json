@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the FL_DirectoryCrawl node used for in ComfyUI?",
+        "answer": "The FL_DirectoryCrawl node in ComfyUI is designed to scan a specified directory and its subdirectories for image files, then load and process these images into a batch of tensors."
+    },
+    {
+        "question": "What input type does FL_DirectoryCrawl require and what does it represent?",
+        "answer": "FL_DirectoryCrawl requires the input type `directory_path`, which specifies the path to the directory that the node will scan for image files."
+    },
+    {
+        "question": "What type of data does FL_DirectoryCrawl output and what is its purpose?",
+        "answer": "FL_DirectoryCrawl outputs `image` data type, which represents a batch of images that have been loaded, oriented correctly, converted to RGB, and normalized, in a format suitable for further image processing or analysis."
+    },
+    {
+        "question": "Which nodes in ComfyUI can aggregate images from a filesystem into a batch for processing?",
+        "answer": "The FL_DirectoryCrawl node is capable of aggregating images from a filesystem into a batch for processing in ComfyUI."
+    },
+    {
+        "question": "How does FL_DirectoryCrawl handle the orientation of loaded images?",
+        "answer": "FL_DirectoryCrawl corrects the orientation of loaded images using `ImageOps.exif_transpose(image)` to ensure they are correctly oriented before further processing."
+    },
+    {
+        "question": "What image formats does FL_DirectoryCrawl support?",
+        "answer": "FL_DirectoryCrawl supports a range of common image formats including JPEG, PNG, BMP, and GIF."
+    },
+    {
+        "question": "What class method in FL_DirectoryCrawl is responsible for loading and processing image batches?",
+        "answer": "The `load_image_batch` method of the FL_DirectoryCrawl node is responsible for loading and processing image batches, including the correction of image orientation and conversion to the RGB format."
+    }
+]

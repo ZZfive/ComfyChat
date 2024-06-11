@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the `SaltMaskThresholdRegion` node used for in ComfyUI?",
+        "answer": "The `SaltMaskThresholdRegion` node is used to apply a threshold filter to mask regions, segmenting them based on specified black and white threshold values. This node is designed to isolate and enhance areas within masks, making it easier to distinguish between different regions based on their intensity levels."
+    },
+    {
+        "question": "What are the required input types for the `SaltMaskThresholdRegion` node?",
+        "answer": "The required input types for the `SaltMaskThresholdRegion` node are `masks` (Comfy dtype: `MASK`, Python dtype: `List[torch.Tensor]`), `black_threshold` (Comfy dtype: `INT`, Python dtype: `int`), and `white_threshold` (Comfy dtype: `INT`, Python dtype: `int`)."
+    },
+    {
+        "question": "How does the `black_threshold` parameter in the `SaltMaskThresholdRegion` node work?",
+        "answer": "The `black_threshold` parameter in the `SaltMaskThresholdRegion` node sets the lower bound for pixel intensity. Pixels with intensity below this value are set to black to aid in the segmentation of darker regions within the masks."
+    },
+    {
+        "question": "What is the output of the `SaltMaskThresholdRegion` node and in what format?",
+        "answer": "The output of the `SaltMaskThresholdRegion` node is `MASKS` (Comfy dtype: `MASK`, Python dtype: `torch.Tensor`). The output masks are after applying the threshold filter, with regions segmented based on the specified black and white thresholds."
+    },
+    {
+        "question": "Which node in ComfyUI can be used to filter and segment mask regions based on intensity levels?",
+        "answer": "The `SaltMaskThresholdRegion` node in ComfyUI can be used to filter and segment mask regions based on intensity levels."
+    },
+    {
+        "question": "What is the value range for `black_threshold` and `white_threshold` in the `SaltMaskThresholdRegion` node?",
+        "answer": "The value range for `black_threshold` and `white_threshold` in the `SaltMaskThresholdRegion` node is from 0 to 255, with a default value of 75 for `black_threshold` and 255 for `white_threshold`."
+    },
+    {
+        "question": "What is the default value of `black_threshold` in the `SaltMaskThresholdRegion` node?",
+        "answer": "The default value of `black_threshold` in the `SaltMaskThresholdRegion` node is 75."
+    }
+]

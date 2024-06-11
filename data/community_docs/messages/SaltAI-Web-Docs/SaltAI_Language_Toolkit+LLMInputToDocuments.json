@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LLMInputToDocuments class in ComfyUI?",
+        "answer": "The LLMInputToDocuments class in ComfyUI is designed to transform input data into a structured document format, potentially incorporating additional information and supporting concatenation of inputs for enhanced document creation."
+    },
+    {
+        "question": "What does the input_data parameter represent in the LLMInputToDocuments node?",
+        "answer": "The input_data parameter represents the primary data to be transformed into document format, serving as the core content for the document creation process."
+    },
+    {
+        "question": "What is the role of the extra_info parameter in the LLMInputToDocuments node?",
+        "answer": "The extra_info parameter is an optional JSON-formatted string included as metadata in the document, allowing for the enrichment of the document with additional context or information."
+    },
+    {
+        "question": "How does concat_input parameter affect the document creation process in the LLMInputToDocuments node?",
+        "answer": "The concat_input parameter is a boolean flag that, when set to True, indicates that input data should be concatenated into a single document. If False, each input is treated as a separate document."
+    },
+    {
+        "question": "What type of documents does the LLMInputToDocuments node output?",
+        "answer": "The LLMInputToDocuments node outputs transformed input data into a structured document format, enriched with optional metadata. The document type in output is `DOCUMENT` as defined by the Comfy dtype."
+    },
+    {
+        "question": "What happens if the input_data is a dictionary and the concat_input is true in the LLMInputToDocuments node?",
+        "answer": "When input_data is a dictionary and concat_input is true, the LLMInputToDocuments node will convert the dictionary into a string where each key-value pair is separated by a newline, and then create a single Document instance containing this text."
+    },
+    {
+        "question": "Which type of data inputs are supported by the LLMInputToDocuments node?",
+        "answer": "The LLMInputToDocuments node supports various data inputs including dictionaries, lists, strings, integers, floats, and PyTorch tensors. It can transform these data types into documents, adjusting the processing based on the nature of the input."
+    }
+]

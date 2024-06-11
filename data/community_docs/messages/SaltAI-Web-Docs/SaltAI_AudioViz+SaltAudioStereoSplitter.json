@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltAudioStereoSplitter node in ComfyUI?",
+        "answer": "The SaltAudioStereoSplitter node is designed to split stereo audio files into their left and right channels as separate mono audio files, which is essential for audio editing and processing tasks that require individual manipulation of each stereo channel."
+    },
+    {
+        "question": "What is the input type required by the SaltAudioStereoSplitter node?",
+        "answer": "The SaltAudioStereoSplitter node requires an 'audio' input, which should be a stereo audio file in a two-channel format. The node expects this audio to be in a two-channel stereo format to successfully separate it into mono channels."
+    },
+    {
+        "question": "What are the output types of the SaltAudioStereoSplitter node?",
+        "answer": "The SaltAudioStereoSplitter node outputs two mono audio files: 'left_channel_mono' and 'right_channel_mono', representing the left and right channels of the original stereo audio file, respectively."
+    },
+    {
+        "question": "What is the Python dtype for the 'audio' input of the SaltAudioStereoSplitter node?",
+        "answer": "The Python dtype for the 'audio' input of the SaltAudioStereoSplitter node is `bytes`."
+    },
+    {
+        "question": "How does the SaltAudioStereoSplitter node process the stereo audio file?",
+        "answer": "The SaltAudioStereoSplitter node processes a stereo audio file by splitting it into its left and right channels as separate mono audio files using the split_stereo_to_mono method."
+    },
+    {
+        "question": "What will happen if the input audio to the SaltAudioStereoSplitter node is not a two-channel stereo format?",
+        "answer": "If the input audio to the SaltAudioStereoSplitter node is not a two-channel stereo format, the node will raise a ValueError indicating that the input audio must be two-channel stereo."
+    },
+    {
+        "question": "What is the Infra type for the SaltAudioStereoSplitter node?",
+        "answer": "The Infra type for the SaltAudioStereoSplitter node is `CPU`."
+    }
+]

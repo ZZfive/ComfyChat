@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the primary function of the MaskBoundingBox+ node in ComfyUI?",
+        "answer": "The MaskBoundingBox+ node in ComfyUI is designed to calculate the axis-aligned bounding box (AABB) of given masks to identify the minimal rectangular area that entirely encompasses the non-zero regions of each mask."
+    },
+    {
+        "question": "Which input is crucial for determining the area of interest within the mask in the MaskBoundingBox+ node?",
+        "answer": "The input `mask` is crucial for determining the area of interest within the mask in the MaskBoundingBox+ node."
+    },
+    {
+        "question": "What effect does the `padding` parameter have on the calculated bounding box in the MaskBoundingBox+ node?",
+        "answer": "The `padding` parameter specifies the amount of padding to add to the calculated bounding box, allowing for adjustments to the box size beyond the exact non-zero regions of the mask."
+    },
+    {
+        "question": "How does the `blur` input affect the bounding box calculation in MaskBoundingBox+?",
+        "answer": "The `blur` input defines the level of blur to apply to the mask before calculating the bounding box, which can smooth out irregularities and affect the final box dimensions."
+    },
+    {
+        "question": "What is the role of the `image_optional` input in the MaskBoundingBox+ node?",
+        "answer": "The `image_optional` input is an optional parameter that, if provided, can be used in conjunction with the mask for enhanced bounding box calculations, incorporating visual context."
+    },
+    {
+        "question": "What types of information are returned by the MaskBoundingBox+ node?",
+        "answer": "The MaskBoundingBox+ node returns an output mask adjusted for bounding box calculations (`MASK`), an optional cropped or adjusted image based on bounding box (`IMAGE`), and the coordinates (`x`, `y`) and dimensions (`width`, `height`) of the calculated bounding box."
+    },
+    {
+        "question": "Can MaskBoundingBox+ adjust an output image according to the calculated bounding box?",
+        "answer": "Yes, the MaskBoundingBox+ node can adjust an output image (`IMAGE`) based on the bounding box calculations, incorporating any specified padding or blur effects."
+    }
+]

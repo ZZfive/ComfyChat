@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PFG node in ComfyUI?",
+        "answer": "The PFG node in ComfyUI is designed to enhance the conditioning process in generative models by applying a learned transformation to the input conditioning vectors, thereby better guiding the generation process."
+    },
+    {
+        "question": "What are the input types required by the PFG node?",
+        "answer": "The PFG node requires inputs such as 'positive' and 'negative' conditioning vectors, a 'pfg_scale' factor, an 'image' for feature extraction, and a 'model_name' specifying the pre-trained PFG model to use."
+    },
+    {
+        "question": "What does the 'pfg_scale' input in the PFG node do?",
+        "answer": "The 'pfg_scale' input in the PFG node acts as a scaling factor for the PFG feature vector, allowing users to adjust its influence on the conditioning process."
+    },
+    {
+        "question": "What are the output types of the PFG node?",
+        "answer": "The PFG node outputs modified 'conditioning' vectors, both positive and negative, which have been enhanced with features extracted from the input image."
+    },
+    {
+        "question": "Which pre-trained model does the PFG node use for computing features from the input image?",
+        "answer": "The PFG node uses a pre-trained ViT (Vision Transformer) model for computing features from the input image to modify the conditioning vectors."
+    },
+    {
+        "question": "Can the model_name input in the PFG node be customized?",
+        "answer": "Yes, the 'model_name' input in the PFG node allows for flexibility in choosing different pre-trained PFG models based on the specific requirements or characteristics of the input image."
+    },
+    {
+        "question": "What is the computation process of the PFG node when modifying conditioning vectors?",
+        "answer": "The PFG node extracts features from the input image using a pre-trained model, scales these features based on the 'pfg_scale' input, and combines them with the original conditioning vectors to produce modified conditioning vectors, enhancing the ability to generate desired outputs."
+    }
+]

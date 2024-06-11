@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the Filter node in ComfyUI and what is it used for?",
+        "answer": "The Filter node in ComfyUI is a custom node designed to selectively process data based on specific criteria, allowing for the refinement and extraction of relevant information from a dataset. It evaluates and filters input data to meet defined conditions, enabling targeted data analysis and manipulation."
+    },
+    {
+        "question": "What are the input types required by the Filter node?",
+        "answer": "The Filter node requires three input types: 'in_question' which serves as the primary query or condition for filtering, 'wordlist' which is a list of words or terms used as criteria for filtering the data, and 'safeword' which is a specific term or flag ensuring certain data is preserved or excluded from filtering."
+    },
+    {
+        "question": "What is the role of 'in_question' in the Filter node?",
+        "answer": "'in_question' in the Filter node serves as the primary query or condition for filtering, determining the focus of data processing."
+    },
+    {
+        "question": "What is the data type of 'wordlist' in the Filter node and how is it used?",
+        "answer": "'wordlist' in the Filter node has a Comfy dtype of 'STRING' and Python dtype of 'List[str]'. It is a list of words or terms used as criteria for filtering the data, aiding in the refinement of results."
+    },
+    {
+        "question": "What is the purpose of the 'safeword' input in the Filter node?",
+        "answer": "The 'safeword' input in the Filter node serves as a specific term or flag that ensures certain data is preserved or excluded from filtering, enhancing control over the output of the node."
+    },
+    {
+        "question": "What is the output type of the Filter node and what does it represent?",
+        "answer": "The output type of the Filter node is 'STRING' with a Comfy dtype of 'STRING' and Python dtype of 'str'. It represents the result of the filtering process, typically a subset of the input data that meets the defined criteria."
+    },
+    {
+        "question": "How does the Filter node decide what to output based on the inputs provided?",
+        "answer": "The Filter node checks if 'in_question' exists within 'wordlist'. If it does, the node returns 'safeword', otherwise it returns 'in_question'. This mechanism allows the node to selectively filter data based on predefined criteria."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the ChangeImageBatchSize __Inspire node used for in the ComfyUI environment?",
+        "answer": "The ChangeImageBatchSize __Inspire node in ComfyUI is used to adjust the batch size of an image tensor to a specified size, either expanding or trimming the batch based on the desired count, crucial for formatting image data for batch processing."
+    },
+    {
+        "question": "What are the required input types for the ChangeImageBatchSize __Inspire node?",
+        "answer": "The required input types for the ChangeImageBatchSize __Inspire node are an `image` tensor with the Comfy dtype of `IMAGE` and Python dtype of `torch.Tensor`, a `batch_size` integer with a default value of 1, a minimum value of 1, and a maximum value of 4096, and a `mode` string with a simple method for adjusting batch size."
+    },
+    {
+        "question": "Which resizing mode is currently supported by the ChangeImageBatchSize __Inspire node?",
+        "answer": "The ChangeImageBatchSize __Inspire node currently supports a 'simple' resizing mode for adjusting the image tensor batch size by either expanding or trimming the tensor."
+    },
+    {
+        "question": "What does the ChangeImageBatchSize __Inspire node output after resizing the image tensor?",
+        "answer": "The ChangeImageBatchSize __Inspire node outputs the resized image tensor with the adjusted batch size, with the Comfy dtype of `IMAGE` and Python dtype of `torch.Tensor`."
+    },
+    {
+        "question": "What happens when the batch size specified by `batch_size` is larger than the number of images in the input tensor?",
+        "answer": "When the batch size specified by `batch_size` is larger than the number of images in the input tensor, the ChangeImageBatchSize __Inspire node expands the input tensor with copies of the last frame until it reaches the desired batch size."
+    },
+    {
+        "question": "What is the infra type for the ChangeImageBatchSize __Inspire node and what does it indicate?",
+        "answer": "The infra type for the ChangeImageBatchSize __Inspire node is `GPU`, indicating that it is designed to run on GPU infrastructure, which can provide significant acceleration for image batch processing tasks."
+    },
+    {
+        "question": "What is unknown about the ChangeImageBatchSize __Inspire node in its usage tips?",
+        "answer": "In the usage tips of the ChangeImageBatchSize __Inspire node, it is noted that common nodes are unknown, which implies there is no explicit reference to common nodes that work in conjunction with this node."
+    }
+]

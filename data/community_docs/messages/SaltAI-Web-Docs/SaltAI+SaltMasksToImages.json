@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the role of the SaltMasksToImages node in ComfyUI?",
+        "answer": "The SaltMasksToImages node in ComfyUI is designed to convert a collection of mask images into a tensor representation, facilitating the transition from image processing to tensor operations for further computational tasks."
+    },
+    {
+        "question": "What is the input type required by the SaltMasksToImages node?",
+        "answer": "The SaltMasksToImages node requires a `masks` input, representing a collection of mask images to be converted into tensor format. The masks are specified as `MASK` in Comfy dtype and `List[torch.Tensor]` in Python dtype."
+    },
+    {
+        "question": "What are the output types of the SaltMasksToImages node?",
+        "answer": "The output of the SaltMasksToImages node is a tensor comprising the converted images from the input masks, specified as `IMAGE` in Comfy dtype and `torch.Tensor` in Python dtype."
+    },
+    {
+        "question": "In which category can the SaltMasksToImages node be found in ComfyUI?",
+        "answer": "The SaltMasksToImages node can be found in the `SALT/Masking` category in ComfyUI."
+    },
+    {
+        "question": "What is the infrastructure type of the SaltMasksToImages node?",
+        "answer": "The SaltMasksToImages node has an infrastructure type of `GPU`."
+    },
+    {
+        "question": "Which method is used by the SaltMasksToImages node to convert masks to images?",
+        "answer": "The SaltMasksToImages node uses the `convert` method to convert masks to images. This method iterates over the input masks, converts each mask to a PIL image using `mask2pil`, converts the PIL image to a tensor using `pil2tensor`, and then concatenates all the resulting tensors using `torch.cat`."
+    },
+    {
+        "question": "What does the SaltMasksToImages node return?",
+        "answer": "The SaltMasksToImages node returns a tuple containing a single element, the `images` tensor, which is a concatenation of the individual images converted from the input masks."
+    }
+]

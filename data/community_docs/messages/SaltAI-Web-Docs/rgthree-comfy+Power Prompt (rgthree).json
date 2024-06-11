@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the class name of the Power Prompt node?",
+        "answer": "The class name of the Power Prompt node is `Power Prompt (rgthree)`."
+    },
+    {
+        "question": "In what category does the Power Prompt node fall under in ComfyUI?",
+        "answer": "The Power Prompt node falls under the `rgthree` category in ComfyUI."
+    },
+    {
+        "question": "What is the primary function of the Power Prompt node?",
+        "answer": "The primary function of the Power Prompt node is to process textual prompts, potentially enhancing them with additional context or modifications before further processing."
+    },
+    {
+        "question": "What are the required and optional input types for the Power Prompt node?",
+        "answer": "The required input type is `prompt` of dtype `STRING`. Optional input types include `opt_model` of dtype `MODEL`, `opt_clip` of dtype `CLIP`, `insert_lora` of dtype `COMBO[STRING]`, `insert_embedding` of dtype `COMBO[STRING]`, and `insert_saved` of dtype `COMBO[STRING]`."
+    },
+    {
+        "question": "What does the `insert_lora` parameter do in the Power Prompt node?",
+        "answer": "The `insert_lora` parameter in the Power Prompt node permits the inclusion of a LORA adjustment to the prompt, which can modify the processing behavior based on the selected LORA's attributes."
+    },
+    {
+        "question": "How does the Power Prompt node handle prompts with LORAs when no model and CLIP are supplied?",
+        "answer": "When no model and CLIP are supplied, the Power Prompt node will log a warning if <lora: tags are found in the prompt. Loras are not processed in this case, and they are kept for TEXT output."
+    },
+    {
+        "question": "What does the Power Prompt node return?",
+        "answer": "The Power Prompt node returns a conditioning vector from the prompt and optionally the 'opt_clip' parameter (`CONDITIONING`), the model selected for processing (`MODEL`), the CLIP model used for encoding (`CLIP`), and the processed or enhanced prompt (`TEXT`)."
+    }
+]

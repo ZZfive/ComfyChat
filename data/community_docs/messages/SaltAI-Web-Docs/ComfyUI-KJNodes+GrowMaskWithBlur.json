@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the GrowMaskWithBlur node used for in ComfyUI?",
+        "answer": "The GrowMaskWithBlur node in ComfyUI is designed to manipulate masks or batches of masks by expanding or contracting them, optionally applying blur, and performing various other transformations such as flipping, filling holes, and interpolating between frames."
+    },
+    {
+        "question": "What type of data does the GrowMaskWithBlur node expect as input for masks?",
+        "answer": "The GrowMaskWithBlur node expects a mask or batch of masks as input, with the data type being `MASK` in Comfy terms and `torch.Tensor` in Python."
+    },
+    {
+        "question": "What does the `expand` parameter in the GrowMaskWithBlur node control?",
+        "answer": "The `expand` parameter in the GrowMaskWithBlur node determines the amount by which the mask(s) will be expanded or contracted. Positive values expand the mask, while negative values contract it."
+    },
+    {
+        "question": "Which input facilitates dynamic resizing over a sequence of masks in GrowMaskWithBlur?",
+        "answer": "The `incremental_expandrate` input in GrowMaskWithBlur specifies the rate at which the `expand` parameter is adjusted per frame, allowing for dynamic resizing over a sequence of masks."
+    },
+    {
+        "question": "What effect does enabling the `tapered_corners` input have on masks when using GrowMaskWithBlur?",
+        "answer": "When `tapered_corners` is enabled in GrowMaskWithBlur, it applies tapered corners to the mask(s) during expansion or contraction, affecting the shape of the processed mask."
+    },
+    {
+        "question": "How can the `blur_radius` input influence the masks processed by the GrowMaskWithBlur node?",
+        "answer": "By setting the `blur_radius` input to a value greater than 0 in GrowMaskWithBlur, a blur effect is applied to the mask(s) with the specified radius."
+    },
+    {
+        "question": "What is returned by the GrowMaskWithBlur node for output types?",
+        "answer": "The GrowMaskWithBlur node returns the primary output mask after applying the specified transformations and the inverted version of the primary output mask, both of dtype `MASK` in Comfy terms and `torch.Tensor` in Python."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Mask Crop Dominant Region node in ComfyUI?",
+        "answer": "The Mask Crop Dominant Region node is designed to identify and extract the dominant region from a given set of masks, applying a specified padding around the cropped area."
+    },
+    {
+        "question": "What are the required inputs for the Mask Crop Dominant Region node?",
+        "answer": "The required inputs are `masks`, which are the input masks from which the dominant region is to be cropped, and `padding`, which specifies the padding to be applied around the cropped dominant region."
+    },
+    {
+        "question": "What type of data is expected for the `masks` input in the Mask Crop Dominant Region node?",
+        "answer": "The `masks` input expects a `MASK` type data, specifically a `torch.Tensor` in Python, representing the input masks from which the dominant region is to be cropped."
+    },
+    {
+        "question": "What does the `padding` input in the Mask Crop Dominant Region node control?",
+        "answer": "The `padding` input controls the amount of padding to be applied around the cropped dominant region, allowing for adjustable margins around the extracted area."
+    },
+    {
+        "question": "What does the Mask Crop Dominant Region node output?",
+        "answer": "The Mask Crop Dominant Region node outputs the cropped dominant regions from the input masks, potentially with applied padding, represented as a `MASK` type data or `torch.Tensor` in Python."
+    },
+    {
+        "question": "What category does the Mask Crop Dominant Region node belong to in ComfyUI?",
+        "answer": "The Mask Crop Dominant Region node belongs to the 'WAS Suite/Image/Masking' category."
+    },
+    {
+        "question": "How does the Mask Crop Dominant Region node process masks with more than three dimensions?",
+        "answer": "If the masks have more than three dimensions, the node iterates through each mask, processes them individually to crop the dominant region with padding, and returns the result as a concatenated tensor."
+    }
+]

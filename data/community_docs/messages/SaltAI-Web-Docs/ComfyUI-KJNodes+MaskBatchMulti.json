@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MaskBatchMulti node in ComfyUI?",
+        "answer": "The MaskBatchMulti node in ComfyUI is designed to create a batch of images by combining multiple masks, allowing for dynamic input count adjustment and the aggregation of mask data for further image processing or analysis."
+    },
+    {
+        "question": "What is the category of the MaskBatchMulti node in ComfyUI?",
+        "answer": "The MaskBatchMulti node falls under the 'KJNodes/masking' category in ComfyUI, reflecting its specialized role in handling masks for image processing tasks."
+    },
+    {
+        "question": "Which input represents the number of masks to be combined by the MaskBatchMulti node?",
+        "answer": "The 'inputcount' input represents the number of masks that the MaskBatchMulti node will combine into a single batch, facilitating dynamic adjustment of the node's input capacity."
+    },
+    {
+        "question": "What type of data does the 'inputcount' parameter in MaskBatchMulti node accept?",
+        "answer": "The 'inputcount' parameter in the MaskBatchMulti node accepts data of 'INT' dtype in Comfy, which is equivalent to 'int' in Python, specifying the number of masks to be combined."
+    },
+    {
+        "question": "How does the MaskBatchMulti node handle masks with different sizes when combining them into a batch?",
+        "answer": "When combining masks of different sizes, the MaskBatchMulti node ensures compatibility by interpolating new masks to match the size of the first mask before concatenating them, maintaining the integrity of the batch."
+    },
+    {
+        "question": "What is the output type of the MaskBatchMulti node in ComfyUI?",
+        "answer": "The output type of the MaskBatchMulti node in ComfyUI is 'MASK', representing the combined batch of masks as a 'torch.Tensor' in Python, suitable for downstream image processing tasks requiring batched mask data."
+    },
+    {
+        "question": "What infrastructure type is recommended for the efficient operation of the MaskBatchMulti node?",
+        "answer": "The MaskBatchMulti node in ComfyUI is recommended to be run on a GPU infrastructure type for optimal performance and efficient image processing operations."
+    }
+]

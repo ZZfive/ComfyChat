@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the `ttN multiModelMerge` node in ComfyUI?",
+        "answer": "The `ttN multiModelMerge` node in ComfyUI is designed to facilitate the merging of multiple models and/or CLIP models based on specified configurations and interpolation ratios. It allows for flexible integration and manipulation of model attributes to achieve desired outcomes."
+    },
+    {
+        "question": "Which required parameters are needed to specify primary and secondary models for merging in `ttN multiModelMerge`?",
+        "answer": "To specify the primary and secondary models for merging in `ttN multiModelMerge`, you need the `ckpt_A_name` and `config_A_name` for the primary model, and the `ckpt_B_name` and `config_B_name` for the secondary model."
+    },
+    {
+        "question": "What is the role of `model_interpolation` and `clip_interpolation` parameters in `ttN multiModelMerge`?",
+        "answer": "The `model_interpolation` and `clip_interpolation` parameters in `ttN multiModelMerge` determine the interpolation ratios for merging model and CLIP model attributes, respectively. These ratios affect how the attributes from different models are balanced in the final merged models."
+    },
+    {
+        "question": "Can the first CLIP model's attributes be modified specifically during the merging process?",
+        "answer": "Yes, the first CLIP model's attributes can be specifically modified during the merging process by using `clip_A_override`, allowing for customization of how its features are integrated into the final merged CLIP model."
+    },
+    {
+        "question": "Is it possible to save the merged model created by `ttN multiModelMerge`?",
+        "answer": "Yes, it is possible to save the merged model created by `ttN multiModelMerge`. This is controlled by the `save_model` parameter, which is a boolean indicating whether the merged model should be saved to disk."
+    },
+    {
+        "question": "What are some of the data types associated with the output of the `ttN multiModelMerge` node?",
+        "answer": "Some of the data types associated with the output of the `ttN multiModelMerge` node include `MODEL`, `CLIP`, and `VAE`, which represent the resulting model, CLIP model, and VAE model after merging, respectively."
+    },
+    {
+        "question": "What customization options are available when merging models using `ttN multiModelMerge`?",
+        "answer": "When merging models using `ttN multiModelMerge`, customization options include overriding specific attributes of the model or CLIP models designated as A, B, or C, and specifying parameters such as `model_multiplier` and `clip_multiplier` to adjust the dominance of the models' features in the merged output."
+    }
+]

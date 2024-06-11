@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the INPAINT_MaskedFill node in ComfyUI?",
+        "answer": "The INPAINT_MaskedFill node in ComfyUI is designed to fill masked areas of an image with specified fill methods, including a neutral color fill or advanced inpainting techniques, ensuring seamless blending with surrounding pixels for image inpainting tasks."
+    },
+    {
+        "question": "What type of output does the INPAINT_MaskedFill node provide in ComfyUI?",
+        "answer": "The INPAINT_MaskedFill node provides an output of type `IMAGE` in ComfyUI, which is the processed image tensor after masked areas have been filled according to the specified method."
+    },
+    {
+        "question": "Can you list the input types required by the INPAINT_MaskedFill node in ComfyUI?",
+        "answer": "The input types required by the INPAINT_MaskedFill node in ComfyUI include an image tensor, a mask tensor, a fill method specified as a string, and a falloff value."
+    },
+    {
+        "question": "What types of methods can the 'fill' input parameter accept in the INPAINT_MaskedFill node?",
+        "answer": "The 'fill' input parameter in the INPAINT_MaskedFill node can accept 'neutral' for a simple color fill, 'telea' for Telea inpainting, or 'inpaint_ns' for Navier-Stokes based inpainting."
+    },
+    {
+        "question": "What role does the 'falloff' input play in the INPAINT_MaskedFill node of ComfyUI?",
+        "answer": "The 'falloff' input in the INPAINT_MaskedFill node determines the transition smoothness between filled areas and the original image, which affects the blending quality, with a value between 0 and 8191."
+    },
+    {
+        "question": "Which input is used to guide the filling process in specific regions of the image in the INPAINT_MaskedFill node?",
+        "answer": "The 'mask' input in the INPAINT_MaskedFill node guides the filling process, ensuring that only specified regions defined by the mask are altered."
+    },
+    {
+        "question": "How does the INPAINT_MaskedFill node in ComfyUI process the 'falloff' input to ensure smooth transitions in inpainting?",
+        "answer": "In the INPAINT_MaskedFill node of ComfyUI, the 'falloff' input is processed using binary erosion and Gaussian blur to determine the transition smoothness between filled areas and the original image pixel values, ensuring a smooth blending of the inpainted areas."
+    }
+]

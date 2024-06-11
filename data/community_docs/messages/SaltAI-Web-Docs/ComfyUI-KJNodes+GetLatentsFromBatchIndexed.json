@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the GetLatentsFromBatchIndexed node in ComfyUI?",
+        "answer": "The GetLatentsFromBatchIndexed node in ComfyUI is designed to select and return specific latents from a given batch based on provided indices, facilitating the extraction of a subset of latents for further processing or analysis."
+    },
+    {
+        "question": "What type of data does the 'latents' input parameter expect in the GetLatentsFromBatchIndexed node?",
+        "answer": "The 'latents' input parameter expects a data type represented by 'LATENT', which translates to a Python dictionary with 'samples' as a key mapped to a torch.Tensor, containing the latents from which specific items will be selected."
+    },
+    {
+        "question": "How does the GetLatentsFromBatchIndexed node determine which latents to extract from the batch?",
+        "answer": "The GetLatentsFromBatchIndexed node uses the 'indexes' parameter, which specifies the indices of the latents to be selected from the batch, thereby determining which latents are to be extracted and processed."
+    },
+    {
+        "question": "What does the output of the GetLatentsFromBatchIndexed node consist of?",
+        "answer": "The output of the GetLatentsFromBatchIndexed node is a modified version of the input latent batch, containing only the latents at the specified indices."
+    },
+    {
+        "question": "In ComfyUI, what Python data format does the output of the GetLatentsFromBatchIndexed node express the latents in?",
+        "answer": "In ComfyUI, the Python data format for the output of the GetLatentsFromBatchIndexed node is a tuple of dictionaries, each dictionary representing a latent with the 'samples' key mapped to a torch.Tensor."
+    },
+    {
+        "question": "Which category does the GetLatentsFromBatchIndexed node belong to in ComfyUI?",
+        "answer": "The GetLatentsFromBatchIndexed node belongs to the 'KJNodes' category in ComfyUI."
+    },
+    {
+        "question": "How is the list of indices for selecting latents handled in the source code of GetLatentsFromBatchIndexed?",
+        "answer": "In the source code of GetLatentsFromBatchIndexed, the list of indices is first parsed from the 'indexes' string parameter into a list of integers. Then, this list is converted to a PyTorch tensor to select the latents at the specified indices from the latent_samples."
+    }
+]

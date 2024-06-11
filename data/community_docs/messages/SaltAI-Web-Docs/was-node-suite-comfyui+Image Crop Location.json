@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Image Crop Location node in ComfyUI?",
+        "answer": "The Image Crop Location node is designed to crop a given image based on specified coordinates and dimensions, ensuring the cropped area fits within the original image's boundaries."
+    },
+    {
+        "question": "What parameters are required for the Image Crop Location node?",
+        "answer": "The required parameters for the Image Crop Location node include `image`, `top`, `left`, `right`, and `bottom` which define the region to be extracted from the input image."
+    },
+    {
+        "question": "What does the `image` parameter represent in the Image Crop Location node?",
+        "answer": "The `image` parameter in the Image Crop Location node represents the input image to be cropped, and it is crucial as it defines the base image from which a specific region will be extracted based on the provided coordinates."
+    },
+    {
+        "question": "In what format does the Image Crop Location node accept the `image` parameter?",
+        "answer": "The Image Crop Location node accepts the `image` parameter in the `torch.Tensor` format."
+    },
+    {
+        "question": "How does the Image Crop Location node handle crop coordinates that exceed the image dimensions?",
+        "answer": "The Image Crop Location node adjusts the specified coordinates to fit within the original image's dimensions by dynamically changing the crop area, thus ensuring the cropped area does not exceed the image's dimensions."
+    },
+    {
+        "question": "What does the `crop_data` output represent in the Image Crop Location node?",
+        "answer": "The `crop_data` output in the Image Crop Location node is a tuple that includes the final crop dimensions and coordinates, formatted as a tuple of tuples."
+    },
+    {
+        "question": "Can the Image Crop Location node be executed on which hardware for optimal performance?",
+        "answer": "The Image Crop Location node is optimized to run on GPU hardware, making it performant for image processing tasks."
+    }
+]

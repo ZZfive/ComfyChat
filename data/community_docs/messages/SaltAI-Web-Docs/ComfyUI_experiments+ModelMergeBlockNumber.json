@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the ModelMergeBlockNumber node used for in ComfyUI?",
+        "answer": "The ModelMergeBlockNumber node in ComfyUI is used for merging two models by blending their components based on specified ratios for different parts of the models, allowing for fine-grained control over the merging process."
+    },
+    {
+        "question": "What are the two models required by the ModelMergeBlockNumber node?",
+        "answer": "The ModelMergeBlockNumber node requires two models: `model1`, which serves as the base model onto which patches from the second model are applied, and `model2`, from which key patches are applied to the first model based on specified ratios."
+    },
+    {
+        "question": "What does the `time_embed.` input control in the ModelMergeBlockNumber node?",
+        "answer": "The `time_embed.` input in the ModelMergeBlockNumber node specifies the blend ratio for the time embedding components of the two models being merged."
+    },
+    {
+        "question": "How many input blocks can be individually adjusted using the ModelMergeBlockNumber node?",
+        "answer": "The ModelMergeBlockNumber node allows for the individual adjustment of 12 input blocks using the `input_blocks.i.` inputs."
+    },
+    {
+        "question": "Which node can be used to merge models with different blend ratios for output blocks?",
+        "answer": "The ModelMergeBlockNumber node can be used to merge models with different blend ratios for output blocks, allowing the adjustment of 12 output blocks individually."
+    },
+    {
+        "question": "What does the `middle_block.i.` input control in the ModelMergeBlockNumber node?",
+        "answer": "The `middle_block.i.` input in the ModelMergeBlockNumber node specifies the blend ratio for each of the middle blocks, targeting 3 middle blocks for adjustment."
+    },
+    {
+        "question": "What is the data type of the output of the ModelMergeBlockNumber node?",
+        "answer": "The output of the ModelMergeBlockNumber node is of type `MODEL`, representing the result of merging two models based on the specified blend ratios for various components."
+    }
+]

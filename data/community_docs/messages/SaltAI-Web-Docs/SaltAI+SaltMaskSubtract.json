@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is the purpose of the SaltMaskSubtract node in ComfyUI?",
+        "answer": "The SaltMaskSubtract node in ComfyUI is designed to perform subtraction between two sets of masks, effectively computing the difference to highlight or remove specific regions within the masks."
+    },
+    {
+        "question": "What are the required inputs for the SaltMaskSubtract node?",
+        "answer": "The required inputs for the SaltMaskSubtract node are `masks_a` and `masks_b`, both of type `MASK` (torch.Tensor), representing the first and second set of masks to be operated on, respectively."
+    },
+    {
+        "question": "What does `masks_a` represent in the SaltMaskSubtract node?",
+        "answer": "`masks_a` in the SaltMaskSubtract node represents the first set of masks to be subtracted from, determining the base for the subtraction operation."
+    },
+    {
+        "question": "What is the output of the SaltMaskSubtract node?",
+        "answer": "The output of the SaltMaskSubtract node is a new set of masks, represented as type `MASK` (torch.Tensor), which is the result of subtracting the second set of masks from the first, highlighting differences."
+    },
+    {
+        "question": "Which dtype is used by `masks_b` in the SaltMaskSubtract node?",
+        "answer": "`masks_b` in the SaltMaskSubtract node uses the dtype `MASK` (torch.Tensor), which specifies the masks to subtract from `masks_a`."
+    },
+    {
+        "question": "What type of node is SaltMaskSubtract classified under in ComfyUI?",
+        "answer": "SaltMaskSubtract is classified under the category `SALT/Masking/Filter` in ComfyUI."
+    },
+    {
+        "question": "What is the function that performs the subtraction operation in the SaltMaskSubtract node?",
+        "answer": "The function that performs the subtraction operation in the SaltMaskSubtract node is `subtract_masks`, which takes `masks_a` and `masks_b` as inputs."
+    },
+    {
+        "question": "Which infrastructure type is necessary for the operation of the SaltMaskSubtract node?",
+        "answer": "The SaltMaskSubtract node requires an infrastructure type of `GPU` for its operation."
+    },
+    {
+        "question": "How are the resulting masks computed in the SaltMaskSubtract node?",
+        "answer": "In the SaltMaskSubtract node, the resulting masks are computed by subtracting `masks_b` from `masks_a` and clamping the values to the range 0-255."
+    }
+]

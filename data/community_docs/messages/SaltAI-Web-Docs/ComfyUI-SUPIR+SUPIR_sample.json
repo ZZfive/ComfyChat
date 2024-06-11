@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SUPIR_sample node in ComfyUI?",
+        "answer": "The SUPIR_sample node in ComfyUI is designed for sampling in the SUPIR model framework, utilizing model parameters, latents, and control scales to generate samples tailored to the given inputs."
+    },
+    {
+        "question": "Which specific model instance does the SUPIR_sample node require for the sampling process?",
+        "answer": "The SUPIR_sample node requires the SUPIR model instance, which includes the denoiser, diffusion model, and control model."
+    },
+    {
+        "question": "How does the SUPIR_sample node contribute to the generation process in terms of conditional inputs?",
+        "answer": "The SUPIR_sample node utilizes positive and negative conditional inputs to guide the generation towards desired attributes and steer it away from undesired ones, enhancing the relevance of the samples to specific conditions."
+    },
+    {
+        "question": "What role does the 'seeds' parameter play in the SUPIR_sample node?",
+        "answer": "The 'seeds' parameter in the SUPIR_sample node is used to ensure the reproducibility of the samples by setting a seed value for random number generation."
+    },
+    {
+        "question": "What is the effect of increasing the 'steps' parameter on the detail and quality of the generated samples in the SUPIR_sample node?",
+        "answer": "Increasing the 'steps' parameter in the SUPIR_sample node affects the detail and quality of the generated samples by defining the number of steps to perform during the sampling process."
+    },
+    {
+        "question": "How does the SUPIR_sample node adjust conditional guidance over the course of sampling?",
+        "answer": "The SUPIR_sample node adjusts conditional guidance through the 'cfg_scale_start' and 'cfg_scale_end' parameters, linearly scaling the class-conditional guidance from the starting to the end level of adherence to the specified conditions."
+    },
+    {
+        "question": "What does the 'EDM_s_churn' parameter in SUPIR_sample influence, and under which samplers does it have no effect?",
+        "answer": "The 'EDM_s_churn' parameter in SUPIR_sample influences the rate of adaptation of the diffusion process to changes in noise levels over time, having no effect with DPMPP samplers."
+    }
+]

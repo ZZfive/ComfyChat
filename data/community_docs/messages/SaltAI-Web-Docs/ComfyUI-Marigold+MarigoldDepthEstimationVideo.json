@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is the purpose of the MarigoldDepthEstimationVideo node in ComfyUI?",
+        "answer": "The MarigoldDepthEstimationVideo node in ComfyUI is designed for diffusion-based monocular depth estimation in video sequences, incorporating optical flow for enhanced frame-to-frame consistency. It is particularly useful for applications requiring depth perception in dynamic scenes, offering a blend of precision and temporal stability."
+    },
+    {
+        "question": "What are the required input types for the MarigoldDepthEstimationVideo node?",
+        "answer": "The required input types for the MarigoldDepthEstimationVideo node are: `image` (torch.Tensor), `seed` (int), `first_frame_denoise_steps` (int), `first_frame_n_repeat` (int), `n_repeat_batch_size` (int), `invert` (bool), `keep_model_loaded` (bool), `scheduler` (str), `normalize` (bool), `denoise_steps` (int), `flow_warping` (bool), `flow_depth_mix` (float), and `noise_ratio` (float)."
+    },
+    {
+        "question": "What are the optional input types you can use with the MarigoldDepthEstimationVideo node?",
+        "answer": "The optional input type for the MarigoldDepthEstimationVideo node is: `model` (str)."
+    },
+    {
+        "question": "Which nodes allow for diffusion-based monocular depth estimation in video sequences?",
+        "answer": "The MarigoldDepthEstimationVideo node allows for diffusion-based monocular depth estimation in video sequences, incorporating optical flow for enhanced frame-to-frame consistency."
+    },
+    {
+        "question": "What role does flow_warping play in the MarigoldDepthEstimationVideo node?",
+        "answer": "Enables or disables the use of optical flow for warping depth maps between frames, crucial for maintaining temporal consistency in videos."
+    },
+    {
+        "question": "How does `invert` modify the output of the MarigoldDepthEstimationVideo node?",
+        "answer": "The `invert` property inverts the depth map's color scheme, where typically black represents the front and white the back."
+    },
+    {
+        "question": "What is the purpose of `n_repeat_batch_size` in the MarigoldDepthEstimationVideo node?",
+        "answer": "The `n_repeat_batch_size` determines how many of the n_repeat iterations are processed together as a batch, influencing processing speed and VRAM usage."
+    },
+    {
+        "question": "What is the effect of `flow_depth_mix` in the MarigoldDepthEstimationVideo node?",
+        "answer": "The `flow_depth_mix` parameter represents the mixing ratio between the current and previous depth maps, influenced by optical flow, to achieve temporal stability."
+    },
+    {
+        "question": "What does `first_frame_n_repeat` control in the MarigoldDepthEstimationVideo node?",
+        "answer": "The `first_frame_n_repeat` control the number of iterations to be ensembled for the first frame's depth map, affecting the final depth estimation's accuracy and detail."
+    }
+]

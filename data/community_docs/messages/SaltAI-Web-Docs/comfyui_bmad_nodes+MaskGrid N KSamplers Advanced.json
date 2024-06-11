@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MaskGrid N KSamplers Advanced node in ComfyUI?",
+        "answer": "The MaskGrid N KSamplers Advanced node in ComfyUI specializes in applying advanced sampling techniques to generate or modify latent spaces in a grid format, leveraging multiple samplers and masking strategies for complex manipulations of images."
+    },
+    {
+        "question": "What role does the 'model' input play in the MaskGrid N KSamplers Advanced node?",
+        "answer": "The 'model' input in the MaskGrid N KSamplers Advanced node specifies the model used for sampling, which defines the generative model's architecture that will be utilized during the sampling process."
+    },
+    {
+        "question": "How does the 'cfg' parameter influence the sampling process in the MaskGrid N KSamplers Advanced node?",
+        "answer": "The 'cfg' parameter in the MaskGrid N KSamplers Advanced node specifies the conditioning factor for the generative model, influencing the strength of the conditioning during the sampling process, affecting how closely the output conforms to the conditioning inputs."
+    },
+    {
+        "question": "Which node is responsible for setting the mask on the latent image in the MaskGrid N KSamplers Advanced process?",
+        "answer": "The set_mask_node, which is an existing node required by the MaskGrid N KSamplers Advanced node, is responsible for setting the mask on the latent image, preparing it for the advanced sampling techniques used by the node."
+    },
+    {
+        "question": "What is the output dtype of the MaskGrid N KSamplers Advanced node in ComfyUI?",
+        "answer": "The output dtype of the MaskGrid N KSamplers Advanced node in ComfyUI is LATENT, represented as a `List[torch.Tensor]` in Python, containing the modified latent images after applying advanced sampling and masking techniques."
+    },
+    {
+        "question": "What are the two modes of operation for the MaskGrid N KSamplers Advanced node and how do they differ?",
+        "answer": "The two modes of operation for the MaskGrid N KSamplers Advanced node are 'Sample then Fork' and 'Fork then Sample'. 'Sample then Fork' applies the mask and performs sampling before forking, while 'Fork then Sample' forks the latent space before applying the mask and sampling."
+    },
+    {
+        "question": "What infrastructure type is recommended for using the MaskGrid N KSamplers Advanced node?",
+        "answer": "The recommended infrastructure type for using the MaskGrid N KSamplers Advanced node is GPU, as indicated by the Infra type in the node documentation."
+    }
+]

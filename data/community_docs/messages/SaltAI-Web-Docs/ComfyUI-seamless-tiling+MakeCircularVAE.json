@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the MakeCircularVAE node designed for in ComfyUI?",
+        "answer": "The MakeCircularVAE node in ComfyUI is designed to modify a VAE (Variational Autoencoder) to support seamless tiling in generated images, either by making a copy of the VAE or modifying it in place."
+    },
+    {
+        "question": "What does the `vae` input in the MakeCircularVAE node represent?",
+        "answer": "The `vae` input in the MakeCircularVAE node represents the VAE to be modified for seamless tiling. This parameter is crucial as it determines the base model that will undergo modifications to support circular tiling."
+    },
+    {
+        "question": "What is the purpose of the `tiling` input in the MakeCircularVAE node?",
+        "answer": "The `tiling` input in the MakeCircularVAE node specifies the mode of tiling to be applied, enabling tiling on both axes, only on the x-axis, only on the y-axis, or disabling it. This affects how the VAE's internal model is adjusted for seamless image generation."
+    },
+    {
+        "question": "How does the `copy_vae` input in the MakeCircularVAE node function?",
+        "answer": "The `copy_vae` input in the MakeCircularVAE node determines whether to modify the original VAE in place or to make a copy before applying the tiling modifications. This choice impacts whether the original VAE remains unchanged."
+    },
+    {
+        "question": "What is the output of the MakeCircularVAE node in ComfyUI?",
+        "answer": "The output of the MakeCircularVAE node in ComfyUI is the modified VAE with seamless tiling capabilities enabled as specified. This VAE can then be used for generating images with seamless transitions."
+    },
+    {
+        "question": "What is the Python dtype for the `vae` input in the MakeCircularVAE node?",
+        "answer": "The Python dtype for the `vae` input in the MakeCircularVAE node is `comfy.sd.VAE`, which represents the type of VAE object used in the ComfyUI framework."
+    },
+    {
+        "question": "How does the MakeCircularVAE node modify the VAE model for seamless tiling?",
+        "answer": "The MakeCircularVAE node modifies the VAE model for seamless tiling by using the `make_circular_asymm` function on the `first_stage_model` attribute of the VAE copy based on the tiling mode specified by the `tiling` input."
+    }
+]

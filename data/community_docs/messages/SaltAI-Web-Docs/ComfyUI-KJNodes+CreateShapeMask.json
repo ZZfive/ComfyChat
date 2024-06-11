@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CreateShapeMask node in ComfyUI?",
+        "answer": "The CreateShapeMask node in ComfyUI is designed for generating masks or batches of masks with specific shapes, providing a tool for dynamic creation of animated masks by adjusting the growth of the shape across frames."
+    },
+    {
+        "question": "Which input determines the number of frames for the animated mask in the CreateShapeMask node?",
+        "answer": "The `frames` input determines the number of frames for the animated mask, allowing for the creation of a sequence of masks with progressive growth."
+    },
+    {
+        "question": "Which input specifies the geometric shape of the mask to be created by the CreateShapeMask node?",
+        "answer": "The `shape` input specifies the geometric shape of the mask to be created, which can be 'circle', 'square', or 'triangle'."
+    },
+    {
+        "question": "How is the initial width of the shape specified in the CreateShapeMask node?",
+        "answer": "The initial width of the shape is specified by the `shape_width` input."
+    },
+    {
+        "question": "What does the `grow` input in the CreateShapeMask node control?",
+        "answer": "The `grow` input controls the amount by which the shape grows on each frame, enabling animation of the mask."
+    },
+    {
+        "question": "What are the Comfy data types for inputs of the CreateShapeMask node?",
+        "answer": "The Comfy data types for inputs of the CreateShapeMask node include `COMBO[STRING]` for `shape`, `INT` for `frames`, `location_x`, `location_y`, `grow`, `frame_width`, and `frame_height`, and `INT` for `shape_width` and `shape_height`."
+    },
+    {
+        "question": "What kind of output can be expected from the CreateShapeMask node?",
+        "answer": "The CreateShapeMask node outputs masks in torch.Tensor format under the types `mask` and `mask_inverted`, where `mask_inverted` is an inverted version of the `mask`, with the shape's area transparent and the rest opaque."
+    }
+]

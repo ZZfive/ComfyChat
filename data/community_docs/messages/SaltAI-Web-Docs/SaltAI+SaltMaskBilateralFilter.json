@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the SaltMaskBilateralFilter in ComfyUI used for?",
+        "answer": "The SaltMaskBilateralFilter node in ComfyUI is used to apply a bilateral filter to mask regions, which helps in smoothing the regions while preserving edges, enhancing the quality of mask regions by reducing noise and maintaining structural integrity."
+    },
+    {
+        "question": "What are the required input types for the SaltMaskBilateralFilter node?",
+        "answer": "The required input type for the SaltMaskBilateralFilter node is `masks`, which refers to the input masks to be processed with the bilateral filter. The masks are represented using the Comfy dtype of `MASK` and the Python dtype of `List[torch.Tensor]`."
+    },
+    {
+        "question": "Can the SaltMaskBilateralFilter node take optional parameters, and if so, what are they?",
+        "answer": "Yes, the SaltMaskBilateralFilter node can take optional parameters including `diameter`, `sigmaColor`, and `sigmaSpace`. These control aspects such as the diameter of each pixel neighborhood, the filter sigma in the color space, and the filter sigma in the coordinate space, respectively."
+    },
+    {
+        "question": "What is the purpose of the `diameter` input in the SaltMaskBilateralFilter node?",
+        "answer": "The `diameter` input in the SaltMaskBilateralFilter node specifies the diameter of each pixel neighborhood that is used during filtering. This parameter affects the extent of smoothing applied to the mask regions."
+    },
+    {
+        "question": "What determines how colors in the neighborhood will be mixed together when using SaltMaskBilateralFilter in ComfyUI?",
+        "answer": "The `sigmaColor` input in the SaltMaskBilateralFilter node determines how much colors in the neighborhood will be mixed together during the filtering process."
+    },
+    {
+        "question": "Which parameter in the SaltMaskBilateralFilter node specifies how spatial closeness of pixels will be considered during filtering?",
+        "answer": "The `sigmaSpace` input in the SaltMaskBilateralFilter node determines the filter sigma in the coordinate space, affecting how the spatial closeness of pixels will be taken into account during the bilateral filtering process."
+    },
+    {
+        "question": "What does the SaltMaskBilateralFilter node return after processing the input masks in ComfyUI?",
+        "answer": "After processing the input masks, the SaltMaskBilateralFilter node returns a tensor of the regions, which is the result of applying the bilateral filter to the masks. The output tensor is of the type `MASK` and is represented using the Python dtype of `torch.Tensor`."
+    }
+]

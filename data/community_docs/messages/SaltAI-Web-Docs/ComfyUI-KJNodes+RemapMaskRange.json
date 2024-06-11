@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the RemapMaskRange node used for in ComfyUI?",
+        "answer": "The RemapMaskRange node is designed to adjust the range of values within a mask to a new specified minimum and maximum, ensuring that the mask's values are scaled appropriately within this new range."
+    },
+    {
+        "question": "Which category does the RemapMaskRange node belong to in ComfyUI?",
+        "answer": "The RemapMaskRange node belongs to the 'KJNodes/masking' category in ComfyUI."
+    },
+    {
+        "question": "What data types are associated with the 'mask' input in the RemapMaskRange node?",
+        "answer": "The 'mask' input in the RemapMaskRange node is of type 'MASK' in Comfy's data type system and 'torch.Tensor' in Python."
+    },
+    {
+        "question": "What is the purpose of the 'min' input in the RemapMaskRange node?",
+        "answer": "The 'min' input in the RemapMaskRange node specifies the new minimum value in the remapped range, setting the lower bound for the mask's values."
+    },
+    {
+        "question": "How does the RemapMaskRange node handle the 'mask' input to scale its range?",
+        "answer": "The RemapMaskRange node scales the mask values by dividing each value by the maximum found in the mask, then multiplying by the difference between the 'max' and 'min' inputs and adding the 'min' value, ensuring all values are clamped within [0.0, 1.0]."
+    },
+    {
+        "question": "In which scenarios is the RemapMaskRange node typically used in ComfyUI?",
+        "answer": "The RemapMaskRange node can be used in scenarios where the user needs to adjust the range of values within a mask, making it useful for tasks like blending different masks or preparing masks for image processing operations."
+    },
+    {
+        "question": "What infrastructure type is the RemapMaskRange node primarily associated with in ComfyUI?",
+        "answer": "The RemapMaskRange node is associated with the 'GPU' infrastructure type in ComfyUI."
+    }
+]

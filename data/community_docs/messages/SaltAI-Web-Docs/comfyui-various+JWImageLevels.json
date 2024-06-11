@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the JWImageLevels node used for in ComfyUI?",
+        "answer": "The JWImageLevels node in ComfyUI is used for adjusting the intensity levels of an image, enhancing contrast or correcting exposure by linearly rescaling colors between specified minimum and maximum values."
+    },
+    {
+        "question": "What input does the JWImageLevels node require to adjust an image?",
+        "answer": "The JWImageLevels node requires an input image tensor of type torch.Tensor and dtype IMAGE, as well as minimum and maximum intensity values, both as float values."
+    },
+    {
+        "question": "How does the JWImageLevels node handle pixels with intensities outside the specified range?",
+        "answer": "In the JWImageLevels node, pixels with intensities below the specified minimum value are set to black, and those above the maximum value are set to white, effectively clipping any out-of-range values."
+    },
+    {
+        "question": "What does the output of the JWImageLevels node represent?",
+        "answer": "The output of the JWImageLevels node is an image tensor with adjusted intensity levels, rescaled to fit within the new specified range, and it has the same data type as the input image."
+    },
+    {
+        "question": "What is the role of the `min` and `max` inputs in the JWImageLevels node?",
+        "answer": "The `min` and `max` inputs in the JWImageLevels node define the lower and upper bounds of the intensity range, respectively. Any pixel value lower than `min` is set to black, and any value higher than `max` is set to white."
+    },
+    {
+        "question": "Which nodes can adjust the intensity levels of an image in ComfyUI?",
+        "answer": "The JWImageLevels node is capable of adjusting the intensity levels of an image by linearly rescaling the colors between given minimum and maximum values."
+    },
+    {
+        "question": "What datatypes are used in ComfyUI for the input and output images of the JWImageLevels node?",
+        "answer": "In ComfyUI, the input and output images for the JWImageLevels node are torch.Tensor with the dtype set as IMAGE, allowing for the manipulation of image tensors."
+    }
+]

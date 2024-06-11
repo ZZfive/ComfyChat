@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the SaveMetaData node in ComfyUI used for?",
+        "answer": "The SaveMetaData node in ComfyUI is designed to save metadata information to a text file, processing image metadata and additional details about the image and its associated data."
+    },
+    {
+        "question": "What are the required input types for the SaveMetaData node?",
+        "answer": "The required input types for the SaveMetaData node include an `image` (Comfy dtype: IMAGE, Python dtype: torch.Tensor), `filename_prefix` (Comfy dtype: STRING, Python dtype: str), `timestamp_prefix` (Comfy dtype: COMBO[STRING], Python dtype: bool), and `counter` (Comfy dtype: COMBO[STRING], Python dtype: bool)."
+    },
+    {
+        "question": "What does the `image` parameter in SaveMetaData represent?",
+        "answer": "The `image` parameter in SaveMetaData represents the image whose metadata is to be saved. This parameter is crucial as it determines the context and content of the metadata to be saved."
+    },
+    {
+        "question": "What does the `timestamp_prefix` parameter in SaveMetaData do?",
+        "answer": "The `timestamp_prefix` parameter in SaveMetaData is a boolean flag indicating whether to prepend a timestamp to the filename, aiding in organizing and sorting the metadata files."
+    },
+    {
+        "question": "What purpose does the `counter` parameter serve in the SaveMetaData node?",
+        "answer": "The `counter` parameter in SaveMetaData is a boolean flag that determines whether a counter should be appended to the filename, useful for versioning or tracking multiple metadata files for the same image."
+    },
+    {
+        "question": "How does SaveMetaData process the filename for the metadata file?",
+        "answer": "SaveMetaData processes the filename for the metadata file by potentially including a timestamp prefix and counter based on the `timestamp_prefix` and `counter` parameters, and it uses the `filename_prefix` provided by the user."
+    },
+    {
+        "question": "What happens inside the SaveMetaData function when processing the metadata?",
+        "answer": "Inside the SaveMetaData function, the metadata is processed by replacing elements in the `filename_prefix` using the `search_and_replace` function, determining the full output folder and subfolder, appending the timestamp and counter if specified, and then writing the `extra_pnginfo` and `prompt` information to a .txt file at the determined file path."
+    }
+]

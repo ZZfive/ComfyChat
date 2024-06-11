@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the role of the InstantIDModelLoader node in ComfyUI?",
+        "answer": "The InstantIDModelLoader node in ComfyUI is designed to load and initialize the InstantID model from a specified file path, preparing it for further processing or analysis."
+    },
+    {
+        "question": "What is the dtype of the `instantid_file` input in the InstantIDModelLoader node?",
+        "answer": "The dtype of the `instantid_file` input in the InstantIDModelLoader node is `COMBO[STRING]` in Comfy terms, and `str` in Python terms."
+    },
+    {
+        "question": "What does the `instantid` output of the InstantIDModelLoader node represent?",
+        "answer": "The `instantid` output of the InstantIDModelLoader node represents the loaded and initialized InstantID model, which is returned in a format compatible with further processing or analysis in the InstantID framework."
+    },
+    {
+        "question": "What is the category of the InstantIDModelLoader node in ComfyUI?",
+        "answer": "The category of the InstantIDModelLoader node in ComfyUI is `InstantID`."
+    },
+    {
+        "question": "What is the output type of the InstantIDModelLoader node?",
+        "answer": "The output type of the InstantIDModelLoader node is `INSTANTID` which corresponds to the loaded and initialized InstantID model."
+    },
+    {
+        "question": "How is the model loaded and configured in the InstantIDModelLoader node?",
+        "answer": "The model is loaded using the file path specified by `instantid_file` and configured based on its checkpoint and file type using comfy.utils.load_torch_file, ensuring it is ready for further processing within the InstantID framework."
+    },
+    {
+        "question": "What is the Python function responsible for loading the model in the InstantIDModelLoader node?",
+        "answer": "The Python function responsible for loading the model in the InstantIDModelLoader node is `load_model`."
+    },
+    {
+        "question": "How is the model handled differently if the checkpoint file is in `.safetensors` format?",
+        "answer": "If the checkpoint file is in `.safetensors` format, the model is reformatted into a dictionary with keys `image_proj` and `ip_adapter`, with subkeys corresponding to the specific parts of the model stripped of their respective prefixes."
+    }
+]

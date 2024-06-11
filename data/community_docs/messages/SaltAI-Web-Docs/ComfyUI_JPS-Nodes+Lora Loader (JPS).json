@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Lora Loader (JPS) node in ComfyUI?",
+        "answer": "The Lora Loader (JPS) node in ComfyUI is designed to dynamically load and apply LoRA (Low-Rank Adaptation) adjustments to models and/or CLIP components based on specified parameters, allowing for fine-tuned control over model outputs without altering the original model architecture."
+    },
+    {
+        "question": "What parameters does the Lora Loader (JPS) node require to apply LoRA adjustments?",
+        "answer": "The Lora Loader (JPS) node requires the base model (`model`), the CLIP model component (`clip`), a switch to enable or disable LoRA adjustments (`switch`), the name of the LoRA file to load and apply (`lora_name`), the strength of LoRA adjustments for the model (`strength_model`), and the strength of LoRA adjustments for the CLIP component (`strength_clip`)."
+    },
+    {
+        "question": "What does the `switch` parameter in the Lora Loader (JPS) node control?",
+        "answer": "The `switch` parameter in the Lora Loader (JPS) node controls whether LoRA adjustments are applied to the models or not, providing a straightforward mechanism to enable or disable the adaptation process."
+    },
+    {
+        "question": "How does the Lora Loader (JPS) node modify the model and CLIP components?",
+        "answer": "The Lora Loader (JPS) node modifies the model and CLIP components by applying LoRA adjustments based on the specified parameters, resulting in modified outputs reflecting changes in behavior or performance."
+    },
+    {
+        "question": "What determines the intensity of the LoRA adjustments applied by the Lora Loader (JPS) node?",
+        "answer": "The intensity of the LoRA adjustments applied by the Lora Loader (JPS) node to the model is determined by the `strength_model` parameter, and for the CLIP component, by the `strength_clip` parameter, both allowing precise control over the adaptation's impact."
+    },
+    {
+        "question": "What happens if the `strength_model` and `strength_clip` parameters are set to 0 in the Lora Loader (JPS) node?",
+        "answer": "If the `strength_model` and `strength_clip` parameters are set to 0, the Lora Loader (JPS) node returns the original base model and CLIP component without applying any LoRA adjustments."
+    },
+    {
+        "question": "How does the Lora Loader (JPS) node handle the loading of LoRA files?",
+        "answer": "The Lora Loader (JPS) node loads LoRA files specified by `lora_name` using the `load_torch_file` function from the `comfy.utils` module to load the file safely, ensuring the adjustments can be applied correctly to the model and CLIP component."
+    }
+]

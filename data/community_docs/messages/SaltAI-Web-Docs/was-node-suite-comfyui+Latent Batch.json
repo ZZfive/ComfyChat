@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Latent Batch node in ComfyUI?",
+        "answer": "The Latent Batch node in ComfyUI is designed to merge multiple sets of latent representations into a single batch, with potential resizing of one set to match the dimensions of the others before concatenation."
+    },
+    {
+        "question": "What does the Latent Batch node do with the sets of latent samples?",
+        "answer": "The Latent Batch node combines sets of latent samples from all input sets, potentially resizing some sets to ensure dimensional consistency with others."
+    },
+    {
+        "question": "What are the optional inputs for the Latent Batch node?",
+        "answer": "The Latent Batch node has four optional inputs: latent_a, latent_b, latent_c, and latent_d, all of which are sets of latent samples that can be included in the batch."
+    },
+    {
+        "question": "How does the Latent Batch node ensure dimensional consistency among input sets?",
+        "answer": "The Latent Batch node checks the dimensions of the latent samples and resizes those that do not match, ensuring that all sets can be concatenated without dimensional mismatches."
+    },
+    {
+        "question": "What are the infra type and category of the Latent Batch node in ComfyUI?",
+        "answer": "The Latent Batch node has an infra type of 'GPU' and falls under the category 'WAS Suite/Latent' in ComfyUI."
+    },
+    {
+        "question": "Which sets of latent samples can be resized by the Latent Batch node?",
+        "answer": "The optional inputs latent_b, latent_c, and latent_d of the Latent Batch node can potentially be resized to match the dimensions of the base input, latent_a, before concatenation."
+    },
+    {
+        "question": "What Python data type does the output of the Latent Batch node use?",
+        "answer": "The output of the Latent Batch node uses a Python data type of `Dict[str, torch.Tensor]`, representing the combined set of latent samples."
+    }
+]

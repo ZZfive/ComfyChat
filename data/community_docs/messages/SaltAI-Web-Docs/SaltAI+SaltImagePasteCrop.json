@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the SaltImagePasteCrop node in ComfyUI used for?",
+        "answer": "The SaltImagePasteCrop node in ComfyUI is used for blending and sharpening operations in image processing, specifically for pasting cropped images onto target images."
+    },
+    {
+        "question": "What are the required input types for the SaltImagePasteCrop node?",
+        "answer": "The required input types for the SaltImagePasteCrop node include `images`, `crop_images`, `crop_data_batch`, `crop_blending`, and `crop_sharpening`."
+    },
+    {
+        "question": "What does the `images` input in SaltImagePasteCrop represent?",
+        "answer": "The `images` input in SaltImagePasteCrop represents the original images onto which the cropped images will be pasted, serving as the base layer for the pasting operation."
+    },
+    {
+        "question": "How does the `crop_data_batch` input facilitate the pasting process in SaltImagePasteCrop?",
+        "answer": "The `crop_data_batch` input in SaltImagePasteCrop provides a batch of data specifying the location, size, and additional parameters for each crop area in the original images, essential for aligning and integrating cropped images."
+    },
+    {
+        "question": "What role does `crop_blending` play in the SaltImagePasteCrop node?",
+        "answer": "The `crop_blending` input in SaltImagePasteCrop determines the intensity of blending between the original and cropped images, affecting the smoothness of the transition."
+    },
+    {
+        "question": "What are the output types of the SaltImagePasteCrop node?",
+        "answer": "The output types of the SaltImagePasteCrop node include `images` and `masks`, where `images` represents the result of pasting the cropped images onto the original after adjustments, and `masks` indicate the areas affected by the pasting operation."
+    },
+    {
+        "question": "How does SaltImagePasteCrop handle the blending of cropped images onto original images?",
+        "answer": "SaltImagePasteCrop handles blending by using a blending mask created through gradients at the edges of the cropped images, controlled by the `crop_blending` parameter."
+    }
+]

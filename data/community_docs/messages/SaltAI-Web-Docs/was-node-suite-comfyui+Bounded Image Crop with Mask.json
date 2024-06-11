@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the class name for the node that performs bounded image cropping with masks in ComfyUI?",
+        "answer": "The class name for the node that performs bounded image cropping with masks in ComfyUI is `Bounded Image Crop with Mask`."
+    },
+    {
+        "question": "What is the purpose of the `Bounded Image Crop with Mask` node in ComfyUI?",
+        "answer": "The purpose of the `Bounded Image Crop with Mask` node in ComfyUI is to crop images based on specified masks and adjust the cropping boundaries with additional padding parameters, providing dynamic and context-aware image processing."
+    },
+    {
+        "question": "What parameters does the `Bounded Image Crop with Mask` node take and what do they represent?",
+        "answer": "The `Bounded Image Crop with Mask` node takes the following parameters: `image`, which represents the input image or batch of images to be cropped; `mask`, which is the mask or batch of masks used to determine the cropping boundaries; `padding_left`, `padding_right`, `padding_top`, and `padding_bottom`, which specify the amount of padding to be added to the respective boundaries of the crop."
+    },
+    {
+        "question": "What is the output of the `Bounded Image Crop with Mask` node and in what format is it provided?",
+        "answer": "The output of the `Bounded Image Crop with Mask` node is a batch of cropped images and the boundaries used for each crop, provided in formats compatible with the ComfyUI framework."
+    },
+    {
+        "question": "How does the `Bounded Image Crop with Mask` node adjust the cropping boundaries of an image?",
+        "answer": "The `Bounded Image Crop with Mask` node adjusts the cropping boundaries by taking into account the values of `padding_left`, `padding_right`, `padding_top`, and `padding_bottom`, which add extra space around the object defined by the mask during the cropping process."
+    },
+    {
+        "question": "What restrictions are there on the `padding_top`, `padding_bottom`, `padding_left`, and `padding_right` parameters for the `Bounded Image Crop with Mask` node?",
+        "answer": "The `padding_top`, `padding_bottom`, `padding_left`, and `padding_right` parameters must be non-negative integers, and their maximum values are set to avoid overflow issues with a 64-bit integer range, aligning with the limitations of the data types used in the ComfyUI framework."
+    },
+    {
+        "question": "In what way does the `Bounded Image Crop with Mask` node ensure sensitivity to the presence and shape of objects within the images?",
+        "answer": "The `Bounded Image Crop with Mask` node ensures sensitivity to the presence and shape of objects within the images by using masks to determine cropping boundaries; this allows it to be aware of object locations and maintain the integrity of objects during the cropping process."
+    }
+]

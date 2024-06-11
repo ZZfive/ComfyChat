@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Batch Float Fit (mtb) node in ComfyUI?",
+        "answer": "The Batch Float Fit (mtb) node in ComfyUI is designed to adjust the range of a batch of float values, optionally clamping them within a new target range and applying an easing function for smooth transitions."
+    },
+    {
+        "question": "How does the Batch Float Fit (mtb) node compute the source range?",
+        "answer": "The Batch Float Fit (mtb) node can either automatically compute the source range based on the input values or use a specified range when the `auto_compute_source` option is set to false."
+    },
+    {
+        "question": "What types of input does the Batch Float Fit (mtb) node require?",
+        "answer": "The Batch Float Fit (mtb) node requires a list of float values `values`, a boolean `clamp` indicating whether to clamp the transformed values, another boolean `auto_compute_source` to determine whether to compute the source range automatically, and `source_min` and `source_max` values that define the source range if `auto_compute_source` is false. Additionally, it takes `target_min` and `target_max` values for the new target range and a string value `easing` representing the easing function to apply."
+    },
+    {
+        "question": "Can the Batch Float Fit (mtb) node perform data normalization?",
+        "answer": "Yes, the Batch Float Fit (mtb) node can be used for data normalization and transformation tasks as it transforms float values from their original range to a new target range."
+    },
+    {
+        "question": "When would you set the `auto_compute_source` to true in the Batch Float Fit (mtb) node?",
+        "answer": "You should set the `auto_compute_source` to true in the Batch Float Fit (mtb) node when you want the source range to be computed automatically based on the minimum and maximum of the input values."
+    },
+    {
+        "question": "What effect does setting the `clamp` input to true have on the output of the Batch Float Fit (mtb) node?",
+        "answer": "Setting the `clamp` input to true ensures that all transformed values are clamped within the target range, preventing any values from falling outside this range."
+    },
+    {
+        "question": "What role does the `easing` input play in the Batch Float Fit (mtb) node?",
+        "answer": "The `easing` input in the Batch Float Fit (mtb) node defines the easing function to be applied during the transformation of the float values, allowing for smooth transitions between the source and target ranges."
+    }
+]

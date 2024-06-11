@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR Multi Upscale Stack node in ComfyUI?",
+        "answer": "The CR Multi Upscale Stack node is designed to create a stack of upscale operations based on specified models and rescale factors, allowing for a sequence of image upscale transformations to be defined and applied in a modular fashion."
+    },
+    {
+        "question": "What are the required inputs for the CR Multi Upscale Stack node?",
+        "answer": "The required inputs for the CR Multi Upscale Stack node include 'switch_1', 'upscale_model_1', 'rescale_factor_1', 'switch_2', 'upscale_model_2', 'rescale_factor_2', 'switch_3', 'upscale_model_3', and 'rescale_factor_3'. Each switch determines whether the corresponding upscale model and its rescale factor should be included in the stack."
+    },
+    {
+        "question": "How does the conditional input 'switch_1' function in the CR Multi Upscale Stack node?",
+        "answer": "The 'switch_1' input acts as a conditional flag for the inclusion of the first upscale model and its associated rescale factor in the stack. If 'On', the specified upscale model and rescale factor are included; if 'Off', they are skipped."
+    },
+    {
+        "question": "What is the function of the 'rescale_factor_n' inputs in the CR Multi Upscale Stack node?",
+        "answer": "The 'rescale_factor_n' inputs define the rescale factor associated with the corresponding upscale model, determining the magnitude of the upscale transformation when the associated switch is 'On'."
+    },
+    {
+        "question": "What is the output type of the CR Multi Upscale Stack node in ComfyUI?",
+        "answer": "The CR Multi Upscale Stack node outputs an 'UPSCALE_STACK', which is a compiled list of upscale operations, each represented as a tuple of an upscale model and its corresponding rescale factor. This list is dynamically constructed based on the input switches and parameters."
+    },
+    {
+        "question": "How does the optional input 'upscale_stack' enhance the functionality of the CR Multi Upscale Stack node?",
+        "answer": "The optional 'upscale_stack' input allows for the accumulation and modular configuration of upscale transformations by extending an initial list of upscale operations with additional models and rescale factors based on the switches."
+    },
+    {
+        "question": "What is the purpose of the 'show_help' output in the CR Multi Upscale Stack node?",
+        "answer": "The 'show_help' output in the CR Multi Upscale Stack node provides a URL that gives access to additional documentation and help related to the node."
+    }
+]

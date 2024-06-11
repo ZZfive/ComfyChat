@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the JWLoopImageSequence node used for in ComfyUI?",
+        "answer": "The JWLoopImageSequence node in ComfyUI is designed to adjust the number of frames in an image sequence to match a specified target frame count. It either truncates the sequence to the target length or repeats the sequence (or parts of it) to reach the desired length, ensuring the output sequence has exactly the number of frames specified."
+    },
+    {
+        "question": "What are the required input types for the JWLoopImageSequence node?",
+        "answer": "The required input types for the JWLoopImageSequence node are `images`, which is a tensor representing the sequence of images to be processed, and `target_frames`, an integer specifying the desired number of frames in the output image sequence."
+    },
+    {
+        "question": "How does the JWLoopImageSequence node handle input sequences longer than the target frame count?",
+        "answer": "When the input sequence to the JWLoopImageSequence node is longer than the target frame count, the node truncates the sequence to the target length."
+    },
+    {
+        "question": "What does the JWLoopImageSequence node do if the input sequence is shorter than the target frame count?",
+        "answer": "If the input sequence to the JWLoopImageSequence node is shorter than the target frame count, the node repeats the sequence or parts of it to extend the sequence to reach the desired length."
+    },
+    {
+        "question": "What data types are used for input and output in the JWLoopImageSequence node?",
+        "answer": "The input for `images` is of type `IMAGE` and data type `torch.Tensor`, and the input for `target_frames` is of type `INT` and Python data type `int`. The output is of type `IMAGE` and Python data type `torch.Tensor`, representing the adjusted image sequence with the specified number of frames."
+    },
+    {
+        "question": "What is the role of the `target_frames` input in the JWLoopImageSequence node?",
+        "answer": "The `target_frames` input in the JWLoopImageSequence node determines the desired number of frames in the output image sequence. This input guides whether the input sequence will be truncated or extended to reach the specified frame count."
+    },
+    {
+        "question": "What is the default value for the `target_frames` input in the JWLoopImageSequence node in ComfyUI?",
+        "answer": "The default value for the `target_frames` input in the JWLoopImageSequence node is 16."
+    }
+]

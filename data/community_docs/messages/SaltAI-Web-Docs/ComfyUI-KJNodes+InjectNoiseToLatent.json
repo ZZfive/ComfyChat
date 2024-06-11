@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the InjectNoiseToLatent node in ComfyUI?",
+        "answer": "The InjectNoiseToLatent node in ComfyUI is designed to modify latent representations by injecting noise into them, aiming to enhance or alter the characteristics of the latent space for various generative tasks."
+    },
+    {
+        "question": "What are the required input types for the InjectNoiseToLatent node?",
+        "answer": "The required input types for the InjectNoiseToLatent node include 'latents', 'strength', and 'noise'. These are the original latent representations, the scaling factor for the noise, and the noise tensor itself, respectively."
+    },
+    {
+        "question": "How does InjectNoiseToLatent handle the mixing of random noise?",
+        "answer": "InjectNoiseToLatent can mix random noise into the noised latent by using the 'mix_randn_amount' and 'seed' parameters, which control the amount of randomness to add and can ensure reproducibility in the noise generation."
+    },
+    {
+        "question": "What effect does the 'normalize' parameter have in the InjectNoiseToLatent node?",
+        "answer": "The 'normalize' parameter in InjectNoiseToLatent indicates whether to normalize the noised latent, affecting its distribution by normalizing the noised latent with respect to its standard deviation."
+    },
+    {
+        "question": "How is the noise averaged with the original latents in InjectNoiseToLatent?",
+        "answer": "If the 'average' parameter is set to True, the InjectNoiseToLatent node will average the noise with the original latents, blending rather than solely adding the noise."
+    },
+    {
+        "question": "What optional node input type allows selective noise injection in the InjectNoiseToLatent node?",
+        "answer": "The optional input type 'mask' in InjectNoiseToLatent allows for selective noise injection, enabling targeted alterations of the latent space where the noise is applied selectively."
+    },
+    {
+        "question": "What is the output type of the InjectNoiseToLatent node?",
+        "answer": "The output type of the InjectNoiseToLatent node is 'latent', representing the modified latent representations after noise injection, reflecting the combined effects of the input parameters."
+    }
+]

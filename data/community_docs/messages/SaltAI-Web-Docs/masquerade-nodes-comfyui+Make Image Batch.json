@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Make Image Batch node in ComfyUI?",
+        "answer": "The Make Image Batch node is designed to aggregate multiple individual images or smaller batches of images into a larger batch, enhancing efficiency in batch operations."
+    },
+    {
+        "question": "What types of input does the Make Image Batch node require?",
+        "answer": "The Make Image Batch node requires a primary image input and can optionally accept up to five additional images. The primary image is a required input, and all others are optional."
+    },
+    {
+        "question": "What is the primary image input for the Make Image Batch node, and what format does it take?",
+        "answer": "The primary image input for the Make Image Batch node is `image1`, and it is a required input that serves as the base to which additional images can be appended. The image is in the format of `IMAGE` with a Comfy dtype of `IMAGE` and a Python dtype of `torch.Tensor`."
+    },
+    {
+        "question": "How can optional images be added to the batch using the Make Image Batch node?",
+        "answer": "Optional images can be added to the batch using the `image2`, `image3`, `image4`, `image5`, and `image6` inputs. Each is optional and can further increase the size of the image batch."
+    },
+    {
+        "question": "What type of output does the Make Image Batch node produce?",
+        "answer": "The Make Image Batch node produces a batch of images aggregated from the individual inputs, which is output as `image` with a Comfy dtype of `IMAGE` and a Python dtype of `torch.Tensor`."
+    },
+    {
+        "question": "What is the role of `torch.cat()` in the Make Image Batch node's source code?",
+        "answer": "`torch.cat()` is used in the Make Image Batch node's source code to concatenate the optional images to the primary image, forming a larger batch of images."
+    },
+    {
+        "question": "Which infra type is supported by the Make Image Batch node?",
+        "answer": "The Make Image Batch node supports the infra type `GPU`. This indicates that the node can effectively process images in parallel using the computing resources of a GPU."
+    }
+]

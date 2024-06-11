@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the class name of the node that converts masks into RGBA images?",
+        "answer": "The class name of the node that converts masks into RGBA images is `SaltRGBAFromMask`."
+    },
+    {
+        "question": "What does the `threshold` parameter in `SaltRGBAFromMask` control?",
+        "answer": "The `threshold` parameter in `SaltRGBAFromMask` controls the cutoff point for determining transparency in the mask. Pixels above this value will be more opaque."
+    },
+    {
+        "question": "Which node in ComfyUI adds an alpha channel to an image based on a mask?",
+        "answer": "The `SaltRGBAFromMask` node in ComfyUI adds an alpha channel to an image based on a mask."
+    },
+    {
+        "question": "What is the output format of the image produced by `SaltRGBAFromMask`?",
+        "answer": "The output format of the image produced by `SaltRGBAFromMask` is `PIL.Image`, representing the resulting RGBA image."
+    },
+    {
+        "question": "In `SaltRGBAFromMask`, what is the `invert_mask` parameter used for?",
+        "answer": "The `invert_mask` parameter in `SaltRGBAFromMask` is used to indicate whether the mask should be inverted before applying it to the image, effectively swapping which areas are considered transparent and which are opaque."
+    },
+    {
+        "question": "What input types does `SaltRGBAFromMask` require for the mask?",
+        "answer": "`SaltRGBAFromMask` requires the mask input type `MASK` with Python dtype `PIL.Image`, which determines the regions that will be transparent or opaque in the resulting image."
+    },
+    {
+        "question": "What does the `image` input of `SaltRGBAFromMask` represent?",
+        "answer": "The `image` input of `SaltRGBAFromMask` represents the source image that will be combined with the mask to produce an RGBA image, where non-masked areas remain visible and masked areas can become transparent or semi-transparent."
+    }
+]

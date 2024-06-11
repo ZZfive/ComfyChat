@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the class name for the node used to generate XY plots in ComfyUI?",
+        "answer": "The class name for the node used to generate XY plots in ComfyUI is `ttN xyPlot`."
+    },
+    {
+        "question": "What controls whether the X and Y axes are flipped in the `ttN xyPlot` node?",
+        "answer": "The `flip_xy` input, which is a `COMBO[STRING]` type, controls whether the X and Y axes are flipped in the `ttN xyPlot` node."
+    },
+    {
+        "question": "Which input in the `ttN xyPlot` node determines the data for the X-axis?",
+        "answer": "The `x_values` input, of type `STRING`, determines the data for the X-axis in the `ttN xyPlot` node."
+    },
+    {
+        "question": "How is the spacing between grid points in the `ttN xyPlot` node defined?",
+        "answer": "The spacing between grid points in the `ttN xyPlot` node is defined by the `grid_spacing` input, which is an `INT` type."
+    },
+    {
+        "question": "What outputs does the `ttN xyPlot` node produce?",
+        "answer": "The `ttN xyPlot` node outputs an `xyPlot`, which encapsulates the generated XY plot data with type `XYPLOT`."
+    },
+    {
+        "question": "What are the python data types for inputs `latent_id` and `output_individuals` in the `ttN xyPlot` node?",
+        "answer": "The python data type for `latent_id` is `int`, and for `output_individuals` it is `str` in the `ttN xyPlot` node."
+    },
+    {
+        "question": "Describe the process used to clean and prepare the `x_values` and `y_values` for the `ttN xyPlot` node.",
+        "answer": "The `x_values` and `y_values` are cleaned by splitting them on `'; '`, then stripping any trailing semicolons and whitespace. If convertible, values are further cast to `int` or `float`, and finally, empty strings are excluded from the cleaned list."
+    }
+]

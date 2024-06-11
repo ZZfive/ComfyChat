@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the ConditioningSetMaskAndCombine5 node used for in ComfyUI?",
+        "answer": "The ConditioningSetMaskAndCombine5 node in ComfyUI is designed to apply masks to conditioning data, combining multiple sets of conditioning and masks with varying strengths. This facilitates complex conditioning scenarios for generative models by selectively enhancing or suppressing features within the conditioning data based on the masks applied."
+    },
+    {
+        "question": "What types of data does 'mask_i' in ConditioningSetMaskAndCombine5 represent?",
+        "answer": "The 'mask_i' input type in ConditioningSetMaskAndCombine5 represents a mask to be applied to the set of conditioning data, determining the areas of influence. It has a Comfy dtype of 'MASK' and a Python dtype of 'torch.Tensor'."
+    },
+    {
+        "question": "How does the 'set_cond_area' input influence the ConditioningSetMaskAndCombine5 node's output?",
+        "answer": "The 'set_cond_area' input in ConditioningSetMaskAndCombine5 determines whether to set the conditioning area to the bounds defined by the mask. It allows for more precise control over the conditioning effects by specifying 'default' or 'mask bounds' as the setting."
+    },
+    {
+        "question": "What is the function of the 'combined_positive' output in ConditioningSetMaskAndCombine5?",
+        "answer": "The 'combined_positive' output in ConditioningSetMaskAndCombine5 represents the combined set of positive conditioning data after mask application. It's ready for use in further generative processes and has a Comfy dtype of 'CONDITIONING' and a Python dtype of 'List[torch.Tensor]'."
+    },
+    {
+        "question": "In the context of the ConditioningSetMaskAndCombine5 node, what role do the 'mask_i_strength' parameters play?",
+        "answer": "The 'mask_i_strength' parameters in ConditioningSetMaskAndCombine5 define the strength of the mask applied to each set of conditioning data, influencing the degree of feature enhancement or suppression. They have a Comfy dtype of 'FLOAT' and a Python dtype of 'float'."
+    },
+    {
+        "question": "Which nodes can combine conditioning data sets in ComfyUI?",
+        "answer": "The ConditioningSetMaskAndCombine5 node can combine conditioning data sets in ComfyUI. It is specifically designed to combine multiple sets of conditioning and masks with varying strengths, enhancing or suppressing features based on the applied masks."
+    },
+    {
+        "question": "What environment is ConditioningSetMaskAndCombine5 optimized to run in?",
+        "answer": "ConditioningSetMaskAndCombine5 is optimized to run in a CPU environment. This is indicated by the 'infra type' description as 'CPU'."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the Blend Latents node used for in ComfyUI?",
+        "answer": "The Blend Latents node in ComfyUI is designed to blend two sets of latent representations using various blending modes such as add, multiply, divide, subtract, overlay, screen, difference, exclusion, hard light, linear dodge, soft light, and random noise. This node facilitates the creation of new, hybrid latent representations by combining features from both inputs in a controlled manner."
+    },
+    {
+        "question": "Which blending modes are available in the Blend Latents node?",
+        "answer": "The Blend Latents node offers blending modes such as add, multiply, divide, subtract, overlay, screen, difference, exclusion, hard light, linear dodge, soft light, and random noise."
+    },
+    {
+        "question": "What types of inputs does the Blend Latents node require?",
+        "answer": "The Blend Latents node requires two sets of latent representations, `latent_a` and `latent_b`, as well as an operation parameter to specify the blending mode and a blend parameter to determine the proportion of influence for each set of latents."
+    },
+    {
+        "question": "How does the Blend Latents node determine the proportion of influence from each set of latent representations?",
+        "answer": "The Blend Latents node uses the `blend` parameter, a float value that determines the proportion of influence each set of latents has on the final blended output."
+    },
+    {
+        "question": "What is the output type of the Blend Latents node in ComfyUI?",
+        "answer": "The output type of the Blend Latents node is `latent`, which is the resulting set of blended latent representations. It combines features from the input sets according to the specified blending mode and factor."
+    },
+    {
+        "question": "What are the Python dtypes for `latent_a` and `latent_b` input types in the Blend Latents node?",
+        "answer": "The Python dtype for both `latent_a` and `latent_b` in the Blend Latents node is `Dict[str, torch.Tensor]`."
+    },
+    {
+        "question": "Can you provide an example of a mathematical operation used by the Blend Latents node?",
+        "answer": "One example of a mathematical operation used by the Blend Latents node is screen blend, where the inverted latents are calculated and then used to create blended latent by 1 - (inverted_latent1 * inverted_latent2 * (1 - blend_factor))."
+    }
+]

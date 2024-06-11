@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the primary purpose of the MarigoldDepthEstimation node in ComfyUI?",
+        "answer": "The primary purpose of the MarigoldDepthEstimation node in ComfyUI is to generate depth maps from single images using a diffusion-based monocular depth estimation technique."
+    },
+    {
+        "question": "Which input parameter in MarigoldDepthEstimation determines the initial image for depth map creation?",
+        "answer": "The input parameter that determines the initial image for depth map creation is the `image`, which is the primary input that drives the depth estimation process."
+    },
+    {
+        "question": "How does the `denoise_steps` parameter in MarigoldDepthEstimation influence the output?",
+        "answer": "The `denoise_steps` parameter in MarigoldDepthEstimation influences the output by specifying the number of steps per depth map, which increases accuracy at the cost of processing time, directly affecting the depth map's detail and quality."
+    },
+    {
+        "question": "In the context of MarigoldDepthEstimation, what effect does increasing the `n_repeat` parameter have on the depth map?",
+        "answer": "Increasing the `n_repeat` parameter in MarigoldDepthEstimation leads to a more refined depth map due to the ensembling of multiple iterations, which improves the accuracy and detail of the final depth map, albeit at the expense of increased processing time."
+    },
+    {
+        "question": "What is the purpose of the `reduction_method` parameter in MarigoldDepthEstimation?",
+        "answer": "The `reduction_method` parameter in MarigoldDepthEstimation specifies the method used for reducing the ensemble of depth maps into a single map, impacting the process of how individual depth maps are combined and affecting the final image's quality and detail."
+    },
+    {
+        "question": "How does setting `invert` to `True` in MarigoldDepthEstimation affect the output depth map?",
+        "answer": "Setting `invert` to `True` in MarigoldDepthEstimation inverts the default depth map colors to ensure compatibility with certain applications, making the depth map's visual representation match the expected format for further processing."
+    },
+    {
+        "question": "What role does the `keep_model_loaded` parameter play in MarigoldDepthEstimation?",
+        "answer": "The `keep_model_loaded` parameter in MarigoldDepthEstimation determines whether the depth estimation model remains loaded between invocations, which can significantly reduce processing time for subsequent images but at the expense of increased memory usage."
+    }
+]

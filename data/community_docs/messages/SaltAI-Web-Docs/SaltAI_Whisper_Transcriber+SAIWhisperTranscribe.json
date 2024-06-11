@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What class is used for transcribing audio and video files in ComfyUI?",
+        "answer": "The SAIWhisperTranscribe class in ComfyUI is used for transcribing audio and video files using a Whisper model."
+    },
+    {
+        "question": "What are the required input parameters for the `SAIWhisperTranscribe` node?",
+        "answer": "The required input parameters for the `SAIWhisperTranscribe` node are `whisper_model`, which is the Whisper model configuration used for transcription, and `file_path`, the path to the media file to be transcribed."
+    },
+    {
+        "question": "What are the output types that `SAIWhisperTranscribe` produces?",
+        "answer": "The output types produced by `SAIWhisperTranscribe` include `transcription_text`, `transcription_timestamp_dict`, `transcription_frame_dict`, `prompt_schedule`, `images`, `transcription_count`, `frame_rate`, and `frame_count`."
+    },
+    {
+        "question": "Which parameter in the `SAIWhisperTranscribe` node affects the detail level of the transcription output?",
+        "answer": "The `max_new_tokens` parameter in the `SAIWhisperTranscribe` node affects the detail level of the transcription output, controlling the maximum number of new tokens to generate."
+    },
+    {
+        "question": "How does the `SAIWhisperTranscribe` node validate the media file format?",
+        "answer": "The `SAIWhisperTranscribe` node validates the media file format by checking if the file path extension matches any of the predefined video or audio file extensions in its `video_extensions` and `audio_extensions` lists."
+    },
+    {
+        "question": "What are the file formats recognized by the `SAIWhisperTranscribe` node?",
+        "answer": "The `SAIWhisperTranscribe` node recognizes video formats including 3g2, 3gp, 3gp2, 3gpp, amv, asf, avi, divx, drc, dv, f4v, flv, m2v, m4p, m4v, mkv, mov, mp4, mpe, mpeg, mpeg2, mpeg4, mpg, mpv, mxf, nsv, ogg, ogv, qt, rm, rmvb, roq, svi, vob, webm, wmv, and yuv. It also recognizes audio formats such as mp3, wav, aac, flac, ogg, m4a, and wma."
+    },
+    {
+        "question": "What does the `transcription_frame_dict` output represent in `SAIWhisperTranscribe`?",
+        "answer": "The `transcription_frame_dict` output represents a dictionary mapping frame numbers to transcribed text, which is useful for syncing transcription with video frames."
+    }
+]

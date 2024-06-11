@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the SUPIR_encode node designed for?",
+        "answer": "The SUPIR_encode node is designed for encoding images into a latent space representation using a specified VAE model."
+    },
+    {
+        "question": "What VAE model is used by the SUPIR_encode node for image encoding?",
+        "answer": "The VAE model used by the SUPIR_encode node for image encoding is specified as an input parameter of dtype `SUPIRVAE`."
+    },
+    {
+        "question": "What are the input types for the SUPIR_encode node?",
+        "answer": "The input types for the SUPIR_encode node include the VAE model (SUPIR_VAE), the image to be encoded, a boolean flag (use_tiled_vae) to indicate if a tiled approach should be used, the tile size (encoder_tile_size), and the data type for the encoder's output (encoder_dtype)."
+    },
+    {
+        "question": "What are the output types of the SUPIR_encode node?",
+        "answer": "The SUPIR_encode node outputs a latent space representation of the encoded image with a Comfy dtype of `LATENT` and a Python dtype of `torch.Tensor`."
+    },
+    {
+        "question": "What does the 'use_tiled_vae' flag enable in the SUPIR_encode node?",
+        "answer": "The 'use_tiled_vae' flag, a boolean input, enables the use of a tiled approach for VAE encoding in the SUPIR_encode node. This can be beneficial for processing large images or for reducing memory usage."
+    },
+    {
+        "question": "Which data type is specified for the output of the SUPIR_encode node and what is its significance?",
+        "answer": "The data type specified for the output of the SUPIR_encode node is `LATENT`, indicating the node produces a latent space representation of the input image, which is crucial for further processing or generation tasks within the VAE framework."
+    },
+    {
+        "question": "What are the options for the 'encoder_dtype' input and what does it control?",
+        "answer": "The 'encoder_dtype' input offers options such as 'bf16', 'fp32', and 'auto'. It controls the precision and size of the generated latent representation, allowing the user to specify the data type for the encoder's output."
+    }
+]

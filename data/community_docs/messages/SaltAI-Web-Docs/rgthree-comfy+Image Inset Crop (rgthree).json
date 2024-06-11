@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Image Inset Crop (rgthree) node in ComfyUI?",
+        "answer": "The Image Inset Crop (rgthree) node in ComfyUI is designed for cropping images based on specified inset values, enabling precise control over the cropping area and adjusting the visible portion of an image according to user needs."
+    },
+    {
+        "question": "What types of units can be used to specify inset values in the Image Inset Crop node?",
+        "answer": "Inset values in the Image Inset Crop node can be specified either in pixels or as percentages of the image size."
+    },
+    {
+        "question": "Which input is essential for defining the source image in the Image Inset Crop node?",
+        "answer": "The essential input for defining the source image in the Image Inset Crop node is the `image` input, which should be provided as a `torch.Tensor`."
+    },
+    {
+        "question": "What determines how inset values are interpreted and applied in the Image Inset Crop node?",
+        "answer": "The interpretation and application of inset values in the Image Inset Crop node are determined by the `measurement` input, which specifies whether the values are in pixels or percentages."
+    },
+    {
+        "question": "How are inset values from the left and right edges of the image defined and used in the Image Inset Crop node?",
+        "answer": "Inset values from the left and right edges of the image are defined using the `left` and `right` inputs, which control how much of these sides will be cropped. They are specified as integers and interpreted based on the `measurement` setting."
+    },
+    {
+        "question": "What happens when cropping dimensions result in the `bottom` being lower than the `top` after the percentage conversion in the Image Inset Crop node?",
+        "answer": "If cropping dimensions result in the `bottom` being lower than the `top` after the percentage conversion, the Image Inset Crop node will raise a ValueError indicating that the cropping dimensions are invalid."
+    },
+    {
+        "question": "What is the `inset_top` and `inset_bottom` variable used for in the Image Inset Crop node?",
+        "answer": "The `inset_top` and `inset_bottom` variables are used to define the new bounds for cropping the image in the top and bottom areas, respectively, after the percentage conversion has been applied to the input values."
+    }
+]

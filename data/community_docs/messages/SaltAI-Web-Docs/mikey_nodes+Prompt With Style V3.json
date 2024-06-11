@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the Prompt With Style V3 node?",
+        "answer": "The Prompt With Style V3 node is designed to enhance text prompts with predefined styles, dynamically integrating style elements into positive and negative prompts for use in various text-based applications."
+    },
+    {
+        "question": "What is stripped from input prompts by the Prompt With Style V3 node?",
+        "answer": "The Prompt With Style V3 node strips existing style syntax from input prompts, matches them with available styles, and reformats them according to the selected style."
+    },
+    {
+        "question": "How does the Prompt With Style V3 node handle special syntax and wildcards in input prompts?",
+        "answer": "The Prompt With Style V3 node processes input prompts, handling special syntax and wildcards by finding and replacing them, matching the stripped prompts with available styles, and reformatting them with the selected style."
+    },
+    {
+        "question": "What are the input types required by the Prompt With Style V3 node?",
+        "answer": "The Prompt With Style V3 node requires several input types such as positive_prompt, negative_prompt, ratio_selected, custom_size, fit_custom_size, custom_width, custom_height, batch_size, seed, target_mode, base_model, clip_base, and clip_refiner."
+    },
+    {
+        "question": "What does the `extra_pnginfo` parameter in the `start` method of Prompt With Style V3 node do?",
+        "answer": "The `extra_pnginfo` parameter allows the node to store additional metadata about the node's execution, such as configuration options and the processed prompts, enhancing the information that can be saved or passed to other nodes."
+    },
+    {
+        "question": "How are LoRAs loaded and applied by the Prompt With Style V3 node?",
+        "answer": "The node extracts and loads LoRAs specified in the `positive_prompt` and `negative_prompt` by using a regex pattern, updates the model and CLIP parameters with the detected LoRAs, and returns the new model, clip, and the prompt stripped of LoRA syntax for further processing."
+    },
+    {
+        "question": "What are the output nodes mentioned in the documentation of Prompt With Style V3?",
+        "answer": "The documentation mentions that Prompt With Style V3 is not treated as an output node (`Output node: False`), indicating it is not intended to be the final processing step or the endpoint for data flow in a pipeline."
+    },
+    {
+        "question": "What kind of output does the `start` method of the Prompt With Style V3 node produce?",
+        "answer": "The `start` method of Prompt With Style V3 produces a range of output nodes such as `base_model`, `samples`, `base_pos_cond`, `base_neg_cond`, `refiner_pos_cond`, `refiner_neg_cond`, `positive_prompt`, `negative_prompt`, and additional metadata within `extra_pnginfo`."
+    }
+]

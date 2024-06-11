@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the Cross Fade Image Batches (SuperBeasts.AI) node designed to do in ComfyUI?",
+        "answer": "The Cross Fade Image Batches (SuperBeasts.AI) node is designed to blend two sequences of images (batches) together over a specified number of frames using a cross-fading effect, enabling smooth transitions between image sequences."
+    },
+    {
+        "question": "What are the required input types for the Cross Fade Image Batches (SuperBeasts.AI) node and what do they represent?",
+        "answer": "The required input types for the Cross Fade Image Batches (SuperBeasts.AI) node are `batch1` and `batch2`, which are the two sequences of images to be cross-faded, `fade_frames` specifying the number of frames for the cross-fade effect, `fade_strength` controlling the blend strength, and `ease_type` determining the smoothing type of the transition."
+    },
+    {
+        "question": "What are the possible easing functions for the `ease_type` input and how do they affect the cross-fade effect?",
+        "answer": "The possible easing functions for the `ease_type` input include linear, ease_in, ease_out, and ease_in_out. These functions are used to control the transition smoothness: linear ensures a uniform effect, ease_in starts gradually and ends quickly, ease_out starts quickly and ends gradually, and ease_in_out starts and ends gradually while being quicker in the middle."
+    },
+    {
+        "question": "Which Python and Comfy datatypes are associated with the input `batch1` in the Cross Fade Image Batches (SuperBeasts.AI) node?",
+        "answer": "The input `batch1` in the Cross Fade Image Batches (SuperBeasts.AI) node has a Comfy dtype of `IMAGE` and a Python dtype of `torch.Tensor`, representing the starting sequence of images for the transition."
+    },
+    {
+        "question": "What will happen if the number of fade frames is greater than the number of frames in a batch in the Cross Fade Image Batches (SuperBeasts.AI) node?",
+        "answer": "If the number of fade frames is greater than the number of frames in a batch, the Cross Fade Image Batches (SuperBeasts.AI) node will raise a ValueError, indicating that the number of fade frames must be less than or equal to the number of frames in each batch."
+    },
+    {
+        "question": "How is the strength of the fade effect controlled in the Cross Fade Image Batches (SuperBeasts.AI) node?",
+        "answer": "The strength of the fade effect in the Cross Fade Image Batches (SuperBeasts.AI) node is controlled by the `fade_strength` input, which is a Float type parameter ranging from 0.0 to 1.0, determining how much the images from the two batches blend together during the cross-fade effect."
+    },
+    {
+        "question": "What infrastructure type is recommended for efficient usage of the Cross Fade Image Batches (SuperBeasts.AI) node?",
+        "answer": "The Cross Fade Image Batches (SuperBeasts.AI) node recommends an infra type of `GPU` for efficient usage, indicating that the node can take advantage of graphical processing units to enhance performance, especially when handling complex image blending operations."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the MaskPreview+ node in ComfyUI?",
+        "answer": "MaskPreview+ is a node in ComfyUI under the category of essentials, designed for generating a preview of masks by reshaping and expanding the input mask tensor, option to save these images to a temporary directory with compression."
+    },
+    {
+        "question": "What is the class name of MaskPreview+ in ComfyUI?",
+        "answer": "The class name of MaskPreview+ in ComfyUI is `MaskPreview+`."
+    },
+    {
+        "question": "What kind of output does the MaskPreview+ node provide in ComfyUI?",
+        "answer": "The MaskPreview+ node does not have any output types; its functionality is to save images of masks for previewing purposes."
+    },
+    {
+        "question": "What is the primary input for the MaskPreview+ node in ComfyUI?",
+        "answer": "The primary input for the MaskPreview+ node in ComfyUI is the `mask`, which is of Comfy dtype: `MASK` and Python dtype: `torch.Tensor`."
+    },
+    {
+        "question": "How does the MaskPreview+ node reshape the input mask tensor in ComfyUI?",
+        "answer": "The MaskPreview+ node reshapes the input mask tensor to (-1, 1, mask.shape[-2], mask.shape[-1]) and moves the dimension to the end, then expands it to have three channels for image saving."
+    },
+    {
+        "question": "What does the MaskPreview+ node use for temporary image storage in ComfyUI?",
+        "answer": "The MaskPreview+ node in ComfyUI uses the temporary directory provided by `folder_paths.get_temp_directory()` for storing the images it generates from the mask data."
+    },
+    {
+        "question": "What is the type attribute of the MaskPreview+ node in ComfyUI?",
+        "answer": "The type attribute of the MaskPreview+ node in ComfyUI is 'temp', indicating that it operates on data in a temporary manner."
+    }
+]

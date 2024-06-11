@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MTB_PickFromBatch node in ComfyUI?",
+        "answer": "The MTB_PickFromBatch node in ComfyUI allows for the selection of a specific number of images from a batch, based on a specified direction (either from the start or the end of the batch), which is useful for operations that require a subset of images from a larger collection."
+    },
+    {
+        "question": "What are the required input parameters for the MTB_PickFromBatch node?",
+        "answer": "The required input parameters for the MTB_PickFromBatch node are an `image` batch, a `from_direction` to specify the direction from which images are selected, and a `count` to determine the number of images to select."
+    },
+    {
+        "question": "How does the MTB_PickFromBatch node handle the `image` parameter?",
+        "answer": "The MTB_PickFromBatch node handles the `image` parameter, which represents the batch of images from which a subset will be selected, by determining the pool of available images for selection."
+    },
+    {
+        "question": "What data types are associated with the `image` and `from_direction` inputs in the MTB_PickFromBatch node?",
+        "answer": "In the MTB_PickFromBatch node, the `image` input is of the `IMAGE` dtype (`torch.Tensor` in Python) and the `from_direction` input is of the `COMBO[STRING]` dtype (`str` in Python)."
+    },
+    {
+        "question": "What does the `count` parameter in the MTB_PickFromBatch node represent?",
+        "answer": "The `count` parameter in the MTB_PickFromBatch node represents the number of images to select from the batch."
+    },
+    {
+        "question": "How does the output of the MTB_PickFromBatch node compare to the input in terms of functionality?",
+        "answer": "The output of the MTB_PickFromBatch node, `image`, is the selected subset of images from the batch based on the specified count and direction, with the same dtype as the input `IMAGE` (`torch.Tensor` in Python)."
+    },
+    {
+        "question": "Can the MTB_PickFromBatch node limit the number of images selected to the available number in the batch?",
+        "answer": "Yes, the MTB_PickFromBatch node can limit the number of images selected to the available number in the batch by setting `count` to the minimum of the requested number of images and the actual number of images in the batch."
+    }
+]

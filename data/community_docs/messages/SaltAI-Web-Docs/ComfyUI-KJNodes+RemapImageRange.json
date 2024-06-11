@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does the RemapImageRange node do in KJNodes/image category?",
+        "answer": "The RemapImageRange node adjusts the pixel value range of an image to a specified new range, potentially clamping the values to ensure they stay within standard image value limits."
+    },
+    {
+        "question": "What is the significance of the 'image' input in the RemapImageRange node?",
+        "answer": "The 'image' input is the source image whose pixel values are to be adjusted to a new range using the RemapImageRange node."
+    },
+    {
+        "question": "How does the 'min' parameter affect the input image when using the RemapImageRange node?",
+        "answer": "The 'min' parameter in the RemapImageRange node is the minimum value of the new range for the image pixel values, influencing the lower bound of the remapping process."
+    },
+    {
+        "question": "In what way does the 'clamp' parameter operate in the RemapImageRange node?",
+        "answer": "The 'clamp' parameter, which is a boolean flag in the RemapImageRange node, indicates whether the remapped image values should be clamped to a [0.0, 1.0] range, ensuring they stay within standard image value limits."
+    },
+    {
+        "question": "What is the dtype of the 'max' input for the RemapImageRange node?",
+        "answer": "The dtype of the 'max' input for the RemapImageRange node is 'FLOAT', specifying the maximum value of the new range for the image pixel values."
+    },
+    {
+        "question": "What does the 'image' output type represent in the context of the RemapImageRange node?",
+        "answer": "The 'image' output type in the RemapImageRange node represents the image with its pixel values remapped to the specified new range, potentially clamped to fit within a [0.0, 1.0] range, and it has the Comfy dtype 'IMAGE' and Python dtype 'torch.Tensor'."
+    },
+    {
+        "question": "What Python operations does the RemapImageRange node perform on the 'image' to achieve its function?",
+        "answer": "The RemapImageRange node, in its 'remap' function, performs operations such as adjusting image dtype to float32 if it was in float16, calculating the new pixel values based on the 'min' and 'max' inputs, and applying clamping if the 'clamp' input is True, resulting in the remapped image."
+    }
+]

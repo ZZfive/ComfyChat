@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AV_VAELoader node in ComfyUI?",
+        "answer": "The AV_VAELoader node in ComfyUI is designed to load VAE models with an optional override feature, enhancing flexibility in model selection and usage within the Art Venture framework."
+    },
+    {
+        "question": "What does the AV_VAELoader node output?",
+        "answer": "The AV_VAELoader node outputs the loaded VAE model, ready for use within the system, with a Comfy dtype of VAE and a Python dtype of torch.nn.Module."
+    },
+    {
+        "question": "What is the function of the `vae_override` input in the AV_VAELoader node?",
+        "answer": "The `vae_override` input in the AV_VAELoader node allows specifying an alternative VAE model to load. If the model is not found, the default or intended VAE model is loaded instead, providing flexibility in model selection."
+    },
+    {
+        "question": "How does the AV_VAELoader node determine which VAE model to load?",
+        "answer": "The AV_VAELoader node first looks at the `vae_name` input to determine the default VAE model to load. If the `vae_override` input is specified and valid, it overrides the default VAE model, loading the alternative model instead."
+    },
+    {
+        "question": "What happens if the specified `vae_override` model is not found in the AV_VAELoader node?",
+        "answer": "If the specified `vae_override` model is not found in the AV_VAELoader node, a warning is printed, and the node falls back to loading the model specified by `vae_name`."
+    },
+    {
+        "question": "In which category can you find the AV_VAELoader node in ComfyUI?",
+        "answer": "The AV_VAELoader node can be found under the category 'Art Venture/Loaders' in ComfyUI."
+    },
+    {
+        "question": "What is the Python dtype of the `vae_name` input in the AV_VAELoader node?",
+        "answer": "The Python dtype of the `vae_name` input in the AV_VAELoader node is `str`."
+    }
+]

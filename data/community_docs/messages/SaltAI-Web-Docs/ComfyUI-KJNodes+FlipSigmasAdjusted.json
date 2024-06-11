@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FlipSigmasAdjusted node in ComfyUI?",
+        "answer": "The FlipSigmasAdjusted node in ComfyUI is designed to manipulate a sequence of sigma values for use in diffusion models by inverting the order, applying an offset, and optionally scaling the sequence."
+    },
+    {
+        "question": "What kind of input does the FlipSigmasAdjusted node require for sigma values?",
+        "answer": "The FlipSigmasAdjusted node requires a torch.Tensor input of type SIGMAS for the sequence of sigma values to be adjusted."
+    },
+    {
+        "question": "How does the FlipSigmasAdjusted node handle scaling of the sigma values?",
+        "answer": "The FlipSigmasAdjusted node can scale the adjusted sigma values by the last sigma value in the sequence if the divide_by_last_sigma flag is set to True, or by a specified scalar value provided as divide_by."
+    },
+    {
+        "question": "What does the FlipSigmasAdjusted node return as output?",
+        "answer": "The FlipSigmasAdjusted node returns the adjusted sequence of sigma values as a torch.Tensor with dtype SIGMAS, and a string representation of the adjusted values for easy readability."
+    },
+    {
+        "question": "What is the role of the offset_by parameter in FlipSigmasAdjusted?",
+        "answer": "The offset_by parameter in FlipSigmasAdjusted indicates how much to offset the sigma values in the sequence, allowing for further adjustment by repositioning the values in the sequence."
+    },
+    {
+        "question": "In which situation does FlipSigmasAdjusted adjust the first sigma value to 0.0001?",
+        "answer": "FlipSigmasAdjusted adjusts the first sigma value to 0.0001 when either the original or adjusted first sigma value is zero to avoid division by zero or to ensure the value is non-zero for further calculations."
+    },
+    {
+        "question": "Which node in ComfyUI is used for manipulating noise levels during the sampling process of diffusion models?",
+        "answer": "The FlipSigmasAdjusted node in ComfyUI is used for adjusting noise levels during the sampling process of diffusion models by inverting, offsetting, and scaling sigma values."
+    }
+]

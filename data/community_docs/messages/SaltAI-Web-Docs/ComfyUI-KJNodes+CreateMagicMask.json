@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the CreateMagicMask node in ComfyUI used for?",
+        "answer": "The CreateMagicMask node in ComfyUI is designed to generate dynamic masks based on a set of parameters including frames, transitions, depth, distortion, seed, frame width, and frame height, which can be used to apply various visual effects to images or video frames."
+    },
+    {
+        "question": "What does the 'frames' input parameter in the CreateMagicMask node specify?",
+        "answer": "The 'frames' input parameter in the CreateMagicMask node specifies the number of frames for which the mask will be generated, affecting the temporal length of the resulting mask sequence."
+    },
+    {
+        "question": "Which input controls the level of distortion applied to the mask in CreateMagicMask?",
+        "answer": "The 'distortion' input in CreateMagicMask controls the level of distortion applied to the mask, allowing for varied degrees of visual warping and alteration."
+    },
+    {
+        "question": "What type of input is required for the 'seed' parameter in the CreateMagicMask node?",
+        "answer": "The 'seed' parameter in the CreateMagicMask node requires an INT input type, setting the random seed for mask generation to ensure reproducibility of the mask patterns."
+    },
+    {
+        "question": "What are the output types of the CreateMagicMask node?",
+        "answer": "The CreateMagicMask node outputs 'mask' and 'mask_inverted', both of dtype MASK in ComfyUI, which correspond to a dynamic mask based on the input parameters and its inverted version, respectively."
+    },
+    {
+        "question": "What Python data type is used for the 'mask' and 'mask_inverted' outputs of the CreateMagicMask node?",
+        "answer": "The 'mask' and 'mask_inverted' outputs of the CreateMagicMask node in Python use the data type `torch.Tensor`."
+    },
+    {
+        "question": "How are the frames for each transition calculated in the CreateMagicMask node?",
+        "answer": "In the CreateMagicMask node, the number of frames for each transition is calculated by dividing the total number of frames by the number of transitions."
+    }
+]
