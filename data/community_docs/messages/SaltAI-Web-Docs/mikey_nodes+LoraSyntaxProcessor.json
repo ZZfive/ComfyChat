@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoraSyntaxProcessor node in ComfyUI?",
+        "answer": "The LoraSyntaxProcessor node is designed to interpret and process 'lora' syntax within text inputs to dynamically modify machine learning models and their parameters, facilitating the customization of model behavior based on textual prompts."
+    },
+    {
+        "question": "What are the required inputs for the LoraSyntaxProcessor node?",
+        "answer": "The required inputs for the LoraSyntaxProcessor node are: model (`torch.nn.Module`), clip (`torch.Tensor`), text (`str`), and seed (`int`)."
+    },
+    {
+        "question": "What does the 'text' input of the LoraSyntaxProcessor node represent?",
+        "answer": "The 'text' input is the text input containing 'lora' syntax that specifies how the model and clip should be adjusted."
+    },
+    {
+        "question": "How does the LoraSyntaxProcessor process the 'text' input?",
+        "answer": "The LoraSyntaxProcessor processes the 'text' input by first processing any random syntax using the seed value, then searching and replacing syntax within the text, and finally, parsing 'lora' syntax to apply corresponding adjustments to the model and clip parameters."
+    },
+    {
+        "question": "What is the role of the 'seed' input in the LoraSyntaxProcessor node?",
+        "answer": "The 'seed' input in the LoraSyntaxProcessor node is a seed value used for processing any random syntax within the text input, ensuring reproducibility of results."
+    },
+    {
+        "question": "What are the outputs of the LoraSyntaxProcessor node?",
+        "answer": "The outputs of the LoraSyntaxProcessor node are the adjusted machine learning model, the modified clip parameter, the original text input for reference, and the original text input with 'lora' syntax removed, indicating the adjustments have been applied."
+    },
+    {
+        "question": "How is lora syntax identified and processed in the text input by the LoraSyntaxProcessor node?",
+        "answer": "Lora syntax in the text input is identified using the regular expression `r'<lora:(.*?)(?::(.*?))?>'`, and each found lora prompt, consisting of a filename and optional multiplier, is processed by loading or applying the corresponding adjustments to the model and clip based on the lora filename and multiplier."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Efficient Loader node in ComfyUI?",
+        "answer": "The Efficient Loader node in ComfyUI is designed to streamline the process of loading and initializing models, VAEs, and other dependencies for generative tasks. It aims to optimize the setup phase by efficiently managing resources through selective caching and reusing components, supporting customization through parameters like checkpoint names, LoRA configurations, and batch sizes."
+    },
+    {
+        "question": "What is the class name for the Efficient Loader node within ComfyUI?",
+        "answer": "The class name for the Efficient Loader node within ComfyUI is `Efficient Loader`."
+    },
+    {
+        "question": "Which parameters are required for the Efficient Loader node to function properly?",
+        "answer": "The parameters required for the Efficient Loader node to function properly are `ckpt_name`, `vae_name`, `clip_skip`, `lora_name`, `lora_model_strength`, `lora_clip_strength`, `positive`, `negative`, `token_normalization`, `weight_interpretation`, `empty_latent_width`, `empty_latent_height`, and `batch_size`."
+    },
+    {
+        "question": "What does the parameter `clip_skip` influence in the context of ComfyUI's Efficient Loader node?",
+        "answer": "In ComfyUI's Efficient Loader node, the `clip_skip` parameter specifies the intervals at which CLIP layers are skipped, optimizing the model's performance for specific tasks."
+    },
+    {
+        "question": "Which output type does the Efficient Loader node use to represent the main model loaded and prepared for generative tasks?",
+        "answer": "The Efficient Loader node uses the output type `MODEL`, with the comfy dtype `MODEL`, to represent the main model loaded and prepared for generative tasks, including any applied modifications like LoRA. The Python dtype for this output type is `torch.nn.Module`."
+    },
+    {
+        "question": "Can you name some nodes that are commonly used together with the Efficient Loader node in ComfyUI?",
+        "answer": "Some nodes that are commonly used together with the Efficient Loader node in ComfyUI include KSampler (Efficient), VAEDecode, FaceDetailer, KSampler Adv. (Efficient), KSampler, UltimateSDUpscale, BatchPromptSchedule, CLIPTextEncode, and LoraLoader."
+    },
+    {
+        "question": "What infra type is recommended for using the Efficient Loader node in ComfyUI?",
+        "answer": "The recommended infra type for using the Efficient Loader node in ComfyUI is `GPU`."
+    }
+]

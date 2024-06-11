@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the SaltConditioningSetMaskAndCombine node used for in ComfyUI?",
+        "answer": "The SaltConditioningSetMaskAndCombine node in ComfyUI is designed for advanced conditioning manipulation in audio-visual scheduling tasks. It combines and applies masks to multiple conditioning schedules, allowing for precise control over the conditioning process."
+    },
+    {
+        "question": "What are the required inputs for the SaltConditioningSetMaskAndCombine node?",
+        "answer": "The required inputs for the SaltConditioningSetMaskAndCombine node are `positive_schedule_a`, `negative_schedule_a`, `positive_schedule_b`, `negative_schedule_b`, `mask_a`, and `mask_b`, which represent the conditioning schedules and masks to be combined and applied."
+    },
+    {
+        "question": "What is the purpose of `set_cond_area` input in SaltConditioningSetMaskAndCombine?",
+        "answer": "The `set_cond_area` input in SaltConditioningSetMaskAndCombine determines whether the conditioning area is set to default or adjusted to mask bounds. This affects how masks are applied to the conditioning schedules."
+    },
+    {
+        "question": "What are the optional inputs for SaltConditioningSetMaskAndCombine?",
+        "answer": "The optional inputs for SaltConditioningSetMaskAndCombine are `mask_strengths_a`, `mask_strengths_b`, and `set_cond_area`. The `mask_strengths` inputs are lists of strengths for each mask applied to the conditioning schedules, and `set_cond_area` is a string that can be 'default' or 'mask bounds'."
+    },
+    {
+        "question": "What are the output types of the SaltConditioningSetMaskAndCombine node?",
+        "answer": "The SaltConditioningSetMaskAndCombine node outputs `conditioning` of an unknown Python type. The dtype for Comfy is `CONDITIONING`."
+    },
+    {
+        "question": "How does SaltConditioningSetMaskAndCombine utilize the masks and conditioning schedules?",
+        "answer": "SaltConditioningSetMaskAndCombine applies masks to conditioning schedules specified by `positive_schedule_a`, `negative_schedule_a`, `positive_schedule_b`, and `negative_schedule_b`. The masks and their strengths are applied, and the conditioning area can be adjusted based on mask bounds by `set_cond_area`."
+    },
+    {
+        "question": "What is the Python data type for `mask_a` and `mask_b` in SaltConditioningSetMaskAndCombine?",
+        "answer": "The Python data type for `mask_a` and `mask_b` in SaltConditioningSetMaskAndCombine is `torch.Tensor`."
+    },
+    {
+        "question": "What is the Python data type for `positive_schedule_a` and `positive_schedule_b` in the SaltConditioningSetMaskAndCombine node?",
+        "answer": "The Python data type for `positive_schedule_a` and `positive_schedule_b` in the SaltConditioningSetMaskAndCombine node is `list`."
+    }
+]

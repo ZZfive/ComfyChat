@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the ColorBlend node used for in ComfyUI?",
+        "answer": "The ColorBlend node in ComfyUI is designed to blend a black and white layer with a color layer, combining the luminosity of the former with the color information of the latter to produce a single image."
+    },
+    {
+        "question": "What are the required inputs for the ColorBlend node?",
+        "answer": "The required inputs for the ColorBlend node are `bw_layer`, which is the black and white layer image, and `color_layer`, which is the color layer image. Both inputs have a Comfy dtype of `IMAGE` and a Python dtype of `numpy.ndarray`."
+    },
+    {
+        "question": "What output does the ColorBlend node produce?",
+        "answer": "The ColorBlend node outputs a single image of dtype `IMAGE`, which is the result of blending the black and white layer with the color layer. The output Python dtype is `numpy.ndarray`."
+    },
+    {
+        "question": "How does the ColorBlend node handle images of different sizes?",
+        "answer": "If the black and white layer and the color layer are of different sizes, the ColorBlend node repeats the smaller image to match the size of the larger one or scales the color layer to match the size of the black and white layer before blending."
+    },
+    {
+        "question": "What is the purpose of the `color_blending_mode` function in the ColorBlend class?",
+        "answer": "The `color_blending_mode` function in the ColorBlend class is responsible for the blending process of the black and white and color layers. It processes the input images, aligns their sizes if necessary, and performs the color blending."
+    },
+    {
+        "question": "Which category does the ColorBlend node belong to in ComfyUI?",
+        "answer": "The ColorBlend node belongs to the `stability/image/postprocessing` category in ComfyUI."
+    },
+    {
+        "question": "What is the infrastructure type required for the ColorBlend node?",
+        "answer": "The ColorBlend node requires an 'infra type' of `CPU` for its operations, indicating that it is designed to run on the central processing unit."
+    }
+]

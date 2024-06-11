@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does the JWImageLoadRGBIfExists node do in ComfyUI?",
+        "answer": "The JWImageLoadRGBIfExists node is designed to load an RGB image from a specified path if it exists; otherwise, it returns a default image provided as input, ensuring flexibility in image handling workflows."
+    },
+    {
+        "question": "What are the required input types for the JWImageLoadRGBIfExists node?",
+        "answer": "The JWImageLoadRGBIfExists node requires two input types: `default`, which is a default image to return if the specified path does not contain an image, and `path`, which specifies the file path of the image to be loaded."
+    },
+    {
+        "question": "What kind of image does the `default` input for JWImageLoadRGBIfExists expect, and in what format?",
+        "answer": "The `default` input for the JWImageLoadRGBIfExists node expects an image in `IMAGE` format, specifically a `torch.Tensor`, which is to be returned when the specified `path` does not contain an image file."
+    },
+    {
+        "question": "If the JWImageLoadRGBIfExists node does not find the image at the specified path, what output does it provide?",
+        "answer": "If the image is not found at the specified path, the JWImageLoadRGBIfExists node provides the default image that was input, ensuring the workflow can proceed despite the absence of the target file."
+    },
+    {
+        "question": "In ComfyUI, what type of data is output by the JWImageLoadRGBIfExists node when an image is found?",
+        "answer": "When an image is found, the JWImageLoadRGBIfExists node outputs an `IMAGE` type data, which is a `torch.Tensor`, representing the loaded RGB image or the default image if the specified file does not exist."
+    },
+    {
+        "question": "What infrastructure does the JWImageLoadRGBIfExists node support for processing images?",
+        "answer": "The JWImageLoadRGBIfExists node supports GPU infrastructure for processing images, facilitating potentially faster and more efficient image handling and processing."
+    },
+    {
+        "question": "How is the functionality of the JWImageLoadRGBIfExists node implemented in the source code?",
+        "answer": "The functionality of the JWImageLoadRGBIfExists node is implemented by checking the existence of the image file at the specified path using `os.path.exists(path)`. If the file does not exist, the node returns the default image; otherwise, it loads the image from the specified path using the `load_image(path)` function."
+    }
+]

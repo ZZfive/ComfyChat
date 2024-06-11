@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MiDaS Depth Approximation node in ComfyUI?",
+        "answer": "The MiDaS Depth Approximation node in ComfyUI is used to approximate depth maps from input images, providing detailed depth information which is crucial for various applications such as 3D reconstruction, augmented reality, and scene understanding."
+    },
+    {
+        "question": "What are the required input types for the MiDaS Depth Approximation node?",
+        "answer": "The required input types for the MiDaS Depth Approximation node are the input image tensor, a flag to determine CPU or GPU processing, the type of MiDaS model to be used, and a flag to invert the depth map."
+    },
+    {
+        "question": "What types of MiDaS models can be selected using the 'midas_type' input?",
+        "answer": "The 'midas_type' input allows you to select between 'DPT_Large' and 'DPT_Hybrid' MiDaS models for depth approximation."
+    },
+    {
+        "question": "How is the depth map tensor processed in terms of normalization and conversion?",
+        "answer": "The depth map tensor is normalized by subtracting the minimum value and dividing by the range, then converted to uint8 format by multiplying by 255, clipping, rounding, and converting the data type."
+    },
+    {
+        "question": "What is the significance of the 'use_cpu' flag in the MiDaS Depth Approximation node?",
+        "answer": "The 'use_cpu' flag in the MiDaS Depth Approximation node determines whether to use the CPU or GPU for processing, affecting execution speed and efficiency, especially for processing large images or batches of images."
+    },
+    {
+        "question": "Which optional input allows for the use of custom or pre-trained MiDaS models in the depth approximation process?",
+        "answer": "The optional input 'midas_model' allows for the use of custom or pre-trained MiDaS models, providing flexibility in choosing the model and its associated transform for depth approximation."
+    },
+    {
+        "question": "What is the output of the MiDaS Depth Approximation node and in what format is it provided?",
+        "answer": "The output of the MiDaS Depth Approximation node is the depth map tensor, provided in IMAGE format as a torch.Tensor, offering per-pixel depth estimation for the input image."
+    }
+]

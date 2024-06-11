@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does the Mask By Text node in ComfyUI do?",
+        "answer": "The Mask By Text node in ComfyUI automatically generates masks based on textual prompts, creating image masks aligned with the semantic content of provided text."
+    },
+    {
+        "question": "What are the required input types for the Mask By Text node?",
+        "answer": "The required input types for the Mask By Text node include `image`, `prompt`, `negative_prompt`, `precision`, and `normalize`."
+    },
+    {
+        "question": "What is the `image` input for in the Mask By Text node?",
+        "answer": "The `image` input in the Mask By Text node is the input image for which the mask will be generated, serving as the canvas for the text-based mask creation."
+    },
+    {
+        "question": "How does the Mask By Text node use the `precision` input?",
+        "answer": "The `precision` input in the Mask By Text node specifies the precision of the mask generation, allowing control over the mask's sensitivity to the text prompts."
+    },
+    {
+        "question": "What is returned by the Mask By Text node in ComfyUI?",
+        "answer": "The Mask By Text node returns `thresholded_mask` and `raw_mask`, where `thresholded_mask` is the mask generated based on the text prompts with thresholding, and `raw_mask` is the mask before any thresholding."
+    },
+    {
+        "question": "Which dtype does the `thresholded_mask` output use in ComfyUI?",
+        "answer": "The `thresholded_mask` output of the Mask By Text node uses the `torch.Tensor` dtype in Python and the `IMAGE` dtype in ComfyUI."
+    },
+    {
+        "question": "What happens when the `normalize` input is set to `yes` in the Mask By Text node?",
+        "answer": "When the `normalize` input is set to `yes`, the Mask By Text node normalizes the mask, adjusting the scale and distribution of the mask values."
+    }
+]

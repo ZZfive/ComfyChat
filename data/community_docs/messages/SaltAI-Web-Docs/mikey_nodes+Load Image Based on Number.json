@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the Load Image Based on Number node in ComfyUI?",
+        "answer": "The Load Image Based on Number node in ComfyUI is designed to load an image from a specified directory based on a given index or seed, ensuring that a valid image is always returned regardless of the seed value."
+    },
+    {
+        "question": "What is the purpose of the input `image_directory` in the Load Image Based on Number node?",
+        "answer": "The `image_directory` input in the Load Image Based on Number node specifies the directory from which to load the image, and it is crucial for locating and accessing the desired images."
+    },
+    {
+        "question": "How does the `seed` input determine the image to load in the Load Image Based on Number node?",
+        "answer": "The `seed` input in the Load Image Based on Number node determines the specific image to load by serving as an index into the sorted list of image files within the directory, ensuring a deterministic selection of images."
+    },
+    {
+        "question": "What type of output does the Load Image Based on Number node provide and what format is it in?",
+        "answer": "The Load Image Based on Number node provides an output of type `image` which is a `torch.Tensor` and a `filename` output which is a `STRING`, representing the loaded image in tensor format and the name of the original image file, respectively."
+    },
+    {
+        "question": "What happens when the Load Image Based on Number node is given a seed number much larger than the number of images in the directory?",
+        "answer": "When the Load Image Based on Number node is given a seed number much larger than the number of images in the directory, it uses modulo to wrap around the list of files, ensuring an image is still returned."
+    },
+    {
+        "question": "Which node can load images based on a number in the directory path in ComfyUI?",
+        "answer": "The Load Image Based on Number node in ComfyUI can load images based on a number in the directory path."
+    },
+    {
+        "question": "In ComfyUI, what does the Load Image Based on Number node do when the seed number is larger than the number of available images?",
+        "answer": "In ComfyUI, the Load Image Based on Number node uses modulo operation on the seed number to wrap around the list of files when the seed number is larger than the number of available images, ensuring that the node can select an image regardless of the seed's magnitude."
+    }
+]

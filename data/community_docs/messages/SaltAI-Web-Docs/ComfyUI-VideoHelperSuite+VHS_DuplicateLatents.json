@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the VHS_DuplicateLatents node used for in ComfyUI?",
+        "answer": "The VHS_DuplicateLatents node is designed to replicate a batch of latent representations a specified number of times, which is crucial for data augmentation processes or preparing data for batch processing in machine learning models."
+    },
+    {
+        "question": "Which category does the VHS_DuplicateLatents node belong to in ComfyUI?",
+        "answer": "The VHS_DuplicateLatents node belongs to the Video Helper Suite 🎥🅥🅗🅢/latent category in ComfyUI."
+    },
+    {
+        "question": "What parameters are required by the VHS_DuplicateLatents node?",
+        "answer": "The VHS_DuplicateLatents node requires two parameters: `latents` and `multiply_by`. The `latents` parameter represents the input latent representations to be duplicated, and `multiply_by` determines the number of times the input latents are replicated."
+    },
+    {
+        "question": "What is the output of the VHS_DuplicateLatents node?",
+        "answer": "The VHS_DuplicateLatents node outputs a `LATENT` and a `count`. The `LATENT` is the output latent representations duplicated according to the `multiply_by` parameter, and `count` is the total count of latent representations after duplication."
+    },
+    {
+        "question": "Which common nodes can be used together with the VHS_DuplicateLatents node?",
+        "answer": "Common nodes that can be used together with the VHS_DuplicateLatents node include `KSampler` and `LatentComposite`."
+    },
+    {
+        "question": "What infrastructure type does the VHS_DuplicateLatents node support?",
+        "answer": "The VHS_DuplicateLatents node supports the Infra type `GPU`, indicating it is optimized for graphics processing units."
+    },
+    {
+        "question": "How does the VHS_DuplicateLatents node duplicate input latents?",
+        "answer": "The VHS_DuplicateLatents node duplicates input latents by creating copies of the input latent samples and then combining them using `torch.cat()` along dimension 0, resulting in a single tensor with duplicated samples."
+    }
+]

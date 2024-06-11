@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the INPAINT_LoadInpaintModel node in ComfyUI?",
+        "answer": "The INPAINT_LoadInpaintModel node is designed to load a specific inpainting model based on the provided model name, preparing it for use in inpainting tasks by ensuring it is in evaluation mode."
+    },
+    {
+        "question": "What category does the INPAINT_LoadInpaintModel node belong to in ComfyUI?",
+        "answer": "The INPAINT_LoadInpaintModel node belongs to the 'inpaint' category in ComfyUI."
+    },
+    {
+        "question": "What is the required input type for the INPAINT_LoadInpaintModel node and what does it signify?",
+        "answer": "The required input type for the INPAINT_LoadInpaintModel node is `model_name`, which signifies the name of the inpainting model to be loaded. This parameter is crucial for identifying and retrieving the correct model file."
+    },
+    {
+        "question": "What is the output type of the INPAINT_LoadInpaintModel node and what does it represent?",
+        "answer": "The output type of the INPAINT_LoadInpaintModel node is `inpaint_model`. It represents the loaded inpainting model, ready for use in subsequent inpainting operations."
+    },
+    {
+        "question": "Which Python data type is associated with the 'model_name' input of the LoadInpaintModel class?",
+        "answer": "The 'model_name' input of the LoadInpaintModel class is associated with the Python data type `str`."
+    },
+    {
+        "question": "What happens if the model file for the inpainting model specified in 'model_name' is not found by the INPAINT_LoadInpaintModel node?",
+        "answer": "If the model file for the inpainting model specified in 'model_name' is not found, the INPAINT_LoadInpaintModel node will raise a RuntimeError indicating that the model file was not found."
+    },
+    {
+        "question": "How does the INPAINT_LoadInpaintModel node determine how to load the model from a .pt file?",
+        "answer": "The INPAINT_LoadInpaintModel node uses `torch.jit.load` to load the model from a .pt file, mapping the location to the CPU and extracting the state dictionary of the model."
+    }
+]

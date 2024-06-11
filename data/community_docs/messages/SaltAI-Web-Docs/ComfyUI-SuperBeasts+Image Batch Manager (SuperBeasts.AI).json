@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the Image Batch Manager node from SuperBeasts.AI designed for?",
+        "answer": "The Image Batch Manager node is designed to reorder and process a batch of images based on specified dimensions and an optional new order, enabling dynamic resizing, cropping, and reordering of images to fit desired dimensions."
+    },
+    {
+        "question": "How does the Image Batch Manager node affect the output images' width and height?",
+        "answer": "The Image Batch Manager node affects the output images' width and height through resizing and cropping operations to ensure images meet the specified width and height requirements set by the `width` and `height` parameters."
+    },
+    {
+        "question": "What determines whether the reordering functionality of the Image Batch Manager node is enabled?",
+        "answer": "The reordering functionality of the Image Batch Manager node is determined by the `ordering_enabled` parameter, which when set to 'enabled', allows images to be rearranged according to the 'new_order' parameter if specified."
+    },
+    {
+        "question": "Which parameter defines the custom sequence for reordering the images in the Image Batch Manager node?",
+        "answer": "The parameter that defines the custom sequence for reordering images is `new_order`, which is used when `ordering_enabled` is set to 'enabled'. It should be a comma-separated list of indices representing the new order of images."
+    },
+    {
+        "question": "What type of data does the Image Batch Manager node work with when it comes to images?",
+        "answer": "The Image Batch Manager node works with images represented as 'IMAGE' data type in ComfyUI and as `torch.Tensor` type in Python, capable of including up to twelve possible images for processing."
+    },
+    {
+        "question": "What does the 'new_order' parameter in the Image Batch Manager node specify, and what is its data type?",
+        "answer": "The 'new_order' parameter in the Image Batch Manager node specifies a custom sequence for reordering processed images, represented as a comma-separated list of indices. Its data type in ComfyUI is `STRING` and in Python is `str`."
+    },
+    {
+        "question": "What is the category of the Image Batch Manager node in ComfyUI?",
+        "answer": "The category of the Image Batch Manager node in ComfyUI is `SuperBeastsAI/Image`."
+    }
+]

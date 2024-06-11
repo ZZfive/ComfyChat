@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR Apply Model Merge node in ComfyUI?",
+        "answer": "The CR Apply Model Merge node in ComfyUI is designed to merge multiple models and CLIPs based on specified ratios, normalization settings, and merge methods, supporting weighted merging and normalization of ratios."
+    },
+    {
+        "question": "What are the required input types for the CR Apply Model Merge node?",
+        "answer": "The required input types for the CR Apply Model Merge node include a stack of models (`model_stack`), a method for merging models (`merge_method`), a setting for whether to normalize ratios (`normalise_ratios`), and a weight factor for weighted merging (`weight_factor`)."
+    },
+    {
+        "question": "How are the ratios of models and CLIPs adjusted in the CR Apply Model Merge node if normalization is enabled?",
+        "answer": "If normalization is enabled (`normalise_ratios` set to \"Yes\"), the ratios of models and CLIPs are adjusted so that their sum equals 1, ensuring a balanced merge."
+    },
+    {
+        "question": "What does the `weight_factor` input in CR Apply Model Merge affect?",
+        "answer": "The `weight_factor` input in CR Apply Model Merge affects the influence of each model in the final merge when the merge method is set to \"Weighted\"."
+    },
+    {
+        "question": "What output does the CR Apply Model Merge node provide regarding the merged models?",
+        "answer": "The CR Apply Model Merge node provides a final merged model (`MODEL`), a final merged CLIP model (`CLIP`), information about the merged models including ratios and adjustments (`model_mix_info`), and a URL for help and documentation (`show_help`)."
+    },
+    {
+        "question": "What common nodes can be used with CR Apply Model Merge?",
+        "answer": "Common nodes that can be used with CR Apply Model Merge include KSampler, LoraLoader (found in ComfyUI-Custom-Scripts), CLIPSetLastLayer, and Display Any (rgthree)."
+    },
+    {
+        "question": "In what scenario would the CR Apply Model Merge node output just a single model without performing any merging?",
+        "answer": "The CR Apply Model Merge node will output just a single model without performing any merging when there is only one active model in the `model_stack` input."
+    }
+]

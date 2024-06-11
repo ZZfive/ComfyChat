@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the LoadInstanceFusersNode used for in the context of ComfyUI?",
+        "answer": "LoadInstanceFusersNode is a custom node in ComfyUI designed to load and prepare instance fusers models from a specified directory, adjusting their scale according to the provided parameter."
+    },
+    {
+        "question": "What category does the LoadInstanceFusersNode belong to?",
+        "answer": "LoadInstanceFusersNode belongs to the 'instance/loaders' category in ComfyUI."
+    },
+    {
+        "question": "What parameter is used to determine the influence of the fusers on the generated instances in LoadInstanceFusersNode?",
+        "answer": "The 'fusers_scale' parameter determines the scale factor to be applied to the fusers, affecting their influence on the instance fusion process in LoadInstanceFusersNode."
+    },
+    {
+        "question": "What does the LoadInstanceFusersNode output and what is its format?",
+        "answer": "LoadInstanceFusersNode outputs a list of loaded and scaled fuser models, ready for integration into the instance diffusion process. The output dtype in ComfyUI is 'FUSERS' and in Python, it is a Dictionary with string keys and a List of torch.nn.Module values."
+    },
+    {
+        "question": "How is the 'model_filename' input used in LoadInstanceFusersNode?",
+        "answer": "The 'model_filename' input in LoadInstanceFusersNode specifies the filename of the model to be loaded. It is used to identify and retrieve the correct fuser model from the designated directory."
+    },
+    {
+        "question": "Which method is responsible for loading the model in LoadInstanceFusersNode?",
+        "answer": "The 'load_model' method in LoadInstanceFusersNode is responsible for loading the model specified by 'model_filename' and scaling it according to 'fusers_scale'."
+    },
+    {
+        "question": "What infrastructure type is recommended for utilizing the LoadInstanceFusersNode?",
+        "answer": "The LoadInstanceFusersNode recommends 'GPU' as the infrastructure type for its operation."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the InRange (hsv) node in ComfyUI?",
+        "answer": "The InRange (hsv) node is designed to filter an image based on a specified hue, saturation, and value (HSV) range, allowing for the isolation of specific colors or color ranges within an image."
+    },
+    {
+        "question": "What are the input types required by the InRange (hsv) node?",
+        "answer": "The InRange (hsv) node requires input of type `rgb_image` which is an RGB image, `color_a` and `color_b` which are color bounds in HSV format, and `hue_mode` which specifies the hue filtering method."
+    },
+    {
+        "question": "How does the InRange (hsv) node handle the hue filtering based on the hue_mode parameter?",
+        "answer": "The InRange (hsv) node offers different strategies for handling hue filtering based on the hue_mode parameter, which can choose the smallest or largest hue interval, ignore hue entirely, perform a single or split check, and these strategies are applied using methods defined within the class."
+    },
+    {
+        "question": "What does the hue_mode 'IGNORE' in the InRange (hsv) node do?",
+        "answer": "The 'IGNORE' hue_mode in the InRange (hsv) node disregards the hue component entirely, filtering based only on saturation and value."
+    },
+    {
+        "question": "Which methods are responsible for calculating the saturation and value bounds in the InRange (hsv) node?",
+        "answer": "The methods `get_saturation_and_value_bounds` in the InRangeHSV class calculate the saturation and value bounds based on the `color_a` and `color_b` input parameters."
+    },
+    {
+        "question": "What methods does the InRange (hsv) node use for hue filtering and under which conditions?",
+        "answer": "The InRange (hsv) node uses methods like `hue_ignore`, `hue_single`, `hue_split`, `hue_largest`, and `hue_smallest` for hue filtering, where the method `hue_split` is used when two hue intervals are involved and it selects either the smallest or largest interval."
+    },
+    {
+        "question": "What is the output type produced by the InRange (hsv) node?",
+        "answer": "The InRange (hsv) node outputs an image after applying the HSV threshold, with the output type being `IMAGE` and the output image being a filtered version highlighting the pixels within the specified HSV range."
+    }
+]

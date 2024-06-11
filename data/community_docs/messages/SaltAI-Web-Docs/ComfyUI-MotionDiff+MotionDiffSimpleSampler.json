@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the MotionDiffSimpleSampler node designed to do in ComfyUI?",
+        "answer": "The MotionDiffSimpleSampler node is designed to facilitate the sampling process within a motion diffusion framework in ComfyUI, specifically targeting the generation or transformation of motion data by abstracting the complexities of selecting and applying different sampling strategies."
+    },
+    {
+        "question": "What sampling strategies can be specified by the `sampler_name` input in MotionDiffSimpleSampler?",
+        "answer": "The `sampler_name` input in MotionDiffSimpleSampler can specify sampling strategies such as 'ddpm' and 'ddim'. The default is 'ddim'."
+    },
+    {
+        "question": "How does the MotionDiffSimpleSampler handle the input `motion_data`?",
+        "answer": "The MotionDiffSimpleSampler handles the input `motion_data`, which includes motion, motion mask, and motion length, by transforming or generating anew based on the sampling strategy specified by `sampler_name`."
+    },
+    {
+        "question": "What role does the `seed` input play in MotionDiffSimpleSampler?",
+        "answer": "The `seed` input in MotionDiffSimpleSampler is used to ensure reproducibility of the generated or transformed motion data by providing a seed value."
+    },
+    {
+        "question": "Which inputs are required for the MotionDiffSimpleSampler in ComfyUI?",
+        "answer": "The required inputs for the MotionDiffSimpleSampler in ComfyUI include `sampler_name`, `md_model`, `md_clip`, `md_cond`, `motion_data`, and `seed`."
+    },
+    {
+        "question": "In what way does MotionDiffSimpleSampler interact with the motion diffusion model?",
+        "answer": "MotionDiffSimpleSampler interacts with the motion diffusion model, `md_model`, by using it as a wrapper that provides the necessary interface for the sampling process, and by moving the model to the GPU (`get_torch_device()`) for computation and then back to the CPU after processing."
+    },
+    {
+        "question": "What type of output does MotionDiffSimpleSampler generate?",
+        "answer": "MotionDiffSimpleSampler generates an output `motion_data` which includes the generated or transformed motion sequence, motion mask, and motion length, with the dtype being `MOTION_DATA` in ComfyUI and `Dict[str, torch.Tensor]` in Python."
+    }
+]

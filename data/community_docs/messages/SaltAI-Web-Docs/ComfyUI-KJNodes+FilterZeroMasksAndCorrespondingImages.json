@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FilterZeroMasksAndCorrespondingImages node in ComfyUI?",
+        "answer": "The FilterZeroMasksAndCorrespondingImages node in ComfyUI is designed to filter out all zero-value masks from a batch and, optionally, filter out corresponding images based on the presence of non-zero masks."
+    },
+    {
+        "question": "What are the input types required for the FilterZeroMasksAndCorrespondingImages node?",
+        "answer": "The required input for the FilterZeroMasksAndCorrespondingImages node is a list of masks (`masks`), which are to be filtered by removing those that are entirely zero-valued."
+    },
+    {
+        "question": "What optional input does the FilterZeroMasksAndCorrespondingImages node have in ComfyUI?",
+        "answer": "The optional input for the FilterZeroMasksAndCorrespondingImages node is a list of images (`original_images`), which are corresponding to the masks and are retained if associated with non-zero masks."
+    },
+    {
+        "question": "What does the FilterZeroMasksAndCorrespondingImages node output in ComfyUI?",
+        "answer": "The FilterZeroMasksAndCorrespondingImages node outputs the filtered list of non-zero masks (`non_zero_masks_out`), the list of images corresponding to the non-zero masks (`non_zero_mask_images_out`), the list of images corresponding to zero masks (`zero_mask_images_out`), and the indexes of images corresponding to the zero masks (`zero_mask_images_out_indexes`)."
+    },
+    {
+        "question": "What is the computation type of the FilterZeroMasksAndCorrespondingImages node in ComfyUI?",
+        "answer": "The computation type of the FilterZeroMasksAndCorrespondingImages node is `CPU`."
+    },
+    {
+        "question": "How does the FilterZeroMasksAndCorrespondingImages node in ComfyUI handle mismatched lengths of masks and original images?",
+        "answer": "If the number of original images is not equal to the number of masks, the FilterZeroMasksAndCorrespondingImages node in ComfyUI ignores the original_images input with a warning message."
+    },
+    {
+        "question": "What does the FilterZeroMasksAndCorrespondingImages class do when filtering masks in ComfyUI?",
+        "answer": "The FilterZeroMasksAndCorrespondingImages class filters out masks that are entirely zero-valued and, if `original_images` are provided, retains images that correspond to non-zero masks and separates out those that correspond to zero masks."
+    }
+]

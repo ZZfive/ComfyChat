@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the INPAINT_InpaintWithModel node used for in ComfyUI?",
+        "answer": "INPAINT_InpaintWithModel is a custom node in ComfyUI used for performing inpainting on images using a specified inpainting model. It targets areas specified by a mask for filling in or correcting parts of the image."
+    },
+    {
+        "question": "What types of input does the INPAINT_InpaintWithModel node require?",
+        "answer": "The INPAINT_InpaintWithModel node requires an inpainting model (`INPAINT_MODEL`), an image (`IMAGE`), a mask (`MASK`), and a seed (`INT`). Optionally, it can also take an upsampling model (`UPSCALE_MODEL`)."
+    },
+    {
+        "question": "How does the INPAINT_InpaintWithModel handle inpainting with a mask?",
+        "answer": "The INPAINT_InpaintWithModel node uses a mask to indicate areas of the image to be inpainted. The model focuses on these areas to fill in or correct parts of the image."
+    },
+    {
+        "question": "What is the role of the `inpaint_model` input in INPAINT_InpaintWithModel?",
+        "answer": "The `inpaint_model` input in INPAINT_InpaintWithModel is the inpainting model to be used for the inpainting process. This model dictates the technique and quality of the inpainting."
+    },
+    {
+        "question": "Which optional input can be used with INPAINT_InpaintWithModel to upscale the inpainted image?",
+        "answer": "INPAINT_InpaintWithModel allows for the optional upsampling of the inpainted image using the `optional_upscale_model` input, which is of dtype `UPSCALE_MODEL`."
+    },
+    {
+        "question": "Can INPAINT_InpaintWithModel upscale images, and how is this feature implemented?",
+        "answer": "Yes, INPAINT_InpaintWithModel can upscale images if an `optional_upscale_model` is provided. The upscaling is performed using the `ImageUpscaleWithModel` class from the `comfy_extras.nodes_upscale_model` module."
+    },
+    {
+        "question": "What output does the INPAINT_InpaintWithModel node provides in ComfyUI?",
+        "answer": "INPAINT_InpaintWithModel provides the result of the inpainting process as an output of dtype `IMAGE`, which is the original image with the specified areas inpainted. Optionally, the image may also be upscaled if an upscaling model was provided."
+    }
+]

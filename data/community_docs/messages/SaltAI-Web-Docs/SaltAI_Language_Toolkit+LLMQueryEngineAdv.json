@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LLMQueryEngineAdv node in ComfyUI?",
+        "answer": "The LLMQueryEngineAdv node in ComfyUI is designed to enhance querying capabilities by leveraging language models and embedding models to process and understand complex queries, refining search results based on similarity and relevance."
+    },
+    {
+        "question": "Which types of queries can the LLMQueryEngineAdv node process?",
+        "answer": "The LLMQueryEngineAdv node can process both standard queries input as text and also context-based queries provided through a list of chat messages."
+    },
+    {
+        "question": "What type of model is required as input for the LLMQueryEngineAdv node?",
+        "answer": "The LLMQueryEngineAdv node requires a language and embedding model, represented as `LLM_MODEL`, which is crucial for understanding and generating responses to the queries."
+    },
+    {
+        "question": "How does LLMQueryEngineAdv control the breadth of the search results?",
+        "answer": "LLMQueryEngineAdv allows controlling the breadth of search results through the `top_k` parameter, specifying the number of top results to retrieve, and `similarity_cutoff`, a threshold for filtering results based on their similarity score, ensuring relevance of the returned information."
+    },
+    {
+        "question": "What is the `llm_message` input in the LLMQueryEngineAdv node used for?",
+        "answer": "The `llm_message` input in the LLMQueryEngineAdv node is a list of messages that can provide additional context or information for the query processing, enhancing the query's precision and scope."
+    },
+    {
+        "question": "What action is taken if an `embed_model` cannot be determined from the provided `LLM_MODEL` in the LLMQueryEngineAdv node?",
+        "answer": "If an `embed_model` cannot be determined from the provided `LLM_MODEL`, the LLMQueryEngineAdv node raises an AttributeError, indicating that the model is required for operation."
+    },
+    {
+        "question": "What is the output of the LLMQueryEngineAdv node?",
+        "answer": "The LLMQueryEngineAdv node outputs the results of the processed query in a structured format, represented as a `STRING`. This output contains the response generated from the language model and can include all necessary details from the input query and any additional context."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is LCMScheduler in ComfyUI?",
+        "answer": "LCMScheduler is a custom node in ComfyUI that is designed to compute and adjust the sigma values for a generative model based on the specified number of steps and denoise factor."
+    },
+    {
+        "question": "What category does the LCMScheduler node belong to in ComfyUI?",
+        "answer": "The LCMScheduler node belongs to the 'sampling/custom_sampling/schedulers' category in ComfyUI."
+    },
+    {
+        "question": "What does the 'model' parameter represent in LCMScheduler?",
+        "answer": "The 'model' parameter in LCMScheduler specifies the generative model for which the sigma values are to be calculated, playing a crucial role in determining the specific characteristics of the noise to be introduced during the sampling process."
+    },
+    {
+        "question": "How does the 'steps' parameter influence the sampling process in LCMScheduler?",
+        "answer": "The 'steps' parameter in LCMScheduler defines the number of steps to be used in the sampling process, directly influencing the granularity of the noise adjustment; a higher number of steps allows for finer control over the generation."
+    },
+    {
+        "question": "What effect does adjusting the 'denoise' parameter have on the noise level in LCMScheduler?",
+        "answer": "Adjusting the 'denoise' parameter in LCMScheduler allows for the control of the noise level during the sampling process; a lower value results in a higher number of total steps, enabling more precise control over the noise characteristics."
+    },
+    {
+        "question": "What is the significance of the 'sigmas' output in LCMScheduler?",
+        "answer": "The 'sigmas' output in LCMScheduler represents the calculated sigma values for the specified model and parameters, crucial for controlling the noise level in the generative process, directly impacting the quality and characteristics of the generated output."
+    },
+    {
+        "question": "How is the number of total steps calculated when the 'denoise' parameter is less than 1.0 in LCMScheduler?",
+        "answer": "When the 'denoise' parameter is less than 1.0 in LCMScheduler, the total steps are calculated by dividing the steps by the denoise value, resulting in a larger number of steps for finer control over the noise level during generation."
+    }
+]

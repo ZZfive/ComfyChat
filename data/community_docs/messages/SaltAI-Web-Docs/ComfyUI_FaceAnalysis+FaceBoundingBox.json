@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is the purpose of the FaceBoundingBox node in ComfyUI?",
+        "answer": "The FaceBoundingBox node is designed to detect and extract the bounding boxes of faces within an image."
+    },
+    {
+        "question": "Which category does the FaceBoundingBox node belong to in ComfyUI?",
+        "answer": "The FaceBoundingBox node belongs to the 'FaceAnalysis' category in ComfyUI."
+    },
+    {
+        "question": "What model or library is specified by the 'analysis_models' input in the FaceBoundingBox node?",
+        "answer": "The 'analysis_models' input specifies the models and libraries used for face detection, impacting the accuracy and method of bounding box calculation."
+    },
+    {
+        "question": "What is the data type of the 'image' input in the FaceBoundingBox node?",
+        "answer": "The 'image' input's Comfy dtype is `IMAGE` and its Python dtype is `PIL.Image or torch.Tensor`."
+    },
+    {
+        "question": "How does the FaceBoundingBox node handle the 'padding' input?",
+        "answer": "The 'padding' input is an optional value used to expand the bounding boxes, ensuring the entire face is captured without being too close to the edges."
+    },
+    {
+        "question": "What does the 'index' input in the FaceBoundingBox node control?",
+        "answer": "The 'index' input optionally specifies the index of a specific face to focus on, with a default value that processes all detected faces."
+    },
+    {
+        "question": "What are the output types produced by the FaceBoundingBox node?",
+        "answer": "The FaceBoundingBox node outputs `IMAGE`, `x`, `y`, `width`, and `height` for the bounding box of the detected face."
+    },
+    {
+        "question": "What is the infra type for the FaceBoundingBox node?",
+        "answer": "The infra type for the FaceBoundingBox node is `CPU`."
+    },
+    {
+        "question": "What are the requirements for the 'image' input when using the FaceBoundingBox node in ComfyUI?",
+        "answer": "The 'image' input requires an image in which faces are to be detected and their bounding boxes calculated, with the dtype `IMAGE`."
+    },
+    {
+        "question": "How is the output list handled in the FaceBoundingBox node when using a specific 'index'?",
+        "answer": "If 'index' is not -1, the node outputs a list of the cropped image and bounding box coordinates for the specified face index; otherwise, it outputs data for all detected faces."
+    }
+]

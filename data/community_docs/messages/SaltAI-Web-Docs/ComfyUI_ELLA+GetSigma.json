@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the GetSigma node in ComfyUI?",
+        "answer": "The GetSigma node in ComfyUI is designed to calculate a specific sigma value based on a given model, sampler, scheduler, and step parameters, providing a straightforward way to obtain a sigma value which is crucial for controlling the noise level in generative models."
+    },
+    {
+        "question": "What role does the 'model' input parameter play in the GetSigma node?",
+        "answer": "The 'model' input parameter in the GetSigma node specifies the generative model to be used for sigma calculation, crucial for determining the appropriate noise level based on the model's characteristics and configurations."
+    },
+    {
+        "question": "How does the 'scheduler' parameter affect the sigma calculation in the GetSigma node?",
+        "answer": "The 'scheduler' parameter in the GetSigma node determines the scheduling algorithm for adjusting noise levels throughout the generative process, playing a key role in fine-tuning the progression of sigma values over specified steps."
+    },
+    {
+        "question": "What is the significance of the 'steps' parameter in the GetSigma node's input?",
+        "answer": "The 'steps' parameter in the GetSigma node specifies the total number of steps to consider for sigma calculation, defining the scope within which the start and end steps are evaluated, impacting the final sigma value."
+    },
+    {
+        "question": "What is the output of the GetSigma node and what does it represent?",
+        "answer": "The output of the GetSigma node is a calculated sigma value, represented as a float, which is a measure of the noise level to be applied. This value is critical for controlling the generative process's fidelity and diversity."
+    },
+    {
+        "question": "How does the 'end_at_step' parameter influence the sigma value calculation in GetSigma?",
+        "answer": "The 'end_at_step' parameter in the GetSigma node sets the final point for noise adjustment, determining when to stop calculating sigma and influencing the outcome of the generative model's output."
+    },
+    {
+        "question": "What computation does the GetSigma node perform to calculate the sigma value?",
+        "answer": "The GetSigma node performs sigma calculation by subtracting the sigma value at the end_at_step from the start_at_step, then dividing it by the model's scale factor, resulting in a sigma value that represents the noise level to be applied."
+    }
+]

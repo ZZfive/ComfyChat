@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SUPIR_model_loader_v2 node in ComfyUI?",
+        "answer": "The SUPIR_model_loader_v2 node is designed to initialize and prepare the SUPIR model for use by loading the model's state from a specified path and optionally adjusting its precision for memory efficiency."
+    },
+    {
+        "question": "What model does the SUPIR_model_loader_v2 node specifically prepare for use?",
+        "answer": "The SUPIR_model_loader_v2 node specifically prepares the SUPIR model for use."
+    },
+    {
+        "question": "What does the `clip` input in SUPIR_model_loader_v2 specify?",
+        "answer": "The `clip` input in SUPIR_model_loader_v2 specifies the CLIP model used in conjunction with the SUPIR model to enhance its capabilities, particularly for tasks involving image and text processing."
+    },
+    {
+        "question": "What is the purpose of the `vae` input in SUPIR_model_loader_v2?",
+        "answer": "The `vae` input in SUPIR_model_loader_v2 specifies the VAE model used alongside the SUPIR model, contributing to the overall image processing and generation capabilities."
+    },
+    {
+        "question": "What does the `supir_model` input in SUPIR_model_loader_v2 do?",
+        "answer": "The `supir_model` input in SUPIR_model_loader_v2 specifies the file paths to the SUPIR model checkpoints, which are essential for loading the model's state for use in image processing tasks."
+    },
+    {
+        "question": "How does the `fp8_unet` input affect the operation of the SUPIR_model_loader_v2 node?",
+        "answer": "The `fp8_unet` input in SUPIR_model_loader_v2, when set, converts the model's weights to a lower precision format (torch.float8_e4m3fn) to save VRAM, with a slight impact on quality."
+    },
+    {
+        "question": "What output does SUPIR_model_loader_v2 produce?",
+        "answer": "SUPIR_model_loader_v2 produces the loaded SUPIR model ready for image processing tasks, with the output dtype being `SUPIRMODEL`."
+    }
+]

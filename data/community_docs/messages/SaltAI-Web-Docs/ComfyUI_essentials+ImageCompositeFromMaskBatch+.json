@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the ImageCompositeFromMaskBatch+ node in ComfyUI used for?",
+        "answer": "The ImageCompositeFromMaskBatch+ node in ComfyUI is designed to create a composite image by blending two images based on a mask, adjusting their dimensions and scales for compatibility."
+    },
+    {
+        "question": "What are the required input types for the ImageCompositeFromMaskBatch+ node?",
+        "answer": "The required input types for the ImageCompositeFromMaskBatch+ node are 'image_from', 'image_to', and 'mask', all of which are torch.Tensor data types in Python."
+    },
+    {
+        "question": "How does the ImageCompositeFromMaskBatch+ node handle images with different dimensions?",
+        "answer": "The ImageCompositeFromMaskBatch+ node uses common_upscale to scale the 'image_to' to match the dimensions of 'image_from' if they differ in size."
+    },
+    {
+        "question": "What does the mask parameter in ImageCompositeFromMaskBatch+ do?",
+        "answer": "The 'mask' parameter in ImageCompositeFromMaskBatch+ is a binary mask used to determine the blending of 'image_from' and 'image_to'. Areas marked by the mask favor 'image_to' over 'image_from'."
+    },
+    {
+        "question": "Which class implements the functionality of ImageCompositeFromMaskBatch+?",
+        "answer": "The ImageCompositeFromMaskBatch+ functionality is implemented by the class `ImageCompositeFromMaskBatch`, which is categorized under 'essentials' in ComfyUI."
+    },
+    {
+        "question": "What is the output type of the ImageCompositeFromMaskBatch+ node?",
+        "answer": "The output type of the ImageCompositeFromMaskBatch+ node is a single 'IMAGE', which is a torch.Tensor in Python, representing the resulting composite image after blending 'image_from' and 'image_to' based on the 'mask'."
+    },
+    {
+        "question": "What kind of processing does the ImageCompositeFromMaskBatch+ node do on the 'mask' before blending?",
+        "answer": "Before blending, the ImageCompositeFromMaskBatch+ node may upscale the 'mask' to match the size of 'image_from' using bicubic interpolation if their dimensions do not match."
+    }
+]

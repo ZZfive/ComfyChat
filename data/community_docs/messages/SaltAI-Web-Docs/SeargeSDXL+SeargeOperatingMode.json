@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SeargeOperatingMode node in ComfyUI?",
+        "answer": "The SeargeOperatingMode node is designed to configure and manage operating modes within the ComfyUI environment, tailored for the SDXL suite, allowing dynamic adjustment of workflow, prompting modes, and batch processing sizes for a flexible user experience."
+    },
+    {
+        "question": "What does the workflow_mode input in SeargeOperatingMode determine?",
+        "answer": "The workflow_mode input determines the workflow mode, which specifies the overall process flow and operations available within the UI, such as text-to-image or image-to-image conversions."
+    },
+    {
+        "question": "How is the batch_size parameter in SeargeOperatingMode utilized?",
+        "answer": "The batch_size parameter in SeargeOperatingMode determines the number of items to be processed in a single batch, enabling efficient bulk processing of tasks within ComfyUI."
+    },
+    {
+        "question": "What data types are used to represent the workflow_mode and batch_size inputs in SeargeOperatingMode?",
+        "answer": "The workflow_mode is represented as a combo string allowing values 'none', 'text-to-image', 'image-to-image', 'in-painting', and the batch_size is an integer type in SeargeOperatingMode."
+    },
+    {
+        "question": "What optional input does SeargeOperatingMode have, and what is its purpose?",
+        "answer": "SeargeOperatingMode has an optional input 'data' that is a data stream for additional configurations or parameters required by the operating mode to enrich the configured data stream with selected settings."
+    },
+    {
+        "question": "What are the output types of the SeargeOperatingMode node?",
+        "answer": "The output type of the SeargeOperatingMode node is a data stream ('SRG_DATA_STREAM') enriched with the selected operating mode settings."
+    },
+    {
+        "question": "How does the SeargeOperatingMode node process input data to generate its output, according to its source code?",
+        "answer": "The SeargeOperatingMode node processes input data, including the workflow_mode, prompting_mode, and batch_size, by creating a dictionary with these values and, if an optional 'data' stream is provided, it enriches the stream with the created dictionary, returning the updated data stream as output."
+    }
+]

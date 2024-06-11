@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageListLoader node in ComfyUI?",
+        "answer": "The ImageListLoader node in ComfyUI is designed to load a list of images from a specified source, facilitating the handling and manipulation of multiple images in a batch processing or image analysis workflow."
+    },
+    {
+        "question": "What mandatory input does the ImageListLoader node require to locate the source of images?",
+        "answer": "The ImageListLoader node requires the 'folder_path' input, which specifies the directory path from which images will be loaded."
+    },
+    {
+        "question": "How does ImageListLoader allow for selective loading of images?",
+        "answer": "ImageListLoader allows for selective loading of images through the 'file_filter' input, which defines the file pattern to filter the images to be loaded, enabling selection based on their file type or naming convention."
+    },
+    {
+        "question": "What determines the order in which images are processed by ImageListLoader?",
+        "answer": "The 'sort_method' input determines the sorting method for the loaded images, affecting the order of processing, either 'numerical' or 'alphabetical'."
+    },
+    {
+        "question": "What pythont dtype does the image list output by ImageListLoader correspond to?",
+        "answer": "The image list output by ImageListLoader corresponds to a Python data type of 'List[torch.Tensor]', facilitating further processing or analysis of the loaded images."
+    },
+    {
+        "question": "Which method will be used if the 'sort_method' input is set to 'alphabetical'?",
+        "answer": "If the 'sort_method' input is set to 'alphabetical', the ImageListLoader will use the alphabetical_sort method to sort the file names alphabetically."
+    },
+    {
+        "question": "What exception is raised by ImageListLoader if the specified folder path does not exist?",
+        "answer": "If the specified folder path does not exist, ImageListLoader raises an Exception with a message indicating the non-existing folder path."
+    }
+]

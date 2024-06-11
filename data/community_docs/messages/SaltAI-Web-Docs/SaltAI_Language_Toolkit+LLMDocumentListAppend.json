@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LLMDocumentListAppend node in ComfyUI?",
+        "answer": "The LLMDocumentListAppend node is designed to append a list of documents to an existing list of documents, optionally updating their metadata with additional information."
+    },
+    {
+        "question": "What is the class name of the LLMDocumentListAppend node?",
+        "answer": "The class name of the LLMDocumentListAppend node is `LLMDocumentListAppend`."
+    },
+    {
+        "question": "What does the `llm_documents` parameter represent in the LLMDocumentListAppend node?",
+        "answer": "The `llm_documents` parameter represents the initial list of documents to which new documents will be appended. It plays a crucial role in the node's operation by serving as the base collection for aggregation."
+    },
+    {
+        "question": "What is the role of the `append_llm_documents` input in the LLMDocumentListAppend node?",
+        "answer": "The `append_llm_documents` input is the list of new documents to be appended to the existing list. This parameter is essential for expanding the document collection with new entries."
+    },
+    {
+        "question": "How is additional metadata merged into the appended documents using the LLMDocumentListAppend node?",
+        "answer": "The `extra_info` parameter, which is a JSON string containing additional metadata, is used to merge into the metadata of the documents being appended, allowing for the enrichment of document data."
+    },
+    {
+        "question": "What are the output types of the LLMDocumentListAppend node?",
+        "answer": "The output type of the LLMDocumentListAppend node is `documents`, which represents the updated list of documents after appending the new documents and optionally updating their metadata, having the Comfy dtype `DOCUMENT`."
+    },
+    {
+        "question": "What does the `document_append` function in the LLMDocumentListAppend node do?",
+        "answer": "The `document_append` function in the LLMDocumentListAppend node appends the `append_llm_documents` list to the `llm_documents` list, updates the metadata of the appended documents with the `extra_info` if provided, and returns the updated list of documents."
+    }
+]

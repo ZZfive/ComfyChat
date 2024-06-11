@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LLMLLaVANextImageEvaluator node in ComfyUI?",
+        "answer": "The LLMLLaVANextImageEvaluator node in ComfyUI is designed to evaluate images using the LLaVA Next V1 model, generating descriptions or captions based on the provided prompts and images. It abstracts the complexity of image processing and model evaluation, offering a streamlined interface for generating textual representations of images."
+    },
+    {
+        "question": "What are the required input types for the LLMLLaVANextImageEvaluator node?",
+        "answer": "The required input types for the LLMLLaVANextImageEvaluator node include the LLaVA Next V1 model (lnv1_model) used for evaluating the images, a batch of images (images) represented as tensors, the maximum number of tokens (max_tokens) for each image description, the prompt format (prompt_format) for constructing the prompt for the model, and the specific prompt (prompt) given to the model for generating the image description."
+    },
+    {
+        "question": "What output types does the LLMLLaVANextImageEvaluator node provide?",
+        "answer": "The LLMLLaVANextImageEvaluator node provides three output types: raw strings (strings) generated as image descriptions, a list of raw strings (list) each representing a generated description for the input images, and a collection of Document objects (documents) encapsulating each generated image description along with additional metadata."
+    },
+    {
+        "question": "How does the prompt_format parameter in the LLMLLaVANextImageEvaluator node influence the output?",
+        "answer": "The prompt_format parameter in the LLMLLaVANextImageEvaluator node is used to construct the prompt for the LLaVA Next V1 model, which incorporates the image and user instructions into a structured template, significantly influencing the context and focus of the generated image descriptions."
+    },
+    {
+        "question": "What is the default maximum number of tokens (max_tokens) generated for each image description in the LLMLLaVANextImageEvaluator node?",
+        "answer": "The default maximum number of tokens (max_tokens) generated for each image description in the LLMLLaVANextImageEvaluator node is 48."
+    },
+    {
+        "question": "What is the default prompt_format used in the LLMLLaVANextImageEvaluator node?",
+        "answer": "The default prompt_format used in the LLMLLaVANextImageEvaluator node is \"[INST] SYSTEM: You are a professional image captioner, follow the directions of the user exactly.\nUSER: <image>\n<prompt>[/INST]\"."
+    },
+    {
+        "question": "What are the parameters required for the eval function in the LLMLLaVANextImageEvaluator node?",
+        "answer": "The parameters required for the eval function in the LLMLLaVANextImageEvaluator node include the LLaVA Next V1 model (lnv1_model), images represented as tensors (images), the maximum number of tokens (max_tokens) for each image description, the prompt format (prompt_format), and the specific prompt (prompt) given to the model."
+    }
+]

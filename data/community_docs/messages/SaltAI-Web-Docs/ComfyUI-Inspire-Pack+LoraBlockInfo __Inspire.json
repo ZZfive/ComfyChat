@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoraBlockInfo node in ComfyUI?",
+        "answer": "The LoraBlockInfo node in ComfyUI is designed to extract and communicate detailed information about specific LoRA blocks within a model, providing insights into the LoRA adaptations and their impacts."
+    },
+    {
+        "question": "What are the input types required by the LoraBlockInfo node?",
+        "answer": "The LoraBlockInfo node requires four input types: 'model', 'clip', 'lora_name', and 'block_info'. 'model' represents the deep learning model, 'clip' is associated with the CLIP model, 'lora_name' specifies the name of the LoRA file, and 'block_info' contains details about modified LoRA blocks."
+    },
+    {
+        "question": "Which infra type is associated with the LoraBlockInfo node?",
+        "answer": "The infra type associated with the LoraBlockInfo node is 'CPU'."
+    },
+    {
+        "question": "What is the category of the LoraBlockInfo node in ComfyUI?",
+        "answer": "The LoraBlockInfo node falls under the category of 'InspirePack/LoraBlockWeight' in ComfyUI."
+    },
+    {
+        "question": "How does the LoraBlockInfo node handle the extraction of LoRA information from the model?",
+        "answer": "The LoraBlockInfo node extracts LoRA information by utilizing functions from the comfy.lora module to map LoRA keys for both the model and the CLIP model, load the specified LoRA file, and then parse various blocks like input, middle, output, and text blocks to count and categorize LoRA adaptations."
+    },
+    {
+        "question": "What does the 'doit' method in the LoraBlockInfo node do?",
+        "answer": "The 'doit' method in the LoraBlockInfo node executes the process of loading the LoRA file, extracting the information about the adapted blocks, and sending the extracted information as feedback to the node's widget in ComfyUI."
+    },
+    {
+        "question": "Does the LoraBlockInfo node have any output types?",
+        "answer": "The LoraBlockInfo node does not have specified output types; it outputs by sending node feedback containing the block information to ComfyUI."
+    }
+]

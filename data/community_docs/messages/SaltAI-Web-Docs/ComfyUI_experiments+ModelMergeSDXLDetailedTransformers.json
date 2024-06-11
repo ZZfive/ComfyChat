@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ModelMergeSDXLDetailedTransformers node in ComfyUI?",
+        "answer": "The ModelMergeSDXLDetailedTransformers node in ComfyUI specializes in merging two models with a focus on detailed transformer block adjustments. It allows for fine-tuning of the merging process by providing extensive control over transformer block parameters, enabling precise model customization and optimization."
+    },
+    {
+        "question": "What does the `time_embed` parameter adjust in the ModelMergeSDXLDetailedTransformers node?",
+        "answer": "The `time_embed` parameter in the ModelMergeSDXLDetailedTransformers node adjusts the time embedding layer's contribution to the merged model, allowing for temporal aspects of the models to be fine-tuned."
+    },
+    {
+        "question": "What are the required inputs for the ModelMergeSDXLDetailedTransformers node?",
+        "answer": "The required inputs for the ModelMergeSDXLDetailedTransformers node are `model1`, `model2`, `time_embed`, and `label_emb`. The models represent the two models to be merged, and the `time_embed` and `label_emb` parameters help control the merging process."
+    },
+    {
+        "question": "What does the ModelMergeSDXLDetailedTransformers node output?",
+        "answer": "The ModelMergeSDXLDetailedTransformers node outputs a single model, which is the result of merging the two input models, incorporating adjustments from both input models and specified transformer block parameters."
+    },
+    {
+        "question": "What is the role of the `label_emb` parameter in the ModelMergeSDXLDetailedTransformers node?",
+        "answer": "The `label_emb` parameter in the ModelMergeSDXLDetailedTransformers node adjusts the label embedding layer's contribution to the merged model, enabling customization of how label information influences the merged model."
+    },
+    {
+        "question": "How does the ModelMergeSDXLDetailedTransformers node enable fine-tuning of input blocks?",
+        "answer": "The ModelMergeSDXLDetailedTransformers node allows fine-tuning of input blocks through parameters like `input_blocks.i.j.` and its sub-parameters. This includes transformer blocks adjustments like `norm1`, `attn1.to_q`, `attn1.to_k`, `attn1.to_v`, `attn1.to_out`, `ff.net`, `norm2`, `attn2.to_q`, `attn2.to_k`, `attn2.to_v`, `attn2.to_out`, and `norm3`."
+    },
+    {
+        "question": "What is the purpose of the middle and output blocks adjustments in the ModelMergeSDXLDetailedTransformers node?",
+        "answer": "The middle and output blocks adjustments in the ModelMergeSDXLDetailedTransformers node, such as `middle_block.i.` and `output_blocks.i.j.`, along with their transformer block details, enable fine-tuning of the model’s intermediate processing stages and its final output characteristics."
+    }
+]

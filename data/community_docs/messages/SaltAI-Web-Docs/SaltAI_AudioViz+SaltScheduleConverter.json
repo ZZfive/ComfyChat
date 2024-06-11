@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltScheduleConverter node in ComfyUI?",
+        "answer": "The SaltScheduleConverter node in ComfyUI is designed to transform schedule lists into formats compatible with various modules by converting list inputs into floats, ensuring interoperability with modules that require specific numeric types."
+    },
+    {
+        "question": "What are the input types accepted by the SaltScheduleConverter node?",
+        "answer": "The SaltScheduleConverter node accepts a `schedule_list` as its required input type, which is a list of values intended to be converted into different numeric formats."
+    },
+    {
+        "question": "What output types does the SaltScheduleConverter node produce?",
+        "answer": "The SaltScheduleConverter node produces three output types: `floats`, `float`, and `int`. `floats` is a list of original float values from the input schedule list; `float` is a duplicate of the float list; and `int` is a list of integers derived from rounding the original schedule list values."
+    },
+    {
+        "question": "Which modules can benefit from the output of the SaltScheduleConverter node?",
+        "answer": "The SaltScheduleConverter node makes schedule lists compatible with modules like MTB, IPAdapter, and others that use numeric types, thereby enhancing interoperability."
+    },
+    {
+        "question": "How does the SaltScheduleConverter node handle the conversion of schedule lists?",
+        "answer": "The SaltScheduleConverter node converts the input `schedule_list` into lists of floats and integers, depending on the output format required by the connected modules."
+    },
+    {
+        "question": "What is the role of the `INFRA_TYPE` in the SaltScheduleConverter node?",
+        "answer": "The `INFRA_TYPE` in the SaltScheduleConverter node is set to `CPU`, indicating that the computation related to the conversion of schedule lists takes place on the CPU."
+    },
+    {
+        "question": "What kind of data does the `schedule_list` parameter expect as input for the SaltScheduleConverter node?",
+        "answer": "The `schedule_list` parameter of the SaltScheduleConverter node expects a list of floating-point numbers as input, specified as `List[float]` in Python."
+    }
+]

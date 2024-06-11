@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Match Dimensions (mtb) node in ComfyUI?",
+        "answer": "The Match Dimensions (mtb) node in ComfyUI is designed to adjust the dimensions of an image to match those of a reference image along a specified dimension (height or width), ensuring the aspect ratio is preserved throughout the process."
+    },
+    {
+        "question": "What determines the new dimensions of the source image when using the Match Dimensions (mtb) node?",
+        "answer": "The new dimensions of the source image are determined by the dimensions of the reference image, based on the specified dimension (height or width) chosen in the 'match' parameter."
+    },
+    {
+        "question": "What does the 'source' input represent in the Match Dimensions (mtb) node?",
+        "answer": "The 'source' input in the Match Dimensions (mtb) node represents the source image to be resized, which plays a crucial role in determining the new dimensions while preserving the aspect ratio."
+    },
+    {
+        "question": "What is the role of the 'reference' input in the Match Dimensions (mtb) node?",
+        "answer": "The 'reference' input in the Match Dimensions (mtb) node plays the role of providing dimensions that are used as the target for resizing the source image. It dictates the final dimensions to aim for, guiding the resizing process."
+    },
+    {
+        "question": "What are the possible values for the 'match' input in the Match Dimensions (mtb) node and how do they influence the resizing process?",
+        "answer": "The 'match' input in the Match Dimensions (mtb) node can accept the values 'height' or 'width'. Specifying 'height' ensures that the source image is resized to match the height of the reference image, while 'width' matches the width, in both cases preserving the original aspect ratio of the source image."
+    },
+    {
+        "question": "What are the output types and corresponding dtypes for the Match Dimensions (mtb) node?",
+        "answer": "The outputs from the Match Dimensions (mtb) node include 'image' with a Comfy dtype of 'IMAGE' (and Python dtype of 'IMAGE'), 'new_width' with a Comfy dtype of 'INT' (and Python dtype of 'INT'), and 'new_height' also with a Comfy dtype of 'INT' (and Python dtype of 'INT')."
+    },
+    {
+        "question": "How is the resizing process for the source image implemented in the Match Dimensions (mtb) node?",
+        "answer": "The resizing process in the Match Dimensions (mtb) node involves first computing the aspect ratio of the source image. Based on the 'match' input, either the new height or width is determined by the dimensions of the reference image, adjusting the opposite dimension to preserve the original aspect ratio. The images are then resized using the specified dimensions, ensuring that the aspect ratio is maintained."
+    }
+]

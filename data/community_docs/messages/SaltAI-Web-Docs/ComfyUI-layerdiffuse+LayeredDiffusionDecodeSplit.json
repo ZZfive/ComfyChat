@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the LayeredDiffusionDecodeSplit node in ComfyUI?",
+        "answer": "The LayeredDiffusionDecodeSplit node in ComfyUI is designed for the specialized task of decoding images in a layered diffusion process, specifically handling split layers. It is essential for accommodating different frame rates or sequences while ensuring temporal consistency and visual quality."
+    },
+    {
+        "question": "What are the required input types for the LayeredDiffusionDecodeSplit node?",
+        "answer": "The required input types for the LayeredDiffusionDecodeSplit node include `samples` which is a collection of sample data typically representing different states in the diffusion process, `images` as a tensor of images to be decoded, `frames` defining the number of frames to be processed, `sd_version` specifying the version of the stable diffusion model to be used, and `sub_batch_size` determining the processing sub-batch size."
+    },
+    {
+        "question": "How does the `samples` input of the LayeredDiffusionDecodeSplit node impact the decoding process?",
+        "answer": "The `samples` input of the LayeredDiffusionDecodeSplit node determines the states or stages in the diffusion process which are essential for the node to decode and split the images across frames of the sequence."
+    },
+    {
+        "question": "What determines the output images' processing speed in the LayeredDiffusionDecodeSplit node?",
+        "answer": "The processing speed of the output images in the LayeredDiffusionDecodeSplit node is influenced by the `sub_batch_size` parameter, which governs the efficiency and speed of the decoding operation by managing computational resources."
+    },
+    {
+        "question": "In what way does the `frames` input affect the processing of the samples in the LayeredDiffusionDecodeSplit node?",
+        "answer": "The `frames` input affects how the samples are sliced in the LayeredDiffusionDecodeSplit node, determining how images are decoded across the sequence based on the number of frames to be processed."
+    },
+    {
+        "question": "What does the `sd_version` input do in ComfyUI's LayeredDiffusionDecodeSplit node?",
+        "answer": "The `sd_version` input in the LayeredDiffusionDecodeSplit node specifies the version of the stable diffusion model to be used, which impacts the decoding behavior and the quality of the output images."
+    },
+    {
+        "question": "What is returned by the LayeredDiffusionDecodeSplit node?",
+        "answer": "The LayeredDiffusionDecodeSplit node returns decoded images, processed through the layered diffusion technique, that includes modifications for split layers and adjustments for frame rates."
+    },
+    {
+        "question": "On what type of hardware is the LayeredDiffusionDecodeSplit node optimized to run?",
+        "answer": "The LayeredDiffusionDecodeSplit node in ComfyUI is optimized to run on GPU infrastructure for efficient image processing and decoding."
+    }
+]

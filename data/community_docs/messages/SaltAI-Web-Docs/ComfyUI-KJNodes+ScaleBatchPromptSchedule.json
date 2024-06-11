@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the ScaleBatchPromptSchedule node in ComfyUI used for?",
+        "answer": "The ScaleBatchPromptSchedule node in ComfyUI is designed to adapt a batch schedule from one frame count to another, effectively scaling the schedule to fit a new frame duration. It ensures that the timing of prompts or actions remains synchronized with the new frame length when animation or video frame counts are modified."
+    },
+    {
+        "question": "What specific input does the ScaleBatchPromptSchedule node require?",
+        "answer": "The ScaleBatchPromptSchedule node requires three specific inputs: the string representation of the original batch schedule (`input_str`), the original frame count (`old_frame_count`), and the target frame count to which the original schedule will be scaled (`new_frame_count`)."
+    },
+    {
+        "question": "How does the ScaleBatchPromptSchedule node handle the calculation of scaled frames?",
+        "answer": "The ScaleBatchPromptSchedule node calculates the scaling factor based on the old and new frame counts, then iterates over the frame numbers and strings from the original schedule to calculate the new frame number for each, storing the results in a dictionary. It finally formats the output string based on the sorted dictionary of new frame numbers and strings."
+    },
+    {
+        "question": "What kind of data does the ScaleBatchPromptSchedule node return?",
+        "answer": "The ScaleBatchPromptSchedule node returns the scaled batch schedule in string format, reflecting the adjusted key frames and values for the new frame count. The data type is STRING both in ComfyUI and Python."
+    },
+    {
+        "question": "In what category does the ScaleBatchPromptSchedule node fall under in ComfyUI?",
+        "answer": "The ScaleBatchPromptSchedule node falls under the AnimationScheduling and Scheduling categories in ComfyUI, making it part of the KJNodes category."
+    },
+    {
+        "question": "What infrastructure type is recommended for using the ScaleBatchPromptSchedule node?",
+        "answer": "The ScaleBatchPromptSchedule node is recommended to be used with an Infrastructure type of CPU."
+    },
+    {
+        "question": "Which node is the ScaleBatchPromptSchedule based on for modifying frame counts?",
+        "answer": "The ScaleBatchPromptSchedule node is based on Fizz's nodes BatchPromptSchedule for modifying frame counts in ComfyUI."
+    }
+]

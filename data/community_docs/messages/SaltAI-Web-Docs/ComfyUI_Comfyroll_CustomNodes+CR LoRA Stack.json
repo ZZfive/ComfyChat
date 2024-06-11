@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the CR LoRA Stack node designed for in ComfyUI?",
+        "answer": "The CR LoRA Stack node in ComfyUI is designed to create and manage a stack of LoRA (Low-Rank Adaptation) modifications for models, enabling the sequential application of multiple LoRA modifications to a model for fine-tuned adjustments."
+    },
+    {
+        "question": "What does the `switch_1` input control in the CR LoRA Stack node?",
+        "answer": "The `switch_1` input in the CR LoRA Stack node controls whether the first LoRA modification is applied, enabling selective application of modifications, with the control being a COMBO of STRING type."
+    },
+    {
+        "question": "How does one specify the first LoRA modification using the CR LoRA Stack node?",
+        "answer": "The first LoRA modification is specified using the `lora_name_1` input, which is a STRING type input in COMBO format, providing the name of the first LoRA modification to be applied in the sequence."
+    },
+    {
+        "question": "What data type is used for the `model_weight_1` input and what does it determine?",
+        "answer": "The `model_weight_1` input is of FLOAT type and it determines the weight of the first LoRA modification on the model, influencing the extent of the modification's impact on the model's behavior."
+    },
+    {
+        "question": "What is the purpose of the `clip_weight_1` input in the CR LoRA Stack node?",
+        "answer": "The `clip_weight_1` input is used to set the weight of the first LoRA modification on the clip, affecting how significantly the clip is modified, and it is of FLOAT data type."
+    },
+    {
+        "question": "What is the role of the `lora_stack` input in the CR LoRA Stack node?",
+        "answer": "The `lora_stack` input allows for the inclusion of an existing LoRA stack to be extended with new modifications, facilitating the building of complex LoRA sequences by adding it to the list of existing modifications."
+    },
+    {
+        "question": "What is returned by the CR LoRA Stack node?",
+        "answer": "The CR LoRA Stack node returns a compiled list of LoRA modifications, ready for application to a model and clip, represented as `LORA_STACK`, along with a `STRING` type URL for documentation or help related to the LoRA stack node."
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the ApplyInstantID node in ComfyUI?",
+        "answer": "The ApplyInstantID node is designed to integrate InstantID technology into images, leveraging facial analysis and control networks to enhance or modify the image based on specified conditions."
+    },
+    {
+        "question": "What class name does the ApplyInstantID node have in ComfyUI?",
+        "answer": "The class name for the ApplyInstantID node is `ApplyInstantID`."
+    },
+    {
+        "question": "Which category does the ApplyInstantID node belong to in ComfyUI?",
+        "answer": "The ApplyInstantID node belongs to the `InstantID` category in ComfyUI."
+    },
+    {
+        "question": "What output does the ApplyInstantID node provide in ComfyUI?",
+        "answer": "The ApplyInstantID node provides a modified model after applying InstantID (`MODEL`), along with the positive conditioning text (`CONDITIONING`) and negative conditioning text (`CONDITIONING`) after processing."
+    },
+    {
+        "question": "What models are required for the proper functioning of ApplyInstantID in ComfyUI?",
+        "answer": "The ApplyInstantID node requires the `instantid` model for identity processing and enhancement, the `insightface` model for detecting and analyzing faces within the image, and the `control_net` model to guide the application of InstantID according to specified conditions."
+    },
+    {
+        "question": "Which parameters can be adjusted to control the application of InstantID in ComfyUI?",
+        "answer": "The strength of InstantID application can be adjusted using the `weight` parameter, the starting point of the application process can be set with `start_at`, and `end_at` specifies the endpoint of the application process, enabling precise control over the extent of InstantID modifications."
+    },
+    {
+        "question": "What optional inputs does the ApplyInstantID node provide in ComfyUI?",
+        "answer": "The ApplyInstantID node allows for an optional `image_kps` input for more detailed facial analysis and InstantID application, and an `mask` input to selectively apply modifications."
+    },
+    {
+        "question": "Can InstantID be applied without a previously generated keypoints image in ComfyUI?",
+        "answer": "Yes, if no keypoints image is provided, the Image itself is used by the ApplyInstantID node for the application of InstantID, specifically the first image in the batch."
+    }
+]

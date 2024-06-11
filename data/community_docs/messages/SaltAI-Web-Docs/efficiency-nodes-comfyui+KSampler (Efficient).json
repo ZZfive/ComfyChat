@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the KSampler (Efficient) node in ComfyUI?",
+        "answer": "The KSampler (Efficient) node is designed to efficiently sample latent images using a variety of sampling techniques, tailored to work with specific model configurations and conditioning parameters."
+    },
+    {
+        "question": "Which parameters does the KSampler (Efficient) node require for image generation?",
+        "answer": "The KSampler (Efficient) node requires parameters including model to be used, seed value, number of steps, configuration parameter (cfg), sampling algorithm (sampler_name), scheduler, positive and negative conditioning text, initial latent image, denoising level, and preview method."
+    },
+    {
+        "question": "How does the 'positive' input influence the output of the KSampler (Efficient) node?",
+        "answer": "The 'positive' input specifies positive conditioning text that guides the image generation towards desired attributes or themes, affecting the characteristics and generation's creativity of the output images."
+    },
+    {
+        "question": "What optional input affects the refinement of the generated images in the KSampler (Efficient) node?",
+        "answer": "The optional 'denoise' parameter, ranging from 0.0 to 1.0, controls the denoising level in the sampling process, affecting the clarity and sharpness of the generated images."
+    },
+    {
+        "question": "What role does the 'vae_decode' parameter play in the KSampler (Efficient) node?",
+        "answer": "The 'vae_decode' parameter specifies whether to decode the latent image using a VAE model, which affects the final image representation and is indicated by a boolean option."
+    },
+    {
+        "question": "Which node can contribute a custom VAE model to the KSampler (Efficient) node?",
+        "answer": "The optional 'optional_vae' input can be used to input a custom VAE model from another node that contributes to the image generation process."
+    },
+    {
+        "question": "How does the KSampler (Efficient) node leverage common nodes for further image processing?",
+        "answer": "The KSampler (Efficient) node can be used in conjunction with common nodes such as PreviewImage for previewing the images, ImageUpscaleWithModel for upscaling images, and VAEDecode for decoding VAEs, among others, to refine or process the generated images further."
+    }
+]

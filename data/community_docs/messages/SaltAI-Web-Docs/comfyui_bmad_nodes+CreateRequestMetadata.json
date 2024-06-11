@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the `CreateRequestMetadata` class responsible for in ComfyUI?",
+        "answer": "The `CreateRequestMetadata` class in ComfyUI is responsible for creating and managing a JSON file that contains metadata about a request, providing functionalities to update request data, add resources to the request, and manage the request's state."
+    },
+    {
+        "question": "Which node category does `CreateRequestMetadata` belong to?",
+        "answer": "`CreateRequestMetadata` belongs to the `Bmad/api` category in ComfyUI."
+    },
+    {
+        "question": "What is the significance of creating only one instance of `CreateRequestMetadata` in a prompt?",
+        "answer": "Creating only one instance of `CreateRequestMetadata` in a prompt is significant to avoid conflicts and ensure proper management of the request's metadata."
+    },
+    {
+        "question": "What ensures the uniqueness of each request in ComfyUI's `CreateRequestMetadata`?",
+        "answer": "The uniqueness of each request in ComfyUI's `CreateRequestMetadata` is ensured by a unique `request_id` that is crucial for tracking and managing the request throughout its lifecycle."
+    },
+    {
+        "question": "What does the `CreateRequestMetadata` node output?",
+        "answer": "The `CreateRequestMetadata` node does not have any output types."
+    },
+    {
+        "question": "What does the `update_outdata` function in `CreateRequestMetadata` do?",
+        "answer": "The `update_outdata` function in `CreateRequestMetadata` updates the metadata for a request, ensuring that the `request_id` is set properly, setting the request's state, and writing request status to a JSON file."
+    },
+    {
+        "question": "What happens if `CreateRequestMetadata.request_id` is set to 'insert_id'?",
+        "answer": "If `CreateRequestMetadata.request_id` is set to 'insert_id', an error is raised indicating that the `request_id` might not be set properly or there might be more than one `CreateRequestMetadata` node in the workflow."
+    }
+]

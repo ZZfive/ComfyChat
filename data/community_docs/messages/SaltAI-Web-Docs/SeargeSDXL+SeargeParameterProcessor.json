@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SeargeParameterProcessor node in ComfyUI?",
+        "answer": "The SeargeParameterProcessor node in ComfyUI is designed to process and refine parameters for image generation tasks, incorporating advanced settings such as seed manipulation, style template adjustments, and high-resolution fix parameters. It acts as a central hub for configuring the generation process to ensure optimally adjusted inputs like prompts, generation parameters, and model names."
+    },
+    {
+        "question": "What does the SeargeParameterProcessor node accept as input?",
+        "answer": "The SeargeParameterProcessor node accepts a variety of parameters including prompts, generation parameters, model names, and advanced settings, which are collectively known as `PARAMETER_INPUTS`. These inputs allow for a comprehensive customization of the image generation process."
+    },
+    {
+        "question": "What are the possible values for the refiner intensity in SeargeParameterProcessor?",
+        "answer": "The possible values for the refiner intensity in SeargeParameterProcessor are `hard` and `soft`, which refer to using the same seed as the base in the case of `hard`, or a different seed from the base in the case of `soft`."
+    },
+    {
+        "question": "How does the SeargeParameterProcessor handle the denoise parameter when it is not provided?",
+        "answer": "When the denoise parameter is not provided, the SeargeParameterProcessor sets it to a default value of 1.0."
+    },
+    {
+        "question": "What does the SeargeParameterProcessor output?",
+        "answer": "The SeargeParameterProcessor outputs a dictionary of processed parameters, known as `PARAMETERS`, that is ready for use in the image generation process."
+    },
+    {
+        "question": "Under which conditions does the SeargeParameterProcessor set the `hrf_steps` parameter to 0?",
+        "answer": "The SeargeParameterProcessor sets the `hrf_steps` parameter to 0 when the `hires_fix` parameter is set to `disabled`."
+    },
+    {
+        "question": "How does the SeargeParameterProcessor process different prompt styles?",
+        "answer": "The SeargeParameterProcessor can process various prompt styles, ranging from simple to more complex options, such as '3 prompts G+L-N', 'subject focus', 'style focus', 'weighted', 'overlay', and more. Depending on the style selected, it adjusts parameters like `prompt_style_selector`, `prompt_style_group`, `secondary_prompt`, `style_prompt`, and `negative_style` to ensure the prompt is properly formatted for image generation."
+    }
+]

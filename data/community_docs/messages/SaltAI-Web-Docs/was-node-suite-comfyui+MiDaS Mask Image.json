@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the 'MiDaS Mask Image' node used for in ComfyUI?",
+        "answer": "The 'MiDaS Mask Image' node in ComfyUI is used to separate the background and foreground of an image by approximating its depth using the MiDaS model."
+    },
+    {
+        "question": "What are the required inputs for the 'MiDaS Mask Image' node?",
+        "answer": "The required inputs for the 'MiDaS Mask Image' node include the input image tensor, a flag for using the CPU instead of the GPU, the version of the MiDaS model, a determination of foreground or background removal, a flag for applying thresholding, several threshold values, a smoothing value, and RGB values for the background color."
+    },
+    {
+        "question": "How does the 'MiDaS Mask Image' node recognize depth to create a mask?",
+        "answer": "The 'MiDaS Mask Image' node recognizes depth by converting the input image into a format suitable for the MiDaS model, then applying the model to estimate depth and uses this information to create a mask distinguishing foreground from background elements."
+    },
+    {
+        "question": "What is the function of the 'threshold' flag in the 'MiDaS Mask Image' node?",
+        "answer": "The 'threshold' flag in the 'MiDaS Mask Image' node determines whether to apply thresholding to the depth mask, which can further refine the separation of foreground and background in the image."
+    },
+    {
+        "question": "What does the 'smoothing' parameter in the 'MiDaS Mask Image' node control?",
+        "answer": "The 'smoothing' parameter in the 'MiDaS Mask Image' node controls the amount of Gaussian blur applied to the depth mask, which can help smooth out edges and transitions in the image."
+    },
+    {
+        "question": "Which input determines the targeted removal in an image by the 'MiDaS Mask Image' node?",
+        "answer": "The 'remove' input in the 'MiDaS Mask Image' node determines whether the foreground or the background should be targeted for removal based on the depth estimation provided by the MiDaS model."
+    },
+    {
+        "question": "What is the output format of the 'MiDaS Mask Image' node in ComfyUI?",
+        "answer": "The 'MiDaS Mask Image' node in ComfyUI outputs an image with either the foreground or the background removed, based on depth estimation and specified input parameters, with the output format being a torch.Tensor of type IMAGE."
+    }
+]

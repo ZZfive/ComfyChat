@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageConcanate node in ComfyUI?",
+        "answer": "The ImageConcanate node in ComfyUI is designed to concatenate two images together in a specified direction, optionally adjusting the size of the second image to match the first, which is useful for creating composite images or expanding the visual context of an existing image."
+    },
+    {
+        "question": "Which two images does ImageConcanate concatenate?",
+        "answer": "ImageConcanate concatenates image1 and image2, where image1 serves as the base image in the concatenation process and image2 is the image that can be resized to match the dimensions of image1 if specified."
+    },
+    {
+        "question": "What does the direction parameter control in the ImageConcanate node?",
+        "answer": "The direction parameter in the ImageConcanate node specifies the direction in which the second image will be concatenated to the first. Options include 'right', 'down', 'left', and 'up'."
+    },
+    {
+        "question": "What does the match_image_size parameter do in ImageConcanate?",
+        "answer": "The match_image_size parameter in ImageConcanate determines whether the second image should be resized to match the dimensions of the first image before concatenation."
+    },
+    {
+        "question": "What is the output of the ImageConcanate node?",
+        "answer": "The output of the ImageConcanate node is a single composite image resulting from concatenating the second image to the first in the specified direction."
+    },
+    {
+        "question": "In which Python data type is the output image stored by the ImageConcanate node?",
+        "answer": "The output image from the ImageConcanate node is stored as a torch.Tensor, a Python data type commonly used for deep learning."
+    },
+    {
+        "question": "How does ImageConcanate handle the resizing of the second image if match_image_size is set to True?",
+        "answer": "If match_image_size is set to True, ImageConcanate resizes the second image using torch.nn.functional.interpolate to match the dimensions of the first image before the concatenation takes place."
+    }
+]

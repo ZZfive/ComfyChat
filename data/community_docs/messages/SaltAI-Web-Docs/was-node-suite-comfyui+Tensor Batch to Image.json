@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Tensor Batch to Image node in ComfyUI?",
+        "answer": "The Tensor Batch to Image node in ComfyUI is designed to convert a batch of tensor images into a single tensor image based on a specified index, allowing for the selection of a specific image from the batch for further processing or visualization."
+    },
+    {
+        "question": "What are the required input types for the Tensor Batch to Image node?",
+        "answer": "The required input types for the Tensor Batch to Image node are `images_batch`, which is a batch of images represented as tensors, and `batch_image_number`, the index of the image within the batch to be converted."
+    },
+    {
+        "question": "In the context of Tensor Batch to Image, what type of data does the `images_batch` input represent?",
+        "answer": "The `images_batch` input represents a batch of images as tensors in ComfyUI, with a Comfy dtype of `IMAGE` and a Python dtype of `List[torch.Tensor]`."
+    },
+    {
+        "question": "How is the `batch_image_number` input used in the Tensor Batch to Image node?",
+        "answer": "The `batch_image_number` input in the Tensor Batch to Image node specifies the index of the image within the batch to be converted into a tensor image, determining which image from the batch is selected for output."
+    },
+    {
+        "question": "What output does the Tensor Batch to Image node produce?",
+        "answer": "The Tensor Batch to Image node outputs a single tensor image selected from the input batch based on the specified index, with a Comfy dtype of `IMAGE` and a Python dtype of `torch.Tensor`."
+    },
+    {
+        "question": "What are the usage tips for the Tensor Batch to Image node in ComfyUI?",
+        "answer": "The usage tips for the Tensor Batch to Image node include specifying it as an infra type of `GPU`, indicating its processing preference for graphical processing units."
+    },
+    {
+        "question": "What happens if the `batch_image_number` is out of bounds for the input `images_batch` in the Tensor Batch to Image node?",
+        "answer": "If the `batch_image_number` is out of bounds for the input `images_batch` in the Tensor Batch to Image node, the node will return the last image from the batch as a fallback, and an error message will be printed to indicate the issue."
+    }
+]

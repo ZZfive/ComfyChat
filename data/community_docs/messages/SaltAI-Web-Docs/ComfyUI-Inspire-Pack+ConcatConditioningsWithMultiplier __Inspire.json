@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ConcatConditioningsWithMultiplier __Inspire node in ComfyUI?",
+        "answer": "The ConcatConditioningsWithMultiplier __Inspire node is designed to concatenate multiple conditioning vectors, each potentially modified by a corresponding multiplier, to enhance or adjust their influence in a generative model's output."
+    },
+    {
+        "question": "What is the primary conditioning vector in the ConcatConditioningsWithMultiplier __Inspire node and what role does it play?",
+        "answer": "The primary conditioning vector in the ConcatConditioningsWithMultiplier __Inspire node is `conditioning1`. It serves as the base for further conditioning modifications to which additional conditionings will be concatenated."
+    },
+    {
+        "question": "How is the strength of the primary conditioning vector adjusted in the ConcatConditioningsWithMultiplier __Inspire node?",
+        "answer": "The strength of the primary conditioning vector in the ConcatConditioningsWithMultiplier __Inspire node can be adjusted by the optional input `multiplier1`. This allows for its influence to be tuned before concatenation with other conditionings."
+    },
+    {
+        "question": "What are the output types and their descriptions for the ConcatConditioningsWithMultiplier __Inspire node?",
+        "answer": "The output type of the ConcatConditioningsWithMultiplier __Inspire node is `conditioning` with both Comfy dtype `CONDITIONING` and Python dtype `List[Tuple[torch.Tensor, Any]]`. This represents the concatenated conditioning vector, with each component's strength adjusted by its corresponding multiplier, ready for use in model conditioning."
+    },
+    {
+        "question": "Which node's class name is ConcatConditioningsWithMultiplier __Inspire and under which category can it be found in ComfyUI?",
+        "answer": "The class name for ConcatConditioningsWithMultiplier __Inspire is `ConcatConditioningsWithMultiplier __Inspire` and it can be found under the category `InspirePack/__for_testing` in ComfyUI."
+    },
+    {
+        "question": "In the ConcatConditioningsWithMultiplier __Inspire node, what happens if `multiplier1` is not provided?",
+        "answer": "If `multiplier1` is not provided in the ConcatConditioningsWithMultiplier __Inspire node, its default value is 1.0, which means that the strength of the primary conditioning vector is not adjusted and it remains at full strength."
+    },
+    {
+        "question": "What is the `INFRA_TYPE` of the ConcatConditioningsWithMultiplier __Inspire node and how should it be used?",
+        "answer": "The ConcatConditioningsWithMultiplier __Inspire node has an `INFRA_TYPE` of `GPU` suggesting that it is optimized for processing on a GPU. This indicates that for optimal performance, the node should be used on systems equipped with a suitable GPU."
+    }
+]

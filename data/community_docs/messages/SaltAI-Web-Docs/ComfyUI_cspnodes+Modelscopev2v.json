@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Modelscopev2v node in ComfyUI?",
+        "answer": "The Modelscopev2v node in ComfyUI is designed to transform visual content from one domain to another, leveraging advanced models to understand and manipulate visual data at a high level, enabling complex visual transformations and enhancements."
+    },
+    {
+        "question": "What are the Required Inputs for the Modelscopev2v node, and what are their types?",
+        "answer": "The Required Inputs for the Modelscopev2v node include: 'video_frames' (IMAGE), 'prompt' (STRING), 'negative_prompt' (STRING), 'model_path' (STRING), 'strength' (FLOAT), 'num_inference_steps' (INT), 'guidance_scale' (FLOAT), 'seed' (INT), 'enable_forward_chunking' (BOOLEAN), and 'enable_vae_slicing' (BOOLEAN)."
+    },
+    {
+        "question": "How does the Modelscopev2v node control the intensity of the transformation?",
+        "answer": "The intensity of the transformation is controlled by the 'strength' input, which is a floating point number allowing for fine-tuning of the visual output's adherence to the prompt."
+    },
+    {
+        "question": "What determines the number of steps the model takes to perform the transformation in Modelscopev2v?",
+        "answer": "The number of steps the model takes to perform the transformation in Modelscopev2v is determined by the 'num_inference_steps' input, which affects the quality and detail of the output."
+    },
+    {
+        "question": "What type of data output does the Modelscopev2v node provide, and in what format?",
+        "answer": "The Modelscopev2v node provides 'image' output, represented as a List of torch.Tensor in PyTorch format, corresponding to the transformed video frames."
+    },
+    {
+        "question": "What class is responsible for the Modelscopev2v functionality in ComfyUI and what is its category?",
+        "answer": "The class responsible for the Modelscopev2v functionality in ComfyUI is 'Modelscopev2v', and it falls under the category 'cspnodes/modelscope'."
+    },
+    {
+        "question": "Which input in Modelscopev2v is used to steer away from certain transformations?",
+        "answer": "The 'negative_prompt' input in Modelscopev2v is used to steer away from certain transformations by providing a textual description of undesired elements or outcomes."
+    }
+]

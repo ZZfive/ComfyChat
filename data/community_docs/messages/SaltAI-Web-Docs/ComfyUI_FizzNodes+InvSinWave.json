@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the InvSinWave node used for in ComfyUI?",
+        "answer": "The InvSinWave node in ComfyUI is used for generating an inverse sine wave pattern, which can create dynamic, wave-like animations or effects by adjusting parameters such as phase, amplitude, x translation, and y translation over a series of frames."
+    },
+    {
+        "question": "Which parameter in the InvSinWave node affects the speed and spacing of the wave pattern?",
+        "answer": "The `phase` parameter in the InvSinWave node affects the speed and spacing of the wave pattern, as it defines the period of the wave, determining how many units it takes for the wave to complete one full cycle."
+    },
+    {
+        "question": "What effect does the amplitude parameter have on the InvSinWave node output?",
+        "answer": "The `amplitude` parameter in the InvSinWave node influences the height of the wave's peaks, thus affecting the wave's intensity and the range of its vertical movement."
+    },
+    {
+        "question": "In ComfyUI, which node can be used to translate a wave along the horizontal axis?",
+        "answer": "The InvSinWave node in ComfyUI can translate a wave along the horizontal axis by adjusting the `x_translation` parameter."
+    },
+    {
+        "question": "Which output type does the InvSinWave node provide for scenarios requiring discrete values?",
+        "answer": "The InvSinWave node provides an `int` output type, which outputs the integer representation of the wave value, useful for scenarios requiring discrete values."
+    },
+    {
+        "question": "How is the output wave value calculated by the InvSinWave node?",
+        "answer": "The output wave value calculated by the InvSinWave node is determined by the formula `(y_translation+(amplitude*-(np.sin(-1*(2*np.pi*current_frame/phase-x_translation)))))`, modifying the wave's amplitude based on the absolute value of the cosine function."
+    },
+    {
+        "question": "What type of calculation can the InvSinWave node in ComfyUI handle?",
+        "answer": "The InvSinWave node in ComfyUI can handle precise wave calculations and outputs the calculated wave value as a `float` data type."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Load Text File node in ComfyUI?",
+        "answer": "The Load Text File node in ComfyUI is designed to load text from a specified file, processing the text to exclude lines starting with specific characters and handling file path validations."
+    },
+    {
+        "question": "What are the required input types for the Load Text File node?",
+        "answer": "The required input types for the Load Text File node are `file_path` (the path to the text file to be loaded) and `dictionary_name` (an optional name for the dictionary key under which the loaded text lines will be stored, defaulting to the filename)."
+    },
+    {
+        "question": "What output types does the Load Text File node produce?",
+        "answer": "The Load Text File node produces two output types: `string` (the processed text line(s)) and `dict` (a dictionary mapping the dictionary name to the list of processed lines)."
+    },
+    {
+        "question": "What is the default value for the `dictionary_name` input in the Load Text File node?",
+        "answer": "The default value for the `dictionary_name` input in the Load Text File node is `[filename]`, which will use the filename of the loaded text file."
+    },
+    {
+        "question": "How does the Load Text File node handle file paths that cannot be found?",
+        "answer": "If the specified file path cannot be found, the Load Text File node will print an error message and return an empty string and a dictionary with an empty list under the specified dictionary name."
+    },
+    {
+        "question": "What does the Load Text File node do if a line in the text file starts with a specific character?",
+        "answer": "The Load Text File node will exclude any line in the text file that starts with specific characters during processing. This ensures that certain types of lines, such as comments starting with '#', are not included in the output."
+    },
+    {
+        "question": "How does the Load Text File node maintain a history of loaded files?",
+        "answer": "The Load Text File node maintains a history of loaded files and their respective lines for efficient data retrieval and manipulation by writing the file path to the file history."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the Bbox From Mask (mtb) node used for in ComfyUI?",
+        "answer": "The Bbox From Mask (mtb) node is designed to extract a bounding box from a given mask, optionally inverting the mask and considering an image for size compatibility."
+    },
+    {
+        "question": "What does the bounding box extracted by the Bbox From Mask (mtb) node represent?",
+        "answer": "The bounding box extracted by the Bbox From Mask (mtb) node represents the minimal bounding area that encapsulates the non-zero elements of the mask."
+    },
+    {
+        "question": "What are the required input types for the Bbox From Mask (mtb) node?",
+        "answer": "The required input types for the Bbox From Mask (mtb) node are `mask` (Comfy dtype: MASK, Python dtype: torch.Tensor) and `invert` (Comfy dtype: BOOLEAN, Python dtype: bool)."
+    },
+    {
+        "question": "Can the Bbox From Mask (mtb) node invert the input mask before extracting the bounding box?",
+        "answer": "Yes, the Bbox From Mask (mtb) node can invert the input mask before extracting the bounding box based on the boolean flag `invert`."
+    },
+    {
+        "question": "What is the purpose of the optional `image` input in the Bbox From Mask (mtb) node?",
+        "answer": "The optional `image` input in the Bbox From Mask (mtb) node ensures the extracted bounding box is compatible with the image's dimensions when provided."
+    },
+    {
+        "question": "What output types does the Bbox From Mask (mtb) node provide?",
+        "answer": "The Bbox From Mask (mtb) node provides output types `bbox` (Comfy dtype: BBOX, Python dtype: Tuple[int, int, int, int]) and optionally `image` (Comfy dtype: IMAGE, Python dtype: unknown)."
+    },
+    {
+        "question": "How is the bounding box coordinates calculated in the Bbox From Mask (mtb) node?",
+        "answer": "The bounding box coordinates are calculated by finding the non-zero indices of the mask, determining the minimum and maximum x and y values from these indices, and creating a bounding box tuple with the minimum x, minimum y, width, and height."
+    }
+]

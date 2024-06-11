@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is FL_ImagePixelator and where does it belong in ComfyUI?",
+        "answer": "FL_ImagePixelator is a custom node in ComfyUI belonging to the 'Fill Nodes' category. It applies pixelation effects to images."
+    },
+    {
+        "question": "What types of images can FL_ImagePixelator process?",
+        "answer": "FL_ImagePixelator can process images represented as either torch.Tensor or PIL images, supporting both individual images and batches."
+    },
+    {
+        "question": "How does the 'scale_factor' input of FL_ImagePixelator affect the pixelated image?",
+        "answer": "The 'scale_factor' input determines the intensity of the pixelation effect by scaling the image's resolution down before scaling it back up."
+    },
+    {
+        "question": "What is the role of the 'kernel_size' input in the FL_ImagePixelator node?",
+        "answer": "The 'kernel_size' input specifies the size of the kernel used in the additional processing step after pixelation, affecting the final appearance of the pixelated image."
+    },
+    {
+        "question": "What is the output format of FL_ImagePixelator and how does it relate to the input format?",
+        "answer": "The output of FL_ImagePixelator is in the same format as the input—either torch.Tensor or PIL.Image.Image—after pixelation effects are applied according to the specified scale factor and kernel size."
+    },
+    {
+        "question": "Which method is used for pixelation when the input image is of type PIL.Image.Image?",
+        "answer": "When the input image is of type PIL.Image.Image, the method 'apply_pixelation_pil' is used for pixelation in FL_ImagePixelator."
+    },
+    {
+        "question": "What modifications does FL_ImagePixelator make to input images of type torch.Tensor to ensure compatibility with pixelation?",
+        "answer": "For input images of type torch.Tensor, FL_ImagePixelator may add or remove the batch dimension to ensure compatibility with pixelation, depending on whether the input is a single image or a batch of images."
+    }
+]

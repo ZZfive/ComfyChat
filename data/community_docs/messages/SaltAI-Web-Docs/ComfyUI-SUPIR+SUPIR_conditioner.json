@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SUPIR_conditioner node in ComfyUI?",
+        "answer": "The SUPIR_conditioner node is designed to condition the input data for the SUPIR model, preparing it for further processing or generation tasks by integrating various conditioning elements such as positive and negative prompts."
+    },
+    {
+        "question": "What role does the SUPIR_model input play in the SUPIR_conditioner node?",
+        "answer": "The SUPIR_model input represents the SUPIR model to which the conditioning is applied, serving as the core component for the conditioning process."
+    },
+    {
+        "question": "How does the positive_prompt input contribute to the SUPIR_conditioner node's functionality?",
+        "answer": "The positive_prompt input is a text prompt that guides the model to generate or process data in a positive or desired direction, influencing the conditioning outcome."
+    },
+    {
+        "question": "What is the significance of the negative_prompt input in the SUPIR_conditioner node?",
+        "answer": "The negative_prompt input is a text prompt that guides the model to avoid certain patterns or themes, acting as a counterbalance to the positive prompt in the conditioning process."
+    },
+    {
+        "question": "What optional input does the SUPIR_conditioner node have, and how is it used?",
+        "answer": "The SUPIR_conditioner node has an optional input, 'captions', which can provide additional context or guidance for the conditioning process, further customizing the output. Captions are used to influence the conditioning based on provided text, either singularly or in a list matching the number of tiles or incoming image batch size."
+    },
+    {
+        "question": "What are the output types of the SUPIR_conditioner node?",
+        "answer": "The SUPIR_conditioner node outputs 'positive' and 'negative' data types, represented as 'SUPIR_cond_pos' and 'SUPIR_cond_neg', respectively, which are conditioned data tailored for positive outcomes and avoiding certain patterns or themes, ready for further processing by the SUPIR model."
+    },
+    {
+        "question": "How does the SUPIR_conditioner node handle batch captioning?",
+        "answer": "In batch captioning, the SUPIR_conditioner node processes each sample in a batch, applying individual captions if a list matching the batch size is given. Each image then uses a corresponding caption for conditioning."
+    }
+]

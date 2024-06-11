@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the BatchCropFromMask node designed to do in ComfyUI?",
+        "answer": "The BatchCropFromMask node in ComfyUI is designed to process a batch of masks and corresponding images, identifying and cropping out the relevant areas defined by the masks. It dynamically calculates the optimal bounding box for each mask to ensure that the cropped images retain the most significant parts of the original images, based on the presence of non-zero pixels in the masks."
+    },
+    {
+        "question": "What does the 'original_images' input parameter represent in BatchCropFromMask, and in what format does it need to be provided?",
+        "answer": "The 'original_images' parameter in BatchCropFromMask represents a batch of images that correspond to the masks provided. These images are cropped according to the calculated bounding boxes from the masks. It needs to be provided in the format of `torch.Tensor` as the Comfy dtype is `IMAGE`."
+    },
+    {
+        "question": "In BatchCropFromMask, what is the role of the 'masks' input parameter?",
+        "answer": "The 'masks' input parameter in BatchCropFromMask represents a batch of masks that define areas of interest within the corresponding images. It is crucial for determining the regions to crop, as the node calculates bounding boxes based on these masks provided in the format of `torch.Tensor` with the Comfy dtype `MASK`."
+    },
+    {
+        "question": "How does the 'crop_size_mult' parameter in BatchCropFromMask adjust the size of the crop?",
+        "answer": "The 'crop_size_mult' parameter in BatchCropFromMask acts as a multiplier to the calculated bounding box dimensions, enabling fine-tuning of the crop size based on specific requirements. When inputting this parameter, it should be in the `float` format as the Comfy dtype is `FLOAT`."
+    },
+    {
+        "question": "What is the purpose of the 'bbox_smooth_alpha' parameter in BatchCropFromMask, and how should it be configured?",
+        "answer": "The 'bbox_smooth_alpha' parameter in BatchCropFromMask is used to smooth the changes in bounding box sizes across different masks. This helps in achieving more consistent crop sizes and shapes by applying a smoothing factor to the size calculations. When configuring this parameter, it should be in the `float` format as the Comfy dtype is `FLOAT`."
+    },
+    {
+        "question": "Which output of BatchCropFromMask includes the images cropped according to the calculated bounding boxes?",
+        "answer": "The 'cropped_images' output of BatchCropFromMask includes the images cropped according to the calculated bounding boxes from the masks, focusing on the areas of interest. This output provides the images in the format of `torch.Tensor` with the Comfy dtype `IMAGE`."
+    },
+    {
+        "question": "In BatchCropFromMask, what does the 'width' output provide, and what is its Python dtype?",
+        "answer": "The 'width' output in BatchCropFromMask provides the width of the largest bounding box calculated across all masks, after adjustments and smoothing. The Python dtype for this output is `int`."
+    }
+]

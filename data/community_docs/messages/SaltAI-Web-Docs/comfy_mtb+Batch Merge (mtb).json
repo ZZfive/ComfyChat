@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Batch Merge (mtb) node in ComfyUI?",
+        "answer": "The Batch Merge (mtb) node in ComfyUI is designed to merge multiple image batches into a single batch, adjusting for different frame counts among the batches and applying a specified fusion method to combine images."
+    },
+    {
+        "question": "How does the Batch Merge (mtb) node handle frame count discrepancies between different image batches?",
+        "answer": "The Batch Merge (mtb) node handles frame count discrepancies by either repeating the first (head) or last (tail) frame of the batch according to the `fill` parameter."
+    },
+    {
+        "question": "Which class implements the functionality of the Batch Merge (mtb) node in ComfyUI?",
+        "answer": "The functionality of the Batch Merge (mtb) node in ComfyUI is implemented by the `MTB_BatchMerge` class."
+    },
+    {
+        "question": "What options are available for the `fusion_mode` parameter in the Batch Merge (mtb) node?",
+        "answer": "The options available for the `fusion_mode` parameter in the Batch Merge (mtb) node are `add`, `multiply`, and `average`, which determine how images from different batches are combined."
+    },
+    {
+        "question": "What is the output type of the Batch Merge (mtb) node and what Python dtype does it correspond to?",
+        "answer": "The output type of the Batch Merge (mtb) node is `IMAGE`, corresponding to the Python dtype `torch.Tensor`, representing the single image batch resulting from the merger."
+    },
+    {
+        "question": "Which infrastructure best suits running the Batch Merge (mtb) node?",
+        "answer": "The Batch Merge (mtb) node is best suited for running on a `GPU` infrastructure."
+    },
+    {
+        "question": "How are the input batches adjusted before merging by the Batch Merge (mtb) node?",
+        "answer": "Input batches are adjusted by either repeating the head or tail frame to match the maximum frame count before merging by the Batch Merge (mtb) node, based on the specified `fill` parameter."
+    }
+]

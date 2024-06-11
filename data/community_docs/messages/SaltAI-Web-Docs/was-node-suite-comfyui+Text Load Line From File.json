@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the 'Text Load Line From File' node designed to do in ComfyUI?",
+        "answer": "The 'Text Load Line From File' node in ComfyUI is designed to load a specific line or the next line from a text file based on the provided mode, supporting automatic sequential reading, reading by index, and handling multiline text inputs."
+    },
+    {
+        "question": "What are the required inputs for the 'Text Load Line From File' node?",
+        "answer": "The required inputs for the 'Text Load Line From File' node are `file_path`, `dictionary_name`, `label`, `mode`, and `index`. These inputs specify the file to load, how the loaded lines will be stored, for tracking the reading position, the method of line selection, and the exact line number to be read respectively."
+    },
+    {
+        "question": "What is the function of the `dictionary_name` input in the 'Text Load Line From File' node?",
+        "answer": "The `dictionary_name` input in the 'Text Load Line From File' node defines the name of the dictionary key under which the loaded lines will be stored, customizable or set to the default, which is the filename, impacting how the loaded text is referenced and utilized."
+    },
+    {
+        "question": "How does the 'Text Load Line From File' node handle file paths and reading positions?",
+        "answer": "The 'Text Load Line From File' node integrates a database for tracking read positions and file paths, facilitating efficient text batch processing by ensuring continuity in reading across invocations and managing access to multiple files."
+    },
+    {
+        "question": "What is the purpose of the `multiline_text` input in the 'Text Load Line From File' node?",
+        "answer": "The `multiline_text` input in the 'Text Load Line From File' node allows for direct input of text content bypassing file reading, supporting line selection based on the mode and index, providing an alternative way to supply and manipulate text content independent of file access."
+    },
+    {
+        "question": "What outputs does the 'Text Load Line From File' node provide?",
+        "answer": "The 'Text Load Line From File' node outputs `line_text` and `dictionary`. The `line_text` is the specific line of text loaded from the file or multiline text input based on the mode, and the `dictionary` is a dictionary containing the loaded lines under a specified key."
+    },
+    {
+        "question": "What does the mode selection in 'Text Load Line From File' dictate?",
+        "answer": "The mode selection in 'Text Load Line From File' dictates the method of line selection: 'automatic' for sequential reading, 'index' for access to a specific line by index, or handling 'multiline_text' directly, influencing how the text is accessed and loaded."
+    }
+]

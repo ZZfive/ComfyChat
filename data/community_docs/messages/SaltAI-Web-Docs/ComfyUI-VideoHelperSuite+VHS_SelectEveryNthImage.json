@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the VHS_SelectEveryNthImage node in ComfyUI?",
+        "answer": "The VHS_SelectEveryNthImage node in ComfyUI is designed to filter through a batch of images, selecting every nth image according to a specified interval, which is useful for thinning out image datasets or preparing sequences of images for processing that requires reduced density."
+    },
+    {
+        "question": "What inputs does the VHS_SelectEveryNthImage node require?",
+        "answer": "The VHS_SelectEveryNthImage node requires two inputs: 'images', which is the collection of images to be filtered, and 'select_every_nth', which defines the interval at which images are selected from the input batch."
+    },
+    {
+        "question": "What types of data does the 'images' input parameter of the VHS_SelectEveryNthImage node accept?",
+        "answer": "The 'images' input parameter of the VHS_SelectEveryNthImage node accepts Comfy dtype 'IMAGE' and Python dtype 'Tensor'."
+    },
+    {
+        "question": "What is the function of the 'select_every_nth' parameter in the VHS_SelectEveryNthImage node?",
+        "answer": "The 'select_every_nth' parameter in the VHS_SelectEveryNthImage node specifies the interval at which images are selected from the input batch. An interval of 'n' means every nth image is kept, with the rest discarded, effectively thinning the batch."
+    },
+    {
+        "question": "What output types does the VHS_SelectEveryNthImage node produce?",
+        "answer": "The VHS_SelectEveryNthImage node produces two output types: 'IMAGE', which is the filtered subset of images where only every nth image from the original batch is included, and 'count', which is the total number of images selected and returned by the node."
+    },
+    {
+        "question": "What is the Comfy dtype for the 'IMAGE' output of the VHS_SelectEveryNthImage node?",
+        "answer": "The Comfy dtype for the 'IMAGE' output of the VHS_SelectEveryNthImage node is 'IMAGE', and the Python dtype is 'Tensor'."
+    },
+    {
+        "question": "How is the Python function for the VHS_SelectEveryNthImage node defined in the source code?",
+        "answer": "The Python function for the VHS_SelectEveryNthImage node is defined as 'select_images', which takes 'images' of type Tensor and 'select_every_nth' of type int as parameters, and returns the sub-images and the count of selected images."
+    }
+]

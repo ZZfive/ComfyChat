@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the RAFTEstimate node used for in ComfyUI?",
+        "answer": "The RAFTEstimate node is designed to estimate the optical flow between two images using the RAFT algorithm, providing a straightforward way to obtain motion vectors that describe the apparent motion of objects between consecutive images."
+    },
+    {
+        "question": "What are the required input types for the RAFTEstimate node?",
+        "answer": "The required input types for the RAFTEstimate node are 'image_a' and 'image_b', both of dtype 'IMAGE' and type 'torch.Tensor'."
+    },
+    {
+        "question": "How does the RAFTEstimate node process the images to estimate optical flow?",
+        "answer": "The RAFTEstimate node first ensures the input images 'image_a' and 'image_b' are of type 'torch.Tensor'. Then, it preprocesses the images, loads the RAFT model, and computes the optical flow using the model, returning the best flow estimate."
+    },
+    {
+        "question": "What is the output type of the RAFTEstimate node?",
+        "answer": "The output type of the RAFTEstimate node is 'RAFT_FLOW', represented as a tensor of motion vectors between the two input images."
+    },
+    {
+        "question": "Which images do 'image_a' and 'image_b' represent in the RAFTEstimate node?",
+        "answer": "'image_a' is the first image in a sequence and 'image_b' is the second image, following 'image_a', against which the movements and the optical flow are estimated."
+    },
+    {
+        "question": "Can RAFTEstimate be used to estimate the motion vectors between multiple images?",
+        "answer": "No, the RAFTEstimate node is specifically designed to estimate the motion vectors between two images, 'image_a' and 'image_b'."
+    },
+    {
+        "question": "What is the infrastructure type that the RAFTEstimate node utilizes?",
+        "answer": "The RAFTEstimate node utilizes a 'GPU' infrastructure type for optical flow estimation between the two images."
+    }
+]

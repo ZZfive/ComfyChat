@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the main function of the VRAM_Debug node in ComfyUI?",
+        "answer": "The VRAM_Debug node is designed to monitor and manage video RAM (VRAM) usage, providing functionalities to clear memory caches, unload all models from memory, and perform garbage collection to optimize VRAM."
+    },
+    {
+        "question": "Which input allows the VRAM_Debug node to clear PyTorch's cache?",
+        "answer": "The 'empty_cache' input allows the VRAM_Debug node to clear PyTorch's cache, potentially freeing up significant VRAM."
+    },
+    {
+        "question": "What type of data is expected for the 'gc_collect' input in the VRAM_Debug node?",
+        "answer": "The 'gc_collect' input expects a BOOLEAN data type, which determines whether garbage collection is performed to free up unused memory and optimize VRAM usage."
+    },
+    {
+        "question": "How can models be unloaded from memory using the VRAM_Debug node?",
+        "answer": "Models can be unloaded from memory by using the 'unload_all_models' input, indicating whether all models should be unloaded, which can drastically reduce VRAM usage."
+    },
+    {
+        "question": "What does the 'any_input' input in the VRAM_Debug node allow?",
+        "answer": "The 'any_input' input allows for any additional input to be passed through the VRAM_Debug node, providing flexibility in its application."
+    },
+    {
+        "question": "What is the purpose of the 'image_pass' input in the VRAM_Debug node?",
+        "answer": "The 'image_pass' input is an optional input that allows image data to be passed through the VRAM_Debug node without modification."
+    },
+    {
+        "question": "How does the VRAM_Debug node report VRAM usage?",
+        "answer": "The VRAM_Debug node reports the amount of free VRAM before and after its operations through the 'freemem_before' and 'freemem_after' outputs, respectively."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ApplyInstantIDControlNet node in ComfyUI?",
+        "answer": "The ApplyInstantIDControlNet node is designed to apply a control network to modify facial embeddings based on specified conditions, achieving targeted modifications in facial representations."
+    },
+    {
+        "question": "What are the input requirements for the ApplyInstantIDControlNet node?",
+        "answer": "The ApplyInstantIDControlNet node requires facial embeddings (`face_embeds`), a control network model (`control_net`), image keypoints (`image_kps`), positive conditioning phrases (`positive`), negative conditioning phrases (`negative`), a strength value (`strength`), a start point in the process (`start_at`), and an end point in the process (`end_at`)."
+    },
+    {
+        "question": "Which input in ApplyInstantIDControlNet node represents the intensity of modifications?",
+        "answer": "The `strength` input in the ApplyInstantIDControlNet node represents the intensity of modifications applied by the control network."
+    },
+    {
+        "question": "What optional input can be used with the ApplyInstantIDControlNet node for localizing modifications?",
+        "answer": "An optional input, `mask`, can be used with the ApplyInstantIDControlNet node to localize the modifications applied by the control network."
+    },
+    {
+        "question": "What type of data does the `face_embeds` input expect in the ApplyInstantIDControlNet node?",
+        "answer": "The `face_embeds` input in the ApplyInstantIDControlNet node expects `FACE_EMBEDS` (a data representation of facial features) and corresponds to the Python data type `torch.Tensor`."
+    },
+    {
+        "question": "What determines whether a face embedding modification is applied in the ApplyInstantIDControlNet node?",
+        "answer": "In the ApplyInstantIDControlNet node, modifications to facial embeddings are determined based on the control network model (`control_net`), image keypoints guiding the process (`image_kps`), and conditioning phrases specifying desired and undesired attributes (`positive` and `negative` conditions)."
+    },
+    {
+        "question": "What infrastructure is required for running the ApplyInstantIDControlNet node according to the documentation?",
+        "answer": "The ApplyInstantIDControlNet node requires a GPU infra type for running according to the documentation."
+    }
+]

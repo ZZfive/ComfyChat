@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the Masks Combine Batch node used for in ComfyUI?",
+        "answer": "The Masks Combine Batch node is designed to combine multiple mask tensors into a single mask tensor by summing them up, ensuring the resulting mask values are clamped between 0 and 1."
+    },
+    {
+        "question": "What is the Python data type for the 'masks' input in the Masks Combine Batch node?",
+        "answer": "The Python data type for the 'masks' input in the Masks Combine Batch node is `List[torch.Tensor]`."
+    },
+    {
+        "question": "In what category does the Masks Combine Batch node fall under in ComfyUI?",
+        "answer": "The Masks Combine Batch node falls under the 'WAS Suite/Image/Masking' category in ComfyUI."
+    },
+    {
+        "question": "How does the Masks Combine Batch node process the 'masks' input?",
+        "answer": "The Masks Combine Batch node processes the 'masks' input by using `torch.sum` to sum up the batch of mask tensors along the zeroth dimension, then it clamps the combined mask tensor's values between 0 and 1."
+    },
+    {
+        "question": "What is the output data type of the Masks Combine Batch node in ComfyUI?",
+        "answer": "The output data type of the Masks Combine Batch node in ComfyUI is a single mask tensor of type `torch.Tensor`."
+    },
+    {
+        "question": "What infrastructure type is associated with the Masks Combine Batch node?",
+        "answer": "The Masks Combine Batch node is associated with the 'GPU' infrastructure type."
+    },
+    {
+        "question": "What does the Masks Combine Batch node's method `combine_masks` do with the input masks?",
+        "answer": "The `combine_masks` method of the Masks Combine Batch node stacks all input masks, sums them up, and then clamps the resulting tensor's values to ensure they are within the 0 to 1 range."
+    }
+]

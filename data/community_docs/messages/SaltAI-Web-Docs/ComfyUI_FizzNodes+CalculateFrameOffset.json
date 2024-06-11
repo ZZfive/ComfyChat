@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CalculateFrameOffset node in the context of animation or simulation frame management?",
+        "answer": "The CalculateFrameOffset node is designed to calculate the offset for frame numbers in a sequence, facilitating the management of frame-based operations in animations or simulations, ensuring seamless transitions and looping in frame sequences."
+    },
+    {
+        "question": "What are the required input types for the CalculateFrameOffset node?",
+        "answer": "The required input types for the CalculateFrameOffset node include `current_frame` specifying the current frame in the sequence, `max_frames` defining the maximum number of frames, `num_latent_inputs` indicating the number of latent inputs, and `index` representing an index used in the offset calculation."
+    },
+    {
+        "question": "What does the `current_frame` input represent in the CalculateFrameOffset node?",
+        "answer": "The `current_frame` input represents the current frame in the sequence and is crucial for determining the starting point for the offset calculation."
+    },
+    {
+        "question": "What determines the correct looping of frame numbers within the sequence limits in the CalculateFrameOffset node?",
+        "answer": "The correct looping of frame numbers within the sequence limits in the CalculateFrameOffset node is determined by the `max_frames` input, which defines the maximum number of frames in the sequence."
+    },
+    {
+        "question": "How does the `num_latent_inputs` input influence the frame offset calculation in the CalculateFrameOffset node?",
+        "answer": "The `num_latent_inputs` input influences the frame offset calculation in the CalculateFrameOffset node by adjusting the spacing between frames, impacting the calculated frame offset."
+    },
+    {
+        "question": "What is returned by the CalculateFrameOffset node and its significance in determining the next frame?",
+        "answer": "The CalculateFrameOffset node returns the calculated frame offset as an integer, which facilitates the determination of the next frame in the sequence."
+    },
+    {
+        "question": "How is the frame offset calculated when the `current_frame` is not equal to 0 in the CalculateFrameOffset node?",
+        "answer": "When the `current_frame` is not equal to 0, the frame offset is calculated using the formula `(current_frame - 1) * (num_latent_inputs - 1) + (num_latent_inputs-1)`, then the `index` is added to the result and the total is taken modulo `max_frames` to ensure it loops correctly within the sequence limits."
+    }
+]

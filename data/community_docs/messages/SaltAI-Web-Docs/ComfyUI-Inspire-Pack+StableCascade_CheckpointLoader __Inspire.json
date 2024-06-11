@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the function of the StableCascade_CheckpointLoader in the InspirePack/Backend category?",
+        "answer": "The StableCascade_CheckpointLoader is designed to efficiently manage and load model checkpoints in a cascading manner, utilizing caching mechanisms to avoid redundant loads and enhance performance in model deployment scenarios."
+    },
+    {
+        "question": "What does the 'stage_b' input parameter specify in the StableCascade_CheckpointLoader?",
+        "answer": "The 'stage_b' parameter specifies the checkpoint for the 'b' stage model, which is essential for identifying and loading the correct 'b' stage model, with an option to utilize caching for improved efficiency."
+    },
+    {
+        "question": "Which output does the StableCascade_CheckpointLoader provide to support multimodal operations?",
+        "answer": "The StableCascade_CheckpointLoader provides the 'c_clip_vision' output which is the CLIP vision component loaded alongside the 'c' stage model, facilitating multimodal operations."
+    },
+    {
+        "question": "What is the purpose of the 'key_opt_b' input parameter?",
+        "answer": "The 'key_opt_b' input serves as an optional key for the 'b' stage checkpoint to uniquely identify it in the cache, allowing for precise cache management and retrieval."
+    },
+    {
+        "question": "What Python dtype is associated with the 'c_vae' output of the StableCascade_CheckpointLoader?",
+        "answer": "The 'c_vae' output of the StableCascade_CheckpointLoader has the Python dtype 'torch.nn.Module'."
+    },
+    {
+        "question": "How does the StableCascade_CheckpointLoader handle caching in the context of the 'stage_c' model?",
+        "answer": "The caching strategy for 'stage_c' is determined by the 'cache_mode' input parameter. If 'cache_mode' is set to 'stage_c' or 'all', the 'stage_c' model will be cached, enhancing efficiency by avoiding redundant loading."
+    },
+    {
+        "question": "What does the 'key_c' output represent in the StableCascade_CheckpointLoader?",
+        "answer": "The 'key_c' output in the StableCascade_CheckpointLoader represents the cache key associated with the 'c' stage model, reflecting its cache status or identifier."
+    }
+]

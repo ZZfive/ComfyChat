@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ttN pipeLoaderSDXL_v2 node in ComfyUI?",
+        "answer": "The ttN pipeLoaderSDXL_v2 node in ComfyUI is designed to load and initialize the Stable Diffusion XL model for image generation tasks, providing an enhanced version with optimizations for larger scale operations."
+    },
+    {
+        "question": "Which input parameter of the ttN pipeLoaderSDXL_v2 node determines the model version for image generation?",
+        "answer": "The `ckpt_name` input parameter of the ttN pipeLoaderSDXL_v2 node determines the checkpoint name for the Stable Diffusion XL model, crucial for loading the correct model version for image generation."
+    },
+    {
+        "question": "What does the `clip_skip` parameter in the ttN pipeLoaderSDXL_v2 node do?",
+        "answer": "The `clip_skip` parameter in the ttN pipeLoaderSDXL_v2 node determines the number of layers to skip in the CLIP model, affecting the integration of textual guidance."
+    },
+    {
+        "question": "What is the output of the ttN pipeLoaderSDXL_v2 node that is used for image generation?",
+        "answer": "The output of the ttN pipeLoaderSDXL_v2 node that is used for image generation is `sdxl_pipe`, which provides the initialized Stable Diffusion XL pipeline, ready for image generation tasks."
+    },
+    {
+        "question": "What is the purpose of the `loras` input parameter in the ttN pipeLoaderSDXL_v2 node?",
+        "answer": "The `loras` input parameter in the ttN pipeLoaderSDXL_v2 node specifies LoRA modifications to apply, enhancing model capabilities with additional parameters."
+    },
+    {
+        "question": "Which parameters are used to specify image aspect ratios in the ttN pipeLoaderSDXL_v2 node?",
+        "answer": "The `empty_latent_aspect` and `conditioning_aspect` parameters in the ttN pipeLoaderSDXL_v2 node are used to specify image aspect ratios for creating empty latents and conditioning inputs, respectively."
+    },
+    {
+        "question": "How is the `target_aspect` parameter in the ttN pipeLoaderSDXL_v2 node calculated based on other aspects?",
+        "answer": "If `target_aspect` is specified and not \"width x height [custom]\", the factor specified in `target_aspect` is multiplied by the width and height of `empty_latent_aspect` to calculate `target_width` and `target_height`."
+    }
+]

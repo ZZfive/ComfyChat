@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is FaceFixerOpenCV and what is its intended use?",
+        "answer": "FaceFixerOpenCV is a custom node in ComfyUI designed to enhance and modify facial features within images using OpenCV. It is used to detect faces in images and apply transformations such as resizing, denoising, and blending with other facial features to improve or alter their appearance."
+    },
+    {
+        "question": "What are the required input types for the FaceFixerOpenCV node?",
+        "answer": "The required input types for the FaceFixerOpenCV node include an image tensor (`image`), the base model for generating or enhancing facial features (`base_model`), the variational autoencoder (`vae`), positive conditioning (`positive_cond_base`), negative conditioning (`negative_cond_base`), a seed value for reproducibility (`seed`), face image resolution (`face_img_resolution`), padding size (`padding`), scale factor (`scale_factor`), min neighbors threshold (`min_neighbors`), denoising level (`denoise`), classifier model (`classifier`), sampling method (`sampler_name`), scheduler for sampling process (`scheduler`), configuration settings (`cfg`), and the number of steps in the face fixing process (`steps`)."
+    },
+    {
+        "question": "Which output does FaceFixerOpenCV produce and in what format?",
+        "answer": "FaceFixerOpenCV produces a modified image tensor (`image`) with enhanced or altered facial features. This output is in the format recognized by ComfyUI as `IMAGE` and is represented by a `torch.Tensor` in Python."
+    },
+    {
+        "question": "What types of classifier models can be used with FaceFixerOpenCV?",
+        "answer": "FaceFixerOpenCV supports various classifier models, including 'animeface', 'combined', 'haarcascade_frontalface_default.xml', 'haarcascade_profileface.xml', 'haarcascade_frontalface_alt.xml', 'haarcascade_frontalface_alt2.xml', 'haarcascade_upperbody.xml', 'haarcascade_fullbody.xml', 'haarcascade_lowerbody.xml', 'haarcascade_frontalcatface.xml', and 'hands'. These classifiers help the node find different types of faces in the images."
+    },
+    {
+        "question": "How does FaceFixerOpenCV handle faces that are detected in an image?",
+        "answer": "FaceFixerOpenCV crops each detected face from the image, processes it individually to enhance or alter features such as size and noise level, and then blends the modified face back into the original image using a feathered mask to ensure a smooth transition."
+    },
+    {
+        "question": "What is the significance of the `cfg` input in FaceFixerOpenCV?",
+        "answer": "The `cfg` input in FaceFixerOpenCV represents configuration settings for the face fixing process. It is a float type value that can range from 0.0 to 1000.0, allowing for detailed control over how facial features are improved or altered during processing."
+    },
+    {
+        "question": "Which nodes are commonly used in conjunction with FaceFixerOpenCV?",
+        "answer": "The `Save Image With Prompt Data` node is commonly used after the facial features have been enhanced or altered by FaceFixerOpenCV. This node allows for saving the processed image with additional metadata, such as prompt data that describes the alterations made."
+    }
+]

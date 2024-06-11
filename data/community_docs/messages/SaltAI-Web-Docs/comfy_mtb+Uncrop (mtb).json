@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Uncrop (mtb) node in ComfyUI?",
+        "answer": "The Uncrop (mtb) node is designed to reverse the cropping process on images, restoring them to their original dimensions or to a specified larger context, which is essential for operations where the spatial context of an image needs to be preserved or reconstructed after it has been cropped."
+    },
+    {
+        "question": "What are the required inputs for the Uncrop (mtb) node?",
+        "answer": "The required inputs for the Uncrop (mtb) node are `image`, `crop_image`, `bbox`, and `border_blending`. `image` is the original image serving as the background for the uncropping process, `crop_image` is the cropped image to be integrated back, `bbox` is the bounding box specifying where the cropped image should be placed, and `border_blending` controls the blending of borders between the cropped and original images."
+    },
+    {
+        "question": "What is the Infra type of the Uncrop (mtb) node?",
+        "answer": "The Infra type of the Uncrop (mtb) node is `GPU`."
+    },
+    {
+        "question": "What is the class name of the Uncrop (mtb) node in ComfyUI?",
+        "answer": "The class name of the Uncrop (mtb) node is `Uncrop (mtb)`."
+    },
+    {
+        "question": "What type of input does the `image` parameter require and how is it represented in ComfyUI?",
+        "answer": "The `image` parameter requires an input of type `IMAGE` that represents the original image which will serve as the background for the uncropping process. In ComfyUI, this is represented as a `torch.Tensor`."
+    },
+    {
+        "question": "What is the purpose of the `border_blending` parameter in the Uncrop (mtb) node?",
+        "answer": "The `border_blending` parameter in the Uncrop (mtb) node is used to control the blending of the borders between the cropped image and the original image, ensuring a seamless transition and integration of the cropped content into the original image's context."
+    },
+    {
+        "question": "What does the Uncrop (mtb) node return after the uncropping process?",
+        "answer": "After the uncropping process, the Uncrop (mtb) node returns an `image` that represents the image after the uncropping process has been applied, showing the cropped content seamlessly integrated into the original image's context. This output is of type `IMAGE` and represented as a `torch.Tensor` in ComfyUI."
+    }
+]
