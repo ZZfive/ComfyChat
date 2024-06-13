@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DetailerForEachTest节点的主要功能是什么？",
+        "answer": "DetailerForEachTest节点的主要功能是在不损害原始图像完整性的情况下通过单独处理每个图像段来增强图像细节，专注于图像内的感兴趣区域，以提高视觉清晰度和细节。"
+    },
+    {
+        "question": "哪些参数是DetailerForEachTest节点的必须输入？",
+        "answer": "DetailerForEachTest节点必须输入的参数包括：image（输入图像张量）、segs（分割数据）、model（用于细节增强的模型）、guide_size（引导尺寸）、guide_size_for（引导尺寸用于）、max_size（最大尺寸）、seed（随机种子）、steps（增强步数）、cfg（配置设置）、sampler_name（采样器名称）和scheduler（学习率调度器）。"
+    },
+    {
+        "question": "DetailerForEachTest节点如何处理噪声和图像修复？",
+        "answer": "DetailerForEachTest节点通过应用去噪步骤和根据force_inpaint开关执行修复操作来处理噪声和图像修复。"
+    },
+    {
+        "question": "DetailerForEachTest节点支持哪些可选输入参数来进一步调整图像处理？",
+        "answer": "DetailerForEachTest节点支持一些可选输入参数，包括CLIP张量（clip）、变分自编码器（vae）、denoise（去噪开关）、inpaint_model（修复模型）、noise_mask（噪声掩码张量）、feather（羽化参数）、cycles（重复周期数）、noise_mask_feather（噪声掩码羽化值）、以及wildcard和detailer_hook，用于动态选择增强选项和执行自定义操作。"
+    },
+    {
+        "question": "DetailerForEachTest节点的输出包括哪些类型和什么内容？",
+        "answer": "DetailerForEachTest节点的主要输出包括增强图像张量（enhanced_img），以及一系列列表类型的输出，如裁剪图像张量列表（cropped）、增强的裁剪图像张量列表（cropped_enhanced）、带有alpha通道的增强裁剪图像张量列表（cropped_enhanced_alpha），和在增强过程生成的PIL图像列表（cnet_images）。"
+    },
+    {
+        "question": "使用DetailerForEachTest节点时需要考虑的运行环境是什么？",
+        "answer": "使用DetailerForEachTest节点时，需要考虑的运行环境是GPU基础设施（Infra type: GPU），以便能够高效地处理图像细节增强。"
+    },
+    {
+        "question": "DetailerForEachTest节点中的wildcard参数有什么作用？",
+        "answer": "DetailerForEachTest节点中的wildcard参数允许基于某些条件动态选择增强选项，为节点如何对图像的不同段应用增强提供灵活性。"
+    }
+]

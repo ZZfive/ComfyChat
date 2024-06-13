@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ComfyUI中的easy imageScaleDown节点有什么功能？",
+        "answer": "easy imageScaleDown节点用于将输入图像调整到指定的宽度和高度，可能通过中心裁剪来保持长宽比的完整性，适用于预处理图像以适应机器学习模型和应用程序的输入要求。"
+    },
+    {
+        "question": "imageScaleDown节点处理图像时如何确定输出尺寸？",
+        "answer": "imageScaleDown节点通过用户指定的宽度和高度参数来确定输出图像的尺寸，这决定了缩放过程中的水平和垂直维度大小。"
+    },
+    {
+        "question": "在imageScaleDown节点中，crop参数的作用是什么？",
+        "answer": "crop参数在imageScaleDown节点中用于指定调整大小时的裁剪方法，决定图像在缩放前是否进行居中裁剪以增强输出的视觉效果。"
+    },
+    {
+        "question": "哪些参数是imageScaleDown节点的必需输入？",
+        "answer": "imageScaleDown节点的必需输入参数包括要缩小的图像（images）、期望的宽度（width）和高度（height），这些直接决定了输出图像的尺寸和质量。"
+    },
+    {
+        "question": "imageScaleDown节点的输出类型是什么？",
+        "answer": "imageScaleDown节点的输出类型为IMAGE，即调整大小后的图像，以torch.Tensor的数据格式提供，准备进行后续处理或分析。"
+    },
+    {
+        "question": "如何使用‘crop’参数优化imageScaleDown的处理结果？",
+        "answer": "通过设置‘crop’参数为'center'，imageScaleDown节点在调整图像尺寸前会进行中心裁剪，以确保缩放后图像的视觉效果更加适宜。"
+    },
+    {
+        "question": "imageScaleDown节点对输入图像做中心裁剪的逻辑是如何实现的？",
+        "answer": "当‘crop’参数设置为'center'时，imageScaleDown节点会根据图像的原始和目标长宽比计算出需裁剪的中心坐标，确保缩放过程维持了图像的中心视图和长宽比的完整性。"
+    }
+]

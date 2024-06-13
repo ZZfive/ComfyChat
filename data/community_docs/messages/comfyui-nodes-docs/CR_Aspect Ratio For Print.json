@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_AspectRatioForPrint节点的用途是什么?",
+        "answer": "CR_AspectRatioForPrint节点用于根据指定的宽高比计算和调整图像或打印的尺寸，它在ComfyUI中满足各种打印需求，为图像尺寸的精确调整提供便利。"
+    },
+    {
+        "question": "哪些输入参数是CR_AspectRatioForPrint节点必须的?",
+        "answer": "宽度(width)、高度(height)、宽高比(aspect_ratio)、交换维度(swap_dimensions)、放大因子(upscale_factor)、预缩放因子(prescale_factor)和批次大小(batch_size)是CR_AspectRatioForPrint节点的必需输入参数。"
+    },
+    {
+        "question": "ComfyUI中CR_AspectRatioForPrint节点如何处理宽高比?",
+        "answer": "CR_AspectRatioForPrint节点使用输入的宽高比参数调整图像尺寸，如果宽高比在预定义的打印尺寸中，将直接应用该尺寸，否则节点将依据输入的尺寸和宽高比计算调整后的尺寸。"
+    },
+    {
+        "question": "CR_AspectRatioForPrint节点的输出具体有哪些?",
+        "answer": "CR_AspectRatioForPrint节点的输出包括调整后的宽度和高度、用于放大图像的缩放因子(upscale_factor)、预缩放因子(prescale_factor)、处理的图像数量(batch_size)，以及处理后的空潜在表示(empty_latent)和帮助文档链接(show_help)。"
+    },
+    {
+        "question": "swap_dimensions参数的作用是什么?",
+        "answer": "在CR_AspectRatioForPrint节点中，swap_dimensions参数允许用户交换宽度和高度维度，这使得在某些打印需求或图像展示设置下，用户可以灵活调整图像的方向或布局。"
+    },
+    {
+        "question": "CR_AspectRatioForPrint节点的'batch_size'参数影响什么?",
+        "answer": "batch_size参数指定CR_AspectRatioForPrint节点一次可以处理的图像数量，这对于高效地批量处理或缩放多张图像至关重要。"
+    },
+    {
+        "question": "empty_latent输出代表什么?",
+        "answer": "empty_latent输出在CR_AspectRatioForPrint节点中代表处理后的图像空潜在表示，它通常被用于后续的图像处理任务，如应用于其他节点进行进一步的图像生成或修改。"
+    }
+]

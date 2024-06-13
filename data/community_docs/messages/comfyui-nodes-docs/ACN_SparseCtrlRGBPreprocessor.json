@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ACN_SparseCtrlRGBPreprocessor是什么节点?",
+        "answer": "ACN_SparseCtrlRGBPreprocessor，或称为RgbSparseCtrlPreprocessor，是ComfyUI中的一个自定义节点，专注于处理涉及稀疏控制机制的图像数据，以便高级控制网络应用的预处理阶段。"
+    },
+    {
+        "question": "ACN_SparseCtrlRGBPreprocessor的输入要求有哪些?",
+        "answer": "ACN_SparseCtrlRGBPreprocessor需要image（图像）、vae（变分自编码器模型）和latent_size（潜在空间的维度）作为输入。其中image和latent_size的类型是torch.Tensor，vae的类型是comfy.sd.VAE。"
+    },
+    {
+        "question": "哪些输入对于RgbSparseCtrlPreprocessor节点至关重要?",
+        "answer": "对于RgbSparseCtrlPreprocessor节点，image（图像）参数是至关重要的，因为它代表了将被放大和编码的原始输入，是影响节点输出和控制网络中后续处理的基本元素。"
+    },
+    {
+        "question": "ACN_SparseCtrlRGBPreprocessor如何处理图像数据?",
+        "answer": "ACN_SparseCtrlRGBPreprocessor节点首先将输入图像放大以匹配潜在大小，然后使用指定的变分自编码器（VAE）模型将图像编码为潜在空间表示，最终以预处理格式包装编码数据，专为高级控制网络设计。"
+    },
+    {
+        "question": "ACN_SparseCtrlRGBPreprocessor的主要输出类型是什么?",
+        "answer": "ACN_SparseCtrlRGBPreprocessor的主要输出类型是proc_IMAGE，这是输入图像的预处理版本，编码为潜在空间表示。此输出与高级控制网络节点兼容，不适用于其他类型的图像输入。"
+    },
+    {
+        "question": "ACN_SparseCtrlRGBPreprocessor适合在哪个硬件环境运行?",
+        "answer": "根据使用提示，ACN_SparseCtrlRGBPreprocessor节点的基础设施类型为GPU，意味着它适用于图形处理器上运行以加速图像处理和编码工作。"
+    },
+    {
+        "question": "在ComfyUI中，如何调用ACN_SparseCtrlRGBPreprocessor的preprocess_images方法?",
+        "answer": "在ComfyUI中调用ACN_SparseCtrlRGBPreprocessor的preprocess_images方法，需要传递一个VAE类型（comfy.sd.VAE）的vae参数，一个Tensor类型的image参数，以及一个定义潜在空间维度的latent_size参数（类型为Dict[str, torch.Tensor]）。"
+    }
+]

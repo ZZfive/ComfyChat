@@ -1,0 +1,42 @@
+[
+    {
+        "question": "CR_TextScheduler节点的作用是什么？",
+        "answer": "CR_TextScheduler是ComfyUI的一个自定义节点，用于管理和根据时间表插值文本提示，能够在关键帧列表的指导下生成动态、随项目或场景变化而变化的提示文本。"
+    },
+    {
+        "question": "ComfyUI中的CR_TextScheduler节点工作在哪两种模式下？",
+        "answer": "CR_TextScheduler节点可以在默认文本模式('Default Text')和调度模式('Schedule')下运行，这两种模式决定了节点如何处理输入数据来生成文本输出。"
+    },
+    {
+        "question": "CR_TextScheduler中的'schedule_format'选项提供了几种类型的时间表格式？",
+        "answer": "CR_TextScheduler节点的'schedule_format'参数提供了两种格式选项，'CR'和'Deforum'，用于定义时间表数据的结构和语法，确保关键帧列表能被正确解析和解释。"
+    },
+    {
+        "question": "当前帧参数（current_frame）在CR_TextScheduler中起到什么作用？",
+        "answer": "当前帧参数（current_frame）用于指定文本提示生成的特定时间点，是调度器根据关键帧列表确定正确文本所需的关键信息。"
+    },
+    {
+        "question": "在CR_TextScheduler中，如何解决当前帧没有特定文本安排的问题？",
+        "answer": "当当前帧没有指定文本时，CR_TextScheduler将使用'default_text'参数设置的初始或备用文本作为替代。"
+    },
+    {
+        "question": "CR_TextScheduler的输出类型分别是什么？",
+        "answer": "CR_TextScheduler的输出类型包括'text_out'，代表调度器生成的文本提示，以及'show_help'，提供指向节点操作相关文档或帮助页面的URL链接。"
+    },
+    {
+        "question": "CR_TextScheduler中，'show_help'输出类型的具体功能是什么？",
+        "answer": "'show_help'输出类型为用户提供了一个URL链接，指向CR_TextScheduler节点操作的文档或帮助页面，以便于用户获取额外的指导和信息。"
+    },
+    {
+        "question": "当在CR_TextScheduler中选择'Default Text'模式时，节点如何响应？",
+        "answer": "当选择'Default Text'模式时，CR_TextScheduler将禁用调度器，直接使用'default_text'参数设置的文本进行输出，不涉及时间表的调度处理。"
+    },
+    {
+        "question": "如何在CR_TextScheduler中管理多个时间表？",
+        "answer": "在CR_TextScheduler中，通过'schedule_alias'参数可以识别和管理多个时间表，尤其是当同时处理多个时间表时，它可以有效地区分和控制不同的时间表。"
+    },
+    {
+        "question": "在CR_TextScheduler中，'schedule'参数的类型是什么？",
+        "answer": "CR_TextScheduler的'schedule'参数类型为'SCHEDULE'，它包含了一个定义了调度器要遵循的时间线和相关文本提示的关键帧列表。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "什么是ADE_AdjustWeightIndivAttnMult节点？",
+        "answer": "ADE_AdjustWeightIndivAttnMult节点属于Animate Diff扩展，用于单独调整神经网络中注意力机制的权重，以优化模型性能，特别是在满足特定任务需求时调整注意力过程。"
+    },
+    {
+        "question": "哪些参数是WeightAdjustIndivAttnMultNode类的必填输入？",
+        "answer": "WeightAdjustIndivAttnMultNode的必填输入包括pe_MULT、attn_MULT、attn_q_MULT、attn_k_MULT、attn_v_MULT、attn_out_weight_MULT、attn_out_bias_MULT以及print_adjustment参数。"
+    },
+    {
+        "question": "在WeightAdjustIndivAttnMultNode中，pe_MULT参数有什么作用？",
+        "answer": "pe_MULT参数对位置编码权重进行缩放，直接影响模型捕获输入序列中元素顺序的能力，这对于语言翻译和文本生成等应用至关重要。"
+    },
+    {
+        "question": "attn_MULT参数如何影响模型对序列中不同部分的关注？",
+        "answer": "attn_MULT参数调整全局注意力权重，影响模型对序列中不同部分的集中或分散注意力，可用于增强或减弱特定输入特征的影响。"
+    },
+    {
+        "question": "WeightAdjustIndivAttnMultNode的哪个参数专门调整注意力查询权重？",
+        "answer": "attn_q_MULT专门调整注意力机制中的查询权重，使模型能够更精确地修改查询输入数据中不同元素的优先级。"
+    },
+    {
+        "question": "output parameter 'weight_adjust'在WeightAdjustIndivAttnMultNode中的作用是什么？",
+        "answer": "weight_adjust参数输出的是一个封装了所有权重调整的WEIGHT_ADJUST对象，这个对象能够应用于模型，进一步微调权重，或传递给后续节点作更深入的调整。"
+    },
+    {
+        "question": "WeightAdjustIndivAttnMultNode的'prev_weight_adjust'参数在什么情况下使用？",
+        "answer": "prev_weight_adjust参数允许您提供先前的权重调整组，从而使WeightAdjustIndivAttnMultNode能够在此基础上进行增添或修改，或决定清除已有调整并开始新的调整过程。"
+    }
+]

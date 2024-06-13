@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_InputSwitchPipe节点的主要作用是什么？",
+        "answer": "CR_InputSwitchPipe节点旨在根据选择输入管理不同处理管道之间的数据流，它评估'Input'参数以确定后续工作流中是使用'pipe1'还是'pipe2'，在基于输入条件需要不同处理路径的条件工作流中起关键作用。"
+    },
+    {
+        "question": "如何通过CR_InputSwitchPipe节点选择'pipe1'或'pipe2'？",
+        "answer": "通过整数值的'Input'参数选择'pipe1'或'pipe2'；1表示使用'pipe1'，任何其他值则使用'pipe2'。这种机制允许根据所需处理路径灵活地指导工作流进程。"
+    },
+    {
+        "question": "CR_InputSwitchPipe节点有哪些输入类型？",
+        "answer": "CR_InputSwitchPipe节点需要的输入类型包括整数形式的'Input'、第一个管道选项'pipe1'以及替代选择'pipe2'。每种输入都有其对应的Comfy和Python数据类型，支持无缝集成多种处理路径。"
+    },
+    {
+        "question": "CR_InputSwitchPipe节点的输出包含哪些信息？",
+        "answer": "CR_InputSwitchPipe节点的输出是基于'Input'参数选择的管道，以及一个常量字符串'PIPE_LINE'输出和一个链接至帮助文档的'show_help'字符串输出，后者始终链接到CR_InputSwitchPipe节点的GitHub wiki页面。"
+    },
+    {
+        "question": "CR_InputSwitchPipe节点适用于哪种工作流程？",
+        "answer": "CR_InputSwitchPipe节点特别适用于需要根据输入条件改变处理路径的工作流程，通过评估'Input'参数来动态选择数据流的管道，实现条件分支处理。"
+    },
+    {
+        "question": "'pipe1'和'pipe2'参数在CR_InputSwitchPipe节点中的作用是什么？",
+        "answer": "'pipe1'和'pipe2'参数为CR_InputSwitchPipe节点提供了两个可选的处理管道，'Input'参数决定实际使用哪一个。使得可以在不同的处理场景间平滑切换，提升ComfyUI中的工作流程灵活性。"
+    },
+    {
+        "question": "CR_InputSwitchPipe节点的'show_help'输出有何用处？",
+        "answer": "CR_InputSwitchPipe节点的'show_help'输出提供了一个指向GitHub wiki页面的链接，该页面详细记录了节点的功能和使用方法，以便用户快速了解节点的详细信息和操作指南。"
+    }
+]

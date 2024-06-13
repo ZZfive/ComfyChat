@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR Load Schedule From File 节点的主要功能是什么？",
+        "answer": "CR Load Schedule From File 节点的主要功能是从文件中导入调度数据，便于管理和组织动画序列，尤其适用于将关键帧或提示数据加载并解析成可在动画流程中进一步处理的格式。"
+    },
+    {
+        "question": "CR Load Schedule From File 节点支持哪些输入参数？",
+        "answer": "CR Load Schedule From File 支持 input_file_path、file_name 和 file_extension 作为输入参数，分别用于指定调度文件所在的目录、文件名称及文件格式。"
+    },
+    {
+        "question": "在 ComfyUI 中使用 CR Load Schedule From File 时，如何指定要加载的文件路径？",
+        "answer": "在 ComfyUI 中使用 CR Load Schedule From File 时，通过 input_file_path 参数指定要加载的文件路径，这是节点正确识别和访问包含调度数据的文件的关键参数。"
+    },
+    {
+        "question": "CR Load Schedule From File 如何处理不同类型的调度文件？",
+        "answer": "CR Load Schedule From File 根据 file_extension 参数确定文件类型（txt 或 csv），并应用正确的解析方法来处理调度文件，确保数据被准确读取和解释。"
+    },
+    {
+        "question": "CR Load Schedule From File 节点的输出类型包括什么？",
+        "answer": "CR Load Schedule From File 节点的输出类型包括 SCHEDULE 和 show_text，其中 SCHEDULE 提供了解析后的数据，而 show_text 提供了数据的文本表示，方便在应用程序中显示或用于调试。"
+    },
+    {
+        "question": "CR Load Schedule From File 解析后的数据在 ComfyUI 中以什么形式输出？",
+        "answer": "CR Load Schedule From File 解析后的数据在 ComfyUI 中以 List[List[str]] 的形式输出，即一系列字符串列表，体现了从文件中提取的结构化数据。"
+    },
+    {
+        "question": "在使用 CR Load Schedule From File 时，有哪些重要的使用提示？",
+        "answer": "使用 CR Load Schedule From File 时，应注意它使用 CPU 类型的基础设施，这在资源分配和性能优化方面是重要的考虑因素。"
+    }
+]

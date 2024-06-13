@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_MakeBatchFromImageList节点的功能是什么?",
+        "answer": "CR_MakeBatchFromImageList节点在Comfyroll/List/Utils类别下，主要功能是接收一系列图像并高效地合并成一个批次张量，简化图像数据处理，提升图像处理流程的整体性能和效率。"
+    },
+    {
+        "question": "image_list参数在CR_MakeBatchFromImageList节点中的作用是什么?",
+        "answer": "image_list参数是CR_MakeBatchFromImageList节点的关键输入，它代表需要批处理的图像集合。此参数通过确定输出批次张量的内容和结构来直接影响节点的操作，对于创建用于进一步处理的图像批次至关重要。"
+    },
+    {
+        "question": "如何获取CR_MakeBatchFromImageList节点的帮助信息?",
+        "answer": "CR_MakeBatchFromImageList节点的show_help输出提供了一个包含文档URL的帮助链接，用于提供额外指导，帮助用户了解节点的使用方法或理解其功能。"
+    },
+    {
+        "question": "CR_MakeBatchFromImageList节点的输出包含哪些类型?",
+        "answer": "CR_MakeBatchFromImageList节点的输出包括image_batch，这是连接张量形式的图像批次，以及show_help，它是包含文档链接的字符串，用于提供节点使用上的帮助。"
+    },
+    {
+        "question": "CR_MakeBatchFromImageList节点在什么类型的硬件上运行更佳?",
+        "answer": "CR_MakeBatchFromImageList节点的infra type指定为CPU，这意味着它在CPU设备上运行更加高效。"
+    },
+    {
+        "question": "CR_MakeBatchFromImageList节点的INPUT_TYPES和RETURN_TYPES分别是什么?",
+        "answer": "CR_MakeBatchFromImageList节点的INPUT_TYPES设定为接收'IMAGE'类型的image_list，RETURN_TYPES设定为返回'IMAGE'类型的image_batch和'STRING'类型的show_help输出。"
+    },
+    {
+        "question": "当image_list参数只有一个元素或为空时，CR_MakeBatchFromImageList节点如何处理?",
+        "answer": "当image_list参数包含的元素数目小于或等于1时，CR_MakeBatchFromImageList节点会直接返回image_list本身，不进行批次合并操作。"
+    }
+]

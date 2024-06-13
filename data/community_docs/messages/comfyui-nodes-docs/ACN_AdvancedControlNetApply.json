@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ACN_AdvancedControlNetApply节点的主要功能是什么？",
+        "answer": "ACN_AdvancedControlNetApply节点旨在整合正向和负向调节输入以及控制网络，精细地操控神经网络模型的输出，通过调整控制信号的强度和范围来影响模型行为。"
+    },
+    {
+        "question": "ACN_AdvancedControlNetApply中的control_net参数是怎样影响模型输出的？",
+        "answer": "control_net参数作为一个关键组件，确定了模型输出如何受到特定控制信号的影响。它被用于将信号应用于模型的不同部分，以实现模型行为的调节。"
+    },
+    {
+        "question": "强度参数(strength)在ACN_AdvancedControlNetApply中的作用是什么？",
+        "answer": "强度参数决定了控制信号施加在模型上的力度，允许用户微调控制网络对模型输出影响的强弱。"
+    },
+    {
+        "question": "哪些节点接受或输出与ACN_AdvancedControlNetApply相关的CONDITIONING数据类型？",
+        "answer": "ACN_AdvancedControlNetApply节点处理的正向和负向调节输入与输出均使用CONDITIONING数据类型，包括输入的positive和negative参数以及输出的正向和负向输出。"
+    },
+    {
+        "question": "ACN_AdvancedControlNetApply中mask_optional参数的用途是什么？",
+        "answer": "mask_optional参数是一个可选掩码输入，用于选择性地将控制信号应用于模型输出的特定区域，提供局部控制效果的微调手段。"
+    },
+    {
+        "question": "timestep_kf参数在ACN_AdvancedControlNetApply节点中是如何被利用的？",
+        "answer": "时间步关键帧输入timestep_kf用于定义控制信号的时间结构，允许随时间动态控制，增强控制信号的时间依赖性。"
+    },
+    {
+        "question": "ACN_AdvancedControlNetApply节点如何处理没有控制信号强度输入的情况？",
+        "answer": "如果strength参数为0，ACN_AdvancedControlNetApply节点将直接返回输入的positive和negative调节输入不变，不应用任何控制信号。"
+    }
+]

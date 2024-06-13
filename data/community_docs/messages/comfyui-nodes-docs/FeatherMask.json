@@ -1,0 +1,30 @@
+[
+    {
+        "question": "FeatherMask是什么?",
+        "answer": "FeatherMask是ComfyUI中用于平滑掩码边缘与周围区域过渡的自定义节点，通过逐渐调整掩码的像素不透明度来实现柔和的边界过渡，适用于图像处理和编辑中。"
+    },
+    {
+        "question": "羽化效果在图像处理中通常用于什么目的？",
+        "answer": "羽化效果用于平滑掩码边界，避免掩码和背景之间的硬边缘，使过渡看起来更加自然，适用于图像合成和编辑时需要融合不同图像部分的场景。"
+    },
+    {
+        "question": "FeatherMask节点接受哪些输入类型？",
+        "answer": "FeatherMask节点主要接受'mask'作为必需的输入，该参数是一个定义图像中感兴趣区域的二进制张量。同时支持四个可选参数'left'、'top'、'right'和'bottom'用于定义各个方向上的羽化像素数。"
+    },
+    {
+        "question": "如何控制FeatherMask节点对掩码边缘的羽化程度？",
+        "answer": "通过设置'left'、'top'、'right'和'bottom'四个参数，可以控制掩码四个方向上羽化效果的宽度，从而精确调节羽化程度。"
+    },
+    {
+        "question": "在FeatherMask节点中，'mask'参数的作用是什么？",
+        "answer": "'mask'参数在FeatherMask节点中定义了图像上需要羽化的区域，该二进制张量直接决定了哪些部分将被羽化处理，其尺寸和像素值对羽化过程具有直接影响。"
+    },
+    {
+        "question": "FeatherMask节点的'feathered_mask'输出类型代表什么？",
+        "answer": "'feathered_mask'输出类型是一个带有平滑过渡边缘的掩码张量，这是节点操作的直接结果，实现了掩码区域和未掩码区域之间的视觉平滑过渡。"
+    },
+    {
+        "question": "FeatherMask节点的实现依赖于哪种设备类型？",
+        "answer": "FeatherMask节点最适合在CPU上执行，它是节点实现和运行的主要基础设施类型，这通常意味着它不会依赖于GPU加速。"
+    }
+]

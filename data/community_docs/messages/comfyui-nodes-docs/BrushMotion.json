@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BrushMotion节点在ComfyUI的哪个类别中？",
+        "answer": "BrushMotion节点属于DragNUWA类别，用于根据指定的掩码缩放和插值输入的运动数据，生成运动效果。"
+    },
+    {
+        "question": "BrushMotion节点的工作原理是什么？",
+        "answer": "BrushMotion节点通过缩放和插值输入的运动数据，并根据指定的画笔掩码进行运动效果的动态调整，从而生成运动效果。"
+    },
+    {
+        "question": "BrushMotion节点要求哪些输入类型？",
+        "answer": "BrushMotion节点需要模型参数(model)、运动刷子参数(motion_brush)和画笔掩码参数(brush_mask)作其输入。"
+    },
+    {
+        "question": "模型参数(model)在BrushMotion节点中起什么作用？",
+        "answer": "模型参数定义了要生成的运动效果的基础结构和特征，是BrushMotion节点实际运算的重要依据。"
+    },
+    {
+        "question": "BrushMotion节点支持哪种运算设备？",
+        "answer": "BrushMotion节点支持在CPU上进行运算；这是其运算类型(infra type)所限定。"
+    },
+    {
+        "question": "BrushMotion节点的输出类型是什么？",
+        "answer": "BrushMotion节点的输出类型是'MotionBrush'，具体包含了根据输入掩码和模型规格调整后的最终运动效果。"
+    },
+    {
+        "question": "举个例子，BrushMotion节点如何实现具体运动数据的缩放？",
+        "answer": "在BrushMotion源代码中，通过计算mask边界box，得到x和y方向的缩放比例，分别应用于x和y方向的motion_brush数据，实现具体运动数据的缩放。"
+    }
+]

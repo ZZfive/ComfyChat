@@ -1,0 +1,30 @@
+[
+    {
+        "question": "FaceRestoreModelLoader是什么类型的节点，它属于哪个category?",
+        "answer": "FaceRestoreModelLoader是一个自定义节点，属于facerestore_cf类别，用于根据提供的模型名称加载和初始化面部恢复模型。"
+    },
+    {
+        "question": "FaceRestoreModelLoader加载模型时需要什么关键参数?",
+        "answer": "FaceRestoreModelLoader在加载模型时需要一个关键参数model_name，它是模型的唯一标识符，用于指定要加载的面部恢复模型。"
+    },
+    {
+        "question": "ComfyUI中如何处理FaceRestoreModelLoader节点的输入类型?",
+        "answer": "ComfyUI中FaceRestoreModelLoader节点的输入类型由'model_name'定义，该参数的数据类型为List[str]，并从facerestore_models文件夹的路径列表中获取。"
+    },
+    {
+        "question": "FaceRestoreModelLoader输出的面部恢复模型其数据类型是什么?",
+        "answer": "FaceRestoreModelLoader输出的面部恢复模型数据类型为torch.nn.Module，这种类型对于执行高质量面部恢复任务至关重要。"
+    },
+    {
+        "question": "哪些模型可以通过FaceRestoreModelLoader加载?",
+        "answer": "FaceRestoreModelLoader可以加载位于facerestore_models目录下的模型。特别是，如果model_name包含'codeformer'，它将加载CodeFormer模型。"
+    },
+    {
+        "question": "FaceRestoreModelLoader依赖哪些设备类型?",
+        "answer": "FaceRestoreModelLoader的使用建议需要‘infra type’为GPU的设备，这通常是指它能在GPU上提供最佳性能。"
+    },
+    {
+        "question": "如何使用FaceRestoreModelLoader加载CodeFormer模型?",
+        "answer": "使用FaceRestoreModelLoader加载CodeFormer模型时，如果model_name包含'codeformer'，节点将加载相应的模型参数，并初始化CodeFormer网络结构进行后续处理。"
+    }
+]

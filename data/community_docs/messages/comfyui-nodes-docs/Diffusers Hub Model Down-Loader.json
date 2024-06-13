@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Diffusers_Hub_Model_Loader 是什么？",
+        "answer": "WAS_Diffusers_Hub_Model_Loader是ComfyUI中WAS Suite的一部分，旨在从Hugging Face模型中心加载机器学习模型，简化解模型下载和初始化的过程，便于用户快速集成到工作流程中。"
+    },
+    {
+        "question": "如何使用WAS_Diffusers_Hub_Model_Loader加载特定版本的模型？",
+        "answer": "通过使用'revision'参数指定模型的特定版本，确保模型性能的可重复性和一致性，这对于需要精确模型迭代的用户至关重要。"
+    },
+    {
+        "question": "WAS_Diffusers_Hub_Model_Loader节点可以输出哪些类型？",
+        "answer": "WAS_Diffusers_Hub_Model_Loader节点输出MODEL（机器学习模型）、CLIP（文本和图像交互组件）、VAE（变分自编码器）以及NAME_STRING（人类可读的模型标识符）等类型。"
+    },
+    {
+        "question": "repo_id参数在WAS_Diffusers_Hub_Model_Loader中的作用是什么？",
+        "answer": "repo_id参数用于清晰识别Hugging Face Hub上的特定模型存储库，对节点执行至关重要，因为它是下载过程正确的源，确保准确获取所需模型的关键。"
+    },
+    {
+        "question": "哪些任务可以利用WAS_Diffusers_Hub_Model_Loader节点？",
+        "answer": "需要复杂模型能力的任务，如自然语言处理和生成性AI，可以极大受益于WAS_Diffusers_Hub_Model_Loader节点提供的模型集成功能，简化工作流程并增强模型应用的灵活性。"
+    },
+    {
+        "question": "什么是name_string输出在WAS_Diffusers_Hub_Model_Loader中的作用？",
+        "answer": "name_string输出提供了加载模型的人类可读标识符，通常以字符串形式返回存储库ID，对于工作流中的引用、记录及模型管理的文档化至关重要。"
+    },
+    {
+        "question": "如何实现WAS_Diffusers_Hub_Model_Loader从Hugging Face加载模型？",
+        "answer": "WAS_Diffusers_Hub_Model_Loader通过调用'download_diffusers_model'方法从Hugging Face下载模型到指定本地目录，并使用'diffusersLoader'加载checkpoint，返回加载的模型、clip和vae以及模型的名称字符串。"
+    }
+]

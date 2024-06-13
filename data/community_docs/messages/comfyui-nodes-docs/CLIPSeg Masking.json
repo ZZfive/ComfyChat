@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CLIPSeg_image 是什么功能？",
+        "answer": "CLIPSeg_image 是 WAS_CLIPSeg 类中的一个方法，用于使用文本提示执行图像的精确对象分割，生成一个掩码以隔离文本描述的主体。"
+    },
+    {
+        "question": "什么是 CLIPSeg_model 参数的作用？",
+        "answer": "clipseg_model 参数允许用户加载预训练的 CLIPSeg 模型，这对于使用针对特定任务或数据集微调的自定义模型尤其重要。"
+    },
+    {
+        "question": "在 WAS_CLIPSeg 方法中，MASK 输出代表什么？",
+        "answer": "MASK 输出是一个二进制掩码，根据文本描述分离图像中的主体与背景，对于对象分离和背景移除处理至关重要。"
+    },
+    {
+        "question": "哪些输入类型是 CLIPSeg_image 方法所需的？",
+        "answer": "CLIPSeg_image 方法需要 'image' 作为必需的输入参数，另外可选参数有 'text' 和 'clipseg_model'，用于提供分割和模型方面的额外指引。"
+    },
+    {
+        "question": "MASK_IMAGE 输出代表什么，它在图像处理中有何作用？",
+        "answer": "MASK_IMAGE 是一个被掩码突出显示的分割主体的图像，可用于视觉验证或作为进一步图像处理流程的输入，常用于查看分割的准确度或进行基于分割图像的后续操作。"
+    },
+    {
+        "question": "image 参数在 CLIPSeg_image 方法中为何重要？",
+        "answer": "image 参数是模型分析的输入图像，用于识别并隔离文本描述中的主体。图像的分辨率和质量直接影响掩码生成的准确性。"
+    },
+    {
+        "question": "text 参数在图像分割中扮演什么角色？",
+        "answer": "text 参数为 CLIPSeg 模型提供指导描述，帮助模型确定图像中要隔离的主体，即使它是可选的，包含文本描述可显著提高分割精度。"
+    }
+]

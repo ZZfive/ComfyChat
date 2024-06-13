@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Checkpoint Loader是什么类型的节点?",
+        "answer": "Checkpoint Loader是一个WAS Suite类别下的Advanced Loaders子类中的节点，用于高效加载指定检查点的预训练模型、CLIP模型和VAE模型。"
+    },
+    {
+        "question": "Checkpoint Loader节点的输入参数config_name的作用是什么?",
+        "answer": "参数config_name确保在加载过程中应用正确的模型架构和超参数，标识了模型所需的特定配置设置。"
+    },
+    {
+        "question": "Checkpoint Loader节点中哪些输入决定了CLIP模型和VAE组件的加载?",
+        "answer": "可选输入'output_clip'和'output_vae'分别决定是否加载CLIP模型和VAE组件，提供加载过程中的灵活性以适应不同需求。"
+    },
+    {
+        "question": "Checkpoint Loader节点输出的MODEL类型代表什么?",
+        "answer": "输出类型'MODEL'提供了加载的模型架构，这是进一步处理或推理任务所需的核心组件。"
+    },
+    {
+        "question": "Checkpoint Loader节点的输出CLIP和VAE在什么场景下是必需的?",
+        "answer": "输出'CLIP'和'VAE'分别适用于涉及文本到图像或图像到文本功能以及生成能力或潜在空间操作的任务，它们对于这些特定场景是关键组件。"
+    },
+    {
+        "question": "Checkpoint Loader的'NAME_STRING'输出为什么对日志记录很重要?",
+        "answer": "输出'NAME_STRING'返回检查点的基本名称，作为检查点的标识符，对于日志记录或记录保存非常有用，便于追溯模型的具体配置和版本。"
+    },
+    {
+        "question": "Checkpoint Loader节点是在哪种infrastructure类型下工作的?",
+        "answer": "Checkpoint Loader节点的infra type参数指明它在CPU环境下工作，这意味着它可以处理复杂的模型加载和预处理任务而不需要GPU支持。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DifferentialDiffusion节点的主要功能是什么？",
+        "answer": "DifferentialDiffusion节点通过集成自定义去噪过程来增强给定模型的功能，基于差分扩散原理运作，通过控制模型扩散过程中每一步应用的噪声减少级别来改进输出品质。"
+    },
+    {
+        "question": "DifferentialDiffusion节点的'extra_options'参数包含什么信息？",
+        "answer": "DifferentialDiffusion节点的'extra_options'参数是一个字典，它包含了节点操作所需的额外设置，比如定义扩散过程的范围和参数的 'model' 和 'sigmas'，对节点的定制和灵活性至关重要。"
+    },
+    {
+        "question": "DifferentialDiffusion节点中的'sigma'参数如何影响去噪过程？",
+        "answer": "在DifferentialDiffusion节点中，'sigma'参数用来确定扩散过程中的噪声水平，直接影响去噪掩码的应用，进而影响模型最终的输出品质。"
+    },
+    {
+        "question": "使用DifferentialDiffusion节点时，'denoise_mask'参数的作用是什么？",
+        "answer": "'denoise_mask'参数在DifferentialDiffusion节点中定义了模型输出中将经历噪声减少的区域，确保扩散过程的精炼效果，使输出品质得到提升。"
+    },
+    {
+        "question": "DifferentialDiffusion节点的输出包含了什么？",
+        "answer": "DifferentialDiffusion节点的输出是一个增强的模型，带有差分扩散去噪功能，代表了节点功能的成功应用，输出模型更适合于产生高质量的输出。"
+    },
+    {
+        "question": "哪些硬件类型最适合运行DifferentialDiffusion节点？",
+        "answer": "根据使用提示,'infra_type'为GPU的硬件最适合运行DifferentialDiffusion节点，以充分利用其性能和功能。"
+    },
+    {
+        "question": "在源代码中，DifferentialDiffusion节点的'forward'方法做了什么？",
+        "answer": "在DifferentialDiffusion节点的源代码中，'forward'方法根据传入的'sigma'、'denoise_mask'和'extra_options'参数进行自定义去噪处理，计算和更新去噪掩码，以适应动态调整的去噪级别。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "cascadeSettings节点是ComfyUI中的哪个分类？",
+        "answer": "cascadeSettings节点是ComfyUI中EasyUse/PreSampling分类的节点，用于简化配置和管理生成模型流水线的设置过程。"
+    },
+    {
+        "question": "在cascadeSettings节点中，'image_to_latent_c'参数的作用是什么？",
+        "answer": "在cascadeSettings节点中，'image_to_latent_c'参数允许输入一个将被编码到潜在空间的图像，为生成过程指定一个起点，影响输出的方向和风格。"
+    },
+    {
+        "question": "cascadeSettings节点的'seeder'参数如何工作？",
+        "answer": "cascadeSettings节点不存在'seeder'参数，但有'seed'参数，它通过设置固定的随机种子来确保生成过程的可复现性，对于在不同运行中获得一致的结果很重要。"
+    },
+    {
+        "question": "哪些参数是cascadeSettings节点的必须输入项？",
+        "answer": "cascadeSettings节点的必须输入项包括：'pipe'、'encode_vae_name'、'decode_vae_name'、'steps'、'cfg'、'sampler_name'、'scheduler'、'denoise'和'seed'。"
+    },
+    {
+        "question": "cascadeSettings节点的'pipe'输入参数代表什么？",
+        "answer": "'pipe'输入参数是cascadeSettings节点中一个至关重要参数，它携带了生成模型流水线的全部上下文，包括模型设置和数据样本，对节点的正确运行和生成过程的完整性至关重要。"
+    },
+    {
+        "question": "在cascadeSettings节点中，使用哪个参数可以控制图像生成过程中的降噪水平？",
+        "answer": "在cascadeSettings节点中，使用'denoise'参数可以控制图像生成过程中的降噪水平，影响最终图像的清晰度和平滑度。"
+    },
+    {
+        "question": "cascadeSettings节点的'pipe_line'输出是什么？",
+        "answer": "'pipe_line'输出是cascadeSettings节点的应用了所有设置的输入'pipe'的更新版本，作为生成流水线后续阶段的基础，确保配置的参数在图像生成过程中被正确地传播和利用。"
+    }
+]

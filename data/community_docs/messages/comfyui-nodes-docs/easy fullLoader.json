@@ -1,0 +1,30 @@
+[
+    {
+        "question": "fullLoader是什么?",
+        "answer": "fullLoader是ComfyUI中EasyUse/Loaders类别下的一个自定义节点，用于封装和简化加载检查点、VAE、CLIP以及条件数据的流程，提供一致的模型初始化接口。"
+    },
+    {
+        "question": "fullLoader支持哪些输入类型?",
+        "answer": "fullLoader支持的输入类型包括模型检查点名称（ckpt_name）、配置名称（config_name）、VAE名称（vae_name）、CLIP跳过层级（clip_skip）等，涵盖了加载和设置管道所需的关键组件。"
+    },
+    {
+        "question": "fullLoader的输出包含了什么?",
+        "answer": "fullLoader的主要输出类型为pipe，这是一个管道设置，包含了模型、VAE、CLIP和条件数据的集成，为生成流程提供了一个集成的设置框架。"
+    },
+    {
+        "question": "如何使用fullLoader加载特定的模型检查点?",
+        "answer": "通过提供ckpt_name参数，可以指定fullLoader加载特定模型检查点，该参数是用于识别管道中加载的特定模型的关键标识。"
+    },
+    {
+        "question": "VAE名称在fullLoader有什么作用?",
+        "answer": "为fullLoader提供vae_name参数是用于指明要加载的变分自编码器模型，这直接影响到生成结果的潜在空间表示，是pipeline中图像生成能力的关键组成部分。"
+    },
+    {
+        "question": "clip_skip参数的作用是什么?",
+        "answer": "在fullLoader中，clip_skip参数是用于控制CLIP模型的层级应用，这可以调整文本条件的细节层次，影响最终生成输出的内容准确度和响应性。"
+    },
+    {
+        "question": "哪些自定义参数会影响fullLoader的输出?",
+        "answer": "除了必备参数外，fullLoader还支持多种自定义选项，如模型、CLIP和VAE的覆盖选项、LoRA堆栈和其他高级参数，这些均可根据具体需求定制，旨在提供更灵活的加载和管道设置。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CLIPTextEncodeSDXLRefiner节点在ComfyUI中的功能是什么?",
+        "answer": "CLIPTextEncodeSDXLRefiner节点使用CLIP模型对文本输入进行细化和编码，通过整合审美分数、尺寸和文本信息，指导后续的图像合成或处理阶段。"
+    },
+    {
+        "question": "在使用CLIPTextEncodeSDXLRefiner节点时，ascore参数的作用是什么？",
+        "answer": "ascore参数在CLIPTextEncodeSDXLRefiner节点中用于量化生成内容的视觉吸引力，通过加权因素影响编码过程中的审美质量。"
+    },
+    {
+        "question": "CLIPTextEncodeSDXLRefiner节点输出的条件信号包含哪些信息？",
+        "answer": "调节输出是一个包含编码文本、审美分数和尺寸信息的信号，作为后续图像处理的指导，确保内容与初始文本描述相匹配。"
+    },
+    {
+        "question": "使用CLIPTextEncodeSDXLRefiner时，确保处理任务在哪个硬件上进行最高效？",
+        "answer": "CLIPTextEncodeSDXLRefiner节点的处理建议在GPU上执行，因此它的infra type被标记为GPU，以实现最佳性能。"
+    },
+    {
+        "question": "在ComfyUI中，CLIPTextEncodeSDXLRefiner发出的'CONDITIONING'具体数据类型是什么？",
+        "answer": "在ComfyUI中，CLIPTextEncodeSDXLRefiner的'CONDITIONING'输出是一个Tuple，包含torch.Tensor和一个字典，该字典包含各种类型的数据，如torch.Tensor, float和int。"
+    },
+    {
+        "question": "CLIPTextEncodeSDXLRefiner如何处理输入文本？",
+        "answer": "CLIPTextEncodeSDXLRefiner节点通过CLIP模型处理输入文本，首先对文本进行标记化，然后编码为可用于调节图像合成的格式，同时整合审美分数和尺寸信息。"
+    },
+    {
+        "question": "为什么ComfyUI中的CLIPTextEncodeSDXLRefiner需要输入'width'和'height'参数？",
+        "answer": "宽度和高度参数在CLIPTextEncodeSDXLRefiner中定义输出图像的分辨率，这对于编码文本在图像中的视觉表现至关重要，确保内容能够根据指定尺寸正确缩放和展示。"
+    }
+]

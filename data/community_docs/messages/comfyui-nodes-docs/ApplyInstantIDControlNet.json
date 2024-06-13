@@ -1,0 +1,38 @@
+[
+    {
+        "question": "ApplyInstantIDControlNet节点是ComfyUI中的哪一类?",
+        "answer": "ApplyInstantIDControlNet节点属于ComfyUI中的InstantID类别，用于基于嵌入和关键点信息修改图像中的面部特征。"
+    },
+    {
+        "question": "ApplyInstantIDControlNet节点的'face_embeds'参数在Python中具有什么数据类型?",
+        "answer": "在Python中，'face_embeds'参数具有数据类型Dict[str, Any]，存储面部嵌入信息，为节点操作提供面部基础表示。"
+    },
+    {
+        "question": "控制网络如何应用于图像的关键点信息？",
+        "answer": "通过'control_net'参数，控制网络根据给定的关键点信息调整图像，该网络在Python中的数据类型为torch.nn.Module，是修改面部特征的指南。"
+    },
+    {
+        "question": "强度参数'strength'在ApplyInstantIDControlNet节点中起什么作用?",
+        "answer": "'strength'参数决定了控制网络在调整面部特征时的影响力度，允许用户控制从微妙到显著的变化程度。"
+    },
+    {
+        "question": "Stop at参数在ComfyUI的ApplyInstantIDControlNet节点中的作用是什么?",
+        "answer": "‘end_at’参数定义了控制网络调整何时结束，这有助于控制面部特征修改的精确过渡和范围。"
+    },
+    {
+        "question": "ApplyInstantIDControlNet节点可接受什么类型的掩码?",
+        "answer": "ApplyInstantIDControlNet节点接受'torch.Tensor'类型掩码，允许有针对性的图像区域调整，确保仅在指定区域应用或排除更改。"
+    },
+    {
+        "question": "通过ApplyInstantIDControlNet节点，正面调节输入发生了什么变化?",
+        "answer": "通过节点操作，正面调节输入的面部特征被修改并体现在输出的'positive'参数中，反映了根据输入的期望和调整后的外观。"
+    },
+    {
+        "question": "哪些输入参数是ApplyInstantIDControlNet节点必须提供的?",
+        "answer": "必需的输入参数包括'face_embeds', 'control_net', 'image_kps', 'positive', 'negative', 'strength', 'start_at', 'end_at'，这些参数保证节点能够准确地调整面部特征。"
+    },
+    {
+        "question": "ApplyInstantIDControlNet节点工作时需要哪种类型的基础设施?",
+        "answer": "ApplyInstantIDControlNet节点的运行依赖于GPU作为基础设施类型，这适合作为执行其复杂图像处理功能的平台。"
+    }
+]

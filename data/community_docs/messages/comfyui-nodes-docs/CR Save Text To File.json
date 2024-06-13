@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_SaveTextToFile节点的主功能是什么？",
+        "answer": "CR_SaveTextToFile节点的主要功能是将文本数据保存到文件中，支持多行文本处理，并能写入指定路径和格式的文件，确保文件名的唯一性以避免覆盖现有文件。"
+    },
+    {
+        "question": "哪些输入类型是CR_SaveTextToFile节点所必需的？",
+        "answer": "CR_SaveTextToFile节点必需的输入类型包括'multiline_text'，用于保存将被写入文件的文本内容。"
+    },
+    {
+        "question": "如果'file_extension'参数是'csv'，CR_SaveTextToFile节点如何处理文本数据？",
+        "answer": "当'file_extension'参数设置为'csv'时，CR_SaveTextToFile节点会将文本分割成列表，然后逐行写入CSV文件，每行包含一个列表元素。"
+    },
+    {
+        "question": "CR_SaveTextToFile节点如何避免文件覆盖？",
+        "answer": "CR_SaveTextToFile节点通过在遇到相同文件名时，在文件名后添加一个数字索引（如'file_name_1.txt'），以确保每个保存的文件具有唯一的名称。"
+    },
+    {
+        "question": "CR_SaveTextToFile节点输出的'help_url'是什么？",
+        "answer": "输出的'help_url'是URL链接，用以指向详细的文档，提供关于如何使用CR_SaveTextToFile节点的进一步帮助和指导。"
+    },
+    {
+        "question": "在CR_SaveTextToFile中，'output_file_path'参数没有提供时，将会发生什么？",
+        "answer": "如果在'CR_SaveTextToFile'中没有提供'output_file_path'参数，节点将会使用一个默认路径来保存文件。"
+    },
+    {
+        "question": "CR_SaveTextToFile使用的Python数据类型是什么类型？",
+        "answer": "CR_SaveTextToFile节点处理的Python数据类型主要包括字符串类型（str），如多行文本、文件路径和名称，以及枚举类型（COMBO），用于确定文件扩展名。"
+    }
+]

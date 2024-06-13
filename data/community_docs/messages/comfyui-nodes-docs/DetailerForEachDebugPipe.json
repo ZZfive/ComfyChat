@@ -1,0 +1,46 @@
+[
+    {
+        "question": "DetailerForEachTestPipe 有何功能?",
+        "answer": "DetailerForEachTestPipe 是ComfyUI的ImpactPack/Detailer类别中的一个自定义节点，用于对单张输入图像执行详细的图像处理任务，包括增强、裁剪和细节提升。"
+    },
+    {
+        "question": "DetailerForEachTestPipe 中的'doit'方法负责什么?",
+        "answer": "'doit'方法在DetailerForEachTestPipe中负责核心的图像增强处理，它利用各种模型和参数来增强图像，并输出原始图像、裁剪和增强版本等多种类型的处理过图像。"
+    },
+    {
+        "question": "哪一种类型的输入是DetailerForEachTestPipe所必需的并且对节点输出有显著影响?",
+        "answer": "图像(input image)是DetailerForEachTestPipe中必须的输入类型，它直接影响输出结果的质量和内容，是节点输出的主要决定因素。"
+    },
+    {
+        "question": "'segs'参数在DetailerForEachTestPipe的节点处理中起什么样的作用?",
+        "answer": "'segs'参数提供图像分割信息，对于在特定区域内增强和处理目标至关重要，影响节点如何处理图像的不同部分以细化细节。"
+    },
+    {
+        "question": "在DetailerForEachTestPipe中，'guide_size'参数的功能是什么?",
+        "answer": "'guide_size'参数用于指定在DetailerForEachTestPipe的图像增强过程中为引导图像处理的细节层次尺度，对决定图像细节数量至关重要。"
+    },
+    {
+        "question": "DetailerForEachTestPipe节点的哪些输入参数对控制其随机性和可重复性有重要影响?",
+        "answer": "'seed'参数用于初始化DetailerForEachTestPipe节点中的随机数生成器，确保随机过程的可重复性和结果的一致性。"
+    },
+    {
+        "question": "为什么在DetailerForEachTestPipe中会使用'feather'参数?",
+        "answer": "'feather'参数在DetailerForEachTestPipe中用于控制图像处理中边缘的柔和度，这对于实现增强区域与原始图像的自然过渡非常重要。"
+    },
+    {
+        "question": "DetailerForEachTestPipe的核心输出结果是什么?",
+        "answer": "DetailerForEachTestPipe的关键输出是'enhanced_img'，即增强后的图像，该输出展示了图像视觉质量和细节的提升，是节点功能的主要目标。"
+    },
+    {
+        "question": "'cropped'和'cropped_enhanced'在DetailerForEachTestPipe输出中分别代表什么?",
+        "answer": "'cropped'输出包含从原始图像派生的裁剪图像列表，而'cropped_enhanced'提供了裁剪后图像增强的列表，突出对每个分段的详细改进结果。"
+    },
+    {
+        "question": "DetailerForEachTestPipe如何处理噪声掩码?",
+        "answer": "通过'noise_mask'参数，DetailerForEachTestPipe可以确定是否在增强图像噪声的处理阶段应用噪声掩码，这是对需要噪声管理的增强技术的关键控制选项。"
+    },
+    {
+        "question": "DetailerForEachTestPipe支持哪些额外的输出类型?",
+        "answer": "除了增强图像之外，DetailerForEachTestPipe还支持更新的分割信息(new_segs)、控制网处理的图像列表(cnet_images)和其他与图像处理流程相关的基本管道信息(basic_pipe)的输出。"
+    }
+]

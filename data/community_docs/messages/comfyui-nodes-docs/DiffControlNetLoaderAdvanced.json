@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DiffControlNetLoaderAdvanced的作用是什么？",
+        "answer": "DiffControlNetLoaderAdvanced节点用于加载和管理高级控制网络，确保它们与模型预期的权重类型兼容并验证控制网络权重的完整性，适用于复杂的模型操作。"
+    },
+    {
+        "question": "模型参数在DiffControlNetLoaderAdvanced中扮演什么角色？",
+        "answer": "模型参数定义了将应用控制网络的基础模型，确定控制网络的运行上下文，直接影响DiffControlNetLoaderAdvanced节点的执行。"
+    },
+    {
+        "question": "如何指定DiffControlNetLoaderAdvanced中要加载的控制网络？",
+        "answer": "通过control_net_name参数指定要加载的控制网络的名称，用于识别模型的正确控制网络配置，影响节点功能和控制应用的结果。"
+    },
+    {
+        "question": "可选参数timestep_keyframe在DiffControlNetLoaderAdvanced中实现了什么功能？",
+        "answer": "timestep_keyframe参数允许指定控制网络中与时间相关的关键帧，细化控制网络随时间的行为，提供对模型操作的更精细控制。"
+    },
+    {
+        "question": "DiffControlNetLoaderAdvanced的输出代表了什么？",
+        "answer": "DiffControlNetLoaderAdvanced输出的是已加载的控制网络（CONTROL_NET），封装了控制网络的配置和权重，准备应用于模型，是后续模型操作的基础组成部分。"
+    },
+    {
+        "question": "哪些组件是DiffControlNetLoaderAdvanced的输入类型？",
+        "answer": "DiffControlNetLoaderAdvanced的输入类型包括必要的模型参数和control_net_name，以及可选的timestep_keyframe参数，用于控制网络的加载和管理。"
+    },
+    {
+        "question": "DiffControlNetLoaderAdvanced的INFRA type是什么？",
+        "answer": "DiffControlNetLoaderAdvanced的Infra type设定为CPU，这意味着其运算或处理使用CPU作为主要基础设施，而非GPU。"
+    }
+]

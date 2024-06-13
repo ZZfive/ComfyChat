@@ -1,0 +1,42 @@
+[
+    {
+        "question": "CR_SetValueOnBinary节点的功能是什么？",
+        "answer": "CR_SetValueOnBinary节点根据二进制输入的状态条件性地分配一个值。如果输入为真（1），它将返回'value_if_1'指定的值；如果为假（0），则返回'value_if_0'的值。"
+    },
+    {
+        "question": "哪些参数是CR_SetValueOnBinary节点的必填输入？",
+        "answer": "CR_SetValueOnBinary节点的必填输入包括'binary'、'value_if_1'和'value_if_0'。'binary'是一个整数型二进制输入，'value_if_1'和'value_if_0'为用于条件返回的浮点数值。"
+    },
+    {
+        "question": "CR_SetValueOnBinary节点如何处理二进制输入？",
+        "answer": "CR_SetValueOnBinary节点根据‘binary’参数的值（0或1）来决定返回'value_if_1'还是'value_if_0'，确保在工作流中实现条件逻辑。"
+    },
+    {
+        "question": "CR_SetValueOnBinary的输出类型有哪些？",
+        "answer": "CR_SetValueOnBinary的输出类型包括一个整数类型用于反映二进制输入值（INT）、一个基于条件返回的浮点数类型（FLOAT），以及一个指向帮助文档的字符串类型（STRING）输出。"
+    },
+    {
+        "question": "CR_SetValueOnBinary中的'binary'输入有何数据要求？",
+        "answer": "'binary'输入必须是整数，接受0或1的值，确保节点能够在清晰且明确的条件下工作。"
+    },
+    {
+        "question": "'value_if_1'和'value_if_0'参数代表什么？",
+        "answer": "'value_if_1'表示当二进制输入为真（1）时将返回的值，'value_if_0'则设定了二进制输入为假（0）时的返回值，两者都是浮点类型，提供条件分配的灵活性。"
+    },
+    {
+        "question": "如何在ComfyUI中使用CR_SetValueOnBinary节点执行条件语句？",
+        "answer": "通过将'binary'设置为1或0，可以基于该条件选择返回'value_if_1'或'value_if_0'参数的值，从而在工作流中执行简单的条件逻辑。"
+    },
+    {
+        "question": "CR_SetValueOnBinary节点的'INT'输出表示什么？",
+        "answer": "'INT'输出表示二进制输入值的整数表示，直接反映了根据输入二进制条件将返回的数值类型。"
+    },
+    {
+        "question": "CR_SetValueOnBinary节点的'FLOAT'输出在工作流中如何使用？",
+        "answer": "'FLOAT'输出是基于二进制输入条件返回的具体数值，此值可以被工作流下游利用进行更复杂的计算或判断。"
+    },
+    {
+        "question": "在CR_SetValueOnBinary节点中，'show_help'输出有何作用？",
+        "answer": "'show_help'输出提供了一个URL链接指向节点文档页面，允许用户轻松获取关于如何有效使用此节点的详细信息。"
+    }
+]

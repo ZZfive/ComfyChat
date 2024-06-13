@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BlurNode 是什么，以及它在 ComfyUI 中的分类是怎样的？",
+        "answer": "BlurNode 是 Masquerade Nodes 类别中的一款自定义节点，专门用于在图像上施加高斯模糊效果，以仿现摄影和图像处理中常见的柔焦效果。"
+    },
+    {
+        "question": "BlurNode 的输入参数有哪些，并且它们有何作用？",
+        "answer": "BlurNode 的必需输入参数包括 image（节点将进行模糊处理的输入图像），以及可选参数 radius（定义模糊效果的范围）和 sigma_factor（调整高斯核的标准差，用于控制模糊的平滑度）。"
+    },
+    {
+        "question": "radius 参数在 BlurNode 中代表什么，它的数据类型是什么？",
+        "answer": "radius 参数定义了高斯模糊效果的范围，至关重要，因为它直接影响用于模糊的高斯核大小，因此影响模糊程度。数据类型为整型（INT），适用 ComfyUI 的整型格式。"
+    },
+    {
+        "question": "节点执行后会输出什么类型的参数，以及它表示什么？",
+        "answer": "BlurNode 在执行后会输出 blurred_image 参数，代表了经过高斯模糊后处理的图像。输出数据类型为 IMAGE，即通过 ComfyUI 处理图像的通用格式。"
+    },
+    {
+        "question": "ComfyUI 中的哪个节点可以实现图像的高斯模糊效果？",
+        "answer": "在 ComfyUI 的 Masquerade Nodes 类别下，BlurNode 节点可以实现高斯模糊，其通过对输入图像应用高斯核达到平滑和减少细节可见性的效果。"
+    },
+    {
+        "question": "gaussian_blur 函数在 BlurNode 中的功能和逻辑是什么？",
+        "answer": "gaussian_blur 函数用于执行高斯模糊的关键计算，通过构建和应用高斯核在图像上，该核基于指定的 kernel_size 和 sigma 参数，从而生成平滑和模糊后的图像。"
+    },
+    {
+        "question": "在 ComfyUI 中，应用图像模糊效果所需的自定义节点叫什么，它的工作原理简述是怎样的？",
+        "answer": "ComfyUI 中应用图像模糊效果的自定义节点是 BlurNode。它通过高斯核对图像数据进行算法处理，实现图像视觉上细节的减少和平滑化，其效果类似于摄影中的柔焦技术。"
+    }
+]

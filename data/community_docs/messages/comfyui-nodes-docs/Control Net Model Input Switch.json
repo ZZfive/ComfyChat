@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Control_Net_Input_Switch是什么类型的应用节点？",
+        "answer": "WAS_Control_Net_Input_Switch是一个逻辑决策节点，属于WAS Suite模块，专门用于智能选择两个控制网络中的一个，基于给定的布尔条件。"
+    },
+    {
+        "question": "Control Net Model Input Switch节点的主要功能是什么？",
+        "answer": "Control Net Model Input Switch节点的主要功能是在两个控制网络选项中根据布尔条件进行智能切换，以确保工作流程中使用最合适的控制网络。"
+    },
+    {
+        "question": "control_net_a参数在WAS_Control_Net_Input_Switch中起什么作用？",
+        "answer": "在WAS_Control_Net_Input_Switch节点中，control_net_a参数代表第一个控制网络选项，当布尔条件为真时，节点将选择这个控制网络进行后续处理。"
+    },
+    {
+        "question": "当boolean参数为False时，Control Net Model Input Switch将选择哪个控制网络？",
+        "answer": "当boolean参数为False时，Control Net Model Input Switch节点将选择control_net_b作为输出，即选择备选控制网络进行后续处理。"
+    },
+    {
+        "question": "输出的selected_control_net表示什么？",
+        "answer": "selected_control_net输出表示Control Net Model Input Switch节点根据布尔条件选择的控制网络，这个选择决定了工作流程中后续的处理路径。"
+    },
+    {
+        "question": "哪些类型的输入数据可以与control_net_a和control_net_b参数兼容？",
+        "answer": "control_net_a和control_net_b参数可以接收CONTROL_NET类型的数据，它们的Python数据类型为Optional[Union[comfy.sd.CONTROL_NET, torch.Tensor]]，这意味着可以接收从stable diffusion模型导出的控制网络或PyTorch张量表示的控制网络数据。"
+    },
+    {
+        "question": "在Control Net Model Input Switch节点中，boolean参数用于什么目的？",
+        "answer": "在Control Net Model Input Switch节点中，boolean参数用于决定选择control_net_a还是control_net_b作为输出。当boolean为真时，节点输出control_net_a；反之，则输出control_net_b。"
+    }
+]

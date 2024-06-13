@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_ApplyModelMerge节点的目的是什么？",
+        "answer": "CR_ApplyModelMerge节点旨在方便地将多个模型合并为一个单一的统一模型，通过智能地组合模型比例和剪贴比例，在必要时进行归一化，并应用指定的合并方法，创建所选模型的和谐混合。"
+    },
+    {
+        "question": "CR_ApplyModelMerge节点的model_stack参数是如何定义的？",
+        "answer": "model_stack参数定义了要合并的模型序列，至关重要，它在节点的执行中起着核心作用，决定了将贡献给最终合并模型的模型。它在ComfyUI中的dtype是MODEL_STACK，Python中的dtype是List[Tuple[str, float, float]]。"
+    },
+    {
+        "question": "在CR_ApplyModelMerge节点中，merge_method参数如何影响模型合并的过程？",
+        "answer": "merge_method参数决定了模型的组合方式，是节点功能的关键因素，因为它决定了用于合并的算法，可以显著影响结果模型的特性。它在ComfyUI中的dtype是COMBO['Recursive', 'Weighted']，Python中的dtype是str。"
+    },
+    {
+        "question": "CR_ApplyModelMerge节点的normalise_ratios参数有何作用？",
+        "answer": "normalise_ratios参数指示是否应将比例归一化，这对于确保比例准确反映每个模型对合并结果的预期贡献非常重要。在ComfyUI中的dtype是COMBO['Yes', 'No']，Python中的dtype是str。"
+    },
+    {
+        "question": "如何描述CR_ApplyModelMerge节点的weight_factor参数的作用？",
+        "answer": "weight_factor参数影响合并过程中模型的权重，对于微调每个模型对最终合并模型的贡献至关重要，允许对结果进行精确控制，在ComfyUI中的dtype是FLOAT，Python中的dtype是float。"
+    },
+    {
+        "question": "使用CR_ApplyModelMerge节点时，什么类型输出提供了合并后的模型？",
+        "answer": "使用CR_ApplyModelMerge节点时，MODEL类型输出提供了应用合并方法和指定参数后得到的合并模型。它代表了节点处理的顶点，对用户的工作流程至关重要，在ComfyUI中的dtype是MODEL，Python中的dtype是comfy.model_management.Model。"
+    },
+    {
+        "question": "CR_ApplyModelMerge节点的show_help输出提供了什么信息？",
+        "answer": "CR_ApplyModelMerge节点的show_help输出提供了一个链接到文档的链接，以获得进一步的帮助。对于寻求如何有效使用节点的更多信息的用户来说，这是一个有用的资源。在ComfyUI中的dtype是STRING，Python中的dtype是str。"
+    }
+]

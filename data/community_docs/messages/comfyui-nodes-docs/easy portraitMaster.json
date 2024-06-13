@@ -1,0 +1,34 @@
+[
+    {
+        "question": "portraitMaster节点的功能是什么?",
+        "answer": "portraitMaster节点是ComfyUI中的一个自定义节点，用于根据一组全面的参数生成详细肖像生成提示，结合面部特征、表情和光照条件以实现高度定制化和真实感。"
+    },
+    {
+        "question": "肖像生成提示中包含哪些类型的输出?",
+        "answer": "肖像生成提示包含两种类型的输出：'prompt'，一个综合性的字符串，整合所有输入参数，确保图像中捕捉到预期的细节；以及'negative_prompt'，一个补充性字符串，提供了应最小化或避免的方面，提高图像质量。"
+    },
+    {
+        "question": "portraitMaster中'shot'参数的作用是什么?",
+        "answer": "'shot'参数用于定义要生成的肖像类型，影响图像的整体构图和框架，对捕捉所期望的美学和叙述至关重要。"
+    },
+    {
+        "question": "哪些参数用于增加肖像的文化和种族多样性?",
+        "answer": "'nationality_1'和'nationality_2'参数，与'nationality_mix'一起使用，有助于定义肖像主题的文化和种族背景，增加了肖像的多样性和丰富性。"
+    },
+    {
+        "question": "如何利用'age'参数在portraitMaster中精确地反映主体的年龄?",
+        "answer": "'age'参数通过影响面部特征、皮肤细节和其他与年龄相关的属性的渲染，确保肖像准确反映所选年龄组，支持INT类型输入，范围在18到90岁之间。"
+    },
+    {
+        "question": "portraitMaster节点如何处理肖像主题的性别特征?",
+        "answer": "通过'gender'参数，portraitMaster节点指导生成与所选性别相符的物理特征和表情细节，有助于提高肖像的真实感和可信度，并可根据年龄调整性别描述为'girl'或'boy'。"
+    },
+    {
+        "question": "如何在portraitMaster节点配置中声明肖像生成的输入类型?",
+        "answer": "在portraitMaster节点配置中，多种输入类型被声明，包括'default'、'key'映射和数据类型如'COMBO'、'INT'和'FLOAT'，其中'COMBO'类型用于选择列表，如'nationality_list'。"
+    },
+    {
+        "question": "如何使用'face_shape'参数在portraitMaster中添加面部形状的细节?",
+        "answer": "通过设置'face_shape'参数，portraitMaster节点可以添加特定的面部形状细节到肖像中，如果'face_shape'不为空且'face_shape_weight'大于0，则在生成提示中加入具体面部形状的描述。"
+    }
+]

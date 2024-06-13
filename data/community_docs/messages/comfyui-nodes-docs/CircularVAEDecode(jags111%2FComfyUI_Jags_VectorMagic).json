@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CircularVAEDecode 是什么?",
+        "answer": "CircularVAEDecode 是 ComfyUI 的一个自定义节点，由 jags111%2FComfyUI_Jags_VectorMagic 项目提供，用于变分自编码器（VAE）解码过程，确保生成的图像边界处保持一致性。"
+    },
+    {
+        "question": "CircularVAEDecode 节点的输入类型有哪些?",
+        "answer": "CircularVAEDecode 节点的输入类型包括 'samples' 和 'vae'，前者代表VAE编码器的潜在向量，后者是指变分自编码器模型，用于将潜在样本解码成图像。"
+    },
+    {
+        "question": "CircularVAEDecode 的输出类型是什么?",
+        "answer": "CircularVAEDecode 的输出类型是 'image'，这是通过使用 VAE 模型解码输入潜在样本得到的结果，代表编码数据的视觉表现。"
+    },
+    {
+        "question": "哪些参数是 CircularVAEDecode 必需的?",
+        "answer": "CircularVAEDecode 需要有 'samples' 和 'vae' 两个参数的输入，其中 samples 是潜在向量，而 vae 是用于解码的变分自编码器模型。"
+    },
+    {
+        "question": "CircularVAEDecode 是怎样处理图像一致性问题的?",
+        "answer": "CircularVAEDecode 节点通过为 VAE 的解码过程准备模型的卷积层，使用循环填充模式，从而保证生成的图像在边界处保持一致性。"
+    },
+    {
+        "question": "samples 参数在 CircularVAEDecode 中的作用是什么?",
+        "answer": "samples 参数在 CircularVAEDecode 节点中代表 VAE 编码器的潜在向量，对于生成图像至为关键，它驱动整个解码过程，直接影响图像的质量与特征。"
+    },
+    {
+        "question": "CircularVAEDecode 节点适用于哪种类型的基础设施?",
+        "answer": "CircularVAEDecode 节点的使用提示表明，它适于 GPU 基础设施类型，意味着处理图形相关的计算和解码过程时更加高效。"
+    }
+]

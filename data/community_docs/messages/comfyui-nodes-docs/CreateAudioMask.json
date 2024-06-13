@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CreateAudioMask节点用于什么目的？",
+        "answer": "CreateAudioMask节点用于将音频信号转换为视觉表示，具体是创建与音频频率内容相对应的掩码，为音频到视觉的转换过程做出了贡献。"
+    },
+    {
+        "question": "CreateAudioMask节点使用什么库生成频谱图？",
+        "answer": "CreateAudioMask节点使用librosa库从音频文件生成频谱图，进而可视化为一系列与音频幅值成比例的圆圈。"
+    },
+    {
+        "question": "哪些输入参数影响CreateAudioMask节点中输出图像的尺寸？",
+        "answer": "`width`和`height`参数分别设置输出图像的宽度和高度，这两个参数共同作用以确定图像尺寸。"
+    },
+    {
+        "question": "如何在CreateAudioMask节点中控制音频信号的视觉表示时间和频率细节？",
+        "answer": "通过设置`frames`参数可以控制从音频文件处理的帧数，从而影响音频信号随时间演变的视觉细节。"
+    },
+    {
+        "question": "在CreateAudioMask中，掩码反转功能实现的作用是？",
+        "answer": "`invert`参数决定生成的掩码在颜色上是否应该被反转，这在需要调整掩码和背景对比度的应用中尤为关键。"
+    },
+    {
+        "question": "CreateAudioMask节点的关键输入之一'audio_path'的作用是什么？",
+        "answer": "`audio_path`参数定义了用于生成掩码的音频文件的路径，直接影响生成掩码的内容和质量。"
+    },
+    {
+        "question": "CreateAudioMask输出什么类型的图像？",
+        "answer": "CreateAudioMask输出的`output_image`是音频数据的视觉表示，封装了音频的时间和频率特征，同时提供音频频率内容的二进制`mask`表示。"
+    }
+]

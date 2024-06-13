@@ -1,0 +1,30 @@
+[
+    {
+        "question": "easy isSDXL节点的功能是什么？",
+        "answer": "easy isSDXL节点用于根据输入与特定模型（如SDXL模型）的兼容性进行分类，确保在ComfyUI工作流程中正确应用模型。"
+    },
+    {
+        "question": "isSDXL节点的输入参数optional_pipe起什么作用？",
+        "answer": "optional_pipe参数提供了一种包含条件阶段模型的流水线上下文，这影响了isSDXL节点的决策过程，确定模型的兼容性。"
+    },
+    {
+        "question": "isSDXL节点的输入参数optional_clip有何作用？",
+        "answer": "optional_clip参数提供了一个替代输入，使得节点能够与clip模型一起工作，这对于某些依赖于clip模型的操作是至关重要的。"
+    },
+    {
+        "question": "isSDXL节点的输出是什么类型？",
+        "answer": "isSDXL节点的输出类型是布尔值，表示模型是否兼容。具体来说，True表示兼容，False表示不兼容。"
+    },
+    {
+        "question": "如何在没有optional_pipe和optional_clip的情况下执行isSDXL节点？",
+        "answer": "在没有optional_pipe和optional_clip的情况下，无法直接执行isSDXL节点，因为至少需要其中一个参数来提供模型上下文以进行兼容性判断。"
+    },
+    {
+        "question": "isSDXL节点执行判断时会引用哪种类型模型？",
+        "answer": "isSDXL节点在执行判断时会引用SDXLClipModel、SDXLRefinerClipModel或SDXLClipG这三种类型模型中的一种，用于判断模型兼容性。"
+    },
+    {
+        "question": "使用isSDXL节点时需要注意哪些计算资源？",
+        "answer": "使用isSDXL节点时，建议的基础设施类型为CPU，这意味着该节点的执行可能在CPU上进行，而非GPU或其他类型的加速器。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_ValueScheduler节点在其动画工作流中发挥了什么作用？",
+        "answer": "CR_ValueScheduler是ComfyUI中用于在动画工作流中管理值调度的节点。它允许用户选择根据当前帧应用计划值或选择默认值，以确保根据指定计划正确设置动画参数。"
+    },
+    {
+        "question": "CR_ValueScheduler节点中的'mode'参数有何作用？",
+        "answer": "CR_ValueScheduler节点中的'mode'参数决定是否使用默认值或根据计划应用值。它定义了调度程序的操作模式，影响动画中值的分配方式。"
+    },
+    {
+        "question": "哪些参数可以决定CR_ValueScheduler使用默认值还是根据计划分配值？",
+        "answer": "CR_ValueScheduler使用'mode'参数来决定使用默认值还是根据当前帧应用的计划值。当模式设置为'Schedule'时，节点会根据当前帧和计划别名应用特定的值；当模式为'Default Value'时，总是使用默认值。"
+    },
+    {
+        "question": "CR_ValueScheduler中的'schedule_alias'参数有何作用？",
+        "answer": "在CR_ValueScheduler中，'schedule_alias'参数用于引用动画中的特定计划。当节点处于'Schedule'模式时，它有助于识别应从计划中考虑哪些关键帧和参数进行值分配。"
+    },
+    {
+        "question": "CR_ValueScheduler节点如何处理当前帧没有可用计划值的情况？",
+        "answer": "当CR_ValueScheduler节点在当前帧没有找到可用的计划值时，它会使用提供的'default_value'参数作为后备值，确保动画参数具有连贯性和一致性。"
+    },
+    {
+        "question": "CR_ValueScheduler输出类型中的'float_out'参数有什么重要性？",
+        "answer": "CR_ValueScheduler节点的'float_out'参数表示节点输出的浮点数值。这对于需要浮点精度的动画参数来说至关重要，可以是应用计划或使用默认值的结果。"
+    },
+    {
+        "question": "CR_ValueScheduler节点的'show_help'输出提供了什么信息？",
+        "answer": "CR_ValueScheduler节点的'show_help'输出提供了指向节点文档的URL链接，为用户提供进一步的指导和信息，帮助其更有效地使用节点。"
+    }
+]

@@ -1,0 +1,38 @@
+[
+    {
+        "question": "FaceEmbedDistance节点属于哪个类别？",
+        "answer": "FaceEmbedDistance节点属于FaceAnalysis类别。"
+    },
+    {
+        "question": "FaceEmbedDistance的主要功能是什么？",
+        "answer": "FaceEmbedDistance节点的主要功能是使用欧几里得和余弦距离度量来分析和比较面部特征，以确定输入图像和参考图像之间的相似性，促进面部识别和验证。"
+    },
+    {
+        "question": "哪些输入参数对于FaceEmbedDistance节点执行面部检测和嵌入提取是至关重要的？",
+        "answer": "analysis_models参数包含用于面部检测和嵌入提取的模型，对于节点执行面部分析功能至关重要。"
+    },
+    {
+        "question": "参考图像在FaceEmbedDistance节点中扮演什么角色？",
+        "answer": "参考图像对于与输入图像进行比较至关重要。它们作为计算距离和识别匹配的基线，显著影响节点分析面部相似性的能力。"
+    },
+    {
+        "question": "FaceEmbedDistance节点的欧几里得距离阈值有何作用？",
+        "answer": "欧几里得距离阈值(filter_thresh_eucl)用于过滤掉过于不相似的图像，控制面部相似性评估的严格程度。"
+    },
+    {
+        "question": "FaceEmbedDistance节点的余弦距离阈值(filter_thresh_cos)和欧几里得阈值有何不同？",
+        "answer": "余弦距离阈值与欧几里得阈值一起使用，以细化面部相似性评估，专注于面部嵌入的方向性而不仅仅是它们的幅度。"
+    },
+    {
+        "question": "FaceEmbedDistance节点是否支持输出图像覆盖？",
+        "answer": "是的，如果启用了generate_image_overlay选项，它会在输入图像上生成一个覆盖层，显示距离度量，提供面部分析结果的视觉表示。"
+    },
+    {
+        "question": "FaceEmbedDistance节点的输出类型有哪些？它们的Python dtype是什么？",
+        "answer": "FaceEmbedDistance节点的输出类型包括IMAGE (List[PIL.Image.Image]), FLOAT (float), 和STRING (str)，分别代表了分析后的图像、欧几里得距离值和余弦距离值以及CSV形式的面部分析记录。"
+    },
+    {
+        "question": "如何使用FaceEmbedDistance节点检查面部相似性？",
+        "answer": "通过输入必要的图像、参考图像和模型参数，FaceEmbedDistance节点能够计算并比较面部特征的欧几里得和余弦距离，从而评估面部的相似性。"
+    }
+]

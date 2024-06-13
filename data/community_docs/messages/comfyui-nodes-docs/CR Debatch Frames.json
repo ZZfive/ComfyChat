@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_DebatchFrames节点在ComfyUI中的具体用途是什么？",
+        "answer": "CR_DebatchFrames节点用于处理并拆分输入的图像帧批次为单独的帧，为动画工作流程中的进一步分析或独立处理每个帧提供准备。"
+    },
+    {
+        "question": "CR_DebatchFrames节点的输入参数'frames'的特性是什么？",
+        "answer": "‘frames’参数代表节点将处理的图像帧批次，输入的帧数据应为torch.Tensor格式，它决定了节点如何拆分批次数据为独立帧。"
+    },
+    {
+        "question": "CR_DebatchFrames节点输出的'debatched_frames'是什么？",
+        "answer": "‘debatched_frames’输出是由从输入批次中提取的单独帧列表组成，数据类型为List[torch.Tensor]，为后续动画处理步骤提供单独的帧数据。"
+    },
+    {
+        "question": "在使用ComfyUI进行动画制作时，CR_DebatchFrames节点的执行依赖于哪些输入？",
+        "answer": "CR_DebatchFrames节点的执行依赖于输入的'frames'参数，该参数需要是类型为IMAGE的图像帧批次，用于拆分处理。"
+    },
+    {
+        "question": "哪些节点输出可以直接作为CR_DebatchFrames的输入？",
+        "answer": "可以输出IMAGE类型数据，即torch.Tensor格式的图像帧批次的任何节点都可以作为CR_DebatchFrames的输入。"
+    },
+    {
+        "question": "在ComfyUI中，CR_DebatchFrames节点的输出如何在动画流水线中应用？",
+        "answer": "CR_DebatchFrames的输出即‘debatched_frames’，是一系列独立的图像帧，可以直接用于动画流水线中图像处理或分析的下一步，如单独帧的渲染或效果应用。"
+    },
+    {
+        "question": "CR_DebatchFrames节点的执行是在CPU上还是GPU上进行？",
+        "answer": "CR_DebatchFrames节点的执行基础设施类型为CPU，意味着所有处理在CPU上进行，不涉及GPU加速。"
+    }
+]

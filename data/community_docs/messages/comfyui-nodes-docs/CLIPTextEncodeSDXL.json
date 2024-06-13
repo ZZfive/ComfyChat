@@ -1,0 +1,42 @@
+[
+    {
+        "question": "CLIPTextEncodeSDXL是什么类型的节点?",
+        "answer": "CLIPTextEncodeSDXL是ComfyUI中的一个高级条件任务节点，用于将文本信息编码为可用于图像生成或基于文本的搜索等的应用格式。"
+    },
+    {
+        "question": "CLIPTextEncodeSDXL如何与CLIP模型交互以编码文本信息?",
+        "answer": "CLIPTextEncodeSDXL节点通过CLIP模型实例，将文本转换为令牌，这些令牌可以整合到AI模型中，生成更丰富、更细致的输出。"
+    },
+    {
+        "question": "在CLIPTextEncodeSDXL节点中，'width'和'height'参数的作用是什么?",
+        "answer": "'width'和'height'参数分别指定编码过程的宽度和高度维度，这对于确定输出的分辨率和确保与其他组件的兼容性非常重要。"
+    },
+    {
+        "question": "为了满足特定尺寸要求，CLIPTextEncodeSDXL提供了哪些参数?",
+        "answer": "为了满足特定尺寸要求，CLIPTextEncodeSDXL提供了'target_width'和'target_height'参数，指导编码过程产生需要的输出尺寸。"
+    },
+    {
+        "question": "在CLIPTextEncodeSDXL中，'text_g'和'text_l'参数的用途是什么?",
+        "answer": "'text_g'和'text_l'参数分别接受主要和附加的文本信息，这些信息将被编码，直接影响编码输出的质量和相关性。"
+    },
+    {
+        "question": "CLIPTextEncodeSDXL节点的输出结果是什么类型的数据?",
+        "answer": "CLIPTextEncodeSDXL节点的输出是'CONDITIONING'对象，封装了已编码的文本信息，对于需要整合文本上下文到模型输出的应用至关重要。"
+    },
+    {
+        "question": "哪些参数在CLIPTextEncodeSDXL中用于控制输入数据的裁剪区域?",
+        "answer": "'crop_w'和'crop_h'参数用于定义在编码过程中裁剪区域的宽度和高度，允许对输入数据的特定部分进行选择性关注。"
+    },
+    {
+        "question": "CLIPTextEncodeSDXL节点的PYTHON dtype和Comfy dtype有何区别?",
+        "answer": "在CLIPTextEncodeSDXL节点中，PYTHON dtype和Comfy dtype都是用来表示参数类型，PYTHON dtype使用Python的标准数据类型（如int或str），而Comfy dtype则使用ComfyUI框架中的特定类型，如INT或STRING。"
+    },
+    {
+        "question": "哪些节点在ComfyUI中可能与CLIPTextEncodeSDXL协同工作?",
+        "answer": "在ComfyUI中，可能与CLIPTextEncodeSDXL协同工作的节点包括任何需要从编码的文本信息中提取条件来生成图像或其他基于文本的输出的节点。"
+    },
+    {
+        "question": "使用CLIPTextEncodeSDXL时有哪个infrastructure类型被推荐?",
+        "answer": "使用CLIPTextEncodeSDXL节点时推荐的infrastructure类型是CPU，这意味着它在大多数现代计算设备中都可以运行而不需要专门的图形处理单元（GPU）。"
+    }
+]

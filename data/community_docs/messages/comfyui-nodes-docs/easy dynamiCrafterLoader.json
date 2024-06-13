@@ -1,0 +1,30 @@
+[
+    {
+        "question": "easy dynamiCrafterLoader节点的类别和输出节点类型是什么？",
+        "answer": "easy dynamiCrafterLoader 节点的类别是 EasyUse/Loaders，它不是一个输出节点。"
+    },
+    {
+        "question": "easy dynamiCrafterLoader 提供了哪些核心功能？",
+        "answer": "easy dynamiCrafterLoader 封装了加载和准备各种模型和数据的功能，适用于 dynamiCrafter 流水线，简化了模型选择、初始化和配置过程，确保必要组件为后续生成任务就绪。"
+    },
+    {
+        "question": "dynamiCrafterLoader 中，model_name 参数对于节点有何作用？",
+        "answer": "model_name 参数用于指定在 dynamiCrafterLoader 中将使用哪个模型，决定了生成过程的基础架构和相关参数。"
+    },
+    {
+        "question": "哪些参数会影响生成任务的流程控制与结果质量？",
+        "answer": "clip_skip 参数影响 CLIP 模型用于文本调节的层选择，决议了生成结果的创意方向；init_image 参数提供视觉输入以初始化潜在空间，直接影响最终输出；resolution 参数定义输出尺寸，匹配模型能力和需求的质量与细节水平。"
+    },
+    {
+        "question": "pipe 输出具体封装了哪些内容？",
+        "answer": "pipe 输出封装了 dynamiCrafter 流水线所需的所有组件，包括模型、VAE、文本编码等，设计为与下游生成任务无缝集成。"
+    },
+    {
+        "question": "使用 easy dynamiCrafterLoader 时，什么类型的设备是推荐的运行平台？",
+        "answer": "easy dynamiCrafterLoader 推荐使用 GPU，以实现加速并提高生成任务的性能。"
+    },
+    {
+        "question": "dynamiCrafterLoader 如何处理模型加载和文本编码？",
+        "answer": "dynamiCrafterLoader 使用各种缓存和加载机制处理模型加载，并针对 clip_skip 参数调整 CLIP 模型，使用 CLIPTextEncode 编码器处理正负向文本编码，确保生成任务的顺利进行。"
+    }
+]

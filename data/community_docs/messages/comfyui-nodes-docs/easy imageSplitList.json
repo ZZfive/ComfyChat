@@ -1,0 +1,30 @@
+[
+    {
+        "question": "easy imageSplitList节点的作用是什么？",
+        "answer": "easy imageSplitList节点根据特定标准将输入的图像列表分割成多个子集，这有助于提高工作流中图像数据的组织和处理效率。"
+    },
+    {
+        "question": "哪些输入对easy imageSplitList节点是必需的？",
+        "answer": "图像参数是easy imageSplitList节点所必需的，它决定了后续的分割过程和输出结果的结构。"
+    },
+    {
+        "question": "easy imageSplitList节点处理后的输出是什么形式？",
+        "answer": "easy imageSplitList节点的输出代表了重新组织的图像子集，通常以Tuple[List[PIL.Image.Image], List[PIL.Image.Image], List[PIL.Image.Image]]的形式返回，这是工作流中进一步分析或处理的基础。"
+    },
+    {
+        "question": "在easy imageSplitList节点中，图像参数的实际数据类型是什么？",
+        "answer": "在easy imageSplitList节点中，图像参数在Python中是List[PIL.Image.Image]类型，而ComfyUI框架内部被视为IMAGE类型。"
+    },
+    {
+        "question": "easy imageSplitList节点是如何将图像列表分割的？",
+        "answer": "easy imageSplitList节点根据图像列表的长度决定分割方式：如果长度可被3整除，图像将被均匀分割为3个子集；如果长度可被2整除，图像则被分割为2个子集，且没有剩余。"
+    },
+    {
+        "question": "在ComfyUI中，哪些节点可以处理图像列表的分割？",
+        "answer": "ComfyUI的easy imageSplitList节点可以实现图像列表的分割，适用于需要对图像数据进行组织和预处理的工作流。"
+    },
+    {
+        "question": "easy imageSplitList节点的源代码显示了如何处理不同大小的图像列表？",
+        "answer": "easy imageSplitList节点的源代码根据输入图像列表的长度动态调整分割策略，以适应3等分或2等分的需要，确保了图像子集的均等性和分割过程的有效性。"
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "question": "CR_SimpleImageCompare节点属于哪个分类？",
+        "answer": "CR_SimpleImageCompare节点属于Comfyroll/Graphics/Template分类。"
+    },
+    {
+        "question": "CR_SimpleImageCompare节点的主要功能是什么？",
+        "answer": "CR_SimpleImageCompare节点的主要功能是将两张图片并排比较，并在图片上叠加文字，提供直观的图片差异评估和定制的视觉效果。"
+    },
+    {
+        "question": "哪些输入是CR_SimpleImageCompare节点必需的？",
+        "answer": "CR_SimpleImageCompare节点必需的输入包括：text1, text2, footer_height, font_name, font_size, mode 和 border_thickness。"
+    },
+    {
+        "question": "CR_SimpleImageCompare节点如何处理文字和图片的叠加？",
+        "answer": "CR_SimpleImageCompare节点使用文字1和文字2叠加到各自的图片上，并设定页脚高度控制文字空间，选择字体和大小，设定模式和边框厚度来定制最终图片的显示效果。"
+    },
+    {
+        "question": "CR_SimpleImageCompare节点的输出包括什么？",
+        "answer": "CR_SimpleImageCompare节点的输出包括一张并排比较的图片（IMAGE类型）和一个URL链接（STRING类型），即show_help，提供进一步的使用指导。"
+    },
+    {
+        "question": "mode参数在CR_SimpleImageCompare节点中怎么工作？",
+        "answer": "mode参数允许用户选择文字和背景颜色的显示模式，可以在'normal'和'dark'之间选择，以优化文字的可见性和对比度。"
+    },
+    {
+        "question": "CR_SimpleImageCompare节点的source code中的'font_dir'是如何定义的？",
+        "answer": "在CR_SimpleImageCompare节点的source code中，'font_dir'是通过节点文件的真实路径与'fonts'目录组合来定义的，用于获取可用字体列表。"
+    },
+    {
+        "question": "在CR_SimpleImageCompare节点中，图片和文字对比如何呈现最佳可读性？",
+        "answer": "CR_SimpleImageCompare节点通过mode参数选择文字显示模式，配合footer_height设定文字空间，以及通过font_size调整文字大小，以保证文字对比背景的最佳可读性。"
+    },
+    {
+        "question": "CR_SimpleImageCompare节点的source code中，'image1'和'image2'的处理逻辑是怎样的？",
+        "answer": "在CR_SimpleImageCompare节点的source code中，'image1'和'image2'被转化成PIL格式，如果尺寸不匹配，会进行重置，之后并叠加文字，确保并排比较的图片保持一致的尺寸和布局。"
+    },
+    {
+        "question": "CR_SimpleImageCompare节点的source code中，如何实现文字面板(text panel)的绘制？",
+        "answer": "CR_SimpleImageCompare节点的source code利用,text_panel这个函数创建文字面板，通过指定的高度、文本、字体、大小等参数，将文字绘制到预设的尺寸上，确保文字对比的一致性和视觉效果。"
+    }
+]

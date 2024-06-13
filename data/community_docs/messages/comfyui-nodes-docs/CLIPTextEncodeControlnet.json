@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CLIPTextEncodeControlnet节点是做什么的？",
+        "answer": "CLIPTextEncodeControlnet节点旨在将文本输入编码成可用于控制图像生成的格式，利用CLIP模型理解文本并将其转换为可以引导图像生成过程的潜在空间表示。"
+    },
+    {
+        "question": "如何在ComfyUI中使用CLIPTextEncodeControlnet节点进行图像生成的文本指导？",
+        "answer": "在ComfyUI中，通过给定CLIP模型、条件以及文本输入，CLIPTextEncodeControlnet节点能够生成一组编码表示，这些表示用于确保图像生成符合提供的文本描述。"
+    },
+    {
+        "question": "CLIPTextEncodeControlnet节点的重要输入参数有哪些？",
+        "answer": "CLIPTextEncodeControlnet节点的重要输入参数包括'clip'、'conditioning'、以及'text'，分别代表用于文本编码的CLIP模型、决定文本编码条件的输入以及需要处理的文本输入。"
+    },
+    {
+        "question": "使用CLIPTextEncodeControlnet节点时，针对'text'参数的编程接口有何特性？",
+        "answer": "'text'参数在ComfyUI中具备多行文本输入和动态提示功能，这意味着用户可以输入多行文本来更好地描述所需生成的图像，并通过动态提示实现文本的自主变化。"
+    },
+    {
+        "question": "在ComfyUI中，哪些节点可以直接接收CLIPTextEncodeControlnet的输出？",
+        "answer": "在ComfyUI中，节点产生的'conditioning'输出可以被任何期待CONDITIONING类型的节点接收，用于后续的图像生成任务，确保生成结果与文本描述一致。"
+    },
+    {
+        "question": "CLIPTextEncodeControlnet节点的'clip'输入的实际类型是什么？",
+        "answer": "在ComfyUI中，CLIPTextEncodeControlnet节点的'clip'输入实际类型为Comfy的dtype CLIP，代表的是torch.nn.Module，在代码实现中用于处理文本编码任务的深度学习模型。"
+    },
+    {
+        "question": "哪些设备最适合运行CLIPTextEncodeControlnet节点？",
+        "answer": "CLIPTextEncodeControlnet节点最适合在GPU设备上运行，因为GPU能够加速深度学习相关计算，提高文本向潜在空间表示转换的速度。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "APISR_ModelLoader_Zho 是什么？",
+        "answer": "APISR_ModelLoader_Zho 是 ComfyUI 的一个自定义节点，用于加载和管理图像超分辨率模型，提供统一接口处理不同模型架构。"
+    },
+    {
+        "question": "APISR_ModelLoader_Zho 节点输入参数 apisr_model 的作用是什么？",
+        "answer": "apisr_model 参数用于指定要加载的模型文件，引导节点找到正确的模型架构和权重，对超分辨率生成器实例化至关重要。"
+    },
+    {
+        "question": "哪些模型可以在 APISR_ModelLoader_Zho 节点中加载？",
+        "answer": "APISR_ModelLoader_Zho 节点可以加载 '4x_APISR_GRL_GAN_generator.pth' 和 '2x_APISR_RRDB_GAN_generator.pth' 两个模型文件。"
+    },
+    {
+        "question": "APISR_ModelLoader_Zho 节点的主要输出是什么？",
+        "answer": "主要输出是 'pipe'，它表示已加载的超分辨率模型生成器，用于图像放大任务，其性能决定超分辨率过程的有效性。"
+    },
+    {
+        "question": "在 ComfyUI 中，哪些节点能够处理图像放大任务？",
+        "answer": "APISR_ModelLoader_Zho 节点可以处理图像放大任务，通过加载超分辨率模型生成器并输出 'pipe' 以执行图像放大。"
+    },
+    {
+        "question": "运行 APISR_ModelLoader_Zho 节点需要哪种基础架构？",
+        "answer": "运行 APISR_ModelLoader_Zho 节点要求基于 GPU 的基础设施，以支持超分辨率模型的高效处理。"
+    },
+    {
+        "question": "APISR_ModelLoader_Zho 节点源代码中如何处理未提供的 apisr_model 参数？",
+        "answer": "APISR_ModelLoader_Zho 节点源代码中，若未提供 apisr_model 参数，会通过 raise ValueError 抛出异常，指示需要指定模型文件参数。"
+    }
+]

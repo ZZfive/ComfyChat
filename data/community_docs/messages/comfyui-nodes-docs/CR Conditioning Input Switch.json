@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_ConditioningInputSwitch节点的作用是什么？",
+        "answer": "CR_ConditioningInputSwitch节点用于根据条件输入管理数据流，它允许根据'Input'参数的值选择两个条件输入之一，从而在复杂工作流中引导数据流，实现条件逻辑，避免了使用嵌套结构。"
+    },
+    {
+        "question": "'Input'参数在CR_ConditioningInputSwitch节点中扮演什么角色？",
+        "answer": "'Input'参数作为CR_ConditioningInputSwitch节点的开关，当其值为1时选择'conditioning1'作为输出，而当其值非1时则选择'conditioning2'。此参数是确定节点输出的关键，直接影响工作流中的决策过程。"
+    },
+    {
+        "question": "CR_ConditioningInputSwitch节点在选择条件输入时如何工作？",
+        "answer": "CR_ConditioningInputSwitch节点根据'Input'参数的值来决定输出哪一组条件数据：当'Input'参数等于1时，节点选择'conditioning1'作为输出；当'Input'参数不等于1时，节点选择'conditioning2'作为输出，为后续步骤提供必要的信息。"
+    },
+    {
+        "question": "'conditioning1'和'conditioning2'在CR_ConditioningInputSwitch节点中有什么区别？",
+        "answer": "'conditioning1'和'conditioning2'是CR_ConditioningInputSwitch节点的两个可选输入，分别根据'Input'参数的值来决定使用哪一个。当'Input'参数等于1时，'conditioning1'被选中，否则，'conditioning2'生效，使得节点在不同场景下具备灵活性和适应性。"
+    },
+    {
+        "question": "CR_ConditioningInputSwitch节点的'CONDITIONING'输出类型代表着什么？",
+        "answer": "CR_ConditioningInputSwitch节点的'CONDITIONING'输出类型代表基于'Input'参数值选择的条件数据，它是节点条件逻辑的结果，为工作流中的后续步骤提供必要信息，类型兼容ComfyUI中的CONDITIONING数据类型。"
+    },
+    {
+        "question": "CR_ConditioningInputSwitch节点的'show_help'输出功能是什么？",
+        "answer": "CR_ConditioningInputSwitch节点的'show_help'输出提供了节点文档的URL链接，方便用户快速访问使用节点的附加信息和指导，增强节点的易用性。"
+    },
+    {
+        "question": "哪些类型的输入和输出与CR_ConditioningInputSwitch节点相关联？",
+        "answer": "CR_ConditioningInputSwitch节点支持INT类型的'Input'参数，和'CONDITIONING'类型的'conditioning1'、'conditioning2'输入，以及'CONDITIONING'、'STRING'类型的输出，用于处理和提供条件逻辑决策下的数据和帮助信息。"
+    }
+]

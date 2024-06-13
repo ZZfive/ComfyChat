@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ADE_MultivalDynamic是什么?",
+        "answer": "ADE_MultivalDynamic是一个ComfyUI的自定义节点，分类在Animate Diff 🎭🅐🅓/multival类别下，主要用于动态生成和操纵多值数据，是创建复杂动画的关键组件。"
+    },
+    {
+        "question": "MultivalDynamicNode中的'create_multival'方法是怎样工作的?",
+        "answer": "'create_multival'方法能够处理单个或可迭代的浮点数作为输入，并生成适合下游动画处理的多值数据。它能够针对动画的不同方面，如角色运动或场景转换，动态地应用一系列数值。"
+    },
+    {
+        "question": "在ComfyUI的ADE_MultivalDynamic节点中'float_val'参数的作用是什么?",
+        "answer": "'float_val'参数是MultivalDynamicNode中的一个关键输入，用以定义节点将用于创建多值数据的基值或值序列。它可以是单个浮点数或浮点数数组，对节点输出的范围和性质有直接影响。"
+    },
+    {
+        "question": "什么是'float_val'在MultivalDynamicNode中的输入格式?",
+        "answer": "'float_val'的格式在ComfyUI中是FLOAT类型，而在Python中可能是单个浮点数或浮点数列表(Union[float, List[float]])，这取决于用户是要设置单个数值还是一个数值序列来影响动画的不同部分。"
+    },
+    {
+        "question": "在MultivalDynamicNode中如何应用'mask_optional'参数?",
+        "answer": "'mask_optional'是MultivalDynamicNode中的一个可选参数，用于将掩码应用于生成的多值数据，允许选择性地在动画的不同元素上应用'float_val'，从而实现条件或部分动画效果，为动画效果增色添彩。"
+    },
+    {
+        "question": "在ComfyUI的ADE_MultivalDynamic中，'mask_optional'的输入格式是什么?",
+        "answer": "'mask_optional'的输入在ComfyUI中类型为MASK，对应到Python中则为可选的torch.Tensor格式，允许用户指定一个可能用于条件动画效果的掩码张量。"
+    },
+    {
+        "question": "输出'multival'在ComfyUI的ADE_MultivalDynamic节点中代表什么?",
+        "answer": "输出'multival'表示由MultivalDynamicNode处理和生成的多值数据张量，它包含了'float_val'指定的动态值范围，可能根据'mask_optional'进行修改。'multival'作为动画流水线的进一步开发基础，可以直接集成到渲染过程中。"
+    }
+]

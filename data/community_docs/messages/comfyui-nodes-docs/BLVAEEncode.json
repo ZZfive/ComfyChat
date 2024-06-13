@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BLVAEEncode节点的主要功能是什么？",
+        "answer": "BLVAEEncode节点的主要功能是使用变分自编码器（VAE）将图像编码为潜在空间表示，支持从输入图像编码新表示或加载工作流中存在的潜在表示。"
+    },
+    {
+        "question": "哪些参数是BLVAEEncode节点编码过程所必需的？",
+        "answer": "必需的参数有'vae'，代表用于转换输入图像为潜在表示的变分自编码器模型。"
+    },
+    {
+        "question": "在什么情况下，BLVAEEncode节点会删除工作流中的潜在表示？",
+        "answer": "当设置'remove_latent_on_load'为true时，BLVAEEncode节点会在成功加载潜在表示后从工作流中删除它，以释放空间和资源；当'delete_workflow_latent'为true时，它会删除工作流中的任何现有潜在表示。"
+    },
+    {
+        "question": "BLVAEEncode节点的'tiled'参数起到什么作用？",
+        "answer": "'tiled'参数决定是否以平铺方式执行编码过程，这对于处理大型图像有益，以避免内存问题，其'tile_size'参数进一步定义了编码图像的瓦片大小。"
+    },
+    {
+        "question": "处理大型图像时，应使用BLVAEEncode节点的哪个参数？",
+        "answer": "处理大型图像时，应启用'tiled'参数并设置适当的'tile_size'，以分割图像进行编码，从而避免内存溢出的问题。"
+    },
+    {
+        "question": "如果想在BLVAEEncode节点中存储或加载潜在表示，应设置哪些参数？",
+        "answer": "要存储或加载潜在表示，应设置'store_or_load_latent'为true，并指定'unique_id'参数，用于标识潜在数据的位置和检索。"
+    },
+    {
+        "question": "什么类型的节点是BLVAEEncode节点？",
+        "answer": "BLVAEEncode节点属于'latent'类别，主要处理与变分自编码器相关的潜在空间转换任务。"
+    }
+]

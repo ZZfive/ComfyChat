@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_SimplePromptScheduler是什么类型的节点？",
+        "answer": "CR_SimplePromptScheduler是ComfyUI中Comfyroll/Animation/Schedulers类别下的一个节点，用于管理和调度动画中的提示，根据关键帧列表自动更改提示。"
+    },
+    {
+        "question": "CR_SimplePromptScheduler如何实现动态内容的创建？",
+        "answer": "CR_SimplePromptScheduler通过在特定帧自动更改提示来促进动态内容的创建，无需手动干预，这对于处理需要精确提示调整的复杂序列很关键。"
+    },
+    {
+        "question": "CR_SimplePromptScheduler的keyframe_list输入类型有什么作用？",
+        "answer": "keyframe_list输入用于定义提示及其对应帧的顺序，这对于节点调度提示至关重要，确保动画的正确时间显示正确的提示。"
+    },
+    {
+        "question": "CR_SimplePromptScheduler的current_frame输入类型是如何影响其功能的？",
+        "answer": "current_frame输入指示动画时间轴上的当前点，节点使用它来确定关键帧列表中哪个提示应该对当前帧处于激活状态。"
+    },
+    {
+        "question": "CR_SimplePromptScheduler的keyframe_format输入为何是可选的？",
+        "answer": "keyframe_format输入是可选的，因为它指定了关键帧数据的结构，允许节点正确解析和解释关键帧列表，这对于调度提示的完整性和准确性非常重要。"
+    },
+    {
+        "question": "CR_SimplePromptScheduler的输出类型包括哪些？",
+        "answer": "CR_SimplePromptScheduler的输出类型包括当前提示(current_prompt)、下一个提示(next_prompt)、提示之间的过渡权重(weight)和一个链接到文档的帮助信息(show_help)。"
+    },
+    {
+        "question": "在CR_SimplePromptScheduler的使用中，为什么infra type是CPU？",
+        "answer": "CR_SimplePromptScheduler的infra type指定为CPU，通常是因为此节点操作的数据处理和逻辑调度并不依赖于GPU加速，而是更适合于CPU执行。"
+    }
+]

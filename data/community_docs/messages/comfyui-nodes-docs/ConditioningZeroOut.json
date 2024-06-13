@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ConditioningZeroOut节点的作用是什么？",
+        "answer": "ConditioningZeroOut节点在ComfyUI中专门用于操作条件数据，通过将特定元素（如'pooled_output'）置零来控制神经网络中信息的流动，允许模型预测的有针对性修改，而不改变数据底层结构。"
+    },
+    {
+        "question": "在ConditioningZeroOut中，什么样的数据类型会被接受作为输入？",
+        "answer": "ConditioningZeroOut节点接受的数据类型为Comfy的CONDITIONING类型，Python中表现为Dict[str, Any]形式，这个输入定义了将被节点操作的条件数据。"
+    },
+    {
+        "question": "ConditioningZeroOut节点的输出类型是什么？",
+        "answer": "ConditioningZeroOut节点的输出为Comfy的CONDITIONING类型，表现为List[Tuple[torch.Tensor, Dict[str, Any]]]，这是zero_out操作后修改条件数据的直接结果。"
+    },
+    {
+        "question": "条件数据中哪个元素会被ConditioningZeroOut节点置零？",
+        "answer": "ConditioningZeroOut节点将条件数据中的'pooled_output'元素置零，从而实现对模型预测的控制。"
+    },
+    {
+        "question": "哪些元素对于ConditioningZeroOut节点是必需的？",
+        "answer": "对于ConditioningZeroOut节点而言，'conditioning'参数是必需的，它提供了将被节点操作的输入数据，对节点执行和零化结果有显著影响。"
+    },
+    {
+        "question": "ConditioningZeroOut节点的类别是什么？",
+        "answer": "ConditioningZeroOut节点属于ComfyUI的'advanced/conditioning'类别，专门处理神经网络条件数据的高级操作。"
+    },
+    {
+        "question": "在使用ConditioningZeroOut节点时，硬件上有什么推荐？",
+        "answer": "ConditioningZeroOut节点推荐使用CPU作为infrastructure-type，意味着它的操作与CPU兼容并且可能是为CPU优化的。"
+    }
+]

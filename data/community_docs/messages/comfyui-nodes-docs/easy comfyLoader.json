@@ -1,0 +1,42 @@
+[
+    {
+        "question": "comfyLoader的`adv_pipeloader`方法的作用是什么？",
+        "answer": "`adv_pipeloader`方法简化了高级用例中模型和数据的加载与准备过程，整合了VAE、CLIP、LORA等组件，为用户提供了全面的处理流程，根据提示和偏好生成与操作高质量图像。"
+    },
+    {
+        "question": "在`adv_pipeloader`方法中，ckpt_name参数的用途是什么？",
+        "answer": "ckpt_name参数确定要使用的具体模型配置，通过决定模型架构和学习到的参数来影响节点的整体性能与输出。"
+    },
+    {
+        "question": "vae_name参数为什么对comfyLoader至关重要？",
+        "answer": "vae_name参数用于选择适当的变分自编码器模型，该模型在生成和操作图像的潜在表示方面发挥关键作用。"
+    },
+    {
+        "question": "如何利用clip_skip参数来增强图像生成过程？",
+        "answer": "clip_skip参数控制CLIP模型与图像生成之间的交互，影响节点如何利用语义信息来增强生成的图像质量。"
+    },
+    {
+        "question": "lora_model_strength和lora_clip_strength这些参数如何协同工作以优化图像生成？",
+        "answer": "lora_model_strength调整LORA层对模型输出的影响，而lora_clip_strength调节CLIP模型与LORA层的集成强度，两者协同确保生成图像在语义准确性和视觉真实性之间取得平衡。"
+    },
+    {
+        "question": "resolution参数对`adv_pipeloader`的输出图像有何影响？",
+        "answer": "resolution参数决定了生成图像的尺寸，直接影响图像生成所需细节水平和计算资源，从而影响输出图像的质量和尺寸。"
+    },
+    {
+        "question": "positive和negative参数如何指导comfyLoader生成的图像特性？",
+        "answer": "positive参数包含正面提示文本，引导生成符合期望美学或主题的图像，而negative参数包含负面提示，阻止模型生成不需要的特征或风格。"
+    },
+    {
+        "question": "comfyLoader方法输出的`ui`和`result`分别代表什么？",
+        "answer": "`ui`输出提供了用户友好的通配符提示表示，可视化正面与负面的提示效果；而`result`输出包含了加载的模型、VAE、CLIP和其他相关数据结构，用于后续的图像操作和分析。"
+    },
+    {
+        "question": "哪些输入参数决定了comfyLoader中潜在空间的宽度和高度，以及它们如何影响图像生成？",
+        "answer": "empty_latent_width和empty_latent_height参数设定潜在空间的尺寸，对于确定图像变化范围和多样性至关重，直接影响生成过程的效率和输出图像的质量。"
+    },
+    {
+        "question": "comfyLoader适合在什么类型的基础架构上运行？",
+        "answer": "comfyLoader的`adv_pipeloader`方法最适合在GPU上运行，以高效处理图像生成和模型计算的复杂任务。"
+    }
+]

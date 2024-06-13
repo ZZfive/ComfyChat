@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ESAM_ModelLoader_Zho 是什么类型的节点？",
+        "answer": "ESAM_ModelLoader_Zho 是一个属于 🔎YOLOWORLD_ESAM 类别的 class node，用于加载 ESAM 模型，确保与 GPU 或 CPU 的兼容性。"
+    },
+    {
+        "question": "ESAM_ModelLoader_Zho 输出什么类型的模型？",
+        "answer": "ESAM_ModelLoader_Zho 输出 esam_model，即加载的 ESAM 模型，类型为 torch.jit.ScriptModule，用于之后的处理和推理任务。"
+    },
+    {
+        "question": "加载 ESAM 模型时，device 参数的作用是什么？",
+        "answer": "device 参数决定 ESAM 模型加载到 GPU 还是 CPU 环境，这对于模型的正确执行至关重要。"
+    },
+    {
+        "question": "在 ComfyUI 中使用 ESAM_ModelLoader_Zho 节点时，设备参数的可能值是什么？",
+        "answer": "在 ComfyUI 中使用 ESAM_ModelLoader_Zho 节点时，设备参数的可能值为 COMBO['CUDA', 'CPU']。"
+    },
+    {
+        "question": "在 ComfyUI 的 ESAM_ModelLoader_Zho 节点中，Python 中 device 类型是什么？",
+        "answer": "在 ComfyUI 的 ESAM_ModelLoader_Zho 节点中，Python 中 device 类型是 Union[str, torch.device]。"
+    },
+    {
+        "question": "ESAM_ModelLoader_Zho 节点应该如何使用？",
+        "answer": "ESAM_ModelLoader_Zho 节点应基于 GPU 基础设施类型使用，这意味着它最适合在具有 GPU 的系统上运行以获得最佳性能。"
+    },
+    {
+        "question": "GCMD_ESAM_ModelLoader_Zho 节点加载模型的源代码路径是什么？",
+        "answer": "源代码中，根据设备参数的不同，模型路径可以是 efficient_sam_s_gpu.jit（GPU 环境下）或 efficient_sam_s_cpu.jit（CPU 环境下），均位于当前目录下 models 子目录中。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_ModelMergeStack节点的主要功能是什么？",
+        "answer": "CR_ModelMergeStack节点的主要功能是将多个模型检查点合并为一个统一的栈，允许用户调整模型和剪辑组件的贡献比例，以根据特定需求灵活地合并不同模型。"
+    },
+    {
+        "question": "如何使用CR_ModelMergeStack节点控制检查点的包含与否？",
+        "answer": "通过使用switch参数，如switch_1、switch_2和switch_3，可以控制对应的检查点是否包含在模型栈中。如果设置为'On'，相应的检查点将被集成到栈中。"
+    },
+    {
+        "question": "在CR_ModelMergeStack中，model_ratio1和clip_ratio1参数的作用是什么？",
+        "answer": "model_ratio1和clip_ratio1参数分别用于调整第一个检查点的模型和剪辑组件在合并栈中的贡献比例，从而精准地控制每个检查点在结果中的影响程度。"
+    },
+    {
+        "question": "CR_ModelMergeStack节点的'optional'部分的model_stack参数有什么作用？",
+        "answer": "model_stack参数允许用户为CR_ModelMergeStack节点提供一个初始模型列表，以便在现有的模型栈基础上进行进一步的合并，这对于构建复杂的模型组合非常有用。"
+    },
+    {
+        "question": "CR_ModelMergeStack节点的输出类型有哪些？",
+        "answer": "CR_ModelMergeStack节点的主要输出是'MODEL_STACK'，包含合并后的模型检查点列表，以及'show_help'，提供一个链接到更多帮助文档的URL。"
+    },
+    {
+        "question": "在使用CR_ModelMergeStack时，可选参数'model_stack'的Python dtype是什么？",
+        "answer": "在使用CR_ModelMergeStack时，'model_stack'参数的Python dtype是List[Tuple[str, float, float]]，表示一个模型栈，其中每个元素是一个三元组，包含检查点名称、模型比率和剪辑比率。"
+    },
+    {
+        "question": "哪些节点可以帮助合并多个模型检查点？",
+        "answer": "CR_ModelMergeStack是用于合并多个模型检查点的节点之一，它属于ComfyUI的Comfyroll/Model Merge类别，旨在通过灵活调整模型和剪辑组件的贡献比例来精确匹配用户需求。"
+    }
+]

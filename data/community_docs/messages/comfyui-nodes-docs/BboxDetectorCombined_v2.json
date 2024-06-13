@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BboxDetectorCombined_v2是什么?",
+        "answer": "BboxDetectorCombined_v2是一个ComfyUI中的自定义节点，属于检测类别，用于使用预训练的边界框检测器识别并分割图像中的对象。"
+    },
+    {
+        "question": "BboxDetectorCombined_v2如何使用预训练模型进行对象检测和分割?",
+        "answer": "BboxDetectorCombined_v2通过输入参数bbox_detector使用预训练模型来检测图像中的对象，随后生成并输出特定区域的掩码，用于识别和隔离这些对象。"
+    },
+    {
+        "question": "哪些输入对BboxDetectorCombined_v2操作至关重要?",
+        "answer": "对BboxDetectorCombined_v2的操作至关重要的输入包括bbox_detector，它提供了预训练模型，以及image，作为处理并检测的对象基底。"
+    },
+    {
+        "question": "为什么threshold参数在BboxDetectorCombined_v2中是可选的?",
+        "answer": "threshold参数在BboxDetectorCombined_v2中作为可选参数存在，它帮助设置对象检测的置信度阈值，以此过滤掉可能的假阳性结果，确保仅真正置信度高的对象被检测。"
+    },
+    {
+        "question": "dilation参数在BboxDetectorCombined_v2中扮演什么角色?",
+        "answer": "dilation参数在BboxDetectorCombined_v2中用于扩展检测到的对象掩码边界，有助于细化分割效果，确保掩码包含整个对象，即使对象的边缘未被完全捕捉。"
+    },
+    {
+        "question": "BboxDetectorCombined_v2输出的mask表示什么?",
+        "answer": "BboxDetectorCombined_v2输出的mask是一个二进制图像，它表示了输入图像中检测到的对象的分割。此mask结果是节点操作的关键输出，为后续分析或处理提供了清晰的对象边界定义。"
+    },
+    {
+        "question": "使用BboxDetectorCombined_v2有什么特殊提示?",
+        "answer": "BboxDetectorCombined_v2在使用上的特殊提示是，它依赖于GPU（Infrastructure type: GPU）的计算能力，这在节点的具体源代码中有所体现。"
+    }
+]

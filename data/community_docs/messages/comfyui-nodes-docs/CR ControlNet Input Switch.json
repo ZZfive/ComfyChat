@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_ControlNetInputSwitch节点的用途是什么？",
+        "answer": "CR_ControlNetInputSwitch节点用于为控制网络提供条件切换机制，使用户能够根据输入值在两个控制网络间进行选择，便利地将数据路由到所需网络路径。"
+    },
+    {
+        "question": "CR_ControlNetInputSwitch节点的输入类型有哪些？",
+        "answer": "CR_ControlNetInputSwitch节点的输入类型包括：必需的‘Input’参数（用于决定使用哪个控制网络的INT），和可选的‘control_net1’及‘control_net2’参数（代表节点可以选择的第一个和第二个控制网络）。"
+    },
+    {
+        "question": "什么是CR_ControlNetInputSwitch的‘Input’参数？",
+        "answer": "‘Input’参数通过指定控制网络索引来决定CR_ControlNetInputSwitch节点的执行流程，控制网络的选择与该参数的值有关。"
+    },
+    {
+        "question": "CR_ControlNetInputSwitch节点如何根据‘Input’参数做出选择？",
+        "answer": "当‘Input’参数设置为1时，节点选择‘control_net1’，而设置为2时，节点选择‘control_net2’。"
+    },
+    {
+        "question": "CR_ControlNetInputSwitch的输出有哪些类型？",
+        "answer": "CR_ControlNetInputSwitch节点的输出类型包括：‘CONTROL_NET’，提供基于‘Input’值选定的控制网络；以及‘show_help’输出，提供访问节点文档的URL。"
+    },
+    {
+        "question": "‘show_help’输出提供了什么信息？",
+        "answer": "‘show_help’输出提供了额外信息和指导的URL，帮助用户有效使用CR_ControlNetInputSwitch节点，是访问节点文档的途径。"
+    },
+    {
+        "question": "控制网络在ComfyUI的CR_ControlNetInputSwitch节点中如何被表示？",
+        "answer": "在ComfyUI中，CR_ControlNetInputSwitch节点中‘control_net1’和‘control_net2’参数以‘CONTROL_NET’类型表示，通过Python类型str来存储。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "什么是AnimateDiffSettingsNode?",
+        "answer": "AnimateDiffSettingsNode是ComfyUI中的一个自定义节点，属于Animate Diff 🎭🅐🅓/ad settings类别，用于生成调整场景差异的动画设置。"
+    },
+    {
+        "question": "AnimateDiffSettingsNode如何影响动画的质量和连贯性？",
+        "answer": "通过调整位置嵌入和权重，AnimateDiffSettingsNode确保动画设置在整个动画序列中一致且有效地应用，从而提高动画的质量和连贯性。"
+    },
+    {
+        "question": "pe_adjust在AnimateDiffSettingsNode中的作用是什么？",
+        "answer": "pe_adjust参数允许对动画中的位置嵌入进行微调，直接影响动画的空间方面如何呈现，影响动画场景的整体质量和连贯性。"
+    },
+    {
+        "question": "weight_adjust对动画效果有何影响？",
+        "answer": "weight_adjust参数用于修改与动画元素相关联的权重，控制动画效果的强度和焦点，通过调整权重获得更细致和针对性的视觉结果。"
+    },
+    {
+        "question": "ad_settings输出包含了什么信息？",
+        "answer": "ad_settings输出提供了一套根据pe_adjust和weight_adjust参数调整的全面动画设置，决定了动画差异将如何在最终渲染的场景中体现。"
+    },
+    {
+        "question": "哪些节点的输出可以作为pe_adjust的输入类型？",
+        "answer": "任意能够生成Comfy dtype为PE_ADJUST或Python dtype为Union[AdjustGroup, None]的节点的输出，都可以作为pe_adjust的输入类型。"
+    },
+    {
+        "question": "在AnimateDiffSettingsNode中，infra type被指定为CPU意为什么？",
+        "answer": "infra type被指定为CPU意味着AnimateDiffSettingsNode被设计为在CPU上运行，这可能是因为它主要用于逻辑处理而非GPU加速的计算密集型任务。"
+    }
+]

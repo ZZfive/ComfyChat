@@ -1,0 +1,50 @@
+[
+    {
+        "question": "CR_CycleImages 是什么类型的节点？",
+        "answer": "CR_CycleImages 是 ComfyUI 中 Comfyroll/Animation/Legacy 类别下的一个节点，用于循环遍历图像列表，按指定帧间隔顺序显示图像。"
+    },
+    {
+        "question": "CR_CycleImages 节点的用途是什么？",
+        "answer": "CR_CycleImages 节点特别适用于从图像集合中创建动画或幻灯片，通过控制帧延迟和循环次数来操作图像的显示顺序。"
+    },
+    {
+        "question": "什么是 CR_CycleImages 节点的必填参数？",
+        "answer": "CR_CycleImages 节点的必填参数包括 'mode'，决定了图像的循环模式，和 'image_list'，是循环播放的图像集合。"
+    },
+    {
+        "question": "CR_CycleImages 节点的 'mode' 参数有哪些可选值？",
+        "answer": "目前 'mode' 参数只支持 'Sequential' 模式，这确保图像将按照在 'image_list' 中的顺序显示。"
+    },
+    {
+        "question": "如何通过 CR_CycleImages 节点控制动画的速度？",
+        "answer": "通过设置 'frame_interval' 参数，CR_CycleImages 节点可控制每张图像显示之间的帧延迟，从而影响动画或幻灯片的速度和流畅度。"
+    },
+    {
+        "question": "CR_CycleImages 节点的 'loops' 参数有什么作用？",
+        "answer": "'loops' 参数决定了图像列表将被循环重复的次数，这影响了动画或幻灯片的持续时间。"
+    },
+    {
+        "question": "哪些是 CR_CycleImages 节点的可选参数？",
+        "answer": "CR_CycleImages 节点的可选参数包括 'frame_interval'、'loops' 和 'current_frame'，它们分别用于设定帧间隔、循环次数和当前循环中的帧位置。"
+    },
+    {
+        "question": "CR_CycleImages 节点有哪些输出类型？",
+        "answer": "CR_CycleImages 节点的输出类型包括 'IMAGE'，即基于当前循环位置的图像，以及 'show_help'，一个链接到详细文档的URL。"
+    },
+    {
+        "question": "CR_CycleImages 节点的核心输出是什么？",
+        "answer": "CR_CycleImages 节点的核心输出是 'IMAGE'，它提供了在当前循环中的图像，这是节点功能的直接视觉结果。"
+    },
+    {
+        "question": "如何获取关于 CR_CycleImages 节点使用的帮助？",
+        "answer": "CR_CycleImages 节点通过 'show_help' 输出类型提供一个链接到详细文档页面的URL，可以访问扩展的使用帮助和信息。"
+    },
+    {
+        "question": "CR_CycleImages 节点的源代码如何处理图像列表的循环？",
+        "answer": "源代码中，如果 'image_list' 不为空，会根据 'loops' 参数的值将 'image_list' 复制指定次数以形成循环模式，然后基于 'mode' 和 'current_frame' 选取并返回当前图像。"
+    },
+    {
+        "question": "使用 CR_CycleImages 节点时有什么有关 CPU 的提示？",
+        "answer": "CR_CycleImages 节点的使用提示指出它属于 Infra type: CPU，意味着运行时它可能更依赖于 CPU 的性能。"
+    }
+]

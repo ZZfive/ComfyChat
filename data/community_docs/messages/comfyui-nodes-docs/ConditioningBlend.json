@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_ConditioningBlend是什么？",
+        "answer": "WAS_ConditioningBlend是ComfyUI中一个自定义节点，用于将两个条件输入按照指定的混合模式和强度无缝融合，确保条件信号的和谐整合并生成最终的条件输出。"
+    },
+    {
+        "question": "WAS_ConditioningBlend节点的核心功能是什么？",
+        "answer": "WAS_ConditioningBlend节点的核心功能在于结合和调节两个不同的条件信号，通过定制混合方式和影响程度，生成一个统一的、优化后的条件输出。"
+    },
+    {
+        "question": "WAS_ConditioningBlend中的blending_strength参数起什么作用？",
+        "answer": "blending_strength参数用于控制由conditioning_a和conditioning_b两个条件输入在混合时的影响力分布，它允许用户精确调整两个输入的混合比重，从而微调最终输出的特性。"
+    },
+    {
+        "question": "WAS_ConditioningBlend如何处理随机性和复现性？",
+        "answer": "通过seed参数，WAS_ConditioningBlend可以控制随机数生成的起始状态，确保在相同设置下每次执行可以得到一致的结果，以此保证输出的可复现性。"
+    },
+    {
+        "question": "使用WAS_ConditioningBlend时，如何指定混合模式？",
+        "answer": "混合模式通过blending_mode参数指定，它接受字符串形式的混合算法标识，定义了两个条件输入结合的计算逻辑，影响输出的最终形式。"
+    },
+    {
+        "question": "哪些条件输入是WAS_ConditioningBlend节点必需的？",
+        "answer": "WAS_ConditioningBlend节点需要conditioning_a和conditioning_b作为必需的条件输入，另外还需要blending_mode来定义混合模式，以及可选的blending_strength和seed参数。"
+    },
+    {
+        "question": "WAS_ConditioningBlend节点的输出是什么类型的？",
+        "answer": "WAS_ConditioningBlend节点输出的是一个单一的条件张量，表现为一个包含了tensor和字典数据结构的列表，这个输出代表了对conditioning_a和conditioning_b混合处理后的最终结果，用于后续需要条件数据的节点。"
+    }
+]

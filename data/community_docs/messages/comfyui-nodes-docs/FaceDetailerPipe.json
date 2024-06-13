@@ -1,0 +1,38 @@
+[
+    {
+        "question": "FaceDetailerPipe节点的功能是什么？",
+        "answer": "FaceDetailerPipe节点旨在增强图像中面部的细节。它处理输入图像以细化面部特征并提高整体质量，特别适用于需要高质量面部表示的应用。"
+    },
+    {
+        "question": "输入图像的质量如何影响FaceDetailerPipe节点的处理结果？",
+        "answer": "输入图像的质量和分辨率直接影响FaceDetailerPipe节点的最终输出。高质量和高分辨率的图像为基础处理和增强提供了更好的原始数据，从而产生更优秀的面部细化效果。"
+    },
+    {
+        "question": "FaceDetailerPipe支持哪些输入类型？",
+        "answer": "FaceDetailerPipe支持包括图像（IMAGE）、细节增强管道（DETAILER_PIPE）、引导图像尺寸（guide_size）和输入图像最大尺寸（max_size）等输入类型。"
+    },
+    {
+        "question": "哪些节点或插件可以进行面部的细节增强？",
+        "answer": "FaceDetailerPipe节点可以进行面部细节的增强，处理输入图像以细化面部特征并提高整体质量。"
+    },
+    {
+        "question": "FaceDetailerPipe节点的output node属性是什么？",
+        "answer": "FaceDetailerPipe节点的output node属性为False，表明它不是一个输出节点，而是用于处理输入并生成中间或特定目标任务所需数据的节点。"
+    },
+    {
+        "question": "FaceDetailerPipe节点的增强图像输出类型及其格式是什么？",
+        "answer": "FaceDetailerPipe节点的增强图像输出类型为IMAGE，对应的Python数据类型为torch.Tensor，是节点执行面部细节增强后的主要结果。"
+    },
+    {
+        "question": "FaceDetailerPipe节点是否支持GPU运行？",
+        "answer": "是的，FaceDetailerPipe节点的运行支持GPU，这在使用提示中被指定为Infra type：GPU，意味着它可以高效利用GPU资源进行并行处理和加速图像处理任务。"
+    },
+    {
+        "question": "FaceDetailerPipe节点除了主输出图像外还能输出什么？",
+        "answer": "FaceDetailerPipe节点还输出增强图像的裁剪细化面部图像和一个描绘增强面部区域的二进制mask，分别对应输出类型LIST[IMAGE]和MASK，Python数据类型为List[torch.Tensor]和torch.Tensor。"
+    },
+    {
+        "question": "哪些输入类型和参数对FaceDetailerPipe节点的面部细化过程至关重要？",
+        "answer": "对FaceDetailerPipe节点的面部细化过程至关重要的输入类型包括detailer_pipe，它包含了指导面部细化过程所必需的模型和参数集合，以及guide_size和max_size等，这些参数影响图像的处理细节和增强水平。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_VAEInputSwitch是什么类型的节点？",
+        "answer": "CR_VAEInputSwitch是ComfyUI中的一个自定义节点，它属于Comfyroll/Utils/Logic类别，用于有条件地在两个变分自编码器（VAE）模型之间切换输入。"
+    },
+    {
+        "question": "CR_VAEInputSwitch节点如何根据输入参数选择VAE模型？",
+        "answer": "CR_VAEInputSwitch通过'Input'参数确定使用哪个VAE模型。当'Input'参数为1时，它选择'VAE1'，当'Input'参数为2时，选择'VAE2'进行输入切换。"
+    },
+    {
+        "question": "哪些参数对于CR_VAEInputSwitch是必需的？",
+        "answer": "对于CR_VAEInputSwitch，'Input'参数是必需的，它决定了数据是否流向VAE1或VAE2。"
+    },
+    {
+        "question": "CR_VAEInputSwitch的'Input'参数的数据类型是什么？",
+        "answer": "CR_VAEInputSwitch的'Input'参数在Comfy中为INT类型，在Python中为int类型，用于指定模型切换。"
+    },
+    {
+        "question": "CR_VAEInputSwitch的VAE输出用于什么目的？",
+        "answer": "CR_VAEInputSwitch的'VAE'输出提供所选择的变分自编码器（VAE）模型，以便在后续的节点中进行处理或进一步分析。"
+    },
+    {
+        "question": "如果想要切换到不同的VAE模型，应该调整CR_VAEInputSwitch的哪个参数？",
+        "answer": "为了在两个不同的VAE模型之间切换，需要更改CR_VAEInputSwitch的'Input'参数，将其设置为1将使用VAE1，设置为2将使用VAE2。"
+    },
+    {
+        "question": "CR_VAEInputSwitch节点提供了哪些输出类型？",
+        "answer": "CR_VAEInputSwitch提供了两种输出类型：'VAE'，用于输出所选的VAE模型，以及'show_help'，输出一个链接到详细节点文档的字符串。"
+    }
+]

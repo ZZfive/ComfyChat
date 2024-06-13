@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ArithmeticBlend是什么类型的节点，它在ComfyUI中的具体用途是什么？",
+        "answer": "ArithmeticBlend是一个后处理混合节点，在ComfyUI中属于postprocessing/Blends类别，它通过算术运算实现两幅图像的合成，通过选择的混合模式（如add、subtract或difference）来创建视觉效果，实现对image1和image2的融合。"
+    },
+    {
+        "question": "ArithmeticBlend节点的输入参数都有哪些？",
+        "answer": "ArithmeticBlend节点的输入包括image1，用于算术运算的第一幅图像；image2，用于与image1进行混合的第二幅图像；以及blend_mode，算术运算的模式，决定了如何组合image1和image2以及显著影响最终的视觉结果。"
+    },
+    {
+        "question": "哪些类型的混合模式是由ArithmeticBlend节点支持的？",
+        "answer": "ArithmeticBlend节点支持add（加法）、subtract（减法）和difference（差值）三种混合模式。"
+    },
+    {
+        "question": "ArithmeticBlend节点的输出结果是什么？",
+        "answer": "ArithmeticBlend节点的输出是一个名为blended_image的融合图像，包含所选混合模式的视觉效应，其数据类型为Comfy的IMAGE或Python的torch.Tensor。"
+    },
+    {
+        "question": "使用ArithmeticBlend节点时，如何确定最终输出的图像究竟是通过加法、减法还是差值混合得到的？",
+        "answer": "通过设置blend_mode参数可以选择不同的混合模式，blend_mode可以是'add'（加法）、'subtract'（减法）或'difference'（差值），每个模式会定义不同的算术运算，从而影响最终输出图像的特征。"
+    },
+    {
+        "question": "哪些自定义节点可以通过算术运算实现两幅图像的合成?",
+        "answer": "ComfyUI中ArithmeticBlend节点是通过算术运算实现两幅图像合成的自定义节点，它支持进行加法、减法或差值运算，以生成融合效果。"
+    },
+    {
+        "question": "ArithmeticBlend节点的功能如何通过混合模式blended_image来实现？",
+        "answer": "ArithmeticBlend节点根据选定的blend_mode（混合模式），如add、subtract或difference，对输入的image1和image2进行算术运算，生成融合图像blended_image。"
+    }
+]

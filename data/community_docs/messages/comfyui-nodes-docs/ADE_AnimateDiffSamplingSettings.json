@@ -1,0 +1,42 @@
+[
+    {
+        "question": "SampleSettingsNode 类的 `create_settings` 方法在 ComfyUI AnimateDiff 🎭🅐🅓 中的作用是什么？",
+        "answer": "SampleSettingsNode 类的 `create_settings` 方法用于动画过程，配置和生成采样设置，它封装了噪声生成、迭代选择和采样过程中的其他可定制参数，对动画工作流的后续步骤准备起关键作用。"
+    },
+    {
+        "question": "batch_offset 参数在 SampleSettingsNode 中的角色是什么？",
+        "answer": "batch_offset 参数在 SampleSettingsNode 中用于管理噪声生成的批量处理，通过偏移批量索引确保不同批次间有独特的噪声模式，对采样执行和结果有显著影响。"
+    },
+    {
+        "question": "在 SampleSettingsNode 中，什么样的噪声类型可以被选择？",
+        "answer": "在 SampleSettingsNode 中可以通过参数 `noise_type` 选择不同的噪声层类型，该参数对生成噪声的特征、动画的整体质量和风格至关重要。"
+    },
+    {
+        "question": "SampleSettingsNode 中的 seed_gen 参数如何影响噪声生成？",
+        "answer": "seed_gen 参数在 SampleSettingsNode 中决定噪声层种子生成的方法，以确保噪声模式的一致性和可重复性，并维持噪声生成过程在不同运行中的完整性。"
+    },
+    {
+        "question": "哪些参数可以定制 SampleSettingsNode 采样过程中的噪声层属性？",
+        "answer": "在 SampleSettingsNode 通过参数 `noise_layers` 可以指定采样过程中的自定义噪声层，提供高度的灵活性和创意调整选项，以实现特定的噪声配置和视觉效果。"
+    },
+    {
+        "question": "SampleSettingsNode 提供了哪些迭代控制选项？",
+        "answer": "SampleSettingsNode 通过 `iteration_opts` 参数提供迭代控制选项，在采样过程中微调优化目标，如速度、准确性和资源使用，以实现动画性能与质量的平衡。"
+    },
+    {
+        "question": "在 SampleSettingsNode 中，如何自定义采样过程的配置关键帧？",
+        "answer": "在 SampleSettingsNode 中，通过 `custom_cfg` 参数，用户可以应用自定义配置关键帧到采样过程，引入特定的创意调整以满足独特项目要求。"
+    },
+    {
+        "question": "SampleSettingsNode 的 settings 输出包含什么信息？",
+        "answer": "SampleSettingsNode 的 `settings` 输出封装了通过 `create_settings` 方法定制的所有采样设置参数和选项，指导后续动画过程的步骤。"
+    },
+    {
+        "question": "对于需要在 SampleSettingsNode 中控制噪声减少的动画项目，会用到哪个参数？",
+        "answer": "在 SampleSettingsNode 中，控制噪声减少通常涉及 `adapt_denoise_steps` 参数，当设为 true 时，允许系统自适应调整去噪步骤，从而提高动画质量。"
+    },
+    {
+        "question": "在哪些条件下，用户会特别使用 SeedOverride 参数？",
+        "answer": "用户在需要特定噪声模式或复制先前运行结果的场景时，会特别使用 `seed_override` 参数，手动覆盖用于噪声生成的默认种子值，为过程增加额外的控制层。"
+    }
+]

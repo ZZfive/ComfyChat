@@ -1,0 +1,42 @@
+[
+    {
+        "question": "CreateVoronoiMask是ComfyUI中的哪种类型节点？",
+        "answer": "CreateVoronoiMask是ComfyUI节点的生成类节点，属于KJNodes/masking/generate类目，用于生成Voronoi掩模。"
+    },
+    {
+        "question": "CreateVoronoiMask节点的输入参数'frames'的作用是什么？",
+        "answer": "参数'frames'用于指定在Voronoi掩模序列中生成的帧数，对于定义输出动画或图案的长度至关重要。"
+    },
+    {
+        "question": "'num_points'的影响是什么，它在CreateVoronoiMask节点中起什么作用？",
+        "answer": "'num_points'参数设定用于创建Voronoi图的点的数量，直接影响生成掩模的复杂性和细节。"
+    },
+    {
+        "question": "在调整Voronoi图案时，'line_width'如何影响最终输出？",
+        "answer": "参数'line_width'控制Voronoi掩模中线的粗细，确定图案特征的可见性和突出度。"
+    },
+    {
+        "question": "CreateVoronoiMask节点输出的'mask'是什么？",
+        "answer": "输出参数'mask'表示生成的Voronoi掩模作为张量，是一个二进制图像，其中掩模的图案已编码，准备进一步处理或应用。"
+    },
+    {
+        "question": "哪些节点可以直接处理由CreateVoronoiMask生成的掩模？",
+        "answer": "CreateVoronoiMask生成的掩模输出为'torch.Tensor'类型，任何接受和处理张量的节点可以处理该掩模，比如图像处理或图像混合节点。"
+    },
+    {
+        "question": "CreateVoronoiMask节点的'speed'参数作用是？",
+        "answer": "参数'speed'定义点从起始位置过渡到结束位置的速率，影响掩模序列中的动态运动。"
+    },
+    {
+        "question": "CreateVoronoiMask节点的'frame_width'和'frame_height'设置对输出有什么影响？",
+        "answer": "'frame_width'和'frame_height'参数分别设置遮罩序列中每个帧的宽度和高度，对于定义输出的纵横比和整体尺寸至关重要，共同决定输出的整体形状。"
+    },
+    {
+        "question": "使用CreateVoronoiMask节点时有哪些重要的提示？",
+        "answer": "使用CreateVoronoiMask节点处理数据时，推荐的基础设施类型是CPU，这在节点文档的用法建议中指出。"
+    },
+    {
+        "question": "如何在ComfyUI中利用节点GetMaskValues与CreateVoronoiMask进行交互？",
+        "answer": "GetMaskValues节点可以从CreateVoronoiMask生成的掩模中提取特定像素的信息，通过连接掩模输出到GetMaskValues节点的输入，可以对掩模中的特定区域进行数值分析。"
+    }
+]

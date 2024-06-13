@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ADE_MultivalScaledMask 是什么?",
+        "answer": "ADE_MultivalScaledMask，或称 MultivalScaledMaskNode，是 ComfyUI Animate Diff 🎭🅐🅓/multival 类别下的自定义节点，用于在指定范围内缩放掩码张量，通过线性转换或归一化操作来适应动画和可视化应用程序的后续处理。"
+    },
+    {
+        "question": "掩码张量如何在 ADE_MultivalScaledMask 节点中被缩放？",
+        "answer": "掩码张量在 MultivalScaledMaskNode 中根据 'min_float_val' 和 'max_float_val' 参数指定的范围进行缩放。如果选择绝对缩放，将进行线性转换；如果是相对缩放，则执行归一化操作。"
+    },
+    {
+        "question": "哪些参数是 ADE_MultivalScaledMask 节点必需的？",
+        "answer": "MultivalScaledMaskNode 需要 'min_float_val'、'max_float_val' 和 'mask' 三个必需参数。'min_float_val' 和 'max_float_val' 定义了掩码张量的缩放范围，'mask' 是用于缩放的张量本身。"
+    },
+    {
+        "question": "在 ADE_MultivalScaledMask 中，可选的 scaling 参数是什么？",
+        "answer": "可选参数 'scaling' 指定了应用于掩码张量的缩放类型，默认为绝对缩放（ScaleType.ABSOLUTE），但也可以选择相对缩放（ScaleType.RELATIVE）。"
+    },
+    {
+        "question": "MultivalScaledMaskNode 节点的输出是什么？",
+        "answer": "输出是经过缩放转换的多值张量，以 MULTIVAL 形式提供，它是在动画或可视化任务中进一步处理的直接结果。"
+    },
+    {
+        "question": "哪些节点可以处理和缩放掩码张量以进行动画或可视化？",
+        "answer": "Animate Diff 的 MultivalScaledMaskNode 是用于在指定范围内缩放掩码张量，以适合动画和可视化应用程序进行进一步处理的节点。"
+    },
+    {
+        "question": "ADE_MultivalScaledMask 节点在哪里可以找到源代码？",
+        "answer": "源代码可以从 GitHub 仓库 https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved.git 下找到。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_IncrementInteger 是什么类型的节点，属于哪个类别？",
+        "answer": "CR_IncrementInteger 是一个输出节点，属于 Comfyroll/Animation/Interpolate 类别，主要用于在动画序列中递增整数值。"
+    },
+    {
+        "question": "CR_IncrementInteger 节点的 start_value 参数有什么作用？",
+        "answer": "start_value 参数定义了递增开始的初始整数值，对于设置动画序列的起始点至关重要。"
+    },
+    {
+        "question": "哪些参数决定了 CR_IncrementInteger 中整数值的动态变化？",
+        "answer": "step 参数决定了每个帧 start_value 递增的量，而 start_frame 和 frame_duration 参数则控制了递增开始的时间点和持续的帧数，从而影响整数值的变化速率和动画序列的长度。"
+    },
+    {
+        "question": "CR_IncrementInteger 节点的 current_frame 参数有何作用？",
+        "answer": "current_frame 参数代表动画中的当前帧号，用于根据帧的进展计算整数值的当前值，从而在动画中实现动态变化。"
+    },
+    {
+        "question": "CR_IncrementInteger 节点的输出包括什么？",
+        "answer": "CR_IncrementInteger 节点提供 INT 输出，即递增后的当前整数值，用以反映当前帧动画的进度；同时，提供 show_help 输出，包含指向节点文档URL的字符串，提供关于节点使用的附加信息和指导。"
+    },
+    {
+        "question": "动画中整数值的递增是如何根据当前帧计算的？",
+        "answer": "如果 current_frame 大于等于 start_frame，则从 start_value 开始按 step 的量递增，直到 current_frame 超过 start_frame + frame_duration，以实现动画中整数值的逐步增加。"
+    },
+    {
+        "question": "哪些节点适用于在动画中实现数值的逐步增加？",
+        "answer": "CR_IncrementInteger 节点特别适用于创建动画，其中数值需要随时间逐步增加，它能够通过指定的帧持续时间来控制整数值的动态变化。"
+    }
+]

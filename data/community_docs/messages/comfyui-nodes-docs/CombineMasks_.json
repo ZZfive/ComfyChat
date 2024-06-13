@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CombineMasks节点的作用是什么？",
+        "answer": "CombineMasks节点在ComfyUI中用于将多个掩码张量合并成一个综合掩码，增强了底层数据的表示，并提供了多种可视化结果，如热图和二值叠加。"
+    },
+    {
+        "question": "哪些掩码是CombineMasks节点的必需输入？",
+        "answer": "CombineMasks节点需要输入的掩码包括mask_1和mask_2，这两个是组合过程不可或缺的部分。"
+    },
+    {
+        "question": "CombineMasks节点可选的输入掩码是什么？",
+        "answer": "CombineMasks节点的可选输入掩码为mask_3，它通过引入更细粒度的细节来进一步增强整体掩码的表示。"
+    },
+    {
+        "question": "CombineMasks节点的主要输出是什么？",
+        "answer": "CombineMasks节点的主要输出是Combined Mask，这是一个将所有输入掩码融合为单一表示的结果，同时还输出热图掩码和二值掩码。"
+    },
+    {
+        "question": "热图掩码和二值掩码在CombineMasks中的作用是什么？",
+        "answer": "热图掩码提供了彩色表示，增强了分割结果的可解释性；二值掩码提供了一个简化的黑白视图，强调核心元素，是分析工具的一部分。"
+    },
+    {
+        "question": "在CombineMasks节点中，哪些参数类型对于输入图像和掩码是必需的？",
+        "answer": "输入图像参数类型为Comfy dtype: IMAGE，Python dtype: torch.Tensor；而对于掩码，Comfy dtype: MASK，Python dtype: torch.Tensor。"
+    },
+    {
+        "question": "如何在ComfyUI中使用CombineMasks节点？",
+        "answer": "CombineMasks节点专为CPU上运行设计，它通过结合mask_1和mask_2（以及可选的mask_3）来生成综合掩码，根据输入的张量返回掩码、热图和二值掩码作为张量输出。"
+    }
+]

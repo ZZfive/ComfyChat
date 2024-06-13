@@ -1,0 +1,30 @@
+[
+    {
+        "question": "FaceParse节点的作用是什么？",
+        "answer": "FaceParse节点使用预训练的模型分析和解析输入图像中的面部特征，将图像转换为详细的面部解析图，适用于进一步分析或可视化，尤其是对面部结构的理解、面部表情识别或面部特征跟踪。"
+    },
+    {
+        "question": "哪些参数是FaceParse节点执行面部解析必需的？",
+        "answer": "FaceParse节点执行面部解析功能必需的参数有：模型（用于定义预训练神经网络架构）、处理器（用于预处理图像以兼容模型格式）和图像（待分析的面部图像）。"
+    },
+    {
+        "question": "FaceParse节点的输出包含什么信息？",
+        "answer": "FaceParse节点的输出包含两个主要部分：输出图像，它是可视化后的面部解析图，展示不同面部特征；以及面部解析结果，提供输入图像的分割信息，其中每个像素被分配一个对应的面部特征标签，用于进一步分析。"
+    },
+    {
+        "question": "FaceParse节点的运行依赖哪种运算设备？",
+        "answer": "FaceParse节点的运行依赖于GPU（图形处理单元），这表明其运算过程可能需要高性能图形卡的支撑以达到最佳效率。"
+    },
+    {
+        "question": "哪些输入数据类型是FaceParse节点需要的？",
+        "answer": "FaceParse节点需要的输入数据类型包括：FACE_PARSING_MODEL（模型参数）、FACE_PARSING_PROCESSOR（处理器参数）和IMAGE（图像参数）。这些参数分别定义了预训练神经网络架构、预处理输入图像的格式以及待解析的图像本身。"
+    },
+    {
+        "question": "哪些组件是FaceParse节点输出数据类型的具体内容？",
+        "answer": "FaceParse节点的输出数据类型包括IMAGE和FACE_PARSING_RESULT，其中，IMAGE类型描述彩色的面部解析图结果，用于可视化；FACE_PARSING_RESULT存储逐像素的面部特征标签，为后续应用提供数据支持。"
+    },
+    {
+        "question": "FaceParse节点在ComfyUI框架下的分类是什么？",
+        "answer": "FaceParse节点在ComfyUI框架中归类于'face_parsing'类别，这表示它专门用于面部特征的分析与解析。"
+    }
+]

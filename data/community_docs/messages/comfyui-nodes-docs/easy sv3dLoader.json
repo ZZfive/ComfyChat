@@ -1,0 +1,30 @@
+[
+    {
+        "question": "sv3DLoader节点在ComfyUI中的作用是什么?",
+        "answer": "sv3DLoader节点是ComfyUI中的一个自定义节点，位于EasyUse/Loaders分类。它作为高效加载和处理3D模型及其相关数据的接口，简化了初始化、模型状态管理以及图像准备流程，以供后续处理使用。"
+    },
+    {
+        "question": "哪些输入参数对于确定sv3DLoader节点的输出质量至关重要?",
+        "answer": "在sv3DLoader节点中，'ckpt_name'（检查点名称）、'vae_name'（变分自编码器名称）、'init_image'（初始化图像）、'empty_latent_width'（潜在空间的宽度）、'empty_latent_height'（潜在空间的高度）对于输出质量至关重要，它们影响模型初始化、编码过程以及最终的图像保真度。"
+    },
+    {
+        "question": "sv3DLoader节点中的'interp_easing'和'easing_mode'参数具体做些什么?",
+        "answer": "sv3DLoader节点中的'interp_easing'参数决定了模型转换到不同状态时的平滑度，而'easing_mode'参数决定了在空间移动时应用的缓和类型，无论是方位角还是仰角变化，对模型在潜在空间中的运动轨迹有直接影响。"
+    },
+    {
+        "question": "sv3DLoader节点的主要输出是什么?",
+        "answer": "sv3DLoader节点的主要输出包括'pipe'（管道输出，用于将加载的模型和其他相关数据传递到后续处理步骤），'model'（初始化的3D模型，核心组件用于进一步操作和内容生成），以及'interp_log'（记录模型处理期间方位角和仰角值的日志，供参考）。"
+    },
+    {
+        "question": "在使用sv3DLoader节点时，如何控制模型在潜在空间中的进程?",
+        "answer": "通过提供'scheduler'参数，用户可以对缓和点进行详细控制，精确调整模型在潜在空间的进程，进一步精细化模型的动态展现与效果。"
+    },
+    {
+        "question": "哪种调度方式可以帮助sv3DLoader节点在潜在空间中更精细地控制模型的动态?",
+        "answer": "使用可选的'scheduler'参数提供的调度方式，可以实现对sv3DLoader节点在潜在空间中模型动态进程的精细化控制，允许调整缓和点以更精确地操纵模型动态变化。"
+    },
+    {
+        "question": "在ComfyUI中，通过sv3DLoader节点加载3D模型时，'pipe'、'model'、'interp_log'输出分别代表什么?",
+        "answer": "在sv3DLoader节点中，'pipe'代表一个包含加载模型及相关信息的管道输出结构，用于后续处理；'model'是已经初始化并准备好操作的3D模型；'interp_log'记录了解处理过程中使用的方位角和仰角信息，以助于理解模型动态变化。"
+    }
+]

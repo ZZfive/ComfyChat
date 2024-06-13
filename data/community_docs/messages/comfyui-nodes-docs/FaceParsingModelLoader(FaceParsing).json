@@ -1,0 +1,30 @@
+[
+    {
+        "question": "FaceParsingModelLoader是做什么的?",
+        "answer": "FaceParsingModelLoader是ComfyUI中的一个节点，用于高效加载预训练的语义分割模型，专注于面部解析任务，用户无需深入了解模型加载过程即可直接使用。"
+    },
+    {
+        "question": "FaceParsingModelLoader如何有助于面部特征提取?",
+        "answer": "FaceParsingModelLoader通过确保预训练语义分割模型正确实例化并准备好推理，简化了用户在应用程序中集成面部解析功能的复杂性，使高级面部特征提取变得简便。"
+    },
+    {
+        "question": "face_parsing_path参数的作用是什么?",
+        "answer": "参数'face_parsing_path'在FaceParsingModelLoader中至关重要，它指定了预训练面部解析模型的文件路径，指导节点加载正确的模型，支持后续的面部解析任务。"
+    },
+    {
+        "question": "FaceParsingModelLoader的输出类型是什么?",
+        "answer": "FaceParsingModelLoader的输出类型为'FACE_PARSING_MODEL'，即已加载的预训练面部解析模型，用户可直接用于语义分割任务中的面部数据处理和分析。"
+    },
+    {
+        "question": "如何在应用程序中使用FaceParsingModelLoader执行面部解析?",
+        "answer": "通过FaceParsingModelLoader，用户只需输入预训练模型的路径，即可加载模型并用于面部解析，无需自己处理模型初始化的复杂过程。"
+    },
+    {
+        "question": "哪些模型可以与FaceParsingModelLoader节点一起使用?",
+        "answer": "FaceParsingModelLoader节点可以使用预训练的语义分割模型，如通过`AutoModelForSemanticSegmentation.from_pretrained(face_parsing_path)`加载的模型，用于面部解析任务。"
+    },
+    {
+        "question": "FaceParsingModelLoader的输出类型如何在Python中表示?",
+        "answer": "FaceParsingModelLoader节点的输出类型'FACE_PARSING_MODEL'在Python中表示为torch.nn.Module，允许用户在下游任务中直接使用模型进行语义分割。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BitwiseAndMaskForEach节点的作用是什么？",
+        "answer": "BitwiseAndMaskForEach节点的'doit'方法对段进行位运算，使用掩码确定重叠区域，处理每个基础段与一组掩码段，识别和保留重叠区域，同时消除非重叠区域，对于细化分割结果特别重要。"
+    },
+    {
+        "question": "BitwiseAndMaskForEach节点的输入参数有哪些？",
+        "answer": "BitwiseAndMaskForEach节点需要两个输入参数：'base_segs'和'mask_segs'，分别是一系列分割对象集合和作为位运算掩码的分割对象，用于确定重叠及非重叠区域的操作。"
+    },
+    {
+        "question": "'base_segs'参数在BitwiseAndMaskForEach节点中起什么作用？",
+        "answer": "'base_segs'参数是BitwiseAndMaskForEach节点处理的核心输入，它收录了一系列分割对象集合，构成了与掩码段进行位运算的基础，直接影响节点执行的结果，决定基础段与掩码段的重叠检测范围。"
+    },
+    {
+        "question": "'mask_segs'参数如何影响BitwiseAndMaskForEach节点的操作结果？",
+        "answer": "'mask_segs'参数由用于位运算的分割对象组成，它定义了操作后要保留的区域，目的是指定要考虑重叠并应在操作后保留的区域，从而塑造节点的最终输出。"
+    },
+    {
+        "question": "BitwiseAndMaskForEach节点的输出是什么？",
+        "answer": "BitwiseAndMaskForEach节点的输出是经过位运算处理的分割对象列表，即'result'，它只包含基础段与掩码段之间有重叠的段，以细化的分割数据形式呈现，确保只保留真正重叠的区域。"
+    },
+    {
+        "question": "哪些类型的操作可以在BitwiseAndMaskForEach节点中执行？",
+        "answer": "在BitwiseAndMaskForEach节点中，主要执行的是位运算，通过使用掩码来确定基础段与掩码段之间的重叠区域，对非重叠区域进行掩盖的动作，以实现更精细的分割结果。"
+    },
+    {
+        "question": "BitwiseAndMaskForEach节点适用于哪种环境？",
+        "answer": "BitwiseAndMaskForEach节点的执行环境建议为CPU，这可以认为是它的infra type，而该节点对于图像处理，特别是在涉及复杂分割和区域保留的操作时，发挥着重要作用。"
+    }
+]

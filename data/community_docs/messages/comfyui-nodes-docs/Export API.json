@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Export_API是什么类型的节点？",
+        "answer": "WAS_Export_API是ComfyUI中的一个输出节点，属于WAS Suite/Debug类别，用于以结构化方式导出提示数据。"
+    },
+    {
+        "question": "save_prompt_api参数有何作用？",
+        "answer": "save_prompt_api参数控制是否保存提示数据，这对于维护工作流中使用提示的记录、调试和审查非常重要。"
+    },
+    {
+        "question": "哪些参数决定了导出文件的命名格式？",
+        "answer": "filename_prefix（文件名前缀）、filename_delimiter（分隔符）和filename_number_padding（数字填充）参数共同决定了导出文件的命名格式，确保输出文件有系统化和有序的命名。"
+    },
+    {
+        "question": "WAS_Export_API输出什么类型的格式？",
+        "answer": "WAS_Export_API输出格式化的提示数据的JSON表示形式，确保导出的信息结构清晰且可被机器读取，类型为Dictionary（字典）。"
+    },
+    {
+        "question": "如何启用WAS_Export_API对文本中的标记进行解析和替换？",
+        "answer": "启用parse_text_tokens参数，它允许WAS_Export_API解析提示文本中的标记并用相应值替换，便于定制和个性化导出的数据。"
+    },
+    {
+        "question": "WAS_Export_API中infra type表示什么？",
+        "answer": "Infra type在文档中表示该节点的处理类型，WAS_Export_API的infra type为CPU，意味着它在CPU上运行而不是GPU，适合处理不需要大量并行计算的任务，如数据导出。"
+    },
+    {
+        "question": "如何确定导出文件的数字计数器的初始值？",
+        "answer": "WAS_Export_API会检查输出路径下已存在的、符合命名模式的文件，如果存在，初始值将基于最大已编号文件的计数器值加1；如无现有文件，则计数器从1开始。"
+    }
+]

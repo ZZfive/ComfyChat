@@ -1,0 +1,38 @@
+[
+    {
+        "question": "CR_RandomLoRAStack节点的目的是什么?",
+        "answer": "CR_RandomLoRAStack节点的主要目的是将多个LoRA模块随机堆叠到基础模型上，通过智能地处理LoRA模块的选择和应用，确保模型功能的多样化和可控增强。"
+    },
+    {
+        "question": "独家模式（exclusive_mode）在CR_RandomLoRAStack中的作用是什么?",
+        "answer": "独家模式（exclusive_mode）决定是否一次只能应用一个LoRA模块。如果设置为'On'，它将强制执行互斥性，确保节点的操作是非冗余且专注的。"
+    },
+    {
+        "question": "步长（stride）在CR_RandomLoRAStack中的作用是什么?",
+        "answer": "步长（stride）定义了CR_RandomLoRAStack节点重新评估LoRA堆叠的频率。它控制LoRA模块的施用间隔，对节点整体性能有重要影响。"
+    },
+    {
+        "question": "force_randomize_after_stride参数在CR_RandomLoRAStack中起什么作用?",
+        "answer": "当force_randomize_after_stride被启用后，CR_RandomLoRAStack节点会在一定数量的步长后随机化LoRA选择，增加节点操作的不可预测性。"
+    },
+    {
+        "question": "CR_RandomLoRAStack如何处理LoRA模块的随机堆叠?",
+        "answer": "CR_RandomLoRAStack基于指定的概率（chance_n）和权重（model_weight_n, clip_weight_n）随机选择LoRA模块进行堆叠，如果启用exclusive_mode为'On'，则按概率优先原则选择，确保堆叠的LoRA模块彼此不覆盖功能。"
+    },
+    {
+        "question": "哪些参数用来控制单个LoRA模块在CR_RandomLoRAStack中的应用?",
+        "answer": "应用第一个LoRA模块的控制参数包括lora_name_1、switch_1、chance_1、model_weight_1和clip_weight_1。这些参数依次对应模块名称、开关、应用概率、模型权重和剪辑权重。"
+    },
+    {
+        "question": "CR_RandomLoRAStack节点的输出类型是什么?",
+        "answer": "CR_RandomLoRAStack节点的输出是一个LoRA模块堆叠（lora_stack），它已经根据输入参数随机选择和加权，用于按节点配置修改基础模型的行为。"
+    },
+    {
+        "question": "CR_RandomLoRAStack是如何处理多个LoRA模块的权重和概率的?",
+        "answer": "对于每个可堆叠的LoRA模块，CR_RandomLoRAStack使用model_weight和clip_weight来控制模块对最终输出的影响程度，而chance参数确定将该LoRA添加到堆叠中的概率。这允许节点输出在可控性和随机性之间找到平衡。"
+    },
+    {
+        "question": "在CR_RandomLoRAStack中，可选的lora_stack输入用于什么目的?",
+        "answer": "可选的lora_stack输入允许预先定义一组LoRA模块及其权重，用于CR_RandomLoRAStack节点上进一步的随机化处理前的自定义和预置堆叠。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BNK_GetSigma节点是做什么的？",
+        "answer": "BNK_GetSigma节点，或称GetSigma，计算sigma值，这是用于衡量噪声或信噪比的指标，在指定步骤范围内分析模型输出的变化，以洞察模型行为和噪声特性。"
+    },
+    {
+        "question": "BNK_GetSigma节点的输入参数有哪些？",
+        "answer": "BNK_GetSigma节点的输入参数包括：model（模型）、sampler_name（采样器名称）、scheduler（调度器）、steps（步骤数）、start_at_step（起始步骤）和end_at_step（结束步骤），用于精确控制噪声分析的框架和范围。"
+    },
+    {
+        "question": "BNK_GetSigma节点的'sampler_name'参数为什么重要？",
+        "answer": "BNK_GetSigma节点的'sampler_name'参数决定了从模型中采样的方法，影响sigma值的计算，因为不同的采样器影响采样数据的质量和分布，从而间接影响噪声分析的精度。"
+    },
+    {
+        "question": "如何使用BNK_GetSigma节点进行噪声分析？",
+        "answer": "使用BNK_GetSigma节点进行噪声分析，首先提供一个模型参数，定义要分析的确切模型，然后使用采样器和调度器设置，通过指定步骤范围，可以在特定点测量和分析噪声特性变化。"
+    },
+    {
+        "question": "BNK_GetSigma节点的输出类型是什么？",
+        "answer": "BNK_GetSigma节点的输出类型是sigma值，表示为FLOAT，它反映了在指定步骤范围内噪声特性的变化，为模型在噪声减少和信号清晰度方面的性能提供度量指标。"
+    },
+    {
+        "question": "在BNK_GetSigma节点计算中，'model'参数有什么作用？",
+        "answer": "在BNK_GetSigma节点中，'model'参数定义了要分析的生成模型，确定了用于计算sigma值的数据来源和处理过程，影响着整个节点功能的实现和噪声分析的准确度。"
+    },
+    {
+        "question": "BNK_GetSigma节点如何处理模型行为和噪声特性？",
+        "answer": "BNK_GetSigma节点通过计算模型在特定步骤范围内的sigma值变化来处理模型行为和噪声特性。sigma值的变化提供了对模型去噪能力和信号稳定性的洞察，反映在图像生成过程中的噪声控制效果。"
+    }
+]

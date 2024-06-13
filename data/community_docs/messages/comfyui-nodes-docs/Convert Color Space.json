@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ConvertColorSpace节点的主要功能是什么？",
+        "answer": "ConvertColorSpace节点主要用于在ComfyUI软件中实现图像从一个颜色空间到另一个颜色空间的转换，如从RGB转换到HSV或HSL，反过来亦可，以支持更高效的操作和分析图像数据。"
+    },
+    {
+        "question": "在ConvertColorSpace节点中，'in_space'参数的作用是什么？",
+        "answer": "'in_space'参数用于定义输入图像的当前颜色空间，它决定了节点执行转换操作时的起点，是颜色空间转换正确进行的基础。"
+    },
+    {
+        "question": "要使用ConvertColorSpace节点，'out_space'参数应该怎样设置？",
+        "answer": "'out_space'参数应设为需要转换的输出图像的颜色空间，如RGB、HSV或HSL，这是节点运算的核心参数，决定了图像颜色空间转换的目标格式。"
+    },
+    {
+        "question": "用户如何提供需要转换的图像给ConvertColorSpace节点？",
+        "answer": "用户通过'IMAGE'参数提供输入图像，这个参数是节点进行颜色空间转换的主数据对象。"
+    },
+    {
+        "question": "ConvertColorSpace节点输出的图像有怎样的数据类型和格式？",
+        "answer": "ConvertColorSpace节点输出的图像数据类型是IMAGE，具体表现为一个torch.Tensor，所包含的是按指定颜色空间转换后的图像。"
+    },
+    {
+        "question": "哪些颜色空间之间可以使用ConvertColorSpace节点进行转换？",
+        "answer": "ConvertColorSpace节点支持在RGB、HSV、和HSL这三种颜色空间之间进行双向转换。"
+    },
+    {
+        "question": "ConvertColorSpace节点执行颜色空间转换时在何种类型的硬件上运行更佳？",
+        "answer": "ConvertColorSpace节点支持在CPU硬件上运行，作为运行此节点的基础设施类型，因此在CPU上该功能表现最佳。"
+    }
+]

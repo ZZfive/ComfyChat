@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DiffusersLoader 是什么类？",
+        "answer": "DiffusersLoader 是一个旨在简化加载和初始化扩散模型的各个组件的类，适用于从指定路径加载模型本身、CLIP 和 VAE 等部分。"
+    },
+    {
+        "question": "DiffusersLoader 的主要方法是什么？",
+        "answer": "load_checkpoint 方法是 DiffusersLoader 的主要功能接口，它抽象了文件路径解析和模型加载的复杂性。"
+    },
+    {
+        "question": "model_path 参数在 DiffusersLoader 中的作用是什么？",
+        "answer": "model_path 参数是 DiffusersLoader 中必不可少的，它指定了预期模型文件所在的路径，用于搜索和加载扩散模型的必需组件。"
+    },
+    {
+        "question": " DiffusersLoader 中的 output_vae 和 output_clip 参数用于什么目的？",
+        "answer": "output_vae 和 output_clip 参数分别决定是否加载 VAE 和 CLIP 组件。它们提供了在模型加载过程中根据特定需求的灵活性。"
+    },
+    {
+        "question": "DiffusersLoader 的输出类型有哪些？",
+        "answer": "DiffusersLoader 的输出类型包括：MODEL（代表加载的扩散模型），CLIP（模型的文本特征提取器部分），以及 VAE（模型的变分自编码器组件）。"
+    },
+    {
+        "question": "使用 DiffusersLoader 时需要注意什么基础设施类型？",
+        "answer": "使用 DiffusersLoader 时，需要注意的基础设施类型是 CPU。"
+    },
+    {
+        "question": "DiffusersLoader 中与输出组件相关的参数是什么数据类型？",
+        "answer": "DiffusersLoader 中的输出组件，如 MODEL，CLIP 和 VAE，分别是 torch.nn.Module 和 comfy.sd.VAE 类型，具体取决于组件。"
+    }
+]

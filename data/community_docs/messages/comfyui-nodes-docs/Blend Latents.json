@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Blend_Latents 是什么?",
+        "answer": "WAS_Blend_Latents 是一个ComfyUI中用于通过多种混合操作来组合两个潜在表示的自定义节点，它属于WAS Suite/Latent类别，用于生成复合输出，对图像合成和风格迁移等应用非常有帮助。"
+    },
+    {
+        "question": "latent_a 参数的作用是什么？",
+        "answer": "参数 `latent_a` 表示在混合过程中第一个潜在向量，作为复合潜在输出的基础，其对混合的初始状态和最终结果的贡献极为重要。"
+    },
+    {
+        "question": "在WAS_Blend_Latents中，`operation`参数有哪些可选值？",
+        "answer": "`operation`参数可以是`add`、`multiply`、`divide`、`subtract`、`overlay`、`hard_light`、`soft_light`、`screen`、`linear_dodge`、`difference`、`exclusion`和`random`之一，用于确定混合操作的类型。"
+    },
+    {
+        "question": "哪些节点输出可以被WAS_Blend_Latents节点作为输入？",
+        "answer": "WAS_Blend_Latents 节点需要从输出类型为LATENT的节点获取输入，如 `latent_a` 和 `latent_b` 参数，这些通常来自于那些可以生成潜在向量的节点，例如预训练的图像生成模型。"
+    },
+    {
+        "question": "在WAS_Blend_Latents中，`blend`参数的默认值是多少？",
+        "answer": "在WAS_Blend_Latents中，`blend`参数的默认值是0.5，它用于控制`latent_a`和`latent_b`在混合过程中的混合程度，范围从0.01至1.0，以0.01为步幅。"
+    },
+    {
+        "question": "WAS_Blend_Latents的`samples`输出表示什么？",
+        "answer": "`samples`输出表示应用了所选混合操作后得到的混合潜在表示，这是混合过程的结果，包含了输入潜在向量的组合特征，适用于进一步的处理或分析。"
+    },
+    {
+        "question": "哪些混合模式在WAS_Blend_Latents中使用且如何选择它们？",
+        "answer": "WAS_Blend_Latents支持多种混合模式，包括添加、乘法、除法、减法、叠加等，这些模式的选择通过节点的`operation`参数决定，直接影响了两个潜在向量的混合方式和结果。"
+    }
+]

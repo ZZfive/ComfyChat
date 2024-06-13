@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CLIPSubtract节点的主要功能是什么？",
+        "answer": "CLIPSubtract节点的主要功能是对两个CLIP模型执行减法操作，将一个模型的关键补丁从另一个模型中减去，通过调整特定补丁的影响力度来微调模型特征。"
+    },
+    {
+        "question": "CLIPSubtract节点属于哪个类别？",
+        "answer": "CLIPSubtract节点属于ComfyUI的'advanced/model_merging'类别，是高级模型合并技术中的关键工具。"
+    },
+    {
+        "question": "CLIPSubtract节点的输入'clip1'代表什么？",
+        "answer": "'clip1'代表第一个CLIP模型，作为基础模型接收从第二个模型中减去的关键补丁，定义了将整合修改的主体。"
+    },
+    {
+        "question": "在CLIPSubtract节点中，'clip2'起到什么作用？",
+        "answer": "'clip2'是提供关键补丁的第二个CLIP模型，用于决定将从第一个模型中减去的补丁，从而改变模型的某些特征。"
+    },
+    {
+        "question": "如何控制CLIPSubtract节点中合并补丁的强度？",
+        "answer": "通过设置'clip2'模型与'clip1'模型合并时的'multiplier'值，一个浮点数，来调整从第二个CLIP模型合并到第一个模型中的补丁强度，控制补丁对结果模型的影响程度。"
+    },
+    {
+        "question": "CLIPSubtract节点的输出类型是什么？",
+        "answer": "CLIPSubtract节点的输出类型是修改后的CLIP模型（'resulting_clip'），其中包括从第二个模型减去的补丁，并按指定的乘数调整，数据类型为ComfyUI中的CLIP，Python中的修改后CLIP模型类实例。"
+    },
+    {
+        "question": "运行CLIPSubtract节点对硬件有什么要求？",
+        "answer": "CLIPSubtract节点对硬件的要求体现在其Infra类型为CPU，意味着它可以在任何支持Python的CPU设备上运行，没有特定的GPU加速需求。"
+    }
+]

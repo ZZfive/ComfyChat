@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CenterImage是什么?",
+        "answer": "CenterImage是ComfyUI中隶属于♾️Mixlab/Layer类别的一个自定义节点，用于将图像处理并居中放置在给定的画布内，同时生成与居中区域相对应的掩码。"
+    },
+    {
+        "question": "CenterImage节点如何确定图像的居中位置？",
+        "answer": "CenterImage节点通过计算提供的四个边距参数（左、上、右、下）来确定图像在画布中的居中位置，使得图像能够精确地居中放置，并贴合画布的边框。"
+    },
+    {
+        "question": "CenterImage节点的掩码输出有何用途？",
+        "answer": "CenterImage节点的掩码输出是一个二进制图像，用于描绘居中图像的区域，对图像的后续处理工作，如掩蔽、过滤或分割，至关重要。"
+    },
+    {
+        "question": "哪些参数是CenterImage节点必需的输入类型？",
+        "answer": "CenterImage节点的必需输入类型包括：图片画布（'canvas'），左、上、右、下的边距（'left', 'top', 'right', 'bottom'）。这些参数都是在画布中居中图像的基础和关键要素。"
+    },
+    {
+        "question": "CenterImage节点的网格输出是什么？",
+        "answer": "网格输出为画布内居中图像的坐标和尺寸，这些信息对于完成更精细的图像处理操作或图像操作是必需的，提供了图像放置的精确位置和大小。"
+    },
+    {
+        "question": "CenterImage节点如何处理和输出网格及掩码数据？",
+        "answer": "CenterImage节点通过中心化算法处理画布和边距信息后，输出一个四元素元组表示的网格数据，以及使用torch.Tensor格式的二进制图像表示的掩码数据。"
+    },
+    {
+        "question": "CenterImage节点支持哪些数据格式输入和输出？",
+        "answer": "CenterImage节点支持PYTHON中PIL.Image.Image和torch.Tensor数据格式输入输出。画布输入采用IMAGE类型，输出的网格则为元组类型，而掩码输出为MASK类型对应torch.Tensor。"
+    }
+]

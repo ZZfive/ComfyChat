@@ -1,0 +1,34 @@
+[
+    {
+        "question": "showSpentTime节点的用处是什么？",
+        "answer": "showSpentTime节点在ComfyUI平台中用于捕捉工作流处理图像或视频时的时间消耗，并在用户界面中显示，帮助用户监控系统性能和识别潜在性能瓶颈。"
+    },
+    {
+        "question": "showSpentTime节点需要哪些输入类型？",
+        "answer": "showSpentTime节点的输入包括：pipe参数，它的主要功能是提供正在处理的数据管道所需的所有信息；spent_time参数，用于显示推理所花费的时间；unique_id，用于识别特定节点；以及extra_pnginfo参数，包含工作流额外信息。"
+    },
+    {
+        "question": "pipe参数在showSpentTime节点中起到什么作用？",
+        "answer": "pipe参数在showSpentTime节点中至关重要，因为它包含了节点运行所需的数据管道信息，包括可能用以计算spent_time的loader设置。"
+    },
+    {
+        "question": "如果spent_time参数未提供，showSpentTime节点将如何获取时间信息？",
+        "answer": "如果spent_time参数未提供，showSpentTime节点将尝试从pipe的loader设置中检索花费的时间，以用于显示。"
+    },
+    {
+        "question": "哪些输出类型是由showSpentTime节点生成的？",
+        "answer": "showSpentTime节点产生ui和result两种类型的输出，ui输出是用于在用户界面显示信息的字典，而result输出是一个空字典，主要是为了展示流程信息，并非为了数据传递。"
+    },
+    {
+        "question": "在showSpentTime节点的使用中，unique_id参数如何帮助定位特定节点？",
+        "answer": "unique_id参数帮助showSpentTime节点精准定位工作流中的特定节点，通过与extra_pnginfo参数关联，将推理时间与正确节点匹配，从而提供具体节点的性能反馈。"
+    },
+    {
+        "question": "showSpentTime节点的主要功能是通过何种方式实现的？",
+        "answer": "showSpentTime节点主要功能是通过从pipe参数中解析loader设置的spent_time，并在用户界面中显示出来，从而提供处理时间的反馈。"
+    },
+    {
+        "question": "showSpentTime节点如何处理无spent_time的情况下输出界面信息？",
+        "answer": "在spent_time未被提供时，showSpentTime节点会尝试从pipe的loader设置中获取spent_time，确保即使在未直接提供的场合下，用户界面也能显示准确的时间信息。"
+    }
+]

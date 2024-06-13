@@ -1,0 +1,30 @@
+[
+    {
+        "question": "easy kSamplerInpainting节点做什么？",
+        "answer": "easy kSamplerInpainting节点是ComfyUI中用于图像修复的自定义节点，通过使用VAE模型填充图像中指定的区域，辅助图像修复过程并提供各种条件选项以根据用户需求细化修复效果。"
+    },
+    {
+        "question": "哪些是easy kSamplerInpainting节点的必需输入参数？",
+        "answer": "easy kSamplerInpainting节点的必需输入参数包括pipe对象、grow_mask_by和image_output，其中pipe包含进行修复所需的关键信息，grow_mask_by决定修复区域的扩大范围，而image_output指定修复后图像的输出方式。"
+    },
+    {
+        "question": "如何定义修复过程的区域范围？",
+        "answer": "修复过程的区域范围由'grow_mask_by'参数定义，它影响用于修复的遮罩的大小和形状，进而确定修复操作的具体作用范围。"
+    },
+    {
+        "question": "easy kSamplerInpainting提供哪些额外条件选项？",
+        "answer": "通过'additional'参数，easy kSamplerInpainting为修复过程提供额外条件，如微分扩散或模型条件，允许用户增强修复结果的灵活性和定制化。"
+    },
+    {
+        "question": "修复后的图像如何输出？",
+        "answer": "修复后的图像输出类型由'image_output'参数决定，可能是预览、保存，或结合预览与保存，这取决于用户的需求和选择。"
+    },
+    {
+        "question": "运行easy kSamplerInpainting节点需要哪种基础设施？",
+        "answer": "运行easy kSamplerInpainting节点至少需要GPU作为基础设施类型，以支持图像修复过程中的资源密集型计算。"
+    },
+    {
+        "question": "easy kSamplerInpainting节点的输出包括哪些数据类型？",
+        "answer": "easy kSamplerInpainting节点的主要输出包括更新的pipe对象、修复后的图像以及VAE模型，分别封装了图像修复操作的结果、具体图像的修复成果以及解码和编码操作的信息。"
+    }
+]

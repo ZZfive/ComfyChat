@@ -1,0 +1,30 @@
+[
+    {
+        "question": "pipeBatchIndex节点在ComfyUI中的作用是什么？",
+        "answer": "pipeBatchIndex节点在ComfyUI中用于操作流水线中的批次数据，通过选择和处理特定批次索引来优化批量处理任务，增强工作流程。"
+    },
+    {
+        "question": "在ComfyUI易用管道类别下，pipeBatchIndex节点如何处理批次数据？",
+        "answer": "pipeBatchIndex节点通过‘pipe’参数处理数据流水线中的样本和相关信息，使用‘batch_index’和‘length’参数选定和处理特定批次，从而实现在流水线中对数据的精细化控制。"
+    },
+    {
+        "question": "pipeBatchIndex节点的‘pipe’参数接受什么数据类型？",
+        "answer": "pipeBatchIndex节点的‘pipe’参数接受Comfy dtype‘PIPE_LINE’，Python dtype为Dict[str, Any]的数据类型，代表正在处理的流水线数据。"
+    },
+    {
+        "question": "如何指定pipeBatchIndex节点要处理的批次索引？",
+        "answer": "通过‘batch_index’参数指定pipeBatchIndex节点要处理的批次索引，该参数接受Comfy dtype‘INT’，Python dtype为int的数据类型。"
+    },
+    {
+        "question": "确定pipeBatchIndex节点处理元素数量的参数是什么？这如何影响数据处理？",
+        "answer": "‘length’参数确定pipeBatchIndex节点处理的元素数量，它控制了操作的范围，影响被操作数据的规模，管理着任务的处理深度。"
+    },
+    {
+        "question": "在复杂工作流中，pipeBatchIndex节点如何区分不同实例的执行？",
+        "answer": "pipeBatchIndex节点利用可选的‘my_unique_id’参数来跟踪其执行的特定实例，便于在复杂工作流中识别不同节点运行，提供更好的可追踪性和管理。"
+    },
+    {
+        "question": "pipeBatchIndex节点的输出提供了什么？",
+        "answer": "pipeBatchIndex节点输出修改后的‘pipe’流水线数据，其中包含经过处理的样本批次，用于将结果输入给流水线的后续阶段继续处理。"
+    }
+]

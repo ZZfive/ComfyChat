@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_MultiUpscaleStack节点的目的是什么？",
+        "answer": "CR_MultiUpscaleStack节点旨在通过一系列上采样模型提高图像质量和分辨率，允许用户切换选择不同的上采样模型，应用特定的重新缩放因子，以优化图像输出。"
+    },
+    {
+        "question": "CR_MultiUpscaleStack节点中switch_1参数的作用是什么？",
+        "answer": "switch_1参数用于决定第一个上采样模型是否在栈中被激活。这一开关控制着模型在上采样过程中的包含，从而直接影响最终图像输出的质量。"
+    },
+    {
+        "question": "upscale_model_1参数允许用户做什么？",
+        "answer": "upscale_model_1参数允许用户选择上采样栈中使用的第一个模型，模型的选择对上采样结果有显著的影响，因为不同的模型可能针对不同类型的图像或质量要求进行了优化。"
+    },
+    {
+        "question": "CR_MultiUpscaleStack中的rescale_factor参数是如何影响图像的？",
+        "answer": "rescale_factor参数定义了上采样模型的缩放因子，这对于上采样程度的控制至关重要，直接影响结果图像的分辨率和清晰度。"
+    },
+    {
+        "question": "CR_MultiUpscaleStack节点的可选参数upscale_stack有何作用？",
+        "answer": "upscale_stack参数允许用户输入一个预先存在的上采样模型栈及其因子，这能够简化上采样过程，通过在先前配置的模型栈基础上构建。"
+    },
+    {
+        "question": "什么是CR_MultiUpscaleStack节点输出的UPSCALE_STACK格式？",
+        "answer": "CR_MultiUpscaleStack节点输出的UPSCALE_STACK是一个结构化的列表，包含了激活并组合的上采样模型及其相应的重新缩放因子，代表了上采样栈的最终配置。"
+    },
+    {
+        "question": "CR_MultiUpscaleStack节点如何处理输入的upscale_stack参数？",
+        "answer": "CR_MultiUpscaleStack节点会根据输入的upscale_stack参数扩展上采样列表，如果参数指定的模型不为‘None’，并且相应的开关参数处于‘On’状态，将被添加到上采样列表中。"
+    }
+]

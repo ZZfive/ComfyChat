@@ -1,0 +1,30 @@
+[
+    {
+        "question": "什么类和节点允许在ComfyUI中加载运动Lora模型？",
+        "answer": "AnimateDiffLoraLoader节点，它属于Animate Diff 🎭🅐🅓类，允许在ComfyUI中方便地加载和应用运动Lora模型。"
+    },
+    {
+        "question": "在AnimateDiffLoraLoader节点中，'lora_name'参数的作用是什么？",
+        "answer": "'lora_name'参数用于识别要加载的特定运动Lora模型，确保从可用选项中正确选择模型，对节点的操作和最终的动画效果至关重要。"
+    },
+    {
+        "question": "有哪些参数可以在AnimateDiffLoraLoader节点中调整运动Lora模型的强度？",
+        "answer": "参数'strength'用于决定运动Lora对动画影响的强度。它是微调动画以实现所需效果的关键因素，允许在不同的运动层之间保持平衡。"
+    },
+    {
+        "question": "为何'prev_motion_lora'参数在AnimateDiffLoraLoader中是可选的？",
+        "answer": "'prev_motion_lora'参数是可选的，它用于提供之前运动Lora模型的状态，这对于保持动画序列的连贯性很重要，允许为复杂的动画效果叠加多个Lora模型。"
+    },
+    {
+        "question": "AnimateDiffLoraLoader输出哪种类型的模型？",
+        "answer": "AnimateDiffLoraLoader输出'MOTION_LORA'类型，表示应用了指定强度并与任何之前的运动Lora模型混合后的结果运动Lora模型，作为进一步角色动画的基础。"
+    },
+    {
+        "question": "AnimateDiffLoraLoader节点在处理参数时有哪些类型检查？",
+        "answer": "AnimateDiffLoraLoader节点检查'lora_name'参数应为字符串类型，'strength'参数应为浮点数类型，而'prev_motion_lora'参数应为MotionLoraList类型，分别对应Python的str、float和MotionLoraList数据类型。"
+    },
+    {
+        "question": "在使用AnimateDiffLoraLoader时需要注意哪些类型和设备的兼容性？",
+        "answer": "根据源代码，AnimateDiffLoraLoader节点的infra type是CPU，这意味着它在CPU上运行，不需要GPU资源。这与ComfyUI的CPU基础设施兼容。"
+    }
+]

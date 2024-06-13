@@ -1,0 +1,38 @@
+[
+    {
+        "question": "CheckpointLoaderSimpleMikey节点的用途是什么？",
+        "answer": "CheckpointLoaderSimpleMikey节点用于简化检查点的加载过程，旨在机器学习工作流中管理模型状态、相关剪辑和变分自编码器（VAE）的加载，同时计算并返回检查点文件的哈希值以确保数据完整性和可追溯性。"
+    },
+    {
+        "question": "CheckpointLoaderSimpleMikey节点如何识别要加载的特定检查点？",
+        "answer": "CheckpointLoaderSimpleMikey节点通过参数'ckpt_name'识别要加载的特定检查点，使用它在检查点目录中定位并访问相关的模型状态和配置文件。"
+    },
+    {
+        "question": "如何控制CheckpointLoaderSimpleMikey节点是否加载v消炎和clip？",
+        "answer": "通过设置参数'output_vae'和'output_clip'分别控制是否加载与检查点相关联的변分自编码器（VAE）和clip，为用户提供操作的灵活性和定制化。"
+    },
+    {
+        "question": "CheckpointLoaderSimpleMikey节点的'unique_id'参数有何作用？",
+        "answer": "'unique_id'参数在CheckpointLoaderSimpleMikey节点的操作中为额外识别提供服务，可以在需要通过文件名之外的方式区分多个检查点时使用。"
+    },
+    {
+        "question": "CheckpointLoaderSimpleMikey节点的'extra_pnginfo'参数用于什么？",
+        "answer": "'extra_pnginfo'是一个可选参数，用于为CheckpointLoaderSimpleMikey节点内的某些操作提供可能需要的额外信息，增强了节点对各种场景的适应性。"
+    },
+    {
+        "question": "CheckpointLoaderSimpleMikey节点的'prompt'参数如何影响其行为？",
+        "answer": "'prompt'参数允许用户通过输入指导CheckpointLoaderSimpleMikey节点的行为，可能影响检查点的处理方式或节点返回的信息，提供一定程度的定制化。"
+    },
+    {
+        "question": "CheckpointLoaderSimpleMikey节点加载的模型、clip和VAE的输出类型是什么？",
+        "answer": "CheckpointLoaderSimpleMikey节点为从检查点加载的模型、clip和VAE分别输出'MODEL'、'CLIP'和'VAE'类型的数据，它们分别对应于torch.nn.Module类型，用于表示模型状态、clip和変分自编码器的状态。"
+    },
+    {
+        "question": "哪些输出能够帮助用户跟踪和记录检查点信息？",
+        "answer": "CheckpointLoaderSimpleMikey节点输出的'ckpt_name'和'ckpt_hash'能够帮助用户跟踪和记录检查点信息；'ckpt_name'提供被加载的检查点文件的名称，而'ckpt_hash'是派生自检查点文件的哈希值，用作检查点的唯一标识符。"
+    },
+    {
+        "question": "CheckpointLoaderSimpleMikey节点的技术支持类型是什么？",
+        "answer": "CheckpointLoaderSimpleMikey节点的infrastructure type指定为CPU，意味着它的操作和负载最适用于CPU资源。"
+    }
+]

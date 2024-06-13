@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CutByMask节点的主要功能是什么?",
+        "answer": "CutByMask节点的主要功能是根据掩码的边界框裁剪图像。如果提供了特定的宽度和高度，它还能将图像调整到这些尺寸，处理多个掩码，从单个图像中提取不同的部分。"
+    },
+    {
+        "question": "哪些类型的参数是CutByMask节点必需的?",
+        "answer": "CutByMask节点需要两个必需的输入参数：'image'和'mask'。'image'代表将根据掩码裁剪的输入图像，而'mask'用于定义裁剪过程后将保留的图像区域。"
+    },
+    {
+        "question": "CutByMask节点的自选参数有什么作用?",
+        "answer": "CutByMask节点的自选参数如'force_resize_width'和'force_resize_height'允许用户调整结果图像的宽度和高度；'mask_mapping_optional'参数则在处理多个掩码时，允许节点根据每个掩码处理图像的不同部分。"
+    },
+    {
+        "question": "如何利用CutByMask节点处理多个掩码?",
+        "answer": "通过提供'mask_mapping_optional'参数，CutByMask节点可以从一个单独的图像中按照多个掩码切割出不同的部分，增强批量图像处理的能力。"
+    },
+    {
+        "question": "在ComfyUI中，CutByMask节点的输入和输出数据类型分别是什么?",
+        "answer": "在ComfyUI中，CutByMask节点的'input'数据类型为IMAGE（torch.Tensor），而输出类型也返回IMAGE（torch.Tensor，表示裁剪和重新尺寸后的图像）。"
+    },
+    {
+        "question": "CutByMask节点的输入类型中，'image'和'mask'参数的数据类型具体是什么?",
+        "answer": "'image'和'mask'参数在ComfyUI中的数据类型均为IMAGE，对应的Python数据类型为torch.Tensor。"
+    },
+    {
+        "question": "CutByMask节点是如何实现图像裁剪的?",
+        "answer": "CutByMask节点通过检测掩码的边界框来裁剪图像，并可以根据'force_resize_width'和'force_resize_height'参数改变图像尺寸，确保裁剪部分符合指定的尺寸要求。"
+    }
+]

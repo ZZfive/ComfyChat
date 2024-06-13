@@ -1,0 +1,34 @@
+[
+    {
+        "question": "BNK_Unsampler是ComfyUI中的哪个类?",
+        "answer": "BNK_Unsampler是ComfyUI中的Unsampler类，属于sampling类别，通过迭代细化潜在空间来促进高保真样本的生成。"
+    },
+    {
+        "question": "BNK_Unsampler的哪些输入类型是必须的?",
+        "answer": "BNK_Unsampler的必须输入类型包括model、steps、cfg、sampler_name、positive、negative和latent_image，它们对采样过程和输出样本的控制至关重要。"
+    },
+    {
+        "question": "BNK_Unsampler的steps参数的作用是什么?",
+        "answer": "steps参数决定了BNK_Unsampler执行采样迭代的次数，这对于潜在空间的细化和最终样本的质量至关重要。"
+    },
+    {
+        "question": "在BNK_Unsampler中，配置条件输入positive和negative的目的是什么?",
+        "answer": "配置positive和negative条件输入是为了引导BNK_Unsampler的生成过程，positive输入引导向期望的特征发展，而negative输入避免不希望的特征出现。"
+    },
+    {
+        "question": "BNK_Unsampler的输出类型是什么，它们代表什么?",
+        "answer": "BNK_Unsampler的输出类型为samples，代表潜在空间点的精炼结果，对生成高质量图像至关重要。"
+    },
+    {
+        "question": "BNK_Unsampler源代码中的normalize参数有何作用?",
+        "answer": "normalize参数决定了BNK_Unsampler输出的samples是否进行归一化处理，如果启用，将使得输出均值为零且标准差为一。"
+    },
+    {
+        "question": "BNK_Unsampler的source code中，'device'是如何定义的?",
+        "answer": "BNK_Unsampler源代码中，'device'是通过调用comfy.model_management.get_torch_device()函数以获取当前GPU设备的方式定义的。"
+    },
+    {
+        "question": "BNK_Unsampler如何确保高效使用GPU资源?",
+        "answer": "BNK_Unsampler通过函数comfy.model_management.load_models_gpu加载模型至GPU，以确保GPU高效记忆模型和操作数据，同时通过comfy.sampler_helpers.cleanup_additional_models清理额外模型，优化资源使用。"
+    }
+]

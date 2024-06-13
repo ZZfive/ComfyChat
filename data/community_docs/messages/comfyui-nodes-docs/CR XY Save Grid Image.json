@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_XYSaveGridImage节点的主要功能是什么？",
+        "answer": "CR_XYSaveGridImage是ComfyUI中的一个自定义节点，主要功能是将网格图像保存到指定的输出目录，支持不同保存模式和多种文件格式。"
+    },
+    {
+        "question": "CR_XYSaveGridImage支持的文件格式有哪些？",
+        "answer": "CR_XYSaveGridImage支持webp, jpg, png, tif等文件格式。"
+    },
+    {
+        "question": "保存图像时，CR_XYSaveGridImage如何确保文件名的唯一性？",
+        "answer": "CR_XYSaveGridImage通过使用文件名前缀结合一个数字计数器来确保每个保存的图像都具有基于前缀和计数器的唯一文件名，防止文件覆盖。"
+    },
+    {
+        "question": "哪些参数可以控制CR_XYSaveGridImage节点保存图像的位置？",
+        "answer": "输出文件夹(output_folder)和输出路径(output_path)参数可以控制图像的保存位置，前者用于指定输出目录内的目录，后者允许覆盖默认路径选择自定义保存位置。"
+    },
+    {
+        "question": "CR_XYSaveGridImage的模式参数(mode)有哪些选项？",
+        "answer": "模式参数(mode)有'保存(Save)'和'预览(Preview)'两种选项，分别用于永久保存图像或临时保存供审查。"
+    },
+    {
+        "question": "CR_XYSaveGridImage中的触发器(trigger)参数如何影响节点行为？",
+        "answer": "触发器(trigger)是一个布尔标志，当设置为True时，会启动图像保存过程；否则，节点暂停执行主要功能。"
+    },
+    {
+        "question": "CR_XYSaveGridImage在预览模式下，保存的图像会存储在哪里？",
+        "answer": "在预览模式下，CR_XYSaveGridImage会将图像保存在临时目录(temp_directory)中，便于用户界面显示并审查图像。"
+    }
+]

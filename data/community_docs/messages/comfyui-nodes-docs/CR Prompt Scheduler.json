@@ -1,0 +1,54 @@
+[
+    {
+        "question": "CR_PromptScheduler是什么类型的自定义节点，它属于哪个类别？",
+        "answer": "CR_PromptScheduler是一个属于Comfyroll/Animation/Schedulers类别的自定义节点，用于管理和根据关键帧或时间表对提示进行调度。"
+    },
+    {
+        "question": "CR_PromptScheduler中的'mode'参数有什么作用？",
+        "answer": "CR_PromptScheduler的'mode'参数决定了节点使用的调度方法，可以应用默认提示、遵循关键帧列表或实现更复杂的调度。"
+    },
+    {
+        "question": "在CR_PromptScheduler中，'current_frame'输入有什么功能？",
+        "answer": "'current_frame'输入是CR_PromptScheduler确定要应用哪个提示的参考点，对节点的执行至关重要，直接影响提示的选择。"
+    },
+    {
+        "question": "CR_PromptScheduler的'default_prompt'输入用于什么场景？",
+        "answer": "CR_PromptScheduler的'default_prompt'输入提供了一个备用文本，当当前帧未安排特定提示时使用，确保总有一个提示可用。"
+    },
+    {
+        "question": "什么是CR_PromptScheduler的'schedule_format'，它有哪几种类型？",
+        "answer": "CR_PromptScheduler的'schedule_format'指定了输入时间表数据的结构，有'CR'和'Deforum'两种类型，它通知节点如何解释时间表信息。"
+    },
+    {
+        "question": "CR_PromptScheduler的'interpolate_prompt'选项有什么功能？",
+        "answer": "CR_PromptScheduler的'interpolate_prompt'选项确定是否在提示之间进行插值，以实现平滑过渡，增强动画或应用程序的流畅性。"
+    },
+    {
+        "question": "CR_PromptScheduler的'keyframe_list'输入用于什么目的？",
+        "answer": "CR_PromptScheduler的'keyframe_list'输入用于在模式设置为'关键帧列表'时定义关键帧及其关联的提示，对于创建特定帧的提示至关重要。"
+    },
+    {
+        "question": "CR_PromptScheduler如何生成'current_prompt'输出？",
+        "answer": "CR_PromptScheduler的'current_prompt'输出代表根据调度器评估的当前处于活动状态的提示，可以直接用于应用程序或动画中。"
+    },
+    {
+        "question": "在CR_PromptScheduler中，'next_prompt'输出提供什么信息？",
+        "answer": "CR_PromptScheduler的'next_prompt'输出指示下一帧将处于活动状态的提示，这对于预览即将发生的变化或为提示序列做准备非常有用。"
+    },
+    {
+        "question": "CR_PromptScheduler的'weight'输出代表什么？",
+        "answer": "CR_PromptScheduler的'weight'输出是一个浮点值，表示提示之间的过渡进度，特别在'interpolate_prompt'设置为'是'时相关。"
+    },
+    {
+        "question": "CR_PromptScheduler的'show_help'输出提供什么功能？",
+        "answer": "CR_PromptScheduler的'show_help'输出提供与节点相关的文档或帮助页面URL链接，作为用户寻求更多信息的快速参考。"
+    },
+    {
+        "question": "CR_PromptScheduler的'prepend_text'和'append_text'输入提供了什么灵活性？",
+        "answer": "CR_PromptScheduler的'prepend_text'和'append_text'输入允许在提示前后添加自定义文本，提供了扩展或修饰提示的灵活性。"
+    },
+    {
+        "question": "哪些节点可以根据关键帧或预定义的时间表调度动画提示？",
+        "answer": "CR_PromptScheduler节点可以根据关键帧或预定义的时间表调度动画提示，用于管理和自定义动画或其他基于时间的应用程序中的动态提示。"
+    }
+]

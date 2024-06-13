@@ -1,0 +1,38 @@
+[
+    {
+        "question": "CR_UpscaleImage是什么?",
+        "answer": "CR_UpscaleImage是ComfyUI的一个自定义节点，用于使用选定的放大模型提高输入图像的分辨率。"
+    },
+    {
+        "question": "CR_UpscaleImage节点的主要输入是什么？",
+        "answer": "CR_UpscaleImage节点的主要输入是图像（image），它是将被处理并放大到更高分辨率的源材料。"
+    },
+    {
+        "question": "哪些因素影响CR_UpscaleImage节点输出图像的质量？",
+        "answer": "CR_UpscaleImage节点输出图像的质量受多种因素影响，包括放大模型（upscale_model）的选择、模式（mode）的设定以及超采样（supersample）和重新采样方法（resampling_method）的使用。"
+    },
+    {
+        "question": "ComfyUI中CR_UpscaleImage节点如何选择放大模型？",
+        "answer": "在ComfyUI中，CR_UpscaleImage节点通过'upscale_model'参数来选择放大模型，参数取值为预训练模型的名称，这些模型文件存储在'upscale_models'文件夹中。"
+    },
+    {
+        "question": "CR_UpscaleImage节点的输出类型有哪些？",
+        "answer": "CR_UpscaleImage节点的主要输出类型是IMAGE，代表放大后的图像，以及STRING类型的URL，链接到附加的文档帮助。"
+    },
+    {
+        "question": "在CR_UpscaleImage节点中，模式参数的作用是什么？",
+        "answer": "模式参数（mode）在CR_UpscaleImage节点中决定图像将被重新缩放还是调整大小，影响图像最终尺寸和缩放技术。"
+    },
+    {
+        "question": "CR_UpscaleImage节点支持哪些重新采样方法？",
+        "answer": "CR_UpscaleImage节点支持四种重新采样方法：lanczos、nearest、bilinear和bicubic，这些方法在图像处理期间用于确定图像插值的算法，影响放大图像的平滑度和清晰度。"
+    },
+    {
+        "question": "CR_UpscaleImage的'rounding_modulus'参数有什么作用？",
+        "answer": "CR_UpscaleImage的'rounding_modulus'参数用于调整图像的尺寸，常用于确保放大后的图像尺寸可以被特定数字整除，以增强与某些显示标准的兼容性。"
+    },
+    {
+        "question": "在使用CR_UpscaleImage节点时，如何调整图像的精确宽度？",
+        "answer": "通过设置'resize_width'参数，用户可以指定调整大小后图像的新宽度，当模式设置为'resize'时，这对于精确控制图像尺寸尤为重要。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DetailerForEachPipe 节点的功能是什么？",
+        "answer": "DetailerForEachPipe 节点通过应用一系列图像处理技术来增强图像的细节，专注于通过高级算法提升图像中各个部分的视觉质量。它在后处理流程中扮演关键角色，强调图像内容细节的增强。"
+    },
+    {
+        "question": "哪些输入是 DetailerForEachPipe 节点所必需的？",
+        "answer": "DetailerForEachPipe 节点的必需输入包括：图像（IMAGE）、分割数据（SEGS）、引导尺寸（FLOAT）、最大尺寸（FLOAT）、种子（INT）、步骤（INT）和配置（FLOAT）。"
+    },
+    {
+        "question": "DetailerForEachPipe 节点的输出类型有哪些？",
+        "answer": "DetailerForEachPipe 节点的输出包括：增强后的图像（IMAGE）、输出分割数据（SEGS）、基本管道输出（BASIC_PIPE）和控制网图像输出（COMBO[IMAGE]）。"
+    },
+    {
+        "question": "segmentation maps 在 DetailerForEachPipe 节点中是如何使用的？",
+        "answer": "分割数据（SEGS）为 DetailerForEachPipe 节点提供了图像内兴趣区域的信息，指导节点的处理，确保只有相关区域经受细节增强。"
+    },
+    {
+        "question": "DetailerForEachPipe 能提供哪些视觉质量的提升？",
+        "answer": "DetailerForEachPipe 节点通过应用高级算法精炼图像中各个部分的视觉质量，实现较高水平的细节增强，从而提升图像的视觉质量。"
+    },
+    {
+        "question": "DetailerForEachPipe 节点的哪个输入参数控制算法对细节的调整程度？",
+        "answer": "配置参数（cfg）调整 DetailerForEachPipe 增强算法的设置，用以微调输出的细节水平，对增强图像的视觉结果有显著影响。"
+    },
+    {
+        "question": "使用 DetailerForEachPipe 节点时，需要关注哪些输入参数以防止内存过度使用？",
+        "answer": "要防止 DetailerForEachPipe 节点在增强过程中内存过度使用，应关注最大尺寸（max_size）参数，该参数为处理的图像段尺寸设置了上限，以控制计算负载，确保节点在可用资源内运行。"
+    }
+]

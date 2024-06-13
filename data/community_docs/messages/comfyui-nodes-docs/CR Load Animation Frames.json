@@ -1,0 +1,38 @@
+[
+    {
+        "question": "CR_LoadAnimationFrames是什么?",
+        "answer": "CR_LoadAnimationFrames是ComfyUI中Comfyroll/Animation/IO类别下的一个节点，用于从指定目录加载图像序列，并将其处理为适合动画和视频编辑任务的帧数据。"
+    },
+    {
+        "question": "哪些节点可以帮助处理图像序列以进行动画编辑?",
+        "answer": "ComfyUI的CR_LoadAnimationFrames节点能够加载并处理图像序列，适用于动画或视频编辑等下游任务。"
+    },
+    {
+        "question": "如何指定加载图像序列的起始帧？",
+        "answer": "CR_LoadAnimationFrames节点通过可选参数'start_index'来确定图像序列的起始帧，允许用户控制序列的开始点，从而选择性地加载感兴趣的帧。"
+    },
+    {
+        "question": "CR_LoadAnimationFrames节点的max_frames参数的目的是什么？",
+        "answer": "max_frames参数用于设定从图像序列中加载的最大帧数，这有助于控制和优化资源使用，确保工作流的效率。"
+    },
+    {
+        "question": "从CR_LoadAnimationFrames节点输出的IMAGE是什么数据类型？",
+        "answer": "CR_LoadAnimationFrames节点的IMAGE输出是torch.Tensor类型，提供作为帧堆栈的加载图像序列，便于进一步的数据处理和分析。"
+    },
+    {
+        "question": "CR_LoadAnimationFrames节点是否可以提供帮助文档链接？",
+        "answer": "是的，CR_LoadAnimationFrames节点的show_help输出提供了一个链接，指向详细文档帮助，以便用户获取更多关于节点使用和功能的信息。"
+    },
+    {
+        "question": "CR_LoadAnimationFrames节点是如何保证正确加载指定目录下的图像序列？",
+        "answer": "CR_LoadAnimationFrames节点通过image_sequence_folder参数指定包含图像序列的目录，并在输入目录中查找并处理符合要求的图像，以确保正确加载图像序列用于后续处理。"
+    },
+    {
+        "question": "CR_LoadAnimationFrames的源代码中如何实现图像的加载和处理？",
+        "answer": "CR_LoadAnimationFrames节点的源代码首先通过image_sequence_folder确定图像目录，然后加载并按序列排序的图像文件列表。它根据start_index和max_frames参数选择性加载图像，将图像转换为RGB模式并归一化，最后将所有图像堆栈为torch.Tensor类型的输出。"
+    },
+    {
+        "question": "CR_LoadAnimationFrames节点的主要应用场景是什么？",
+        "answer": "CR_LoadAnimationFrames节点主要用于动画和视频编辑，它能够加载和处理图像序列，为后续的动画或视频处理任务提供准备好的帧数据。"
+    }
+]

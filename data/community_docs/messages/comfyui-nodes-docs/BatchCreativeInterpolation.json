@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BatchCreativeInterpolationNode是用于什么目的的节点？",
+        "answer": "BatchCreativeInterpolationNode是一个用于图像批量创意插值的节点，它能够控制输出帧的分布、关键帧影响和强度值，以实现图像状态之间的平滑过渡，并提供高控制度以适应创意应用。"
+    },
+    {
+        "question": "BatchCreativeInterpolationNode的关键输入包括哪些？",
+        "answer": "关键输入包括正面条件图像（positive）、负面条件图像（negative）、输入图像（images）、用于插值的模型（model）、IPA适配器（ipadapter）、CLIP Vision模型（clip_vision）和各种分布、影响与强度类型的参数。"
+    },
+    {
+        "question": "输入参数linear_key_frame_influence_value是如何影响插值过程的？",
+        "answer": "linear_key_frame_influence_value指定关键帧在插值过程中线性影响的值，当关键帧影响类型设置为'linear'时适用，影响关键帧的强度分布。"
+    },
+    {
+        "question": "BatchCreativeInterpolationNode的输出类型有哪些？",
+        "answer": "输出类型包括GRAPH（可视化权重比较）、POSITIVE（正面插值条件）、NEGATIVE（负面插值条件）、MODEL（修改后的模型）、KEYFRAME_POSITIONS（关键帧位置）和BATCH_SIZE（批次大小）等。"
+    },
+    {
+        "question": "哪些节点在进行图像插值时可以被用作正面条件或负面条件的输入？",
+        "answer": "在BatchCreativeInterpolationNode中，正面条件和负面条件的输入都接受IMAGE类型，它们以Comfy dtype: IMAGE和Python dtype: torch.Tensor的形式出现，分别用于引导插值的方向和限制或引导插值效果。"
+    },
+    {
+        "question": "dynamic_frame_distribution_values参数在BatchCreativeInterpolationNode中扮演什么角色？",
+        "answer": "dynamic_frame_distribution_values定义了当帧分布类型设置为'dynamic'时，动态帧分布的逗号分隔值字符串，用于控制每个帧在插值框架中的分布位置和密度。"
+    },
+    {
+        "question": "使用BatchCreativeInterpolationNode进行插值时，动态帧分布的开启条件是什么？",
+        "answer": "动态帧分布的开启条件是在type_of_frame_distribution参数中选择'dynamic'；此外，必须提供dynamic_frame_distribution_values参数作为定义动态分布规则的逗号分隔值字符串。"
+    }
+]

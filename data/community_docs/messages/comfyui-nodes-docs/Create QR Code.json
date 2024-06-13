@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CreateQRCodeNode是什么类型的节点？",
+        "answer": "CreateQRCodeNode是ComfyUI中Masquerade类别下的一个自定义节点，用于从文本输入生成QR码图像。"
+    },
+    {
+        "question": "哪些参数是CreateQRCodeNode生成QR码所必需的?",
+        "answer": "CreateQRCodeNode需要'text'参数作为必须输入，用来编码生成QR码，同时支持'size', 'qr_version', 'error_correction', 'box_size' 和 'border'作为可选参数来微调输出的QR码。"
+    },
+    {
+        "question": "CreateQRCodeNode的QR码图像输出数据类型是什么?",
+        "answer": "CreateQRCodeNode的QR码图像输出类型为ComfyUI的'IMAGE'，其数据类型在Python中表现为torch.Tensor格式。"
+    },
+    {
+        "question": "如何确定CreateQRCodeNode中的QR码错误纠正级别？",
+        "answer": "CreateQRCodeNode中的'error_correction'参数决定了QR码的错误纠正级别，它可以设置为'L','M','Q','H'中的一个，分别对应低、中、高和最高四个级别的错误纠正能力。"
+    },
+    {
+        "question": "哪些节点能够生成QR码图像？",
+        "answer": "在ComfyUI中，CreateQRCodeNode是能够从文本输入生成QR码图像的节点。"
+    },
+    {
+        "question": "CreateQRCodeNode使用的基础设施类型是什么？",
+        "answer": "CreateQRCodeNode的使用依赖于CPU作为基础设施类型，数据处理和生成不会利用GPU资源。"
+    },
+    {
+        "question": "CreateQRCodeNode可接受的'size'参数范围是什么？",
+        "answer": "CreateQRCodeNode中的'size'参数范围是从64到4096，增量为64，默认值为512，用于控制生成的QR码图的大小。"
+    }
+]

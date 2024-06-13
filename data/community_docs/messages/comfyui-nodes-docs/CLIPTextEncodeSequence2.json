@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CLIPTextEncodeSequence2节点的功能是什么？",
+        "answer": "CLIPTextEncodeSequence2节点旨在将文本序列编码成可用于生成模型中进一步处理的条件序列，处理每行文本以创建一组条件向量，并根据指定的关键帧类型对这些向量进行转换，以与所需的帧数对齐。"
+    },
+    {
+        "question": "哪些是CLIPTextEncodeSequence2节点的必需输入参数？",
+        "answer": "CLIPTextEncodeSequence2节点的必需输入参数包括'clip'、'frame_count'和'text'，分别提供文本编码的上下文、指定总帧数以及原始输入文本。"
+    },
+    {
+        "question": "CLIPTextEncodeSequence2节点处理文本的输入是哪个参数？",
+        "answer": "文本参数（text）是处理的输入，它是将被转换成条件序列的信息来源。"
+    },
+    {
+        "question": "什么是'clip'参数在CLIPTextEncodeSequence2中的作用？",
+        "answer": "'clip'参数为文本编码过程提供了必要的上下文，影响文本如何被转换成条件向量序列。"
+    },
+    {
+        "question": "CLIPTextEncodeSequence2节点的权重解释参数（weight_interpretation）影响什么？",
+        "answer": "权重解释参数定义了解译编码文本权重的方法，对编码过程的准确性和可靠性至关重要，影响条件序列的质量。"
+    },
+    {
+        "question": "哪些节点输出是CLIPTextEncodeSequence2节点生成的？",
+        "answer": "CLIPTextEncodeSequence2节点生成的输出包括'conditioning_sequence'，它是编码文本表示的列表；'cond_keyframes'，代表与编码文本对应的特定帧；以及'frame_count'，表示生成的总帧数。"
+    },
+    {
+        "question": "ComfyUI中使用CLIPTextEncodeSequence2节点时，哪种类型是决定条件关键帧如何分布在帧数上的参数？",
+        "answer": "cond_keyframes_type参数决定条件关键帧如何分布在帧数上，对于将文本编码与所需的时间结构对齐非常重要。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "什么是WeightAdjustAllAddNode类？",
+        "answer": "WeightAdjustAllAddNode是ComfyUI-AnimateDiff-Evolved插件中的一部分，负责在模型中应用统一的权重调整。"
+    },
+    {
+        "question": "WeightAdjustAllAddNode的get_weight_adjust方法有什么作用？",
+        "answer": "get_weight_adjust方法用于调整模型中所有权重的大小，通过接受一个加法值输入，并可选择地打印调整信息。"
+    },
+    {
+        "question": "Which input types are needed for the 'get_weight_adjust' method in WeightAdjustAllAddNode？",
+        "answer": "The method requires 'all_ADD' (FLOAT) and 'print_adjustment' (BOOLEAN) as inputs, and 'prev_weight_adjust' (WEIGHT_ADJUST) is optional."
+    },
+    {
+        "question": "all_ADD参数的作用是什么？",
+        "answer": "all_ADD参数定义了模型中所有权重调整的量级，直接影响权重调整的大小和模型性能的改变。"
+    },
+    {
+        "question": "print_adjustment参数做什么？",
+        "answer": "print_adjustment参数是一个布尔值，用于控制是否打印权重调整的详细信息，对于调试特别有帮助。"
+    },
+    {
+        "question": "prev_weight_adjust参数在什么情况下使用？",
+        "answer": "prev_weight_adjust参数允许输入先前的权重调整组，这可以用来叠加或修改现有权重调整，增强调整过程的灵活性。"
+    },
+    {
+        "question": "get_weight_adjust方法的输出是什么？",
+        "answer": "get_weight_adjust方法返回一个AdjustGroup对象，包含了根据'all_ADD'值调整后的权重信息。"
+    }
+]

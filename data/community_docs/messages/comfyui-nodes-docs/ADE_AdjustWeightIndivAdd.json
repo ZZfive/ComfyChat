@@ -1,0 +1,30 @@
+[
+    {
+        "question": "什么是WeightAdjustIndivAddNode?",
+        "answer": "WeightAdjustIndivAddNode是ComfyUI的Animate Diff 🎭🅐🅓插件类别下的一个类，用于通过向不同类型的参数添加特定值来单独调整模型的权重。"
+    },
+    {
+        "question": "WeightAdjustIndivAddNode通过什么参数调整位置编码权重?",
+        "answer": "WeightAdjustIndivAddNode使用pe_ADD参数来调整位置编码权重，这对于微调模型对输入序列结构的理解至关重要。"
+    },
+    {
+        "question": "attn_ADD参数在WeightAdjustIndivAddNode中起什么作用?",
+        "answer": "attn_ADD参数用于修改注意力机制的权重，通过调整此参数，可以增强模型聚焦输入的不同部分的能力，有助于提高模型在需要对上下文有细微理解的任务上的性能。"
+    },
+    {
+        "question": "其他不属于预定义类别的权重如何在WeightAdjustIndivAddNode中调整?",
+        "answer": "WeightAdjustIndivAddNode通过other_ADD参数调整不属于预定义类别的权重，提供了模型微调的灵活性，允许进行更广泛的调整。"
+    },
+    {
+        "question": "WeightAdjustIndivAddNode中print_adjustment标志的作用是什么?",
+        "answer": "print_adjustment标志控制是否将对权重的调整记录在日志中，这对于理解调整对模型行为的影响非常有用，特别是在调试场景下。"
+    },
+    {
+        "question": "WeightAdjustIndivAddNode如何处理先前的权重调整?",
+        "answer": "WeightAdjustIndivAddNode接受一个可选的prev_weight_adjust参数，用于应用先前的调整组，允许节点继续调整序列或应用一组预定义的修改。"
+    },
+    {
+        "question": "WeightAdjustIndivAddNode的输出类型是怎样的?",
+        "answer": "WeightAdjustIndivAddNode的输出是一个WEIGHT_ADJUST类型，具体来说是一个AdjustGroup对象，代表了对模型权重所做的集体调整。这个对象可以进一步完善模型或将调整应用于另一个模型实例。"
+    }
+]

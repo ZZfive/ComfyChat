@@ -1,0 +1,30 @@
+[
+    {
+        "question": "FaceAnalysisModels类的作用是什么？",
+        "answer": "FaceAnalysisModels类的作用是初始化和加载面部分析任务所需的模型，确保运行环境具有适当模型和提供者，以有效地执行后续的面部分析操作。"
+    },
+    {
+        "question": "载入FaceAnalysisModels类模型时，哪些参数是必需的？",
+        "answer": "载入FaceAnalysisModels类模型时，必需的参数包括 'library' 和 'provider'。其中，'library' 指定要使用的面部分析库，而 'provider' 指定用于执行模型的后端。"
+    },
+    {
+        "question": "FaceAnalysisModels类的'load_models'方法如何处理'dlib'库？",
+        "answer": "当参数'library'设置为'dlib'时，'load_models'方法会载入dlib库提供的面部检测器、面部关键点预测模型以及面部识别模型。"
+    },
+    {
+        "question": "哪类模型在参数'library'设置为'insightface'时会被FaceAnalysisModels类使用？",
+        "answer": "当参数'library'设置为'insightface'时，FaceAnalysisModels类会使用InsightFace模型，具体是'buffalo_l'模型，根目录由INSIGHTFACE_DIR设定，以provider参数所指定的ExecutionProvider作为执行提供商。"
+    },
+    {
+        "question": "FaceAnalysisModels类加载模型的'detector'输出是什么类型？",
+        "answer": "FaceAnalysisModels类加载模型的'detector'输出类型根据'library'参数的不同而变化，当'library'为'insightface'时，'detector'输出类型为FaceAnalysis模型；当'library'为'dlib'时，'detector'输出类型为dlib的面部检测器类型。"
+    },
+    {
+        "question": "哪些参数可以从FaceAnalysisModels类的'load_models'方法输出获得？",
+        "answer": "从FaceAnalysisModels类的'load_models'方法输出中，可以获得加载的'task_models'，其中包含所需的模型与相关信息，如模型本身和预处理状态等，为后续的面部分析操作提供必要工具。"
+    },
+    {
+        "question": "在FaceAnalysisModels中，'load_models'方法对于'provider'参数支持哪些值？",
+        "answer": "FaceAnalysisModels中的'load_models'方法对于'provider'参数支持的值包括但不限于 'CPU', 'CUDA', 'DirectML', 'OpenVINO', 'ROCM' 和 'CoreML'，涵盖了多种不同的执行提供者，这影响模型的性能和与系统硬件的兼容性。"
+    }
+]

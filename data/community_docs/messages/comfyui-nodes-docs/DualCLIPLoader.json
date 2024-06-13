@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DualCLIPLoader节点的功能是什么?",
+        "answer": "DualCLIPLoader节点旨在高效地加载和管理双CLIP（对比语言-图像预训练）模型，促进它们在更大系统中的联合操作，抽象了加载和访问CLIP模型的复杂性。"
+    },
+    {
+        "question": "在ComfyUI中DualCLIPLoader属于哪一类别？",
+        "answer": "DualCLIPLoader节点在ComfyUI中属于'advanced/loaders'类别。"
+    },
+    {
+        "question": "DualCLIPLoader的输入参数clip_name1和clip_name2有何作用？",
+        "answer": "参数'clip_name1'和'clip_name2'分别指定要加载的第一个和第二个CLIP模型，对于识别和加载所需的模型至关重要，直接影响节点访问和处理模型的能力。"
+    },
+    {
+        "question": "DualCLIPLoader输出的'CLIP'具体包含哪些内容？",
+        "answer": "输出'CLIP'代表已加载的CLIP模型，包含图像和文本嵌入的组合，用于进一步的处理和分析，为各种下游任务提供了基础。"
+    },
+    {
+        "question": "DualCLIPLoader的Python和Comfy数据类型分别是什么？",
+        "answer": "DualCLIPLoader的参数'clip_name1'和'clip_name2'的Comfy和Python数据类型均为str，而输出'CLIP'的Comfy数据类型为COMBO[str, torch.Tensor]，Python数据类型为Tuple[str, torch.Tensor]。"
+    },
+    {
+        "question": "DualCLIPLoader的源代码中函数load_clip做了什么？",
+        "answer": "load_clip函数接收参数clip_name1和clip_name2，使用这些参数定位模型路径，加载指定的CLIP模型，并返回加载后的模型组合。"
+    },
+    {
+        "question": "如何使用DualCLIPLoader加载和使用的基础设施类型是什么？",
+        "answer": "DualCLIPLoader的使用基础设施类型为CPU，意味着它适合在CPU上运行加载和处理双CLIP模型的任务。"
+    }
+]
