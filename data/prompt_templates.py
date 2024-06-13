@@ -106,9 +106,10 @@ You need to understand the document content I input, then construct the question
 2. You need adjust the number of generated question-answer data pairs based on the length of the passed in text, but generate at least five question-answer data pairs each time.
 3. Note that I will tell you the described subject name before passing in the specific document content, and you can use it directly when building question and answer data. Ensure that the constructed question and answer data cover all the content of the text as much as possible.
 4. Do not generate any question-answer pairs about "Licenses" and "Commit Version"
-5. Do not miss necessary symbols, but do not add unnecessary symbols.
-6. When generating question-answer pairs, do not just start from a specific subject, but also ask questions that point to the subject in the input text from the characteristics and phenomena. For example, the LoadImage node can load images, so do not just generate questions like "What can the LoadImage node do?", but also generate questions like "What nodes can load images?"
-7. Please ensure that the output json data format is correct. 
+5. Do not generate question-answer pairs for "objects such as images or videos represented by relative positions" in documents
+6. Do not miss necessary symbols, but do not add unnecessary symbols.
+7. When generating question-answer pairs, do not just start from a specific subject, but also ask questions that point to the subject in the input text from the characteristics and phenomena. For example, the LoadImage node can load images, so do not just generate questions like "What can the LoadImage node do?", but also generate questions like "What nodes can load images?"
+8. Please ensure that the output json data format is correct. 
 #############
 
 # TONE #
@@ -145,9 +146,11 @@ template_zh = '''
 1. 我传递的文档都是关于ComfyUI（使用稳定扩散模型生成图片和视频的GUI）以及扩展其功能的自定义节点或插件。在构建问答数据时，一定要明确主题是针对ComfyUI还是针对其某个自定义节点或插件。问答数据中的主体必须带有节点或插件的具体名称，例如\"ComfyUI-Manager\"节点；不要只使用\"扩展\"或\"自定义节点\"作为主体，这并不能表示问题是关于节点或插件的具体名称。
 2. 你需要根据传入的文本长度调整生成的问答数据对的数量，但每次至少生成七个问答数据对。
 3. 注意，在传入具体文档内容之前，我会告诉你文本描述的具体主体，你可以在构建问答数据时直接使用它。确保构建的问答数据尽可能覆盖文本的所有内容。
-4. 不要遗漏必要的符号，但不要添加不必要的符号。
-5. 生成问答对时，不要只从特定主体开始，还要从特征和现象出发指向输入文本中主体得问题。例如，LoadImage节点可以加载图片，不要只生成“LoadImage节点可以做什么？”这样的问题，还要生成“哪些节点可以加载图片？”这样的问题。
-6. 请确保输出的json数据格式正确。
+4. 不要生成任何关于“Licenses”和“Commit Version”的问答对.
+5. 不要对文档中的“以相对位置表示的图片或视频等对象”生成问答对。
+6. 不要遗漏必要的符号，但不要添加不必要的符号。
+7. 生成问答对时，不要只从特定主体开始，还要从特征和现象出发指向输入文本中主体得问题。例如，LoadImage节点可以加载图片，不要只生成“LoadImage节点可以做什么？”这样的问题，还要生成“哪些节点可以加载图片？”这样的问题。
+8. 请确保输出的json数据格式正确。
 #############
 
 # 语气 #
