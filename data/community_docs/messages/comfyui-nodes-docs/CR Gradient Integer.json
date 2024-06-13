@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_GradientInteger是什么类型的节点，它属于哪个插件？",
+        "answer": "CR_GradientInteger是ComfyUI的Comfyroll插件中的一个节点，属于Animation/Interpolate类别。"
+    },
+    {
+        "question": "CR_GradientInteger节点的目的是什么？",
+        "answer": "CR_GradientInteger节点旨在为两个整数值之间的插值提供平滑过渡，特别是针对动画和基于时间的视觉效果。"
+    },
+    {
+        "question": "CR_GradientInteger的start_value和end_value参数分别代表什么？",
+        "answer": "start_value是插值开始的起始整数值，而end_value是插值的目标结束整数值。"
+    },
+    {
+        "question": "帧持续时间（frame_duration）在CR_GradientInteger中的作用是什么？",
+        "answer": "帧持续时间定义了插值过渡从起始值到结束值所需的总帧数，决定了过渡的长度。"
+    },
+    {
+        "question": "gradient_profile参数在CR_GradientInteger插值中起什么作用？",
+        "answer": "gradient_profile参数定义了插值过程中变化速率的插值配置文件，影响过渡随时间的进展情况。"
+    },
+    {
+        "question": "在使用CR_GradientInteger时，什么时候会直接返回起始值或结束值，而不是计算的插值？",
+        "answer": "如果当前帧小于起始帧，CR_GradientInteger会直接返回起始值；如果当前帧大于起始帧加帧持续时间，节点会直接返回结束值。"
+    },
+    {
+        "question": "当start_frame为10，frame_duration为20，current_frame为15时，CR_GradientInteger节点基于start_value与end_value如何计算插值的结果？",
+        "answer": "在这种情况下，CR_GradientInteger节点会计算出从start_value到end_value之间在第15帧时的值，通过计算(end_value - start_value) / frame_duration获得每帧变化的步长，然后计算出第15帧时的插值结果。"
+    }
+]

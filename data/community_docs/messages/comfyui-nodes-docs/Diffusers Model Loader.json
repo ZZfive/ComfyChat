@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Diffusers_Loader是什么?",
+        "answer": "WAS_Diffusers_Loader是属于WAS Suite/Loaders/Advanced类别下的一个自定义节点，用于从指定目录下智能加载和管理预训练模型，如模型、VAE和CLIP组件，由https://github.com/WASasquatch/was-node-suite-comfyui维护。"
+    },
+    {
+        "question": "load_checkpoint方法在ComfyUI中起什么作用？",
+        "answer": "load_checkpoint方法用于从指定目录加载预训练的模型，它能智能地遍历文件系统定位模型，同时管理模型、VAE和CLIP等必要组件，确保下游任务所需的模型组件无缝集成。"
+    },
+    {
+        "question": "模型路径(model_path)对WAS_Diffusers_Loader的作用是什么？",
+        "answer": "模型路径(model_path)参数是WAS_Diffusers_Loader节点中至关重要的，它用来识别文件系统中特定模型的位置，指导节点到正确位置加载模型，是执行节点任务、决定后续操作中使用的模型来源的关键。"
+    },
+    {
+        "question": "启用output_vae参数会影响WAS_Diffusers_Loader的哪些方面？",
+        "answer": "启用output_vae参数会使WAS_Diffusers_Loader加载模型的变分自编码器组件(VAE)，这是根据下游任务是否需要VAE的生成能力作出的战略性选择，影响节点功能和执行力。"
+    },
+    {
+        "question": "什么样的参数控制CLIP组件的加载？",
+        "answer": "output_clip参数控制CLIP组件的加载，这一组件通常服务于图像-文本匹配任务。根据项目需求，该参数的启用与否直接影响节点执行此类任务的能力，确保节点与项目更广泛目标的一致性。"
+    },
+    {
+        "question": "WAS_Diffusers_Loader的输出类型分别代表什么？",
+        "answer": "WAS_Diffusers_Loader的输出类型包括代表模型核心结构的'MODEL'、提供图像-文本匹配能力的'CLIP'(可选)、负责模型生成能力的'VAE'(可选)以及用作模型名称标签的'NAME_STRING'，用于日志记录和引用。"
+    },
+    {
+        "question": "如何使用WAS_Diffusers_Loader加载模型？",
+        "answer": "使用WAS_Diffusers_Loader加载模型的过程需要指定模型路径(model_path)，并可选择性地设定output_vae和output_clip参数决定是否同时加载VAE和CLIP组件，硬件需求上，推荐使用CPU执行。"
+    }
+]

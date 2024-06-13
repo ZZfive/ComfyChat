@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DetailerForEach节点的目的是什么？",
+        "answer": "DetailerForEach节点旨在增强图像中各个部分的细节。它通过对每个部分应用详细的增强过程，包括放大、去噪和将增强的部分粘贴回原始图像，来提高图像的视觉质量，特别是那些具有不同需要更详细表示的区域的图像。"
+    },
+    {
+        "question": "DetailerForEach节点中的'guide_size'参数有何作用？",
+        "answer": "'guide_size'参数决定了细节增强所关注的尺度，它是控制每个段应用的细节层次的关键因素。"
+    },
+    {
+        "question": "哪些类型的输入数据是DetailerForEach节点所必需的？",
+        "answer": "DetailerForEach节点需要的输入数据包括：由IMAGE dtype定义的'image'，由SEGS dtype定义的'segs'，用于增强过程的'MODEL'，辅助图像增强的'CLIP'模型，处理图像数据的'VAE'，以及float类型的'guide_size'和int类型的'steps'，这些参数影响细节层次和增强过程的品质。"
+    },
+    {
+        "question": "DetailerForEach节点使用哪些深度学习模型进行图像增强？",
+        "answer": "DetailerForEach节点使用不同类型的深度学习模型进行图像增强，包括用于增强过程的模型，通常是一个能够理解和生成详细图像的深度学习模型，以及CLIP模型或类似的模型，它们通过提供图像内容的文本描述来协助生成具有上下文感知能力的图像增强。"
+    },
+    {
+        "question": "如何在ComfyUI中使用DetailerForEach节点？",
+        "answer": "在ComfyUI中，DetailerForEach节点作为提升图像细节的一部分，需要用户在节点图中连接输入图像（IMAGE dtype）、定义的段（SEGS dtype）、模型（MODEL dtype）、CLIP模型（CLIP dtype）、VAE（VAE dtype），以及设置guide_size和其他参数来微调增强过程。正确的连接和设置后，执行节点就会生成具有更丰富细节的增强图像。"
+    },
+    {
+        "question": "在DetailerForEach节点输出中，'enhanced_image'代表什么？",
+        "answer": "'enhanced_image'输出代表了经过DetailerForEach节点处理后，具有改进细节的增强图像。其中，每个段都经过单独处理，以获得更高的分辨率和清晰度。"
+    },
+    {
+        "question": "DetailerForEach节点能否处理图像批次？",
+        "answer": "DetailerForEach节点目前不支持处理图像批次（batch）。如果尝试使用该节点处理多个图像，将会引发错误。具体来说，如果'input'的长度超过1，会触发异常，提示该节点不支持图像批次。正确的使用方法是单个处理图像，相关内容可参考特定的使用教程。"
+    }
+]

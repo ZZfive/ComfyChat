@@ -1,0 +1,30 @@
+[
+    {
+        "question": "convertKeyframeKeysToBatchKeys是什么类型的节点？",
+        "answer": "convertKeyframeKeysToBatchKeys是ComfyUI中的一个HelperNodes类节点，来源于FizzNodes库，专门用于动画和模拟中的关键帧数据处理优化。"
+    },
+    {
+        "question": "在ComfyUI中，convertKeyframeKeysToBatchKeys节点的目的是什么？",
+        "answer": "该节点的'concat'方法的目的是高效地将关键帧数据组合成单个批次进行处理，通过结合输入的关键帧数量和潜在维度的数量来创建适合批量操作的连续序列。"
+    },
+    {
+        "question": "convertKeyframeKeysToBatchKeys节点的输入参数'input'代表什么意义？",
+        "answer": "'input'参数代表要处理的关键帧数量，是节点操作的基础，直接影响创建的批次大小和后续处理步骤的效率。"
+    },
+    {
+        "question": "哪些参数会决定convertKeyframeKeysToBatchKeys节点的批次最终结构？",
+        "answer": "‘num_latents’参数指定关键帧数据中的潜在维度数量，对于确定批次的最终结构至关重要，确保数据适当组织以适应下游任务。"
+    },
+    {
+        "question": "convertKeyframeKeysToBatchKeys节点的'concat'方法是如何创建适合批量操作的序列的？",
+        "answer": "'concat'方法通过将输入的关键帧数量与潜在维度的数量相乘，创建一个连续的序列，以此来适应批量操作，从而优化大规模动画或模拟中的关键帧数据处理。"
+    },
+    {
+        "question": "处理大规模动画或模拟中的关键帧数据时，使用convertKeyframeKeysToBatchKeys节点有什么优势？",
+        "answer": "使用此节点，用户可以将关键帧数据高效地组合成批次，通过优化数据处理流程，提高大规模动画或模拟中关键帧数据处理的效率和性能。"
+    },
+    {
+        "question": "convertKeyframeKeysToBatchKeys节点的输出是什么？",
+        "answer": "'result'输出包含了计算出的批次关键序列，它是输入关键帧计数和潜在维度数量的乘积，构成动画或模拟流水线中进一步处理和分析的基础。"
+    }
+]

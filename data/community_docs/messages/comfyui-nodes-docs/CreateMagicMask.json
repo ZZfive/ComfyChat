@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CreateMagicMask是什么类型的ComfyUI节点？",
+        "answer": "CreateMagicMask是ComfyUI中的KJNodes/masking/generate分类下的自定义节点，用于生成具有不同复杂度和细节的动态遮罩。"
+    },
+    {
+        "question": "CreateMagicMask节点能生成什么类型的输出？",
+        "answer": "CreateMagicMask节点生成遮罩（mask）和反转遮罩（mask_inverted）作为输出，每种输出都是一个Torch张量（Comfy dtype: TORCH_TENSOR），代表帧堆叠的遮罩序列。"
+    },
+    {
+        "question": "CreateMagicMask的'frame_width'参数影响什么？",
+        "answer": "'frame_width'参数定义了每一帧的宽度，对遮罩序列的分辨率和细节水平起到关键作用，更大值意味着更高分辨率，但可能增加计算资源的需求。"
+    },
+    {
+        "question": "哪些节点参数影响CreateMagicMask生成遮罩序列的复杂度和细节？",
+        "answer": "CreateMagicMask生成的遮罩序列复杂度和细节受'depth'参数控制，该参数通过指定变换次数来增强图案的复杂程度。'distortion'参数也对其引入不规则性影响，值越高，图案越抽象。"
+    },
+    {
+        "question": "CreateMagicMask中的'seed'参数有何作用？",
+        "answer": "'seed'参数用于初始化随机数生成器，确保了CreateMagicMask生成过程的可重复性，以便在相同设置下重新运行时能够得到一致的结果。"
+    },
+    {
+        "question": "在CreateMagicMask中，'mask_inverted'输出有什么作用？",
+        "answer": "'mask_inverted'输出提供了生成的遮罩序列的反转效果，可以用于创建对比或突出视觉应用中的不同内容或区域。"
+    },
+    {
+        "question": "使用CreateMagicMask时，'transitions'参数的具体影响是什么？",
+        "answer": "'transitions'参数指定了遮罩序列内图案变化的次数，影响遮罩外观随时间的多样性和演变速度。"
+    }
+]

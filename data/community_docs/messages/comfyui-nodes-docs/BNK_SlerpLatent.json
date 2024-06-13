@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BNK_SlerpLatent是什么?",
+        "answer": "BNK_SlerpLatent是ComfyUI中的LatentSlerp类，用于执行潜在向量之间的球面线性插值（slerp），在潜在状态之间提供平滑过渡，尤其是在连续潜在空间中生成中间表示非常有用。"
+    },
+    {
+        "question": "BNK_SlerpLatent的必填输入有哪些？",
+        "answer": "BNK_SlerpLatent的必填输入包括第一组潜在向量latents1和插值因子factor，用于确定在两组潜在集之间路径上的位置。"
+    },
+    {
+        "question": "哪些是BNK_SlerpLatent的可选输入？",
+        "answer": "BNK_SlerpLatent的可选输入包括代表插值截止点的第二组潜在向量latents2和一个用于选择性地应用于潜在向量某些元素的掩码mask。"
+    },
+    {
+        "question": "BNK_SlerpLatent的主要输出是什么？",
+        "answer": "BNK_SlerpLatent的主要输出是slerped_latents，即插值后的潜在向量结果，标志着输入潜在集之间的平滑过渡。"
+    },
+    {
+        "question": "当latents2未提供时，BNK_SlerpLatent将如何操作？",
+        "answer": "如果未提供latents2，BNK_SlerpLatent将仅仅返回输入的潜在向量latents1未做任何改变。"
+    },
+    {
+        "question": "掩码mask在BNK_SlerpLatent中的作用是什么？",
+        "answer": "掩码mask在BNK_SlerpLatent中用于选择性地将插值过程应用于潜在向量的特定元素，为细粒度控制提供了可能。"
+    },
+    {
+        "question": "BNK_SlerpLatent最适合在什么类型的硬件上使用？",
+        "answer": "BNK_SlerpLatent最适合在GPU上使用，这是因为GPU并行处理的能力可以优化潜在向量运算中的复杂计算。"
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "question": "BboxDetectorForEach属于哪个类别？",
+        "answer": "BboxDetectorForEach属于ImpactPack/Detector类别，是ComfyUI的一个自定义节点，用于图像段的边界框检测。"
+    },
+    {
+        "question": "BboxDetectorForEach节点的主要功能是什么？",
+        "answer": "BboxDetectorForEach节点的主要功能是使用给定的检测器为图像中的每个段检测边界框。"
+    },
+    {
+        "question": "哪些参数是BboxDetectorForEach节点所必需的？",
+        "answer": "BboxDetectorForEach节点必需的参数包括bbox_detector、image、threshold、dilation、crop_factor和drop_size。"
+    },
+    {
+        "question": "BboxDetectorForEach中的'bbox_detector'参数的作用是什么？",
+        "answer": "'bbox_detector'参数定义了将用于识别图像内边界框的检测器，是节点执行和检测准确性中的关键因素。"
+    },
+    {
+        "question": "BboxDetectorForEach节点支持什么样的图像输入类型？",
+        "answer": "BboxDetectorForEach节点接受的图像参数类型为Comfy的IMAGE，即Python中的torch.Tensor，代表需要进行边界框检测的视觉数据。"
+    },
+    {
+        "question": "BboxDetectorForEach节点的'drop_size'参数如何影响段检测过程？",
+        "answer": "BboxDetectorForEach节点中的'drop_size'参数决定了在检测过程中被丢弃的段的大小，是控制检测段数量和计算资源之间平衡的关键因素。"
+    },
+    {
+        "question": "BboxDetectorForEach如何处理检测到的段并输出？",
+        "answer": "BboxDetectorForEach节点处理检测到的段后，输出代表这些段集合的segs数据，其中包含了每个段的边界框和相关元数据。"
+    },
+    {
+        "question": "BboxDetectorForEach节点有何限制？",
+        "answer": "BboxDetectorForEach节点不支持图像批次处理，当输入的图像批次长度大于1时会抛出异常。"
+    },
+    {
+        "question": "如果在ComfyUI中使用BboxDetectorForEach节点，该节点能运行在什么硬件上？",
+        "answer": "BboxDetectorForEach节点可以在CPU上运行，具体的硬件要求和最佳实践可以参考ComfyUI-Impact-Pack教程文档。"
+    },
+    {
+        "question": "BboxDetectorForEach的自定义扩展功能如何实现？",
+        "answer": "通过'detailer_hook'参数，用户可以为BboxDetectorForEach节点提供自定义细节或后处理步骤，实现与其它系统集成或特定领域的逻辑应用。"
+    },
+    {
+        "question": "BboxDetectorForEach节点的'segs'输出类型的Python数据类型是什么？",
+        "answer": "BboxDetectorForEach节点的'segs'输出类型为Comfy的SEGS，其Python类型为List[impact.core.SEG]，表示检测到的段集合，包含每个段的边界框和元数据。"
+    },
+    {
+        "question": "在BboxDetectorForEach的检测过程中，'labels'参数如何被使用？",
+        "answer": "'labels'参数允许基于用户指定的段类型来过滤检测结果，只保留感兴趣的段，简化后续处理步骤并提高检测效率和准确性。"
+    }
+]

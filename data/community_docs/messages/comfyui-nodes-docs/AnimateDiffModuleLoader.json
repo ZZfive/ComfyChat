@@ -1,0 +1,30 @@
+[
+    {
+        "question": "AnimateDiffModuleLoader是什么类型的节点？",
+        "answer": "AnimateDiffModuleLoader是ComfyUI中一个专门用于动画框架内管理和操作运动模块的节点，属于'Animate Diff'类别，用于集成和应用高级运动技术，以增强动画的动态性和流畅性。"
+    },
+    {
+        "question": "AnimateDiffModuleLoader节点的输入参数'model_name'起什么作用？",
+        "answer": "模型名称（model_name）输入参数对于识别要加载和操作的特定运动模块至关重要。它决定了动画资产的来源以及为后续操作设定基础。"
+    },
+    {
+        "question": "AnimateDiffModuleLoader中的'LoRa堆栈'参数（lora_stack）有何功能？",
+        "answer": "LoRa堆栈是一个可选参数，提供后允许通过逐层调整来微调运动模块。它增强动画适应性和定制性，满足特定要求。"
+    },
+    {
+        "question": "AnimateDiffModuleLoader节点的输出是什么？",
+        "answer": "AnimateDiffModuleLoader节点的输出是运动模块（motion_module），即节点处理的结果，代表最终确定和优化的动画模块，准备在动画流程中使用。"
+    },
+    {
+        "question": "在AnimateDiffModuleLoader源代码的'load_motion_module'方法中，如果motion_module的版本是v2并且提供了LoRa堆栈，会执行哪些操作？",
+        "answer": "如果'motion_module'的版本是v2，并且提供了LoRa堆栈，AnimateDiffModuleLoader将会清除当前的LoRa堆栈，将新的LoRa堆栈注入到'motion_module'中，并将新的LoRa堆栈信息存储在对象的'lora_stack'属性上。"
+    },
+    {
+        "question": "哪些类型的LoRa堆栈会被AnimateDiffModuleLoader的load_motion_module方法接受并处理？",
+        "answer": "LoRa堆栈需要是以列表形式（List[Tuple[Dict[str, torch.Tensor], float]]）提供的，其中元素是字典值对应指定的模型参数和一个浮点数，这个浮点数代表了层调整的权重。"
+    },
+    {
+        "question": "AnimateDiffModuleLoader的load_motion_module方法中如何处理与V2 motion_module不兼容的LoRa堆栈？",
+        "answer": "如果提供的LoRa堆栈与motion_module v2不兼容，AnimateDiffModuleLoader中的load_motion_module方法将发出警告，并且不会对不兼容的LoRa堆栈进行处理。"
+    }
+]

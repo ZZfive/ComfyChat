@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_SeamlessChecker节点是做什么的?",
+        "answer": "CR_SeamlessChecker节点是ComfyUI中的自定义节点，用于检查图像的无缝拼接效果。它通过调整图像大小、生成网格布局，并展示多个图像的缩放版本来帮助识别和评估图像的拼接质量。"
+    },
+    {
+        "question": "CR_SeamlessChecker能处理哪些类型的输入数据？",
+        "answer": "CR_SeamlessChecker节点接受图像（IMAGE类型，可以是PIL.Image.Image或torch.Tensor）、缩放因子（FLOAT类型）和网格选项（COMBO类型，包括'2x2', '3x3', '4x4', '5x5', '6x6'）作为输入参数。"
+    },
+    {
+        "question": "CR_SeamlessChecker的输出类型是什么？",
+        "answer": "CR_SeamlessChecker的输出类型为字符串（STRING），这通常包含了如何使用节点的说明和资源链接，帮助用户更有效地操作该节点。"
+    },
+    {
+        "question": "rescale_factor在CR_SeamlessChecker中起什么作用？",
+        "answer": "rescale_factor允许用户调整图像尺寸，对于无缝拼接检查至关重要。它直接影响用户能够以何种程度精细地查看图像拼接的细节。"
+    },
+    {
+        "question": "grid_options如何影响CR_SeamlessChecker的输出？",
+        "answer": "grid_options定义了图像在网格中的布局方式，这决定着最终缩放图像的数量和整个网格拼接效果的评估方式。"
+    },
+    {
+        "question": "在ComfyUI中，用户如何应用CR_SeamlessChecker进行图像拼接评估？",
+        "answer": "通过调整rescale_factor和选择适当的grid_options，用户可以使用CR_SeamlessChecker节点来生成不同比例的网格布局，帮助评估图像拼接的连续性和视觉效果的一致性。"
+    },
+    {
+        "question": "CR_SeamlessChecker的使用需要什么类型的基础设施？",
+        "answer": "CR_SeamlessChecker节点的执行可以在CPU上进行，不需要GPU等高性能计算硬件。"
+    }
+]

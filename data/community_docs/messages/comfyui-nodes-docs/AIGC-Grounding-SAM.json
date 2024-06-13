@@ -1,0 +1,30 @@
+[
+    {
+        "question": "AIGCImageRemoveBackgroundRembg 节点的用途是什么？",
+        "answer": "AIGCImageRemoveBackgroundRembg 节点用于使用先进的图像分割技术无缝去除图像背景，提供干净的前景对象以供进一步使用。"
+    },
+    {
+        "question": "使用 AIGCImageRemoveBackgroundRembg 节点移除背景需要哪些必需输入参数？",
+        "answer": "必需输入参数包括 'image'、'text'、'sam_model_name' 和 'groundingdino_model_name'，用于从图像中进行精确分割。"
+    },
+    {
+        "question": "AIGCImageRemoveBackgroundRembg 的图像输入有何要求？",
+        "answer": "图像输入对节点的操作至关重要，它的质量与格式直接影响节点执行效果和生成的掩码准确性。"
+    },
+    {
+        "question": "AIGCImageRemoveBackgroundRembg 中用于分割的 SAM 预训练模型如何选定？",
+        "answer": "通过指定 'sam_model_name' 参数，可以选择影响性能和分割结果质量的预训练SAM模型。"
+    },
+    {
+        "question": "GroundingDINO 模型在 AIGCImageRemoveBackgroundRembg 节点中扮演什么角色？",
+        "answer": "GroundingDINO 模型通过 'groundingdino_model_name' 参数选定，用于识别图像内感兴趣的区域，对于精确的对象分割至关重要。"
+    },
+    {
+        "question": "如何控制 AIGCImageRemoveBackgroundRembg 节点输出的多个分割结果选择？",
+        "answer": "通过设置 'return_index' 参数，用户可以从多个分割结果中选择所需的输出掩码。"
+    },
+    {
+        "question": "AIGCImageRemoveBackgroundRembg 节点输出哪些类型的数据？",
+        "answer": "节点输出 'new_image' 和 'mask'，其中 'new_image' 是背景已被去除的处理过的图像，而 'mask' 是二进制表示的分割区域。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_SimpleTextScheduler节点是用于什么的?",
+        "answer": "CR_SimpleTextScheduler节点是用于管理和调度动画序列中每个帧的文本输出，确保文本在动画中根据预定义的关键帧无缝变化。"
+    },
+    {
+        "question": "schedule 参数在CR_SimpleTextScheduler中的作用是什么？",
+        "answer": "schedule参数用于接收包含动画序列中关键帧文本信息的字符串，其multiline属性允许用户输入跨越多行的更复杂的时间表，从而定义文本随时间的变化序列。"
+    },
+    {
+        "question": "CR_SimpleTextScheduler节点对current_frame参数的预期是什么？",
+        "answer": "current_frame参数预期接收整数值，指示动画序列中的当前帧号，这对于确保节点根据动画的进度从时间表中正确提取文本至关重要。"
+    },
+    {
+        "question": "CR_SimpleTextScheduler节点的主要输出是什么？",
+        "answer": "CR_SimpleTextScheduler节点的主要输出是text_out参数，它表示基于当前帧号计划显示的文本，确保与动画进度相一致的动态文本内容。"
+    },
+    {
+        "question": "CR_SimpleTextScheduler节点的show_help参数提供什么信息？",
+        "answer": "show_help参数提供了额外帮助文档的URL链接，这有助于用户获取关于节点使用方法或故障排除的详细信息。"
+    },
+    {
+        "question": "CR_SimpleTextScheduler节点如何处理schedule参数为空的情况？",
+        "answer": "当schedule参数为空时，CR_SimpleTextScheduler节点会发出警告，提醒没有找到任何关键帧信息，可能无法正确调度文本输出。"
+    },
+    {
+        "question": "CR_SimpleTextScheduler节点在不能找到与当前帧匹配的schedule时如何响应？",
+        "answer": "当CR_SimpleTextScheduler节点发现没有与current_frame匹配的schedule时，它会发出警告提示，并指出simple schedules必须从帧0开始，这可能指明了问题的原因。"
+    }
+]

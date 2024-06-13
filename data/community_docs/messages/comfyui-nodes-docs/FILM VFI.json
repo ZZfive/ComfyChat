@@ -1,0 +1,30 @@
+[
+    {
+        "question": "FILM_VFI 节点的主要功能是什么？",
+        "answer": "FILM_VFI 节点是用于通过插帧来增强视频内容的，旨在提高帧率和平滑度，同时保持视觉质量不变，通过在现有帧之间生成中间帧来实现更流畅、更逼真的运动效果。"
+    },
+    {
+        "question": "什么参数在 FILM_VFI 节点中用于指定预训练模型，它对插值帧的影响是什么？",
+        "answer": "在 FILM_VFI 节点中，ckpt_name 参数用于指定用于帧插值的预训练模型，直接影响插值帧的质量和准确性。"
+    },
+    {
+        "question": "在 FILM_VFI 中，frames 参数的作用是什么？",
+        "answer": "frames 参数是帧插值过程的源材料，提供了生成额外帧的视觉上下文，对输出的视觉保真度有重要影响。"
+    },
+    {
+        "question": "FILM_VFI 节点如何通过 clear_cache_after_n_frames 参数管理计算资源？",
+        "answer": "clear_cache_after_n_frames 参数通过设定在帧插值过程中多久清除一次缓存来帮助管理计算资源，确保节点在可用系统资源内高效运行。"
+    },
+    {
+        "question": "FILM_VFI 节点的 output_frames 输出代表什么？",
+        "answer": "output_frames 输出代表帧插值过程的结果，包含原始输入帧和新生成的中间帧，主要是为了提供更高帧率的视频，以增强视觉体验和运动的平滑度。"
+    },
+    {
+        "question": "哪个参数决定了在每对输入帧之间要生成的额外帧数？",
+        "answer": "multiplier 参数决定了在每对输入帧之间要生成的额外帧数，对于控制输出视频帧密度至关重要，较高的值能够带来更平滑的运动效果。"
+    },
+    {
+        "question": "FILM_VFI 节点的 optional_interpolation_states 参数下，如何定制帧插值过程？",
+        "answer": "通过 optional_interpolation_states 参数，用户可以指定哪些帧应跳过或不跳过，这允许对最终输出进行一定程度的控制，使节点能够满足视频内容的特定需求或限制。"
+    }
+]

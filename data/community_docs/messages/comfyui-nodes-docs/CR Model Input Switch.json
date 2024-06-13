@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_ModelInputSwitch 节点的功能是什么?",
+        "answer": "CR_ModelInputSwitch 节点功能是在两个提供的模型之间根据输入值进行选择，简化工作流中的模型选择过程，无需复杂的分支逻辑。"
+    },
+    {
+        "question": "输入参数 ‘Input’ 在 CR_ModelInputSwitch 节点中的作用是什么？",
+        "answer": "‘Input’ 参数指导节点逻辑，根据其值选择 ‘model1’ 或 ‘model2’，影响节点输出，是决定模型选择的关键。"
+    },
+    {
+        "question": "CR_ModelInputSwitch 节点的 ‘model1’ 参数的类型和作用是什么？",
+        "answer": "‘model1’ 参数是 CR_ModelInputSwitch 节点可选的第一个模型输入，当 ‘Input’ 参数为1时，它成为选择的模型；其类型在 Comfy 中为 MODEL。"
+    },
+    {
+        "question": "CR_ModelInputSwitch 节点的 ‘model2’ 参数在什么情况下被激活？",
+        "answer": "‘model2’ 参数在 CR_ModelInputSwitch 节点中，当 ‘Input’ 参数值不等于1时激活，此时模型‘model2’被考虑并可能作为输出。"
+    },
+    {
+        "question": "CR_ModelInputSwitch 节点的 ‘MODEL’ 输出的含义是什么？",
+        "answer": "‘MODEL’ 输出是 CR_ModelInputSwitch 节点基于 ‘Input’ 参数选择的输出模型，体现了节点逻辑对模型的选择结果。"
+    },
+    {
+        "question": "CR_ModelInputSwitch 节点的 ‘show_help’ 输出提供什么信息？",
+        "answer": "‘show_help’ 输出链接到节点的文档，为 CR_ModelInputSwitch 提供额外信息和使用指导，其数据类型为 STRING。"
+    },
+    {
+        "question": "CR_ModelInputSwitch 节点的 ‘Input’ 参数的默认和可能的取值范围是多少？",
+        "answer": "‘Input’ 参数，默认值为1，可能的取值范围为1到2，用于指导节点逻辑在 ‘model1’ 和 ‘model2’ 之间选择。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_LoRAStack节点的主要功能是什么？",
+        "answer": "CR_LoRAStack节点的主要功能是管理和组合多个LoRA（低秩适应）层到一个单一的栈中，允许用户调整每个LoRA层的包含、权重，以及通过微调每个层的贡献来增强模型性能，而不会显著增加计算成本。"
+    },
+    {
+        "question": "CR_LoRAStack节点的哪个参数决定第一个LoRA层是否被包括在栈中？",
+        "answer": "在CR_LoRAStack节点中，参数'switch_1'是一种组合类型，代表一个开关，决定第一个LoRA层是否应该被包括在LoRA栈中，该参数的Python数据类型为str。"
+    },
+    {
+        "question": "如何调整CR_LoRAStack中LoRA层对最终输出的贡献？",
+        "answer": "通过调整参数'model_weight_*'和'clip_weight_*'，用户可以微调CR_LoRAStack节点中每个LoRA层对最终输出结果的贡献。"
+    },
+    {
+        "question": "用户如何预填充LoRA栈以便于后续工作？",
+        "answer": "CR_LoRAStack节点提供了'lora_stack'参数，允许用户使用现有的LoRA层来预填充LoRA栈，便于在先前状态基础上继续工作。"
+    },
+    {
+        "question": "CR_LoRAStack节点输出什么类型的数据？",
+        "answer": "CR_LoRAStack节点主要输出LORA_STACK类型的数据，这是由包含LoRA层名称、模型权重和剪辑值的元组组成的列表，以及一个STRING类型的URL链接，用于获取更多关于节点使用的帮助和信息。"
+    },
+    {
+        "question": "在CR_LoRAStack中，'clip_weight_*'参数的作用是什么？",
+        "answer": "'clip_weight_*'参数在CR_LoRAStack中用于限制每个LoRA层的权重，确保任何单一层不会对最终输出造成不成比例的影响，保持整体模型输出的平衡。"
+    },
+    {
+        "question": "CR_LoRAStack节点的源代码中'INPUT_TYPES'方法返回的字典包含了什么信息？",
+        "answer": "CR_LoRAStack节点的'INPUT_TYPES'方法返回的字典包含了节点要求的输入类型信息，包括所有必要的输入参数如'switch_1'，'lora_name_1'等的类型和范围设定，以及可选的'lora_stack'参数，用于预填充LoRA栈。"
+    }
+]

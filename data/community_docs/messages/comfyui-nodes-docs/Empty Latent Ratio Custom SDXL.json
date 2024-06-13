@@ -1,0 +1,30 @@
+[
+    {
+        "question": "EmptyLatentRatioCustom节点在ComfyUI中起什么作用？",
+        "answer": "EmptyLatentRatioCustom节点在ComfyUI中用于为给定的维度和批量大小生成潜在表示，它根据预定义或用户自定义的比率智能确定潜在大小以适应进一步的处理或生成任务。"
+    },
+    {
+        "question": "EmptyLatentRatioCustom节点的输出数据类型是什么？",
+        "answer": "EmptyLatentRatioCustom节点的输出数据类型是潜变量（LATENT），具体为torch.Tensor，这提供了生成的潜在表示，为后续操作奠定基础。"
+    },
+    {
+        "question": "在EmptyLatentRatioCustom节点中，batch_size参数的作用是什么？",
+        "answer": "在EmptyLatentRatioCustom节点中，batch_size参数允许用户指定一次处理的样本数量，虽然是可选的，但它的值可以影响节点的执行效率。"
+    },
+    {
+        "question": "如何确定EmptyLatentRatioCustom节点的潜在空间大小？",
+        "answer": "EmptyLatentRatioCustom节点的潜在空间大小根据预定义比率或用户自定义比率智能确定，当输入的宽度和高度比与ratio_dict中定义的比率匹配时，会使用ratio_dict中的潜在大小，否则会调用find_latent_size函数自动生成。"
+    },
+    {
+        "question": "EmptyLatentRatioCustom节点的运算在什么硬件上执行？",
+        "answer": "EmptyLatentRatioCustom节点的运算主要在CPU上执行，根据其定义的infra type为CPU的使用提示。"
+    },
+    {
+        "question": "当输入宽度和高度不匹配ratio_dict中任何预定义比率时，EmptyLatentRatioCustom节点如何处理？",
+        "answer": "当输入的宽度和高度比例不匹配ratio_dict中任何预定义比率时，EmptyLatentRatioCustom节点会通过调用find_latent_size函数自动生成潜在大小，确保输出的潜在空间适合后续的处理或生成任务。"
+    },
+    {
+        "question": "EmptyLatentRatioCustom节点的输入维度参数Comfy和Python的dtype分别是什么？",
+        "answer": "EmptyLatentRatioCustom节点的宽度和高度参数在Comfy中的dtype为INT，在Python中的dtype为int，它们对于定义输入空间的维度至关重要。"
+    }
+]

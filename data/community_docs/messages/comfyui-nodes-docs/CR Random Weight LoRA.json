@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_RandomWeightLoRA节点的作用是什么？",
+        "answer": "CR_RandomWeightLoRA节点用于ComfyUI框架下，为LoRA模型层动态分配随机权重，引入可变性和定制性以优化模型性能。"
+    },
+    {
+        "question": "CR_RandomWeightLoRA节点如何确保输出的不可预测性？",
+        "answer": "CR_RandomWeightLoRA节点通过生成唯一哈希值，根据该哈希值决定是否分配新的随机权重，从而确保输出不可完全预测。"
+    },
+    {
+        "question": "什么是CR_RandomWeightLoRA节点的必要输入参数？",
+        "answer": "CR_RandomWeightLoRA节点的必要输入参数包括stride（步长）、force_randomize_after_stride（步长后强制随机化）、lora_name（LoRA名称）、switch（开关）、weight_min（权重最小值）和weight_max（权重最大值）及clip_weight（权重限制）。"
+    },
+    {
+        "question": "CR_RandomWeightLoRA节点中'lora_stack'的作用是什么？",
+        "answer": "lora_stack参数允许将额外的LoRA层包含在CR_RandomWeightLoRA节点的处理中，从而增强其功能并适应特定任务需求。"
+    },
+    {
+        "question": "如何控制CR_RandomWeightLoRA节点中随机权重的范围？",
+        "answer": "通过weight_min和weight_max参数设置随机权重的范围，而clip_weight参数用于限制权重不超过特定值，共同控制节点的行为和输出的稳定性。"
+    },
+    {
+        "question": "CR_RandomWeightLoRA节点支持哪种类型的操作设备？",
+        "answer": "CR_RandomWeightLoRA节点支持GPU作为其运行的基础设施类型。"
+    },
+    {
+        "question": "哪些参数影响CR_RandomWeightLoRA节点处理输入数据的频率？",
+        "answer": "stride参数是影响CR_RandomWeightLoRA节点处理输入数据频率的关键因素，也会影响到节点执行的效率和结果。"
+    }
+]

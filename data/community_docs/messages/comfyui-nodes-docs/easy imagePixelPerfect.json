@@ -1,0 +1,30 @@
+[
+    {
+        "question": "imagePixelPerfect是什么，它属于哪个类别？",
+        "answer": "imagePixelPerfect是ComfyUI中EasyUse/Image类别下的一个节点类，用于优化图像分辨率，确保在调整大小时保持图像纵横比和视觉完整性。"
+    },
+    {
+        "question": "imagePixelPerfect节点对于图像输入有什么要求？",
+        "answer": "imagePixelPerfect节点需要图像作为参数，这是节点操作的关键，以确定初始尺寸和质量。图像的类型应符合ComfyImage标准，具体为PIL.Image格式。"
+    },
+    {
+        "question": "resize_mode参数在imagePixelPerfect节点中起到了什么作用？",
+        "answer": "resize_mode是可选参数，它决定了图像如何进行调整以适应给定的约束，选择最适合的尺寸保持纵横比，影响调整大小后的视觉效果，类型为Union[str, ResizeMode]。"
+    },
+    {
+        "question": "imagePixelPerfect节点输出的分辨率类型有哪些？",
+        "answer": "imagePixelPerfect节点输出是整数值，表示计算出的理想像素数，即经过调整后图像的最终分辨率，对应于Comfy的INT类型和Python的int类型。"
+    },
+    {
+        "question": "如何使用imagePixelPerfect节点获得最佳的图像缩放效果？",
+        "answer": "使用imagePixelPerfect节点时，应基于图像的width和height，选择适当的resize_mode参数（ResizeMode.RESIZE，ResizeMode.INNER_FIT或ResizeMode.OUTER_FIT），以计算出保持纵横比的最优分辨率。"
+    },
+    {
+        "question": "哪些节点可以帮助确定图像的理想像素尺寸？",
+        "answer": "ComfyUI的EasyUse/Image类别下的imagePixelPerfect节点可协助计算出在给定尺寸内保持图像纵横比的理想像素数量，以优化分辨率。"
+    },
+    {
+        "question": "imagePixelPerfect执行结果包含哪些信息？",
+        "answer": "imagePixelPerfect执行后返回一个字典，包括用户界面信息('ui'键下的'text'字段，展示width，height，以及计算出的理想像素数)，以及结果('result'字段)即计算出的分辨率。"
+    }
+]

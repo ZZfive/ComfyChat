@@ -1,0 +1,38 @@
+[
+    {
+        "question": "BatchPromptScheduleLatentInput节点的主要功能是什么？",
+        "answer": "BatchPromptScheduleLatentInput节点的'animate'方法的主要功能是处理和生成用于批量处理环境中创建动画序列的动画提示。它接受如文本、潜在数量和权重等参数，以控制跨帧提示的插值。"
+    },
+    {
+        "question": "在BatchPromptScheduleLatentInput中，'text'参数的作用是什么？",
+        "answer": "'text'参数是一个包含动画基础提示的字符串。它定义了动画序列的初始条件，节点通过它来生成提示，预期的文本格式是节点能够解释并用于生成提示的格式。"
+    },
+    {
+        "question": "如何使用'num_latents'参数控制动画帧的范围和多样性？",
+        "answer": "'num_latents'参数指定了动画过程中使用的潜在变量的个数，这对于确定动画帧的范围和多样性至关重要，因为它影响如何探索和利用潜在空间来创建动画。"
+    },
+    {
+        "question": "BatchPromptScheduleLatentInput如何处理可选的'pre_text'参数？",
+        "answer": "'pre_text'参数是一个可选字符串，可通过在每个动画提示前添加文本，用于在每个提示的开头添加一致的元素，从而增强动画序列的连贯性和主题一致性。"
+    },
+    {
+        "question": "BatchPromptScheduleLatentInput的'POS'输出代表什么？",
+        "answer": "'POS'输出为每个帧的动画提供正向条件信息，来源于正向提示的插值，它对于引导动画达到预期结果至关重要。它的类型是CONDITIONING，Python中的张量类型为torch.Tensor。"
+    },
+    {
+        "question": "动画提示的平滑过渡是如何通过BatchPromptScheduleLatentInput节点实现的？",
+        "answer": "动画提示的平滑过渡主要是通过'pw_a'参数实现的，这是一个浮点数，表示用于动画提示插值的权重，影响帧之间的过渡，有助于确保动画的平滑度。"
+    },
+    {
+        "question": "BatchPromptScheduleLatentInput的哪个输出包含动画过程中的潜在变量信息？",
+        "answer": "'INPUT_LATENTS'输出包含动画过程中使用的潜在变量，这些变量对于生成动画帧至关重要，代表了用于创建最终动画的底层数据，其类型为LATENT，Python中的类型为Dict[str, torch.Tensor]。"
+    },
+    {
+        "question": "BatchPromptScheduleLatentInput节点使用哪些输入来生成动画条件？",
+        "answer": "BatchPromptScheduleLatentInput节点使用包含动画基础提示的'text'，用于动画过程的'num_latents'，以及一系列影响提示的权重参数来生成动画条件。"
+    },
+    {
+        "question": "哪些自定义节点可以帮助处理动画中的条件信息？",
+        "answer": "BatchPromptScheduleLatentInput是ComfyUI中的一个自定义节点，专门用于处理和生成动画提示中的条件信息，特别是在批量处理环境中，使得动画的创建更为精细和可控。"
+    }
+]

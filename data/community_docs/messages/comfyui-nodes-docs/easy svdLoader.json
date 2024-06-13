@@ -1,0 +1,34 @@
+[
+    {
+        "question": "svdLoader节点在ComfyUI中的作用是什么？",
+        "answer": "svdLoader是ComfyUI中一个重要节点，属于EasyUse/Loaders类别，用于加载和处理模型检查点、VAE和CLIP模型，初始化和设置复杂生成管道，简化各种模型的集成，确保高效和无缝的数据处理和转换。"
+    },
+    {
+        "question": "哪些参数是svdLoader节点加载模型所必需的？",
+        "answer": "svdLoader节点加载模型必须提供的参数包括检查点名称（ckpt_name）、VAE名称（vae_name）和CLIP名称（clip_name）。"
+    },
+    {
+        "question": "svdLoader节点中的'init_image'参数对模型生成有何影响？",
+        "answer": "'init_image'参数提供了一个初始视觉输入，作为生成模型的参考，对生成内容的方向和质量有显著影响。"
+    },
+    {
+        "question": "如何确定svdLoader节点生成图像的大小和比例？",
+        "answer": "通过'svdLoader'节点中的'resolution'参数可以确定生成图像的大小和比例，它直接影响输出的细节和清晰度水平。"
+    },
+    {
+        "question": "哪些参数影响svdLoader节点生成图像的结构连贯性和多样性？",
+        "answer": "'empty_latent_height'和'empty_latent_width'参数共同定义了潜在空间的尺寸，分别影响生成图像的结构连贯性和多样性。"
+    },
+    {
+        "question": "除了必填参数外，svdLoader节点还支持哪些可选参数？",
+        "answer": "svdLoader节点支持的可选参数包括Positve Prompt和Negative Prompt，它们通过文本提供正面和负面的条件，以增强或抑制生成内容的特定方面。"
+    },
+    {
+        "question": "什么是svdLoader节点的'pipe'输出？",
+        "answer": "'pipe'输出包含生成管道所需的所有组件，即加载的模型、VAE和CLIP，对后续处理和生成任务至关重要。"
+    },
+    {
+        "question": "在ComfyUI中，使用svdLoader节点进行有效模型加载和生成需要采用哪种硬件类型？",
+        "answer": "svdLoader节点的使用建议硬件类型为CPU，以确保有效的模型加载和生成过程。"
+    }
+]

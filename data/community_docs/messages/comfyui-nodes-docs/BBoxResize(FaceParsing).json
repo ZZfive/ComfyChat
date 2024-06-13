@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BBoxResize节点是属于哪个类别的?",
+        "answer": "BBoxResize节点属于'face_parsing'类别，用于处理面部解析任务中的边界框调整。"
+    },
+    {
+        "question": "BBoxResize节点的作用是什么?",
+        "answer": "BBoxResize节点的作用是将边界框的尺寸调整以适应新的图像尺寸，同时确保边界框在图像中位置的相对不变。"
+    },
+    {
+        "question": "哪些参数是BBoxResize节点必需的输入?",
+        "answer": "BBoxResize节点必需的输入参数包括：'bbox'（边界框坐标）、'width_old'（原图像宽度）、'height_old'（原图像高度）、'width'（新图像宽度）和'height'（新图像高度）。"
+    },
+    {
+        "question": "BBoxResize节点中的bbox参数代表什么?",
+        "answer": "参数'bbox'代表需要调整大小的边界框坐标，它是节点操作的基础，决定了对象在图像中的初始位置和大小。"
+    },
+    {
+        "question": "BBoxResize节点的表示类型是什么?",
+        "answer": "BBoxResize节点的输出类型为'BBOX'，这是一种调整后的边界框坐标，使用'Comfy dtype: BBOX'表示，对应Python类型为'torch.Tensor'。"
+    },
+    {
+        "question": "BBoxResize节点如何确保边界框在缩放时比例不变?",
+        "answer": "BBoxResize节点通过保持'width_old'/'width'和'height_old'/'height'的比例来确保边界框在调整大小过程中的比例不变。"
+    },
+    {
+        "question": "在BBoxResize节点中，bbox数据是如何进行缩放计算的?",
+        "answer": "在BBoxResize节点中，边界框数据通过使用原边界框坐标与旧图像尺寸的比例，计算对应新图像尺寸的坐标，以达成缩放功能。"
+    }
+]

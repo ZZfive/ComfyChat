@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CompositeMotionBrush节点的作用是什么？",
+        "answer": "CompositeMotionBrush是ComfyUI中DragNUWA类别下的一个节点，功能是将多个运动层集成到单一的复合层中，通过基于预定义模式的混合算法优先考虑某些运动向量，以增强整体运动表示。"
+    },
+    {
+        "question": "model参数在CompositeMotionBrush节点中起什么作用？",
+        "answer": "model参数定义了运动层的结构基础，决定了输入运动数据的维度和长度。这是节点运行的关键，因为它确保存入的运动信息格式正确，从而影响节点的处理流程和输出结果。"
+    },
+    {
+        "question": "如何理解motion_brush_layer0和motion_brush_layer1在CompositeMotionBrush节点中的角色？",
+        "answer": "motion_brush_layer0是运动信息的基础层，作为节点混合过程的初始输入，而motion_brush_layer1是次级运动层，提供额外的运动向量在混合过程中供考虑。两者的结合影响了最终复合运动输出的特性。"
+    },
+    {
+        "question": "CompositeMotionBrush节点中的mode参数默vet9认配置是什么？",
+        "answer": "mode参数决定了节点用于集成运动层的混合策略，其默认设置为'override'。这个模式决定了在最终输出中如何优先考虑和处理运动向量，例如覆盖或合成。"
+    },
+    {
+        "question": "CompositeMotionBrush节点的输出具体包含什么？",
+        "answer": "CompositeMotionBrush节点的输出是一组复合运动层，表示为MotionBrush类型。这是根据指定的模式混合了输入的motion_brush_layer0和motion_brush_layer1的结果，提供了增强的运动表示。"
+    },
+    {
+        "question": "哪些参数类型是CompositeMotionBrush节点处理运动信息所必需的？",
+        "answer": "CompositeMotionBrush节点处理运动信息时，要求的输入类型包括模型参数（DragNUWA类型）以及两个MotionBrush类型的参数（motion_brush_layer0和motion_brush_layer1）。这些构成了其处理链中的基础和扩展运动层。"
+    },
+    {
+        "question": "在CompositeMotionBrush节点中，'override'模式是如何选择和应用运动向量的？",
+        "answer": "在'override'模式下，CompositeMotionBrush节点会详细地比较运动层中的运动向量，优先使用motion_brush_layer1中的数据来更新或覆盖默认的motion_brush_layer0。这个过程中，节点检查每个向量的强度来确定哪个层的值应该保持或替换。"
+    }
+]

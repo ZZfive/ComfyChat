@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BatchCropFromMask节点的主要功能是什么？",
+        "answer": "BatchCropFromMask节点主要用于处理一批图像及其对应的掩码，根据掩码识别图像中的兴趣区域并裁剪图像，以专注于这些区域，同时平滑边界框的大小和中心，以增强批量中不同图像裁剪过程的一致性。"
+    },
+    {
+        "question": "BatchCropFromMask节点如何识别兴趣区域并执行裁剪？",
+        "answer": "BatchCropFromMask节点使用提供的掩码来识别原始图像中与兴趣区域对应的部分，通过掩码确定哪些部分应被裁剪并保留，然后执行裁剪操作专注于这些区域。"
+    },
+    {
+        "question": "BatchCropFromMask节点的'original_images'参数代表什么？",
+        "answer": "'original_images'参数代表将由节点处理的图像批次。该参数是必需的，节点将使用这些图像与提供的掩码结合，以确定需要裁剪的区域。"
+    },
+    {
+        "question": "BatchCropFromMask节点的'crop_size_mult'参数有何作用？",
+        "answer": "'crop_size_mult'参数允许通过将该因子与边界框尺寸相乘来调整裁剪区域的大小，为裁剪操作提供灵活性。"
+    },
+    {
+        "question": "哪类节点可以识别并裁剪图像中的兴趣区域？",
+        "answer": "BatchCropFromMask节点可以识别并裁剪图像中的兴趣区域，它是专门为处理一批图像及其对应的掩码设计的，用于确定并裁剪感兴趣的区域。"
+    },
+    {
+        "question": "BatchCropFromMask节点的'output types'中包含了哪些内容？",
+        "answer": "BatchCropFromMask节点的'output types'包括原始图像（original_images）、裁剪后的图像（cropped_images）、边界框（bboxes）以及裁剪区域的宽度和高度（width, height）。"
+    },
+    {
+        "question": "BatchCropFromMask节点的'bbox_smooth_alpha'参数控制什么？",
+        "answer": "'bbox_smooth_alpha'参数控制批次中连续图像之间边界框尺寸的平滑度，有助于保持裁剪大小的一致性，在批量处理中非常重要。"
+    }
+]

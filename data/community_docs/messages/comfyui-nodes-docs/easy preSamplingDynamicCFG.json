@@ -1,0 +1,30 @@
+[
+    {
+        "question": "dynamicCFGSettings节点的主要功能是什么？",
+        "answer": "dynamicCFGSettings节点的主要功能是在给定的管道中动态调整配置设置，根据指定的参数优化采样过程，特别适用于ComfyUI中的预采样环节，它允许通过调整steps、cfg和denoise等参数来微调采样程序，进而优化输出管道的生成。"
+    },
+    {
+        "question": "dynamicCFGSettings节点的seed参数用于什么目的？",
+        "answer": "seed参数在dynamicCFGSettings节点中用于初始化随机数生成器，确保采样过程的可重复性和一致性的关键设置，这是为了准确地重复实验或结果而设置的。"
+    },
+    {
+        "question": "哪些参数是dynamicCFGSettings节点的必填项？",
+        "answer": "dynamicCFGSettings节点的必填参数包括pipe、steps、cfg、cfg_mode、cfg_scale_min、sampler_name、scheduler和denoise。这些参数直接控制和定义了节点在采样过程中的行为和输出特性。"
+    },
+    {
+        "question": "在ComfyUI中，dynamicCFGSettings节点的cfg参数代表什么含义？",
+        "answer": "在ComfyUI中，dynamicCFGSettings节点的cfg参数代表配置权重，是一个用于调整采样过程的浮点值，它是控制图像质量和采样效果的关键参数，影响整个过程的行为和输出质量。"
+    },
+    {
+        "question": "dynamicCFGSettings节点处理配置输入时需指定哪些自选参数？",
+        "answer": "dynamicCFGSettings节点可以接收包括image_to_latent和latent在内的自选输入参数。同时，prompt、extra_pnginfo和my_unique_id也作为可选参数，为采样过程提供额外的上下文信息或个性化标识。"
+    },
+    {
+        "question": "容易使用的ComfyUI节点在什么环境下运行最佳？",
+        "answer": "ComfyUI中容易使用的节点，如dynamicCFGSettings，其Infra type指定为CPU，表明这类节点在中央处理单元上运行最佳，更适用于需要大量计算操作的图像和视频生成任务。"
+    },
+    {
+        "question": "dynamicCFGSettings节点所提供的输出类型是什么？",
+        "answer": "dynamicCFGSettings节点的输出类型为pipe，代表经过配置和参数动态调整后生成的修改后的采样管道，这种输出管道被优化用于后续的采样操作，确保了算法的连续性和优化效果。"
+    }
+]

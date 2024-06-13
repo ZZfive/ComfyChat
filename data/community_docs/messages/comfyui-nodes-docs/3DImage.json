@@ -1,0 +1,30 @@
+[
+    {
+        "question": "3DImage节点的主要功能是什么?",
+        "answer": "3DImage节点，或称Image3D，主要负责处理和操作3D图像。它将base64编码的图像转换为张量形式，适合深度学习模型的进一步处理，同时处理掩码和背景图像提取，提供全面的图像操作功能。"
+    },
+    {
+        "question": "在Image3D节点中，'upload'参数的作用是什么？",
+        "answer": "'upload'参数是Image3D节点中必需的，它包含base64编码的图像数据和可选的材料，是节点执行的关键，因为它为图像操作提供了主要的输入。"
+    },
+    {
+        "question": "Image3D节点如何处理材料（material）参数？",
+        "answer": "Image3D节点的'material'参数是可选的，用于增强主要图像处理过程，它允许包含额外的图像数据，增加了节点功能的灵活性。"
+    },
+    {
+        "question": "Image3D节点能输出哪些类型的数据？",
+        "answer": "Image3D节点可以输出四种类型的数据：以张量形式处理的3D图像（IMAGE）、从输入图像派生的二进制掩码（MASK）、可选的背景图像（BG_IMAGE），以及处理过的材料图像（MATERIAL）。"
+    },
+    {
+        "question": "Image3D节点的输出能否直接用于哪些类型的下游任务？",
+        "answer": "Image3D节点的输出，特别是IMAGE和MASK，可以直接用于机器学习、计算机视觉应用，以及图像分割和其他分析任务中，为后续处理提供基础。"
+    },
+    {
+        "question": "哪些节点可以处理3D图像？",
+        "answer": "在ComfyUI的♾️Mixlab/Image分类中，Image3D节点是处理和操作3D图像的专业工具，通过将图像转换为张量，适合深度学习等复杂任务的使用。"
+    },
+    {
+        "question": "Image3D节点在什么基础设施类型上运行？",
+        "answer": "Image3D节点推荐在CPU上运行，根据其源代码中定义的'security type'，该节点没有特别指定的硬件要求，可以在标准CPU上执行。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "AMT_VFI节点的功能是什么？",
+        "answer": "AMT_VFI节点是ComfyUI的一个自定义节点，用于执行视频帧插值，增加帧率，提供流畅的过渡和视觉效果，通过生成原始素材中不存在的中间帧来实现。"
+    },
+    {
+        "question": "ckpt_name在AMT_VFI节点中起什么作用？",
+        "answer": "ckpt_name参数在AMT_VFI节点中用于指定特定的预训练模型配置，从而确保处理帧插值时所需的输出质量和性能。"
+    },
+    {
+        "question": "frames参数在AMT_VFI节点中扮演什么角色？",
+        "answer": "frames参数在AMT_VFI节点中至关重要，因为它代表输入的视频帧，节点将基于这些帧进行插值处理，输出质量直接受输入帧的影响。"
+    },
+    {
+        "question": "clear_cache_after_n_frames参数在AMT_VFI节点中的作用是什么？",
+        "answer": "clear_cache_after_n_frames参数在AMT_VFI中用于优化内存管理，通过在处理指定数量的帧后清除缓存，避免了在高强度帧插值任务中出现内存溢出。"
+    },
+    {
+        "question": "multiplier参数如何影响AMT_VFI节点的输出？",
+        "answer": "multiplier参数在AMT_VFI节点中决定了两个原有帧之间生成的中间帧数量，数值的增大会提升输出视频的帧率但同时增加计算复杂度。"
+    },
+    {
+        "question": "optional_interpolation_states参数在AMT_VFI节点中提供什么功能？",
+        "answer": "optional_interpolation_states参数为用户提供了额外的控制，允许对特定帧的插值行为进行自定义调整，以满足特定需求或效果。"
+    },
+    {
+        "question": "AMT_VFI节点的interpolated_frames输出是什么格式？",
+        "answer": "AMT_VFI节点的interpolated_frames输出格式为IMAGE，包含原始视频帧及新增的中间帧，组合起来形成更平滑、帧率更高的视频序列。"
+    }
+]

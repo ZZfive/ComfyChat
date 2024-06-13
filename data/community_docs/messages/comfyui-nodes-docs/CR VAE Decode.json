@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_VAEDecode节点的功能是什么？",
+        "answer": "CR_VAEDecode节点用于通过变分自编码器（VAE）将潜在向量解码成图像。这是生成模型中的重要组成部分，能够从压缩的表示重建图像，用于可视化潜在空间和生成新样本。"
+    },
+    {
+        "question": "CR_VAEDecode节点的'samples'参数有何作用？",
+        "answer": "'samples'参数包含了潜在表示，是解码为图像的关键输入。它直接影响输出，决定了生成图像的多样性和质量，其类型为LATENT（torch.Tensor类型）。"
+    },
+    {
+        "question": "在CR_VAEDecode节点中，'vae'参数如何影响解码过程？",
+        "answer": "'vae'参数指定用于解码过程的预训练变分自编码器模型。模型的选择对于功能至关重要，因为这决定了解码过程的结构和能力，类型为VAE（torch.nn.Module类型）。"
+    },
+    {
+        "question": "当启用CR_VAEDecode节点的'tiled'参数时，会发生什么？",
+        "answer": "当将'tiled'参数设置为True时，CR_VAEDecode节点将以平铺方式解码输入样本。这有助于处理更大的图像或需要特定解码模式的情况。"
+    },
+    {
+        "question": "CR_VAEDecode的'circular'参数有什么作用？",
+        "answer": "'circular'参数（布尔类型）启用时，会将循环填充模式应用于VAE模型中的卷积层，有助于保持图像特征在边界处的连续性。"
+    },
+    {
+        "question": "CR_VAEDecode节点生成的'IMAGE'输出代表什么？",
+        "answer": "'IMAGE'输出是节点处理后的主要结果，包含从输入潜在样本生成的解码图像，对于视觉分析和进一步的图像处理非常重要，类型为IMAGE（torch.Tensor类型）."
+    },
+    {
+        "question": "用户如何获取更多关于CR_VAEDecode节点的使用帮助？",
+        "answer": "CR_VAEDecode节点的'show_help'输出提供一个URL链接（类型为STRING），指向详细的文档页面，以便用户获取额外的指导和了解节点的功能和使用方法。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "samplerSettings类在ComfyUI的Easy preSampling类别中起什么作用?",
+        "answer": "samplerSettings类封装了采样流水线的配置过程，提供结构化方式定义采样过程的参数，旨在简化复杂采样的设置，确保正确应用设置以实现期望的结果。"
+    },
+    {
+        "question": "samplerSettings的pipe参数在采样过程中扮演什么角色？",
+        "answer": "pipe参数是必需的，因为它包含了采样过程中所需的核心数据和设置，包括模型、图像以及其他samplerSettings类用来配置采样环境的相关信息。"
+    },
+    {
+        "question": "哪些参数对图像的降噪水平有直接影响？",
+        "answer": "denoise参数用于控制在采样过程中应用的降噪水平，显著影响生成样本的清晰度和质量。"
+    },
+    {
+        "question": "如何通过samplerSettings确保采样过程的可重复性？",
+        "answer": "通过使用seed参数，初始化随机数生成器，确保在不同运行中获得一致的结果，从而确保采样过程的可重复性。"
+    },
+    {
+        "question": "哪些参数是用来调整采样过程配置的？",
+        "answer": "cfg参数是一个浮点值，用于调整采样过程的配置，发挥重要作用在微调采样器的行为以获得最佳结果。"
+    },
+    {
+        "question": "samplerSettings类的输出包括什么？",
+        "answer": "samplerSettings类的输出是pipe，一个包含更新设置和数据的综合结构，为生成高质量样本准备所需条件。"
+    },
+    {
+        "question": "scheduler参数在采样过程中有何作用？",
+        "answer": "scheduler参数定义了采样过程的调度策略，对于管理采样的动态、确保过程随时间适应和演变至关重要，以产生最佳可能的结果。"
+    }
+]

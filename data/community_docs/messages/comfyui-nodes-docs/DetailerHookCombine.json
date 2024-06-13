@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DetailerHookCombine属于哪一类别，其作用是什么?",
+        "answer": "DetailerHookCombine属于PixelKSampleHookCombine类别，它在像素级采样过程中充当两个独立钩子的协调器，确保每个钩子依次应用于潜在空间、分割和粘贴图像，以提高生成图像的细节和一致性。"
+    },
+    {
+        "question": "DetailerHookCombine接收的'latent'参数有何作用？",
+        "answer": "'latent'参数代表了正在处理的潜在空间向量，它携带了细节增强过程所需的编码信息，是DetailerHookCombine进行处理的关键输入。"
+    },
+    {
+        "question": "哪些节点可以处理图像的分割张量数据以细化图像细节？",
+        "answer": "DetailerHookCombine节点可以处理图像的分割张量数据以细化图像细节，它的'segs'参数是一个分割张量列表，每个张量对应图像的不同部分。"
+    },
+    {
+        "question": "'processed_image'输出的特征是什么？",
+        "answer": "'processed_image'输出是在两个钩子增强后的最终图像张量，其特征是具有改进的视觉质量和细节的图像。"
+    },
+    {
+        "question": "DetailerHookCombine如何影响输入的潜在向量？",
+        "answer": "DetailerHookCombine的'cycled_latent'输出是将两个钩子应用于输入潜在向量的结果，用于提高潜在表示中的细节水平。"
+    },
+    {
+        "question": "DetailerHookCombine在处理分割数据时执行了哪些操作？",
+        "answer": "DetailerHookCombine在处理分割数据时，对'segs'参数进行处理，通过两个钩子的连续应用，生成的'refined_segs'输出实现了对图像更详细和准确的分割。"
+    },
+    {
+        "question": "DetailerHookCombine节点的源代码中有哪些关键方法？",
+        "answer": "DetailerHookCombine节点的源代码包含'cycle_latent'、'post_detection'和'post_paste'三个关键方法，分别用于处理潜在向量、分割张量列表和粘贴图像的后处理。"
+    }
+]

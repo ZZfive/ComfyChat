@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CalculateFrameOffset节点的用途是什么？",
+        "answer": "CalculateFrameOffset 节点用于根据当前帧、最大帧数和潜在输入数量计算并分配序列中的帧编号，旨在管理与帧相关操作的序列顺序。"
+    },
+    {
+        "question": "哪些参数是CalculateFrameOffset节点的必备输入？",
+        "answer": "CalculateFrameOffset 节点的必备输入参数包括：current_frame（当前帧位），max_frames（最大帧数），num_latent_inputs（潜在输入数量），index（潜在输入中的具体索引）。"
+    },
+    {
+        "question": "current_frame和max_frames参数在CalculateFrameOffset中有什么作用？",
+        "answer": "current_frame参数确定帧编号分配的起始点，而max_frames参数设置帧编号的上限，以确保帧编号保持在有效范围内。"
+    },
+    {
+        "question": "num_latent_inputs和index参数如何影响CalculateFrameOffset节点的帧分配？",
+        "answer": "num_latent_inputs参数影响序列内帧编号的分配方式，指示用于帧计算的潜在输入数量，而index参数代表潜在输入中的具体索引，用于计算分配帧编号的偏移量。"
+    },
+    {
+        "question": "CalculateFrameOffset的输出是什么？",
+        "answer": "CalculateFrameOffset节点的输出是frame_offset，代表给定输入计算出的帧编号，对于序列中帧的后续处理具有重要意义。"
+    },
+    {
+        "question": "在CalculateFrameOffset中，当前帧为0时的计算规则是什么？",
+        "answer": "当current_frame为0时，CalculateFrameOffset节点返回具体的index值作为帧编号偏移量。"
+    },
+    {
+        "question": "哪些节点可以在ComfyUI中帮助管理帧序列的计算？",
+        "answer": "CalculateFrameOffset节点是ComfyUI中FizzleDorf's FizzNodes的一部分，专门用于帮助管理帧序列计算，特别是在帧编号的分配与偏移处理上。"
+    }
+]

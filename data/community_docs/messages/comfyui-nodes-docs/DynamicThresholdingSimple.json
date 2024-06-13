@@ -1,0 +1,46 @@
+[
+    {
+        "question": "DynamicThresholdingSimpleComfyNode是什么类型的节点？",
+        "answer": "DynamicThresholdingSimpleComfyNode是一个高级自定义节点，属于mcmonkey类别，用于动态调整模型的阈值设定，确保输出特征符合期望。"
+    },
+    {
+        "question": "DynamicThresholdingSimpleComfyNode主要输入参数有哪些？",
+        "answer": "主要输入参数包括模型model（定义神经网络架构和参数），mimic_scale（用于调整输出以匹配目标特征的程度），以及threshold_percentile（确定调整模型输出的相对阈值）。"
+    },
+    {
+        "question": "DynamicThresholdingSimpleComfyNode的model输入参数有什么作用？",
+        "answer": "model输入参数定义了神经网络的基础架构和参数，它是进行动态阈值调整的核心所在，直接影响输出的特性。"
+    },
+    {
+        "question": "mimic_scale参数在DynamicThresholdingSimpleComfyNode中如何工作？",
+        "answer": "mimic_scale参数调整模型输出与目标特征的匹配程度，其设置值直接影响动态阈值调整策略下输出与目标特征的接近度。"
+    },
+    {
+        "question": "threshold_percentile参数在DynamicThresholdingSimpleComfyNode中的功能是什么？",
+        "answer": "threshold_percentile参数确定用于调整模型输出的阈值，它的设定是根据期望的输出分布来进行调整，确保输出结果的特性符合预设范围。"
+    },
+    {
+        "question": "DynamicThresholdingSimpleComfyNode的输出类型是什么？",
+        "answer": "输出类型为修改后的模型，即经过动态阈值设定调整的输入模型，其阈值参数已经根据设定的mimic_scale和threshold_percentile进行了调整。"
+    },
+    {
+        "question": "DynamicThresholdingSimpleComfyNode的主要用途是什么？",
+        "answer": "DynamicThresholdingSimpleComfyNode主要用于基于指定的百分位数和缩放因子动态调整模型的阈值设定，确保模型输出的特征满足期望的分布特性。"
+    },
+    {
+        "question": "使用DynamicThresholdingSimpleComfyNode时，推荐的类型是什么？",
+        "answer": "推荐使用类型为GPU，这是因为动态阈值调整的操作往往需要大量的计算资源，GPU可以提供更高效的并行处理能力。"
+    },
+    {
+        "question": "通过调整哪些参数可以直接影响DynamicThresholdingSimpleComfyNode的效果？",
+        "answer": "直接通过调整mimic_scale和threshold_percentile参数可以影响DynamicThresholdingSimpleComfyNode的效果，mimic_scale决定了输出修改的程度，threshold_percentile则影响阈值调整的严格程度。"
+    },
+    {
+        "question": "在ComfyUI中如何使用DynamicThresholdingSimpleComfyNode？",
+        "answer": "在ComfyUI中，通过将模型、mimic_scale和threshold_percentile作为输入传递给DynamicThresholdingSimpleComfyNode，可以动态调整神经网络模型的输出特征，使其更符合期望的分布规律。"
+    },
+    {
+        "question": "DynamicThresholdingSimpleComfyNode的代码中，'sampler_dynthresh'函数的功能是什么？",
+        "answer": "该函数实现了动态阈值调整的具体计算过程，通过对输入、条件和无条件概率以及缩放比例的处理，调整了模型的输出，以满足动态阈值设定的要求。"
+    }
+]

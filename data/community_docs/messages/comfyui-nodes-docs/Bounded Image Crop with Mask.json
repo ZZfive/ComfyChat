@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Bounded_Image_Crop_With_Mask 是什么节点？",
+        "answer": "WAS_Bounded_Image_Crop_With_Mask 是 ComfyUI 中的一个自定义节点，用于根据掩码定义的边界智能裁剪图像，同时应用填充以确保裁剪区域保持所需的纵横比或大小。"
+    },
+    {
+        "question": "WAS_Bounded_Image_Crop_With_Mask 节点的主要输入是什么？",
+        "answer": "WAS_Bounded_Image_Crop_With_Mask 节点的主要输入是图像（image）和掩码（mask），其中图像用于裁剪操作，掩码用于定义裁剪的边界。"
+    },
+    {
+        "question": "定义图像裁剪区域的边界取决于什么？",
+        "answer": "WAS_Bounded_Image_Crop_With_Mask 节点中裁剪区域的边界主要取决于提供的掩码（mask），它定义了图像中的感兴趣区域，从而指导裁剪操作。"
+    },
+    {
+        "question": "WAS_Bounded_Image_Crop_With_Mask 节点可选输入的目的是什么？",
+        "answer": "WAS_Bounded_Image_Crop_With_Mask 节点的可选输入，如 padding_left, padding_right, padding_top, 和 padding_bottom，用于控制裁剪后图像的尺寸和纵横比，确保裁剪区域能够满足特定的尺寸要求或保持原始比例。"
+    },
+    {
+        "question": "WAS_Bounded_Image_Crop_With_Mask 节点的输出包括哪些内容？",
+        "answer": "WAS_Bounded_Image_Crop_With_Mask 节点的输出包括裁剪后的图像（cropped_image）和裁剪区域的边界坐标（image_bounds），后者提供了原始图像中裁剪区域的位置信息。"
+    },
+    {
+        "question": "裁剪操作后，怎样得到裁剪区域的边界坐标？",
+        "answer": "通过 WAS_Bounded_Image_Crop_With_Mask 节点的裁剪操作，可以得到 image_bounds 输出，它是由 List[Tuple[int, int, int, int]] 组成的坐标列表，表示裁剪区域在原图中的位置，以确保用户了解裁剪的确切范围。"
+    },
+    {
+        "question": "哪种类型的节点可以实现根据掩码智能裁剪图像并调整尺寸？",
+        "answer": "ComfyUI 中的 WAS_Bounded_Image_Crop_With_Mask 节点可以实现这一功能，它不仅根据掩码定义的边界裁剪图像，还能通过添加填充自动调整输出图像的尺寸。"
+    }
+]

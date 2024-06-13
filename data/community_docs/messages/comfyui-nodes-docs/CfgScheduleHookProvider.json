@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CfgScheduleHookProvider节点的功能是什么？",
+        "answer": "CfgScheduleHookProvider节点在ComfyUI的ImpactPack/Upscale类别中，用于管理和提供迭代过程中配置进度表，通过简单接口检索基于指定迭代和目标配置的钩子，以处理不同调度策略的复杂性。"
+    },
+    {
+        "question": "schedule_for_iteration参数在ComfyUI的节点中扮演什么角色？",
+        "answer": "schedule_for_iteration参数确定了迭代过程使用哪个进度表，对配置随时间变化的方式至关重要，直接影响整个处理流程的最终效果。"
+    },
+    {
+        "question": "target_cfg参数对CfgScheduleHookProvider的操作有何影响？",
+        "answer": "target_cfg参数设置迭代过程所期望达到的配置值，直接影响应用于迭代过程中的最终配置，对节点的行为有决定性影响。"
+    },
+    {
+        "question": "hook输出在CfgScheduleHookProvider中的具体作用是什么？",
+        "answer": "hook输出是CfgScheduleHookProvider提供的配置好的钩子对象，用于迭代过程中的调度管理，包含调整配置所需逻辑。"
+    },
+    {
+        "question": "CfgScheduleHookProvider节点中，'simple'调度策略如何工作？",
+        "answer": "如果schedule_for_iteration参数设置为'simple'，CfgScheduleHookProvider会产生一个SimpleCfgScheduleHook钩子对象，根据target_cfg进行配置，以实现简单的调度策略。"
+    },
+    {
+        "question": "在哪些设备上可以有效使用CfgScheduleHookProvider节点？",
+        "answer": "CfgScheduleHookProvider节点的源代码指出其infra type为CPU，意味着该节点主要在CPU设备上有效运行。"
+    },
+    {
+        "question": "CfgScheduleHookProvider节点的输入和输出数据类型分别是什么？",
+        "answer": "输入类型包括字符串参数schedule_for_iteration和浮点数参数target_cfg，用于定义迭代策略和目标配置值；输出类型为PK_HOOK，提供配置好的钩子对象以用于迭代过程中的调度管理。"
+    }
+]

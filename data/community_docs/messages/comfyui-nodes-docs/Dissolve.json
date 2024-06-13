@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Dissolve节点的作用是什么?",
+        "answer": "Dissolve节点是ComfyUI的一个自定义节点，它根据指定的溶解因子将两张图像通过点阵图案无缝混合，创建出平滑过渡的最终图像。"
+    },
+    {
+        "question": "哪些类型的数据由Dissolve节点的image1和image2接受?",
+        "answer": "Dissolve节点的image1和image2输入接受ComfyUI的IMAGE类型数据，Python中的等效数据类型是torch.Tensor。"
+    },
+    {
+        "question": "Dissolve节点的溶解因子是如何工作的?",
+        "answer": "溶解因子是一个浮点值，它确定image1和image2之间的混合比例，影响每张图像在最终结果中的可见程度。值为0.0时仅显示image1，值为1.0时仅显示image2。"
+    },
+    {
+        "question": "Dissolve节点的输出dissolve_image是什么类型的数据?",
+        "answer": "Dissolve节点的输出dissolve_image表示使用指定溶解因子混合后的图像，数据类型在ComfyUI中为IMAGE，在Python中为torch.Tensor。"
+    },
+    {
+        "question": "使用Dissolve节点时的硬件要求是什么?",
+        "answer": "Dissolve节点在执行时推荐的硬件类型为CPU，这是其使用的基础设施类型。"
+    },
+    {
+        "question": "哪一种节点可以实现图像间的平滑过渡?",
+        "answer": "ComfyUI中名为Dissolve的节点可以实现图像间基于溶解因子的平滑过渡混合。"
+    },
+    {
+        "question": "在Dissolve节点中，溶解过程具体是如何实现的?",
+        "answer": "Dissolve节点中，通过创建与输入图像相同形状的随机点阵图案（dither_pattern），并使用溶解因子作为阈值生成mask，随后根据mask计算最终的溶解图像dissolve_image，这涉及到根据mask在image1和image2间选择像素值，并利用torch库中的操作确保输出图像像素值在0到1的范围之间。"
+    }
+]

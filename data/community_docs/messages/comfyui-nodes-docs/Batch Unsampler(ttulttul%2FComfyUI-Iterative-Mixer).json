@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BatchUnsampler类的功能是什么？",
+        "answer": "BatchUnsampler 类旨在逆向工程应用于一批潜在变量的噪声计划，从给定的潜在图像开始，逐步向后工作，生成一系列去噪的潜在变量序列。"
+    },
+    {
+        "question": "BatchUnsampler类的哪些输入参数是必需的？",
+        "answer": "BatchUnsampler类的必需输入参数包括模型(model)、采样器名称(sampler_name)、调度策略(scheduler)、步骤数(steps)、开始步骤(start_at_step)、结束步骤(end_at_step)和潜在图像(latent_image)。"
+    },
+    {
+        "question": "开始逆向采样过程的控制参数是什么？",
+        "answer": "start_at_step 参数指定了开始逆向采样的初始步骤，设置了去噪序列的起点，对控制生成潜在变量的范围至关重要。"
+    },
+    {
+        "question": "模型参数在BatchUnsampler类中的作用是什么？",
+        "answer": "模型参数定义了用于取消采样操作的基础架构和噪声计划，对生成去噪潜在变量序列至关重要，直接影响节点的功能和效果。"
+    },
+    {
+        "question": "在BatchUnsampler类中调度策略影响什么？",
+        "answer": "调度(scheduler)策略决定了在取消采样过程中噪声级别的分配，影响去噪潜在序列的平滑性和连贯性，对准确表示至关重要。"
+    },
+    {
+        "question": "BatchUnsampler类生成的输出是什么？",
+        "answer": "BatchUnsampler 类生成的输出是'latent_batch'，其中包含逐步去噪的潜在变量序列，代表对原始潜在图像噪声计划的逆向工程。"
+    },
+    {
+        "question": "normalize参数启用时对输出有何影响？",
+        "answer": "当启用normalize参数时，BatchUnsampler会将生成的潜在变量调整至平均值为零，这可能优化下游应用的潜在变量可比性。"
+    }
+]

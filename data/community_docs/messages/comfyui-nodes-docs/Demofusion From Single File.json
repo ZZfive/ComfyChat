@@ -1,0 +1,38 @@
+[
+    {
+        "question": "DemofusionFromSingleFile 是什么类型的产品？",
+        "answer": "DemofusionFromSingleFile 是 ComfyUI 中的一个定制节点，用于执行图像生成的扩散模型，利用预训练的检查点根据文本提示合成新的视觉内容。"
+    },
+    {
+        "question": "使用 DemofusionFromSingleFile 节点合成图像时，如何指定预训练模型?",
+        "answer": "通过设置 'ckpt_name' 参数来指定用于图像生成的预训练模型。此参数指导节点定位和加载适当的模型权重和配置，从而确保后续生成过程的准确执行。"
+    },
+    {
+        "question": "哪些参数可以控制 DemofusionFromSingleFile 节点生成的图像的风格和内容?",
+        "answer": "正面参数 'positive' 和负面参数 'negative' 影响输出图像的主题方向和应避免的方面，而 'cfg' 参数则用于调整模型配置，微调生成过程以实现特定视觉效果，如风格和一致性。"
+    },
+    {
+        "question": "如何决定使用 DemofusionFromSingleFile 节点生成图像的尺寸?",
+        "answer": "设置 'width' 和 'height' 参数可确定生成图像的水平和垂直分辨率，这些参数在确定输出比例和尺寸方面起关键作用。"
+    },
+    {
+        "question": "DemofusionFromSingleFile 节点中的 'inference_steps' 参数控制什么?",
+        "answer": "'inference_steps' 参数控制扩散过程中使用的迭代次数，直接影响生成图像的复杂性和精细度。通过调整该参数，可以优化生成内容的细节水平。"
+    },
+    {
+        "question": "在 DemofusionFromSingleFile 节点中如何确保图像生成结果的可复现性?",
+        "answer": "使用 'seed' 参数通过固定值初始化随机数生成器，确保结果的可复现性，这对于在不同运行中进行一致的实验和结果比较至关重要。"
+    },
+    {
+        "question": "DemofusionFromSingleFile 节点生成的具体输出是什么?",
+        "answer": "节点的主要输出是基于提供的文本提示和模型配置生成的 'image'，这封装了视觉内容，是创作过程的主要结果，展示了节点合成新图像的能力。"
+    },
+    {
+        "question": "除了直接指定的参数，还有哪些因素影响 DemofusionFromSingleFile 节点的图像生成质量?",
+        "answer": "除了参数设置，GPU 类型（Infra type）也是影响节点性能和图像生成质量的关键因素。GPU 的性能决定了生成过程的运行效率。"
+    },
+    {
+        "question": "DemofusionFromSingleFile 节点属于 ComfyUI 的哪个分类?",
+        "answer": "DemofusionFromSingleFile 节点属于 ComfyUI 分类 'tests'，这个名字指出了其在创意AI应用中的功能定位与实验测试特性。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_LatentBatchSize节点的类别是什么？",
+        "answer": "CR_LatentBatchSize节点的类别是Comfyroll/Essential/Core。"
+    },
+    {
+        "question": "CR_LatentBatchSize的输入类型有哪些？",
+        "answer": "CR_LatentBatchSize有两个输入类型：'latent'，这是一个包含潜在表示的关键参数；和'batch_size'，这是一个可选的参数，用于设定每个批量中的样本数目。"
+    },
+    {
+        "question": "CR_LatentBatchSize如何处理潜在表示？",
+        "answer": "CR_LatentBatchSize节点处理和管理潜在表示的批量大小，确保下游流程可以一致地运行，无论原始样本数量如何。"
+    },
+    {
+        "question": "如果在CR_LatentBatchSize节点中未提供batch_size参数，会发生什么？",
+        "answer": "如果在CR_LatentBatchSize节点中未提供batch_size参数，它将默认为2。"
+    },
+    {
+        "question": "CR_LatentBatchSize节点的输入'latent'是什么类型的参数？",
+        "answer": "输入'latent'是CR_LatentBatchSize节点的主要输入，它包含了需要批量处理的潜在表示，类型为Dict[str, torch.Tensor]。"
+    },
+    {
+        "question": "CR_LatentBatchSize节点如何处理latent参数以满足输出批量大小？",
+        "answer": "CR_LatentBatchSize节点通过对latent进行复制和连接来调整潜在表示张量，以满足所需的批量大小。"
+    },
+    {
+        "question": "CR_LatentBatchSize节点的输出是什么？",
+        "answer": "CR_LatentBatchSize节点的输出是已连接的潜在表示张量，类型为torch.Tensor, 旨在确保与期望具有特定批量维度的后续处理步骤的兼容性。"
+    }
+]

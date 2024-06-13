@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CLIPAdd节点的主要功能是什么？",
+        "answer": "CLIPAdd节点是ComfyUI的一个高级自定义节点，用于将两个独立的CLIP模型整合到一个统一的结构中，通过合并关键模型补丁，来增强或结合功能，创建更复杂的新模型。"
+    },
+    {
+        "question": "什么是CLIPAdd节点的输入要求之一？",
+        "answer": "CLIPAdd节点的输入要求之一是clip1，表示第一个CLIP模型，它作为合并过程的基础，并决定了第二个模型的补丁将整合的基础设施配置。"
+    },
+    {
+        "question": "如何描述clip2输入在CLIPAdd节点中的作用？",
+        "answer": "clip2输入是CLIPAdd节点的另一个要求，它提供关键补丁来合并到clip1中，对于合并后模型的额外功能高度重要。"
+    },
+    {
+        "question": "CLIPAdd节点的输出类型具体是什么？",
+        "answer": "CLIPAdd节点的输出类型是merged_clip，即表示已经整合了两个输入CLIP模型功能的单一模型，此模型可用于进一步的使用或部署。"
+    },
+    {
+        "question": "提供一个通过CLIPAdd节点进行模型合并的具体方法？",
+        "answer": "在ComfyUI的CLIPAdd源代码中，通过clone()函数复制clip1模型，然后调用add_patches()方法以1.0的权重添加clip2的关键补丁到clip1模型中，从而完成合并过程。"
+    },
+    {
+        "question": "哪些场景下可能使用到CLIPAdd节点？",
+        "answer": "当需要将两个CLIP模型的特性整合到单一模型中，用于更复杂任务的处理或者为了结合两个模型的优点时，CLIPAdd节点就能派上用场。"
+    },
+    {
+        "question": "CLIPAdd节点适合哪种运算环境？",
+        "answer": "CLIPAdd节点适合在CPU环境下运行，而不一定要求使用GPU或更高级的运算设备。"
+    }
+]

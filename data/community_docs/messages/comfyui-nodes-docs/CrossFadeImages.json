@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CrossFadeImages节点的功能是什么？",
+        "answer": "CrossFadeImages节点用于在ComfyUI中通过交叉淡化技术无缝混合两组图像，创建视觉上吸引人的变形序列，特别是在需要从一张图像平滑过渡到另一张图像时特别有用。"
+    },
+    {
+        "question": "使用CrossFadeImages节点时，'images_1'参数代表什么?",
+        "answer": "'images_1'参数指过渡期间将逐渐淡出的第一组图像，这些图像构成了交叉淡化效果的起点，并对初始视觉表现至关重要。"
+    },
+    {
+        "question": "CrossFadeImages节点的输出类型是什么?",
+        "answer": "CrossFadeImages节点的输出类型是代表交叉淡化过渡的图像序列，输出的Python dtype为`torch.Tensor`，且代表了从`images_1`到`images_2`平滑过渡后的图像集合。"
+    },
+    {
+        "question": "交叉淡化过渡的效果受到哪些输入参数的影响？",
+        "answer": "交叉淡化过渡的效果由'images_1'、'images_2'、'interpolation'、'transition_start_index'、'transitioning_frames'、'start_level'和'end_level'这七个输入参数共同影响，它们分别控制图像、过渡效果的样式、时间和Fade程度。"
+    },
+    {
+        "question": "哪组参数决定了CrossFadeImages中过渡图像的视觉动态？",
+        "answer": "'interpolation'参数决定了图像之间变化的速率，影响过渡的视觉动态。它可以是'linear'、'ease_in'、'ease_out'、'ease_in_out'、'bounce'、'elastic'、'glitchy'或'exponential_ease_out'中的一个，显著改变图像过渡的视觉体验。"
+    },
+    {
+        "question": "CrossFadeImages节点的工作原理如何描述？",
+        "answer": "CrossFadeImages节点根据指定的插值类型将两组图像 (`images_1` 和 `images_2`) 从一个平滑过渡到另一个，通过调整alpha级别和使用的缓动函数，控制淡入淡出的效果。"
+    },
+    {
+        "question": "如何控制CrossFadeImages中图像淡出淡入的起始点？",
+        "answer": "通过调整'transition_start_index'参数可以控制淡入过程的起始点，这允许用户在图像序列中选择交叉淡化过渡开始的具体位置。"
+    }
+]

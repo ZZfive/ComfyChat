@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ApplyStableSRUpscaler节点的作用是什么？",
+        "answer": "ApplyStableSRUpscaler节点是一种自定义节点，用于利用StableSR模型技术提高输入图像的分辨率，同时确保图像的视觉完整性得以保持。它旨在应用先进的上采样技术以生成高质量、细节丰富的图像，同时避免损害原始内容。"
+    },
+    {
+        "question": "ApplyStableSRUpscaler节点如何与StableSR模型交互？",
+        "answer": "ApplyStableSRUpscaler节点通过'stablesr_model'参数指定StableSR模型的检查点路径，该路径包含进行上采样过程所需的预训练权重。通过加载这些权重，节点能够执行StableSR上采样技术的应用。"
+    },
+    {
+        "question": "在ApplyStableSRUpscaler节点的输入参数中，model代表什么？",
+        "answer": "在ApplyStableSRUpscaler节点中，'model'参数代表了基础结构和功能，定义了节点将操作的模型。对于上采样过程，一个有效的模型是确保正确应用StableSR技术的关键。"
+    },
+    {
+        "question": "提供latent_image参数如何影响ApplyStableSRUpscaler节点的上采样过程？",
+        "answer": "当提供的latent_image参数被应用时，节点可以将额外信息纳入上采样过程，以考虑输入的潜在特征，这可以完善输出并可能带来更好的视觉结果。"
+    },
+    {
+        "question": "ApplyStableSRUpscaler节点的输出model_sr代表什么？",
+        "answer": "输出model_sr是StableSR上采样技术应用于输入模型的结果，表示原模型的增强版本，具有更高的分辨率和细节，已准备好用于进一步的使用或分析。"
+    },
+    {
+        "question": "实现ApplyStableSRUpscaler节点上采样功能的Python数据类型是什么？",
+        "answer": "实现上采样功能的Python数据类型包括torch.nn.Module类型，用于表示'model'和输出'model_sr'，同时使用torch.Tensor表示可选的'latent_image'参数。"
+    },
+    {
+        "question": "哪些输入是ApplyStableSRUpscaler节点执行上采样过程所必需的？",
+        "answer": "ApplyStableSRUpscaler节点执行上采样过程必需的输入包括'model'和'stablesr_model'，它们分别提供了操作的基础结构和功能以及上采样所需的StableSR模型的路径。"
+    }
+]

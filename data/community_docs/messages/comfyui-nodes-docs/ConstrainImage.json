@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ConstrainImage节点在ComfyUI中的功能是什么？",
+        "answer": "ConstrainImage节点用于将图像尺寸调整到指定边界内，同时保持图像的纵横比，确保图像在缩放过程中不会超出或低于预设的尺寸范围。"
+    },
+    {
+        "question": "ConstrainImage节点如何处理图像的大小变化？",
+        "answer": "ConstrainImage节点通过缩放图像至最接近的最大和最小尺寸，必要时进行裁剪，以确保图像适应定义的约束条件，同时保持其原有的纵横比。"
+    },
+    {
+        "question": "ConstrainImage节点操作中，最大宽度参数（max_width）的作用是什么？",
+        "answer": "最大宽度参数（max_width）在ConstrainImage节点中设定了图像变换后的宽度上限，确保图像的宽度不超过该值，从而维持预期的纵横比。"
+    },
+    {
+        "question": "ConstrainImage节点中crop_if_required参数的选项和作用是什么？",
+        "answer": "crop_if_required参数提供了一个决策点，确定在图像缩放后是否应根据需要裁剪图像，以确保图像完全符合指定的约束条件。选项包括'yes'和'no'，其中'yes'表示在必要时裁剪，'no'表示不裁剪。"
+    },
+    {
+        "question": "哪些情况下ConstrainImage节点会进行图像裁剪？",
+        "answer": "当ConstrainImage节点的crop_if_required参数设置为'yes'，并且在缩放之后图像尺寸仍然超出指定的约束条件时，节点将对图像进行裁剪，以确保图像完全适应定义的大小限制。"
+    },
+    {
+        "question": "ConstrainImage节点在输出中如何表示处理后的图像？",
+        "answer": "ConstrainImage节点的输出图像表示已通过约束过程调整的输入图像，该图像已调整至满足指定的最大和最小尺寸，同时保持纵横比，输出数据类型为IMAGE，实质上是一个torch.Tensor对象。"
+    },
+    {
+        "question": "哪些输入参数是ConstrainImage节点处理流程中所必需的？",
+        "answer": "ConstrainImage节点在处理流程中必需的输入参数包括图像（images），这直接影响节点的操作，以及最大宽度（max_width）、最大高度（max_height）、最小宽度（min_width）和最小高度（min_height），用于定义图像缩放和裁剪的约束范围。"
+    }
+]

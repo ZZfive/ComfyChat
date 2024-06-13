@@ -861,7 +861,7 @@ def generate_data_from_comfyui_docs(comfyui_docs_path: str = r"D:\git_github\sel
 def generate_data_from_SaltAI_Web_Docs(SaltAI_Web_Docs_path: str = r"D:\git_github\self\ComfyChat\data\community_docs\repos\SaltAI-Web-Docs\docs\md",
                                        save_dir: str = r"D:\git_github\self\ComfyChat\data\community_docs\messages\SaltAI-Web-Docs",
                                        successful_node_list_name: str = "successful_node_list.json",
-                                       unsuccessful_node_list_name: str = "unsuccessful_node_list.json"):
+                                       unsuccessful_node_list_name: str = "unsuccessful_node_list.json") -> None:
     logger = create_logger("generate_data_from_comfyui_docs")
 
     successful_node_list_path = os.path.join(save_dir, "information", successful_node_list_name)
@@ -931,6 +931,57 @@ def generate_data_from_SaltAI_Web_Docs(SaltAI_Web_Docs_path: str = r"D:\git_gith
                                 unsuccessful_nodes.append(index_path)
                     else:
                         continue
+    finally:
+        save2json(successful_nodes, successful_node_list_path)
+        save2json(unsuccessful_nodes, unsuccessful_node_list_path)
+
+
+def generate_data_from_comfyui_nodes_docs(comfyui_nodes_docs_path: str = r"D:\git_github\self\ComfyChat\data\community_docs\repos\comfyui-nodes-docs\docs",
+                                          save_dir: str = r"D:\git_github\self\ComfyChat\data\community_docs\messages\comfyui-nodes-docs",
+                                          successful_node_list_name: str = "successful_node_list.json",
+                                          unsuccessful_node_list_name: str = "unsuccessful_node_list.json") -> None:
+    logger = create_logger("generate_data_from_comfyui_nodes_docs")
+
+    successful_node_list_path = os.path.join(save_dir, "information", successful_node_list_name)
+    if os.path.exists(successful_node_list_path):
+        successful_nodes = load4json(successful_node_list_path, [])
+    else:
+        with open(successful_node_list_path, "a"):
+            os.utime(successful_node_list_path, None)
+        successful_nodes = []
+
+    unsuccessful_node_list_path = os.path.join(save_dir, "information", unsuccessful_node_list_name)
+    if os.path.exists(unsuccessful_node_list_path):
+        unsuccessful_nodes = load4json(unsuccessful_node_list_path, [])
+    else:
+        with open(unsuccessful_node_list_path, "a"):
+            os.utime(unsuccessful_node_list_path, None)
+        unsuccessful_nodes = []
+
+    try:
+        for item in os.listdir(comfyui_nodes_docs_path):
+            md_path = os.path.join(comfyui_nodes_docs_path, item)
+            if not os.path.isdir(md_path):
+                name, ext = extract_name_extension(item)
+                if ext in ['.MD', '.MDX', '.md', '.mdx'] and md_path not in successful_nodes:
+                    try:
+                        rsp = ''
+                        rsp = get_data_from_siliconflow(name, md_path,
+                                                        model='alibaba/Qwen2-72B-Instruct',
+                                                        system_prompt=system_prompt_zh,
+                                                        template=template_zh)
+                        time.sleep(3)
+                        rsp_json = parse_json(rsp)
+                        save2json(rsp_json, os.path.join(save_dir, f"{name}.json"))
+                        successful_nodes.append(md_path)
+                        if md_path in unsuccessful_nodes:
+                            unsuccessful_nodes.remove(md_path)
+                        logger.info(f'Successfully extracting data from file: {md_path}')
+                        # break
+                    except Exception as e:
+                        logger.error(f'Failed to extract data from file: {md_path}, error: {e}')
+                        if md_path not in unsuccessful_nodes:
+                            unsuccessful_nodes.append(md_path)
     finally:
         save2json(successful_nodes, successful_node_list_path)
         save2json(unsuccessful_nodes, unsuccessful_node_list_path)
@@ -1058,15 +1109,17 @@ if __name__=='__main__':
     # ans = eng2zh_chat2api(eng_text='America is fucking shit')
     # print(ans)
 
-    temp = get_data_from_siliconflow('VAEEncodeTiled',
-                                 r'D:\git_github\self\ComfyChat\data\community_docs\repos\comfyui-nodes-docs\docs\VAEEncodeTiled.md',
-                                 model='alibaba/Qwen2-72B-Instruct',
-                                 system_prompt=system_prompt_zh, template=template_zh)
-    print(temp)
-    temp = parse_json(temp)
-    print(temp)
+    # temp = get_data_from_siliconflow('VAEEncodeTiled',
+    #                              r'D:\git_github\self\ComfyChat\data\community_docs\repos\comfyui-nodes-docs\docs\VAEEncodeTiled.md',
+    #                              model='alibaba/Qwen2-72B-Instruct',
+    #                              system_prompt=system_prompt_zh, template=template_zh)
+    # print(temp)
+    # temp = parse_json(temp)
+    # print(temp)
     # save2json(temp, r"D:\git_github\self\ComfyChat\data\community_docs\repos\VAEEncode.json")
 
     # generate_data_from_comfyui_docs()
 
     # generate_data_from_SaltAI_Web_Docs()
+
+    generate_data_from_comfyui_nodes_docs()

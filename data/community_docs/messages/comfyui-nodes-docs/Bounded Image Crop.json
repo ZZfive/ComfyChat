@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Bounded_Image_Crop 系统用于什么目的？",
+        "answer": "WAS_Bounded_Image_Crop 是 ComfyUI 的一个自定义节点，旨在根据指定边界智能裁剪图像，确保裁剪区域在图像的有效尺寸内，适用于图像预处理，专注于兴趣区域而不扭曲图像结构。"
+    },
+    {
+        "question": "WAS_Bounded_Image_Crop 节点处理图像时的核心输入是什么？",
+        "answer": "核心输入是 'image'，即待裁剪的图像数据。它决定了将要进行裁剪操作的内容，图像的尺寸和质量直接影响裁剪操作的结果。"
+    },
+    {
+        "question": "什么是 'image_bounds' 参数，其在 WAS_Bounded_Image_Crop 中的作用是什么？",
+        "answer": "'image_bounds' 参数定义了将在图像中被裁剪的区域，对于指定裁剪操作的确切坐标至关重要；这些边界决定了裁剪后图像的外观，必须精确无误。"
+    },
+    {
+        "question": "WAS_Bounded_Image_Crop 节点的输入 'image' 和 'image_bounds' 的数据类型在 ComfyUI 和 Python 中分别是什么？",
+        "answer": "在 ComfyUI 中，'image' 类型为 IMAGE，而 'image_bounds' 类型为 IMAGE_BOUNDS；在 Python 中，'image' 的类型是 Union[torch.Tensor, PIL.Image.Image]，而 'image_bounds' 的类型是 List[Tuple[int, int, int, int]]。"
+    },
+    {
+        "question": "WAS_Bounded_Image_Crop 节点输出的 'cropped_image' 具体含义是什么？",
+        "answer": "'cropped_image' 是 WAS_Bounded_Image_Crop 节点裁剪操作的直接结果，代表了输入图像根据 'image_bounds' 指定的边界经过裁剪后的图像数据，数据类型与输入 'image' 类似，为 torch.Tensor。"
+    },
+    {
+        "question": "在 WAS_Bounded_Image_Crop 的智能裁剪过程中，什么情况下会引发 ValueError？",
+        "answer": "当提供的边界 'rmin > rmax' 或 'cmin > cmax' 时，表示边界无效或超出图像尺寸，这将引发 ValueError。"
+    },
+    {
+        "question": "WAS_Bounded_Image_Crop 节点可以处理一系列图像吗？其具体是如何操作的？",
+        "answer": "WAS_Bounded_Image_Crop 节点可以处理一系列图像，当输入的图像尺寸不同时，它会根据每个图像的 ‘image_bounds’ 分别进行裁剪操作，从而确保每个图像的裁剪都在有效边界内进行。"
+    }
+]

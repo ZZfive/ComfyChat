@@ -1,0 +1,42 @@
+[
+    {
+        "question": "CR_CycleLoRAs是什么样的节点？",
+        "answer": "CR_CycleLoRAs是ComfyUI中一个自定义节点，用于管理和循环遍历LoRA（低秩适应）参数列表，以增强动画中模型和剪辑的多样性和动态性。"
+    },
+    {
+        "question": "CR_CycleLoRAs节点如何增强生成动画的多样性？",
+        "answer": "CR_CycleLoRAs节点通过顺序应用不同的LoRA调整来增强生成动画的多样性，从而实现复杂视觉效果的创建。"
+    },
+    {
+        "question": "哪个参数决定CR_CycleLoRAs节点的操作行为？",
+        "answer": "mode参数决定了CR_CycleLoRAs节点的操作行为，它可以选择'关闭'或'顺序'模式来控制LoRA参数的循环应用。"
+    },
+    {
+        "question": "CR_CycleLoRAs节点的模型参数在动画创建中扮演什么角色？",
+        "answer": "模型参数是CR_CycleLoRAs节点操作的核心，该参数指定的模型将应用LoRA调整，以实现所需动画效果。"
+    },
+    {
+        "question": "CR_CycleLoRAs节点中的lora_list参数是什么？",
+        "answer": "lora_list参数是CR_CycleLoRAs节点循环应用的LoRA参数列表，这列表中的每个元素代表一套可应用于模型和剪辑的LoRA调整。"
+    },
+    {
+        "question": "如何控制CR_CycleLoRAs节点循环遍历LoRA参数的频率？",
+        "answer": "通过frame_interval参数可以定义CR_CycleLoRAs节点遍历LoRA参数的频率，这对于控制动画序列的节奏和时间至关重要。"
+    },
+    {
+        "question": "CR_CycleLoRAs节点的loops参数有何作用？",
+        "answer": "loops参数指定CR_CycleLoRAs节点完全遍历LoRA参数列表的次数，影响生成动画的持续时间和重复特征。"
+    },
+    {
+        "question": "CR_CycleLoRAs节点的输出提供哪些信息？",
+        "answer": "CR_CycleLoRAs节点的输出包括应用了LoRA调整的模型（MODEL类型）和与模型一起调整的视觉表示（CLIP类型），以及一个帮助文档的URL链接（STRING类型）。"
+    },
+    {
+        "question": "CR_CycleLoRAs节点的source code中如何决定LoRA参数的当前应用？",
+        "answer": "在CR_CycleLoRAs的source code中，如果mode参数为'Sequential'，则根据当前帧和帧间隔计算当前LoRA参数的索引，选择并应用相应的LoRA调整至模型。"
+    },
+    {
+        "question": "哪些是CR_CycleLoRAs节点的infra type？",
+        "answer": "CR_CycleLoRAs节点的infra type为CPU，意味着它适用于在CPU上运行的操作。"
+    }
+]

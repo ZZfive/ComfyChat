@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BatchValueScheduleLatentInput节点的主要功能是什么？",
+        "answer": "BatchValueScheduleLatentInput节点的主要功能是根据给定的文本时间表处理和动画一批潜在输入，解释文本以生成关键帧，并平滑插值这些值，实现在关键帧之间的平稳过渡，适用于创建动画或平滑转换中的潜在变量进展。"
+    },
+    {
+        "question": "BatchValueScheduleLatentInput节点中'text'参数的作用是什么？",
+        "answer": "'text'参数在BatchValueScheduleLatentInput节点中定义了潜在输入动画的时间表，是一个字符串形式的关键帧及其相应值的描述，用于生成动画序列，确定动画模式和潜在输入随时间变化的值。"
+    },
+    {
+        "question": "num_latents在BatchValueScheduleLatentInput节点中代表什么？",
+        "answer": "'num_latents'参数代表要动画化的潜在变量的字典，其中键标识不同的潜在变量，值表示这些变量的初始状态张量，是动画过程起点与随时间操作变量的定义。"
+    },
+    {
+        "question": "BatchValueScheduleLatentInput节点如何使用'print_output'参数？",
+        "answer": "'print_output'参数是BatchValueScheduleLatentInput节点中的一个可选布尔标志，若设置为True，则会将生成的关键帧及其插值结果打印到控制台，用于调试或在进一步处理前可视化动画序列。"
+    },
+    {
+        "question": "BatchValueScheduleLatentInput节点输出的't'是什么类型，表示什么？",
+        "answer": "节点输出't'为Comfy dtype的FLOAT，Python dtype的pandas.Series，表示从输入文本时间表生成的插值关键帧的浮点数序列，指示动画随时间的进展。"
+    },
+    {
+        "question": "什么情况下BatchValueScheduleLatentInput节点的整数列表输出相较于浮点数有优势？",
+        "answer": "BatchValueScheduleLatentInput节点输出的整数列表从插值关键帧派生，提供动画序列的离散化版本，对于需要整数值而非浮点数的应用非常有用，如用于某些计数或索引应用中。"
+    },
+    {
+        "question": "在BatchValueScheduleLatentInput节点输出中，潜在变量的字典如何更新？",
+        "answer": "输出潜在变量字典'num_latents'包含了根据输入时间表动画化后的潜在变量的更新状态，表示动画过程对潜在变量状态的影响。"
+    }
+]

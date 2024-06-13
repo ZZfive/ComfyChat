@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR SDXL Base Prompt Encoder 节点用于什么目的?",
+        "answer": "CR SDXL Base Prompt Encoder 节点旨在处理和编码用于生成具有特定属性的图像的提示，确保生成的图像符合所需特征并避免不需要的特征。"
+    },
+    {
+        "question": "base_clip 参数在 CR SDXL Base Prompt Encoder 中扮演什么角色?",
+        "answer": "base_clip 参数对于编码过程至关重要，用于标记和编码输入提示，这些提示被用来引导图像的创建。"
+    },
+    {
+        "question": "正面引导文本（pos_g）和正面语言文本（pos_l）有何区别?",
+        "answer": "正面引导文本（pos_g）指定生成图像中的所需特性，而正面语言文本（pos_l）提供了额外的上下文来细化图像生成过程，确保所需属性被清晰传达。"
+    },
+    {
+        "question": "CR SDXL Base Prompt Encoder 能生成什么类型的输出?",
+        "answer": "CR SDXL Base Prompt Encoder 生成正面提示的编码表示（base_positive）和负面提示的编码表示（base_negative），以及一个链接到文档的帮助输出（show_help）用于辅助理解和使用节点。"
+    },
+    {
+        "question": "如何使用 preset 参数在 CR SDXL Base Prompt Encoder 中?",
+        "answer": "preset 参数允许用户选择预定义的正面和负面提示组合进行图像生成，通过提供平衡所需和不期望特征包含的选项，简化了图像生成过程。"
+    },
+    {
+        "question": "CR SDXL Base Prompt Encoder 节点建议在哪种类型的基础设施上运行?",
+        "answer": "根据使用提示，CR SDXL Base Prompt Encoder 节点建议在 CPU 基础设施上运行。"
+    },
+    {
+        "question": "CR SDXL Base Prompt Encoder 如何处理 pos_l 和 neg_l 长度不匹配的情况?",
+        "answer": "当 pos_l 和 neg_l 的长度不匹配时，CR SDXL Base Prompt Encoder 会通过将较短的列表重复填充直到与较长的列表长度相同，来确保两者的长度一致，从而避免编码时的错误。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_ConditioningMixer节点的功能是什么？",
+        "answer": "CR_ConditioningMixer节点是ComfyUI中的一个自定义节点，用于混合或组合不同的条件输入，为合并或平均条件数据提供方法，以实现用户所需的输出结果。"
+    },
+    {
+        "question": "如何选择CR_ConditioningMixer中的混合方法？",
+        "answer": "通过'mix_method'参数，用户可以选择包括'Combine'、'Average'或'Concatenate'在内的混合模式，以定义条件输入如何被组合。"
+    },
+    {
+        "question": "CR_ConditioningMixer支持的输入类型有哪些？",
+        "answer": "CR_ConditioningMixer支持的输入类型包括conditioning_1和conditioning_2，它们是条件输入的列表，以及mix_method，定义混合策略，和average_strength（当混合方法为'Average'时使用）。"
+    },
+    {
+        "question": "当使用'Average'混合方法时，什么参数控制条件输入的混合比例？",
+        "answer": "使用'Average'混合方法时，'average_strength'参数控制两个条件输入之间的混合比例，影响最终的输出结果。"
+    },
+    {
+        "question": "CR_ConditioningMixer节点的输出包括哪些内容？",
+        "answer": "CR_ConditioningMixer节点的输出包括CONDITIONING类型，表示混合后的条件数据，和show_help字符串，提供节点文档的URL链接。"
+    },
+    {
+        "question": "CR_ConditioningMixer在平均模式下如何处理不同长度的条件输入？",
+        "answer": "在平均模式下，CR_ConditioningMixer会警告如果输入的条件数据包含多于一个条件，只应用第一个条件。同时，在混合时，会调整输入的维度以匹配，保证计算能够顺利进行。"
+    },
+    {
+        "question": "CR_ConditioningMixer的'Concatenate'操作如何实现条件输入的连接？",
+        "answer": "在'Concatenate'操作下，CR_ConditioningMixer使用torch库的cat函数沿着第二个维度（1）连接conditioning_to和conditioning_from中的张量，来生成经过连接的条件输出。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_SimpleValueScheduler 是什么？",
+        "answer": "CR_SimpleValueScheduler 是 ComfyUI 中一个自定义节点，用于管理和插值关键帧时间表，支持值的调度，尤其在创建帧之间的平滑过渡和动态变化中发挥作用，让用户有简单直接的方式安排值随时间变化。"
+    },
+    {
+        "question": "如何定义 CR_SimpleValueScheduler 中的关键帧随时间变化的值？",
+        "answer": "通过 'schedule' 输入定义随时间变化的关键帧值，允许用户在不同帧上指定不同的值，CR_SimpleValueScheduler 节点能够在这些值之间进行插值。"
+    },
+    {
+        "question": "使用 CR_SimpleValueScheduler，用户如何指示动画时间线中的当前位置？",
+        "answer": "用户通过 'current_frame' 参数指示动画时间线中的当前位置，这对于确定在任何给定时刻应用哪个预定值至关重要。"
+    },
+    {
+        "question": "CR_SimpleValueScheduler 节点输出什么类型的值？",
+        "answer": "CR_SimpleValueScheduler 输出 INT 和 FLOAT 类型的值，分别提供当前帧预定值的整数和浮点数表示，以及一个 STRING 类型的 'show_help' 输出，提供进一步的文档链接。"
+    },
+    {
+        "question": "INT 和 FLOAT 输出在 CR_SimpleValueScheduler 中有何区别？",
+        "answer": "INT 输出提供整数表示，适用于动画流水线中数值的基本运算。FLOAT 输出提供浮点数表示，适用于动画过程中需要更精确计算和微调的场景。"
+    },
+    {
+        "question": "在使用 CR_SimpleValueScheduler 节点时，如何找到详细的帮助文档？",
+        "answer": "通过节点的 'show_help' 输出可以获取到文档链接，以便在使用 CR_SimpleValueScheduler 时获得进一步的指导和帮助。"
+    },
+    {
+        "question": "当使用 CR_SimpleValueScheduler 节点但未定义 'schedule' 时，节点会如何响应？",
+        "answer": "如果 'schedule' 未定义或为空，节点将发出警告，提示没有在时间表中找到预定的帧值，表示简化的调度必须从帧 0 开始。"
+    }
+]

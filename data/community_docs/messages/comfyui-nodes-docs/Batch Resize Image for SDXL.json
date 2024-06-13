@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BatchResizeImageSDXL是什么类型的节点?",
+        "answer": "BatchResizeImageSDXL是ComfyUI的Mikey/Image分类下的一个节点，用于批量调整图像大小。"
+    },
+    {
+        "question": "BatchResizeImageSDXL节点支持哪些放大算法?",
+        "answer": "BatchResizeImageSDXL节点支持包括'nearest-exact', 'bilinear', 'area', 'bicubic'在内的多种放大算法，通过upscale_method参数指定。"
+    },
+    {
+        "question": "如何使用BatchResizeImageSDXL确保图像长宽比不变?",
+        "answer": "通过设置crop参数为'center'，BatchResizeImageSDXL节点可以在调整大小后裁剪图像，以保持其长宽比不变或关注特定部分，确保图像比例的准确无损。"
+    },
+    {
+        "question": "BatchResizeImageSDXL的输出结果是什么?",
+        "answer": "BatchResizeImageSDXL节点输出的是IMAGE类型的数据，具体是一个包含所有处理后图像的列表，列表中的每个元素是调整大小后的图像，准备进入下一个处理或展示阶段。"
+    },
+    {
+        "question": "哪些输入参数是BatchResizeImageSDXL节点必需的?",
+        "answer": "BatchResizeImageSDXL节点必需的输入参数包括image_directory、upscale_method和crop，分别用于指定图像目录、放大算法和裁剪方式。"
+    },
+    {
+        "question": "BatchResizeImageSDXL节点在代码中如何定义其输入类型和返回类型?",
+        "answer": "在BatchResizeImageSDXL节点的源代码中，它通过INPUT_TYPES和RETURN_TYPES定义了输入类型包括STRING类型的image_directory，以及COMBO类型的选择项定义了upscale_method和crop，输出类型为IMAGE。"
+    },
+    {
+        "question": "BatchResizeImageSDXL节点适用于哪种处理器类型的执行?",
+        "answer": "BatchResizeImageSDXL节点的执行兼容CPU类型的基础设施，这意味着它可以在基于CPU的计算环境中运行而无需GPU加速。"
+    }
+]

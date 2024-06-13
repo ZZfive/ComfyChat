@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CircularVAEDecode节点的主要功能是什么？",
+        "answer": "CircularVAEDecode节点的主要功能是执行变分自编码器（VAE）的解码过程，并对卷积层应用循环填充以增强生成图像的平铺特性，从而提高解码图像的连贯性和视觉质量。"
+    },
+    {
+        "question": "CircularVAEDecode节点的'samples'参数的作用是什么？",
+        "answer": "'samples'参数提供了节点用于重构图像的潜在表示，是重构图像质量和特性的关键输入。"
+    },
+    {
+        "question": "哪些类型的'vae'参数适合CircularVAEDecode节点？",
+        "answer": "CircularVAEDecode节点需要预训练的VAE模型作为'vae'参数，它使用该模型执行解码过程，模型的架构和训练直接影响节点生成高质量图像的能力。"
+    },
+    {
+        "question": "CircularVAEDecode节点的'tiling'参数如何影响输出？",
+        "answer": "'tiling'参数控制VAE模型中卷积层循环填充的应用，允许根据输出图像的期望特性定制节点的行为，从而显著影响生成图像的平铺特性。"
+    },
+    {
+        "question": "CircularVAEDecode节点的输出数据类型是什么？",
+        "answer": "CircularVAEDecode节点的输出是IMAGE类型，这是通过解码提供的潜在表示生成的图像，直接反映了VAE模型和所选平铺参数在重构图像方面的有效性。"
+    },
+    {
+        "question": "CircularVAEDecode节点解码过程的具体实现是什么？",
+        "answer": "CircularVAEDecode节点通过复制输入的VAE模型并在需要时调整模型中的循环填充参数来实现解码，根据选定的'tiling'参数，它会改变VAE解码器中的循环填充设置，以生成平铺效果更好的图像。"
+    },
+    {
+        "question": "在ComfyUI中，哪些节点可以与CircularVAEDecode配合使用以处理潜在表示？",
+        "answer": "在ComfyUI中，任何能够生成LATENT类型的节点都可以与CircularVAEDecode节点配合使用，以对潜在表示进行解码并生成平铺效果更好的图像。"
+    }
+]

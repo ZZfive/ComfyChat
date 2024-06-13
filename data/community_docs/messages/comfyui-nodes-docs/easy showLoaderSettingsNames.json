@@ -1,0 +1,30 @@
+[
+    {
+        "question": "showLoaderSettingsNames节点的功能是什么？",
+        "answer": "showLoaderSettingsNames是ComfyUI中的一个节点，它的功能是展示在流水线设置中的各种组件名称，尤其是检查点、VAE和LoRA的名字，以提高用户对当前工作流配置的透明度和易用性。"
+    },
+    {
+        "question": "showLoaderSettingsNames节点的'pipe'参数有什么作用？",
+        "answer": "在showLoaderSettingsNames节点中，'pipe'参数是必需的，它代表包含要提取设置的流水线，用于提供加载器设置的上下文，对节点的操作至关重要。"
+    },
+    {
+        "question": "对于showLoaderSettingsNames节点，'names'参数的类型和其作用是什么？",
+        "answer": "'names'参数在showLoaderSettingsNames节点中类型为INFO，它是可选的，可以提供加载器设置的额外上下文或默认值，影响结果的呈现或解释方式。"
+    },
+    {
+        "question": "在showLoaderSettingsNames节点中，'unique_id'参数用于什么？",
+        "answer": "'unique_id'参数在showLoaderSettingsNames节点中是可选的，用于标识工作流中的特定节点，它可以帮助节点更准确地定位和更新特定节点的设置。"
+    },
+    {
+        "question": "showLoaderSettingsNames节点如何处理'string'类型的输出？",
+        "answer": "showLoaderSettingsNames节点的'string'类型输出包括'ckpt_name'、'vae_name'和'lora_name'，它们分别提供流水线中使用的检查点、VAE组件、LoRA模型的名称，为用户提供详细的模型配置信息。"
+    },
+    {
+        "question": "在使用showLoaderSettingsNames节点时，有什么使用提示？",
+        "answer": "使用showLoaderSettingsNames节点时，应注意到它被设计为在CPU上运行，这是一个关键的使用提示，以确保节点性能和资源优化。"
+    },
+    {
+        "question": "showLoaderSettingsNames节点是如何提取并展示组件名称的？",
+        "answer": "showLoaderSettingsNames节点通过分析输入的'pipe'参数中包含的流水线设置，提取与检查点、VAE和LoRA相关的名称，并通过'string'类型的输出将其展示给用户，这有助于用户理解正在使用的模型配置。"
+    }
+]

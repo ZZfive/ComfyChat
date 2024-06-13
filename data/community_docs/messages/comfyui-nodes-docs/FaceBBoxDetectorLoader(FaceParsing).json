@@ -1,0 +1,30 @@
+[
+    {
+        "question": "FaceBBoxDetectorLoader是什么类型的节点，它属于哪个类别？",
+        "answer": "FaceBBoxDetectorLoader是ComfyUI中属于face_parsing类别的一个节点，它被设计用于加载和管理面部检测模型，使输入数据可用于识别和定位图像中的面部。"
+    },
+    {
+        "question": "FaceBBoxDetectorLoader节点的输入参数model_name的作用是什么？",
+        "answer": "model_name参数用于指定FaceBBoxDetectorLoader节点使用的面部检测模型，它决定了模型的架构，影响检测的准确性和性能，直接影响节点处理和分析面部数据的能力。"
+    },
+    {
+        "question": "FaceBBoxDetectorLoader节点支持的模型有哪些，其输入和输出数据类型分别是什么？",
+        "answer": "FaceBBoxDetectorLoader节点支持多种面部检测模型，具体由model_name参数指定，如'bbox/face_yolov5s.pt'或'bbox/face_yolov5m.pt'等。输入数据类型为model_name，可以是字符串或字符串列表；输出数据类型为BBOX_DETECTOR，具体格式为Tuple[YOLO]类型的配置好的面部检测模型。"
+    },
+    {
+        "question": "哪些任务可以受益于FaceBBoxDetectorLoader节点输出的面部检测模型？",
+        "answer": "FaceBBoxDetectorLoader节点输出的面部检测模型可以用于后续的面部分析任务，如面部识别、表情分析、年龄和性别估计等任务，这些下游任务可以高效地在检测到的面部图像上进行分析。"
+    },
+    {
+        "question": "FaceBBoxDetectorLoader节点的初始化过程是否包含模型的加载？",
+        "answer": "在FaceBBoxDetectorLoader节点的初始化过程中，并不直接包含模型的加载。模型的加载是由main方法根据model_name参数，从指定路径加载面部检测模型。"
+    },
+    {
+        "question": "哪些类型的硬件支持FaceBBoxDetectorLoader节点的运行？",
+        "answer": "FaceBBoxDetectorLoader节点的运行可以在CPU硬件上进行，没有特别指定GPU或其他类型的硬件需求。"
+    },
+    {
+        "question": "如何使用FaceBBoxDetectorLoader节点进行面部检测模型的初始化和使用？",
+        "answer": "使用FaceBBoxDetectorLoader节点进行面部检测模型的初始化和使用涉及通过指定model_name参数来加载选定的面部检测模型，之后节点将返回配置好的模型，可以用于后续的面部图像的检测任务。"
+    }
+]

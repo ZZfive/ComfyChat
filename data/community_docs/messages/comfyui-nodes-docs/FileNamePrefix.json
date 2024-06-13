@@ -1,0 +1,30 @@
+[
+    {
+        "question": "FileNamePrefix节点在ComfyUI中是做什么的？",
+        "answer": "FileNamePrefix节点在ComfyUI中的Mikey/Meta类别下，用于生成标准化的文件名前缀，包括当前日期、自定义目录名称和文本输入，以确保文件名的唯一性和便于管理。"
+    },
+    {
+        "question": "在FileNamePrefix节点中，date参数的作用是什么？",
+        "answer": "date参数在FileNamePrefix节点中决定是否在生成的文件名前缀中包含当前日期，这对于保持时间顺序和文件唯一性至关重要。"
+    },
+    {
+        "question": "如何在FileNamePrefix中包含用户定义的目录名称？",
+        "answer": "使用custom_directory参数可以在FileNamePrefix中包含用户定义的目录名称，这提供了根据特定项目需求组织文件的灵活性。"
+    },
+    {
+        "question": "FileNamePrefix节点支持哪几种输入数据类型？",
+        "answer": "FileNamePrefix节点支持的输入数据类型包括字符串类型（STRING）用于'text', 'date', 'date_directory', 'custom_directory', 和 'custom_text'，以及PROMPT和EXTRA_PNGINFO类型，分别用于'prompt'和'extra_pnginfo'参数以处理额外的元数据和图像信息。"
+    },
+    {
+        "question": "prompt参数在FileNamePrefix中的作用是什么？",
+        "answer": "prompt参数允许在FileNamePrefix中通过附加元数据对文件名前缀进行高级定制，对于将动态元素纳入文件命名约定非常重要。"
+    },
+    {
+        "question": "FileNamePrefix节点如何处理extra_pnginfo参数？",
+        "answer": "FileNamePrefix节点利用extra_pnginfo参数为其生成的文件名前缀提供补充信息，通常与'prompt'参数结合使用，以包含更详尽的上下文数据。"
+    },
+    {
+        "question": "FileNamePrefix节点的主要输出是什么？",
+        "answer": "FileNamePrefix节点的主要输出是filename_prefix，这是基于节点输入参数生成的标准化文件名前缀，用于确保文件命名的连贯性与系统标准一致。"
+    }
+]

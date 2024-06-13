@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_CLIPSeg_Batch节点的CLIPSeg_images方法主要功能是什么？",
+        "answer": "WAS_CLIPSeg_Batch节点的CLIPSeg_images方法主要用于根据文本提示执行图像分割。这种方法利用CLIPSeg模型生成与图像中描述的实体对应的掩码，处理多个图像和文本，为复杂的分割任务提供解决方案。"
+    },
+    {
+        "question": "WAS_CLIPSeg_Batch节点处理图像分割时，其处理流程涉及哪些关键步骤?",
+        "answer": "WAS_CLIPSeg_Batch节点处理图像分割的关键步骤包括接收图像和文本输入参数，使用CLIPSeg模型进行图像理解并根据文本描述生成分割掩码，最终输出分割后的图像批次和对应的掩码数据。"
+    },
+    {
+        "question": "在使用WAS_CLIPSeg_Batch节点时，哪些输入参数是必需的？",
+        "answer": "在使用WAS_CLIPSeg_Batch节点进行图像分割时，必需的输入参数包括至少一个主图像（image_a）和相应的文本说明（text_a）用于引导模型。"
+    },
+    {
+        "question": "WAS_CLIPSeg_Batch节点能够处理的图像有哪些类型？",
+        "answer": "WAS_CLIPSeg_Batch节点处理的图像类型可以是PIL.Image.Image或torch.Tensor，具体取决于输入参数的格式，如image_a、image_b和可选的image_c等。"
+    },
+    {
+        "question": "如何使用文本 A 和文本 B 参数影响WAS_CLIPSeg_Batch节点的图像分割结果？",
+        "answer": "文本 A 和文本 B 参数提供文本描述，作为WAS_CLIPSeg_Batch节点的CLIPSeg模型的指导，帮助模型识别和分割图像中的特定区域。这些参数通过文本提示细化分割过程，使其更容易专注于特定对象或特征。"
+    },
+    {
+        "question": "哪些参数是WAS_CLIPSeg_Batch节点可选的，它们如何影响输出？",
+        "answer": "WAS_CLIPSeg_Batch节点的可选参数包括image_c和text_c等，这些参数允许在分割过程中加入更多图像和文本信息，从而增强模型的视觉和文本理解，改善分割结果的准确性。"
+    },
+    {
+        "question": "WAS_CLIPSeg_Batch节点输出的MASKS_BATCH和MASK_IMAGES_BATCH具体表示什么？",
+        "answer": "WAS_CLIPSeg_Batch节点输出的MASKS_BATCH是与输入图像中感兴趣区域对应的生成掩码，而MASK_IMAGES_BATCH则包括所有已经被分割模型处理并应用了掩码的图像，主要用以突出显示分割任务的结果。"
+    }
+]

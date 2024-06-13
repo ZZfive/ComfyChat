@@ -1,0 +1,30 @@
+[
+    {
+        "question": "FaceBBoxDetect节点是什么?",
+        "answer": "FaceBBoxDetect是ComfyUI中的一个自定义节点，它隶属于face_parsing类别，用于识别和定位图像中的面部，通过预训练的边界框检测器来精炼并提供面部边界框列表。"
+    },
+    {
+        "question": "FaceBBoxDetect节点处理图像时的输出是什么?",
+        "answer": "FaceBBoxDetect节点的输出是bbox_list，即检测到的面部周围的精炼边界框列表，类型为List[Tuple[int, int, int, int]]，对进一步的面部分析或处理提供数据支持。"
+    },
+    {
+        "question": "哪些是FaceBBoxDetect节点的必填输入参数?",
+        "answer": "FaceBBoxDetect节点的必填输入参数包括bbox_detector（用于检测面部边界框的预训练模型）、image（输入图像数据）、threshold（确定面部检测置信度的值）和dilation（调整边界框大小的参数）。"
+    },
+    {
+        "question": "如何调整FaceBBoxDetect节点检测到的面部边界框的大小?",
+        "answer": "通过调整dilation参数可以微调FaceBBoxDetect节点检测到的边界框的大小，这对于边界框坐标的准确性至关重要，确保它们更好地适应面部的实际大小。"
+    },
+    {
+        "question": "bbox_detector参数在FaceBBoxDetect节点中起什么作用?",
+        "answer": "bbox_detector参数是FaceBBoxDetect节点中的一个关键成分，指定了一个预训练的模型，用于识别输入图像中的面部边界框，直接影响面部检测的准度和可靠性。"
+    },
+    {
+        "question": "在FaceBBoxDetect节点中，如何设定面部检测的精确度?",
+        "answer": "通过设置threshold参数，可以调整FaceBBoxDetect节点对面部检测的精确度，该值范围为0到1，用于确定检测到的面部是否被包含在结果中，从而影响最终的检测精度。"
+    },
+    {
+        "question": "FaceBBoxDetect节点对输入图像的具体处理方式是什么?",
+        "answer": "FaceBBoxDetect节点通过对输入图像进行处理，识别出的面部边界框将进行调整以确保它们完全位于图像边界内，提供一个经过精炼的面部边界框列表作为输出结果。"
+    }
+]

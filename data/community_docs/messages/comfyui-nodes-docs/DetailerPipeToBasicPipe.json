@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DetailerPipeToBasicPipe节点的作用是什么？",
+        "answer": "DetailerPipeToBasicPipe节点将详细的管道结构转换为更基本的形式，通过提取并重新格式化其基本组成部分，以实现复杂数据处理工作流程的简化。"
+    },
+    {
+        "question": "DetailerPipeToBasicPipe节点如何处理输入的详细管道？",
+        "answer": "DetailerPipeToBasicPipe节点通过分解输入的detailer_pipe参数，提取核心组件并将其转换为更基本的结构，形成base_basic_pipe和refiner_basic_pipe输出。"
+    },
+    {
+        "question": "DetailerPipeToBasicPipe的输入类型是什么？",
+        "answer": "DetailerPipeToBasicPipe的唯一输入类型是'detailer_pipe'，类型为DETIALER_PIPE，这是一个必须的参数，提供需要转换的详细管道结构。"
+    },
+    {
+        "question": "base_basic_pipe和refiner_basic_pipe的区别是什么？",
+        "answer": "base_basic_pipe是原始详细管道的简化版，聚焦于核心操作；而refiner_basic_pipe从详细结构派生，旨在精炼处理，适用于需要更专注和优化的场景。"
+    },
+    {
+        "question": "DetailerPipeToBasicPipe的输出类型有哪些？",
+        "answer": "DetailerPipeToBasicPipe输出两组BASIC_PIPE类型的数据：base_basic_pipe和refiner_basic_pipe，每一组输出都是torch.nn.Module和torch.Tensor类型的元素组合。"
+    },
+    {
+        "question": "哪些任务会使用到DetailerPipeToBasicPipe节点？",
+        "answer": "DetailerPipeToBasicPipe节点适用于需要简化复杂管道结构和数据处理流程的应用场景，尤其是那些涉及到图像和视频生成工作流程的下游任务。"
+    },
+    {
+        "question": "在ComfyUI中，如何识别DetailerPipeToBasicPipe节点的类型？",
+        "answer": "DetailerPipeToBasicPipe节点属于ImpactPack/Pipe类别，其输入和返回类型分别定义为DETIALER_PIPE和BASIC_PIPE，可以通过ComfyUI的界面或脚本调用来识别和使用它。"
+    }
+]

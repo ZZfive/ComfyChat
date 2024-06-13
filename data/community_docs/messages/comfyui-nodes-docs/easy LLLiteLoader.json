@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LLLiteLoader节点的作用是什么？",
+        "answer": "LLLiteLoader节点的目的是方便轻量级模型的集成，通过添加额外的模型功能来增强ComfyUI系统整体的处理能力。"
+    },
+    {
+        "question": "哪些模型参数是LLLiteLoader节点运行所必需的？",
+        "answer": "LLLiteLoader节点运行必需的模型参数包括模型本身（model）、模型名称（model_name）和条件图像（cond_image）。这些参数对节点的功能和输出有着直接的影响。"
+    },
+    {
+        "question": "模型参数在LLLiteLoader中扮演何种角色？",
+        "answer": "模型参数在LLLiteLoader中定义了节点将使用和修改的基础架构，直接影响节点的输出和行为，是运行节点的基石。"
+    },
+    {
+        "question": "LLLiteLoader节点能够处理哪些类型的输出？",
+        "answer": "LLLiteLoader节点的输出类型包括经过处理和调整的模型（MODEL），该模型准备好了后续任务的使用，其格式为torch.nn.Module。"
+    },
+    {
+        "question": "在LLLiteLoader中，model_name参数的作用是什么？",
+        "answer": "model_name参数在LLLiteLoader中用于从列表中选择适当的模型，其特性及预期应用将引导节点的处理流程和结果。"
+    },
+    {
+        "question": "LLLiteLoader的可选参数有哪些？它们各有什么意义？",
+        "answer": "LLLiteLoader的可选参数包括：strength、steps、start_percent和end_percent。其中strength调整模型对条件的适应强度，steps定义迭代次数，影响处理的复杂性和准确性；start_percent和end_percent分别设置了模型适应过程的始末端点，影响节点操作的状态和最终结果。"
+    },
+    {
+        "question": "如何使用LLLiteLoader节点？",
+        "answer": "使用LLLiteLoader节点时应注意，其设计和优化适用于CPU，考虑到平台限制和性能优化，应该依据这一硬件基础进行操作。"
+    }
+]

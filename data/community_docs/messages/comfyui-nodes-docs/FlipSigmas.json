@@ -1,0 +1,30 @@
+[
+    {
+        "question": "什么是FlipSigmas节点？",
+        "answer": "FlipSigmas是ComfyUI中一个自定义节点，它在采样过程中通过反转sigma值的顺序来操作采样策略，确保采样的特定序列得以遵循。"
+    },
+    {
+        "question": "FlipSigmas节点从哪些输入类型获取数据？",
+        "answer": "FlipSigmas节点的必需输入为'sigmas'，它是一个张量，包含在采样过程中使用的sigma值，这些值定义了采样期间噪声减少的顺序和尺度。"
+    },
+    {
+        "question": "FlipSigmas节点的输入张量'sigmas'在ComfyUI中的数据类型是什么？",
+        "answer": "在ComfyUI中，FlipSigmas节点的'sigmas'输入张量的数据类型为torch.Tensor。"
+    },
+    {
+        "question": "FlipSigmas节点输出什么类型的数据？",
+        "answer": "FlipSigmas节点输出一个'翻转后的sigma值'张量，它同样遵循torch.Tensor的数据类型，在ComfyUI中的表示为torch.Tensor。"
+    },
+    {
+        "question": "使用FlipSigmas节点可能带来什么样的结果变化？",
+        "answer": "使用FlipSigmas节点后，由于改变了sigma值的顺序，后续的采样步骤序列会受其影响，可能会导致生成样本的质量和特性有所不同。"
+    },
+    {
+        "question": "无论有无输入sigma值，FlipSigmas节点都会执行什么操作？",
+        "answer": "即使没有输入sigma值，即输入的sigmas长度为0，FlipSigmas节点也总是会返回一个空的sigmas特性，确保流程的连续性。"
+    },
+    {
+        "question": "当从输出中获取的sigma值首项为0时，FlipSigmas节点如何处理？",
+        "answer": "当输出的sigma值首项为0时，FlipSigmas节点会将其替换为0.0001，避免在采样过程中可能出现的不稳定性。"
+    }
+]

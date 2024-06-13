@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ConcatConditioningsWithMultiplier节点的作用是什么？",
+        "answer": "ConcatConditioningsWithMultiplier节点的作用是增强条件输入，通过将条件输入乘以指定的因子，允许在复杂工作流中微调和调整条件强度。"
+    },
+    {
+        "question": "ConcatConditioningsWithMultiplier节点接受哪些类型的主要输入？",
+        "answer": "ConcatConditioningsWithMultiplier节点接受的主要输入是conditioning1，其数据类型是CONDITIONING，Python类型为torch.Tensor。"
+    },
+    {
+        "question": "在ConcatConditioningsWithMultiplier节点中，multiplier1参数起到怎样的作用？",
+        "answer": "multiplier1参数是一个可选输入，用于调整条件输入conditioning1的强度，允许输出的微调。其数据类型是FLOAT，Python类型为float。"
+    },
+    {
+        "question": "ConcatConditioningsWithMultiplier节点的输出数据类型是什么？",
+        "answer": "ConcatConditioningsWithMultiplier节点的输出数据代表了增强后的条件数据，数据类型为CONDITIONING，在Python环境下表现为List[Tuple[torch.Tensor, Any]]，其中包含增强后的条件和附加信息。"
+    },
+    {
+        "question": "ConcatConditioningsWithMultiplier节点的工作需要哪种硬件环境？",
+        "answer": "ConcatConditioningsWithMultiplier节点在使用时推荐的硬件环境是GPU，以支持高效的数据处理和运算。"
+    },
+    {
+        "question": "ConcatConditioningsWithMultiplier节点的工作流程涉及到哪个自定义节点？",
+        "answer": "ConcatConditioningsWithMultiplier节点的工作流程中涉及到了ConditioningMultiplier_PoP自定义节点，用于乘以conditioning的强度。如果未安装此节点，会尝试自动安装。"
+    },
+    {
+        "question": "使用ConcatConditioningsWithMultiplier节点时，如何处理传入多个conditioning输入？",
+        "answer": "当传入多个conditioning输入时，ConcatConditioningsWithMultiplier节点会将它们与conditioning1连接，但只会应用第一个conditioning。如果输入中有多个条件，只使用第一个，这是一个Warning提示。"
+    }
+]

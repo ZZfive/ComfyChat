@@ -1,0 +1,34 @@
+[
+    {
+        "question": "FaceToMask节点属于哪个自定义类别？",
+        "answer": "FaceToMask节点属于'♾️Mixlab/Mask'自定义类别，专注于图像处理和面部特征检测。"
+    },
+    {
+        "question": "FaceToMask节点的输入是什么类型？",
+        "answer": "FaceToMask节点的唯一输入类型是'IMAGE'，要求输入PIL.Image类型的图像用于面部特征提取。"
+    },
+    {
+        "question": "在ComfyUI中，FaceToMask节点如何输出掩码数据？",
+        "answer": "FaceToMask节点输出的数据类型为'MASK'，表示使用绿色通道数据突出显示检测到的面部区域，存储为torch.Tensor类型的张量。"
+    },
+    {
+        "question": "FaceToMask节点的主要功能是什么？",
+        "answer": "FaceToMask节点的主要功能是使用图像处理技术识别输入图像中的面部，并生成一个突出显示这些面部的掩码，重点关注绿色通道。"
+    },
+    {
+        "question": "使用FaceToMask节点时有哪些基础设施类型推荐？",
+        "answer": "使用FaceToMask节点时，推荐在CPU架构上执行，以最佳地处理图像和生成面部掩码。"
+    },
+    {
+        "question": "哪些节点可以用于从图像中识别面部特征并创建掩码？",
+        "answer": "ComfyUI中的'FaceToMask'节点可以用于识别图像中的面部特征，并创建一个突出显示这些特征的掩码，尤其是在专注于绿色通道时更有效果。"
+    },
+    {
+        "question": "在什么情形下会使用FaceToMask节点？",
+        "answer": "FaceToMask节点通常在需要从复杂图像背景中隔离和高亮面部特征，或者在图像编辑、脸部识别任务中用于后续处理时被使用，例如在化妆、换脸或特效添加前的图像预处理步骤。"
+    },
+    {
+        "question": "FaceToMask节点内部如何生成面部掩码？",
+        "answer": "FaceToMask节点内部先将输入图像转换为PIL.Image格式，然后通过'tensor2pil'和'detect_faces'函数检测面部，再使用'pil2tensor'转换为张量，最后选取绿色通道的数据作为输入图像中面部区域的掩码。"
+    }
+]

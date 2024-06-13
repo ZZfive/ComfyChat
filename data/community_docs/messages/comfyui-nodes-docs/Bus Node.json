@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Bus节点在ComfyUI系统中的作用是什么？",
+        "answer": "WAS_Bus节点作为WAS Suite中的一个核心组件，它负责管理和协调模型、剪辑、vae、正向和负向条件等元素在系统不同部分之间的高效传递，促进整个工作流程的无缝衔接。"
+    },
+    {
+        "question": "‘bus’参数在WAS_Bus节点中的功能是什么?",
+        "answer": "'bus'参数在WAS_Bus节点中充当一个容器，用于捆绑和传递模型、剪辑、Vae、正向和负向条件等组件，旨在提高系统内部数据传输的效率。"
+    },
+    {
+        "question": "哪些类型的数据可以被WAS_Bus节点的'bus'参数持有？",
+        "answer": "WAS_Bus节点的'bus'参数可以持有模型（MODEL）、剪辑（CLIP）、vae（VAE）、正向条件（CONDITIONING）和负向条件（CONDITIONING）等类型的数据。"
+    },
+    {
+        "question": "在没有提供模型的情况下运行WAS_Bus节点会发生什么？",
+        "answer": "如果没有在WAS_Bus节点中提供模型（MODEL），并且其'bus'参数中也没有包含模型，那么节点将抛出ValueError异常，指示需要提供模型或包含模型的'bus'。"
+    },
+    {
+        "question": "WAS_Bus节点的主要返回值是什么？",
+        "answer": "WAS_Bus节点的主要返回值是一个组合了经过处理的组件（模型、剪辑、vae和条件元素）的'bus'，以及分别的model、clip、vae、positive和negative输出，用于后续处理或分析。"
+    },
+    {
+        "question": "哪些是WAS_Bus节点在运行时必需的输入？",
+        "answer": "WAS_Bus节点运行时必需的输入包括模型（model）、剪辑（clip）和自编码器（vae）。如果没有这些输入中的任何一个，节点将无法正常运行，并会抛出ValueError异常。"
+    },
+    {
+        "question": "WAS_Bus节点中的'clip'参数对于哪些应用场景至关重要？",
+        "answer": "WAS_Bus节点中的'clip'参数对于涉及多媒体数据（如视频或音频片段）处理和分析的应用程序至关重要，因为它确保了这类多媒体数据能够被适当地管理和操作。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CropFace节点在ComfyUI中的功能是什么?",
+        "answer": "CropFace节点的功能是从输入图像中提取面部区域，通过检测面部并按预定义模板裁剪和对齐，从而为后续的处理（如恢复或识别）准备面部图像。"
+    },
+    {
+        "question": "CropFace节点支持哪些检测模型进行面部识别?",
+        "answer": "CropFace节点支持的检测模型包括 retinaface_resnet50、retinaface_mobile0.25、YOLOv5l 和 YOLOv5n，这些模型用于在输入图像中识别面部区域。"
+    },
+    {
+        "question": "CropFace节点对输入图像的要求是什么?",
+        "answer": "CropFace节点要求输入图像（dtype: IMAGE, numpy.ndarray）作为面部检测和裁剪的来源，没有有效的输入图像，节点无法执行其功能。"
+    },
+    {
+        "question": "CropFace节点的输出类型是什么?",
+        "answer": "CropFace节点的输出类型为 IMAGE，输出是裁剪和对齐的面部图像，这些图像已准备好进行进一步处理。"
+    },
+    {
+        "question": "哪些节点适合用于处理面部区域进行后续恢复或识别?",
+        "answer": "CropFace节点适合用于从输入图像中提取和处理面部区域，以进行后续面部图像的恢复或识别，利用了检测模型确保面部有效裁剪和对齐。"
+    },
+    {
+        "question": "CropFace节点的运行依赖什么类型的基础设施?",
+        "answer": "CropFace节点的运行依赖于CPU作为基础设施类型，用于处理和提取面部图像。"
+    },
+    {
+        "question": "如何影响CropFace节点输出的面部图像质量?",
+        "answer": "CropFace节点输出的面部图像质量受facedetection参数影响，该参数指定用于面部识别的检测模型，模型的准确性和效率直接影响裁剪面部图像的质量。"
+    }
+]

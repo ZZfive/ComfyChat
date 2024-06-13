@@ -1,0 +1,42 @@
+[
+    {
+        "question": "CR_LoadScheduledModels节点的作用是什么？",
+        "answer": "CR_LoadScheduledModels节点用于根据预定义的时间表管理模型的加载，允许在特定的帧动态加载不同的模型或选择默认模型，以增强模型使用的灵活性和适应性。"
+    },
+    {
+        "question": "CR_LoadScheduledModels节点的模式参数(mode)有何作用？",
+        "answer": "模式参数(mode)在CR_LoadScheduledModels节点中决定是加载默认模型还是依据时间表选择模型，是节点操作的核心关键，直接影响模型的加载行为。"
+    },
+    {
+        "question": "当前帧(current_frame)参数在CR_LoadScheduledModels节点的功能中为什么重要？",
+        "answer": "当前帧(current_frame)参数在CR_LoadScheduledModels节点中用于指示动画或序列中的当前位置，对于根据时间表确定何时加载何种模型至关重要。"
+    },
+    {
+        "question": "CR_LoadScheduledModels节点的输出类型有哪些？",
+        "answer": "CR_LoadScheduledModels节点的输出类型包括MODEL、CLIP、VAE和show_help。分别提供加载的模型、上下文图像处理模型、变分自编码器组件以及文档的帮助链接。"
+    },
+    {
+        "question": "哪些节点参数会影响CR_LoadScheduledModels根据时间表动态加载模型？",
+        "answer": "影响CR_LoadScheduledModels节点动态加载模型的时间表相关参数包括：时间表别名(schedule_alias)、时间表格式(schedule_format)和时间表(schedule)，这些参数决定了模型加载的规则和具体时间点。"
+    },
+    {
+        "question": "CR_LoadScheduledModels节点中的默认模型(default_model)有什么作用？",
+        "answer": "在CR_LoadScheduledModels节点中，当特定帧未安排加载特定模型时，将使用默认模型(default_model)作为后备模型进行加载，确保模型加载的连续性。"
+    },
+    {
+        "question": "如何使用CR_LoadScheduledModels节点确定在特定帧加载的模型？",
+        "answer": "通过设置当前帧(current_frame)和时间表(schedule)，CR_LoadScheduledModels节点可以根据预定义的时间表自动选择并加载符合当前帧需求的模型。"
+    },
+    {
+        "question": "CR_LoadScheduledModels节点的输出'VAE'代表什么？",
+        "answer": "CR_LoadScheduledModels节点的输出'VAE'代表变分自编码器，是生成新数据点过程中的关键组成部分，对模型生成能力至关重要。"
+    },
+    {
+        "question": "CR_LoadScheduledModels的'schedule_alias'参数如何影响模型加载？",
+        "answer": "在CR_LoadScheduledModels节点中，'schedule_alias'参数为节点内特定时间表提供标识符，影响时间表的选择和应用，进而决定在不同帧下加载哪个模型。"
+    },
+    {
+        "question": "CR_LoadScheduledModels节点中'model_list'参数为什么会和'schedule_alias'参数关联紧密？",
+        "answer": "CR_LoadScheduledModels节点中'model_list'参数包含按各自别名指定的多个模型，与'schedule_alias'参数关联，依据时间表别名匹配到具体模型，实现基于时间表的模型选择和加载。"
+    }
+]

@@ -1,0 +1,31 @@
+[
+    {
+        "question": "什么是ADE_AdjustWeightIndivAttnAdd节点?",
+        "answer": "ADE_AdjustWeightIndivAttnAdd节点是ComfyUI的一个自定义节点，用于调整神经网络模型中各个注意力机制的权重，允许微调查询、键、值向量以及输出权重和偏差的参数。"
+    },
+    {
+        "question": "ade_AdjustWeightIndivAttnAdd节点可以调整哪些类型的权重?",
+        "answer": "ade_AdjustWeightIndivAttnAdd节点可以调整位置编码、一般注意力、查询、键、值权重以及注意力机制的输出权重和偏差。"
+    },
+    {
+        "question": "attn_k_ADD参数在ade_AdjustWeightIndivAttnAdd节点中起什么作用?",
+        "answer": "attn_k_ADD参数负责调整注意力机制的键权重，修改它能够改变模型与输入数据相关部分对齐的能力，这对于依赖准确上下文对齐的任务至关重要。"
+    },
+    {
+        "question": "如何在ComfyUI中使用ade_AdjustWeightIndivAttnAdd节点进行权重调整?",
+        "answer": "在ComfyUI中，ade_AdjustWeightIndivAttnAdd节点需要输入多个FLOAT类型的参数，如pe_ADD和attn_ADD等，来调整模型内特定权重，此外，还可以选择性地输入prev_weight_adjust参数，用以继续一系列调整或应用一组预定义的调整。"
+    },
+    {
+        "question": "ade_AdjustWeightIndivAttnAdd节点的输出是什么?",
+        "answer": "ade_AdjustWeightIndivAttnAdd节点的输出是一个WEIGHT_ADJUST类型的数据，包含了将各个注意力调整应用于模型的结果，提供了调整后权重的结构化表示。"
+    },
+    {
+        "question": "哪些参数用于决定ade_AdjustWeightIndivAttnAdd节点中的模型权重调整范围?",
+        "question_type": "aml",
+        "answer": "ade_AdjustWeightIndivAttnAdd节点中的pe_ADD、attn_ADD、attn_q_ADD等参数的范围决定模型权重调整范围，这些FLOAT参数的可调整范围是-2.0到2.0，步长1e-06。"
+    },
+    {
+        "question": "ade_AdjustWeightIndivAttnAdd节点中可选参数prev_weight_adjust有何作用?",
+        "answer": "prev_weight_adjust是一个可选参数，用于应用先前的权重调整组到模型中，这允许用户继续一系列的权重调整或应用一组预定义的调整集。"
+    }
+]

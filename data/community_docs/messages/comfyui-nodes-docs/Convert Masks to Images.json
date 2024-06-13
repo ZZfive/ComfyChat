@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Convert Masks to Images节点的主要功能是什么？",
+        "answer": "Convert Masks to Images节点，即WAS_Mask_To_Image，主要功能是将掩码数据转换为图像格式。它能智能处理各种尺寸的掩码输入，确保与不同类型的掩码数据兼容，实现从掩码到视觉图像的无缝转换。"
+    },
+    {
+        "question": "WAS_Mask_To_Image节点的输入数据类型是什么？",
+        "answer": "WAS_Mask_To_Image节点的关键输入类型是'masks'，其数据类型为MASK，可以是torch.Tensor或List[torch.Tensor]，定义了需要转换为图像的掩码数据。"
+    },
+    {
+        "question": "WAS_Mask_To_Image节点输出的图像数据类型是什么？",
+        "answer": "WAS_Mask_To_Image节点输出的图像数据类型是IMAGES，表示转换后的图像数据，其数据类型为IMAGE，具体格式为torch.Tensor。"
+    },
+    {
+        "question": "哪种掩码维度是WAS_Mask_To_Image节点可以处理的？",
+        "answer": "WAS_Mask_To_Image节点可以处理N维、3维和2维的掩码数据，即形状为[N, C, H, W]、[H, W, C]和[H, W]的掩码。"
+    },
+    {
+        "question": "如何在ComfyUI中使用WAS_Mask_To_Image节点转换掩码为图像？",
+        "answer": "在ComfyUI中使用WAS_Mask_To_Image节点，需要将掩码数据作为'masks'参数输入，节点将智能处理输入的掩码，并返回不同类型为IMAGE的图像数据，即'IMAGES'作为转换结果。"
+    },
+    {
+        "question": "在WAS_Mask_To_Image节点执行中，CPU起了什么作用？",
+        "answer": "在WAS_Mask_To_Image节点的执行过程中，CPU是其运行的基础基础设施类型，即Infra type。CPU负责处理掩码到图像的转换逻辑，包括掩码数据的接收、转换算法的执行以及最终图像数据的生成。"
+    },
+    {
+        "question": "当输入掩码的维度不匹配时，WAS_Mask_To_Image节点会如何反应？",
+        "answer": "当WAS_Mask_To_Image节点接收到不匹配预期维度的掩码输入时，它会触发错误处理机制，具体通过cstr('Invalid input shape. Expected [N, C, H, W] or [H, W].').error.print()语句，显示错误信息，并原样返回输入的掩码数据。"
+    }
+]

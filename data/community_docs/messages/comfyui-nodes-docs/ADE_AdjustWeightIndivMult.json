@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WeightAdjustIndivMultNode是什么?",
+        "answer": "WeightAdjustIndivMultNode是ComfyUI Animate Diff 🎭🅐🅓/ad settings/weight adjust类别下的一个自定义节点，用于通过乘法单独修改模型的权重，无需改变模型的底层结构。"
+    },
+    {
+        "question": "使用pe_MULT参数可以实现什么功能？",
+        "answer": "pe_MULT参数用于调整ComfyUI模型中与位置编码相关的权重，它能微调模型对输入元素顺序的敏感度，从而影响在依赖序列顺序任务上的表现。"
+    },
+    {
+        "question": "attn_MULT参数如何影响模型的注意力机制？",
+        "answer": "attn_MULT参数作为注意力机制权重的乘数，通过调整可以控制注意力机制对ComfyUI模型输出的影响，这对于需要理解上下文和元素关系的任务至关重要。"
+    },
+    {
+        "question": "如何应用other_MULT参数于ComfyUI模型中？",
+        "answer": "other_MULT参数被用于ComfyUI模型中不受pe_MULT或attn_MULT直接影响的其他权重的调整，为特定实验或用例提供灵活的参数微调机制。"
+    },
+    {
+        "question": "通过设置print_adjustment=True，节点能提供什么信息？",
+        "answer": "当将print_adjustment参数设置为True时，WeightAdjustIndivMultNode可以记录并输出权重调整的详细信息，这对于跟踪模型权重更改很有帮助。"
+    },
+    {
+        "question": "prev_weight_adjust参数的作用是什么？",
+        "answer": "prev_weight_adjust参数允许加载先前权重调整，以便在现有基础上构建或修改，特别适用于迭代调整中保留和改进之前的权重调整步骤。"
+    },
+    {
+        "question": "WeightAdjustIndivMultNode输出的类型以及用途是什么？",
+        "answer": "WeightAdjustIndivMultNode输出类型是AdjustGroup对象，封装应用于ComfyUI模型的结果权重调整，可用于进一步完善模型或应用于另一个模型实例。"
+    }
+]

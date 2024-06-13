@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CreateGradientMask是什么类型的节点？",
+        "answer": "CreateGradientMask是一个生成渐变蒙版的节点，属于KJNodes/masking/generate类别，用于图像处理任务中创建动态遮罩效果。"
+    },
+    {
+        "question": "CreateGradientMask节点的'invert'参数的作用是什么？",
+        "answer": "'invert'参数决定是否反转渐变蒙版，便于创建互补的蒙版或在不同区域应用不同的效果。"
+    },
+    {
+        "question": "哪些参数定义了CreateGradientMask输出的蒙版的尺寸？",
+        "answer": "'width'和'height'参数定义了蒙版的尺寸，分别是蒙版的宽度和高度，以像素为单位。"
+    },
+    {
+        "question": "CreateGradientMask的输出数据类型是什么？",
+        "answer": "CreateGradientMask的输出类型是TORCH.TENSOR，表示渐变蒙版的张量，用于后续图像操作。"
+    },
+    {
+        "question": "对于动态遮罩效果，CreateGradientMask中哪个参数是至关重要的？",
+        "answer": "'frames'参数是至关重要的，因为它指定了要生成蒙版的帧数，这直接影响输出批次大小，对于创建动画或时间变化效果至关重要。"
+    },
+    {
+        "question": "CreateGradientMask节点的工作原理是什么？",
+        "answer": "CreateGradientMask节点通过计算图像宽度上的线性渐变并根据帧序列中的当前帧调整渐变，从而生成渐变蒙版；它可以在时间和空间上产生变化，适用于多种动态遮罩效果。"
+    },
+    {
+        "question": "如何在ComfyUI中逆向使用CreateGradientMask生成的渐变蒙版？",
+        "answer": "通过设置'invert'参数为True，CreateGradientMask可以生成逆向的渐变蒙版，即反转蒙版中的黑白色阶，适用于需要互补蒙版的应用场景。"
+    }
+]

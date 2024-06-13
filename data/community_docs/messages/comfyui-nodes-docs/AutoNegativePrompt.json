@@ -1,0 +1,30 @@
+[
+    {
+        "question": "AutoNegativePrompt 节点的作用是什么？",
+        "answer": "AutoNegativePrompt 节点用于基于给定的正面提示自动生成负面提示，以增强两者之间的对比。它通过将输入文本中的正面情感替换为负面情感来创造性地修改文本，旨在提供鲜明的对比或对立点。"
+    },
+    {
+        "question": "AutoNegativePrompt 节点的工作原理是什么？",
+        "answer": "AutoNegativePrompt 节点的工作原理包括使用预定义的负面属性列表来增强负面情感的能力，不仅限于直接文本反转，还包括创造性地调整文本，以产生与正面提示对比鲜明的负面提示。"
+    },
+    {
+        "question": "哪些参数是 AutoNegativePrompt 节点需要的必填参数？",
+        "answer": "AutoNegativePrompt 节点的必填参数是 postive_prompt ，即正面提示。这是节点操作的基础，决定了生成负面提示的上下文和主题内容。用 Comfy 的数据类型表示，这是一个 STRING 类型的数据。"
+    },
+    {
+        "question": "增强负面提示的重度可以通过什么参数控制？",
+        "answer": "通过 enhancenegative 参数可以控制应用于负面提示的增强级别，它加强负面属性，使与正面提示的对比更加明显。该参数的数据类型为 INT，范围为 [0, 1]，使得可以调整最终输出的语气和严重程度。"
+    },
+    {
+        "question": "AutoNegativePrompt 节点如何引入随机变化？",
+        "answer": "AutoNegativePrompt 节点通过 insanitylevel 参数引入随机变化，这个参数在转换过程中模拟了更混乱或不可预测的负面提示，影响最终输出中包含的负面词汇的多样性和创造性。"
+    },
+    {
+        "question": "AutoNegativePrompt 节点的输出是什么类型？",
+        "answer": "AutoNegativePrompt 节点的输出是 negative_prompt ，即一个与原始正面提示形成对比的精炼负面提示，封装了转换过程的本质，并提供了创造性和细腻的负面情感表达，数据类型为 STRING。"
+    },
+    {
+        "question": "AutoNegativePrompt 节点在代码中如何调用其主函数？",
+        "answer": "AutoNegativePrompt 节点的主函数是 Comfy_OBP_AutoNegativePrompt ，在源代码中定义，通过调用此函数并传入正面提示（postive_prompt），疯狂等级（insanitylevel），增强负面程度（enhancenegative），基础负面提示（base_negative）和种子（seed）参数，生成相应的负面提示。"
+    }
+]

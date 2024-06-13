@@ -1,0 +1,30 @@
+[
+    {
+        "question": "EditBasicPipe的作用是什么？",
+        "answer": "EditBasicPipe类的'doit'方法用于修改ComfyUI的基本管道的组成部分，允许有选择性地用新值替换模型、剪辑、VAE和条件输入等元素。"
+    },
+    {
+        "question": "EditBasicPipe的输入有哪些类型？",
+        "answer": "EditBasicPipe的输入类型包括必选的'basic_pipe'参数，以及可选的'model'、'clip'、'vae'、'positive'和'negative'参数，用于根据需要更新管道的不同组件。"
+    },
+    {
+        "question": "如何使用EditBasicPipe更新管道中的模型？",
+        "answer": "要通过EditBasicPipe更新ComfyUI管道中的模型，您可以在调用'doit'方法时提供'model'参数，它将替换管道中的现有模型。"
+    },
+    {
+        "question": "EditBasicPipe是否可以处理对比学习相关的任务？",
+        "answer": "是的，EditBasicPipe可以通过提供'negative'参数来处理对比学习相关的任务，这允许模型从不应该做的事情的示例中学习。"
+    },
+    {
+        "question": "在EditBasicPipe中，'clip'参数的具体功能是什么？",
+        "answer": "'clip'参数允许在ComfyUI的管道中更新裁剪机制，这对集成各种数据处理技术和定制分析任务特别有用。"
+    },
+    {
+        "question": "EditBasicPipe的输出是什么？",
+        "answer": "EditBasicPipe的输出是一个修改后的'basic_pipe'，即输入管道的修改版本，反映了对其组件所做的任何更新，准备用于进一步使用或部署。"
+    },
+    {
+        "question": "EditBasicPipe的'positive'参数影响管道中的哪个方面？",
+        "answer": "'positive'参数影响ComfyUI管道中条件输入方面，它用于替换或指定指导模型行为的条件输入，特别是在需要强化学习或特定模型指导的任务中。"
+    }
+]

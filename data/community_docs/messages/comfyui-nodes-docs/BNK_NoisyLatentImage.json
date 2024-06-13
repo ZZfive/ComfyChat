@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BNK_NoisyLatentImage是ComfyUI的哪个分类下的自定义节点？",
+        "answer": "BNK_NoisyLatentImage是ComfyUI中latent/noise分类下的自定义节点，主要用于在潜在空间中引入噪声，以便于多样化的图像生成。"
+    },
+    {
+        "question": "BNK_NoisyLatentImage节点的'device'是如何根据'source'参数决定的？",
+        "answer": "在BNK_NoisyLatentImage节点中，如果'source'参数被设置为'CPU'，那么'device'将被指定为'cpu'；如果'source'是'GPU'，则'device'将使用当前可用的Torch设备，这通常是GPU设备。"
+    },
+    {
+        "question": "在BNK_NoisyLatentImage节点中，'seed'参数的作用是什么？",
+        "answer": "'seed'参数在BNK_NoisyLatentImage节点中用于初始化随机数生成器，确保每次对于相同的'seed'值，同一批噪声数据是一致的，这对于实验的可重复性至关重要。"
+    },
+    {
+        "question": "BNK_NoisyLatentImage节点的'width'和'height'参数如何影响输出的图像？",
+        "answer": "'width'和'height'参数设置了生成的图像的尺寸，较大的值意味着更高的分辨率和更详细的图像，同时也要求更多的GPU计算资源。"
+    },
+    {
+        "question": "BNK_NoisyLatentImage节点中的'batch_size'参数表示什么？",
+        "answer": "'batch_size'参数决定了BNK_NoisyLatentImage节点并行处理的图像数量，它直接影响内存消耗和计算时间，较大的批处理大小可以提高处理效率但要求更多的系统资源。"
+    },
+    {
+        "question": "BNK_NoisyLatentImage节点的'samples'输出有什么特点？",
+        "answer": "BNK_NoisyLatentImage节点的'samples'输出包含嘈杂的潜在变量，作为后续生成模型输入的基础，这些潜在变量能够创造多样化输出并对最终结果产生关键影响。"
+    },
+    {
+        "question": "BNK_NoisyLatentImage节点生成的噪声是如何体现在最终图像上的？",
+        "answer": "BNK_NoisyLatentImage节点通过在潜在空间引入噪声，使训练模型在输出时能够产生多样化的图像。噪声的添加确保即使在使用相同的'model'和'input'下，每个输出图像仍然保持独一无二，这直接体现在图片的细节差异上。"
+    }
+]

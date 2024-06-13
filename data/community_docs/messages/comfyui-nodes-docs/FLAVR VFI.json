@@ -1,0 +1,38 @@
+[
+    {
+        "question": "FLAVR_VFI节点属于哪个类别？",
+        "answer": "FLAVR_VFI节点属于ComfyUI-Frame-Interpolation/VFI类别，专门用于执行帧插值。"
+    },
+    {
+        "question": "使用FLAVR_VFI节点的主要目的是什么？",
+        "answer": "主要目的是对输入帧序列执行帧插值，生成中间帧，从而增强动画的平滑度和连续性，有效翻倍帧率。"
+    },
+    {
+        "question": "哪些输入是FLAVR_VFI节点所必需的？",
+        "answer": "必需的输入包括'ckpt_name'（模型权重的检查点名称）和'frames'（要进行插值的图像序列）。"
+    },
+    {
+        "question": "函数clear_cache_after_n_frames的作用是什么？",
+        "answer": "clear_cache_after_n_frames参数用于控制在处理期间多久清除一次GPU缓存，以优化性能并防止内存过载。"
+    },
+    {
+        "question": "FLAVR_VFI节点支持的帧率增加倍数是怎样的？",
+        "answer": "目前，FLAVR_VFI节点仅支持将帧率翻倍，即增加帧率的倍数为2。"
+    },
+    {
+        "question": "duplicate_first_last_frames参数的设置有什么作用？",
+        "answer": "当duplicate_first_last_frames设置为true时，将在输出序列中复制第一帧和最后一帧，以保持动画开头和结尾的一致性。"
+    },
+    {
+        "question": "FLAVR_VFI节点的推荐基础设施类型是什么？",
+        "answer": "推荐的基础设施类型是GPU，以充分利用硬件加速进行帧插值处理。"
+    },
+    {
+        "question": "可选参数optional_interpolation_states如何影响FLAVR_VFI节点的插值过程？",
+        "answer": "optional_interpolation_states参数允许用户通过指定应跳过或包含哪些帧来定制插值过程，满足特定的创意需求。"
+    },
+    {
+        "question": "节点FLAVR_VFI的主要输出是什么？",
+        "answer": "主要输出是interpolated_frames，这是一个包含原始和新生成的额外帧的序列，实现更平滑的视觉效果。"
+    }
+]

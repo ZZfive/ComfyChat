@@ -1,0 +1,30 @@
+[
+    {
+        "question": "AnimateDiffSampler节点的目的是什么？",
+        "answer": "AnimateDiffSampler是一个在ComfyUI中用于增强生成模型采样过程的节点，通过引入运动模块来改善输出中动画的流畅性和连贯性，提供更加栩栩如生的体验。"
+    },
+    {
+        "question": "AnimateDiffSampler节点的核心输入是什么？",
+        "answer": "motion_module是AnimateDiffSampler的核心输入，它提供了动态数据，使生成动画内容成为可能，影响模型如何感知和生成输出中的运动。"
+    },
+    {
+        "question": "AnimateDiffSampler节点的inject_method参数作用是什么？",
+        "answer": "inject_method参数决定了AnimateDiffSampler如何将运动模块集成到模型的扩散过程中，这对于确定运动集成的有效性以及动画结果的质量至关重要。"
+    },
+    {
+        "question": "如何定义AnimateDiffSampler中要生成的动画的长度？",
+        "answer": "通过frame_number参数定义AnimateDiffSampler中要生成的动画的长度，它直接影响节点的输出，从而影响动画的总体持续时间和范围。"
+    },
+    {
+        "question": "AnimateDiffSampler节点的输出类型是什么？",
+        "answer": "AnimateDiffSampler节点的输出类型为samples，代表生成的动画帧。输出样本是节点处理的最终结果，包含了为了创建动画内容而应用的运动和扩散过程。"
+    },
+    {
+        "question": "除了motion_module，AnimateDiffSampler节点还需要哪些输入以完成其功能？",
+        "answer": "除了motion_module，AnimateDiffSampler节点还需要inject_method和frame_number参数以完成其功能，这些参数分别控制运动模块的注入方式和动画长度定义。"
+    },
+    {
+        "question": "如何在使用AnimateDiffSampler时确保最佳性能？",
+        "answer": "要确保使用AnimateDiffSampler时的最佳性能，应该遵循'Infra type: GPU'的使用提示，这意味着需要在GPU上运行此节点，以利用硬件加速进行高效处理。"
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "question": "CR_SelectModel是什么类型的节点，它属于哪个类别？",
+        "answer": "CR_SelectModel是ComfyUI中的一个核心类节点，属于'Comfyroll/Essential/Core'类别，主要用于根据用户定义的标准选择和加载模型。"
+    },
+    {
+        "question": "CR_SelectModel如何确定要加载哪个检查点文件？",
+        "answer": "CR_SelectModel通过user-provided的'select_model'参数，这是一个整数，用以决定将使用哪个检查点文件来加载模型。"
+    },
+    {
+        "question": "用户可以提供多少个检查点文件名给CR_SelectModel节点？",
+        "answer": "用户可以提供多达五个检查点文件名（'ckpt_name1'到'ckpt_name5'）给CR_SelectModel节点，用于模型的选择和加载。"
+    },
+    {
+        "question": "CR_SelectModel的核心输出是什么？",
+        "answer": "CR_SelectModel的核心输出是'MODEL'对象，代表用户选择加载的模型，用于后续处理或分析。"
+    },
+    {
+        "question": "CR_SelectModel节点输出中的'VAE'和'CLIP'分别代表什么？",
+        "answer": "CR_SelectModel节点输出中的'VAE'代表模型架构中的变分自编码器对象，而'CLIP'是与所选模型关联的clip对象，两者都是处理生成模型或潜在空间操作的关键组成部分。"
+    },
+    {
+        "question": "CR_SelectModel节点的'ckpt_name'输出有什么用处？",
+        "answer": "CR_SelectModel节点的'ckpt_name'输出提供了用于加载模型的检查点文件的名称，这对于记录和后续的模型管理非常有用。"
+    },
+    {
+        "question": "如何获取CR_SelectModel节点的额外文档信息？",
+        "answer": "通过CR_SelectModel节点的'show_help'输出，用户可以获取一个链接到节点文档的URL，为其提供额外的指导或信息。"
+    },
+    {
+        "question": "哪些节点可以根据用户定义的标准选择和加载模型？",
+        "answer": "CR_SelectModel节点可以根据用户定义的标准选择和加载模型，是ComfyUI中处理模型选择和加载的关键节点。"
+    },
+    {
+        "question": "在ComfyUI中，哪个节点可以处理多个检查点文件的选择和加载？",
+        "answer": "CR_SelectModel节点能够处理多个（最多五个）检查点文件的选择和加载，提供了模型多样性的选择。"
+    },
+    {
+        "question": "对于ComfyUI中处理模型加载流程，哪些功能是由CR_SelectModel提供？",
+        "answer": "CR_SelectModel提供根据用户定义的选择标准加载模型的功能，同时返回'MODEL'、'CLIP'、'VAE'对象以及检查点名称和相关文档链接，支持模型选择后的后续处理。"
+    }
+]

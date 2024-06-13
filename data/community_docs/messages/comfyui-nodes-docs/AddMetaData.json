@@ -1,0 +1,30 @@
+[
+    {
+        "question": "AddMetaData节点的目的是什么？",
+        "answer": "AddMetaData节点的目的是通过附加文本信息来丰富图像数据，增强图像的实用性和上下文，适用于各种应用场景。"
+    },
+    {
+        "question": "AddMetaData节点输入参数中的label有何功能？",
+        "answer": "label参数作为元数据的描述符，为附加到图像的元数据提供文本标识符，对正在添加的元数据进行分类和描述。"
+    },
+    {
+        "question": "在ComfyUI中，AddMetaData节点如何处理文本值参数？",
+        "answer": "文本值参数定义了将包含在图像元数据中的特定文本，可以是静态的或动态的，允许灵活丰富元数据的方式。"
+    },
+    {
+        "question": "AddMetaData节点的可选prompt参数在什么情况下最为有用？",
+        "answer": "可选的prompt参数在需要将动态数据注入到元数据中时最为有用，特别当元数据需要来自工作流中其他节点或组件的信息时，它允许进行更具交互性和上下文感知的元数据创建过程。"
+    },
+    {
+        "question": "AddMetaData节点会输出什么类型的数据？",
+        "answer": "AddMetaData节点的输出数据是带有添加元数据的原始图像，Comfy dtype为IMAGE，Python dtype为PIL.Image或类似图像对象，图像已用指定的文本值丰富。"
+    },
+    {
+        "question": "什么是AddMetaData节点在附加信息到图像元数据时的处理逻辑？",
+        "answer": "AddMetaData节点在附加信息到图像元数据时，会检查额外PNG信息，如果label已经在额外PNG信息中存在，则在其原值后添加新的文本值；如果label是第一次出现，则直接将text_value作为新值添加。"
+    },
+    {
+        "question": "哪些节点可以用来增强图像的元数据？",
+        "answer": "AddMetaData节点可以用来增强图像的元数据，它通过附加文本信息增强图像的实用性和上下文，适用于ComfyUI的多种应用场景。"
+    }
+]

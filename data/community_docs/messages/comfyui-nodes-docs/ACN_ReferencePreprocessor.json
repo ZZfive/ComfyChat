@@ -1,0 +1,38 @@
+[
+    {
+        "question": "ACN_ReferencePreprocessor是什么类型的节点?",
+        "answer": "ACN_ReferencePreprocessor是一个用于ComfyUI Advanced-ControlNet的预处理节点，它使用变分自编码器（VAE）将输入图像转换为潜在空间表示。"
+    },
+    {
+        "question": "ACN_ReferencePreprocessor节点属于哪个类别?",
+        "answer": "ACN_ReferencePreprocessor节点属于'Adv-ControlNet 🛂🄰🄲🄽/Reference/preprocess'类别，它是为了准备图像以供高级控制网络处理而设计的。"
+    },
+    {
+        "question": "ACN_ReferencePreprocessor节点如何处理图像?",
+        "answer": "ACN_ReferencePreprocessor节点使用VAE处理图像，将它们编码到一个潜在表示中，这个表示可以被控制网络的下游节点进一步处理。"
+    },
+    {
+        "question": "ACN_ReferencePreprocessor需要哪些输入类型?",
+        "answer": "ACN_ReferencePreprocessor需要输入图像（IMAGE类型），VAE（变分自编码器，VAE类型），以及潜在空间大小（latent_size，LATENT类型）。"
+    },
+    {
+        "question": "ACN_ReferencePreprocessor输出什么类型的变量?",
+        "answer": "ACN_ReferencePreprocessor输出proc_IMAGE，这是一种已经被转换为潜在表示形式的图像，准备用于进一步的高级处理，数据类型为comfy.utils.ReferencePreprocWrapper。"
+    },
+    {
+        "question": "ACN_ReferencePreprocessor中，latent_size参数的作用是什么?",
+        "answer": "在ACN_ReferencePreprocessor中，latent_size参数定义了编码图像的潜在空间的尺寸，这决定了最终潜在表示的维度和结构。"
+    },
+    {
+        "question": "哪些情况下会使用到ACN_ReferencePreprocessor?",
+        "answer": "ACN_ReferencePreprocessor通常在高级图像处理和生成任务中使用，特别是在需要将图像转换为更易于处理或理解的潜在形式以便应用程序如风格转移、图像合成或高分辨率图像生成时。"
+    },
+    {
+        "question": "ACN_ReferencePreprocessor的infra type是什么?",
+        "answer": "ACN_ReferencePreprocessor的infra type为GPU，这意味着节点主要在GPU上运行以进行图像编码的计算。"
+    },
+    {
+        "question": "如何调用ACN_ReferencePreprocessor的preprocess_images方法?",
+        "answer": "调用ACN_ReferencePreprocessor的preprocess_images方法需要提供VAE实例、图像张量和潜在空间大小张量作为参数。"
+    }
+]

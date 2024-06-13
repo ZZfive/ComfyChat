@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CustomCFGNode 主要作用是什么？",
+        "answer": "CustomCFGNode 是 ComfyUI-AnimateDiff-Evolved 项目中的一个自定义节点，它用于创建动画和采样设置的控制流图（CFG），使用户能够自定义动画流程，而无需深入了解底层模型操作的细节。"
+    },
+    {
+        "question": "什么类型的数据是 CustomCFGNode 输入的关键参数？",
+        "answer": "CustomCFGNode 的关键输入参数是 cfg_multival，这个参数的类型可以是 float 或 torch.Tensor，用于在动画中定义特定关键帧的多值配置，以影响采样过程。"
+    },
+    {
+        "question": "CustomCFGNode 输出的数据类型代表了什么？",
+        "answer": "CustomCFGNode 输出类型为 CUSTOM_CFG，这代表了一个已自定义的关键帧组，用于控制采样过程，它封装了关键帧的配置和对应的开始百分比，允许对动画进展进行细粒度控制。"
+    },
+    {
+        "question": "CustomCFGNode 类中哪一行代码定义了它的输入类型？",
+        "answer": "CustomCFGNode 的输入类型由 'INPUT_TYPES' 类方法定义，其中具体为 'cfg_multival': ('MULTIVAL',)，指明了输入的类型和标识。"
+    },
+    {
+        "question": "在实现 CustomCFGNode 控制流图的关键运算中，使用了哪个方法？",
+        "answer": "在 CustomCFGNode 类中，使用的方法是 'create_custom_cfg'，它接收 cfg_multival 参数来创建自定义的关键帧组，用于控制采样过程。"
+    },
+    {
+        "question": "什么情况下会使用 CustomCFGNode？",
+        "answer": "CustomCFGNode 适用于想要在 ComfyUI 环境中对动画和采样设置进行高级自定义的用户，特别是在需要控制关键帧配置和采样过程的精细程度时。"
+    },
+    {
+        "question": "CustomCFGNode 的计算基础设施类型是什么？",
+        "answer": "CustomCFGNode 的执行不需要特定的硬件加速，其 Infra type 被指定为 CPU，意味着它可以在任何标准 CPU 架构上运行。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ConditioningConcat是ComfyUI中的哪个类别的一部分？",
+        "answer": "ConditioningConcat是ComfyUI中'conditioning'类别的一部分，用于处理条件输入的合并。"
+    },
+    {
+        "question": "ConditioningConcat节点的目标是什么？",
+        "answer": "ConditioningConcat节点的目标是将两个条件输入（'conditioning_to'和'conditioning_from'）合并为单个输出，以适合神经网络架构中的后续处理步骤。"
+    },
+    {
+        "question": "'conditioning_to'参数在ConditioningConcat节点中的作用是什么？",
+        "answer": "'conditioning_to'参数表示将会与另一个条件输入连接的目标条件输入，它决定了附加额外条件信息的基础，对于确定最终输出的结构至关重要。"
+    },
+    {
+        "question": "'conditioning_from'参数在ConditioningConcat节点中有什么作用？",
+        "answer": "'conditioning_from'参数提供了将与'conditioning_to'结合的源条件输入，它补充了额外的上下文或特征，这可能增强模型在条件处理中的表现。"
+    },
+    {
+        "question": "ConditioningConcat节点的输出类型是什么？",
+        "answer": "ConditioningConcat节点的输出类型是merged conditioning张量，它整合了'conditioning_to'和'conditioning_from'的元素，构建方式与下游神经网络操作兼容。"
+    },
+    {
+        "question": "ConditioningConcat节点的源代码中'torch.cat'函数在做什么？",
+        "answer": "在ConditioningConcat节点的源代码中，'torch.cat'函数用于沿指定维度将不同条件张量（t1和cond_from）合并，从而形成一个整合后的条件张量。"
+    },
+    {
+        "question": "如果'conditioning_from'有多个输入，ConditioningConcat节点将如何处理？",
+        "answer": "若'conditioning_from'包含多个条件输入，ConditioningConcat节点仅会应用第一个条件，对其他输入发出警告，表明仅第一个条件将实际应用于'conditioning_to'。"
+    }
+]

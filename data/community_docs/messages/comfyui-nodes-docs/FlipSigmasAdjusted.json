@@ -1,0 +1,30 @@
+[
+    {
+        "question": "FlipSigmasAdjusted节点的作用是什么？",
+        "answer": "FlipSigmasAdjusted节点是ComfyUI中的一个自定义节点，用于处理和调整一组西格玛值。它可以翻转输入西格玛的顺序，通过特定操作调整每个西格玛，并确保无西格玛值为零。"
+    },
+    {
+        "question": "FlipSigmasAdjusted节点如何防止西格玛值为零的情况？",
+        "answer": "当翻转和调整后的西格玛值为零时，FlipSigmasAdjusted节点会用一个最小的正值（0.0001）代替，以确保西格玛值不为零，提高数值稳定性。"
+    },
+    {
+        "question": "FlipSigmasAdjusted节点的'sigmas'输入参数是什么？",
+        "answer": "'sigmas'是FlipSigmasAdjusted节点中的一个必需输入，表示噪声分布的标准差序列，是节点操作的基础数据。"
+    },
+    {
+        "question": "哪些节点可以处理西格玛值序列？",
+        "answer": "ComfyUI中的FlipSigmasAdjusted节点可以处理并调整西格玛值序列，适用于噪声减少或图像处理任务中调整标准差。"
+    },
+    {
+        "question": "FlipSigmasAdjusted节点的'divide_by_last_sigma'参数有什么功能？",
+        "answer": "'divide_by_last_sigma'参数是一个布尔标志，当设置为True时，翻转和调整后的西格玛值序列中的每个值将除以最后一个西格玛值，以此来对西格玛值进行归一化操作。"
+    },
+    {
+        "question": "FlipSigmasAdjusted节点的'divide_by'参数如何影响输出结果？",
+        "answer": "'divide_by'参数可以缩放调整后的西格玛值，对于特定应用的微调和控制输出结果具有重要作用。"
+    },
+    {
+        "question": "FlipSigmasAdjusted节点提供了哪些输出类型？",
+        "answer": "FlipSigmasAdjusted节点提供'SIGMAS'和'sigmas_string'两种输出类型，前者是调整后的西格玛值，后者是这些值的字符串表示，便于可视化和记录。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BasicScheduler节点的目的是什么?",
+        "answer": "BasicScheduler节点的目的是管理和计算在生成图像的扩散过程中使用的sigma值的时间表，确保平滑且连贯的采样过程。"
+    },
+    {
+        "question": "哪种类型的输入参数对BasicScheduler节点的执行至关重要？",
+        "answer": "模型参数(model)对BasicScheduler节点的执行至关重要，因为它代表了用于图像采样的基础模型，直接影响sigma值的计算。"
+    },
+    {
+        "question": "基本的sigmas输出在ComfyUI中的数据类型是什么？",
+        "answer": "BasicScheduler节点输出的sigmas在ComfyUI中的数据类型是FLOAT[1]，这对应于torch.Tensor，提供了扩散过程中每个步骤计算的sigma值。"
+    },
+    {
+        "question": "steps参数对BasicScheduler有何影响？",
+        "answer": "steps参数影响BasicScheduler中采样过程的步骤数量，控制着采样粒度，直接影响生成图像的质量。"
+    },
+    {
+        "question": "ComfyUI中BasicScheduler节点计算sigmas的过程是如何实现的？",
+        "answer": "BasicScheduler节点通过调用calculate_sigmas函数计算sigmas，该函数采用model.get_model_object('model_sampling')、调度器策略、total_steps等参数，返回用于扩散过程的sigma值列表。"
+    },
+    {
+        "question": "在BasicScheduler中，denoise参数的作用是什么？",
+        "answer": "denoise参数调整采样过程中应用的噪声减少水平，影响最终图像的清晰度和细节。"
+    },
+    {
+        "question": "在BasicScheduler中，调度器参数(scheduler)如何影响生成的sigmas？",
+        "answer": "调度器参数定义了用于sigma值计算的计划类型，它是采样过程中的关键决定因素，直接影响输出的sigmas，从而左右最终图像的质量。"
+    }
+]

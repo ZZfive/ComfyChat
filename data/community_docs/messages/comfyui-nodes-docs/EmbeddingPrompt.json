@@ -1,0 +1,30 @@
+[
+    {
+        "question": "EmbeddingPrompt是什么类型的节点?",
+        "answer": "EmbeddingPrompt是ComfyUI中的一个自定义节点，属于∞Mixlab/Prompt类别，专用于基于嵌入和相关权重生成提示，允许用户调整特定嵌入在输出中的影响。"
+    },
+    {
+        "question": "EmbeddingPrompt节点的必填输入是什么以及它的作用?",
+        "answer": "EmbeddingPrompt节点的必填输入是'embedding'，该参数定义了生成提示的基础上下文或主题，它可以确保所选嵌入与上下文相关。"
+    },
+    {
+        "question": "optional参数'weight'在EmbeddingPrompt中的作用?",
+        "answer": "在EmbeddingPrompt节点中，'weight'参数是选择性的，用于调整所选嵌入对最终提示的影响，以便用户可以对输出强调嵌入上下文进行细微控制。"
+    },
+    {
+        "question": "EmbeddingPrompt节点的输出是什么以及其数据类型?",
+        "answer": "EmbeddingPrompt节点的输出是一个字符串类型(prompt)，这个输出整合了所选嵌入及其权重，形成了一个简洁且针对性的声明，可以被其他节点或应用程序作为输入使用。"
+    },
+    {
+        "question": "在ComfyUI中哪些节点可以生成上下文相关的提示?",
+        "answer": "在ComfyUI中，EmbeddingPrompt节点可以生成基于上下文相关的提示，它基于用户选择的嵌入和权重，形成具有特定语义的输出。"
+    },
+    {
+        "question": "EmbeddingPrompt节点的'weight'参数如何影响输出提示?",
+        "answer": "如果在EmbeddingPrompt节点中为'weight'参数添加了一个不同于1的值，输出提示中将包括该权重，形成像'(embedding:weight)'这样的格式，影响了最终提示的生成。"
+    },
+    {
+        "question": "EmbeddingPrompt节点的运行方式和函数?",
+        "answer": "EmbeddingPrompt节点通过run函数接收输入参数(embedding, weight)，根据这些参数生成字符串输出(prompt)，函数运行在CPU上，输出是一个单一的字符串。"
+    }
+]

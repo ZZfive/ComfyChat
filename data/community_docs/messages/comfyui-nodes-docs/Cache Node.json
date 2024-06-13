@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Cache节点的目的是什么?",
+        "answer": "WAS_Cache节点的目的是高效地管理和存储输入数据，如潜在向量、图像和条件数据，确保数据随时可用以优化工作流程和提高系统性能。"
+    },
+    {
+        "question": "WAS_Cache节点如何缓存潜在向量？",
+        "answer": "WAS_Cache节点通过使用latent_suffix参数定义的文件名后缀缓存潜在向量，确保区分不同潜在向量并帮助有效地管理数据。"
+    },
+    {
+        "question": "在WAS_Cache节点中，image_suffix参数有何作用？",
+        "answer": "image_suffix参数用于指定缓存图像的文件名后缀，帮助WAS_Cache节点在需要时正确识别和访问图像数据，确保有组织地处理视觉信息。"
+    },
+    {
+        "question": "哪些参数对于WAS_Cache节点缓存条件数据是必需的？",
+        "answer": "conditioning_suffix参数是WAS_Cache节点缓存条件数据时必需的，它应用于条件数据的文件名后缀，并确保条件信息在后续处理阶段可以被正确组织和维护。"
+    },
+    {
+        "question": "WAS_Cache节点如何使用output_path参数？",
+        "answer": "output_path参数决定了WAS_Cache节点将缓存数据存储的目录，提供灵活性以适应特定的存储需求和处理流程，允许数据存储在特定目录中进行进一步处理。"
+    },
+    {
+        "question": "哪些数据类型可以作为WAS_Cache节点的输入使用？",
+        "answer": "WAS_Cache节点可以接受STRING作为latent_suffix、image_suffix和conditioning_suffix的输入类型，以及LATENT、IMAGE和CONDITIONING作为latent、image和conditioning的输入类型。"
+    },
+    {
+        "question": "输出的latent_filename是什么格式的？",
+        "answer": "latent_filename输出提供了WAS_Cache节点缓存的潜在向量的文件名，格式为Comfy STRING类型，在Python中表现为str类型，便于后续处理或检索潜在数据。"
+    }
+]

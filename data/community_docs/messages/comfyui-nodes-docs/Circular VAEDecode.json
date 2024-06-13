@@ -1,0 +1,34 @@
+[
+    {
+        "question": "CircularVAEDecode节点的作用是什么？",
+        "answer": "CircularVAEDecode节点使用变分自编码器（VAE）将潜在表示解码回图像，特别地，通过修改卷积层的填充模式为'circular'来处理边缘效应，适用于图像生成任务。"
+    },
+    {
+        "question": "哪些输入是CircularVAEDecode节点所必需的？",
+        "answer": "CircularVAEDecode节点需要'samples'和'vae'两个必需输入参数，其中'samples'代表潜在表示，而'vae'则代表用于解码的变分自编码器模型。"
+    },
+    {
+        "question": "CircularVAEDecode节点的'samples'参数是什么？",
+        "answer": "'samples'参数保存了节点将解码成图像的潜在表示，这个输入直接影响节点的输出，确定生成图像的质量和特性。"
+    },
+    {
+        "question": "CircularVAEDecode节点的'vae'参数作用是什么？",
+        "answer": "'vae'参数代表变分自编码器模型，节点将使用该模型来解码潜在样本，决定了解码过程的结构和功能方面。"
+    },
+    {
+        "question": "CircularVAEDecode节点的主要输出是什么？",
+        "answer": "CircularVAEDecode节点的主要输出是'image'，即从潜在样本生成的解码图像，这标志着潜在空间数据成功转换为人类可解释的视觉格式。"
+    },
+    {
+        "question": "CircularVAEDecode如何处理卷积层的填充模式？",
+        "answer": "CircularVAEDecode节点将VAE中卷积层的填充模式修改为'circular'，这一处理方式有助于处理边缘效应，增强图像生成任务中的图像质量。"
+    },
+    {
+        "question": "在使用CircularVAEDecode时需要什么类型的计算资源？",
+        "answer": "使用CircularVAEDecode节点时，推荐使用GPU作为计算资源，这是由于GPU对图像处理和深度学习应用的高效性。"
+    },
+    {
+        "question": "哪些节点可以根据潜在样本生成解码图像？",
+        "answer": "CircularVAEDecode是其中之一，它专门用于根据潜在样本生成解码图像，通过使用变分自编码器并修改其卷积层填充模式来优化图像生成过程。"
+    }
+]

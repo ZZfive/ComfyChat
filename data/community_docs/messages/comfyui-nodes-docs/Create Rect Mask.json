@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CreateRectMask节点的作用是什么?",
+        "answer": "CreateRectMask节点是Masquerade Nodes的一部分，用于根据指定的参数生成矩形掩码，它能够根据测量模式（如百分比或像素）、矩形的原点以及尺寸来计算掩码的坐标，适用于多种图像处理任务。"
+    },
+    {
+        "question": "CreateRectMask节点的mode参数有何作用?",
+        "answer": "mode参数决定了掩码尺寸的测量单位，可选择'percent'或'pixels'，用于基于百分比或绝对像素值来定义掩码的大小，影响掩码在图像上的表现。"
+    },
+    {
+        "question": "origin参数如何影响CreateRectMask节点的工作方式?",
+        "answer": "origin参数指定了计算掩码位置的参考点，可以是'topleft'、'bottomleft'、'topright'或'bottomright'，它帮助确定掩码相对于图像边角的位置，影响掩码的最终位置。"
+    },
+    {
+        "question": "CreateRectMask节点如何使用x和y参数定义掩码的起始点?",
+        "answer": "x和y参数分别指定掩码在水平和垂直方向上的起始位置，当与mode和origin参数一起作用时，它们能一起确定掩码在图像上的具体位置。"
+    },
+    {
+        "question": "width和height参数在CreateRectMask节点中的作用是什么?",
+        "answer": "width和height参数分别定义了掩码的水平和垂直范围，它们决定了掩码的大小，与位置坐标一起，共同描绘掩码的覆盖范围。"
+    },
+    {
+        "question": "在CreateRectMask节点中，image_width和image_height参数有何功能?",
+        "answer": "image_width和image_height参数分别指定了应用掩码的图像的宽度和高度，这对于保持掩码尺寸在不同图像大小之间的一致性尤其重要，特别是当mode设置为'percent'时。"
+    },
+    {
+        "question": "CreateRectMask节点的copy_image_size参数有何作用?",
+        "answer": "copy_image_size参数允许掩码基于提供的图像大小自适应，这对于根据具体图像尺寸动态创建掩码非常有用，如果设置，它将忽略image_width和image_height参数。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DetailerForEachPipeForAnimateDiff 节点的核心功能是什么？",
+        "answer": "DetailerForEachPipeForAnimateDiff 节点的主要功能是通过分割信息增强动画帧的细节，特别关注由边界框或裁剪区域定义的局部区域，以提高动画差异的视觉质量。"
+    },
+    {
+        "question": "哪些参数是 DetailerForEachPipeForAnimateDiff 节点必须的输入？",
+        "answer": "DetailerForEachPipeForAnimateDiff 节点必须的输入包括 'image_frames', 'segs', 'guide_size', 'max_size', 'seed', 'steps', 'cfg', 'sampler_name', 'scheduler', 'denoise', 'feather', 'basic_pipe' 和 'refiner_ratio'。"
+    },
+    {
+        "question": "image_frames 参数在 DetailerForEachPipeForAnimateDiff 中的作用是什么？",
+        "answer": "'image_frames' 参数提供了节点处理的基础原始图像数据，它的质量直接影响细节增强后的最终输出质量。"
+    },
+    {
+        "question": "DetailerForEachPipeForAnimateDiff 如何使用 'segs' 参数来区分图像的不同区域进行处理？",
+        "answer": "'segs' 参数定义了节点用于识别图像的不同区域进行细节处理的分割信息，对于节点理解哪些部分需要细节增强至关重要。"
+    },
+    {
+        "question": "什么是 'basic_pipe' 参数？",
+        "answer": "'basic_pipe' 参数提供基础模型和组件，这些是细节增强过程所必需的，使得节点能够执行其核心功能，即增强图像帧的细节。"
+    },
+    {
+        "question": "DetailerForEachPipeForAnimateDiff 节点处理后会返回哪些输出类型？",
+        "answer": "处理后 DetailerForEachPipeForAnimateDiff 节点返回的输出类型包括增强后的 'image' 帧，更新的 'segs' 分割信息，使用的 'basic_pipe' 基础模型组件，以及生成的控制网 'cnet_images' 列表。"
+    },
+    {
+        "question": "在使用 DetailerForEachPipeForAnimateDiff 进行细节增强时，'denoise' 参数的用途是什么？",
+        "answer": "'denoise' 参数用于控制应用于处理中的图像帧的降噪级别，重要的是它有助于实现清晰干净的输出，同时不损害图像的细节品质。"
+    }
+]

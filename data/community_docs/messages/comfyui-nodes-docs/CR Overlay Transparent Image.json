@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_OverlayTransparentImage是什么类型的节点以及它的输出节点属性如何？",
+        "answer": "CR_OverlayTransparentImage属于Comfyroll/Graphics/Layout类别的自定义节点，它不是一个输出节点，用于将一个透明的覆盖图像混合至背景图像，调整覆盖层的透明度、位置、旋转和缩放。"
+    },
+    {
+        "question": "CR_OverlayTransparentImage节点的主输入类型有哪些？",
+        "answer": "CR_OverlayTransparentImage的主输入类型包括背景图像（back_image）和覆盖图像（overlay_image），它们都是PIL.Image.Image类型。此外，还输入透明度级别（transparency），以控制覆盖图像的透明度。"
+    },
+    {
+        "question": "什么决定了CR_OverlayTransparentImage节点输出图像的最终透明度？",
+        "answer": "CR_OverlayTransparentImage节点输出图像的最终透明度由'transparency'参数决定，范围在0.0（完全不透明）到1.0（完全透明）。"
+    },
+    {
+        "question": "CR_OverlayTransparentImage节点提供了哪些可选输入控制覆盖图像的位置和大小？",
+        "answer": "CR_OverlayTransparentImage节点的可选输入包括水平偏移（offset_x）、垂直偏移（offset_y）、旋转角度（rotation_angle）和覆盖图像缩放因子（overlay_scale_factor），它们共同控制覆盖图像的位置和大小调整。"
+    },
+    {
+        "question": "哪些参数允许CR_OverlayTransparentImage中的覆盖图像进行旋转和缩放？",
+        "answer": "节点中的'rotation_angle'参数允许覆盖图像旋转，'overlay_scale_factor'参数用于调整覆盖图像的大小。"
+    },
+    {
+        "question": "CR_OverlayTransparentImage节点产生的输出结果类型是什么？",
+        "answer": "CR_OverlayTransparentImage节点产生一个最终合成图像（output_image），其类型为torch.Tensor，代表混合操作后背景与覆盖图像的输出结果。"
+    },
+    {
+        "question": "在使用CR_OverlayTransparentImage时应该使用哪种基础设施类型？",
+        "answer": "CR_OverlayTransparentImage节点推荐使用CPU型基础设施进行处理。"
+    }
+]

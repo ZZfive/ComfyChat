@@ -1,0 +1,34 @@
+[
+    {
+        "question": "CLIPTextEncodeSequence节点的用途是什么？",
+        "answer": "CLIPTextEncodeSequence节点旨在将一系列文本行编码成一组条件序列，这些序列可以用于神经网络中的进一步处理。"
+    },
+    {
+        "question": "编码文本前，'token_normalization'参数的作用是什么？",
+        "answer": "'token_normalization'参数决定了文本中的标记在编码前如何被归一化，它确保编码后的文本保持一致的规模，这对于后续的神经网络操作非常重要。"
+    },
+    {
+        "question": "哪种输入参数对文本如何转换为数值表示有直接的影响？",
+        "answer": "'clip'参数对文本如何转换为数值表示有直接的影响，因为它提供了用于文本编码的上下文或模型。"
+    },
+    {
+        "question": "哪些自定义节点或插件中可以找到CLIPTextEncodeSequence节点？",
+        "answer": "CLIPTextEncodeSequence节点可以在WAS_Extras插件中找到，其repo参考为https://github.com/WASasquatch/WAS_Extras。"
+    },
+    {
+        "question": "如何理解'weight_interpretation'参数在文本编码过程中的作用？",
+        "answer": "'weight_interpretation'参数定义了在编码过程中与文本标记相关联的权重的解释方法。"
+    },
+    {
+        "question": "什么类型的输出期望从CLIPTextEncodeSequence节点得到？",
+        "answer": "从CLIPTextEncodeSequence节点期望得到的是系列编码后的文本行，每行都表示为索引和编码向量的一对，类型为List[Tuple[int, List[float]]]。"
+    },
+    {
+        "question": "运行CLIPTextEncodeSequence节点推荐的基础设施类型是什么？",
+        "answer": "运行CLIPTextEncodeSequence节点推荐的基础设施类型是GPU。"
+    },
+    {
+        "question": "多行文本输入如何影响CLIPTextEncodeSequence节点的输出？",
+        "answer": "原始文本输入是多行的，可以包括一系列文本行，每行都将被编码成条件序列，显著影响节点的输出。"
+    }
+]

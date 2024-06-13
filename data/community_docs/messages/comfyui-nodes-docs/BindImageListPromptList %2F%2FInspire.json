@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BindImageListPromptList是什么类型的节点?",
+        "answer": "BindImageListPromptList是ComfyUI的自定义节点，属于InspirePack/Prompt类别，它用于处理图像数据和对应的文本提示，并确保每张图像都与正面和负面的文本响应相关联。"
+    },
+    {
+        "question": "BindImageListPromptList节点的输入类型有哪些?",
+        "answer": "BindImageListPromptList节点的输入类型包括'default_positive'、'default_negative'、'zipped_prompts'和'images'，其中'images'为必须的一组图像数据，'zipped_prompts'包含正面和负面文本提示对，'default_positive'和'default_negative'用于当图像数量大于提示时填补空缺。"
+    },
+    {
+        "question": "当图像数量超过提供的正面和负面提示时，BindImageListPromptList节点如何处理?",
+        "answer": "当图像数量超过提供的正面和负面提示时，BindImageListPromptList节点使用'default_positive'和'default_negative'参数填充额外的图像，确保每张图像都有对应的正面和负面文本提示。"
+    },
+    {
+        "question": "BindImageListPromptList节点的输出包含哪些数据类型?",
+        "answer": "BindImageListPromptList节点的输出包含调整过的'images'、'positive'（正面文本提示列表）、'negative'（负面文本提示列表）和'prompt_label'，指示提示类型。"
+    },
+    {
+        "question": "在一个场景中，如果提供的文本提示对少于图像数量，BindImageListPromptList节点将如何处理?",
+        "answer": "当提供的文本提示对少于图像数量时，BindImageListPromptList节点将使用'default_positive'和'default_negative'参数来自动填充不足的提示对，确保所有图像都有正面和负面文本提示。"
+    },
+    {
+        "question": "运行BindImageListPromptList节点要求在哪种类型的处理器上?",
+        "answer": "运行BindImageListPromptList节点的硬件要求为CPU，没有特别指出需要GPU的支持。"
+    },
+    {
+        "question": "在ComfyUI中，如何使用BindImageListPromptList节点处理图像-文本数据集?",
+        "answer": "在ComfyUI中，通过连接'images'和'zipped_prompts'到BindImageListPromptList节点的输入端，用户可以处理图像-文本数据集，输出包含配对后的图像和经组织的正面与负面文本提示，以及一个描述每个提示来源的'prompt_label'。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "AddNoise节点的功能是什么？",
+        "answer": "AddNoise节点旨在通过引入随机噪声来处理潜在图像，这对于合成图像生成过程中的多样性和逼真度至关重要。"
+    },
+    {
+        "question": "在AddNoise节点中，model参数的作用是什么？",
+        "answer": "model参数对于AddNoise节点至关重要，因为它决定了用于采样和处理潜在图像的模型，直接影响生成图像的质量和特性。"
+    },
+    {
+        "question": "AddNoise节点如何处理噪声参数（noise）？",
+        "answer": "噪声参数（noise）提供了AddNoise节点将整合到潜在图像中的随机性来源。噪声的类型和属性显著影响输出图像的多样性和不可预测性。"
+    },
+    {
+        "question": "sigmas参数在AddNoise节点中的作用是什么？",
+        "answer": "sigmas参数决定了AddNoise节点中添加到潜在图像的噪声规模。通过控制噪声水平，它影响合成图像的视觉外观。"
+    },
+    {
+        "question": "AddNoise节点对latent_image参数如何操作？",
+        "answer": "latent_image参数是AddNoise的核心输入，代表将通过添加噪声进行修改的图像数据。节点对其进行噪声添加，以完成图像的合成修改。"
+    },
+    {
+        "question": "AddNoise节点的输出'latent'表示什么？",
+        "answer": "AddNoise节点的输出'latent'参数代表应用噪声后的带噪声图像，封装了携带所需噪声特性的合成数据，可供进一步处理或分析。"
+    },
+    {
+        "question": "AddNoise节点在过程中如何处理噪声缩放（noise scaling）？",
+        "answer": "AddNoise节点使用model参数中的model_sampling对象的noise_scaling方法调整噪声，根据sigmas确定的scale参数进行缩放，确保噪声在潜在图像上得到适当融合。"
+    }
+]

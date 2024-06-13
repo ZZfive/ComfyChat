@@ -1,0 +1,46 @@
+[
+    {
+        "question": "imageRemBg节点的功能是什么?",
+        "answer": "imageRemBg节点用于从输入图像中移除背景，通过深度学习模型确保图像的主要主题在输出中得到保留，同时减少背景干扰，适用于进一步的使用或展示。"
+    },
+    {
+        "question": "imageRemBg节点输入中的'rem_mode'参数有何作用？",
+        "answer": "rem_mode参数指定了imageRemBg节点的背景移除模式，它决定了使用的背景分离算法方法，直接影响最终输出图像的背景移除精度。"
+    },
+    {
+        "question": "imageRemBg节点的'images'输入是怎样的？",
+        "answer": "images输入定义了将进行背景移除操作的图像集，其格式和质量直接影响背景去除的效果，对应的Python类型为torch.Tensor。"
+    },
+    {
+        "question": "哪些输出类型是imageRemBg节点提供的？",
+        "answer": "imageRemBg节点提供图像（移除背景后的）和掩码（用于隔离前景与背景的二进制图像）两种输出类型，主要输出是处理后的图像。"
+    },
+    {
+        "question": "在使用imageRemBg节点时，'image_output'参数设定可以采取哪些值？",
+        "answer": "image_output参数可以设定为'Hide'、'Preview'、'Save'或'Hide/Save'，用于指定处理后的图像是否隐藏、预览或保存，或者同时保存。"
+    },
+    {
+        "question": "如何利用imageRemBg节点进行背景移除并预览或保存输出结果？",
+        "answer": "设置'image_output'参数为'Preview'或'Save'即可预览或保存背景移除后的图像。选择'Preview'预览，'Save'保存，或'Hide/Save'同时在隐藏时保存。"
+    },
+    {
+        "question": "imageRemBg节点执行背景移除操作时使用什么类型的运算设备？",
+        "answer": "imageRemBg节点执行背景移除操作时优先使用GPU（图像处理单元），这意味着它需要GPU的支持实现高效运行和处理图像数据。"
+    },
+    {
+        "question": "imageRemBg节点中的'device'变量是什么？",
+        "answer": "'device'变量用于确定使用何种设备（如GPU或CPU）加载和运行模型，确保模型能在最适配的硬件上执行，提高处理速度和效率。"
+    },
+    {
+        "question": "哪些自定义节点或插件可以用于从图像中移除背景？",
+        "answer": "ComfyUI中的imageRemBg节点可以用于移除图像背景，通过深度学习模型提供简化和干净的前景用于后续使用或展示。"
+    },
+    {
+        "question": "在背景移除过程中提供的'mask'输出代表什么？",
+        "answer": "mask输出是imageRemBg在背景移除过程中生成的二进制掩码，用于在图像中区分并隔离前景对象与背景，为后续处理提供便利。"
+    },
+    {
+        "question": "imageRemBg节点中的'device'变量在模型载入时起什么作用？",
+        "answer": "'device'变量在模型载入时用于指示模型和数据应加载到GPU（如果可用）还是CPU上，这旨在优化模型执行速度和性能。"
+    }
+]

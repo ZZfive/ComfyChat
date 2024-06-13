@@ -1,0 +1,30 @@
+[
+    {
+        "question": "comfyUI 中的 cascadeLoader 节点的作用是什么？",
+        "answer": "cascadeLoader 节点在 ComfyUI 中被设计用于简化各种模型和数据加载和处理的流水线，它封装了模型检索、通过LORA增强以及对正负输入应用CLIP嵌入的复杂性，这使得它能够无缝整合这些组件，确保高效的数据流和最优性能。"
+    },
+    {
+        "question": "在 cascadeLoader 节点中，'stage_c' 参数用于什么目的？",
+        "answer": "'stage_c' 参数在 cascadeLoader 节点中用于指定流水线所使用的checkpoint或UNet模型，它对模型的加载起点至关重要，并直接影响后续的处理步骤。"
+    },
+    {
+        "question": "哪些参数在 cascadeLoader 节点中是输入类型且是必需的？",
+        "answer": "cascadeLoader 节点中必需的输入类型包括 'stage_c'（用于checkpoint或UNet模型的选择）和 'resolution'（定义潜在空间和输出图像的尺寸）两者的输入。"
+    },
+    {
+        "question": "在 ComfyUI 的 cascadeLoader 节点中，'pipe' 输出代表什么？",
+        "answer": "在 ComfyUI 的 cascadeLoader 节点中，'pipe' 输出封装了加工模型、嵌入以及其他相关数据，为下游任务准备，它是下游操作和流水线精化的关键。"
+    },
+    {
+        "question": "cacheLoader能够处理的输出数据类型有哪些？",
+        "answer": "cascadeLoader 能够处理的输出数据类型包括 'PIPE_LINE'（流水线状态），'MODEL'（模型对象），'LATENT'（潜在变量表示）和 'VAE'（变分自编码器对象）。"
+    },
+    {
+        "question": "在 cascadeLoader 中，如何确定加载的模型是 checkpoint 还是 UNet？",
+        "answer": "cascadeLoader 节点中的 'is_ckpt' 函数用于确定 'stage_c' 参数所指定的模型到底是checkpoint模型还是UNet模型。如果是checkpoint，函数返回 True，否则返回 False，这决定了模型加载的类型和方式。"
+    },
+    {
+        "question": "cascadeLoader 节点支持哪些类型的模型加载？",
+        "answer": "cascadeLoader 节点支持checkpoint和UNet模型的加载，此外，还可以加载和应用LORA来增强模型，以及对正负输入进行CLIP嵌入处理。"
+    }
+]

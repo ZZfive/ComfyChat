@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DynamicThresholdingFull是什么类型的应用于ComfyUI的节点？",
+        "answer": "DynamicThresholdingFull，或称DynamicThresholdingComfyNode，是ComfyUI中的一个高级自定义节点，专为动态调整模型的阈值处理过程以达到期望模仿水平而设计，被归类在advanced/mcmonkey类别。"
+    },
+    {
+        "question": "DynamicThresholdingFull节点处理过程的核心目标是什么？",
+        "answer": "DynamicThresholdingFull节点的核心目标是动态调整模型的阈值处理过程，以达到期望的模仿水平，并控制生成的输出变化，通过细化模型响应和根据指定参数优化生成过程来实现。"
+    },
+    {
+        "question": "哪些是DynamicThresholdingFull节点必须的输入类型及其在ComfyUI的解释？",
+        "answer": "DynamicThresholdingFull节点的必要输入类型包括'string'模型（用于定义基础操作，Comfy dtype：MODEL，Python dtype：torch.nn.Module）和'float'mimic_scale（控制模仿程度，Comfy dtype：FLOAT，Python dtype：float）。"
+    },
+    {
+        "question": "哪些输入参数控制DynamicThresholdingFull的阈值处理过程的强度和输出质量？",
+        "answer": "mimic_scale和threshold_percentile参数控制DynamicThresholdingFull的阈值处理过程的强度和输出质量。mimic_scale调整模仿程度，而threshold_percentile根据分位数值设定阈值，影响特征的动态缩放和变异性。"
+    },
+    {
+        "question": "在DynamicThresholdingFull中，cfg_mode和mimic_mode参数的目的是什么？",
+        "answer": "cfg_mode和mimic_mode参数分别规定了动态阈值处理中的配置模式和缩放模式。cfg_mode指导节点如何应用配置，而mimic_mode定义模型如何适应输入并相应调整其输出。"
+    },
+    {
+        "question": "DynamicThresholdingFull节点的输出包含什么？",
+        "answer": "DynamicThresholdingFull节点的输出是已根据输入参数动态调整和优化后的模型（Comfy dtype：MODEL，Python dtype：torch.nn.Module），这个模型可以提供优化和受控的输出，满足期望的模仿和质量标准。"
+    },
+    {
+        "question": "使用DynamicThresholdingFull节点进行图像或视频生成时，如何确保性能高效？",
+        "answer": "为确保使用DynamicThresholdingFull节点时的性能高效，应选择合适的infra type，通常推荐使用GPU类型，以加速动态阈值处理过程，提升生成内容的质量。"
+    }
+]

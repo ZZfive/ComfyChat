@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ChromaticAberration节点是做什么用的?",
+        "answer": "ChromaticAberration节点用于模拟图像的色差效果，通过水平或垂直移动颜色通道来改变感知颜色，从而创建逼真的失真效果。"
+    },
+    {
+        "question": "ChromaticAberration节点可以处理什么类型的输入数据？",
+        "answer": "ChromaticAberration节点的输入类型包括'IMAGE'数据类型的图像以及'INT'数据类型的红色、绿色和蓝色通道的位移量，和'STR'数据类型的表示移动方向的'COMBO'类型。"
+    },
+    {
+        "question": "如何调整ChromaticAberration节点中的红色通道位移？",
+        "answer": "通过red_shift参数可以调整ChromaticAberration节点中的红色通道位移，范围从-20到20，步长为1，此参数影响色差效果的产生。"
+    },
+    {
+        "question": "在ChromaticAberration节点中，green_direction参数的作用是什么？",
+        "answer": "green_direction参数用于指定绿色通道移动的方向，可以是'horizontal'或'vertical'，这是为了准确模拟色差效果而设置的关键参数。"
+    },
+    {
+        "question": "什么是output参数？",
+        "answer": "output参数代表了在ChromaticAberration节点中，经色差效果处理后的最终图像，展示了节点操作对图像产生视觉影响的结果。"
+    },
+    {
+        "question": "哪些参数可以影响ChromaticAberration节点中蓝色通道的位移和方向？",
+        "answer": "在ChromaticAberration节点中，blue_shift参数控制蓝色通道的位移量，而blue_direction参数规定蓝色通道的移动方向，这两者共同影响失真效果的出现。"
+    },
+    {
+        "question": "ChromaticAberration节点在代码中如何实现色差？",
+        "answer": "ChromaticAberration节点的代码实现中，通过'torch.roll'函数根据每个颜色通道的shift和direction参数来模拟色差，沿着图像的维度进行位移操作。"
+    }
+]

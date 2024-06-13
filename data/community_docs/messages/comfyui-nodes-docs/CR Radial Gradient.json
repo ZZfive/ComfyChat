@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_RadialGradient节点的作用是什么？",
+        "answer": "CR_RadialGradient节点是ComfyUI中的一个自定义节点，它用于生成径向渐变图像，能够在指定的宽度和高度上从起始颜色平滑过渡到结束颜色，支持自定义径向中心和渐变距离。"
+    },
+    {
+        "question": "如何设置CR_RadialGradient节点的输出图像宽度？",
+        "answer": "在CR_RadialGradient节点中，通过'width'输入参数定义输出图像的宽度，该参数的dtype为INT，用于确定渐变图案的水平范围。"
+    },
+    {
+        "question": "哪些颜色参数可以控制CR_RadialGradient的渐变效果？",
+        "answer": "通过'start_color'和'end_color'参数指定径向渐变的起始和结束颜色，这两个参数的dtype分别为COLORS和STRING（十六进制颜色），用于确定渐变效果的整体外观和颜色过渡。"
+    },
+    {
+        "question": "CR_RadialGradient的径向中心如何影响图像上的颜色分布？",
+        "answer": "CR_RadialGradient的径向中心由'radial_center_x'和'radial_center_y'参数控制，这影响了渐变中心在图像上的水平和垂直位置，从而影响颜色的分布。"
+    },
+    {
+        "question": "CR_RadialGradient的'gradient_distance'参数的作用是什么？",
+        "answer": "'gradient_distance'参数控制CR_RadialGradient节点中渐变效果的扩散程度，决定了颜色变化的速度和过渡的平滑度。"
+    },
+    {
+        "question": "CR_RadialGradient节点输出的IMAGE是什么类型的Python对象？",
+        "answer": "CR_RadialGradient节点输出的IMAGE为径向渐变图像，其Python dtype是torch.Tensor，表示的是图像的张量表示形式。"
+    },
+    {
+        "question": "在不设置'radial_center_x'和'radial_center_y'参数的情况下，径向渐变中心会默认位于哪里？",
+        "answer": "如果不设定'radial_center_x'和'radial_center_y'参数，CR_RadialGradient节点中的径向渐变中心将默认位于图像的正中心，其默认值为x=0.5，y=0.5。"
+    }
+]

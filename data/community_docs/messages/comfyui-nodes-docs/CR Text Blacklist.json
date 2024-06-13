@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_TextBlacklist 节点的作用是什么?",
+        "answer": "CR_TextBlacklist 节点是 Comfyroll/Utils/Text 类别下的自定义节点，用于通过替换指定的黑名单词汇来净化文本，确保文本内容符合规范或个人偏好。"
+    },
+    {
+        "question": "CR_TextBlacklist 节点处理的输入参数有哪些?",
+        "answer": "CR_TextBlacklist 节点处理的必要输入参数有 'text'（要处理的文本）和 'blacklist_words'（黑名单词汇列表），以及可选的 'replacement_text'（用于替换的文本）。"
+    },
+    {
+        "question": "CR_TextBlacklist 节点如何处理文本中的黑名单词汇?",
+        "answer": "CR_TextBlacklist 节点通过扫描输入的 'text' 并用 'replacement_text' 替换其中的黑名单词汇，实现文本净化。"
+    },
+    {
+        "question": "在 CR_TextBlacklist 节点中，replacement_text 参数的用途是什么?",
+        "answer": "replacement_text 参数在 CR_TextBlacklist 节点中用于指定一个替换文本，它用于替换在输入文本中检测到的所有黑名单词汇。"
+    },
+    {
+        "question": "CR_TextBlacklist 节点的输出包括哪些类型?",
+        "answer": "CR_TextBlacklist 节点的输出包括 STRING 类型的净化后文本，以及一个 STRING 类型的 'show_help' 链接，用于提供节点使用的文档。"
+    },
+    {
+        "question": "使用 CR_TextBlacklist 节点需要关注哪些使用提示?",
+        "answer": "使用 CR_TextBlacklist 节点的一个重要提示是其 Infra type 为 CPU，意味着该节点的处理将在 CPU 上完成。"
+    },
+    {
+        "question": "CR_TextBlacklist 节点的工作原理是什么?",
+        "answer": "CR_TextBlacklist 节点的工作原理是遍历 'blacklist_words' 参数中的每一行，即每个黑名单词汇，然后在 'text' 参数表示的文本中搜索并替换这些词汇为 'replacement_text' 参数指定的文本。"
+    }
+]

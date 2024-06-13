@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DefaultWeights节点在ComfyUI中的作用是什么?",
+        "answer": "DefaultWeights节点在ComfyUI的Adv-ControlNet中用于初始化并返回一组默认的控制权重和相应的时间步关键帧组，是控制网络的重要基础组件。"
+    },
+    {
+        "question": "DefaultWeights节点的'load_weights'方法如何执行初始化?",
+        "answer": "通过调用DefaultWeights节点的'load_weights'方法，系统初始化并返回一组默认的控制权重与时间步关键帧组，确保了系统有基线权重集。"
+    },
+    {
+        "question": "CONTROL_NET_WEIGHTS输出用于哪些方面?",
+        "answer": "CONTROL_NET_WEIGHTS输出表示网络的默认控制权重，它是控制网络行为的关键，定义了后续计算和调整中使用的初始权重。"
+    },
+    {
+        "question": "TIMESTEP_KEYFRAME输出如何在控制网络中发挥作用?",
+        "answer": "TIMESTEP_KEYFRAME输出封装了与控制权重相关联的关键帧组，对控制网络的时间动态起着重要作用，提供了管理和随时间应用权重的结构化方式。"
+    },
+    {
+        "question": "在ComfyUI的DefaultWeights节点中，哪种处理单元更适合运行?",
+        "answer": "DefaultWeights节点推荐的处理单元类型是CPU，这在节点的使用小贴士中给出。"
+    },
+    {
+        "question": "哪种类型的权重和关键帧组是在DefaultWeights节点中产生?",
+        "answer": "DefaultWeights节点产生的权重类型为ControlWeights，关键帧组类型为TimestepKeyframeGroup，分别对应Comfy的ControlWeights和TimestepKeyframeGroup数据类型。"
+    },
+    {
+        "question": "ComfyUI中的DefaultWeights节点是否可以产生输出?",
+        "answer": "是的，DefaultWeights节点可以产生输出，具体输出类型包括CONTROL_NET_WEIGHTS和TIMESTEP_KEYFRAME。"
+    }
+]

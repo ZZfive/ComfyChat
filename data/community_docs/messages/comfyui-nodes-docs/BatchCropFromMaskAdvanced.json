@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BatchCropFromMaskAdvanced节点的作用是什么?",
+        "answer": "BatchCropFromMaskAdvanced节点用于根据提供的掩码智能裁剪图像，确保保留图像中感兴趣区域的同时，裁剪出统一尺寸的图像，便于进一步处理或分析。"
+    },
+    {
+        "question": "BatchCropFromMaskAdvanced节点中'crop'方法如何工作?",
+        "answer": "'crop'方法通过对每个掩码计算边界框，然后经过平滑处理调整边界框大小和中心，最终裁剪出统一尺寸的图像，同时确保掩码区域的完整性。"
+    },
+    {
+        "question": "BatchCropFromMaskAdvanced节点的'original_images'参数是什么?",
+        "answer": "'original_images'参数是包含原始图像数据的关键输入，它对节点的执行至关重要，直接影响裁剪操作和最终输出图像。"
+    },
+    {
+        "question": "如何定义BatchCropFromMaskAdvanced节点的'crop_size_mult'参数?",
+        "answer": "'crop_size_mult'参数用于调整裁剪图像的大小，是一个可选输入，允许用户控制最终裁剪的图像尺寸相对于原始图像的比例。"
+    },
+    {
+        "question": "BatchCropFromMaskAdvanced的输入类型包括哪些?",
+        "answer": "输入类型分为必需和可选两类，其中'original_images'和'masks'是必需输入，'crop_size_mult'与'bbox_smooth_alpha'为可选输入，分别控制裁剪大小和平滑度。"
+    },
+    {
+        "question": "哪些输出类型由BatchCropFromMaskAdvanced节点提供?",
+        "answer": "输出类型包括原始图像、裁剪图像、裁剪掩码、组合裁剪图像、组合裁剪掩码、边界框坐标、组合边界框、边界框宽度和高度，为进一步处理和分析提供全面信息。"
+    },
+    {
+        "question": "BatchCropFromMaskAdvanced节点的'bbox_smooth_alpha'参数怎样影响输出?",
+        "answer": "'bbox_smooth_alpha'参数用于控制连续图像之间边界框大小的平滑度，对所有输出中与边界框相关的类型（如bboxes和combined_bounding_box）的平滑度和一致性产生影响。"
+    }
+]

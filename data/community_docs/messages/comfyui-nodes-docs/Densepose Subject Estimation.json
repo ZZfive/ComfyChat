@@ -1,0 +1,38 @@
+[
+    {
+        "question": "DenseposeSubjectEstimation是什么类型的节点?",
+        "answer": "DenseposeSubjectEstimation是一个属于'util'类别的节点，用于处理和分析输入图像中的摆姿，通过过滤器来选择基于特定标准的最相关摆姿。"
+    },
+    {
+        "question": "DenseposeSubjectEstimation的输入类型有什么要求？",
+        "answer": "DenseposeSubjectEstimation要求有openpose_image、subject和可选的densepose_select_every_nth作为输入。openpose_image是视觉输入，subject用于定义过滤摆姿的标准，而densepose_select_every_nth控制从过滤后的摆姿中选择的频率。"
+    },
+    {
+        "question": "哪些参数是DenseposeSubjectEstimation的必需输入？",
+        "answer": "DenseposeSubjectEstimation节点的必需输入参数包括openpose_image和subject。"
+    },
+    {
+        "question": "DenseposeSubjectEstimation如何选择和处理摆姿？",
+        "answer": "DenseposeSubjectEstimation节点使用过滤器来选择与特定主题相关的摆姿，并通过一系列基于主题和体质的过滤器来精炼摆姿集合。"
+    },
+    {
+        "question": "DenseposeSubjectEstimation的输出类型有哪些？",
+        "answer": "DenseposeSubjectEstimation的输出类型包括DENSEPOSE和DENSEPOSE_NAME，前者表示最终选定的摆姿，后者提供了选定摆姿的标识符或名称。"
+    },
+    {
+        "question": "DenseposeSubjectEstimation在何种条件下会从过滤后的摆姿中选择特定摆姿？",
+        "answer": "DenseposeSubjectEstimation节点会根据densepose_select_every_nth参数的值，从过滤后的摆姿中选择特定摆姿，控制输出摆姿的密度。"
+    },
+    {
+        "question": "DENSEPOSE_NAME输出代表什么信息？",
+        "answer": "DENSEPOSE_NAME输出提供了选定摆姿的标识符或名称，为记录、标记或进行额外处理提供文本参考。"
+    },
+    {
+        "question": "DENSEPOSE输出与DENSEPOSE_NAME输出有何不同？",
+        "answer": "DENSEPOSE输出是图像中经过精炼的摆姿，为后续使用或展示的主要输出，而DENSEPOSE_NAME输出为选定摆姿的名称，提供文本参考。"
+    },
+    {
+        "question": "DENSEPOSE数据类型在ComfyUI和Python中分别是什么？",
+        "answer": "在ComfyUI中，DENSEPOSE类型为IMAGE，而在Python中，其数据类型为torch.Tensor。"
+    }
+]

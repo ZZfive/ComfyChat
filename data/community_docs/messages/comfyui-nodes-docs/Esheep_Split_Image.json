@@ -1,0 +1,30 @@
+[
+    {
+        "question": "EsheepImageSplit节点主要用于什么场景?",
+        "answer": "EsheepImageSplit节点是用于将输入图像按指定的行和列分割成网格状的瓦片，便于处理大型图像，增强工作流程，允许进行更集中的分析和操作。"
+    },
+    {
+        "question": "哪些输入类型是EsheepImageSplit节点所必需的?",
+        "answer": "EsheepImageSplit节点的必需输入类型包括图像（images）、列数（columns）和行数（lines）。"
+    },
+    {
+        "question": "图像在EsheepImageSplit节点中的角色是什么?",
+        "answer": "图像在EsheepImageSplit节点中作为源数据，为节点操作提供主要的输入，决定了后续处理和瓦片生成的方式。"
+    },
+    {
+        "question": "列数和行数在EsheepImageSplit中的作用分别是什么?",
+        "answer": "列数（columns）和行数（lines）分别决定了水平和垂直方向上图像的分割方式，直接影响到生成瓦片的排列和数量，共同定义了网格结构。"
+    },
+    {
+        "question": "EsheepImageSplit节点的输出格式是什么?",
+        "answer": "EsheepImageSplit节点的输出是分割后的图像瓦片集合，以Comfy dtype为IMAGE和Python dtype为torch.Tensor的格式封装，便于在下游任务中进一步利用。"
+    },
+    {
+        "question": "哪些Python数据类型与EsheepImageSplit的输入或输出类型相关?",
+        "answer": "与EsheepImageSplit节点的输入或输出类型相关的是PIL.Image（图像输入）和torch.Tensor（图像输出）的Python数据类型。"
+    },
+    {
+        "question": "EsheepImageSplit节点的执行过程中，如何转化输入图像为多个瓦片?",
+        "answer": "在EsheepImageSplit节点中，输入图像首先根据给定的列数和行数分割成多个小块，然后每个小块被转换为PIL.Image格式，最终转化为torch.Tensor格式的图像瓦片。"
+    }
+]

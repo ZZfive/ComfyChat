@@ -1,0 +1,30 @@
+[
+    {
+        "question": "FaceFixerOpenCV 节点的用途是什么？",
+        "answer": "FaceFixerOpenCV 节点旨在使用一系列面部检测和图像处理技术来增强和修正图像中的面部特征，确保修正后的面部能够无缝地集成到原始图像中。"
+    },
+    {
+        "question": "哪些输入类型是 FaceFixerOpenCV 节点所必需的？",
+        "answer": "FaceFixerOpenCV 节点的必需输入类型包括 'image'、'base_model'、'vae'、'positive_cond_base' 和 'negative_cond_base'，这些类型分别用于图像、特征提取模型、变分自编码器、正向调节输入和负向调节输入。"
+    },
+    {
+        "question": "FaceFixerOpenCV 节点提供哪些可选输入类型？",
+        "answer": "可选输入类型包括 'seed'、'face_img_resolution'、'padding'、'scale_factor'、'min_neighbors'、'denoise'、'classifier'、'sampler_name'、'scheduler'、'cfg' 和 'steps'，涵盖了随机种子、图像分辨率、填充、缩放因子、去噪水平等多个关键参数。"
+    },
+    {
+        "question": "FaceFixerOpenCV 节点的输出是什么？",
+        "answer": "FaceFixerOpenCV 节点输出的是一个 'IMAGE' 类型的结果，即具有增强和修正面部特征的输出图像，代表了处理后输入图像的最终状态。"
+    },
+    {
+        "question": "FaceFixerOpenCV 节点处理过程中使用哪几种面部检测器？",
+        "answer": "FaceFixerOpenCV 节点可选的分类器包括 'animeface'、'combined' 以及多种 haarcascade 模型，如 'haarcascade_frontalface_default.xml' 和 'haarcascade_profileface.xml' 等，用于脸部及身体其他部分的检测。"
+    },
+    {
+        "question": "FaceFixerOpenCV 如何处理多个检测到的面部以避免重叠？",
+        "answer": "当检测到多个面部时，FaceFixerOpenCV 使用 IoU（Intersection over Union）计算来找到最佳的面部位置，以避免处理过程中的重叠，同时优化处理效率。"
+    },
+    {
+        "question": "如何在 FaceFixerOpenCV 节点中解决面部特征增强过程中的随机性问题？",
+        "answer": "通过设置 'seed' 参数，FaceFixerOpenCV 确保在面部特征增强过程中结果的可复现性，这在需要一致且可预测的结果时尤为重要。"
+    }
+]

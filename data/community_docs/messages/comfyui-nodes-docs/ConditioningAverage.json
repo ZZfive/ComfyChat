@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ConditioningAverage 节点的作用是什么？",
+        "answer": "ConditioningAverage 节点的作用是通过应用加权平均值来混合来自不同条件输入的数据，在 ComfyUI 中提供条件过程的精细控制。"
+    },
+    {
+        "question": "ComfyUI 中 ConditioningAverage 的 'conditioning_from' 参数是干什么的？",
+        "answer": "在 ConditioningAverage 节点中，'conditioning_from' 参数提供了将与 'conditioning_to' 平均的源条件数据，对于混合的初始化条件至关重要并直接影响节点的执行和结果输出。"
+    },
+    {
+        "question": "ComfyUI 的 ConditioningAverage 如何处理条件混合？",
+        "answer": "ConditioningAverage 根据 'conditioning_to_strength' 参数，智能地将 'conditioning_from' 与 'conditioning_to' 结合，通过加权平均直接影响条件混合过程。"
+    },
+    {
+        "question": "在 ConditioningAverage 节点中，'conditioning_to' 参数代表什么？",
+        "answer": "'conditioning_to' 参数在 ConditioningAverage 节点中定义了将应用加权平均的目标条件数据，对于确定节点的最终输出起到核心作用。"
+    },
+    {
+        "question": "ConditioningAverage 节点的输出包括哪些类型的数据？",
+        "answer": "ConditioningAverage 节点的输出包含修改后的张量列表，以及可能包含 'pooled_output' 字典项的元组，这一输出代表条件混合结果，是生成模型中进一步处理的重要数据。"
+    },
+    {
+        "question": "ComfyUI 的 ConditioningAverage 节点使用哪些数据类型进行输入和输出？",
+        "answer": "ConditioningAverage 节点接收和输出 CONDITIONING 类型的 Comfy 数据，即 List[Tuple[torch.Tensor, Dict[str, torch.Tensor]]] 形式的 Python 数据类型。"
+    },
+    {
+        "question": "ConditioningAverage 节点支持的硬件类型是什么？",
+        "answer": "ConditioningAverage 节点支持的硬件类型是 CPU，这是其执行条件混合操作的有效计算环境。"
+    }
+]

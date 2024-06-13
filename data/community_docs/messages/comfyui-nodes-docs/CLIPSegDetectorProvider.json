@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CLIPSegDetectorProvider是什么类?",
+        "answer": "CLIPSegDetectorProvider是一个ComfyUI中的自定义节点类，它基于CLIPSeg模型创建一个边界框检测器，用于基于文本提示检测图像中感兴趣的对象。"
+    },
+    {
+        "question": "CLIPSegDetectorProvider节点能够完成哪些任务？",
+        "answer": "CLIPSegDetectorProvider节点能够处理输入的文本和图像数据，根据文本描述生成图像中感兴趣对象的边界框，适用于基于文本提示的对象检测功能。"
+    },
+    {
+        "question": "输入到CLIPSegDetectorProvider节点的blur参数的作用是什么？",
+        "answer": "输入的blur参数用于调整图像的模糊程度，这是一个可选参数，它可以对检测精度产生影响，允许用户根据图像特性进行微调。"
+    },
+    {
+        "question": "CLIPSegDetectorProvider节点的dilation_factor参数有何作用？",
+        "answer": "dilation_factor参数是CLIPSegDetectorProvider节点中的一个可选输入，用于扩大检测到对象的边界，增强图像中较大或更分散对象的检测效果。"
+    },
+    {
+        "question": "CLIPSegDetectorProvider的输出是什么类型？",
+        "answer": "CLIPSegDetectorProvider节点的输出是BBOX_DETECTOR类型，具体来说，是一个BBoxDetectorBasedOnCLIPSeg对象，用于处理提供了文本提示下的对象边界框检测。"
+    },
+    {
+        "question": "CLIPSegDetectorProvider节点的哪类基础设施支持其运行？",
+        "answer": "CLIPSegDetectorProvider节点最适用于GPU类型的基础设施，这根据其使用提示确定。"
+    },
+    {
+        "question": "使用CLIPSegDetectorProvider时，如果未能检测到'CLIPSeg'节点，会发生什么？",
+        "answer": "如果在执行CLIPSegDetectorProvider时，环境未能检测到'CLIPSeg'节点的存在，系统将输出一个错误信息，指示用户必须安装biegert/ComfyUI-CLIPSeg扩展才能使用此节点。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Combine Masks 节点（MaskCombineOp）的功能是什么？",
+        "answer": "Combine Masks（MaskCombineOp）节点旨在将两个输入图像进行并集、交集、乘法等操作，以生成单一图像，适用于图像处理和计算机视觉任务中的多种视觉效果合成。"
+    },
+    {
+        "question": "在 ComfyUI 中，Combine Masks 节点处理图像的组合时，哪些是必需的输入参数？",
+        "answer": "Combine Masks 节点的必需输入参数包括image1、image2和op，分别指代两张要组合的图像和应用于这些图像的操作类型。"
+    },
+    {
+        "question": "Combine Masks 节点中 clamp_result 参数的作用是什么？",
+        "answer": "clamp_result 参数用于确定在执行图像操作后，结果图像是否应该被限制在0到1的范围内，防止由于操作而产生的极端值。"
+    },
+    {
+        "question": "如何进行多幅图像的并集操作？",
+        "answer": "使用 Combine Masks 节点通过将 op 设置为'union (max)'来实现多幅图像的并集操作，这将选择在数值上较大的像素值。"
+    },
+    {
+        "question": "在 ComfyUI 的 Combine Masks 中，'multiply_alpha'操作有何特殊处理？",
+        "answer": "'multiply_alpha'操作在 Combine Masks 节点中特殊处理复合图像的alpha通道，它将图像1的RGB部分与图像2的alpha值相乘，然后合并为一个新的带有调整后的透明度的图像。"
+    },
+    {
+        "question": "哪些操作可能要求在 Combine Masks 节点中使用 clamp_result 或 round_result 参数？",
+        "answer": "当执行图像的'add'或'multiply'等操作时，clamp_result可能需要用来限制结果值避免溢出，而round_result可能用于将操作后的浮点像素值四舍五入为最接近的整数值。"
+    },
+    {
+        "question": "在 ComfyUI 中，如何使用 Combine Masks 节点处理图像数据？",
+        "answer": "在 ComfyUI 中，Combine Masks 节点使用 PyTorch 定义的操作处理图像数据，算法会根据 op 参数执行选定的图像处理操作，如'union (max)'、'intersection (min)'等，并可选地使用Python’s torch库进行结果的range钳位和round四舍五入。"
+    }
+]

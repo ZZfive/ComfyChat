@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ControlNetApply是什么类型的节点?",
+        "answer": "ControlNetApply是一个conditioning类别的节点，专为在神经网络处理流程中集成控制信号设计。它在ComfyUI中用于增强图像处理过程，通过控制网络指导调整图像。"
+    },
+    {
+        "question": "ControlNetApply中的apply_controlnet方法的目的是什么?",
+        "answer": "apply_controlnet方法的目标是将控制网络的输出融合到条件数据中，以根据图像和指定的强度参数调整图像。它通过直接修改神经网络的条件信号来实现图像增强或变化。"
+    },
+    {
+        "question": "控制信号如何应用于神经网络的处理流程?",
+        "answer": "控制信号通过ControlNetApply节点的apply_controlnet方法被集成到神经网络处理流程中。该方法将控制信号与条件数据、图像和强度参数相结合，以影响条件数据并调整图像。"
+    },
+    {
+        "question": "哪些输入是ControlNetApply节点处理中所必需的?",
+        "answer": "ControlNetApply节点所需的输入包括: conditioning（条件数据）、control_net（控制网络）和image（图像数据），这些是节点正确运行的关键。"
+    },
+    {
+        "question": "ControlNetApply中的'strength'参数的作用是什么?",
+        "answer": "‘strength’参数用于调整控制网络对图像处理中条件数据影响的强度。通过调节参数值，用户能够控制最终图象输出中基于控制网络引导的调整程度。"
+    },
+    {
+        "question": "什么是ControlNetApply的'control_net'输入?",
+        "answer": "'control_net'参数是ComfyUI的ControlNetApply节点中一个必需的输入，它定义了用于指导图像数据修改的网络。此参数的类型为CONTROL_NET，是指导图像变化的关键要素。"
+    },
+    {
+        "question": "已处理的条件数据在ControlNetApply节点中如何呈现?",
+        "answer": "在ControlNetApply节点应用控制网络并进行图像处理后，输出的条件数据标记为'dtype: CONDITIONING'，表示图像数据已根据控制网络的指导和强度参数进行了调整。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BatchValueSchedule是什么节点?",
+        "answer": "BatchValueSchedule是一个ComfyUI的自定义节点，位于FizzNodes 📅🅕🅝/BatchScheduleNodes分类中，用于管理和插值指定帧范围内的关键帧值，适用于创建基于关键帧计算的动态序列。"
+    },
+    {
+        "question": "BatchValueSchedule节点的输入参数有哪些, 它们的Comfy dtype和Python dtype分别是什么?",
+        "answer": "BatchValueSchedule节点的输入参数包括: text（Comfy dtype: STRING，Python dtype: str），一个定义关键帧的字符串; max_frames（Comfy dtype: INT，Python dtype: int），指定需要插值的帧数上限; print_output（Comfy dtype: BOOLEAN，Python dtype: bool），一个可选的布尔值，若设置为True则将在控制台打印插值结果。"
+    },
+    {
+        "question": "BatchValueSchedule节点的输出参数有哪些, 并解释它代表了什么?",
+        "answer": "BatchValueSchedule的输出参数为: interpolated_values（Comfy dtype: FLOAT，Python dtype: List[float]），基于关键帧和插值方法中计算出的每个帧上的浮点值; frame_numbers（Comfy dtype: INT，Python dtype: List[int]），与interpolated_values对应的帧的整型编号列表。"
+    },
+    {
+        "question": "text参数在BatchValueSchedule节点中的作用是什么?",
+        "answer": "text参数是一个定义动画关键帧的字符串，它用于BatchValueSchedule中直接决定将在帧序列中进行插值的值，是确保准确插值的基础输入。"
+    },
+    {
+        "question": "为什么max_frames参数如此关键?",
+        "answer": "max_frames参数是BatchValueSchedule中关键参数之一，它限定了要在其中插值的帧数上限，从而确定了关键帧值在整个帧序列中分布的范围和插值的密度。"
+    },
+    {
+        "question": "在BatchValueSchedule节点中，print_output参数被设置为True时会发生什么?",
+        "answer": "当print_output参数设置为True时，BatchValueSchedule将在控制台打印其插值结果，这对于调试和验证节点生成的输出是否满足预期至关重要。"
+    },
+    {
+        "question": "BatchValueSchedule节点的源代码中，函数animate和INPUT_TYPES的定义方式具体是什么?",
+        "answer": "BatchValueSchedule节点源代码中的'animate'函数接收参数text、max_frames和print_output，并通过调用其他辅助函数计算插值结果，最终返回（t, list(map(int, t)))作为interpolated_values和frame_numbers。'INPUT_TYPES'定义了节点接受的输入类型、默认值和数据范围。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ExponentialScheduler是ComfyUI中的哪一类节点？",
+        "answer": "ExponentialScheduler属于ComfyUI的'sampling/custom_sampling/schedulers'类别，用于定义在扩散模型中噪声水平的指数衰减计划。"
+    },
+    {
+        "question": "ExponentialScheduler中的'steps'参数有何作用？",
+        "answer": "'steps'参数确定了噪声计划中的步数，它是控制噪声减少粒度的关键，直接影响采样质量和过程收敛性。"
+    },
+    {
+        "question": "在ExponentialScheduler中，'sigma_max'参数如何影响噪声计划？",
+        "answer": "'sigma_max'参数设定了噪声计划的初始噪声水平，它的值决定了噪声指数衰减的起点，从而影响扩散过程的起始噪声状态。"
+    },
+    {
+        "question": "ExponentialScheduler中'输出节点'属性的值告诉了我们什么？",
+        "answer": "ExponentialScheduler的'输出节点'属性为False，这意味着它不是一个用于图像输出的节点，而是用于噪声计划计算的中间节点。"
+    },
+    {
+        "question": "如何解释ExponentialScheduler中的'sigma_min'参数？",
+        "answer": "'sigma_min'参数指明了噪声计划达到的最终噪声水平，决定了采样过程的目标噪声状态，从而影响最终生成内容的噪声特性。"
+    },
+    {
+        "question": "ExponentialScheduler节点的'SIGMAS'输出有何意义？",
+        "answer": "'SIGMAS'输出提供了按指数衰减规则计算的噪声水平序列，对后续采样步骤有着直接的影响，是控制噪声的关键数据。"
+    },
+    {
+        "question": "ExponentialScheduler的'infra type'是什么，这意味着什么？",
+        "answer": "ExponentialScheduler的'infra type'为CPU，意味着该节点的操作和计算主要在CPU上执行，而不是依赖于GPU或其它硬件加速。"
+    }
+]

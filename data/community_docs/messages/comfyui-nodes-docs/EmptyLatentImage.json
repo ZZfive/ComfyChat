@@ -1,0 +1,30 @@
+[
+    {
+        "question": "EmptyLatentImage节点的作用是什么?",
+        "answer": "EmptyLatentImage节点用于生成空的潜在空间表示，作为潜在空间中图像的占位符，提供一个填充了零的结构化张量，用于进一步图像生成过程的起点。"
+    },
+    {
+        "question": "EmptyLatentImage节点所需的宽度参数为什么重要？",
+        "answer": "宽度参数定义了潜在图像的宽度，对于设定生成潜在空间的水平分辨率至关重要，并在确定图像的结构中起着重要作用。"
+    },
+    {
+        "question": "在潜在图像生成中，Height参数具体控制什么？",
+        "answer": "Height参数指定了潜在图像的高度，对于建立潜在空间的垂直分辨率至关重要，影响生成图像的整体尺寸。"
+    },
+    {
+        "question": "EmptyLatentImage中的batch_size参数有何作用？",
+        "answer": "批处理大小（batch_size）参数决定了一次性生成的潜在图像的数量，对于控制生成过程的效率非常关键，特别是在大量处理数据时尤为重要。"
+    },
+    {
+        "question": "EmptyLatentImage输出类型中的samples代表什么？",
+        "answer": "samples是生成潜在空间表示的输出，为一个全零的张量，作为后续图像处理或生成任务的基础，其数据类型在ComfyUI中为LATENT，在Python中类型为torch.Tensor。"
+    },
+    {
+        "question": "哪些参数是生成EmptyLatentImage所必需的？",
+        "answer": "生成EmptyLatentImage节点所必需的参数包括宽度（width）和高度（height），它们确定潜在图像的基本尺寸，而批处理大小（batch_size）是可选参数，用于控制生成图像的数量。"
+    },
+    {
+        "question": "EmptyLatentImage的源代码中使用了哪种设备类型进行张量操作？",
+        "answer": "EmptyLatentImage的源代码中使用的是GPU类型的设备进行张量操作，确保了生成潜在图像的高效性。"
+    }
+]

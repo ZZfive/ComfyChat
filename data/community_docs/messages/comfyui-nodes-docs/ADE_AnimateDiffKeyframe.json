@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ADE_AnimateDiffKeyframe是什么类型的节点？",
+        "answer": "ADE_AnimateDiffKeyframe是一个在ComfyUI中管理动画差异关键帧的节点，属于Animate Diff 🎭🅐🅓类，用于确保动画序列连贯性和维护完整性的关键处理。"
+    },
+    {
+        "question": "start_percent参数的作用是什么？",
+        "answer": "start_percent参数定义了关键帧在动画时间线中的起始位置，这对于确定动画的时机和确保关键帧序列的正确排序至关重要，其数据类型为FLOAT。"
+    },
+    {
+        "question": "在ComfyUI中，如何使用ADE_AnimateDiffKeyframe节点添加新的关键帧？",
+        "answer": "ADE_AnimateDiffKeyframe节点可以通过其load_keyframe方法接收参数如start_percent，并可选参数prev_ad_keyframes、scale_multival等，来创建并添加新的关键帧至动画序列中。"
+    },
+    {
+        "question": "scale_multival参数如何影响动画的表现？",
+        "answer": "scale_multival参数调整关键帧处动画的缩放，控制动画变化的强度和在序列特定点的范围，其数据类型为MULTIVAL，对于细化动画动态尤为重要。"
+    },
+    {
+        "question": "哪些参数可以用于继承或创建动画序列中关键帧的效果？",
+        "answer": "effect_multival和inherit_missing参数用于创建或微调动画序列中的关键帧效果，其中inherit_missing决定是否从先前关键帧继承未定义属性，而effect_multival则用于修改效果强度。"
+    },
+    {
+        "question": "guarantee_steps参数的意义是什么？",
+        "answer": "guarantee_steps参数确保关键帧之间的最小步数，这对于控制动画的平滑度和平稳过渡至关重要，其数据类型为INT。"
+    },
+    {
+        "question": "ADKeyframeNode节点的输出格式是什么？",
+        "answer": "ADKeyframeNode节点的输出是一组关键帧（AD_KEYFRAMES），表示带新添加或修改的关键帧的动画序列，对于后续动画的处理与渲染过程极其重要。"
+    }
+]

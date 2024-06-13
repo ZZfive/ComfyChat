@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BNK_TiledKSampler节点的主要功能是什么？",
+        "answer": "BNK_TiledKSampler节点的主要功能是促进高分辨率图像的生成，通过将任务划分为更小的部分，即瓦片，使采样过程更高效。它允许对图像生成过程进行复杂的控制，整合各种条件输入以指导生成过程。"
+    },
+    {
+        "question": "如何在ComfyUI中使用BNK_TiledKSampler进行图像采样？",
+        "answer": "在ComfyUI中使用BNK_TiledKSampler进行图像采样，首先需要提供模型参数、种子、瓦片宽度和高度、瓦片策略、步骤数、配置参数、采样器名称、调度器、正面条件输入、负面条件输入、潜在图像和去噪参数。"
+    },
+    {
+        "question": "BNK_TiledKSampler中的瓦片宽度（tile_width）参数影响什么？",
+        "answer": "瓦片宽度（tile_width）参数在BNK_TiledKSampler中决定了每个瓦片的水平维度。较大的瓦片宽度可以影响采样过程的粒度，可能会导致生成的图像有更多的细节，但同时也可能增加图像生成的计算量。"
+    },
+    {
+        "question": "BNK_TiledKSampler节点的输出包含了什么信息？",
+        "answer": "BNK_TiledKSampler节点的输出是一个潜在图像参数，它封装了在采样过程后细化的潜在表示，以及生成的图像及其相关的元数据。"
+    },
+    {
+        "question": "BNK_TiledKSampler中的模型参数的主要作用是什么？",
+        "answer": "模型参数在BNK_TiledKSampler中是定义用于生成图像样本的基础生成模型的重要组件。它决定输出的类型和质量，是图像生成质量的核心。"
+    },
+    {
+        "question": "什么是BNK_TiledKSampler中的去噪参数？它在图像采样过程中的作用是什么？",
+        "answer": "BNK_TiledKSampler中的去噪参数控制了在采样过程中应用的噪声减少水平，直接影响生成图像的清晰度和质量。降低此参数值会减少图像中的随机噪声，但可能会牺牲一些细节。"
+    },
+    {
+        "question": "BNK_TiledKSampler节点中的采样器名称参数有何作用？",
+        "answer": "采样器名称参数在BNK_TiledKSampler节点中指定了要用于图像生成的采样器类型。不同的采样器可能会影响图像的风格和特征，选择合适的采样器对于获得期望的图像效果至关重要。"
+    }
+]

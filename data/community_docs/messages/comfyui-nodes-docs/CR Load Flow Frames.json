@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_LoadFlowFrames 节点的作用是什么？",
+        "answer": "CR_LoadFlowFrames 节点用于动画目的加载和处理图像序列，能够根据用户定义的标准对目录中的帧进行排序和选择，确保动画帧逐帧操作的流畅工作流程。"
+    },
+    {
+        "question": "哪些参数是 CR_LoadFlowFrames 节点所必需的，并解释 input_folder 参数的作用？",
+        "answer": "CR_LoadFlowFrames 节点需要 input_folder、sort_by、current_frame 和 skip_start_frames 参数。其中，input_folder 指定包含图像序列的目录，在确定动画图像的来源中起着关键作用。"
+    },
+    {
+        "question": "在 CR_LoadFlowFrames 节点中，当前帧是通过哪个参数控制的？这个参数有何显著功能？",
+        "answer": "当前帧通过 current_frame 参数控制，它指示图像加载过程的起始帧，对于控制节点在动画序列中开始操作的位置至关重要。"
+    },
+    {
+        "question": "CR_LoadFlowFrames 可选参数 input_path 有何作用？",
+        "answer": "input_path 参数可选，它提供了一个特定的路径到图像文件，即使它们不在默认的输入目录中，为动画过程提供了文件位置的灵活性。"
+    },
+    {
+        "question": "CR_LoadFlowFrames 输出类型中，current_image 和 previous_image 提供了什么信息？",
+        "answer": "current_image 输出提供了从图像序列中加载的最新帧，而 previous_image 输出提供了序列中当前帧之前的帧，二者对于动画中的过渡效果和持续的动画操作非常重要。"
+    },
+    {
+        "question": "对于 CR_LoadFlowFrames 节点，show_help 输出类型的目的是什么？",
+        "answer": "show_help 输出提供了一个链接到文档的链接，用于给用户提供有关如何使用该节点的进一步指导，对于寻求有关节点功能更多信息的用户特别有帮助。"
+    },
+    {
+        "question": "使用 CR_LoadFlowFrames 节点处理图像序列时，应如何指定图像的排序方式？",
+        "answer": "用户通过 sort_by 参数指定图像的排序方式，它确定了输入文件夹中图像文件的排序方法，对于维护动画序列中帧的正确顺序至关重要。"
+    }
+]

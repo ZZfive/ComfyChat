@@ -1,0 +1,30 @@
+[
+    {
+        "question": "AreaToMask是什么类型的节点？",
+        "answer": "AreaToMask是ComfyUI中的一个自定义节点，属于Mixlab/Mask类别，用于将带有RGBA通道的图像转换为掩码，专注于通过移除透明度和应用切割技术来隔离感兴趣的特定区域。"
+    },
+    {
+        "question": "AreaToMask节点的核心功能是什么？",
+        "answer": "核心功能是将包含透明度信息的图像转换为专注于精确隔离和处理特定区域的掩码。"
+    },
+    {
+        "question": "哪些类型的输入是AreaToMask节点必需的？",
+        "answer": "AreaToMask节点需要“RGBA”类型输入，这提供了转换掩码所需的原始图像数据，通常是PIL.Image格式的Python类型数据。"
+    },
+    {
+        "question": "在输入类型中，‘RGBA’对AreaToMask节点意味着什么？",
+        "answer": "‘RGBA’输入意味着节点需要一张包含红、绿、蓝和透明度通道的图像，这通常是用于处理图像中的透明和不透明区域的基础数据。"
+    },
+    {
+        "question": "AreaToMask节点输出的掩码格式是什么？",
+        "answer": "输出的掩码格式是tensor类型，属于Comfy dtype，在Python中表示为torch.Tensor，主要用于后续的图像处理任务，能够进行精确的操作和分析。"
+    },
+    {
+        "question": "在哪个硬件环境下可以最有效地运行AreaToMask节点？",
+        "answer": "AreaToMask节点的基础设施类型为CPU，意味着它可以在普通CPU环境下运行，但可能不是最高效的运行环境，具体效率取决于处理图像的复杂程度。"
+    },
+    {
+        "question": "如何在ComfyUI中调用AreaToMask节点？",
+        "answer": "通过在节点编辑器中选择'♾️Mixlab/Mask'分类下的'AreaToMask'节点，然后连接一个含有'RGBA'格式的图像输入。在运行图时，会将输入图像转换为对特定区域进行隔离处理的掩码输出。"
+    }
+]

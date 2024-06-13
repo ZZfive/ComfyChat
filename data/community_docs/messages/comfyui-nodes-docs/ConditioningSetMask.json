@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ConditioningSetMask节点是哪个类别的节点，其主要功能是什么？",
+        "answer": "ConditioningSetMask节点属于conditioning类别，它通过在指定区域内应用掩码并调整强度，来修改输入的条件集，增强模型对不同输入响应的灵活性。"
+    },
+    {
+        "question": "在ComfyUI中，ConditioningSetMask节点输入的mask参数为何类型，以及它的作用是什么？",
+        "answer": "ConditioningSetMask节点的mask参数类型是MASK，即torch.Tensor，它用于确定条件集中哪些元素将被修改，与强度参数共同作用控制修改的范围。"
+    },
+    {
+        "question": "ConditioningSetMask节点中，强度参数strength有何作用？",
+        "answer": "强度参数strength用于决定掩码对条件集产生的影响程度，其值域为0.0到10.0，允许用户微调掩码的作用范围，影响最终输出的条件集。"
+    },
+    {
+        "question": "ConditioningSetMask节点的set_cond_area参数有何选项，以及它如何影响节点的行为？",
+        "answer": "set_cond_area参数提供'default'和'mask bounds'两个选项，选择不同选项可以控制是使用默认的条件区域还是使节点行为依据掩码的边界，显著改变输出条件集的生成方式。"
+    },
+    {
+        "question": "ConditioningSetMask节点处理后，输出的条件集（conditioning）有何特征？",
+        "answer": "ConditioningSetMask节点输出的条件集是经过掩码和强度参数修改后的结果，类型同输入，为CONDITIONING，即List[Tuple[str, Dict[str, Any]]]列表，代表了节点对模型处理流程做出的调整。"
+    },
+    {
+        "question": "哪些类型的节点可以用于在ComfyUI中调整条件集以增强模型的响应灵活性？",
+        "answer": "ConditioningSetMask节点可以通过应用掩码和调整强度，定制条件区域，增强模型对不同输入的响应灵活性，是专门用于此类场景的节点。"
+    },
+    {
+        "question": "在ComfyUI的ConditioningSetMask节点中，如何通过Python dtype格式访问mask参数？",
+        "answer": "在ConditioningSetMask节点中，mask参数的Python dtype格式为torch.Tensor，可以通过此类型直接访问并处理掩码数据，用于确定条件集中需要修改的元素范围。"
+    }
+]
