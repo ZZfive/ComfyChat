@@ -1,0 +1,30 @@
+[
+    {
+        "question": "PromptScheduleNodeFlowEnd 类的作用是什么？",
+        "answer": "PromptScheduleNodeFlowEnd 类是 ComfyUI 中的一个自定义节点，用于根据给定的文本和一系列参数生成动画提示，处理文本以创建一系列用于驱动动画序列的提示，同时确保平滑的帧间过渡。"
+    },
+    {
+        "question": "哪些是 PromptScheduleNodeFlowEnd 必需的输入参数？",
+        "answer": "PromptScheduleNodeFlowEnd 必需的输入参数包括 ‘text’、‘max_frames’、‘clip’、‘print_output’ 和 ‘current_frame’。这些参数分别用于提供原始文本、定义动画序列的最大帧数、代表 CLIP 模型、控制是否打印输出以及指示动画序列中的当前位置。"
+    },
+    {
+        "question": "‘text’ 参数在 PromptScheduleNodeFlowEnd 这个节点中起到什么作用？",
+        "answer": "‘text’ 参数是 PromptScheduleNodeFlowEnd 的关键输入，它提供了将用于生成动画提示的原始文本，直接影响动画的内容和流程。"
+    },
+    {
+        "question": "How does 'pre_text' influence the animation in 'PromptScheduleNodeFlowEnd'?",
+        "answer": "'pre_text' 用于在主动画提示前添加上下文，影响动画的初始状态，特别是在需要引入预备部分时有用，为动画的起始提供额外的描述或设定。"
+    },
+    {
+        "question": "可以用来微调动画进展的可选参数有哪些？",
+        "answer": "可选参数 ‘pw_a’、‘pw_b’、‘pw_c’ 和 ‘pw_d’ 用于调整动画中某些提示的影响，允许根据创意要求对动画进行精确控制，从而微调动画的进展。"
+    },
+    {
+        "question": "‘POS’ 输出代表什么意思？",
+        "answer": "‘POS’ 输出提供了动画的正向调节数据，代表动画在每一帧应该采取的期望方向或结果，通过 Conditioning 类型输出，用于引导动画正向变化。"
+    },
+    {
+        "question": "什么类型的设备最佳支持使用 PromptScheduleNodeFlowEnd 节点？",
+        "answer": "PromptScheduleNodeFlowEnd 节点的最佳运行环境为 CPU，这意味着它被优化用于在中央处理器上运行，适合于那些倾向于在标准计算设备上运行 ComfyUI 的用户。"
+    }
+]

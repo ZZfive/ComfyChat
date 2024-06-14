@@ -1,0 +1,42 @@
+[
+    {
+        "question": "INPAINT_MaskedFill节点是用于什么目的的?",
+        "answer": "INPAINT_MaskedFill节点是ComfyUI中的一个自定义节点，用于通过使用不同的算法填充图像中缺失或遮蔽的区域，并与周围上下文相匹配，从而执行图像修复。"
+    },
+    {
+        "question": "INPAINT_MaskedFill节点输入的图像参数有什么作用？",
+        "answer": "图像参数是INPAINT_MaskedFill节点操作的基础，为图像修复过程提供了主要输入，它是实现所需图像修复效果的关键数据。"
+    },
+    {
+        "question": "INPAINT_MaskedFill节点中的遮罩（mask）参数是如何指导图像修复的?",
+        "answer": "遮罩参数定义了INPAINT_MaskedFill中需要进行图像修复的具体区域，指导图像内容的填充或修改。"
+    },
+    {
+        "question": "INPAINT_MaskedFill节点的填充方法（fill）参数对图像修复有何影响?",
+        "answer": "填充方法参数在INPAINT_MaskedFill中决定了图像修复的使用方法，对填充内容的质量和风格有重大影响，是实现期望视觉效果的决定性因素。"
+    },
+    {
+        "question": "可选参数衰减（falloff）在INPAINT_MaskedFill节点中如何影响图像修复过渡平滑度?",
+        "answer": "衰减参数通过控制侵蚀和模糊操作的半径影响INPAINT_MaskedFill图像修复过渡的平滑度，决定了填充区域与原始图像融合的方式。"
+    },
+    {
+        "question": "在INPAINT_MaskedFill中，衰减（falloff）参数的Python dtype是什么类型?",
+        "answer": "衰减（falloff）参数在INPAINT_MaskedFill中的Python dtype类型为int，用于表示控制图像修复过渡平滑度的整数值。"
+    },
+    {
+        "question": "哪些算法填充方案可在INPAINT_MaskedFill节点的填充（fill）参数中选择?",
+        "answer": "在INPAINT_MaskedFill节点中，可以通过填充（fill）参数选择'neutral'，'telea'或'navier-stokes'算法填充方案，这几种方案影响图像修复方法的选择。"
+    },
+    {
+        "question": "哪些节点可以使用不同的算法执行图像修复?",
+        "answer": "ComfyUI的INPAINT_MaskedFill节点可使用不同的算法填充方案对图像中缺失或遮蔽的区域进行修复，实现与周围上下文相匹配和无缝融合的图像修复效果。"
+    },
+    {
+        "question": "INPAINT_MaskedFill节点输出结果为何种类型?",
+        "answer": "INPAINT_MaskedFill节点的输出类型是IMAGE类型的图像，是图像修复过程的结果，其中遮蔽区域已填充与周围上下文相匹配的内容，提供了一个视觉上连贯的最终图像。"
+    },
+    {
+        "question": "INPAINT_MaskedFill节点适用于哪种硬件类型以执行图像修复任务?",
+        "answer": "INPAINT_MaskedFill节点的执行建议在GPU上进行，这是其执行图像修复任务的理想硬件配置。"
+    }
+]

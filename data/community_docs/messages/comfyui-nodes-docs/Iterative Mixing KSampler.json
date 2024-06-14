@@ -1,0 +1,30 @@
+[
+    {
+        "question": "IterativeMixingKSampler是什么类？",
+        "answer": "IterativeMixingKSampler是ComfyUI中的一个类，它通过逐步引入一组参考潜在表示来指导并细化一批潜在表示，从而提高生成样本的质量，特别适用于迭代混合过程。"
+    },
+    {
+        "question": "IterativeMixingKSampler主要用于解决什么问题？",
+        "answer": "IterativeMixingKSampler旨在通过迭代混合提高生成样本的质量，它逐步引入一组参考潜在表示来指导潜在表示批次的去噪和细化过程。"
+    },
+    {
+        "question": "什么类型的输入是IterativeMixingKSampler所必需的？",
+        "answer": "IterativeMixingKSampler需要模型、种子、配置参数（cfg）、采样器名称、调度策略、步数增量、正向调节数据、负向调节数据、潜在表示批次、去噪程度、混合速率参数以及一个批次顺序反转标志作为输入。"
+    },
+    {
+        "question": "latent_image_batch参数在IterativeMixingKSampler中起什么作用？",
+        "answer": "latent_image_batch参数包含需要被去噪和细化的潜在表示批次，是IterativeMixingKSampler处理的核心数据。"
+    },
+    {
+        "question": "IterativeMixingKSampler如何生成输出结果？",
+        "answer": "IterativeMixingKSampler生成的输出是经过迭代去噪过程后细化的潜在表示批次，输出类型为LATENT，数据类型为torch.Tensor。"
+    },
+    {
+        "question": "哪些输入参数直接影响IterativeMixingKSampler的去噪过程？",
+        "answer": "模型、去噪程度参数（denoise）、正向与负向调节数据（positive和negative）、采样器名称以及配置参数（cfg）直接对IterativeMixingKSampler的去噪过程产生影响。"
+    },
+    {
+        "question": "IterativeMixingKSampler采用了什么类型的基础设施？",
+        "answer": "IterativeMixingKSampler的推荐基础设施类型是CPU，但实际应用中也可能支持GPU，取决于具体实现和环境配置。"
+    }
+]

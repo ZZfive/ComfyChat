@@ -1,0 +1,34 @@
+[
+    {
+        "question": "PasteByMask节点的功能是什么？",
+        "answer": "PasteByMask节点的功能是使用遮罩确定位置，将一个图像粘贴到另一个图像上，智能地调整粘贴图像的大小以适应遮罩的尺寸。"
+    },
+    {
+        "question": "哪些类型的输入是PasteByMask节点必需的？",
+        "answer": "PasteByMask节点必需的输入类型包括image_base（基础图像）、image_to_paste（要粘贴的图像）、mask（掩模）和resize_behavior（调整大小行为）。"
+    },
+    {
+        "question": "PasteByMask节点支持的resize_behavior有哪几种模式？",
+        "answer": "PasteByMask节点的resize_behavior参数支持五种模式：'resize'、'keep_ratio_fill'、'keep_ratio_fit'、'source_size'和'source_size_unmasked'，这些模式分别控制图像如何调整大小以适应遮罩。"
+    },
+    {
+        "question": "在PasteByMask节点中，'mask_mapping_optional'参数的作用是什么？",
+        "answer": "'mask_mapping_optional'是一个可选参数，用于指定特别的image_to_paste粘贴到哪个基础图像image_base上，为复杂图像操作提供额外控制。"
+    },
+    {
+        "question": "PasteByMask节点如何处理与遮罩大小不匹配的图像？",
+        "answer": "PasteByMask节点通过重复图像（根据遮罩和基础图像的大小差）来处理大小不匹配的问题，确保粘贴和遮罩操作正确执行。"
+    },
+    {
+        "question": "哪些操作是PasteByMask输出的组成部分？",
+        "answer": "PasteByMask节点的输出是一个调整后的结果图像，根据指定的resize_behavior参数，将image_to_paste粘贴到image_base上。"
+    },
+    {
+        "question": "PasteByMask节点的缩放行为在哪些模式下会保持原图的纵横比？",
+        "answer": "在'keep_ratio_fill'和'keep_ratio_fit'模式下，ResizeBehavior会确保在调整image_to_paste大小以适应遮罩时，其纵横比保持不变。"
+    },
+    {
+        "question": "PasteByMask节点的Python dtype是什么？",
+        "answer": "PasteByMask节点的Python dtype是torch.Tensor，用于处理所有图像和掩模操作。"
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "question": "KSamplerSelect节点在ComfyUI中起到什么作用？",
+        "answer": "KSamplerSelect节点在ComfyUI中提供了一种选择不同采样方法的机制，它简化了采样器选择和初始化过程，让用户关注于高级采样任务。"
+    },
+    {
+        "question": "什么是sampler_name参数在KSamplerSelect节点中的功能？",
+        "answer": "sampler_name参数用于确定将使用哪种采样方法，它指导KSamplerSelect节点选择正确的采样器，对采样过程的执行和结果至关重要。"
+    },
+    {
+        "question": "KSamplerSelect的SAMPLER输出代表什么？",
+        "answer": "SAMPLER输出代表了根据选择的采样方法封装的功能，它对于执行采样过程和实现所需结果具有重要意义。"
+    },
+    {
+        "question": "在KSamplerSelect节点中，sampler_name参数的类型是什么？",
+        "answer": "在KSamplerSelect节点中，sampler_name参数的类型是字符串(str)，在Comfy和Python中皆如此定义。"
+    },
+    {
+        "question": "KSamplerSelect节点的适用范围是什么？",
+        "answer": "KSamplerSelect节点是为采样过程设计的，特别适用于从多种可用的采样方法中选择合适的一种来使用。"
+    },
+    {
+        "question": "哪些采样器可以被KSamplerSelect节点选择？",
+        "answer": "KSamplerSelect节点可以从comfy.samplers.SAMPLER_NAMES中选择采样器，这包含了ComfyUI中所有可利用的采样方法。"
+    },
+    {
+        "question": "KSamplerSelect节点是否是一个输出节点？",
+        "answer": "KSamplerSelect节点不是一个输出节点，它主要用于处理输入并根据选择的采样方法输出采样器对象。"
+    },
+    {
+        "question": "使用KSamplerSelect时需要注意哪些硬件条件？",
+        "answer": "KSamplerSelect节点的使用建议在CPU上执行，即它的infra type为CPU，这是因为采样过程在CPU上可能更稳定或更优化。"
+    },
+    {
+        "question": "在ComfyUI中，KSamplerSelect节点与采样方法之间的关系是什么？",
+        "answer": "KSamplerSelect节点在ComfyUI中的作用是根据用户的选择来初始化并返回特定的采样方法，使得用户可以灵活选择适合的采样器。"
+    },
+    {
+        "question": "KSamplerSelect是如何选择采样器的？",
+        "answer": "KSamplerSelect通过解析sampler_name参数，调用comfy.samplers.sampler_object方法来选择并初始化指定名称的采样器。"
+    }
+]

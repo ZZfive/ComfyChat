@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LoadResAdapterNormalization 是什么？",
+        "answer": "LoadResAdapterNormalization 是 ComfyUI 的一个自定义节点，用于将 ResAdapter 标准化权重集成到给定的模型中，增强模型处理具有标准化特征的输入数据的能力。"
+    },
+    {
+        "question": "LoadResAdapterNormalization 的输入参数有哪些？",
+        "answer": "LoadResAdapterNormalization 的输入参数包括必需的 'model' 和 'resadapter_path'。'model' 是将要应用 ResAdapter 标准化权重的机器学习模型，而 'resadapter_path' 指定了存储 ResAdapter 标准化权重的目录路径。"
+    },
+    {
+        "question": "哪些类型的数据可以作为 LoadResAdapterNormalization 的输入 'model'？",
+        "answer": "LoadResAdapterNormalization 的输入 'model' 的数据类型应该是 Comfy dtype: MODEL 或 Python dtype: torch.nn.Module。"
+    },
+    {
+        "question": "LoadResAdapterNormalization 的 'resadapter_path' 参数有何用途？",
+        "answer": "'resadapter_path' 参数指向存储 ResAdapter 标准化权重的目录路径，对于节点来说，它是找到并加载正确权重以确保标准化成功应用于模型的必要条件。"
+    },
+    {
+        "question": "LoadResAdapterNormalization 节点会输出什么类型的数据？",
+        "answer": "LoadResAdapterNormalization 输出 'model_clone'，这是一个应用了 ResAdapter 标准化权重的原始模型，数据类型为 Comfy dtype: MODEL 或 Python dtype: torch.nn.Module。"
+    },
+    {
+        "question": "LoadResAdapterNormalization 节点的使用建议是什么？",
+        "answer": "LoadResAdapterNormalization 节点的建议使用类型是 CPU，这意味着它在 CPU 上运行较为合适。"
+    },
+    {
+        "question": "在使用 LoadResAdapterNormalization 节点时，如何确保 'resadapter_path' 指向的路径是有效的？",
+        "answer": "在 LoadResAdapterNormalization 节点中，通过检查 'resadapter_path' 所指向的路径是否存在来确保其有效性，即方法 `load_res_adapter` 内的 'resadapter_full_path' 必须是一个有效的路径，否则会抛出 'Invalid model path' 的异常。"
+    }
+]

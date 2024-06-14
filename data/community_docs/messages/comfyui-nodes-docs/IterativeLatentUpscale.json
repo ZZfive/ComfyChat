@@ -1,0 +1,30 @@
+[
+    {
+        "question": "IterativeLatentUpscale 节点的功能是什么？",
+        "answer": "IterativeLatentUpscale 节点的功能是逐步放大样本的潜在表示，通过控制的迭代步骤来智能地应用放大因子，增强潜在空间的分辨率，从而可能提升放大输出中的细节品质。"
+    },
+    {
+        "question": "IterativeLatentUpscale 节点的'doit'方法如何实现样本质的放大？",
+        "answer": "'doit'方法通过迭代放大潜在表示来实现样本质的放大，根据指定的迭代步骤和放大因子精炼潜在空间，以实现更高质量的放大效果，同时保持底层结构完好。"
+    },
+    {
+        "question": "在 IterativeLatentUpscale 节点中，'samples'参数为何至关重要？",
+        "answer": "'samples'参数提供了节点处理的初始潜在表示，其质量和维度直接影响最终高分辨率输出的生成。它是迭代放大过程的起点和基础。"
+    },
+    {
+        "question": "如何使用'upscale_factor'参数控制输出解析度？",
+        "answer": "'upscale_factor'参数设定潜在表示放大到目标解析度的程度，是控制放大输出最终分辨率的关键，允许用户自定义潜在空间的规模，以达到所需的输出尺寸。"
+    },
+    {
+        "question": "'steps'参数的作用是什么？",
+        "answer": "'steps'参数定义了迭代放大过程中执行的步骤数，影响迭代过程的粒度，更多步骤会导致更平滑、更精细的放大结果。"
+    },
+    {
+        "question": "'upscaler'参数在 IterativeLatentUpscale 节点中的作用是什么？",
+        "answer": "'upscaler'参数提供了放大潜在样本的机制，包含了迭代放大过程所必需的逻辑和操作，对节点功能的效率和效果至关重要。"
+    },
+    {
+        "question": "IterativeLatientUpscale 节点如何处理可选参数'temp_prefix'？",
+        "answer": "'temp_prefix'参数用于标识迭代放大过程中创建的临时文件前缀，虽然不是必需的，但在复杂工作流程中用于组织和识别临时文件，尤其是在涉及多个节点的情况下非常有用。"
+    }
+]

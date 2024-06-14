@@ -1,0 +1,30 @@
+[
+    {
+        "question": "TransitionFromSize节点是做什么的？",
+        "answer": "TransitionFromSize节点在ComfyUI中用于生成从一个图像大小平滑过渡到另一个图像大小的一系列图像。这个过程由贝塞尔曲线控制，提供视觉上吸引人的转变效果。"
+    },
+    {
+        "question": "哪些参数是TransitionFromSize节点的必要输入？",
+        "answer": "TransitionFromSize节点需要的必要输入包括：图像（image）、from_image_width、from_image_height、total_frames和beiser_point_x与beiser_point_y。"
+    },
+    {
+        "question": "beiser_point_x和beiser_point_y如何影响TransitionFromSize的图像变形？",
+        "answer": "beiser_point_x和beiser_point_y是贝塞尔曲线上的控制点，分别影响过渡的水平和垂直方面，定义变形路径的水平和垂直曲率。"
+    },
+    {
+        "question": "TransitionFromSize节点的输出是什么类型？",
+        "answer": "TransitionFromSize节点的输出是一系列代表从原始大小到新大小平滑过渡的图像，类型为IMAGE，且在Python中以torch.Tensor形式表示。"
+    },
+    {
+        "question": "在使用TransitionFromSize时，如何利用bezier曲线来创造视觉上平滑的过渡效果？",
+        "answer": "通过设置beiser_point_x和beiser_point_y的值，即贝塞尔曲线的控制点，可以控制图像变形的路径和速度，从而创造视觉上平滑且吸引人的过渡效果。"
+    },
+    {
+        "question": "TransitionFromSize节点的total_frames参数有什么作用？",
+        "answer": "total_frames参数规定了过渡序列中的总帧数，这直接影响变形过程的持续时间和细节水平，即过渡看起来的流畅程度。"
+    },
+    {
+        "question": "哪些Python数据类型是TransitionFromSize节点输入所需的？",
+        "answer": "TransitionFromSize节点输入所需的数据类型为：图像参数为PIL.Image.Image或numpy.ndarray，尺寸参数为int，而贝塞尔曲线的控制点参数为float。"
+    }
+]

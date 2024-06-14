@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SaveLatent节点的目的是什么？",
+        "answer": "SaveLatent节点旨在将样本的潜在表示保存到磁盘，通过将潜在张量转换为文件格式，便于以后检索和进一步处理或分析。"
+    },
+    {
+        "question": "SaveLatent节点处理的输入数据类型是什么？",
+        "answer": "SaveLatent节点的关键输入数据类型是 LATENT（潜在表示），具体为 torch.Tensor 类型的张量。此外，它可接收 STRING 类型的 filename_prefix 和 PROMPT 类型的 prompt 以及 EXTRA_PNGINFO 类型的额外元数据。"
+    },
+    {
+        "question": "如何使用 SaveLatent 节点保存包含元数据的潜在表示？",
+        "answer": "通过提供包含描述信息的 'prompt' 和任何其他形式的 'extra_pnginfo' 参数，SaveLatent 节点将这些附加到保存的潜在文件的元数据中，为潜在表示提供上下文。"
+    },
+    {
+        "question": "SaveLatent 节点的输出是什么？",
+        "answer": "SaveLatent 节点的输出是一个字典，其中包含保存的潜在文件的详细信息，如文件名和所属的子文件夹，这些信息适合在界面显示或后续处理使用。"
+    },
+    {
+        "question": "在保存潜在表示时，filename_prefix 参数的作用是什么？",
+        "answer": "filename_prefix 参数定义了保存的文件名前缀，影响着保存文件的命名和在输出目录中的组织，以识别和分类为目的。"
+    },
+    {
+        "question": "为什么在潜在文件的元数据中提供 prompt 和 extra_pnginfo 参数很重要？",
+        "answer": "提供 prompt 和 extra_pnginfo 参数对于跟踪潜在表示的生成背景和补充关键信息至关重要，有助于理解潜在数据的来源和使用场景，特别是当这些数据用于后续分析或处理时。"
+    },
+    {
+        "question": "SaveLatent 节点保存文件时如何处理元数据的整合？",
+        "answer": "SaveLatent 节点在保存文件时，如果 'prompt' 和 'extra_pnginfo' 被提供，会将它们转化为 JSON 格式，并作为一个整体的 metadata 字典的一部分，确保所有指定的元数据在文件中得以保存。"
+    }
+]

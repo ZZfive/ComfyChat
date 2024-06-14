@@ -1,0 +1,30 @@
+[
+    {
+        "question": "HypernetworkLoader 类有何作用？",
+        "answer": "HypernetworkLoader 类旨在方便地加载和集成超网络到现有的神经网络模型中，以增强模型的能力，通过动态生成基于提供的强度参数的超网络补丁来实现。"
+    },
+    {
+        "question": "HypernetworkLoader 需要哪些必填的输入参数？",
+        "answer": "HypernetworkLoader 需要的必填输入参数包括 'model' 和 'hypernetwork_name'，分别代表将通过超网络进行增强的神经网络模型及要加载的超网络名称。"
+    },
+    {
+        "question": "什么是 model 参数，它的类型和用途是什么？",
+        "answer": "'model' 参数代表将通过超网络进行增强的神经网络，类型为 Comfy dtype 的 MODEL 和 Python dtype 的 torch.nn.Module，用于被修改以包含超网络功能的核心组件。"
+    },
+    {
+        "question": "hypernetwork_name 参数的功能是什么？",
+        "answer": "'hypernetwork_name' 参数用于指定要加载的超网络的名称，是决定将应用于模型的哪个超网络补丁的关键输入。"
+    },
+    {
+        "question": "HypernetworkLoader 中有哪些可选的输入参数？",
+        "answer": "HypernetworkLoader 的可选输入参数是 'strength'，用于决定超网络对模型影响的强度，允许微调效果的强度，类型为 Comfy dtype 的 FLOAT 和 Python dtype 的 float。"
+    },
+    {
+        "question": "HypernetworkLoader 的输出包括什么？",
+        "answer": "HypernetworkLoader 的输出是 'model'，即已经通过超网络补丁增强的原始神经网络模型，现在具备了利用超网络提供的额外能力。"
+    },
+    {
+        "question": "如何使用 HypernetworkLoader 加载超网络并增强模型？",
+        "answer": "使用 HypernetworkLoader 加载超网络并增强模型的步骤包括调用 'load_hypernetwork' 方法，传入 'model'、'hypernetwork_name' 和可选的 'strength' 参数，输出为增强后的神经网络模型。"
+    }
+]

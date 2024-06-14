@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentFromBatch节点的'frombatch'方法实现了什么功能？",
+        "answer": "LatentFromBatch节点的'frombatch'方法能够从给定的批次中提取特定长度的潜在样本，从特定的批次索引开始，确保提取的样本及其掩码（如果存在）被正确处理，保持它们的完整性和正确性。"
+    },
+    {
+        "question": "在ComfyUI中，LatentFromBatch节点的'samples'参数的作用是什么？",
+        "answer": "'samples'参数是LatentFromBatch节点中至关重要的一项输入，它保存了要从中提取批次的潜在表示。该参数直接影响节点的输出，因为它指定了潜在数据的来源。"
+    },
+    {
+        "question": "如何使用LatentFromBatch节点从特定批次的索引开始提取样本？",
+        "answer": "使用LatentFromBatch节点时，通过指定'batch_index'参数，可以定义从样本中提取潜在数据的起始点，从而控制在后续操作中将使用批次的特定段。"
+    },
+    {
+        "question": "LatentFromBatch节点的'length'参数影响其输出的哪些方面？",
+        "answer": "'length'参数在确定LatentFromBatch节点的输出大小和要处理的潜在数据范围方面起着关键作用。它指定了从批次中提取的样本数量。"
+    },
+    {
+        "question": "哪个输出参数代表了LatentFromBatch节点的核心数据输出？",
+        "answer": "'latent_samples'输出是LatentFromBatch节点的关键输出参数，它包含了基于提供的批次索引和长度参数提取的潜在表示，是工作流程中进一步使用的核心数据。"
+    },
+    {
+        "question": "在ComfyUI的LatentFromBatch节点中，'noise_mask'如何处理？",
+        "answer": "当'noise_mask'存在时，LatentFromBatch节点会根据样本的形状适当地重复或截取掩码，以确保掩码与样本大小匹配，然后将其克隆并包括在输出中。"
+    },
+    {
+        "question": "LatentFromBatch节点输出的'batch_index'字段如何填充？",
+        "answer": "输出的'batch_index'字段在LatentFromBatch节点中根据输入的批次索引和长度参数来填充，表示处理后的批次索引范围，确保与输入参数一致。"
+    }
+]

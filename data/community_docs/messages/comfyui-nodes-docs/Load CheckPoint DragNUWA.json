@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LoadCheckPointDragNUWA节点主要用于ComfyUI中的什么功能?",
+        "answer": "LoadCheckPointDragNUWA节点主要用于封装和操作DragNUWA模型，允许用户基于各种输入（如跟踪点或光流数据）条件化模型，以生成高保真度的视频帧。"
+    },
+    {
+        "question": "在LoadCheckPointDragNUWA节点中，检查点名称（ckpt_name）的作用是什么？",
+        "answer": "检查点名称（ckpt_name）在LoadCheckPointDragNUWA节点中至关重要，因为它标识了要加载的特定DragNUWA模型，确保使用正确的模型配置以生成高质量的视频帧。"
+    },
+    {
+        "question": "LoadCheckPointDragNUWA节点输出的模型类型是什么？",
+        "answer": "LoadCheckPointDragNUWA节点输出的模型类型是DragNUWA，这是后续视频帧生成的核心组件，封装了产生高质量视觉内容所需的学习模式和特性。"
+    },
+    {
+        "question": "模型长度参数在LoadCheckPointDragNUWA节点中是如何影响视频生成的？",
+        "answer": "模型长度参数在LoadCheckPointDragNUWA节点中影响视频帧的生成范围，它设置模型的时间维度，决定了模型可以处理的帧数，影响随时间捕捉运动和细节的能力。"
+    },
+    {
+        "question": "哪些输入参数是LoadCheckPointDragNUWA节点所必需的?",
+        "answer": "LoadCheckPointDragNUWA节点所需的输入参数包括检查点名称（ckpt_name）、尺寸参数（dimension）和模型长度参数（model_length）。"
+    },
+    {
+        "question": "LoadCheckPointDragNUWA节点所生成的视频帧质量受哪些参数影响？",
+        "answer": "LoadCheckPointDragNUWA节点生成的视频帧质量受检查点名称（影响模型配置）和尺寸参数（影响分辨率和格式匹配）的影响，确保输出符合所需的格式和质量标准。"
+    },
+    {
+        "question": "LoadCheckPointDragNUWA的代码实现中，如何加载DragNUWA模型？",
+        "answer": "LoadCheckPointDragNUWA节点通过调用load_dragnuwa方法加载DragNUWA模型，该方法接收检查点名称、尺寸和模型长度作为输入，使用特定路径加载模型并返回DragNUWA_net实例。"
+    }
+]

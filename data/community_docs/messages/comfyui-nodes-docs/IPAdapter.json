@@ -1,0 +1,38 @@
+[
+    {
+        "question": "IPAdapterSimple节点属于哪个类别？",
+        "answer": "IPAdapterSimple节点属于ComfyUI中的ipadapter类别，其功能是将图像处理适配器无缝集成到模型的工作流程中。"
+    },
+    {
+        "question": "IPAdapterSimple节点能否输出新模型？",
+        "answer": "IPAdapterSimple节点不会输出新的模型，它修改传入的模型以增强其按照特定风格或提示生成和处理图像的能力。"
+    },
+    {
+        "question": "哪些输入类型是IPAdapterSimple节点所必需的？",
+        "answer": "IPAdapterSimple节点需要的必需输入有模型参数（代表核心结构）、ipadapter（适配器配置指南）、图像（视觉数据）、权重、start_at和end_at参数。"
+    },
+    {
+        "question": "ipadapter参数的作用是什么？",
+        "answer": "ipadapter参数在IPAdapterSimple节点中用于指导模型内的图像处理和适配，它设置了风格或转换，是节点核心功能的关键所在。"
+    },
+    {
+        "question": "IPAdapterSimple节点如何对图像进行处理？",
+        "answer": "IPAdapterSimple节点基于提供的图像和适配器配置，对模型应用转换和加权，增强其生成或处理特定风格图像的能力。"
+    },
+    {
+        "question": "在哪些情况下会使用到attn_mask参数？",
+        "answer": "attn_mask参数在处理图像时，指定模型应关注的输入部分，可用于集中模型注意力于图像某些区域，特别在IPAdapterSimple节点中作为可选输入。"
+    },
+    {
+        "question": "weight_type参数有哪些可选值？",
+        "answer": "weight_type参数可选值包括'standard'、'prompt is more important'和'style transfer'，分别影响权重参数如何作用于模型，改变IPAdapterSimple节点的行为。"
+    },
+    {
+        "question": "IPAdapterSimple节点的输出模型相较于输入模型有何变化？",
+        "answer": "输出模型是IPAdapterSimple节点处理后的模型，增加了新图像处理能力，代表了经过适应或修改后的版本。"
+    },
+    {
+        "question": "哪些情况下IPAdapterSimple节点会抛出异常？",
+        "answer": "如果在传给IPAdapterSimple节点的ipadapter参数中未找到'ipadapter'或'clipvision'模型，节点会抛出异常，提示需要先使用IPAdapterUnifiedLoader节点加载模型。"
+    }
+]

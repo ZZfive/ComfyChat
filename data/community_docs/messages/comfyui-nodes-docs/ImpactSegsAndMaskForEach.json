@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SegsBitwiseAndMaskForEach节点执行什么操作？",
+        "answer": "SegsBitwiseAndMaskForEach节点执行按位与操作于每个分割掩码和提供的掩码，生成一组细化的分割掩码，以过滤掉分割过程中不需要的区域，确保只保留感兴趣的区域。"
+    },
+    {
+        "question": "SegsBitwiseAndMaskForEach属于哪个类别？",
+        "answer": "SegsBitwiseAndMaskForEach属于'ImpactPack/Operation'类别，是ComfyUI-Impact-Pack的一部分，可从https://github.com/ltdrdata/ComfyUI-Impact-Pack.git 获取。"
+    },
+    {
+        "question": "SegsBitwiseAndMaskForEach节点的'doit'方法的输出是什么？",
+        "answer": "'doit'方法的输出是一个元组，包含原始分割和一个细化分割对象列表，每个对象都带有通过按位与操作更新的掩码。"
+    },
+    {
+        "question": "在SegsBitwiseAndMaskForEach中，'segs'参数代表什么？",
+        "answer": "'segs'参数代表将由节点处理的分割对象集合，它对节点的操作至关重要，决定了与掩码进行按位与操作的输入数据。"
+    },
+    {
+        "question": "在SegsBitwiseAndMaskForEach中，'masks'参数的类型是什么？",
+        "answer": "'masks'参数是一个包含要应用于每个分割的掩码的张量，类型为torch.Tensor，在节点的功能中重要，定义最终分割输出中要包含或排除的区域。"
+    },
+    {
+        "question": "哪些节点可以应用掩码以创建细化的分割掩码？",
+        "answer": "SegsBitwiseAndMaskForEach节点可以对每个分割掩码和掩码执行按位与操作，创建一组细化的分割掩码。"
+    },
+    {
+        "question": "SegsBitwiseAndMaskForEach节点在哪个环境中运行更合适？",
+        "answer": "SegsBitwiseAndMaskForEach节点的推荐运行环境为CPU，根据其'Infra type'说明。"
+    }
+]

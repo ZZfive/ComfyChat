@@ -1,0 +1,30 @@
+[
+    {
+        "question": "KfPGroupCurveMultiply是ComfyUI中的哪个类别的一部分？",
+        "answer": "KfPGroupCurveMultiply是ComfyUI-Manager的CATEGORY类别的一部分，详细信息可参考https://github.com/dmarx/ComfyUI-Keyframed。"
+    },
+    {
+        "question": "KfPGroupCurveMultiply节点的作用是什么？",
+        "answer": "KfPGroupCurveMultiply节点在ComfyUI中用于将一组参数与一条曲线相乘，根据关键帧数据动态调整参数值，使参数值能够随时间变化。"
+    },
+    {
+        "question": "如何理解KfPGroupCurveMultiply节点的输入参数'parameter_group'？",
+        "answer": "在KfPGroupCurveMultiply节点中，'parameter_group'是一个参数组，它的值会与曲线相乘，用于定义节点调整的参数集，其数据类型为Comfy dtype中的PARAMETER_GROUP，Python dtype则为Dict[str, Any]。"
+    },
+    {
+        "question": "KfPGroupCurveMultiply中'curve'输入参数的定义是什么？",
+        "answer": "KfPGroupCurveMultiply的'curve'输入参数指定了一条曲线，这条曲线定义了在不同时间点对参数组的乘法因子，对于控制动态调整至关重要，其Comfy dtype为KEYFRAMED_CURVE，Python dtype为kf.Curve。"
+    },
+    {
+        "question": "KfPGroupCurveMultiply节点的输出结果是什么？",
+        "answer": "KfPGroupCurveMultiply节点的输出结果是修改后的参数组，其值已经根据曲线进行了乘法调整，输出的数据类型为Comfy dtype的PARAMETER_GROUP，即Python dtype中的Dict[str, Any]。"
+    },
+    {
+        "question": "KfPGroupCurveMultiply支持哪种类型的基础架构？",
+        "answer": "KfPGroupCurveMultiply节点的infra type为CPU，这意味着它在运行时依赖于CPU进行计算。"
+    },
+    {
+        "question": "哪些节点的输出可以作为KfPGroupCurveMultiply的输入？",
+        "answer": "任何输出为PARAMETER_GROUP类型或能够产生关键帧曲线（KEYFRAMED_CURVE）的节点都可以作为KfPGroupCurveMultiply的输入，如ComfyUI中具有这些数据类型的自定义节点或默认节点。"
+    }
+]

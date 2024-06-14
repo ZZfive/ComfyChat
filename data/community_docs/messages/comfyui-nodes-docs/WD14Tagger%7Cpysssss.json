@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WD14Tagger是什么?",
+        "answer": "WD14Tagger是ComfyUI的image类别下的一个输出节点，使用指定模型对图像数据进行分类并返回相关标签，旨在通过自动标记增强图像数据的组织和检索。"
+    },
+    {
+        "question": "WD14Tagger节点的主要功能是什么?",
+        "answer": "WD14Tagger的主要功能是对输入的图像数据进行分类并标记，通过处理单个图像，应用阈值以过滤标签，同时考虑排除标准。"
+    },
+    {
+        "question": "WD14Tagger节点处理图像输入时有哪些必需参数?",
+        "answer": "WD14Tagger节点处理图像时的必需参数包括image（提供原始数据）、model（决定具体机器学习模型）、threshold（设置标签最小置信度）、character_threshold（设置字符级标签的次级阈值）和exclude_tags（指定不应包含的标签）。"
+    },
+    {
+        "question": "WD14Tagger节点的输出代表什么?",
+        "answer": "WD14Tagger的输出（'tags'）是一个列表，其中包含基于输入图像和应用阈值的相关与重要标签，直接代表节点的功能和标记过程的有效性。"
+    },
+    {
+        "question": "哪些类型的数据可以被WD14Tagger节点处理?",
+        "answer": "WD14Tagger节点可以处理的输入数据类型包括：图像（'image'，Comfy dtype: IMAGE，Python dtype: numpy.ndarray），模型（'model'，Comfy dtype: all_models，Python dtype: callable），以及阈值相关的浮点数值，如threshold和character_threshold。"
+    },
+    {
+        "question": "如何定制或排除特定标签在WD14Tagger的输出中?",
+        "answer": "要定制WD14Tagger的输出标签或排除某些标签，可以设置'exclude_tags'参数，在节点运行时定义不应包含在最终输出中的具体标签或标签类别。"
+    },
+    {
+        "question": "WD14Tagger中的tag方法具体实现了什么?",
+        "answer": "WD14Tagger的tag方法实现了接收处理图像、模型、阈值设置和排除标签的功能，返回一张或多张图像的标签列表，是一种异步处理，以生成标签输出。"
+    }
+]

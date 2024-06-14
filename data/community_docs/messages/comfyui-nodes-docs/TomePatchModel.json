@@ -1,0 +1,30 @@
+[
+    {
+        "question": "TomePatchModel 是什么？",
+        "answer": "TomePatchModel 是 ComfyUI 的一个类，用于通过补丁技术修改和增强给定模型的功能，特别是其注意力机制，以提高特定任务的性能而不显著改变底层架构。"
+    },
+    {
+        "question": "TomePatchModel 的 'model' 参数代表什么？",
+        "answer": "'model' 参数代表将要进行补丁化的机器学习模型。通过补丁化过程，模型的行为得到定制，以使其更适合预期的应用。"
+    },
+    {
+        "question": "输入 'model' 和 'ratio' 的数据类型分别是什么？",
+        "answer": "输入 'model' 的数据类型在 Comfy 系统中为 MODEL 类型，在 Python 中为 torch.nn.Module 类型；'ratio' 的数据类型在 Comfy 中为 FLOAT 类型，在 Python 中为 float 类型。"
+    },
+    {
+        "question": "TomePatchModel 的 'ratio' 参数有什么作用？",
+        "answer": "'ratio' 参数决定了模型注意力机制被补丁化的程度，对于控制修改范围、平衡性能与计算效率至关重要。"
+    },
+    {
+        "question": "应用 TomePatchModel 进行补丁化后，输出的 'modified_model' 是什么？",
+        "answer": "输出的 'modified_model' 是对输入模型执行补丁化处理的结果，代表了一个已经为部署或进一步训练准备就绪的增强模型。"
+    },
+    {
+        "question": "TomePatchModel 适合在哪个硬件上运行？",
+        "answer": "TomePatchModel 的最佳运行环境为 CPU，这是基于其基础设施类型（Infra type）的指导建议。"
+    },
+    {
+        "question": "在修改模型注意力机制时，TomePatchModel 具体执行了哪些操作？",
+        "answer": "TomePatchModel 在 'patch' 方法中，为模型定制了特殊的注意力机制补丁，涉及对直接矩阵操作的自定义函数toe和自定义模型方法如 'set_model_attn1_patch' 和 'set_model_attn1_output_patch' 的调用，以实现注意力机制的修改。"
+    }
+]

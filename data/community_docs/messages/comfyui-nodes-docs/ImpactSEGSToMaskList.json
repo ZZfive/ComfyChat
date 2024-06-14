@@ -1,0 +1,42 @@
+[
+    {
+        "question": "SEGSToMaskList节点的作用是什么？",
+        "answer": "SEGSToMaskList节点旨在将分割对象转换为掩码列表，它作为ImpactPack/Util类别中的一个工具，帮助将分割数据转换为更易于用于可视化或进一步分析的格式。"
+    },
+    {
+        "question": "SEGSToMaskList节点属于哪个类别？",
+        "answer": "SEGSToMaskList节点属于ImpactPack/Util类别。"
+    },
+    {
+        "question": "SEGSToMaskList节点是否是输出节点？",
+        "answer": "SEGSToMaskList节点不是输出节点，它是用于处理数据的中间节点。"
+    },
+    {
+        "question": "SEGSToMaskList节点的主要输入参数是什么？",
+        "answer": "SEGSToMaskList节点的主要输入参数是'segs'，它提供了需要转换为掩码的分割数据。"
+    },
+    {
+        "question": "SEGSToMaskList节点输出什么类型的数据？",
+        "answer": "SEGSToMaskList节点输出'masks'类型的数据，具体为来自输入分割数据的掩码列表，每个掩码代表一个不同的段。"
+    },
+    {
+        "question": "SEGSToMaskList节点在ComfyUI中如何表示输入分割数据的类型？",
+        "answer": "在ComfyUI中，SEGSToMaskList节点表示输入分割数据的类型为SEGS，对应Python中的List[core.SEG]类型。"
+    },
+    {
+        "question": "SEGSToMaskList节点输出的掩码列表以什么格式存在？",
+        "answer": "SEGSToMaskList节点输出的掩码列表在ComfyUI中以MASK类型存在，对应Python中的List[torch.Tensor]类型，其中每个torch.Tensor表示一个掩码。"
+    },
+    {
+        "question": "SEGSToMaskList节点在哪些情况下会产生空掩码？",
+        "answer": "当输入的'segs'数据转换后所得掩码列表的长度为0时，SEGSToMaskList节点会生成一个空掩码，以torch.zeros初始化，确保输出格式的一致性。"
+    },
+    {
+        "question": "哪类设备最适宜运行SEGSToMaskList节点？",
+        "answer": "SEGSToMaskList节点最适合在CPU设备上运行。"
+    },
+    {
+        "question": "SEGSToMaskList节点的源代码如何执行掩码生成？",
+        "answer": "SEGSToMaskList节点的源代码通过'doit'函数中的core.segs_to_masklist方法转换'输入的segs数据为掩码列表，然后处理可能的空列表情况以及调整掩码维度，使其适合后续处理。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "UltimateSDUpscale节点的主要作用是什么？",
+        "answer": "UltimateSDUpscale节点的主要作用是使用先进技术提升图像的分辨率，它通过稳定扩散模型放大图像，提供高质量、细节丰富的结果，旨在保持原始图像本质的同时提高视觉真实性。"
+    },
+    {
+        "question": "哪些参数对于UltimateSDUpscale节点的运行至关重要，它们分别起到了什么作用？",
+        "answer": "critical的参数包括：\n1. `image`：用于放大的基础图像。\n2. `model`：定义放大的AI模型，影响结果的风格和质量。\n3. `positive`和`negative`：分别为正向和负向调节，指导和避免放大过程中的特征。\n4. `vae`：实现图像编码和解码，保持原始本质和提高分辨率。\n5. `upscale_by`：决定放大倍数和细节水平。\n6. `seed`：确保放大过程结果的可复现性。\n7. `steps`、`cfg`和`sampler_name`：共同影响AI模型的配置、迭代次数和采样方法，从而影响最终图像的质量和细节。\n8. `scheduler`和`denoise`：分别影响学习率调度和降噪水平，与收敛性和图像清晰度相关。\n9. `upscale_model`和`mode_type`：指定放大模型和处理模式，影响分辨率提升和视觉特征。\n10. `tile_width`和`tile_height`：设置用于瓦片处理的尺寸，影响放大的效率和质量。\n11. `mask_blur`、`tile_padding`、`seam_fix_mode`等：调整放大区域与原始图像的融合、保持结构的完整性和减少接缝处的伪影。"
+    },
+    {
+        "question": "在UltimateSDUpscale节点中，模型参数型号的选择如何影响放大的结果？",
+        "answer": "在UltimateSDUpscale节点中，模型参数型号的选择显著影响放大结果的风格和质量，不同的模型可能会产生不同风格的放大图像，从而适应不同的使用场景和用户偏好。"
+    },
+    {
+        "question": "seam_fix_denoise参数在UltimateSDUpscale节点中的作用是什么？",
+        "answer": "seam_fix_denoise参数在UltimateSDUpscale节点中用于控制应用在瓦片之间接缝的降噪水平，有助于减少放大瓦片接缝处的异常图像特征，提高最终图像的平滑度和视觉连续性。"
+    },
+    {
+        "question": "UltimateSDUpscale节点的`force_uniform_tiles`参数作用是什么？",
+        "answer": "force_uniform_tiles参数在UltimateSDUpscale节点中确保所有瓦片具有相同的大小，简化放大的处理过程并提高图像的均匀性，这对于整合放大后的图像至关重要。"
+    },
+    {
+        "question": "UltimateSDUpscale节点如何处理大型图像的放大过程，以提高效率和质量？",
+        "answer": "UltimateSDUpscale节点可以通过设置`tiled_decode`参数为True，指示图像按照瓦片解码。这一处理方法提高了大型图像放大过程的效率和质量，确保图像放大时的精度和细节水平。"
+    },
+    {
+        "question": "UltimateSDUpscale节点的输入参数有哪些类型？其中`IMAGE`类型具体代表着什么？",
+        "answer": "UltimateSDUpscale节点的输入参数包括多种类型，如IMAGE、MODEL、CONDITIONING、VAE、FLOAT、INT、ENUM、UPSCALE_MODEL、BOOLEAN等。其中`IMAGE`类型代表将要放大的基础图像，其数据类型可以是PIL.Image或torch.Tensor，输出图像也是同样类型和格式，展示更高分辨率和增强细节的图像。"
+    }
+]

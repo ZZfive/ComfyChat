@@ -1,0 +1,50 @@
+[
+    {
+        "question": "SEGSUpscalerPipe 的主要功能是什么？",
+        "answer": "SEGSUpscalerPipe 是ComfyUI中用于提高图像分辨率的自定义节点，它利用深度学习模型放大图像，同时保持语义分割（SEGS）的完整性。"
+    },
+    {
+        "question": "SEGSUpscalerPipe 在哪些类型的图像处理中特别有用？",
+        "answer": "SEGSUpscalerPipe 特别适用于需要高质量图像上采样的应用场景，如图形设计、摄影和视频处理。"
+    },
+    {
+        "question": "SEGSUpscalerPipe 的输入图像参数（image）的 Python 类型是什么？",
+        "answer": "SEGSUpscalerPipe 输入图像参数（image）的 Python 类型是 torch.Tensor。"
+    },
+    {
+        "question": "SEGSUpscalerPipe 如何控制上采样过程中噪声的处理？",
+        "answer": "SEGSUpscalerPipe 通过参数 'denoise'，控制上采样过程中噪声的处理。较高值可以减少图像中的噪声，但也可能去除一些细节。"
+    },
+    {
+        "question": "哪些输入参数会影响 SEGSUpscalerPipe 输出图像的质量和尺寸？",
+        "answer": "影响 SEGSUpscalerPipe 输出图像质量和尺寸的主要输入参数包括 'rescale_factor', 'resampling_method', 'steps', 'cfg', 'denoise', 'feather', 'inpaint_model', 和 'noise_mask_feather'。"
+    },
+    {
+        "question": "SEGSUpscalerPipe 的 'supersample' 参数的作用是什么？",
+        "answer": "SEGSUpscalerPipe 中的 'supersample' 参数是一个标志，指示是否使用超采样技术进行上采样，这可以提高放大的图像的锐度和清晰度。"
+    },
+    {
+        "question": "SEGSUpscalerPipe 支持哪些重采样方法？",
+        "answer": "SEGSUpscalerPipe 支持多种重采样方法，包括 'lanczos', 'nearest', 'bilinear', 和 'bicubic'。"
+    },
+    {
+        "question": "SEGSUpscalerPipe 的 'inpaint_model' 参数是什么用途？",
+        "answer": "SEGSUpscalerPipe 的 'inpaint_model' 参数是一个布尔标志，用于指示在上采样期间是否使用修复模型来填充图像中缺失或损坏的区域。"
+    },
+    {
+        "question": "SEGSUpscalerPipe 中 'segs' 参数的功能是什么？",
+        "answer": "SEGSUpscalerPipe 的 'segs' 参数提供了语义分割图，用于指导上采样过程，确保语义完整性得以保持。"
+    },
+    {
+        "question": "SEGSUpscalerPipe 的基本组件是否可以自定义？",
+        "answer": "是的，SEGSUpscalerPipe 通过 'basic_pipe' 参数允许自定义上采样过程的基本组件，包括模型、clip、vae等部分和影响结果的额外设置。"
+    },
+    {
+        "question": "SEGSUpscalerPipe 中 'rounding_modulus' 参数的目的是什么？",
+        "answer": "SEGSUpscalerPipe 的 'rounding_modulus' 参数用于确定输出图像尺寸的取模数，确保尺寸一致且适合更进一步的处理。"
+    },
+    {
+        "question": "SEGSUpscalerPipe 的 'cfg' 参数如何影响上采样过程？",
+        "answer": "SEGSUpscalerPipe 的 'cfg' 参数用于调整上采样过程中细节保留和噪声减少之间的平衡。"
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "question": "StableZero123_BatchSchedule类的什么方法负责图像处理并生成潜在表示？",
+        "answer": "StableZero123_BatchSchedule类的`encode`方法负责图像处理并生成潜在表示。"
+    },
+    {
+        "question": "StableZero123_BatchSchedule的`encode`方法处理哪种类型的输入数据？",
+        "answer": "`encode`方法处理来自CLIP视觉模型的输出`clip_vision`，原始图像数据`init_image`以及变分自编码器模型`vae`作为其要求的输入。"
+    },
+    {
+        "question": "StableZero123_BatchSchedule节点的哪些输出用于引导图像生成？",
+        "answer": "节点输出`positive`和`negative`分别包含正向和负向条件数据，用于引导图像生成任务。"
+    },
+    {
+        "question": "在StableZero123_BatchSchedule中，`latent`输出的目的是什么？",
+        "answer": "`latent`输出代表了处理后的潜在图像样本，其目的是提供输入图像的低维表示，适用于多种图像生成任务。"
+    },
+    {
+        "question": "StableZero123_BatchSchedule节点的`interpolation`参数有何作用？",
+        "answer": "`interpolation`参数允许选择在调整图像大小时应用的插值方法，影响图像的平滑度和最终外观。"
+    },
+    {
+        "question": "如何在StableZero123_BatchSchedule节点中定义角度过渡？",
+        "answer": "通过提供`azimuth_points_string`和`elevation_points_string`参数，可以定义图像处理中的角度插值，控制水平和垂直方向上的过渡。"
+    },
+    {
+        "question": "StableZero123_BatchSchedule类的`INTERPOLATION`参数可以设置哪些选项？",
+        "answer": "`interpolation`参数可以设置为`linear`、`ease_in`、`ease_out`或`ease_in_out`，分别对应线性、快进、快出和快进快出缓动函数。"
+    },
+    {
+        "question": "StableZero123_BatchSchedule的infra type是什么？",
+        "answer": "StableZero123_BatchSchedule节点的infra type为GPU，意味着它在GPU上运行以处理图像数据。"
+    }
+]

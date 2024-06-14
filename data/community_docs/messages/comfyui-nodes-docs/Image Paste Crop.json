@@ -1,0 +1,38 @@
+[
+    {
+        "question": "WAS_Image_Paste_Crop节点的主要功能是什么？",
+        "answer": "WAS_Image_Paste_Crop节点的主要功能是通过将一个次级图像粘贴到主图像上，然后进行裁剪和混合，以实现图像的无缝集成和操作。"
+    },
+    {
+        "question": "WAS_Image_Paste_Crop节点如何影响图像的锐化效果？",
+        "answer": "WAS_Image_Paste_Crop节点通过调整'crop_sharpening'参数控制应用于次级图像的锐化级别，增加此值可以增强图像细节，使粘贴的图像更加清晰。"
+    },
+    {
+        "question": "哪类图像可以作为WAS_Image_Paste_Crop的主图像输入？",
+        "answer": "WAS_Image_Paste_Crop节点的主图像输入可以是任何PIL.Image.Image格式的图像，这是ComfyUI内部识别的IMAGE类型的Python表现形式。"
+    },
+    {
+        "question": "WAS_Image_Paste_Crop节点中'crop_blending'参数的作用是什么？",
+        "answer": "在WAS_Image_Paste_Crop节点中，'crop_blending'参数控制主图像与次级图像之间的混合量，较高值产生更平滑过渡，较低值使次级图像更加突出。"
+    },
+    {
+        "question": "在ComfyUI中如何获得WAS_Image_Paste_Crop节点的源代码？",
+        "answer": "可以在WASasquatch的GitHub仓库中找到WAS_Image_Paste_Crop节点的源代码，具体链接为https://github.com/WASasquatch/was-node-suite-comfyui。"
+    },
+    {
+        "question": "哪些节点可以用来无缝集成两个图像？",
+        "answer": "WAS_Image_Paste_Crop节点是ComfyUI中可以用来无缝集成两个图像的节点之一，它通过裁剪和混合操作实现集成效果。"
+    },
+    {
+        "question": "WAS_Image_Paste_Crop的输出类型包括什么？",
+        "answer": "WAS_Image_Paste_Crop节点的输出类型包括'result_image'，即最终处理的图像，以及'result_mask'，由裁剪操作生成的遮罩，分别以torch.Tensor格式表示。"
+    },
+    {
+        "question": "WAS_Image_Paste_Crop节点的哪一项输出可用于进一步的图像处理？",
+        "answer": "WAS_Image_Paste_Crop节点生成的'result_mask'输出，即由裁剪操作产生的遮罩，可用于进一步的图像处理任务，如深度合成或图像分离。"
+    },
+    {
+        "question": "使用WAS_Image_Paste_Crop节点时，哪种硬件最适合操作？",
+        "answer": "WAS_Image_Paste_Crop节点的使用最适合在CPU上进行，即其指定的infra type为CPU，这表明该节点的运算更倾向于在CPU上执行而非GPU。"
+    }
+]

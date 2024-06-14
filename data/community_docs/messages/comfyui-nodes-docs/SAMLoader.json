@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SAMLoader节点在ComfyUI中的作用是什么?",
+        "answer": "SAMLoader节点在ComfyUI中的作用是高效管理和加载SAM家族中的模型，包括ESAM，提供高级接口以根据用户定义的标准选择和使用模型，确保高性能和资源的有效利用。"
+    },
+    {
+        "question": "SAMLoader节点的输出类型是什么?",
+        "answer": "SAMLoader节点的输出类型是SAM_MODEL，这是已加载的SAM模型的代表，准备用于推理或进一步处理，封装了模型的架构和学习到的参数。"
+    },
+    {
+        "question": "加载SAM模型时，model_name参数的目的是什么？",
+        "answer": "model_name参数在SAMLoader中用于确定加载的SAM模型，指导节点指向正确的模型文件，这是后续处理和预测任务执行的关键。"
+    },
+    {
+        "question": "SAMLoader节点的device_mode参数如何影响模型的执行？",
+        "answer": "device_mode参数允许用户在SAMLoader节点中指定模型执行的计算设备，优化GPU或CPU资源使用，影响模型性能和效率。"
+    },
+    {
+        "question": "SAMLoader节点的Comfy和Python dtype分别是什么类型？",
+        "answer": "在SAMLoader节点中，model_name和device_mode参数的Comfy和Python dtype都是str类型，而SAM_MODEL输出的Comfy和Python dtype是torch.nn.Module类型。"
+    },
+    {
+        "question": "当使用'ESAM'模型时，SAMLoader节点会执行哪些额外步骤?",
+        "answer": "当用户指定使用'ESAM'模型时，SAMLoader会首先检查必要的扩展'DZOComfyUIYoloWorldEfficientSAM'是否已安装，若未安装则尝试安装，并通过该扩展加载和使用ESAM模型，确保特定模型的可用性。"
+    },
+    {
+        "question": "SAMLoader节点的infra type是什么，这意味着什么？",
+        "answer": "SAMLoader节点的infra type是GPU，意味着该节点的执行和模型加载被优化为在GPU上运行，以保持高效率和性能。"
+    }
+]

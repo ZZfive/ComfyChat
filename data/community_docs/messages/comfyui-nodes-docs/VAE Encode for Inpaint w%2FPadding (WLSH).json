@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WLSH_VAE_Encode_For_Inpaint_Padding节点的目的是什么？",
+        "answer": "WLSH_VAE_Encode_For_Inpaint_Padding节点旨在使用变分自编码器（VAE）模型对图像数据进行编码，以便在考虑填充的情况下进行图像修复任务。"
+    },
+    {
+        "question": "在WLSH_VAE_Encode_For_Inpaint_Padding节点中，'pixels'参数的作用是什么？",
+        "answer": "'pixels'参数提供了原始输入图像像素，这些像素对于编码过程至关重要，因为它们提供了VAE生成潜在表示所需的原始数据。"
+    },
+    {
+        "question": "如何调整图像尺寸以满足模型输入要求在WLSH_VAE_Encode_For_Inpaint_Padding节点中？",
+        "answer": "WLSH_VAE_Encode_For_Inpaint_Padding节点中，图像尺寸会根据模型的输入要求，通常在64的倍数，进行调整，裁剪为宽高分别为x和y的尺寸。"
+    },
+    {
+        "question": "WLSH_VAE_Encode_For_Inpaint_Padding中'mask'参数的功能是什么？",
+        "answer": "'mask'参数定义了图像中需要修复的感兴趣区域，它与图像像素一起工作，引导VAE的编码过程，确保编码聚焦于图像的修复区域。"
+    },
+    {
+        "question": "在WLSH_VAE_Encode_For_Inpaint_Padding节点，如何处理并影响'noise_mask'输出？",
+        "answer": "节点通过卷积和侵蚀操作处理掩码，生成'noise_mask'输出，提供了图像中掩蔽区域的信息，间接影响了编码潜在表示的质量。"
+    },
+    {
+        "question": "WLSH_VAE_Encode_For_Inpaint_Padding节点的输出'samples'是什么？",
+        "answer": "'samples'输出代表了输入图像的编码潜在表示，是该节点的主要输出，可用于后续的修复或生成任务中。"
+    },
+    {
+        "question": "使用WLSH_VAE_Encode_For_Inpaint_Padding节点时的基础设施类型是什么？",
+        "answer": "使用WLSH_VAE_Encode_For_Inpaint_Padding节点时推荐的基础设施类型是GPU，以优化模型的编码处理速度和效率。"
+    }
+]

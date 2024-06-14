@@ -1,0 +1,30 @@
+[
+    {
+        "question": "JagsCLIPSeg节点的主要功能是什么？",
+        "answer": "JagsCLIPSeg节点利用CLIPSeg模型通过文本提示和图像输入执行图像分割，根据文本描述生成详细掩码，增强了分割过程并利用语言的上下文。"
+    },
+    {
+        "question": "哪些输入是JagsCLIPSeg节点所必需的？",
+        "answer": "JagsCLIPSeg节点需要图像（IMAGE）和文本（STRING）作为必需输入。"
+    },
+    {
+        "question": "图像和文本在JagsCLIPSeg分割过程中扮演什么角色？",
+        "answer": "图像为分割过程提供视觉上下文，而文本作为指导提示描述了节点应在图像中关注的内容或特征。"
+    },
+    {
+        "question": "JagsCLIPSeg节点支持哪些可选输入参数？",
+        "answer": "JagsCLIPSeg支持模糊（blur）、阈值（threshold）和膨胀因子（dilation_factor）作为可选输入参数。"
+    },
+    {
+        "question": "JagsCLIPSeg节点的输出类型包括哪些？",
+        "answer": "JagsCLIPSeg节点的输出包括Mask、Heatmap Mask和BW Mask，分别提供了分割的二值表示、分割置信度的热图以及分割结果的黑白版本。"
+    },
+    {
+        "question": "如何控制JagsCLIPSeg生成的掩模平滑度和二值化阈值？",
+        "answer": "通过调整可选的模糊（blur）和阈值（threshold）参数，可以控制JagsCLIPSeg节点生成的掩模平滑度和二值化阈值，从而影响最终的细节和边界清晰度。"
+    },
+    {
+        "question": "JagsCLIPSeg节点执行分割时需要哪种类型的硬件基础设施？",
+        "answer": "JagsCLIPSeg节点的执行推荐使用GPU作为硬件基础设施，以增强处理速度和效率。"
+    }
+]

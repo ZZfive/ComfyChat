@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LDSRUpscaler节点的作用是什么？",
+        "answer": "LDSRUpscaler节点的'upscale'方法旨在使用预训练模型增强输入图像的分辨率，它利用LDSR算法执行超分辨率，即在保持或提高图像质量的同时增加图像的空间分辨率。"
+    },
+    {
+        "question": "如何使用'LDSRUpscaler'节点放大图像？",
+        "answer": "使用LDSRUpscaler节点放大图像需要指定预训练模型的路径、待处理的图像集合、扩散步骤数、预缩小比例、后缩小比例和缩小算法。这些参数共同决定了放大图像的质量和处理效率。"
+    },
+    {
+        "question": "在'LDSRUpscaler'中，'model'参数的作用是什么？",
+        "answer": "'model'参数在'LDSRUpscaler'节点中代表用于进行图像放大的预训练模型的路径，确定应用于输入图像的超分辨率处理的特定模型权重和架构。"
+    },
+    {
+        "question": "LDSRUpscaler节点支持哪些输出类型？",
+        "answer": "LDSRUpscaler节点支持的输出类型为'image'，输出类型为torch.Tensor，包含超分辨率过程产生的放大图像。"
+    },
+    {
+        "question": "使用LDSRUpscaler节点时，'pre_downscale'和'post_downscale'参数有何作用？",
+        "answer": "'pre_downscale'参数在LDSRUpscaler节点中用于控制在超分辨率过程之前图像的缩放，而'post_downscale'参数用于控制超分辨率过程之后图像的最终缩放，这两个参数允许用户调整输入和输出图像的分辨率。"
+    },
+    {
+        "question": "在超分辨率过程中，'steps'参数如何影响图像放大？",
+        "answer": "'steps'参数定义了超分辨率过程中使用的扩散步骤数，更多步骤通常可以带来更高质量的放大结果，但也可能延长处理时间。"
+    },
+    {
+        "question": "LDSRUpscaler节点中的'downsample_method'参数提供哪些选项？",
+        "answer": "在LDSRUpscaler节点中，'downsample_method'参数允许选择调整图像大小时的缩小算法，常见的选项包括‘Nearest’或‘Lanczos’，这可能影响到缩小图像的质量。"
+    }
+]

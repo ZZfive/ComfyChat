@@ -1,0 +1,38 @@
+[
+    {
+        "question": "IPAdapterStyleCompositionBatch 节点的作用是什么？",
+        "answer": "IPAdapterStyleCompositionBatch 节点是 ComfyUI 的一个自定义节点，用于以批量处理的方式促进图像风格与图像组合的整合，并强调了风格一致性在生成图像中的重要性。"
+    },
+    {
+        "question": "哪些输入类型是 IPAdapterStyleCompositionBatch 节点所必需的？",
+        "answer": "IPAdapterStyleCompositionBatch 需要 model（模型）、ipadapter（风格适应器）、image_style 和 image_composition 等输入类型以执行其功能。"
+    },
+    {
+        "question": "model 参数在 IPAdapterStyleCompositionBatch 节点中起什么作用？",
+        "answer": "model 参数定义了用于风格组合的底层神经网络架构，直接影响节点生成具有所需风格特征的图像的能力。"
+    },
+    {
+        "question": "哪些输入参数可以微调 IPAdapterStyleCompositionBatch 节点的风格和组合输入对最终输出的影响？",
+        "answer": "weight_style 和 weight_composition 参数允许用户调整风格和组合元素对最终合成图像的贡献，实现风格与组合之间的平衡。"
+    },
+    {
+        "question": "IPAdapterStyleCompositionBatch 节点的 composed_images 输出是什么？",
+        "answer": "composed_images 是 IPAdapterStyleCompositionBatch 节点风格组合过程的最终结果，它包含了风格化和组合后的合成图像，展示了节点进行图像风格组合的能力。"
+    },
+    {
+        "question": "哪些参数可以控制风格在图像中的应用比例？",
+        "answer": "IPAdapterStyleCompositionBatch 节点中的 expand_style 参数和 weight_style 参数可以分别控制风格是否扩展以适应整个图像以及风格输入对合成图像的影响力度。"
+    },
+    {
+        "question": "IPAdapterStyleCompositionBatch 节点在哪种基础设施类型上运行效率最高？",
+        "answer": "IPAdapterStyleCompositionBatch 节点的推荐基础设施类型是 GPU，因为GPU的并行计算能力能加快图像处理和风格组合的效率。"
+    },
+    {
+        "question": "在 IPAdapterStyleCompositionBatch 节点中，什么是 embeds_scaling 参数的作用？",
+        "answer": "embeds_scaling 参数是用于选择风格组合中涉及的嵌入的缩放方法，这是确定生成的组合图像质量和特性的关键因素。"
+    },
+    {
+        "question": "IPAdapterStyleCompositionBatch 节点与同类节点有何不同？",
+        "answer": "IPAdapterStyleCompositionBatch 是专门为以批量处理的方式实现风格和图像组合的无缝融合而设计的，着重于生成图像中风格一致性的重要性，这是其与一般风格图像组合节点的主要区别。"
+    }
+]

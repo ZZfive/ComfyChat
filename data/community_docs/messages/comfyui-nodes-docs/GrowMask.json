@@ -1,0 +1,30 @@
+[
+    {
+        "question": "GrowMask 是什么类型的节点？",
+        "answer": "GrowMask 是 ComfyUI 中 'mask' 类别下的一个节点，用于对二进制掩码进行扩展或侵蚀操作，属于掩码处理工具。"
+    },
+    {
+        "question": "哪些输入参数是 GrowMask 节点必不可少的？",
+        "answer": "GrowMask 节点必需的输入参数包括 'mask' 和 'expand'。'mask' 用于指定操作的目标二进制掩码，而 'expand' 确定压缩或扩展的程度。"
+    },
+    {
+        "question": "如何在 GrowMask 中定义掩码边缘处理方式？",
+        "answer": "通过 'tapered_corners' 参数，设置为True可以应用一种特定的侵蚀模式，从而平滑掩码的角落，为需要圆角的掩码形状提供视觉优化效果。"
+    },
+    {
+        "question": "GrowMask 的输出返回了什么类型的数据？",
+        "answer": "GrowMask 的输出为 'expanded_mask'，这是一种经扩展或侵蚀处理后生成的二进制掩码，其数据格式为 PyTorch 的 Tensor。"
+    },
+    {
+        "question": "在 GrowMask 节点中，'expand' 参数如何影响掩码？",
+        "answer": "'expand' 参数决定掩码是膨胀还是侵蚀。正值使掩码尺寸增大，负值则使其缩小。具体而言，正值指明掩码边界向外扩展的距离，而负值指定边界向内缩小的程度。"
+    },
+    {
+        "question": "GrowMask 的 'mask' 输入接收什么数据类型？",
+        "answer": "GrowMask 节点接受的 'mask' 参数数据类型为 'MASK'，即一种代表二进制掩码的 PyTorch Tensor，用于标识图像的特定区域。"
+    },
+    {
+        "question": "GrowMask 节点适用于哪种硬件类型？",
+        "answer": "GrowMask 节点在软件架构中被设计为在 CPU 上运行，不依赖于 GPU 加速，因此在大多数标准硬件配置下可实现高效处理。"
+    }
+]

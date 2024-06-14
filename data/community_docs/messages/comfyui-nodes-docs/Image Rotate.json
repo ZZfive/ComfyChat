@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Image_Rotate节点是什么，主要用于什么场景？",
+        "answer": "WAS_Image_Rotate节点是ComfyUI中一个用于图像预处理的自定义节点，其主要功能是对图像批次进行旋转调整，尤其适用于需要进行方向调整的图像操作任务。"
+    },
+    {
+        "question": "WAS_Image_Rotate节点如何智能处理旋转操作？",
+        "answer": "WAS_Image_Rotate节点通过调整角度到最近的90度倍数来智能处理旋转，使用指定的重采样过滤器，确保图像的旋转过程既精准又保持了图像质量。"
+    },
+    {
+        "question": "在WAS_Image_Rotate节点中，'sampler'参数有何作用，提供哪些选项？",
+        "answer": "'sampler'参数定义了旋转期间使用的重采样方法，影响旋转后图像的最终质量。它提供'nearset'、'bilinear'、'bicubic'三种选项，分别代表最近邻、双线性和双三次插值。"
+    },
+    {
+        "question": "WAS_Image_Rotate节点的'images'输入参数代表什么，其数据类型是什么？",
+        "answer": "'images'输入参数代表即将被旋转的图像批次，是节点所有操作的核心。其数据类型是IMAGE，Python中的类型为torch.Tensor。"
+    },
+    {
+        "question": "WAS_Image_Rotate中，如果输入的'rotation'参数不是90的倍数，节点会如何处理？",
+        "answer": "如果输入的'rotation'参数值不能被90整除，WAS_Image_Rotate节点会将其调整为最近的90倍数，以执行标准旋转处理。"
+    },
+    {
+        "question": "哪些节点在图像预处理中用于旋转图像？",
+        "answer": "WAS_Image_Rotate节点是专门设计用于图像预处理中旋转图像的自定义节点，它能够智能地调整图像角度，使用指定的重采样过滤器保持图像质量。"
+    },
+    {
+        "question": "在WAS_Image_Rotate节点，'mode'参数的作用是什么，它提供哪些选项？",
+        "answer": "'mode'参数确定旋转的执行策略，是在内部使用标准旋转('internal')，还是通过图像转置方法('transpose')进行旋转，这一选择影响旋转的底层算法和执行方式。"
+    }
+]

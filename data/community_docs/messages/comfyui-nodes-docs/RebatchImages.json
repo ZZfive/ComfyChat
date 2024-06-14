@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageRebatch节点在ComfyUI中的功能是什么？",
+        "answer": "ImageRebatch节点在ComfyUI中旨在高效地将图像数据重新组织成批次，处理这些图像以创建更小的批次，适用于并行处理或基于批次的机器学习任务，优化图像数据的处理以实现更高效的训练和推理工作流程。"
+    },
+    {
+        "question": "ImageRebatch节点的输入参数有哪些，它们分别是什么类型的？",
+        "answer": "ImageRebatch节点的输入参数包括'images'和'batch_size'。'images'参数是节点处理的图像数据集合，类型为List[torch.Tensor]；'batch_size'参数决定了每个输出批次中图像的数量，类型为int。"
+    },
+    {
+        "question": "ImageRebatch中的'images'参数的输入意味着什么？",
+        "answer": "'images'参数是ImageRebatch节点中的图像数据集合，是节点进行批处理的原材料，节点的性能和结果直接依赖于输入图像的质量和格式。"
+    },
+    {
+        "question": "在ImageRebatch中，'batch_size'参数的作用是什么？",
+        "answer": "'batch_size'参数在ImageRebatch中决定每个输出批次包含的图像数量，是批处理过程的粒度决定因素，直接影响节点性能及后续处理或训练步骤的效率。"
+    },
+    {
+        "question": "ImageRebatch节点的主要输出是什么，它的作用是什么？",
+        "answer": "ImageRebatch节点的主要输出是'output_list'，这是一个由图像批次列表组成的，每个批次按照指定的批次大小准备，用于进一步处理或输入到机器学习流程中的后续节点或模型中。"
+    },
+    {
+        "question": "ImageRebatch节点对硬件基础设施有何要求？",
+        "answer": "ImageRebatch节点要求的基建类型是CPU，意味着它可以在不依赖GPU加速的机器上运行。"
+    },
+    {
+        "question": "哪些节点可以用于在ComfyUI中高效处理和重新组织图像数据？",
+        "answer": "ComfyUI中ImageRebatch节点专门用于高效处理和重新组织图像数据，通过将图像数据重新组织成更小的批次，优化图像数据处理流程，提升训练和推理效率。"
+    }
+]

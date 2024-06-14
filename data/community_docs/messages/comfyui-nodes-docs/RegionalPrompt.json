@@ -1,0 +1,30 @@
+[
+    {
+        "question": "RegionalPrompt属于哪个类别且其作用是什么？",
+        "answer": "RegionalPrompt节点属于ImpactPack/Regional类别，它主要用于生成特定于区域的提示，通过掩码定义兴趣区域，并利用高级采样器确定区域内的点，从而将处理重点放在图像的特定区域，提高后续图像操作的精度。"
+    },
+    {
+        "question": "RegionalPrompt节点的输入类型包含哪些？",
+        "answer": "RegionalPrompt节点的输入类型包括必须的掩码（mask）和高级采样器（advanced_sampler）。掩码参数用于定义图像中的兴趣区域，而高级采样器则影响区域内采样策略的确定。"
+    },
+    {
+        "question": "掩码(mask)在RegionalPrompt节点中的作用是什么？",
+        "answer": "掩码参数在RegionalPrompt中是至关重要的，因为它用于定义图像内的兴趣区域。这是一个过滤参数，用来隔离节点将进行处理的特定区域，从而显著影响区域提示生成的最终结果。"
+    },
+    {
+        "question": "在RegionalPrompt中，'Python dtype'为np.ndarray的掩码（mask）参数与'Comfy dtype'为MASK的表述有何区别？",
+        "answer": "在RegionalPrompt节点中，'Python dtype'为np.ndarray意味着掩码（mask）在Python环境中的数据类型为NumPy数组，通常用于表示多维数组；而'Comfy dtype'为MASK表明其在ComfyUI的环境中是一个专门处理掩码数据类型的变量，设计用于图像分割、区域选择等任务。"
+    },
+    {
+        "question": "RegionalPrompt的高级采样器参数影响什么？",
+        "answer": "在RegionalPrompt中，高级采样器参数是决定掩码内采样策略的关键元素。它影响在掩码范围内如何选取点，这对于确保区域提示准确性和代表性至关重要。"
+    },
+    {
+        "question": "RegionalPrompt的输出类型及其意义是什么？",
+        "answer": "RegionalPrompt的输出类型为一组区域提示（REGIONAL_PROMPTS）。这组提示是根据输入掩码和采样器量身定制，对于指导特定兴趣区域的进一步分析或处理具有特殊意义。在ComfyUI的表示中，其数据类型为REGIONAL_PROMPTS，而在Python环境中则表现为List[REGIONAL_PROMPT]类型的列表。"
+    },
+    {
+        "question": "在使用RegionalPrompt时，是否可以指定运行的硬件类型？",
+        "answer": "RegionalPrompt节点在使用上的建议硬件类型为CPU，这是通过使用场景提示给出的建议配置，以行之有效地利用计算资源。"
+    }
+]

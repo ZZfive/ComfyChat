@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SetDefaultImageForSEGS节点的作用是什么？",
+        "answer": "SetDefaultImageForSEGS节点处理分割（SEGS），将其缩放到与给定图像尺寸相匹配，并可选地使用基于分割的裁剪区域的新裁剪图像覆盖现有图像。这适用于进一步分析或可视化的分割数据预处理。"
+    },
+    {
+        "question": "SetDefaultImageForSEGS的'doit'方法如何处理输入的分割对象集合？",
+        "answer": "'doit'方法将输入的分割对象集合'segs'缩放到与参考'image'的尺寸相匹配，如果'override'参数设置为True，则根据更新的分割数据生成新的裁剪图像，覆盖任何已有的裁剪图像。"
+    },
+    {
+        "question": "在SetDefaultImageForSEGS节点中，'segs'参数的预期数据类型是什么？",
+        "answer": "'segs'参数的预期数据类型在ComfyUI下是SEGS，在Python中的类型是List[SEG]，它代表了将被处理和缩放的分割对象集合。"
+    },
+    {
+        "question": "SetDefaultImageForSEGS节点的'override'参数有什么功能？",
+        "answer": "'override'参数是一个布尔类型，若设置为True，SetDefaultImageForSEGS节点将生成新的裁剪图像，无视现有裁剪图像，这是在需要根据新的分割数据更新图像时非常有用的特性。"
+    },
+    {
+        "question": "哪些节点可以处理图像和分割的匹配尺寸？",
+        "answer": "SetDefaultImageForSEGS节点是可以处理图像和分割的匹配尺寸的节点之一，确保分割数据与参考图像尺寸相适应，有益于后续的分析或可视化。"
+    },
+    {
+        "question": "SetDefaultImageForSEGS节点处理后的输出数据类型是什么？",
+        "answer": "SetDefaultImageForSEGS节点处理后输出'segs'，其数据类型在ComfyUI下仍然是SEGS，在Python中转换为Tuple[List[SEG], List[SEG]]，包含了尺寸调整后的分割数据，可能还覆盖了裁剪图像。"
+    },
+    {
+        "question": "SetDefaultImageForSEGS节点适用于哪种基础硬件处理？",
+        "answer": "SetDefaultImageForSEGS节点的'infra type'为CPU，意味着它设计用于在中央处理器上运行，进行分割对象与图像数据的尺寸配对及图像处理。"
+    }
+]

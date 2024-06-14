@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageBatchTestPattern节点的用途是什么？",
+        "answer": "ImageBatchTestPattern节点是KJNodes/text分类下的一个节点，用于生成带有文本模式的图像批次，特别适用于测试和可视化不同字体和大小对文本输出的影响。"
+    },
+    {
+        "question": "哪些输入类型是ImageBatchTestPattern节点所必须的？",
+        "answer": "ImageBatchTestPattern节点必须输入的类型包括batch_size, start_from, text_x, text_y, width, height, font, 和 font_size，分别控制图像的数量、起点、文本位置、尺寸、字体以及字体大小。"
+    },
+    {
+        "question": "batch_size参数对ImageBatchTestPattern节点有什么影响？",
+        "answer": "batch_size参数决定了ImageBatchTestPattern节点生成的图像数量，它直接影响输出数据的体积和节点的计算负载。"
+    },
+    {
+        "question": "ImageBatchTestPattern节点输出什么类型的数据？",
+        "answer": "ImageBatchTestPattern节点输出类型为IMAGE的数据，这是一批使用了指定文本模式的生成图像，格式为torch.Tensor，可进行后续处理或可视化。"
+    },
+    {
+        "question": "具体参数中font和font_size的作用是什么？",
+        "answer": "font参数指定ImageBatchTestPattern节点中使用的字体类型，影响文本的风格和可读性。font_size参数则设置文本大小，确定文本的突出性和可见性，二者共同定义文本的视觉效果。"
+    },
+    {
+        "question": "ImageBatchTestPattern节点的文本位置是如何定义的？",
+        "answer": "文本在图像上的位置由text_x和text_y参数设定，分别控制文本在图像上的水平和垂直位置，对于对齐文本至关重要。"
+    },
+    {
+        "question": "ImageBatchTestPattern的输入参数如何影响输出图像的尺寸？",
+        "answer": "width和height参数共同确定输出图像的具体尺寸，与文本的视觉呈现紧密联系，影响图像的宽度和高度。"
+    }
+]

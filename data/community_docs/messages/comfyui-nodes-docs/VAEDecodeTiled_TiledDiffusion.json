@@ -1,0 +1,30 @@
+[
+    {
+        "question": "VAEDecodeTiled_TiledDiffusion是什么类型的节点，它的类别是什么？",
+        "answer": "VAEDecodeTiled_TiledDiffusion是一个ComfyUI中的节点，属于_for_testing类别。它使用变分自编码器（VAE）模型从潜在表示中解码和重建图像，特别强调通过平铺和扩散技术处理大图像。"
+    },
+    {
+        "question": "VAEDecodeTiled_TiledDiffusion节点的输入类型有哪些？",
+        "answer": "VAEDecodeTiled_TiledDiffusion节点的输入类型包括：'samples'（代表潜在空间向量的Comfy dtype为LATENT，Python dtype为torch.Tensor），'vae'（预训练的变分自编码器模型，用于执行解码过程，Comfy dtype为VAE，Python dtype为torch.nn.Module），'tile_size'（决定平铺尺寸的Comfy dtype为INT，Python dtype为int），以及额外的'fast'（影响解码速度和图像质量之间平衡的Comfy dtype为BOOLEAN，Python dtype为bool）。"
+    },
+    {
+        "question": "VAEDecodeTiled_TiledDiffusion节点的输出有哪些？",
+        "answer": "VAEDecodeTiled_TiledDiffusion节点的输出是IMAGE类型的数据，代表从潜在空间解码出来的重建图像，其Comfy dtype为IMAGE，Python dtype为torch.Tensor。"
+    },
+    {
+        "question": "节点的'tile_size'参数是如何影响图像处理的？",
+        "answer": "'tile_size'参数决定了用于处理图像的平铺的尺寸，该尺寸对于优化解码过程中的内存使用量和计算效率起着关键作用。"
+    },
+    {
+        "question": "启用'fast'参数会对图像的质量产生什么影响？",
+        "answer": "启用'fast'参数允许节点在牺牲潜在图像质量的条件下进行更快的解码，它影响了解码过程中速度和准确性的平衡。"
+    },
+    {
+        "question": "VAEDecodeTiled_TiledDiffusion节点的主要功能是什么？",
+        "answer": "VAEDecodeTiled_TiledDiffusion节点的主要功能是从潜在空间重建图像，此过程利用变分自编码器（VAE）模型，利用平铺和扩散技术处理大图像，其平衡计算效率和图像质量。"
+    },
+    {
+        "question": "哪种类型的硬件资源最适合运行VAEDecodeTiled_TiledDiffusion节点？",
+        "answer": "VAEDecodeTiled_TiledDiffusion节点最适合在GPU上运行，这是其基础设施类型的推荐选项。"
+    }
+]

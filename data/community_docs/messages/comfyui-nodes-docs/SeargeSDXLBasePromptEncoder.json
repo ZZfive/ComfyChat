@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SeargeSDXLBasePromptEncoder 类的主要功能是什么？",
+        "answer": "SeargeSDXLBasePromptEncoder 类的主要功能是处理和编码文本输入，使其符合 CLIP 模型的要求，通过平衡和对齐正面与负面文本提示的长度，确保与模型兼容。"
+    },
+    {
+        "question": "SeargeSDXLBasePromptEncoder 中的 base_clip 参数的作用是什么？",
+        "answer": "base_clip 参数是 SeargeSDXLBasePromptEncoder 中至关重要的参数，用于提供文本标记化和编码的基础，通常是一个 CLIP 模型实例，用于处理输入的文本提示。"
+    },
+    {
+        "question": "哪些参数用于控制图像尺寸和裁剪功能？",
+        "answer": "base_width 和 base_height 分别用于控制基础图像的宽度和高度。同时，crop_w 与 crop_h 分别用于确定从基础图像中裁剪区域的宽度和高度。"
+    },
+    {
+        "question": "SeargeSDXLBasePromptEncoder 如何输出编码后的正面和负面条件数据？",
+        "answer": "SeargeSDXLBasePromptEncoder 通过 base_positive 和 base_negative 两个输出分别提供编码后的正面和负面条件数据，它们用于在后续处理阶段建立文本的正面和负面上下文。"
+    },
+    {
+        "question": "pos_g 和 pos_l 参数在 SeargeSDXLBasePromptEncoder 中的作用是什么？",
+        "answer": "pos_g 和 pos_l 参数分别存储正面全局和局部的文本输入，是生成正面条件数据所必需的，有助于细化正面条件数据的编码过程，增加粒度和特异性。"
+    },
+    {
+        "question": "在 SeargeSDXLBasePromptEncoder 中如何处理 pos_g 和 neg_g 的文本长度差异？",
+        "answer": "在处理 pos_g 和 neg_g 的文本长度差异时，如果局部文本长度与全局文本长度不匹配，SeargeSDXLBasePromptEncoder 会通过添加适当的空文本直到长度相等，从而确保编码过程中的对齐和平衡，特别是在 negative 和 positive 的文本编码中。"
+    },
+    {
+        "question": "SeargeSDXLBasePromptEncoder 中 target_width 和 target_height 参数的作用是什么？",
+        "answer": "target_width 和 target_height 参数分别表示最终输出预期的宽度和高度，它们在确定编码过程的调整大小和缩放操作方面起关键作用，确保输出尺寸与指定目标相符。"
+    }
+]

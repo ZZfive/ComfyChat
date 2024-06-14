@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentUpscale节点的作用是什么？",
+        "answer": "LatentUpscale节点通过不同的放大方法提高输入潜在样本的分辨率，以改善生成图像的质量和细节，对于高分辨率输出至关重要，后者可进一步处理或用于下游任务。"
+    },
+    {
+        "question": "哪些参数是LatentUpscale节点放大输入样本时所必需的？",
+        "answer": "LatentUpscale节点放大输入样本时需要'samples'（潜在表示）、'upscale_method'（放大方法）、'width'（宽度）、'height'（高度）和'crop'（居中裁剪）等参数。"
+    },
+    {
+        "question": "LatentUpscale节点的'samples'参数有何作用？",
+        "answer": "'samples'参数提供节点将要放大的潜在表示，直接影响最终输出的质量和分辨率，是放大过程的起点。"
+    },
+    {
+        "question": "LatentUpscale节点支持哪些放大方法？",
+        "answer": "LatentUpscale节点支持的放大方法包括'nearest-exact'（最近邻），'bilinear'（双线性），'area'（区域采样），'bicubic'（双三次样条），以及'bislerp'（双线性插值）。"
+    },
+    {
+        "question": "在LatentUpscale节点中如何设定输出图像的尺寸？",
+        "answer": "通过使用'width'和'height'参数可以设定拉伸输出图像的宽度和高度。这两个参数共同作用以确立图像的尺寸，对于实现期望的视觉规模和比例至关重要。"
+    },
+    {
+        "question": "LatentUpscale节点的'crop'参数有何功能？",
+        "answer": "'crop'参数决定如何处理和裁剪放大图像，影响输出的定位和构图，可以让用户选择居中裁剪或关闭该功能，确保生成的图像正确对齐和聚焦。"
+    },
+    {
+        "question": "使用LatentUpscale节点时，'width'和'height'参数是否可以设置为零？",
+        "answer": "当'width'和'height'参数同时设为零时，原始样例数据'samples'将被直接复制。若仅一个参数设为零，节点将根据另一个参数的值和原始图像比例自动计算缺失尺寸。"
+    }
+]

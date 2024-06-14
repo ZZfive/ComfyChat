@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageBatchSplitter是什么类型的节点，它属于哪个分类？",
+        "answer": "ImageBatchSplitter是一个属于InspirePack/Util分类的节点，它在ComfyUI中用于高效管理和操作图像批次。"
+    },
+    {
+        "question": "ImageBatchSplitter节点的核心功能是什么？",
+        "answer": "ImageBatchSplitter节点的核心功能是将大量图像数据按用户定义的计数拆分成更小的子集，以确保批处理大小统一，特别适合于机器学习和图像处理流程的前期数据准备。"
+    },
+    {
+        "question": "ImageBatchSplitter如何处理无法被分割计数整除的图像总数？",
+        "answer": "当图像总量不能被分割计数完美整除时，ImageBatchSplitter会确保通过填充或其他方式生成的子集具有统一的大小，使数据符合下游处理的需求。"
+    },
+    {
+        "question": "在ImageBatchSplitter中，'images'参数代表什么？",
+        "answer": "在ImageBatchSplitter中，'images'参数代表了待处理的图像数据集合，它是节点的主要输入，这些图像将按'split_count'被组织和操作成子集。"
+    },
+    {
+        "question": "ImageBatchSplitter中的'split_count'参数对输出有何影响？",
+        "answer": "ImageBatchSplitter中的'split_count'参数决定了输入图像划分成的子集数量，这直接影响了输出的细节程度，确保处理后的数据满足后续机器学习或图像处理任务的需求。"
+    },
+    {
+        "question": "ImageBatchSplitter的输出数据类型是什么，以及在流程中它的重要性如何？",
+        "answer": "ImageBatchSplitter的输出是一个由处理后的图像组成的元组，按'split_count'组织。这些输出对于后续需要一致批处理大小的操作至关重要，有助于流程中的数据流动，特别有利于图像处理或机器学习模型的统一处理。"
+    },
+    {
+        "question": "ImageBatchSplitter节点支持哪些计算基础设施类型？",
+        "answer": "ImageBatchSplitter节点支持CPU作为其基础设施类型，这意味着它可以在标准的中央处理器上运行，而无需额外的GPU或加速器硬件。"
+    }
+]

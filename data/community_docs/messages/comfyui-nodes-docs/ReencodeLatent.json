@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ReencodeLatent节点属于哪个ComfyUI的扩展包类别？",
+        "answer": "ReencodeLatent节点属于ComfyUI的ImpactPack/Util类别。"
+    },
+    {
+        "question": "ReencodeLatent节点的作用是什么？",
+        "answer": "ReencodeLatent节点用一对变分自编码器（VAE）重新编码潜在表示，适用于需要在潜在和像素域中操纵和分析数据的任务。"
+    },
+    {
+        "question": "ReencodeLatent节点中的'tile_mode'参数影响什么？",
+        "answer": "'tile_mode'参数决定了解码和编码过程的处理方式，可以控制节点执行两步操作还是选择性地解码或编码。"
+    },
+    {
+        "question": "在使用ReencodeLatent节点时，'input_vae'和'output_vae'参数分别代表什么？",
+        "answer": "'input_vae'参数指定用于将潜在样本解码成像素空间的VAE，而'output_vae'参数定义了将像素数据重新编码成潜在表示的VAE。"
+    },
+    {
+        "question": "如果想要调整ReencodeLatent节点中像素数据处理的分辨率，应该如何操作？",
+        "answer": "可以通过设置'tile_size'参数来调整像素数据处理的分辨率，这个参数在'tile_mode'设置为'Both'或'Decode(input) only'时特别重要。"
+    },
+    {
+        "question": "哪些类型的输入是ReencodeLatent节点所必需的？",
+        "answer": "ReencodeLatent节点需要'samples'、'tile_mode'、'input_vae'和'output_vae'作为必需输入，其中'samples'代表要重新编码的潜在表示。"
+    },
+    {
+        "question": "ReencodeLatent节点的输出是什么？",
+        "answer": "ReencodeLatent节点的输出是'torch.Tensor'类型的'latent'，代表重新编码后的潜在表示，可以用于进一步分析或作为后续节点的输入。"
+    }
+]

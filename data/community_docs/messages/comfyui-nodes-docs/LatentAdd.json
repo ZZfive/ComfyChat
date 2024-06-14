@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentAdd节点的功能是什么？",
+        "answer": "LatentAdd节点的功能是在ComfyUI中对两组潜在样本执行逐元素加法，确保样本在加法前被适当地重塑以匹配维度，从而无缝结合来自不同来源或不同尺度的潜在表示。"
+    },
+    {
+        "question": "LatentAdd节点的输入类型是什么？",
+        "answer": "LatentAdd节点的输入类型包括两组潜在样本'samples1'和'samples2'，它们的类型都为LATENT，Python类型为Dict[str, torch.Tensor]。"
+    },
+    {
+        "question": "LatentAdd节点的'samples1'参数起什么作用？",
+        "answer": "'samples1'参数表示要相加的第一组潜在样本，是节点操作中的关键输入，其质量和格式直接影响加法的结果。"
+    },
+    {
+        "question": "LatentAdd节点如何处理'samples2'输入？",
+        "answer": "'samples2'参数保存要与'samples1'相加的第二组潜在样本，它与'samples1'在形状和类型上的兼容性对节点功能的成功执行至关重要。"
+    },
+    {
+        "question": "LatentAdd节点的输出包含什么？",
+        "answer": "LatentAdd节点的输出为'samples_out'，表示节点执行加法操作的结果，包含相加后的潜在样本，这些样本作为节点输出至关重要。"
+    },
+    {
+        "question": "在ComfyUI中哪些节点可以实现潜在样本的加法？",
+        "answer": "在ComfyUI中，LatentAdd节点专门用于实现潜在样本之间的加法，尤其适用于需要调整和结合不同来源或尺度的潜在表示的场景。"
+    },
+    {
+        "question": "LatentAdd节点的执行基于哪种硬件类型？",
+        "answer": "LatentAdd节点的建议执行硬件类型为CPU，这意味着该节点特别优化以在CPU上高效运行。"
+    }
+]

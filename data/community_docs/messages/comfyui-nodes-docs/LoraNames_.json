@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CreateLoraNames节点的功能是什么？",
+        "answer": "CreateLoraNames节点的功能是简化从给定文本中提取和组织名称的过程，特别适用于处理Lora字体名称列表，它提供一个清洁的名称列表和提示以供进一步使用。"
+    },
+    {
+        "question": "CreateLoraNames节点如何处理输入的Lora字体名称文本？",
+        "answer": "CreateLoraNames节点处理输入文本，去除多余字符和空行，将名称与其文件扩展名分离，生成一个干净的列表和派生提示。"
+    },
+    {
+        "question": "CreateLoraNames节点的输入数据类型是什么？",
+        "answer": "CreateLoraNames节点的输入类型是lora_names，预期为多行格式的字符串，即Lora字体名称列表。"
+    },
+    {
+        "question": "CreateLoraNames节点输出什么类型的数据？",
+        "answer": "CreateLoraNames节点输出两个类型的数据：一个是经过清理的Lora字体名称列表，另一个是从该列表派生的提示列表，两者都为列表形式的字符串。"
+    },
+    {
+        "question": "CreateLoraNames节点是如何从Lora字体名称派生出提示的？",
+        "answer": "通过使用os.path.splitext函数去除名称中的文件扩展名，CreateLoraNames节点从Lora字体名称列表中派生出提示。"
+    },
+    {
+        "question": "使用CreateLoraNames节点时需要注意什么？",
+        "answer": "使用CreateLoraNames节点时，需要注意其Infra类型为CPU，这意味着它在CPU上运行，以及输入的lora_names参数是节点操作的主要数据源。"
+    },
+    {
+        "question": "哪些任务适合使用CreateLoraNames节点？",
+        "answer": "适合使用CreateLoraNames节点的任务包括从Lora字体名称文本中提取干净的名称和派生提示，特别适用于需要准备Lora字体列表以供进一步处理或使用的情况。"
+    }
+]

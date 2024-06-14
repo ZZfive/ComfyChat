@@ -1,0 +1,34 @@
+[
+    {
+        "question": "SeargeParameterProcessor节点的作用是什么？",
+        "answer": "SeargeParameterProcessor是一个ComfyUI中的自定义节点，用于处理和优化图像生成任务的输入参数，确保参数配置正确以实现期望的输出质量和风格。"
+    },
+    {
+        "question": "SeargeParameterProcessor节点处理的输入类型是什么？",
+        "answer": "SeargeParameterProcessor节点的输入类型为Dict[str, Any]，提供节点将处理和优化的初始参数集，它直接影响节点的操作和最终输出。"
+    },
+    {
+        "question": "处理后的输出参数与输入参数有何不同？",
+        "answer": "输出参数代表了经过SeargeParameterProcessor处理和优化后的参数集，现在已准备好用于图像生成过程的后续阶段，与输入参数相比，应更加优化和准备就绪。"
+    },
+    {
+        "question": "SeargeParameterProcessor节点如何处理'denoise'参数？",
+        "answer": "如果'inputs'中的'denoise'参数未定义，SeargeParameterProcessor将默认设定'denoise'值为1.0。"
+    },
+    {
+        "question": "SeargeParameterProcessor节点在什么情况下会修改'noise_offset'参数？",
+        "answer": "当'saturation'设置为'refiner_intensity'的'soft'选项时，SeargeParameterProcessor会将'noise_offset'设置为1，否则为0。"
+    },
+    {
+        "question": "如何使用SeargeParameterProcessor根据不同的seed偏移调整hrf_seed？",
+        "answer": "如果'seed_offset'设置为'distinct'，则'hrf_seed'将被设置为'seed'加3，否则'hrf_seed'将直接与'seed'相同。"
+    },
+    {
+        "question": "SeargeParameterProcessor如何根据'text to image'操作模式调整参数？",
+        "answer": "如果操作模式设置为'text to image'，SeargeParameterProcessor将设置'operation_selector'为0，同时确保'denoise'值为1.0。"
+    },
+    {
+        "question": "在SeargeParameterProcessor中，'prompt_style'为'simple'时对参数有什么影响？",
+        "answer": "如果'prompt_style'设置为'simple'，SeargeParameterProcessor将'prompt_style_selector'和'prompt_style_group'设置为0，且确保'secondary_prompt'与'main_prompt'相同，而'style_prompt'和'negative_style'留空。"
+    }
+]

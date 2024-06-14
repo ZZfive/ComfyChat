@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Image_Blend节点是做什么的?",
+        "answer": "WAS_Image_Blend节点是一种ComfyUI的自定义节点，用于将两张图片无缝融合成一张复合图像。它可以通过调整blend_percentage参数控制第二幅图片在最终图像中的可见度。"
+    },
+    {
+        "question": "blend_percentage参数如何影响WAS_Image_Blend节点的输出图像？",
+        "answer": "blend_percentage是一个介于0.0到1.0的浮点值，决定了image_b在最终图像中的可见程度。当blend_percentage为0.0时，仅显示image_a；为1.0时，仅显示image_b；中间值表示两幅图按比例融合。"
+    },
+    {
+        "question": "哪两类图片可以输入到WAS_Image_Blend节点中？",
+        "answer": "WAS_Image_Blend节点接受两类必需的图片输入：image_a和image_b。image_a是第一张输入图片，image_b则与image_a进行混合生成最终合成图像。"
+    },
+    {
+        "question": "在WAS_Image_Blend节点中，输出的图像类型是什么以及它是如何产生的？",
+        "answer": "输出的图像类型是IMAGE，具体来说是torch.Tensor类型。它由方法'image_blend'生成，该方法基于输入的blend_percentage将image_a和image_b进行视觉融合。"
+    },
+    {
+        "question": "哪些自定义节点可以实现两张图片的融合？",
+        "answer": "WAS_Image_Blend节点是ComfyUI中提供图片融合功能的自定义节点之一，允许用户根据指定的百分比混合两张图片，从而创造视觉上和谐的复合图像。"
+    },
+    {
+        "question": "WAS_Image_Blend节点的实现采用了什么编程语言和框架？",
+        "answer": "WAS_Image_Blend节点使用Python编程语言实现，并且依赖于ComfyUI框架，利用PIL（Python Imaging Library）进行图片处理，以及torch.Tensor作为图片的内部表示。"
+    },
+    {
+        "question": "在ComfyUI中，如何控制两张图片融合的视觉效果？",
+        "answer": "在ComfyUI中的WAS_Image_Blend节点使用blend_percentage参数来控制图片融合的视觉效果。该参数设置得越高，第二张图片在合成图像中所占的比例越大。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ConcatConditionings节点的主要功能是什么？",
+        "answer": "ConcatConditionings节点是ComfyUI中ImpactPack/Util类别下的一个工具，用于将多个条件输入合并成单个输出。它通过连接每个条件输入的第一个元素与主要条件输入来结合它们的效应，对后续模型行为的指导至关重要。"
+    },
+    {
+        "question": "ConcatConditionings节点如何处理多个conditioning_from输入？",
+        "answer": "当ConcatConditionings节点收到多个conditioning_from输入时，仅应用第一个输入，而其余的输入将被忽略，同时会发出警告提示这一状况。"
+    },
+    {
+        "question": "ComfyUI的ConcatConditionings节点的输入conditioning1代表什么？",
+        "answer": "在ComfyUI的ConcatConditionings节点中，conditioning1是主要的条件输入，它会与来自conditioning_from的额外条件输入合并。conditioning1构成了输出的基础，对最终模型条件应用产生决定性影响。"
+    },
+    {
+        "question": "ConcatConditionings节点的输出包含了什么信息？",
+        "answer": "ConcatConditionings节点的输出是一系列合并后的条件对列表，其中每对由原始主条件张量和额外条件张量连接产生的张量组合成，以及在融合过程中保存下来的原始条件对的次要元素的副本组成。"
+    },
+    {
+        "question": "ConcatConditionings节点的适用硬件是什么？",
+        "answer": "ConcatConditionings节点的运行硬件类型是CPU，意味着它对硬件要求较低，可以在标准的中央处理器上运行。"
+    },
+    {
+        "question": "哪些节点可以实现条件输入的合并？",
+        "answer": "ComfyUI中ImpactPack/Util类别的ConcatConditionings节点能够实现条件输入的合并。这一节点特别设计用于将多个条件信号整合成单一的输出信号，以有效引导后续的模型行为。"
+    },
+    {
+        "question": "在ComfyUI中使用ConcatConditionings节点进行条件合并时有哪些Python数据类型是可接受的？",
+        "answer": "ConcatConditionings节点接受Comfy dtype为CONDITIONING的输入，这在Python中表现为List[Tuple[torch.Tensor, Any]]格式的数据，其中torch.Tensor通常表示与条件相关联的数值张量，而Any可以是任何其他与条件相关的数据实体。"
+    }
+]

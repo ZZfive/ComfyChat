@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Mask_Add节点在ComfyUI中的作用是什么?",
+        "answer": "WAS_Mask_Add节点在ComfyUI中的WAS Suite/Image/Masking类别下，用于执行两个掩码图像的加法操作，旨在合并掩码数据以创建复合掩码，对图像处理工作流程中需要层叠掩码的情况至关重要。"
+    },
+    {
+        "question": "WAS_Mask_Add节点的输入参数'masks_a'和'masks_b'分别代表什么?",
+        "answer": "'masks_a'代表要添加的第一组掩码图像，而'masks_b'代表与之集成的第二组掩码图像，这两个参数是创建全面复合掩码所必需的。"
+    },
+    {
+        "question": "WAS_Mask_Add节点是否可以处理多维度的掩码输入?",
+        "answer": "是的，WAS_Mask_Add节点可以处理多维度掩码输入，当输入掩码的维度大于2时，节点会直接执行加法操作；如果维度小于等于2，则会先增加维度，执行加法操作后，再将维度缩减回来，确保结果在有效范围内。"
+    },
+    {
+        "question": "在WAS_Mask_Add节点中，输出'MASKS'的具体类型和特征是什么?",
+        "answer": "输出'MASKS'是节点执行的加法操作结果，它在Comfy UI中的数据类型为MASK，Python中为torch.Tensor，表示的是一个复合掩码，包含了输入掩码的组合特征，用于下游图像处理任务。"
+    },
+    {
+        "question": "哪些节点可以用于在ComfyUI中合并掩码数据?",
+        "answer": "ComfyUI中的WAS_Mask_Add节点专门用于执行将两个掩码图像相加的操作，擅长合并掩码数据以创建复合掩码，适用于需要处理和层叠掩码的图像流程。"
+    },
+    {
+        "question": "WAS_Mask_Add节点的执行指令'mask_add_masks'主要执行什么操作?",
+        "answer": "执行指令'mask_add_masks'主要负责将输入的两组掩码数据'masks_a'和'masks_b'进行相加操作，形成一个包含了两组掩码特征的复合掩码，这个过程确保了掩码值在有效范围内，便于后续图像处理任务的无缝集成。"
+    },
+    {
+        "question": "WAS_Mask_Add节点在什么类型的硬件上运行最佳?",
+        "answer": "WAS_Mask_Add节点的运行推荐使用CPU作为基础设施类型（Infra type），这意味着它在CPU上运行将获得最佳性能和响应性。"
+    }
+]

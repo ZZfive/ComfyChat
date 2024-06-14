@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ComfyUI中的ImageScale节点主要用于什么目的？",
+        "answer": "ImageScale节点主要用于通过不同的上采样方法提高数字图像的分辨率，提供用户一个简单的接口来指定新的尺寸或保持纵横比缩放图像。"
+    },
+    {
+        "question": "使用ImageScale节点时，image参数的Python数据类型是什么？",
+        "answer": "使用ImageScale节点时，image参数的Python数据类型可以是PIL.Image.Image或torch.Tensor。"
+    },
+    {
+        "question": "ImageScale节点支持哪些上采样算法？",
+        "answer": "ImageScale节点支持的上采样算法包括'nearest-exact'，'bilinear'，'area'，'bicubic'和'lanczos'，适用于不同的用例，以实现高质量的图像放大。"
+    },
+    {
+        "question": "ImageScale节点的crop参数有什么功能？",
+        "answer": "ImageScale节点的crop参数定义了上采样后是否以及如何裁剪图像，这对于控制图像的最终构图至关重要。"
+    },
+    {
+        "question": "ImageScale节点的输出类型是什么？",
+        "answer": "ImageScale节点的输出类型为upscaled_image，代表使用指定方法放大后的图像，Image数据类型与输入保持一致，可以是PIL.Image.Image或torch.Tensor。"
+    },
+    {
+        "question": "在ImageScale节点中，如果width和height都设为0，会发生什么情况？",
+        "answer": "在ImageScale节点中，如果width和height都设为0，默认情况下不会改变图像的尺寸，即返回原图像。"
+    },
+    {
+        "question": "如何在ComfyUI中调整图像的宽高比以实现更精确的上采样？",
+        "answer": "在ComfyUI的ImageScale节点中，通过指定width和height参数可以调节图像宽高比，实现更精确的上采样。如果仅指定width或height中的一个，另一个设为0，则会自动计算以保持纵横比的缩放。"
+    }
+]

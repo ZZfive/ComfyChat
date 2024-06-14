@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SEGSOrderedFilterDetailerHookProvider节点的作用是什么？",
+        "answer": "SEGSOrderedFilterDetailerHookProvider节点设计用于对一组分割应用具体的过滤和排序机制，允许按面积尺寸和空间坐标定制过滤标准，并按升序或降序进行排序，特别适用于精炼分割任务的输出以符合特定要求。"
+    },
+    {
+        "question": "在ComfyUI中，SEGSOrderedFilterDetailerHookProvider节点的'目标'输入参数起到什么作用？",
+        "answer": "'目标'参数在SEGSOrderedFilterDetailerHookProvider节点中定义了根据分割的面积、宽度、高度或其角落坐标过滤的标准，直接影响哪些分割被选择进行进一步处理。"
+    },
+    {
+        "question": "SEGSOrderedFilterDetailerHookProvider节点中的'take_start'参数如何影响过滤结果？",
+        "answer": "'take_start'参数在SEGSOrderedFilterDetailerHookProvider节点中指定要开始考虑的分割范围的起始索引，主要用于需要处理过滤结果子集的情况，以增加数据处理效率和减少不必要的处理。"
+    },
+    {
+        "question": "哪些参数可以影响SEGSOrderedFilterDetailerHookProvider节点的输出分割排序？",
+        "answer": "SEGSOrderedFilterDetailerHookProvider节点的'order'参数确定分割排序的升序或降序，对需要特定顺序的分割应用至关重要。"
+    },
+    {
+        "question": "SEGSOrderedFilterDetailerHookProvider节点的输出类型是什么？",
+        "answer": "SEGSOrderedFilterDetailerHookProvider节点输出是'DETAILER_HOOK'类型，封装了应用过滤和排序逻辑，用于进一步细化和组织分割结果，在处理流程的下游使用。"
+    },
+    {
+        "question": "SEGSOrderedFilterDetailerHookProvider节点的'take_count'参数如何工作？",
+        "answer": "'take_count'参数在SEGSOrderedFilterDetailerHookProvider节点中定义了要获取的分割数量，从由'take_start'指定的索引开始，用以控制处理数据量，保持输出在可管理大小。"
+    },
+    {
+        "question": "在ComfyUI-Impact-Pack中如何构建SEGSOrderedFilterDetailerHookProvider节点的输入配置？",
+        "answer": "SEGSOrderedFilterDetailerHookProvider节点的输入配置通过定义'COMBO'类型的'target'、'BOOLEAN'类型的'order'和'INT'类型'take_start'及'take_count'参数实现，这些参数允许自定义过滤和排序分割的方式。"
+    }
+]

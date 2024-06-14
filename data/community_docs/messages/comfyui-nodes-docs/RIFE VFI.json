@@ -1,0 +1,46 @@
+[
+    {
+        "question": "RIFE_VFI 节点在 ComfyUI 中的作用是什么？",
+        "answer": "RIFE_VFI 节点在 ComfyUI-Frame-Interpolation/VFI 类别中，用于执行视频帧插值，能够生成输入视频帧之间的帧，有效提高帧率。"
+    },
+    {
+        "question": "RIFE_VFI 如何影响视频的平滑度和连续性？",
+        "answer": "RIFE_VFI 节点通过顺序处理每个帧并创建新的帧，从而增强视频序列的平滑度和连续性。"
+    },
+    {
+        "question": "哪个参数在 RIFE_VFI 中选择帧插值使用的检查点模型？",
+        "answer": "参数 'ckpt_name' 决定了 RIFE_VFI 节点将应用以生成插值帧的特定权重和架构。"
+    },
+    {
+        "question": "RIFE_VFI 中的 'multiplier' 参数的功能是什么？",
+        "answer": "'multiplier' 参数决定了输入帧生成输出帧时的倍数，例如使用 2 的乘数将在输入帧间有效创建一个插值帧。"
+    },
+    {
+        "question": "RIFE_VFI 节点的 'fast_mode' 参数有什么作用？",
+        "answer": "'fast_mode' 是一个可选的布尔标志，启用后可以提供更快但可能不太精确的插值过程，适用于快速预览或处理大量帧。"
+    },
+    {
+        "question": "在 RIFE_VFI 中，什么参数帮助管理内存使用？",
+        "answer": "'clear_cache_after_n_frames' 参数有助于在插值过程中管理内存使用，指定处理多少帧后清除缓存以防止内存溢出。"
+    },
+    {
+        "question": "什么参数在 RIFE_VFI 处理过程中调整输入帧的分辨率？",
+        "answer": "'scale_factor' 参数在 RIFE_VFI 处理帧前调整输入帧的分辨率，适用于处理不同的帧大小，影响输出的清晰度。"
+    },
+    {
+        "question": "RIFE_VFI 节点如何使用 'ensemble' 参数？",
+        "answer": "'ensemble' 参数允许 RIFE_VFI 节点组合多个插值模型以提高插值帧的质量，可能导致更稳定和高保真的结果。"
+    },
+    {
+        "question": "RIFE_VFI 的主要输出是什么？",
+        "answer": "RIFE_VFI 的主要输出是 'interpolated_frames' 参数，它代表帧插值过程的输出，包含原始输入帧和新生成的中间帧。"
+    },
+    {
+        "question": "RIFE_VFI 节点中的 'optional_interpolation_states' 参数的作用是什么？",
+        "answer": "'optional_interpolation_states' 提供使用附加状态自定义 RIFE_VFI 插值过程的方法，允许对输出进行更细粒度的控制。"
+    },
+    {
+        "question": "RIFE_VFI 节点的基础设施类型是什么？",
+        "answer": "RIFE_VFI 节点的基础设施类型为 GPU，表明它主要依赖于图形处理单元进行加速计算。"
+    }
+]

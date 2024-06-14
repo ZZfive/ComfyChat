@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Gradually_More_Denoise_KSampler 节点的主要功能是什么？",
+        "answer": "Gradually_More_Denoise_KSampler 节点主要用于逐步精细化潜在图像的去噪过程，通过应用一系列逐步增加去噪强度的步骤，以实现更清晰的输出。"
+    },
+    {
+        "question": "Gradually_More_Denoise_KSampler 节点在哪些场景中尤其重要？",
+        "answer": "此节点在需要逐步增强图像质量的场景中至关重要，适用于生成动画的平滑过渡或以逐步方式提高图像清晰度的情况。"
+    },
+    {
+        "question": "哪些参数对于 Gradually_More_Denoise_KSampler 节点的功能是必需的？",
+        "answer": "Gradually_More_Denoise_KSampler 节点的必需参数包括 model、positive、negative 和 latent_image。"
+    },
+    {
+        "question": "Gradually_More_Denoise_KSampler 节点的'latent_image'参数有何重要作用？",
+        "answer": "'latent_image'参数是包含用于生成去噪输出的初始潜在表示的关键输入，对最终图像的质量有重大影响。"
+    },
+    {
+        "question": "什么是 Gradually_More_Denoise_KSampler 节点的'start_denoise'参数的职责？",
+        "answer": "'start_denoise'参数设置初始去噪强度，是生成图像的初始清晰度的关键控制点。"
+    },
+    {
+        "question": "Gradually_More_Denoise_KSampler 节点的'denoise_increment'参数有何功能？",
+        "answer": "'denoise_increment'参数表示每一步骤中去噪强度的增加量，这对于控制图像清晰度的增加速度至关重要。"
+    },
+    {
+        "question": "如果在 Gradually_More_Denoise_KSampler 节点的'start_denoise'参数上增加的'denoise_increment'乘以'denoise_increment_steps'超过1.0，会怎样？",
+        "answer": "如果'start_denoise' + 'denoise_increment' * 'denoise_increment_steps'的总和超过1.0，则会抛出异常，指出最大去噪强度不能超过1.0。"
+    }
+]

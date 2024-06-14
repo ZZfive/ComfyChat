@@ -1,0 +1,50 @@
+[
+    {
+        "question": "PPFNKSamplerAdvanced 是什么?",
+        "answer": "PPFNKSamplerAdvanced 是 Power Noise Suite 的一部分，封装了用于生成高质量噪声模式的复杂功率律噪声模型采样方法，特别是那些遵循特定功率律分布的模式。"
+    },
+    {
+        "question": "PPFNKSamplerAdvanced 的主要功能是什么？",
+        "answer": "PPFNKSamplerAdvanced 提供了对生成过程的增强控制，能够混合多种噪声类型，并且可以与现有的采样框架集成，以获取符合特定功率律分布的噪声模式。"
+    },
+    {
+        "question": "ComfyUI 中的什么参数决定了采样器操作的底层功率律噪声模型？",
+        "answer": "在 ComfyUI 中，'model' 参数定义了 PPFNKSamplerAdvanced 操作的底层功率律噪声模型，决定了噪声分布的类型和生成的噪声模式的整体特征。"
+    },
+    {
+        "question": "如何在 ComfyUI 中确保同一采样器设置下反复产生相同的噪声模式？",
+        "answer": "在 ComfyUI 中，使用相同的 'seed' 参数值可以确保在相同采样器设置下反复产生相同的噪声模式。种子参数初始化随机数生成器，实现噪声生成的可重复性。"
+    },
+    {
+        "question": "在 PPFNKSamplerAdvanced 中调整采样步骤数量有什么作用？",
+        "answer": "在 PPFNKSamplerAdvanced 中调整 'steps' 参数决定了采样过程经历的迭代次数。更多的步骤通常会导致生成更精细、质量更高的噪声模式。"
+    },
+    {
+        "question": "在 ComfyUI 中，配置值 'cfg' 影响哪些方面？",
+        "answer": "在 ComfyUI 中，'cfg' 参数作为配置值，影响 PPFNKSamplerAdvanced 的噪声生成行为，如细节水平和模式的平滑度。"
+    },
+    {
+        "question": "ComfyUI 中的 'positive' 和 'negative' 参数有何作用？",
+        "answer": "在 ComfyUI 中，'positive' 和 'negative' 参数均作为条件数据，引导PPFNKSamplerAdvanced的噪声生成过程，确保模式符合期望的特征并排除不想要的特征或模式。"
+    },
+    {
+        "question": "ComfyUI 中如何获取采样过程生成的噪声模式？",
+        "answer": "在 ComfyUI 中，通过 PPFNKSamplerAdvanced 的 'latents' 输出类型可以获取在潜在空间表示中生成的噪声模式，这些可以作为进一步处理或转换到其他域的输入。"
+    },
+    {
+        "question": "如何在 ComfyUI 中使用 PPFNKSamplerAdvanced 采样方法生成噪声模式？",
+        "answer": "为了使用 PPFNKSamplerAdvanced 采样方法生成噪声模式，需要输入模型参数、种子、步骤数、采样器名称、配置值等，并在输出 latent 中接收所生成的噪声模式。"
+    },
+    {
+        "question": "ComfyUI 中哪种类型的节点可以混合多种噪声类型以生成高质量的模式？",
+        "answer": "PPFNKSamplerAdvanced 是 ComfyUI 中的节点，能够通过其复杂的采样方法混合多种噪声类型，生产符合特定功率律分布的高质量噪声模式。"
+    },
+    {
+        "question": "什么是 PPFNKSamplerAdvanced 输出的 latents？",
+        "answer": "PPFNKSamplerAdvanced 的 'latents' 输出包含在潜在空间表示中生成的噪声模式，这些模式可以用作进一步处理或转换的输入，且表示为 torch.Tensor 类型。"
+    },
+    {
+        "question": "在 ComfyUI 视角下，针对 PPFNKSamplerAdvanced 节点，种子参数的作用是什么？",
+        "answer": "在ComfyUI中，PPFNKSamplerAdvanced节点的种子参数（'seed'）初始化随机数生成器，在每次运行采样器时，相同的种子值生成相同的噪声模式，确保噪声生成过程的可重复性。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MirroredImage 是什么？",
+        "answer": "MirroredImage 是 ComfyUI 中 Mixlab 图像类别下的一种节点，用于通过水平轴反射输入的图像集合，从而创建输入图像的镜像版本。"
+    },
+    {
+        "question": "MirroredImage 节点处理的图像输入是什么格式？",
+        "answer": "MirroredImage 节点处理的图像输入格式为 COMBO[IMAGE]，即 List[PIL.Image.Image]，这使得节点能够读取和操作图像。"
+    },
+    {
+        "question": "如何描述 MirroredImage 输出的镜像图像？",
+        "answer": "MirroredImage 节点的输出是一系列经过水平反射的图像列表，格式为 COMBO[IMAGE] 或 List[torch.Tensor]，可用于扩充数据集、视觉效果创建或基于对称性的分析。"
+    },
+    {
+        "question": "MirroredImage 节点可以在哪些设备上运行？",
+        "answer": "MirroredImage 节点的运行依赖于 CPU，这意味着它不需要 GPU 加速，可在任何配备 CPU 的系统上运行。"
+    },
+    {
+        "question": "在 Mixlab/Image 类别下，哪些节点可以产生镜像图像？",
+        "answer": "在 Mixlab/Image 类别下，MirroredImage 节点可以通过水平轴反射输入图像，生成镜像图像集合，用于各类图像处理任务。"
+    },
+    {
+        "question": "MirroredImage 的源代码如何将输入图像转换为镜像图像？",
+        "answer": "MirroredImage 的源代码通过遍历输入图像集合，使用 Python Imaging Library (PIL) 的 Image.FLIP_LEFT_RIGHT 方法进行水平反射，然后将处理后的图像转换回 torch.Tensor 格式。"
+    },
+    {
+        "question": "MirroredImage 节点是否支持图像列表的输入与输出？",
+        "answer": "是的，MirroredImage 节点支持图像列表的输入与输出。它接受图像列表作为输入，输出同样为一个由镜像图像组成的列表。"
+    }
+]

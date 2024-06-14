@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Lora_Loader 节点的功能是什么？",
+        "answer": "WAS_Lora_Loader 节点用于管理和应用 Lora 模型，以增强基础模型和剪辑的功能，同时通过缓存先前加载的模型来优化性能和资源使用。"
+    },
+    {
+        "question": "WAS_Lora_Loader 节点的 'model' 参数有何作用？",
+        "answer": "'model' 参数是将应用 Lora 增强的基础模型，直接影响节点输出，决定将被修改以适应 Lora 模型增强的主模型。"
+    },
+    {
+        "question": "哪些模型可以作为 'clip' 参数输入 WAS_Lora_Loader 节点？",
+        "answer": "'clip' 参数要求输入的是应当受 Lora 模型影响的剪辑组件类型，它应为 ComfyUI 中的 CLIP 类型，即 python 中的 torch.nn.Module 类型。"
+    },
+    {
+        "question": "如何在 WAS_Lora_Loader 节点上加载特定的 Lora 模型？",
+        "answer": "通过 'lora_name' 参数指定要加载的 Lora 模型的文件名，从而加载特定的 Lora 模型。"
+    },
+    {
+        "question": "如何调整 Lora 模型对模型基础的影响强度？",
+        "answer": "使用 'strength_model' 参数，它可以调整 Lora 模型对基础模型影响的强度，在满足特定需求的同时，微调节点输出的增强效果。"
+    },
+    {
+        "question": "WAS_Lora_Loader 节点输出包含哪些类型及它们的意义？",
+        "answer": "节点输出包括增强的 'MODEL'、调整后的 'CLIP' 以及加载和应用的 Lora 模型名称 'NAME_STRING'，分别对应增强的模型、修改的剪辑组件和使用的特定 Lora 模型参考。"
+    },
+    {
+        "question": "在何种CPU环境下可以使用 WAS_Lora_Loader 节点？",
+        "answer": "WAS_Lora_Loader 节点在 CPU 类型的基础设施环境中可以使用，确保其操作的广泛适用性。"
+    }
+]

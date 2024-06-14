@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentKeyframeGroupNode在ComfyUI中的功能是什么？",
+        "answer": "LatentKeyframeGroupNode在ComfyUI中的功能是管理潜在的关键帧组，尤其是通过load_keyframes方法根据提供的索引强度处理和组织潜在的关键帧，确保控制网络中潜在空间操作的连贯性和结构化方法。"
+    },
+    {
+        "question": "index_strengths在LatentKeyframeGroupNode中扮演什么角色？",
+        "answer": "index_strengths参数在LatentKeyframeGroupNode中定义了组内潜在关键帧的分布和强度，对于确定关键帧如何影响潜在空间至关重要。"
+    },
+    {
+        "question": "LatentKeyframeGroupNode如何处理潜在空间操作的连续性和一致性？",
+        "answer": "LatentKeyframeGroupNode通过利用可选的prev_latent_kf参数，为当前关键帧组提供了上下文，从而处理潜在空间操作的连续性和一致性。"
+    },
+    {
+        "question": "load_keyframes方法的输出类型和意义是什么？",
+        "answer": "load_keyframes方法的输出类型是LATENT_KEYFRAME，即LatentKeyframeGroup，它封装了处理后的关键帧，代表节点操作的结构化输出，对于下游处理非常重要。"
+    },
+    {
+        "question": "LatentKeyframeGroupNode中的print_keyframes参数有什么作用？",
+        "answer": "print_keyframes参数是一个布尔标志，当设置为True时，它会记录关键帧信息，这有助于调试和理解节点的运作机制。"
+    },
+    {
+        "question": "哪些参数是LatentKeyframeGroupNode的必须输入？",
+        "answer": "LatentKeyframeGroupNode的必须输入是index_strengths，这是一个字符串参数，定义了组内潜在关键帧的分布和强度。"
+    },
+    {
+        "question": "LatentKeyframeGroupNode的infra type是什么？",
+        "answer": "LatentKeyframeGroupNode的infra type是CPU，意味着该节点的操作主要在CPU上执行。"
+    }
+]

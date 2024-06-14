@@ -1,0 +1,30 @@
+[
+    {
+        "question": "JDC_RandNoise节点的用途是什么？",
+        "answer": "JDC_RandNoise节点是用于生成随机噪声图像的自定义插件，适用于ComfyUI。它通过为每个像素分配用户定义范围内的随机颜色来创建指定尺寸的图像，适用于图像处理任务的数据增强或噪声过滤。"
+    },
+    {
+        "question": "JDC_RandNoise的输入参数'width'和'height'对图像有什么影响？",
+        "answer": "'width'和'height'参数分别定义了生成的噪声图像的宽度和高度。它们决定了输出图像的分辨率和尺寸，影响噪声模式的细节水平和整体大小。"
+    },
+    {
+        "question": "JDC_RandNoise节点如何控制噪声图像的色彩强度？",
+        "answer": "通过设置'value_min'和'value_max'参数，JDC_RandNoise节点控制噪声强度以及每个像素的随机颜色值范围，而'red_min/max'、'green_min/max'和'blue_min/max'参数则分别控制颜色通道中的红色、绿色和蓝色强度，影响噪声图像的整体颜色组成。"
+    },
+    {
+        "question": "在JDC_RandNoise中，'seed'参数的作用是什么？",
+        "answer": "'seed'参数在JDC_RandNoise中用于初始化随机数生成器，确保每次生成的噪声图像可复现。这对于测试和比较条件下的噪声模式至关重要，因为它保证了随机性的控制与一致性。"
+    },
+    {
+        "question": "JDC_RandNoise节点的输出是什么类型，以及这些输出可以如何用于ComfyUI中？",
+        "answer": "JDC_RandNoise节点的输出类型为'IMAGE'，这意味着它生成的是包含随机噪声的图像。这些图像可以用于机器学习项目的数据增强、图像处理算法的测试，或用于创造视觉效果，特别是在ComfyUI的图形用户界面中。"
+    },
+    {
+        "question": "哪些输入参数影响JDC_RandNoise中噪声图像的色彩构成？",
+        "answer": "除了'value_min'和'value_max'对噪声强度的影响，'red_min/max'、'green_min/max'和'blue_min/max'参数控制了噪声图像中红色、绿色和蓝色通道的最小值和最大值，直接决定了色彩构成的范围和噪声的色调。"
+    },
+    {
+        "question": "JDC_RandNoise节点的'red_min'参数的作用是什么？",
+        "answer": "'red_min'参数设定了JDC_RandNoise生成的噪声图像中红色通道的最小值。它有助于控制噪声图像中红色色彩强度的下限，对最终图像的颜色组成产生重要影响。"
+    }
+]

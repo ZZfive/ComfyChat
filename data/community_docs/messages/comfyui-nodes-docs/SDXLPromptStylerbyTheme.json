@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SDXLPromptStylerbyTheme节点是什么及其用途?",
+        "answer": "SDXLPromptStylerbyTheme是ComfyUI中Style Prompts类的一个实例，主要用于根据预定义的主题对提示进行风格化处理。这个节点通过读取包含样式和模板的JSON文件，生成与特定主题相符的风格化正面和负面提示，以增强文本输入的主题一致性和整体吸引力。"
+    },
+    {
+        "question": "风格化正面提示输出的用途是什么？",
+        "answer": "风格化正面提示输出，即positive_prompt_text_g，旨在与指定的主题保持一致，增强信息的整体吸引力，以确保生成的图像或文本内容符合用户的审美和上下文需求。"
+    },
+    {
+        "question": "SDXLPromptStylerbyTheme需要哪些必填输入参数？",
+        "answer": "SDXLPromptStylerbyTheme节点需要必填的输入参数有：text_positive（正面提示文本），text_negative（负面提示文本），style（应用的主题风格）。这些参数在风格化过程和最终输出中起着关键作用。"
+    },
+    {
+        "question": "log_prompt参数的作用是什么？",
+        "answer": "log_prompt参数是一个可选设置，当设置为'Yes'时，节点会记录提示风格化过程的日志，这对于调试和审查提示风格化效果非常有用。"
+    },
+    {
+        "question": "SDXLPromptStylerbyTheme如何处理文本输入？",
+        "answer": "节点接收text_positive和text_negative作为输入，基于预先设置style参数和内部存储的主题模板，将原始文本内容转换为风格化后的正面和负面提示；如果log_prompt被启用，节点还会记录详细的过程信息。"
+    },
+    {
+        "question": "SDXLPromptStylerbyTheme的主要输入数据类型是什么？",
+        "answer": "SDXLPromptStylerbyTheme的主要输入数据类型是字符串（STRING），用于text_positive（正面提示文本）和text_negative（负面提示文本），以及style（主题风格），它们都是ComfyUI和Python中的字符串类型（str）。"
+    },
+    {
+        "question": "哪些功能或组件与 SDXLPromptStylerbyTheme 的执行紧密相关？",
+        "answer": "SDXLPromptStylerbyTheme的执行与输入类型紧密相关，包括text_positive、text_negative、style和log_prompt参数，同时依赖于预定义的主题样式和模板，这些存储在sdxl_styles_themes.json文件中。"
+    }
+]

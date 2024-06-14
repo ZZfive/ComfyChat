@@ -1,0 +1,38 @@
+[
+    {
+        "question": "SAMDetectorCombined节点的用途是什么？",
+        "answer": "SAMDetectorCombined节点是ComfyUI中的一个自定义节点，用于通过SAM（Segment Anything Model）检测和分割图像中的物体。它处理输入图像，生成勾勒出检测到的物体的掩码，适用于需要精确物体定位和分割的计算机视觉和图像分析任务。"
+    },
+    {
+        "question": "哪些输入参数对于SAMDetectorCombined节点的操作至关重要？",
+        "answer": "SAMDetectorCombined节点的核心输入参数包括SAM模型（sam_model）、分割提示（segs）和输入图像（image）。这些参数直接影响节点在检测和分割物体方面的性能。"
+    },
+    {
+        "question": "SAMDetectorCombined如何使用分割提示（segs）处理图像？",
+        "answer": "SAMDetectorCombined使用提供的分割提示（segs）指导SAM模型检测图像中的特定区域。这些提示提高分割过程的准确性，尤其是在图像包含多个对象的复杂场景中。"
+    },
+    {
+        "question": "SAMDetectorCombined节点处理后的输出是什么类型？",
+        "answer": "SAMDetectorCombined节点处理后的输出是MASK类型，这是一种最终分割掩码，对于需要对象分割的进一步分析或下游任务至关重要。"
+    },
+    {
+        "question": "SAMDetectorCombined节点支持哪些类型的检测提示？",
+        "answer": "SAMDetectorCombined节点支持多种检测提示，包括'center-1'，'horizontal-2'，'vertical-2'，'rect-4'，'diamond-4'，'mask-area'，'mask-points'，'mask-point-bbox'，和'none'。这些提示决定检测策略，并影响段议提示的处理方式。"
+    },
+    {
+        "question": "SAMDetectorCombined节点的膨胀参数对分割掩码有何作用？",
+        "answer": "膨胀参数（dilation）用于控制检测到的对象边界框的扩展，这在分割掩码的后处理中起着重要作用，对调整对象边界与背景的区分有很大帮助。"
+    },
+    {
+        "question": "在使用SAMDetectorCombined进行分割过程时，mask_hint_threshold参数的作用是什么？",
+        "answer": "mask_hint_threshold参数用于设定分割过程中使用掩码提示的阈值，影响SAMDetectorCombined在识别对象边界时对掩码提示的依赖程度。"
+    },
+    {
+        "question": "哪些节点能够处理图像中的物体检测和分割？",
+        "answer": "SAMDetectorCombined是能够处理图像中物体检测和分割的节点之一，它通过细分提示和SAM模型处理输入图像，生成检测到物体的分割掩码。"
+    },
+    {
+        "question": "SAMDetectorCombined节点的mask_hint_use_negative参数在分割过程中扮演什么角色？",
+        "answer": "mask_hint_use_negative参数决定SAMDetectorCombined在分割过程中如何使用负提示，增强节点区分对象与背景的能力。"
+    }
+]

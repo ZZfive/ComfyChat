@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Mask_Invert是什么类型的节点？",
+        "answer": "WAS_Mask_Invert是ComfyUI中WAS Suite/Image/Masking类别的自定义节点，专门用于反转二进制掩码数据，支持图像处理任务中的掩码操作。"
+    },
+    {
+        "question": "WAS_Mask_Invert节点的应用场景是什么？",
+        "answer": "WAS_Mask_Invert节点适用于需要反转二进制掩码数据的情况，如图像分割或合成，尤其当用户希望对现有掩码进行反转操作以得到不同的处理效果时。"
+    },
+    {
+        "question": "WAS_Mask_Invert节点输入的masks参数代表什么？",
+        "answer": "WAS_Mask_Invert节点的'masks'参数定义了要被反转的二进制掩码数据，该数据必须是ComfyUI的MASK类型，通常为PIL.Image.Image或np.ndarray格式。"
+    },
+    {
+        "question": "哪些数据类型可以作为WAS_Mask_Invert节点的输入？",
+        "answer": "WAS_Mask_Invert节点接受Comfy dtype MASK的数据类型，但是实际的Python dtype可以是PIL.Image.Image或np.ndarray，这在节点输入定义时必不可少。"
+    },
+    {
+        "question": "WAS_Mask_Invert节点的输出类型是什么？",
+        "answer": "WAS_Mask_Invert节点的输出类型为[mask]，这表示反转后的二进制掩码数据。在ComfyUI中，输出数据类型标记为MASK，Python dtype可为PIL.Image.Image，这直接反映了节点反转掩码的功能。"
+    },
+    {
+        "question": "如何使用WAS_Mask_Invert节点反转掩码以用于进一步的图像处理？",
+        "answer": "要在进一步的图像处理中使用WAS_Mask_Invert节点反转掩码，首先需要将掩码数据以ComfyUI的MASK类型输入节点；然后节点会输出反转后的掩码数据，这可以被下游节点用来进行后续的图像操作，如合成、修剪等。"
+    },
+    {
+        "question": "WAS_Mask_Invert的源代码中哪个方法负责创建反转掩码的输出？",
+        "answer": "在WAS_Mask_Invert的源代码中，add_masks方法负责创建反转掩码的输出。该方法接受一个masks参数，返回一个数组，其中每个元素都是1.0与输入掩码值的差值，实现了掩码的反转。"
+    }
+]

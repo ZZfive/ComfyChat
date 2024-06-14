@@ -1,0 +1,30 @@
+[
+    {
+        "question": "StyleAlignedSampleReferenceLatents节点的主要功能是什么？",
+        "answer": "StyleAlignedSampleReferenceLatents节点的主要功能是在ComfyUI中生成与给定潜在图像风格一致的参考潜在序列，确保一系列生成图像保持风格一致性。"
+    },
+    {
+        "question": "哪些参数对StyleAlignedSampleReferenceLatents节点的'sample'方法是必需的？",
+        "answer": "对StyleAlignedSampleReferenceLatents节点的'sample'方法而言，必需的参数包括：模型（model）、正向条件因素（positive）、负向条件因素（negative）、采样策略（sampler）、方差（sigmas）和潜在图像（latent_image）, 这些参数直接决定了生成潜在图像的质量、随机性和风格一致性。"
+    },
+    {
+        "question": "StyleAlignedSampleReferenceLatents节点中的'sampler'参数是做什么的？",
+        "answer": "在StyleAlignedSampleReferenceLatents节点中，'sampler'参数用于指定采样策略，这是控制生成潜在图像随机性和多样性的重要因素。"
+    },
+    {
+        "question": "ComfyUI中StyleAlignedSampleReferenceLatents节点的输出是什么？",
+        "answer": "ComfyUI中StyleAlignedSampleReferenceLatents节点的输出包括ref_latents，这是一系列与输入潜在图像风格一致的参考潜在，以及noised_output，即采样过程的最终输出，是输入潜在图像的噪声版本。"
+    },
+    {
+        "question": "在StyleAlignedSampleReferenceLatents节点中，噪声是如何被控制的？",
+        "answer": "在StyleAlignedSampleReferenceLatents节点中，噪声的控制主要通过noise_seed参数初始化，这确保了一致的噪声模式和结果的可重复性。"
+    },
+    {
+        "question": "怎么确保使用StyleAlignedSampleReferenceLatents节点时输出图像的风格一致性？",
+        "answer": "StyleAlignedSampleReferenceLatents节点通过结合模型参数、正向条件因素（positive）和负向条件因素（negative），以及采样过程中的随机噪声（noise_seed参数），确保输出图像的风格与输入潜在图像的风格保持一致，特别是在SIGMAS参数的协助下，控制噪声的传播，达到风格一致的效果。"
+    },
+    {
+        "question": "说说StyleAlignedSampleReferenceLatents节点与ComfyUI的关系？",
+        "answer": "StyleAlignedSampleReferenceLatents是ComfyUI中的一个自定义节点，专注于风格一致性，尤其在需要一系列图像在风格上保持一致的场景下发挥了重要作用。节点通过采样和条件设置，能够在保持图像风格一致性的前提下生成多张图像。"
+    }
+]

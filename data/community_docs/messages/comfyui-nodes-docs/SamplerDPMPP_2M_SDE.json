@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SamplerDPMPP_2M_SDE是什么?",
+        "answer": "SamplerDPMPP_2M_SDE是ComfyUI中一个自定义的采样节点，属于sampling/custom_sampling/samplers类别，用于从概率分布生成数据点，特别适用于对样本质量和计算效率要求高的场景。"
+    },
+    {
+        "question": "SamplerDPMPP_2M_SDE如何控制采样过程的探索与利用之间的平衡？",
+        "answer": "通过调整'eta'参数，SamplerDPMPP_2M_SDE能够在采样空间中实现探索与利用的平衡，选择适当的'eta'值对收敛速度和样本质量有显著影响。"
+    },
+    {
+        "question": "哪些参数会影响SamplerDPMPP_2M_SDE的采样过程？",
+        "answer": "SamplerDPMPP_2M_SDE的采样过程受'solver_type'、'eta'、's_noise'和'noise_device'参数的影响，它们分别控制数值方法、学习率、噪声水平和计算设备。"
+    },
+    {
+        "question": "在SamplerDPMPP_2M_SDE中，'solver_type'参数有什么作用？",
+        "answer": "'solver_type'参数决定了用于解决底层SDE的数值方法，对采样过程的准确性和稳定性有重要影响，可选择'midpoint'或'heun'方法。"
+    },
+    {
+        "question": "如何指定SamplerDPMPP_2M_SDE节点的噪声生成设备？",
+        "answer": "通过设置'noise_device'参数来指定是否在GPU或CPU上生成噪声，这取决于硬件的可用性和所需的性能特性。"
+    },
+    {
+        "question": "SamplerDPMPP_2M_SDE的输出是什么？",
+        "answer": "SamplerDPMPP_2M_SDE节点的输出是一个采样器对象，它封装了配置好的采样方法，可以用来从指定的分布中生成样本。"
+    },
+    {
+        "question": "在哪些方面SamplerDPMPP_2M_SDE的设计特别强调了效率？",
+        "answer": "SamplerDPMPP_2M_SDE的设计强调了在保持样本质量的同时，通过利用SDE方法创建的马尔可夫链实现计算效率，同时，'solver_type'的选择和噪声生成设备的指定也影响其效率。"
+    }
+]

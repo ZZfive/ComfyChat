@@ -1,0 +1,42 @@
+[
+    {
+        "question": "KSampler节点的主要功能是什么？",
+        "answer": "KSampler节点的主要功能是执行给定模型的采样操作，它对潜在空间的操作对于图像合成或特征提取等任务至关重要。"
+    },
+    {
+        "question": "在使用KSampler时，模型参数为什么是至关重要的输入？",
+        "answer": "模型参数定义了KSampler将使用的底层模型，影响节点执行和生成的潜在表示的质量，是确保高质量输出的关键因素。"
+    },
+    {
+        "question": "KSampler中的种子（seed）参数如何影响采样过程？",
+        "answer": "KSampler中的种子参数初始化随机数生成器，确保采样过程的可重复性，影响采样中使用的噪声模式，从而影响结果的一致性和可靠性。"
+    },
+    {
+        "question": "什么是KSampler节点中的'steps'参数，其作用是什么？",
+        "answer": "'steps'参数确定KSampler采样过程中的迭代次数，直接影响潜在表示的收敛和细节水平，更多的步骤可能意味着更高质量的输出。"
+    },
+    {
+        "question": "如何调整KSampler以控制采样过程中的条件正反馈和负反馈？",
+        "answer": "通过设置KSampler的'positive'和'negative'参数，用户可以提供条件信息，引导采样过程向期望的方向发展或远离不希望的结果。"
+    },
+    {
+        "question": "在KSampler中，'sampler_name'参数的作用是什么？",
+        "answer": "'sampler_name'参数用于指定KSampler节点要使用的采样方法，不同方法在采样过程中的应用会影响到生成结果的差异性。"
+    },
+    {
+        "question": "KSampler的'latent_image'参数如何影响节点的输出？",
+        "answer": "'latent_image'参数定义了KSampler采样过程的初始潜在状态，对节点的最终输出有直接和决定性的影响，是采样方向的基础。"
+    },
+    {
+        "question": "哪些参数在KSampler中用于控制采样输出的质量和清晰度？",
+        "answer": "在KSampler中，'cfg'和'denoise'参数用于微调节点性能和输出质量，'cfg'参数通过控制超参数来优化采样，而'denoise'参数调整去噪水平，进一步提高输出的清晰度。"
+    },
+    {
+        "question": "用户在使用KSampler时可以自定义哪些参数以改变采样结果？",
+        "answer": "用户在使用KSampler时可以自定义模型、种子、步骤数、配置值（cfg）、采样方法（sampler_name）、学习率调度器（scheduler）、条件信息（positive和negative）、初始潜在图像（latent_image）和去噪水平（denoise），这些参数显著影响输出的样式和质量。"
+    },
+    {
+        "question": "在KSampler的上下文中，'latent'输出表示什么？",
+        "answer": "'latent'输出是KSampler节点采样过程的直接结果，包含生成的潜在表示，反映采样过程的最终状态，对于后续处理和图像合成具有关键作用。"
+    }
+]

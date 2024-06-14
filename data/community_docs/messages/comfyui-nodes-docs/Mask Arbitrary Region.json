@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Mask Arbitrary Region的类名是什么？",
+        "answer": "Mask Arbitrary Region的类名是WAS_Mask_Arbitrary_Region。"
+    },
+    {
+        "question": "在ComfyUI中，Mask Arbitrary Region节点主要用于什么类别？",
+        "answer": "Mask Arbitrary Region节点主要用于WAS Suite/Image/Masking类别下的任务。"
+    },
+    {
+        "question": "Mask Arbitrary Region节点的arbitrary_region方法的功能是什么？",
+        "answer": "arbitrary_region方法处理输入掩码，并根据提供的大小和阈值参数生成表示感兴趣区域的张量，适用于图像编辑、分析或机器学习等任务。"
+    },
+    {
+        "question": "在WAS_Mask_Arbitrary_Region中，处理多维掩码输入时将如何操作？",
+        "answer": "如果输入掩码masks的维度大于3，节点将分别处理每个掩码，生成各自的地区张量，最后将这些张量组合成一个大张量。"
+    },
+    {
+        "question": "WAS_Mask_Arbitrary_Region节点的'resize_mask'参数是否存在？",
+        "answer": "在提供的文档中，'resize_mask'参数并未提及；Mask Arbitrary Region节点的关键参数是masks、size和threshold。"
+    },
+    {
+        "question": "如何设置Mask Arbitrary Region节点中size和threshold参数的默认值和范围？",
+        "answer": "在WAS_Mask_Arbitrary_Region节点中，size参数的默认值为256，范围从1到4096；threshold的默认值为128，范围从0到255，两者的步长都是1。"
+    },
+    {
+        "question": "Mask Arbitrary Region节点处理单个掩码时，掩码如何转换为感兴趣的区域张量？",
+        "answer": "单个掩码首先通过一系列处理，包括转换为numpy数组，应用阈值和尺寸参数，生成一个感兴趣区域的掩码，最后将其转换成张量输出。"
+    }
+]

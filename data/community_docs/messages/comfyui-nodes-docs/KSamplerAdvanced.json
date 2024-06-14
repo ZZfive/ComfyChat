@@ -1,0 +1,30 @@
+[
+    {
+        "question": "KSamplerAdvanced是什么类型的节点，它主要解决什么问题？",
+        "answer": "KSamplerAdvanced是ComfyUI中sampling类别下的一个自定义节点，它通过控制噪声的添加来生成高质量的潜在表示，主要用于高级采样过程，以增强输出的多样性和质量。"
+    },
+    {
+        "question": "KSamplerAdvanced节点中的'return_with_leftover_noise'参数为何种数据类型？",
+        "answer": "KSamplerAdvanced节点中的'return_with_leftover_noise'参数的Comfy dtype为COMBO[disable, enable]，Python dtype为str，用于决定是否在返回的样本中包含剩余噪声。"
+    },
+    {
+        "question": "哪些参数是KSamplerAdvanced节点采样操作的基础？",
+        "answer": "在KSamplerAdvanced节点中，'model' 参数是采样操作的基础，它定义了将从中采样的生成模型，其属性直接影响生成的潜在表示的性质。"
+    },
+    {
+        "question": "KSamplerAdvanced节点中的'positive'和'negative'参数有何作用？",
+        "answer": "KSamplerAdvanced节点中的'positive'参数提供条件数据，引导采样过程生成符合特定期望特征的样本，而'negative'参数提供条件数据，帮助采样过程避免生成具有不良特征的样本。"
+    },
+    {
+        "question": "KSamplerAdvanced节点的'sampler_name'参数控制什么？",
+        "answer": "KSamplerAdvanced节点的'sampler_name'参数指定要使用的采样方法，这对节点的整体性能和效果至关重要，因为不同的采样器可以显著改变生成样本的特性。"
+    },
+    {
+        "question": "KSamplerAdvanced节点的功能如何概括？",
+        "answer": "KSamplerAdvanced节点旨在通过各种噪声配置和调度选项，从模型中进行高级采样，通过控制噪声的引入和调整采样策略，它能够灵活地适应多种采样需求，成为探索生成模型潜在空间的多功能工具。"
+    },
+    {
+        "question": "在KSamplerAdvanced节点中，如何控制采样过程的起始和结束点？",
+        "answer": "在KSamplerAdvanced节点中，'start_at_step'参数决定了采样过程的起始步骤，而'end_at_step'参数指定了采样过程的最后步骤，这两个参数允许用户精细控制采样过程的范围。"
+    }
+]

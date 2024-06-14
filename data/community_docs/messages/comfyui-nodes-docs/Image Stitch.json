@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Image_Stitch 节点的作用是什么？",
+        "answer": "WAS_Image_Stitch 节点用于根据指定的缝合方向无缝地组合两张图像，通过应用羽化效果创造平滑过渡，适用于创建全景图像或纹理。"
+    },
+    {
+        "question": "哪些图像可以使用 WAS_Image_Stitch 节点进行缝合？",
+        "answer": "WAS_Image_Stitch 节点可以处理由 ComfyUI 定义的数据类型 IMAGE 的图像，这些图像可以是 PIL.Image.Image 类型。"
+    },
+    {
+        "question": "如何定义两张图像的缝合方向？",
+        "answer": "通过 'stitch' 参数定义，它可以是 'top'、'left'、'bottom' 或 'right'，指定图像的缝合方向和组合方式，这是 WIP Suite/Image/Transform 节点的组成部分之一。"
+    },
+    {
+        "question": "WAS_Image_Stitch 中的 'feathering' 参数控制什么？",
+        "answer": "'feathering' 参数决定了缝合边界应用的羽化量，更高值能使图像间过渡更柔和，但会减小输出图像尺寸，其取值范围为 0 到 2048。"
+    },
+    {
+        "question": "WAS_Image_Stitch 节点如何处理输入图像的羽化以达到平滑过渡？",
+        "answer": "WAS_Image_Stitch 节点设置 'feathering' 参数控制缝合处过渡的柔和度，该参数越高，边界模糊效果越明显，从而得到更平滑的拼接结果。"
+    },
+    {
+        "question": "在 WAS Suite/Image/Transform 类别中，WAS_Image_Stitch 节点输出的是什么格式的图像？",
+        "answer": "WAS_Image_Stitch 节点输出 'stitched_image'，是一个无缝组合的图像，格式为 ComfyUI 定义的 IMAGE 类型，等同于 PIL.Image.Image，适用于进一步处理或保存。"
+    },
+    {
+        "question": "WAS_Image_Stitch 节点根据什么标准来确定缝合方向的正确性？",
+        "answer": "WAS_Image_Stitch 节点依据提供的 'stitch' 参数定义缝合方向，此参数需在 ['top', 'left', 'bottom', 'right'] 内有效，如果提供无效值，节点将发出错误信息，确保正确缝合。"
+    }
+]

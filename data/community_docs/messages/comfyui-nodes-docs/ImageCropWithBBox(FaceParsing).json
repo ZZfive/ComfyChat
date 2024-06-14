@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageCropWithBBox节点是做什么的?",
+        "answer": "ImageCropWithBBox节点是ComfyUI中的自定义节点，主要用于根据边界框坐标裁剪图像，以处理特定的感兴趣区域，提高后续图像分析任务的效率。"
+    },
+    {
+        "question": "ImageCropWithBBox节点处理哪些类型的输入?",
+        "answer": "ImageCropWithBBox节点处理两种主要类型的输入：'bbox'（边界框坐标）和'image'（原始图像数据），两者的类型均为torch.Tensor。"
+    },
+    {
+        "question": "裁剪操作后的输出是什么类型?",
+        "answer": "裁剪操作后的输出是'cropped_image'，它包含了由'bbox'参数定义的原始图像的裁剪区域，输出类型同样为torch.Tensor，适合于后续处理或分析。"
+    },
+    {
+        "question": "ImageCropWithBBox节点的输入参数'bbox'有何作用?",
+        "answer": "'bbox'参数在ImageCropWithBBox节点中定义了要处理图像的特定区域，通过指定边界框坐标直接影响裁剪操作。"
+    },
+    {
+        "question": "哪些节点可以用于特定区域的图像裁剪？",
+        "answer": "ImageCropWithBBox是专门用于根据边界框坐标裁剪图像的节点，适合于需要处理特定区域图像分析的任务。"
+    },
+    {
+        "question": "图像数据在ImageCropWithBBox节点裁剪中的重要性如何?",
+        "answer": "图像数据是ImageCropWithBBox节点执行裁剪操作的基础，其质量与格式直接影响裁剪的准确性与后续分析任务的效率。"
+    },
+    {
+        "question": "ImageCropWithBBox节点的运行依赖于哪种计算资源?",
+        "answer": "ImageCropWithBBox节点的使用推荐在CPU上运行，这是其推荐的infra type，尽管在GPU上运行也是可能的，但CPU能更好地处理其计算需求。"
+    }
+]

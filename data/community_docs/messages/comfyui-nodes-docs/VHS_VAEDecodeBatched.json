@@ -1,0 +1,30 @@
+[
+    {
+        "question": "VHS_VAEDecodeBatched是什么节点?",
+        "answer": "VHS_VAEDecodeBatched是ComfyUI的Video Helper Suite套件中的一个节点，它的作用是对多个潜在样本进行批量解码，利用VAE模型高效重建图像，特别适用于处理大型数据集。"
+    },
+    {
+        "question": "VAEDecodeBatched节点的输入参数有哪些?",
+        "answer": "VAEDecodeBatched节点的主要输入参数包括'samples'（潜在样本），'vae'（VAE模型），以及可选的'per_batch'（单批次处理的样本数量），这些参数对于解码图像的质量和效率至关重要。"
+    },
+    {
+        "question": "VAEDecodeBatched节点的'samples'参数是什么类型?",
+        "answer": "VAEDecodeBatched节点的'samples'参数使用Comfy dtype类型LATENT，对应Python dtype为torch.Tensor，这个参数包含了待解码成图像的潜在表示，其质量和结构直接影响输出图像的品质。"
+    },
+    {
+        "question": "为什么需要设置'per_batch'参数?",
+        "answer": "'per_batch'参数用于控制解码过程中每个批次处理的样本数量，它是平衡计算效率和内存使用的关键，特别是在处理大型数据集时，适当调整'per_batch'可以优化资源分配。"
+    },
+    {
+        "question": "使用VAEDecodeBatched节点输出的图像类型是什么?",
+        "answer": "VAEDecodeBatched节点输出的图像是一个IMAGE类型的张量，用Comfy dtype表示，其Python dtype为torch.Tensor，这些图像从输入的潜在样本解码而来，代表重建的结果。"
+    },
+    {
+        "question": "哪些节点可以对潜在样本进行批量图像重建?",
+        "answer": "ComfyUI的VHS_VAEDecodeBatched节点可以对潜在样本进行批量图像重建，利用VAE模型高效处理大型数据集或优化计算资源分配，生成重建图像。"
+    },
+    {
+        "question": "VAEDecodeBatched节点的工作原理是什么?",
+        "answer": "VAEDecodeBatched节点通过批量解码潜在样本，使用指定的VAE模型重建图像。它按批次处理输入样本，由'per_batch'参数控制，对每个批次调用vae.decode()方法，最后将所有批次的解码结果合并，实现高效资源利用和图像重建。"
+    }
+]

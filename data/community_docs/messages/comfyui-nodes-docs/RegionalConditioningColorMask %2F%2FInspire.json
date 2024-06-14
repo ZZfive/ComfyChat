@@ -1,0 +1,30 @@
+[
+    {
+        "question": "RegionalConditioningColorMask 节点的功能是什么?",
+        "answer": "RegionalConditioningColorMask 节点用于将颜色掩码应用于 CLIP 模型的文本编码中，以增强对图像特定区域的关注。它通过转换颜色掩码图像为二进制掩码，并将此掩码用于条件文本编码，从而提供更为精细的图像生成过程控制。"
+    },
+    {
+        "question": "clip 参数的作用是什么？",
+        "answer": "clip 参数是将被 CLIP 模型编码的文本提示，定义模型在图像生成过程中应关注的语义内容。它的相关性和特异性直接影响节点的有效性。"
+    },
+    {
+        "question": "mask_color 的作用是什么？",
+        "answer": "mask_color 参数用于指定在 'color_mask' 图像中用于生成掩码的颜色。它对识别图像中的目标区域至关重要，并以有效的 RGB 颜色格式提供，以确保掩码能够准确地隔离所需区域。"
+    },
+    {
+        "question": "strength 参数如何影响图像生成?",
+        "answer": "strength 参数控制掩码对文本编码影响的强度，较高的值可增加对掩码区域的强调，影响生成图像的特征明显度。它在区域焦点和整体图像一致性之间提供了平衡的微调。"
+    },
+    {
+        "question": "哪些参数是 RegionalConditioningColorMask 节点的必须输入？",
+        "answer": "RegionalConditioningColorMask 节点的必须输入包括 'clip', 'color_mask', 'mask_color', 'strength' 和 'prompt'，这些参数对于节点的正确操作至关重要。"
+    },
+    {
+        "question": "Optional 的 set_cond_area 参数控制什么？",
+        "answer": "set_cond_area 参数确定掩码应用于条件的方式，可以使用默认行为或显式设置掩码边界，影响节点增强特定区域的区域条件的能力。"
+    },
+    {
+        "question": "RegionalConditioningColorMask 节点的主要输出是什么？",
+        "answer": "RegionalConditioningColorMask 节点的主要输出是已经被颜色掩码修改过的文本编码，即 conditioning，以及从 'color_mask' 图像派生的二进制掩码，用于图像生成过程的精确控制。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "RegionalConditioningSimple节点的功能是什么？",
+        "answer": "RegionalConditioningSimple节点是一个ComfyUI中InspirePack/Regional类的自定义节点，用于根据指定掩码在图像上应用基于CLIP的区域性条件，以在特定区域提升图像生成的准确性和相关性。"
+    },
+    {
+        "question": "哪些是RegionalConditioningSimple节点的必填输入？",
+        "answer": "RegionalConditioningSimple节点的必填输入包括'clip'（CLIP条件）、'mask'（图像掩码）、'strength'（条件强度）、'set_cond_area'（条件区域设置）和'prompt'（文本描述）。"
+    },
+    {
+        "question": "在RegionalConditioningSimple中，'set_cond_area'的含义是什么？",
+        "answer": "'set_cond_area'参数决定了区域性条件应用的区域确定方法；它可以采用默认设置或基于掩码边界来定义条件区域，影响掩码在图像上的应用方式。"
+    },
+    {
+        "question": "RegionalConditioningSimple节点输出的'dtype'类型是什么？",
+        "answer": "RegionalConditioningSimple节点输出的'dtype'类型是'CONDITIONING'，表示应用于图像的处理过的区域性条件数据，其Python dtype为torch.Tensor，是图像进一步操作的关键组成部分。"
+    },
+    {
+        "question": "如何调整RegionalConditioningSimple节点的区域性条件强度？",
+        "answer": "通过调整'strength'参数可以控制RegionalConditioningSimple节点中区域性条件的强度，允许用户精细化调节对指定图像区域的强调程度，影响输出中条件特征的显著度。"
+    },
+    {
+        "question": "RegionalConditioningSimple节点所需的'clip'参数的作用是什么？",
+        "answer": "'clip'参数对RegionalConditioningSimple节点至关重要，定义了基于用户的视觉上下文去生成图像的基本依据。它是条件处理过程中的核心输入，指导图像的生成和编辑。"
+    },
+    {
+        "question": "哪些节点可以与RegionalConditioningSimple节点配合使用？",
+        "answer": "RegionalConditioningSimple节点可以通过其输出的CONDITIONING类型结合其他处理或优化图像的节点使用，如节点ConditioningSetMask或CLIPTextEncode，以实现对图像的更复杂控制和编辑。"
+    }
+]

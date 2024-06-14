@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageToMask节点的用途是什么？",
+        "answer": "ImageToMask节点主要用于从输入图像中提取特定的颜色通道以创建掩码，这个掩码随后可以用于各种图像处理任务，例如分割和隔离图像中的特定特征，实现更有针对性的分析和操作。"
+    },
+    {
+        "question": "ImageToMask节点的通道参数(channel)如何影响输出结果？",
+        "answer": "通道参数‘channel’指定了要从图像中提取的颜色通道。选择的通道会决定掩码中表示的具体方面，对图像的后续处理和分析有显著影响。"
+    },
+    {
+        "question": "ImageToMask节点的掩码输出(mask)代表什么？",
+        "answer": "掩码输出是输入图像中选择颜色通道的单通道表示，提供了所选通道信息的专注视图，为进一步的图像操作和分析提供基础。"
+    },
+    {
+        "question": "哪些系统或环境可以运行ImageToMask节点？",
+        "answer": "ImageToMask节点的基础设施类型被指定为CPU，意味着它可以在CPU上运行，具体版本和兼容性的详细信息可能在节点的源代码或相关文档中给出。"
+    },
+    {
+        "question": "ImageToMask节点的主要输入是什么？",
+        "answer": "ImageToMask节点的主要输入是‘image’参数，它承担着通过提取颜色通道以形成掩码的角色。‘image’的类型是ComfyUI定义的IMAGE和Python中的torch.Tensor。"
+    },
+    {
+        "question": "哪些颜色通道可以被ImageToMask节点提取？",
+        "answer": "ImageToMask节点可以通过其‘channel’参数提取‘red’、‘green’、‘blue’或‘alpha’四种类别的颜色通道。"
+    },
+    {
+        "question": "什么是ImageToMask节点类的FUNCTION属性？",
+        "answer": "ImageToMask节点的FUNCTION属性为‘image_to_mask’，它定义了节点执行的主要操作，即从输入图像中提取指定颜色通道并生成相应掩码的方法。"
+    }
+]

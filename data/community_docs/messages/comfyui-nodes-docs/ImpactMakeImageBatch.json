@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MakeImageBatch节点的功能是什么？",
+        "answer": "MakeImageBatch节点用于高效地将多个图像合并成一个标准化的批次，以优化后续的图像处理流程。它确保了所有图像在批次中具有相同的尺寸，适合批量神经网络训练或批量图像操作。"
+    },
+    {
+        "question": "如何理解MakeImageBatch节点中 image1 参数的作用？",
+        "answer": "image1参数作为尺寸参考，用于调整后续图像的尺寸以与之匹配，确保了图像批次的一致性，这是一切后续处理的基础。"
+    },
+    {
+        "question": "MakeImageBatch节点中kwargs参数如何工作？",
+        "answer": "kwargs参数允许节点处理一个可变数量的图像，每个图像根据image1的尺寸进行调整后，将被合并到同一个批次中。这提高了节点的灵活性和实用性。"
+    },
+    {
+        "question": "MakeImageBatch节点的输出是什么？",
+        "answer": "MakeImageBatch节点输出的是一个已经按统一尺寸调整并沿着批次维度连接好的图像批次。"
+    },
+    {
+        "question": "MakeImageBatch节点的哪种类型的图像调整功能有助于批量图像处理？",
+        "answer": "MakeImageBatch节点通过调整所有图像尺寸以匹配image1的尺寸，从而确保了图像批次中尺寸的一致性，这有利于大量图像的统一处理，如批量神经网络训练。"
+    },
+    {
+        "question": "在ComfyUI中，哪些节点可以用于统一图像数据集为统一尺寸的批次？",
+        "answer": "MakeImageBatch节点是专门设计用于将多个大小不一的图像调整为统一尺寸的批次，适用于神经网络训练和批量图像操作等。"
+    },
+    {
+        "question": "MakeImageBatch节点是否支持将不同尺寸的图像高效地组合成一个批次用于处理？",
+        "answer": "是的，MakeImageBatch节点能够在必要时调整图像的大小，确保所有图像具有相同的尺寸，并将它们沿批次维度连接，实现高效组合以供后续处理。"
+    }
+]

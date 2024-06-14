@@ -1,0 +1,34 @@
+[
+    {
+        "question": "MikeySampler节点的主要功能是什么？",
+        "answer": "MikeySampler节点旨在从给定的基础模型和细化模型生成高质量的样本，同时利用VAE进行潜在空间操作。它执行复杂的采样技术，并结合条件输入来优化输出。该节点还根据指定的方法和强度对生成的图像进行放大，确保最终输出满足所需的分辨率和质量标准。"
+    },
+    {
+        "question": "MikeySampler节点中的'seed'参数有何作用？",
+        "answer": "种子参数对于采样过程的可重复性至关重要，确保在不同运行中生成的样本是一致的。在采样算法的随机性控制中起着重要作用，其类型为INT。"
+    },
+    {
+        "question": "MikeySampler节点中的'base_model'和'refiner_model'各负责什么？",
+        "answer": "'base_model'是用于潜在空间初始采样的基础神经网络，决定了生成样本的质量和多样性。'refiner_model'用于进一步提高基础模型生成的样本质量，它细化潜在空间表示，以实现最终输出的更高保真度。"
+    },
+    {
+        "question": "MikeySampler节点支持哪些类型的输出？",
+        "answer": "MikeySampler节点支持'latent'类型的输出，表示采样过程中得到的编码潜在向量，作为模型和最终放大图像之间的中间表示。"
+    },
+    {
+        "question": "如何使用MikeySampler节点进行图像放大？",
+        "answer": "通过设置'upscale_by'和'hires_strength'参数，可以分别控制图像的缩放因子和高分辨率放大过程的强度，以调整最终输出的分辨率和细节水平。"
+    },
+    {
+        "question": "在MikeySampler节点中，除了指定的'seed'，还有哪些参数对采样过程有直接影响？",
+        "answer": "除了'seed'参数，'base_model'，'refiner_model'，和'samples'参数也对采样过程有直接影响。这些参数分别负责潜在空间的初始采样，样本质量的提高，以及潜在向量数量的指定。"
+    },
+    {
+        "question": "MikeySampler节点的'samples'参数影响什么？",
+        "answer": "'samples'参数表示要从基础模型中采样的潜在向量的数量，直接影响生成输出的多样性，其类型为LATENT。"
+    },
+    {
+        "question": "MikeySampler需要哪些类型的模型输入？",
+        "answer": "MikeySampler节点需要'MODEL'类型的'base_model'和'refiner_model'作为输入，用于潜在空间的初始化采样和样本质量的提升，分别对应的Python类型为'torch.nn.Module'。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "VHS_MergeMasks节点的主要功能是什么？",
+        "answer": "VHS_MergeMasks节点的主要功能是将两个输入掩码合并为单个掩码，通过指定的合并策略和缩放方法智能处理掩码大小的差异，确保无缝集成。"
+    },
+    {
+        "question": "Mask_A在MergeMasks节点中起什么作用？",
+        "answer": "Mask_A是MergeMasks中要合并的第一个掩码，作为最终组合掩码的关键组成部分，决定着第二个掩码集成的初始结构。"
+    },
+    {
+        "question": "MergeMasks节点的工作原理是什么？",
+        "answer": "MergeMasks工作原理是通过比较和调整两个掩码mask_A和mask_B的尺寸，根据所选的merge_strategy与scale_method，合并它们成为一个输出掩码。"
+    },
+    {
+        "question": "什么情况下会使用到MergeMasks节点？",
+        "answer": "当需要将多个掩码层结合用于进一步处理或可视化时，用户会用到MergeMasks节点，它特别适用于视频编辑和其他图形处理软件中的高级掩码操作。"
+    },
+    {
+        "question": "MergeMasks节点的输入和输出数据类型是什么？",
+        "answer": "MergeMasks节点的输入类型包括mask_A、mask_B、merge_strategy、scale_method和crop。输出类型是OFFSET和count，分别代表合并掩码和数量。"
+    },
+    {
+        "question": "在MergeMasks节点中，如何确定合并时应以哪个掩码作为模板？",
+        "answer": "合并策略（merge_strategy）决定了掩码的匹配方式和模板选择，根据MergeStrategies的选项，系统会判断使用A掩码、B掩码作为模板，或匹配两个掩码中较小或较大的一个。"
+    },
+    {
+        "question": "MergeMasks节点设计上有哪些特别之处？",
+        "answer": "MergeMasks的设计独特之处在于能够智能地处理不同大小的掩码，通过选择不同的缩放方法和裁剪技术保证合并后的掩码准确对齐，提供高效和精细的控制选项。"
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "question": "MikeySamplerTiled节点是什么，它属于哪个类别？",
+        "answer": "MikeySamplerTiled是一个属于Mikey/Sampling类别的节点，用于执行复杂的采样过程，包括生成和细化潜在样本，进而放大和平铺图像。"
+    },
+    {
+        "question": "MikeySamplerTiled节点的主要功能是什么？",
+        "answer": "MikeySamplerTiled节点利用各种模型和条件生成高质量、连贯的、放大的图像。通过其复杂的采样过程，它能够处理图像细节，确保输出图像既有细腻的细节又保持一致性。"
+    },
+    {
+        "question": "哪些输入类型对于MikeySamplerTiled节点是必需的？",
+        "answer": "MikeySamplerTiled节点要求提供基础模型、细化模型、样本、VAE、正向调节、负向调节、模型名称等输入类型，这些对图像放大和平铺的基础处理至关重要。"
+    },
+    {
+        "question": "输入的'base_model'在MikeySamplerTiled节点中的作用是什么？",
+        "answer": "'base_model'作为MikeySamplerTiled节点的初始采样过程的关键，为生成图像提供基础结构，其选择直接影响最终输出的风格和质量。"
+    },
+    {
+        "question": "MikeySamplerTiled节点中，'refiner_model'的作用是什么？",
+        "answer": "'refiner_model'在MikeySamplerTiled节点中用于通过进一步的细化步骤来提高采样图像的质量，尤其在实现放大图像的细节和清晰度方面起到关键作用。"
+    },
+    {
+        "question": "MikeySamplerTiled节点生成的输出图像有哪些类型？",
+        "answer": "MikeySamplerTiled节点生成的输出包括平铺图像和非平铺的放大图像。平铺图像代表放大和平铺后的最终产品，而放大图像提供了非平铺版本，便于比较和进一步处理。"
+    },
+    {
+        "question": "在MikeySamplerTiled节点中，'seed'的目的是什么？",
+        "answer": "'seed'在MikeySamplerTiled节点中用于提供采样过程中的可重复性，确保使用相同种子值进行操作时结果的一致性，这有助于调试和可预测性。"
+    },
+    {
+        "question": "MikeySamplerTiled节点中的'tiler_denoise'参数如何影响图像输出？",
+        "answer": "'tiler_denoise'参数控制在平铺过程中应用的去噪级别，它直接影响到平铺图像的清晰度和平滑度，从而影响图像的整体质量。"
+    },
+    {
+        "question": "MikeySamplerTiled节点需要哪些类型的GPU支持？",
+        "answer": "MikeySamplerTiled节点的运行建议在GPU上进行，这意味着它对硬件有特定要求，主要依赖于GPU来实现其图像处理功能。"
+    },
+    {
+        "question": "在MikeySamplerTiled节点中，'vae'的输入类型和用途是什么？",
+        "answer": "'vae'输入类型为VAE，在MikeySamplerTiled中用于将潜在样本解码到像素空间，这是将抽象的样本转化成具体图像的关键步骤，以便于图像的后期处理和放大。"
+    }
+]

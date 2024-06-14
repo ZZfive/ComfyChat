@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Mask_Batch_to_Single_Mask 是什么?",
+        "answer": "WAS_Mask_Batch_to_Single_Mask 是 ComfyUI 中的一个自定义节点，用于从多个掩码中提取单个掩码张量。"
+    },
+    {
+        "question": "节点 'mask_batch_to_mask' 如何帮助图像处理工作流程?",
+        "answer": "'mask_batch_to_mask' 节点通过指定批次号从一批掩码中提取单个掩码张量，简化了从集合中选取特定掩码的过程，适用于图像处理和计算机视觉项目。"
+    },
+    {
+        "question": "掩码张量在 'mask_batch_to_mask' 节点中的作用是什么？",
+        "answer": "掩码张量是 'mask_batch_to_mask' 节点处理的基础，一系列掩码张量构成了该节点操作的对象，从中可提取特定的张量用于后续操作。"
+    },
+    {
+        "question": "哪些输入类型是 'mask_batch_to_mask' 方法所必需的？",
+        "answer": "必需的输入类型是 'masks'，它表示一组掩码张量；可选的输入类型是 'batch_number'，用于指定从集合中提取哪个掩码张量。"
+    },
+    {
+        "question": "输出 'single_mask' 的数据类型是什么？",
+        "answer": "'single_mask' 的输出数据类型为 'MASK'，实质上是 torch.Tensor 类型的单个掩码张量，它是 'mask_batch_to_mask' 节点操作的主要结果。"
+    },
+    {
+        "question": "如何指定要从批次中提取的掩码张量？",
+        "answer": "通过提供可选参数 'batch_number'，它可以是一个整数，定义了从掩码批次中提取掩码张量的索引。"
+    },
+    {
+        "question": "如果指定的批次号在 'masks' 集合中不存在会怎样？",
+        "answer": "如果指定的批次号不存在，'mask_batch_to_mask' 节点会返回一个错误，说明指定的批次号没有定义，并返回集合中的最后一张图像作为结果。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WildcardEncodeInspire节点是做什么的？",
+        "answer": "WildcardEncodeInspire是一个用于处理和编码带有通配符和LoRa块的文本输入的节点，它将这些元素整合到模型和clip条件中，用于稳定扩散，从而增强输出内容的创造性和适应性。"
+    },
+    {
+        "question": "WildcardEncodeInspire节点如何填充通配符？",
+        "answer": "WildcardEncodeInspire节点通过基于用户输入或固定文本动态生成提示来填充通配符，这有助于提高AI生成内容的质量和相关性。"
+    },
+    {
+        "question": "哪些参数对WildcardEncodeInspire节点的编码过程至关重要？",
+        "answer": "model、clip、token_normalization、weight_interpretation、wildcard_text、populated_text、mode、seed参数对WildcardEncodeInspire节点的编码过程至关重要。这些参数定义了AI模型的基础、文本与视觉上下文的整合方式、文本标记的预处理、权重处理方式以及通配符处理和随机性引入等关键功能。"
+    },
+    {
+        "question": "WildcardEncodeInspire节点的mode参数有何作用？",
+        "answer": "mode参数用于控制节点是基于用户输入生成动态提示，还是使用固定文本。这对于确定节点生成提示的灵活性和适应性至关重要。"
+    },
+    {
+        "question": "WildcardEncodeInspire节点的seed参数如何影响输出？",
+        "answer": "seed参数通过在编码过程中引入随机性，影响WildcardEncodeInspire节点的输出。这让即使使用相同的输入也能产生多样化和独特的结果，增加了AI输出的变异性。"
+    },
+    {
+        "question": "WildcardEncodeInspire节点支持哪些类型的输出？",
+        "answer": "WildcardEncodeInspire节点支持模型（更新后的AI模型）、clip（整合视觉上下文）、conditioning（额外的上下文和指导）和populated_text（处理后的最终文本）输出类型，其中populated_text参数包含了经过处理、通配符已被填充或替换的最终文本。"
+    },
+    {
+        "question": "在使用WildcardEncodeInspire节点时，需要哪些额外的准备或注意事项？",
+        "answer": "使用WildcardEncodeInspire节点进行处理时，需注意Node Class Mappings中是否存在'ImpactWildcardEncode'，如果不存在，需要安装'Impact Pack'扩展。此外，节点的infra type为GPU，意味着处理可能依赖于GPU的加速能力。"
+    }
+]

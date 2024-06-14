@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageToMask节点属于哪个类别？",
+        "answer": "ImageToMask节点属于Masquerade Nodes类别，旨在将输入图像转换为掩码表示。"
+    },
+    {
+        "question": "ImageToMask节点的输入类型是什么？",
+        "answer": "ImageToMask节点的输入类型包括图像和方法。图像以张量格式存在，方法决定了基于强度或alpha值的转换策略。"
+    },
+    {
+        "question": "ImageToMask节点处理的图像参数有何要求？",
+        "answer": "图像参数是必需的，预计以torch.Tensor格式存在，是节点转换过程的起点，决定了掩码的生成源。"
+    },
+    {
+        "question": "ImageToMask节点的方法参数如何影响掩码生成？",
+        "answer": "方法参数决定了掩码是基于强度还是alpha值派生，影响了最终掩码的特性和适用于下游应用的适宜性。"
+    },
+    {
+        "question": "使用ImageToMask节点生成的输出是什么？",
+        "answer": "使用ImageToMask节点生成的输出是MASK，一个张量形式的掩码，封装了适合于分割或其他基于掩码的应用的图像数据。"
+    },
+    {
+        "question": "ImageToMask节点响应哪种类型的硬件？",
+        "answer": "ImageToMask节点在CPU上运行，这说明它是为CPU环境设计的，可能优化了在此类硬件上的性能。"
+    },
+    {
+        "question": "ImageToMask节点的源代码中定义的核心功能是什么？",
+        "answer": "ImageToMask节点的源代码定义了核心功能convert，它根据所选方法将输入图像转换成掩码，支持基于强度或alpha值的转换。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "什么是LLMNode?",
+        "answer": "LLMNode是一个ComfyUI的自定义节点，属于llm类别，用于与语言模型进行交互式通信，处理用户输入并生成响应。"
+    },
+    {
+        "question": "使用LLMNode进行交互时，哪些输入是必需的?",
+        "answer": "LLMNode要求文本输入作为启动与语言模型对话的必需条件，文本输入为AI的响应设定了上下文。"
+    },
+    {
+        "question": "LLMNode的输出类型是什么?",
+        "answer": "LLMNode的输出类型为result，包含语言模型对用户输入的响应，该响应以LIST[STRING]的形式在ComfyUI中表示。"
+    },
+    {
+        "question": "哪些节点可以处理语言模型的交互?",
+        "answer": "LLMNode是处理与语言模型进行交互的节点之一，它能够接收文本输入并生成响应，实现信息交流。"
+    },
+    {
+        "question": "LLMNode支持哪种运行环境?",
+        "answer": "LLMNode支持在CPU环境下运行，这是其指定的Infra type。"
+    },
+    {
+        "question": "LLMNode如何处理图像和编辑标签?",
+        "answer": "在LLMNode的响应中，如果检测到'<image>'或'<edit>'标签，它会从结果中移除这些标签之后的内容，处理并返回剩余部分。"
+    },
+    {
+        "question": "LLMNode的源代码中如何处理未成功获取语言模型响应的情况?",
+        "answer": "如果HTTP请求的状态码不为200，或返回的消息中角色不是'assistant'，LLMNode会返回用户原始输入，表示未成功获得模型响应。"
+    }
+]

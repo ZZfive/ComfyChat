@@ -1,0 +1,30 @@
+[
+    {
+        "question": "KfKeyframedCondition是什么?",
+        "answer": "KfKeyframedCondition是ComfyUI中一个新的自定义节点，用于将条件元素与关键帧结构结合，允许在不同时间点上对数据进行操控和转换，确保状态间的平滑过渡。"
+    },
+    {
+        "question": "KfKeyframedCondition如何在序列中发挥关键作用？",
+        "answer": "KfKeyframedCondition节点在关键帧处应用条件，从而动态调整序列中的状态，为其动态演变提供平滑且连贯的过渡，特别是在条件变化方面。"
+    },
+    {
+        "question": "哪些参数是KfKeyframedCondition节点中必需的，它们各自扮演什么角色？",
+        "answer": "KfKeyframedCondition需要三个关键参数：conditioning设定初始状态，time指定条件应用的时间点，interpolation_method决定关键帧间条件的过渡方式，它们协同确保序列的行为与输出特性。"
+    },
+    {
+        "question": "KfKeyframedCondition节点的输出类型有哪些，它们各自的用途是什么？",
+        "answer": "KfKeyframedCondition的主要输出包括kf_cond_t和kf_cond_pooled，前者指定关键帧时间的条件变化，后者提供额外的条件层，同时，cond_dict输出字典形式的条件信息，便于进一步的分析和处理。"
+    },
+    {
+        "question": "在哪些情况下，KfKeyframedCondition的kf_cond_pooled输出会出现？",
+        "answer": "kf_cond_pooled输出在存在额外条件层时可见，用于为系统演变状态添加复杂性和细微差异，尤其是在指定时间点需要处理多个条件信息的情况下。"
+    },
+    {
+        "question": "如何理解KfKeyframedCondition节点中的interpolation_method参数？",
+        "answer": "interpolation_method参数定义了条件在关键帧之间过渡的插值方式，可选方法包括linear、easeIn、easeOut和easeInOut，旨在创建条件的自然流动，对最终序列的影响显著。"
+    },
+    {
+        "question": "KfKeyframedCondition节点的cond_dict输出包含什么类型的信息？",
+        "answer": "cond_dict输出包含一个字典，其中包含了条件的详细信息，包括但不限于关键帧条件和任何属性的池化输出，这是特定时间点条件状态的快照，便于后续处理和分析。"
+    }
+]

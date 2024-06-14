@@ -1,0 +1,38 @@
+[
+    {
+        "question": "RegionalIPAdapterEncodedColorMask是什么类型的节点？",
+        "answer": "RegionalIPAdapterEncodedColorMask是ComfyUI InspirePack/Regional类别下的一个节点，专门用于将颜色掩码应用并编码于图像，以便IPAdapter模型使用，实现图像特定区域的精细控制。"
+    },
+    {
+        "question": "如何应用color_mask输入来实现区域条件化？",
+        "answer": "color_mask输入是用于生成过程中区域条件化基础的图像。通过此参数，节点能够识别需要色彩掩码处理的区域，引导模型在生成图像时关注特定区域。"
+    },
+    {
+        "question": "mask_color参数的作用是什么？",
+        "answer": "mask_color参数用于定义掩码的颜色值，确定输入图像中哪些部分会在条件化过程中被强调或被忽略，是区域控制的重要参数。"
+    },
+    {
+        "question": "embeds参数在条件化过程中的作用是什么？",
+        "answer": "embeds参数通过提供相应的嵌入向量，为模型的条件化过程添加额外上下文，有助于根据用户提示和期望创作风格塑造最终输出，对于生成内容的精确度和创意性至关重要。"
+    },
+    {
+        "question": "weight参数如何影响最终的生成结果？",
+        "answer": "weight参数调整掩码对生成过程的影响程度。较高的权重值促使模型严格遵从掩码，而较低的权重允许在遵守掩码要求的同时增加更多的生成变化。"
+    },
+    {
+        "question": "weight_type参数的具体功能是什么？",
+        "answer": "weight_type参数决定权重的分配方式，影响掩码对生成内容的影响策略，通过改变权重在空间上的分布，可以直接影响模型对输入掩码的响应模式。"
+    },
+    {
+        "question": "unfold_batch的作用是什么？",
+        "answer": "unfold_batch是一个可选参数，当启用时，允许多个图像批量进行掩码应用处理，有效提高了多图像场景下的处理效率。"
+    },
+    {
+        "question": "RegionalIPAdapterEncodedColorMask输出了哪些类型的数据？",
+        "answer": "RegionalIPAdapterEncodedColorMask节点输出包括REGIONAL_IPADAPTER（区域性条件化的IPAdapter对象）以及处理后的MASK图像，均用于指导后续的图像生成流程。"
+    },
+    {
+        "question": "哪些参数是RegionalIPAdapterEncodedColorMask节点的应用中必需的？",
+        "answer": "必需的输入参数包括color_mask、mask_color、embeds、weight和weight_type，这些参数是节点执行功能的基础，直接决定了条件化处理的表现和效果。"
+    }
+]

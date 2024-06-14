@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WildcardProcessor节点的功能是什么？",
+        "answer": "WildcardProcessor节点的功能是通过替换通配符操作和处理文本输入，使用特定模式或值进行动态文本生成，基于用户定义的标准。"
+    },
+    {
+        "question": "哪些是WildcardProcessor节点的必需输入参数？",
+        "answer": "WildcardProcessor节点的必需输入参数包括'prompt'（文本提示）和'seed'（随机种子），用于初始化随机数生成器并进行通配符替换。"
+    },
+    {
+        "question": "WildcardProcessor的'prompt_'参数有何作用?",
+        "answer": "'prompt_'参数是一个可选的字典，它提供通配符替换的额外上下文或特定指令，增强节点操作的定制性。"
+    },
+    {
+        "question": "如何使用'seed'参数保证替换过程的可重复性？",
+        "answer": "'seed'参数作为随机数生成器的初始化值，确保每次使用相同的种子时，从通配符文件中选择的行将保持一致，实现替换过程的可重复性。"
+    },
+    {
+        "question": "WildcardProcessor的输出是什么？",
+        "answer": "WildcardProcessor的输出是'processed_prompt'，其中输入提示中的通配符已被适当的值替换，表示文本处理完成，准备进一步使用或输出。"
+    },
+    {
+        "question": "什么是'extra_pnginfo'参数？",
+        "answer": "'extra_pnginfo'参数是可选的JSON对象，用于提供可能影响节点处理输入提示的额外信息，包含通配符替换的额外数据。"
+    },
+    {
+        "question": "WildcardProcessor的输入和输出数据类型分别是什么？",
+        "answer": "输入数据类型包括'string'类型的'prompt'和'int'类型的'seed'；可选的'prompt_'为'dict'类型和'extra_pnginfo'可以是'string'或'dict'类型。输出是'string'类型的'processed_prompt'。"
+    }
+]

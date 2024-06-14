@@ -1,0 +1,38 @@
+[
+    {
+        "question": "ImageFromBatch节点的作用是什么？",
+        "answer": "ImageFromBatch节点用于从一批图像中提取一系列选定的图像，充当图像处理工作流程中的关键组件，使用户能够高效地隔离和操作特定的图像数据段。"
+    },
+    {
+        "question": "ImageFromBatch节点的'batch_index'参数有何作用？",
+        "answer": "'batch_index'参数用于指定在图像批次中开始提取的起始索引，它允许用户精确控制选择哪些图像进行进一步分析，影响后续图像处理任务。"
+    },
+    {
+        "question": "哪些类型的图像可以作为ImageFromBatch节点的输入？",
+        "answer": "ImageFromBatch节点的主要输入是图像批次，其数据类型为Comfy dtype: IMAGE及Python dtype: torch.Tensor。"
+    },
+    {
+        "question": "ImageFromBatch节点的输出是什么？",
+        "answer": "ImageFromBatch节点的输出是'image_sequence'，即基于指定索引和长度从输入批次中提取的图像集合，输出的数据类型为Comfy dtype: IMAGE及Python dtype: torch.Tensor。"
+    },
+    {
+        "question": "ImageFromBatch节点中的'length'参数如何定义？",
+        "answer": "'length'参数指示从指定的'batch_index'开始，从批次中提取的连续图像的数量，决定了节点将输出的图像序列的大小。"
+    },
+    {
+        "question": "在ComfyUI中，如何操作图像批次中特定数量的连续图像？",
+        "answer": "通过使用ImageFromBatch节点，指定'batch_index'和'length'参数，可以操作图像批次中特定数量的连续图像，实现对特定图像子集的集中分析和处理。"
+    },
+    {
+        "question": "ComfyUI中的ImageFromBatch节点属于哪个类别？",
+        "answer": "ComfyUI中的ImageFromBatch节点属于'image/batch'类别，主要用于处理图像批次并从中提取子集。"
+    },
+    {
+        "question": "哪些节点可以用来从图像批次中提取特定的连续图像？",
+        "answer": "在ComfyUI中，ImageFromBatch节点可以从图像批次中提取特定的连续图像，以满足对特定图像子集的深入分析或处理需求。"
+    },
+    {
+        "question": "ImageFromBatch节点的'frombatch'函数执行什么任务？",
+        "answer": "ImageFromBatch节点的'frombatch'函数基于指定的'batch_index'和'length'参数，从输入的图像批次中提取连续的图像集合，返回处理后的图像数据段。"
+    }
+]

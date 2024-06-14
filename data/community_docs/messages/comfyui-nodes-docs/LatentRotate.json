@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentRotate节点的功能是什么？",
+        "answer": "LatentRotate节点旨在对潜在样本执行旋转操作，能够在潜在空间中处理各种旋转角度，如90、180或270度，以转换潜在空间数据。"
+    },
+    {
+        "question": "在ComfyUI中，LatentRotate属于哪种类别？",
+        "answer": "LatentRotate属于'latent/transform'类别，专门用于潜在空间操作的预处理。"
+    },
+    {
+        "question": "哪些参数对于LatentRotate节点的操作是必需的？",
+        "answer": "LatentRotate节点的操作需要'samples'和'rotation'两个参数，分别代表需要旋转的潜在空间数据和要应用于潜在样本的旋转角度。"
+    },
+    {
+        "question": "LatentRotate节点如何处理不同的旋转角度？",
+        "answer": "根据'rotation'参数指定的旋转角度，LatentRotate节点可以将潜在空间数据旋转90、180或270度，转换潜在空间中数据的方向。"
+    },
+    {
+        "question": "旋转后的潜在空间数据的输出格式是什么？",
+        "answer": "LatentRotate节点输出的'rotated_samples'是一个字典，其中包含了旋转后的潜在空间数据，格式是Dict[str, torch.Tensor]，即ComfyUI中的LATENT类型。"
+    },
+    {
+        "question": "LatentRotate节点操作的性能依赖于什么因素？",
+        "answer": "节点在转换数据方面的有效性直接与输入样本的质量和格式相关，'samples'是该节点操作的关键参数，影响输出的旋转数据质量。"
+    },
+    {
+        "question": "LatentRotate节点的执行依赖于哪种硬件类型？",
+        "answer": "LatentRotate节点的执行依赖于CPU，根据节点的使用提示，其Infra type被指定为CPU。"
+    }
+]

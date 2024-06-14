@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImpactQueueTrigger节点的作用是什么？",
+        "answer": "ImpactQueueTrigger是ComfyUI中的一个自定义节点，作用于管理系统中操作的触发。它通过向PromptServer的实例发送命令来决定是否激活特定进程，是控制任务流程和基于预定义条件启动操作的关键。"
+    },
+    {
+        "question": "ImpactQueueTrigger节点的'doit'方法如何发挥作用？",
+        "answer": "'doit'方法通过处理'required'和'optional'参数来触发控制系统内的进程，其中'signal'用于判断是否进行触发，而'mode'参数以布尔类型控制触发默认状态。"
+    },
+    {
+        "question": "在ComfyUI中，哪些参数是ImpactQueueTrigger节点必须接收的？",
+        "answer": "ImpactQueueTrigger节点必须接收'信号（signal）'参数，这是决定是否触发系统中操作的关键输入，直接关联着节点运行的必要性。"
+    },
+    {
+        "question": "ImpactQueueTrigger节点的'输出类型'指的是什么？",
+        "answer": "ImpactQueueTrigger节点的'输出类型'中的'signal_opt'表示节点在执行后传出的优化或处理过的信号，用于系统内的进一步使用或分析，保持与输入的通用性一致。"
+    },
+    {
+        "question": "ImpactQueueTrigger中，'mode'参数的默认值是什么？它有什么作用？",
+        "answer": "'mode'参数的默认值为True，这意味着节点默认处于触发状态。此参数虽为可选，但能无需改变信号的情况下控制节点的触发行为，提供灵活的控制机制。"
+    },
+    {
+        "question": "ImpactQueueTrigger节点的系统兼容性或要求是什么？",
+        "answer": "ImpactQueueTrigger节点有明确的基础设施类型定义，即使用场景主要在于CPU上，这表明了该节点的运行可以完全在CPU架构上得到实现和支持。"
+    },
+    {
+        "question": "ImpactQueueTrigger节点如何处理和'PromptServer'的交互？",
+        "answer": "ImpactQueueTrigger节点通过'doit'方法中的'if mode'条件判断，向'PromptServer'的实例发送'send_sync'命令，具体为'impact-add-queue'，以激活和控制其他相关操作。"
+    }
+]

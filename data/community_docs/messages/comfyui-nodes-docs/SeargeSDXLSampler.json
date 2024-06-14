@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SeargeSDXLSampler的节点输出表示什么类型的变量？",
+        "answer": "SeargeSDXLSampler的输出类型表示潜在图像的最终状态，具体为潜在表示，其数据类型为Comfy中的LATENT类型，对应Python中的torch.Tensor。"
+    },
+    {
+        "question": "SeargeSDXLSampler适用于何种类型的任务？",
+        "answer": "SeargeSDXLSampler适用于深度学习框架内的采样过程，特别针对风格迁移任务，通过基础模型与细化模型的结合来逐步提升生成输出的质量。"
+    },
+    {
+        "question": "使用SeargeSDXLSampler需要哪些类型的基础模型和条件参数？",
+        "answer": "使用SeargeSDXLSampler，需要提供基础模型(base_model)、基础正向调节(base_positive)、基础负面调节(base_negative)，这些参数是采样过程的基础。"
+    },
+    {
+        "question": "SeargeSDXLSampler中的'base_ratio'参数有何作用？",
+        "answer": "'base_ratio'参数用于调整采样步骤中用于基础阶段的比例，影响总步骤中基础模型的作用强度，从而影响最终输出的初始质量。"
+    },
+    {
+        "question": "在SeargeSDXLSampler中，确定采样策略的参数是什么？",
+        "answer": "SeargeSDXLSampler中，通过'sampler_name'参数来确定采样策略，影响采样过程的效率和质量，这决定了所使用的具体采样方法。"
+    },
+    {
+        "question": "SeargeSDXLSampler如何处理生成过程中的噪点管理？",
+        "answer": "SeargeSDXLSampler通过'noise_seed'参数和'denoise'参数来管理整个采样过程中的噪声，其中'noise_seed'引入变异性和随机性，而'denoise'控制降噪水平。"
+    },
+    {
+        "question": "哪些条件能够指导SeargeSDXLSampler中的图像生成，确保图像与特定领域保持一致？",
+        "answer": "基础正向调节(base_positive)和提炼正向调节(refiner_positive)可用于指导生成的图像与期望的风格和内容保持一致，确保输出图像符合特定领域的标准。"
+    }
+]

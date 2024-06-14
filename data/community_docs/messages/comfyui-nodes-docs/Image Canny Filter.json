@@ -1,0 +1,34 @@
+[
+    {
+        "question": "WAS_Canny_Filter是什么?",
+        "answer": "WAS_Canny_Filter是WAS Suite/Image/Filter分类下ComfyUI的一个自定义节点，用于对输入图像应用Canny边缘检测算法，以增强边缘的可见性，该节点输出处理后的图像，突出显示其边缘。"
+    },
+    {
+        "question": "WAS_Canny_Filter如何处理输入图像?",
+        "answer": "WAS_Canny_Filter通过高斯模糊、梯度计算和阈值处理的多阶段算法处理输入图像，识别并突出重要边缘，增强图像数据中边缘的可见性。"
+    },
+    {
+        "question": "在WAS_Canny_Filter中，'enable_threshold'参数是做什么的?",
+        "answer": "'enable_threshold'参数决定是否在Canny算法中应用阈值步骤，这对于控制边缘检测的灵敏度至关重要，如果设置为'true'，则应用阈值处理来优化边缘检测。"
+    },
+    {
+        "question": "哪些参数控制WAS_Canny_Filter中Canny边缘检测的阈值?",
+        "answer": "'threshold_low'和'threshold_high'参数分别设置Canny边缘检测的下限和上限阈值，这两个阈值共同决定哪些边缘足够强以包含在最终输出中。"
+    },
+    {
+        "question": "在WAS_Canny_Filter节点中，'images'参数的用途是什么?",
+        "answer": "'images'参数是Canny边缘检测过程的输入，它是节点将处理以识别和增强边缘的原始图像数据，作为Comfy dtype为IMAGE以及Python dtype为torch.Tensor类型输入。"
+    },
+    {
+        "question": "哪些节点输出使用WAS_Canny_Filter处理后的图像?",
+        "answer": "WAS_Canny_Filter节点的'images'输出参数包含使用Canny滤波器突出显示边缘的已处理图像，Comfy dtype为IMAGE，Python dtype为torch.Tensor，此输出代表边缘检测操作的最终结果。"
+    },
+    {
+        "question": "WAS_Canny_Filter应用Canny边缘检测算法的处理流程是怎样的?",
+        "answer": "WAS_Canny_Filter节点应用Canny边缘检测算法，包括高斯模糊以去除噪声，计算梯度确定边缘方向，使用设定的阈值对梯度幅值进行处理，最后应用阈值分割和非极大值抑制来获得最终的边缘图。"
+    },
+    {
+        "question": "在WAS_Canny_Filter节点中，谁决定了Canny边缘检测过程的阈值是否开启?",
+        "answer": "在WAS_Canny_Filter节点中,'enable_threshold'参数决定Canny边缘检测过程的阈值是否开启，如果设置为'true'，则开启阈值处理，并使用'threshold_low'和'threshold_high'参数控制阈值。"
+    }
+]

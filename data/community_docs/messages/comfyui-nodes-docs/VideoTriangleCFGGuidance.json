@@ -1,0 +1,30 @@
+[
+    {
+        "question": "VideoTriangleCFGGuidance属于哪个类别？",
+        "answer": "VideoTriangleCFGGuidance属于sampling/video_models类别，是ComfyUI中用于增强视频模型可控性的自定义节点。"
+    },
+    {
+        "question": "VideoTriangleCFGGuidance节点如何增强视频模型的可控性？",
+        "answer": "VideoTriangleCFGGuidance通过应用有配置引导函数的补丁来增强模型可控性，根据线性配置比例混合条件与非条件输出，从而对视频内容进行微调。"
+    },
+    {
+        "question": "VideoTriangleCFGGuidance需要哪些必需输入？",
+        "answer": "VideoTriangleCFGGuidance需要'模型（model）' 和 '最小配置比例（min_cfg）'作为必需输入，前者代表视频模型，后者控制条件与非条件输出的混合比例。"
+    },
+    {
+        "question": "modified_model输出代表什么？",
+        "answer": "modified_model输出是视频模型在应用了VideoTriangleCFGGuidance引导新采样策略后的更新版本，用于生成具有调整后内容特性的视频。"
+    },
+    {
+        "question": "VideoTriangleCFGGuidance的min_cfg参数作用是什么？",
+        "answer": "min_cfg参数设定条件和非条件输出混合时的最低配置比例，对采样过程中引导强度有关键影响。"
+    },
+    {
+        "question": "哪些类型的模型可以作为VideoTriangleCFGGuidance的输入？",
+        "answer": "VideoTriangleCFGGuidance的输入'模型（model）'应为ComfyUI系统中定义类型为'MODEL'的对象，Python类型为'torch.nn.Module'。"
+    },
+    {
+        "question": "在使用VideoTriangleCFGGuidance节点时，模型是在哪个硬件上进行处理的？",
+        "answer": "从使用提示来看，VideoTriangleCFGGuidance节点的infra类型为CPU，意味着处理是在CPU上进行的。"
+    }
+]

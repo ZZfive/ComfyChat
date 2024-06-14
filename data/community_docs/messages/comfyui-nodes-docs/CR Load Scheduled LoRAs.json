@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CR_LoadScheduledLoRAs是ComfyUI中的哪个分类的一部分？",
+        "answer": "CR_LoadScheduledLoRAs是ComfyUI中Comfyroll/Animation/Schedulers分类的一部分，用于管理和应用预定计划的LoRAs到模型和剪辑。"
+    },
+    {
+        "question": "CR_LoadScheduledLoRAs节点的有哪些输入类型？",
+        "answer": "CR_LoadScheduledLoRAs节点的输入类型包括必填的mode、model、clip和current_frame，以及可选的schedule_alias、default_lora、strength_model、strength_clip、schedule_format、lora_list和schedule。"
+    },
+    {
+        "question": "在CR_LoadScheduledLoRAs节点上，模式参数（mode）有哪些选项？",
+        "answer": "模式参数（mode）在CR_LoadScheduledLoRAs节点上有三个选项：'Off'、'Load default LoRA'和'Schedule'，用以控制节点如何处理LoRA加载。"
+    },
+    {
+        "question": "CR_LoadScheduledLoRAs节点的'current_frame'参数的功能是什么？",
+        "answer": "'current_frame'参数指定了当前的帧数，CR_LoadScheduledLoRAs节点使用它来动态选择适合当前帧的LoRA，以根据用户的计划增强或修改模型和剪辑。"
+    },
+    {
+        "question": "哪些输入会在CR_LoadScheduledLoRAs节点中用以调整LoRA应用的强度？",
+        "answer": "在CR_LoadScheduledLoRAs节点中，'strength_model'和'strength_clip'输入用于调整LoRA对model和clip的影响程度。"
+    },
+    {
+        "question": "CR_LoadScheduledLoRAs的输出类型有哪些？",
+        "answer": "CR_LoadScheduledLoRAs节点的输出类型包括'处理后的模型'（MODEL）、'处理后的clip'（CLIP）和'帮助文档链接'（STRING），其中帮助文档链接提供用户更多关于如何使用节点的信息。"
+    },
+    {
+        "question": "如何在没有为当前帧指定LoRA时使用CR_LoadScheduledLoRAs节点？",
+        "answer": "当没有为当前帧指定LoRA时，CR_LoadScheduledLoRAs节点将使用'default_lora'参数中设置的默认LoRA，如果该参数已设置。"
+    }
+]

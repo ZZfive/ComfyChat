@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SeargeOutput6节点在ComfyUI中的作用是什么？",
+        "answer": "SeargeOutput6节点在ComfyUI中促进解复用过程，从给定输入中提取和组织各种参数，简化数据处理并确保参数被有效分离，以便后续处理阶段使用。"
+    },
+    {
+        "question": "SeargeOutput6的'parameters'输入和输出的Comfy数据类型是什么？",
+        "answer": "SeargeOutput6的'parameters'输入和输出的Comfy数据类型都是Dict[str, Union[str, int, float, bool]]。"
+    },
+    {
+        "question": "什么是SeargeOutput6节点的'hrf_steps'输出？",
+        "answer": "SeargeOutput6节点的'hrf_steps'输出表示高分辨率修复过程中涉及的步骤数，这可以控制输出的细节水平。"
+    },
+    {
+        "question": "SeargeOutput6节点的'hrf_denoise'输出控制着什么？",
+        "answer": "SeargeOutput6节点的'hrf_denoise'输出控制着应用于高分辨率修复的去噪水平，这直接影响到最终结果的清晰度和质量。"
+    },
+    {
+        "question": "哪些参数是由SeargeOutput6节点解复用的？",
+        "answer": "SeargeOutput6节点解复用的参数包括但不限于高分辨率修复步骤数、去噪水平、上采样因子、噪声偏移、随机种子值和是否应用高分辨率修复的布尔标志。"
+    },
+    {
+        "question": "SeargeOutput6中的'hrf_noise_offset'输出的作用是什么？",
+        "answer": "在SeargeOutput6中，'hrf_noise_offset'输出表示噪声偏移水平，这是微调图像处理中噪声特性的一个关键控制参数。"
+    },
+    {
+        "question": "如何在代码中使用SeargeOutput6节点的'parameters'输入？",
+        "answer": "在SeargeOutput6的代码实现中，'parameters'输入用于以字典形式接收所有解复用操作所需的基本数据。这些数据被解析并分离成更具体的输出，如hrf_steps、hrf_denoise等，通过函数demux进行处理。"
+    }
+]

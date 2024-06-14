@@ -1,0 +1,30 @@
+[
+    {
+        "question": "VAEDecodeTiled节点的作用是什么？",
+        "answer": "VAEDecodeTiled节点使用变分自编码器（VAE）模型将潜在表示解码成图像，特别适用于处理大图像或在计算资源受限的条件下以平铺方式高效解码。"
+    },
+    {
+        "question": "VAEDecodeTiled如何利用平铺方式执行解码？",
+        "answer": "VAEDecodeTiled通过将图像分割成多个平铺（tile），在内存和计算效率上进行优化，特别适合处理尺寸较大的图像，使得解码过程更加高效和可扩展。"
+    },
+    {
+        "question": "VAEDecodeTiled节点中的'samples'参数是做什么的？",
+        "answer": "'samples'参数是包含潜在表示的输入，它决定了解码后图像的特征，是VAEDecodeTiled产生图像输出的基础。"
+    },
+    {
+        "question": "在ComfyUI中，VAEDecodeTiled节点对于输入的'vae'参数有什么要求？",
+        "answer": "'vae'参数指定了解码所需使用的变分自编码器模型，其架构和参数直接影响解码图像的质量和风格，对于生成高质量的图像至关重要。"
+    },
+    {
+        "question": "VAEDecodeTiled的'output'输出表示什么？",
+        "answer": "'output'参数代表了节点解码潜在表示后生成的图像，是VAEDecodeTiled的主要输出，反映了变分自编码器解码过程的最终结果。"
+    },
+    {
+        "question": "哪种类型的硬件最适合运行VAEDecodeTiled节点？",
+        "answer": "VAEDecodeTiled节点的执行优化于GPU上，这意味着它最适合在具有GPU加速能力的硬件上运行，以获得最佳性能。"
+    },
+    {
+        "question": "修改'tile_size'参数能带来什么影响？",
+        "answer": "通过调整'tile_size'参数，可以优化图像处理中的内存使用和处理时间，从而更加灵活地适应不同大小的图像，对解码过程中的平铺划分大小进行微调。"
+    }
+]

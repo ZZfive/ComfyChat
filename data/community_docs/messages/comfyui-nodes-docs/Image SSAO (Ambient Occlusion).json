@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Image_Ambient_Occlusion节点的作用是什么?",
+        "answer": "WAS_Image_Ambient_Occlusion节点旨在通过应用环境光遮蔽效果来增强图像的视觉深度和真实感，通过智能计算遮蔽并创造出更自然、更沉浸的视觉效果。"
+    },
+    {
+        "question": "哪些参数是WAS_Image_Ambient_Occlusion节点所需的输入?",
+        "answer": "WAS_Image_Ambient_Occlusion节点需要images、depth_images作为必需参数，以及如strength、radius、ao_blur等多个可选参数。"
+    },
+    {
+        "question": "WAS_Image_Ambient_Occlusion节点的'tile_size'参数如何影响操作?",
+        "answer": "'tile_size'参数通过将图像划分为多个小块来优化处理，允许并行处理，特别是在大型图像上，以提高环境光遮蔽的处理性能。"
+    },
+    {
+        "question": "如何确定WAS_Image_Ambient_Occlusion节点'enable_specular_masking'参数被启用时的作用?",
+        "answer": "当'enable_specular_masking'参数启用时，它允许选择性地应用遮蔽效果，绕过高镜面反射区域，从而更具控制地应用于特定区域的遮蔽。"
+    },
+    {
+        "question": "在使用WAS_Image_Ambient_Occlusion节点时，'radius'参数代表什么?",
+        "answer": "'radius'参数定义了在每个像素周围用于遮蔽计算的区域大小。较大的半径会创建更渐进和广泛的遮蔽效果，而较小的半径则生成更紧致、更局部的遮蔽效果。"
+    },
+    {
+        "question": "WAS_Image_Ambient_Occlusion节点输出哪些类型的图像?",
+        "answer": "WAS_Image_Ambient_Occlusion节点输出包括：composited_images，表示应用了环境光遮蔽效果的最终渲染图像；ssao_images，提供计算出的独立环境光遮蔽图像；以及specular_mask_images，包含用于应用镜面遮罩的遮罩信息。"
+    },
+    {
+        "question": "WAS_Image_Ambient_Occlusion节点的'ao_blur'参数有何作用?",
+        "answer": "'ao_blur'参数控制应用于遮蔽图像的模糊程度，通过平滑遮蔽效果来创造出更柔软和自然的外观，帮助达到更佳的视觉效果。"
+    }
+]

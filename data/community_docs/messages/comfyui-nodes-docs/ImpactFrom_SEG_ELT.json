@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImpactFrom_SEG_ELT节点的作用是什么？",
+        "answer": "ImpactFrom_SEG_ELT节点旨在处理并转换 SEG_ELT 对象，将其转换为包含图像、掩码和元数据的结构化格式，以供ImpactPack实用程序套件进一步分析和操作。"
+    },
+    {
+        "question": "ImpactFrom_SEG_ELT节点的输入是什么类型的？",
+        "answer": "ImpactFrom_SEG_ELT节点的关键输入类型是'seg_elt'，这是一种特定于ComfyUI的类型，包含了图像数据和相关元数据。"
+    },
+    {
+        "question": "ImpactFrom_SEG_ELT节点是否修改或增强传入的SEG_ELT对象？",
+        "answer": "是的，传入的SEG_ELT对象可能在通过ImpactFrom_SEG_ELT节点处理期间得到增强或修改，并作为'seg_elt'输出传递出去。"
+    },
+    {
+        "question": "cropped_image和cropped_mask输出在什么场景下尤为关键？",
+        "answer": "cropped_image和cropped_mask对于需要张量输入格式的机器学习模型来说至关重要，特别是在涉及分割任务时，cropped_mask描绘了图像内的兴趣区域。"
+    },
+    {
+        "question": "How does the 'crop_region' output of the ImpactFrom_SEG_ELT node relate to image analysis?",
+        "answer": "The 'crop_region' output specifies the coordinates and dimensions of the cropping area within the image, which is crucial for understanding the spatial context of the imaged data in image analysis tasks."
+    },
+    {
+        "question": "What purpose does the 'confidence' output serve in the output types of the ImpactFrom_SEG_ELT node?",
+        "answer": "The 'confidence' output reflects the certainty of segmentation or classification results, which is important for evaluating the reliability of model outputs."
+    },
+    {
+        "question": "在使用ImpactFrom_SEG_ELT节点时，有哪些重要注意事项？",
+        "answer": "ImpactFrom_SEG_ELT节点的'infra type'被指定为'CPU'，表示其主要在CPU上运行，因此使用时应考虑CPU资源的限制和优化。"
+    }
+]

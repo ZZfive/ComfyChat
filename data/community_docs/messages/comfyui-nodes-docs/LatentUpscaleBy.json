@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentUpscaleBy节点是用于什么类型的上采样过程的?",
+        "answer": "LatentUpscaleBy节点是ComfyUI中的一种自定义节点，它用于对潜在表示进行上采样，通过提高潜在向量的分辨率来增加保真度，而不改变其内在特性。"
+    },
+    {
+        "question": "LatentUpscaleBy节点的'upscale_method'参数支持哪些上采样算法?",
+        "answer": "LatentUpscaleBy节点的'upscale_method'参数支持以下上采样算法：'nearest-exact'，'bilinear'，'area'，'bicubic'和'bislerp'，这些算法为用户提供不同的质量选项。"
+    },
+    {
+        "question": "在ComfyUI中，哪些输入类型是LatentUpscaleBy节点执行上采样所必需的?",
+        "answer": "LatentUpscaleBy节点执行上采样所必需的输入类型包括'samples'，'upscale_method'和'scale_by'。其中'samples'是潜在表示，'upscale_method'指定上采样算法，而'scale_by'是上采样的缩放因子。"
+    },
+    {
+        "question": "什么是LatentUpscaleBy节点'upscaled_samples'输出的作用?",
+        "answer": "LatentUpscaleBy节点的'upscaled_samples'输出是上采样后潜在表示的结果，它增强了数据以准备进行进一步的处理或分析，同时保持原有的潜在向量的特性。"
+    },
+    {
+        "question": "'scale_by'参数在LatentUpscaleBy节点中起到什么作用?",
+        "answer": "'scale_by'参数在LatentUpscaleBy节点中用于指定上采样的缩放因子，决定了潜在样本被放大的程度，直接影响最终上采样输出的分辨率。"
+    },
+    {
+        "question": "如何确定LatentUpscaleBy节点中'samples'输出的形状?",
+        "answer": "LatentUpscaleBy节点中'samples'输出的形状通过输入'samples'中的张量和'scale_by'参数确定，输出张量的宽度和高度分别由原张量宽度和高度乘以'scale_by'因子计算得出。例如，如果原始宽度和高度分别为W和H，那么上采样后的宽度和高度为W * 'scale_by'和H * 'scale_by'。"
+    },
+    {
+        "question": "LatentUpscaleBy节点中'samples'参数的预期Python数据类型是什么?",
+        "answer": "LatentUpscaleBy节点中'samples'参数的预期Python数据类型为torch.Tensor，这表示它期望接受PyTorch张量作为输入，其中包含了上采样所需要的潜在表示数据。"
+    }
+]

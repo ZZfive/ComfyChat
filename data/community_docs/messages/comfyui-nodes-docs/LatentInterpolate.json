@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentInterpolate节点的主要功能是什么？",
+        "answer": "LatentInterpolate节点旨在对两组潜在样本进行插值，通过计算输入样本的加权和来实现，权重由指定的比例确定，用于生成不同潜在表示之间的平滑过渡，这对于图像变形或风格迁移等应用至关重要。"
+    },
+    {
+        "question": "LatentInterpolate节点的输出包含什么？",
+        "answer": "LatentInterpolate节点的输出是一组插值后的潜在样本，这些样本基于指定的比例混合输入样本，提供了从samples1到samples2之间的无缝过渡，数据类型为Dict[str, torch.Tensor]。"
+    },
+    {
+        "question": "如何控制LatentInterpolate两组潜在样本之间的插值程度？",
+        "answer": "通过ratio参数控制两组样本之间插值的程度，接近0的值将产生更接近samples1的输出，而接近1的值将产生更接近samples2的输出。"
+    },
+    {
+        "question": "LatentInterpolate节点的samples1代表什么？",
+        "answer": "samples1代表将被插值的第一组潜在样本，作为插值过程的起点，对定义过渡的初始状态至关重要，数据类型为Comfy的LATENT类型，对应Python类型为Dict[str, torch.Tensor]。"
+    },
+    {
+        "question": "LatentInterpolate节点的Input types中，samples2起什么作用？",
+        "answer": "samples2将用于插值的第二组潜在样本，代表插值的终点，对确定过渡的最终状态至关重要，同样，数据类型为Comfy的LATENT类型，对应Python类型为Dict[str, torch.Tensor]。"
+    },
+    {
+        "question": "LatentInterpolate节点的工作原理是什么？",
+        "answer": "工作原理涉及到对潜在样本进行规范化处理，然后根据指定的ratio对规范化后的样本进行加权平均，最终生成融合了原本两组潜在样本特征的中间状态。"
+    },
+    {
+        "question": "哪些应用场景适合使用LatentInterpolate节点？",
+        "answer": "LatentInterpolate节点特别适用于图像变形、风格迁移等需要平滑过渡变换的应用场景中，能够有效生成从一个潜在表示到另一个潜在表示之间的中间状态。"
+    }
+]

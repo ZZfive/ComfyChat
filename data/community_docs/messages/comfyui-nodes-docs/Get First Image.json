@@ -1,0 +1,30 @@
+[
+    {
+        "question": "GetFirstImage节点属于哪个类别？",
+        "answer": "GetFirstImage节点属于DragNUWA类别，可以在ComfyUI中找到。"
+    },
+    {
+        "question": "GetFirstImage节点的输入图像采用什么数据类型？",
+        "answer": "GetFirstImage节点输入的图像参数数据类型预期为包含一批图像的torch.Tensor，符合ComfyUI的COMBO[torch.Tensor]的数据类型规范。"
+    },
+    {
+        "question": "GetFirstImage节点的目的是什么？",
+        "answer": "GetFirstImage节点的目的是从一批图像中提取特定的子集，专注于选择过程以确保所需图像被隔离以供后续处理。"
+    },
+    {
+        "question": "哪些节点可以处理图像子集选择？",
+        "answer": "ComfyUI中的GetFirstImage节点可以处理图像子集选择，特别适用于从一批图像中选择特定的图像。"
+    },
+    {
+        "question": "GetFirstImage节点的输出是什么类型的图像数据？",
+        "answer": "GetFirstImage节点的输出也是一个torch.Tensor，表示根据指定标准选择的输入图像的精炼子集，准备好进行进一步的分析或处理。"
+    },
+    {
+        "question": "GetFirstImage节点的源码中如何选择特定图像索引？",
+        "answer": "GetFirstImage节点的源码中，通过解析用户指定的索引或切片范围选择特定图像，此范围用于从输入图像张量中提取合适的子集，例如通过'selected_indexes' 参数来定义图像的选取。"
+    },
+    {
+        "question": "运行GetFirstImage节点需要什么类型的硬件支持？",
+        "answer": "GetFirstImage节点的运行推荐在CPU上执行，这是其基础设施类型指定的条件。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageMaskSwitch节点的用途是什么？",
+        "answer": "ImageMaskSwitch节点的用途是在ComfyUI中，根据选择参数选择性地路由图像和掩码输入，便于在进一步处理或分析时选择多个图像-掩码对，确保只有所需的对被传递到工作流程中。"
+    },
+    {
+        "question": "ImageMaskSwitch节点的'select'参数如何影响其行为？",
+        "answer": "'select'参数根据其整数值直接通过选择适当的图像-掩码对来影响ImageMaskSwitch节点的输出，决定将使用哪组图像-掩码对。"
+    },
+    {
+        "question": "哪些输入类型对ImageMaskSwitch节点来说是必须的？",
+        "answer": "ImageMaskSwitch节点必须接收'select'和'images1'作为输入。'select'确定哪组图像-掩码对被选中，而'images1'是首组用于开关操作的图像。"
+    },
+    {
+        "question": "当'select'设置为2时，ImageMaskSwitch节点输出什么？",
+        "answer": "当'select'设置为2时，ImageMaskSwitch节点输出'images2_opt'和对应的'mask2_opt'，即第二组可选图像和掩码。"
+    },
+    {
+        "question": "ImageMaskSwitch节点的输出是什么格式？",
+        "answer": "ImageMaskSwitch节点的输出格式包括'IMAGE'和'MASK'。输出的'IMAGE'基于'select'选择的图像集，而'MASK'对应于所选图像集的掩码。"
+    },
+    {
+        "question": "ImageMaskSwitch节点的内存吞吐类型是什么？",
+        "answer": "ImageMaskSwitch节点的内存吞吐类型包括'IMAGE'和'MASK'，其Python dtype是PIL.Image或torch.Tensor，确保了图像和掩码数据的灵活处理。"
+    },
+    {
+        "question": "在ComfyUI中使用ImageMaskSwitch节点时，输出的图像和掩码如何使用？",
+        "answer": "在ComfyUI中使用ImageMaskSwitch节点时，输出的图像和掩码可以用于后续的图像处理或分析，如进一步的图像生成、编辑或掩码应用与操作，确保工作流程中图像和掩码数据的准确路由和使用。"
+    }
+]

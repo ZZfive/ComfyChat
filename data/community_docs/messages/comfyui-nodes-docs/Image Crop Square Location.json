@@ -1,0 +1,34 @@
+[
+    {
+        "question": "WAS_Image_Crop_Square_Location节点的用途是什么？",
+        "answer": "WAS_Image_Crop_Square_Location节点主要用于基于指定位置坐标裁剪图像，将其裁剪成正方形，适用于需要统一图像尺寸的场景，如社交媒体或机器学习模型的数据输入。"
+    },
+    {
+        "question": "WAS_Image_Crop_Square_Location的image输入参数是什么类型？",
+        "answer": "image参数是节点将处理的输入图像，类型为Comfy的IMAGE数据类型或Python的PIL.Image.Image或torch.Tensor。"
+    },
+    {
+        "question": "WAS_Image_Crop_Square_Location节点如何处理没有指定x和y参数的情况？",
+        "answer": "如果不提供x和y参数的具体值，节点将默认执行中心裁剪，确保从图像中心开始进行裁剪操作。"
+    },
+    {
+        "question": "WAS_Image_Crop_Square_Location节点的size参数决定什么？",
+        "answer": "size参数决定了裁剪图像的正方形边长，它确保裁剪尽可能接近指定的尺寸，而不超出图像的边框。"
+    },
+    {
+        "question": "哪些输出数据类型是WAS_Image_Crop_Square_Location节点提供的？",
+        "answer": "WAS_Image_Crop_Square_Location节点输出的数据类型包括裁剪后的图像（IMAGE）和与裁剪过程相关的元数据（CROP_DATA）,后者包含了裁剪区域的大小和坐标。"
+    },
+    {
+        "question": "哪些节点处理图像裁剪并输出裁剪图像和裁剪数据？",
+        "answer": "WAS_Image_Crop_Square_Location是处理图像裁剪的节点，其产生裁剪后的图像输出和包含裁剪细节的元数据。"
+    },
+    {
+        "question": "WAS_Image_Crop_Square_Location的crop_data输出中包含了什么信息？",
+        "answer": "crop_data输出包含了裁剪区域的大小和坐标（即左、上、右和下边界的坐标），对于记录裁剪过程和进行后续图像分析非常有用。"
+    },
+    {
+        "question": "WAS_Image_Crop_Square_Location节点适合在哪种硬件上运行？",
+        "answer": "WAS_Image_Crop_Square_Location节点的运行建议在CPU上执行，这是其Infra type指定的参数。"
+    }
+]

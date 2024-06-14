@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Masks Subtract 节点的功能是什么？",
+        "answer": "Masks Subtract 节点的功能是对两组掩码图像进行逐元素相减，确保结果处于有效的像素值范围内，适用于图像处理和掩码操作中需要从一个掩码中移除另一个掩码的场景。"
+    },
+    {
+        "question": "Masks Subtract 节点的subtract_masks方法主要实现了什么功能？",
+        "answer": "subtract_masks 方法实现的是对 masks_a 和 masks_b 两组掩码进行相减，通过 torch.clamp 方法限制结果，确保有效像素值范围内，实现掩码的相减操作。"
+    },
+    {
+        "question": "如何使用Masks Subtract节点进行掩码相减？",
+        "answer": "要使用 Masks Subtract 节点进行掩码相减，需提供两组掩码：masks_a 和 masks_b，masks_a 提供基础掩码，而 masks_b 是要从 masks_a 中减去的掩码。节点自动处理像素值范围，确保结果的有效性。"
+    },
+    {
+        "question": "在Masks Subtract的subtract_masks方法中，如何处理掩码相减后的结果？",
+        "answer": "在 subtract_masks 方法中，掩码相减后的结果使用 torch.clamp 处理，确保像素值范围在 0 到 255 之间，这可以使结果图像保持有效性和可显示性。"
+    },
+    {
+        "question": "masks_a 和 masks_b 在 Masks Subtract 节点中起什么作用？",
+        "answer": "在 Masks Subtract 节点中，masks_a 是提供基础掩码的参数，用于后续的减法操作；而 masks_b 则是要从 masks_a 中减去的掩码，它直接决定了掩码相减操作的最终结果。"
+    },
+    {
+        "question": "WAS_Mask_Subtract 节点在 ComfyUI 的类别和功能是什么？",
+        "answer": "WAS_Mask_Subtract 节点位于 ComfyUI 的 WAS Suite/Image/Masking 类别下，主要用于执行两组掩码图像之间的相减操作，确保相减结果的像素值在有效范围内。"
+    },
+    {
+        "question": "哪些应用场景下需要使用 WAS_Mask_Subtract 节点？",
+        "answer": "WAS_Mask_Subtract 节点适用于需要从一个掩码中精确移除另一个掩码的图像处理场景，例如在进行图像合成、分割或编辑时，确保确切的区域操作可以被精确执行。"
+    }
+]

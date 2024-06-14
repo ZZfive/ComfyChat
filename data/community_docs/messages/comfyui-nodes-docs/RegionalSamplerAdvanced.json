@@ -1,0 +1,34 @@
+[
+    {
+        "question": "RegionalSamplerAdvanced 节点用于什么目的？",
+        "answer": "RegionalSamplerAdvanced 节点用于对潜在图像的特定区域执行高级采样操作，允许自定义采样步骤、噪声添加和恢复定义区域内的潜在状态，为局部图像生成的采样过程提供了高度的控制能力。"
+    },
+    {
+        "question": "RegionalSamplerAdvanced 节点的 'add_noise' 参数有什么作用？",
+        "answer": "'add_noise' 参数决定在采样过程中是否向潜在图像添加噪声，是实现所需视觉效果的关键因素，这可以影响生成图像的质量和随机性。"
+    },
+    {
+        "question": "如何确保 RegionalSamplerAdvanced 在采样过程中具有可重复性？",
+        "answer": "通过设置 'noise_seed' 参数，你可以初始化添加噪声的随机数生成器，确保采样过程中引入的噪声模式是确定性的，从而实现过程的可重复性。"
+    },
+    {
+        "question": "在 RegionalSamplerAdvanced 中，'steps' 参数的作用是什么？",
+        "answer": "'steps' 参数指定执行的采样步骤数，它决定了最终图像的细节和分辨率，更多的步骤通常能够生成更精细的结果。"
+    },
+    {
+        "question": "在 RegionalSamplerAdvanced 的上下文中，'restore_latent' 选项的含义是什么？",
+        "answer": "'restore_latent' 参数指示在每个区域采样后是否应恢复潜在状态，以保持在多个采样操作重叠的区域中图像的完整性。"
+    },
+    {
+        "question": "哪些参数可以影响 RegionalSamplerAdvanced 处理的图像最终构图？",
+        "answer": "重叠区域之间的重叠程度由 'overlap_factor' 参数控制，这对于确保采样区域的无缝集成至关重要。"
+    },
+    {
+        "question": "RegionalSamplerAdvanced 节点的 'latent_image' 参数代表什么？",
+        "answer": "'latent_image' 参数表示采样开始时图像的初始潜在状态。是采样过程的起点，对生成最终图像至关重要。"
+    },
+    {
+        "question": "RegionalSamplerAdvanced 中的 'additional_sigma_ratio' 参数如何工作？",
+        "answer": "'additional_sigma_ratio' 参数调整用于额外采样的 sigma 比例，允许微调噪声水平及其对图像生成过程的影响。"
+    }
+]

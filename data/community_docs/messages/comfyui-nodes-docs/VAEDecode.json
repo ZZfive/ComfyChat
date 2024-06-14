@@ -1,0 +1,30 @@
+[
+    {
+        "question": "VAEDecode节点的作用是什么？",
+        "answer": "VAEDecode节点是为了将潜在表示转换回原始数据空间而设计的，它利用变分自编码器（VAE）的解码能力重构图像。"
+    },
+    {
+        "question": "VAEDecode节点如何生成图像？",
+        "answer": "VAEDecode节点通过解码潜在向量来生成图像，这些向量通过变分自编码器模型，使其在结构和内容上类似于原始数据集的新数据实例。"
+    },
+    {
+        "question": "在ComfyUI中，VAEDecode节点的'samples'参数代表什么？",
+        "answer": "'samples'参数在VAEDecode节点中表示将要被解码成图像的潜在表示，是重构过程中的关键输入，其质量将严重影响解码图像的清晰度和细节。"
+    },
+    {
+        "question": "哪些类型的设备最适宜运行VAEDecode节点？",
+        "answer": "VAEDecode节点的最适宜运行环境为GPU，这是因为GPU的并行处理能力能够显著提升节点的解码速度和复杂图像的重构能力。"
+    },
+    {
+        "question": "在ComfyUI中，如何指定VAEDecode节点的预训练变分自编码器模型？",
+        "answer": "在ComfyUI中，通过'vae'参数来指定用于解码潜在样本的预训练变分自编码器模型，该模型的参数和学习到的分布对于执行解码过程至关重要。"
+    },
+    {
+        "question": "哪些节点可以将潜在表示转换回图像数据？",
+        "answer": "在ComfyUI中，VAEDecode节点可以将潜在表示转换回图像数据，它通过解码潜在空间的向量来重构图像，恢复其结构和内容特征。"
+    },
+    {
+        "question": "VAEDecode节点的源码中如何实现解码功能？",
+        "answer": "VAEDecode节点的源码中通过'class VAEDecode'定义了'INPUT_TYPES'方法来指定输入类型，包括'samples'和'vae'，并通过'decode'函数实现解码功能，该函数返回解码后的图像数据。"
+    }
+]

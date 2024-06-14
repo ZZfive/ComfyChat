@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Mask_Combine_Batch节点用途是什么?",
+        "answer": "WAS_Mask_Combine_Batch节点的用途是将多个掩码图像合并为一个单一、无缝的掩码，适用于需要进一步处理或可视化的应用程序，如图像分割或视觉特效中的遮罩。"
+    },
+    {
+        "question": "WAS_Mask_Combine_Batch接收的掩码图像类型是什么?",
+        "answer": "WAS_Mask_Combine_Batch接收的掩码图像类型是Comfy dtype中的List[Image]和Python dtype中的List[PIL.Image.Image]，即一系列的掩码图像列表。"
+    },
+    {
+        "question": "WAS_Mask_Combine_Batch输出的combined_mask是什么格式?",
+        "answer": "WAS_Mask_Combine_Batch输出的'combined_mask'格式为单个Image类型，表示将所有输入掩码集体覆盖范围合并为一张图的PIL.Image.Image格式掩码。"
+    },
+    {
+        "question": "哪些应用可以受益于WAS_Mask_Combine_Batch节点?",
+        "answer": "WAS_Mask_Combine_Batch节点受益于需要处理或可视化多个掩码图像的应用，如图像分割、视觉特效和需要合并多个遮罩的技术场景。"
+    },
+    {
+        "question": "WAS_Mask_Combine_Batch如何实现多个掩码图像的合并?",
+        "answer": "WAS_Mask_Combine_Batch通过调用'combine_masks'函数，使用PyTorch库将输入的掩码图像堆叠后求和，并对结果进行clamp操作，确保最终掩码的值域在0到1之间，从而输出单一的combined_mask。"
+    },
+    {
+        "question": "WAS_Mask_Combine_Batch运行在何种硬件上?",
+        "answer": "WAS_Mask_Combine_Batch节点的运行被指定在 CPU 上执行，这是其Infra type参数指出的硬件要求。"
+    },
+    {
+        "question": "在ComfyUI中如何使用多个掩码图像进行合并处理?",
+        "answer": "在ComfyUI中，可以使用WAS_Mask_Combine_Batch节点来处理和合并多个掩码图像。输入masks列表后，该节点会返回一个combined_mask，即合并后的单个掩码图像结果。"
+    }
+]

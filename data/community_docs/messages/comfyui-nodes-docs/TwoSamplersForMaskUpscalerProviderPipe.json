@@ -1,0 +1,38 @@
+[
+    {
+        "question": "TwoSamplersForMaskUpscalerProviderPipe节点的主要功能是什么？",
+        "answer": "TwoSamplersForMaskUpscalerProviderPipe节点的主要功能是使用两种不同的采样方法高效地对图像进行放大。它结合基础采样器和掩码采样器，以及掩码和变分自编码器（VAE），执行图像放大过程。"
+    },
+    {
+        "question": "哪一种参数决定了TwoSamplersForMaskUpscalerProviderPipe节点图像放大的算法？",
+        "answer": "scale_method参数决定了TwoSamplersForMaskUpscalerProviderPipe节点进行图像放大的具体算法，该参数直接影响放大的质量和效率。"
+    },
+    {
+        "question": "TwoSamplersForMaskUpscalerProviderPipe节点在图像放大过程中如何控制采样频率？",
+        "answer": "使用full_sample_schedule参数来控制TwoSamplersForMaskUpscalerProviderPipe节点在图像放大过程中的采样频率，该参数决定何时进行完整采样，对速度和质量的平衡至关重要。"
+    },
+    {
+        "question": "使用分块变分自编码器（VAE）对TwoSamplersForMaskUpscalerProviderPipe节点有何益处？",
+        "answer": "使用use_tiled_vae参数选择的分块变分自编码器（VAE）可以增强TwoSamplersForMaskUpscalerProviderPipe节点的图像放大过程，通过更高效地处理大图像来优化GPU架构上的性能。"
+    },
+    {
+        "question": "TwoSamplersForMaskUpscalerProviderPipe的输出是什么类型的对象？",
+        "answer": "TwoSamplersForMaskUpscalerProviderPipe的输出是UPSCALER类型的对象，该对象包含了图像放大过程的结果，是用于后续使用或分析的最终输出。"
+    },
+    {
+        "question": "哪些类型的节点是TwoSamplersForMaskUpscalerProviderPipe节点的输入组成部分？",
+        "answer": "TwoSamplersForMaskUpscalerProviderPipe节点的输入包括基础采样器（KSAMPLER）、掩码采样器（KSAMPLER）、掩码（MASK）和基本管道（BASIC_PIPE）等一系列组成部分，每种节点对放大过程的执行都至关重要。"
+    },
+    {
+        "question": "在TwoSamplersForMaskUpscalerProviderPipe节点中，如何指定处理图像时使用的瓦片尺寸？",
+        "answer": "在TwoSamplersForMaskUpscalerProviderPipe节点中，tile_size参数用于指定使用分块VAE处理图像时的瓦片尺寸，这对于管理内存使用和处理时间非常重要。"
+    },
+    {
+        "question": "对使用TwoSamplersForMaskUpscalerProviderPipe有何性能建议？",
+        "answer": "使用TwoSamplersForMaskUpscalerProviderPipe时，一个性能建议是选择适当的infra type，推荐使用GPU以优化放大过程的性能。"
+    },
+    {
+        "question": "TwoSamplersForMaskUpscalerProviderPipe节点属于哪一类别？",
+        "answer": "TwoSamplersForMaskUpscalerProviderPipe节点属于ImpactPack/Upscale类别，专门用于图像的放大处理。"
+    }
+]

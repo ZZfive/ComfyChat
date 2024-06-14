@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LoadImageInspire是什么类型的节点?",
+        "answer": "LoadImageInspire是ComfyUI中InspirePack/image类别的一个节点，用于加载和预处理图像，将其转换为适合进一步分析和操作的格式。"
+    },
+    {
+        "question": "LoadImageInspire节点的输入参数有哪些?",
+        "answer": "LoadImageInspire节点的主要输入参数包括图像（image）和图像数据（image_data），其中图像参数定义了将要处理的源图像，图像数据参数包含编码后的图像数据。"
+    },
+    {
+        "question": "LoadImageInspire节点如何处理输入图像?",
+        "answer": "LoadImageInspire节点将输入图像转换为结构化数组，特别地，它将图像数据解码，进行格式转换（如RGB）和类型转换以适应下游的任务需求，如特征提取或图像分类。"
+    },
+    {
+        "question": "LoadImageInspire的输出类型是什么?",
+        "answer": "LoadImageInspire节点的输出包括图像（IMAGE）和掩码（MASK），其中图像输出类型为torch.Tensor，适用于进一步的分析或处理，掩码输出提供了一个二进制表示，适用于图像相关的操作。"
+    },
+    {
+        "question": "在LoadImageInspire的源代码中，如何解析和转换图像数据?",
+        "answer": "在LoadImageInspire的源代码中，通过base64解码图像数据，将其转换为字节流，然后使用PIL库将其加载为图像对象。接着，图像对象被转换为RGB模式，转化为numpy数组和张量，为下游任务做好准备。"
+    },
+    {
+        "question": "LoadImageInspire处理的掩膜的默认大小是多少?",
+        "answer": "如果输入图像没有Alpha通道，LoadImageInspire会生成一个默认大小为64x64的零掩码，其数据类型为浮点32位，设备位于CPU上，这用于没有透明度信息的图像。"
+    },
+    {
+        "question": "哪些节点可以处理图像以用于分析或操作?",
+        "answer": "ComfyUI中的LoadImageInspire节点可以处理图像，将其转换为结构化格式，适用于下游分析和操作，特别地，它通过优化格式和类型转换，为特征提取或图像分类任务提供预处理图像数据。"
+    }
+]

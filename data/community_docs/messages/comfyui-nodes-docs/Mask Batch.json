@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Mask_Batch节点的作用是什么？",
+        "answer": "WAS_Mask_Batch节点旨在高效处理和批量处理多个掩码输入，确保所有输入掩码统一尺寸，并堆叠成单个批次以供进一步处理，对准备下游任务所需的一致掩码尺寸的数据发挥关键作用。"
+    },
+    {
+        "question": "哪些输入被WAS_Mask_Batch节点用于处理掩码？",
+        "answer": "WAS_Mask_Batch节点使用'masks_a', 'masks_b', 'masks_c'和'masks_d'参数，这些是用于处理的各种掩码输入，每一种都是可选的。"
+    },
+    {
+        "question": "'masks_a'参数为何如此重要？",
+        "answer": "'masks_a'参数是一个可选输入，它允许用户为处理提供一组掩码，对节点的操作至关重要，因为它直接影响到将被批量处理和处理的数据。"
+    },
+    {
+        "question": "WAS_Mask_Batch节点可以处理多少组掩码输入？",
+        "answer": "WAS_Mask_Batch节点可以处理四组可选掩码输入，分别为'masks_a', 'masks_b', 'masks_c', 和 'masks_d'，提供了处理多个掩码的灵活性。"
+    },
+    {
+        "question": "节点如何处理不同掩码的维度差异？",
+        "answer": "WAS_Mask_Batch节点会检查所有掩码输入的维度，若发现不匹配，将抛出ValueError警告，确保所有输入掩码具有相同的尺寸以进行统一处理。"
+    },
+    {
+        "question": "WAS_Mask_Batch节点的主要输出是什么？",
+        "answer": "WAS_Mask_Batch节点的主要输出是一个包含所有输入掩码的批量张量（'masks'），准备用于后续操作，输出为torch.Tensor类型。"
+    },
+    {
+        "question": "使用WAS_Mask_Batch节点时有哪些注意事项？",
+        "answer": "使用WAS_Mask_Batch节点时应注意，至少需要提供一个输入掩码，所有输入掩码应具有相同的尺寸，否则会引发维度不匹配的错误。"
+    }
+]

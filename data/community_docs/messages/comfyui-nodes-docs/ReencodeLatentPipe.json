@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ReencodeLatentPipe是什么样的节点?",
+        "answer": "ReencodeLatentPipe是一个用于潜在空间表示转换的节点，属于ComfyUI的ImpactPack/Util类别，通过对变分自编码器（VAE）的使用来重新编码潜在空间中的样本。"
+    },
+    {
+        "question": "ReencodeLatentPipe节点的主要输入是什么？",
+        "answer": "ReencodeLatentPipe的主要输入参数是\"samples\"，它代表了需要在节点中进行重新编码的潜在空间数据，形式上为Comfy dtype规定的LATENT类型，即Python dtype中的torch.Tensor。"
+    },
+    {
+        "question": "tile_mode参数的作用是什么？",
+        "answer": "tile_mode参数定义了在重新编码过程中像素平铺的处理方式，这个参数对于控制节点如何处理像素数据结构至关重要。"
+    },
+    {
+        "question": "input_basic_pipe和output_basic_pipe的区别是什么？",
+        "answer": "input_basic_pipe参数用于提供初始的变分自编码器（VAE）模型，以解码潜在样本；而output_basic_pipe参数则提供用于编码重新编码的潜在样本的VAE模型，对节点的输出结果至关重要。"
+    },
+    {
+        "question": "ReencodeLatentPipe的输出是什么？",
+        "answer": "ReencodeLatentPipe的主要输出是latent_samples，即重新编码后的潜在空间数据，呈现为Comfy dtype LATENT类型，实质上是torch.Tensor，对后续的分析或处理任务具有核心意义。"
+    },
+    {
+        "question": "哪些节点对于在不同VAE模型之间进行潜在空间数据转换是必要的？",
+        "answer": "ReencodeLatentPipe节点是必要的，它专门设计用于在不同VAE模型之间操作或比较潜在表示，通过重新编码潜在空间样本来促进转换。"
+    },
+    {
+        "question": "ReencodeLatentPipe的用途需要哪种硬件支持？",
+        "answer": "ReencodeLatentPipe的运行建议使用GPU硬件，这在源代码中的infra type: GPU属性中得以体现，以确保高效的计算处理能力。"
+    }
+]

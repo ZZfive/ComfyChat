@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Select Image Indices是什么节点?",
+        "answer": "Select Image Indices, 或者称为 ImageSelector, 是 ComfyUI 中 motionctrl 类别下的一个自定义节点，用于根据指定的索引筛选图像集合。"
+    },
+    {
+        "question": "ImageSelector节点的输入参数是什么类型？",
+        "answer": "ImageSelector节点的输入参数包含'images'和'selected_indexes'，分别对应图像数据（COMFY dtype: IMAGE，Python dtype: torch.Tensor）和字符串类型的索引集（COMFY dtype: STRING，Python dtype: str）。"
+    },
+    {
+        "question": "如何使用 ImageSelector 进行图像选择？",
+        "answer": "在 ImageSelector 节点中，用户可以通过指定'selected_indexes'参数来选择图像的特定索引，这些索引决定了哪些图像将被进一步处理。"
+    },
+    {
+        "question": "ImageSelector 节点如何处理'selected_indexes'？",
+        "answer": "当'selected_indexes'包含单个或多个以逗号分隔的索引或索引范围时，ImageSelector 节点会筛选出相应的图像，并在输出中仅提供这一子集。"
+    },
+    {
+        "question": "在ComfyUI中，如何指定图像选择的多个连续索引？",
+        "answer": "在ComfyUI的ImageSelector节点中，可以使用':',如'start:end'，来定义一个索引范围，以选择从'start'到'end'（不包括）之间的所有图像。"
+    },
+    {
+        "question": "Select Image Indices节点的输出如何表示选定的图像子集？",
+        "answer": "Select Image Indices节点的输出'selected_images'是一个IMAGE类型的Tensor，代表了基于'selected_indexes'参数所过滤出的图像子集，准备进行后续处理。"
+    },
+    {
+        "question": "Select Image Indices节点可以在哪种处理器上运行？",
+        "answer": "Select Image Indices节点是专门为CPU设计的，不需要GPU加速，因此它在CPU上运行是高效的。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Remove_Background节点的主要功能是什么？",
+        "answer": "WAS_Remove_Background节点的主要功能是通过移除背景来处理图像，实现前景的提取。它将图像转换为灰度图，应用高斯模糊，并使用二值阈值来创建一个掩膜，以隔离所需的元素。"
+    },
+    {
+        "question": "WAS_Remove_Background节点处理图像时的关键输入是什么？",
+        "answer": "关键输入是'images'参数，它代表了节点将处理的输入图像，是节点移除背景所必需的图像源。"
+    },
+    {
+        "question": "在WAS_Remove_Background节点中，'mode'参数的作用是什么？",
+        "answer": "'mode'参数用于决定节点将移除的是图像的背景还是前景。它是可选的，影响节点的行为，提供在处理不同类型图像时的灵活性。"
+    },
+    {
+        "question": "如何调整WAS_Remove_Background节点的背景识别灵敏度？",
+        "answer": "通过调整'threshold'参数来控制背景移除的灵敏度，它设置灰度值被认定为背景或前景的水平，直接影响前景与背景的区分。"
+    },
+    {
+        "question": "当使用WAS_Remove_Background节点时，'threshold_tolerance'参数的作用是什么？",
+        "answer": "'threshold_tolerance'参数定义了在应用阈值前用于平滑处理的高斯模糊的半径，影响如何处理图像中的噪声和细节，决定最终输出的质量。"
+    },
+    {
+        "question": "WAS_Remove_Background节点处理过的图像输出为何种格式？",
+        "answer": "处理后的图像以'torch.Tensor'的格式通过'images'输出参数输出，代表了移除背景操作的最终结果。"
+    },
+    {
+        "question": "在使用WAS_Remove_Background节点进行图像处理时，推荐使用哪种类型的基础硬件？",
+        "answer": "推荐使用CPU作为基础硬件类型，以进行WAS_Remove_Background节点的图像背景移除处理任务。"
+    }
+]

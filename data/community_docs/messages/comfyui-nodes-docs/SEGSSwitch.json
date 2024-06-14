@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SEGSSwitch在ComfyUI中的主要功能是什么？",
+        "answer": "SEGSSwitch（实为GeneralSwitch）主要负责根据提供的索引管理和路由数据，选择一个输入并根据工作流的节点信息检索相应的标签，是工作流决策过程中的关键组件，允许执行条件路径。"
+    },
+    {
+        "question": "在ComfyUI中，GeneralSwitch节点的'select'参数是做什么的？",
+        "answer": "'select'参数是节点用于识别正确输入的选择索引，对于确定节点将处理哪个输入至关重要。类型为'int'，在Comfy和Python中分别对应'INT'和'int'类型。"
+    },
+    {
+        "question": "ComfyUI的GeneralSwitch节点如何处理'sel_mode'参数？",
+        "answer": "'sel_mode'参数允许用户指定选择应基于提示还是执行上下文，影响节点如何解释输入，普遍影响工作流的整体行为。在ComfyUI中被视为'BOOLEAN'类型，对应Python的'bool'类型。"
+    },
+    {
+        "question": "ComfyUI-Manager中的GeneralSwitch节点的'input1'参数是用来干什么的？",
+        "answer": "'input1'参数提供灵活性，处理各种类型的数据，增强节点对不同工作流场景的适应性，类型为'ANY'，在Python中是'Any'类型，表示可以接受任何类型的数据。"
+    },
+    {
+        "question": "GeneralSwitch节点的'unique_id'参数对于节点操作的作用是什么？",
+        "answer": "'unique_id'参数用于内部标识工作流中的特定节点，对节点引用自己的输入和配置设置有关键作用，在ComfyUI中是'UNIQUE_ID'类型，Python中是'str'类型。"
+    },
+    {
+        "question": "GeneralSwitch节点的'extra_pnginfo'参数包含的工作流信息有什么用途？",
+        "answer": "'extra_pnginfo'参数包含有关工作流中节点视觉表示的额外信息，帮助自定义节点外观并提供上下文，类型是'EXTRA_PNGINFO'，在Python中是'Dict[str, Any]'类型。"
+    },
+    {
+        "question": "在ComfyUI中GeneralSwitch节点如何提供一个条件路由功能？",
+        "answer": "通过使用'select'来决定数据流向，GeneralSwitch充当了一个根据输入索引进行条件路径选择的角色，输出'selected_value'表示选定的数据，'selected_label'提供上下文信息，'selected_index'指示选择的索引，共同完成条件路由功能。"
+    }
+]

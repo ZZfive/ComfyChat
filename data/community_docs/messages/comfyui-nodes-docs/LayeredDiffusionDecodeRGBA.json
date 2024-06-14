@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LayeredDiffusionDecodeRGBA节点的功能是什么？",
+        "answer": "LayeredDiffusionDecodeRGBA节点的主要功能是从像素值集中解码出RGBA图像，包括alpha通道以表示透明度。"
+    },
+    {
+        "question": "在ComfyUI中LayeredDiffusionDecodeRGBA节点需要哪些输入参数来正确运行？",
+        "answer": "LayeredDiffusionDecodeRGBA节点需要'samples'、'images'、'sd_version'和'sub_batch_size'四个参数来确保解码过程正常进行。"
+    },
+    {
+        "question": "'samples'参数在LayeredDiffusionDecodeRGBA节点中的作用是什么？",
+        "answer": "'samples'参数包含了解码过程中所需的像素数据和版本信息，是节点运行的关键。"
+    },
+    {
+        "question": "LayeredDiffusionDecodeRGBA节点的'sd_version'参数如何影响其输出？",
+        "answer": "'sd_version'参数指定了Stable Diffusion模型的版本，这会直接影响LayeredDiffusionDecodeRGBA节点的解码过程和生成图像的质量。"
+    },
+    {
+        "question": "如何控制LayeredDiffusionDecodeRGBA节点中图像的解码性能和内存使用？",
+        "answer": "通过调整'sub_batch_size'参数，可以控制LayeredDiffusionDecodeRGBA节点每次迭代中处理的图像数量，进而优化解码过程的性能和内存使用。"
+    },
+    {
+        "question": "LayeredDiffusionDecodeRGBA节点输出哪些主要数据？",
+        "answer": "LayeredDiffusionDecodeRGBA节点主要输出解码后的RGBA图像数据（'image'）和alpha通道（'alpha'），两者分别对应于图像的数据和透明度信息。"
+    },
+    {
+        "question": "LayeredDiffusionDecodeRGBA节点如何生成包含透明度效果的RGBA图像？",
+        "answer": "LayeredDiffusionDecodeRGBA节点通过从像素值中解码alpha通道值，将之与解码的图像数据整合，从而生成完整的RGBA图像，其中alpha通道保证了图像的透明度效果。"
+    }
+]

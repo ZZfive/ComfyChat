@@ -1,0 +1,42 @@
+[
+    {
+        "question": "Yoloworld_ESAM_DetectorProvider_Zho 是什么类型的节点？",
+        "answer": "Yoloworld_ESAM_DetectorProvider_Zho是一个ImpactPack类别的节点，用于基于YOLO的模型检测图像中的指定对象，并可选择性地使用ESAM进行对象分割。"
+    },
+    {
+        "question": "哪些对象是Yoloworld_ESAM_DetectorProvider_Zho节点的必需输入？",
+        "answer": "Yoloworld_ESAM_DetectorProvider_Zho节点需要输入YOLOWORLDMODEL类型的YOLO模型、STRING类型的类别列表、FLOAT类型的IoU阈值以及BOOLEAN类型的with_class_agnostic_nms参数。"
+    },
+    {
+        "question": "ComfyUI 中的 YOLOWORLDMODEL 类型具体指什么？",
+        "answer": "YOLOWORLDMODEL类型指的是YOLOWorldModel，这是一种专用于图像中对象识别的神经网络架构。"
+    },
+    {
+        "question": "如何在 Yoloworld_ESAM_DetectorProvider_Zho 中调整检测准确度？",
+        "answer": "通过设置'iou_threshold'参数，可以调整预测边界框与真实边界框之间的重叠标准，从而影响检测的精确度。较高的阈值精度更高，但可能覆盖更少的正确预测；较低的阈值可能包含更多的正确预测，但精度降低。"
+    },
+    {
+        "question": "在Yoloworld_ESAM_DetectorProvider_Zho节点中，with_class_agnostic_nms参数的作用是什么？",
+        "answer": "with_class_agnostic_nms参数作用于启用类别不可知的非极大值抑制，帮助减少重叠检测，提高检测结果的整体准确性。"
+    },
+    {
+        "question": "ESAM模型在Yoloworld_ESAM_DetectorProvider_Zho中的作用是什么？",
+        "answer": "提供ESAM模型选项可以对检测到的对象进行分割，增强图像内容的理解和分析深度，尤其在启用对象分割功能时，ESAMModel将提供详细的分割信息。"
+    },
+    {
+        "question": "Yoloworld_ESAM_DetectorProvider_Zho节点的输出是什么？",
+        "answer": "Yoloworld_ESAM_DetectorProvider_Zho节点输出BBOX_DETECTOR和SEGM_DETECTOR，前者提供对象边界框信息，后者在ESAM模型被提供的情境下，提供分割掩码，用于定位并分析图像中特定对象的精确边界。"
+    },
+    {
+        "question": "在使用Yoloworld_ESAM_DetectorProvider_Zho节点时，推荐的运算设备是什么？",
+        "answer": "根据节点的设计和计算需求，Yoloworld_ESAM_DetectorProvider_Zho节点的运算过程推荐在GPU上进行。"
+    },
+    {
+        "question": "Yoloworld_ESAM_DetectorProvider_Zho节点使用了哪种高级分割算法？",
+        "answer": "Yoloworld_ESAM_DetectorProvider_Zho节点可以利用ESAM模型进行更高级的图像对象分割，只要在节点参数中提供了'ESAMMODEL'类型的输入。"
+    },
+    {
+        "question": "Yoloworld_ESAM_DetectorProvider_Zho 内部函数'doit'如何产生输出？",
+        "answer": "函数'doit'接收YOLO模型、对象类别、IoU阈值、NMS设置以及可选的ESAM模型输入；首先初始化BBOX_DETECTOR，如果ESAM模型存在，则进一步生成SEGM_DETECTOR输出，如果没有ESAM模型，则SEGM_DETECTOR输出为None。"
+    }
+]

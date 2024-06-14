@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImpactPack的SEGSPicker节点的作用是什么？",
+        "answer": "SEGSPicker节点是ImpactPack插件的一部分，用于处理和选择一系列分段中的特定片段。它根据提供的索引列表选择分段，并可调整分段到备用图像的尺寸。"
+    },
+    {
+        "question": "SEGSPicker节点的'picks'参数代表什么？",
+        "answer": "'picks'参数是一个包含用逗号分隔的索引列表的字符串，指明从输入分段集合中选择特定分段。这是节点操作的核心依据。"
+    },
+    {
+        "question": "如何在没有提供备用图像的情况下使用SEGSPicker节点？",
+        "answer": "如果未提供'fallback_image_opt'参数，SEGSPicker不会调整分段的大小，而是直接根据'picks'列表中的索引选择并返回指定的分段。"
+    },
+    {
+        "question": "在ComfyUI中，SEGSPicker节点的输出是什么格式？",
+        "answer": "SEGSPicker节点的输出是'Tuple[List[SEG], List[SEG]]'格式的分段集合，代表基于选择处理后的新分段。"
+    },
+    {
+        "question": "在SEGSPicker节点中，'unique_id'字段有何作用？",
+        "answer": "'unique_id'是一个用于跟踪和管理分段内部状态的隐藏字段，对节点的外部用户来说通常是不可见的，但它对于数据追踪和维护数据完整性至关重要。"
+    },
+    {
+        "question": " SEGSPicker节点的'fallback_image_opt'参数如何影响输出？",
+        "answer": "'fallback_image_opt'参数允许节点缩放分段以匹配该备用图像的尺寸，确保输出大小适合进一步处理。这通过调用'segs_scale_match'函数在内部实现。"
+    },
+    {
+        "question": "SEGSPicker节点的处理流程中如何处理分段掩码？",
+        "answer": "对于每个分段，SEGSPicker节点会应用掩码于裁剪后的图像。如果分段具有'cropped_image'，则直接使用；如果没有，且提供了备用图像，则从备用图像中裁剪并应用掩码；若两者皆无，则使用空图像。"
+    }
+]

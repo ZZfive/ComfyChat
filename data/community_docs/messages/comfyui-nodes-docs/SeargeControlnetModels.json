@@ -1,0 +1,42 @@
+[
+    {
+        "question": "SeargeControlnetModels是什么类型的ComfyUI节点?",
+        "answer": "SeargeControlnetModels是UI_INPUTS类别下的一个ComfyUI节点，用于协调检索和整合多种控制网模型，以定制图像处理任务的视觉输出。"
+    },
+    {
+        "question": "SeargeControlnetModels的clip_vision输入参数的作用是什么？",
+        "answer": "clip_vision参数对于选择影响生成图像视觉风格和内容的模型检查点至关重要，这确保了生成的图像具有特定的视觉特征和风格。"
+    },
+    {
+        "question": "在SeargeControlnetModels中，canny_checkpoint输入参数如何影响图像处理？",
+        "answer": "canny_checkpoint输入参数在SeargeControlnetModels中用于精确定位图像中的边缘，确保根据所选检查点在节点输出中表现出精细的结构元素。"
+    },
+    {
+        "question": "深度感知在SeargeControlnetModels中的实现方式是什么？",
+        "answer": "通过depth_checkpoint参数，SeargeControlnetModels能够控制生成图像中的深度感知，加强三维方面的视觉呈现，使图像看起来更为立体和真实。"
+    },
+    {
+        "question": "哪些输入类型可以让SeargeControlnetModels实现广泛的风格变化？",
+        "answer": "SeargeControlnetModels通过recolor_checkpoint参数能够调整图像的色彩板，这允许在最终视觉产品中实现广泛的风格变化，满足多样化审美需求。"
+    },
+    {
+        "question": "SeargeControlnetModels如何支持自定义的控制网模型？",
+        "answer": "SeargeControlnetModels通过custom_checkpoint参数允许实施自定义控制网模型，这不仅扩展了节点的功能，还满足了使用者对特定风格和效果的定义要求。"
+    },
+    {
+        "question": "SeargeControlnetModels的数据输出包含什么？",
+        "answer": "SeargeControlnetModels的数据输出是一个字典格式，包含了所选择的控制网模型信息，为后续的图像处理操作准备了必要的数据基础。"
+    },
+    {
+        "question": "在SeargeControlnetModels中，输入的控制网模型如何被处理并输出？",
+        "answer": "SeargeControlnetModels通过其create_dict方法将输入的各个控制网模型参数整理为字典形式的数据，确保这些模型信息被系统地整合和输出，以供后续节点使用。"
+    },
+    {
+        "question": "哪些类型的数据输入是SeargeControlnetModels所必需的？",
+        "answer": "SeargeControlnetModels需要的必要输入包括clip_vision、canny_checkpoint、depth_checkpoint、recolor_checkpoint、sketch_checkpoint以及custom_checkpoint，这些输入确保节点能够综合控制各种图像处理效果。"
+    },
+    {
+        "question": "SeargeControlnetModels的运行依赖于哪种硬件？",
+        "answer": "SeargeControlnetModels的运行基础是CPU，这意味着它可以在一般处理能力下执行图像处理任务，而不依赖于GPU等高性能计算资源。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageListToImageBatch节点的功能是什么？",
+        "answer": "ImageListToImageBatch节点属于ComfyUI的ImpactPack/Operation类别，用于将图像列表转换为单一的图像批次，通过在第一维度上连接图像来确保所有图像具有相同的形状，以适应进一步的神经网络操作。"
+    },
+    {
+        "question": "哪些自定义节点用于高效地将图像列表转换为单个图像批次？",
+        "answer": "ImageListToImageBatch是ComfyUI中用于将多个图像高效转换为单个批次的自定义节点，它能确保所有图像具有相同的形状，适用于神经网络处理。"
+    },
+    {
+        "question": "ImageListToImageBatch节点的输入类型是什么？",
+        "answer": "ImageListToImageBatch节点的必需输入类型为'images'，这是一个图像张量列表（List[torch.Tensor]），对节点操作至关重要，因为它直接决定了图像批次的创建和确保所有图像兼容性。"
+    },
+    {
+        "question": "ImageListToImageBatch节点的输出有哪些特点？",
+        "answer": "ImageListToImageBatch节点的输出是一个表示图像批次的单个图像张量，该批次通过在第一维度上连接输入图像张量创建，适合用于需要大量图像数据的下游任务。"
+    },
+    {
+        "question": "ImageListToImageBatch节点如何处理形状不匹配的图像？",
+        "answer": "当形状不匹配时，ImageListToImageBatch节点会使用comfy.utils.common_upscale函数调整图像尺寸，以匹配目标图像形状，确保所有图像在第一维度上可以连接成单个批次。"
+    },
+    {
+        "question": "ImageListToImageBatch节点适合哪些硬件类型？",
+        "answer": "ImageListToImageBatch节点的使用提示指出，其最适合的硬件类型为GPU，这可能是由于图像处理和神经网络操作对并行计算的需求。"
+    },
+    {
+        "question": "如何使用ImageListToImageBatch节点处理图像批次？",
+        "answer": "使用ImageListToImageBatch节点时，首先需要输入一个图像张量列表（'images'），随后它会将这些图像在第一维度上连接起来，生成一个单个的图像批次，输出的图像张量格式为torch.Tensor，便于后续的神经网络处理任务。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "IterativeMixingSamplerNode 是什么，它在 ComfyUI 中的作用是什么？",
+        "answer": "IterativeMixingSamplerNode 是 ComfyUI 中负责通过迭代混合潜在变量来增强生成样本多样性和质量的自定义节点。它逐步调整不同潜在变量在采样过程中的影响，实现对生成输出的精细控制。"
+    },
+    {
+        "question": "在 IterativeMixingSamplerNode 中，模型参数有什么作用？",
+        "answer": "模型参数定义了采样器将使用的基础生成网络，决定了节点将利用的基础架构和学习成果，对于创建新的样本至关重要。"
+    },
+    {
+        "question": "如何控制 IterativeMixingSamplerNode 中主要潜在变量的初始影响？",
+        "answer": "通过调整 Alpha_1 参数，可以控制 IterativeMixingSamplerNode 中混合过程中主要潜在变量的初始影响，显著改变生成内容的特点，是实现预期结果的关键。"
+    },
+    {
+        "question": "IterativeMixingSamplerNode 的混合进度有什么作用？",
+        "answer": "混合进度定义了 IterativeMixingSamplerNode 中混合过程随时间的进展，确保不同潜在变量之间平滑过渡，在生成样本的自然演变中至关重要。"
+    },
+    {
+        "question": "哪些参数定义了 IterativeMixingSamplerNode 混合过程中的噪声模式？",
+        "answer": "perlin_mode 和 perlin_strength 参数在 IterativeMixingSamplerNode 中定义了混合过程中的噪声模式，增加了随机性，从而增强生成样本的创造性和可变性；perlin_scale 参数影响噪声模式的粒度，控制生成样本的细部细节和纹理。"
+    },
+    {
+        "question": "在 IterativeMixingSamplerNode 的混合过程中，如何限制混合影响的程度？",
+        "answer": "通过调整 clamp_blending_at_pct 参数，可以将 IterativeMixingSamplerNode 中的混合影响限制在指定的百分比内，确保混合不会过度，保持整体平衡，在生成过程中十分重要。"
+    },
+    {
+        "question": "IterativeMixingSampler 节点的输出类型为何及其代表的意义？",
+        "answer": "IterativeMixingSampler 节点的输出类型是 ('SAMPLER')，它代表一个配置好的采样策略实例，结合了各种参数以产生多样化和高质量的生成样本，反映了潜在变量的精细混合。"
+    }
+]

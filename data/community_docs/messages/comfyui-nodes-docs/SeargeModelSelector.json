@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SeargeModelSelector节点的功能是什么？",
+        "answer": "SeargeModelSelector节点简化了选择和组合模型检查点的过程，封装了处理各种检查点类型的复杂性，使用户可以专注于模型的分析和应用而不需关心底层技术细节。"
+    },
+    {
+        "question": "什么是SeargeModelSelector中的基础模型检查点base_checkpoint？",
+        "answer": "SeargeModelSelector中的base_checkpoint参数指定基础模型检查点，这是所有后续操作的起点。其选择对下游任务的性能和准确性有直接影响。Comfy dtype为UI.CHECKPOINTS()，Python dtype为Union[str, None]。"
+    },
+    {
+        "question": "refiner_checkpoint参数的作用是什么？",
+        "answer": "refiner_checkpoint参数在SeargeModelSelector中用于提升基础模型的性能，引入了完善模型预测的可能性，从而提升了最终输出质量。其Comfy dtype是UI.CHECKPOINTS_WITH_NONE()，在Python中的dtype是Union[str, None]。"
+    },
+    {
+        "question": "在SeargeModelSelector中，vae_checkpoint参数承担什么角色？",
+        "answer": "vae_checkpoint参数在SeargeModelSelector中对于整合变分自编码器至关重要。它允许整合潜在表示，对处理复杂数据任务极为关键。其Comfy dtype是UI.VAE_WITH_EMBEDDED()，Python dtype是List[str]。"
+    },
+    {
+        "question": "SeargeModelSelector中的data参数有何作用？",
+        "answer": "在SeargeModelSelector中，data参数作为容器存储模型选择过程中可能需要的附加工具信息，它在节点有效和高效运行中发挥辅助作用。数据类型为SRG_DATA_STREAM在Comfy中，Python中的dtype为Dict[str, Any]。"
+    },
+    {
+        "question": "运行SeargeModelSelector时，哪些输入参数是必需的？",
+        "answer": "运行SeargeModelSelector时，必需的输入参数包括base_checkpoint、refiner_checkpoint和vae_checkpoint，用以指定基础模型、精炼模型和变分自编码器的检查点。"
+    },
+    {
+        "question": "SeargeModelSelector的输出data表示什么？",
+        "answer": "SeargeModelSelector的输出data包含了模型选择过程的结果，包括组合的检查点信息，是工作流程进入后续阶段的关键，促进进一步的分析和应用，其数据类型在Comfy中为SRG_DATA_STREAM，Python dtype为Dict[str, Any]。"
+    }
+]

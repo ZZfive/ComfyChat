@@ -1,0 +1,30 @@
+[
+    {
+        "question": "KfPGroupSum是什么类型的节点？",
+        "answer": "KfPGroupSum是一个属于keyframed/experimental类别的节点，用于将多个关键帧曲线相加形成复合曲线。"
+    },
+    {
+        "question": "KfPGroupSum节点的输出是什么？",
+        "answer": "KfPGroupSum节点的输出是一个复合的关键帧曲线，类型为KEYFRAMED_CURVE，它是所有输入曲线的总和，提供了一个集体行为的简化视图。"
+    },
+    {
+        "question": "KfPGroupSum节点的关键输入是什么？",
+        "answer": "KfPGroupSum节点的关键输入是参数组(parameter_group)，这是一个包含要相加的关键帧曲线集的类型为PARAMETER_GROUP的变量，通常为Dict[str, kf.Curve]。"
+    },
+    {
+        "question": "KfPGroupSum节点如何生成复合曲线？",
+        "answer": "KfPGroupSum通过将参数组中所有曲线的值相加，生成一个复合曲线，这条曲线代表了所有输入曲线的行为总和。"
+    },
+    {
+        "question": "什么类型的数据可以用作KfPGroupSum的输入参数组？",
+        "answer": "KfPGroupSum的输入参数组应为Comfy dtype的PARAMETER_GROUP类型，对应于Python中的Dict[str, kf.Curve]，存储了要聚合的关键帧曲线。"
+    },
+    {
+        "question": "哪些节点的输出可以作为KfPGroupSum的输入使用？",
+        "answer": "任何输出PARAMETER_GROUP类型的节点，如keyframed节点或自定义插件节点，其输出可以作为KfPGroupSum的输入参数组使用。"
+    },
+    {
+        "question": "KfPGroupSum的执行基础架构是什么？",
+        "answer": "KfPGroupSum节点在CPU上执行，不需要GPU加速，适合处理涉及参数组与关键帧曲线聚合的任务。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MaskListToMaskBatch节点的作用是什么?",
+        "answer": "MaskListToMaskBatch节点用于将一系列掩码图像整合成一个单一的批次张量，确保它们适配批量处理的3D格式，对下游机器学习模型的批量输入数据作准备和处理。"
+    },
+    {
+        "question": "MaskListToMaskBatch节点处理的输入类型是什么?",
+        "answer": "MaskListToMaskBatch节点处理的必要输入是'mask'参数，它是一个掩码图像列表，数据类型为List[torch.Tensor]，适用于ComfyUI的MASK类型。"
+    },
+    {
+        "question": "MaskListToMaskBatch如何处理输入的掩码列表?",
+        "answer": "该节点为每张掩码应用3D格式转换，必要时确保它们适配后续批量处理，再将所有这些经过调整的掩码图像组合成一个单一的批次张量。"
+    },
+    {
+        "question": "MaskListToMaskBatch节点的输出是什么?",
+        "answer": "MaskListToMaskBatch节点的输出是一个MASK批次，格式化为与机器学习模型所期望的批量输入兼容的张量，是后续训练或推理中重要的输入组件。"
+    },
+    {
+        "question": "MaskListToMaskBatch节点的使用场景具备什么特点?",
+        "answer": "该节点被设计为在CPU上运行，意味着它在没有GPU加速的情况下仍能高效处理掩码列表至批次张量的转换，适合于资源受限的环境。"
+    },
+    {
+        "question": "哪些节点适合用于在ComfyUI中将多张掩码图像整合为一个批次?",
+        "answer": "MaskListToMaskBatch是一个合适的节点，它能够处理多个掩码图像并将其转换为适合批量处理的格式，适应下游机器学习模型的需要。"
+    },
+    {
+        "question": "如果输入掩码列表为空，MaskListToMaskBatch节点会返回什么?",
+        "answer": "当输入的掩码列表为空时，MaskListToMaskBatch节点会返回一个默认尺寸的空掩码张量，大小为(1, 64, 64)，该张量以CUDA的float32类型存储，且具有额外的单维度。"
+    }
+]

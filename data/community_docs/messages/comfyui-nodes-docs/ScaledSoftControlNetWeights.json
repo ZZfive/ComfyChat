@@ -1,0 +1,38 @@
+[
+    {
+        "question": "ScaledSoftUniversalWeights 是 ComfyUI 中的什么类型？",
+        "answer": "ScaledSoftUniversalWeights 是 ComfyUI 中 Adv-ControlNet 🛂🅐🅒🅝/weights 类别下的一个类，用于生成缩放和可能翻转的控制权重。"
+    },
+    {
+        "question": "ScaledSoftUniversalWeights 的哪个参数用于调整网络权重的缩放？",
+        "answer": "base_multiplier 参数用于控制网络权重的缩放，其范围为0.0到1.0，这对于微调权重对网络输出的影响至为关键。"
+    },
+    {
+        "question": "如何在 ScaledSoftUniversalWeights 中反转权重应用的方向？",
+        "answer": "通过设置 flip_weights 参数为 True，可以反转权重应用的方向，这对于实现特定效果或纠正控制网络行为中的意外影响非常重要。"
+    },
+    {
+        "question": "ScaledSoftUniversalWeights 的主要输出是什么？",
+        "answer": "ScaledSoftUniversalWeights 的主要输出包括一组控制权重（Control_NET_WEIGHTS）和基于时间的控制点表示（TIMESTEP_KEYFRAME）, 这些对于控制网络的行为和时间应用特征至关重要。"
+    },
+    {
+        "question": "Timestep_keyframe 的输出在 ScaledSoftUniversalWeights 中代表什么？",
+        "answer": "Timestep_keyframe 输出在 ScaledSoftUniversalWeights 中代表控制网络内基于时间的控制点的结构化表示，它定义了权重随时间应用的时间特征。"
+    },
+    {
+        "question": "在 ScaledSoftUniversalWeights 中，'weights' 输出是如何影响控制网络的？",
+        "answer": "'weights' 输出代表由 ScaledSoftUniversalWeights 节点生成的一组控制权重，这些权重的形状和特性受到输入参数 base_multiplier 和 flip_weights 的影响，用于塑造控制网络的行为。"
+    },
+    {
+        "question": "运行 ScaledSoftUniversalWeights 需要什么类型的硬件？",
+        "answer": "运行 ScaledSoftUniversalWeights 的基础设施类型为 CPU，意味着它可以在标准处理器上执行，而不一定需要特殊的图形处理单元或加速硬件。"
+    },
+    {
+        "question": "哪些参数影响 ScaledSoftControlNetWeights 中生成的权重？",
+        "answer": "在 ScaledSoftControlNetWeights 中，生成的权重受 base_multiplier 和 flip_weights 参数影响，前者控制权重的缩放，后者可能反转权重的应用方向。"
+    },
+    {
+        "question": "ComfyUI 中哪些节点依赖于 ScaledSoftUniversalWeights 输出的 CONTROL_NET_WEIGHTS？",
+        "answer": "ComfyUI 中依赖于 ScaledSoftUniversalWeights 生成的 CONTROL_NET_WEIGHTS 的节点通常涉及到需要或可以调整控制权重的网络输入，尤其是那些涉及Adv-ControlNet功能的节点。"
+    }
+]

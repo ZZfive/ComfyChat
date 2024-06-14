@@ -1,0 +1,30 @@
+[
+    {
+        "question": "IPAdapterMS是什么类型的ComfyUI节点?",
+        "answer": "IPAdapterMS是ComfyUI的一个自定义节点，属于ipadapter/dev类别，用于将多种图像处理模型集成到统一框架中，通过配置参数增强图像数据操作和模型性能。"
+    },
+    {
+        "question": "哪些是IPAdapterMS的必需输入类型?",
+        "answer": "IPAdapterMS必需的输入类型包括模型(model)、适配器(ipadapter)、图像(image)和权重(weight)，其中模型参数定义核心图像处理模型，适配器参数指定与模型接口的适配器，图像参数提供图像处理的输入数据，权重参数调整图像处理对最终输出的影响。"
+    },
+    {
+        "question": "IPAdapterMS中的weight参数有何作用?",
+        "answer": "weight参数在IPAdapterMS中用于调整图像处理的某些方面对最终输出的影响，是微调节点操作以实现期望结果的关键因素，其数据类型为FLOAT，可以在-1到5之间变化，默认值为1.0。"
+    },
+    {
+        "question": "IPAdapterMS的combine_embeds参数如何影响节点的输出?",
+        "answer": "combine_embeds参数决定了IPAdapterMS内部不同嵌入的组合方式，如concat、add、subtract、average或norm average，这一决策影响节点输出的整合和一致性。"
+    },
+    {
+        "question": "start_at和end_at参数在IPAdapterMS中的作用是什么?",
+        "answer": "start_at和end_at参数分别定义了图像处理操作的起始点和终点，它们确定节点分析和操作图像数据的阶段，使用户能够控制图像处理的特定部分。"
+    },
+    {
+        "question": "IPAdapterMS节点的output types有哪些?",
+        "answer": "IPAdapterMS的output types主要是processed_image，它代表节点执行图像处理后的结果，包含了操作和分析的所有内容，输出的数据类型为IMAGE。"
+    },
+    {
+        "question": "在使用IPAdapterMS时特别需要注意什么?",
+        "answer": "使用IPAdapterMS时，需注意其infra type为GPU，这意味着高效的图像处理通常需要GPU的计算能力，因此在配置环境或选择硬件时应考虑到GPU的使用。"
+    }
+]

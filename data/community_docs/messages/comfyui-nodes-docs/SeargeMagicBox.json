@@ -1,0 +1,42 @@
+[
+    {
+        "question": "SeargeMagicBox的作用是什么?",
+        "answer": "SeargeMagicBox作为图像生成过程的中央协调器，它管理数据流和各阶段执行，处理从预处理到后处理的复杂工作流，旨在生成高质量图像并允许广泛定制。"
+    },
+    {
+        "question": "在SeargeMagicBox中，stage参数的作用是什么？",
+        "answer": "stage参数决定SeargeMagicBox节点执行的特定操作，如加载检查点或生成图像，是节点功能的选取器，直接影响输出和后续处理步骤。"
+    },
+    {
+        "question": "SeargeMagicBox中的input_from参数有何意义？",
+        "answer": "input_from参数确定SeargeMagicBox节点输入数据的来源，可以是预定义数据流或用户自定义输入，是后续处理基础和直接影响最终输出的关键。"
+    },
+    {
+        "question": "output_to参数在SeargeMagicBox中如何影响数据流？",
+        "answer": "output_to参数指定了SeargeMagicBox节点输出的方向，可以设置为自定义输出或后续处理的数据流，对于整体系统内部数据流至关重要。"
+    },
+    {
+        "question": "SeargeMagicBox中data参数的作用是什么？",
+        "answer": "data参数是一个字典，包含图像生成流水线各阶段间传递的必要信息和中间结果，作为数据流的支柱，确保所有阶段都能访问所需数据。"
+    },
+    {
+        "question": "custom_input参数在SeargeMagicBox中提供了什么功能？",
+        "answer": "custom_input参数用于提供SeargeMagicBox从标准数据流以外注入的外部数据或特定配置，给予了图像生成过程中的灵活性和适应性。"
+    },
+    {
+        "question": "SeargeMagicBox的data输出包含了哪些信息？",
+        "answer": "SeargeMagicBox的data输出包含了图像生成过程的最终结果，包括处理过的图像、潜在表示和其他相关信息，用作下游阶段的输入或保存为最终输出。"
+    },
+    {
+        "question": "什么时候会使用custom_output参数？",
+        "answer": "当input_from参数设置为自定义时，会使用custom_output参数。它允许SeargeMagicBox定制输出以满足特定用户需求或集成更广泛的系统中。"
+    },
+    {
+        "question": "哪些类实例化是SeargeMagicBox在处理特定阶段时调用的？",
+        "answer": "SeargeMagicBox在处理特定阶段如load checkpoints或apply controlnet时，会实例化相应的如SeargeStageLoadCheckpoints或SeargeStageApplyControlnet类。"
+    },
+    {
+        "question": "SeargeMagicBox是如何进行管道流程的？",
+        "answer": "SeargeMagicBox通过run_stage方法处理管道中的特定阶段，基于输入和当前阶段，调用相应类实例的process方法执行图像生成的特定任务。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Image_Batch节点的功能是什么？",
+        "answer": "WAS_Image_Batch节点旨在处理并批量处理多个图像以进行进一步操作，确保所有输入图像具有匹配的尺寸，然后将它们合并成单个张量，以促进批量高效处理图像数据。"
+    },
+    {
+        "question": "WAS_Image_Batch节点的输入类型有哪些？",
+        "answer": "WAS_Image_Batch节点的输入类型包括可选的'images_a', 'images_b', 'images_c', 'images_d'，均接受IMAGE类型，具体为Python中的Union[torch.Tensor, List[torch.Tensor]]."
+    },
+    {
+        "question": "WAS_Image_Batch节点的'images_a'参数用于什么？",
+        "answer": "参数'images_a'用于提供要批量处理的一组图像，它是节点操作中的关键输入，直接影响将要处理的内容。"
+    },
+    {
+        "question": "什么是WAS_Image_Batch节点中'images_d'的输入类型和功能？",
+        "answer": "'images_d'提供了进一步的可选图像输入能力，其类型是'IMAGE'，同时也是Python中Union[torch.Tensor, List[torch.Tensor]]类型，允许节点在单个批量操作中处理更广泛的图像数组。"
+    },
+    {
+        "question": "WAS_Image_Batch节点输出的'IMAGE'类型具体指什么？",
+        "answer": "'IMAGE'输出是已处理和连接的图像张量，具体为Python中的torch.Tensor，对于需要统一图像数据批次的下游任务至关重要。"
+    },
+    {
+        "question": "哪些节点可以进行批量图像处理？",
+        "answer": "WAS_Image_Batch是ComfyUI的一个节点，专门用于批量处理多个图像的进一步操作，可以处理多个图像并将其合并成单个张量，很适合图像批量处理的场景。"
+    },
+    {
+        "question": "WAS_Image_Batch节点在处理图像时如何确保内容的一致性？",
+        "answer": "WAS_Image_Batch节点通过确保所有输入图像具有匹配的尺寸来处理图像一致性和批量处理，如果输入图像尺寸不匹配，会引发ValueError异常。"
+    }
+]

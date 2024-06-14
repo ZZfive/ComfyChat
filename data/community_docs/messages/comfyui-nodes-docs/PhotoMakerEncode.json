@@ -1,0 +1,30 @@
+[
+    {
+        "question": "PhotoMakerEncode节点是什么?",
+        "answer": "PhotoMakerEncode是一个ComfyUI的自定义节点，用于通过结合文本、clip特征和图像来应用photomaker效果，处理输入并生成用于进一步图像操作的conditioning输出。"
+    },
+    {
+        "question": "PhotoMakerEncode节点的关键输入是什么?",
+        "answer": "PhotoMakerEncode节点的关键输入包括photomaker（预训练模型或兼容图像处理对象）、image（目标图像）、clip（文本标记化和编码）和text（描述性输入指导效果）。"
+    },
+    {
+        "question": "PhotoMakerEncode节点的输出条件格式是什么?",
+        "answer": "PhotoMakerEncode节点的输出条件是条件编码表示，即CONDITIONING类型，表现为Tuple[torch.Tensor, Dict[str, torch.Tensor]]格式，用于指导后续的图像操作过程。"
+    },
+    {
+        "question": "如何在ComfyUI中使用PhotoMakerEncode节点?",
+        "answer": "在ComfyUI中使用PhotoMakerEncode节点需要提供photomaker模型、待处理的图像、clip编码器以及指导效果的文字描述。这些输入将被节点处理生成photomaker条件输出。"
+    },
+    {
+        "question": "PhotoMakerEncode的输入参数中哪个与动态提示直接相关?",
+        "answer": "在PhotoMakerEncode节点的输入参数中，text参数是与动态提示直接相关的，它允许包含多行字符串形式的动态描述来指导photomaker效果的生成。"
+    },
+    {
+        "question": "PhotoMakerEncode节点中的特殊令牌'special_token'用于什么目的?",
+        "answer": "在PhotoMakerEncode节点中，特殊令牌'special_token'（定义为'photomaker'）用于在text输入中定位，以确定photomaker效果应用于图像的具体方式。"
+    },
+    {
+        "question": "如何在代码中实现PhotoMakerEncode的效果?",
+        "answer": "要实现PhotoMakerEncode的效果，需调用'apply_photomaker'方法，传入photomaker、image、clip和text参数，node将处理这些输入以生成photomaker条件输出。"
+    }
+]

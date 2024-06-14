@@ -1,0 +1,38 @@
+[
+    {
+        "question": "PromptWithSDXL节点的功能是什么？",
+        "answer": "PromptWithSDXL节点用于处理和生成针对风格和内容生成任务的提示，通过应用各种转换来优化和提高生成内容的质量，特别是处理复杂的提示结构以产生高质量输出。"
+    },
+    {
+        "question": "正负面提示在PromptWithSDXL节点中的作用是什么？",
+        "answer": "正面提示指导生成具有所需特征的内容，而负面提示则指定应避免的内容，两相结合确保最终输出符合预期的风格、主题且不含不需要元素。"
+    },
+    {
+        "question": "哪些输入决定了生成内容的样式偏好？",
+        "answer": "正面样式和负面样式参数定义了生成内容中应强调和应避免的风格元素，确保最终输出与用户指定的审美偏好一致。"
+    },
+    {
+        "question": "batch_size和seed参数在PromtWithSDXL节点中如何运作？",
+        "answer": "batch_size允许控制单次操作生成的样本数量，seed则用于在生成过程引入可控的随机性，旨在生成多样化的输出集。"
+    },
+    {
+        "question": "生成内容的质量和规格是如何被控制的？",
+        "answer": "通过ratio_selected参数设定的分辨率比例，以及width和height参数，PromptWithSDXL确保生成内容的视觉呈现和规格符合所需纵横比，质量由refiner_width和refiner_height参数所控制的细化过程决定。"
+    },
+    {
+        "question": "生成的输出类型有哪些？",
+        "answer": "PromptWithSDXL生成的输出包括潜在表示（其核心为后续细化的基础）、正面和负面提示的文本形式、风格文='#code本输出以及宽度和高度参数，还有细化过程的宽度和高度规定，这些输出用于进一步生成和细化最终内容。"
+    },
+    {
+        "question": "PromptWithSDXL节点适合在什么类型的处理器上运行？",
+        "answer": "PromptWithSDXL节点建议在CPU类型的处理器上运行，以处理复杂的提示结构和生成的优化过程。"
+    },
+    {
+        "question": "ComfyUI中的PromptWithSDXL节点主要响应何种输入类型？",
+        "answer": "PromptWithSDXL主要响应的输入类型包括必要的正面和负面提示文本输入、正负向样式信息以及比率选择，同时可选地接收批次大小和种子值输入，以控制生成过程的细节和随机性。"
+    },
+    {
+        "question": "PromptWithSDXL节点的输出如何帮助进一步创造视觉内容？",
+        "answer": "该节点的输出，如潜在表示（samples），及细化宽度（refine_width）和高度（refine_height），为后续的视觉内容生成提供了基础和细化的形状尺寸参数，有助于确保视觉输出的质量和匹配度。"
+    }
+]

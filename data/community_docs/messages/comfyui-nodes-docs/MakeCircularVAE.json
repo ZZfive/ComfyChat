@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MakeCircularVAE节点的目的是什么？",
+        "answer": "MakeCircularVAE节点的目的是修改变分自编码器（VAE）模型，通过应用循环填充来处理具有周期性边界条件的数据，特别是那些具有固有循环对称性的数据。"
+    },
+    {
+        "question": "MakeCircularVAE节点如何应用于x和y维度的循环填充？",
+        "answer": "节点根据'tiling'参数的配置，选择性地将循环填充应用于VAE模型的x和y维度，或者仅应用于其中一个维度。"
+    },
+    {
+        "question": "MakeCircularVAE节点的'run'方法有哪些输入参数？",
+        "answer": "'run'方法的输入参数包括'vae'（要被修改的VAE模型）、'tiling'（决定如何应用循环填充）以及'copy_vae'（指定是否创建VAE的副本）。"
+    },
+    {
+        "question": "在MakeCircularVAE节点中，'copy_vae'参数的作用是什么？",
+        "answer": "'copy_vae'参数决定了是否直接修改原始的VAE模型或首先创建其副本。选择'Make a copy'会在修改前创建VAE的副本，选择'Modify in place'则会直接在原始模型上进行更改，影响内存使用和模型更改的范围。"
+    },
+    {
+        "question": "MakeCircularVAE节点的输出是什么？",
+        "answer": "MakeCircularVAE节点的输出是一个已修改或复制的、卷积层已应用循环填充的变分自编码器模型，从而增强了其处理具有循环对称性数据的能力。"
+    },
+    {
+        "question": "哪些数据类型会特别受益于MakeCircularVAE节点的功能？",
+        "answer": "具有固有循环对称性的数据会特别受益于MakeCircularVAE节点的功能，这些节点通过循环填充增强了VAE模型处理周期性数据的能力。"
+    },
+    {
+        "question": "MakeCircularVAE节点的'infratype'是什么？",
+        "answer": "MakeCircularVAE节点的'infratype'是GPU，意味着它被设计为在GPU上运行，以优化处理变分自编码器模型和循环填充的性能。"
+    }
+]

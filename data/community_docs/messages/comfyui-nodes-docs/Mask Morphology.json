@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MaskMorphologyNode 主要执行什么功能？",
+        "answer": "MaskMorphologyNode 是 ComfyUI 的一个节点，用于执行形态学操作，如膨胀、腐蚀、开运算和闭运算，以处理图像掩码，这些操作对于去噪和特征增强非常重要。"
+    },
+    {
+        "question": "MaskMorphologyNode 中的image参数代表什么？",
+        "answer": "image参数是一个张量，表示输入图像掩码，它是节点操作的基础，形态学变换直接作用于这个图像数据。"
+    },
+    {
+        "question": "什么参数控制 MaskMorphologyNode 中形态学操作的范围？",
+        "answer": "distance参数确定了形态学操作的范围，比如用于膨胀或腐蚀的核的大小，这一参数对节点处理结果有显著影响。"
+    },
+    {
+        "question": "comfyUI中哪些子节点可以执行形态学操作并影响图像掩码？",
+        "answer": "MaskMorphologyNode 节点可以执行形态学操作，包括膨胀、腐蚀、开运算和闭运算，这些操作通常用于图像掩码的去噪和特征增强。"
+    },
+    {
+        "question": "在使用 MaskMorphologyNode 时，'op'参数可以设置为哪几种操作类型？",
+        "answer": "'op'参数用于指定形态学操作的类型，可以是'dilate'（膨胀）、'erode'（腐蚀）、'open'（开运算）或'close'（闭运算）。"
+    },
+    {
+        "question": "MaskMorphologyNode 节点返回的图像格式是什么？",
+        "answer": "MaskMorphologyNode 节点返回的输出图像是一个具有torch.Tensor类型的张量，代表了应用了选定形态学操作后的结果图像掩码。"
+    },
+    {
+        "question": "如何执行闭运算以去除图像掩码中的小物体？",
+        "answer": "在 MaskMorphologyNode 节点中设置'op'参数为'close'，然后应用选定的距离参数'distance'，闭运算会先执行膨胀操作以闭合前景物体的裂缝，再进行腐蚀操作以消除新引入的小物体。"
+    }
+]

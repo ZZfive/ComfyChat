@@ -1,0 +1,38 @@
+[
+    {
+        "question": "WAS_KSampler的用途是什么?",
+        "answer": "WAS_KSampler是WAS套件中的一个节点，用于执行图像合成过程中的采样操作，它利用先进的采样技术生成潜在表示，对创建新图像或增强现有图像至关重要。"
+    },
+    {
+        "question": "哪些参数是WAS_KSampler节点所必需的?",
+        "answer": "WAS_KSampler节点需要以下必需参数：模型（model）、种子（seed）、采样器名称（sampler_name）、调度器（scheduler）、正向条件信息（positive）和负向条件信息（negative），以及采样过程的初始图像（latent_image）。"
+    },
+    {
+        "question": "模型参数在WAS_KSampler中的作用是什么?",
+        "answer": "模型参数定义了WAS_KSampler采样过程所使用的底层神经网络架构，直接影响生成的潜在表示的质量和特性。"
+    },
+    {
+        "question": "如何调整WAS_KSampler中的无分类器指导比例（cfg）?",
+        "answer": "cfg参数用于调整WAS_KSampler采样中的内容与随机性之间的平衡，可在0.0至100.0的范围内调整，以控制输出图像与输入条件的保真度。"
+    },
+    {
+        "question": "哪些采样器可以使用在WAS_KSampler节点上?",
+        "answer": "WAS_KSampler节点的sampler_name参数可以指定各种可用的采样方法，具体取决于实际支持的列表，如comfy.samplers.KSampler.SAMPLERS所示，这些选择对于实现期望的图像生成结果至关重要。"
+    },
+    {
+        "question": "在WAS_KSampler中，正向条件信息和负向条件信息的作用分别是什么?",
+        "answer": "正向条件信息引导WAS_KSampler的采样过程生成所需特征的图像，而负向条件信息防止采样图像中出现不需要的特征，两者都对输出图像的关键特性有着决定性的影响。"
+    },
+    {
+        "question": "WAS_KSampler输出的'latent'代表什么?",
+        "answer": "WAS_KSampler的'latent'输出是采样图像的编码表示，可进一步处理或作为后续图像合成任务的输入。"
+    },
+    {
+        "question": "哪些是WAS_KSampler节点可选的输入参数?",
+        "answer": "WAS_KSampler节点的可选输入参数包括步数（steps）、无分类器指导比例（cfg）、去噪参数（denoise），这些参数提供了对采样过程的进一步控制，如迭代次数、内容与随机性之间的平衡、噪声减少级别等。"
+    },
+    {
+        "question": "WAS_KSampler节点最适合在哪种硬件环境下运行?",
+        "answer": "WAS_KSampler节点的最佳运行环境是GPU硬件，这有助于增强其在图像采样和处理方面的性能。"
+    }
+]

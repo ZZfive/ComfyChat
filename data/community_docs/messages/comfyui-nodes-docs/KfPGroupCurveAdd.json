@@ -1,0 +1,30 @@
+[
+    {
+        "question": "KfPGroupCurveAdd是什么类型的节点?",
+        "answer": "KfPGroupCurveAdd是ComfyUI中的一个自定义节点，用于将Keyframed Curve整合到参数组中，增强数据模型的结构与功能。"
+    },
+    {
+        "question": "KfPGroupCurveAdd节点的输入有哪些？",
+        "answer": "KfPGroupCurveAdd节点需要两个输入：'parameter_group'（参数组）和'curve'（曲线）。"
+    },
+    {
+        "question": "参数组在KfPGroupCurveAdd中的作用是什么？",
+        "answer": "参数组在KfPGroupCurveAdd中的作用是提供基础架构，与动态变化的曲线输入结合，以增强操作的复杂性和数据的结构上下文。"
+    },
+    {
+        "question": "KfPGroupCurveAdd节点的输出是什么？",
+        "answer": "KfPGroupCurveAdd节点的输出是一个融合了参数组和曲线的整合结果，以字典形式表示，封装了两者的组合属性和行为。"
+    },
+    {
+        "question": "KfPGroupCurveAdd的实现方式是什么？",
+        "answer": "KfPGroupCurveAdd类通过deepcopy函数复制参数组和曲线输入，然后将它们合并在一起，返回整合后的参数组。"
+    },
+    {
+        "question": "哪些类型可以输入给KfPGroupCurveAdd节点的curve和parameter_group？",
+        "answer": "KfPGroupCurveAdd节点的'curve'输入应为'KEYFRAMED_CURVE'类型，参数组应为'PARAMETER_GROUP'类型，在Python中分别对应为kf.KeyframedCurve和Dict[str, Any]。"
+    },
+    {
+        "question": "KfPGroupCurveAdd节点的优化应该关注哪方面？",
+        "answer": "由于KfPGroupCurveAdd节点需要处理曲线和参数组的深度融合，优化工作应聚焦于提升节点的执行效率和数据处理能力，特别是在曲线与参数组的集成过程中。"
+    }
+]

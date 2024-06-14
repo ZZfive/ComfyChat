@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ThresholdMask节点的用途是什么?",
+        "answer": "ThresholdMask节点用于根据设定的阈值将输入图像转换为二进制掩码，这在图像分割任务中尤其关键，帮助确定哪些像素属于感兴趣目标，哪些不属于，通过二进制分类简化图像，辅助后续处理和分析。"
+    },
+    {
+        "question": "ThresholdMask节点如何定义输入图像的像素归属?",
+        "answer": "ThresholdMask节点通过参数'mask'和特定的阈值(value)确定图像中像素的归属。该阈值影响哪些像素被最终掩码包含，阈值越低，包含的像素越多；阈值越高，包含的像素越少。"
+    },
+    {
+        "question": "哪些输入类型是ThresholdMask节点所必需的?",
+        "answer": "ThresholdMask节点必需的输入类型是'mask'，它对应于需要进行阈值处理的输入图像，对节点的操作至关重要，且基于提供的阈值来确定哪些像素将被包含在最终掩码中。"
+    },
+    {
+        "question": "ThresholdMask节点的'output mask'具体指什么?",
+        "answer": "ThresholdMask节点的输出'mask'表示将输入图像转换为二进制表示后的结果，每个像素要么被分类为属于目标对象，要么不属于，这是基于设定的阈值来确定的，对于图像中的对象检测和分割非常重要。"
+    },
+    {
+        "question": "在ThresholdMask节点中，'value'参数的作用是什么?",
+        "answer": "'value'参数在ThresholdMask节点中用于设定掩码转换的阈值，它决定了像素被包含在掩码中的界限，较高的数值会产生更严格的掩码，而较低的数值会更宽松，包含更多的像素。"
+    },
+    {
+        "question": "ThresholdMask节点的输入类型'mask'和'output mask'的Python数据类型是什么?",
+        "answer": "ThresholdMask节点中输入类型'mask'和输出类型'mask'的Python数据类型均为torch.Tensor，表示该节点能够处理和生成张量格式的数据，适用于深度学习应用。"
+    },
+    {
+        "question": "如何使用ThresholdMask节点实现图像的二值化?",
+        "answer": "通过提供'mask'图像并设置适当的'value'作为掩码转换的阈值，ThresholdMask节点可以执行图像二值化。输出的二进制掩码将根据阈值将每个像素分类为'属于对象'或'不属于对象'，从而实现图像的简化处理。"
+    }
+]

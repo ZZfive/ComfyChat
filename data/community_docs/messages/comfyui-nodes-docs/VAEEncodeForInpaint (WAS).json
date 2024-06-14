@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_VAEEncodeForInpaint 节点的目的和功能是什么？",
+        "answer": "WAS_VAEEncodeForInpaint 节点的目的是将图像像素编码为适合图像修复任务的潜在空间表示，为后续修复过程生成并准备输入数据。"
+    },
+    {
+        "question": "哪些参数是WAS_VAEEncodeForInpaint节点处理的原始图像数据所必需的？",
+        "answer": "WAS_VAEEncodeForInpaint 节点要求提供'pixels'参数，这是节点处理的原始图像数据。"
+    },
+    {
+        "question": "WAS_VAEEncodeForInpaint在编码过程中的掩码参数有何作用？",
+        "answer": "掩码参数（mask）标识图像中需要修复的区域，确保编码过程更加关注图像上的特定区域，这对于图像修复任务至关重要。"
+    },
+    {
+        "question": "mask_offset参数在WAS_VAEEncodeForInpaint节点中的作用是什么？",
+        "answer": "mask_offset参数允许调整掩码的边界，以此控制图像修复的范围，正值表示扩展掩码，而负值表示收缩掩码，间接影响编码时考虑的区域。"
+    },
+    {
+        "question": "哪些节点可以用于图像修复任务的图像编码？",
+        "answer": "WAS_VAEEncodeForInpaint是一个用于将图像像素编码至潜在空间适应图像修复任务的节点，它通过预训练的VAE模型实现这一功能。"
+    },
+    {
+        "question": "潜在表示（latent）在WAS_VAEEncodeForInpaint节点编码过程中的作用是什么？",
+        "answer": "潜在表示捕获了输入图像的本质特征，剔除了不必要的细节，特别优化以用于修复区域的重建，是编码过程的核心结果，作为后续修复任务的输入。"
+    },
+    {
+        "question": "在使用WAS_VAEEncodeForInpaint进行图像修复时，哪类硬件设备可以提供最佳性能？",
+        "answer": "使用WAS_VAEEncodeForInpaint进行图像修复时，最佳性能通常在GPU上获得，因为其处理能力有利于深度学习模型的运行和图像处理算法的执行。"
+    }
+]

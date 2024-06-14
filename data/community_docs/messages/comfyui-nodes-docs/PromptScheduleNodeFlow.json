@@ -1,0 +1,30 @@
+[
+    {
+        "question": "PromptScheduleNodeFlow 是什么？",
+        "answer": "PromptScheduleNodeFlow 是 ComfyUI 中的一个自定义节点，它属于 FizzNodes / ScheduleNodes 类别，用于根据给定的帧数操作和调度字符串内容。"
+    },
+    {
+        "question": "在 ComfyUI 中，PromptScheduleNodeFlow 节点的 'text' 参数是做什么的？",
+        "answer": "'text' 参数定义了要添加到日程中的文本内容，影响着信息在特定帧中的结构和呈现方式，用于调度字符串。"
+    },
+    {
+        "question": "哪些参数对计算新的最大帧数是必需的？",
+        "answer": "必需的 'num_frames' 参数表示执行操作的当前帧数，影响计算添加或修改文本后的最大帧数，对调度信息的时间结构至关重要。"
+    },
+    {
+        "question": "如何使用 `PromptScheduleNodeFlow` 更新现有日程中的文本条目？",
+        "answer": "使用可选的参数 'in_text' 可以修改 PromptScheduleNodeFlow 中现有日程的文本条目，避免了重复创建或从头构建日程。"
+    },
+    {
+        "question": "更新文本后，日程的最大帧数如何确定？",
+        "answer": "更新后的新最大帧数 'new_max' 是由当前帧数 'num_frames' 加上指定的最大帧数 'max_frames' 决定的，若 'max_frames' 为零，则仅基于 'num_frames'。"
+    },
+    {
+        "question": "FetchNodes 中 PromptScheduleNodeFlow 节点的 'new_text' 输出是什么？",
+        "answer": "'new_text' 输出表示 PromptScheduleNodeFlow 节点在应用程序中添加或修改后生成的更新文本内容，反映在日程中对应帧上的文本变化。"
+    },
+    {
+        "question": "使用 PromptScheduleNodeFlow 节点时是否可以运行在 GPU 上？",
+        "answer": "根据提示，PromptScheduleNodeFlow 节点的底层基础设施类型为 CPU，意味着该节点的设计和实现是仅在 CPU 上执行的，不支持 GPU 加速。"
+    }
+]

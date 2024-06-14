@@ -1,0 +1,30 @@
+[
+    {
+        "question": "StableCascade_StageC_VAEEncode是什么类型的节点？",
+        "answer": "StableCascade_StageC_VAEEncode是一个ComfyUI中的自定义节点，属于latent/stable_cascade类别，用于使用VAE将图像编码为潜在表示。"
+    },
+    {
+        "question": "StableCascade_StageC_VAEEncode节点的输入包括哪些参数？",
+        "answer": "StableCascade_StageC_VAEEncode节点需要图像(image)、变分自编码器(VAE)、压缩级别(compression)作为输入参数。"
+    },
+    {
+        "question": "StableCascade_StageC_VAEEncode节点如何处理输入图像？",
+        "answer": "该节点将输入图像上采样至所需分辨率，并用VAE生成压缩的潜在空间表示，应用于图像压缩和重建过程。"
+    },
+    {
+        "question": "压缩参数在StableCascade_StageC_VAEEncode节点中起到什么作用？",
+        "answer": "压缩参数决定了图像编码前的下采样级别，是平衡图像质量与编码效率的重要因素，可针对特定需求调整。"
+    },
+    {
+        "question": "StableCascade_StageC_VAEEncode节点提供哪些输出？",
+        "answer": "节点输出'stage_c'和'stage_b'，分别是图像压缩的潜在表示和初始化为零的潜在表示，前者用于下游任务，后者有时用于拓展处理。"
+    },
+    {
+        "question": "Image参数的质量如何影响StableCascade_StageC_VAEEncode节点的性能？",
+        "answer": "输入图像的质量和分辨率直接影响节点输出的潜在表示的质量，及后续任务中的处理效果。"
+    },
+    {
+        "question": "StableCascade_StageC_VAEEncode节点调用的infra类型是什么？",
+        "answer": "StableCascade_StageC_VAEEncode节点运行在GPU上，意味着需要GPU支持进行高效的图像处理和潜在空间编码。"
+    }
+]

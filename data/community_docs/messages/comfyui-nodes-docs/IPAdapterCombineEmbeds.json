@@ -1,0 +1,30 @@
+[
+    {
+        "question": "IPAdapterCombineEmbeds节点的主要功能是什么？",
+        "answer": "IPAdapterCombineEmbeds节点旨在通过多种指定方法智能地组合多个嵌入输入，包括连接、加法、减法、平均、归一化平均、最大值或最小值操作，从而处理和整合不同嵌入数据到统一格式，增强嵌入操作的灵活性和适应性。"
+    },
+    {
+        "question": "在ComfyUI中，IPAdapterCombineEmbeds的infra type是什么？",
+        "answer": "IPAdapterCombineEmbeds在ComfyUI中的infra type是GPU，这意味着它优化于或依赖于GPU资源进行高效处理。"
+    },
+    {
+        "question": "哪些是IPAdapterCombineEmbeds节点在组合嵌入输入（如embed1）时可选的额外输入？",
+        "answer": "IPAdapterCombineEmbeds节点在组合嵌入输入时，有四个可选的额外输入：embed2、embed3、embed4和embed5，它们可以用来进行更复杂的嵌入组合操作。"
+    },
+    {
+        "question": "IPAdapterCombineEmbeds节点的'combined_embeds'输出表示什么？",
+        "answer": "combined_embeds输出是将指定方法应用于输入嵌入的结果，它代表了输入数据经节点处理后的合成形式，适合用于进一步分析或模型训练。"
+    },
+    {
+        "question": "IPAdapterCombineEmbeds节点是如何使用'method'参数来确定嵌入输入的数学运算的？",
+        "answer": "method参数在IPAdapterCombineEmbeds节点中决定嵌入输入的组合方式，它可以选择从'concat'、'add'、'subtract'、'average'、'norm average'、'max'或'min'中的一种运算，显著影响节点的具体行为和输出特性。"
+    },
+    {
+        "question": "如果IPAdapterCombineEmbeds节点的method参数设置为'add'，将如何处理提供的嵌入输入？",
+        "answer": "当IPAdapterCombineEmbeds节点的method参数设置为'add'时，它将计算所有提供的嵌入输入的总和，然后将结果以unsqueeze操作返回，确保输出维度与输入相匹配。"
+    },
+    {
+        "question": "在IPAdapterCombineEmbeds节点操作中，'embed1'输入的作用是什么？",
+        "answer": "'embed1'输入是IPAdapterCombineEmbeds节点操作中必需的主要嵌入输入，它为后续的组合方法提供了基础，对节点的执行和最终输出具有至关重要的影响。"
+    }
+]

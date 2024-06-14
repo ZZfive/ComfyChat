@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MaskToSEGS节点主要用于处理哪些任务？",
+        "answer": "MaskToSEGS节点主要用于将二进制掩码转换为由SEG对象表示的分割区域，可以进一步用于图像处理任务。"
+    },
+    {
+        "question": "MaskToSEGS节点的输入掩码如何定义图像内的区域？",
+        "answer": "掩码参数是一个二进制掩码，定义了图像内的感兴趣区域，直接影响分割过程和生成的SEG对象。"
+    },
+    {
+        "question": "在MaskToSEGS节点中，combined参数的设置对输出结果有何影响？",
+        "answer": "combined参数决定是否将掩码中的重叠区域合并为单个SEG对象，简化复杂场景的表示。"
+    },
+    {
+        "question": "如何调整MaskToSEGS中分割对象周围的上下文大小？",
+        "answer": "通过调整crop_factor参数，可以控制每个掩码段的边界框周围的裁剪区域的大小，从而影响SEG对象的细节级别。"
+    },
+    {
+        "question": "在MaskToSEGS节点中，bbox_fill参数有什么功能？",
+        "answer": "bbox_fill参数指定裁剪区域内边界框是否应用实心填充，以突出显示或隔离SEG对象内的特定区域。"
+    },
+    {
+        "question": "MaskToSEGS节点如何处理小于特定尺寸的掩码段？",
+        "answer": "通过drop_size参数设置，MaskToSEGS节点可以丢弃不符合尺寸阈值的小段，以减少分割中的噪声。"
+    },
+    {
+        "question": "若想从基于轮廓的掩码创建实心SEG对象，应如何配置MaskToSEGS节点？",
+        "answer": "通过设置contour_fill参数为True，MaskToSEGS节点将填充掩码轮廓内的区域，从而生成实心的SEG对象。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "RegionalSeedExplorerColorMask 节点是做什么用的？",
+        "answer": "RegionalSeedExplorerColorMask 节点是 ComfyUI 的 InspirePack 中的一个组件，它基于颜色掩码和种子提示来探索并生成图像区域中的变化，同时控制噪声增强某些特征。"
+    },
+    {
+        "question": "哪些输入类型是 RegionalSeedExplorerColorMask 节点必需的？",
+        "answer": "RegionalSeedExplorerColorMask 节点必需的输入类型包括 color_mask（颜色掩码）、noise（噪声）、seed_prompt（种子提示）和 enable_additional（是否启用额外的种子提示）。"
+    },
+    {
+        "question": "在 RegionalSeedExplorerColorMask 节点中，mask_color 参数的作用是什么？",
+        "answer": "mask_color 参数用于识别颜色掩码中将用于创建二进制掩码以进行区域选择的特定颜色，是节点用于选择目标区域进行处理的关键参数。"
+    },
+    {
+        "question": "RegionalSeedExplorerColorMask 节点中的 enable_additional 做什么？",
+        "answer": "enable_additional 决定了是否应用额外的种子提示，影响图像变化的复杂性和多样性。如果启用，增加额外的种子对变化过程进行更精细的控制。"
+    },
+    {
+        "question": "什么参数可以调整额外种子影响的强度？",
+        "answer": "additional_strength 参数可以调整额外种子对图像变化的影响强度，允许用户微调应用于图像变化的效果。取值范围在 0.0 到 1.0 之间。"
+    },
+    {
+        "question": "RegionalSeedExplorerColorMask 的 output types 有哪些？",
+        "answer": "RegionalSeedExplorerColorMask 的输出类型包括经过处理的 noise（噪声）和 mask（掩码），前者代表带有应用变化的噪声，是生成多样化图像的关键组成部分；后者是选定区域的二进制表示，用于隔离和应用特定更改。"
+    },
+    {
+        "question": "在 RegionalSeedExplorerColorMask 节点中，noise_mode 参数如何影响处理过程？",
+        "answer": "noise_mode 参数决定了用于处理噪声的计算资源，GPU 为模型密集型任务提供更快的计算能力，CPU 则更适合处理不那么复杂的操作。选择 GPU 或 CPU 取决于操作的复杂性和计算资源的可用性。"
+    }
+]

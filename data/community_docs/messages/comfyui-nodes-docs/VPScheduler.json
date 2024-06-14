@@ -1,0 +1,30 @@
+[
+    {
+        "question": "VPScheduler节点在ComfyUI中的主要功能是什么？",
+        "answer": "VPScheduler节点主要用于为扩散模型生成一个连续的方差保持（VP）噪声时间表，通过确定每一步的噪声水平来优化生成样本的质量。"
+    },
+    {
+        "question": "VPScheduler中参数'steps'的作用是什么？",
+        "answer": "参数'steps'定义了噪声时间表中的步数，它决定了每一步应用的噪声水平的粒度，直接影响最终输出的质量。"
+    },
+    {
+        "question": "哪一参数设置VPScheduler中噪声的最低水平，为何重要？",
+        "answer": "参数'beta_min'设置时间表中噪声的最低水平，它确保采样过程的初始步骤具有足够的噪声水平，这对于促进输出的多样性和细节至关重要。"
+    },
+    {
+        "question": "在VPScheduler节点中，'sigmas'代表什么？",
+        "answer": "输出'sigmas'指的是VP噪声时间表中每一步计算出的噪声水平，它是采样过程的基础，指导生成最终输出。"
+    },
+    {
+        "question": "如何在ComfyUI中使用VPScheduler来控制噪声增加的速率？",
+        "answer": "在ComfyUI中，通过调整VPScheduler节点的'beta_d'参数可以控制噪声增加的速率，进而影响生成样本的细节和收敛。"
+    },
+    {
+        "question": "哪些输入类型是VPScheduler节点必需的？",
+        "answer": "VPScheduler节点必需的输入类型包括'steps'，它定义了噪声时间表中的步数，对采样过程和最终输出质量具有决定性影响。"
+    },
+    {
+        "question": "在ComfyUI的VPScheduler节点中，参数'eps_s'的设定及其影响是什么？",
+        "answer": "参数'eps_s'在VPScheduler节点中指定噪声时间表的结束值，关键作用是确定采样过程中应用的最终噪声水平，对于生成样本的细节和整体质量至关重要。"
+    }
+]

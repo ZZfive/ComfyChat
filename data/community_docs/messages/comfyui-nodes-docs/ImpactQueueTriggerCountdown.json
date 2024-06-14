@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImpactQueueTriggerCountdown是什么类型的节点？",
+        "answer": "ImpactQueueTriggerCountdown是ComfyUI中的一个自定义节点，属于ImpactPack/Logic/_for_test类别，主要用于管理队列系统中的倒计时和触发机制。"
+    },
+    {
+        "question": "ImpactQueueTriggerCountdown节点的'doit'方法负责什么功能？",
+        "answer": "ImpactQueueTriggerCountdown节点的'doit'方法负责推进倒计时并根据总计数和当前模式决定是否触发事件，它是控制基于队列的工作流操作流程的关键。"
+    },
+    {
+        "question": "哪些参数是ImpactQueueTriggerCountdown节点的必需输入？",
+        "answer": "ImpactQueueTriggerCountdown节点的必需输入包括'count'（用于跟踪倒计时序列中的当前位置）、'total'（定义最大计数）和'mode'（决定是否触发事件）。"
+    },
+    {
+        "question": "ImpactQueueTriggerCountdown节点的'count'参数扮演什么角色？",
+        "answer": "参数'count'用于跟踪ImpactQueueTriggerCountdown节点在倒计时序列中的当前位置，对确定队列的进度和触发事件的时间至关重要。"
+    },
+    {
+        "question": "为什么在ImpactQueueTriggerCountdown节点中需要使用'unique_id'参数？",
+        "answer": "'unique_id'参数在ImpactQueueTriggerCountdown节点中用于在系统中惟一标识节点，以便进行反馈和队列管理，确保工作流中的准确通信和跟踪。"
+    },
+    {
+        "question": "ImpactQueueTriggerCountdown节点可以输出哪些类型？",
+        "answer": "ImpactQueueTriggerCountdown节点输出包括'signal_opt'（可选地传递信号）、'count'（反映更新后的计数）和'total'（提供总计数值）来帮助理解倒计时序列的剩余步骤。"
+    },
+    {
+        "question": "在什么情况下ImpactQueueTriggerCountdown的'doit'方法会触发事件？",
+        "answer": "在'mode'参数为True，且'count'参数达到或超过'total'定义的最大计数减一时，ImpactQueueTriggerCountdown的'doit'方法会触发事件。"
+    }
+]

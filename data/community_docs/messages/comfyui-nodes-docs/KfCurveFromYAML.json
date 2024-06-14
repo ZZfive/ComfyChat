@@ -1,0 +1,30 @@
+[
+    {
+        "question": "KfCurveFromYAML是ComfyUI中的哪个类别下的自定义节点?",
+        "answer": "KfCurveFromYAML是ComfyUI中的CATEGORY类别下的自定义节点，可在动画和模拟工作流中使用。"
+    },
+    {
+        "question": "KfCurveFromYAML节点的输入类型是什么?",
+        "answer": "KfCurveFromYAML节点的输入类型是‘yaml’，它需要一个包含曲线描述的YAML格式字符串，Comfy dtype为STRING，Python dtype为str。"
+    },
+    {
+        "question": "‘yaml’参数在KfCurveFromYAML节点中的作用是什么?",
+        "answer": "‘yaml’参数定义了要生成的曲线结构和特征，包括关键帧和插值方法，是节点运行的必要参数。"
+    },
+    {
+        "question": "KfCurveFromYAML节点的输出类型是什么?",
+        "answer": "KfCurveFromYAML节点输出类型是‘curve’，输出一个Comfy dtype为KEYFRAMED_CURVE，Python dtype为keyframed.Curve，即代表由输入YAML定义的关键帧曲线。"
+    },
+    {
+        "question": "哪些节点可以通过解析YAML格式的字符串来生成关键帧曲线?",
+        "answer": "KfCurveFromYAML节点专门用于解析YAML格式的字符串以生成关键帧曲线，适用于动画和模拟流程。"
+    },
+    {
+        "question": "KfCurveFromYAML节点的运行依赖于哪种硬件?",
+        "answer": "KfCurveFromYAML节点的运行依赖于CPU，根据节点的infra type属性表明，它是在CPU上执行的。"
+    },
+    {
+        "question": "KfCurveFromYAML节点的Python代码示例中，函数(INPUT_TYPES)是如何定义‘yaml’输入类型的默认值的?",
+        "answer": "在KfCurveFromYAML节点的Python代码示例中，函数(INPUT_TYPES)定义了‘yaml’输入类型具有多行文本的默认值：'curve: \\n- - 0\\n  - 0\\n  - linear\\n- - 1\\n  - 1\\nloop: false\\n  bounce: false\\n  duration: 1\\n  label: foo'。"
+    }
+]

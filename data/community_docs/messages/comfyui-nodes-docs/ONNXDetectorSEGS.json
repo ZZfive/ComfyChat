@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BboxDetectorForEach节点的主要功能是什么？",
+        "answer": "BboxDetectorForEach节点的主要功能是在图像中检测每个段的边界框，它利用bbox_detector根据阈值和其他参数识别并定位段，确保检测到最相关的段。"
+    },
+    {
+        "question": "BboxDetectorForEach节点中bbox_detector的作用是什么？",
+        "answer": "bbox_detector是BboxDetectorForEach节点的关键组件，负责在图像中实际检测边界框，直接影响检测过程的准确性和效率。"
+    },
+    {
+        "question": "BboxDetectorForEach节点的哪一参数用于调整检测后的裁剪段大小？",
+        "answer": "crop_factor参数用于调整检测后的裁剪段的大小，是微调分割过程以满足特定应用需求的重要调整参数。"
+    },
+    {
+        "question": "哪些参数能够在BboxDetectorForEach节点中影响检测到的段的数量和精度？",
+        "answer": "threshold参数决定了bbox_detector在识别边界框时的灵敏度，dilation参数控制检测到的边界框的扩展，这两个参数都会影响检测到的段的数量和检测的精度。"
+    },
+    {
+        "question": "BboxDetectorForEach节点的哪一参数用于过滤掉噪声和无关数据？",
+        "answer": "BboxDetectorForEach节点的drop_size参数用于指定考虑的段的最小大小，过滤掉噪声和无关数据，从而提高检测质量。"
+    },
+    {
+        "question": "BboxDetectorForEach节点的valid_input_dtype是什么？",
+        "answer": "BboxDetectorForEach节点的有效输入数据类型包括bbox_detector (BBOX_DETECTOR)，image (IMAGE)，threshold (FLOAT)，dilation (INT)，crop_factor (FLOAT)，drop_size (INT)，以及可选参数labels (STRING)和detailer_hook (DETAILER_HOOK)。"
+    },
+    {
+        "question": "BboxDetectorForEach节点的outputs_dtype是什么？",
+        "answer": "BboxDetectorForEach节点的输出数据类型是segs (SEGS)，其中包含了图像中检测到的段，每个段都附带其边界框信息。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SAMDetectorSegmented节点的功能是什么？",
+        "answer": "SAMDetectorSegmented节点使用SAM模型检测和分割图像中的物体，生成一个组合掩蔽和一个单独掩蔽的批次，对于在ImpactPack框架内进行进一步分析和操作至关重要。"
+    },
+    {
+        "question": "SAM模型参数在SAMDetectorSegmented节点中有什么作用？",
+        "answer": "SAM模型参数定义了用于分割任务的机器学习模型，直接影响节点准确检测和分割图像中对象的能力。"
+    },
+    {
+        "question": "SAMDetectorSegmented节点处理哪些输入数据？",
+        "answer": "SAMDetectorSegmented节点处理SAM模型参数、分割提示（segs）和图像输入，用于分割和检测图像中的特定区域。"
+    },
+    {
+        "question": "detection_hint参数在SAMDetectorSegmented节点的检测过程中扮演什么角色？",
+        "answer": "detection_hint参数提供了细化检测过程的方法，允许指定不同的检测策略，优化节点性能以适应输入图像的特性。"
+    },
+    {
+        "question": "结合mask和batch_masks输出分别表示什么？",
+        "answer": "combined_mask参数代表分割过程的聚合结果，包含所有检测到的对象的单一掩蔽；而batch_masks参数提供一个数组，包含每个检测到的对象的单独掩蔽，允许对每个对象进行详细的分析和操作。"
+    },
+    {
+        "question": "哪些参数影响SAMDetectorSegmented节点的掩蔽输出质量和精度？",
+        "answer": "threshold、dilation、bbox_expansion、mask_hint_threshold和mask_hint_use_negative参数影响SAMDetectorSegmented节点的掩蔽输出质量、精度和适应性，通过调整置信度水平、掩蔽扩展、边界框扩展、掩蔽提示敏感度和负掩蔽提示使用方式来实现。"
+    },
+    {
+        "question": "mask_hint_threshold影响SAMDetectorSegmented节点的哪个方面？",
+        "answer": "mask_hint_threshold参数用于设置掩蔽提示的敏感度，影响SAMDetectorSegmented节点如何解释和响应提供的分割提示，直接影响分割质量。"
+    }
+]

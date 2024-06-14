@@ -1,0 +1,46 @@
+[
+    {
+        "question": "IPAdapterLoadEmbeds节点的作用是什么？",
+        "answer": "IPAdapterLoadEmbeds 节点在ComfyUI中的作用是检索和处理嵌入数据，它是系统中处理嵌入数据的关键组件，确保嵌入数据被正确加载并为下游任务提供可用性。"
+    },
+    {
+        "question": "使用IPAdapterLoadEmbeds节点可以加载什么类型的数据？",
+        "answer": "IPAdapterLoadEmbeds 节点可以加载后缀为 .ipadpt 的嵌入数据存储文件，这些文件中包含了处理下游任务所需的信息。"
+    },
+    {
+        "question": "嵌入数据在ComfyUI的IPAdapterLoadEmbeds节点中的表现形式是什么？",
+        "answer": "IPAdapterLoadEmbeds节点输出的嵌入数据表现为torch.Tensor张量，这是输入数据的加工形式，准备用于后续的分析或模型训练。"
+    },
+    {
+        "question": "IPAdapterLoadEmbeds节点的load方法功能是什么？",
+        "answer": "load方法是IPAdapterLoadEmbeds节点的关键功能，用于从指定文件路径中定位并加载嵌入数据，确保数据正确处理后以张量形式输出。"
+    },
+    {
+        "question": "哪些参数是IPAdapterLoadEmbeds节点的必填项？",
+        "answer": "在IPAdapterLoadEmbeds节点中，'embeds' 是必填参数，它是一个包含嵌入数据存储文件路径的列表，指导节点定位数据的正确位置。"
+    },
+    {
+        "question": "在ComfyUI中，哪些节点依赖于IPAdapterLoadEmbeds节点的输出？",
+        "answer": "依赖于IPAdapterLoadEmbeds节点输出的节点通常涉及后续的分析任务或模型训练，具体的节点依赖于数据处理的工作流和目标。"
+    },
+    {
+        "question": "IPAdapterLoadEmbeds节点的输入格式是什么？",
+        "answer": "IPAdapterLoadEmbeds节点的输入参数格式为 List[str]，其中列表包含的是文件路径字符串。"
+    },
+    {
+        "question": "IPAdapterLoadEmbeds节点的输出格式是什么？",
+        "answer": "IPAdapterLoadEmbeds节点的输出格式为 torch.Tensor，表示加载并处理后的嵌入数据。"
+    },
+    {
+        "question": "在ComfyUI中，哪些组件与IPAdapterLoadEmbeds节点关联？",
+        "answer": "IPAdapterLoadEmbeds节点关联于 'ipadapter/embeds' 类别，用于处理与嵌入数据相关的任务，它的输出常被其他节点用于进一步的分析和处理。"
+    },
+    {
+        "question": "IPAdapterLoadEmbeds节点的实现和存储库是什么？",
+        "answer": "IPAdapterLoadEmbeds节点的实现和存储库在 https://github.com/cubiq/ComfyUI_IPAdapter_plus.git ，其中详细地编码了节点的加载和处理逻辑。"
+    },
+    {
+        "question": "IPAdapterLoadEmbeds节点在ComfyUI系统中支持的基础设施类型是什么？",
+        "answer": "IPAdapterLoadEmbeds节点在ComfyUI系统中支持的基础设施类型是 CPU，意味着数据处理和加载操作运行在CPU上。"
+    }
+]

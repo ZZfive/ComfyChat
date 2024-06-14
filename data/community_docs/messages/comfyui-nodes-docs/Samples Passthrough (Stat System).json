@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Samples_Passthrough_Stat_System 是什么?",
+        "answer": "WAS_Samples_Passthrough_Stat_System 是 ComfyUI 的一个自定义节点，属于 WAS Suite/Debug 类别，用于提供系统当前状态的统计概览，包括 RAM、VRAM 使用情况和硬盘空间利用率，无需深入了解底层数据收集过程的具体细节。"
+    },
+    {
+        "question": "WAS_Samples_Passthrough_Stat_System 的 'stat_system' 方法做什么？",
+        "answer": "'stat_system' 方法记录关键的系统指标，如 RAM 和 VRAM 使用情况、硬盘空间利用率，提供对资源消耗的洞察，帮助监控系统的健康状况和性能。"
+    },
+    {
+        "question": "WAS_Samples_Passthrough_Stat_System 需要什么输入类型？",
+        "answer": "WAS_Samples_Passthrough_Stat_System 需要 'samples' 参数作为输入，它代表潜在空间样本，对于执行 'stat_system' 方法至关重要，通常数据类型为 Union[torch.Tensor, List[torch.Tensor]]."
+    },
+    {
+        "question": "哪些系统指标会被 WAS_Samples_Passthrough_Stat_System 记录？",
+        "answer": "WAS_Samples_Passthrough_Stat_System 记录的指标包括：使用的 RAM、总的 RAM、使用的 VRAM、总的 VRAM以及使用的硬盘空间和总硬盘空间，以 GB 为单位。"
+    },
+    {
+        "question": "WAS_Samples_Passthrough_Stat_System 节点的输出是什么？",
+        "answer": "WAS_Samples_Passthrough_Stat_System 节点输出 'samples'，即为通过系统传递的原始潜在空间样本，未经任何更改，数据类型同样为 Union[torch.Tensor, List[torch.Tensor]]."
+    },
+    {
+        "question": "WAS_Samples_Passthrough_Stat_System 节点运行在什么类型的基础设施上？",
+        "answer": "WAS_Samples_Passthrough_Stat_System 节点运行在 CPU 上，其性能和资源监测包括 CPU 类型的基础数据。"
+    },
+    {
+        "question": "如何使用 WAS_Samples_Passthrough_Stat_System 节点获取系统统计信息？",
+        "answer": "通过提供 'samples' 参数输入到 WAS_Samples_Passthrough_Stat_System 节点，运行 'stat_system' 方法，节点会输出处理并未经改动的原始样本，同时后台记录系统统计信息，如RAM、VRAM使用情况及硬盘利用率。"
+    }
+]

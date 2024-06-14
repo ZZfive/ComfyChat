@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Mask By Text 节点（ClipsSegNode）的主要功能是什么？",
+        "answer": "Mask By Text 节点（ClipSegNode）的主要功能是根据提供的文本提示从输入图像自动计算出一个分段掩码。"
+    },
+    {
+        "question": "Mask By Text 节点（ClipSegNode）需要哪些必要输入？",
+        "answer": "Mask By Text 节点（ClipSegNode）的必要输入包括图像（Image）、文本提示（prompt）和精度参数（precision）。"
+    },
+    {
+        "question": "Mask By Text 节点（ClipSegNode）中的阈值掩码输出是什么？",
+        "answer": "阈值掩码（thresholded_mask）是基于文本提示对图像进行二进制分割后的结果，是该节点的主要输出，用于需要主题隔离进行处理的应用。"
+    },
+    {
+        "question": "如何在 Mask By Text 节点（ClipSegNode）中应用负面提示以提高掩码的精度？",
+        "answer": "通过提供负面提示，Mask By Text 节点（ClipSegNode）可以指定在分割中应排除的内容，通过增加额外的上下文信息，改善掩码精度。"
+    },
+    {
+        "question": "Mask By Text 节点（ClipSegNode）的原始掩码有何作用？",
+        "answer": "原始掩码（raw_mask）提供了一个分割掩码的连续值表示，这在需要更精细理解分隔的应用场景中可能更有用。"
+    },
+    {
+        "question": "在 Mask By Text 节点（ClipSegNode）操作中，精度参数（precision）决定什么？",
+        "answer": "精度参数（precision）在 Mask By Text 节点（ClipSegNode）中决定了掩码生成的阈值，即节点多严格地决定哪些像素属于掩码。"
+    },
+    {
+        "question": "Mask By Text 节点（ClipSegNode）的 normalize 参数有什么用途？",
+        "answer": "normalize 参数在 Mask By Text 节点（ClipSegNode）中指示节点是否应将结果掩码标准化至 0 到 1 之间，这对于需要一致掩码强度的某些应用可能很有帮助。"
+    }
+]

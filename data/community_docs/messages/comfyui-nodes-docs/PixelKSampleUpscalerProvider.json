@@ -1,0 +1,38 @@
+[
+    {
+        "question": "PixelKSampleUpscalerProvider节的主要功能是什么？",
+        "answer": "PixelKSampleUpscalerProvider节点主要用于图像放大，封装了选择放大方法并应用于输入图像的逻辑，提供增强图像质量的接口。"
+    },
+    {
+        "question": "在PixelKSampleUpscalerProvider节点中，'scale_method'参数的作用是什么？",
+        "answer": "'scale_method'参数确定了图像放大的具体算法，影响放大输出的质量和风格；可选值包括'nearest-exact'，'bilinear'，'lanczos'，'area'等。"
+    },
+    {
+        "question": "选择不同的'vae'选项在PixelKSampleUpscalerProvider中如何影响图像放大？",
+        "answer": "选择不同的'vae'（变分自编码器）配置会影响图像放大的特征提取和潜在空间操作，从而增强放大图像的细节和整体质量。"
+    },
+    {
+        "question": "PixelKSampleUpscalerProvider节点中的'cfg'参数如何影响放大图像的处理结果？",
+        "answer": "'cfg'参数在节点中用于调整放大图像的细节和伪影平衡，对图像的最终外观产生重要影响。"
+    },
+    {
+        "question": "哪些因素可以影响PixelKSampleUpscalerProvider的放大输出质量？",
+        "answer": "放大输出质量可能受到'scale_method'（缩放方法）、'steps'（步数）和'denoise'（去噪参数）的选择影响，此外，'cfg'（配置值）和使用的模型（'model'参数）也可以显著影响放大效果。"
+    },
+    {
+        "question": "PixelKSampleUpscalerProvider输出类型中的'upscaler'代表什么？",
+        "answer": "输出类型中的'upscaler'代表了放大器，即节点放大的图像或用于图像放大的模型。它封装了放大的结果。"
+    },
+    {
+        "question": "使用PixelKSampleUpscalerProvider节点时，'use_tiled_vae'的目的是什么？",
+        "answer": "'use_tiled_vae'参数允许节点通过将图像分割成较小的平铺来处理更大的图像，有助于提高内存效率和放大的精细度。"
+    },
+    {
+        "question": "如何在PixelKSampleUpscalerProvider中调整去噪水平？",
+        "answer": "在PixelKSampleUpscalerProvider中，通过调整'denoise'参数可以控制应用于放大图像的噪声减少级别，从而改善最终图像的清晰度和清洁度。"
+    },
+    {
+        "question": "PixelKSampleUpscalerProvider的'positive'和'negative'参数分别在放大过程中扮演什么角色？",
+        "answer": "'positive'和'negative'参数分别用于在放大过程中指导模型增强或抑制特定图像特征，促进增强性和避免不想要的效果。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Images_To_RGB节点的功能是什么？",
+        "answer": "WAS_Images_To_RGB节点的`image_to_rgb`方法旨在将一系列图像转换为它们的RGB表示形式，通过将图像转换为张量并转换为RGB格式，然后如果提供了多个图像，则将张量堆叠起来，以准备图像进行进一步处理或分析。"
+    },
+    {
+        "question": "WAS_Images_To_RGB节点处理单个图像和多个图像的方式有何不同？",
+        "answer": "当处理单个图像时，WAS_Images_To_RGB节点直接将图像转换为RGB张量并返回；而当处理多个图像时，它将每个图像转换为RGB张量，并将所有张量堆叠起来一起返回。"
+    },
+    {
+        "question": "如何在ComfyUI中使用WAS_Images_To_RGB节点转换图像为RGB格式？",
+        "answer": "在ComfyUI中，通过将图像输入到WAS_Images_To_RGB节点的`images`参数中，可以将图像转换为RGB格式的张量。"
+    },
+    {
+        "question": "在WAS_Images_To_RGB节点中，'images'输入的类型是什么？",
+        "answer": "'images'输入的类型为Comfy dtype为IMAGE，Python dtype为List[torch.Tensor]，表示一组需要转换为RGB格式的图像集合。"
+    },
+    {
+        "question": "WAS_Images_To_RGB节点的输出是什么，以及这个输出的用途？",
+        "answer": "输出类型为`tensors`，它们是代表输入图像经过RGB转换后的张量或张量堆叠。这个输出允许与WAS套件中需要RGB图像数据进行进一步处理的其他节点集成。"
+    },
+    {
+        "question": "WAS_Images_To_RGB节点的`image_to_rgb`方法如何处理图像转换过程？",
+        "answer": "`image_to_rgb`方法首先检查是否有多个图像；如果有，则将每个图像转换为RGB张量并堆叠；否则，直接转换图像为RGB张量。"
+    },
+    {
+        "question": "哪些场景可能需要使用WAS_Images_To_RGB节点？",
+        "answer": "在需要准备图像数据以进行深度学习模型输入或任何需要RGB格式图像进行进一步处理分析的场景下，WAS_Images_To_RGB节点可以用来转换图像到所需的RGB张量格式。"
+    }
+]

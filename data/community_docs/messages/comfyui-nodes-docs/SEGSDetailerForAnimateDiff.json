@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SEGSDetailerForAnimateDiff 是什么？",
+        "answer": "SEGSDetailerForAnimateDiff 是 ComfyUI 中 ImpactPack/Detailer 类别下的一款自定义节点，该节点旨在增强图像帧中的分割细节，特别适用于提高动画差异的质量。它通过缩放和处理图像的各个部分来提高其清晰度和细节水平。"
+    },
+    {
+        "question": "SEGSDetailerForAnimateDiff 节点处理哪些类型的输入？",
+        "answer": "SEGSDetailerForAnimateDiff 节点处理的输入包括原始图像数据（image_frames）、分割信息（segs）、用于设置细节增强过程的各类参数如 guide_size、指导细节增强焦点的参数 guide_size_for 等，并支持可选输入如 refiner_ratio 和 refiner_basic_pipe_opt。"
+    },
+    {
+        "question": "哪些参数直接影响 SEGSDetailerForAnimateDiff 输出图像的细节和质量？",
+        "answer": "guide_size 参数设置细节增强过程的缩放因子；max_size 参数为放大的图像帧设定了最大尺寸；steps 参数决定了采样过程中迭代次数；cfg 参数调整采样过程的配置；sampler_name 参数指定采样方法；scheduler 参数定义采样步骤的调度策略；denoise 参数控制应用于增强图像的降噪水平。"
+    },
+    {
+        "question": "如何调整 SEGSDetailerForAnimateDiff 节点增强效果的细节水平？",
+        "answer": "通过调整 guide_size 参数的值可以为图像分段引入更多细节，该参数设置细节增强过程的缩放因子。"
+    },
+    {
+        "question": "SEGSDetailerForAnimateDiff 节点输出什么类型的图像？",
+        "answer": "SEGSDetailerForAnimateDiff 节点输出增强分割细节的图像（segs）和控制网对细节增强过程影响的视觉表示（cnet_images）。"
+    },
+    {
+        "question": "使用 SEGSDetailerForAnimateDiff 时，哪些输入类型是必需的？",
+        "answer": "在使用 SEGSDetailerForAnimateDiff 节点时，必需的输入类型包括 image_frames（图像帧）、segs（分割）、guide_size（指导大小）、guide_size_for（指导大小应用方式）、max_size（最大尺寸）、seed（种子）、steps（步骤）、cfg（配置参数）、sampler_name（采样器名称）、scheduler（调度器）、denoise（降噪）和 basic_pipe（基础管道）。"
+    },
+    {
+        "question": "可选参数 refiner_basic_pipe_opt 在 SEGSDetailerForAnimateDiff 中的作用是什么？",
+        "answer": "可选的 refiner_basic_pipe_opt 参数提供了次级细化过程所需的核心组件，通过输入一组额外组件用于加强或微调图像细节增强的效果。"
+    }
+]

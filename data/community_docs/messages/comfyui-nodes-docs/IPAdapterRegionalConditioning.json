@@ -1,0 +1,38 @@
+[
+    {
+        "question": "IPAdapterRegionalConditioning节点的用途是什么？",
+        "answer": "IPAdapterRegionalConditioning节点在ComfyUI中用于实现区域性条件化生成图像，通过处理图像生成过程中指定区域的注意力遮罩和文本条件化。"
+    },
+    {
+        "question": "哪些参数是IPAdapterRegionalConditioning节点的必需输入？",
+        "answer": "IPAdapterRegionalConditioning节点的必需输入包括图像（作为参考图像）、图像权重、文本权重、权重类型、开始位置和结束位置。"
+    },
+    {
+        "question": "IPAdapterRegionalConditioning节点的Python dtype是什么类型？",
+        "answer": "IPAdapterRegionalConditioning节点的Python dtype可以是torch.Tensor（用于图像和注意力遮罩）或float（用于各种权重和位置参数），以及str（用于权重类型）。"
+    },
+    {
+        "question": "IPAdapterRegionalConditioning节点的Comfy dtype包含哪些类型？",
+        "answer": "IPAdapterRegionalConditioning节点的Comfy dtype包含IMAGE、FLOAT和WEIGHT_TYPES，以及用于注意力遮罩和条件化输入的MASK和CONDITIONING类型。"
+    },
+    {
+        "question": "在IPAdapterRegionalConditioning节点中，如何控制权重的计算方法？",
+        "answer": "通过指定'weight_type'参数来控制权重的计算方法，以影响图像和文本之间的平衡，从而获得更好的生成效果。"
+    },
+    {
+        "question": "IPAdapterRegionalConditioning节点输出哪些类型的数据？",
+        "answer": "IPAdapterRegionalConditioning节点输出IP适配器参数（IPADAPTER_PARAMS），正向条件化（POSITIVE）和负向条件化（NEGATIVE）数据。"
+    },
+    {
+        "question": "使用IPAdapterRegionalConditioning节点时需要注意什么硬件要求？",
+        "answer": "使用时硬件方面需要满足GPU的基础设施类型。"
+    },
+    {
+        "question": "IPAdapterRegionalConditioning节点支持哪些非必需输入？",
+        "answer": "节点支持注意力遮罩（mask）、正向条件化（positive）和负向条件化（negative）作为非必需输入。"
+    },
+    {
+        "question": "如何在图像生成中使用IPAdapterRegionalConditioning节点控制特定区域的生成效果？",
+        "answer": "可以通过提供特定区域的注意力遮罩参数（mask），结合正向（positive）和负向（negative）条件化输入，来控制和细化区域内的生成效果。"
+    }
+]

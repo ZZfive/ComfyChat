@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Inset_Image_Bounds节点的作用是什么？",
+        "answer": "WAS_Inset_Image_Bounds节点在ComfyUI中用于调整图像的边界，通过在图像的各个边界插入特定值来修改边界，同时确保图像的结构完整性。"
+    },
+    {
+        "question": "哪些参数是WAS_Inset_Image_Bounds节点要求的输入？",
+        "answer": "WAS_Inset_Image_Bounds节点要求的输入参数包括image_bounds, inset_left, inset_right, inset_top, 和inset_bottom，这些参数分别定义了图像的初始边界和需要插入的边界值。"
+    },
+    {
+        "question": "image_bounds参数在WAS_Inset_Image_Bounds节点中代表什么？",
+        "answer": "image_bounds参数在WAS_Inset_Image_Bounds节点中表示图像的初始边界，用于确定图像尺寸修改的起始点，这一参数对于尺寸修改流程至关重要。"
+    },
+    {
+        "question": "WAS_Inset_Image_Bounds节点的inset_left参数是什么？",
+        "answer": "inset_left参数定义了图像左侧边界插入的像素数量，这对于确定图像左边缘调整后的具体位置非常重要。"
+    },
+    {
+        "question": " inset_bottom参数的作用是什么？",
+        "answer": " inset_bottom参数指示图像的底部边界需要插入的像素数，它是定义图像下边界调整后位置的关键因素。"
+    },
+    {
+        "question": "WAS_Inset_Image_Bounds节点的输出是什么类型的？",
+        "answer": "WAS_Inset_Image_Bounds节点的输出为inset_bounds，其类型为IMAGE_BOUNDS，表示应用边界插入操作后图像的新边界。"
+    },
+    {
+        "question": "使用WAS_Inset_Image_Bounds节点时可能遇到的问题是什么？",
+        "answer": "当使用WAS_Inset_Image_Bounds节点时，如果提供的inset参数值超过了原始图像的边界，则会抛出一个ValueError异常，提示'inset'值不可超过图像的边界限制。"
+    }
+]

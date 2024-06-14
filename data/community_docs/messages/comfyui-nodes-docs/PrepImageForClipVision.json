@@ -1,0 +1,30 @@
+[
+    {
+        "question": "PrepImageForClipVision节点的主要功能是什么？",
+        "answer": "PrepImageForClipVision节点主要功能是为ClipVision模型预处理图像，通过调整图像大小、裁剪和锐化，确保图像符合模型的输入要求，以增强特征识别。"
+    },
+    {
+        "question": "哪些类型的图像参数是PrepImageForClipVision节点所必需的？",
+        "answer": "PrepImageForClipVision节点需要图像参数作为主要输入，支持的图像类型包括PIL.Image或torch.Tensor，这是由节点处理的核心内容。"
+    },
+    {
+        "question": "在PrepImageForClipVision节点中，interpolation参数的作用是什么？",
+        "answer": "在PrepImageForClipVision节点中，interpolation参数定义了图像调整大小的插值模式，影响结果图像的清晰度和细节，用户可以从提供的六种插值类型中选择。"
+    },
+    {
+        "question": "PrepImageForClipVision节点的crop_position参数对图像处理有何影响？",
+        "answer": "crop_position参数决定了图像裁剪的方式，可以设置为‘top’、‘bottom’、‘left’、‘right’、‘center’或‘pad’，影响图像的构图和焦点，以确保重要特征的正确定位与呈现。"
+    },
+    {
+        "question": "如何使用PrepImageForClipVision节点的sharpening参数提升图像的清晰度？",
+        "answer": "sharpening参数允许微调图像对比度，增强边缘和细节，范围在0.0到1.0之间，步长为0.05，通过调整该参数，可以显著提高图像的视觉清晰度和模型的特征识别能力。"
+    },
+    {
+        "question": "PrepImageForClipVision节点输出的图像格式是什么？",
+        "answer": "PrepImageForClipVision节点输出的图像已预处理和调整，格式为torch.Tensor，符合ComfyUI的IMAGE类型，以便于进一步分析或处理。"
+    },
+    {
+        "question": "PrepImageForClipVision节点处理的图像会被调整到什么尺寸？",
+        "answer": "在PrepImageForClipVision节点中，处理后的图像会被调整为224x224的固定尺寸，这是为了适应ClipVision模型的输入要求，确保图像正确格式化和分析。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "KarrasScheduler节点在ComfyUI中的作用是什么？",
+        "answer": "KarrasScheduler节点在ComfyUI中根据Karras等人（2022年）的方法生成噪声时间表，用于控制扩散过程中的采样迭代，确保噪声到清晰数据表示的平稳过渡。"
+    },
+    {
+        "question": "KarrasScheduler节点的'steps'参数为什么重要？",
+        "answer": "'steps'参数定义了采样过程中的迭代次数，直接影响噪声时间表的粒度，进而影响采样的结果质量，是采样过程的关键配置。"
+    },
+    {
+        "question": "如何设置'sigma_max'参数以控制初始噪声水平？",
+        "answer": "'sigma_max'参数指定了采样过程中噪声的最大标准差，它是形成初始噪声水平的关键决定因素，影响着整体采样的保真度。"
+    },
+    {
+        "question": "在KarrasScheduler节点中，'sigma_min'参数对采样数据有何影响？",
+        "answer": "'sigma_min'参数设置了噪声的最小标准差，它影响采样数据的最终清晰度，是采样过程结束时对噪声时间表细微调整的关键。"
+    },
+    {
+        "question": "什么是'rho'参数，它在KarrasScheduler节点中扮演什么角色？",
+        "answer": "'rho'参数控制了采样迭代过程中噪声标准差降低的速率，是噪声减少计划调度中的关键因素，直接影响采样算法的收敛速度和效率。"
+    },
+    {
+        "question": "KarrasScheduler节点输出的'SIGMAS'代表什么？",
+        "answer": "输出'SIGMAS'代表了一系列σ值，构成了采样过程的噪声时间表，是算法逐步减少噪声、生成清晰数据表示的基础。"
+    },
+    {
+        "question": "使用KarrasScheduler节点时，在什么类型的处理器上运算会更高效？",
+        "answer": "KarrasScheduler节点的Infra type为CPU，意味着在CPU上执行此节点会更高效，这不依赖于高计算能力的GPU，适合不需要大量并行计算的场景。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DilateMaskInSEGS 节点属于哪个分类？",
+        "answer": "DilateMaskInSEGS 节点属于 ImpactPack/Util 分类，这是一个在 ComfyUI 软件中针对图像分割掩码操作的工具节点。"
+    },
+    {
+        "question": "DilateMaskInSEGS 节点的用途是什么？",
+        "answer": "DilateMaskInSEGS 节点用于对图像分割掩码执行形态学膨胀操作，通过扩展分割区域的边界来增强分割效果，特别适用于边界定义模糊的情况。"
+    },
+    {
+        "question": "DilateMaskInSEGS 节点处理的输入数据类型是什么？",
+        "answer": "DilateMaskInSEGS 节点处理的主要输入数据类型是 SEGS，即分割对象集合，以及一个整数型的膨胀量 dilation。"
+    },
+    {
+        "question": "节点处理 sege 集合的目的是什么？",
+        "answer": "处理 ‘segs’ 集合的目的是应用形态膨胀操作来修改分割掩码的边界，最终输出扩展后的分割对象集合，用于后续图像处理或分析。"
+    },
+    {
+        "question": "节点中的 ‘dilation’ 参数如何影响处理结果？",
+        "answer": "‘dilation’ 参数确定了分割掩码的边界扩展程度，较大的值会导致更显著的边界扩展，这对于某些应用场景是需要的，但也可能引入不准确之处。"
+    },
+    {
+        "question": "节点是如何处理膨胀操作的？",
+        "answer": "节点通过核心函数 core.dilate_mask 对每个分割对象的 cropped_mask 应用指定的 dilation 参数，从而达到膨胀的效果。"
+    },
+    {
+        "question": "节点的输出是什么？",
+        "answer": "节点的输出是 new_segs，即包含了应用膨胀后修改的分割对象的集合，这些对象现在具有扩展的边界，适用于后续的工作流程。"
+    }
+]

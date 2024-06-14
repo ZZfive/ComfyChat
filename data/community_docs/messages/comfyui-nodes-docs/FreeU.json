@@ -1,0 +1,30 @@
+[
+    {
+        "question": "FreeU是什么类型的自定义节点？",
+        "answer": "FreeU是ComfyUI中model_patches类别的一个自定义节点，它通过调整模型参数来增强特定任务的表现。"
+    },
+    {
+        "question": "FreeU节点如何修改模型的行为？",
+        "answer": "FreeU节点通过调整模型中间表示的规模和偏移参数，影响模型通道，从而改变模型的行为，增强其特定任务上的性能。"
+    },
+    {
+        "question": "在FreeU节点中，b1参数的作用是什么？",
+        "answer": "b1参数是FreeU节点中的一个缩放因子，作用于模型通道的前一半，影响节点调整模型输出的能力。"
+    },
+    {
+        "question": "s2参数如何影响FreeU节点中的模型输出？",
+        "answer": "s2参数是FreeU节点中的偏移量，专门用于调整模型通道的第二季度，定制模型输出以满足特定要求。"
+    },
+    {
+        "question": "FreeU节点的modified_model输出代表什么？",
+        "answer": "FreeU节点的modified_model输出是经过补丁处理的模型，表示输入模型应用了FreeU参数调整后的增强版本。"
+    },
+    {
+        "question": "哪些设备类型支持FreeU节点的运行？",
+        "answer": "FreeU节点支持在GPU设备上运行，这是节点的操作建议，以优化计算能力。"
+    },
+    {
+        "question": "FreeU节点的输出块是如何在内部被修改的？",
+        "answer": "在FreeU节点中，输出块通过应用特定的缩放和偏移因子进行修改，使用了Fourier_filter函数来影响模型通道的特定部分。"
+    }
+]

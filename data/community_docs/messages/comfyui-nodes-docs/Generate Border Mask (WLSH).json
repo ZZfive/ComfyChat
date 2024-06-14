@@ -1,0 +1,46 @@
+[
+    {
+        "question": "WLSH_Generate_Edge_Mask是什么节点？",
+        "answer": "WLSH_Generate_Edge_Mask是ComfyUI中的一个自定义节点，专注于根据给定的方向和图像生成边缘遮罩，用于修复任务中的区域掩蔽。"
+    },
+    {
+        "question": "哪些输入参数对于WLSH_Generate_Edge_Mask节点至关重要？",
+        "answer": "对于WLSH_Generate_Edge_Mask，image、direction、pixels和overlap参数至关重要，它们分别用于处理基础图像、确定掩码的方向、定义掩码边缘的大小以及控制掩码边缘的厚度。"
+    },
+    {
+        "question": "WLSH_Generate_Edge_Mask节点处理哪些类型的输入数据？",
+        "answer": "WLSH_Generate_Edge_Mask处理'IMAGE'类型的图像、字符串类型的方向（如'up'、'down'、'left'或'right'）、整数类型的像素大小以及整数类型的重叠厚度。"
+    },
+    {
+        "question": "WLSH_Generate_Edge_Mask输出什么类型的掩码？",
+        "answer": "WLSH_Generate_Edge_Mask生成了IMAGE类型的关键输出掩码，用于表示将要进行修复处理的区域，其特征是基于输入参数，直接决定了后续图像输出的维修质量。"
+    },
+    {
+        "question": "如何使用WLSH_Generate_Edge_Mask节点的direction参数？",
+        "answer": "direction参数在WLSH_Generate_Edge_Mask中用于定义掩码方向，它接受四个预设值：'left'、'right'、'up'或'down'，以特定方向对图像的修复区域进行定位。"
+    },
+    {
+        "question": "像素参数(pixels)在WLSH_Generate_Edge_Mask中的作用是什么？",
+        "answer": "像素参数(pixels)在WLSH_Generate_Edge_Mask中定义了掩码边缘的大小，从而控制掩蔽区域的范围，该参数以像素单位调整掩蔽尺寸。"
+    },
+    {
+        "question": "WLSH_Generate_Edge_Mask节点如何处理图像修复中的重叠(overlap)参数？",
+        "answer": "节点中的重叠参数用于定义掩码边缘的厚度，这对于确保掩蔽区域和未掩蔽区域之间的平滑过渡是关键，防止图像修复时的边缘突变，从而提升最终修复图像的质量。"
+    },
+    {
+        "question": "WLSH_Generate_Edge_Mask的像素范围默认是什么？",
+        "answer": "WLSH_Generate_Edge_Mask的像素参数默认范围是从32到512，以32为步长，这提供了调整掩膜边缘尺寸的灵活性，进而精细控制修复区域的范围。"
+    },
+    {
+        "question": "如何定义掩码边缘的厚度在WLSH_Generate_Edge_Mask中？",
+        "answer": "WLSH_Generate_Edge_Mask中的掩码边缘厚度由overlap参数定义，它的默认范围从16到256，可按16为步长调整，精细控制边界模糊度，以确保修复操作的平滑过渡。"
+    },
+    {
+        "question": "WLSH_Generate_Edge_Mask节点如何创建掩码以实现平滑过渡？",
+        "answer": "WLSH_Generate_Edge_Mask通过应用GaussianBlur过滤器在生成的掩码边缘上实现平滑过渡，确保掩蔽区域与未掩蔽区域之间的融合更加自然，提高了修复图像的质量。"
+    },
+    {
+        "question": "生成边框遮罩的ComfyUI自定义节点有哪些重要的特性？",
+        "answer": "重要的特性包括处理图像创建与指定方向对齐的边框遮罩、允许用户自定义边框宽度和重叠厚度，以及为边框遮罩应用GaussianBlur以实现自然过渡。"
+    }
+]

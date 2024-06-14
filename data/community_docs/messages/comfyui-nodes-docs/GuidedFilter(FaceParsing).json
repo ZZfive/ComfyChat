@@ -1,0 +1,30 @@
+[
+    {
+        "question": "GuidedFilter是什么类？它属于哪个类别？",
+        "answer": "GuidedFilter是一个在ComfyUI中用于面部解析(face_parsing)的类，它应用非线性过滤技术，利用引导图像来影响过滤过程，以便在去除噪声或平滑外观的同时保留原始图像的结构和边缘。"
+    },
+    {
+        "question": "GuidedFilter节点的主要功能是什么？",
+        "answer": "GuidedFilter节点的主要功能是通过非线性过滤技术来增强图像中的细节，同时去除噪声，特别是在面部解析应用中，它能在平滑图像过程中保留边缘和结构。"
+    },
+    {
+        "question": "使用GuidedFilter过滤图像时，哪些参数是必需的？",
+        "answer": "使用GuidedFilter过滤图像时，必需的参数包括图像(image)、半径(radius)和eps值。这些参数分别影响了输入图像的选择、滤波器考虑的局部邻域大小以及滤波器的灵敏度。"
+    },
+    {
+        "question": "如何理解GuidedFilter节点中的'eps'参数？",
+        "answer": "'eps'参数在GuidedFilter节点中控制过滤过程的灵敏度，较低的值会导致更激进的平滑效果，而较高的值能保留更多细节。"
+    },
+    {
+        "question": "在哪些情况下，'guide'参数会在GuidedFilter节点中使用？",
+        "answer": "'guide'参数在GuidedFilter节点中用于提供参考图像，当存在时，它会指导过滤过程，实现基于引导内容的选择性增强或抑制图像特征，特别是在处理面部图片以改善解析效果时。"
+    },
+    {
+        "question": "GuidedFilter节点的输出是什么？它的格式是什么？",
+        "answer": "GuidedFilter节点的输出是已经通过引导滤波操作处理后的图像，这个图像格式为IMAGE，其Python数据类型为torch.Tensor，在ComfyUI范畴下则对应的类型同样是IMAGE。"
+    },
+    {
+        "question": "在实现GuidedFilter功能时，采用了哪种类型的计算平台？",
+        "answer": "在实现GuidedFilter功能时，使用的是CPU型计算平台，这决定了其运算环境与依赖，具体如I/O限制、并行处理能力等。"
+    }
+]

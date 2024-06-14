@@ -1,0 +1,42 @@
+[
+    {
+        "question": "SaveAnimatedWEBP节点的'save_images'方法用于什么目的？",
+        "answer": "SaveAnimatedWEBP节点的'save_images'方法用于高效地将一系列图像保存为动画WEBP文件，利用PIL库进行图像转换，并允许控制帧速率、无损压缩和质量设置。"
+    },
+    {
+        "question": "SaveAnimatedWEBP节点在工作流中的角色是什么？",
+        "answer": "SaveAnimatedWEBP节点在图像处理工作流的最终输出阶段扮演关键角色，能够从一系列静态图像中创建高质量的动画视觉效果。"
+    },
+    {
+        "question": "在SaveAnimatedWEBP节点中，'images'参数的Comfy数据类型和Python数据类型分别是什么？",
+        "answer": "'images'参数的Comfy数据类型是IMAGE，Python数据类型是List[torch.Tensor]，用于提供将保存为动画的输入图像。"
+    },
+    {
+        "question": "对于SaveAnimatedWEBP节点，'fps'参数如何影响动画的输出？",
+        "answer": "'fps'参数决定动画的帧速率，直接影响到输出动画的流畅度和运动感知。"
+    },
+    {
+        "question": "无损压缩在SaveAnimatedWEBP节点中如何实现？",
+        "answer": "通过设置'lossless'参数为True，SaveAnimatedWEBP节点在保存动画时采用无损压缩方法，确保动画保持最高质量，没有图像数据的损失。"
+    },
+    {
+        "question": "在SaveAnimatedWEBP节点中，'quality'参数的作用是什么？",
+        "answer": "'quality'参数在SaveAnimatedWEBP节点中用于平衡文件大小和图像质量，较高的值会产生更好质量的图像但文件更大，较低值则相反。"
+    },
+    {
+        "question": "如何在SaveAnimatedWEBP节点中选择压缩算法？",
+        "answer": "通过'方法'参数，可以选择创建动画WEBP文件时使用的压缩算法，不同的方法提供不同程度的压缩效率和速度。"
+    },
+    {
+        "question": "在SaveAnimatedWEBP节点，'filename_prefix'参数如何帮助组织输出文件？",
+        "answer": "'filename_prefix'参数确定了保存文件的命名基础，结合唯一标识符创建完整的文件名，便于组织和识别输出。"
+    },
+    {
+        "question": "SaveAnimatedWEBP节点的'ui'输出提供了什么信息？",
+        "answer": "'ui'输出是一个字典，包含保存的图像详细信息，如文件名和子文件夹位置，帮助用户追踪和引用保存的动画文件。"
+    },
+    {
+        "question": "SaveAnimatedWEBP节点的推荐基础设施类型是什么？",
+        "answer": "SaveAnimatedWEBP节点推荐使用CPU作为基础设施类型，以用于图像和动画处理。"
+    }
+]

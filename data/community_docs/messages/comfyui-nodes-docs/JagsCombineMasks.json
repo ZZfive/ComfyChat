@@ -1,0 +1,38 @@
+[
+    {
+        "question": "JagsCombineMasks节点的功能是什么？",
+        "answer": "JagsCombineMasks节点在ComfyUI中用于将多个掩码张量协同整合为统一的表示形式，便于在给定的图像上下文中集成分割区域，以简化二进制或分类数据的合并过程，提高基于掩码的图像处理任务的实用性。"
+    },
+    {
+        "question": "使用JagsCombineMasks时，输入图像的作用是什么？",
+        "answer": "输入图像作为JagsCombineMasks的基础层，是合并和可视化掩码的起点，它提供了准确叠加和整合掩码所需的空间上下文，确保掩码在正确的位置显示于图像上。"
+    },
+    {
+        "question": "在使用JagsCombineMasks时，mask_1和mask_2分别代表着什么？",
+        "answer": "mask_1是主掩码，在JagsCombineMasks的融合过程中是核心组件。mask_2是次级掩码，通过引入额外的分割层来完善合并掩码，两者的结合提高了最终输出的粒度和特异性。"
+    },
+    {
+        "question": "如何在没有mask_3的情况下使用JagsCombineMasks？",
+        "answer": "mask_3在JagsCombineMasks中是可选的。即使没有mask_3，节点仍然可以工作，它默认会合并mask_1和mask_2，生成一个基础的合并掩码。"
+    },
+    {
+        "question": "JagsCombineMasks生成的掩码有哪些类型？",
+        "answer": "JagsCombineMasks生成三种类型的掩码：Combined Mask（合并掩码），Heatmap Mask（热图掩码），以及BW Mask（二值掩码），分别用于汇总分割信息、可视化分割结果和提供清晰的分割表示。"
+    },
+    {
+        "question": "JagsCombineMasks的输出掩码在ComfyUI中以什么形式提供？",
+        "answer": "JagsCombineMasks的输出掩码在ComfyUI中以MASK和IMAGE两种形式提供，其中Combined Mask、Heatmap Mask和BW Mask分别对应不同的图像处理需求和视觉效果。"
+    },
+    {
+        "question": "哪些任务可以受益于JagsCombineMasks节点的增强功能？",
+        "answer": "基于掩码的图像处理任务，如分割、物体识别和特定区域的增强，可以显著受益于JagsCombineMasks节点的增强功能，因为它简化并优化了掩码数据的集成和可视化。"
+    },
+    {
+        "question": "JagsCombineMasks是如何生成可视化结果的？",
+        "answer": "JagsCombineMasks生成可视化结果的过程包括将掩码转换为热图和二值掩码，通过颜色叠加和透明度设置实现与基础图像的融合，以直观地展示分割区域。"
+    },
+    {
+        "question": "在JagsCombineMasks的代码实现中，参数'input_image'和'mask_1'至'mask_3'的作用是什么？",
+        "answer": "在JagsCombineMasks的代码实现中，'input_image'是基础图像用于生成可视化结果，而'mask_1'至'mask_3'是掩码张量，用于定义特定区域的分割，且后二者或三者会被整合以创建复合掩码。"
+    }
+]

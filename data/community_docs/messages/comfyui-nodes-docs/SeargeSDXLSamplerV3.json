@@ -1,0 +1,38 @@
+[
+    {
+        "question": "SeargeSDXLSamplerV3 是什么类，它属于哪个类别？",
+        "answer": "SeargeSDXLSamplerV3 是一个属于“Searge/_deprecated_/Sampling”类别的类，旨在使用基础模型和细化模型的组合执行采样过程，生成高质量潜在图像。"
+    },
+    {
+        "question": "SeargeSDXLSamplerV3 节点如何整合噪声和条件输入来产生图像？",
+        "answer": "SeargeSDXLSamplerV3 节点通过整合噪声和条件输入（正向和负向条件数据）来生成细化结果，这提高了整体采样效率和图像质量。"
+    },
+    {
+        "question": "在 SeargeSDXLSamplerV3 中，基础模型起何作用？",
+        "answer": "基础模型在 SeargeSDXLSamplerV3 中用于建立采样的基础结构，确定生成潜在图像过程中的初始条件和变化。"
+    },
+    {
+        "question": "哪两个参数控制着 SeargeSDXLSamplerV3 的采样过程，使其沿预期的方向进行？",
+        "answer": "base_positive 和 base_negative 参数通过指导正向（期望特征）和负向（避免不希望的特征）条件，确保 SeargeSDXLSamplerV3 的采样沿预期方向进行。"
+    },
+    {
+        "question": "refiner_positive 和 refiner_negative 在 SeargeSDXLSamplerV3 节点中具有什么功能？",
+        "answer": "refiner_positive 和 refiner_negative 参数在 SeargeSDXLSamplerV3 中用于强调期望的特征并避免不希望的元素，从而精炼和定向最终输出的细节。"
+    },
+    {
+        "question": "哪几个参数对 SeargeSDXLSamplerV3 中采样过程的细节和质量有直接影响？",
+        "answer": "steps、cfg 和 sampler_name 参数直接影响 SeargeSDXLSamplerV3 中采样过程的细节、质量和效率，其中steps控制过程的复杂性和时间，cfg调整探索与利用的平衡，sampler_name定义使用的具体采样算法。"
+    },
+    {
+        "question": "SeargeSDXLSamplerV3 提供了哪些输出类型？",
+        "answer": "SeargeSDXLSamplerV3 的输出是代表最终潜在图像的 'latent' 类型，包含了通过基础和细化模型组合实现的精炼特征和细节。"
+    },
+    {
+        "question": "SeargeSDXLSamplerV3 节点的采样过程是如何实现去噪的？",
+        "answer": "SeargeSDXLSamplerV3 节点通过 denoise 参数控制采样过程中的去噪水平，提高最终输出图像的清晰度和质量。"
+    },
+    {
+        "question": "什么参数可以帮助用户定制 SeargeSDXLSamplerV3 节点预细化过程的预备步骤数量？",
+        "answer": "refiner_prep_steps 参数在 SeargeSDXLSamplerV3 节点中可允许用户定制预细化过程中的预备步骤数量，优化细化模型的应用点。"
+    }
+]

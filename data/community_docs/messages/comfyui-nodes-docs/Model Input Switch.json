@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Model_Input_Switch 的主要功能是什么？",
+        "answer": "WAS_Model_Input_Switch 是 ComfyUI 中的一个自定义节点，主要功能是根据布尔条件选择两个模型中的一个，用于工作流中的决策逻辑。"
+    },
+    {
+        "question": "模型切换方法在 ComfyUI 的工作流中扮演什么角色？",
+        "answer": "模型切换方法作为 ComfyUI 工作流中的决策节点，根据布尔输入决定将数据流向导向 model_a 或者 model_b，影响后续的处理序列。"
+    },
+    {
+        "question": "WAS_Model_Input_Switch 中的 model_a 和 model_b 参数有何区别？",
+        "answer": "model_a 和 model_b 都是 WAS_Model_Input_Switch 的输入参数，分别代表节点可以选择的第一个和第二个模型；具体选择哪一个模型取决于布尔条件。"
+    },
+    {
+        "question": "在 WAS_Model_Input_Switch 中，'boolean' 参数的用途是什么？",
+        "answer": "'boolean' 参数在 WAS_Model_Input_Switch 中充当开关，根据其值（True 或 False）决定节点返回 model_a 或 model_b，从而影响后续工作流程的走向。"
+    },
+    {
+        "question": "WAS_Model_Input_Switch 的 selected_model 输出代表什么？",
+        "answer": "selected_model 输出是 WAS_Model_Input_Switch 的关键输出，它表示根据布尔条件选择的最终模型，决定了工作流中接下来的处理步骤。"
+    },
+    {
+        "question": "哪些类型的数据被 WAS_Model_Input_Switch 识别为有效的输入？",
+        "answer": "WAS_Model_Input_Switch 识别的输入包括 'MODEL' 类型的数据，通常为 torch.nn.Module 类或任何兼容的模型对象；以及 'BOOLEAN' 类型的数据，用于条件判断。"
+    },
+    {
+        "question": "WAS_Model_Input_Switch 节点在模型选择逻辑中如何执行其功能？",
+        "answer": "WAS_Model_Input_Switch 节点通过其 model_switch 方法，根据传入的 boolean 参数，选择返回 model_a 或 model_b，以此实现基于条件的模型选择和数据流程控制。"
+    }
+]

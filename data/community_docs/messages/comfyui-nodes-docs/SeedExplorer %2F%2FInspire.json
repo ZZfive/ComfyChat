@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SeedExplorer属于哪个分类，其主要功能是什么？",
+        "answer": "SeedExplorer属于InspirePack/Prompt分类，它是一个操作和生成噪声模式的节点，旨在基于提供的种子和附加参数激发和促进噪声生成任务中的创造性过程。"
+    },
+    {
+        "question": "SeedExplorer的输出类型是什么以及Python中的数据类型？",
+        "answer": "SeedExplorer的输出类型是噪声（noise），在Python中的数据类型是torch.Tensor。"
+    },
+    {
+        "question": "哪些参数对于SeedExplorer的噪声生成至关重要？",
+        "answer": "潜在变量(latent)和种子提示(seed_prompt)对于SeedExplorer噪声生成至关重要，潜在变量为噪声生成提供基础结构，而种子提示指导噪声生成过程，允许用户注入特定的模式或风格到输出中。"
+    },
+    {
+        "question": "如果需要在噪声中引入多样性和复杂性，应当如何设置？",
+        "answer": "为了在噪声中引入多样性和复杂性，应将enable_additional参数设为True，这样就会应用额外的种子变化。"
+    },
+    {
+        "question": "哪些输入参数是选择性而非必需的？",
+        "answer": "SeedExplorer中，额外种子(additional_seed)和额外强度(additional_strength)是选择性而非必需的输入参数，它们可以为噪声引入额外的变化层，提高最终输出的多样性。"
+    },
+    {
+        "question": "能否在不使用GPU的情况下运行SeedExplorer？",
+        "answer": "可以，通过设置noise_mode参数为'CPU'，SeedExplorer可以使用CPU资源进行噪声生成，但推荐使用GPU以提高计算密集型任务的性能。"
+    },
+    {
+        "question": "SeedExplorer在处理种子变化时，如何确保噪声的一致性和连贯性？",
+        "answer": "SeedExplorer通过initial_batch_seed_mode参数控制，该参数可影响生成的噪声模式的整体一致性和连贯性，选择恰当的种子模式是确保噪声特性的一致性的关键。"
+    }
+]

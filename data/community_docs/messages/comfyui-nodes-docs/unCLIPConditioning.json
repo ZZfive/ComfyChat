@@ -1,0 +1,30 @@
+[
+    {
+        "question": "unCLIPConditioning节点的功能是什么？",
+        "answer": "unCLIPConditioning节点旨在修改和增强模型的调节输入，使生成过程获得更详细的控制，通过添加额外参数如强度和噪声增强来改善输出结果。"
+    },
+    {
+        "question": "在unCLIPConditioning节点中，'conditioning'输入的作用是什么？",
+        "answer": "'conditioning'输入定义了基础调节参数，其中包含指导模型输出的特征和属性，对确定生成内容起到决定性作用。"
+    },
+    {
+        "question": "unCLIPConditioning模块中的'strength'参数如何影响生成过程？",
+        "answer": "'strength'参数作为调节输入的修饰符，允许调整模型输出的细节或强度水平至期望的数值。"
+    },
+    {
+        "question": "噪声增强（noise_augmentation）在unCLIPConditioning节点中的作用是什么？",
+        "answer": "噪声增强参数在调节过程中引入随机性，有助于生成更多样化和创造性的输出，对增加输出图像的多样性至关重要。"
+    },
+    {
+        "question": "unCLIPConditioning节点输出的数据类型是什么？",
+        "answer": "unCLIPConditioning节点输出的是经过调整和增强的调节输入，以CONDITIONING的Comfy dtype输出，具体为List[Tuple[str, dict]]的Python dtype形式。"
+    },
+    {
+        "question": "unCLIPConditioning的基础设施类型是什么？",
+        "answer": "unCLIPConditioning节点的推荐运行基础设施类型为CPU。"
+    },
+    {
+        "question": "如何在unCLIPConditioning应用中使用'strength'参数达到精细化控制？",
+        "answer": "当'strength'参数设置为非零值时，unCLIPConditioning会修改提供的条件，通过向'conditioning'添加额外的unclip_conditioning信息。'strength'参数的调整允许用户精细控制生成图像的特性与质量。"
+    }
+]

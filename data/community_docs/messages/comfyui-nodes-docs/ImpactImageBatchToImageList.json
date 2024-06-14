@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageBatchToImageList节点的用途是什么？",
+        "answer": "ImageBatchToImageList节点用于将一批图像转换为单个图像的列表，作为ImpactPack类别中的一个实用工具，它对从批量处理到单个图像处理的转换至关重要，特别是对于需要逐个图像操作的下游任务。"
+    },
+    {
+        "question": "ImageBatchToImageList属于哪个类别和仓库？",
+        "answer": "ImageBatchToImageList节点属于ImpactPack/Util类别，它可以在仓库https://github.com/ltdrdata/ComfyUI-Impact-Pack.git中找到。"
+    },
+    {
+        "question": "ImageBatchToImageList的输入参数是什么？",
+        "answer": "ImageBatchToImageList的输入参数是'image'，它是一个批次的输入图像，类型为torch.Tensor，这个参数决定了将被转换为单个图像列表的内容。"
+    },
+    {
+        "question": "ImageBatchToImageList的输出类型是什么？",
+        "answer": "ImageBatchToImageList的输出类型是'images'，它是由输入批次派生出的单个图像列表，其中每个图像对应原始批次中的一个元素，适用于需要单独图像操作或分析的应用程序。输出的Python数据类型为List[torch.Tensor]。"
+    },
+    {
+        "question": "哪些任务需要ImageBatchToImageList节点进行图像批量转换至单个图像列表？",
+        "answer": "某些需要逐个图像操作的下游任务，例如图像识别、分类或其他依赖于单个图像输入的任务，可能需要使用ImageBatchToImageList节点将批量图像转换为单个图像列表。"
+    },
+    {
+        "question": "ImageBatchToImageList节点的基础设施类型是什么？",
+        "answer": "ImageBatchToImageList节点的基础设施类型是CPU，这意味着它主要在中央处理器上运行和处理图像数据。"
+    },
+    {
+        "question": "ImageBatchToImageList节点如何处理图像批次并生成单个图像列表？",
+        "answer": "ImageBatchToImageList节点通过遍历输入图像批次，将每个批次元素转换为单个torch.Tensor，从而生成由单个图像组成的列表，这适用于需要逐个图像进行操作或分析的场景。"
+    }
+]
