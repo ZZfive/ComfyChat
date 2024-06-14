@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What are the two mainstream methods of Stable Diffusion model for image-to-image transformation?",
+        "answer": "The two mainstream methods are Overdraw and Reference. Overdraw takes the input image as a base and uses the model to regenerate a new image on it, while Reference uses the input image as part of the prompt, inputting it with the text prompt into the model to generate a new image."
+    },
+    {
+        "question": "How does the Overdraw method work in Stable Diffusion's image-to-image process?",
+        "answer": "In the Overdraw method, the input image is first added noise and then denoised into a new image using the same method as the text-to-image process. This workflow is generally called the Simple img2img workflow."
+    },
+    {
+        "question": "What is the difference between the Reference method and the Overdraw method in ComfyUI's Stable Diffusion image-to-image process?",
+        "answer": "The Reference method does not redraw the input image but uses it as part of the prompt. It inputs the image and text prompts together into the model to generate a new image, whereas the Overdraw method directly modifies the input image to generate a new one."
+    },
+    {
+        "question": "What models should be downloaded and placed into the corresponding folders in ComfyUI for image-to-image transformations?",
+        "answer": "The required models include Dreamshaper (placed in models/checkpoints folder), stable-diffusion-2-1-unclip (placed in models/checkpoints folder), coadapter-style-sd15v1 (placed in models/style_models folder), and OpenAI CLIP Model (placed in models/clip_vision folder)."
+    },
+    {
+        "question": "What kind of effect can you expect if you use the image as a supplement to the text prompt in ComfyUI's image-to-image processes?",
+        "answer": "If the image is used as a supplement to the text prompt, the generated image will also contain elements from the original image and may even have a similar style to the original image. This workflow is generally referred to as the unCLIP model workflow."
+    }
+]

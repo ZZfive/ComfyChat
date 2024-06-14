@@ -1,0 +1,30 @@
+[
+    {
+        "question": "IPAdapter Plus可以解决ComfyUI中风格迁移的哪些问题？",
+        "answer": "IPAdapter Plus使得用户无需寻找特定的LoRA模型或撰写复杂的提示词，只需提供一张参考图像，就能实现图像风格的迁移，特别适用于难以描述或找不到相应LoRA模型的风格。"
+    },
+    {
+        "question": "如何在ComfyUI中安装IPAdapter Plus插件？",
+        "answer": "安装IPAdapter Plus插件有多种方法：可以直接从其GitHub页面下载插件文件并置于ComfyUI的custom_nodes/目录下，或通过ComfyUI的Manager进行安装；如果你使用Comflowy，也可在左侧的Extensions页面搜索并下载ComfyUI_IPAdapter_plus。"
+    },
+    {
+        "question": "安装IPAdapter Plus时还需要安装什么依赖？",
+        "answer": "使用者还需安装insightface依赖，具体安装步骤可参阅Comflowy FAQ中的教程。"
+    },
+    {
+        "question": "IPAdapter节点支持哪些类型模型，它们各有什么特点？",
+        "answer": "IPAdapter支持如SD1.5、SDXL等模型，其中ip-adapter_sd15为基础模型，风格强度适中；ip-adapter_sd15_light_v11.bin为轻量级模型，风格迁移程度较轻。Plus模型如ip-adapter-plus_sd15.safetensors比基础模型更强大，适用于生图需求；ip-adapter-plus-face_sd15.safetensors专门用于处理人物面部，对于面部问题处理效果更佳。"
+    },
+    {
+        "question": "IPAdapter Plus的FaceID模型有什么作用？",
+        "answer": "FaceID模型在进行人物风格迁移时，可以专门控制人物面部五官，确保与参考图的一致性，适用于处理面部特别之处的精确迁移。"
+    },
+    {
+        "question": "使用IPAdapter Plus能生成哪些类型的效果？",
+        "answer": "用户可以生成如插画风格的人像、全新的合成图像，甚至NFT头像，后者不仅作为身份标识，还能在Web3中带来投资和社交价值。生成的NFT头像风格多元，包括像素风、赛博朋克风、奇葩另类风格等。"
+    },
+    {
+        "question": "如何使用Controlnet改进IPAdapter Plus的风格迁移效果？",
+        "answer": "通过在基础风格迁移工作流中加入Controlnet节点，特别是线图（lineart）节点，可以控制最终生成图像的轮廓与输入图更加一致，用户可以调整steps和cfg参数来优化生成效果。"
+    }
+]

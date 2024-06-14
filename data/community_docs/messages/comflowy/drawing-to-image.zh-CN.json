@@ -1,0 +1,30 @@
+[
+    {
+        "question": "在ComfyUI中，如何从涂鸦直接生成图片？",
+        "answer": "通过使用Painter Node代替Load Image节点，并将Checkpoint的模型切换至SDXL Turbo，同时调整KSampler的step和cfg为1，可以在ComfyUI中实现边画图边生成图片的功能。"
+    },
+    {
+        "question": "Painter Node在ComfyUI中扮演什么角色？",
+        "answer": "Painter Node在ComfyUI中作为一个简易的画板节点，允许用户在生成图片的过程中进行涂鸦，代替传统的Load Image节点提供动态图像生成的功能。"
+    },
+    {
+        "question": "如何在ComfyUI中设置流程以实现自动图像生成？",
+        "answer": "在ComfyUI中，通过勾选Extra options并启用Auto Queue选项，再点击Queue Prompt，即可设定流程实现图像的自动连续生成。"
+    },
+    {
+        "question": "为什么要将KSampler的step和cfg参数均设置为1来实现涂鸦生图？",
+        "answer": "将KSampler的step和cfg参数设置为1是为了确保在每个小步骤后能看到即时的变化，这对于边画边生成的实时预览效果至关重要。"
+    },
+    {
+        "question": "SDXL Turbo模型在涂鸦图像生成中起到什么作用？",
+        "answer": "SDXL Turbo模型在ComfyUI中的涂鸦生图流程中，用于提供更快的渲染速度及更佳的图像质量，是实现边画边生成图片的关键模型选择。"
+    },
+    {
+        "question": "ComfyUI中哪些步骤需要调整以实现自动生图流程？",
+        "answer": "在ComfyUI中实现自动生图，需要调整的步骤包括将模型设置为SDXL Turbo，调整KSampler参数，以及在Extra options中启用Auto Queue并通过Queue Prompt控制流程的启停。"
+    },
+    {
+        "question": "哪些节点和设置可以协助实现ComfyUI的涂鸦生图流程？",
+        "answer": "实现ComfyUI的涂鸦生图流程需要使用Painter Node替代Load Image节点，选择SDXL Turbo模型，以及调整KSampler的step和cfg参数为1，并通过队列管理设置确保自动图像生成过程顺畅。"
+    }
+]

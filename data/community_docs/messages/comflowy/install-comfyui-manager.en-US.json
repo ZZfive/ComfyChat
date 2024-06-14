@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the ComfyUI Manager designed to do in ComfyUI?",
+        "answer": "The ComfyUI Manager is a plugin that extends the functionality of ComfyUI, a GUI tool for AI image generation, allowing users to install additional plugins and manage models more efficiently."
+    },
+    {
+        "question": "How can one begin using the ComfyUI Manager if they are already familiar with command-line tools?",
+        "answer": "To use the ComfyUI Manager via the command line, open the ComfyUI project using VS Code or Terminal, enter the custom_nodes directory, and clone the ComfyUI Manager repository from GitHub using the command `git clone https://github.com/ltdrdata/ComfyUI-Manager.git`."
+    },
+    {
+        "question": "What is the recommended method to start ComfyUI after installing the ComfyUI Manager through VS Code?",
+        "answer": "After installing the ComfyUI Manager through VS Code, return to the ComfyUI directory by navigating back or by using the terminal's capabilities, and then start ComfyUI by executing the command `python main.py --force-fp16`."
+    },
+    {
+        "question": "What steps should be taken to handle the situation where the ComfyUI Manager panel does not appear after starting ComfyUI?",
+        "answer": "If the ComfyUI Manager panel does not appear after starting ComfyUI, and an error related to 'torchvision' is displayed in the terminal, it indicates that the 'torchvision' module is missing. To resolve this, close the ComfyUI service, install 'torchvision' by running `pip install torchvision`, and then restart ComfyUI."
+    },
+    {
+        "question": "Which feature of the ComfyUI Manager allows for automatic installation of missing nodes required for imported workflows?",
+        "answer": "The 'Install Missing Custom Nodes' feature of the ComfyUI Manager allows for the automatic detection and installation of plugins necessary for workflows that contain nodes not present in the current environment."
+    },
+    {
+        "question": "What is the procedure for manually installing the ComfyUI Manager if you prefer not to use the command line?",
+        "answer": "To manually install the ComfyUI Manager, download the plugin from its GitHub repository, extract the downloaded ZIP file, rename the folder to 'ComfyUI-Manager', move this folder into the custom_nodes directory of the ComfyUI project, and then start ComfyUI to complete the installation process."
+    },
+    {
+        "question": "What does the ComfyUI Manager enable users to do with the 'Download Model' feature?",
+        "answer": "The 'Download Model' feature in the ComfyUI Manager allows users to install models to specific nodes within ComfyUI. Users can select the model they need from the provided interface, and it will be automatically placed in the correct folder without requiring manual movement."
+    },
+    {
+        "question": "How can one verify that a plugin has been successfully installed through the ComfyUI Manager?",
+        "answer": "To verify the successful installation of a plugin, after restarting ComfyUI, double-click on a blank space in the interface and enter the name of a node from the plugin. If the search yields results, this confirms that the installation was successful. If not, check in the 'Install Custom Nodes' list within the ComfyUI Manager to see if it is marked as installed and, if necessary, refresh the browser page or close and reopen the browser to reattempt the search."
+    }
+]

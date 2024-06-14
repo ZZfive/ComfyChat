@@ -1,0 +1,30 @@
+[
+    {
+        "question": "在ComfyUI中使用Inpainting技术的主要目的是什么？",
+        "answer": "在ComfyUI中使用Inpainting技术的主要目的是更换图像中特定区域的内容，而不会影响图像的其他部分，如修改人物发色而不改变头部或背景的其他特征。"
+    },
+    {
+        "question": "为了开始使用Inpainting技术，需要下载和准备哪个模型，并放在ComfyUI的哪个文件夹中？",
+        "answer": "为了开始使用Inpainting技术，需要下载并准备Dreamshaper 8-inpainting模型，并将其放在ComfyUI的models/checkpoints文件夹中。"
+    },
+    {
+        "question": "在Inpainting工作流中，grow_mask_by配置项的值越大意味着什么？",
+        "answer": "在Inpainting工作流中，grow_mask_by配置项的值越大意味着新生成的图片部分与原图的融合会更加自然。"
+    },
+    {
+        "question": "在MaskEditor中，如何标记需要修改的区域？",
+        "answer": "在MaskEditor中，可以通过涂抹工具标出想要修改的区域，如人物的头发，并可以使用Thickness选项调整笔刷大小以更精确地涂抹。完成后，点击Save to node保存更改。"
+    },
+    {
+        "question": "在切换Inpainting模型时的推荐技巧是什么？",
+        "answer": "在切换Inpainting模型时的推荐技巧是使用和初始图片生成时一致的模型，例如如果初始图片是由Dreamshaper生成的，则Inpainting场景中也应使用Dreamshaper的Inpainting模型。"
+    },
+    {
+        "question": "在KSampler中调整denoise值为0.85的效果是什么？",
+        "answer": "在KSampler中调整denoise值为0.85会使生成的新图片与原图更加接近，但保留了一定程度的变化，具体的数值可根据个人偏好或测试结果进行修改。"
+    },
+    {
+        "question": "在Outpainting工作流中，Pad Image for Outpainting节点的作用是什么？",
+        "answer": "在Outpainting工作流中，Pad Image for Outpainting节点用于扩展图像的边界以增加图像尺寸，通过调整left、top、right和bottom参数控制扩展的方向和像素数，feathering参数则影响边缘平滑度，更大值可使过渡更自然但可能导致涂抹感。"
+    }
+]

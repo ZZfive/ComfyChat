@@ -1,0 +1,30 @@
+[
+    {
+        "question": "为什么在使用AI绘图工具，如ComfyUI时，结果往往具有随机性?",
+        "answer": "AI绘图工具如ComfyUI的结果具有随机性的主要原因是许多配置或操作是不可视化的，这意味着修改某个配置可能不会立即在界面上呈现明显变化，导致学习过程需要理解AI相关的理论知识。"
+    },
+    {
+        "question": "在ComfyUI中，Stable Diffusion系统的构架包含哪些关键组件?",
+        "answer": "Stable Diffusion系统由多个关键组件构成，包括Text Encoder（用于将文本编译为特征向量）、Image Information Creator（用于在潜空间里基于特征向量降噪生成中间产物）和Image Decoder（将中间产物解码为实际图像）等主要部分。"
+    },
+    {
+        "question": "Latent Space（潜空间）在ComfyUI中的作用是什么?",
+        "answer": "潜空间在ComfyUI中的作用是将图像编码为一组数据并进行压缩，以提取数据中最重要特征和结构，使图像能在较低的维度中操作和插值，更精细地控制和编辑图像，以提高生成图像的质量和逼真度。"
+    },
+    {
+        "question": "Stable Diffusion如何生成一张基于prompt的图片?",
+        "answer": "Stable Diffusion生成图片通过将prompt转化为特征向量，与随机图像一起放入Image Information Creator中，基于这些特征向量在潜空间里进行多步骤的降噪，最终得到的中间产物再由Image Decoder解码为实际图像。"
+    },
+    {
+        "question": "Denoise过程中的Noise Predictor作用是什么?",
+        "answer": "在Denoise过程中，Noise Predictor模型的作用是预测随机图中包含的噪音，基于prompt和随机图片预测噪声图像B，并基于不含prompt的特征预测噪声图像C，以便之后进行对比和修正以去除无关噪声。"
+    },
+    {
+        "question": "使用CFG Scale（或Guidance Scale）为何重要?",
+        "answer": "使用CFG Scale（或Guidance Scale）是为了提高图片生成的准确性，此系数放大基于prompt预测的噪声D，再与无prompt噪声C相加，得到图E，从而提高「根据prompt预测的噪声」的计算权重，更精确地生成与prompt相关的图像。"
+    },
+    {
+        "question": "CLIP模型在ComfyUI的Text Encoder中如何发挥作用?",
+        "answer": "ComfyUI的Text Encoder部分使用CLIP模型将输入的prompt转化为与现实图片有相关性的特征向量，文本被转化为特征向量，这些向量与现实图像的特征向量在降噪过程中有一定程度的相关性和影响，帮助生成与prompt描述相对应的图像。"
+    }
+]

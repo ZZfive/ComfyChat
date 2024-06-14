@@ -1,0 +1,30 @@
+[
+    {
+        "question": "IPAdapter是什么类型的插件?",
+        "answer": "IPAdapter是ComfyUI的一个插件，它能够轻松实现图生图，即将一张参考图像的风格或主题应用到另一张图像上，实现风格迁移和主题转换。"
+    },
+    {
+        "question": "IPAdapter插件如何实现图像到图像的条件转换?",
+        "answer": "IPAdapter通过解耦交叉注意力机制创新，引入专门的图像特征交叉注意力层，与文本特征层并行工作，捕捉和整合图像特征，确保图像的详细信息得到充分保留和利用。"
+    },
+    {
+        "question": "哪些节点是IPAdapter中的关键组件?",
+        "answer": "IPAdapter中的关键节点包括IPAdapterEncoder、IPAdapterUnifiedLoader、IPAdapterCombineEmbeds和IPAdapterEmbeds，它们分别负责图像编码、模型加载、嵌入合并和嵌入生成。"
+    },
+    {
+        "question": "如何实现不同模型在IPAdapter中的加载?",
+        "answer": "通过IPAdapterUnifiedLoader节点，用户可以统一加载不同的IPAdapter模型，包括SD1.5、SDXL等，并且可以轻松地选择和加载所需的模型。"
+    },
+    {
+        "question": "IPAdapter插件有哪些主要功能?",
+        "answer": "IPAdapter插件支持风格迁移、内容转换、条件生成和动画支持。它能够捕捉参考图像的风格和主题应用到新生成的图像上，并可以精确定义条件生成的图像，甚至支持动画创作。"
+    },
+    {
+        "question": "使用IPAdapter进行面部特征转换的步骤是什么?",
+        "answer": "要实现面部特征转换，可以使用FaceID功能，需要添加IPAdapterUnifiedLoaderFacelD和IPAdapterFacelD节点，并在加载器中选择下载好的Face模型，然后切换模型为PLUS FACE (portraits)以确保面部的一致性。"
+    },
+    {
+        "question": "如何使用IPAdapter与ControlNet结合提高最终图像与输入图的相关性?",
+        "answer": "通过增加ControlNet节点如lineart来控制主体轮廓的同时进行风格迁移，可以确保生成的轮廓与上传的一致，调整steps和cfg参数来达到所需效果。"
+    }
+]

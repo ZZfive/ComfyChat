@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LoRA在ComfyUI中的作用是什么？",
+        "answer": "LoRA在ComfyUI中被用于修改生成图片的风格，它通过在不破坏原有模型结构的情况下注入参数，实现了模型的个性化定制和风格化图像生成。"
+    },
+    {
+        "question": "如何在ComfyUI中添加LoRA节点？",
+        "answer": "在ComfyUI中添加LoRA节点，只需右键选择All node，然后进入loaders，选择Load LoRA节点即可添加。"
+    },
+    {
+        "question": "添加的LoRA节点如何与ComfyUI中的其他节点连接？",
+        "answer": "LoRA节点左侧连接Checkpoint模型，右侧连接CLIP和KSampler节点，以便在生成图片流程中应用LoRA风格。"
+    },
+    {
+        "question": "使用LoRA时是否需要更换VAE？",
+        "answer": "是的，有时LoRA的效果在特定的VAE算法下会更好，因此，在使用LoRA时可能需要根据LoRA的特性选择或替换VAE。"
+    },
+    {
+        "question": "LCM-LoRA相较于SDXL Turbo有哪些优势？",
+        "answer": "LCM-LoRA相比SDXL Turbo，支持生成更高的分辨率图片（1024x1024），且在多数情况下生成的图片效果更优，不过在生成速度上，Turbo更胜一筹。"
+    },
+    {
+        "question": "在ComfyUI中配置LCM-LoRA时，KSampler节点应该如何设置？",
+        "answer": "配置LCM-LoRA的KSampler时，应当将step设置为5（或大于4），cfg设置为1.8（或大于1.5），选择sampler_name为LCM，scheduler为sgm_uniform。"
+    },
+    {
+        "question": "使用LCM-LoRA生成图片时，Empty Latent Image的尺寸应如何设置？",
+        "answer": "使用LCM-LoRA时，Empty Latent Image的尺寸建议设置为1024x1024或更大，以充分利用LCM-LoRA支持的高分辨率生成能力。"
+    }
+]

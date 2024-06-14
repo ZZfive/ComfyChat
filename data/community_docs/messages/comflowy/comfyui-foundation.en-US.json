@@ -1,0 +1,26 @@
+[
+    {
+        "question": "What are the essential components of the Stable Diffusion model and their equivalents in ComfyUI?",
+        "answer": "The essential components of the Stable Diffusion model in ComfyUI are CLIP Text Encode (Text Encoder), KSmapler (Image Information Creator), Empty Latent Image (Image Information Creator), and VAE Decoder (Image Decoder)."
+    },
+    {
+        "question": "What are the key nodes for configuring prompts in ComfyUI and what principles should be followed?",
+        "answer": "The CLIP Text Encode node is used for configuring the prompt. Principles for writing prompts include keeping them under 75 tokens, using commas to separate keywords, placing important words at the front, and using `(keyword:weight)` to adjust the relevance of words in the generated image."
+    },
+    {
+        "question": "What is the purpose of the Load Checkpoint node in ComfyUI?",
+        "answer": "The Load Checkpoint node in ComfyUI is the starting point of all workflows and allows you to switch or load different models, including Stable Diffusion versions like 1.5, XL, and XL-Turbo."
+    },
+    {
+        "question": "How does the Empty Latent Image node in ComfyUI contribute to the image generation process?",
+        "answer": "The Empty Latent Image node in ComfyUI adjusts the final image size and is where the generation of images begins, as the model runs based on the number specified by the batch_size value."
+    },
+    {
+        "question": "What general advice is given for the best image output settings using KSampler in ComfyUI?",
+        "answer": "For optimal image output using the KSampler in ComfyUI, settings include using the SDXL model for high image quality and diversity, adjusting the step value between 20-30, and setting cfg between 6-8 for good results."
+    },
+    {
+        "question": "Which connectable items in ComfyUI are determined by color-coding and what does 'Like Connects With Like' imply?",
+        "answer": "Connectable items in ComfyUI are determined by color-coding, implying that only endpoints of the same color can connect with each other. 'Like Connects With Like' suggests that only items of the same type can connect, ensuring that connections are made properly and functionally."
+    }
+]

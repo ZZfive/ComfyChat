@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What is Stable Cascade and how does it differ from the Stable Diffusion model?",
+        "answer": "Stable Cascade is a new text-to-image model released by Stability AI using the Würstchen architecture. It differs from the Stable Diffusion model by having a smaller latent space with a compression factor of 42, compared to a factor of 8 in Stable Diffusion. This leads to faster image generation and lower training costs."
+    },
+    {
+        "question": "How does Stable Cascade compare to Midjourney in terms of cost?",
+        "answer": "Stable Cascade's cost of generation is significantly lower compared to SD 1.5, being 16 times less expensive. When comparing the cost of generating images between Stable Cascade and Midjourney, they were set to generate in batches of 4 to allow for a fair comparison of generation costs."
+    },
+    {
+        "question": "In what aspects does Stable Cascade outperform Midjourney according to the document?",
+        "answer": "Stable Cascade outperforms Midjourney in prompt alignment, adhering more closely to the requirements of the prompt. However, Midjourney tends to generate more aesthetically diverse images, though this can be subjective."
+    },
+    {
+        "question": "What two main advantages does Stable Cascade have over Midjourney, besides prompt alignment?",
+        "answer": "Stable Cascade generates images faster than Midjourney, especially on a good graphics card, which can significantly affect work efficiency. It also benefits from a large open-source ecosystem, offering additional capabilities like the IPAdapter and ControlNet which are not available in Midjourney."
+    },
+    {
+        "question": "What workflow adjustment is necessary to use the Stable Cascade model in ComfyUI?",
+        "answer": "To use Stable Cascade in ComfyUI, one must adjust the default workflow by changing the Empty Latent Image node to StableCascade_EmptyLatentImage and setting the compression to 42. The checkpoint node's model should be set to the stage c model that was downloaded. Additionally, another checkpoint and StableCascade_StageB_Conditioning nodes should be added, and the second checkpoint node should load the stage b model."
+    }
+]

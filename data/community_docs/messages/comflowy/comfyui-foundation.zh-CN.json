@@ -1,0 +1,30 @@
+[
+    {
+        "question": "在开始学习ComfyUI或ComflowySpace前，应完成哪些准备工作？",
+        "answer": "在开始学习ComfyUI或ComflowySpace之前，确保你已经完成了安装，并下载好Stable Diffusion v1.5或Stable Diffusion XL模型，将模型文件置于相应的文件夹内。"
+    },
+    {
+        "question": "Stable Diffusion模型中的Text Encoder在ComfyUI中对应哪个节点？",
+        "answer": "Stable Diffusion模型中的Text Encoder在ComfyUI中对应'CLIP Text Encode'节点。"
+    },
+    {
+        "question": "KSampler节点在ComfyUI中的主要作用是什么？",
+        "answer": "KSampler节点在ComfyUI中的主要作用是模型生成图片的部分，它是整个生成流程的核心，涉及到潜空间的采样操作。"
+    },
+    {
+        "question": "如何在ComfyUI中调整Generate Image（文生图）的图片尺寸？",
+        "answer": "在ComfyUI中，通过'Empty Latent Image'节点调整'width'（宽度）和'height'（高度）参数来调整Generate Image（文生图）的图片尺寸。"
+    },
+    {
+        "question": "为什么有些模型像SDXL默认大小是1024x1024，而SD v1.5则是512x512？",
+        "answer": "不同模型默认大小的差异主要源于训练使用的图片大小不同。例如，SDXL在训练时使用的是更大尺寸的图片，因此，它在处理大尺寸模型时能提供更好的效果。"
+    },
+    {
+        "question": "使用ComfyUI时，如何确保重复生成一张完全相同的图片？",
+        "answer": "通过保持'KSampler'节点中的'seed'（随机种子）和Prompt完全一致来确保在ComfyUI中重复生成一张完全相同的图片。这是通过控制潜空间的初始噪声实现的。"
+    },
+    {
+        "question": "在ComfyUI中，如何将潜空间的图像转换为肉眼可见的图像？",
+        "answer": "在ComfyUI中，通过向'Empty Latent Image'节点添加'VAE Decode'节点，并与'VAE loader'节点连接，最后连接上'Save Image'或'Preview Image'节点，可以实现潜空间图像到肉眼可见图像的转换。"
+    }
+]

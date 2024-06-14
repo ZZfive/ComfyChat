@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ControlNet在ComfyUI中的作用是什么？",
+        "answer": "ControlNet在ComfyUI中通过图片的结构信息来控制模型生成的图片，可以基于简笔画、图片的mask或边缘信息来影响模型的输出。"
+    },
+    {
+        "question": "控制构图的需求如何通过ControlNet解决？",
+        "answer": "ControlNet通过将结构信息输入模型，影响Stable Diffusion生成的图片，从而实现对构图的控制，例如简笔画控制或深度图控制。"
+    },
+    {
+        "question": "Scribble ControlNet的工作流程如何搭建？",
+        "answer": "Scribble ControlNet的搭建包括加载默认工作流，添加Load Image和Apply ControlNet节点，连接Text Encode节点，加载ControlNet Scribble模型，以及调整参数和模型。"
+    },
+    {
+        "question": "为什么使用ControlNet时需要加载特定的Checkpoint模型？",
+        "answer": "Checkpoint的模型需要与ControlNet的模型兼容，通常是基于SD 1.5的模型，以确保ControlNet能够有效地工作并影响模型的输出。"
+    },
+    {
+        "question": "如何使用插件生成深度图以控制图像的景深？",
+        "answer": "可以使用Zoe-Depth Map节点替换DWPose Estimation节点，将生成的深度图直接输入到ControlNet模型中，控制模型生成的图像的景深。"
+    },
+    {
+        "question": "哪些节点具体需要加载ControlNet模型？",
+        "answer": "在ControlNet工作流程中，Apply ControlNet节点左侧的control_net端点需要连入Load ControlNet Model节点上选择的具体ControlNet模型，如ControlNet Scribble或ControlNet Openpose。"
+    },
+    {
+        "question": "使用ControlNet时如何调整模型的影响强度？",
+        "answer": "在Apply ControlNet节点中，通过调整'strength'参数的值来控制ControlNet对最终生成图像的影响程度，数值越大，生成图像与输入结构图的相似度越高。"
+    }
+]

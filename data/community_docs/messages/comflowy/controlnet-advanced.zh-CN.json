@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ControlNet 进阶篇主要介绍什么内容？",
+        "answer": "ControlNet 进阶篇主要介绍如何使用插件将已有的图片转化为 ControlNet 可使用的 Pose、Depth 或其他类型的图片，以便在没有直接使用 Pose 或 Depth 图的情况下也能应用 ControlNet 功能。"
+    },
+    {
+        "question": "在开始学习 ControlNet 进阶篇之前，需要下载并安装哪些模型和文件？",
+        "answer": "在开始学习前，需要下载并安装 Dreamshaper、ControlNet Scribble、ControlNet Openpose 和 ControlNet Canny 模型文件，并且将它们放到 ComfyUI 的相应文件夹内，包括 models/checkpoints 和 models/controlnet。"
+    },
+    {
+        "question": "使用 ControlNet 时，Canny 节点与 Scribble ControlNet workflow 有什么不同？",
+        "answer": "Canny 节点用于将现有图片转化成边缘图，相比 Scribble ControlNet workflow 中的手绘草图，它能提供更精准的图像细节，作为 ControlNet 的输入，以获得更准确的生成结果。"
+    },
+    {
+        "question": "如何安装 ComfyUI 的 ControlNet Auxiliary Preprocessors 插件？",
+        "answer": "可以通过 ComfyUI-Manager 或直接从 Github 下载并安装，将插件放入 ComfyUI 的 custom_nodes 文件夹，重启 ComfyUI 后，可以通过双击空白处并输入插件内的 nodes 名称来检查是否安装成功。"
+    },
+    {
+        "question": "在 Image pose ControlNet workflow 中，DWPose Estimation 节点的参数如何配置以优化人物姿势检测？",
+        "answer": "DWPose Estimation 节点的参数应该设置为：detect_hand: disable, detect_body: enable, detect_face: disable，仅检测人物的身体；resolution: 512，保持与生成图片一致的尺寸；bbox_detector 和 pose_estimator 分别设置为 yolox_l.onnx 和 dw-ll_ucoco_384.onnx，以加快处理速度。"
+    },
+    {
+        "question": "在制作参考图片的 ControlNet workflow 中，如何将参考图片导入到参考节点中使用？",
+        "answer": "参考图片通过 ReferenceOnlySimple 节点导入，首先使用 VAE Encode 节点将图片转化为 latent，然后将 ReferenceOnlySimple 节点与 Ksampler 连接，代替 Empty Latent Image 节点，以利用参考图片生成新的内容，如 logo 等。"
+    },
+    {
+        "question": "在 ControlNet 的 Image depth ControlNet workflow 是怎么工作的？",
+        "answer": "Image depth ControlNet workflow 的内容目前处于修订中，没有具体的工作流程说明，但可以推测它是利用深度信息来指导图片生成过程中的控制网操作。"
+    }
+]
