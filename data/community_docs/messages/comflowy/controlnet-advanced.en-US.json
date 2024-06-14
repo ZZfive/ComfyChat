@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What models are required for the ControlNet Advanced workflows and where should they be placed?",
+        "answer": "For ControlNet Advanced workflows, you need to download Dreamshaper, ControlNet Scribble, ControlNet Openpose, and ControlNet Canny models. Place Dreamshaper within the models/checkpoints folder, and the other models in the models/controlnet folder in ComfyUI."
+    },
+    {
+        "question": "Which plugin is needed to convert images for use with the Canny ControlNet workflow and how is it installed?",
+        "answer": "To convert images for use with the Canny ControlNet workflow, you need to install the ComfyUI's ControlNet Auxiliary Preprocessors plugin. Installation can be done via the ComfyUI-Manager or directly from Github by placing the plugin in the custom_nodes folder in ComfyUI."
+    },
+    {
+        "question": "What is the difference between Canny and Scribble workflows in ControlNet Advanced?",
+        "answer": "Canny generates edge maps from existing images, aiming for a more accurate reference than hand-drawn styles produced by Scribble. Canny is recommended when converting someone else's picture into an image for ControlNet use due to its precision."
+    },
+    {
+        "question": "How do you insert and connect a Canny Node in the ComfyUI's workflow?",
+        "answer": "Insert a Canny Node in the workflow by double-clicking on a blank space, searching for 'Canny', and then connecting this node's left endpoint with the Load Image node and the right endpoint with the Apply ControlNet node. Optionally, add a Preview Image node to the right endpoint of the Canny node for viewing the Canny image."
+    },
+    {
+        "question": "What are the necessary steps to create an Image Pose ControlNet workflow?",
+        "answer": "To create an Image Pose ControlNet workflow, first insert a DWPose Estimation node, connect it to the Load Image node, and configure the parameters for the pose estimation to detect only the body. Optionally, add an Upscale Image node for resolution consistency, and connect the right endpoint of DWPose Estimation to the left endpoint of the Apply ControlNet node."
+    }
+]

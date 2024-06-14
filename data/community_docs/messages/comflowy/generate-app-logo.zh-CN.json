@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ComfyUI 生成 App Logo 的第一种方法是什么？",
+        "answer": "ComfyUI 生成 App Logo 的第一种方法是使用 prompt 生成，但可能不如 Midjourney 生成的 Logo 效果好，因为 Midjourney 的模型在训练时经过了针对 Logo 的优化。"
+    },
+    {
+        "question": "如何利用 LoRA 在 ComfyUI 中生成更优的 App Logo？",
+        "answer": "通过使用 LoRA，可以弥补 ComfyUI 在直接使用 Stable Diffusion 时生成 Logo 优化不足的情况，可以先在 Civitai 上找到与 App Logo 相关的 LoRA 模型，与 SD XL 1.0 等相应 Checkpoint 结合使用。"
+    },
+    {
+        "question": "在使用 LoRA 生成 App Logo 时，如何优化 workflow 的效率？",
+        "answer": "在 LoRA 的 workflow 中，可以通过设置 'batch_size' 的参数值来调整效率，初始测试时可设为 1 加快生成速度，确定 prompt 后，设为较大的值以连续生成多张图，避免实时生成的耗时问题。"
+    },
+    {
+        "question": "使用 ControlNet 生成 App Logo 的前提条件是什么？",
+        "answer": "在使用 ControlNet 生成 App Logo 时，需要有初步的设计想法，如特定字符的加入，或设计深度和层次感的需要，ControlNet 技术可以基于预先设定的草图或深度图来辅助生成符合特定视觉风格的 Logo。"
+    },
+    {
+        "question": "在 ControlNet 生成流程中，为什么需要注意 checkpoint 和 ControlNet 的 base 模型要一致？",
+        "answer": "如果不一致，ControlNet 生成图像的过程中会出现错误，因 base 模型不匹配导致图像生成失败，因此确保 Checkpoint 和 ControlNet 的 base 模型一致是使用时的必要条件。"
+    },
+    {
+        "question": "在利用参考图生成新 Logo 时，有哪些方法可供选择？",
+        "answer": "两种方法可供选择：一是使用 Reference-only ControlNet，这种方法可以通过加载参考图像并利用实验性节点进行图像生成；二是 IPAdapter + ControlNet 方法，这种方法可以利用参考图片作为引导生成新图像，但在绘制效果上可能不如第一种方法。"
+    },
+    {
+        "question": "使用 ComfyUI 生成 App Logo 时，新手应该如何开始学习并实践？",
+        "answer": "新手应选择最简单有效的方法开始，如使用 prompt 或 LoRA，同时多进行尝试，耐心调整参数，思考如何让 AI 技术更好地服务工作流程，而非盲目追求复杂模板和插件。"
+    }
+]

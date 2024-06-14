@@ -1,0 +1,30 @@
+[
+    {
+        "question": "什么是图生图工作流在ComfyUI中的两种主流方法？",
+        "answer": "在ComfyUI中，Stable Diffusion模型的图生图的两种主流方法是重绘（drawing over）和参考（reference）。重绘是将输入图片作为基底，在其上生成新图片；参考是将输入图片作为参数，与prompt一起输入到模型中，生成新图片。"
+    },
+    {
+        "question": "在ComfyUI的图生图方法中，如何利用图片进行生成过程的控制？",
+        "answer": "通过将图片作为基底或参数输入，可以控制生成图片的分辨率、部分内容或人物姿势等，例如在重绘方法中使用图片作为基底可以引入特定元素或风格。"
+    },
+    {
+        "question": "ComfyUI中的哪些模型需要下载并放置在特定文件夹内以支持高级图生图功能？",
+        "answer": "需要下载并放置在特定文件夹内的模型包括Dreamshaper、stable-diffusion-2-1-unclip、coadapter-style-sd15v1以及OpenAI CLIP Model，这些模型分别存放在models/checkpoints、models/checkpoints、models/style_models和models/clip_vision文件夹中。"
+    },
+    {
+        "question": "ComfyUI中Simple img2img workflow的关键步骤是什么？",
+        "answer": "Simple img2img workflow的关键步骤包括添加Load Image节点加载图片，使用VAE Encode转换为latent picture，以及调整KSampler的denoise设置以控制生成图像与输入图像的相似程度。"
+    },
+    {
+        "question": "在ComfyUI的unCLIP model workflow中，CLIP Vision Encode与unCLIPCondtioning节点如何参与图像生成流程？",
+        "answer": "CLIP Vision Encode首先将图片转化为向量，然后unCLIPCondtioning节点将这些图片向量与文本prompt的向量融合，最终输入到KSampler中，以生成既考虑图像信息又考虑文本prompt描述的新图片。"
+    },
+    {
+        "question": "ComfyUI中的Style model workflow与unCLIP model workflow的主要区别是什么？",
+        "answer": "Style model workflow与unCLIP model workflow的主要区别在于，Style model workflow仅仅使用图片的风格而忽略内容，生成图像表现出原图风格但可能不包含原图内容，适用于想要保持风格而非特定物体的场景。"
+    },
+    {
+        "question": "在ComfyUI的图生图实践工作中，如何调整KSampler的参数以影响输出图像与输入图像的相似度？",
+        "answer": "可以通过调整KSampler中的denoise参数来控制输出图像与输入图像的相似程度，参数值越小，生成的图像就越接近原始输入图像；此外，噪声增强参数（noise_augmentation）也影响新旧图像的相似度，数值越小表示图像越相似。"
+    }
+]

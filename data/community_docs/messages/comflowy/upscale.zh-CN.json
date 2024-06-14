@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Upscale在ComfyUI中主要用于什么?",
+        "answer": "Upscale在ComfyUI中主要用于修复和放大低分辨率照片至高清图片，通过ComfyUI的Upscale Image节点或使用模型的方式提升图像质量。"
+    },
+    {
+        "question": "在ComfyUI中，如何使用Upscale Image节点实现图像放大?",
+        "answer": "在ComfyUI中，通过在生成图像后添加Upscale Image节点，配置method参数如bicubic、bilinear等，并设置Scale参数为放大倍数，可以实现图像放大。"
+    },
+    {
+        "question": "ComfyUI中模型驱动的图像放大的工作流程是怎样的?",
+        "answer": "在ComfyUI中，模型驱动的图像放大工作流程包括添加Upscale Image（using Model）节点，加载如Real-ESRGAN、Swin2SR或BSRGAN等模型，并将模型与图像节点连接以实现放大。"
+    },
+    {
+        "question": "ComfyUI的Hi-res fix latent upscale workflow有什么特点?",
+        "answer": "ComfyUI的Hi-res fix latent upscale workflow在VAE Decode后连上Upscale Image节点，通过潜空间图放大而非像素图，能补充细节的同时也可能会改变原图信息，生成速度相对较慢。"
+    },
+    {
+        "question": "如何在ComfyUI中搭建对比不同模型Upscale效果的workflow?",
+        "answer": "在ComfyUI中，可以通过加载一张图片并将其分别传递给三个不同模型的Upscale节点，生成三张放大的Image，以对比不同模型的Upscale效果。"
+    },
+    {
+        "question": "ComfyUI中的Upscale pixel和Hi-res fix workflow能否结合使用?",
+        "answer": "在ComfyUI中，Upscale pixel和Hi-res fix workflow可以结合使用，先用pixel upscale保持图片内容不变，再使用Hi-res fix增加细节，采取先放大后缩小的方式使图片细节更丰富。"
+    },
+    {
+        "question": "为什么在ComfyUI中单独调整empty latent image大小可能效果不佳?",
+        "answer": "在ComfyUI中，单独调整empty latent image大小可能效果不佳，因为模型可能未训练处理比原训练尺寸更大的图像，Upscale节点则擅长等比例放大并可能补充细节。"
+    }
+]

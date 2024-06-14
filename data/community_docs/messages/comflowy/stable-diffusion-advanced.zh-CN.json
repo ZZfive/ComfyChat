@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Stable Diffusion XL相比之前的版本有何优势?",
+        "answer": "Stable Diffusion XL能生成更高质量的图片，图片细节更丰富，能理解更复杂的prompt，并支持生成更大尺寸的图片。"
+    },
+    {
+        "question": "SDXL在模型架构上有什么不同?",
+        "answer": "SDXL有两个Image Creator：Base模型负责生成全局构图，Refined模型在此基础上生成细节丰富的图片。"
+    },
+    {
+        "question": "SDXL中的CLIP部分有什么改进?",
+        "answer": "SDXL的CLIP部分使用了更大的OpenClip模型，这增强了其理解复杂prompt的能力。"
+    },
+    {
+        "question": "在搭建SDXL workflow时，为什么需要替换并增加KSampler节点?",
+        "answer": "替换是为了利用更高级的KSampler Advanced功能，增加是为了适应SDXL的双模型设计，以实现更细致的图像生成。"
+    },
+    {
+        "question": "在SDXL workflow中如何简化prompt输入操作?",
+        "answer": "通过创建单个Prompt输入框，为所有CLIP Text Encode节点共享输入，避免了prompt的重复输入。"
+    },
+    {
+        "question": "为何在SDXL workflow中单独管理KSampler的steps、Sampler和Scheduler?",
+        "answer": "为了减少操作复杂性，使经常调整的参数可一次设定并应用于所有相关KSampler节点，简化了工作流程。"
+    },
+    {
+        "question": "在SDXL workflow中，如何确保两个KSampler节点的steps协调工作?",
+        "answer": "将第一个KSampler的end_at_step与第二个KSampler的start_at_step通过一个Primitive相连，确保连续而平滑的steps执行，同时调整噪声引入以适应Base和Refined模型的不同需求。"
+    }
+]

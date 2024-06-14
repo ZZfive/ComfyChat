@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What is the purpose of In/Outpainting in ComfyUI?",
+        "answer": "In/Outpainting in ComfyUI is used for modifying specific parts of an image without affecting the rest, allowing users to refine image generation results and personalize AI projects."
+    },
+    {
+        "question": "Which model is recommended for Inpainting in ComfyUI?",
+        "answer": "The Dreamshaper 8-inpainting model is recommended for Inpainting in ComfyUI and should be placed in the models/checkpoints folder."
+    },
+    {
+        "question": "What is the 'grow_mask_by' parameter for in the Inpainting workflow?",
+        "answer": "The 'grow_mask_by' parameter in the Inpainting workflow is used to determine how much the mask will expand around the selected area, set to 6-8 for better blending of the newly generated part with the original image."
+    },
+    {
+        "question": "How can one change a specific part of an image using ComfyUI without altering other areas?",
+        "answer": "To change a specific part of an image without altering other areas in ComfyUI, use the Inpainting workflow, which involves encoding the image, loading it, smearing the area to be changed, switching to the inpainting model, setting the denoise factor, and inputting the desired prompt."
+    },
+    {
+        "question": "What is the process for enlarging an image using ComfyUI's Outpainting workflow?",
+        "answer": "To enlarge an image using ComfyUI's Outpainting workflow, add the Pad Image for Outpainting node, adjust the expansion and feathering parameters, connect the Load Image node and VAE Encode (for Inpainting) through the Pad Image for Outpainting node, and input any additional information required."
+    }
+]

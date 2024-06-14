@@ -1,0 +1,30 @@
+[
+    {
+        "question": "prompt.zh-CN主题中提到的写prompt的三大基本原则是什么？",
+        "answer": "prompt的三大基本原则包括：一是prompt不是越长越好，关键在于精准表达意图，长度最好保持在75个token或约60个字以内；二是越重要的词应放在更靠前的位置；三是善用逗号分隔不同意图和使用括号来调整关键词的权重。"
+    },
+    {
+        "question": "如何使用ComfyUI的Batch image workflow一次生成多张图片？",
+        "answer": "在ComfyUI中，通过调整Empty Latent Image的batch_size参数可以一次生成多张图片。例如，如果将batch_size设置为4，则每次生成4张图片。"
+    },
+    {
+        "question": "哪个部分讲述了如何通过prompt调整ComfyUI生成图片的风格？",
+        "answer": "关于如何通过prompt调整ComfyUI生成图片风格的指导在“SD Prompt基础”章节中提出，详细介绍了使用prompt来影响生成图片效果的方法，并提供了写prompt的基本原则和模板。"
+    },
+    {
+        "question": "ComfyUI使用空latent image节点生成多张图片的原理是什么？",
+        "answer": "ComfyUI通过Empty Latent Image节点的batch_size参数控制图片生成的数量，设置此参数的值可以一次生成多张带有微小变化的图片。"
+    },
+    {
+        "question": "对于ComfyUI的Advanced users,如何访问和独立查看多张图片中的一张？",
+        "answer": "高级用户可以通过Latent from Batch节点调整参数batch_index来选择具体查看哪张图片，并与VAE Decode和Save Image节点配合使用以独立保存和查看图片。"
+    },
+    {
+        "question": "在ComfyUI中，优化prompt和提高出图效率的关键策略有哪些？",
+        "answer": "优化prompt时，应遵循三大基本原则，包括精准表达、重要词前置和符号的合理使用。提高出图效率的方法包括选择较快的模型，如SDXL Base，并利用batch image workflow一次性生成多张图片，以加速探索和测试过程。"
+    },
+    {
+        "question": "在prompt写作中，如何使用括号调整关键词的权重？",
+        "answer": "在prompt中可以使用括号调整关键词的权重，如输入\"(keyword:weight)\"，其中weight值大于1表示增加关键词的影响力，小于1则表示减弱关键词的影响力，以此来精细调整模型生成图片时对特定元素的关注程度。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "face-swap.zh-CN 描述了哪几种使用 ComfyUI 实现换脸的方法？",
+        "answer": "face-swap.zh-CN 描述了三种使用 ComfyUI 实现换脸的方法：使用 ReActor 插件、使用 IPAdapter 方法以及使用 IPAdapter Inpainting 方法。"
+    },
+    {
+        "question": "如何安装及使用 ReActor 插件进行换脸？",
+        "answer": "首先，需要从 GitHub 安装 ReActor 插件。然后，在 ComfyUI 中添加 ReActor Fast Face Swap 节点，并连接 VAE Decode 的 image。加载一张用于换脸的图片至 load image 节点并连接到 ReActor 的 input face，最后通过 save image 节点保存结果。"
+    },
+    {
+        "question": "IPAdapter 方法与 ReActor 方法有何区别？",
+        "answer": "IPAdapter 方法不仅仅适用于人类，还可以用于动物，并且能生成与某个人脸一致的图片。相比于 ReActor，IPAdapter 在处理非人脸部分（如头发）时通常表现出更好的效果。"
+    },
+    {
+        "question": "安装 ComfyUI IPAdapter Plus 插件后，还需要进行哪些步骤才能使用？",
+        "answer": "在 `ComfyUI/models/` 文件夹中创建 `ipadapter` 文件夹并下载对应的 IPAdapter 模型，同时，需要下载 image encoders 并放置在 `ComfyUI/models/clip_vision/` 文件夹内。"
+    },
+    {
+        "question": "使用 IPAdapter Plus 插件时，建议的模型组合有哪些？",
+        "answer": "建议的模型组合包括：SD 1.5 的 realisticVisionV51_v51VAE 检查点与 ip-adapter-full-face_sd15 模型，或 SD XL 的 Juggernaut XL 与 ip-adapter-plus-face_sdxl_vit-h 模型。"
+    },
+    {
+        "question": "构建使用 IPAdapter 方法的 workflow 时应注意哪些设置？",
+        "answer": "在构建使用 IPAdapter 的 workflow 时，应调整 Apply IPAdapter 节点的 weight 参数小于 0.8，并根据输出调整 noise 参数。同时，选择合适的 Load Image 图片，确保人脸处于图片中心且图片为方形，最后优化 KSampler 节点的 Steps 和 CFG 设置。"
+    },
+    {
+        "question": "IPAdapter Inpainting 方法如何实现将图片中的一部分替换成另一张图片的内容？",
+        "answer": "IPAdapter Inpainting 方法通过结合 IPAdapter 和 Inpainting 功能，可以在图片的特定区域替换成另一张图片的内容，例如将猫脸替换成宇航员头盔下的柯基脸。"
+    }
+]

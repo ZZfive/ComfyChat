@@ -1,0 +1,42 @@
+[
+    {
+        "question": "Stable Cascade是什么类型的模型？",
+        "answer": "Stable Cascade是由Stability AI推出的一款新型文生图模型，采用Würstchen架构，其潜空间尺寸小于Stable Diffusion模型。Stable Diffusion的潜空间压缩系数是8，而Stable Cascade的压缩系数为42，这使得图片生成的速度更快，模型训练成本更低。"
+    },
+    {
+        "question": "Stable Cascade的潜空间压缩系数是多少，与Stable Diffusion有何不同？",
+        "answer": "Stable Cascade的潜空间压缩系数是42，这意味着1024x1024的图片会被编码成24x24，与Stable Diffusion的压缩系数8相比，生图速度更快，训练成本更低，据Stability AI评估，在指令对齐和美学质量上也有更好表现。"
+    },
+    {
+        "question": "Stable Cascade与哪个模型相比生成成本降低了16倍？",
+        "answer": "Stable Cascade与SD 1.5相比，生成成本降低了16倍。"
+    },
+    {
+        "question": "Stable Cascade兼容哪些现有技术？",
+        "answer": "Stable Cascade兼容多种现有技术，包括finetuning, LoRA, ControlNet, IP-Adapter, LCM等。"
+    },
+    {
+        "question": "在Prompt 1的对比中，Stable Cascade和Midjourney在Prompt Alignment和美学表现上有何不同？",
+        "answer": "在Prompt Alignment上，Stable Cascade表现得更好，更符合Prompt的要求。但在美感方面，Midjourney的图像呈现更多元，而Stable Cascade的图像相对较一致，例如树枝的形状相似。"
+    },
+    {
+        "question": "在Prompt 2的对比中，Stable Cascade和Midjourney在人物脸型的处理上有何差异？",
+        "answer": "在Prompt 2的人物像对比中，虽然双方在理解Prompt上都较为准确，但是细看人物脸部，Stable Cascade生成的脸型有轻微变形。"
+    },
+    {
+        "question": "在对比中，Stable Cascade与Midjourney在哪些方面值得注意？",
+        "answer": "在对比中，Stable Cascade相较于Midjourney，生成速度更快，尤其是在拥有高性能显卡的情况下，并且Stable Cascade拥有Advantage of powerful open-source ecosystem，如IPAdapter和ControlNet的能力。"
+    },
+    {
+        "question": "如何开始使用Stable Cascade模型进行Workflow？",
+        "answer": "首先需从Hugging Face下载Stable Cascade模型，包括stage b和stage c，放置于models/checkpoints目录下，并确保ComfyUI是最新版本。调整Default workflow，将Empty Latent Image节点更改为StableCascade_EmptyLatentImage，设置compression为42，将checkpoint节点模型替换为stage c模型。"
+    },
+    {
+        "question": "调整Default workflow为使用Stable Cascade模型需要哪些步骤？",
+        "answer": "调整ComfyUI的Default workflow，将Empty Latent Image节点更改为StableCascade_EmptyLatentImage，并设置compression为42。在checkpoint节点中选择下载好的stage c模型。"
+    },
+    {
+        "question": "在ComfyUI中用stable-cascade调整workflow后，需要添加哪些节点？",
+        "answer": "在调整workflow时，需要添加Checkpoint、KSampler节点以及StableCascade_StageB_Conditioning节点，同时在第二个Checkpoint节点选项中选择stage b模型。"
+    }
+]
