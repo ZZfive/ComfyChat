@@ -1,0 +1,42 @@
+[
+    {
+        "question": "PorterDuffImageComposite节点属于哪个类别？",
+        "answer": "PorterDuffImageComposite节点属于'mask/compositing'类别，它执行图像合成操作，特别是在ComfyUI中使用Porter-Duff合成操作符进行图像混合。"
+    },
+    {
+        "question": "PorterDuffImageComposite节点接收的基本输入是什么？",
+        "answer": "PorterDuffImageComposite节点的基本输入包括源图像('source')、源alpha遮罩('source_alpha')、目标图像('destination')、目标alpha遮罩('destination_alpha')以及合成模式('mode')。这些输入对于创建合成图像至关重要。"
+    },
+    {
+        "question": "源alpha遮罩在PorterDuffImageComposite中的作用是什么？",
+        "answer": "源alpha遮罩在PorterDuffImageComposite节点中用于定义源图像的透明度，影响源图像在合成过程中如何与目标图像交互，是生成准确图像融合的关键。"
+    },
+    {
+        "question": "合成模式在PorterDuffImageComposite节点中的作用是什么？",
+        "answer": "合成模式在PorterDuffImageComposite中指定源图像和目标图像之间的混合算法。它是决定合成结果视觉效果的关键参数。"
+    },
+    {
+        "question": "PorterDuffImageComposite节点的输出包括什么？",
+        "answer": "PorterDuffImageComposite的输出包括合成图像('composited_image')和合成alpha('composited_alpha')。合成图像是源图像和目标图像混合的结果，而合成alpha则描述了合成图像的透明度。"
+    },
+    {
+        "question": "PorterDuffImageComposite节点对输入图像尺寸有特殊处理吗？",
+        "answer": "是的，PorterDuffImageComposite节点确保源图像、目标图像及其对alpha遮罩的尺寸一致。如果尺寸不匹配，将执行重采样以匹配目标图像的尺寸，使用的为'bicubic'重采样方法。"
+    },
+    {
+        "question": "PorterDuffImageComposite节点的功能是在哪个设备上执行的？",
+        "answer": "PorterDuffImageComposite节点的执行依赖于GPU（图形处理器单元），以实现高效且可能加速的图像合成操作。"
+    },
+    {
+        "question": "哪类节点用于执行Porter-Duff图像合成？",
+        "answer": "PorterDuffImageComposite节点用于执行Porter-Duff图像合成技术，这种技术在ComfyUI平台中特别用于组合和混合图像。"
+    },
+    {
+        "question": "在ComfyUI中进行图像合成的节点如何处理alpha通道？",
+        "answer": "在ComfyUI中的PorterDuffImageComposite节点会单独处理每个图像的alpha通道（源alpha和目标alpha），并根据合成模式合成它们以生成新的透明度遮罩('composited_alpha')。"
+    },
+    {
+        "question": "如何获取PorterDuffImageComposite节点的源代码？",
+        "answer": "PorterDuffImageComposite节点的源代码可通过这个GitHub链接获取：https://github.com/comfyanonymous/ComfyUI，该节点定义了图像合成的相应功能和输入输出类型。"
+    }
+]

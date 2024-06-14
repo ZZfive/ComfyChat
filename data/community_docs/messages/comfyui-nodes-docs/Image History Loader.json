@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Image History Loader (WAS_Image_History) 节点的用途是什么?",
+        "answer": "Image History Loader 节点（WAS_Image_History）主要用于管理和检索存储在WASDatabase中的历史图像。它允许用户访问历史记录中的图像，以便查看过去的图像状态或数据。"
+    },
+    {
+        "question": "哪些系统部件使 Image History Loader 节点能够存储和检索历史图像?",
+        "answer": "Image History Loader 节点利用WASDatabase存储和检索历史图像，确保用户可以访问过去的图像状态或数据。"
+    },
+    {
+        "question": "WAS_Image_History 节点需要哪些输入类型?",
+        "answer": "WAS_Image_History 节点需要的输入类型为'image'，此参数为字符串类型，对于指定用户想要访问的历史图像至关重要。节点使用它来定位并从数据库中检索正确的图像。"
+    },
+    {
+        "question": "WAS Image History Loader 输出哪些类型的数据?",
+        "answer": "WAS Image History Loader 输出类型为 'image' 和 'filename_text'。'image' 是作为张量形式检索到的历史图像，适于进一步处理或显示；'filename_text' 提供检索到的图像的文件名，便于记录、引用或额外的元数据目的。"
+    },
+    {
+        "question": "哪些类型的数据由Image History Loader作为输出提供?",
+        "answer": "Image History Loader 提供两种类型的数据：'image'，表现为张量形式的历史图像，以及'filename_text'，即历史图像的文件名称。"
+    },
+    {
+        "question": "WAS_Image_History的 'image' 输出参数代表什么?",
+        "answer": "'image' 输出参数表示被检索的历史图像，即以张量形式存储的图像，适用于进一步的处理或在_comfyUI_中显示。"
+    },
+    {
+        "question": "Image History Loader 节点的'source_code'段怎么处理不存在的图像请求?",
+        "answer": "当Image History Loader 节点发现请求的图像不存在时，它会发出错误信息并返回一个黑色512x512像素的图像，文件名标签为'null'。"
+    }
+]

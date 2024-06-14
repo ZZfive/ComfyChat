@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Latent Upscale by Factor (WAS) 是什么？",
+        "answer": "Latent Upscale by Factor (WAS) 是 WAS Node Suite ComfyUI 中的一个自定义节点，用于通过插值和缩放因子来增强潜在表示的分辨率，确保潜在特征被准确高效地放大以提高生成输出的质量。"
+    },
+    {
+        "question": "在 ComfyUI 中，WAS_Latent_Upscale 的主要作用是什么？",
+        "answer": "WAS_Latent_Upscale 节点主要作用是增强潜在表示的分辨率，通过规定的插值模式和缩放因子放大潜在特征，从而提高生成输出的整体质量。"
+    },
+    {
+        "question": "Latent Upscale by Factor (WAS) 节点支持哪些插值方法？",
+        "answer": "Latent Upscale by Factor (WAS) 支持 'area', 'bicubic', 'bilinear', 'nearest' 四种插值方法，每种方法根据最终输出质量和放大效果的不同来选择使用。"
+    },
+    {
+        "question": "哪些输入类型是 Latent Upscale by Factor (WAS) 节点必需的？",
+        "answer": "Latent Upscale by Factor (WAS) 节点必需的输入类型包括 'samples' (潜在表示), 'mode' (插值方法), 'factor' (放大的缩放因子), 'align' (角对齐缩放选择)。"
+    },
+    {
+        "question": "WAS_Latcent_Upscale 节点的 'samples' 和 'mode' 参数的 Comfy dtype 分别是什么？",
+        "answer": "WAS_Latcent_Upscale 节点的 'samples' 参数的 Comfy dtype 是 'LATENT'，'mode' 参数的 Comfy dtype 是 'COMBO[str]'。"
+    },
+    {
+        "question": "如果 'mode' 参数选择了无效的插值模式，WAS_Latcent_Upscale 节点会怎样处理？",
+        "answer": "如果 'mode' 参数选择了无效的插值模式，WAS_Latcent_Upscale 节点将会抛出一个错误并打印相关信息，提示无效的插值模式，并列出有效模式，然后返回原始 'samples' 而不对之进行处理。"
+    },
+    {
+        "question": "使用 WAS_Latcent_Upscale 节点放大潜在表示时，'factor' 参数和 'align' 参数的作用是什么？",
+        "answer": "'factor' 参数指定了放大操作的缩放度，而 'align' 参数决定是否使用角对齐算法进行缩放，这两者共同影响放大后的表示特征。"
+    }
+]

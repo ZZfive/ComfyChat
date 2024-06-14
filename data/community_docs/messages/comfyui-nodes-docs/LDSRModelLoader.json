@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LDSRModelLoader节点的功能是什么？",
+        "answer": "LDSRModelLoader节点用于加载并准备一个LDSR模型，它自动化了模型检索和初始化的复杂过程，确保模型就绪，可用于图像上采样任务。"
+    },
+    {
+        "question": "LDSRModelLoader节点是如何准备模型的？",
+        "answer": "LDSRModelLoader通过将模型转移到适当的设备上并设置为评估模式来准备模型，确保模型完全初始化，准备用于上采样任务。"
+    },
+    {
+        "question": "LDSRModelLoader节点的输入类型是什么？",
+        "answer": "LDSRModelLoader节点的输入类型为'model'，这是一个COMBO[filename]类型的参数，指定要加载的LDSR模型。"
+    },
+    {
+        "question": "哪些模型可以用于LDSRModelLoader节点的上采样过程中？",
+        "answer": "LDSRModelLoader节点可以从指定的模型列表中加载LDSR模型，这些模型的状态字典和配置将用于上采样的过程。"
+    },
+    {
+        "question": "LDSRModelLoader节点的输出类型是什么？",
+        "answer": "LDSRModelLoader节点的输出类型为UPSCALE_MODEL，表示一个完全初始化并准备好的LDSR模型，可直接用于图像上采样任务。"
+    },
+    {
+        "question": "LDSRModelLoader节点的默认模型路径是如何确定的？",
+        "answer": "LDSRModelLoader节点会从模型列表中寻找包含'last.ckpt'的模型作为默认路径，如果没有找到匹配项，则默认路径设置为'last.ckpt'。"
+    },
+    {
+        "question": "运行LDSRModelLoader节点需要哪种类型的基础设施？",
+        "answer": "LDSRModelLoader节点的运行推荐使用CPU作为基础设施类型。"
+    }
+]

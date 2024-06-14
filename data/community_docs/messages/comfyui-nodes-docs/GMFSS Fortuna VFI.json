@@ -1,0 +1,30 @@
+[
+    {
+        "question": "GMFSS_Fortuna_VFI节点是用于什么目的的？",
+        "answer": "GMFSS_Fortuna_VFI节点旨在使用深度学习模型执行视频帧插值，通过在现有帧之间生成额外的帧以提高帧率，创建更平滑的过渡和更高质量的视频输出。"
+    },
+    {
+        "question": "什么是GMFSS_Fortuna_VFI节点中的ckpt_name？",
+        "answer": "ckpt_name是GMFSS_Fortuna_VFI中一个必需的参数，用于指定用于帧插值过程的特定模型权重和架构，影响插值帧的质量和风格。"
+    },
+    {
+        "question": "frames参数对GMFSS_Fortuna_VFI节点的意义是什么？",
+        "answer": "frames参数是GMFSS_Fortuna_VFI中一个必需的输入，包含输入视频帧，这些帧被处理以生成中间帧，这是视频增强过程的关键部分。"
+    },
+    {
+        "question": "clear_cache_after_n_frames参数如何在GMFSS_Fortuna_VFI中工作？",
+        "answer": "clear_cache_after_n_frames参数定义了在处理过程中CUDA缓存被清除的频率，以避免内存溢出，并在内存使用和处理时间之间保持平衡。"
+    },
+    {
+        "question": "multiplier参数在GMFSS_Fortuna_VFI节点中有什么作用？",
+        "answer": "multiplier参数决定了在每对输入帧之间要生成的帧数量，它直接影响输出视频的帧率，较高的乘数意味着较高的帧输出率。"
+    },
+    {
+        "question": "GMFSS_Fortuna_VFI节点的optional_interpolation_states参数能做什么？",
+        "answer": "optional_interpolation_states参数在GMFSS_Fortuna_VFI中提供了一个选项来自定义控制插值过程，比如跳过某些帧或应用特定的插值技术。"
+    },
+    {
+        "question": "GMFSS_Fortuna_VFI节点的输出是什么？",
+        "answer": "GMFSS_Fortuna_VFI节点的主要输出是output_frames参数，它包含经过插值处理后的视频帧，代表了帧率增强后的视频序列。"
+    }
+]

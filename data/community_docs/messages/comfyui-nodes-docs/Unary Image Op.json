@@ -1,0 +1,38 @@
+[
+    {
+        "question": "UnaryImageOp节点是什么？",
+        "answer": "UnaryImageOp节点是Masquerade Nodes类别的一个自定义节点，用于执行多种单输入图像的一元操作，如反转、平均、四舍五入、夹紧和绝对值计算。"
+    },
+    {
+        "question": "UnaryImageOp节点支持哪些一元操作？",
+        "answer": "UnaryImageOp节点支持五种一元操作：图像反转（invert）、计算平均（average）、四舍五入（round）、数据夹紧（clamp）和绝对值计算（abs）。"
+    },
+    {
+        "question": "哪些节点属于Masquerade Nodes类别？",
+        "answer": "虽然多个节点可能被分类在Masquerade Nodes下，UnaryImageOp节点是一个特定的例子，专门用于图像的一元操作执行。"
+    },
+    {
+        "question": "UnaryImageOp节点对图像数据的输入类型有什么要求？",
+        "answer": "UnaryImageOp节点要求图像数据为Comfy dtype的IMAGE类型，以及Python dtype的torch.Tensor类型作为主要输入。"
+    },
+    {
+        "question": "UnaryImageOp节点输出的图像格式是什么？",
+        "answer": "UnaryImageOp节点输出的图像数据格式为Comfy dtype的IMAGE，实质上是Python dtype的torch.Tensor类型，反映出一元操作后的图像数据。"
+    },
+    {
+        "question": "如何使用UnaryImageOp节点进行图像反转？",
+        "answer": "使用UnaryImageOp节点进行图像反转，设置op参数为'invert'，此操作将输入图像的每个像素值通过1减去原值的方式反转。"
+    },
+    {
+        "question": "UnaryImageOp节点中的clamp操作如何工作？",
+        "answer": "clamp操作在UnaryImageOp节点中用于夹紧图像像素值，通过将像素值限定在0到1的范围内，防止数据溢出或不足。"
+    },
+    {
+        "question": "操作UnaryImageOp节点时，op参数的作用是什么？",
+        "answer": "op参数在UnaryImageOp节点中用于指定将要执行的一元操作类型，不同的操作会显著改变原始图像的特性，直接影响后续的图像处理任务。"
+    },
+    {
+        "question": "UnaryImageOp节点对输入操作（op）的格式有何要求？",
+        "answer": "UnaryImageOp节点的op输入格式必须是Comfy dtype的COMBO选择，其中包含'invert', 'average', 'round', 'clamp', 'abs'这五个一元操作的字符串代表，Python dtype为str类型。"
+    }
+]

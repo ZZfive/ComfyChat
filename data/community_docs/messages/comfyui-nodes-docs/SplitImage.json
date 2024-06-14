@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SplitImage节点的作用是什么？",
+        "answer": "SplitImage节点在ComfyUI的♾️Mixlab/Layer类别中，它的主要功能是将输入的图像分割成较小的图像网格，并生成相应的掩码。这增强了图像处理工作流程，分割后的图像和掩码可用于图像编辑、特征提取和数据增强等应用。"
+    },
+    {
+        "question": "SplitImage节点必须的输入参数有哪些？",
+        "answer": "SplitImage节点必须的输入参数包括'image' 和 'num'。'image' 是节点操作的主要输入，决定分割图像的质量与分辨率；'num' 参数决定了图像分割成的段数，影响分割图像的粒度和掩码的细节层次。"
+    },
+    {
+        "question": "在SplitImage节点中，seed参数有什么作用？",
+        "answer": "在SplitImage节点中，seed参数用于控制网格坐标的随机性，确保图像分割过程的可重复性，这对于需要一致结果的较大工作流程至关重要。"
+    },
+    {
+        "question": "SplitImage节点的输出类型有哪些？",
+        "answer": "SplitImage节点的主要输出包括 'grids'，'grid' 和 'mask'。'grids' 是分割图像的集合；'grid' 是基于seed参数选择的单个分割图像；'mask' 是一个二值图像，对应于选定的grid，用于隔离和突出显示特定区域以进行进一步分析或操作。"
+    },
+    {
+        "question": "SplitImage节点是如何处理和选取分割图像的？",
+        "answer": "SplitImage节点根据输入的'image'和'num'参数将图像分割成相应的网格。当处理'seed'参数时，如果'seed'大于'num'，会调整seed值为一个与'num'相关的值，然后选择对应的分割图像；如果seed是'num'的合理部分，则直接选择'seed'索引的分割图像。"
+    },
+    {
+        "question": "SplitImage节点生成的掩码有何用途？",
+        "answer": "SplitImage节点生成的掩码是一个二值图像，用于隔离和突出显示图像的特定区域。掩码通常用于进一步的图像分析或操作中，如特征提取或特定区域的数据增强，有助于后续图像处理的精度和效率。"
+    },
+    {
+        "question": "SplitImage节点的代码中如何处理图像的分割和掩码生成？",
+        "answer": "SplitImage节点的代码先将传入的图像数据转换为PIL格式，然后使用'splitImage'方法对图像进行分割。根据赋值调整或直接使用'seed'参数，选择一个分割图像。接着，使用'createMask'方法根据选择的分割图像位置生成一个掩码，再将掩码转换回Tensor格式。最终返回分割后的图像网格、选择的分割图像详情和对应的掩码。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageCrop是什么类型的节点，它在ComfyUI中的分类是什么？",
+        "answer": "ImageCrop是ComfyUI中的一个图像变换节点，位于'image/transform'分类下。它主要用于通过指定坐标和尺寸裁剪图像的一部分。"
+    },
+    {
+        "question": "ImageCrop节点的输入参数有哪些，它们各自代表什么？",
+        "answer": "ImageCrop节点的输入参数包括：image（输入图像），width（裁剪宽度），height（裁剪高度），x（水平起始点），y（垂直起始点）。这些参数定义了图像裁剪的具体区域。"
+    },
+    {
+        "question": "在ImageCrop节点中，输入的图像（image）参数有什么格式要求？",
+        "answer": "ImageCrop节点的图像参数应为Comfy dtype中的IMAGE类型，Python中可接受PIL.Image.Image或numpy.ndarray格式。"
+    },
+    {
+        "question": "如何在ImageCrop中定义裁剪区域的大小？",
+        "answer": "在ImageCrop节点中，裁剪区域的宽度通过'width'参数定义，高度通过'height'参数确定，两者都以像素为单位。"
+    },
+    {
+        "question": "裁剪操作的起始点如何在ImageCrop中设置？",
+        "answer": "裁剪的起始点通过'x'参数（水平坐标）和'y'参数（垂直坐标）在ImageCrop中确定，这两个参数是裁剪区域左上角在源图像上的坐标。"
+    },
+    {
+        "question": "ImageCrop节点的输出是什么？",
+        "answer": "ImageCrop节点的输出是'cropped_image'，即经过裁剪后的图像。输出的图像格式与输入图像相同，为IMAGE类型，Python中为PIL.Image.Image或numpy.ndarray。"
+    },
+    {
+        "question": "哪些任务中ImageCrop节点的裁剪功能特别有用？",
+        "answer": "ImageCrop节点的裁剪功能在需要聚焦特定区域的任务中特别有用，如对象检测和图像分析，它可以帮助改进算法聚焦在一个感兴趣区域进行更精确的分析或预处理。"
+    }
+]

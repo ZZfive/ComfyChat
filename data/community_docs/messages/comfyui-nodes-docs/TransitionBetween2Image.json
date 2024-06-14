@@ -1,0 +1,30 @@
+[
+    {
+        "question": "TransitionBetween2Image节点是什么?",
+        "answer": "TransitionBetween2Image节点是ComfyUI中AIGC类别下的一个自定义节点，用于生成两个图像之间的平滑过渡，通过贝塞尔曲线插值，将一个图像逐渐变形为另一个以创建视觉效果。"
+    },
+    {
+        "question": "TransitionBetween2Image节点可以应用在哪些场景中?",
+        "answer": "TransitionBetween2Image节点特别适用于需要从一个视觉状态平滑过渡到另一个状态的场景，如动画、视频处理中的视觉效果，以及任何需要渐变过渡的图像处理任务。"
+    },
+    {
+        "question": "TransitionBetween2Image节点的'beiser_point_x'和'beiser_point_y'控制点用于什么目的?",
+        "answer": "这两个控制点('beiser_point_x'和'beiser_point_y')定义了贝塞尔曲线上的位置，以此控制过渡的形状，影响过渡过程中的图像变形效果。"
+    },
+    {
+        "question": "在使用TransitionBetween2Image节点时，'total_frames'参数有何作用?",
+        "answer": "'total_frames'参数指定了过渡过程中要生成的总帧数，增加此数值能使得过渡效果更加平滑，但会相应增加计算所需的时间。"
+    },
+    {
+        "question": "如何利用TransitionBetween2Image生成的图像帧？",
+        "answer": "TransitionBetween2Image生成的帧序列返回为torch.Tensor类型的IMAGE输出，可以直接用于进一步的图像处理或在其他节点中作为输入使用，以实现序列展示或特效合成。"
+    },
+    {
+        "question": "哪些节点可以生成图像过渡效果？",
+        "answer": "ComfyUI中的TransitionBetween2Image节点可以生成两个图像之间的过渡效果，通过控制点调整平滑度和形状，适用于创建动画或视频中的视觉变化。"
+    },
+    {
+        "question": "TransitionBetween2Image节点处理的是什么类型的数据？",
+        "answer": "TransitionBetween2Image节点处理的数据类型包括PIL.Image.Image、numpy.ndarray和torch.Tensor，输入为起始和结束图像及各种控制参数，输出为过渡帧序列的torch.Tensor。"
+    }
+]

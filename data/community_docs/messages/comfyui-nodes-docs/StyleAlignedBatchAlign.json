@@ -1,0 +1,30 @@
+[
+    {
+        "question": "StyleAlignedBatchAlign类的作用是什么？",
+        "answer": "StyleAlignedBatchAlign类的主要作用是通过跨批次对齐模型的风格特征，增强给定模型处理和生成风格一致性输出的能力。它确保模型的注意力和归一化层针对风格一致性进行优化。"
+    },
+    {
+        "question": "model 参数在StyleAlignedBatchAlign中的作用是什么？",
+        "answer": "model 参数定义了StyleAlignedBatchAlign节点将要修改以跨批次对齐风格特征的基础架构。它是决定节点后续行为和功能的主要输入。"
+    },
+    {
+        "question": "如何描述share_norm参数的作用？",
+        "answer": "share_norm参数对确定模型内部的归一化层在如何共享或修改以实现风格特征对齐方面至关重要。它直接影响风格对齐的效率和效果。"
+    },
+    {
+        "question": "StyleAlignedBatchAlign的输出类型是什么？",
+        "answer": "StyleAlignedBatchAlign的输出类型为'MODEL'，即一个经过StyleAlignedBatchAlign节点操作处理的模型，代表输入模型的修改版本，针对风格对齐处理进行了优化。"
+    },
+    {
+        "question": "描述scale参数在StyleAlignedBatchAlign中的功能。",
+        "answer": "scale参数用于调整注意力和归一化层应用于模型上的风格对齐程度，微妙地影响模型在跨批次生成风格一致输出的能力。"
+    },
+    {
+        "question": "在使用StyleAlignedBatchAlign时，哪些输入类型是必须的？",
+        "answer": "在使用StyleAlignedBatchAlign时，必须的输入类型包括：model、share_norm和share_attn参数，它们对于跨批次风格特征对齐至关重要。"
+    },
+    {
+        "question": "StyleAlignedBatchAlign节点的输入参数'share_attn'是什么意思？",
+        "answer": "share_attn参数指定了哪些注意力机制应该被共享或修改以实现风格对齐，这对于模型的整体风格处理能力非常重要。"
+    }
+]

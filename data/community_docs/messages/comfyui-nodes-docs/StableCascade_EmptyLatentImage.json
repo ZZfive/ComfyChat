@@ -1,0 +1,46 @@
+[
+    {
+        "question": "StableCascade_EmptyLatentImage节点的目的是什么？",
+        "answer": "StableCascade_EmptyLatentImage节点的目的是为级联模型的不同阶段生成图像的潜在表示，通过创建零填充张量来初始化潜在状态，这些张量对应特定的维度，这对于稳定级联过程是至关重要的。"
+    },
+    {
+        "question": "StableCascade_EmptyLatentImage节点的'width'参数有什么作用？",
+        "answer": "'width'参数定义了潜在图像的宽度，对于确定生成张量的维度至关重要。它影响潜在空间的结构，因此影响级联模型输出的质量。"
+    },
+    {
+        "question": "StableCascade_EmptyLatentImage的'height'参数如何影响潜在表示？",
+        "answer": "'height'参数指定了潜在图像的高度，是张量形状的关键因素。它在潜在表示的整体结构中起着重要作用，并影响级联模型的性能。"
+    },
+    {
+        "question": "StableCascade_EmptyLatentImage的'compression'参数的作用是什么？",
+        "answer": "'compression'参数控制应用于潜在图像维度的压缩级别，对于管理模型复杂性与计算效率之间的平衡以及级联模型输出的保真度至关重要。"
+    },
+    {
+        "question": "StableCascade_EmptyLatentImage节点的'batch_size'参数是什么？",
+        "answer": "'batch_size'参数表示一次迭代中要处理的样本数量。它对于优化节点的执行很重要，并且可以影响级联模型的吞吐量。"
+    },
+    {
+        "question": "StableCascade_EmptyLatentImage输出的'stage_c'代表什么？",
+        "answer": "'stage_c'输出提供了级联的粗略阶段的潜在表示，这是图像生成初始阶段的关键组成部分。"
+    },
+    {
+        "question": "StableCascade_EmptyLatentImage的'stage_b'输出的含义是什么？",
+        "answer": "'stage_b'输出提供了级联的基础阶段的潜在表示，这对于图像细化的后续阶段至关重要。"
+    },
+    {
+        "question": "哪些参数是StableCascade_EmptyLatentImage的可选输入？",
+        "answer": "StableCascade_EmptyLatentImage的可选输入是'batch_size'参数，它表示一次迭代中要处理的样本数量，对于优化节点执行和级联模型吞吐量有重要影响。"
+    },
+    {
+        "question": "StableCascade_EmptyLatentImage的输入参数的类型是什么？",
+        "answer": "StableCascade_EmptyLatentImage的输入参数类型包括：'width', 'height', 'compression'，都是整型（INT），以及可选的'batch_size'，也是整型（INT）。"
+    },
+    {
+        "question": "StableCascade_EmptyLatentImage节点在ComfyUI中的哪个模块可以找到？",
+        "answer": "StableCascade_EmptyLatentImage节点可以在ComfyUI的'repo Ref: https://github.com/comfyanonymous/ComfyUI'中找到，属于'latent/stable_cascade'这一分类。"
+    },
+    {
+        "question": "StableCascade_EmptyLatentImage的架构类型是什么？",
+        "answer": "StableCascade_EmptyLatentImage的架构类型不适合GPU加速，因此是CPU类型。"
+    }
+]

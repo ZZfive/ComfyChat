@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SeargeCheckpointLoader是什么?",
+        "answer": "SeargeCheckpointLoader是ComfyUI中的一个自定义节点，用于检索和加载先前保存的模型检查点，以便从特定时间点继续训练或评估模型。"
+    },
+    {
+        "question": "SeargeCheckpointLoader节点的输入类型是什么?",
+        "answer": "SeargeCheckpointLoader节点的输入类型为 'ckpt_name'，这是检查点的名称，对于识别特定模型状态至关重要。"
+    },
+    {
+        "question": "为什么要指定ckpt_name?",
+        "answer": "指定ckpt_name对于识别要加载的特定模型状态至关重要，因为它确定了访问哪个检查点，直接影响节点的操作。"
+    },
+    {
+        "question": "SeargeCheckpointLoader的输出类型有哪些?",
+        "answer": "SeargeCheckpointLoader的输出类型包括 'MODEL'、'CLIP'和'VAE'。'MODEL'代表保存时的模型状态，'CLIP'提供加载模型的额外上下文和功能，'VAE'代表变分自编码器。"
+    },
+    {
+        "question": "SeargeCheckpointLoader的PYTHON dtype是什么?",
+        "answer": "SeargeCheckpointLoader输出的PYTHON dtype分别是 torch.nn.Module 对于 'MODEL' 和 'VAE'，以及 Any 对于 'CLIP'。"
+    },
+    {
+        "question": "如何使用SeargeCheckpointLoader节点?",
+        "answer": "使用SeargeCheckpointLoader节点时，需要指定检查点名称作为输入，它可以在 'Searge/_deprecated_/Files' 的Category下找到并调用 'load_checkpoint' 方法加载检查点。"
+    },
+    {
+        "question": "哪些节点可以从特定时间点继续训练模型?",
+        "answer": "SeargeCheckpointLoader节点允许从特定时间点继续训练或评估模型，通过加载先前保存的模型检查点实现。"
+    }
+]

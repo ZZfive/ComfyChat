@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Image_Crop_Face节点的主要功能是什么？",
+        "answer": "WAS_Image_Crop_Face节点的主要功能是智能检测并裁剪图像中的面部，使用预定义的级联分类器定位面部，并进行填充调整以围绕检测到的面部。"
+    },
+    {
+        "question": "哪些输入参数是WAS_Image_Crop_Face节点所必需的？",
+        "answer": "WAS_Image_Crop_Face节点必须接收图像输入，这是进行面部检测和裁剪操作的前提。"
+    },
+    {
+        "question": "裁剪面部时，填充因子的作用是什么？",
+        "answer": "填充因子确定了围绕检测到的面部区域外侧的填充量，例如填充因子0.25意味着使用面部大小的25%作为填充。"
+    },
+    {
+        "question": "WAS_Image_Crop_Face节点可选用的级联XML文件有哪些？",
+        "answer": "该节点可选使用的级联XML文件包括`lbpcascade_animeface.xml`、`haarcascade_frontalface_default.xml`等多种面部检测分类器，如果未指定，将使用默认的级联文件。"
+    },
+    {
+        "question": "如何从输入图像中提取具体大小和已调整填充的裁剪后的面部图像？",
+        "answer": "WAS_Image_Crop_Face节点输出裁剪后的面部图像，已经过调整大小和填充，以及包含原始图像中面部大小和裁剪框坐标的元数据信息。"
+    },
+    {
+        "question": "在哪种计算基础设施下WAS_Image_Crop_Face节点能够执行其功能？",
+        "answer": "WAS_Image_Crop_Face节点的执行类型指定为CPU，意味着它在单个CPU上运行。"
+    },
+    {
+        "question": "如何处理未能检测到面部的情况？",
+        "answer": "若使用所有级联文件均未能检测到面部，节点将返回一个黑色的512x512像素图像，并且输出表明没有找到面部。"
+    }
+]

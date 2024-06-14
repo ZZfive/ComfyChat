@@ -1,0 +1,30 @@
+[
+    {
+        "question": "KfConditioningAddx10节点在ComfyUI中的作用是什么？",
+        "answer": "KfConditioningAddx10节点用于累积处理条件输入，通过聚合多个输入来增强和综合条件数据，影响最终的生成结果。"
+    },
+    {
+        "question": "KfConditioningAddx10节点的聚合操作如何进行？",
+        "answer": "KfConditioningAddx10节点通过将多个'CONDITIONING'类型的输入合并，具体是将它们的'text_embeddings'和'pooled_output'进行累加，来实现条件输入的累积处理。"
+    },
+    {
+        "question": "KfConditioningAddx10节点的必要输入是什么？",
+        "answer": "KfConditioningAddx10节点的必要输入是'cond_0'，这是初始条件数据，对节点的操作至关重要，为其他条件的逐步添加提供了基线。"
+    },
+    {
+        "question": "KfConditioningAddx10节点的可选输入有哪些？",
+        "answer": "KfConditioningAddx10节点有九个可选的条件输入，包括cond_1至cond_9，这些输入可进一步综合条件数据，对节点功能产生累积影响。"
+    },
+    {
+        "question": "如何描述KfConditioningAddx10节点的输出类型？",
+        "answer": "KfConditioningAddx10节点的输出类型为'cond_t_out'，这代表了条件输入的累积结果，内容是聚合和处理后的'CONDITIONING'数据，包含了数组和字典结构。"
+    },
+    {
+        "question": "KfConditioningAddx10节点的源代码中，如何处理多个条件输入？",
+        "answer": "在KfConditioningAddx10节点的源代码中，通过遍历kwargs.values()来访问除必须输入cond_0之外的所有条件输入，对每个输入的'text_embeddings'和'pooled_output'字段进行累加处理，以实现累积效果。"
+    },
+    {
+        "question": "哪些节点可以用于条件数据的累积处理？",
+        "answer": "KfConditioningAddx10是ComfyUI中的一款设计器节点，专门用于条件数据的累积处理，通过聚合多个输入条件，对整体条件数据进行增强和综合处理。"
+    }
+]

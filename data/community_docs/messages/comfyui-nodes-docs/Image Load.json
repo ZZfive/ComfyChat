@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Load_Image节点的功能是什么？",
+        "answer": "WAS_Load_Image 节点用于高效加载和处理来自特定路径或URL的图像。它支持图像转换为所需格式，创建来自alpha通道的掩码，并提取文件名。"
+    },
+    {
+        "question": "WAS_Load_Image节点属于哪个类别？",
+        "answer": "WAS_Load_Image 节点属于WAS Suite/IO类别，专注于输入/输出操作。"
+    },
+    {
+        "question": "哪些是WAS_Load_Image节点的必需输入参数和它们的用途？",
+        "answer": "WAS_Load_Image节点的必需参数是'image_path'，决定图像的加载来源；它可以是本地文件路径或在线URL，用于访问和处理图像数据。"
+    },
+    {
+        "question": "WAS_Load_Image节点中可选参数RGBA的功能是什么？",
+        "answer": "RGBA参数决定是否加载包含alpha通道的图像。这影响图像的透明度，对某些图像处理任务至关重要。"
+    },
+    {
+        "question": "WAS_Load_Image节点的输出有哪些？",
+        "answer": "WAS_Load_Image的输出包括‘image’（已处理图像数据），‘mask’（若存在则来自于alpha通道），以及‘filename_text’（图像文件名的文本表示）。"
+    },
+    {
+        "question": "WAS_Load_Image节点如何处理带有'alpha通道'的图像？",
+        "answer": "若'RGBA'参数设为'true'，WAS_Load_Image将加载带有alpha通道的图像，并在输出中提供一个‘mask’，用于区分透明区域。"
+    },
+    {
+        "question": "对于远程图像URL，WAS_Load_Image节点如何加载图像？",
+        "answer": "若'image_path'参数为HTTP URL，WAS_Load_Image节点将下载图像数据，即使URL访问出现问题，也会处理异常并提供错误反馈。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_KSampler_Cycle节点的功能是什么?",
+        "answer": "WAS_KSampler_Cycle是WAS套件中的高级采样节点，执行各种采样操作，包括模型选择、种子初始化、步数控制、条件输入，以及处理复杂采样任务，如迭代去噪和潜在图像操作。"
+    },
+    {
+        "question": "WAS_KSampler_Cycle中的'model'参数有何作用?",
+        "answer": "'model'参数定义了用于生成输出样本的底层神经网络模型，是采样过程的核心组成部分。正确选择模型对生成样本的质量和特性有显著影响。"
+    },
+    {
+        "question": "如何确保WAS_KSampler_Cycle采样过程的可重复性?",
+        "answer": "通过设置'seed'参数，可以初始化随机数生成器，确保即使在不同的运行中也能生成一致的结果。"
+    },
+    {
+        "question": "WAS_KSampler_Cycle中的'steps'参数对采样过程有何影响?",
+        "answer": "'steps'参数决定了采样过程中的迭代次数，可影响样本的精细度与计算时间。更多的步骤通常导致更精细的样本，但会增加处理时间。"
+    },
+    {
+        "question": "在WAS_KSampler_Cycle节点中，输出潜在表示有何用途?",
+        "answer": "输出的潜在表示是生成样本的编码形式，可以被进一步处理或用于如图像重建、特征提取等各种下游任务。"
+    },
+    {
+        "question": "哪些类型的设备最适合运行WAS_KSampler_Cycle节点?",
+        "answer": "WAS_KSampler_Cycle节点最适合的运行环境需要具有强大的图形处理能力，推荐使用GPU作为基础硬件以增强计算性能和处理速度。"
+    },
+    {
+        "question": "在WAS_KSampler_Cycle节点中，可选的'vae'参数如何影响采样过程?",
+        "answer": "'vae'参数可以是'disable'或'enable'，当启用时，影响潜在空间处理，参与潜在图像的编码和解码流程，对于潜在图像的尺寸匹配和特性调整起到关键作用。"
+    }
+]

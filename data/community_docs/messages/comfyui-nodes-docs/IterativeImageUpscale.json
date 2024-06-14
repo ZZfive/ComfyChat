@@ -1,0 +1,30 @@
+[
+    {
+        "question": "IterativeImageUpscale节点的主要功能是什么？",
+        "answer": "IterativeImageUpscale节点的主要功能是执行迭代图像放大，逐步提高输入图像的分辨率，通过潜在空间模型对图像进行编码和解码，以及应用放大因子在指定步骤上进行迭代，以达到所需的细节水平。"
+    },
+    {
+        "question": "IterativeImageUpscale中哪些参数是必填的？",
+        "answer": "在IterativeImageUpscale节点中，必填的参数包括'pixels'（输入图像），'upscale_factor'（放大级别），'steps'（迭代步骤数），'upscaler'（放大方法或模型）和'vae'（变分自编码器实例）。"
+    },
+    {
+        "question": "IterativeImageUpscale如何处理图像放大过程中的临时结果？",
+        "answer": "IterativeImageUpscale节点使用'温前缀'参数指定放大过程中存储中间结果的临时文件前缀。如果留空，将使用默认行为。"
+    },
+    {
+        "question": "IterativeImageUpscale的'upscale_factor'参数的作用是什么？",
+        "answer": "'upscale_factor'参数定义了放大过程中的放大级别，决定了输入图像经过处理将被放大的倍数。"
+    },
+    {
+        "question": "哪个节点负责处理IterativeImageUpscale节点中的图像编码和解码？",
+        "answer": "IterativeImageUpscale节点通过调用VAEEncode和VAEDecode或其各自的Tiled版本来处理图像的编码和解码，这取决于'upscaler'是否设置了为'tiled'。"
+    },
+    {
+        "question": "IterativeImageUpscale中的'vae'参数有什么作用？",
+        "answer": "'vae'参数是变分自编码器的一个实例，用于IterativeImageUpscale节点中的图像编码和解码过程，这是放大过程中不可或缺的一部分。"
+    },
+    {
+        "question": "IterativeImageUpscale的'mode'参数是如何影响图像放大的？",
+        "answer": "IterativeImageUpscale中的'step_mode'参数决定了每个步骤中用于图像放大的方法，可以选择'simple'或'geometric'，分别代表线性缩放和指数缩放。"
+    }
+]

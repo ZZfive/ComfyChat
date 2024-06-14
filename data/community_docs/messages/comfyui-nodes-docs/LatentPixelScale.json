@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentPixelScale是什么类型的节点？",
+        "answer": "LatentPixelScale是ComfyUI中的一个节点，属于ImpactPack/Upscale类别，专门用于将图像的潜在表示上采样至更高分辨率。"
+    },
+    {
+        "question": "LatentPixelScale在哪些场景下非常关键？",
+        "answer": "LatentPixelScale节点在需要将低分辨率潜在图像转换到高分辨率的图像处理流程中扮演着关键角色。"
+    },
+    {
+        "question": "LatentPixelScale输出哪些类型的数据？",
+        "answer": "LatentPixelScale输出两种类型的数据：'latent'，代表上采样后的潜在表示；'image'，是上采样潜在图像的视觉表示。"
+    },
+    {
+        "question": "LatentPixelScale节点中的'scale_method'参数控制什么？",
+        "answer": "'scale_method'参数决定了用于上采样潜在图像的算法，影响上采样图像的最终外观和性能，可选方法包括'nearest-exact'、'bilinear'、'lanczos'和'area'。"
+    },
+    {
+        "question": "在处理大图像时，LatentPixelScale节点如何优化性能？",
+        "answer": "通过设置参数'use_tiled_vae'为True，LatentPixelScale节点可以使用平铺方法解码和编码潜在表示，从而提高处理大图像的效率。"
+    },
+    {
+        "question": "LatentPixelScale节点如何处理'samples'参数？",
+        "answer": "'samples'参数代表要上采样的图像潜在表示，是影响节点操作和上采样输出质量的主要输入。"
+    },
+    {
+        "question": "LatentPixelScale节点能否支持自定义上采样模型？",
+        "answer": "通过提供的可选参数'upscale_model_opt'，LatentPixelScale节点允许指定自定义模型用于上采样过程，为高级用户提供了应用特定上采样技术的灵活性。"
+    }
+]

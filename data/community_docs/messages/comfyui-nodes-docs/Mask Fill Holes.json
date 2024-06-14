@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Mask_Fill_Region 是什么?",
+        "answer": "WAS_Mask_Fill_Region 是 ComfyUI 中的一个自定义节点，属于 WAS Suite/Image/Masking 类别，专门用来处理图像掩码并填充指定区域，对于图像分割或区域操作尤为重要。"
+    },
+    {
+        "question": "WAS_Mask_Fill_Region 节点的关键输入是什么?",
+        "answer": "WAS_Mask_Fill_Region 节点的关键输入是 'masks'，它是一个掩码数组，其中每个掩码定义了要被填充的区域。"
+    },
+    {
+        "question": "WAS_Mask_Fill_Region 节点的输出数据类型为何?",
+        "answer": "WAS_Mask_Fill_Region 节点的输出数据类型为 'MASKS' 类型的 torch.Tensor，代表了节点操作后填充区域的掩码数组。"
+    },
+    {
+        "question": "哪些应用可以受益于 WAS_Mask_Fill_Region 节点?",
+        "answer": "在其应用中要求区域连续性如无缝纹理创建或合成图的场景，WAS_Mask_Fill_Region 节点能够确保填充区域被适当地集成到掩码中。"
+    },
+    {
+        "question": "WAS_Mask_Fill_Region 节点如何处理多个掩码输入?",
+        "answer": "当 WAS_Mask_Fill_Region 节点接受多个掩码输入时，它会对每个掩码分别处理，生成相应的填充区域张量，然后将所有张量堆叠在一起，形成输出。"
+    },
+    {
+        "question": "WAS_Mask_Fill_Region 节点执行填充所依赖的外部类是什么?",
+        "answer": "WAS_Mask_Fill_Region 节点执行填充依赖于 WAS_Tools_Class 类的 Masking.fill_region 方法，以实现掩码区域的填充操作。"
+    },
+    {
+        "question": "WAS_Mask_Fill_Region 节点的运行基础设备是什么?",
+        "answer": "WAS_Mask_Fill_Region 节点基于 CPU 运行，以执行图像掩码的填充任务。"
+    }
+]

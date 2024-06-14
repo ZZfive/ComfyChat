@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageExpandBatch+ 节点在 ComfyUI 中的功能是什么？",
+        "answer": "ImageExpandBatch+ 节点允许用户在不重载模型的情况下扩展现有图像批次的大小，这对于处理一组批处理图像时需要扩展其数量的场景非常有用。"
+    },
+    {
+        "question": "使用 ImageExpandBatch+ 节点可以解决什么样的工作流程问题？",
+        "answer": "使用 ImageExpandBatch+ 节点可以解决在生成图像批次过程中需要临时增加图像数量但又不想重新加载模型的问题，这在连贯的图像生成场景中特别有用，比如在迭代设计过程中的图片扩增。"
+    },
+    {
+        "question": "如何使用 ImageExpandBatch+ 节点扩展图像批次？",
+        "answer": "要使用 ImageExpandBatch+ 扩展图像批次，用户需要输入原始图像批次和希望扩展的倍数，节点将输出扩展后的图像批次，使得每个原始图像被复制相应次数。"
+    },
+    {
+        "question": "ImageExpandBatch+ 节点对原始图像品质有何影响？",
+        "answer": "ImageExpandBatch+ 节点不会改变原始图像的品质，它仅仅扩展了图像批次的大小，而图像的内容和品质保持不变。"
+    },
+    {
+        "question": "哪些类型的任务适合使用 ImageExpandBatch+ 节点进行图像批次扩展？",
+        "answer": "ImageExpandBatch+ 节点适合于批量图像处理作业，特别是在不需要改变每个图像个体内容，仅需要增加图像数量的场景，如快速生成变体图像进行视觉比较或数据集扩增。"
+    },
+    {
+        "question": "在 ComfyUI 工作流程中，何时应考虑使用 ImageExpandBatch+ 节点？",
+        "answer": "在 ComfyUI 工作流程中，当需要在不重新生成或改变模型设定的前提下增加现有的图像批次大小时，应考虑使用 ImageExpandBatch+ 节点，通常在快速迭代设计或创建多个图像变体时非常高效。"
+    },
+    {
+        "question": "ComfyUI 的 ImageExpandBatch+ 节点如何实现图像批次的高效扩展？",
+        "answer": "ImageExpandBatch+ 节点通过智能地复制每张图像来扩展批次，这避免了资源密集型的模型重新计算，从而实现图像批次的高效扩展，这在批处理图像过程中特别节省时间和计算资源。"
+    }
+]

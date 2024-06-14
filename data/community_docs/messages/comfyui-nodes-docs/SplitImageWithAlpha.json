@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SplitImageWithAlpha节点有什么作用？",
+        "answer": "SplitImageWithAlpha是一个ComfyUI中的自定义节点，用于将图像的颜色信息与alpha通道分离，适用于需要处理透明度任务，如图像合成或遮罩创建。"
+    },
+    {
+        "question": "在ComfyUI中，SplitImageWithAlpha节点属于哪个分类？",
+        "answer": "SplitImageWithAlpha节点属于'mask/compositing'分类，这意味着它专门用于处理图像掩模和复合效果。"
+    },
+    {
+        "question": "哪些输入是SplitImageWithAlpha节点必需的？",
+        "answer": "SplitImageWithAlpha节点需要'image'作为必需的输入参数，该参数包含图像数据，是节点进行分离处理的主要信息源。"
+    },
+    {
+        "question": "SplitImageWithAlpha节点处理后的输出包括什么？",
+        "answer": "SplitImageWithAlpha节点处理后输出包括'color_image'和'alpha_mask'，前者是不含透明度层的颜色图像，后者是代表透明度信息的alpha通道，且已经反转以供合成操作使用。"
+    },
+    {
+        "question": "SplitImageWithAlpha节点的Python数据类型是什么？",
+        "answer": "SplitImageWithAlpha节点处理的输入和输出数据类型在Python中均为'torch.Tensor'，使用PyTorch库进行图像数据的处理和管理。"
+    },
+    {
+        "question": "SplitImageWithAlpha节点在图像合成中的具体用途是什么？",
+        "answer": "SplitImageWithAlpha在图像合成中主要用于分离图像的颜色和透明度信息，使得能够单独处理和调整色彩与alpha遮罩，从而实现更精准的图像叠加和效果创造。"
+    },
+    {
+        "question": "SplitImageWithAlpha节点是否可以在没有GPU支持的环境下工作？",
+        "answer": "尽管SplitImageWithAlpha节点的推荐基础设施为GPU，以优化图像处理的速度和效率，但它理论上也可以在不具有GPU的环境下运行，尽管可能会影响处理性能。"
+    }
+]

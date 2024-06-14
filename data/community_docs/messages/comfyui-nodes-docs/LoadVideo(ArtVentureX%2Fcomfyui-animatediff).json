@@ -1,0 +1,38 @@
+[
+    {
+        "question": "LoadVideo节点是什么?",
+        "answer": "LoadVideo是ComfyUI的一个自定义节点，属于Animate Diff/Utils类别，用于从视频文件中提取帧，支持指定起始点和帧数限制，以便进行后续处理，如动画或差异分析。"
+    },
+    {
+        "question": "LoadVideo节点的输入参数有哪些?",
+        "answer": "LoadVideo节点的输入包括必需的`video`参数，用于指定视频文件，以及可选的`frame_start`和`frame_limit`参数，分别用于定义开始提取的帧号和提取的最大帧数。"
+    },
+    {
+        "question": "如何设定LoadVideo节点的开始帧号？",
+        "answer": "通过`frame_start`参数设置LoadVideo节点的开始帧号，该参数允许用户定义视频序列中要开始提取的初始帧位置。"
+    },
+    {
+        "question": "LoadVideo节点支持哪些视频格式的处理？",
+        "answer": "LoadVideo节点支持多种视频格式，包括GIF、WEBP、MP4、MOV、AVI和WEBM，可自动识别视频文件类型并进行相应的帧提取处理。"
+    },
+    {
+        "question": "LoadVideo节点的输出类型是什么？",
+        "answer": "LoadVideo节点的输出类型包括`frames`，表示一系列转换成张量格式的视频帧，以及`frame_count`，提供提取的帧总数信息，这些输出对于后续分析和操作至关重要。"
+    },
+    {
+        "question": "哪些节点可以用于处理视频文件进行帧提取？",
+        "answer": "ComfyUI中的LoadVideo节点专门用于处理视频文件，可以提取视频帧，是处理动画或差异分析的基础。"
+    },
+    {
+        "question": "LoadVideo节点的`frame_limit`参数有什么作用？",
+        "answer": "`frame_limit`参数用于限制从`frame_start`位置开始所提取的视频帧数量，直接影响节点处理的视频帧范围。"
+    },
+    {
+        "question": "LoadVideo节点是如何决定处理哪种类型视频的？",
+        "answer": "LoadVideo节点通过检查视频文件的扩展名来决定如何处理视频文件，它能够自动识别并处理GIF、WEBP、MP4、MOV、AVI和WEBM等常见视频格式。"
+    },
+    {
+        "question": "LoadVideo节点的`frames`输出表示什么？",
+        "answer": "`frames`输出是一个包含提取视频帧的张量序列，对于下游的图像分析或视频处理操作来说，这一系列帧是基本的输入。"
+    }
+]

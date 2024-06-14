@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ControlNetApplyAdvancedSEGS节点的主要功能是什么？",
+        "answer": "ControlNetApplyAdvancedSEGS节点主要通过应用控制网络来增强分割过程，细化分割掩码，确保平滑过渡，适用于精确控制分割输出的场景。"
+    },
+    {
+        "question": "哪些参数是ControlNetApplyAdvancedSEGS节点处理分割数据所必需的？",
+        "answer": "必需的参数包括'segs'、'control_net'、'strength'、'start_percent'和'end_percent'，其中'segs'提供初始分割数据，'control_net'定义用于指导分割的控制网络，而'strength'、'start_percent'和'end_percent'分别调整网络影响强度和过渡区域。"
+    },
+    {
+        "question": "ControlNetApplyAdvancedSEGS节点中的'segs'参数扮演什么角色？",
+        "answer": "'segs'参数提供节点处理的初始分割数据，是节点执行和控制网络细化分割起点的重要基础。"
+    },
+    {
+        "question": "如何调整ControlNetApplyAdvancedSEGS节点中控制网络的影响强度？",
+        "answer": "通过调整'strength'参数，可以精细控制控制网络对分割的影响强度，影响最终分割输出的质量。"
+    },
+    {
+        "question": "在ControlNetApplyAdvancedSEGS节点中，'control_net'参数具体指什么？",
+        "answer": "'control_net'参数定义了将用于指导分割过程的具体控制网络，对节点功能至关重要，决定如何细化分割掩码。"
+    },
+    {
+        "question": "可选参数'segs_preprocessor'在ControlNetApplyAdvancedSEGS节点中的作用是什么？",
+        "answer": "可选参数'segs_preprocessor'允许在输入控制网络前对分割数据进行预处理，这有助于提高节点性能和准备更有利于分割过程的数据。"
+    },
+    {
+        "question": "哪些是ControlNetApplyAdvancedSEGS节点的输出？",
+        "answer": "节点输出'tuple[segs]'，其中'segs'包含应用控制网络后经细化的分割数据，代表节点操作的最终结果，对后续处理过程至关重要。"
+    }
+]

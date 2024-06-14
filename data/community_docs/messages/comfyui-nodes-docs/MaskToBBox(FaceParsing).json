@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MaskToBBox节点是做什么的？",
+        "answer": "MaskToBBox是ComfyUI中的一个自定义节点，用于将面部遮罩数据转换为边界框坐标，便于在图像中定位面部特征进行分析。"
+    },
+    {
+        "question": "MaskToBBox节点的遮罩参数的作用是什么？",
+        "answer": "遮罩参数是一个张量，代表面部遮罩，用于识别图像中的兴趣区域，直接影响生成的边界框的准确性和质量。"
+    },
+    {
+        "question": "MaskToBBox节点如何处理垫圈（pad）参数？",
+        "answer": "pad参数允许通过填充边缘来调整边界框坐标，确保边界框更好地适应图像中的面部特征，适用于细化边界区域。"
+    },
+    {
+        "question": "MaskToBBox节点的输出数据类型是什么？",
+        "answer": "MaskToBBox节点的输出类型是边界框(BBOX)，表示为一个元组列表，每个元组包含一个边界框的坐标，用于定位面部特征并作为后续处理的输入。"
+    },
+    {
+        "question": "哪些节点可以处理面部特征的定位？",
+        "answer": "MaskToBBox节点是处理面部特征定位的节点之一，它能将面部遮罩转化为精确的边界框坐标，适用于面部特征分析。"
+    },
+    {
+        "question": "在MaskToBBox的用法中，提及的Infra类型是什么意思？",
+        "answer": "Infra type指的是节点运行的硬件类型。对于MaskToBBox节点，其Infra type为CPU，意味着它能在CPU环境中运行。"
+    },
+    {
+        "question": "MaskToBBox节点的垫圈（pad）调整边界框坐标是如何实现的？",
+        "answer": "当pad参数非零时，MaskToBBox节点会通过增加或减少边界框每个坐标的数值来实现调整，使边界框更贴近或远离面部特征，达到精细化控制的目的。"
+    }
+]

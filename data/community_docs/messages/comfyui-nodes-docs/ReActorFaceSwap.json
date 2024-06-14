@@ -1,0 +1,34 @@
+[
+    {
+        "question": "reactor类在ComfyUI中扮演什么角色？",
+        "answer": "reactor类是ComfyUI的一个组件，属于‘🌌 ReActor’类别，它作为一个全面的人脸操作工具包，执行高级的人脸交换及恢复操作，同时也提供性别检测和人脸可见性调整功能。"
+    },
+    {
+        "question": "哪些功能可以让reactor处理人脸并执行交换和恢复操作？",
+        "answer": "reactor需要'input_image'作为源图像，'swap_model'用于人脸交换过程，以及'face_restore_model'用于恢复人脸质量，这些功能使它能够处理人脸并执行交换和恢复操作。"
+    },
+    {
+        "question": "如何使用reactor节点禁用人脸处理流水线的执行？",
+        "answer": "通过设置'enabled'参数为false，可以禁用reactor节点的人脸处理流水线执行，此时输入的图像和人脸模型将不做修改直接返回。"
+    },
+    {
+        "question": "reactor类中的哪些参数会影响恢复后的人脸可见度？",
+        "answer": "参数'face_restore_visibility'影响恢复后的人脸可见度，这个浮点值的取值范围是0.1到1，其中1表示完全可见，0.1表示几乎不可见。"
+    },
+    {
+        "question": "在人脸恢复过程中，codeformer_weight参数的作用是什么？",
+        "answer": "codeformer_weight参数用于在恢复人脸时控制对codeformer模型输出的权重，影响原始人脸特征与恢复后人脸特征之间的平衡。"
+    },
+    {
+        "question": "reactor类提供的人脸处理选项如何与性别检测相结合？",
+        "answer": "通过'detect_gender_input'参数设置，可以选择在输入人脸中检测的性别，这在人脸交换操作期间影响对人脸的选择和处理。"
+    },
+    {
+        "question": "哪些输入控制台日志的详细程度？",
+        "answer": "使用'console_log_level'参数可以设置在执行过程中生成的控制台日志的详细程度，取值为0（警告）、1（状态消息）或2（详细信息）。"
+    },
+    {
+        "question": "reactor类处理的输出包括哪些类型的数据？",
+        "answer": "输出类型包括'result_image'，即经过人脸交换和恢复操作处理后的输出图像，以及'face_model'，用于表示执行过程中使用的人脸模型。"
+    }
+]

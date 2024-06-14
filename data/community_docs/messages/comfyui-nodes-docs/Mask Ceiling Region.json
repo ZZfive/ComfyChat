@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Mask_Ceiling_Region是什么类？",
+        "answer": "WAS_Mask_Ceiling_Region是一个ComfyUI插件中的类，属于WAS Suite/Image/Masking类别，用于识别和处理输入掩码中的最上区域。"
+    },
+    {
+        "question": "WAS_Mask_Ceiling_Region节点输出什么类型的张量？",
+        "answer": "WAS_Mask_Ceiling_Region节点的输出是MASK类型的数据，具体是torch.Tensor格式，表示处理过的掩码区域。"
+    },
+    {
+        "question": "ceiling_region方法如何处理多个输入掩码？",
+        "answer": "当ceiling_region方法接收到多个输入掩码时，它会循环处理每个掩码，将它们转换为PIL图像，应用天花板效果，然后转换回tensor，最终组合成一个维度合适的tensor返回。"
+    },
+    {
+        "question": "WAS_Mask_Ceiling_Region节点支持的输出数据类型是什么？",
+        "answer": "WAS_Mask_Ceiling_Region节点支持的输出数据类型是torch.Tensor，它以MASK的格式返回处理后的最上区域的掩码数据。"
+    },
+    {
+        "question": "WAS_Mask_Ceiling_Region的输入掩码参数为什么重要？",
+        "answer": "输入掩码参数是WAS_Mask_Ceiling_Region的关键输入，它提供节点处理的原始数据，决定哪些图像区域被识别为最上区域，对输出结果有直接影响。"
+    },
+    {
+        "question": "如何使用WAS_Mask_Ceiling_Region节点识别图像中的最上区域？",
+        "answer": "通过将图像掩码提供给WAS_Mask_Ceiling_Region的ceiling_region方法，节点会执行天花板效果来隔离输tracker顶层区域并输出经过处理的张量表示区域。"
+    },
+    {
+        "question": "WAS_Mask_Ceiling_Region节点的最佳运行环境是什么?",
+        "answer": "WAS_Mask_Ceiling_Region节点建议在CPU环境下运行，作为其配置参数的一部分，这表明它对硬件的要求可能与GPU优化算法不同。"
+    }
+]

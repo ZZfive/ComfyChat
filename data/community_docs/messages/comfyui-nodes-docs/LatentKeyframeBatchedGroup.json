@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentKeyframeBatchedGroupNode的作用是什么？",
+        "answer": "LatentKeyframeBatchedGroupNode是ComfyUI的Advanced-ControlNet插件中用于管理和创建具有不同强度的潜在关键帧批量的节点，支持整合之前的潜在关键帧并提供关键帧详情的打印功能。"
+    },
+    {
+        "question": "如何在ComfyUI中的ControlNet框架内使用LatentKeyframeBatchedGroupNode生成关键帧？",
+        "answer": "通过LatentKeyframeBatchedGroupNode，可以基于提供的强度输入和可能的前一个关键帧组来生成ControlNet系统的关键帧批量。"
+    },
+    {
+        "question": "LatentKeyframeBatchedGroupNode中的'float_strengths'参数如何工作？",
+        "answer": "'float_strengths'参数可以是单个浮点数或浮点数列表，用于确定每个新创建的潜在关键帧的强度。它是批量中关键帧强度的核心控制要素。"
+    },
+    {
+        "question": "如何将现有关键帧整合到LatentKeyframeBatchedGroupNode中？",
+        "answer": "使用'prev_latent_kf'参数，可以将已有潜在关键帧组整合到节点的当前操作中，从而构建在现有关键帧结构的基础上。"
+    },
+    {
+        "question": "LatentKeyframeBatchedGroupNode如何实现关键帧细节的打印？",
+        "answer": "通过设置'print_keyframes'参数为True，LatentKeyframeBatchedGroupNode可以启用关键帧信息的日志记录，便于调试和理解关键帧流程。"
+    },
+    {
+        "question": "LatentKeyframeBatchedGroupNode的输出类型是什么？",
+        "answer": "LatentKeyframeBatchedGroupNode的输出类型为'LATENT_KF'，表示经过处理和整合后的一批潜在关键帧的输出，关键于ControlNet系统的后续处理。"
+    },
+    {
+        "question": "在ComfyUI的ControlNet框架中，'LATENT_KF'输出在节点LatentKeyframeBatchedGroupNode中的具体含义是什么？",
+        "answer": "'LATENT_KF'输出在ControlNet系统中表示已经处理了输入强度并整合了任何前一个关键帧组后的潜在关键帧批量，是该系统中一个关键的输出形式。"
+    }
+]

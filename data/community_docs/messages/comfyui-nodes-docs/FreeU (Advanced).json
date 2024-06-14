@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_FreeU是什么类？",
+        "answer": "WAS_FreeU类是ComfyUI中的一个自定义节点，通过应用打补丁技术修改和增强模型行为。它依据预定义的参数和模式改进模型性能或调整输出特征。"
+    },
+    {
+        "question": "WAS_FreeU的打补丁方法('patch')如何影响模型？",
+        "answer": "打补丁方法('patch')旨在通过操纵模型的内部表示来优化或变更模型的性能特征，提供更细致和针对性的模型优化方法。"
+    },
+    {
+        "question": "哪些是WAS_FreeU的必需输入参数？",
+        "answer": "必需输入参数包括模型(model)、目标块(target_block)、多尺度模式(multiscale_mode)、多尺度强度(multiscale_strength)、slice_b1、slice_b2、b1、b2、s1和s2，它们定义了补丁操作的核心属性和范围。"
+    },
+    {
+        "question": "model参数在WAS_FreeU中承担什么角色？",
+        "answer": "model参数定义了将要应用打补丁过程的基础结构和权重，是主要输入，其特征和性能将由WAS_FreeU节点的操作所改变。"
+    },
+    {
+        "question": "哪些参数影响WAS_FreeU在不同尺度上修改模型特征的程度？",
+        "answer": "multiscale_strength参数直接控制了WAS_FreeU节点在不同尺度上修改模型特征的程度。"
+    },
+    {
+        "question": "如何定义打补丁操作将专注于的模型部分？",
+        "answer": "target_block参数决定了WAS_FreeU打补丁操作将集中于模型的哪一部分，如输出块(output_block)、中间块(middle_block)、输入块(input_block)或所有块(all)。"
+    },
+    {
+        "question": "b1和b2参数在打补丁过程中承担什么角色？",
+        "answer": "b1和b2参数分别用于调整打补丁过程中第一片和第二片的影响，允许WAS_FreeU节点控制应用于模型特征的修改程度。"
+    }
+]

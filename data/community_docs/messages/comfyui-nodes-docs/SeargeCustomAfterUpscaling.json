@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SeargeCustomAfterUpscaling节点类属于哪个类别?",
+        "answer": "SeargeCustomAfterUpscaling节点类属于MAGIC_CUSTOM_STAGES类别，用于处理图像放大后的自定义输出阶段。"
+    },
+    {
+        "question": "在ComfyUI中，SeargeCustomAfterUpscaling节点期待接收哪种类型的输入?",
+        "answer": "SeargeCustomAfterUpscaling节点期待接收type为SRG_STAGE_OUTPUT的custom_output作为主要输入，该输入通常包含前一处理阶段的输出结果。"
+    },
+    {
+        "question": "SeargeCustomAfterUpscaling节点的输入参数custom_output的预期作用是什么?",
+        "answer": "custom_output参数是SeargeCustomAfterUpscaling节点处理的核心，它用于检索并完善在放大操作后放大的图像，预期从中提升图像质量。"
+    },
+    {
+        "question": "SeargeCustomAfterUpscaling节点的输出包含了什么，以及它的预期用途是什么?",
+        "answer": "SeargeCustomAfterUpscaling节点输出一个IMAGE类型的数据，即处理后的增强图像，该图像预期具有更高的视觉质量，可用于后续的使用或进一步分析。"
+    },
+    {
+        "question": "处理custom_output参数时，SeargeCustomAfterUpscaling节点会进行怎样的内部操作?",
+        "answer": "SeargeCustomAfterUpscaling节点从custom_output参数中检索放大后的图像，对其进行完善和增强处理，输出为IMAGE类型的数据，该过程可查看节点的source code实现。"
+    },
+    {
+        "question": "SeargeCustomAfterUpscaling节点的infra type被指定为什么，这意味着什么?",
+        "answer": "SeargeCustomAfterUpscaling节点的infra type被指定为CPU，这意味着该节点的任务处理主要由CPU执行，而不是GPU，这可能对处理速度和资源效率有影响。"
+    },
+    {
+        "question": "如果向SeargeCustomAfterUpscaling节点传递的custom_output参数为None，节点会如何响应?",
+        "answer": "如果传递给SeargeCustomAfterUpscaling节点的custom_output参数为None，节点不会进行任何处理，并直接返回None，不生成任何增强的图像输出。"
+    }
+]

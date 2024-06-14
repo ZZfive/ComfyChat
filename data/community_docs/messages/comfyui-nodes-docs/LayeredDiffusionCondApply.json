@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LayeredDiffusionCond是什么节点?",
+        "answer": "LayeredDiffusionCond是ComfyUI中的一个自定义节点，它从前景和背景输入生成混合图像，适用于GPU基础设施，使用扩散模型以创造视觉上一致且细节丰富的输出。"
+    },
+    {
+        "question": "LayeredDiffusionCond节点的用途是什么？",
+        "answer": "LayeredDiffusionCond节点用于创建前景和背景输入的无缝混合图像，利用扩散模型的力量在给定条件下提升输出图像的质量，增强视觉一致性和细节。"
+    },
+    {
+        "question": "model参数在LayeredDiffusionCond中的作用是什么？",
+        "answer": "model参数定义了用于生成混合图像的基础扩散模型，直接影响节点的性能及输出图像的质量，其类型为Comfy UI中的MODEL，Python中为torch.nn.Module类型。"
+    },
+    {
+        "question": "LayeredDiffusionCond节点中weight参数的用途是什么？",
+        "answer": "weight参数调整LayeredDiffusionCond节点中模型的补丁影响，允许微调原始和修改后图像特征之间的平衡，范围通常在-1到3之间，默认为1.0，步长为0.05。"
+    },
+    {
+        "question": "输出的blended_model表示什么？",
+        "answer": "blended_model输出代表已通过LayeredDiffusionCond节点分层扩散过程增强的修改后的扩散模型，包含了输入条件的综合作用，类型为Comfy UI的MODEL，Python中为torch.nn.Module类型。"
+    },
+    {
+        "question": "哪些输入是LayeredDiffusionCond节点所需的条件参数？",
+        "answer": "LayeredDiffusionCond节点需要的条件参数有model、cond、uncond、latent和config。这些参数中，model定义底层扩散模型，cond和uncond控制图像生成方向和细节，latent表示图像潜在状态，config指定模型配置，共塑高质量输出。"
+    },
+    {
+        "question": "Comfy UI中哪些节点能处理图像混合？",
+        "answer": "LayeredDiffusionCond节点是ComfyUI层扩散类别中用于处理图像混合的节点，它能够有效地从前景和背景输入数据生成混合图像，实现视觉上的一致性和细节增强。"
+    }
+]

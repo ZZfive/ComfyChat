@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentBatchComparator是什么类型的节点？",
+        "answer": "LatentBatchComparator是ComfyUI中的自定义节点，用于比较和可视化两批潜在变量之间的差异，旨在通过生成可视化表示来展示它们在潜在空间中相对位置的差异。"
+    },
+    {
+        "question": "LatentBatchComparator节点使用什么度量来量化潜在向量之间的差异？",
+        "answer": "LatentBatchComparator节点使用余弦相似度矩阵来量化潜在向量之间的差异，这个矩阵提供了一个直观的理解关于潜在变量在空间中的相对位置。"
+    },
+    {
+        "question": "LatentBatchComparator节点的输出是什么？",
+        "answer": "LatentBatchComparator节点的输出是一张‘plot_image’，这是一张表示两批潜在变量之间余弦相似度矩阵的图像，用作可视化工具，帮助用户了解潜在变量的相似度或差异。"
+    },
+    {
+        "question": "LatentBatchComparator节点的输入latent_batch_1的数据类型是什么？",
+        "answer": "LatentBatchComparator节点的输入latent_batch_1的Comfy dtype是“LATENT”，对应的Python dtype是Dict[str, torch.Tensor]，用于表示要比较的第一批潜在变量。"
+    },
+    {
+        "question": "当使用LatentBatchComparator节点时，latent_batch_1和latent_batch_2的潜在变量如何结构化以进行有意义的比较？",
+        "answer": "latent_batch_1和latent_batch_2应以允许它们之间进行有意义比较的方式结构化，确保两批变量的格式兼容，以便进行准确的比较。"
+    },
+    {
+        "question": "LatentBatchComparator节点最适合在什么硬件上运行？",
+        "answer": "LatentBatchComparator节点的设计适合在CPU上运行，这是为了有效处理比较潜在变量并生成可视化结果的任务。"
+    },
+    {
+        "question": "LatentBatchComparator如何处理大小不同的latent batches？",
+        "answer": "如果latent_batch_1和latent_batch_2的形状不相同，LatentBatchComparator将抛出一个ValueError异常，提示潜在批次必须具有相同的形状以允许进行比较。"
+    }
+]

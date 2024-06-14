@@ -1,0 +1,38 @@
+[
+    {
+        "question": "LatentBatchSplitter是什么类型的节点？",
+        "answer": "LatentBatchSplitter是一个属于ComfyUI的InspirePack/Util类别的节点，它不是输出节点，可以从https://github.com/ltdrdata/ComfyUI-Inspire-Pack.git获取源代码。"
+    },
+    {
+        "question": "LatentBatchSplitter节点的主要功能是什么？",
+        "answer": "LatentBatchSplitter的主要功能是将一批潜在表示分割成多个子集，以促进数据处理和模型训练中的多样化应用，增强潜在空间探索的灵活性。"
+    },
+    {
+        "question": "LatentBatchSplitter节点如何处理潜在表示？",
+        "answer": "LatentBatchSplitter通过将单一的潜在表示批次分割成指定数量的子集，使这些数据更加适合下游处理，比如模型训练或生成多样化的输出。"
+    },
+    {
+        "question": "LatentBatchSplitter节点处理的数据类型是什么？",
+        "answer": "LatentBatchSplitter节点处理的主要数据类型是潜在表示（Comfy dtype: LATENT, Python dtype: Dict[str, torch.Tensor]），并可以分割成列表形式的潜在表示作为输出。"
+    },
+    {
+        "question": "哪些参数是LatentBatchSplitter节点所必需的？",
+        "answer": "LatentBatchSplitter节点必需的参数是‘latent’，它提供了将被节点处理的初始潜在表示批次，没有这个参数，节点无法执行预定的功能。"
+    },
+    {
+        "question": "‘split_count’参数在LatentBatchSplitter节点中起什么作用？",
+        "answer": "‘split_count’参数用于规定潜在批次要划分为多少个子集，它直接影响输出的粒度和生成数据集的多样性与分布。"
+    },
+    {
+        "question": "LatentBatchSplitter节点的使用建议是什么？",
+        "answer": "根据文档中的使用建议，LatentBatchSplitter节点的infrastructure类型应该是CPU，这表明在CPU上执行效率可能最高。"
+    },
+    {
+        "question": "LatentBatchSplitter节点的输出代表什么？",
+        "answer": "LatentBatchSplitter节点的输出代表重新组织的潜在表示批次，它已经根据设置的参数分割成指定数量的子集，对下游过程至关重要。"
+    },
+    {
+        "question": "在LatentBatchSplitter节点中，‘latent’和‘split_count’的预期输出类型是什么？",
+        "answer": "‘latent’的输出类型保持与输入类型一致，即潜在表示（Comfy dtype: LATENT, Python dtype: List[Dict[str, torch.Tensor]]），而‘split_count’不产出输出类型，它是用于控制节点行为的输入之一。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Image_Blend_Mask节 点的目的是什么？",
+        "answer": "WAS_Image_Blend_Mask节点的目的是使用提供的遮罩和混合百分比无缝混合两张图像，创建一个视觉上连贯的结果，其中一个图像的遮罩区域根据指定的混合级别被另一个图像的相应区域替换。"
+    },
+    {
+        "question": "image_a在WAS_Image_Blend_Mask节点中的作用是什么？",
+        "answer": "image_a在WAS_Image_Blend_Mask节点中是将与图像B混合的主图像，它构成了最终合成图像的基础层。"
+    },
+    {
+        "question": "mask在WAS_Image_Blend_Mask节点中定义了什么？",
+        "answer": "mask在WAS_Image_Blend_Mask节点中定义了图像B的哪些部分应在最终混合中可见，关键作用是确定要被图像B替换的图像A的区域。"
+    },
+    {
+        "question": "WAS_Image_Blend_Mask节点可选的blend_percentage有什么作用？",
+        "answer": "blend_percentage在WAS_Image_Blend_Mask中确定图像B的遮罩区域与图像A混合的程度，允许用户微调混合效果。"
+    },
+    {
+        "question": "混合两张图像时，WAS_Image_Blend_Mask节点的最终输出是什么格式？",
+        "answer": "WAS_Image_Blend_Mask节点混合两张图像的最终输出是result_image，结合了图像A和图像B，输出的类型为IMAGE，Python dtype为torch.Tensor。"
+    },
+    {
+        "question": "WAS_Image_Blend_Mask节点运行在哪个类型的基础硬件上？",
+        "answer": "WAS_Image_Blend_Mask节点运行在CPU上作为其基础设施类型。"
+    },
+    {
+        "question": "你可以提供WAS_Image_Blend_Mask节点的源代码吗？",
+        "answer": "WAS_Image_Blend_Mask节点的源代码定义了如何混合图像并设置了遮罩，例如通过使用'result_image = Image.composite(img_a, masked_img, blend_mask)'来实现结果图像的生成。"
+    }
+]

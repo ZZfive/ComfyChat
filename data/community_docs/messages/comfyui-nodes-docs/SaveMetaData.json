@@ -1,0 +1,42 @@
+[
+    {
+        "question": "SaveMetaData类的主要功能是什么？",
+        "answer": "SaveMetaData类的主要功能是通过`save_metadata`方法组织和存储与图像相关的元数据，确保每个图像的元数据被系统地记录并易于访问。"
+    },
+    {
+        "question": "SaveMetaData节点属于哪个类别？",
+        "answer": "SaveMetaData节点属于'Mikey/Meta'类别。"
+    },
+    {
+        "question": "SaveMetaData节点的哪些输入是必需的？",
+        "answer": "SaveMetaData节点的必需输入是'image'，这是保存元数据的主体，即图像。"
+    },
+    {
+        "question": "如果用户没有提供filename_prefix参数，SaveMetaData会如何处理？",
+        "answer": "如果用户没有提供filename_prefix参数，SaveMetaData会设置一个默认值，确保元数据文件的命名仍然有意义。"
+    },
+    {
+        "question": "额外的png信息参数在SaveMetaData节点中起什么作用？",
+        "answer": "额外的png信息参数允许保存与图像相关的特定信息，如注释或其他详细信息，为保存的元数据提供更全面的信息集。"
+    },
+    {
+        "question": "SaveMetaData的输出类型是什么？",
+        "answer": "SaveMetaData的输出类型是一个字典，包含已保存元数据的文件名和子文件夹，以便用户了解元数据的保存位置。"
+    },
+    {
+        "question": "如何触发SaveMetaData的save_metadata方法？",
+        "answer": "通过提供必要的参数，如'image'和任何可选参数，如'filename_prefix'，在ComfyUI的节点连接系统中触发SaveMetaData的save_metadata方法。"
+    },
+    {
+        "question": "保存的元数据文件名是如何构成的？",
+        "answer": "保存的元数据文件名可包含时间戳、文件名前缀、计数器以及特定的图像信息，具体取决于提供的参数设置。"
+    },
+    {
+        "question": "哪些参数影响save_metadata方法生成的元数据文件名？",
+        "answer": "timestamp_prefix、filename_prefix和counter参数影响生成的元数据文件名，分别控制文件名中时间戳的包含、文件名前缀的设置和计数器的附加。"
+    },
+    {
+        "question": "‘save_metadata’方法是否确认已保存的数据？",
+        "answer": "是的，‘save_metadata’方法的输出字典包含了已保存元数据的确认，指明了元数据文件的名称和位置，从而提供保存状态的确认。"
+    }
+]

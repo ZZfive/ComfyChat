@@ -1,0 +1,34 @@
+[
+    {
+        "question": "WAS_Image_Aspect_Ratio是什么类型的节点?",
+        "answer": "WAS_Image_Aspect_Ratio是ComfyUI的一个自定义节点，属于WAS Suite/Logic类别，用于计算和返回图像的多种比例表示形式。"
+    },
+    {
+        "question": "WAS_Image_Aspect_Ratio节点的哪部分代码负责确定图像的横竖屏模式?",
+        "answer": "在WAS_Image_Aspect_Ratio节点的源代码中，`aspect`方法中的条件逻辑负责确定图像的横竖屏模式，它通过计算宽度除以高度的比率来判断。"
+    },
+    {
+        "question": "图像操作和分析任务中比例考虑的关键作用是什么？",
+        "answer": "在图像操作和分析任务中，比例考虑是关键，因为正确的比例保持是维持图像视觉质量和结构分析准确性的基本要求，特别是在缩放、裁剪和显示变化中。"
+    },
+    {
+        "question": "在没有提供图像张量的情况下，WAS_Image_Aspect_Ratio节点如何计算图像的宽度和高度?",
+        "answer": "当没有提供图像张量时，WAS_Image_Aspect_Ratio节点将依赖于可选输入'width'和'height'参数，它们共同用于计算图像的宽度和高度。"
+    },
+    {
+        "question": "WAS_Image_Aspect_Ratio节点中的'is_landscape_bool'输出代表什么信息？",
+        "answer": "'is_landscape_bool'输出是一个布尔值，用于指示图像是否在横屏模式下，对于横屏图像输出1，对于非横屏（竖屏或正方形）图像输出0。"
+    },
+    {
+        "question": "哪些输入可以用于WAS_Image_Aspect_Ratio节点的纵横比计算?",
+        "answer": "WAS_Image_Aspect_Ratio节点可以使用'width'和'height'参数或'IMAGE'类型输入（即图像张量）来计算图像的纵横比。"
+    },
+    {
+        "question": "WAS_Image_Aspect_Ratio节点在图像的宽高比计算中如何简化常见的纵横比？",
+        "answer": "WAS_Image_Aspect_Ratio节点通过将图像宽度和高度的最大公约数进行计算，然后将其缩放比简化为常见纵横比，如'16:9'格式，提供以简化形式表示的常见纵横比输出。"
+    },
+    {
+        "question": "除了'aspect_number'输出，WAS_Image_Aspect_Ratio节点如何表示纵横比？",
+        "answer": "除了'aspect_number'输出，WAS_Image_Aspect_Ratio也通过'aspect_float'和'aspect_ratio_common'提供浮点数形式的纵横比和简化后常见的纵横比，如'16:9'表示法。"
+    }
+]

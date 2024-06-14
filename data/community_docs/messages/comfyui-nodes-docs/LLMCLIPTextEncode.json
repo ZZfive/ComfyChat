@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LLMCLIPTextEncode是什么类型的节点？",
+        "answer": "LLMCLIPTextEncode是ComfyUI中的一个自定义节点，它属于'llm'类别，通过对文本输入使用CLIP模型进行编码，为下游任务提供条件上下文。"
+    },
+    {
+        "question": "LLMCLIPTextEncode节点的输入参数clip代表什么？",
+        "answer": "在LLMCLIPTextEncode节点中，输入参数clip代表CLIP模型本身，这是文本编码过程的基础，它提供必要的上下文信息处理输入文本。"
+    },
+    {
+        "question": "LLMCLIPTextEncode节点的text参数有什么作用？",
+        "answer": "text参数是LLMCLIPTextEncode节点的关键输入，它承载了要进行编码的文本内容，是节点操作和条件上下文生成的基础。"
+    },
+    {
+        "question": "LLMCLIPTextEncode节点的输出类型是什么含义？",
+        "answer": "LLMCLIPTextEncode节点的输出类型CONDITIONING表示经过CLIP模型处理后的条件化表示，这种表示可以作为后续处理的上下文或者生成响应的基础。"
+    },
+    {
+        "question": "LLMCLIPTextEncode节点适用于哪种计算基础设施？",
+        "answer": "LLMCLIPTextEncode节点被设计用于CPU执行，这意味着文本编码过程主要依赖于较通用的中央处理器来完成。"
+    },
+    {
+        "question": "LLMCLIPTextEncode节点的Python dtype属性是什么，以及它们在节点功能中扮演的角色？",
+        "answer": "LLMCLIPTextEncode节点的Python dtype属性包括CLIPModel用于CLIP模型表示和Dict[str, Any]用于输出的条件化表示。CLIPModel确保文本编码功能的实现，而Dict[str, Any]允许将条件信息以字典形式传递，其中包含池化输出。"
+    },
+    {
+        "question": "LLMCLIPTextEncode节点如何处理和响应文本输入之后生成的结果？",
+        "answer": "当LLMCLIPTextEncode节点接收到文本输入后，它会通过CLIP模型进行编码。节点会检查响应内容，处理其中可能包含的特定标记，如'image'和'edit'，并最终返回经过编码的条件输出和池化输出，为下游任务准备条件上下文。"
+    }
+]

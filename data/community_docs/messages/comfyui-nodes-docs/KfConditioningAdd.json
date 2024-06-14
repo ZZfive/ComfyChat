@@ -1,0 +1,30 @@
+[
+    {
+        "question": "KfConditioningAdd节点的作用是什么？",
+        "answer": "KfConditioningAdd节点用于将两个调节输入相加以产生一个综合的调节输出，它强调数据的整合以增强整体调节影响，且保持各自数据结构不变。"
+    },
+    {
+        "question": "KfConditioningAdd节点处理哪些类型的数据？",
+        "answer": "KfConditioningAdd节点处理的输入类型是CONDITIONING，即Tuple[torch.Tensor, Dict[str, Any]]，用于存储调节所需的信息。"
+    },
+    {
+        "question": "KfConditioningAdd节点的两个主要输入是什么？",
+        "answer": "KfConditioningAdd节点的两个主要输入是conditioning_1和conditioning_2，它们分别代表了将要相加的两个调节数据集。"
+    },
+    {
+        "question": "KfConditioningAdd节点的输出类型是什么？",
+        "answer": "KfConditioningAdd节点的输出类型同样是CONDITIONING，用于表示两个输入相加后得到的增强调节集，Python dtype为List[Tuple[torch.Tensor, Dict[str, Any]]]。"
+    },
+    {
+        "question": "在ComfyUI中使用KfConditioningAdd节点时，其infra type是什么？",
+        "answer": "在ComfyUI中使用KfConditioningAdd节点时，其infra type是CPU，表明该节点主要在中央处理器上运行。"
+    },
+    {
+        "question": "哪些节点可以用于将两个调节输入相加？",
+        "answer": "KfConditioningAdd是ComfyUI中用于将两个调节输入相加的节点，产生综合的调节输出以增强调节影响。"
+    },
+    {
+        "question": "KfConditioningAdd节点如何确保在操作过程中数据不会被意外修改？",
+        "answer": "KfConditioningAdd节点通过使用deepcopy函数来复制conditioning_1和conditioning_2，确保数据不会在操作过程中被意外修改，保证了数据的安全性和原始性。"
+    }
+]

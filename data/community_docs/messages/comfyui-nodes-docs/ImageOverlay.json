@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageOverlay是什么类型的节点，它属于哪个分类？",
+        "answer": "ImageOverlay是Mikey/Image分类下的一种节点，用于图像处理操作中的图层叠加。"
+    },
+    {
+        "question": "ImageOverlay节点如何将前景图像叠加到背景图像上？",
+        "answer": "ImageOverlay节点根据输入的不透明度参数，将前景图像与背景图像融合，创建一个综合了两者视觉特征的合成图像。"
+    },
+    {
+        "question": "哪些类型的输入是ImageOverlay节点所必需的？",
+        "answer": "ImageOverlay节点需要背景图像、前景图像和不透明度三个参数作为输入，以执行图像叠加操作。"
+    },
+    {
+        "question": "在ImageOverlay中，不透明度参数的作用是什么？",
+        "answer": "不透明度参数控制前景图像与背景图像的融合程度，决定合成图像的视觉效果和透明水平。"
+    },
+    {
+        "question": "ImageOverlay节点的输出数据类型是什么，其意义何在？",
+        "answer": "ImageOverlay节点的输出是一个名为result_img的图像数据，代表了根据指定不透明度参数叠加后的合成图像结果。"
+    },
+    {
+        "question": "使用ImageOverlay节点时，有哪些特定的提示需要注意？",
+        "answer": "使用ImageOverlay时，应该注意到它的工作类型是CPU，不涉及任何GPU加速，因此对于性能密集型任务可能需要考虑其执行效率。"
+    },
+    {
+        "question": "ImageOverlay节点如何处理图像数据类型转换？",
+        "answer": "在ImageOverlay的源代码中，它将输入图像从torch.Tensor转换为PIL.Image格式，执行混合操作后，再转换回torch.Tensor格式作为输出。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "StyleModelLoader节点的主要功能是什么？",
+        "answer": "StyleModelLoader节点的主要功能是高效管理和加载风格模型，它在模型部署流水线中起关键作用，确保适当的风格模型被检索并准备好使用。"
+    },
+    {
+        "question": "StyleModelLoader属于哪个类别？",
+        "answer": "StyleModelLoader属于'loaders'类别，这表明它在ComfyUI框架中负责加载任务，特别是风格模型的加载。"
+    },
+    {
+        "question": "StyleModelLoader节点的输入参数'style_model_name'作用是什么？",
+        "answer": "输入参数'style_model_name'用于识别要加载的特定风格模型，它指导节点找到风格模型目录中正确的文件路径，参数的值直接影响模型的加载与后续流程中模型的使用。"
+    },
+    {
+        "question": "StyleModelLoader节点的输出'STYLE_MODEL'代表什么？",
+        "answer": "输出'STYLE_MODEL'代表已加载的风格模型，它封装了模型学习到的特征和参数，可以应用于如风格迁移或特征提取等任务，是进行进一步处理和分析的关键元素。"
+    },
+    {
+        "question": "哪些任务可以使用StyleModelLoader节点加载的风格模型进行？",
+        "answer": "使用StyleModelLoader节点加载的风格模型可以进行多种任务，包括但不限于风格迁移、特征提取，这些模型封装了学习到的特征和参数，适合于风格相关的图像处理和分析工作。"
+    },
+    {
+        "question": "StyleModelLoader节点的实现代码中，从何处获取并载入风格模型？",
+        "answer": "在StyleModelLoader节点的实现代码中，它从'style_models'目录下根据'style_model_name'获取完整路径，并使用comfy.sd模块提供的load_style_model函数来加载模型。"
+    },
+    {
+        "question": "哪些后端或硬件用于运行StyleModelLoader节点？",
+        "answer": "根据使用提示，StyleModelLoader节点支持的后端类型是CPU，这意味着它可以在任何支持Python和PyTorch的CPU环境中运行。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImpactSleep节点的主要功能是什么？",
+        "answer": "ImpactSleep节点的'doit'方法主要功能是在执行流程中引入延迟，通过接受一个信号和一个持续时间，按指定秒数暂停进程，以便控制更大工作流中操作的时间。"
+    },
+    {
+        "question": "信号(signal)参数对ImpactSleep节点有何意义？",
+        "answer": "信号(signal)参数是控制或状态信息的通用输入，它可能影响工作流中后续的步骤，并且是ImpactSleep节点中传递关键状态或控制信息的渠道。"
+    },
+    {
+        "question": "在ImpactSleep节点中，'seconds'参数的作用是什么？",
+        "answer": "在ImpactSleep节点中，'seconds'参数用来定义节点将引入的延迟持续时间，对于时间敏感的操作至关重要，并且其值可以影响到系统的整体性能。"
+    },
+    {
+        "question": "什么是'Infra type: CPU'在ImpactSleep节点的使用小贴士中意味着什么？",
+        "answer": "'Infra type: CPU'暗示ImpactSleep节点的执行依赖于CPU而非GPU资源，这意味着节点的延迟引入与CPU的调度和执行密切相关。"
+    },
+    {
+        "question": "ImpactSleep节点的'OUTPUT_NODE'属性值为True表示什么？",
+        "answer": "ImpactSleep节点的'OUTPUT_NODE'属性值为True表示它是一个输出节点，能够生成控制信号(signal_opt)以保持工作流的连续性，在延迟后提供原始信号确保无缝继续工作流。"
+    },
+    {
+        "question": "在ComfyUI中，哪个功能模块包含ImpactSleep节点？",
+        "answer": "在ComfyUI中，ImpactSleep节点包含在'ImpactPack/Logic/_for_test'类别下，作为控制逻辑流程测试的一部分。"
+    },
+    {
+        "question": "哪些参数会影响ImpactSleep节点的执行流程？",
+        "answer": "Signal和seconds参数会影响到ImpactSleep节点的执行流程。'Signal'参数通过控制反馈流影响后续步骤，而'seconds'则直接决定节点引入的延迟时间。"
+    }
+]

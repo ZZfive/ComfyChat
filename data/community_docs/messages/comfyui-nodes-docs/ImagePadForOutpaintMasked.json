@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImagePadForOutpaintMasked节点的主要功能是什么？",
+        "answer": "ImagePadForOutpaintMasked节点主要用于扩展图像边界，通过智能计算额外像素来无缝融合原始内容，适用于图像编辑和数据增强场景。"
+    },
+    {
+        "question": "哪些类型的输入参数是ImagePadForOutpaintMasked节点必须提供的?",
+        "answer": "ImagePadForOutpaintMasked节点必须提供的输入包括图像(image)、左(left)、顶(top)、右(right)和底(bottom)的像素填充数量，以及feathering参数。"
+    },
+    {
+        "question": "ImagePadForOutpaintMasked节点的'feathering'参数控制什么?",
+        "answer": "'feathering'参数控制原始图像与填充区域之间的过渡平滑度，确保外延图像的视觉效果自然无缝。"
+    },
+    {
+        "question": "ImagePadForOutpaintMasked节点的mask参数有何作用？",
+        "answer": "mask参数为可选输入，定义了图像的遮罩区域，用于在图像外延过程中保留不变的图像部分，保障这些区域在操作中维持原状。"
+    },
+    {
+        "question": "ImagePadForOutpaintMasked节点执行操作后，返回什么类型的数据？",
+        "answer": "ImagePadForOutpaintMasked节点返回的数据类型是扩展后的图像('new_image')和更新的遮罩('new_mask')，两者类型都是'torch.Tensor'。"
+    },
+    {
+        "question": "在ImagePadForOutpaintMasked节点中，参数'top'和'bottom'如何影响图像？",
+        "answer": "参数'top'决定在图像顶部添加的填充像素数，而'bottom'确定图像底部的像素填充数，它们共同决定最终图像的高度和填充区域外观。"
+    },
+    {
+        "question": "如何使用ImagePadForOutpaintMasked节点在图像的水平和垂直方向上同时增加宽度和高度?",
+        "answer": "要使用ImagePadForOutpaintMasked节点在水平和垂直方向上增加图像尺寸，需分别指定非零的left、top、right和bottom参数值，从而在所有四个方向上扩展边界。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SeamlessTile节点的功能是什么？",
+        "answer": "SeamlessTile节点用于修改模型的填充和卷积行为，以实现无缝平铺。它调整Conv2d层的填充模式和填充值以达到“循环”效果，对需要无缝平铺图案的图像处理任务特别有用。"
+    },
+    {
+        "question": "SeamlessTile节点的输入模型参数有什么作用？",
+        "answer": "模型参数是节点操作的核心，代表了将被修改以实现无缝平铺的神经网络，对于实现所需的平铺效果至关重要。"
+    },
+    {
+        "question": "SeamlessTile节点的'tiling'参数如何影响图案的生成？",
+        "answer": "tiling参数控制模型的平铺类型，决定是否全启用平铺、仅x轴、仅y轴的平铺或完全禁用，直接影响模型产生无缝图案的能力。"
+    },
+    {
+        "question": "SeamlessTile节点的'copy_model'参数的作用是什么？",
+        "answer": "copy_model参数决定在修改前模型是否会被复制，能保留原始模型状态不受影响或进行就地修改。"
+    },
+    {
+        "question": "SeamlessTile节点如何调整模型以支持无缝处理？",
+        "answer": "SeamlessTile节点输出修改后的神经网络，该网络具有调整过的填充和卷积设置，以支持无缝平铺。"
+    },
+    {
+        "question": "在ComfyUI中，哪些参数决定了SeamlessTile节点是否创建模型副本进行修改？",
+        "answer": "在SeamlessTile节点中，'copy_model'参数决定了在进行修改前是否创建模型的副本，避免直接修改原始模型。"
+    },
+    {
+        "question": "SeamlessTile的'tiling'设置为'enable'时，对模型的直接影响是什么？",
+        "answer": "当SeamlessTile的'tiling'设置为'enable'时，它会对模型应用完整的平铺效果，调整其填充模式和值以实现循环式无缝拼接效果。"
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "question": "MiDaS_Depth_Approx 是什么节点?",
+        "answer": "MiDaS_Depth_Approx 是一个ComfyUI中的自定义节点，用于使用MiDaS模型估算图像的深度，属于WAS Suite/Image/AI分类。"
+    },
+    {
+        "question": "如何选择MiDaS模型类型在MiDaS_Depth_Approx节点中?",
+        "answer": "在MiDaS_Depth_Approx节点中，通过选择'midas_type'参数，可以从DPT_Large和DPT_Hybrid中选择MiDaS模型类型。"
+    },
+    {
+        "question": "什么情况下应该使用CPU来运行MiDaS_Depth_Approx节点?",
+        "answer": "当系统没有GPU或用户希望为其他任务保留GPU资源时，可以通过设置'use_cpu'参数为true来使用CPU运行MiDaS_Depth_Approx节点。"
+    },
+    {
+        "question": "MiDaS_Depth_Approx节点的输出是什么类型?",
+        "answer": "MiDaS_Depth_Approx节点的输出为IMAGE类型的'images'，即节点生成的深度近似图像。"
+    },
+    {
+        "question": "处理流程中如何使用预加载的MiDaS模型？",
+        "answer": "通过指定'MiDaS_model'参数使用预加载的MiDaS模型，可避免在节点中重复加载模型，简化处理流程，特别是在重复使用相同模型时。"
+    },
+    {
+        "question": "MiDaS_Depth_Approx中'midas_approx'方法如何工作？",
+        "answer": "midas_approx方法处理输入图像以预测深度图，允许用户指定使用CPU或GPU，选择MiDaS模型的类型，并根据需要反转深度值。"
+    },
+    {
+        "question": "什么样的输入图像会影响MiDaS_Depth_Approx节点的输出精度?",
+        "answer": "输入图像的质量和分辨率直接影响MiDaS_Depth_Approx节点生成的深度图的准确性和细节。"
+    },
+    {
+        "question": "如何在MiDaS_Depth_Approx节点中反转深度预测？",
+        "answer": "在需要更高的深度值表示更近的物体的场景中，可以通过设置'invert_depth'参数为true来反转深度预测。"
+    }
+]

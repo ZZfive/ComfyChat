@@ -1,0 +1,38 @@
+[
+    {
+        "question": "IPAdapterEmbeds节点的主要功能是什么？",
+        "answer": "IPAdapterEmbeds节点主要用于将IPAdapter修改集成到给定模型中，通过IPAdapter的能力定制模型的嵌入空间，实现模型行为的微调以适应特定的输入特征。"
+    },
+    {
+        "question": "哪些是IPAdapterEmbeds节点的必需输入参数？",
+        "answer": "IPAdapterEmbeds节点的必需输入参数包括模型（model）、适配器（ipadapter）、正向嵌入（pos_embed）、权重（weight）、权重类型（weight_type）、开始权重（start_at）和结束权重（end_at）。"
+    },
+    {
+        "question": "IPAdapterEmbeds节点的可选输入参数包括哪些？",
+        "answer": "IPAdapterEmbeds节点的可选输入参数包括负向嵌入（neg_embed）、注意力掩码（attn_mask）和CLIP Vision模型（clip_vision）等，用于进一步细化模型的适配过程和特征调整。"
+    },
+    {
+        "question": "如何理解'嵌入操作的复杂性'在IPAdapterEmbeds节点中的抽象化？",
+        "answer": "IPAdapterEmbeds节点抽象了嵌入操作的复杂性，提供了一个简化的接口来增强模型，这意味着用户无需深入了解复杂的适配逻辑，就能通过对模型进行特定的修改以适应其输入特征。"
+    },
+    {
+        "question": "在IPAdapterEmbeds中，'pos_embed'参数的作用是什么？",
+        "answer": "pos_embed参数提供了用于引导适配过程的正向嵌入，对塑造适配模型对特定特征的响应起着至关重要的作用，直接影响了模型适配效果。"
+    },
+    {
+        "question": "如果在使用IPAdapterEmbeds时缺少CLIP Vision模型，会有什么后果？",
+        "answer": "如果在IPAdapterEmbeds节点中缺少CLIP Vision模型且没有提供负向嵌入（neg_embed），则会抛出一个异常，提示缺少CLIP Vision模型，这是因为在某些适配场景中，CLIP Vision模型对于适配过程是必需的。"
+    },
+    {
+        "question": "在ComfyUI的IPAdapterEmbeds节点中，模型参数为何是必需的？",
+        "answer": "模型参数在IPAdapterEmbeds中是必需的，因为它代表了将由IPAdapter进行适配的基础模型，决定适配后模型的结构和行为。"
+    },
+    {
+        "question": "什么是IPAdapterEmbeds节点的输出类型？",
+        "answer": "IPAdapterEmbeds节点的输出类型为一个模型（model），即输入模型经过IPAdapter修改并应用适配规格后的适配版本，代表了整个适配过程的成果。"
+    },
+    {
+        "question": "在使用IPAdapterEmbeds时，'weight'参数如何影响其结果？",
+        "answer": "'weight'参数决定了IPAdapter修改对模型的影响程度，是控制模型适配的关键，较高的权重意味着IPAdapter的修改对模型行为有更大的影响。"
+    }
+]

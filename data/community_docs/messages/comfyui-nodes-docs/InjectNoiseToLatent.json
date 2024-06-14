@@ -1,0 +1,30 @@
+[
+    {
+        "question": "InjectNoiseToLatent节点的用途是什么？",
+        "answer": "InjectNoiseToLatent节点用于将噪声添加到潜在空间表示中，以模拟噪声对生成过程的影响。它通过向潜在样本添加特定强度的噪声来实现这一目标，允许控制噪声的分布和对结果区域的影响。"
+    },
+    {
+        "question": "InjectNoiseToLatent节点主要影响哪种类型的数据？",
+        "answer": "InjectNoiseToLatent节点主要影响潜在空间表示数据，具体是指包含在latents参数中的原始潜在空间表示，这些数据通常决定了生成模型的输出细节。"
+    },
+    {
+        "question": "CoreML技术是否适用于InjectNoiseToLatent节点？",
+        "answer": "InjectNoiseToLatent节点的运行环境与CoreML没有直接关联，其Infra类型为CPU，因此使用标准CPU进行操作。"
+    },
+    {
+        "question": "哪些参数控制噪声对潜在样本的强度和影响？",
+        "answer": "strength参数决定了向潜在样本注入的噪声强度，noise参数则用于指定具体的噪声模式，两者共同控制了噪声影响的性质和强度。"
+    },
+    {
+        "question": "InjectNoiseToLatent节点中'mask'参数的作用是什么？",
+        "answer": "InjectNoiseToLatent节点的'mask'参数允许用户指定噪声应该在哪里应用，即控制噪声影响的区域。当'mask'被启用时，它可以精确地控制潜在空间中哪些部分会被噪声影响，而其余部分则保持不变。"
+    },
+    {
+        "question": "如何实现InjectNoiseToLatent节点与随机性结合的操作？",
+        "answer": "InjectNoiseToLatent节点可以通过'seed'参数与随机性结合，确保在每次运行时噪声生成的随机性是可复现的，这对于一致性实验至关重要。同时，mix_randn_amount参数允许将随机噪声与既有噪声混合，进一步引入额外的变异性。"
+    },
+    {
+        "question": "在什么情况下会使用'normalize'参数？",
+        "answer": "当'normalize'参数设置为True时，InjectNoiseToLatent节点将对噪声化的潜在样本进行归一化处理。这可以确保噪声注入后潜在样本的分布不会出现过度偏斜，尤其是在需要控制噪声强度和分布的实验中。"
+    }
+]

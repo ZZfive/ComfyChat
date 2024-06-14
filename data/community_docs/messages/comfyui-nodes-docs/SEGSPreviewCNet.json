@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SEGSPreviewCNet是ComfyUI的哪个分类下的节点？",
+        "answer": "SEGSPreviewCNet属于ComfyUI的ImpactPack/Util分类，是一个输出节点，用于处理和预览分割结果。"
+    },
+    {
+        "question": "SEGSPreviewCNet节点的输入数据类型是什么？",
+        "answer": "SEGSPreviewCNet节点的输入数据类型是分割数据SEGS，通常表示为Python List[Tuple[str, SEG]]类型，提供节点所需处理的分割信息。"
+    },
+    {
+        "question": "SEGSPreviewCNet节点的输出包括哪两种类型？",
+        "answer": "SEGSPreviewCNet节点的输出包括用于用户界面的DICT类型的ui参数，以及表示分割图像集合的COMBO[IMAGE]类型的结果参数，主要输出是分割数据的视觉表示。"
+    },
+    {
+        "question": "'segs'参数在SEGSPreviewCNet节点中的作用是什么？",
+        "answer": "'segs'参数对SEGSPreviewCNet节点的操作至关重要，它提供了节点将处理的分割数据，直接影响节点的输出，特别在生成分割预览图像时。"
+    },
+    {
+        "question": "SEGSPreviewCNet节点的'ui'输出具体包含了什么内容？",
+        "answer": "SEGSPreviewCNet节点的'ui'输出中包含了用于用户界面的图像列表和其他元素，这些是分割预览的可视化表示，对用户交互和视觉反馈至关重要。"
+    },
+    {
+        "question": "使用SEGSPreviewCNet节点时要注意什么类型的计算资源？",
+        "answer": "使用SEGSPreviewCNet节点处理和预览分割结果时，应考虑CPU资源的使用，因为其infra type设定为使用CPU进行计算。"
+    },
+    {
+        "question": "SEGSPreviewCNet节点在处理cutouts时如何生成预览图像？",
+        "answer": "SEGSPreviewCNet节点在处理分割数据时，对于每一个'SEGS'输入，它会生成与之关联的预览图像；如果'control_net_wrapper'存在且有'control_image'，则'control_image'将会被用于预览图像的生成，否则会生成一个64x64的空图像用于填充。"
+    }
+]

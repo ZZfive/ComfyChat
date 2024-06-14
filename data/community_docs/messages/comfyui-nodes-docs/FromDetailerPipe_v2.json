@@ -1,0 +1,30 @@
+[
+    {
+        "question": "FromDetailerPipe_v2 节点的主要功能是什么？",
+        "answer": "FromDetailerPipe_v2 节点的主要功能是在复杂的处理管道中协调信息和资源流动，确保模型、检测器和钩子等组件得到适当集成和利用，以简化操作并提高管道的整体效率。"
+    },
+    {
+        "question": "FromDetailerPipe_v2 节点的输入是什么类型，为什么它至关重要？",
+        "answer": "FromDetailerPipe_v2 节点的输入类型是 DETAILER_PIPE，它封装了核心组件，向节点提供必要的数据和配置，促进节点的有效运作和达到其预期目的，因此至关重要。"
+    },
+    {
+        "question": "哪些组件是 FromDetailerPipe_v2 节点输出的关键元素？",
+        "answer": "FromDetailerPipe_v2 节点的关键输出元素包括 processed detailer_pipe、model、clip、vae、positive、negative、bbox_detector、sam_model_opt、segm_detector_opt 和 detailer_hook，它们分别代表处理后的管道配置、机器学习模型、数据片段、变分自编码器、正面条件、负面条件、边界框检测器、样本模型选项、分割检测器选项和可定制的钩子功能。"
+    },
+    {
+        "question": "在 ComfyUI 中，哪些节点能用于过滤和增强图像数据？",
+        "answer": "FromDetailerPipe_v2 节点能从复杂管道中过滤和增强图像数据，通过其 bbox_detector 输出实现边界框检测，以及通过 segm_detector_opt 实现数据分割增强。"
+    },
+    {
+        "question": "FromDetailerPipe_v2 节点的 detailer_hook 输出对于节点意味着什么？",
+        "answer": "FromDetailerPipe_v2 节点的 detailer_hook 输出是一个可定制的钩子，允许将额外功能或扩展集成到节点的流程中，使得从特定用例或需求的角度定制节点的行为成为可能。"
+    },
+    {
+        "question": "FromDetailerPipe_v2 节点的 use tips 部分建议在哪种 Infra type 下运行此节点？",
+        "answer": "FromDetailerPipe_v2 节点的 use tips 部分建议在 CPU Infra type 下运行，这表明尽管节点功能复杂，但不应需GPU级别的处理能力就能有效运行。"
+    },
+    {
+        "question": "在使用 FromDetailerPipe_v2 节点时，如何处理输入和返回的数据类型？",
+        "answer": "在使用 FromDetailerPipe_v2 节点时，输入的 detailer_pipe 必须符合 DETAILER_PIPE 类型，而节点返回的数据类型包括 DETAILER_PIPE 类型的处理后管道配置、MODEL 类型的模型、CLIP 类型的剪辑数据、VAE 类型的变分自编码器、CONDITIONING 类型的正面和负面条件、BBOX_DETECTOR 类型的边界框检测器、SAM_MODEL 类型的样本模型选项以及 SEGM_DETECTOR 类型的可选分割检测器。这些输出涵盖了不同处理阶段和功能的数据表示。"
+    }
+]

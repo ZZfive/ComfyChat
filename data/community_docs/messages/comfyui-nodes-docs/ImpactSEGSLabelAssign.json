@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SEGSLabelAssign节点是什么及其所属分类？",
+        "answer": "SEGSLabelAssign是ComfyUI中ImpactPack/Util类别的一个自定义节点，专门用于为一系列段落分配标签，确保每个段落根据其顺序与正确的标签相关联。"
+    },
+    {
+        "question": "SEGSLabelAssign节点的输入数据类型是什么？",
+        "answer": "SEGSLabelAssign节点接收'segs'（类型：SEGS）与'labels'（类型：STRING）两个参数，其中'segs'是指包含待标记段落的集合，而'labels'是一个逗号分隔的标签字符串，用于描述将分配给各段落的具体标签。"
+    },
+    {
+        "question": "SEGSLabelAssign是如何处理输入参数'segs'的？",
+        "answer": "SEGSLabelAssign处理'segs'参数，定义将被接收分配标签的段落数据。该参数对于节点运作至关重要，直接影响其输出，决定哪些段落将被分类。"
+    },
+    {
+        "question": "SEGSLabelAssign节点如何处理段落和标签的关联？",
+        "answer": "SEGSLabelAssign节点根据输入的段落集合（'segs'）和标签（'labels'）确保每个段落根据其顺序与正确的标签关联，通过为每个段落分配相应的标签来完成数据的组织和分类。"
+    },
+    {
+        "question": "SEGSLabelAssign节点的输出代表什么信息？",
+        "answer": "SEGSLabelAssign的输出是一个'SEGS'类型的数据，代表了经过标签分配过程后的段落集合，其中包含了已分配新标签的段落，这对于后续的处理和分析任务是至关重要的信息。"
+    },
+    {
+        "question": "当'segs'和'labels'参数数量不匹配时，SEGSLabelAssign节点如何响应？",
+        "answer": "如果'segs'和'labels'的数量不匹配，SEGSLabelAssign节点将发出警告消息，提示参数的长度差异（'segs'和'labels'的长度对比），并按现有顺序为尽可能多的段落分配标签。"
+    },
+    {
+        "question": "哪些节点使用SEGSLabelAssign进行进一步的数据处理？",
+        "answer": "SEGSLabelAssign节点是用于数据组织与分类的工具，它的输出'SEGS'被设计用于后续数据处理和分析阶段的节点，可以包括任何需要预先标记或分类数据进行进一步操作的节点。"
+    }
+]

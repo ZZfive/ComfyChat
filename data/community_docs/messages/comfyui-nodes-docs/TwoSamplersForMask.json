@@ -1,0 +1,30 @@
+[
+    {
+        "question": "TwoSamplersForMask节点的功能是什么？",
+        "answer": "TwoSamplersForMask节点通过整合两种不同的采样机制——基础采样器和掩码采样器，协调采样过程，允许生成符合特定遮罩标准的潜在表示，从而增强模型关注相关特征和抑制不需要信息的能力，实现更受控和针对性的采样结果。"
+    },
+    {
+        "question": "TwoSamplersForMask节点的Comfy dtype类型是什么？",
+        "answer": "TwoSamplersForMask节点的输入Comfy dtype类型包括潜像（LATENT）、基础采样器（KSAMPLER）和掩码采样器（KSAMPLER），以及掩码（MASK），输出Comfy dtype类型为潜在图像（LATENT）。"
+    },
+    {
+        "question": "TwoSamplersForMask如何处理潜在图像（latent_image）？",
+        "answer": "潜在图像（latent_image）是TwoSamplersForMask的一个关键输入，用于携带采样过程所需的基础结构和特征。在TwoSamplersForMask中，它被基础采样器和掩码采样器共同处理，以生成更精炼的潜在图像，该图像根据预定义的掩码封装了所需的特征并抑制了不相关的特征。"
+    },
+    {
+        "question": "在TwoSamplersForMask中，什么是掩码（mask）的作用？",
+        "answer": "掩码（mask）在TwoSamplersForMask中是一个二进制表示，决定了潜在图像中应保留或丢弃的区域。它指导掩码采样器确定哪些特征应该被关注，哪些应该被忽略，从而塑造最终输出。"
+    },
+    {
+        "question": "TwoSamplersForMask的基础设施（infra）类型是什么？",
+        "answer": "TwoSamplersForMask的基础设施（infra）类型为GPU。"
+    },
+    {
+        "question": "哪些组件构成了TwoSamplersForMask的输入？",
+        "answer": "TwoSamplersForMask的输入组件包括潜在图像（latent_image）、基础采样器（base_sampler）、掩码采样器（mask_sampler）以及掩码（mask）。"
+    },
+    {
+        "question": "TwoSamplersForMask节点在采样过程中如何应用掩码（mask）？",
+        "answer": "TwoSamplersForMask节点在采样过程中先使用逆掩码（inv_mask）为潜在图像添加噪声，之后使用基础采样器（base_sampler）对添加噪声后的潜在图像进行采样；接着应用原始掩码（mask）并使用掩码采样器（mask_sampler）进行进一步采样，最终输出处理后的潜在图像，完成基于特定掩码标准的潜在图像操控。"
+    }
+]

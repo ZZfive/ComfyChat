@@ -1,0 +1,50 @@
+[
+    {
+        "question": "RandomPrompt节点是做什么的？",
+        "answer": "RandomPrompt节点是ComfyUI中用于生成多样化提示集的自定义节点，通过组合可变和不可变文本元素工作。"
+    },
+    {
+        "question": "如何控制RandomPrompt节点生成的提示数量？",
+        "answer": "通过'max_count'参数控制，它确定生成或抽样的最大提示数量。"
+    },
+    {
+        "question": "RandomPrompt节点中的'mutable_prompt'参数有什么作用？",
+        "answer": "'mutable_prompt'参数是用户可以改变的字符串，它构成了生成提示的可变性基础，用于生成广泛的潜在输出。"
+    },
+    {
+        "question": "在RandomPrompt节点中，'immutable_prompt'用于实现什么功能？",
+        "answer": "'immutable_prompt'是在节点执行期间保持不变的字符串，它与可变提示合并，以确保生成的提示有一致的结构。"
+    },
+    {
+        "question": "可选参数'random_sample'在RandomPrompt节点中的作用是什么？",
+        "answer": "'random_sample'参数指示是否应随机选择生成提示的子集，当启用时，为选择过程引入了随机性，有助于创建多样化的提示集。"
+    },
+    {
+        "question": "RandomPrompt节点的'seed'参数有什么用？",
+        "answer": "'seed'参数用于初始化随机抽样中的随机数生成器，提供特定值时确保结果的可复现性，使节点多次执行时结果一致。"
+    },
+    {
+        "question": "RandomPrompt节点生成的输出类型是什么？",
+        "answer": "RandomPrompt节点生成的输出类型是'prompts'，即由可变和不可变文本元素组合生成的文本提示列表，是节点执行的主要结果。"
+    },
+    {
+        "question": "哪些节点可以生成多样化提示集？",
+        "answer": "ComfyUI中，RandomPrompt节点可以生成多样化提示集，通过混合可变和不可变文本元素实现。"
+    },
+    {
+        "question": "如何确保RandomPrompt节点生成的提示具有重复性？",
+        "answer": "通过设置'seed'参数到一个固定的值，可以确保RandomPrompt节点在每次执行时生成相同的随机序列，从而实现结果的重复性。"
+    },
+    {
+        "question": "RandomPrompt节点的'INPUT_TYPES'是一个类方法吗？",
+        "answer": "是的，'INPUT_TYPES'是RandomPrompt节点中的一个类方法，用于定义输入类型和参数，可以直接通过类名调用，不需要实例化。"
+    },
+    {
+        "question": "RandomPrompt节点如何处理可变和不可变的输入提示？",
+        "answer": "RandomPrompt节点通过将'mutable_prompt'和'immutable_prompt'输入分别分割后，按各种组合重组它们，生成可变的提示集。"
+    },
+    {
+        "question": "在RandomPrompt节点的使用中需要注意什么硬件类型？",
+        "answer": "推荐使用CPU作为基础设施类型来运行RandomPrompt节点，以适应其对文本处理和组合的需求。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WLSH_String_Append 是什么节点？",
+        "answer": "WLSH_String_Append 是 ComfyUI 中的一个自定义节点，属于 WLSH Nodes/text 类别，用于以智能方式连接字符串，支持在现有文本前后添加内容，同时提供自定义分隔符。"
+    },
+    {
+        "question": "WLSH_String_Append 节点如何处理字符串连接的分隔符？",
+        "answer": "WLSH_String_Append 节点通过 'separator' 参数来指定在 'input_string' 和 'addition' 之间的分隔符类型，可以选择 comma、space、newline 或 none，形成更可控的连接文本输出。"
+    },
+    {
+        "question": "哪些参数决定了 WLSH_String_Append 节点中文本连接的位置？",
+        "answer": "WLSH_String_Append 节点的 'placement' 参数用于指示 'addition' 文本相对于 'input_string' 的位置，可以是 'after' 或 'before'，即在初始字符串的后面或前面插入文本。"
+    },
+    {
+        "question": "WLSH_String_Append 节点可以输出什么类型的字符串？",
+        "answer": "WLSH_String_Append 节点的输出参数 'combined' 是最终连接后的字符串，格式为 Comfy dtype 的 STRING 类型，即 Python 中的 str 类型，包含了用户定义的 'addition' 和 'input_string' 的连接结果。"
+    },
+    {
+        "question": "WLSH_String_Append 节点的 'addition' 参数有何作用？",
+        "answer": "在 WLSH_String_Append 节点中，'addition' 参数代表将要附加到用户指定的 'input_string' 的文本。它是操作的关键部分，决定了将要添加的内容，尤其在处理多行文本场景时增强灵活性。"
+    },
+    {
+        "question": "在使用 WLSH_String_Append 时，如何定义文本的初始值？",
+        "answer": "通过 'input_string' 参数，用户可以定义连接操作的初始文本。虽然这个参数是可选的，但在没有提供的情况下，节点将仅使用 'addition' 参数创建新字符串。"
+    },
+    {
+        "question": "WLSH_String_Append 是否在所有类型的计算设备上高效运行？",
+        "answer": "WLSH_String_Append 节点的类型为 Infra type CPU，意味着它主要在 CPU 上运行，其运行效率和执行环境可能与设计用于 GPU 的节点不同。"
+    }
+]

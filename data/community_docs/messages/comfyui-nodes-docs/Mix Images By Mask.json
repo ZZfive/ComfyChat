@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MixByMask节点的作用是什么？",
+        "answer": "MixByMask节点的用途是根据提供的掩码将两张图像进行混合，通过调整每张图像的贡献来实现单个合成图像中不同视觉元素的无缝集成。"
+    },
+    {
+        "question": "MixByMask节点属于哪个节点类别？",
+        "answer": "MixByMask节点属于Masquerade Nodes类别。"
+    },
+    {
+        "question": "MixByMask的输入图像1和图像2有什么区别？",
+        "answer": "图像1和图像2是MixByMask节点的两个基本输入，其中图像1通常决定了最终输出的基本视觉内容，而图像2提供了将根据掩码与图像1合并的额外视觉内容。"
+    },
+    {
+        "question": "MixByMask节点对掩码的要求是什么？",
+        "answer": "掩码是MixByMask节点的一个关键输入，用于确定两张图像如何混合，是控制混合过程的重要组件。"
+    },
+    {
+        "question": "MixByMask节点的输出数据类型是什么？",
+        "answer": "MixByMask节点的输出数据类型是IMAGE，具体为应用掩码到输入图像后得到的混合图像，其Python dtype为torch.Tensor。"
+    },
+    {
+        "question": "MixByMask节点支持在哪些平台上运行？",
+        "answer": "MixByMask节点的运行支持的平台为CPU。"
+    },
+    {
+        "question": "混合图像的输出是如何计算的？",
+        "answer": "混合图像的输出是通过计算(image1 * (1.0 - mask) + image2 * mask)来实现的，这里image1和image2是需要混合的图像，而mask则是用于确定图像如何混合的掩码。"
+    }
+]

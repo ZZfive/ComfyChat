@@ -1,0 +1,38 @@
+[
+    {
+        "question": "PatchModelAddDownscale节点的作用是什么?",
+        "answer": "PatchModelAddDownscale节点用于在指定的模型块中引入下采样操作，以修改模型的行为和优化性能或输出质量。"
+    },
+    {
+        "question": "PatchModelAddDownscale节点需要哪些必填输入类型?",
+        "answer": "必填输入类型包括model（用于定义节点将修改的基础模型）、block_number（标识下采样的特定块）、downscale_factor（控制下采样程度）、start_percent与end_percent（定义下采样操作的sigma范围）、downscale_after_skip（指示是否在跳过块后进行下采样）和downscale_method与upscale_method（决定下采样和上采样的算法）."
+    },
+    {
+        "question": "PatchModelAddDownscale如何确定在模型的哪些部分进行下采样?",
+        "answer": "通过block_number参数，PatchModelAddDownscale可以精确地确定对模型架构中哪个特定块应用下采样操作。"
+    },
+    {
+        "question": "哪些输入类型影响PatchModelAddDownscale下采样的输出分辨率?",
+        "answer": "downscale_factor参数直接影响最终输出的分辨率，通过控制下采样的程度，决定图像在处理阶段的分辨率调整。"
+    },
+    {
+        "question": "PatchModelAddDownscale节点如何控制下采样操作的时间点?",
+        "answer": "通过start_percent和end_percent参数，节点可以定义下采样将在sigma范围内的哪个阶段开始和结束。"
+    },
+    {
+        "question": "PatchModelAddDownscale如何处理模型中的结构完整性和下采样效率?",
+        "answer": "downscale_after_skip参数决定是否在模型中某些块被跳过后进行下采样，这一决策影响着模型的结构整体性和下采样过程的效率。"
+    },
+    {
+        "question": "PatchModelAddDownscale支持哪些上采样和下采样方法?",
+        "answer": "下采样和上采样方法包括bicubic、nearest-exact、bilinear、area和bislerp等，具体可以通过downscale_method和upscale_method参数选择。"
+    },
+    {
+        "question": "PatchModelAddDownscale节点的输出有哪些?",
+        "answer": "输出为修改后的模型，该模型是输入模型的版本，具备了额外的下采样功能，为下一步使用或分析做好准备。"
+    },
+    {
+        "question": "PatchModelAddDownscale适配怎样的计算资源?",
+        "answer": "PatchModelAddDownscale节点的设计使用提示表明，它适配于CPU环境。"
+    }
+]

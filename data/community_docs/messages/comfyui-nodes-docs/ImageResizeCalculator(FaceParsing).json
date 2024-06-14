@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageResizeCalculator是什么类型的节点?",
+        "answer": "ImageResizeCalculator是ComfyUI中的一个自定义节点，属于face_parsing类别，用于智能调整图像大小，同时保持纵横比，以满足特定要求如目标尺寸和8的倍数对齐。"
+    },
+    {
+        "question": "ImageResizeCalculator节点的输入参数有哪些?",
+        "answer": "ImageResizeCalculator节点的输入参数包括'image'（图像）、'target_size'（目标尺寸）和'force_8x'（强制对齐到8的倍数）。"
+    },
+    {
+        "question": "哪些图像处理算法可能需要ImageResizeCalculator节点调整后的图像尺寸对齐到8的倍数？",
+        "answer": "某些图像处理算法如面部解析算法可能需要调整后的图像尺寸对齐到8的倍数，因为这种对齐可以优化算法的性能或兼容性。"
+    },
+    {
+        "question": "ImageResizeCalculator节点为什么需要force_8x参数？",
+        "answer": "force_8x参数在ImageResizeCalculator节点中是用于决定调整后的尺寸是否应该对齐到8的倍数，这有助于优化某些图像处理效果，特别是在图像分析和神经网络处理时。"
+    },
+    {
+        "question": "ImageResizeCalculator节点的'default'目标尺寸是多少？",
+        "answer": "ImageResizeCalculator节点的目标尺寸参数'default'值是512。"
+    },
+    {
+        "question": "ImageResizeCalculator节点输出的scale和scale_r分别表示什么？",
+        "answer": "ImageResizeCalculator节点的scale输出表示从原始宽度到新宽度的缩放因子，而scale_r表示从原始高度到新高度的缩放因子的倒数，两者都是理解调整大小过程的缩放效果的关键值。"
+    },
+    {
+        "question": "在哪些设备上可以运行ImageResizeCalculator节点进行图像调整？",
+        "answer": "ImageResizeCalculator节点的运行建议在CPU上进行，这由其'infra type'设定为'CPU'所决定。"
+    }
+]

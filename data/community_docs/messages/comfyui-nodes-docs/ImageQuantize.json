@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageQuantize节点的功能是什么?",
+        "answer": "ImageQuantize节点旨在减少图像中使用的颜色数量，通过将连续颜色范围映射到有限的指定调色板，以达到颜色量化的目的。"
+    },
+    {
+        "question": "哪些输入是ImageQuantize节点所必需的？",
+        "answer": "ImageQuantize节点需要'图像'和'颜色'两个必填输入项。'图像'参数表示要量化的图像，'颜色'参数指定将图像调色板减少到的颜色数量。"
+    },
+    {
+        "question": "可选的输入参数'dither'在ImageQuantize中起什么作用？",
+        "answer": "'dither'参数在量化过程中决定了要应用的抖动技术，帮助在图像中分散量化误差，从而提高视觉效果。"
+    },
+    {
+        "question": "ImageQuantize节点支持哪几种抖动技术？",
+        "answer": "ImageQuantize节点支持多种抖动技术，包括'none'（无抖动）、'floyd-steinberg'抖动，以及不同阶数的'bayer'抖动。"
+    },
+    {
+        "question": "减少颜色数量在量化后的图像输出上有什么影响？",
+        "answer": "减少颜色数量会导致文件大小的减少，但也可能影响图像的细节和质量。'quantized_image'输出张量表示已量化的图像，可以在考虑文件大小和显示兼容性时尤为重要。"
+    },
+    {
+        "question": "哪类技术应用中会需要ImageQuantize节点的功能？",
+        "answer": "ImageQuantize功能在应用上至关重要，特别是在创建较小的图像文件或与某些低颜色深度的显示技术兼容的场景中。"
+    },
+    {
+        "question": "在压缩图像用于网络传输时，ImageQuantize节点能带来什么好处？",
+        "answer": "在压缩图像用于网络传输时，ImageQuantize节点通过减少颜色深度有效地减小图像文件大小，从而加速传输速度，同时，通过可选的抖动技术增强视觉效果以避免质量明显下降。"
+    }
+]

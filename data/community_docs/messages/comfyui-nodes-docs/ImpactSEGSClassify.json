@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SEGS_Classify节点的主要功能是什么？",
+        "answer": "SEGS_Classify节点主要用于使用预训练的变换器模型对图像的段进行分类，能够基于复杂标准将段分类为满足条件和不满足条件的两个类别。"
+    },
+    {
+        "question": "SEGS_Classify节点需要哪些参数才能运行？",
+        "answer": "SEGS_Classify节点需要一个分类器（TRANSFORMERS_CLASSIFIER）、图像段（SEGS）和一个预设或手动的分类表达式（preset_expr或manual_expr）。"
+    },
+    {
+        "question": "在SEGS_Classify节点中，preset_expr参数如何工作？",
+        "answer": "preset_expr参数允许用户选择预定义的表达式，用于分类段依据的条件，或选择'Manual expr'以使用自定义表达式。"
+    },
+    {
+        "question": "SEGS_Classify节点如何处理段的裁剪图像缺失情况？",
+        "answer": "如果段的cropped_image属性不可用，SEGS_Classify可以利用ref_image_opt参数提供的参考图像来裁剪段，以保证分类过程的连续性。"
+    },
+    {
+        "question": "filtered_SEGS输出和remained_SEGS输出分别代表什么？",
+        "answer": "filtered_SEGS输出包括所有满足用户设定分类条件的段，而remained_SEGS输出则是不满足这些条件的段，作为补充结果给出。"
+    },
+    {
+        "question": "SEGS_Classify节点处理段分类时的条件表达式如何解析？",
+        "answer": "条件表达式通过正则表达式匹配进行解析，确定操作符和操作数，并基于段的评分信息与设定的表达式条件进行匹配，以决定段的归类。"
+    },
+    {
+        "question": "当segment的tocropped_image属性缺失时，SEGS_Classify节点如何处理这一情况以确保分类过程的完整性？",
+        "answer": "SEGS_Classify节点会检查可选的ref_image_opt参数，如果该参数存在，则使用该参考图像来生成裁剪区域的图像，从而确保即使segment的裁剪图像属性缺失也能继续执行分类过程。"
+    }
+]

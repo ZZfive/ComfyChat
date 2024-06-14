@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImpactSimpleDetectorSEGS_for_AD 是什么?",
+        "answer": "ImpactSimpleDetectorSEGS_for_AD 是一个ComfyUI中的自定义节点，它位于ImpactPack/Detector类别下，用于检测图像序列中的动画差异，特别强调边界框检测和语义分割。"
+    },
+    {
+        "question": "SimpleDetectorForAnimateDiff 节点如何检测重大变化?",
+        "answer": "SimpleDetectorForAnimateDiff 节点通过初始检测边界框并可选地使用语义分割模型来识别和分割感兴趣区域，以检测输入图像帧序列中的动画差异，强调捕获重大变化并创建掩码。"
+    },
+    {
+        "question": "如何调整SimpleDetectorForAnimateDiff 节点的置信度水平?",
+        "answer": "置信度水平可通过调整 bbox_threshold 参数来控制，此参数定义了边界框检测的置信度等级，从而影响SimpleDetectorForAnimateDiff 节点的检测精密性和分割结果。"
+    },
+    {
+        "question": "SimpleDetectorForAnimateDiff 节点的哪些输入参数影响边界框的检测和扩展?",
+        "answer": "bbox_threshold 和 bbox_dilation 参数直接影响边界框的检测和大小，bbox_threshold 设置检测的置信度标准，bbox_dilation 增强检测区域的尺寸，以优化分割过程。"
+    },
+    {
+        "question": "crop_factor 在 SimpleDetectorForAnimateDiff 中的作用是什么?",
+        "answer": "crop_factor 参数决定了围绕检测区域裁剪图像的程度，有助于将分析集中于图像的相关部分，并减少边缘区域的噪声。"
+    },
+    {
+        "question": "哪些参数是 SimpleDetectorForAnimateDiff 节点的输出类型?",
+        "answer": "SimpleDetectorForAnimateDiff 节点的主要输出类型是 SEGS (语义注释片段)，它表示从输入图像帧中识别的感兴趣的分段区域，对后续处理和分析至关重要。"
+    },
+    {
+        "question": "在使用 SimpleDetectorForAnimateDiff 时应注意什么?",
+        "answer": "在使用时应注意，Infra type 标明节点适配GPU环境，建议在GPU支持下运行以优化性能。同时，合理设置参数如 bbox_threshold、crop_factor 等对于提升分割效果是必要的。"
+    }
+]

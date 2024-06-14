@@ -1,0 +1,38 @@
+[
+    {
+        "question": "ImpactKSamplerBasicPipe节点属于哪个类?",
+        "answer": "ImpactKSamplerBasicPipe节点属于KSamplerBasicPipe类。"
+    },
+    {
+        "question": "使用KSamplerBasicPipe节点时，什么参数用于控制采样过程的迭代次数?",
+        "answer": "steps参数用于控制KSamplerBasicPipe节点中采样过程的迭代次数，增加steps的数量可以导致更精细的潜在表示，但同时也增加了计算成本。"
+    },
+    {
+        "question": "KSamplerBasicPipe节点中的basic_pipe参数是什么?",
+        "answer": "KSamplerBasicPipe节点中的basic_pipe参数是一个复合结构，包含模型、clip、vae以及正/负样本，为生成潜在图像提供了上下文。"
+    },
+    {
+        "question": "在KSamplerBasicPipe节点中，配置采样过程控制参数的是什么?",
+        "answer": "在KSamplerBasicPipe节点中，配置采样过程控制的参数是cfg参数，它用于控制采样过程，影响收敛和生成的潜在图像的质量。"
+    },
+    {
+        "question": "哪些节点参数被用于确定采样器类型和调度策略?",
+        "answer": "在KSamplerBasicPipe节点中，sampler_name参数指定采样器类型，而scheduler参数定义采样过程的调度策略，这两个参数共同决定了采样过程的特性和效率。"
+    },
+    {
+        "question": "KSamplerBasicPipe节点中的latent_image参数有什么作用?",
+        "answer": "KSamplerBasicPipe节点中的latent_image参数是采样过程将作用的初始潜在表示，作为生成新潜在图像的起点。"
+    },
+    {
+        "question": "KSamplerBasicPipe节点的主要功能是什么?",
+        "answer": "KSamplerBasicPipe节点的主要功能是使用指定的采样器和调度器执行采样操作，它在从初始图像生成新的潜在表示方面发挥着关键作用，这些潜在表示可以进一步处理或用于创建新图像。"
+    },
+    {
+        "question": "KSamplerBasicPipe节点的可选参数denoise控制什么?",
+        "answer": "KSamplerBasicPipe节点的可选参数denoise控制应用于生成的潜在图像的去噪水平，调整此值可以帮助提高最终输出的质量。"
+    },
+    {
+        "question": "KSamplerBasicPipe节点的输出包含哪些内容?",
+        "answer": "KSamplerBasicPipe节点的输出包括用于进一步处理或分析的原始组件，新生成的潜在图像，以及采样过程中使用的变分自编码器模型。"
+    }
+]

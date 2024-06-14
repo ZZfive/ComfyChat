@@ -1,0 +1,30 @@
+[
+    {
+        "question": "IPAdapterBatch是什么类型的节点?",
+        "answer": "IPAdapterBatch是ComfyUI中的一个自定义节点，专注于以批量方式高效处理图像数据，并利用IPAdapterAdvanced类的底层处理能力，确保图像数据格式正确且权重适当，以实现最佳性能。"
+    },
+    {
+        "question": "哪些输入是IPAdapterBatch节点所必需的?",
+        "answer": "IPAdapterBatch节点需要的必填输入包括：'model'（定义将用于处理图像数据的机器学习模型），'ipadapter'（指定用于将图像数据与模型集成的适配器），'image'（提供原始数据给模型处理和转换），'weight'（调整图像数据对模型输出的影响），'weight_type'（决定权重如何应用于图像数据），'start_at'（定义处理图像数据的起始点）和'end_at'（标记图像数据处理的终点）。"
+    },
+    {
+        "question": "如何作用于'weight'参数以进行图像数据的微调?",
+        "answer": "'weight'参数让使用者能够通过调整图像数据对模型输出的影响力，从而微调IPAdapterBatch节点，这在为特定应用场景定制节点行为时特别重要。"
+    },
+    {
+        "question": "IPAdapterBatch节点可以处理哪些可选输入类型?",
+        "answer": "IPAdapterBatch节点可以处理的可选输入包括'image_negative'（提供额外图像用于比较或对比），'attn_mask'（用于指定模型处理时应关注或忽略的图像部分），以及'clip_vision'（用于集成CLIP视觉模型以增强图像特征提取）等，这些可选输入提升了节点在处理图像数据时的灵活性和针对性。"
+    },
+    {
+        "question": "在什么情况下'embeds_scaling'参数至关重要?",
+        "answer": "'embeds_scaling'参数对于IPAdapterBatch节点非常重要，因为它决定了图像特征在模型中的缩放和表示方法，进而影响特征的提取和模型在处理过程中的使用方式，是确保图像特征有效利用的关键。"
+    },
+    {
+        "question": "哪些节点通过使用特定参数影响图像数据的处理流程?",
+        "answer": "IPAdapterBatch节点通过'start_at'和'end_at'参数定义图像数据处理的起始和终止点，从而影响图像数据在节点内处理的流程，并允许聚焦于特定区域或特征。"
+    },
+    {
+        "question": "IPAdapterBatch节点如何利用'clip_vision'参数增强图像特征提取?",
+        "answer": "当使用'clip_vision'参数时，IPAdapterBatch节点能够集成CLIP视觉模型，以增强提取图像特征的能力，此功能在特定应用场景下可以显著提升节点的性能和图像数据处理的准确度。"
+    }
+]

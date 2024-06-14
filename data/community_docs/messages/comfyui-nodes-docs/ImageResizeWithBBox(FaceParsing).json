@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageResizeWithBBox是什么类型节点，它属于哪个类别?",
+        "answer": "ImageResizeWithBBox是一个不属于输出节点类的自定义节点，它归属于'face_parsing'类别，专注于面部解析任务中的图像调整。"
+    },
+    {
+        "question": "ImageResizeWithBBox节点保持了图像中的哪些属性在调整大小的过程中?",
+        "answer": "ImageResizeWithBBox节点在调整图像大小时保持了边界框的宽高比和位置，确保图像内关键元素的比例和位置被维护，以供后续处理使用。"
+    },
+    {
+        "question": "ImageResizeWithBBox节点的输入类型有哪些?",
+        "answer": "ImageResizeWithBBox节点的输入类型包括'bbox'和'image'。'bbox'确定图像的兴趣区域和剪裁方式，而'image'则是将要进行转换和分析的视觉数据源。"
+    },
+    {
+        "question": "bbox参数在ImageResizeWithBBox中起到什么作用?",
+        "answer": "在ImageResizeWithBBox中，bbox参数定义了图像内的兴趣区域，决定了图像如何裁剪，确保在调整大小过程中关键特征居中并得到维护。"
+    },
+    {
+        "question": "哪类设备最适合运行ImageResizeWithBBox节点?",
+        "answer": "ImageResizeWithBBox节点适合在CPU设备上运行，这是其推荐的infra类型。"
+    },
+    {
+        "question": "ImageResizeWithBBox节点的输出是什么类型的数据?",
+        "answer": "ImageResizeWithBBox节点的输出是调整大小后的图像，类型为'IMAGE'，确保满足期望的尺寸，同时保持边界框的位置和宽高比不变。"
+    },
+    {
+        "question": "在ImageResizeWithBBox中，输出图像的宽高如何决定?",
+        "answer": "在ImageResizeWithBBox节点中，输出图像的宽高由输入的bbox参数决定，Specifically，输出图像的宽高为bbox_int[3] - bbox_int[1]和bbox_int[2] - bbox_int[0]，分别代表bbox的高和宽。"
+    }
+]

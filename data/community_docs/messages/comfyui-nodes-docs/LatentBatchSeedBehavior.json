@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentBatchSeedBehavior是什么类型的节点，它被分类在ComfyUI的哪个类别下？",
+        "answer": "LatentBatchSeedBehavior是一个属于ComfyUI高级潜在类别（latent/advanced）的节点，用于操作潜在样本批的种子行为。"
+    },
+    {
+        "question": "在LatentBatchSeedBehavior节点中，'samples'参数有何作用？",
+        "answer": "'samples'参数是LatentBatchSeedBehavior节点的必要输入，它包含了节点将处理的潜在表示，对于确定潜在空间抽取的样本至关重要。"
+    },
+    {
+        "question": "当seed_behavior参数设置为'固定'时，LatentBatchSeedBehavior节点如何操作？",
+        "answer": "当seed_behavior设置为'固定'时，LatentBatchSeedBehavior节点会确保结果的一致性。在潜在样本批处理中，它保留批次索引，保持种子的恒定，以便于进行可重复的潜在空间探索。"
+    },
+    {
+        "question": "LatentBatchSeedBehavior节点的'seed_behavior'参数有哪两种模式，它们分别意味着什么？",
+        "answer": "LatentBatchSeedBehavior节点的'seed_behavior'参数有两种模式：'随机'和'固定'。'随机'模式导致节点生成不可预测的潜在空间变化，而'固定'模式则保持种子的一致性，确保每次执行的结果相同。"
+    },
+    {
+        "question": "LatentBatchSeedBehavior节点在输出'samples_out'参数时，如何体现对潜在样本批的处理结果？",
+        "answer": "'samples_out'参数表示经过LatentBatchSeedBehavior节点处理的潜在样本批，它携带了种子行为对潜在空间探索的影响，反映出原始潜在样本批已根据指定的seed_behavior进行了修改。"
+    },
+    {
+        "question": "LatentBatchSeedBehavior节点在什么运行环境下表现最佳？",
+        "answer": "LatentBatchSeedBehavior节点的最优运行环境是基于CPU的基础设施类型（Infra type: CPU），这意味着它在CPU架构上拥有更好的兼容性和执行性能。"
+    },
+    {
+        "question": "ComfyUI中有没有节点用于控制潜在空间中种子行为的随机性和一致性，以及这个节点如何被调用？",
+        "answer": "ComfyUI中有LatentBatchSeedBehavior节点用于控制潜在空间种子行为的随机性和一致性。通过'op'函数，它基于'seed_behavior'参数接收潜在样本批次，并根据制定的行为策略输出修改后的潜在样本。"
+    }
+]

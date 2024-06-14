@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SeargeCustomAfterVaeDecode节点的作用是什么？",
+        "answer": "SeargeCustomAfterVaeDecode节点在ComfyUI中通过解码和后处理变分自编码器（VAE）的输出来生成最终图像，封装了将VAE的潜在空间表示转换为视觉输出的逻辑，以提高工作流程的效率和效果。"
+    },
+    {
+        "question": "SeargeCustomAfterVaeDecode节点的输入参数custom_output为何重要？",
+        "answer": "custom_output参数是SeargeCustomAfterVaeDecode节点中至关重要的一部分，因为它是VAE解码过程的输入，包含了前一个阶段的输出和节点执行其功能所需的必要信息。"
+    },
+    {
+        "question": "SeargeCustomAfterVaeDecode节点可以处理哪种类型的节点输出？",
+        "answer": "SeargeCustomAfterVaeDecode节点可以处理ComfyUI中的SRG_STAGE_OUTPUT类型的数据，这种类型的数据是其它阶段节点处理后产生的输出，包含了必要的信息以供进一步的操作。"
+    },
+    {
+        "question": "SeargeCustomAfterVaeDecode节点的输出数据类型是什么？",
+        "answer": "SeargeCustomAfterVaeDecode节点的输出是IMAGE类型，即经过VAE解码和后处理后得到的最终视觉产品，其数据类型为ComfyUI中的IMAGE或Python中的torch.Tensor。"
+    },
+    {
+        "question": "SeargeCustomAfterVaeDecode节点的运行依赖什么硬件？",
+        "answer": "SeargeCustomAfterVaeDecode节点的处理过程在硬件上依赖于CPU，这是根据其使用提示中的Infra type: CPU来确定的。"
+    },
+    {
+        "question": "哪些情况下SeargeCustomAfterVaeDecode节点的输出会是None？",
+        "answer": "如果输入参数custom_output为None，SeargeCustomAfterVaeDecode节点的输出会是None；此外，在处理过程中任何必要的参数缺失或错误也可能导致相同的结果。"
+    },
+    {
+        "question": "SeargeCustomAfterVaeDecode节点的post_processed和image属性分别代表什么？",
+        "answer": "在SeargeCustomAfterVaeDecode节点中，image通常指的是VAE解码后的图像，而post_processed指的是经过后处理的图像。节点会根据后者是否存在来决定最终输出哪一版本的图像。"
+    }
+]

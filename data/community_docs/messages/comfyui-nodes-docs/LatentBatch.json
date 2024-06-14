@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentBatch类的batch方法的主要功能是什么？",
+        "answer": "LatentBatch类的`batch`方法的主要功能是高效地将两组潜在样本合并为一个批次，确保样本维度兼容，并准备数据以进行进一步的处理。"
+    },
+    {
+        "question": "`samples1`参数在LatentBatch的`batch`方法中起什么作用？",
+        "answer": "`samples1`参数代表要进行批处理的第一组潜在样本，它在确定组合批次的最终形状和结构时起着关键作用，尤其是在潜在空间的维度方面。"
+    },
+    {
+        "question": "在LatentBatch类中，`samples2`参数的用途是什么？",
+        "answer": "`samples2`参数表示用于批处理的第二组潜在样本，它对于方法比较和匹配`samples1`的维度以创建一个连贯的数据批次至关重要。"
+    },
+    {
+        "question": "`samples_out`参数在LatentBatch的`batch`方法的输出中代表什么？",
+        "answer": "`samples_out`参数是批处理过程的输出，包含来自`samples1`和`samples2`的组合潜在样本。它代表了准备好用于下游任务的数据。"
+    },
+    {
+        "question": "LatentBatch的`batch`方法在什么条件下会调整`samples2`的维度？",
+        "answer": "当`samples1`和`samples2`在除了第0维之外的其他维度不相同时，`batch`方法会使用`comfy.utils.common_upscale`函数调整`samples2`的维度以匹配`samples1`。"
+    },
+    {
+        "question": "LatentBatch的`batch`方法如何处理`samples1`和`samples2`的批次索引？",
+        "answer": "LatentBatch的`batch`方法将`samples1`和`samples2`的批次索引分别获取并整合到`samples_out`中，追加`samples2`的批次索引在`samples1`批次索引后以确保批次顺序的连续性。"
+    },
+    {
+        "question": "LatentBatch的实现基于哪种类型的设备？",
+        "answer": "LatentBatch的实现基于CPU类的infrastructure，这意味着它的操作主要在CPU上执行，而不是在GPU或其他类型的设备上。"
+    }
+]

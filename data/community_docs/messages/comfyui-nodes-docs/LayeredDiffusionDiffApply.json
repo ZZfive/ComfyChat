@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LayeredDiffusionDiff节点的主要功能是什么？",
+        "answer": "LayeredDiffusionDiff节点的主要功能是从混合图像中分离前景和背景元素。它通过应用扩散过程实现这一目标，允许模型根据提供的条件区分和提取前景或背景。"
+    },
+    {
+        "question": "哪些模型参数对LayeredDiffusionDiff节点的操作至关重要，以及其Python数据类型是什么？",
+        "answer": "对LayeredDiffusionDiff节点的操作至关重要的模型参数是model，其定义了将用于应用扩散过程的底层模型。Python数据类型为torch.nn.Module。"
+    },
+    {
+        "question": "LayeredDiffusionDiff节点处理图像的背景下，'latent'输入参数的具体作用是什么？",
+        "answer": "'latent'参数保存图像的潜在表示，它将与混合潜在表示一起使用，以指导扩散过程。"
+    },
+    {
+        "question": "在LayeredDiffusionDiff中，什么是'config'参数？",
+        "answer": "'config'参数指定扩散模型的配置设置，确保节点根据预定义的模型规格进行操作，其Python数据类型为str。"
+    },
+    {
+        "question": "哪些参数作为LayeredDiffusionDiff节点的输出返回？",
+        "answer": "LayeredDiffusionDiff节点的输出类型包括修改后的模型（Comfy dtype: MODEL），更新的条件信息（Comfy dtype: CONDITIONING），以及通过扩散机制处理的更新后的无条件输入（Comfy dtype: CONDITIONING）。"
+    },
+    {
+        "question": "在LayeredDiffusionDiff节点中，如何使用'weight'参数进行扩散过程的调整？",
+        "answer": "'weight'参数允许微调扩散过程对图像分离的影响。它提供了一种调整应用扩散强度的手段，其数值范围为-1到3，步进为0.05，Python数据类型为float。"
+    },
+    {
+        "question": "LayeredDiffusionDiff节点在应用时需要什么类型的基础设施？",
+        "answer": "LayeredDiffusionDiff节点的使用建议类型为GPU，这意味着它在图形处理器上运行效率更高。"
+    }
+]

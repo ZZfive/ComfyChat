@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MaskListComposite节点在ComfyUI中的功能是什么？",
+        "answer": "MaskListComposite节点在ComfyUI中的功能是对一系列二进制掩码执行指定的逻辑或算术操作，顺序处理输入掩码并应用所选操作将它们组合成单个结果掩码。"
+    },
+    {
+        "question": "哪些操作类型可以在MaskListComposite节点中指定对输入的二进制掩码进行处理？",
+        "answer": "在MaskListComposite节点中，可以指定‘multiply’、‘add’、‘and’、‘or’或‘xor’操作类型对输入的二进制掩码进行处理。"
+    },
+    {
+        "question": "在需要操作和组合二进制面部特征掩码的任务中，MaskListComposite节点为何起关键作用？",
+        "answer": "MaskListComposite节点在需要操作和组合二进制面部特征掩码的任务中起关键作用，因为它能够处理和组合多个掩码，从而在面部分割或面部解析领域中简化特征提取过程。"
+    },
+    {
+        "question": "MaskListComposite节点的输出是什么？",
+        "answer": "MaskListComposite节点的输出是‘result’参数，代表在输入掩码上应用指定操作后组合的掩码，对于依赖于合成掩码的后续任务至关重要，输出格式为torch.Tensor。"
+    },
+    {
+        "question": "MaskListComposite节点的输入掩码的选择及其影响如何？",
+        "answer": "选择的掩码集合通过‘mask’参数输入到MaskListComposite节点，这些掩码将经历逻辑或算术操作，所选掩码和操作类型显著影响最终结果掩码的生成。"
+    },
+    {
+        "question": "MaskListComposite节点执行逻辑或算术操作时，‘operation’参数的作用是什么？",
+        "answer": "‘operation’参数指定在输入掩码上执行的操作类型，控制掩码组合过程的逻辑或算术行为，从而影响最终结果掩码的形成。"
+    },
+    {
+        "question": "如何在ComfyUI中使用MaskListComposite节点进行掩码组合？",
+        "answer": "在ComfyUI中使用MaskListComposite节点，通过向‘mask’参数提供二进制掩码集合和向‘operation’参数指定操作类型，可以对一系列掩码执行指定的逻辑或算术操作，最终组合成单个结果掩码输出。"
+    }
+]

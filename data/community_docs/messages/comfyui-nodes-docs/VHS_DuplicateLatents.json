@@ -1,0 +1,30 @@
+[
+    {
+        "question": "VHS_DuplicateLatents 是什么节点？",
+        "answer": "VHS_DuplicateLatents 是 ComfyUI 的 Video Helper Suite 🎥🅥🅗🅢 类别中的一个自定义节点，用于复制潜在表示，通过指定的因子增加它们的计数，从而增强潜在表示在训练或数据增强应用中的实用性。"
+    },
+    {
+        "question": "DuplicateLatents 节点如何复制潜在表示？",
+        "answer": "DuplicateLatents 节点复制潜在表示的过程根据用户定义的 'multiply_by' 参数，它控制潜在表示应复制的倍数，通过这一过程，节点可以灵活地调整输出数据集的大小，以适应特定的应用需求。"
+    },
+    {
+        "question": "哪些数据类型是 VHS_DuplicateLatents 节点接受的输入数据？",
+        "answer": "VHS_DuplicateLatents 节点接受的主要输入数据类型是 'LATENT' 和 'INT'，其中 'LATENT' 是一个包含 Tensor 对象的字典，代表潜在空间数据，而 'INT' 类型的 'multiply_by' 参数决定了潜在表示复制的倍数。"
+    },
+    {
+        "question": "如何指定 DuplicateLatents 节点的复制因子？",
+        "answer": "通过在节点的输入中设置 'multiply_by' 参数，可确定潜在表示复制的倍数，这个参数允许用户根据需要放大潜在样本的数量，以适应特定的应用场景，如数据增强或模型训练。"
+    },
+    {
+        "question": "VHS_DuplicateLatents 输出的数据是什么类型？",
+        "answer": "VHS_DuplicateLatents 节点输出的数据类型主要是 'LATENT' 和 'INT'。'LATENT' 类型是包含复制的潜在空间数据的字典，'INT' 类型是输出的潜在样本总数，显示了复制过程后数据放大了多少。"
+    },
+    {
+        "question": "DuplicateLatents 节点支持的硬件类型是什么？",
+        "answer": "DuplicateLatents 节点的运算支持在 CPU 上执行，这意味着它不依赖于GPU加速，而是能够在常规的 CPU 硬件上处理潜在空间复制的任务。"
+    },
+    {
+        "question": "在使用 VHS_DuplicateLatents 节点时如何操作拷贝的潜在表示？",
+        "answer": "在 VHS_DuplicateLatents 节点中，潜在表示的拷贝通过将 'latents' 输入多次按照指定的 'multiply_by' 倍数添加至一个列表中并最终使用 'torch.cat()' 函数沿维度 0 连接这些张量来实现，生成的表示准备进一步应用或处理。"
+    }
+]

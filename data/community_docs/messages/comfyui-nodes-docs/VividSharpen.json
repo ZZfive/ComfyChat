@@ -1,0 +1,30 @@
+[
+    {
+        "question": "VividSharpen节点属于哪一类别？",
+        "answer": "VividSharpen节点属于image/postprocessing类别，专注于图像后期处理。"
+    },
+    {
+        "question": "VividSharpen节点的目的是什么？",
+        "answer": "VividSharpen节点的目的是通过应用独特的锐化算法，增强图像的清晰度和锐利度，创造更加生动和清晰的外观。"
+    },
+    {
+        "question": "VividSharpen处理的主要输入是什么？",
+        "answer": "VividSharpen的主要输入类型是'images'，它接受IMAGE或torch.Tensor类型的图像，这些图像是后续锐化处理的基础。"
+    },
+    {
+        "question": "哪些参数能够控制VividSharpen节点的锐化效果？",
+        "answer": "VividSharpen节点可以通过'radius'和'strength'两个参数来控制锐化效果，'radius'控制锐化前应用的模糊效果的范围，而'strength'定义了锐化效果的强度。"
+    },
+    {
+        "question": "radius参数在VividSharpen节点中起什么作用？",
+        "answer": "在VividSharpen节点中，'radius'参数控制锐化前应用的模糊效果的范围，该参数允许用户调整输出图像中锐度的程度，实现对最终视觉外观的精细控制。"
+    },
+    {
+        "question": "VividSharpen的'strength'参数如何影响图像的输出？",
+        "answer": "VividSharpen的'strength'参数控制锐化效果的强度，允许用户调整锐化的激进程度，从而影响图像的细节和清晰度，生成不同级别锐利度的图像输出。"
+    },
+    {
+        "question": "VividSharpen节点如何处理多个图像输入？",
+        "answer": "当VividSharpen节点接收到多个图像输入时，它会遍历每个图像，利用给定的'radius'和'strength'参数通过vivid_sharpen函数独立地应用锐化算法。处理后，会将所有结果图像聚合为单个输出torch.Tensor返回。"
+    }
+]

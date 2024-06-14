@@ -1,0 +1,30 @@
+[
+    {
+        "question": "TranslateCLIPTextEncode节点的作用是什么?",
+        "answer": "TranslateCLIPTextEncode节点在ComfyUI中用于将文本数据翻译并编码为适合机器学习模型（尤其使用CLIP框架）处理的格式，其主要功能是准备数据供AI模型后续处理。"
+    },
+    {
+        "question": "哪些输入参数是TranslateCLIPTextEncode节点所必需的?",
+        "answer": "TranslateCLIPTextEncode节点所需的输入参数包括'text'（要处理的原始文本输入）和'clip'（用于标记化和编码的CLIP模型）。"
+    },
+    {
+        "question": "TranslateCLIPTextEncode节点的'CONDITIONING'输出表示什么?",
+        "answer": "TranslateCLIPTextEncode节点的'CONDITIONING'输出代表编码后的文本数据，包括CLIP模型生成的条件向量和池化输出，为下游机器学习任务准备加工信息。"
+    },
+    {
+        "question": "‘app_id’和‘app_key’参数在TranslateCLIPTextEncode节点中承担什么角色?",
+        "answer": "‘app_id’和‘app_key’参数作为外部翻译服务的认证信息，用于身份验证，对于访问某些服务及确保翻译过程的安全性和完整性至关重要，尽管它们不是必须提供的。"
+    },
+    {
+        "question": "TranslateCLIPTextEncode节点如何处理输入的文本?",
+        "answer": "TranslateCLIPTextEncode节点首先将输入文本翻译成适合模型的语言，然后使用CLIP模型对翻译后的文本进行标记化和编码，为后续的机器学习任务准备数据。"
+    },
+    {
+        "question": "在使用TranslateCLIPTextEncode节点时需注意什么硬件或基础设施?",
+        "answer": "使用TranslateCLIPTextEncode节点进行处理时，建议的基础设施类型为CPU，这在源代码的注释中被列为'Infra type: CPU'。"
+    },
+    {
+        "question": "TranslateCLIPTextEncode节点的'clip'参数具体是指什么?",
+        "answer": "在TranslateCLIPTextEncode节点中，'clip'参数是指CLIP模型或其接口，用于文本的标记化和编码过程，直接影响文本转换为适于机器学习应用格式的能力。"
+    }
+]

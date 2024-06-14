@@ -1,0 +1,30 @@
+[
+    {
+        "question": "GroundingDinoModelLoader节点的作用是什么？",
+        "answer": "GroundingDinoModelLoader节点的主要作用是加载和准备一个GroundingDino模型，用以执行图像的分割和理解任务。"
+    },
+    {
+        "question": "该节点为何需要GPU作为Infra type？",
+        "answer": "GroundingDinoModelLoader节点需要GPU支持，因为模型加载和初始化的过程中涉及复杂计算，尤其是处理图像分割任务时，GPU能够提供所需的计算能力。"
+    },
+    {
+        "question": "GroundingDinoModelLoader节点的输入类型有哪些？",
+        "answer": "GroundingDinoModelLoader节点的唯一必需输入是model_name，类型为字符串，它决定了要加载的GroundingDino模型。"
+    },
+    {
+        "question": "模型名称参数的重要性体现在哪些方面？",
+        "answer": "模型名称参数确定了具体加载哪个GroundingDino模型，影响模型架构和其在图像分割中的性能，是节点操作的关键决定因素。"
+    },
+    {
+        "question": "GroundingDinoModelLoader节点的输出是什么？",
+        "answer": "节点输出的是一个初始化好的GroundingDino模型，类型为torch.nn.Module，它已经被设置好，可以立即用于图像的分割任务。"
+    },
+    {
+        "question": "如何在ComfyUI中使用GroundingDinoModelLoader？",
+        "answer": "在ComfyUI中使用GroundingDinoModelLoader需要通过其INPUT_TYPES方法指定模型名称，然后调用main方法来加载模型。"
+    },
+    {
+        "question": "哪些任务最适合GroundingDinoModelLoader节点？",
+        "answer": "GroundingDinoModelLoader节点最适合用于图像分割和理解任务，尤其是在需要GPU计算能力提高处理速度的情况下。"
+    }
+]

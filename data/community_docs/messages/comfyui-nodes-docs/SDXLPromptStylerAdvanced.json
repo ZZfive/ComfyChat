@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SDXLPromptStylerAdvanced节点的作用是什么？",
+        "answer": "SDXLPromptStylerAdvanced节点是ComfyUI中的一个自定义节点，它通过基于预定义模板的高级样式技术来增强文本呈现，将正面和负面提示集成并在特定风格下进行定制。"
+    },
+    {
+        "question": "在SDXLPromptStylerAdvanced中，text_positive_g输入类型的要求是什么？",
+        "answer": "text_positive_g参数在SDXLPromptStylerAdvanced中是主要的正面提示，需要强调的核心信息，其Comfy dtype为STRING，Python dtype为str。"
+    },
+    {
+        "question": "辅助性负面提示在SDXLPromptStylerAdvanced节点中如何表示和作用？",
+        "answer": "辅助性的负面提示在SDXLPromptStylerAdvanced节点中通过text_negative_l表示，它在样式化后补充主要负面文本，增强最终输出的深度，其Comfy dtype为STRING，Python dtype为str。"
+    },
+    {
+        "question": "如何在SDXLPromptStylerAdvanced中应用风格参数？",
+        "answer": "在SDXLPromptStylerAdvanced节点中，style输入类型用于确定应用于文本的审美和结构格式，指导输出的整体外观和感觉，其Comfy dtype为STYLE，Python dtype为dict。"
+    },
+    {
+        "question": "SDXLPromptStylerAdvanced节点输出的text_positive_g提供什么信息？",
+        "answer": "SDXLPromptStylerAdvanced的输出text_positive_g反映在应用所选样式后的主要风格化文本，包含主要的正面信息，其Comfy dtype为STRING，Python dtype为str。"
+    },
+    {
+        "question": "SDXLPromptStylerAdvanced中，什么参数决定负面提示是否应用于主要和辅助提示或选择性应用？",
+        "answer": "在SDXLPromptStylerAdvanced节点中，negative_prompt_to参数决定了负面提示的应到目标，是'Both'（应用于主要和辅助提示）、'G only'（仅应用于主要提示）还是'L only'（仅应用于辅助提示）。"
+    },
+    {
+        "question": "在SDXLPromptStylerAdvanced的代码实现中，如何记录提示和风格化文本的信息？",
+        "answer": "在SDXLPromptStylerAdvanced的代码中，通过log_prompt参数可以启用或禁用提示和风格化文本的记录，此参数为BOOLEAN类型，用于调试和审查目的。"
+    }
+]

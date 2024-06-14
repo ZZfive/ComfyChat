@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Mask_Floor_Region的作用是什么？",
+        "answer": "WAS_Mask_Floor_Region是一个ComfyUI中的自定义节点，用于处理掩码并识别掩码中的最低强度区域，通过转换掩码为NumPy数组，应用阈值来隔离非黑色像素，然后确定这些像素中的最小值。"
+    },
+    {
+        "question": "WAS_Mask_Floor_Region能够处理哪些类型的输入？",
+        "answer": "WAS_Mask_Floor_Region的输入是掩码参数（Comfy dtype: MASK，Python dtype: torch.Tensor），可以是单个掩码或掩码的批次。"
+    },
+    {
+        "question": "WAS_Mask_Floor_Region返回什么类型的输出？",
+        "answer": "WAS_Mask_Floor_Region返回一个表示已处理区域的张量（Comfy dtype: MASK，Python dtype: torch.Tensor），该张量突出显示了掩码中识别的最低强度区域。"
+    },
+    {
+        "question": "WAS_Mask_Floor_Region方法中如何处理多维掩码数据？",
+        "answer": "当输入的掩码数据维度大于3时，WAS_Mask_Floor_Region为每个掩码单独处理，通过将其转换为NumPy数组、应用阈值并确定非黑色像素中的最低强度区域，然后将结果组合成一个批次的张量。"
+    },
+    {
+        "question": "哪些情况会触发WAS_Mask_Floor_Region的循环处理模式？",
+        "answer": "如果masks参数的维度大于3，即多掩码情况，WAS_Mask_Floor_Region将对每个掩码单独应用floor_region处理方法，以确保每个掩码都正确处理其最低强度区域。"
+    },
+    {
+        "question": "WAS_Mask_Floor_Region可以处理多少个掩码同时输入？",
+        "answer": "WAS_Mask_Floor_Region可以处理单个掩码或多个掩码的批次，具体数量取决于输入'd masks'参数的大小。"
+    },
+    {
+        "question": "WAS_Mask_Floor_Region的最佳运行环境是什么？",
+        "answer": "WAS_Mask_Floor_Region的运行依赖于CPU基础架构（Infra type: CPU），在操作和处理掩码或掩码批次时建议在CPU中执行。"
+    }
+]

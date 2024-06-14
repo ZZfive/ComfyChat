@@ -1,0 +1,30 @@
+[
+    {
+        "question": "TripoSRViewer是什么类？",
+        "answer": "TripoSRViewer是ComfyUI-Flowty-TripoSR仓库中的一个类，用于3D网格的可视化和导出，详细信息可从https://github.com/flowtyone/ComfyUI-Flowty-TripoSR获取。"
+    },
+    {
+        "question": "TripoSRViewer类的display方法的作用是什么？",
+        "answer": "display方法处理输入的3D网格，准备其进行可视化并保存到指定目录，增强用户审查和分析3D渲染输出的能力，辅助3D模型的后期处理工作流程。"
+    },
+    {
+        "question": "哪些参数是TripoSRViewer的display方法要求的？",
+        "answer": "display方法要求一个名为'mesh'的参数，它代表了需要被处理和可视化展示的3D模型，其数据类型是torch_geometric.data.Batch。"
+    },
+    {
+        "question": "在ComfyUI的环境下，mesh参数的dtype是什么？",
+        "answer": "在ComfyUI中，mesh参数的dtype是MESH，这代表它是一个包含3D网格数据的数据结构。"
+    },
+    {
+        "question": "TripoSRViewer类的display方法输出什么类型的数据？",
+        "answer": "display方法输出的数据类型也是MESH，并表现为Python列表中的字典集，其中字典包含str、int和str列表等类型的键值对，用于描述保存的3D模型文件的详细信息。"
+    },
+    {
+        "question": "TripoSRViewer的display方法适用于什么类型的硬件环境？",
+        "answer": "display方法主要在CPU上运行，没有特定说明其适用的GPU或加速器类型。"
+    },
+    {
+        "question": "使用TripoSRViewer进行3D网格的处理，用户可以得到什么样的具体输出？",
+        "answer": "用户可以得到修改后的3D模型文件和一个包含这些文件信息的列表，列表中的每个元素都是一个字典，描述了一个输出文件的名称、类型和子文件夹位置。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MediaPipeFaceMeshToSEGS节点的主要功能是什么？",
+        "answer": "MediaPipeFaceMeshToSEGS节点的主要功能是处理面部图像，利用MediaPipe FaceMesh模型检测面部标记，并将这些面部特征转换为结构化的分割格式，生成详细的分割掩码。"
+    },
+    {
+        "question": "MediaPipeFaceMeshToSEGS节点如何影响面部特征分割的准确性？",
+        "answer": "输入图像的质量和分辨率直接影响到MediaPipeFaceMeshToSEGS节点的面部特征分割的准确性。更高清晰度的图像是更准确分割的前提。"
+    },
+    {
+        "question": "crop_factor参数在MediaPipeFaceMeshToSEGS节点中起什么作用？",
+        "answer": "crop_factor参数在MediaPipeFaceMeshToSEGS节点中用于调整分割输出的大小，通过影响输出尺寸来控制分割中的细节级别，这是一个可选的设定，允许用户根据需要调整分割尺度。"
+    },
+    {
+        "question": "哪些参数可以用于选择性地分割面部的不同部分？",
+        "answer": "face、mouth、left_eyebrow、left_eye、left_pupil、right_eyebrow、right_eye和right_pupil参数允许选择性地分割面部区域，如面部、嘴巴、眉毛、眼睛和瞳孔，提供极大的定制性。"
+    },
+    {
+        "question": "什么输出类型由MediaPipeFaceMeshToSEGS节点提供？",
+        "answer": "MediaPipeFaceMeshToSEGS节点输出类型为SEGS，这是一种结构化表示面部特征分割的数据格式，包含分割掩码的尺寸和列表，列表由包括标签和相应分割掩码的张量元组组成。"
+    },
+    {
+        "question": "drop_size参数在面部分割中具有什么功能？",
+        "answer": "drop_size参数用于控制MediaPipeFaceMeshToSEGS节点生成的分割点之间的间距，影响分割掩码的密度，通过确定点与点之间的间隔来细化分割结构。"
+    },
+    {
+        "question": "dilation参数如何影响分割的视觉呈现？",
+        "answer": "dilation参数应用于分割掩码以增加分割区域的大小，特别适用于细化较小面部特征的分割，使分割更加饱满，有助于更细致地呈现面部结构。"
+    }
+]

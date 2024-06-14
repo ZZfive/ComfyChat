@@ -1,0 +1,46 @@
+[
+    {
+        "question": "Image Seamless Texture功能是关于什么的?",
+        "answer": "Image Seamless Texture功能是通过应用边缘混合技术将一组图像转换为无缝纹理，使图像可以平铺而不显示可见的接缝。"
+    },
+    {
+        "question": "WAS_Image_Make_Seamless节点的输入图像类型是什么？",
+        "answer": "WAS_Image_Make_Seamless节点的输入图像类型为Comfy的IMAGE类型，即Python中的List[PIL.Image.Image]表示。"
+    },
+    {
+        "question": "什么是blending参数在Image Seamless Texture功能中的作用？",
+        "answer": "blending参数决定了图像边缘应用的混合程度，值越高，过渡越平滑，图像大小相应减少。"
+    },
+    {
+        "question": "哪种类型的输出是Image Seamless Texture功能生成的？",
+        "answer": "Image Seamless Texture功能生成的输出是Comfy dtype为IMAGE，Python dtype为torch.Tensor的无缝纹理图像。"
+    },
+    {
+        "question": "tiled参数在WAS_Image_Make_Seamless中有什么作用？",
+        "answer": "tiled参数用于指示输出是否应该是单个无缝图像或2x2的平铺版本，以便更好地可视化无缝效果。"
+    },
+    {
+        "question": "当tiled设置为true时，tiles参数如何影响输出？",
+        "answer": "当tiled参数设置为true时，tiles参数确定平铺输出中每个方向上的平铺数量。"
+    },
+    {
+        "question": "WAS Image Make Seamless是否能运行在GPU上？",
+        "answer": "根据文档，WAS Image Make Seamless的Infra type为CPU，意味着它预定在CPU上运行。"
+    },
+    {
+        "question": "如何设定blending参数以得到更平滑的过渡效果？",
+        "answer": "为了得到更平滑的过渡效果，应设置blending参数为较高的值，但需注意这会减少图像大小。"
+    },
+    {
+        "question": "ComfyUI中用于创建图像无缝纹理的节点是什么？",
+        "answer": "ComfyUI中用于创建图像无缝纹理的节点是WAS Suite系列下的WAS_Image_Make_Seamless节点。"
+    },
+    {
+        "question": "除了平滑过渡，blending参数影响图像的什么特性？",
+        "answer": "除了影响平滑过渡，blending参数还影响图像的大小，值越高，图像的视觉尺寸会根据平滑度要求而减小。"
+    },
+    {
+        "question": "如何使用WAS Image Make Seamless创建无缝纹理？",
+        "answer": "在ComfyUI中，通过输入图像、设定blending、tiled和tiles参数，调用WAS Image Make Seamless节点的make_seamless方法来创建无缝纹理。"
+    }
+]

@@ -1,0 +1,46 @@
+[
+    {
+        "question": "NoiseInjectionDetailerHookProvider是什么类型的节点？",
+        "answer": "NoiseInjectionDetailerHookProvider是ComfyUI中的一个自定义节点，属于ImpactPack/Detailer类别，用于通过在图像生成过程中的特定点注入噪声来增强生成细节。"
+    },
+    {
+        "question": "NoiseInjectionDetailerHookProvider的schedule_for_cycle参数做什么？",
+        "answer": "schedule_for_cycle参数决定了噪声在生成周期中注入的时间点，这对于调整图像细节的水平和平衡噪声与清晰度至关重要。"
+    },
+    {
+        "question": "NoiseInjectionDetailerHookProvider的source参数有什么作用？",
+        "answer": "source参数决定了噪声生成在CPU还是GPU上进行，这会影响噪声注入过程的性能和效率，是关键的优化节点操作的参数。"
+    },
+    {
+        "question": "NoiseInjectionDetailerHookProvider的seed参数如何影响噪声注入？",
+        "answer": "seed参数初始化随机数生成器，确保噪声的一致性和可复现性，这对于创建可靠且一致的输出非常重要。"
+    },
+    {
+        "question": "NoiseInjectionDetailerHookProvider节点在开始和结束时的噪声强度如何控制？",
+        "answer": "NoiseInjectionDetailerHookProvider通过start_strength和end_strength参数分别设置开始和结束时噪声注射的强度，使得噪声强度可以按需渐变，创造平滑过渡的细节和纹理。"
+    },
+    {
+        "question": "NoiseInjectionDetailerHookProvider的输出是什么？",
+        "answer": "NoiseInjectionDetailerHookProvider节点的输出是一个细节钩子，即DETAILER_HOOK类型，用于注入噪声到图像生成流程中，对提高最终图像的质量和细节起关键作用。"
+    },
+    {
+        "question": "哪些应用会受益于使用NoiseInjectionDetailerHookProvider节点？",
+        "answer": "需要高保真度图像生成以创建复杂纹理或图案的应用将会受益于使用NoiseInjectionDetailerHookProvider，它能够微调输出，确保更细致和详细的结果。"
+    },
+    {
+        "question": "噪声注入如何具体增强图像生成过程？",
+        "answer": "噪声注入在图像生成的关键阶段引入轻微的变化，利用噪声的力量增加输出的可变性，从而微调细节，确保图像结果更精细且细节丰富。"
+    },
+    {
+        "question": "提高源节点为GPU时的工作效率，NoiseInjectionDetailerHookProvider节点提供了什么特性？",
+        "answer": "NoiseInjectionDetailerHookProvider的source参数允许选择GPU作为噪声生成平台，这可以显著提升噪声注入过程的性能，优化节点在GPU上的操作效率。"
+    },
+    {
+        "question": "什么参数在NoiseInjectionDetailerHookProvider的噪声注入过程中保证了一致性和可复现性？",
+        "answer": "NoiseInjectionDetailerHookProvider的seed参数初始化随机数生成器，确保了在不同运行中注入噪声的一致性和可复现性，对稳定输出至关重要。"
+    },
+    {
+        "question": "如何调整噪声对图像的影响程度？",
+        "answer": "通过调整start_strength和end_strength参数，可以精确控制噪声在图像生成周期开始和结束时的强度，进而微调噪声对图像总体影响的程度。"
+    }
+]

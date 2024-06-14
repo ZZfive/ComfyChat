@@ -1,0 +1,42 @@
+[
+    {
+        "question": "SimpleDetectorForEach节点的功能是什么？",
+        "answer": "SimpleDetectorForEach节点旨在使用边界框（bbox）检测器对单个图像执行对象检测，处理图像以识别和定位对象，应用阈值和膨胀技术来完善检测过程。"
+    },
+    {
+        "question": "SimpleDetectorForEach节点如何与SAM模型协作以提高检测精度？",
+        "answer": "SimpleDetectorForEach节点能够与SAM模型集成，使用检测到的分割提示创建更准确的掩码，从而提高检测精度。"
+    },
+    {
+        "question": "SimpleDetectorForEach节点的输出类型是什么？",
+        "answer": "SimpleDetectorForEach节点的输出类型为SEGS，代表检测到的分段对象集合，每个分段包含裁剪后的图像、掩码和其他相关元数据。"
+    },
+    {
+        "question": "SimpleDetectorForEach节点的主要输入参数有哪些？",
+        "answer": "SimpleDetectorForEach节点的主要输入参数包括bbox_detector、image、bbox_threshold、bbox_dilation、crop_factor和drop_size。"
+    },
+    {
+        "question": "在SimpleDetectorForEach节点中，bbox_detector参数起什么作用？",
+        "answer": "bbox_detector参数定义了SimpleDetectorForEach节点在输入图像中识别和定位对象的机制，对于检测过程至关重要。"
+    },
+    {
+        "question": "sub_dilation参数在SimpleDetectorForEach节点中的作用是什么？",
+        "answer": "sub_dilation参数控制检测到的分割的膨胀，允许调整分割过程，尤其对于细化检测到的对象边界特别有用。"
+    },
+    {
+        "question": "sam_mask_hint_threshold参数在SimpleDetectorForEach节点中如何帮助提高掩码的质量？",
+        "answer": "sam_mask_hint_threshold参数与SAM模型集成时使用，设置使用检测到的分割提示的阈值，以生成更准确和详细的掩码，提高掩码质量。"
+    },
+    {
+        "question": "SimpleDetectorForEach节点使用post_dilation参数达到什么效果？",
+        "answer": "post_dilation参数在检测过程后对分割掩码应用最终膨胀，旨在平滑掩码边缘，确保更好地覆盖检测到的对象。"
+    },
+    {
+        "question": "哪些自定义节点可以提高图像中对象检测的准确性？",
+        "answer": "ImpactPack/Detector类下的SimpleDetectorForEach节点可以提高图像中对象检测的准确性，通过使用边界框检测器进行对象识别。"
+    },
+    {
+        "question": "在SimpleDetectorForEach节点中，crop_factor参数对对象检测的影响是什么？",
+        "answer": "crop_factor参数用于确定围绕检测到的对象的裁剪区域的缩放因子，影响裁剪区域的大小和分割中的细节水平，从而影响对象检测的准确性。"
+    }
+]

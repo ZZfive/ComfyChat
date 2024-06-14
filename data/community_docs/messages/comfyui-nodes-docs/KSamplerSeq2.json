@@ -1,0 +1,30 @@
+[
+    {
+        "question": "KSamplerSeq2节点属于哪一类别？",
+        "answer": "KSamplerSeq2节点属于采样(sampling)类别，旨在促进生成模型中高级采样技术的应用。"
+    },
+    {
+        "question": "KSamplerSeq2的主要功能是什么？",
+        "answer": "KSamplerSeq2的主要功能是管理种子生成和操作的复杂性，允许使用各种采样策略，如增量、递减、随机和固定种子模式，同时结合条件化、潜在插值和噪声注入来微调采样过程，最终生成高质量的潜在表示。"
+    },
+    {
+        "question": "哪三个参数是KSamplerSeq2节点的功能实现所必需的？",
+        "answer": "KSamplerSeq2节点的功能实现需要三个必需参数：模型(`model`)，种子(`seed`)和采样序列中的种子模式(`seed_mode_seq`)。"
+    },
+    {
+        "question": "为什么种子(`seed`)参数对于KSamplerSeq2节点至关重要？",
+        "answer": "种子参数对于KSamplerSeq2节点至关重要，因为它初始化随机数生成过程，确保了采样程序的可重复性，为基于种子的采样方法设置了起始点。"
+    },
+    {
+        "question": "seed_mode_seq参数在KSamplerSeq2中起到什么作用？",
+        "answer": "seed_mode_seq参数决定了在整个采样序列中种子值是如何调整或选择的，影响生成样本的多样性和连贯性。"
+    },
+    {
+        "question": "KSamplerSeq2节点的'latent_image'参数在什么情形下会使用？",
+        "answer": "'latent_image'参数在节点需要进行采样过程中的潜在图输入时会使用，它描述了输入的潜在向量或表示，KSamplerSeq2节点会基于这个输入进行进一步处理。"
+    },
+    {
+        "question": "KSamplerSeq2如何处理噪声注入和潜在插值？",
+        "answer": "KSamplerSeq2节点通过特定参数控制噪声注入(`inject_noise`)和潜在插值(`use_latent_interpolation`)，分别调整噪声强度和插值模式，以实现对潜在表示的微调和变化。"
+    }
+]

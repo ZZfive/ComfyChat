@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Image_Select_Channel 节点是什么？",
+        "answer": "WAS_Image_Select_Channel 节点是ComfyUI的一个自定义节点，用于从输入图像中选择并分离出单个颜色通道，比如红色、绿色或蓝色，以进行更进一步的处理或分析。"
+    },
+    {
+        "question": "WAS_Image_Select_Channel 如何处理输入图像？",
+        "answer": "WAS_Image_Select_Channel 节点通过复制用户指定的单个通道（红色、绿色或蓝色）到所有三个颜色通道来处理输入图像，生成一个单通道图像的表示。"
+    },
+    {
+        "question": "哪些输入类型是WAS_Image_Select_Channel节点所必需的？",
+        "answer": "WAS_Image_Select_Channel节点必需的输入类型是图像（Comfy dtype: IMAGE，Python dtype: PIL.Image.Image），这是节点将处理的主要数据。"
+    },
+    {
+        "question": "可选的参数channel在WAS_Image_Select_Channel中起什么作用？",
+        "answer": "channel参数用于在WAS_Image_Select_Channel中指定要提取的特定颜色通道，决定了节点操作的最终结果和输出图像中的颜色信息。"
+    },
+    {
+        "question": "WAS_Image_Select_Channel节点的输出具体是什么？",
+        "answer": "节点的输出是经过处理的图像，包含一个选定的单色通道，用于进一步的图像处理或在只需求单个颜色通道的应用中使用。"
+    },
+    {
+        "question": "哪些应用程序可以使用WAS_Image_Select_Channel节点的输出图像？",
+        "answer": "WAS_Image_Select_Channel节点的输出图像可以用于任何只需要单个颜色通道的进一步图像处理任务，或特定颜色通道的应用，如红外热成像分析、色彩对比度增强等。"
+    },
+    {
+        "question": "在实现WAS_Image_Select_Channel节点时，使用了哪些方法来处理输入图像数据？",
+        "answer": "在实现WAS_Image_Select_Channel节点时，使用了convert_to_single_channel方法来处理输入的图像数据，该方法负责将图像转换为仅含有选择颜色通道的单通道表示。"
+    }
+]

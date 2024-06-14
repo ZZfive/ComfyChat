@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MasksToMaskList是什么类型的节点?",
+        "answer": "MasksToMaskList是ComfyUI中ImpactPack/Operation类别下的一个节点，专门用于处理并转换掩码图像到3D掩码张量列表。"
+    },
+    {
+        "question": "MasksToMaskList节点从哪里可以找到源代码？",
+        "answer": "MasksToMaskList节点的源代码可以在ComfyUI-Impact-Pack仓库中找到，仓库参考链接是https://github.com/ltdrdata/ComfyUI-Impact-Pack.git。"
+    },
+    {
+        "question": "MasksToMaskList节点的主要功能是什么？",
+        "answer": "MasksToMaskList节点的主要功能是将一系列掩码图像转化为3D掩码张量列表，这使得掩码图像适用于图像处理任务中的进一步操作。"
+    },
+    {
+        "question": "MasksToMaskList节点的输入和输出类型是什么？",
+        "answer": "MasksToMaskList节点的输入类型是'masks'(List[torch.Tensor])，输出类型是'mask_list'，同样为List[torch.Tensor]，但每个张量表示一个3D掩码。"
+    },
+    {
+        "question": "MasksToMaskList节点如何处理缺少的输入掩码数据？",
+        "answer": "如果输入的'masks'为None，MasksToMaskList节点将生成一个空的3D掩码，其尺寸为64x64，并填充零值，作为替代的输出数据。"
+    },
+    {
+        "question": "哪些场景下会使用MasksToMaskList节点？",
+        "answer": "MasksToMaskList节点适用于需要将个体掩码图像转换为统一格式的3D掩码张量列表的图像处理场景，常用于准备数据用于复杂的图像分析和滤波任务。"
+    },
+    {
+        "question": "MasksToMaskList节点在硬件要求上有何特别说明？",
+        "answer": "MasksToMaskList节点的硬件要求是CPU，意味着它不是专门优化以在GPU上运行的，而是更偏向于在CPU环境下完成图像处理的任务。"
+    }
+]

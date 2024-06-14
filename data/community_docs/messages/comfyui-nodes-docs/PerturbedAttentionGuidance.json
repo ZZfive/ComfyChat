@@ -1,0 +1,30 @@
+[
+    {
+        "question": "PerturbedAttentionGuidance是什么类型的应用场景？",
+        "answer": "PerturbedAttentionGuidance是ComfyUI中的一个自定义节点，主要应用于测试类别，通过注入扰动来修改模型的注意力机制，增强其鲁棒性和适应性。"
+    },
+    {
+        "question": "PerturbedAttentionGuidance需要哪些输入类型？",
+        "answer": "PerturbedAttentionGuidance需要的输入类型包括必需的模型参数（Comfy dtype: MODEL）和比例参数（Comfy dtype: FLOAT），其中模型参数定义了应用扰动的基础结构，比例参数调整扰动强度。"
+    },
+    {
+        "question": "scale参数在PerturbedAttentionGuidance中扮演什么角色？",
+        "answer": "scale参数在PerturbedAttentionGuidance中用于调整扰动强度，影响模型注意力的改变方式，对输出质量有显著影响。"
+    },
+    {
+        "question": "PerturbedAttentionGuidance输出什么？",
+        "answer": "PerturbedAttentionGuidance输出的模型是在输入模型基础上修改后的版本，增强了扰动注意力引导，能够带来在各种任务中改进的性能。"
+    },
+    {
+        "question": "在ComfyUI中，哪些设备类型对PerturbedAttentionGuidance有支持？",
+        "answer": "根据源码注释显示，PerturbedAttentionGuidance的使用提示表明它主要在CPU上运行，这意味着对于非GPU密集型任务可以提供良好的支持。"
+    },
+    {
+        "question": "scale为0时，PerturbedAttentionGuidance的behavior如何变化？",
+        "answer": "当scale设置为0时，扰动注意力机制不会被应用，输出将直接是无扰动的效果，即原样返回配置的预测结果。"
+    },
+    {
+        "question": "PerturbedAttentionGuidance中的perturbed_attention函数在哪些情况下会被调用？",
+        "answer": "perturbed_attention函数在注意力机制的计算阶段被调用，用于处理查询（q）、键（k）和值（v）向量，影响注意力模式的生成。"
+    }
+]

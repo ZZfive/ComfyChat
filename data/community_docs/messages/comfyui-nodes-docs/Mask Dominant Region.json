@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Mask_Dominant_Region 是什么及其用途？",
+        "answer": "WAS_Mask_Dominant_Region 是 ComfyUI 自定义节点，用于识别并隔离给定掩码图像中最突出的区域。它特别适用于图像分割或特征提取任务中，强调图像的主要主题或特征。"
+    },
+    {
+        "question": "masks 参数在 WAS_Mask_Dominant_Region 节点中的作用是什么？",
+        "answer": "masks 参数是 WAS_Mask_Dominant_Region 节点的必需输入，用于定义要处理的图像数据。这直接影响到节点识别图像中主导区域的执行效果和结果。"
+    },
+    {
+        "question": "如何使用 threshold 参数调整 WAS_Mask_Dominant_Region 节点的输出？",
+        "answer": "threshold 参数允许用户调整图像中区域的识别阈值，它通过控制接缝的可见性与结果图像大小之间的平衡，影响主导区域的定义，适用于无缝纹理或图案的识别。"
+    },
+    {
+        "question": "处理多个掩码时，WAS_Mask_Dominant_Region 节点如何工作？",
+        "answer": "当处理多个掩码时，WAS_Mask_Dominant_Region 节点会分别分析每个掩码以识别主导区域，最终将处理后的区域合并输出，支持同时处理多个图像的场景。"
+    },
+    {
+        "question": "哪些类型的应用程序最适合使用 WAS_Mask_Dominant_Region 节点？",
+        "answer": "WAS_Mask_Dominant_Region 节点最适合用于需要强调图像中主要主题或特征的图像分割和特征提取任务，如分割背景和前景区域，或标记物体轮廓。"
+    },
+    {
+        "question": "WAS_Mask_Dominant_Region 节点的输出 MASKS 参数表示什么？",
+        "answer": "WAS_Mask_Dominant_Region 节点提供的输出 MASKS 参数表示已处理并识别了主导区域的图像数据，可用于下游流程或进一步分析，如对象检测或图像编辑。"
+    },
+    {
+        "question": "在 WAS_Mask_Dominant_Region 节点中，float 数据类型的掩码如何转换以适应节点的操作？",
+        "answer": "WAS_Mask_Dominant_Region 节点内部会将输入的 float 类型掩码转换为 0 到 255 范围内的 uint8 类型，这有利于在图像像素级别的区域识别计算。"
+    }
+]

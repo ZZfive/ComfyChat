@@ -1,0 +1,38 @@
+[
+    {
+        "question": "SEGSPaste节点的用途是什么？",
+        "answer": "SEGSPaste节点用于将分割图中的多个片段无缝集成到给定图像中，通过调整羽化和alpha值来增强图像的视觉细节，实现更自然的混合效果。"
+    },
+    {
+        "question": "SEGSPaste节点可以处理哪些类型的输入？",
+        "answer": "SEGSPaste节点接受图像（IMAGE dtype）、片段数据（SEGS dtype）、羽化（INT dtype）和alpha参数（INT dtype）作为输入，以及一个可选的参考图像（IMAGE dtype）。"
+    },
+    {
+        "question": "SEGSPaste节点的'feather'参数是如何影响图像的？",
+        "answer": "feather参数控制片段粘贴到图像时边缘的模糊程度，用以最大化片段与图像的自然融合，调整范围从0到100。"
+    },
+    {
+        "question": "在SEGSPaste节点中，'alpha'参数的作用是什么？",
+        "answer": "alpha参数定义了粘贴片段的透明度，能够在0到255的范围内调整，决定片段与背景图像的混合程度，影响最终视觉效果的清晰度。"
+    },
+    {
+        "question": "SEGSPaste节点的输出有什么特征？",
+        "answer": "SEGSPaste节点输出一个IMAGE类型的数据，代表经过细节增强后的图像结果，其中增强的片段和基础图像已无缝结合。"
+    },
+    {
+        "question": "使用SEGSPaste节点时，'ref_image_opt'参数的目的是什么？",
+        "answer": "ref_image_opt是一个可选参数，用以提供额外的光源或颜色匹配，确保粘贴片段能够更好地与现有图像环境融合，提高细节增强的自然度。"
+    },
+    {
+        "question": "SEGSPaste节点属于哪个类别，及它支持哪种设备执行？",
+        "answer": "SEGSPaste节点属于'ImpactPack/Detailer'类别，针对GPU设备进行了优化，建议在具有GPU支持的环境中使用以获得最佳性能。"
+    },
+    {
+        "question": "哪些情况适合使用SEGSPaste节点？",
+        "answer": "当需要在图像中精确地集成多个分割图片段并微调其融合效果时，如对特定区域进行细节增强或修复，使用SEGSPaste节点可以达到高度定制和高质量的视觉结果。"
+    },
+    {
+        "question": "SEGSPaste节点是如何处理多个mask的情况？",
+        "answer": "当处理多个mask时，SEGSPaste节点会首先判断mask的大小和形状是否与输入图像批大小对应，然后通过合并或选择合适mask的方式来确保每个片段能够正确地应用到基础图像的相应部分。"
+    }
+]

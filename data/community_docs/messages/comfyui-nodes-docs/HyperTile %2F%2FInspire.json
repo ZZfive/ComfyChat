@@ -1,0 +1,30 @@
+[
+    {
+        "question": "HyperTileInspire节点在ComfyUI中的功能是什么？",
+        "answer": "HyperTileInspire节点通过动态调整模型的特征平铺来增强模型功能，采用随机但系统化的方法修改模型输入的空间维度，特别适用于优化模型在不同输入分辨率上的性能。"
+    },
+    {
+        "question": "HyperTileInspire节点如何增强模型在不同输入分辨率上的性能？",
+        "answer": "HyperTileInspire节点通过修改模型输入平铺的机制，引入变化以优化模型处理和学习数据的能力，尤其是在适应不同输入大小的任务时。"
+    },
+    {
+        "question": "在HyperTileInspire节点中，哪些输入参数是必需的，并描述它们的作用？",
+        "answer": "HyperTileInspire要求设置模型(model)、平铺大小(tile_size)、交换大小(swap_size)、最大深度(max_depth)、深度缩放(scale_depth)和种子(seed)等参数。模型参数代表将要增强的模型；tile_size设定平铺的基础大小；swap_size定义平铺尺寸的最大调整；max_depth控制平铺递归应用次数；scale_depth决定平铺尺寸是否随深度调整；seed则用以初始化随机数生成，确保平铺过程的可复现性。"
+    },
+    {
+        "question": "HyperTileInspire节点的scale_depth参数作用是什么？",
+        "answer": "当scale_depth参数设置为True时，平铺尺寸会随平铺过程的深度动态调整，使得平铺策略更精细且自适应，有助于模型更好地应对输入数据中的不同细节。"
+    },
+    {
+        "question": "在HyperTileInspire节点应用中，其输出结果是什么？",
+        "answer": "输出是一个增强的模型，其注意力机制被修改以适应动态平铺的输入，允许模型在各种尺度上有效处理信息，这对于复杂的数据分析和特征提取任务是必须的。"
+    },
+    {
+        "question": "HyperTileInspire节点最适合在哪种类型的基础设施上运行？",
+        "answer": "HyperTileInspire节点最适合在GPU上运行，鉴于其处理模型和进行深度学习操作的需求。"
+    },
+    {
+        "question": "哪些场景可能需要使用HyperTileInspire节点的seed参数？",
+        "answer": "需要HyperTileInspire节点在多次运行中产生相同或可预测平铺模式的场景，如测试或需要平铺过程可复现性的实验，都可能需要使用seed参数以控制随机性，确保结果的一致性。"
+    }
+]

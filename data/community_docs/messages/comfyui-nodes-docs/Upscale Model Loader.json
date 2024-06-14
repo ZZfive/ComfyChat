@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Upscale_Model_Loader在ComfyUI中的作用是什么？",
+        "answer": "WAS_Upscale_Model_Loader是ComfyUI的一个自定义节点，属于WAS Suite/Loaders类别，它用于加载用于图像放大的预训练模型，使得模型可以无缝集成到工作流程中，无需手动干预即可准备就绪，以备部署。"
+    },
+    {
+        "question": "load_model方法如何帮助实现图像放大任务？",
+        "answer": "load_model方法通过定位并加载模型参数，初始化模型以便在图像放大任务中使用，确保预训练模型能够自动且有效地加载和准备，无需人工介入。"
+    },
+    {
+        "question": "model_name参数在WAS_Upscale_Model_Loader中扮演着什么角色？",
+        "answer": "model_name参数用于指导load_model方法正确识别和加载特定模型，确保任务使用正确的模型，这对放大性能和结果至关重要。"
+    },
+    {
+        "question": "UPSCALE_MODEL输出代表什么？",
+        "answer": "UPSCALE_MODEL输出代表已加载并初始化的模型，表示模型准备完成，可以直接应用于图像放大任务，封装了模型结构和学习到的参数，为后续处理和分析奠定基础。"
+    },
+    {
+        "question": "MODEL_NAME_TEXT输出的用途何在？",
+        "answer": "MODEL_NAME_TEXT输出提供加载模型的名称，便于日志记录、追踪和用户界面中显示，为模型提供一个易于识别的标识符，加强了模型在整个应用程序中的沟通和引用。"
+    },
+    {
+        "question": "哪些类型的模型可以由WAS_Upscale_Model_Loader加载？",
+        "answer": "WAS_Upscale_Model_Loader主要针对在ComfyUI框架下的upscale_models文件夹中保存的预训练模型，用于图像放大的特定任务，它能够加载多种图像放大模型，具体取决于模型目录中的可用模型。"
+    },
+    {
+        "question": "在ComfyUI中，WAS_Upscale_Model_Loader的Infra type属性是CPU意味着什么？",
+        "answer": "WAS_Upscale_Model_Loader的Infra type属性设置为CPU意味着加载和初始化模型的任务将在中央处理器上执行，而不依赖于专门的图形处理单元或其他加速器。"
+    }
+]

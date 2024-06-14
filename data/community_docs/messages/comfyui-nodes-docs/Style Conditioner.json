@@ -1,0 +1,46 @@
+[
+    {
+        "question": "StyleConditioner节点的目的是什么？",
+        "answer": "StyleConditioner节点主要用于在ComfyUI中管理和应用风格条件，使生成内容能够微调以符合所需的风格属性，从而引导生成过程朝向特定的美学或艺术方向。"
+    },
+    {
+        "question": "StyleConditioner节点的'style'参数如何影响生成结果？",
+        "answer": "'style'参数在StyleConditioner节点中用于确定生成过程的风格方向，通过选择正面和负面提示来塑造输出，这些提示会影响最终的生成风格。"
+    },
+    {
+        "question": "强度参数（strength）在StyleConditioner节点中的作用是什么？",
+        "answer": "StyleConditioner节点中的'strength'参数用于调整风格影响生成过程的强度，控制风格特征在输出中的反映程度，从而影响最终生成内容的风格浓度。"
+    },
+    {
+        "question": "如何使用StyleConditioner保持输出内容中正面风格特征的一致性？",
+        "answer": "通过设置'positive_cond_base'和'positive_cond_refiner'参数，StyleConditioner能够维护并增强正面风格特征，确保它们在生成内容中得到一致体现。"
+    },
+    {
+        "question": "在StyleConditioner中，'negative_cond_base'和'negative_cond_refiner'参数如何帮助排除不想要的风格？",
+        "answer": "'negative_cond_base'和'negative_cond_refiner'参数在StyleConditioner中用于设置基本和精细的负面条件，以在生成流程中排除或最小化不希望出现的风格属性。"
+    },
+    {
+        "question": "Base Clip和Refiner Clip在StyleConditioner节点中的作用是什么？",
+        "answer": "Base Clip和Refiner Clip参数在StyleConditioner节点中分别用于编码基本和精细的风格提示，确保它们能以适当格式被生成模型处理，从而影响输出的风格表达。"
+    },
+    {
+        "question": "使用种子（use_seed）在StyleConditioner节点中如何增强风格的选择性？",
+        "answer": "使用种子参数在StyleConditioner节点中提供了依据提供的种子选择特定风格的选项，增强了风格选择的控制性，确保风格的一致性和复制能力。"
+    },
+    {
+        "question": "种子（seed）参数与StyleConditioner节点中‘s style’的选择有何关系？",
+        "answer": "种子（seed）参数用于指定风格选择的起始点，与‘use_seed’标志协同工作，当启用时，根据给定种子以随机或确定的方式影响‘style’参数的选择，从而影响最终的生成风格特性。"
+    },
+    {
+        "question": "StyleConditioner输出中的'base_pos_cond'是什么？",
+        "answer": "StyleConditioner输出中的'base_pos_cond'表示更新后的基本正面条件，反映出集成的风格特征，是最终生成内容的正面风格基础。"
+    },
+    {
+        "question": "在StyleConditioner节点中，refiner_pos_cond输出如何进一步塑造输出内容的风格？",
+        "answer": "在StyleConditioner节点中，'refiner_pos_cond'输出经过精炼的正面条件元素，被用于进一步调整和细化生成内容的风格属性，确保风格表达更加精确。"
+    },
+    {
+        "question": "style_str输出具体提供什么信息？",
+        "answer": "'style_str'输出提供了一个描述生成内容风格影响的文本表示，总结了StyleConditioner节点如何影响风格特性的应用。"
+    }
+]

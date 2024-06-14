@@ -1,0 +1,30 @@
+[
+    {
+        "question": "JDC_ImageLoaderMeta节点的主要功能是什么？",
+        "answer": "JDC_ImageLoaderMeta节点的主要功能是加载图像文件及其相关元数据，支持处理本地和远程图像路径，能从各种图像格式中提取提示和负面提示，并返回图像数据数组、掩码、提示、负面提示、宽度和高度。"
+    },
+    {
+        "question": "JDC_ImageLoaderMeta节点如何处理图像路径？",
+        "answer": "JDC_ImageLoaderMeta节点能处理作为参数输入的图像路径，无论是本地文件路径还是远程图像的URL，都用作加载和操作图像数据的关键输入。"
+    },
+    {
+        "question": "哪些是JDC_ImageLoaderMeta节点的输出类型？",
+        "answer": "JDC_ImageLoaderMeta节点的输出包括：图像（IMAGE），若可用则包括掩码（MASK），提示（STRING），负面提示（STRING），图像宽度（INT）和高度（INT）。"
+    },
+    {
+        "question": "在ComfyUI中，JDC_ImageLoaderMeta节点返回的mask有何作用？",
+        "answer": "在ComfyUI中，JDC_ImageLoaderMeta节点返回的mask是从图像中提取的alpha通道，主要用于分割目的，这能帮助识别图像的透明度信息，特别适合用于需要隔离背景的操作。"
+    },
+    {
+        "question": "JDC_ImageLoaderMeta节点支持哪些元数据的提取？",
+        "answer": "JDC_ImageLoaderMeta节点能从图像元数据中提取提示和负面提示，这是一种嵌入在图像元数据中的指令或信息，可用于指导后续的图像处理或生成任务，提供图像预期用途的上下文。"
+    },
+    {
+        "question": "如何确保JDC_ImageLoaderMeta节点输出的图像尺寸正确性？",
+        "answer": "JDC_ImageLoaderMeta节点提供'width'和'height'输出，确保所处理图像的宽度和高度信息准确返回，以像素为单位，便于了解图像尺寸与比例。"
+    },
+    {
+        "question": "如何验证在JDC_ImageLoaderMeta中的输入图像路径？",
+        "answer": "JDC_ImageLoaderMeta节点使用VALIDATE_INPUTS方法来验证输入的图像路径，确保路径是可访问的，无论是Web URL还是本地文件路径，并检查文件是否存在。"
+    }
+]

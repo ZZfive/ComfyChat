@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImpactNodeSetMuteState节点的作用是什么？",
+        "answer": "ImpactNodeSetMuteState节点用于控制信号处理节点的静音状态，允许用户根据提供的'set_state'参数激活或静音节点，影响系统中信号的流动。"
+    },
+    {
+        "question": "signal参数在ImpactNodeSetMuteState中的角色是什么？",
+        "answer": "'signal'参数是节点处理的输入信号，决定了受静音状态变化影响的数据，对节点操作至关重要。"
+    },
+    {
+        "question": "node_id参数的功能在ImpactNodeSetMuteState中如何体现？",
+        "answer": "'node_id'参数指定了要改变静音状态的信号处理节点的唯一标识符，用于在多个节点的网络中准确定位目标节点。"
+    },
+    {
+        "question": "ImpactNodeSetMuteState的'set_state'参数是如何影响节点操作的？",
+        "answer": "'set_state'参数用于直接控制要设置为激活或静音状态的节点，影响整个系统中信号节点的操作状态。"
+    },
+    {
+        "question": "哪些类型的节点可以使用'the ImpactNodeSetMuteState'进行静音操作？",
+        "answer": "任何支持'ImpactNodeSetMuteState'节点接口的信号处理节点都可以通过该节点的'doit'方法来控制其静音状态。"
+    },
+    {
+        "question": "ImpactNodeSetMuteState节点执行后产生哪些类型的输出？",
+        "answer": "执行后，'ImpactNodeSetMuteState'产生'signal_opt'输出，代表节点静音状态更改后可选修改的信号，反映了信号的处理或静音状态。"
+    },
+    {
+        "question": "在ComfyUI中如何定位和控制特定信号处理节点的静音状态？",
+        "answer": "通过使用'ImpactNodeSetMuteState'节点的'doit'方法，指定目标节点的'node_id'和期望的'set_state'，可以在ComfyUI中实现对特定信号处理节点静音状态的控制。"
+    }
+]

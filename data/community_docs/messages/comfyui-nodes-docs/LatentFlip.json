@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentFlip节点的功能是什么？",
+        "answer": "LatentFlip节点是ComfyUI中用于通过沿指定轴应用翻转操作来转换潜在空间表示的自定义节点，主要用于数据增强或探索潜在空间结构的任务。"
+    },
+    {
+        "question": "LatentFlip节点的'samples'输入参数描述了什么？",
+        "answer": "'samples'参数包含了节点将处理的潜在表示，是实现翻转操作的核心输入，直接关系到操作的执行与输出。"
+    },
+    {
+        "question": "什么决定着潜在样本的翻转轴？",
+        "answer": "LatentFlip节点的'flip_method'参数决定了潜在样本将沿哪个轴翻转，是翻转操作性质的关键决定因素。"
+    },
+    {
+        "question": "LatentFlip节点的输出是什么类型的？",
+        "answer": "LatentFlip节点的输出是经过翻转操作的潜在表示，类型为'LATENT'，可以用于下游任务的处理。"
+    },
+    {
+        "question": "LatentFlip节点如何处理水平翻转？",
+        "answer": "当'flip_method'设置为'y-axis: horizontally'，LatentFlip节点会使用torch.flip函数在第三个维度上翻转'samples'参数，实现水平翻转。"
+    },
+    {
+        "question": "哪些自定义节点能在潜在空间上应用翻转操作？",
+        "answer": "ComfyUI中的LatentFlip节点专为沿指定轴翻转潜在表示而设计，是操纵潜在特征的关键工具。"
+    },
+    {
+        "question": "LatentFlip节点的实现依赖于哪种数据类型？",
+        "answer": "LatentFlip节点的实现主要依赖于ComfyUI中的'LATENT'类型数据，该数据在Python中表现为Dict[str, torch.Tensor]格式，用于存储潜在样本及其翻转后的表示。"
+    }
+]

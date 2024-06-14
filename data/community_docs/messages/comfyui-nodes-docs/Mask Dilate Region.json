@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Mask_Dilate_Region 的主要功能是什么？",
+        "answer": "WAS_Mask_Dilate_Region 是一个用于执行输入掩码形态学膨胀操作的类，它能够扩展掩码区域的边界，对于增强掩码边缘或在掩码区域内创建缓冲区至关重要。"
+    },
+    {
+        "question": "dilate_region 方法的应用场景是什么？",
+        "answer": "dilate_region 方法适用于需要增强掩码边缘或在掩码区域内创建缓冲区的图像处理任务，它通过控制膨胀的范围，提供了一种多功能工具。"
+    },
+    {
+        "question": "在 WAS_Mask_Dilate_Region 中，masks 参数表示什么？",
+        "answer": "masks 参数是输入掩码，定义了要进行膨胀的区域，这对于膨胀过程的结果至关重要，应以可以被方法解释和处理的格式提供，如张量或 numpy 数组。"
+    },
+    {
+        "question": "iterations 参数如何影响 dilate_region 方法的输出？",
+        "answer": "iterations 参数决定了对输入掩码应用膨胀操作的次数，更多的迭代会导致更显著的膨胀效果，用户可以借此控制膨胀的程度，以适应特定应用需求。"
+    },
+    {
+        "question": "dilate_region 方法的输出是什么？",
+        "answer": "dilate_region 方法的主要输出是 MASKS，代表经过指定次数迭代后，从原始输入掩码扩展得到的膨胀掩码。它通常以 torch.Tensor 的形式返回，用于进一步的图像处理或分析。"
+    },
+    {
+        "question": "哪些工具可以进一步处理 WAS_Mask_Dilate_Region 的输出？",
+        "answer": "dilate_region 方法输出的膨胀掩码通常以 torch.Tensor 的形式返回，可以使用 PyTorch 等深度学习框架或其他图像处理软件进行进一步的图像处理、分析或机器学习任务。"
+    },
+    {
+        "question": "如何在 ComfyUI 中使用 WAS_Mask_Dilate_Region？",
+        "answer": "在 ComfyUI 中使用 WAS_Mask_Dilate_Region 时，首先需要输入一个掩码，通常是 MASK 类型的数据，然后可以指定可选的 iterations 参数以调整膨胀的程度，输出将是一个经过指定次数迭代后扩展的 MASK。"
+    }
+]

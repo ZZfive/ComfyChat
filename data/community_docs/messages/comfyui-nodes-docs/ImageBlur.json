@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageBlur 节点是 ComfyUI 的哪个部分，它对图像进行何种处理？",
+        "answer": "ImageBlur 节点属于 ComfyUI 的图像/后期处理类别，专门用于对输入图像应用高斯模糊，以增强图像的平滑度并降低噪声。"
+    },
+    {
+        "question": "ImageBlur 节点的模糊效果是如何被控制的？",
+        "answer": "ImageBlur 节点的模糊效果通过模糊半径和σ（sigma）参数来控制。较大的模糊半径和σ值会产生更广泛的模糊效果，而较小的值则导致更局部的模糊。"
+    },
+    {
+        "question": "哪些参数是 ImageBlur 节点必须提供的输入？",
+        "answer": "ImageBlur 节点必需的输入参数是 'image'，即待处理的输入图像，它是高斯模糊应用的主体。"
+    },
+    {
+        "question": "ImageBlur 节点的 'blurred_image' 输出类型意味着什么？",
+        "answer": "'blurred_image' 是 ImageBlur 节点处理的图像输出，它表示应用了高斯模糊的图像结果。这是节点操作的直接成果，对后续图像处理和可视化流程而言极为重要。"
+    },
+    {
+        "question": "当没有给定特定的模糊半径时，ImageBlur 节点是如何设定模糊程度的？",
+        "answer": "在没有特定设定的情况下，ImageBlur 节点的模糊半径默认值为1，为图像提供了一个轻度的模糊效果。"
+    },
+    {
+        "question": "在使用 ImageBlur 节点时，人们应该对其在哪种类型的硬件设施上运行有所注意？",
+        "answer": "在使用 ImageBlur 节点时，用户应关注其运行于 GPU 的基础设施，以充分利用其计算资源处理图像模糊任务。"
+    },
+    {
+        "question": "ImageBlur 节点的源代码中如何处理图像以应用高斯模糊？",
+        "answer": "ImageBlur 节点的源代码中，它首先检查模糊半径是否为零，若非零则创建适当大小的高斯核，并通过卷积运算将此核应用于图像，实现高斯模糊的处理。"
+    }
+]

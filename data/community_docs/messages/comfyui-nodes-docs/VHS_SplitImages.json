@@ -1,0 +1,30 @@
+[
+    {
+        "question": "VHS_SplitImages节点的作用是什么？",
+        "answer": "VHS_SplitImages节点是ComfyUI中Video Helper Suite的一部分，用于根据指定的索引将一系列图像分割成两个不同的组。这对于图像处理中的数据分割至关重要，能够支持后续的分析、排序或特殊处理。"
+    },
+    {
+        "question": "在ComfyUI中，如何使用VHS_SplitImages节点进行图像分割？",
+        "answer": "通过向VHS_SplitImages节点输入图像和可选的split_index参数，可以将输入的图像数据集合分割成两个组，分别命名为IMAGE_A和IMAGE_B，以及相应的计数A_count和B_count以表示每组中的图像数量。"
+    },
+    {
+        "question": "VHS_SplitImages节点的输入'images'代表什么？它的数据类型是什么？",
+        "answer": "'images'参数代表了VHS_SplitImages节点处理的图像数据集合，是节点操作的基础。它的数据类型为Comfy的IMAGE类型，Python中的对应类型为torch.Tensor。"
+    },
+    {
+        "question": "split_index参数在VHS_SplitImages节点中的作用是什么？如果不设置，将发生什么？",
+        "answer": "'split_index'参数用于定义输入图像分割成两个组的位置，即分界点。如果没有设置，节点会默认使用平衡分割，确保两个组的图像数量尽可能相等。"
+    },
+    {
+        "question": "在输出中，IMAGE_A和IMAGE_B分别表示什么？",
+        "answer": "IMAGE_A和IMAGE_B分别代表了VHS_SplitImages节点通过分割操作得到的两组图像。IMAGE_A是分组操作结果中的第一组图像，IMAGE_B是第二组，它们分别对应了原始图像集合的分割部分。"
+    },
+    {
+        "question": "输出中A_count和B_count对后续处理有何意义？",
+        "answer": "A_count和B_count输出提供了第一组和第二组中图像的具体数量。这些计数对后续处理步骤非常重要，因为它们有助于跟踪图像的分布，以及任何需要知道组大小的下游处理。"
+    },
+    {
+        "question": "VHS_SplitImages节点执行分割操作依赖哪种类型的处理器？",
+        "answer": "VHS_SplitImages节点的分割操作执行依赖于CPU，这是节点的Infra type所指定的处理器类型。"
+    }
+]

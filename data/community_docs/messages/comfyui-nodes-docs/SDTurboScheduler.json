@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SDTurboScheduler是什么类型的自定义节点？",
+        "answer": "SDTurboScheduler是一个自定义节点，它属于sampling/custom_sampling/schedulers类别，用于高效管理和调度扩散模型中的采样操作。"
+    },
+    {
+        "question": "SDTurboScheduler如何简化采样过程中的sigma值生成？",
+        "answer": "SDTurboScheduler为生成扩散采样过程中必不可少的sigma值提供了一个简化接口，它确保采样过程遵循指定参数，简化了流程，实现了高级控制。"
+    },
+    {
+        "question": "哪个参数在SDTurboScheduler中对模型操作至关重要？",
+        "answer": "模型参数（model）在SDTurboScheduler中是至关重要的，它代表了节点将操作的扩散模型，决定了采样过程的结果。"
+    },
+    {
+        "question": "在SDTurboScheduler中，什么是确定采样过程迭代次数的关键参数？",
+        "answer": "在SDTurboScheduler中，步骤参数（steps）确定了采样过程将经历的迭代次数，直接影响采样过程的粒度，控制了计算时间和结果质量之间的平衡。"
+    },
+    {
+        "question": "哪些类型需要在SDTurboScheduler的输入中提供？",
+        "answer": "SDTurboScheduler的输入需要提供模型参数（Comfy dtype: MODEL, Python dtype: torch.nn.Module）、步骤（Comfy dtype: INT, Python dtype: int）和去噪（Comfy dtype: FLOAT, Python dtype: float）。"
+    },
+    {
+        "question": "SDTurboScheduler的输出中，sigmas值代表什么？",
+        "answer": "sigmas输出在SDTurboScheduler中代表用于指导扩散步骤的标准偏差，是采样质量的关键决定因素，直接影响生成样本的结果。"
+    },
+    {
+        "question": "在使用SDTurboScheduler时，推荐的infra type是什么？",
+        "answer": "使用SDTurboScheduler时，推荐的infra type是GPU，以提升处理效率。"
+    }
+]

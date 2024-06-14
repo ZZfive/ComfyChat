@@ -1,0 +1,30 @@
+[
+    {
+        "question": "INPAINT_MaskedBlur节点用于什么目的？",
+        "answer": "INPAINT_MaskedBlur节点用于通过选择性模糊和填充图像中缺失或不需要的部分，应用复杂的图像修复技术。它特别适合基于内容的图像编辑和修复，使遮罩区域与周围图像内容无缝融合。"
+    },
+    {
+        "question": "在使用INPAINT_MaskedBlur节点时，输入的image参数有什么作用？",
+        "answer": "image参数是将由节点处理的输入图像，作为图像修复操作的主要数据源。它的质量直接影响最终修复图像的结果。此参数的类型为Comfy中的IMAGE，Python中的torch.Tensor。"
+    },
+    {
+        "question": "遮罩参数（mask）在INPAINT_MaskedBlur节点中扮演什么角色？",
+        "answer": "mask参数定义了图像中应该被模糊和填充的区域。它是一个关键参数，决定了网络的哪些部分将经历修复过程，以确保所需区域的精确修复。在Comfy中，它的数据类型是MASK，在Python中是torch.Tensor。"
+    },
+    {
+        "question": "INPAINT_MaskedBlur节点中的模糊参数（blur）影响什么？",
+        "answer": "模糊参数（blur）控制应用于遮罩区域的模糊效果的程度，影响填充区域与图像其余部分之间的过渡平滑度。"
+    },
+    {
+        "question": "哪些节点可以进行基于内容的图像修复？",
+        "answer": "INPAINT_MaskedBlur节点可以进行基于内容的图像修复，它通过选择性模糊和填充遮罩区域来实现图像中缺失或不需要部分的修复。"
+    },
+    {
+        "question": "在INPAINT_MaskedBlur处理过程中，衰减参数（falloff）起到什么作用？",
+        "answer": "衰减参数（falloff）决定了模糊效果在遮罩区域边缘处减弱的速率，用于创建从模糊到未模糊区域的更自然和渐进的过渡。"
+    },
+    {
+        "question": "使用INPAINT_MaskedBlur节点修复图像后的输出包含什么？",
+        "answer": "使用INPAINT_MaskedBlur节点修复图像后的输出是一个IMAGE类型的结果，即输出图像，它是图像修复过程的结果，其中遮罩区域已被填充并模糊以匹配周围区域。"
+    }
+]

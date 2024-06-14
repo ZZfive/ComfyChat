@@ -1,0 +1,34 @@
+[
+    {
+        "question": "WAS_Image_Direct_Occlusion节点的作用是什么？",
+        "answer": "WAS_Image_Direct_Occlusion节点处理图像与深度图，创建直接遮挡效果来增强图像视觉真实感，通过模拟光线与物体的相互作用，识别光源，并根据深度和颜色差异应用遮挡以生成立体外观的图像。"
+    },
+    {
+        "question": "哪些参数对WAS_Image_Direct_Occlusion节点的遮挡效果产生直接影响？",
+        "answer": "strength、radius、specular_threshold和colored_occlusion参数可以控制遮挡效果的强度、像素影响区域大小、图像中最亮区域识别标准以及遮挡效果的色彩风格，直接影响遮挡效果的视觉表现。"
+    },
+    {
+        "question": "WAS_Image_Direct_Occlusion如何处理输入的图像和深度图像数据？",
+        "answer": "通过input参数'images'和'depth_images'，分别代表输入的图像和深度信息图像，这些数据是生成遮挡效果的主要数据源，直接影响遮挡效果的计算和应用。"
+    },
+    {
+        "question": "WAS_Image_Direct_Occlusion节点生成的输出类型有哪些？",
+        "answer": "该节点生成的输出类型包括'composited_images'（最终处理过的图像）、'ssdo_images'（带有遮挡效果的图像）、'ssdo_image_masks'（对应遮挡区域的掩码）以及'light_source_image_masks'（光源区域的掩码）。"
+    },
+    {
+        "question": "如何调整WAS_Image_Direct_Occlusion节点输出图像的最终遮挡效果强度？",
+        "answer": "通过调整'strength'参数来控制遮挡效果的强度，这个参数允许用户微调遮挡程度，影响最终输出的视觉效果。"
+    },
+    {
+        "question": "在WAS_Image_Direct_Occlusion节点中，什么是'colored_occlusion'参数的功能？",
+        "answer": "'colored_occlusion'参数决定遮挡效果是否以彩色效果或灰度效果呈现，影响遮挡的视觉风格，允许进行更微妙或更显著的变化。"
+    },
+    {
+        "question": "WAS_Image_Direct_Occlusion节点生成的'composited_images'与'ssdo_images'有何区别？",
+        "answer": "'composited_images'输出参数是应用了所有遮挡处理效果后的最终图像，而'ssdo_images'参数提供了合成前只带有遮挡效果的图像，帮助单独检查遮挡效果以及被用作调试目的。"
+    },
+    {
+        "question": "WAS_Image_Direct_Occlusion节点如何生成光源区域的掩码？",
+        "answer": "通过识别图像中最亮的区域并使用'specular_threshold'参数，WAS_Image_Direct_Occlusion能够定位光源，生成'light_source_image_masks'输出，标识图像中被视为光源的区域。"
+    }
+]

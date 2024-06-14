@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImpactPack中的GaussianBlurMask节点用于什么目的?",
+        "answer": "GaussianBlurMask是一个属于ImpactPack/Util类别的节点，它用于对遮罩应用高斯模糊效果，以软化边缘、减少噪声并增强遮罩的视觉质量，适合进一步处理或展示。"
+    },
+    {
+        "question": "GaussianBlurMask节点的关键输入参数是什么?",
+        "answer": "关键输入参数是遮罩(mask)，它决定了将被模糊的图像内容，其尺寸和格式直接影响高斯模糊的应用方式及最终效果。"
+    },
+    {
+        "question": "GaussianBlurMask的核大小(kernel_size)参数影响什么?",
+        "answer": "核大小参数决定了高斯模糊效果的范围，控制计算模糊区域的大小，值越大，模糊效果越明显。"
+    },
+    {
+        "question": "sigma参数在GaussianBlurMask是什么意思?",
+        "answer": "sigma参数定义了高斯核的标准差，决定了模糊的程度，较高的sigma值会导致更强的模糊效果，而较低的值则产生更微妙的模糊。"
+    },
+    {
+        "question": "GaussianBlurMask节点的输出是什么类型的?",
+        "answer": "GaussianBlurMask节点的输出是已通过高斯模糊处理的输入遮罩，称为模糊遮罩(blurred_mask)，类型为MASK，数据类型为torch.Tensor，输出对于需要平滑遮罩边缘的应用场景十分重要。"
+    },
+    {
+        "question": "GaussianBlurMask节点的实现的基础结构是什么类型的处理器?",
+        "answer": "GaussianBlurMask节点的实现基于CPU处理器类型。"
+    },
+    {
+        "question": "哪些参数可以作为GaussianBlurMask节点的输入?",
+        "answer": "GaussianBlurMask节点可以接收遮罩(mask)、核大小(kernel_size)和sigma作为输入，其中mask为必填参数，而kernel_size和sigma为可选参数。"
+    }
+]

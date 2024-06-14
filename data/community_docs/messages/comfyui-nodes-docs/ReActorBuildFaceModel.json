@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ReActorBuildFaceModel节点的作用是什么？",
+        "answer": "ReActorBuildFaceModel节点用于从一组输入图像中合成面部模型，利用高级计算机视觉技术进行面部检测、特征分析和融合，旨在创建用于识别、认证或可视化的面部综合表示。"
+    },
+    {
+        "question": "哪些因素会影响ReActorBuildFaceModel合成面部模型的准确性和细节？",
+        "answer": "图像的质量和数量直接影响通过ReActorBuildFaceModel合成面部模型的准确性和细节。更高质量和更多数量的图像通常会产生更精确和详细的结果。"
+    },
+    {
+        "question": "ReActorBuildFaceModel所需的关键输入参数是什么？它们如何影响输出？",
+        "answer": "关键输入参数包括'images'、'face_model_name'和'compute_method'。'images'参数提供视觉数据，'face_model_name'用于唯一标识合成的面部模型，而'compute_method'则决定了多个面部特征融合成单一模型的技术，这会直接影响最终模型的细节和准确性。"
+    },
+    {
+        "question": "ReActorBuildFaceModel的'save_mode'参数有什么作用？",
+        "answer": "'save_mode'参数允许控制合成的面部模型是否需要保存；当设置为True时，生成的模型将被保存，便于日后使用，而设置为False时则不会保存，允许用户根据需要管理模型的保存与否。"
+    },
+    {
+        "question": "在ReActorBuildFaceModel中，输出的'face_model_name'表示什么？",
+        "answer": "输出的'face_model_name'代表了通过ReActorBuildFaceModel合成的面部模型的唯一标识符，是后续流程或应用中引用和使用生成模型的关键信息点。"
+    },
+    {
+        "question": "ReActorBuildFaceModel中执行的关键内部操作是什么？",
+        "answer": "关键内部操作包括对输入图像进行预处理，使用analyze_faces函数进行面部检测和特征提取，基于所选compute_method融合多张图像的特征，以及根据'save_mode'参数决定是否存储合成的面部模型。"
+    },
+    {
+        "question": "如果ReActorBuildFaceModel无法从输入图像中检测到面部，会发生什么情况？",
+        "answer": "如果ReActorBuildFaceModel无法检测到面部，将会返回错误消息提示用户尝试其他图像，以确保能够进行面部模型的构建。"
+    }
+]

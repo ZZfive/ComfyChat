@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImagePadForOutpaint 节点的主要功能是什么？",
+        "answer": "ImagePadForOutpaint 节点的主要功能是扩展图像边界，特别适用于外延（outpainting）任务。它允许通过指定像素数扩展图像每一边的尺寸，同时可选择添加羽化效果，以便新边界能平滑融合到原有图像中。"
+    },
+    {
+        "question": "哪些输入参数是ImagePadForOutpaint节点必须的？",
+        "answer": "ImagePadForOutpaint 节点的必需输入参数包括图像（image），该参数代表将填充的输入图像，它对节点的操作至关重要，因为它决定了将要扩展的内容。"
+    },
+    {
+        "question": "ImagePadForOutpaint 节点的'feathering'参数有何作用？",
+        "answer": "feathering 参数用于控制原始图像区域与新增区域之间过渡的平滑度，值越高表示过渡更渐进，利于视觉平滑效果。"
+    },
+    {
+        "question": "ImagePadForOutpaint 节点输出哪些类型的数据？",
+        "answer": "ImagePadForOutpaint 节点输出新图像（new_image）和掩模（mask）。新图像展示了扩展过程的最终结果，而掩模帮助用户区分原始图像及新添加的区域，便于后期混合处理。"
+    },
+    {
+        "question": "哪些参数可以影响ImagePadForOutpaint节点生成的新图像的尺寸和布局？",
+        "answer": "left、right、top和bottom参数分别指定了图像左右两侧和上下两侧所添加的像素数，直接关系到生成图像的尺寸和分布；而feathering参数影响新边缘与原图像之间的融合效果。"
+    },
+    {
+        "question": "在调用ImagePadForOutpaint节点时，mask输出是如何帮助用户进行混合处理的？",
+        "answer": "mask输出是一个二进制图像，它清晰地区分了新添加的区域和原始图像区域，这对于混合新的元素至现有图像中起到关键作用，特别是当进行更加复杂的图像合成操作时。"
+    },
+    {
+        "question": "在ImagePadForOutpaint节点的源代码中，feathering参数的使用影响了哪些部分的代码？",
+        "answer": "在源代码中，feathering参数影响了一段逻辑代码，这段代码负责计算每个像素点的渐变值（v），根据feathering设定的大小，控制图像边界的平滑过渡效果。"
+    }
+]

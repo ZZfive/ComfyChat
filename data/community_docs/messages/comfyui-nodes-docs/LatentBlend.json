@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentBlend节点的作用是什么？",
+        "answer": "LatentBlend节点旨在将两组潜在样本通过指定的混合因子无缝融合和混合，通过调整每个样本集的贡献来创建可以用于进一步处理或可视化的复合表示。"
+    },
+    {
+        "question": "LatentBlend节点支持哪些输入类型？",
+        "answer": "LatentBlend节点支持两种必需输入：'samples1'和'samples2'，它们代表将要混合的潜在样本集；以及'blend_factor'，一个用于控制混合程度的浮点数。此外，还支持一个可选输入'blend_mode'，用于指定组合样本时使用的混合模式。"
+    },
+    {
+        "question": "'samples1'和'samples2'的输入要求是什么？",
+        "answer": "'samples1'和'samples2'是将在LatentBlend节点中进行混合的两组潜在样本，这些样本可以来自不同的图像或计算过程。每个样本要求为Comfy dtype的LATENT类型，Python dtype则为torch.Tensor。"
+    },
+    {
+        "question": "如何描述'blend_factor'在LatentBlend节点中的作用？",
+        "answer": "'blend_factor'是一个用于控制'samples2'与'samples1'混合程度的float值。它为'0'时，输出完全为'samples1'；当为'1'时，输出则完全为'samples2'。"
+    },
+    {
+        "question": "'blend_mode'参数是否可以选择多个模式？",
+        "answer": "'blend_mode'选项当前唯一支持的是'normal'模式，这表明当两组潜在样本进行混合时，LatentBlend节点将按照默认方式操作。"
+    },
+    {
+        "question": "LatentBlend节点的输出是什么？",
+        "answer": "LatentBlend节点的主要输出是'samples_out'，这是一个混合了输入样本与指定的混合因子的潜在样本集，输出数据类型为LATENT，Python dtype为包含torch.Tensor的字典，用于进一步的图像处理或可视化。"
+    },
+    {
+        "question": "LatentBlend的源代码中如何处理不同形状的潜在样本？",
+        "answer": "在LatentBlend的源代码中，如果发现'samples1'和'samples2'的形状不同，将会通过'permute'和'common_upscale'方法对'samples2'进行形状调整，使其与'samples1'的形状相匹配，以确保两组样本可以正确混合。"
+    }
+]

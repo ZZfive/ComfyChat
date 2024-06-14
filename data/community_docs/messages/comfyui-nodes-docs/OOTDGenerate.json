@@ -1,0 +1,30 @@
+[
+    {
+        "question": "OOTDGenerate 是什么节点？",
+        "answer": "OOTDGenerate 是 ComfyUI 的一个自定义节点，用于根据输入的图像和类别合成服装，利用扩散模型进行创意时尚生成。"
+    },
+    {
+        "question": "OOTDGenerate 的输入类型中，哪些参数与生成服装的视觉一致性相关？",
+        "answer": "cloth_image 和 model_image 参数与生成服装的视觉一致性相关，它们分别为生成服装的基础和保持人物形象的模板。"
+    },
+    {
+        "question": "seed 参数在 OOTDGenerate 节点中的作用是什么？",
+        "answer": "seed 参数在 OOTDGenerate 中引入随机性，允许多种结果，对于寻求独特且不重复的时尚选项的用户至关重要。"
+    },
+    {
+        "question": "cfg 参数如何影响 OOTDGenerate 节点的输出效果？",
+        "answer": "cfg 参数调整 OOTDGenerate 中生成过程中使用的图像比例，影响生成服装的分辨率和清晰度，是实现高质量视觉效果的关键因素。"
+    },
+    {
+        "question": "哪些输出类型是 OOTDGenerate 节点提供的？",
+        "answer": "OOTDGenerate 节点的输出类型包括 image 和 image_masked，分别展示了最终生成的服装和应用了特定时尚元素遮罩的生成服装版本。"
+    },
+    {
+        "question": "在使用 OOTDGenerate 节点时有什么关键的使用提示？",
+        "answer": "OOTDGenerate 节点的使用关键提示是推荐使用 GPU 类型的基础设施进行处理，以确保最佳性能。"
+    },
+    {
+        "question": "source code中，OOTDGenerate的generate方法如何处理超参数和输入图像？",
+        "answer": "generate方法接收管道、材质图像、模型图像、类别、种子、步数和配置参数。其中，图像会被调整大小、转换格式，并使用mask和keypoints处理，最后调用管道生成图像。"
+    }
+]

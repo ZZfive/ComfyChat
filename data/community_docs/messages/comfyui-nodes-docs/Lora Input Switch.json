@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Lora Input Switch节点在ComfyUI中有什么功能?",
+        "answer": "Lora Input Switch节点在WAS Suite中作为条件开关运行，根据布尔参数的状态选择并转发两组模型和剪辑输入中的其中一组。"
+    },
+    {
+        "question": "WAS_Lora_Input_Switch节点的INPUT_TYPES包含哪些内容?",
+        "answer": "WAS_Lora_Input_Switch节点的INPUT_TYPES包括两个模型输入(model_a和model_b)，两个剪辑输入(clip_a和clip_b)，以及一个布尔参数。每个输入都规定了Comfy和Python的数据类型。"
+    },
+    {
+        "question": "model_a在Lora Input Switch节点中代表什么?",
+        "answer": "model_a代表第一个模型输入，对于节点运行至关重要，它是布尔开关可以选择的数据流之一。"
+    },
+    {
+        "question": "当boolean参数为真时，Lora Input Switch将输出什么?",
+        "answer": "当boolean参数为真时，Lora Input Switch节点会输出model_a和clip_a，即第一组模型和剪辑输入。"
+    },
+    {
+        "question": "Lora Input Switch节点如何根据boolean参数控制输出?",
+        "answer": "Lora Input Switch节点通过检查boolean参数的状态来控制输出，如果为真，输出model_a和clip_a；如果为假，输出model_b和clip_b。"
+    },
+    {
+        "question": "Lora Input Switch节点的Comfy dtype是什么?",
+        "answer": "Lora Input Switch节点输入的Comfy dtype是MODEL和CLIP类型，输出的Comfy dtype也是MODEL和CLIP类型，表示模型和剪辑数据。"
+    },
+    {
+        "question": "Lora Input Switch节点的输出如何表示在Python中?",
+        "answer": "Lora Input Switch节点在Python中输出的数据类型是Tuple，其中包含两个任意类型的数据，分别对应输出的模型和剪辑。"
+    }
+]

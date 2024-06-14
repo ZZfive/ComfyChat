@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentComposite节点的作用是什么？",
+        "answer": "LatentComposite节点用于混合两个不同样本集的潜在表示，能够以正常或羽化的方式将一个样本集无缝集成到另一个中，这是ComfyUI中latent类别的一个功能节点。"
+    },
+    {
+        "question": "在LatentComposite中，'x'和'y'参数代表什么？",
+        "answer": "'x'和'y'参数在LatentComposite中分别指定合成操作在水平和垂直方向上的起始坐标，影响'samples_from'在'samples_to'背景中的位置。"
+    },
+    {
+        "question": "LatentComposite如何处理合成过程中的边缘平滑？",
+        "answer": "LatentComposite通过'feather'参数控制边缘的平滑度，非零值会使合成操作在'samples_from'和'samples_to'的边缘区域产生渐进过渡，实现羽化效果。"
+    },
+    {
+        "question": "LatentComposite输出的'samples_out'表示什么？",
+        "answer": "LatentComposite的'samples_out'参数是合成操作的结果，包含了从'samples_to'和'samples_from'合并后的潜在样本，保持与输入样本相同的数据类型。"
+    },
+    {
+        "question": "LatentComposite节点的输入类型有哪些是必需的？",
+        "answer": "LatentComposite节点的必需输入类型包括'samples_to'、'samples_from'、'x'和'y'，其中'samples_to'和'samples_from'为潜在样本，'x'和'y'为起始坐标，决定合成操作的位置。"
+    },
+    {
+        "question": "哪些操作可以实现两组潜在样本的融合？",
+        "answer": "使用LatentComposite节点可以实现两组潜在样本的融合，通过指定坐标和混合方式，可以在ComfyUI中无缝集成两个样本集。"
+    },
+    {
+        "question": "LatentComposite节点的'feather'参数的作用是什么？",
+        "answer": "在LatentComposite中，'feather'参数用于调整两组潜在样本合成边界的平滑程度，当设置非零值时，可实现更自然的过渡效果。"
+    }
+]

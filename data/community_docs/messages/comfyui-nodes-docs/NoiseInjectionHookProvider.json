@@ -1,0 +1,30 @@
+[
+    {
+        "question": "NoiseInjectionHookProvider节点的主要功能是什么？",
+        "answer": "NoiseInjectionHookProvider节点的主要功能是将噪声注入图像生成过程，允许创建变化或对图像进行“反采样”，这在生成具有特定噪声特性的图像时非常有用。"
+    },
+    {
+        "question": "哪些参数对于NoiseInjectionHookProvider节点的噪声注入时间表至关重要？",
+        "answer": "schedule_for_iteration参数至关重要，它用于确定噪声在每个迭代中的注入时间表，确保噪声在迭代中一致地应用，从而生成变化或“反采样”图像。"
+    },
+    {
+        "question": "NoiseInjectionHookProvider节点中的source参数的作用是什么？",
+        "answer": "source参数用于指定噪声生成应使用CPU还是GPU源，这个选择影响噪声注入过程的性能和效率。"
+    },
+    {
+        "question": "如何确保NoiseInjectionHookProvider节点在不同运行之间的一致性？",
+        "answer": "通过使用seed参数初始化噪声生成过程，可以确保不同运行之间的一致性，这是因为seed参数确保噪声模式是可复现的。"
+    },
+    {
+        "question": "NoiseInjectionHookProvider节点的start_strength和end_strength参数如何影响噪声注入过程？",
+        "answer": "start_strength参数设置噪声的初始强度，而end_strength参数定义噪声的最终强度。这些参数合作定义噪声强度在整个过程中的变化，对于渐进的噪声添加和控制变化程度至关重要。"
+    },
+    {
+        "question": "NoiseInjectionHookProvider节点适合处理哪种类型的工作流程？",
+        "answer": "此节点适合需要精细控制噪声的工作流程，如生成微妙变化的图像或重建具有特定噪声特性的图像，对于GPU处理尤其高效。"
+    },
+    {
+        "question": "NoiseInjectionHookProvider节点的hook输出实现了什么功能？",
+        "answer": "hook输出封装了节点定义的设置和行为，允许将噪声注入功能集成到更大的图像生成工作流程中，实现无缝应用。"
+    }
+]

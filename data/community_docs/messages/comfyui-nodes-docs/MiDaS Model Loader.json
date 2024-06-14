@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MiDaS_Model_Loader是什么类别？",
+        "answer": "MiDaS_Model_Loader类别负责加载和准备MiDaS模型，确保必要的依赖项已安装，并处理下载和加载指定的MiDaS模型变体。"
+    },
+    {
+        "question": "MiDaS_Model_Loader属于哪个类别和用途是什么？",
+        "answer": "MiDaS_Model_Loader属于WAS Suite/Loaders类别，它主要用于加载MiDaS模型，对深度信息进行处理和分析。"
+    },
+    {
+        "question": "midas_model参数在MiDaS_Model_Loader节点中的作用是什么？",
+        "answer": "midas_model参数用于确定要加载的MiDaS模型类型，这对于深度估计任务中预训练模型权重和配置的选择至关重要。"
+    },
+    {
+        "question": "MiDaS_Model_Loader节点的输出类型是什么？",
+        "answer": "MiDaS_Model_Loader节点的输出类型是Tuple[torch.nn.Module, Callable]，其中包含了已加载的MiDaS模型及其相关转换函数，这对深度信息的后续处理和分析至关重要。"
+    },
+    {
+        "question": "在MiDaS_Model_Loader中，midas_model输出具体包含什么元素？",
+        "answer": "midas_model输出包含一个元组，第一个元素是torch.nn.Module实例，代表加载的MiDaS模型，第二个元素是Callable[[torch.Tensor], torch.Tensor]，代表了与模型相关的转换函数。"
+    },
+    {
+        "question": "MiDaS_Model_Loader节点加载的MiDaS模型变体有哪些？",
+        "answer": "MiDaS_Model_Loader节点可以加载的MiDaS模型变体包括'DPT_Large'和'DPT_Hybrid'，在代码中对应的模型文件分别是'dpt_large_384.pt'和'dpt_hybrid_384.pt'。"
+    },
+    {
+        "question": "在MiDaS_Model_Loader中如何处理未安装的MiDaS模型依赖？",
+        "answer": "在MiDaS_Model_Loader中，如果未安装MiDaS模型及其相关依赖，会通过install_midas方法检查并安装所需的包如'timm'，确保MiDaS可以在python环境下运行。"
+    }
+]

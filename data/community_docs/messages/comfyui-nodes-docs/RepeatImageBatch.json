@@ -1,0 +1,30 @@
+[
+    {
+        "question": "RepeatImageBatch节点的作用是什么?",
+        "answer": "RepeatImageBatch节点的'repeat'方法旨在将单个图像复制到一个批次维度中，允许在数据集中重复该图像，这对于创建增强数据集或批量图像处理非常有用。"
+    },
+    {
+        "question": "RepeatImageBatch节点的输入参数有哪些?",
+        "answer": "RepeatImageBatch节点的输入参数包括必要的'image'，它是指将要处理的单个图像，以及可选的'amount'，用于指定复制次数，默认为1。"
+    },
+    {
+        "question": "什么是'image'参数以及它的Comfy和Python数据类型?",
+        "answer": "'image'参数是节点将处理的输入图像，其Comfy数据类型为IMAGE，Python数据类型为PIL.Image.Image，它是复制过程的对象，对节点的操作至关重要。"
+    },
+    {
+        "question": "'amount'参数的功能是什么?",
+        "answer": "'amount'参数指定输入图像在批次维度上的重复次数，其Comfy数据类型为INT，Python数据类型为int，如果未设置，则默认为1，意味着没有重复发生。"
+    },
+    {
+        "question": "RepeatImageBatch节点的输出是什么?",
+        "answer": "RepeatImageBatch节点的输出是'output_image'，它是在批次维度上重复'amount'参数指定次数的输入图像副本，其数据类型为IMAGE，对应Python的PIL.Image.Image类型。"
+    },
+    {
+        "question": "哪些场景适合使用RepeatImageBatch节点?",
+        "answer": "RepeatImageBatch节点适用于需要在数据集中重复图像创建增强数据集的场景，或任何需要批量复制一致图像进行处理的情况。"
+    },
+    {
+        "question": "如果希望批量复制一张图像10次，RepeatImageBatch节点如何配置?",
+        "answer": "配置RepeatImageBatch节点时，应将'amount'参数设置为10，而'image'参数则应包含希望复制的单个图像。"
+    }
+]

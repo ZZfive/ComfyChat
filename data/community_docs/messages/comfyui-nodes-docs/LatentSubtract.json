@@ -1,0 +1,42 @@
+[
+    {
+        "question": "LatentSubtract节点的作用是什么？",
+        "answer": "LatentSubtract节点是ComfyUI的一个自定义节点，设计用于执行两组潜在样本的减法操作，这在特征提取和潜在空间内的异常检测等应用中尤其有用。"
+    },
+    {
+        "question": "LatentSubtract节点属于哪个类别？",
+        "answer": "LatentSubact节点属于'latent/advanced'类别，意味着它处理潜在空间的高级操作或复杂功能。"
+    },
+    {
+        "question": "LatentSubtract节点的输入'samples1'有什么作用？",
+        "answer": "'samples1'是用于减法操作的第一组潜在样本，构成了操作的基础。它们的质量直接影响节点执行的结果。"
+    },
+    {
+        "question": "如何确保'LatentSubtract'节点中'samples2'的使用是正确的？",
+        "answer": "'samples2'将从第一组'samples1'中减去。这对于'Samples2'与第一组的对齐和兼容性提出了要求，以确保减法操作有意义。"
+    },
+    {
+        "question": "LatentSubtract节点的输出'samples_out'代表什么？",
+        "answer": "'samples_out'是LatentSubtract执行减法操作后的输出，它是一组表示两组输入集之间差异的潜在样本。这种输出可以用于进一步分析或作为后续节点的输入。"
+    },
+    {
+        "question": "哪些应用中特别受益于LatentSubtract节点的处理？",
+        "answer": "特征提取和潜在空间内的异常检测应用特别受益于LatentSubtract节点的处理，因为它可以有效地区分并捕捉潜在样本间的差异。"
+    },
+    {
+        "question": "LatentSubtract节点的infra type是什么，这意味着什么？",
+        "answer": "LatentSubtract节点的infra type是CPU，这意味着该节点的计算应该在CPU上执行，而不是在GPU上，这可能影响处理速度和资源的分配。"
+    },
+    {
+        "question": "在ComfyUI中，哪些节点可以用于潜在样本的减法操作？",
+        "answer": "在ComfyUI中，LatentSubtract节点专门用于潜在样本的减法操作，处理潜在空间内两组样本的差异分析。"
+    },
+    {
+        "question": "LatentSubtract节点的输入和输出有哪些数据类型要求？",
+        "answer": "LatentSubtract节点的输入要求为两组潜在样本（LATENT），Python数据类型为torch.Tensor，输出同样为一组潜在样本，数据类型同样为LATENT和torch.Tensor。"
+    },
+    {
+        "question": "LatentSubtract节点接受的输入类型有什么特别之处？",
+        "answer": "LatentSubtract节点特别之处在于它接受两组潜在样本作为输入，使用COMFY数据类型LATENT，确保了数据格式适合潜在空间的运算。"
+    }
+]

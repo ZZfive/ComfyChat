@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MixColorByMask节点的主要功能是什么？",
+        "answer": "MixColorByMask节点的主要功能是根据提供的遮罩将输入图像与纯色混合，通过调整图像颜色通道至特定的RGB值，然后使用遮罩有选择地组合原始图像与新颜色层，适用于创建需要局部颜色修改或突出的合成图像。"
+    },
+    {
+        "question": "MixColorByMask节点处理图像的哪些关键输入参数是必不可少的？",
+        "answer": "MixColorByMask节点处理的关键输入参数包括输入图像（image）、红色通道强度（r）、绿色通道强度（g）、蓝色通道强度（b）和遮罩（mask），这些参数对于颜色混合操作至关重要。"
+    },
+    {
+        "question": "在MixColorByMask节点中，'r'表示什么？",
+        "answer": "在MixColorByMask节点中，'r'参数指定要与图像混合的红色通道强度，决定了根据遮罩覆盖图像的最终颜色中的红光部分，直接影响输出的色彩表现。"
+    },
+    {
+        "question": "MixColorByMask节点如何处理输入的遮罩参数（mask）？",
+        "answer": "MixColorByMask节点中的遮罩（mask）是一个二进制图像，指示哪些部分的输入图像将接收颜色覆盖，控制着颜色混合操作对图像部分的影响区域，其模式决定了新颜色将可见的区域。"
+    },
+    {
+        "question": "可以混合颜色的节点有哪些？",
+        "answer": "MixColorByMask是ComfyUI中用于混合颜色的节点之一，该节点特别适用于需要在图像的特定区域应用特定色调的情况，能够根据遮罩将输入图像与纯色进行混合。"
+    },
+    {
+        "question": "MixColorByMask节点的输出是什么类型？",
+        "answer": "MixColorByMask节点的输出是颜色混合过程的结果图像（output_image），它是一个二进制图像类型（Comfy dtype: IMAGE, Python dtype: torch.Tensor），展示了受遮罩控制的颜色创意应用在特定区域的最终视觉效果。"
+    },
+    {
+        "question": "MixColorByMask节点处理图像时是否仅限于CPU执行？",
+        "answer": "是的，根据使用提示，MixColorByMask节点的层级和效能优化使其适合在CPU上执行，表明其为CPU类型的基础设施支持，可能不依赖GPU加速。"
+    }
+]

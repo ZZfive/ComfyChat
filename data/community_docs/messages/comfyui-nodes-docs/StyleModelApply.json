@@ -1,0 +1,30 @@
+[
+    {
+        "question": "StyleModelApply节点在ComfyUI中的作用是什么？",
+        "answer": "StyleModelApply节点在ComfyUI中用于将图像的风格集成到生成模型中，通过将风格模型应用于条件生成过程，允许创建风格化的输出。"
+    },
+    {
+        "question": "StyleModelApply节点如何影响最终输出的美学质量？",
+        "answer": "StyleModelApply节点通过影响条件数据如何融入生成模型，特别是通过处理从图像中提取的视觉特征，来直接影响最终输出的美学质量。"
+    },
+    {
+        "question": "在StyleModelApply节点中，哪些输入类型是必需的？",
+        "answer": "在StyleModelApply节点中，必需的输入类型包括clip_vision_output（从图像中提取的视觉特征张量）、style_model（捕获风格特征并应用于生成过程的神经网络模块），以及conditioning（包含多个元组的列表，代表条件数据的不同方面）。"
+    },
+    {
+        "question": "StyleModelApply节点输出的数据类型有哪些特征？",
+        "answer": "StyleModelApply节点输出的数据类型是CONDITIONING，表现为一个包含多个元组的列表，每个元组内都包含两个已经经过风格化和条件处理的张量，直接影响生成内容的风格和主题一致性。"
+    },
+    {
+        "question": "在ComfyUI中如何实现风格元素无缝融入生成流程？",
+        "answer": "在ComfyUI中通过使用StyleModelApply节点来实现风格元素无缝融入生成流程，该节点通过将风格模型应用于视觉模型输出的条件生成过程，实现风格化元素的融合。"
+    },
+    {
+        "question": "StyleModelApply节点中的style_model参数具体定义了什么？",
+        "answer": "StyleModelApply节点中的style_model参数定义了要融入生成内容的风格，这是通过使用一个神经网络模块来捕获风格特征并应用于生成过程实现的。"
+    },
+    {
+        "question": "调用StyleModelApply函数时传入了哪些参数？",
+        "answer": "调用StyleModelApply函数时需要传入的参数有clip_vision_output（表示从图像中提取的视觉特征的张量）、style_model（捕获并将风格特征应用于生成过程的神经网络模块），以及conditioning（一个包含多个元组的列表，用于引导生成模型的输出）。"
+    }
+]

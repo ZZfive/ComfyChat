@@ -1,0 +1,30 @@
+[
+    {
+        "question": "VAELoader节点的作用是什么？",
+        "answer": "VAELoader节点用于管理变分自编码器（VAE）模型的加载和准备，提供统一的接口以访问不同配置的VAE模型，抽象处理复杂性。"
+    },
+    {
+        "question": "如何确定VAELoader节点加载哪个VAE模型？",
+        "answer": "通过'vae_name'参数确定，该参数对于加载特定的VAE模型配置和权重至关重要，确保正确的模型可用于后续任务。"
+    },
+    {
+        "question": "VAELoader节点的输出类型和意义是什么？",
+        "answer": "输出类型为'VAE'，代表加载的变分自编码器模型，封装了模型配置和学习参数，允许在后续任务中使用该模型。"
+    },
+    {
+        "question": "VAELoader节点的'vae_name'参数有何重要性？",
+        "answer": "'vae_name'参数确定将使用哪个VAE模型配置和权重，对节点执行产生直接影响，确保模型正确准备以供后续处理。"
+    },
+    {
+        "question": "VAELoader节点如何处理'taesd'和'taesdxl'模型？",
+        "answer": "如果'vae_name'为'taesd'或'taesdxl'，VAELoader节点会使用特定逻辑加载这些模型的权重，包括处理编码器和解码器文件，并设置恰当的'vae_scale'值。"
+    },
+    {
+        "question": "VAELoader节点支持哪些类型的VAE模型列表？",
+        "answer": "VAELoader节点支持所有位于'vae'目录下的VAE模型，如果存在'taesd'和'taesdxl'的编码器和解码器，也会将它们包括在内。"
+    },
+    {
+        "question": "VAELoader节点的执行依赖于什么基础设施类型？",
+        "answer": "VAELoader节点的执行依赖于CPU型基础设施，对VAE模型的加载和准备在CPU上进行。"
+    }
+]

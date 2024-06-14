@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ModelSamplingContinuousEDM是哪个类别的节点？",
+        "answer": "ModelSamplingContinuousEDM属于采样类别，是ComfyUI中的一个PyTorch模块，用于连续能量距离建模中的采样流程。"
+    },
+    {
+        "question": "ModelSamplingContinuousEDM中的sigma_min参数有何作用？",
+        "answer": "sigma_min参数定义了采样过程中sigma值的最小范围，其选择影响扩散速度和样本质量，确保了采样效率与结果准确性的平衡。"
+    },
+    {
+        "question": "在ModelSamplingContinuousEDM节点中，sigma_data代表了什么含义？",
+        "answer": "sigma_data代表了数据中假设的噪声水平，这个参数对于设定采样过程的初始条件至关重要，以确保模型假设与数据特性相吻合。"
+    },
+    {
+        "question": "ModelSamplingContinuousEDM的sigmas输出是什么？",
+        "answer": "sigmas输出是一个包含在sigma_min和sigma_max之间的对数间隔的sigma数值序列的张量，用于整个采样过程中的扩散控制。"
+    },
+    {
+        "question": "有哪些ComfyUI节点可以初始化或处理持续扩散采样参数？",
+        "answer": "ModelSamplingContinuousEDM是ComfyUI中用于初始化和管理持续扩散采样参数的节点，特别是在控制sigma值的逻辑方面。"
+    },
+    {
+        "question": "ModelSamplingContinuousEDM如何处理模型配置参数？",
+        "answer": "ModelSamplingContinuousEDM可以接收一个字典类型的model_config参数，其中包含了关键的采样设置，包括'sigma_min'、'sigma_max'和'sigma_data'，用于初始化节点并调整特定模型的采样行为。"
+    },
+    {
+        "question": "在ModelSamplingContinuousEDM节点中，log_sigmas输出的作用是什么？",
+        "answer": "log_sigmas输出表示了sigmas的自然对数，主要用于采样过程中的计算效率，尤其是在处理指数运算时，加速计算以优化程序性能。"
+    }
+]

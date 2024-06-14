@@ -1,0 +1,46 @@
+[
+    {
+        "question": "smZ_Settings 类的作用是什么？",
+        "answer": "smZ_Settings 类是用于管理与 Stable Diffusion 模型相关的各种设置的配置节点，如 RNG 源、采样器参数和优化等，以根据特定需求调整模型的行为。"
+    },
+    {
+        "question": "为什么需要设置 Prompt word wrap length limit 参数？",
+        "answer": "这个参数定义了将提示文本包装成适合模型令牌限制的块的限制，对于处理超出模型令牌容量的较长提示至关重要，以确保它们在不丢失含义的情况下被有效处理。"
+    },
+    {
+        "question": "smZ_Settings 中的 RNG 参数如何影响图像生成？",
+        "answer": "RNG 参数确定使用的随机数生成器，这显著影响输出的可变性，选择合适的源确保在不同的硬件和软件环境中图像生成的一致性。"
+    },
+    {
+        "question": "eta 参数在 smZ_Settings 中有何作用？",
+        "answer": "Eta 是 k-diffusion 采样器的一个参数，作为噪声乘数，它控制采样过程中的噪声水平，这可以影响生成图像的细节和质量。"
+    },
+    {
+        "question": "使用 smZ_Settings 节点时，输出通常是什么？",
+        "answer": "smZ_Settings 节点的输出通常是修改后的模型或基于用户配置更新设置的对象，它反映了将在后续图像生成过程中使用定制参数。"
+    },
+    {
+        "question": "如何在 Stable Diffusion 中使用早期的提示编辑时间线版本？",
+        "answer": "使用 smZ_Settings 的 Use previous prompt editing timelines 设置，这允许用户选择以前的提示编辑时间线版本，对于与特定工作流程的兼容性或在图像生成中实现特定效果可能是必要的。"
+    },
+    {
+        "question": "Eta noise seed delta 参数在 smZ_Settings 中有何用途？",
+        "answer": "Eta noise seed delta 参数对于祖先采样器来说，不改善任何方面，只是产生不同的结果，仅当复制图像时是必要的。"
+    },
+    {
+        "question": "smZ_Settings 节点如何支持模型的优化设置？",
+        "answer": "smZ_Settings 支持优化设置，如 Negative Guidance minimum sigma、Pad prompt/negative prompt to be same length 和 Batch cond/uncond，以提高模型运行效率和性能。"
+    },
+    {
+        "question": "smZ_Settings 中的 Compatibility 设置有何作用？",
+        "answer": "Compatibility 设置，如 Use previous prompt editing timelines，用于增强与其他工作流程或特定版本的兼容性，确保不同设置或模型间的协同工作。"
+    },
+    {
+        "question": "哪些计算设备最适合运行 smZ_Settings 节点？",
+        "answer": "smZ_Settings 节点的最佳运行环境是 CPU，这通常是其推荐的 Infra type。"
+    },
+    {
+        "question": "smZ_Settings 节点如何实现对 Sampler 参数的控制？",
+        "answer": "通过 smZ_Settings 节点，用户可以调整多种 sampler 参数，包括 eta、s_churn 等，这些参数控制着不同的样本方法，如 Euler、Heun 和 DPM2 等。"
+    }
+]

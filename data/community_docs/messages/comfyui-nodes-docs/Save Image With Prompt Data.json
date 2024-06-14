@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SaveImagesMikey是什么及其作用？",
+        "answer": "SaveImagesMikey是ComfyUI中的一个节点，位于Mikey/Image类别下，可以处理并保存一系列图像到指定目录。它通过接受图像和其他元数据，自动保存文件，并将相关信息嵌入至PNG图像的元数据中，以便后续的参考和档案管理。"
+    },
+    {
+        "question": "SaveImagesMikey节点有哪些关键输入类型？",
+        "answer": "SaveImagesMikey的关键输入类型包括：'images'（图像），这是节点处理的主要对象；'filename_prefix'（文件名前缀），允许用户自定义文件前缀；'parameters'，用于记录图像生成过程的参数；'positive_prompt'和'negative_prompt'，用于存储创作的正向和反向引导；以及'prompt'和'extra_pnginfo'，用于拓展图像的元数据信息。"
+    },
+    {
+        "question": "在SaveImagesMikey节点中，哪些输入是必需的，哪些是可选的？",
+        "answer": "在SaveImagesMikey节点中，'images'输入是必需的，是节点操作的基础。而'filename_prefix'、'parameters'、'positive_prompt'、'negative_prompt'、'prompt'以及'extra_pnginfo'都是可选参数，用于提供附加的元数据和更精细的输出控制。"
+    },
+    {
+        "question": "SaveImagesMikey节点如何处理图像元数据？",
+        "answer": "SaveImagesMikey节点通过'parameters'、'positive_prompt'、'negative_prompt'等输入接收元数据，并将其嵌入到保存的PNG图像中作为PNG元数据，这样可以便于跟踪图像生成的过程和条件。"
+    },
+    {
+        "question": "哪些图像处理节点可以将元数据嵌入到保存的图像中？",
+        "answer": "SaveImagesMikey节点能够接受并嵌入元数据至保存的图像中，特别适用于在图像生成的最终步骤时，对图像的保存路径以及文件名进行管理，并以PNG格式保存包括参数、提示等在内的详细元数据。"
+    },
+    {
+        "question": "SaveImagesMikey节点的输出类型有哪些？",
+        "answer": "SaveImagesMikey节点的主要输出类型为'ui'，该输出类型以字典形式提供了一系列保存图像的细节信息，包括文件名和所在的子文件夹，便于进行图像的跟踪和管理。"
+    },
+    {
+        "question": "SaveImagesMikey节点的'prompt'输入有什么隐藏功能？",
+        "answer": "尽管'prompt'是SaveImagesMikey节点的一个隐藏输入，但它至关重要，因为其用于提供影响图像生成的描述或上下文。该信息可以被保存于图像的元数据中，为将来进行图像内容的理解和检索提供关键信息。"
+    }
+]

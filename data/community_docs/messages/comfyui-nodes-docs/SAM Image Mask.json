@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SAM Image Mask 节点用于什么目的?",
+        "answer": "SAM Image Mask 节点，正式名为 WAS_SAM_Image_Mask，用于将语义感知分割模型应用于输入图像，生成相应的掩码，以便识别和隔离图像中的特定区域进行进一步分析或操作。"
+    },
+    {
+        "question": "WAS_SAM_Image_Mask 节点处理图像时使用的主要模型是什么?",
+        "answer": "WAS_SAM_Image_Mask 节点处理图像时使用的主要模型是语义感知分割（SAM）模型，此模型对于生成高质量和准确性的掩码至关重要。"
+    },
+    {
+        "question": "哪些参数是 WAS_SAM_Image_Mask 节点所必需的?",
+        "answer": "WAS_SAM_Image_Mask 节点必需的参数包括 'sam_model'（表示SAM模型）、'sam_parameters'（包含点和标签用于分割）和 'image'（输入图像）。"
+    },
+    {
+        "question": "在 SAM Image Mask 节点中，'sam_parameters' 包含什么信息?",
+        "answer": "'sam_parameters' 参数在 SAM Image Mask 节点中包含了分割所必需的点和标签信息，直接影响分割的输出结果。"
+    },
+    {
+        "question": "SAM Image Mask 节点的输出有哪些类型?",
+        "answer": "SAM Image Mask 节点的输出包括带有预测掩码覆盖的原始图像（Comfy dataType: IMAGE）和分割掩码的二进制表示（Comfy dataType: MASK）。"
+    },
+    {
+        "question": "SAM Image Mask 节点的运算逻辑主要集中在哪个函数上?",
+        "answer": "SAM Image Mask 节点的运算逻辑主要集中在 'sam_image_mask' 函数上，它包括了模型准备、预测、以及对结果进行处理和转换的完整过程。"
+    },
+    {
+        "question": "SAM Image Mask 节点在源代码中是如何实现信息传递的?",
+        "answer": "SAM Image Mask 节点在源代码中的实现涉及 'INPUT_TYPES' 方法定义输入数据类型，函数 'sam_image_mask' 实现了具体的节点功能，包括图像处理、模型预测和结果输出。"
+    }
+]

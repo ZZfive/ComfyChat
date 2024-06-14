@@ -1,0 +1,42 @@
+[
+    {
+        "question": "TwoAdvancedSamplersForMask 节点的功能是什么？",
+        "answer": "TwoAdvancedSamplersForMask 节点用于使用两个不同的高级采样器对潜在图像执行高级采样操作，特别应用掩膜腐蚀技术来细化掩膜，通过利用两个采样器的优势提高生成图像的质量。"
+    },
+    {
+        "question": "TwoAdvancedSamplersForMask 节点如何确保采样的可重复性？",
+        "answer": "通过指定种子参数，TwoAdvancedSamplersForMask 节点可以确保随机数生成过程的可重复性，这影响采样算法的初始状态，进而影响生成的潜在图像。"
+    },
+    {
+        "question": "在 TwoAdvancedSamplersForMask 节点中，'steps' 参数的作用是什么？",
+        "answer": "'steps' 参数确定了采样过程将经历的迭代次数，该参数是决定生成图像细节水平和最终质量的关键因素。"
+    },
+    {
+        "question": "什么是 'overlap_factor' 参数在 TwoAdvancedSamplersForMask 节点中的作用？",
+        "answer": "在 TwoAdvancedSamplersForMask 节点中，'overlap_factor' 参数确定掩膜腐蚀的范围，用于在掩膜和未掩膜区域之间创建缓冲区，帮助实现最终图像中过渡的平滑度。"
+    },
+    {
+        "question": "TwoAdvancedSamplersForMask 节点的输出结果是什么？",
+        "answer": "TwoAdvancedSamplersForMask 节点的输出结果是应用了高级采样技术后的潜在图像，它代表采样操作的最终结果，类型为 LATENT，数据类型为 torch.Tensor。"
+    },
+    {
+        "question": "在 TwoAdvancedSamplersForMask 节点中，'denoise' 参数的功能是什么？",
+        "answer": "'denoise' 参数控制在采样过程中应用的噪声减少级别，它对生成图像的清晰度和锐度起着重要作用。"
+    },
+    {
+        "question": "如何在 ComfyUI 中使用 TwoAdvancedSamplersForMask 节点？",
+        "answer": "TwoAdvancedSamplersForMask 节点在 ComfyUI 中的 ImpactPack/Sampler 类别下可用。要使用此节点，应从指定的仓库引用获取，适用于 GPU 环境。"
+    },
+    {
+        "question": "TwoAdvancedSamplersForMask 节点中 'mask' 的作用是什么？",
+        "answer": "在 TwoAdvancedSamplersForMask 节点中，'mask' 参数提供了将应用于潜在图像以区分掩膜和未掩膜区域的掩膜，对指导采样过程很重要。"
+    },
+    {
+        "question": "哪些参数是 TwoAdvancedSamplersForMask 必需的？",
+        "answer": "TwoAdvancedSamplersForMask 必需的参数包括 seed、steps、denoise、samples、base_sampler、mask_sampler 和 mask，它们分别控制采样过程的关键设置和操作。"
+    },
+    {
+        "question": "哪些节点可以用于处理图像的掩膜和未掩膜区域的不同采样需求？",
+        "answer": "TwoAdvancedSamplersForMask 节点可以用于这一目的，通过使用不同的采样器处理图像的掩膜和未掩膜区域，以改善图像质量。"
+    }
+]

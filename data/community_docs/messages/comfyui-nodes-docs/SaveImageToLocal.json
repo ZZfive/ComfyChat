@@ -1,0 +1,42 @@
+[
+    {
+        "question": "SaveImageToLocal节点属于哪个ComfyUI节点类别？",
+        "answer": "SaveImageToLocal节点属于'♾️Mixlab/Image'类别，用于将图像数据持久化到本地文件系统。"
+    },
+    {
+        "question": "SaveImageToLocal节点如何处理图像数据？",
+        "answer": "SaveImageToLocal节点通过保存传入的图像数据到本地磁盘，确保图像在计算环境外部也能够被访问和进一步处理。"
+    },
+    {
+        "question": "在SaveImageToLocal节点中，'images'参数代表什么？",
+        "answer": "'images'参数代表要保存的原始图像数据，是节点操作中的关键输入，其正确格式和完整性对节点的成功执行至关重要。"
+    },
+    {
+        "question": "如何使用SaveImageToLocal节点的'file_path'参数？",
+        "answer": "通过'file_path'参数，可以指定保存图像到本地系统的位置，这对于输出的组织和存储路径的选择很重要。"
+    },
+    {
+        "question": "在ComfyUI中，'prompt'参数能在SaveImageToLocal节点中发挥什么作用？",
+        "answer": "'prompt'参数为保存的图像添加上下文，通过在图像元数据中嵌入描述性文本，便于后续的图像分类和搜索。"
+    },
+    {
+        "question": "SaveImageToLocal节点如何处理'extra_pnginfo'参数？",
+        "answer": "'extra_pnginfo'参数允许在每个保存的图像中包含额外的元数据，如图像的版权信息或拍摄时间，增强了图像的描述并利于更复杂的图像组织。"
+    },
+    {
+        "question": "当'file_path'参数为空时，SaveImageToLocal节点如何处理图像保存？",
+        "answer": "当'file_path'参数为空时，SaveImageToLocal节点会以'ComfyUI'作为文件名前缀进行保存，目录名称基于默认输出目录，确保文件即使在没有指定路径时也能被正确保存。"
+    },
+    {
+        "question": "哪些类型能在SaveImageToLocal节点的处理中被压缩？",
+        "answer": "SaveImageToLocal节点能够在保存图像时，如果以PNG格式保存，则应用指定的'compress_level'，对图像数据进行压缩处理，减少文件大小，提高存储效率。"
+    },
+    {
+        "question": "SaveImageToLocal节点如何处理同名文件冲突？",
+        "answer": "如果遇到同名文件，SaveImageToLocal节点会通过在文件名后附加随机字符串的方法来解决冲突，确保每个图像文件的唯一性。"
+    },
+    {
+        "question": "SaveImageToLocal节点的元数据如何与图像文件关联？",
+        "answer": "SaveImageToLocal节点使用PngInfo类来将元数据，如'prompt'和其他'extra_pnginfo'数据，嵌入到存储的每个图像文件中，便于图像的索引和检索。"
+    }
+]

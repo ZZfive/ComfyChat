@@ -1,0 +1,30 @@
+[
+    {
+        "question": "KfSetKeyframe 是什么类型的节点，它隶属于哪个类别？",
+        "answer": "KfSetKeyframe 是一个属于 RootCategory 类别的节点，用于管理和修改计划中的键帧条件，允许在模型训练过程中动态调整参数。"
+    },
+    {
+        "question": "KfSetKeyframe 节点的主要功能是什么？",
+        "answer": "KfSetKeyframe 节点的主要功能是管理并修改计划中的键帧条件，从而实现对模型训练过程中的参数进行动态调整，以优化训练效果。"
+    },
+    {
+        "question": "KfSetKeyframe 节点的输入参数 'keyframed_condition' 是什么，它为什么重要？",
+        "answer": "'keyframed_condition' 参数定义了设置键帧的条件，是 KfSetKeyframe 节点的必要输入，对于控制模型在特定间隔处的行为至关重要。"
+    },
+    {
+        "question": "如何理解 KfSetKeyframe 节点的 'schedule' 参数，它在模型训练中有何作用？",
+        "answer": "'schedule' 参数定义了模型更新的时机和频率，结合键帧条件，它可以优化整个模型训练过程的效率和效果。"
+    },
+    {
+        "question": "KfSetKeyframe 节点的输出是什么，它对于模型训练的意义何在？",
+        "answer": "KfSetKeyframe 节点的输出是一个包含更新的键帧条件的修改后的计划，用于指导和控制模型训练的进展与性能优化。"
+    },
+    {
+        "question": "哪些类型的参数是 KfSetKeyframe 节点输入的关键组成部分，以及它们的数据类型？",
+        "answer": "KfSetKeyframe 节点的关键输入包括 'keyframed_condition' 和 'schedule'，分别对应 Comfy dtype 'KEYFRAMED_CONDITION' 和 'SCHEDULE'，Python dtype 则为 'Dict[str, Any]' 和 'Optional[kf.ParameterGroup]'。"
+    },
+    {
+        "question": "KfSetKeyframe 节点在执行时会如何处理 'keyframed_condition' 和 'schedule'，结果输出又是什么数据类型？",
+        "answer": "KfSetKeyframe 节点会使用 'keyframed_condition' 更新 'schedule'，结果输出的数据类型是 'SCHEDULE'，即 'Tuple[kf.ParameterGroup, Dict[str, Any]]'，表示包含更新键帧条件的修改后计划。"
+    }
+]

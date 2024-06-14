@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Image_Tile_Batch节点的作用是什么？",
+        "answer": "WAS_Image_Tile_Batch节点是ComfyUI的一个自定义节点，其主要功能是通过'tile_image'方法将单个图像智能地划分为指定数量的较小图块，保持纵横比和图块在图像上的均匀分布。"
+    },
+    {
+        "question": "如何使用WAS_Image_Tile_Batch节点将图像划分为特定数量的图块？",
+        "answer": "用户可以通过设置'num_tiles'参数来决定输入图像被划分为的图块总数，此参数为可选，默认值为6。通过调整该参数，可以控制平铺过程的粒度，显著影响输出图块的大小和数量。"
+    },
+    {
+        "question": "WAS_Image_Tile_Batch节点接受哪些类型的输入？",
+        "answer": "WAS_Image_Tile_Batch节点的主要输入是IMAGE类型的'image'，代表将要被分割的图像，以及可选INT类型的'num_tiles'，用于指定生成的图块数量。"
+    },
+    {
+        "question": "WAS_Image_Tile_Batch节点输出哪些类型的参数？",
+        "answer": "WAS_Image_Tile_Batch节点输出的是'IMAGES'集合，即从输入图像生成的图块集合，每个图块都是原始图像的一个部分。输出类型为List[torch.Tensor]，即一系列的torch.Tensor对象组成的列表。"
+    },
+    {
+        "question": "在ComfyUI中，哪些节点可以将一张图像分割为多张小图？",
+        "answer": "ComfyUI中的WAS_Image_Tile_Batch节点可以将一张图像智能地分割为多张小图，通过'tile_image'方法实现这一功能，同时保持图像的纵横比不变。"
+    },
+    {
+        "question": "WAS_Image_Tile_Batch节点的最佳运行环境是什么？",
+        "answer": "WAS_Image_Tile_Batch节点的推荐运行环境是CPU，其'tile_image'方法特别设计以在CPU上高效执行图像分割任务。"
+    },
+    {
+        "question": "如何在ComfyUI中访问和使用WAS_Image_Tile_Batch节点？",
+        "answer": "WAS_Image_Tile_Batch节点位于'WAS Suite/Image/Process'类别下，用户可以通过ComfyUI的界面添加该节点到其工作流程中，并通过调整'num_tiles'参数定制图像分割。节点的详细信息和源代码可以在https://github.com/WASasquatch/was-node-suite-comfyui找到。"
+    }
+]

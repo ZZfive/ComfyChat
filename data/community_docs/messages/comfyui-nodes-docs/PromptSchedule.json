@@ -1,0 +1,30 @@
+[
+    {
+        "question": "PromptSchedule节点的作用是什么？",
+        "answer": "PromptSchedule节点在ComfyUI中负责管理和动画化文本提示，通过在指定帧数上插值关键帧来创建平滑过渡，对生成随时间变化的动态文本动画至关重要。"
+    },
+    {
+        "question": "如何控制PromptSchedule节点动画的总长度？",
+        "answer": "通过设置'max_frames'参数来控制PromptSchedule节点动画的总长度，这是决定整体动画时长和节奏的关键参数，适用于整数类型。"
+    },
+    {
+        "question": "哪些输入参数是PromptSchedule节点所必需的？",
+        "answer": "PromptSchedule节点所需的必需输入参数包括文本（text）、最大帧数（max_frames）、当前帧（current_frame）和打印输出（print_output）标志。"
+    },
+    {
+        "question": "在PromptSchedule节点中，'clip'参数作用是什么？",
+        "answer": "'clip'参数在PromptSchedule节点中定义了用于文本编码的CLIP模型的引用，这对于将文本提示转换为适合动画的目的格式是必需的，类型为torch.nn.Module。"
+    },
+    {
+        "question": "哪个参数可以影响PromptSchedule节点中动画提示的过渡平滑性？",
+        "answer": "参数'pw_a'（权重a）可影响PromptSchedule节点中动画提示的过渡，有助于增加平滑性，影响整个动画的流畅性，类型为浮点数。"
+    },
+    {
+        "question": "如何使用PromptSchedule节点的输出？",
+        "answer": "PromptSchedule节点产生'POS'和'NEG'输出，分别代表正面和负面条件，生成类型为CONDITIONING，适用于指导当前帧的动画正面和负面生成，确保动画的平衡。"
+    },
+    {
+        "question": "PromptSchedule节点的'pre_text'和'app_text'参数如何影响动画提示？",
+        "answer": "'pre_text'和'app_text'参数在PromptSchedule节点中用作可选的多行字符串，分别用于向动画提示添加前缀和后缀信息，扩展上下文或为序列提供额外设定，类型为字符串。"
+    }
+]

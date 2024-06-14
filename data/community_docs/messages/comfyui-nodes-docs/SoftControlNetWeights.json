@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SoftControlNetWeights 类在 ComfyUI 中的作用是什么？",
+        "answer": "SoftControlNetWeights 类在 ComfyUI 中用于管理和处理控制网络的权重，它封装了加载和组织这些权重的逻辑，以确保权重被正确地应用于影响网络的行为。"
+    },
+    {
+        "question": "哪个参数对 SoftControlNetWeights 的总体权重贡献最大？",
+        "answer": "weight_00 参数对整体权重贡献最大，它是一个浮点数，对控制网络的总体权重有所贡献，是确定对网络行为初始影响的关键。"
+    },
+    {
+        "question": "翻转权重的参数在 SoftControlNetWeights 节点中如何实现？",
+        "answer": "flip_weights 参数为布尔类型，当设置为 True 时，在 SoftControlNetWeights 节点中应用控制网络时会翻转或反转权重，从而显著改变网络的响应。"
+    },
+    {
+        "question": "SoftControlNetWeights 节点的输出类型有哪些，分别代表什么？",
+        "answer": "SoftControlNetWeights 输出 CONTROL_NET_WEIGHTS 和 TIMESTEP_KEYFRAME 类型。CONTROL_NET_WEIGHTS 代表已处理并组织的控制网络权重集合，TIMESTEP_KEYFRAME 是网络操作中某个时间点结构化表示，包括开始百分比和强度详情，用于时间控制。"
+    },
+    {
+        "question": "在使用 SoftControlNetWeights 的过程中，哪种基础设施类型是最佳选择？",
+        "answer": "SoftControlNetWeights 类的使用推荐基础设施类型为 CPU，这通常是处理控制网络和相关权重的有效选择。"
+    },
+    {
+        "question": "SoftControlNetWeights 节点的源代码中，load_weights 函数的主要作用是什么？",
+        "answer": "load_weights 函数在 SoftControlNetWeights 节点的源代码中，主要是根据提供的权重和是否翻转权重的标志，加载和处理权重，返回一个 CONTROL_NET_WEIGHTS 和 TIMESTEP_KEYFRAME 的输出，以便于在控制网络中的进一步应用。"
+    },
+    {
+        "question": "除了 weight_00 外，SoftControlNetWeights 还包含哪些输入类型？",
+        "answer": "除了 weight_00，SoftControlNetWeights 还包含 weight_01 至 weight_12，这些都是浮点类型，用于更细粒度地控制网络权重，以及 flip_weights，用于控制是否在应用前翻转权重。"
+    }
+]

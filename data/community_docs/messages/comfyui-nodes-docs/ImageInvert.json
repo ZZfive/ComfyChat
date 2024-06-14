@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageInvert节点的作用是什么?",
+        "answer": "ImageInvert节点负责执行图像反色操作，接收图像作为输入，输出的图像是原图中像素强度被反转的版本，从而颠倒图像的明暗区域。"
+    },
+    {
+        "question": "ImageInvert节点处理图像的具体方式是什么?",
+        "answer": "ImageInvert节点通过计算1.0 - image来处理输入的图像，这里的's'实际上表示输入图像的反色，即通过这种计算来反转像素强度。"
+    },
+    {
+        "question": "哪些类型的设备适合运行ImageInvert节点?",
+        "answer": "ImageInvert节点适合在CPU设备上运行，其Infra type被指定为CPU，这意味着它是为CPU优化的。"
+    },
+    {
+        "question": "使用ImageInvert节点的输入数据类型是什么?",
+        "answer": "ImageInvert节点的输入数据类型是IMAGE，对应Python中的torch.Tensor类型，它接收图像作为其操作的主要输入。"
+    },
+    {
+        "question": "ImageInvert节点的输出结果定义为何?",
+        "answer": "ImageInvert节点的输出是'inverted_image'，即经过反色处理的图像，其数据类型同样是IMAGE（torch.Tensor），直接反映了节点操作的结果。"
+    },
+    {
+        "question": "在图像处理中，ImageInvert节点为何重要?",
+        "answer": "ImageInvert节点在图像处理中提供了一种简单有效的方法来改变视觉对比度，通过反转像素强度，对图像分析和增强任务中的对比度调整和模式识别有重要的作用。"
+    },
+    {
+        "question": "ImageInvert节点的源代码中如何定义其功能?",
+        "answer": "ImageInvert节点的源代码中定义了函数'invert'，它接受图像作为参数并返回反色图像。通过's = 1.0 - image'这条语句，实现了图像反色功能。"
+    }
+]

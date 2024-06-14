@@ -1,0 +1,50 @@
+[
+    {
+        "question": "SEGSDetailer 是什么节点？",
+        "answer": "SEGSDetailer 是 ComfyUI 中的一个节点，属于 ImpactPack/Detailer 类别，它用于根据分割信息增强图像的细节。"
+    },
+    {
+        "question": "SEGSDetailer 节点如何处理图像以增强细节？",
+        "answer": "SEGSDetailer 节点通过缩放和处理图像的片段来提高视觉质量，利用深度学习模型增强细节，特别在精细细节应用中效果显著。"
+    },
+    {
+        "question": "在 SEGSDetailer 中，'image' 输入代表什么？",
+        "answer": "'image' 输入是 SEGSDetailer 节点处理的主要图像，作为细节增强过程的主要数据源。"
+    },
+    {
+        "question": "SEGSDetailer 节点处理的图像类型是什么？",
+        "answer": "处理的图像类型是 'IMAGE'，其 Python 类型为 'torch.Tensor'。"
+    },
+    {
+        "question": "除了图像外，SEGSDetailer 节点还需要什么输入？",
+        "answer": "除了 'image' 外，还需要 'segs' 输入，即提供图像结构信息的分割数据，这对于节点理解哪些部分需要细节增强至关重要。"
+    },
+    {
+        "question": "在 SEGSDetailer 节点中，'guide_size' 参数的作用是什么？",
+        "answer": "'guide_size' 参数决定了细节增强过程中的缩放因子，影响图像片段在增强前的放大程度，进而影响最终输出的细节水平。"
+    },
+    {
+        "question": "SEGSDetailer 节点的可选参数 'steps' 主要用于什么目的？",
+        "answer": "'steps' 参数表示在细节增强过程中执行的步骤数量，更多的步骤通常会导致更精细的输出，但可能增加计算时间。"
+    },
+    {
+        "question": "使用 SEGSDetailer 节点输出的内容是什么？",
+        "answer": "使用 SEGSDetailer 节点输出的内容包括增强细节后的 'segs'（分割数据）和 'cnet_images'（一个控制网图像列表）用于进一步分析或可视化。"
+    },
+    {
+        "question": "哪些算法在 SEGSDetailer 节点内部使用？",
+        "answer": "虽然具体算法没有详细描述，但可以推测节点使用了深度学习模型和相关的图像处理算法来实现图像细节的增强。"
+    },
+    {
+        "question": "在不增加额外输入的情况下，SEGSDetailer 的默认 'guide_size' 值是多少？",
+        "answer": "如果不增加额外输入，'guide_size' 的默认值是 256，可在 64 到 'MAX_RESOLUTION' 之间调整，步长为 8。"
+    },
+    {
+        "question": "为什么在使用 SEGSDetailer 节点时需要调整 'steps' 的值？",
+        "answer": "调整 'steps' 值可以优化细节增强的过程，更多的步骤通常意味着输出图像细节更丰富，同时也需要更多的计算资源和时间。"
+    },
+    {
+        "question": "如何使用 SEGSDetailer 节点进行图像细节增强？",
+        "answer": "通过向 SEGSDetailer 节点提供输入图像、分割数据以及其他可选参数，如 'guide_size' 和 'steps'，可以实现图像细节的增强。"
+    }
+]

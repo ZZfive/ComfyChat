@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ScaledSoftMaskedUniversalWeights是什么类？",
+        "answer": "ScaledSoftMaskedUniversalWeights是ComfyUI中Adv-ControlNet /weights类的一部分，用于处理和应用软掩码到控制网络的权重上，通过接受一个掩码张量和两个乘数来缩放掩码值，确保它们在指定范围内。"
+    },
+    {
+        "question": "ScaledSoftMaskedUniversalWeights的load_weights方法做什么？",
+        "answer": "load_weights方法处理并应用一个软掩码到控制网络的基础权重上，接收掩码张量和两个乘数来调整掩码值的范围，并提供锁定掩码值选项以精细控制网络输出的影响。"
+    },
+    {
+        "question": "在ScaledSoftMaskedUniversalWeights中，mask参数起什么作用？",
+        "answer": "mask参数是Tensor类型，定义了软掩码，用于控制应用到基础权重调整的幅度，是权重调整过程中的关键组成。"
+    },
+    {
+        "question": "min_base_multiplier在ScaledSoftMaskedUniversalWeights中设置的是什么？",
+        "answer": "min_base_multiplier设置的是掩码值缩放的下限，控制掩码对控制权重的最小影响，确保调整不会太轻微，以便清晰且明显地调整网络行为。"
+    },
+    {
+        "question": "max_base_multiplier参数在ScaledSoftMaskedUniversalWeights中的作用是什么？",
+        "answer": "max_base_multiplier参数确定掩码值缩放的上限，控制掩码对控制权重的最大影响，防止掩码压倒原始权重，保持与调整后权重的平衡。"
+    },
+    {
+        "question": "CONTROL_NET_WEIGHTS输出代表什么意义？",
+        "answer": "CONTROL_NET_WEIGHTS代表应用缩放软掩码后调整的控制权重，直接影响控制网络的输出，反映了基于输入的掩码和乘数参数调整的最终行为。"
+    },
+    {
+        "question": "TIMESTEP_KEYFRAME输出有何作用？",
+        "answer": "TIMESTEP_KEYFRAME在特定时间步提供了控制权重的默认关键帧，对于定义随时间变化的控制权重时间结构至关重要，允许动态调整权重。"
+    }
+]

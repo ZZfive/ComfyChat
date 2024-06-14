@@ -1,0 +1,30 @@
+[
+    {
+        "question": "StableCascade_SuperResolutionControlnet节点的主要功能是什么？",
+        "answer": "StableCascade_SuperResolutionControlnet节点的主要功能是通过稳定的级联方法提高图像分辨率，利用变分自编码器（VAE）对输入图像进行编码，并生成用于超分辨率的控制信号。"
+    },
+    {
+        "question": "节点StableCascade_SuperResolutionControlnet的主要输入类型有哪些？",
+        "answer": "StableCascade_SuperResolutionControlnet的主要输入类型包括图像（'image'）和变分自编码器（'vae'），其中图像用于超分辨率处理，VAE提供编码机制以生成控制信号。"
+    },
+    {
+        "question": "在StableCascade_SuperResolutionControlnet节点中，控制网络输入（controlnet_input）起什么作用？",
+        "answer": "控制网络输入（controlnet_input）是在StableCascade_SuperResolutionControlnet节点中经过加工的版本，输入图像已经被编码并为超分辨率控制网络准备就绪，这是生成高质量放大图像的关键中间步骤。"
+    },
+    {
+        "question": "哪些类型的设备最适合运行StableCascade_SuperResolutionControlnet节点？",
+        "answer": "StableCascade_SuperResolutionControlnet节点推荐使用GPU设备，因为GPU可以提供更快的图像处理和超分辨率计算速度。"
+    },
+    {
+        "question": "StableCascade_SuperResolutionControlnet节点的输出有哪些，它们的数据类型是什么？",
+        "answer": "StableCascade_SuperResolutionControlnet节点的输出包括'managed_image'（IMAGE），'stage_c'和'stage_b'。'stage_c'和'stage_b'是图像的不同级别潜在表示，类型为LATENT，具体是Dict[str, torch.Tensor]。"
+    },
+    {
+        "question": "如何配置和运行StableCascade_SuperResolutionControlnet节点？",
+        "answer": "配置和运行StableCascade_SuperResolutionControlnet节点需要先实例化节点并指定设备，默认为'cpu'，然后通过'manage'方法输入图像和VAE。"
+    },
+    {
+        "question": "StableCascade_SuperResolutionControlnet节点如何编码并准备控制网络输入？",
+        "answer": "StableCascade_SuperResolutionControlnet节点利用输入的VAE编码图像以生成控制网络输入。具体地，它使用VAE的encode方法处理图像，调换维度以适应控制信号的格式，为超分辨率处理准备经过编码的图像。"
+    }
+]

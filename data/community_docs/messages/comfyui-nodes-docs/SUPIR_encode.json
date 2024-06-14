@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SUPIR_encode节点的主要功能是什么？",
+        "answer": "SUPIR_encode节点旨在使用变分自编码器高效处理和编码图像到潜在空间，通过调整模型的前向传递来优化编码过程，确保计算效率和合理内存使用。"
+    },
+    {
+        "question": "SUPIR_encode节点使用哪种模型进行图像编码？",
+        "answer": "SUPIR_encode节点使用变分自编码器模型对输入图像进行高效编码，特别强调根据输入图像大小和瓦片大小调整模型的前向传递。"
+    },
+    {
+        "question": "哪些参数对于SUPIR_encode节点的正常运行至关重要？",
+        "answer": "SUPIR_VAE参数代表了用于编码图像的变分自编码器模型，对节点操作至关重要，因为它定义了编码过程中的架构和参数。"
+    },
+    {
+        "question": "SUPIR_encode节点的输入数据'encoder_dtype'起到什么作用？",
+        "answer": "encoder_dtype参数指定了编码器内部计算使用的数据类型，对节点的性能和精度有重要影响，它可以平衡编码速度和质量。"
+    },
+    {
+        "question": "使用SUPIR_encode节点处理大型图像时，如何提高效率？",
+        "answer": "当处理大型图像时，使用SUPIR_encode节点的use_tiled_vae参数启用分块方法进行编码过程，将大图像分解成更小、更易管理的部分，以提高内存使用和编码过程效率。"
+    },
+    {
+        "question": "SUPIR_encode节点的输出是什么？",
+        "answer": "SUPIR_encode节点的输出是一个潜在表示，即'latent'，这是输入图像的编码版本，形式为潜在向量，对于管道内的进一步分析或生成任务至关重要。"
+    },
+    {
+        "question": "SUPIR_encode节点的使用适合哪种硬件环境？",
+        "answer": "SUPIR_encode节点推荐在GPU环境下使用，以最大化其处理和编码图像的能力，确保潜在空间编码过程的效率。"
+    }
+]

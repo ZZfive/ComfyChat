@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Text2InputOr3rdOption节点的作用是什么？",
+        "answer": "Text2InputOr3rdOption节点是Mikey插件下的一个文本处理节点，它可以根据条件逻辑处理并返回文本输入。节点旨在用提示中的值替换输入文本中的占位符，返回的可以是两个独立的文本或一对相同文本，这取决于布尔标志'use_text_c_for_both'的设置。"
+    },
+    {
+        "question": "text_a输入在Text2InputOr3rdOption节点中扮演什么角色？",
+        "answer": "text_a是Text2InputOr3rdOption节点中一个必填的字符串输入，预计包含原始文本，它将在处理过程中可能用提示中的值替换其中的占位符，是主要的输入文本之一。"
+    },
+    {
+        "question": "节点使用text_c输入的条件是什么？",
+        "answer": "节点使用text_c输入作为替代输出的条件是由布尔标志'use_text_c_for_both'设置并且为'true'时，即当此标志设置为真时，'text_c'将被用作'text_a'和'text_b'的输出。"
+    },
+    {
+        "question": "当use_text_c_for_both设置为'false'时，节点的输出是什么？",
+        "answer": "当use_text_c_for_both设置为'false'时，节点将分别返回加工后的'text_a'和'text_b'，两者均是经过处理以替代占位符的文本输出。"
+    },
+    {
+        "question": "extra_pnginfo输入在Text2InputOr3rdOption节点中如何被利用？",
+        "answer": "extra_pnginfo是一个可选输入，它为节点提供额外的信息以检索和替换文本中的占位符，用于细化文本替换的过程。"
+    },
+    {
+        "question": "哪些类型的输入是Text2InputOr3rdOption节点必需的？",
+        "answer": "Text2InputOr3rdOption节点必需的输入包括'text_a', 'text_b', 'text_c', 'use_text_c_for_both'。所有这些都是字符串或组合类型输入，用于确定文本处理逻辑并控制输出。"
+    },
+    {
+        "question": "Text2InputOr3rdOption节点的'output'函数返回什么类型的数据？",
+        "answer": "Text2InputOr3rdOption节点的'output'函数返回类型为STRING的数据，具体来说，是两份经过处理的文本输出'text_a'和'text_b'，它们可能相同取决于使用'text_c'的逻辑。"
+    }
+]

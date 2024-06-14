@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MakeImageBatch 节点的主要功能是什么？",
+        "answer": "MakeImageBatch 节点主要用于将多个单独的图像或现有的图像批次高效地合并为一个单一的、统一的批次，以便于批量处理图像数据。"
+    },
+    {
+        "question": "如何启动 MakeImageBatch 节点的批次形成过程？",
+        "answer": "通过提供必需的输入 image1，MakeImageBatch 节点将启动图像批次的形成过程。"
+    },
+    {
+        "question": "可选输入 image2 到 image6 在 MakeImageBatch 节点中的作用是什么？",
+        "answer": "image2 到 image6 是可选输入，用于拓展图像批次，增加批次内的图像多样性，从而为批量处理提供更丰富的数据集。"
+    },
+    {
+        "question": "MakeImageBatch 节点的输出如何表示？",
+        "answer": "MakeImageBatch 节点的输出是一个整合图像批次，通过按顺序附加输入图像创建，此输出代表了批次创建过程的顶点。"
+    },
+    {
+        "question": "MakeImageBatch 节点支持哪种类型的计算基础设施？",
+        "answer": "MakeImageBatch 节点的运算适合在 CPU 上执行，这是其 infra type 的特性。"
+    },
+    {
+        "question": "在使用 MakeImageBatch 节点时，如果只提供 image1 会发生什么？",
+        "answer": "如果只提供 image1，MakeImageBatch 节点将创建一个最小批次，仅包含该图像。"
+    },
+    {
+        "question": "MakeImageBatch 节点内部是如何处理附加图像的？",
+        "answer": "MakeImageBatch 节点内部通过调用 `torch.cat` 方法，将可选的输入图像添加到基本图像的批次中，实现图像的顺序合并。"
+    }
+]

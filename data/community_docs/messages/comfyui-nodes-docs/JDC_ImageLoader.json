@@ -1,0 +1,30 @@
+[
+    {
+        "question": "JDC_ImageLoader节点的主要功能是什么？",
+        "answer": "JDC_ImageLoader节点（实际上为LoadImagePath类）主要用于从指定的路径或URL加载和预处理图像数据，使图像适合进一步在ComfyUI中进行计算任务。"
+    },
+    {
+        "question": "LoadImagePath节点如何处理不同来源的图像数据？",
+        "answer": "LoadImagePath节点既可以处理本地文件路径加载的图像，也可以下载处理在线URL指向的图像。"
+    },
+    {
+        "question": "LoadImagePath节点输出的图像张量包含哪些部分？",
+        "answer": "LoadImagePath节点输出包括经过预处理的图像张量（Comfy dtype: TENSOR，Python dtype: torch.Tensor）以及可能提取的二进制掩码（Comfy dtype: TENSOR，Python dtype: torch.Tensor），用于后续的图像分析和处理。"
+    },
+    {
+        "question": "处理在线图像时，LoadImagePath节点是如何操作的？",
+        "answer": "处理在线图像时，LoadImagePath节点通过HTTP请求下载图像数据，然后使用PIL库将其转换为RGB格式，最后对图像进行归一化处理并转换为张量以适应进一步计算任务。"
+    },
+    {
+        "question": "如果图像文件具有透明度通道，LoadImagePath节点如何处理并提取掩码？",
+        "answer": "如果图像源文件包含透明度（Alpha）通道，LoadImagePath节点将从这个通道中提取出二进制掩码，该掩码可用于图像处理工作流的后续阶段，如分割或对象识别。"
+    },
+    {
+        "question": "LoadImagePath节点在处理本地文件图像时如何确保数据的一致性和完整性？",
+        "answer": "在处理本地文件图像时，LoadImagePath节点通过计算图像文件的SHA256哈希值来确保数据的一致性和完整性，从而校验图像未被修改。"
+    },
+    {
+        "question": "哪些自定义节点可以从本地文件路径或URL加载图像并进行预处理？",
+        "answer": "JDC_ImageLoader节点（LoadImagePath）专门设计用于从本地文件路径或URL加载图像并将其预处理为张量格式，以适应ComfyUI中的计算任务。"
+    }
+]

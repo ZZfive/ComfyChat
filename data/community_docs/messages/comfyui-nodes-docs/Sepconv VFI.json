@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SepconvVFI是什么?",
+        "answer": "SepconvVFI是ComfyUI中的一个自定义节点，利用可分离卷积神经网络进行视频帧插值，以提高视频序列中帧间过渡的流畅性和平滑性，提供更高质量的视觉体验，而无需大量的计算资源。"
+    },
+    {
+        "question": "SepconvVFI的必填输入有哪些?",
+        "answer": "SepconvVFI的必填输入包括'ckpt_name'（检查点名称，用于加载帧插值所需的预训练模型权重）和'frames'（输入帧，提供节点处理以创造中间插值帧的原始视频数据）。"
+    },
+    {
+        "question": "什么参数用于控制SepconvVFI的计算资源管理?",
+        "answer": "SepconvVFI中的'clear_cache_after_n_frames'参数，可决定处理过程中GPU缓存的清除频率，用于保持系统的最佳性能。"
+    },
+    {
+        "question": "如何调整SepconvVFI节点中生成插值帧的数量?",
+        "answer": "通过设置SepconvVFI的'multiplier'参数，影响生成的插值帧的数量，进而控制两帧间插值帧的密度。"
+    },
+    {
+        "question": "SepconvVFI如何执行插值?",
+        "answer": "SepconvVFI加载预训练的可分离卷积神经网络模型，对输入帧进行预处理，然后在两帧之间生成中间帧，以获得更平滑的视频过渡。"
+    },
+    {
+        "question": "SepconvVFI输出什么类型的数据?",
+        "answer": "SepconvVFI输出的是'torch.Tensor'类型的图像数据，即'output_frames'，包含了节点生成的插值帧，对于创建更流畅的视频至关重要。"
+    },
+    {
+        "question": "需要什么类型的基础设施才能运行SepconvVFI?",
+        "answer": "运行SepconvVFI需要GPU类型的基础架构，以提供必要的计算能力执行可分离卷积神经网络的视频帧插值任务。"
+    }
+]

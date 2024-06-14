@@ -1,0 +1,30 @@
+[
+    {
+        "question": "IterativeMixingSchedulerAdvanced节点的作用是什么？",
+        "answer": "IterativeMixingSchedulerAdvanced节点用于为迭代采样过程生成一系列噪声水平（sigmas），它根据去噪参数智能调整采样步骤，确保输出精细调到所需的噪声减少水平。"
+    },
+    {
+        "question": "IterativeMixingSchedulerAdvanced节点中的'scheduler'参数的功能是什么？",
+        "answer": "'scheduler'参数确定了在采样过程中将使用的调度策略，它是计算sigmas的关键，直接影响迭代采样的整体性能。"
+    },
+    {
+        "question": "如何利用'end_at_step'参数在采样过程中控制步骤数？",
+        "answer": "'end_at_step'参数定义了采样过程的终点，使用它可以限制执行的步骤数，并在预定点停止采样过程。"
+    },
+    {
+        "question": "在ComfyUI中，IterativeMixingSchedulerAdvanced节点生成的'sigmas'的输出格式是什么？",
+        "answer": "IterativeMixingSchedulerAdvanced节点生成的'sigmas'输出是噪声水平的序列，其格式为torch.Tensor，代表了采样过程中指导模型的噪声水平变化。"
+    },
+    {
+        "question": "控制噪声减少水平的参数在IterativeMixingSchedulerAdvanced中如何起作用？",
+        "answer": "IterativeMixingSchedulerAdvanced中的'denoise'参数，在采样过程中调整噪声减少的水平，它是通过控制去噪步骤的强度来确定输出质量的关键因素。"
+    },
+    {
+        "question": "IterativeMixingSchedulerAdvanced的计算依赖哪些输入变量？",
+        "answer": "IterativeMixingSchedulerAdvanced的计算依赖于'model'、'scheduler'、'steps'、'start_at_step'、'end_at_step'和'denoise'参数，这些变量共同影响采样计划的质量和采样过程的执行流程。"
+    },
+    {
+        "question": "IterativeMixingSchedulerAdvanced节点基于什么平台进行计算？",
+        "answer": "IterativeMixingSchedulerAdvanced节点的计算基于CPU平台进行，这是根据其'Infra type'为CPU的使用提示确定的。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LoraLoaderModelOnly的用途是什么？",
+        "answer": "LoraLoaderModelOnly节点主要用于高效加载和集成Lora模型到现有的模型架构中，通过应用Lora调整以增强基础模型的能力，允许进行精细修改而无需重新加载整个模型。"
+    },
+    {
+        "question": "LoraLoaderModelOnly中'model'参数的作用是什么？",
+        "answer": "'model'参数是LoraLoaderModelOnly节点中非常关键的输入，代表将要整合Lora调整的基础模型，它决定了节点执行中将要修改的模型，类型为torch.nn.Module。"
+    },
+    {
+        "question": "如何在LoraLoaderModelOnly中指定要加载的Lora模型？",
+        "answer": "通过'lora_name'参数指定要加载的Lora文件的名称，它用于识别正确的Lora模型以应用于基础模型，数据类型为字符串（str）。"
+    },
+    {
+        "question": "LoraLoaderModelOnly节点如何控制Lora调整的强度？",
+        "answer": "LoraLoaderModelOnly节点通过可选的'strength_model'参数控制Lora调整的强度，允许用户调节模型性能，类型为float，范围在-20.0到20.0之间，步长为0.01。"
+    },
+    {
+        "question": "LoraLoaderModelOnly节点的主要输出是什么？",
+        "answer": "LoraLoaderModelOnly的主要输出是经过Lora调整修改后的模型，类型为torch.nn.Module，体现了节点集成Lora调整后模型增强的结果。"
+    },
+    {
+        "question": "在使用LoraLoaderModelOnly时需要注意哪些硬件兼容性？",
+        "answer": "使用LoraLoaderModelOnly节点时，推荐的基础设施类型为CPU，这意味着它在CPU上运行时具有较好的效能。"
+    },
+    {
+        "question": "LoraLoaderModelOnly与哪些类型的数据兼容？",
+        "answer": "LoraLoaderModelOnly与ComfyUI中定义的'MODEL'和'STRING'数据类型兼容，具体包括torch.nn.Module类型的模型和str类型的lora_name，以及可选的FLOAT类型'strength_model'参数。"
+    }
+]

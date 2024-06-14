@@ -1,0 +1,46 @@
+[
+    {
+        "question": "MotionctrlSVDLoader是什么?",
+        "answer": "MotionctrlSVDLoader是ComfyUI中一个用于初始化和管理Motionctrl-SVD模型的类，专注于高效地加载模型以执行运动序列的分析和合成任务。"
+    },
+    {
+        "question": "MotionctrlSVDLoader类属于哪个类别？",
+        "answer": "MotionctrlSVDLoader类属于motionctrl类别，这是ComfyUI插件的一个组成部分，专注于运动序列控制。"
+    },
+    {
+        "question": "哪些输入参数是MotionctrlSVDLoader所必需的?",
+        "answer": "MotionctrlSVDLoader需要三个必需的输入参数：ckpt_name、frame_length和steps，分别为模型检查点文件名、帧长度和迭代步骤数。"
+    },
+    {
+        "question": "ckpt_name参数有什么作用？",
+        "answer": "ckpt_name参数用于指定Motionctrl-SVD模型检查点的文件名，确保加载器能够正确加载所需的模型状态，这对于后续操作和结果至关重要。"
+    },
+    {
+        "question": "如何描述frame_length参数的功能？",
+        "answer": "frame_length定义了模型输入数据的时间维度，影响模型处理给定帧跨度内连贯运动序列的能力。"
+    },
+    {
+        "question": "steps参数对模型操作的影响是什么？",
+        "answer": "steps参数确定了模型在其操作过程中将执行的迭代次数，直接影响计算效率和生成的运动序列的质量。"
+    },
+    {
+        "question": "MotionctrlSVDLoader的输出类型是什么？",
+        "answer": "MotionctrlSVDLoader输出类型是已经加载和配置好的Motionctrl-SVD模型，准备用于运动序列的分析和合成，其类型定义为MOTIONCTRLSVD，对应于Python的torch.nn.Module类型。"
+    },
+    {
+        "question": "哪些类型的数据类型被ComfyUI用于输入和输出？",
+        "answer": "ComfyUI 使用STRING、INT和MOTIONCTRLSVD作为输入和输出的数据类型。具体地说，ckpt_name参数需要STRING类型，而frame_length和steps需要INT类型；输出的model使用MOTIONCTRLSVD类型。"
+    },
+    {
+        "question": "MotionctrlSVDLoader在哪个运行架构下表现最佳？",
+        "answer": "MotionctrlSVDLoader在GPU基础设施类型下运行效果最佳，充分利用硬件加速进行运动序列分析和合成。"
+    },
+    {
+        "question": "如何通过MotionctrlSVDLoader加载模型检查点文件？",
+        "answer": "通过MotionctrlSVDLoader的load_checkpoint方法，根据指定的ckpt_name、frame_length和steps参数加载模型检查点文件，若文件不存在，则会下载并加载相应的检查点文件。"
+    },
+    {
+        "question": "MotionctrlSVDLoader在加载模型时涉及哪些步骤？",
+        "answer": "MotionctrlSVDLoader加载模型涉及检索指定的检查点文件、读取配置文件、根据frame_length和steps参数配置模型的过程，最后返回已经加载和配置好的模型，供进一步使用。"
+    }
+]

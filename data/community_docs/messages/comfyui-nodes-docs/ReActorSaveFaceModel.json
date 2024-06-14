@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ReActorSaveFaceModel节点是做什么的？",
+        "answer": "ReActorSaveFaceModel节点是一个用于保存面部识别模型的节点，它将图像数据转换为结构化格式，便于未来的分析或识别，重点在于保留面部属性和特征以供后续使用。"
+    },
+    {
+        "question": "ReActorSaveFaceModel节点的save_mode参数作用是什么？",
+        "answer": "save_mode参数作为整个保存过程的开关，决定是否保存模型，对节点的输出和系统的后续行动至关重要，它的数据类型为BOOLEAN。"
+    },
+    {
+        "question": "ReActorSaveFaceModel节点中face_model_name参数的用途是什么？",
+        "answer": "face_model_name参数用于给面部模型命名，作为保存模型的标识符，便于未来的检索和引用，它对维护模型库存的组织和清晰性很重要，其数据类型为STRING。"
+    },
+    {
+        "question": "select_face_index参数在ReActorSaveFaceModel节点中的作用是什么？",
+        "answer": "select_face_index参数是一个整数索引，用于从分析数据中选择一个具体的面部特征，指导节点专注于特定的面部，数据类型为INT。"
+    },
+    {
+        "question": "ReActorSaveFaceModel节点如何处理输入的image参数？",
+        "answer": "输入的image参数提供面部分析和模型创建所需的视觉数据，节点将使用这些数据来构建和保存面部模型，其数据类型为IMAGE。"
+    },
+    {
+        "question": "如果ReActorSaveFaceModel节点接收到一个现有的face_model参数，会发生什么？",
+        "answer": "当ReActorSaveFaceModel节点接收到face_model参数时，它可以绕过面容分析步骤，直接保存给定的模型，简化了工作流程，face_model参数的数据类型为FACE_MODEL。"
+    },
+    {
+        "question": "在使用ReActorSaveFaceModel节点时的infra type是什么？",
+        "answer": "ReActorSaveFaceModel节点的infra type为CPU，意味着它主要在CPU上执行计算任务。"
+    }
+]

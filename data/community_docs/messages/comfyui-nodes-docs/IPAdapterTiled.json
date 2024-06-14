@@ -1,0 +1,30 @@
+[
+    {
+        "question": "IPAdapterTiled节点的用途是什么？",
+        "answer": "IPAdapterTiled是一个ComfyUI中的节点，它利用平铺机制处理大型图像，特别适用于需要通过平铺处理来避免内存溢出的情况。它能对图像平铺应用一系列变换，利用IPAdapter和CLIPVision模型创造嵌入，这些嵌入可用于进一步处理或模型训练。"
+    },
+    {
+        "question": "什么是IPAdapterTiled所需的模型参数，其作用是什么？",
+        "answer": "IPAdapterTiled的模型参数是必需的，代表了用于处理图像数据的深度学习模型。它是节点的核心，决定了图像平铺如何被分析和转换。"
+    },
+    {
+        "question": "IPAdapterTiled节点中的ipadapter参数指的是什么？",
+        "answer": "ipadapter参数指定了适配器模型，此模型将与主模型配对使用，用于适配图像特征。它是增强模型性能的关键组件，通过修改和增强图像数据来实现。"
+    },
+    {
+        "question": "IPAdapterTiled节点的图像输入有什么特别之处？",
+        "answer": "图像输入是IPAdapterTiled节点的主要数据源，即原始图像数据，它将被分解为平铺并进行处理。图像的数据质量直接影响节点的输出和后续分析效果。"
+    },
+    {
+        "question": "IPAdapterTiled节点的权重参数的作用是什么？",
+        "answer": "权重参数允许调整图像平铺对模型输出的贡献程度。用户可以使用它来微调每个平铺的权重，以在最终结果中达到期望的效果或平衡。"
+    },
+    {
+        "question": "IPAdapterTiled节点输出中的'模型'具体指什么？",
+        "answer": "输出模型代表了经过IPAdapterTiled节点处理后的模型，封装了应用到输入图像平铺上的学到的特征和转换结果。"
+    },
+    {
+        "question": "在处理图像平铺时，IPAdapterTiled节点的'掩码'输出什么作用？",
+        "answer": "掩码输出提供了在处理图像平铺期间使用的关注掩码，这些掩码有助于聚焦图像的特定区域或从分析中排除不需要关注的部分。"
+    }
+]

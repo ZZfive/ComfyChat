@@ -1,0 +1,30 @@
+[
+    {
+        "question": "StringSchedule属于哪个节点类别以及其哪些功能特点？",
+        "answer": "StringSchedule节点属于FizzNodes 📅🅕🅝/ScheduleNodes类别，它的主要功能是处理和动画化基于文本的日程，抽象基于帧的动画的复杂性为一个由文本驱动的界面。"
+    },
+    {
+        "question": "StringSchedule节点中的'text'参数的作用是什么？",
+        "answer": "'text'参数是字符串输入，用于生成动画提示的原始文本，直接影响输出提示的内容和结构，支持多行输入，允许复杂和详细的描述。"
+    },
+    {
+        "question": "在StringSchedule节点中，'max_frames'和'current_frame'参数分别定义了什么？",
+        "answer": "'max_frames'定义动画序列的最大帧数，影响动画的持续时间和帧间隔；'current_frame'指示动画序列中的当前位置，对于确定使用哪个提示以及控制动画的状态至关重要。"
+    },
+    {
+        "question": "StringSchedule节点是否支持将动画提示的输出打印到控制台，如果可以，如何启用此功能？",
+        "answer": "通过设置'print_output'参数为True，可以将动画提示的输出打印到控制台，这是一个可选标志，用于调试或可视化动画序列。"
+    },
+    {
+        "question": "描述StringSchedule中的'pre_text'和'app_text'参数如何增强动画序列的输出？",
+        "answer": "'pre_text'用于在每个帧的提示前添加文本，提供动画序列每个提示开头的上下文和额外信息；'app_text'添加到每个帧的提示后，允许向序列添加结尾或补充文本，增强最终输出的细节和完成度。"
+    },
+    {
+        "question": "StringSchedule中的加权参数（'pw_a'、'pw_b'、'pw_c'、'pw_d'）在动画提示的生成中扮演什么角色？",
+        "answer": "这些参数作为动画提示插值过程中的加权因子，影响提示在动画中的平衡和分布，允许微调，在动画发展中提供额外的控制和影响。"
+    },
+    {
+        "question": "'POS'和'NEG'输出在StringSchedule节点中分别代表什么？",
+        "answer": "'POS'输出代表从输入文本和参数派生的当前积极提示，为给定帧提供肯定或主要内容；'NEG'输出表示当前的消极提示，通过提供对比或替代内容来补充'POS'输出，增强了动画的深度和复杂性。"
+    }
+]

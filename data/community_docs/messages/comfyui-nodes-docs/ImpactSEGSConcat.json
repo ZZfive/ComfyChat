@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SEGSConcat节点的作用是什么?",
+        "answer": "SEGSConcat节点的作用是将多个分割（SEGS）合并为一个统一的分割，确保生成的分割是连贯的，并且保持原始数据形状的完整性。"
+    },
+    {
+        "question": "SEGSConcat节点处理什么样的输入数据?",
+        "answer": "SEGSConcat节点处理的主要输入数据是'segs1'，这是一个分割集合，是节点连接分割过程的关键输入。"
+    },
+    {
+        "question": "什么样的数据类型作为'segs1'输入到SEGSConcat节点?",
+        "answer": "输入到SEGSConcat节点的'segs1'数据类型是Comfy dtype: SEGS，Python dtype: List[Tuple[Tuple[int, int], List[Any]]]，表示一系列分割数据。"
+    },
+    {
+        "question": "SEGSConcat节点的主要输出是什么?",
+        "answer": "SEGSConcat节点的主要输出是'output'参数，即合并过程生成的连接分割，数据类型为Comfy dtype: SEGS。"
+    },
+    {
+        "question": "SEGSConcat节点在哪些硬件上可以运行?",
+        "answer": "SEGSConcat节点的运行无需特定的硬件要求，它可以在CPU上运行。"
+    },
+    {
+        "question": "SEGSConcat中的'dim'和'res'变量在代码中代表什么?",
+        "answer": "在SEGSConcat节点的代码中，'dim'变量记录合并分割的维度，而'res'保存合并后的分割数据，用于最终输出。"
+    },
+    {
+        "question": "如果输入的'segs1'数据维度不一致，SEGSConcat节点会怎样处理?",
+        "answer": "如果输入的'segs1'数据维度不一致，SEGSConcat节点会打印错误信息，并忽略维度不同的数据，确保输出数据的维度一致。"
+    }
+]

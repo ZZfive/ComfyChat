@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SEGSOrderedFilter节点的功能是什么？",
+        "answer": "SEGSOrderedFilter节点用于根据指定的属性，如面积、宽度、高度或坐标，对SEGS集合进行处理和排序，以有意义的方式组织SEGS，便于进一步的分析或可视化。"
+    },
+    {
+        "question": "使用SEGSOrderedFilter节点时，'segs'参数的作用是什么？",
+        "answer": "'segs'参数是SEGS对象的集合，构成了SEGSOrderedFilter节点进行所有排序操作的基础，直接影响节点的排序结果。"
+    },
+    {
+        "question": "SEGSOrderedFilter节点支持哪些排序标准？",
+        "answer": "SEGSOrderedFilter节点支持的排序标准包括裁剪区域的面积、宽度、高度以及角落的x1、y1、x2、y2坐标。"
+    },
+    {
+        "question": "如何控制SEGSOrderedFilter节点的排序方向？",
+        "answer": "通过设置‘order’参数，可以控制SEGSOrderedFilter节点的排序方向，设置为真即为降序，假为升序。"
+    },
+    {
+        "question": "使用SEGSOrderedFilter节点时，如何从排序后的列表中选择特定的SEGS范围？",
+        "answer": "使用‘take_start’参数定义起始索引，结合‘take_count’参数指定提取的SEGS数量，即可从排序后的列表中选择特定范围的SEGS。"
+    },
+    {
+        "question": "SEGSOrderedFilter节点提供哪些输出结果？",
+        "answer": "SEGSOrderedFilter节点提供'filtered_SEGS'，包含了排序和选择的SEGS子集，以及‘remained_SEGS’，即过滤过程未选择的SEGS。"
+    },
+    {
+        "question": "SEGSOrderedFilter节点的哪一特性使其适合在关注特定数据子集的应用场景中使用？",
+        "answer": "SEGSOrderedFilter节点的‘take_start’和‘take_count’参数允许从排序后的列表中选择特定的SEGS范围，这一特性使其适合关注特定数据子集的场景。"
+    }
+]

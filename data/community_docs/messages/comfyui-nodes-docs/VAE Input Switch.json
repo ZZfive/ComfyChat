@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_VAE_Input_Switch的作用是什么？",
+        "answer": "WAS_VAE_Input_Switch节点的作用是在ComfyUI中根据一个布尔标志选择两个变分自编码器（VAE）实例中的一个，实现工作流中的逻辑切换和条件处理。"
+    },
+    {
+        "question": "在WAS_VAE_Input_Switch节点中，vae_a代表什么？",
+        "answer": "在WAS_VAE_Input_Switch节点中，参数vae_a代表可能被开关选择的第一个变分自编码器（VAE）实例，是节点决策过程的关键组件。"
+    },
+    {
+        "question": "WAS_VAE_Input_Switch节点的boolean参数是如何控制流程的？",
+        "answer": "在WAS_VAE_Input_Switch节点中，boolean参数作为控制信号，根据其值决定是选择vae_a还是vae_b作为输出，从而控制处理流程的导向。"
+    },
+    {
+        "question": "selected_vae输出代表什么，其用途又是什么？",
+        "answer": "selected_vae输出表示WAS_VAE_Input_Switch节点根据布尔条件选择的变分自编码器（VAE）实例，它是节点条件逻辑的结果，为后续处理提供起点。"
+    },
+    {
+        "question": "哪些节点可以控制两个VAE的条件执行路径？",
+        "answer": "WAS_VAE_Input_Switch节点可以控制两个VAE的条件执行路径，它充当逻辑开关，依据布尔控制信号选择其中一个VAE用于后续处理。"
+    },
+    {
+        "question": "在ComfyUI的WAS Suite/Logic分类中，哪个节点可以实现VAE的条件选择？",
+        "answer": "在ComfyUI的WAS Suite/Logic分类中，WAS_VAE_Input_Switch节点可以实现VAE的条件选择，提供工作流灵活性和条件处理能力。"
+    },
+    {
+        "question": "WAS_VAE_Input_Switch的实现类中，vae_switch方法如何完成VAE的逻辑选择？",
+        "answer": "在WAS_VAE_Input_Switch的实现类中，vae_switch方法通过检查boolean参数的值来完成VAE的逻辑选择：如果boolean为真，则选择vae_a；否则，选择vae_b作为输出。"
+    }
+]

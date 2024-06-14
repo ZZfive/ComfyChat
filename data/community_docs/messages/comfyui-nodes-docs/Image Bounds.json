@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Image_Bounds 是什么？",
+        "answer": "WAS_Image_Bounds 是 ComfyUI 中 WAS Suite 的一个自定义节点，专门用于计算图像边界，为各种图像处理任务提供空间坐标信息。"
+    },
+    {
+        "question": "image_bounds 方法的功能是什么？",
+        "answer": "image_bounds 方法的功能是计算输入图像的边界，确保图像在处理前得到正确格式化，以便于后续操作的准确执行。"
+    },
+    {
+        "question": "WAS_Image_Bounds 节点的 'image' 输入是什么类型的数据？",
+        "answer": "WAS_Image_Bounds 节点的 'image' 输入类型为 IMAGE，在 Python 中表现为 Union[torch.Tensor, PIL.Image.Image]，是节点计算边界的基础。"
+    },
+    {
+        "question": "什么情况下 'image' 参数对 WAS_Image_Bounds 节点至关重要？",
+        "answer": "'image' 参数对于 WAS_Image_Bounds 节点的操作是不可缺少的，因为它承载了节点用于确定边界的数据源，没有此参数，节点无法执行其预定的边界计算任务。"
+    },
+    {
+        "question": "在图像处理工作中，'image_bounds' 输出为何重要？",
+        "answer": "'image_bounds' 输出为输入图像的边界提供空间坐标，这对需要感知空间的任务极为重要，例如裁剪、调整大小或在图像中定位元素。"
+    },
+    {
+        "question": "如何在 ComfyUI 中格式化 'image_bounds' 的输出数据？",
+        "answer": "'image_bounds' 的输出在 ComfyUI 中的数据类型为 COMBO[Tuple[int, int, int, int]]，在 Python 中表现为 List[Tuple[int, int, int, int]]，包含图像坐标信息。"
+    },
+    {
+        "question": "WAS_Image_Bounds 节点适用于哪种运算环境类型？",
+        "answer": "WAS_Image_Bounds 节点适用于 CPU 运算环境类型，这在其使用提示中被明确标注为 'Infra type: CPU'。"
+    }
+]

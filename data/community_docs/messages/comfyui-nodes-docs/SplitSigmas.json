@@ -1,0 +1,38 @@
+[
+    {
+        "question": "SplitSigmas节点是ComfyUI中的什么类别？",
+        "answer": "SplitSigmas是ComfyUI中的一个节点，属于'sampling/custom_sampling/sigmas'类别。"
+    },
+    {
+        "question": "SplitSigmas节点如何处理sigma值？",
+        "answer": "SplitSigmas节点根据指定的步长索引将输入sigma值划分为两个子集，sigmas1和sigmas2，用于更复杂的采样工作流程。"
+    },
+    {
+        "question": "SplitSigmas节点中的'sigmas'参数是什么？",
+        "answer": "参数'sigmas'是一组对采样过程至关重要的值，决定了采样算法的初始条件，因此是sigma值划分的主要输入。"
+    },
+    {
+        "question": "SplitSigmas节点的'step'参数作用是什么？",
+        "answer": "参数'step'定义了sigma值被分割的索引，影响输出的结构，即在哪个点sigma值被分割，提供了在处理sigma值时的灵活性。"
+    },
+    {
+        "question": "SplitSigmas节点的输出sigmas1和sigmas2分别代表什么？",
+        "answer": "sigmas1包含了直到指定步长的第一部分sigma值，sigmas2则包含了指定步长之后剩余的sigma值，二者作为节点的输出，用于特定的采样技术或进一步分析。"
+    },
+    {
+        "question": "在SplitSigmas节点中如何获取sigma值的两个子集？",
+        "answer": "使用类SplitSigmas的get_sigmas方法，通过输入sigma值和步长索引，可以将sigma值划分为sigmas1和sigmas2两个子集。"
+    },
+    {
+        "question": "哪些节点可以处理多个sigma值组为其输出提供采样细节？",
+        "answer": "SplitSigmas节点可以接收一组sigma值，并根据指定的步长，将其划分为两个子集用于提供采样细节，适用于需要分阶段处理的定制采样流程。"
+    },
+    {
+        "question": "对于需要按步骤对sigma值进行处理的采样技术，应使用哪个节点？",
+        "answer": "应使用SplitSigmas节点，它能根据指定的步长，将sigma值分阶段处理，适用于按步骤需要不同sigma组的采样算法。"
+    },
+    {
+        "question": "在ComfyUI中如何实现sigma值的动态划分？",
+        "answer": "通过使用SplitSigmas节点和其'step'参数，可以根据需要动态变化的步长索引，实现sigma值的划分，便于采样过程中的动态调整和优化。"
+    }
+]

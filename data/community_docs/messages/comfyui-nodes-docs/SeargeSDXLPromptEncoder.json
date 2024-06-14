@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SeargeSDXLPromptEncoder 主要作用是什么？",
+        "answer": "SeargeSDXLPromptEncoder 是一个用于处理和编码文本输入的节点，主要应用于 ComfyUI 平台，它的目标是将提示转换为结构化格式，作为生成模型的条件数据。"
+    },
+    {
+        "question": "SeargeSDXLPromptEncoder 如何处理正面全局提示？",
+        "answer": "SeargeSDXLPromptEncoder 通过参数 'pos_g' 接受正面全局提示，这对于影响生成内容的整体主题和方向至关重要。"
+    },
+    {
+        "question": "SeargeSDXLPromptEncoder 的哪个参数用于定义基础的输入空间尺寸？",
+        "answer": "SeargeSDXLPromptEncoder 使用 'base_width' 和 'base_height' 参数来定义基础输入空间尺寸，这对生成内容的范围和分辨率有直接影响。"
+    },
+    {
+        "question": "哪些参数用于 SeargeSDXLPromptEncoder 中的文本提示编码以避免不希望出现的要素？",
+        "answer": "SeargeSDXLPromptEncoder 通过 'neg_g'（负面全局提示）、'neg_l'（负面局部提示）和 'neg_r'（负面细化提示）参数来排除生成内容中不希望出现的要素，同时 'neg_ascore' 参数有助于减少不希望的审美元素对生成内容的影响。"
+    },
+    {
+        "question": "SeargeSDXLPromptEncoder 节点如何处理正面细化提示？",
+        "answer": "SeargeSDXLPromptEncoder 通过 'pos_r' 参数处理正面细化提示，用于微调生成过程，以确保输出与期望的审美和主题目标紧密对齐。"
+    },
+    {
+        "question": "SeargeSDXLPromptEncoder 的输出种类有哪些？",
+        "answer": "SeargeSDXLPromptEncoder 的输出包括 'base_positive'、'base_negative'、'refiner_positive' 和 'refiner_negative'，每种输出类型都包含从正面和负面提示派生的条件数据，适用于指导和细化生成模型的输出。"
+    },
+    {
+        "question": "SeargeSDXLPromptEncoder 节点优先使用哪种处理器类型？",
+        "answer": "SeargeSDXLPromptEncoder 节点的运行优先使用 CPU 类型基础设施，这意味着它更适合在 CPU 上执行其数据处理和编码任务。"
+    }
+]

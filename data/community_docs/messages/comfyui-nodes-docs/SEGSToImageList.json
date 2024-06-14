@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SEGSToImageList节点在ComfyUI的哪个类别下？",
+        "answer": "SEGSToImageList节点属于ComfyUI的ImpactPack/Util类别，用于将分割数据转换为图像张量列表。"
+    },
+    {
+        "question": "什么参数是SEGSToImageList节点处理分割数据所必需的？",
+        "answer": "SEGSToImageList节点需要'segs'参数，这是节点处理的分割数据集合，直接影响输出图像列表的内容和结构。"
+    },
+    {
+        "question": "SEGSToImageList节点如何处理没有可用分割图像的情况？",
+        "answer": "SEGSToImageList节点可通过'fallback_image_opt'可选参数提供一个默认图像，以确保在没有分割图像时仍能产生一致的输出。"
+    },
+    {
+        "question": "在ComfyUI中，哪些节点可以将分割数据转换为图像张量列表？",
+        "answer": "SEGSToImageList节点是ComfyUI中用于将分割数据转换为图像张量列表的节点。"
+    },
+    {
+        "question": "SEGSToImageList节点的'fallback_image_opt'参数在什么情况下有用？",
+        "answer": "当没有可用的分割图像时，'fallback_image_opt'参数提供一个默认图像，确保SEGSToImageList节点能够产生一致的图像张量列表输出。"
+    },
+    {
+        "question": "SEGSToImageList节点输出的'results'是什么类型的值？",
+        "answer": "SEGSToImageList节点输出的'results'是一个图像张量列表，这些张量是从分割数据派生的，对于下游图像处理任务意义重大。"
+    },
+    {
+        "question": "SEGSToImageList节点在没有提供的分割数据时会输出什么？",
+        "answer": "如果没有提供的分割数据，但'fallback_image_opt'参数被指定，SEGSToImageList节点将会输出基于默认图像处理后生成的图像张量列表。如果两者都未提供，将输出一个空的图像张量列表。"
+    }
+]

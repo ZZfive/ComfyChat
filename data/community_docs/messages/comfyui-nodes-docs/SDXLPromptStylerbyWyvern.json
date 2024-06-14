@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SDXLPromptStylerbyWyvern是什么类型的节点，它属于哪个类别？",
+        "answer": "SDXLPromptStylerbyWyvern是ComfyUI中的一个自定义节点，属于'Style Prompts'类别，用于基于预定义模板对提示进行样式化。"
+    },
+    {
+        "question": "SDXLPromptStylerbyWyvern节点的输入参数有哪些，它们的主要作用是什么？",
+        "answer": "SDXLPromptStylerbyWyvern的输入参数包括'text_positive'(正面文本输入)、'text_negative'(负面文本输入)和'style'(样式)，'text_positive'和'text_negative'用于提供内容基础，而'style'则决定模板选择和文本的格式化方式。可选参数'log_prompt'用于记录样式化过程。"
+    },
+    {
+        "question": "SDXLPromptStylerbyWyvern节点如何处理正面和负面文本输入？",
+        "answer": "此节点接收正面和负面文本输入，将它们与选定的风格相结合，从而产出格式化后的输出。正面文本奠定提示基调，负面文本补充信息，共同创建一个连贯的主题一致的输出。"
+    },
+    {
+        "question": "启用'log_prompt'选项后，SDXLPromptStylerbyWyvern节点提供哪些信息？",
+        "answer": "启用'log_prompt'后，节点将输出风格的选择、输入的正面和负面文本内容、以及处理后的正面和负面提示文本，有助于调试和确认结果的一致性。"
+    },
+    {
+        "question": "在SDXLPromptStylerbyWyvern中，风格参数'style'是如何影响文本的最终格式化结果的？",
+        "answer": "'style'参数指导模板的选择，从而决定正面和负面文本的格式化风格，确保内容以用户期望的方式呈现，同时保持整体美学和主题的连贯性。"
+    },
+    {
+        "question": "SDXLPromptStylerbyWyvern节点的输出包括什么信息，它们的用途是什么？",
+        "answer": "输出包括'positive_prompt_text_g'和'negative_prompt_text_g'，它们分别是经过样式化的正面和负面提示文本。这些输出基于输入的文本和选定的风格模板，用于增强内容显示，以便于进一步处理或展示。"
+    },
+    {
+        "question": "SDXLPromptStylerbyWyvern节点的代码中，'INFRA_TYPE'属性设置为什么，这表明什么？",
+        "answer": "文档中未明确列出'INFRA_TYPE'属性，但按照ComfyUI的惯例，'INFRA_TYPE'通常被设定为'CPU'，这表明进行样式化处理不需要GPU加速，整个流程可以由CPU高效完成。"
+    }
+]

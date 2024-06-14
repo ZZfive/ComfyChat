@@ -1,0 +1,30 @@
+[
+    {
+        "question": "IPAdapterEncoder节点的目的是什么？",
+        "answer": "IPAdapterEncoder节点的目的在于使用预训练的CLIPVision模型处理和编码图像数据，生成捕获图像语义信息的嵌入。"
+    },
+    {
+        "question": "IPAdapterEncoder节点如何处理条件和非条件嵌入？",
+        "answer": "通过权重参数和掩码的存在，IPAdapterEncoder节点处理条件嵌入，这允许微调图像内容对生成的嵌入的影响，并生成非条件嵌入作为参考点。"
+    },
+    {
+        "question": "ipadapter参数在IPAdapterEncoder中的作用是什么？",
+        "answer": "ipadapter参数提供用于编码图像数据的模型信息，是节点操作的关键，确保节点可以访问生成嵌入所需的模型。"
+    },
+    {
+        "question": "哪些参数对IPAdapterEncoder的图像编码是必需的？",
+        "answer": "必需的参数包括ipadapter（包含模型信息）、image（输入图像张量）及weight（权重），影响嵌入生成。"
+    },
+    {
+        "question": "IPAdapterEncoder中mask的可选项有何作用？",
+        "answer": "可选的mask参数允许在编码前对图像应用空间掩码，有助于聚焦图像特定区域或排除无关区域，优化嵌入生成的质量。"
+    },
+    {
+        "question": "IPAdapterEncoder生成的pos_embed和neg_embed代表什么？",
+        "answer": "pos_embed输出代表条件嵌入，与图像数据的语义相关；neg_embed则提供非条件嵌入，可作为基线或与条件嵌入进行比较。"
+    },
+    {
+        "question": "IPAdapterEncoder的重量(weight)参数具体调整什么？",
+        "answer": "重量参数允许用户调整图像内容对生成嵌入的影响程度，通过缩放嵌入，强调或淡化图像数据的某些特征。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SetLatentNoiseMask节点的功能是什么？",
+        "answer": "SetLatentNoiseMask节点是在ComfyUI中用于将噪声掩码应用于潜在样本集合的自定义节点，特别适用于修复过程中的选择性操作，以生成连贯且准确的视觉输出。"
+    },
+    {
+        "question": "哪些输入参数对SetLatentNoiseMask节点操作至关重要？",
+        "answer": "对SetLatentNoiseMask节点至关重要的输入参数是'samples'和'mask'，它们分别定义了要通过噪声掩码修改的潜在表示和需要被掩蔽的潜在样本区域。"
+    },
+    {
+        "question": "SetLatentNoiseMask节点中'samples'参数的类型和作用是什么？",
+        "answer": "SetLatentNoiseMask节点的'samples'参数类型是Comfy dtype中的LATENT，Python dtype为Dict[str, torch.Tensor]，它用于标识将经历噪声掩码处理的数据，直接影响节点的执行。"
+    },
+    {
+        "question": "SetLatentNoiseMask中'mask'参数的兼容性和功能是什么？",
+        "answer": "SetLatentNoiseMask节点的'mask'参数的Comfy dtype为MASK，Python dtype为torch.Tensor，它的兼容性必需与潜在样本的形状相配，主要功能是定义修复过程中需要修改的部分。"
+    },
+    {
+        "question": "何为SetLatentNoiseMask节点的输出，它包含什么数据类型？",
+        "answer": "SetLatentNoiseMask节点的输出是已应用噪声掩码的潜在样本，即'modified_samples'，其数据类型在Comfy中为LATENT，Python dtype为Dict[str, torch.Tensor]，用于后续修复工作流程。"
+    },
+    {
+        "question": "运行SetLatentNoiseMask节点的基础设施类型是什么？",
+        "answer": "运行SetLatentNoiseMask节点推荐的基础设施类型是CPU，这是根据节点的使用提示来确定的。"
+    },
+    {
+        "question": "在图像修复中，如何使用SetLatentNoiseMask节点来修改特定区域？",
+        "answer": "在图像修复流程中，通过应用SetLatentNoiseMask节点，可以根据提供的掩码来选择性操作潜在空间表示，确保仅修改掩蔽区域，从而生成更精确的修复结果。"
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "question": "SV3D_Conditioning节点的作用是什么？",
+        "answer": "SV3D_Conditioning节点处理和编码视觉与空间信息，生成3D条件数据。它从图像、视觉模型和空间参数中产生条件信号，用于3D模型生成任务。"
+    },
+    {
+        "question": "什么参数对于SV3D_Conditioning节点编码图像表示至关重要？",
+        "answer": "clip_vision参数对于SV3D_Conditioning节点至关重要，它提供了用于编码图像的视觉模型，直接影响编码图像表示的质量和准确性。"
+    },
+    {
+        "question": "SV3D_Conditioning节点中的init_image代表什么？",
+        "answer": "init_image参数是节点的关键输入，代表将用于调节3D模型的初始图像，定义输出3D模型的视觉方面，必须精心选择。"
+    },
+    {
+        "question": "使用SV3D_Conditioning节点时，可选的'video_frames'参数有何作用？",
+        "answer": "video_frames参数可选，用于确定要为视频输出生成的帧数，可根据具体的3D模型生成任务的要求进行调整。"
+    },
+    {
+        "question": "哪些节点可以处理3D模型的视觉和空间信息并生成条件信号？",
+        "answer": "SV3D_Conditioning节点可以处理和编码3D模型的视觉与空间信息，生成用于3D模型生成任务的条件信号。"
+    },
+    {
+        "question": "SV3D_Conditioning节点的'positive'输出包含什么信息？",
+        "answer": "positive输出由编码后的图像嵌入和空间参数组成，作为3D模型生成的正向调节信号，直接帮助塑造根据输入图像和空间上下文的3D模型。"
+    },
+    {
+        "question": "在调整3D模型观察角度时，SV3D_Conditioning节点提供了哪个参数？",
+        "answer": "elevation参数提供了观察3D模型的垂直角度，允许调整观察角度，实现最终输出中所需视角。"
+    },
+    {
+        "question": "在哪里可以找到SV3D_Conditioning节点的源代码？",
+        "answer": "你可以访问 https://github.com/comfyanonymous/ComfyUI/ 这个仓库的页面找到SV3D_Conditioning节点的源代码。"
+    },
+    {
+        "question": "SV3D_Conditioning节点在生成3D模型时如何利用VAE参数？",
+        "answer": "vae参数表示变分自编码器（VAE），用于将像素数据编码到潜在空间，转换过程对于创建可用于调节3D模型生成的丰富特征表示是关键。"
+    },
+    {
+        "question": "SV3D_Conditioning节点的'latent'输出代表什么？",
+        "answer": "latent输出代表放大图像的潜在空间表示，是3D模型生成的关键组成部分，包含了输入图像的视觉特征。"
+    }
+]

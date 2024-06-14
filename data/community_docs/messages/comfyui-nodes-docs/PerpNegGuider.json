@@ -1,0 +1,30 @@
+[
+    {
+        "question": "PerpNegGuider是什么?",
+        "answer": "PerpNegGuider是ComfyUI中一个用于指导图像生成过程的自定义节点，通过正向、负向和空条件来影响模型的输出。"
+    },
+    {
+        "question": "在ComfyUI中，PerpNegGuider如何通过正向条件引导生成过程？",
+        "answer": "PerpNegGuider通过positive输入参数关注生成过程中的正向方面，帮助塑造期望的图像品质。"
+    },
+    {
+        "question": "PerpNegGuider节点中的负向条件在图像生成中起什么作用？",
+        "answer": "PerpNegGuider的neg_scale参数调整negative条件的影响程度，从而在生成中有效抑制不希望出现的特征。"
+    },
+    {
+        "question": "PerpNegGuider中设置空条件的基本目的是什么？",
+        "answer": "空条件empty_conditioning在PerpNegGuider中主要用于为生成过程设立一个中性的基线，以便更有效地引导正向和负向条件。"
+    },
+    {
+        "question": "PerpNegGuider节点的cfg参数和neg_scale参数的作用分别是什么？",
+        "answer": "cfg参数调整条件对生成输出的影响，而neg_scale参数则控制neg_scale对负向调节影响的微调。这两个参数增强了引导的灵活性。"
+    },
+    {
+        "question": "在PerpNegGuider中，哪种类型的输入被用来定义模型将与之交互的生成模型？",
+        "answer": "在PerpNegGuider中，model输入被用来定义生成模型，它是节点功能的基础，使得根据指定条件引导生成过程成为可能。"
+    },
+    {
+        "question": "PerpNegGuider节点输出的类型是什么，为什么它的存在重要？",
+        "answer": "PerpNegGuider的输出类型为guider，它是一个配置好的引导对象，对于引导模型产生符合指定指导的输出至关重要，其类型为GUIDER。"
+    }
+]

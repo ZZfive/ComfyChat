@@ -1,0 +1,30 @@
+[
+    {
+        "question": "KfSinusoidalAdjustPhase是什么类型的节点?",
+        "answer": "KfSinusoidalAdjustPhase是ComfyUI-Keyframed仓库中的一部分，属于ROOT_CATEGORY类别，用于调整正弦曲线的相位而不改变其基本特征，如波长和振幅。"
+    },
+    {
+        "question": "KfSinusoidalAdjustPhase节点的输入类型有哪些?",
+        "answer": "KfSinusoidalAdjustPhase节点包括必要的曲线输入（类型为SINUSOIDAL_CURVE）和可选的调整输入（类型为FLOAT），分别用于定义和调整正弦波的相位。"
+    },
+    {
+        "question": "曲线输入在KfSinusoidalAdjustPhase节点中起到什么作用?",
+        "answer": "曲线输入是需要的，它定义了将要被节点调整相位的基础正弦曲线，用于后续的相位值修改。"
+    },
+    {
+        "question": "调整参数在KfSinusoidalAdjustPhase节点中的功能是什么?",
+        "answer": "调整参数会影响应用于输入曲线的相位移位程度，用于调整波的时机，具体通过浮点值来量化调整强度。"
+    },
+    {
+        "question": "KfSinusoidalAdjustPhase节点产生哪些输出类型?",
+        "answer": "该节点输出包括修改后的正弦曲线（类型为KEYFRAMED_CURVE和SINUSOIDAL_CURVE），其中KEYFRAMED_CURVE表示相位调整后的曲线，而SINUSOIDAL_CURVE提供了一致的相位调整波表示。"
+    },
+    {
+        "question": "KfSinusoidalAdjustPhase的代码中，phase如何被调整的?",
+        "answer": "在KfSinusoidalAdjustPhase的main函数中，phase通过将曲线原始的phase值与调整参数相加来实现调整，从而实现了相位的动态变化而不改变波的其他属性。"
+    },
+    {
+        "question": "哪些输入类型是KfSinusoidalAdjustPhase节点必须的?",
+        "answer": "KfSinusoidalAdjustPhase节点必须的输入类型为SINUSOIDAL_CURVE，即输入曲线参数，因为它定义了基础的正弦曲线，是相位调整操作的起点。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SVD_img2vid_Conditioning节点的功能是什么？",
+        "answer": "SVD_img2vid_Conditioning节点用于处理和调节视频帧以进行生成。它能对初始图像进行编码并缩放至所需尺寸，然后根据指定的应用增强，为视频帧生成正面和负面的调节样本，以及潜在表示。"
+    },
+    {
+        "question": "哪些是SVD_img2vid_Conditioning的必填输入参数？",
+        "answer": "SVD_img2vid_Conditioning的必填输入参数包括clip_vision、init_image和vae。这些参数分别用于图像的初始编码、视频生成的基础图像以及将放大的像素信息编码到潜在空间。"
+    },
+    {
+        "question": "SVD_img2vid_Conditioning的init_image参数的作用是什么？",
+        "answer": "init_image参数是视频生成过程的起点，被编码和放大以形成视频帧基础的图像。"
+    },
+    {
+        "question": "SVD_img2vid_Conditioning对于视频输出提供了哪些类型的信息？",
+        "answer": "SVD_img2vid_Conditioning提供了正面、负面调节样本和潜在表示的输出。正面输出用于引导视频生成过程，负面输出用于完善视频生成，潜在输出包含视频帧的编码潜在表示。"
+    },
+    {
+        "question": "SVD_img2vid_Conditioning节点中的augmentation_level参数控制什么？",
+        "answer": "augmentation_level参数控制应用于放大像素的随机扰动的程度，为视频帧添加可变性，其数据类型为float。"
+    },
+    {
+        "question": "SVD_img2vid_Conditioning节点的VIDEO_FRAMES参数影响什么？",
+        "answer": "video_frames参数指定要为视频生成的总帧数，直接影响视频的长度。"
+    },
+    {
+        "question": "SVD_img2vid_Conditioning的fps参数和motion_bucket_id参数在视频生成中起什么作用？",
+        "answer": "fps参数（帧率）决定了生成视频的播放速度，motion_bucket_id参数用于选择视频帧的特定运动特性，影响动画的风格。"
+    }
+]

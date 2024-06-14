@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Mask_Threshold_Region 是什么节点？",
+        "answer": "WAS_Mask_Threshold_Region 是 ComfyUI 中 WAS Suite/Image/Masking 类别下的一个节点，用于通过阈值处理图像掩码来区分图像内的各个区域。"
+    },
+    {
+        "question": "WAS_Mask_Threshold_Region 节点如何处理图像分割？",
+        "answer": "WAS_Mask_Threshold_Region 节点使用黑色和白色阈值创建一个二进制掩码，根据像素强度分割图像，适用于图像分割和目标检测任务。"
+    },
+    {
+        "question": "节点如何处理输入掩码参数？",
+        "answer": "输入掩码参数是节点操作的主要来源，用于生成图像内的阈值区域，是节点功能的核心基础，格式为 torch.Tensor。"
+    },
+    {
+        "question": "black_threshold 参数的作用是什么？",
+        "answer": "black_threshold 参数定义了像素被认为属于黑色区域的强度值下限，对图像分割的确定至关重要，数据类型为整数。"
+    },
+    {
+        "question": "white_threshold 参数对节点有何影响？",
+        "answer": "white_threshold 参数用于定义像素被认为属于白色区域的强度值上限，对于控制分割过程和确定图像内的白色区域是关键参数。"
+    },
+    {
+        "question": "输出类型是什么，这对节点功能意味着什么？",
+        "answer": "输出类型为 MASKS，表示应用阈值处理后的图像掩码，意味着经过处理的图像分段结果将使用 torch.Tensor 格式输出。"
+    },
+    {
+        "question": "WAS_Mask_Threshold_Region 节点的处理效率依赖于什么类型的硬件？",
+        "answer": "节点依赖于 CPU 进行处理，指定的基础设施类型为 CPU，表明节点处理在 CPU 上进行。"
+    }
+]

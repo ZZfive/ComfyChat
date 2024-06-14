@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Mask_Erode_Region 类的作用是什么？",
+        "answer": "WAS_Mask_Erode_Region 类是WAS Node Suite的一部分，用于侵蚀输入掩码的边界区域，通过迭代减小掩码大小，从而达到平滑和明确掩码边界的目的。"
+    },
+    {
+        "question": "erode_region 方法如何处理输入掩码？",
+        "answer": "erode_region 方法通过应用腐蚀效果来修剪掩码区域的边界，迭代参数控制腐蚀的程度，适用于图像处理任务中的去噪或隔离图像区域。"
+    },
+    {
+        "question": "哪种输入类型对 WAS_Mask_Erode_Region 执行至关重要？",
+        "answer": "masks 输入类型对 WAS_Mask_Erode_Region 的执行至关重要，定义了将要经历腐蚀过程的图像区域，并决定了节点的执行结果。"
+    },
+    {
+        "question": "迭代次数参数（iterations）在 WAS_Mask_Erode_Region 中的作用是什么？",
+        "answer": "iterations 参数控制应用于输入掩码的腐蚀效果的程度，更高的值会导致更明显的腐蚀效果，影响掩码区域的大小减少程度，可用于微调腐蚀强度。"
+    },
+    {
+        "question": "WAS_Mask_Erode_Region 的处理结果以什么格式输出？",
+        "answer": "WAS_Mask_Erode_Region 的处理结果输出为 MASKS，反映了应用腐蚀过程后的最终掩码状态，可以用于后续工作流程中的进一步处理或分析。"
+    },
+    {
+        "question": "当输入掩码的维度大于3时，WAS_Mask_Erode_Region 如何处理？",
+        "answer": "当输入掩码的维度大于3时，WAS_Mask_Erode_Region 会对每个掩码单独处理，通过侵蚀每个掩码的边界区域来生成一个新的 tensors 列表，最终将这些 tensors 合并为一个 single tensor。"
+    },
+    {
+        "question": "除了'CPU'之外，WAS_Mask_Erode_Region 还能在什么基础设施类型上运行？",
+        "answer": "WAS_Mask_Erode_Region 要求在 CPU 上运行，文档中未提及其他的基础设施类型。"
+    }
+]

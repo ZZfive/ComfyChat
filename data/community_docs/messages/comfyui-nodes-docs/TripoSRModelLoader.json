@@ -1,0 +1,30 @@
+[
+    {
+        "question": "TripoSRModelLoader节点的作用是什么？",
+        "answer": "TripoSRModelLoader是一个ComfyUI中的节点，用于高效管理和初始化TripoSR模型，确保模型根据指定配置和资源正确加载并使用。"
+    },
+    {
+        "question": "TripoSRModelLoader的输入参数有哪些？",
+        "answer": "TripoSRModelLoader的输入参数包括必要的'model'，指定模型检查点的路径，以及可选的'chunk_size'，用于控制模型的内存使用和批处理大小优化。"
+    },
+    {
+        "question": "如何使用TripoSRModelLoader加载特定配置的模型？",
+        "answer": "通过指定'model'参数的值，可以加载特定配置的TripoSR模型，该参数直接影响模型初始化和权重配置，是TripoSRModelLoader操作的核心。"
+    },
+    {
+        "question": "TripoSRModelLoader节点的输出代表什么？",
+        "answer": "TripoSRModelLoader节点的输出提供了一个初始化并准备使用的TripoSR模型，类型为'torch.nn.Module'，封装了模型的全部功能，支持超分辨率任务的执行。"
+    },
+    {
+        "question": "哪些模型可以用来提升图像分辨率？",
+        "answer": "TripoSRModelLoader可用来加载和使用由ComfyUI-Flowty-TripoSR提供的TripoSR模型，专门针对图像超分辨率任务进行优化。"
+    },
+    {
+        "question": "使用TripoSRModelLoader加载模型时，可以调整哪些参数以优化性能？",
+        "answer": "加载模型时，可以通过设置'chunk_size'来优化模型的内存使用，平衡性能和资源消耗，适用于处理大规模数据时的内存管理。"
+    },
+    {
+        "question": "TripoSRModelLoader的初始化模型实例存储在哪里？",
+        "answer": "TripoSRModelLoader中初始化的模型实例存储在成员变量'self.initialized_model'中，确保模型在需要时可用，无需重复加载。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "InstantIDModelLoader 是什么类型的节点？",
+        "answer": "InstantIDModelLoader 是 ComfyUI 的 InstantID 类别下的一个节点，专门用于高效加载和管理 InstantID 特定模型。"
+    },
+    {
+        "question": "InstantIDModelLoader 节点的输入类型是什么？",
+        "answer": "InstantIDModelLoader 节点的输入类型为 instantid_file，必须输入，用于指定加载的确切 InstantID 模型文件，以确定后续操作中使用的模型的身份和版本。"
+    },
+    {
+        "question": "在 ComfyUI 中，InstantIDModelLoader 节点如何处理模型文件路径？",
+        "answer": "InstantIDModelLoader 通过 instantid_file 参数接收路径，使用 folder_paths.get_full_path 函数处理该路径，确保检索并准备了适当的模型以供系统内使用。"
+    },
+    {
+        "question": "ComfyUI 中的 InstantIDModelLoader 节点有什么输出？",
+        "answer": "InstantIDModelLoader 节点的输出类型为 INSTANTID，代表加载的 InstantID 模型，这是系统执行与模型功能相关任务的至关重要的输出。"
+    },
+    {
+        "question": "InstantIDModelLoader 节点的 Comfy 数据类型是什么？",
+        "answer": "InstantIDModelLoader 在 ComfyUI 中的输入数据类型为 STRING，用于 instantid_file，而输出类型 INSTANTID 的数据类型为 DICTIONARY。"
+    },
+    {
+        "question": "在其源代码中，InstantIDModelLoader 如何处理模型加载？",
+        "answer": "在 InstantIDModelLoader 的源代码中，节点通过 load_model 函数加载模型，该函数利用 comfy.utils.load_torch_file 加载模型，并根据文件的 .safetensors 扩展进行特殊处理。"
+    },
+    {
+        "question": "如何在使用 InstantIDModelLoader 节点时优化计算资源？",
+        "answer": "InstantIDModelLoader 节点建议使用 CPU 作为 infra 类型进行加载和管理 InstantID 特定模型，以优化计算资源的使用。"
+    }
+]

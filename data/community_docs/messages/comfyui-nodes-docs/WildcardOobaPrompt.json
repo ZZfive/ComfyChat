@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WildcardOobaPrompt节点有什么作用？",
+        "answer": "WildcardOobaPrompt节点的作用是为AI应用动态生成和处理提示，通过替换输入提示中的通配符和整合外部API生成的响应，为AI模型提供丰富多样的输入，以产生更加细腻的输出。"
+    },
+    {
+        "question": "WildcardOobaPrompt节点中的'input_prompt'参数是做什么的？",
+        "answer": "'input_prompt'参数是一个包含初始文本字符串的输入，用于作为通配符替换的基础及后续AI处理的起点，直接影响生成提示的多样性和创造性。"
+    },
+    {
+        "question": "如何确保WildcardOobaPrompt节点生成的响应是可复现的？",
+        "answer": "使用'seed'参数初始化随机数生成器，确保即便经过通配符替换过程，结果也能保持一致，便于调试和测试节点功能。"
+    },
+    {
+        "question": "在管理多个并发提示时，WildcardOobaPrompt节点如何定位具体提示？",
+        "answer": "使用'unique_id'参数作为提示中的唯一标识符，帮助节点在处理多个并发提示时准确定位和更新所需的特定提示。"
+    },
+    {
+        "question": "what is 'text' output parameter in WildcardOobaPrompt？",
+        "answer": "The 'text' output parameter represents the final processed prompt after all wildcards have been replaced and the AI response has been integrated, directly affecting the quality and characteristics of the generated content by the AI model."
+    },
+    {
+        "question": "哪些节点可以动态生成和处理AI提示？",
+        "answer": "WildcardOobaPrompt节点能够动态生成和处理AI提示，通过替换通配符和整合外部API，为AI模型输入丰富多样的提示，有助于产生细腻的输出。"
+    },
+    {
+        "question": "WildcardOobaPrompt是如何处理输入提示中的通配符的？",
+        "answer": "WildcardOobaPrompt使用正则表达式匹配并替换输入提示中的通配符，随机选择对应条目，而后通过调用OobaPrompt的api_request方法与外部API交互，替换特定模式的标识符，以生成最终的文本输出。"
+    }
+]

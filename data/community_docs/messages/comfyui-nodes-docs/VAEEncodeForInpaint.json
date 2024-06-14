@@ -1,0 +1,30 @@
+[
+    {
+        "question": "VAEEncodeForInpaint节点的'encode'方法有什么作用？",
+        "answer": "VAEEncodeForInpaint节点的'encode'方法将图像像素转换为修复任务所需的潜在空间表示。它通过变分自编码器（VAE）对图像的遮罩区域进行编码，以便于进行生成或修改，这是在修复和编辑图像过程中保持非遮罩区域原始信息完整性的关键步骤。"
+    },
+    {
+        "question": "哪些参数是VAEEncodeForInpaint节点的必需输入？",
+        "answer": "VAEEncodeForInpaint节点所需的必需输入包括：'pixels'（输入图像数据），'vae'（变分自编码器模型）和'mask'（定义需要修复的图像区域）。"
+    },
+    {
+        "question": "在ComfyUI中，VAEEncodeForInpaint节点的'vae'参数是什么数据类型？",
+        "answer": "在ComfyUI中，VAEEncodeForInpaint节点的'vae'参数数据类型为VAE，表示用于编码图像数据的变分自编码器模型。"
+    },
+    {
+        "question": "为什么参数'mask'在进行图像修复时至关重要？",
+        "answer": "参数'mask'在图像修复过程中至关重要，因为它定义了图像中哪些部分需要修复，是一个二进制张量，用于选择性编码图像区域，确保只有指定的遮罩区域被转换为潜在空间。"
+    },
+    {
+        "question": "A custom node in ComfyUI is designed to help in the inpainting process. What is the node called and what does it convert images into for this task?",
+        "answer": "The node is called 'VAEEncodeForInpaint' and it converts image pixels into latent space representations suitable for inpainting tasks by utilizing a Variational Autoencoder (VAE) for the masked areas of the image."
+    },
+    {
+        "question": "VAEEncodeForInpaint 对'grow_mask_by'参数如何操作以助力修复区域的处理？",
+        "answer": "参数'grow_mask_by'允许通过指定的像素数扩展遮罩区域，这对于确保遮罩和非遮罩区域之间的过渡平滑且定义明确非常必要，它增加了修复区域的连通性和一致性。"
+    },
+    {
+        "question": "VAEEncodeForInpaint节点的主要输出是什么？",
+        "answer": "VAEEncodeForInpaint节点的两个主要输出是'samples'和'noise_mask'。'samples'包含输入图像点在潜在空间的编码表示，这对于进一步处理或生成修复后的图像至关重要。'noise_mask'则是一个二进制张量，表示图像中已经被遮罩且准备进行修复的区域，这对于引导修复过程至关重要，确保只有预定义的区域被修改。"
+    }
+]

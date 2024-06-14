@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_SAM_Parameters节点在ComfyUI中的功能是什么？",
+        "answer": "WAS_SAM_Parameters节点在ComfyUI中被设计为处理图像掩蔽操作的输入数据，对点和标签进行格式化，以生成对后续掩蔽过程至关重要的参数，确保图像分割任务的准确性和效率。"
+    },
+    {
+        "question": "WAS_SAM_Parameters节点处理的输入数据类型有哪些？",
+        "answer": "WAS_SAM_Parameters节点主要处理两种类型的输入数据：'points'，即作为字符串包含一系列x和y坐标的点；'labels'，即与每个点相关的分类标签。"
+    },
+    {
+        "question": "'points'参数为什么对掩蔽过程如此重要？",
+        "answer": "'points'参数通过提供图像中需要关注的区域的坐标，直接影响掩蔽过程的准确性，帮助确定哪些部分应该被保留或被忽略。"
+    },
+    {
+        "question": "'labels'参数如何与'points'参数协同工作？",
+        "answer": "'labels'参数为'points'参数中的点分配分类标签，帮助在掩蔽过程中区分图像中不同类型的区域，对图像段进行分类和组织以实现更精确的图像分割。"
+    },
+    {
+        "question": "输出的'parameters'类型如何描述？",
+        "answer": "输出的'parameters'类型是一个封装了处理后的输入点和标签的字典，格式为与图像掩蔽过程要求兼容的形式，可直接用于下游掩蔽操作，数据类型为Dict[str, Union[np.ndarray, List[int]]]。"
+    },
+    {
+        "question": "在ComfyUI中，WAS_SAM_Parameters节点需要哪种基础设施类型来运行？",
+        "answer": "WAS_SAM_Parameters节点在使用时，其基础设施类型要求为CPU，意味着它在普通计算机的中央处理器上即可正常运行，无需GPU等加速硬件。"
+    },
+    {
+        "question": "WAS_SAM_Parameters节点的输入和输出数据类型在Python中的具体表示是什么？",
+        "answer": "在Python中，'points'和'labels'的输入数据类型为str，表示为字符串；而输出参数'parameters'的数据类型为Dict[str, Union[np.ndarray, List[int]]]，是一个包含numpy数组或整数列表的字典。"
+    }
+]

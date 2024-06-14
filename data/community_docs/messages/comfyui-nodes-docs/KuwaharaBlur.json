@@ -1,0 +1,30 @@
+[
+    {
+        "question": "KuwaharaBlur是什么类型的节点?",
+        "answer": "KuwaharaBlur是一个属于ComfyUI中postprocessing/Filters分类的自定义节点，专门用于对图像进行Kuwahara滤波处理，以平滑图像同时保留边缘细节。"
+    },
+    {
+        "question": "KuwaharaBlur节点能否作为输出节点使用?",
+        "answer": "KuwaharaBlur节点不是一个输出节点，它主要用于对图像应用Kuwahara滤波，处理后的结果需要与其他节点配合使用。"
+    },
+    {
+        "question": "KuwaharaBlur节点的输入参数有哪些?",
+        "answer": "KuwaharaBlur节点的输入参数包括图像（image）、模糊半径（blur_radius）和滤波方法（method），分别用于确定滤波器的处理对象、平滑程度和滤波类型。"
+    },
+    {
+        "question": "KuwaharaBlur节点的method参数支持哪些选项?",
+        "answer": "KuwaharaBlur节点的method参数支持'mean'和'gaussian'两个选项，分别代表均值滤波和平滑高斯滤波，影响输出图像的平滑效果。"
+    },
+    {
+        "question": "KuwaharaBlur如何处理输出图像?",
+        "answer": "KuwaharaBlur节点的输出图像类型为IMAGE，Python dtype为torch.Tensor，它是在应用Kuwahara滤波后得到的处理结果，保持了边缘清晰度的同时减小了图像噪声。"
+    },
+    {
+        "question": "哪些自定义节点可以用来对图像进行非线性滤波?",
+        "answer": "ComfyUI中的KuwaharaBlur自定义节点可以用来对图像进行非线性滤波，特别适用于减少图像噪声同时保留边缘细节。"
+    },
+    {
+        "question": "KuwaharaBlur在什么类型的硬件上运行效果最佳?",
+        "answer": "KuwaharaBlur节点的推荐运行硬件类型是CPU，适合在没有GPU加速的情况下进行图像的Kuwahara滤波处理。"
+    }
+]

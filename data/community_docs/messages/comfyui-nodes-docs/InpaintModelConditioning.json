@@ -1,0 +1,30 @@
+[
+    {
+        "question": "InpaintModelConditioning节点的功能是什么？",
+        "answer": "InpaintModelConditioning节点的'encode'方法用于通过将输入图像编码为潜在空间表示来处理图像，这是修复图像中缺失或遮罩区域的关键步骤。"
+    },
+    {
+        "question": "InpaintModelConditioning节点处理图像的流程是什么？",
+        "answer": "此节点会应用掩码到图像的像素并调整尺寸以确保与编码模型兼容，从而智能地处理图像条件，特别是在填充遮罩区域时。"
+    },
+    {
+        "question": "哪些输入是InpaintModelConditioning节点所必需的？",
+        "answer": "InpaintModelConditioning节点需要'positive'、'negative'、'pixels'、'vae'和'mask'作为输入，这些参数分别代表正向条件、负向条件、输入图像数据、变分自编码器模型和遮罩区域的标识。"
+    },
+    {
+        "question": "'positive'参数在InpaintModelConditioning节点中起什么作用？",
+        "answer": "'positive'参数定义了图像编码过程中的正向条件，决定了图像内容如何受到正向条件因素的影响，该参数类型为CONDITIONING，对应Python中的torch.Tensor。"
+    },
+    {
+        "question": "'vae'输入在InpaintModelConditioning中的具体作用是什么？",
+        "answer": "'vae'参数在节点中用于将图像编码为潜在表示，它是变分自编码器模型，用于图像的潜在空间转换，类型为VAE，对应Python中torch.nn.Module。"
+    },
+    {
+        "question": "InpaintModelConditioning节点的输出包括哪些类型？",
+        "answer": "此节点输出'positive'、'negative'和'latent'，分别表示正向条件信息、负向条件信息以及图像是潜在空间表示，类型分别为CONDITIONING、CONDITIONING和LATENT，对应Python中的tuple和dict类型。"
+    },
+    {
+        "question": "InpaintModelConditioning节点如何生成潜在空间表示？",
+        "answer": "在处理图像尺寸和应用掩码后，节点通过'vae'输入中的变分自编码器对调整后的图像数据进行编码，生成图像的潜在空间表示，并存储在'latent'输出中。"
+    }
+]

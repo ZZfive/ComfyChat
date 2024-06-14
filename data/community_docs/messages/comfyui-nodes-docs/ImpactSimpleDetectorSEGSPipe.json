@@ -1,0 +1,50 @@
+[
+    {
+        "question": "SimpleDetectorForEachPipe是ComfyUI中的哪个类别？",
+        "answer": "SimpleDetectorForEachPipe属于ComfyUI的ImpactPack/Detector类别，它通过预定义的检测管道处理图像，以提高检测精度。"
+    },
+    {
+        "question": "SimpleDetectorForEachPipe节点的主要作用是什么？",
+        "answer": "SimpleDetectorForEachPipe节点旨在通过预定义的检测管道处理图像，考虑各种参数以提高检测精度，专注于识别和定位图像中的物体。"
+    },
+    {
+        "question": "在SimpleDetectorForEachPipe节点中，哪个参数决定了检测质量的关键操作序列？",
+        "answer": "detailer_pipe参数定义了应用于输入图像进行检测的系列操作或管道，是节点操作质量的核心。"
+    },
+    {
+        "question": "什么参数控制SimpleDetectorForEachPipe中检测到的边界框的置信度水平？",
+        "answer": "bbox_threshold参数在SimpleDetectorForEachPipe中设定边界框被视为有效检测的置信度水平，过滤出误报。"
+    },
+    {
+        "question": "SimpleDetectorForEachPipe的bbox_dilation参数有何作用？",
+        "answer": "bbox_dilation参数在SimpleDetectorForEachPipe中控制边界框的膨胀量，以便调整检测到物体的大小，优化检测精度。"
+    },
+    {
+        "question": "哪些参数会影响SimpleDetectorForEachPipe图像检测的粒度？",
+        "answer": "drop_size参数在SimpleDetectorForEachPipe中指定网格单元的大小，影响检测的粒度，对确定检测结果的详细程度至关重要。"
+    },
+    {
+        "question": "在SimpleDetectorForEachPipe中，sub_threshold参数设置的目的何在？",
+        "answer": "sub_threshold参数在SimpleDetectorForEachPipe中设置了次要检测的阈值，通过关注图像中的较小或不太突出的物体来细化检测过程。"
+    },
+    {
+        "question": "哪些节点可以处理图像检测？",
+        "answer": "SimpleDetectorForEachPipe是ComfyUI中处理图像检测的节点之一，它通过预定义的检测管道专注于图像分析和物体识别。"
+    },
+    {
+        "question": "SimpleDetectorForEachPipe的输出类型是什么？",
+        "answer": "SimpleDetectorForEachPipe的输出类型为segs，代表检测到的分割区域，包含了检测过程的主要结果。"
+    },
+    {
+        "question": "SimpleDetectorForEachPipe中哪个参数用于定义SAM模型生成的掩码提示的阈值？",
+        "answer": "sam_mask_hint_threshold参数在SimpleDetectorForEachPipe中用于定义SAM模型生成的掩码提示阈值，控制分割掩码中的细节水平。"
+    },
+    {
+        "question": "SimpleDetectorForEachPipe中的crop_factor参数有何作用？",
+        "answer": "crop_factor参数在SimpleDetectorForEachPipe中用于确定考虑用于检测的图像部分，帮助检测过程集中在图像最相关的区域，提高效率和精度。"
+    },
+    {
+        "question": "如何使用SimpleDetectorForEachPipe节点？",
+        "answer": "使用SimpleDetectorForEachPipe节点需要输入detailer_pipe、image、bbox_threshold、bbox_dilation等参数，并可以在GPU上运行，该节点不支持图像批次处理。"
+    }
+]

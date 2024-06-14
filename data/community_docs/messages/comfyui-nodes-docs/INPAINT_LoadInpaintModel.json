@@ -1,0 +1,30 @@
+[
+    {
+        "question": "INPAINT_LoadInpaintModel 是什么类？",
+        "answer": "INPAINT_LoadInpaintModel 是一个类，专为加载修复模型设计，用于填充图像中缺失或损坏的部分。它简化了模型加载的复杂性，确保这一过程既流畅又可靠。"
+    },
+    {
+        "question": "LoadInpaintModel 类对图像处理有何影响？",
+        "answer": "LoadInpaintModel 类通过初始化修复过程，为图像操作提供基础，至关重要。它保证可以顺利加载用于图像修复的专业模型。"
+    },
+    {
+        "question": "model_name 参数在 LoadInpaintModel 中的作用是什么？",
+        "answer": "model_name 参数在 LoadInpaintModel 中标识要加载的特定修复模型，确定了将用于修复任务的神经网络架构，是节点执行的关键部分。"
+    },
+    {
+        "question": "LoadInpaintModel 输出的 'INPAINT_MODEL' 代表什么？",
+        "answer": "LoadInpaintModel 输出的 'INPAINT_MODEL' 表示已成功加载的修复模型，封装了模型的已训练权重和架构，可供后续图像处理任务使用。"
+    },
+    {
+        "question": "哪些设备类型适合运行 LoadInpaintModel？",
+        "answer": "LoadInpaintModel 适合在 CPU 类型的基础设施上运行。"
+    },
+    {
+        "question": "如何加载模型文件到 INPAINT_MODEL？",
+        "answer": "通过 LoadInpaintModel 的 load 方法，根据模型文件的扩展名 '.pt' 或其他格式，将模型的权重和架构加载到内存中，并转化为 torch.nn.Module 类型以备后续使用。"
+    },
+    {
+        "question": "LoadInpaintModel 在何种情形下会抛出运行时错误？",
+        "answer": "当尝试加载的模型文件未找到时，LoadInpaintModel 会抛出 RuntimeError，提示 'Model file not found: {model_name}'。"
+    }
+]

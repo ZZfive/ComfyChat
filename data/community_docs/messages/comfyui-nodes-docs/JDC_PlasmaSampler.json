@@ -1,0 +1,30 @@
+[
+    {
+        "question": "JDC_PlasmaSampler是什么?",
+        "answer": "JDC_PlasmaSampler是ComfyUI中的一个自定义节点，专为采样而设计，它从给定的模型生成样本，并通过如噪声、步数和去噪等参数控制采样过程，以产生质量好、细节丰富的图像。"
+    },
+    {
+        "question": "PlasmaSampler节点的关键输入有哪些?",
+        "answer": "PlasmaSampler节点的关键输入包括模型（model）、噪声种子（noise_seed）、步数（steps）、配置参数（cfg）、去噪（denoise）、潜在噪声（latent_noise）、采样器名称（sampler_name）、调度器（scheduler）、正（positive）和负（negative）参数以及潜在图像（latent_image）等。"
+    },
+    {
+        "question": "有哪些参数直接影响了PlasmaSampler生成图像的多样性?",
+        "answer": "cfg、latent_noise、sampler_name、distribution_type这些参数直接影响了PlasmaSampler生成图像的多样性，其中latent_noise在潜在空间中引入额外噪声，鼓励生成更多样化的样本，而分布类型参数影响生成样本的多样性和独特性。"
+    },
+    {
+        "question": "在PlasmaSampler中，去噪参数的作用是什么?",
+        "answer": "PlasmaSampler中的去噪参数（denoise）负责控制采样过程中应用的去噪水平，对于完善样本清晰度十分重要，需要平衡好噪声和信号之间的关系。"
+    },
+    {
+        "question": "PlasmaSampler节点支持哪些采样器和调度器?",
+        "answer": "PlasmaSampler节点可以使用由comfy.samplers.KSampler定义的采样器和调度器，它们分别通过sampler_name和scheduler参数确定，提供了多种采样方法和对采样过程参数随时间调整的策略。"
+    },
+    {
+        "question": "PlasmaSampler节点处理结果的表现形式是什么?",
+        "answer": "PlasmaSampler节点处理后的结果是潜在参数（latent），包含了输出样本，即采样过程的结果。这个输出被封装为了Comfy dtype的LATENT格式，包含了生成数据，与输入参数和模型约束一致。"
+    },
+    {
+        "question": "PlasmaSampler节点适合什么类型的基础设施?",
+        "answer": "PlasmaSampler节点最适合GPU类型的基础设施，为了提高采样过程的效率和效果，通常推荐使用GPU进行计算。"
+    }
+]

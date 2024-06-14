@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SeargeSDXLImage2ImageSampler是什么类型的节点？",
+        "answer": "SeargeSDXLImage2ImageSampler是Searge/_deprecated_/Sampling类别下的一个非输出节点，它通过复杂的采样过程增强图像，利用多个模型和参数来改进输出结果的美观度和质量。"
+    },
+    {
+        "question": "SeargeSDXLImage2ImageSampler节点的关键输入类型有哪些？",
+        "answer": "SeargeSDXLImage2ImageSampler节点的关键输入类型包括基础模型（base_model）、正向和负向条件输入（base_positive, base_negative）、细化模型和相应的条件输入（refiner_model, refiner_positive, refiner_negative）、待处理图像（image）、变分自编码器（vae）、噪声种子（noise_seed）、采样步骤（steps）、配置参数（cfg）、采样器名称（sampler_name）以及调度器（scheduler）。"
+    },
+    {
+        "question": "什么参数影响SeargeSDXLImage2ImageSampler细化模型在总采样过程中的参与程度？",
+        "answer": "基础比例（base_ratio）是一个浮点值，它影响了基础模型与细化模型之间的步骤分配比例，直接影响了最终图像中粗略与精细细节的平衡。"
+    },
+    {
+        "question": "在SeargeSDXLImage2ImageSampler节点中，去噪参数如何影响输出图像？",
+        "answer": "去噪参数（denoise）控制了采样过程中应用的降噪水平，直接影响到最终输出图像的清晰度和平滑度，帮助减轻图像中的噪音，提升视觉质量。"
+    },
+    {
+        "question": "哪些模型和步骤可能影响SeargeSDXLImage2ImageSampler节点图像采样的最终输出？",
+        "answer": "基础模型和细化模型分别在采样过程中扮演首要和精修的角色，结合去噪、基础比例、采样步骤和配置参数（如cfg、采样器名称、调度器）共同影响着图像采样的最终输出，确保图像质量和细节平滑且高精度。"
+    },
+    {
+        "question": "SeargeSDXLImage2ImageSampler节点的输出类型是什么？",
+        "answer": "SeargeSDXLImage2ImageSampler节点的输出类型是输出图像（output_image），代表了通过采样过程所生成的高质量、精细视觉效果图像，体现了节点对输入参数和条件的综合处理能力。"
+    },
+    {
+        "question": "SeargeSDXLImage2ImageSampler节点的使用最适合哪种硬件配置？",
+        "answer": "SeargeSDXLImage2ImageSampler建议使用GPU作为基础设施类型，以获得最佳的处理速度和性能，尤其是在处理图像采样和细化任务时。"
+    }
+]

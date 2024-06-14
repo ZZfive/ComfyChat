@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SamplerLCMCycle是什么类？",
+        "answer": "SamplerLCMCycle是一个KSampler的变体类，专门用于处理生成模型中的复杂采样任务，它位于'sampling/custom_sampling/samplers'类别下。"
+    },
+    {
+        "question": "SamplerLCMCycle如何影响生成模型的采样过程？",
+        "answer": "SamplerLCMCycle抽象了采样过程的复杂性，通过有效导航潜在空间以生成高质量样本，为用户提供一个可靠且灵活的模型推理工具，无需深入理解底层算法。"
+    },
+    {
+        "question": "euler_steps参数在SamplerLCMCycle中起什么作用？",
+        "answer": "euler_steps参数决定了采样过程中采取的欧拉步数，此参数设置对生成样本的质量和收敛性有直接影响，平衡计算成本和采样精度。"
+    },
+    {
+        "question": "lcm_steps参数在采样过程中的作用是什么？",
+        "answer": "lcm_steps参数指定了最小公倍数（LCM）步数，确保采样过程在不同维度上同步进行并实现步骤间一致过渡，对整体采样流程的一致性至关重要。"
+    },
+    {
+        "question": "SamplerLCMCycle的使用环境是什么？",
+        "answer": "SamplerLCMCycle节点的基础设施类型为CPU，意味着它在CPU上运行，这可能会影响其处理速度和效率。"
+    },
+    {
+        "question": "tweak_sigmas参数如何影响生成模型的采样结果？",
+        "answer": "tweak_sigmas是一个布尔标志，决定是否对sigma值进行调整，如果启用，可以完善采样过程并导致更细微的样本变化，影响生成图像的细节。"
+    },
+    {
+        "question": "如何调用SamplerLCMCycle以获取配置好的采样器？",
+        "answer": "通过调用SamplerLCMCycle类中的get_sampler方法并传入euler_steps、lcm_steps、tweak_sigmas和ancestral参数，可以生成一个配置好的采样器，准备在生成模型中使用以产生满足特定特征的样本。"
+    }
+]

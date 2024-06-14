@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LoadPromptsFromFile是什么类型的节点？",
+        "answer": "LoadPromptsFromFile是ComfyUI中的一个自定义节点，属于InspirePack/Prompt类别，用于从文件中读取并解析提示文本。"
+    },
+    {
+        "question": "LoadPromptsFromFile节点的'prompt_file'参数起什么作用？",
+        "answer": "'prompt_file'参数是一个字符串值，它指定包含提示信息的文本文件的相对路径，用于确定节点加载和处理提示的来源。"
+    },
+    {
+        "question": "LoadPromptsFromFile的输出类型是什么？",
+        "answer": "LoadPromptsFromFile的输出类型是'ZIPPED_PROMPT'，表现为一个元组列表，每个元组包含从提示文件中提取的正面文本、负面文本和文件名。"
+    },
+    {
+        "question": "在什么情况下使用LoadPromptsFromFile节点是有效的？",
+        "answer": "LoadPromptsFromFile节点最适合在需要从多个文本文件加载和结构化提示数据，用于模型训练或评估等下游任务的场合下使用。"
+    },
+    {
+        "question": "LoadPromptsFromFile节点的输入类型和输出数据在Python中如何表示？",
+        "answer": "输入类型'prompt_file'在Python中表示为字符串类型；输出类型'ZIPPED_PROMPT'在Python中表现为元组形式，每个元组包括两个字符串（正面文本和负面文本）以及一个字符串（文件名）。"
+    },
+    {
+        "question": "哪些任务可以使用LoadPromptsFromFile节点完成？",
+        "answer": "主要任务包括读取特定目录下的多个文本文件，从中提取正面和负面文本段落，为后续的模型训练或生成模型评估提供结构化的提示数据。"
+    },
+    {
+        "question": "LoadPromptsFromFile节点在处理数据时如何区分正面和负面文本？",
+        "answer": "该节点使用正则表达式模式'positive:(.*?)(?:\\n*|$)negative:'匹配并分别提取正面和负面文本段落，通过元组进行组织。"
+    }
+]

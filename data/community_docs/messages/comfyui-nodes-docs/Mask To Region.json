@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MaskToRegion 是什么节点？",
+        "answer": "MaskToRegion 是 ComfyUI 中 Masquerade Nodes 类别下的一个节点，用于根据输入的掩码智能生成适应指定约束条件的矩形区域，例如保持纵横比或确保区域大小为特定数的倍数。"
+    },
+    {
+        "question": "MaskToRegion 如何处理输入掩码？",
+        "answer": "MaskToRegion 节点分析输入掩码来确定满足特定约束的矩形区域，它适应掩码并调整区域大小，同时考虑如纵横比和尺寸要求等约束。"
+    },
+    {
+        "question": "哪些输入类型是 MaskToRegion 节点所必需的？",
+        "answer": "MaskToRegion 节点必需的输入类型包括 'mask'，这是主要的输入数据，用于指定作为处理起点的图像或掩码数据。"
+    },
+    {
+        "question": "MaskToRegion 节点能够处理的可选输入参数有哪些？",
+        "answer": "MaskToRegion 可处理的可选输入包括 'padding'，用于在掩码周围添加额外空间；'constraints'，用于定义区域尺寸调整的条件；'constraint_x' 和 'constraint_y'，用于宽度和高度的约束；'min_width' 和 'min_height'，确保区域不会小于特定尺寸；以及 'batch_behavior'，控制在批量处理中区域的处理方式。"
+    },
+    {
+        "question": "如何利用 MaskToRegion 节点进行图像分割或目标检测的预处理？",
+        "answer": "通过定义正确的约束和调整参数，如 'constraints'，MaskToRegion 节点可以智能地调整边界框以适应掩码，这对于图像分割或目标检测前确定感兴趣的精确区域至关重要。"
+    },
+    {
+        "question": "MaskToRegion 节点的输出是什么？",
+        "answer": "MaskToRegion 节点的输出是一个 'region' 参数，代表了在应用了所有指定约束后，精确适应输入掩码的最终矩形区域。"
+    },
+    {
+        "question": "MaskToRegion 节点的输入参数 'constraints' 指定的是什么？",
+        "answer": "'constraints' 参数在 MaskToRegion 节点中用于确定区域尺寸的调整策略，例如 'keep_ratio' 保持纵横比，'keep_ratio_divisible' 保持可除性，'multiple_of' 尊重倍数，以及 'ignore' 忽略这些规则。"
+    }
+]

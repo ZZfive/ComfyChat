@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ModelSamplingDiscrete负责什么任务？",
+        "answer": "ModelSamplingDiscrete 是 ComfyUI 中用于离散采样的 PyTorch 模块类，它管理采样过程并确定每个时间步的方差，是通过注册一个 beta 时间表实现的。"
+    },
+    {
+        "question": "ModelSamplingDiscrete 如何注册其采样时间表？",
+        "answer": "ModelSamplingDiscrete 通过调用 `_register_schedule` 方法注册其 beta 时间表，该方法处理 beta 计划的设置，以及采样过程中的线性起始和结束值，确保采样参数正确初始化。"
+    },
+    {
+        "question": "当给定模型配置时，ModelSamplingDiscrete 如何初始化采样设置？",
+        "answer": "当模型配置作为输入时，ModelSamplingDiscrete 从模型配置中读取采样设置来初始化采样参数，包括 beta 时间表的类型、线性起始和结束值，这些对调整采样过程的时间步方差至关重要。"
+    },
+    {
+        "question": "ModelSamplingDiscrete 的关键输出是什么，以及它在采样中的作用？",
+        "answer": "ModelSamplingDiscrete 的关键输出是 'sigmas' 参数，它是一个代表每个时间步噪声水平的标准差的 torch.Tensor。该参数由注册的 beta 时间表推导而来，在采样过程中控制噪声的引入量。"
+    },
+    {
+        "question": "ModelSamplingDiscrete 对于采样过程中的 GPU 支持有何说明？",
+        "answer": "ModelSamplingDiscrete 被设计用于 GPU 环境，得益于 PyTorch 的 GPU 支持能力，这使得离散采样过程能够充分利用 GPU 并行计算的优势，尤其在处理大型模型或高维数据时。"
+    },
+    {
+        "question": "ModelSamplingDiscrete 如何进行 sigma 值与时间步之间的转换？",
+        "answer": "ModelSamplingDiscrete 提供了 `timestep` 和 `sigma` 方法来转换 sigma 值与时间步。`timestep` 方法接受 sigma 值并返回最接近的时间步，而 `sigma` 方法基于时间步返回相应的 sigma 值，两种方法均提供了处理连续和离散时间标记之间转换的功能。"
+    },
+    {
+        "question": "采样设置在 ModelSamplingDiscrete 中的设置选项有哪些，以及如何影响采样过程？",
+        "answer": "ModelSamplingDiscrete 的采样设置包括 beta 时间表类型、线性起始和结束值。这些设置直接决定采样过程的 beta 值分布，影响模型在每个时间步的采样过程，以及对输入噪声添加的控制程度。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ToBasicPipe节点是干什么的?",
+        "answer": "ToBasicPipe节点是ComfyUI中ImpactPack的Pipe类别里的一个节点，它用于简化模型基本流水线的组装，将模型、clip、VAE和条件输入等组件高效结合，便于后续任务执行。"
+    },
+    {
+        "question": "哪些类型的数据是ToBasicPipe节点必须的输入?",
+        "answer": "ToBasicPipe节点需要五种主要输入：模型（Comfy dtype: MODEL, Python dtype: torch.nn.Module）、clip（Comfy dtype: CLIP, Python dtype: torch.Tensor）、VAE（Comfy dtype: VAE, Python dtype: torch.nn.Module）、正向条件输入（positive, Comfy dtype: CONDITIONING, Python dtype: torch.Tensor）以及负向条件输入（negative, Comfy dtype: CONDITIONING, Python dtype: torch.Tensor）。"
+    },
+    {
+        "question": "ToBasicPipe的输出有哪些特点?",
+        "answer": "ToBasicPipe的输出是一个综合的basic_pipe模型（Comfy dtype: BASIC_PIPE, Python dtype: Tuple[torch.nn.Module, torch.Tensor, torch.nn.Module, torch.Tensor, torch.Tensor]），它封装了输入的模型、clip、VAE和条件输入，为下一步的处理做准备。"
+    },
+    {
+        "question": "clip参数在ToBasicPipe中的作用是什么?",
+        "answer": "在ToBasicPipe中，clip参数的重要性在于为模型处理定义视觉上下文，这是节点解译和操作视觉数据的关键部分。"
+    },
+    {
+        "question": "ToBasicPipe节点的infra_type是要求在哪个硬件上运行?",
+        "answer": "ToBasicPipe节点的infra_type指定了其运行的硬件环境为CPU。"
+    },
+    {
+        "question": "哪些节点可以从多个组件构建一个基本流水线?",
+        "answer": "ToBasicPipe节点就具备实现该功能，能够从模型、clip、VAE以及条件输入等多个组件构建一个高效的基本流水线结构。"
+    },
+    {
+        "question": "执行模型流水线组装通常涉及哪些步骤?",
+        "answer": "执行模型流水线组装可能涉及整合模型、clip、VAE和条件输入（如正向和负向条件）多个环节，ToBasicPipe节点就是为此设计的，通过其可高效完成此过程。"
+    }
+]

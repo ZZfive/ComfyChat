@@ -1,0 +1,30 @@
+[
+    {
+        "question": "GaussianBlurMaskInSEGS 是什么类型的节点?",
+        "answer": "GaussianBlurMaskInSEGS 是 ComfyUI 中 ImpactPack/Util 类别下的一个节点，用于对 SEG 对象列表中的每个掩码部分应用高斯模糊。"
+    },
+    {
+        "question": "GaussianBlurMaskInSEGS 节点对 SEG 对象中的掩码做了什么处理?",
+        "answer": "GaussianBlurMaskInSEGS 节点通过高斯模糊增强 SEG 对象掩码边缘的平滑度，这在图像分割任务中对需要扩散掩码的图像特别有益。"
+    },
+    {
+        "question": "如何调整 GaussianBlurMaskInSEGS 中的高斯模糊核大小?",
+        "answer": "通过调整 kernel_size 参数，可以设定高斯模糊核的大小，更大的核大小会导致更明显的模糊效果和更平滑的掩码边缘。"
+    },
+    {
+        "question": "GaussianBlurMaskInSEGS 中的 sigma 参数控制什么?",
+        "answer": "sigma 参数控制高斯核的标准差，从而影响模糊范围。高 sigma 值产生更强的模糊效果，而低 sigma 则导致更温和的影响。"
+    },
+    {
+        "question": "GaussianBlurMaskInSEGS 的输出包含什么?",
+        "answer": "GaussianBlurMaskInSEGS 的输出是原始 SEG 对象，这些对象的掩码已经进行了高斯模糊的修改，准备好进行后续处理或分析。"
+    },
+    {
+        "question": "在执行 GaussianBlurMaskInSEGS 操作时，节点处理的输入数据类型是什么?",
+        "answer": "节点处理的输入数据为 List[SEG] 类型的 segs 参数，以及 INT 类型的 kernel_size 和 FLOAT 类型的 sigma 参数。"
+    },
+    {
+        "question": "什么硬件类型最适合运行 GaussianBlurMaskInSEGS 节点?",
+        "answer": "GaussianBlurMaskInSEGS 节点最适合在 GPU 硬件上运行，这有助于加速涉及图像的高斯模糊计算。"
+    }
+]

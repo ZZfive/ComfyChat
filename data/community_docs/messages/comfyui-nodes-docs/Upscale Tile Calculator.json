@@ -1,0 +1,46 @@
+[
+    {
+        "question": "UpscaleTileCalculator节点是干什么的？",
+        "answer": "UpscaleTileCalculator节点主要用于高效计算和管理图像上采样操作中的平铺，其目的是在上采样后确保图像分辨率和质量的完整性。"
+    },
+    {
+        "question": "在UpscaleTileCalculator中，哪些输入类型是必需的？",
+        "answer": "UpscaleTileCalculator节点的必需输入类型包括'image'（输入图像）和'tile_resolution'（平铺分辨率），这些是节点操作的基础。"
+    },
+    {
+        "question": "什么角色由'image'参数在UpscaleTileCalculator节点操作中扮演？",
+        "answer": "'image'参数代表了要被处理的输入图像，对节点的操作和平铺计算结果至关重要，它是节点执行的基础元素。"
+    },
+    {
+        "question": "UpscaleTileCalculator节点的'tile_resolution'参数有什么作用？",
+        "answer": "'tile_resolution'参数决定了图像每个平铺的分辨率，它对于确定上采样后每个平铺的大小十分关键，从而影响上采样过程的效率和输出质量。"
+    },
+    {
+        "question": "UpscaleTileCalculator的输出包含哪些内容？",
+        "answer": " UpscaleTileCalculator节点的主要输出包括上采样后的图像，以及计算出的每个平铺的宽度'tile_width'和高度'tile_height'，这些信息描述了平铺结构。"
+    },
+    {
+        "question": "如何定义上采样后的'图像'输出在UpscaleTileCalculator节点中的角色？",
+        "answer": "上采样后的图像输出代表了处理后图像的最终状态，是节点提高输入图像质量的过程的结果。"
+    },
+    {
+        "question": "UpscaleTileCalculator中的'tile_width'和'tile_height'参数分别提供什么信息？",
+        "answer": "'tile_width'和'tile_height'参数分别指示上采样过程中计算出的每个平铺的宽度和高度，用于描述上采样操作中平铺的尺寸。"
+    },
+    {
+        "question": "UpscaleTileCalculator节点在操作中使用什么基础类型来处理图像？",
+        "answer": "UpscaleTileCalculator节点使用Comfy dtype为IMAGE的类型来处理图像，对应Python dtype中的torch.Tensor。"
+    },
+    {
+        "question": "UpscaleTileCalculator的'tile_resolution'参数的数据类型是什么？",
+        "answer": "'tile_resolution'参数的Comfy dtype为INT，对应的Python dtype为int，表示整数类型。"
+    },
+    {
+        "question": "影响'tile_width'和'tile_height'的重要因素有哪些？",
+        "answer": "'tile_width'和'tile_height'的值直接受原始输入图像的分辨率和指定的平铺分辨率'tile_resolution'因素影响，它们的计算确保上采样后的图像在尺寸上得到适当调整。"
+    },
+    {
+        "question": "UpscaleTileCalculator的基础设施类型是什么？",
+        "answer": "UpscaleTileCalculator节点的基础设施类型指定为CPU，这意味着它在计算上主要依赖于中央处理器而非显卡(GPU)。"
+    }
+]

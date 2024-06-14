@@ -1,0 +1,30 @@
+[
+    {
+        "question": "unCLIPCheckpointLoader 节点的功能是什么?",
+        "answer": "unCLIPCheckpointLoader 节点旨在高效管理和加载unCLIP模型的检查点，简化检查点加载过程，确保模型、CLIP和VAE组件的正确初始化，在模型部署和推理工作流程中发挥关键作用。"
+    },
+    {
+        "question": "ckpt_name 参数在unCLIPCheckpointLoader节点中的作用是什么？",
+        "answer": "ckpt_name参数用于识别要加载的特定检查点，引导节点在检查点目录内找到正确文件路径，是决定模型恢复起点的关键输入。"
+    },
+    {
+        "question": "unCLIPCheckpointLoader节点的 output_vae 参数为何重要？",
+        "answer": "output_vae参数允许用户决定是否从检查点加载变分自编码器组件，提供灵活性，根据特定需求或计算限制选择加载组件。"
+    },
+    {
+        "question": "当需要文本到图像功能时，unCLIPCheckpointLoader节点中的哪个参数应该启用？",
+        "answer": "当需要文本到图像功能时，应启用output_clip参数，以确保加载CLIP组件，满足此类应用程序的需求。"
+    },
+    {
+        "question": "unCLIPCheckpointLoader节点输出的MODEL代表什么？",
+        "answer": "MODEL输出提供了从检查点加载的模型，是后续处理或推理任务的基础，作为模型功能的中心组件。"
+    },
+    {
+        "question": "如何使用unCLIPCheckpointLoader节点加载包含CLIP和VAE的模型？",
+        "answer": "通过设置output_clip和output_vae参数为True，unCLIPCheckpointLoader节点将加载包含CLIP和VAE组件的模型。"
+    },
+    {
+        "question": "unCLIPCheckpointLoader节点的CLIP_VISION输出有何用途？",
+        "answer": "CLIP_VISION输出与CLIP模型的视觉方面有关，专注于图像处理和分析，对于处理图像任务特别重要，提供基于视觉的模型功能。"
+    }
+]

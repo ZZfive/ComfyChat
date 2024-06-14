@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SeargeSDXLRefinerPromptEncoder节点是做什么的?",
+        "answer": "SeargeSDXLRefinerPromptEncoder节点是ComfyUI中用于处理和细化文本输入的节点，通过将文本编码成结构化格式，这种格式对后续分析和生成任务至关重要。它特别关注将正面和负面参考文本转换为调节格式，为管道中的后续步骤做准备。"
+    },
+    {
+        "question": "SeargeSDXLRefinerPromptEncoder节点处理哪些文本输入?",
+        "answer": "SeargeSDXLRefinerPromptEncoder节点处理正面（pos_r）和负面（neg_r）参考文本输入，这些输入将被编码成调节格式，用于后续的分析或生成任务。"
+    },
+    {
+        "question": "在SeargeSDXLRefinerPromptEncoder节点中，refiner_clip参数的作用是什么？",
+        "answer": "refiner_clip参数是SeargeSDXLRefinerPromptEncoder节点中至关重要的参数，它提供了一个CLIP模型的引用。此模型用于标记化和编码输入文本，准备文本数据以供节点处理。"
+    },
+    {
+        "question": "哪些参数影响SeargeSDXLRefinerPromptEncoder节点编码过程中的审美标准?",
+        "answer": "参数pos_ascore和neg_ascore分别用于设置正面和负面参考的审美分数，这直接影响编码输出是否符合期望的审美标准。"
+    },
+    {
+        "question": "SeargeSDXLRefinerPromptEncoder节点如何确定输出的尺寸?",
+        "answer": "SeargeSDXLRefinerPromptEncoder节点通过refiner_width和refiner_height参数来确定输出的尺寸，确保编码输出符合下游任务的尺寸要求。"
+    },
+    {
+        "question": "SeargeSDXLRefinerPromptEncoder节点的refiner_positive和refiner_negative输出代表什么?",
+        "answer": "SeargeSDXLRefinerPromptEncoder节点的refiner_positive输出提供了编码后的正面参考数据，用于需要正面上下文的任务；refiner_negative输出提供了编码后的负面参考数据，用于依赖负面上下文的任务。"
+    },
+    {
+        "question": "SeargeSDXLRefinerPromptEncoder节点的infra type指什么，这对其运行有何影响？",
+        "answer": "SeargeSDXLRefinerPromptEncoder节点的infra type为CPU，这意味着节点的运算将在CPU上执行，而不是GPU或TPU，对节点的运行效率和资源配给有直接影响。"
+    }
+]

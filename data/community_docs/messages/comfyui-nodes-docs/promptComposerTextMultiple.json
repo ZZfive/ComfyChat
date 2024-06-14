@@ -1,0 +1,30 @@
+[
+    {
+        "question": "promptComposerTextMultiple节点的主要作用是什么?",
+        "answer": "promptComposerTextMultiple节点主要用于将多个文本输入合成为单一、连贯的提示，智能地对每个文本条目应用权重，以便控制每个组成部分的影响。"
+    },
+    {
+        "question": "promptComposerTextMultiple节点如何处理文本输入的权重？",
+        "answer": "promptComposerTextMultiple节点通过'weight_1'等参数调整每个输入文本的权重，决定其在组合提示中的相对重要性，这直接影响到提示的整体平衡和焦点。"
+    },
+    {
+        "question": "text_in_opt在promptComposerTextMultiple节点中起到什么作用？",
+        "answer": "text_in_opt是一个可选的文本输入，作为额外信息包含在最终的提示组合中，用于提供补充的上下文或细节，丰富整个提示的信息量。"
+    },
+    {
+        "question": "当哪些条件同时满足时，text_in_opt和text_1等文本内容才会被包含在promptComposerTextMultiple节点的输出中？",
+        "answer": "text_in_opt和text_1等文本内容将被包含在输出中，当且仅当该文本不为空、其相关联的权重大于0，且'active'标志为真时。"
+    },
+    {
+        "question": "promptComposerTextMultiple节点的输出特点是什么?",
+        "answer": "promptComposerTextMultiple节点的输出文本是加权文本输入的综合结果，精简地表达了所有提供的文本信息，反映了带强调和平衡的意图信息。"
+    },
+    {
+        "question": "在promptComposerTextMultiple的输入中，'active'的作用是什么？",
+        "answer": "'active'是一个布尔类型的输入，用于确定是否在提示组合中考虑文本输入及关联的权重。当其为真时，相关的输入数据将被包括在内；为假时，这些数据会被排除。"
+    },
+    {
+        "question": "promptComposerTextMultiple节点处理的文本输入有哪些限制条件？",
+        "answer": "在promptComposerTextMultiple节点中，每个文本输入必须是字符串类型，且权重参数必须是介于0到1.95之间的浮点数，用于组件的影响控制。此外，还需考虑到'active'标志用于控制文本条目的包含与否。"
+    }
+]

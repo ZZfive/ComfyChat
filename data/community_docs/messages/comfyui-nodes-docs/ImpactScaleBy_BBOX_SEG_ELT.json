@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SEG_ELT_BBOX_ScaleBy 节点在 ComfyUI 中的作用是什么？",
+        "answer": "SEG_ELT_BBOX_ScaleBy 节点用于通过指定的因子调整分割元素（SEG_ELT）的规模，通过缩放其边界框并应用零填充到掩码上的方式保持分割完整性。"
+    },
+    {
+        "question": "使用 SEG_ELT_BBOX_ScaleBy 节点调整分割元素时，如何防止信息丢失？",
+        "answer": "该节点通过缩放分割元素的边界框并随后进行掩码的零填充来确保在调整大小过程中不会丢失信息或引入伪影。"
+    },
+    {
+        "question": "在 SEG_ELT_BBOX_ScaleBy 节点中，参数 'seg' 的什么特点决定了其重要性？",
+        "answer": "参数 'seg' 是 SEG_ELT 类型的分割元素，它定义了节点操作的输入数据，直接影响输出分割的尺寸和属性，因此是至关重要的。"
+    },
+    {
+        "question": "当使用 SEG_ELT_BBOX_ScaleBy 节点时，'scale_by' 参数影响的表现是什么？",
+        "answer": "'scale_by' 参数决定了 SEG_ELT 的边界框缩放因子，其值会调整分割元素的大小，直接影响最终输出的分辨率和覆盖范围。"
+    },
+    {
+        "question": "SEG_ELT_BBOX_ScaleBy 节点的 'scaled_seg' 输出是什么？",
+        "answer": "'scaled_seg' 是应用了缩放操作后的分割元素输出，包含调整后的边界框和掩码，确保分割大小正确调整并未丢失详细信息。"
+    },
+    {
+        "question": "如何在 ComfyUI 中的 SEG_ELT_BBOX_ScaleBy 节点正确设置 'scale_by' 参数？",
+        "answer": "在 ComfyUI 中，'scale_by' 参数类型为 'FLOAT'，默认为 1.0，最小值可设为 0.01，最大值为 8.0，步长为 0.01，根据所需调整因子进行设置，影响最终分割元素的大小。"
+    },
+    {
+        "question": "在 SEG_ELT_BBOX_ScaleBy 节点中，为了保持分割的完整性，采用了什么技术？",
+        "answer": "为了保持分割的完整性，节点采用缩放边界框后对掩码进行零填充，并在源代码中通过特定算法（如 fill_zero_outside_bbox 函数）确保整个过程中信息不丢失。"
+    }
+]

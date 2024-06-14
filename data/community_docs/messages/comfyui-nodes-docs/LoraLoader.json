@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LoraLoader节点的目的是什么？",
+        "answer": "LoraLoader节点旨在管理加载和应用LoRA（低秩适应）修改到模型中，高效地处理将LoRA调整集成到模型和CLIP组件中，允许以最小的计算开销微调模型行为。"
+    },
+    {
+        "question": "LoraLoader节点如何处理LoRA调整？",
+        "answer": "LoraLoader节点抽象了LoRA应用的复杂性，为模型增强提供了一个简化的接口，允许用户轻松地将LoRA调整应用于基础模型，以微调模型行为而无需深入了解技术细节。"
+    },
+    {
+        "question": "哪些输入类型是LoraLoader节点所必需的？",
+        "answer": "LoraLoader节点需要model、clip和lora_name这三个参数作为输入类型，这些参数分别代表基础模型、CLIP调制模型以及特定的LoRA配置。"
+    },
+    {
+        "question": "LoraLoader如何处理'model'参数？",
+        "answer": "'model'参数指定了将通过LoRA技术进行修改的基础模型，它是增强的主要对象，直接影响节点的执行和模型功能的结果，LoraLoader节点会基于这个模型应用LoRA调整以实现微调功能。"
+    },
+    {
+        "question": "LoraLoader节点的'model_lora'和'clip_lora'输出代表什么？",
+        "answer": "'model_lora'输出代表应用了LoRA修改的模型，而'clip_lora'输出表示集成了LoRA调整的CLIP模型，这两个输出都是LoraLoader节点操作的直接结果，用于直观反映模型通过LoRA技术增强后的能力。"
+    },
+    {
+        "question": "LoraLoader节点中'strength_model'和'strength_clip'参数的作用是什么？",
+        "answer": "'strength_model'和'strength_clip'参数分别调整LoRA修改应用于模型和CLIP模型的影响强度，它们在LoraLoader节点中起着关键作用，提供了从原始模型到适应后模型之间的平衡，帮助用户精细调节LoRA技术对模型效果的加强程度。"
+    },
+    {
+        "question": "在LoraLoader节点中，如何应用LoRA修改到既定的模型上？",
+        "answer": "通过LoraLoader节点的load_lora方法，根据提供的model、clip、lora_name、strength_model和strength_clip参数，加载并应用指定的LoRA配置至模型和CLIP模型中，生成model_lora和clip_lora输出，具体地，该方法会检查已加载的LoRA是否匹配，若未匹配，则从文件系统加载LoRA调整，最终应用调整并产生增强后的模型输出。"
+    }
+]

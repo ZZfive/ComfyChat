@@ -1,0 +1,30 @@
+[
+    {
+        "question": "RepeatLatentBatch节点的主要功能是什么？",
+        "answer": "RepeatLatentBatch节点的'repeat'方法旨在复制潜在空间样本，该方法接受一批潜在样本和一个整数，整数指定了重复次数，随后返回一个新的批次，其中样本被重复了指定的次数。"
+    },
+    {
+        "question": "在使用RepeatLatentBatch节点时，'samples'参数的作用是什么？",
+        "answer": "'samples'参数是一个关键输入，它包含了需要重复的潜在表示，其有效性与输入样本的质量和结构直接相关。"
+    },
+    {
+        "question": "RepeatLatentBatch节点的'amount'参数如何影响输出批次？",
+        "answer": "'amount'参数决定了'samples'输入中的每个样本将被重复多少次，它是控制输出批次大小和数据增强程度的一个基本因素。"
+    },
+    {
+        "question": "RepeatLatentBatch节点处理'noise_mask'时的做法是什么？",
+        "answer": "如果'noise_mask'在输入的样品中且其形状的0轴大于1，RepeatLatentBatch会相应地重复'noise_mask'，确保其形状与'samples'的形状匹配。"
+    },
+    {
+        "question": "RepeatLatentBatch节点在处理'batch_index'时有什么特别之处？",
+        "answer": "如果输入中包含'batch_index'，RepeatLatentBatch会调整和增加'batch_index'的值，以区分和标识不同重复批次中的元素。"
+    },
+    {
+        "question": "哪些机器学习场景会使用到RepeatLatentBatch节点？",
+        "answer": "RepeatLatentBatch节点在需要扩展数据集或增强训练数据的机器学习应用中特别重要，例如在图像生成或增强中复制潜在空间中的表示进行模式学习。"
+    },
+    {
+        "question": "RepeatLatentBatch节点的'output'返回的是什么类型的数据？",
+        "answer": "'output'返回的是'LATENT'类型的'repeated_samples'，这是根据指定的'amount'重复的潜在表示批次，主要用作工作流程后续阶段进一步处理或分析。"
+    }
+]

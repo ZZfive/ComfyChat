@@ -1,0 +1,42 @@
+[
+    {
+        "question": "VAEEncodeBatched是什么类型的节点？",
+        "answer": "VAEEncodeBatched是ComfyUI中Video Helper Suite的一部分，属于批处理节点类别，用于高效编码视频帧至潜在空间表示。"
+    },
+    {
+        "question": "VAEEncodeBatched的'pixels'参数作用是什么？",
+        "answer": "VAEEncodeBatched的'pixels'参数是其关键输入，代表原始视频帧，对于编码和潜在空间表示的质量至关重要。"
+    },
+    {
+        "question": "使用'vae'参数的目的何在？",
+        "answer": "'vae'参数指定了变分自编码器模型，用于确定视频帧编码的潜在空间结构，对编码过程至关重要。"
+    },
+    {
+        "question": "节点如何处理'per_batch'参数？",
+        "answer": "'per_batch'参数定义了节点处理的像素批大小，有助于控制内存使用和计算效率，特别是在处理大分辨率或大量视频帧时。"
+    },
+    {
+        "question": "VAEEncodeBatched节点的输出表示什么？",
+        "answer": "VAEEncodeBatched节点的'samples'输出包含了输入视频帧的编码潜在空间表示，是下游分析或处理任务的基础。"
+    },
+    {
+        "question": "哪些是VAEEncodeBatched的必填输入参数？",
+        "answer": "VAEEncodeBatched的必填输入参数包括'pixels'（视频帧）、'vae'（变分自编码器模型）和'per_batch'（批处理大小）。"
+    },
+    {
+        "question": "VAEEncodeBatched节点最适合在什么计算资源上运行？",
+        "answer": "VAEEncodeBatched节点最适合在GPU上运行，因为GPU可以加速并行处理，提高编码大量视频帧的效率。"
+    },
+    {
+        "question": "在VAEEncodeBatched中，'pixels'参数的数据类型是什么？",
+        "answer": "在ComfyUI的框架下，'pixels'参数的数据类型是IMAGE，在Python中对应的dtype是torch.Tensor。"
+    },
+    {
+        "question": "如何获取VAEEncodeBatched节点的源代码？",
+        "answer": "可以访问https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git以获取VAEEncodeBatched节点的完整源代码以及相关文档。"
+    },
+    {
+        "question": "哪些节点可以对视频帧进行高效编码？",
+        "answer": "VAEEncodeBatched节点能够高效地将视频帧编码为潜在空间表示，适合于处理大量视频数据的批处理任务。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "IPAdapterFaceID节点的主要功能是什么？",
+        "answer": "IPAdapterFaceID节点旨在成像流程中集成和处理面部识别数据，利用高级模型提高面部识别任务的准确性，确保系统能够从图像中可靠地识别个人。"
+    },
+    {
+        "question": "哪些输入类型是IPAdapterFaceID节点的必须参数？",
+        "answer": "IPAdapterFaceID节点的必须参数包括：模型（model）、ipadapter、以及图像（image）。这些参数定义了用于面部识别的机器学习模型，保证了与系统其他组件的通信，并提供了用于处理的图像数据。"
+    },
+    {
+        "question": "weight参数在IPAdapterFaceID节点中起什么作用？",
+        "answer": "weight参数如同调整杆，允许调整面部识别结果对总体结果的影响，可以在准确性和性能之间找到平衡点，其数据类型是Float类型。"
+    },
+    {
+        "question": "combine_embeds参数在面部识别过程中扮演什么角色？",
+        "answer": "combine_embeds参数决定了面部识别过程中不同嵌入的组合方式，通过选择concat、add、subtract、average或norm average，可以增强面部特征数据的融合以优化识别能力。"
+    },
+    {
+        "question": "IPAdapterFaceID节点的输出是什么？",
+        "answer": "IPAdapterFaceID节点输出face_id_output，这是通过模型处理输入图像后得到的最终面部识别结果，其数据类型是torch.Tensor，代表面部识别任务的最终结果。"
+    },
+    {
+        "question": "IPAdapterFaceID节点的weight_faceidv2参数的设置目的何在？",
+        "answer": "weight_faceidv2参数用于微调FaceID版本2模型在面部识别过程中的贡献程度，通过设置数值调整模型对结果的影响，帮助用户根据具体需求优化识别效果。"
+    },
+    {
+        "question": "哪些组件可以作为IPAdapterFaceID节点的可选输入，并如何使用它们？",
+        "answer": "IPAdapterFaceID节点的可选输入包括image_negative、attn_mask、clip_vision以及insightface。这些输入可以根据需要提供，例如用于处理负例图像、注意力掩码、处理视觉特征或外部面部识别组件，增强了节点的灵活性和功能。"
+    }
+]

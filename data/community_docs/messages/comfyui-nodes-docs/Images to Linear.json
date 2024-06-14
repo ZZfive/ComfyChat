@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Images_To_Linear节点的功能是什么？",
+        "answer": "WAS_Images_To_Linear节点旨在将图像数据转换为线性格式，确保图像数据被适当地转换以便于后续的计算任务，尤其在准备图像进行分析或在线性代数框架内进行操作时至关重要。"
+    },
+    {
+        "question": "WAS_Images_To_Linear节点适用于哪些运算环境？",
+        "answer": "根据使用提示，WAS_Images_To_Linear节点的运算环境类型为CPU，这意味着该节点应在CPU上运行以进行图像到线性数据的转换处理。"
+    },
+    {
+        "question": "哪个输入参数是WAS_Images_To_Linear节点进行图像到线性转换操作的基础？",
+        "answer": "参数 'images' 是节点进行图像到线性转换的基础，确保节点知道应转换哪些图像数据。"
+    },
+    {
+        "question": "WAS_Images_To_Linear节点如何处理多个图像输入？",
+        "answer": "当输入多个图像时，WAS_Images_To_Linear节点会将每个图像转换为张量，然后将这些张量堆叠，最后返回一个包含所有转换后图像的张量列表。"
+    },
+    {
+        "question": "在ComfyUI中，WAS_Images_To_Linear节点转换后的图像具有何种数据类型？",
+        "answer": "WAS_Images_To_Linear节点转换后的图像数据类型为 IMAGE，通常表现为Union[torch.Tensor, List[torch.Tensor]]，适合于进一步的线性分析或操作。"
+    },
+    {
+        "question": "WAS_Images_To_Linear节点的Python数据类型是什么？",
+        "answer": "WAS_Images_To_Linear节点中的'images'参数的Python数据类型是List[PIL.Image.Image]，表示一系列PIL图像对象。"
+    },
+    {
+        "question": "如何在Python中使用WAS_Images_To_Linear节点进行图像转换？",
+        "answer": "通过调用WAS_Images_To_Linear类中的image_to_linear方法，并传入图像参数，该方法将返回转换后的图像数据，准备用于后续的分析或线性操作。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageBatch节点的功能是什么？",
+        "answer": "ImageBatch节点的功能是高效地处理并组合两个图像输入到一个批次中，通过上采样保证尺寸相同，然后沿批次维度连接。"
+    },
+    {
+        "question": "ImageBatch节点的'batch'方法如何处理尺寸不同的两个图像？",
+        "answer": "ImageBatch节点的'batch'方法会对尺寸较小的图像执行上采样，以便两个图像具有相同的尺寸，从而保证图像批次的一致性。"
+    },
+    {
+        "question": "哪些输入类型是ImageBatch节点所必需的？",
+        "answer": "ImageBatch节点要求输入'image1'和'image2'，都代表批次中的图像，以IMAGE数据类型，即torch.Tensor的格式。"
+    },
+    {
+        "question": "ImageBatch节点输出的'batched_images'是什么？",
+        "answer": "'batched_images'输出是结合了'image1'和'image2'的图像批次，用于后续处理任务，如神经网络训练或批量图像操作。"
+    },
+    {
+        "question": "在处理图像批次时，ImageBatch节点首选的设备类型是什么？",
+        "answer": "ImageBatch节点更倾向于使用CPU作为处理图像批次的基础设施类型。"
+    },
+    {
+        "question": "ImageBatch节点的SOURCE CODE中是如何实现图像尺寸调整的？",
+        "answer": "在源代码中，如果'image1'和'image2'的尺寸不同，'image2'会被上采样或下采样至'image1'的尺寸，再进行张量的批次维度连接。"
+    },
+    {
+        "question": "ImageBatch节点在图像处理流程中的作用是什么？",
+        "answer": "ImageBatch节点在图像处理流程中主要负责准备图像数据，通过将多个图像组合为一个批次，为下游的分析或模型推理任务提供统一格式的图像数据。"
+    }
+]

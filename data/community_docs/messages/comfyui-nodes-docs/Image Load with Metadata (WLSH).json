@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WLSH_Read_Prompt节点的作用是什么?",
+        "answer": "WLSH_Read_Prompt节点通过提取和解释嵌入的元数据来处理图像数据，这对于指导图像生成过程至关重要，它确保了图像数据的正确格式化，并为系统中后续的操作做好准备。"
+    },
+    {
+        "question": "‘verbose’参数的设置如何影响WLSH_Read_Prompt节点的输出信息?",
+        "answer": "‘verbose’参数控制输出信息的详细程度。当设置为‘true’时，它启用全面的节点操作日志记录，提供有价值的洞察，有助于调试和优化。"
+    },
+    {
+        "question": "WLSH_Read_Prompt节点对图像数据的处理为何重要?",
+        "answer": "WLSH_Read_Prompt节点对图像数据的处理直接影响后续步骤中使用的图像数据的质量和特性，这是图像处理和生成的前提。"
+    },
+    {
+        "question": "WLSH_Read_Prompt节点有哪些输出类型，它们分别代表什么?",
+        "answer": "输出类型包括：预处理的图像张量（'image'）、与图像相关的积极提示（'positive'）、负面提示（'negative'）、生成过程的随机种子（'seed'）、迭代次数或步骤数（'steps'）、配置比例或参数（'cfg'）、图像的水平和垂直分辨率（'width'和'height'）。"
+    },
+    {
+        "question": "在哪些情况下会使用WLSH_Read_Prompt节点?",
+        "answer": "WLSH_Read_Prompt节点适用于需要从图像中提取元数据，例如提示和参数的情况，以此指导图像生成或解释已生成图像的过程。"
+    },
+    {
+        "question": "使用WLSH_Read_Prompt节点时，需要遵循哪些输入和输出数据类型?",
+        "answer": "节点需要的输入类型有：布尔型的‘verbose’参数和字符串型的‘image’参数。输出类型则涵盖了图像的张量表示、字符串型的提示（正面和负面）、整数型的随机种子和步骤数、浮点型的配置比例以及图像的尺寸参数。"
+    },
+    {
+        "question": "如何确保WLSH_Read_Prompt节点正确处理图像文件?",
+        "answer": "WLSH_Read_Prompt节点对图像文件的正确处理依赖于‘image’参数，这需要指向目标图像的准确文件，同时，节点内部的逻辑负责从该图像中提取必要的元数据并进行处理。"
+    }
+]

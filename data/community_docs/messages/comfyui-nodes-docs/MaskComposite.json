@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MaskComposite节点属于ComfyUI的哪个类别？",
+        "answer": "MaskComposite节点属于ComfyUI的'mask'类别，专门用于处理掩码图像的组合和操作。"
+    },
+    {
+        "question": "MaskComposite节点的输入参数中，'destination'是什么类型的掩码，它的作用是什么？",
+        "answer": "'destination'参数是目标掩码，它作为掩码组合操作的基础，其Comfy dtype是MASK，即Python中的torch.Tensor，它决定了掩码在操作前的初始状态。"
+    },
+    {
+        "question": "在MaskComposite节点中，'source'参数的功能是什么？",
+        "answer": "'source'参数是源掩码，用于与目标掩码组合。其Comfy dtype也是MASK，即Python中的torch.Tensor，它对最终的掩码操作结果有直接贡献。"
+    },
+    {
+        "question": "MaskComposite节点如何通过'x'和'y'参数影响掩码的位置？",
+        "answer": "'x'和'y'参数分别定义了源掩码在水平和垂直方向上相对于目标掩码的位置，x使用Comfy dtype INT（Python dtype int）定义水平位移，y同前但定义垂直位移。"
+    },
+    {
+        "question": "什么参数决定了MaskComposite中源掩码和目标掩码的操作类型？",
+        "answer": "'operation'参数指示了源掩码和目标掩码之间执行的具体掩码组合类型，如multiply（乘法）、add（加法）等，为Python dtype str类型，选择范围为['multiply', 'add', 'subtract', 'and', 'or', 'xor']。"
+    },
+    {
+        "question": "MaskComposite节点输出的是什么类型的掩码，它是如何产生的？",
+        "answer": "MaskComposite节点输出的是经过组合操作的最终掩码，Comfy dtype为MASK（Python dtype为torch.Tensor）。它包含了在应用所有指定转换后遮罩的最终状态。"
+    },
+    {
+        "question": "在使用MaskComposite节点进行掩码组合时，涉及的掩码逻辑运算有哪些？",
+        "answer": "掩码逻辑运算包括'multiply'（乘法，按位与的乘法）、'add'（加法）、'subtract'（减法）、'and'（逻辑与）、'or'（逻辑或）以及'xor'（逻辑异或）。"
+    }
+]

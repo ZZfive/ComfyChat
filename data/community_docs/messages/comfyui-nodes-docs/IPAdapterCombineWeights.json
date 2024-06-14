@@ -1,0 +1,30 @@
+[
+    {
+        "question": "IPAdapterCombineWeights节点的功能是什么？",
+        "answer": "IPAdapterCombineWeights节点支持权重调度，允许用户在不同时间段内调整图像的影响力，实现平滑的过渡和动画效果。"
+    },
+    {
+        "question": "IPAdapterCombineWeights 的权重输出与什么相关联？",
+        "answer": "weights输出代表了将指定方法应用于输入权重的结果，包含了节点目的的精髓，可以用于进一步的分析或模型训练。"
+    },
+    {
+        "question": "IPAdapterCombineWeights 节点的 count 输出代表什么？",
+        "answer": "count输出代表了输入权重的数量，是节点的一个重要属性，用于描述输入数据的规模和范围。"
+    },
+    {
+        "question": "哪些数据类型支持 IPAdapterCombineWeights 节点的权重和计数输出？",
+        "answer": "权重输出支持float数据类型，计数输出支持int数据类型，分别对应Comfy的FLOAT和INT数据类型。"
+    },
+    {
+        "question": "IPAdapterCombineWeights节点的输入有什么要求？",
+        "answer": "IPAdapterCombineWeights节点的INPUT_TYPES包括两个float类型的权重输入，即weights_1和weights_2，它们的值域应在0.0到1.0之间。"
+    },
+    {
+        "question": "如何使用IPAdapterCombineWeights节点处理多个权重输入？",
+        "answer": "如果输入的权重不是列表形式，IPAdapterCombineWeights节点会将其转换为列表，然后将两个输入列表合并成一个，最后计算合并后列表的长度。"
+    },
+    {
+        "question": "IPAdapterCombineWeights节点的执行依赖于哪些硬件资源？",
+        "answer": "IPAdapterCombineWeights节点的infra type为GPU，意味着它的执行依赖于GPU硬件资源。"
+    }
+]

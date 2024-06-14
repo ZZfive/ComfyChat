@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Mask_Smooth_Region节点的功能是什么？",
+        "answer": "WAS_Mask_Smooth_Region节点用于处理输入掩码，对其区域应用平滑效果，以生成无缝纹理或为进一步的图像处理任务准备掩码。通过高斯模糊技术控制平滑的程度，由 'sigma' 参数调整。"
+    },
+    {
+        "question": "如何控制WAS_Mask_Smooth_Region节点中掩码区域的平滑度？",
+        "answer": "通过调整可选的 'sigma' 参数，定义应用于掩码区域的平滑度，调整高斯模糊的标准差，较高的值可导致更明显的平滑效果，这允许用户控制平滑区域的外观。"
+    },
+    {
+        "question": "平滑掩码输出的类型是什么？",
+        "answer": "经过WAS_Mask_Smooth_Region节点处理后，平滑后的掩码或掩码批次的输出类型为 MASK，在 Comfy 平台和 Python 中分别表示为 torch.Tensor。"
+    },
+    {
+        "question": "在WAS_Mask_Smooth_Region节点中，'masks' 参数扮演什么角色？",
+        "answer": "'masks' 参数是WAS_Mask_Smooth_Region节点的关键输入，用于接收一个掩码或掩码批次，直接影响节点的操作和输出，决定哪些区域将被平滑处理。"
+    },
+    {
+        "question": "哪些场景中WAS_Mask_Smooth_Region节点特别有用？",
+        "answer": "WAS_Mask_Smooth_Region节点在生成无缝纹理或准备掩码以供进一步图像处理任务时特别有用，确保在多种应用中提供灵活性和效率。"
+    },
+    {
+        "question": "WAS_Mask_Smooth_Region节点的执行依赖于哪种基础设施类型？",
+        "answer": "WAS_Mask_Smooth_Region节点的执行最适合在CPU基础设施上进行，不特定要求GPU加速。"
+    },
+    {
+        "question": "使用WAS_Mask_Smooth_Region节点处理单个掩码和掩码批次有什么区别？",
+        "answer": "处理单个掩码和掩码批次时，WAS_Mask_Smooth_Region节点会根据输入情况分别处理。对于单个掩码，直接平滑。对于掩码批次，会为每张图像独立应用平滑，最终返回一个统一格式的输出，确保无论输入规模如何，节点都能提供一致的输出格式。"
+    }
+]

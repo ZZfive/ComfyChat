@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SamplerDPMPP_SDE节点的作用是什么?",
+        "answer": "SamplerDPMPP_SDE节点利用带有随机微分方程（SDE）方法的DPM-PP框架来增强从扩散模型生成样本的采样过程，为需要控制采样参数的用户提供自定义采样方法。"
+    },
+    {
+        "question": "‘eta’参数在SamplerDPMPP_SDE节点中扮演什么角色？",
+        "answer": "‘eta’参数是用于控制SamplerDPMPP_SDE节点中采样过程的噪声水平，直接影响生成样本的质量和收敛性，通过适当调整‘eta’，可以实现更稳定和高效的采样过程。"
+    },
+    {
+        "question": "哪些参数可以影响SamplerDPMPP_SDE节点生成的样本的保真度？",
+        "answer": "‘r’参数对于调整采样算法中的收敛速率至关重要，它影响SamplerDPMPP_SDE节点的采样过程接近目标分布的速度，进而影响最终输出的样本保真度。"
+    },
+    {
+        "question": "如何决定SamplerDPMPP_SDE节点的噪声生成设备？",
+        "answer": "‘noise_device’参数在SamplerDPMPP_SDE节点中决定了用于生成噪声的计算设备，无论是GPU还是CPU，影响采样过程的性能和速度。"
+    },
+    {
+        "question": "SamplerDPMPP_SDE节点输出的‘sampler’代表什么？",
+        "answer": "输出‘sampler’是一个定制的采样算法实例，根据SamplerDPMPP_SDE节点中输入参数设置的要求生成样本，确保符合所需的噪声特性和收敛标准。"
+    },
+    {
+        "question": "在SamplerDPMPP_SDE节点中，哪些参数是必需的输入类型？",
+        "answer": "SamplerDPMPP_SDE节点的必需输入类型包括‘eta’、‘s_noise’、‘r’和‘noise_device’，它们各自根据ComfyUI的定义直接关系到采样过程的关键方面。"
+    },
+    {
+        "question": "SamplerDPMPP_SDE节点需要哪种计算资源类型以达到最佳性能？",
+        "answer": "根据SamplerDPMPP_SDE节点的使用建议，它需要Infra类型的GPU以达到最佳性能，尤其是在处理图像生成任务时。"
+    }
+]

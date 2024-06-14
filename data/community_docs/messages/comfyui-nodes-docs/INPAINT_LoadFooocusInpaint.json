@@ -1,0 +1,30 @@
+[
+    {
+        "question": "INPAINT_LoadFooocusInpaint 是什么？",
+        "answer": "INPAINT_LoadFooocusInpaint 是 ComfyUI 的一个自定义节点，用于图像修复，它载入头部模型和补丁数据，确保它们准备就绪，可用于处理图像修复任务。"
+    },
+    {
+        "question": "INPAINT_LoadFooocusInpaint 节点的输入参数有哪些？",
+        "answer": "INPAINT_LoadFooocusInpaint 节点的输入参数为 'head' 和 'patch'。'head' 参数指定头部模型的文件路径，而 'patch' 参数表示补丁数据的文件路径，二者都是图像修复过程中的关键组件。"
+    },
+    {
+        "question": "'head' 参数在图像修复过程中的作用是什么？",
+        "answer": "'head' 参数指定的头部模型文件路径用于引导图像修复过程中修复内容的生成，是修复过程中的核心指导性信息。"
+    },
+    {
+        "question": "INPAINT_LoadFooocusInpaint 节点的输出类型是什么？",
+        "answer": "INPAINT_LoadFooocusInpaint 节点的输出类型是 'INPAINT_PATCH'，包含已加载的头部模型和补丁数据的组合，为图像修复过程提供关键的结构和上下文信息。"
+    },
+    {
+        "question": "哪些类型的模型和数据通过 INPAINT_LoadFooocusInpaint 节点输入和输出？",
+        "answer": "通过 INPAINT_LoadFooocusInpaint 节点输入的是头部模型和补丁数据的文件路径，输出的是一对数据，即已加载的头部模型（torch.nn.Module）和补丁数据（Any）的数据组合。"
+    },
+    {
+        "question": "使用 INPAINT_LoadFooocusInpaint 节点时需要注意什么？",
+        "answer": "使用 INPAINT_LoadFooocusInpaint 节点时，应注意其 Infra type 为 CPU，意味着它将在 CPU 上运行，而非运行于 GPU 环境。"
+    },
+    {
+        "question": "ComfyUI 的哪些设备类型可以使用 INPAINT_LoadFooocusInpaint 节点进行图像修复？",
+        "answer": "由于 INPAINT_LoadFooocusInpaint 节点的 Infra type 指定为 CPU，因此可以在具有 CPU 处理能力的设备上进行图像修复任务，不需要 GPU 的支持。"
+    }
+]

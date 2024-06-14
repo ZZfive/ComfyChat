@@ -1,0 +1,30 @@
+[
+    {
+        "question": "VAESave节点在ComfyUI中的功能是什么？",
+        "answer": "VAESave节点在ComfyUI中用于保存变分自编码器（VAE）模型的状态，通过序列化模型的状态字典到文件，以便以后检索或部署。"
+    },
+    {
+        "question": "VAESave节点保存的VAE模型文件类型是什么？",
+        "answer": "VAESave节点保存的VAE模型文件为.safetensors类型，这是一种二进制安全的模型存储格式，包含模型的参数和可能的元数据。"
+    },
+    {
+        "question": "VAESave节点的'filename_prefix'参数有何作用？",
+        "answer": "'filename_prefix'参数用于定义保存VAE模型的输出文件名的前缀，帮助在组织和识别模型文件时提供明确的信息。"
+    },
+    {
+        "question": "在VAESave节点中，'prompt'和'extra_pnginfo'参数的功能是什么？",
+        "answer": "'prompt'和'extra_pnginfo'参数虽为可选，但前者用于附加模型预期用途的上下文，后者允许添加额外信息存储于模型中，如注释或相关数据。"
+    },
+    {
+        "question": "VAESave节点的'output_checkpoint'输出代表什么？",
+        "answer": "'output_checkpoint'输出参数指示保存的模型文件路径，确认模型已成功保存以及其存储位置，便于后续访问和使用。"
+    },
+    {
+        "question": "如何在ComfyUI中使用VAESave节点保存VAE模型？",
+        "answer": "通过输入必填的VAE模型和输出文件名前缀到VAESave节点，并可选添加上下文或额外信息，节点将处理并保存模型为.safetensors文件，最后输出保存路径。"
+    },
+    {
+        "question": "在ComfyUI中，使用VAESave节点进行模型保存时，infra type应为哪种类型？",
+        "answer": "使用VAESave节点时，infra type应设置为'CPU'，这是因为模型保存任务不需要GPU加速，通常在CPU上执行更高效。"
+    }
+]

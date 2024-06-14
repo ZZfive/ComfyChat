@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SeargeLoras 节点在 ComfyUI 中的作用是什么?",
+        "answer": "SeargeLoras 节点用于处理和管理 LoRA 信号，将它们的强度和配置整合成结构化数据格式。"
+    },
+    {
+        "question": "SeargeLoras 节点支持哪些 LoRA 参数输入?",
+        "answer": "SeargeLoras 节点支持 lora_1 到 lora_5 参数输入，每个参数都有对应的强度值，如 lora_1_strength 到 lora_5_strength，用于定义信号在栈中的影响力。"
+    },
+    {
+        "question": "LoRA 信号的强度如何影响 SeargeLoras 节点的处理?",
+        "answer": "LoRA 信号的强度决定信号在 LoRA 栈中的权重，影响了 SeargeLoras 节点的整体处理和最终输出中的贡献量。"
+    },
+    {
+        "question": "SeargeLoras 节点的输出类型是什么?",
+        "answer": "SeargeLoras 节点的主要输出类型是 'data'，一种封装了 LoRA 信号栈及其相关强度信息的结构化数据流。"
+    },
+    {
+        "question": "在什么硬件环境下使用 SeargeLoras 节点更合适?",
+        "answer": "SeargeLoras 节点的最优使用环境是在 CPU 上，这是基于其 Infra 类型的属性来决定的。"
+    },
+    {
+        "question": "如何初始化 SeargeLoras 类?",
+        "answer": "通过调用 SeargeLoras 的构造函数（`SeargeLoras()`）进行初始化，构造函数将 expected_lora_stack_size 设置为 None，这表示 LoRA 栈大小预期未定义，可以动态调整。"
+    },
+    {
+        "question": "SeargeLoras 节点中的 'get' 方法实现什么功能?",
+        "answer": "'get' 方法集成并处理了 LoRA 参数及其强度，例如 lora_1 和 lora_1_strength，并将其整合到节点的输出数据中，确保 LoRA 信号栈正确管理和更新。"
+    }
+]

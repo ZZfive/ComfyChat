@@ -1,0 +1,38 @@
+[
+    {
+        "question": "LayeredDiffusionDecode的作用是什么？",
+        "answer": "LayeredDiffusionDecode类用于执行像素值的解码过程，重建带有alpha通道的图片，从RGB组件中有效分离出透明度信息。"
+    },
+    {
+        "question": "LayeredDiffusionDecode类支持哪些扩散模型的版本？",
+        "answer": "LayeredDiffusionDecode类能够处理包括SD1x和SDXL在内的不同版本的扩散模型，提供与系统的无缝集成，优化图像生成过程。"
+    },
+    {
+        "question": "LayeredDiffusionDecode需要的'samples'参数为何重要？",
+        "answer": "‘samples’参数对LayeredDiffusionDecode至关重要，它提供了解码所必需的潜在表示，作为图像重建的基础，确保输出与生成模型一致。"
+    },
+    {
+        "question": "使用LayeredDiffusionDecode类进行解码时，sd_version参数的Python数据类型是什么？",
+        "answer": "在使用LayeredDiffusionDecode类时，'sd_version'参数的Python数据类型为Enum，用以指定解码过程中所使用稳定扩散模型的版本。"
+    },
+    {
+        "question": "sub_batch_size参数在LayeredDiffusionDecode中的作用是什么？",
+        "answer": "‘sub_batch_size’参数定义了每一次解码迭代中处理的图像数量，优化计算效率和内存使用，从而影响解码过程的吞吐量和资源分配。"
+    },
+    {
+        "question": "LayeredDiffusionDecode的输出包括哪些类型？",
+        "answer": "LayeredDiffusionDecode的输出包括重建的RGB图像数据（Comfy dtype: IMAGE，Python dtype: torch.Tensor）和alpha通道信息（Comfy dtype: MASK，Python dtype: torch.Tensor）。"
+    },
+    {
+        "question": "LayeredDiffusionDecode在哪个基础设施类型上运行最有效？",
+        "answer": "LayeredDiffusionDecode针对GPU基础设施进行了优化，使图像解码过程在图形处理单元上实现高效执行。"
+    },
+    {
+        "question": "LayeredDiffusionDecode如何根据不同的稳定扩散模型版本下载解码器？",
+        "answer": "在LayeredDiffusionDecode中，对于SD1x版本的模型，会从'Hugging Face'上下载'layer_sd15_vae_transparent_decoder.safetensors'文件；对于SDXL版本，则下载'vae_transparent_decoder.safetensors'。"
+    },
+    {
+        "question": "哪些输出是LayeredDiffusionDecode的主要结果？",
+        "answer": "LayeredDiffusionDecode的主要输出结果包括重建的RGB图像数据（'image'）和alpha通道信息（'mask'），直接对应于解码过程所生成的图像及其透明度层。"
+    }
+]

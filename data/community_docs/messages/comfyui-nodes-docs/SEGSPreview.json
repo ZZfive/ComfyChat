@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SEGSPreview节点的主要功能是什么？",
+        "answer": "SEGSPreview节点是一个处理和预览分割图像的工具，它能够接受分割数据和控制参数来生成分割的视觉预览，同时支持默认图像回退以确保在分割数据不可用时仍能生成预览。"
+    },
+    {
+        "question": "在SEGSPreview节点中的'regs'参数的作用是什么？",
+        "answer": "'segs'参数是SEGSPreview节点的核心输入，它提供了节点将处理的分割数据，直接影响预览图像的生成和质量。"
+    },
+    {
+        "question": "SEGSPreview节点中的'alpha_mode'参数影响什么？",
+        "answer": "'alpha_mode'参数在SEGSPreview节点中决定预览中是否启用alpha混合，对处理最终输出中分割遮罩的透明度起关键作用。"
+    },
+    {
+        "question": "应用中如何设置'segs'参数的最小alpha值？",
+        "answer": "在SEGSPreview节点中，通过'min_alpha'参数设置分割遮罩的最小alpha值，保证即使是遮罩置信度低的区域，分割结果也清晰可见。"
+    },
+    {
+        "question": "可选的'fallback_image_opt'参数在SEGSPreview节点中有什么作用？",
+        "answer": "在SEGSPreview节点中，'fallback_image_opt'参数提供了一个可选图像，用作当分割数据不可用时的回退图像，确保了在任何情况下节点都能生成预览图像。"
+    },
+    {
+        "question": "SEGSPreview节点的输出包括哪些内容？",
+        "answer": "SEGSPreview节点输出包含两部分：用户界面元素，代表预览的UI配置（以‘ui’标签输出），以及包含实际分割图像的数据（以‘result’标签输出），通常为图像批次列表。"
+    },
+    {
+        "question": "SEGSPreview节点的预览图像生成逻辑中，如何处理alpha混合？",
+        "answer": "当'alpha_mode'参数为真时，SEGSPreview节点的预览生成逻辑会在有分割遮罩的情况下应用alpha混合，确保遮罩的透明度可视觉化，而不影响图像的整体质量。"
+    }
+]

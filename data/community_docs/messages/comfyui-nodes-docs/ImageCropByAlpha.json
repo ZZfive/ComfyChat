@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageCropByAlpha节点的用途是什么？",
+        "answer": "ImageCropByAlpha节点旨在基于图像的alpha通道智能裁剪图像，有效地隔离图像的不透明区域，增强图像处理工作流程，特别是处理复杂图像组合或需要清晰分离图像元素的应用程序。"
+    },
+    {
+        "question": "ImageCropByAlpha节点接受哪些参数作为输入？",
+        "answer": "ImageCropByAlpha节点接受两个必需的输入参数：'image'和'RGBA'。'image'是节点需要处理的原始图像，而'RGBA'提供裁剪过程中必需的alpha通道信息，直接影响如何识别和隔离图像的非透明区域。"
+    },
+    {
+        "question": "ImageCropByAlpha节点输出哪些数据类型？",
+        "answer": "ImageCropByAlpha节点输出多种数据类型，包括'IMAGE'、'MASK'、'AREA_MASK'以及坐标和尺寸数据 ('x', 'y', 'width', 'height')，以提供裁剪操作的结果和裁剪区域的空间信息。这些输出涵盖了裁剪后的图像、裁剪过程中的掩码信息以及裁剪区域的具体坐标和尺寸。"
+    },
+    {
+        "question": "ImageCropByAlpha如何帮助处理透明图像？",
+        "answer": "ImageCropByAlpha节点通过基于alpha通道智能裁剪图像，帮助处理透明图像。它能有效地隔离图像的不透明区域，提供精确的内容提取和自动化处理，特别适合涉及透明元素或复杂背景的图像。"
+    },
+    {
+        "question": "什么样的应用程序最适合使用ImageCropByAlpha节点？",
+        "answer": "涉及复杂图像组合或需要清晰分离图像元素的应用程序最适合使用ImageCropByAlpha节点。它特别适用于需要精确提取和处理图像中不透明区域的场景，以及涉及到透明背景或复杂图层的图像处理任务。"
+    },
+    {
+        "question": "ImageCropByAlpha节点处理过程中的关键步骤是什么？",
+        "answer": "关键步骤包括：基于alpha通道信息识别图像的非透明区域，使用二进制掩码隔离这些区域，计算裁剪区的尺寸和坐标，最终裁剪图像并输出裁剪后的内容和相关空间信息。"
+    },
+    {
+        "question": "ImageCropByAlpha节点的输入图像数据类型是什么？",
+        "answer": "ImageCropByAlpha节点的输入图像'IMAGE'和'RGBA'的 Comfy 数据类型是 IMAGE 和 RGBA，对应的 Python 数据类型是 torch.Tensor。这意味着节点在处理中直接操作张量数据，适用于高效处理图像数据。"
+    }
+]

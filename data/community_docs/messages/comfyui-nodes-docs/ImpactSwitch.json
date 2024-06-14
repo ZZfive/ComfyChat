@@ -1,0 +1,30 @@
+[
+    {
+        "question": "GeneralSwitch节点的用途是什么?",
+        "answer": "GeneralSwitch节点用于管理工作流中的数据流，通过选择特定索引的输入来确保正确的数据被引导到后续操作中。"
+    },
+    {
+        "question": "在GeneralSwitch节点中，'select'参数的作用是什么?",
+        "answer": "'select'参数用于决定节点处理的输入索引，它是一个整型参数，决定了特定输入的处理路径。"
+    },
+    {
+        "question": "GeneralSwitch节点中的'sel_mode'参数有何作用?",
+        "answer": "'sel_mode'参数为BOOLEAN类型，它用于决定选择输入是基于提示还是执行上下文，提供了决策机制的灵活性。"
+    },
+    {
+        "question": "GeneralSwitch节点的'unique_id'参数有什么功能?",
+        "answer": "'unique_id'参数是一个用于在工作流中唯一标识节点的隐藏字段，对于内部跟踪和确保节点操作正确关联至其位置十分重要。"
+    },
+    {
+        "question": "GeneralSwitch节点如何处理额外信息?",
+        "answer": "GeneralSwitch节点使用'extra_pnginfo'参数，类型为EXTRA_PNGINFO，用于存储与节点操作相关的额外信息，如工作流详细信息，以加强其与系统的交互。"
+    },
+    {
+        "question": "GeneralSwitch节点的主要输出是什么?",
+        "answer": "GeneralSwitch节点的主要输出包括'selected_value'，即根据索引选择的数据；'selected_label'，与选定输入相关的标签；以及'selected_index'，表示用于选择输入的索引。"
+    },
+    {
+        "question": "GeneralSwitch节点的CPU使用建议有哪些?",
+        "answer": "GeneralSwitch节点建议在CPU上运行，其infra type为CPU，意味着它高效地在非GPU环境下处理数据流控制任务。"
+    }
+]

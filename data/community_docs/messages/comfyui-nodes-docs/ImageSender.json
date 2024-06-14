@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImageSender节点的作用是什么？",
+        "answer": "ImageSender节点用作图像数据的传输工具，它附加前缀于图像文件名并将它们发送到预设的服务器端点，用于系统间视觉内容的无缝交换。"
+    },
+    {
+        "question": "ImageSender节点处理的数据类型是什么？",
+        "answer": "ImageSender节点处理的主要数据类型是IMAGE，表示图像的集合，且被期望为List[bytes]的Python数据类型。"
+    },
+    {
+        "question": "如何为图像文件名定义前缀？",
+        "answer": "使用'filename_prefix'参数可以定义图像文件名的共同前缀，这有助于在接收系统中以系统化方式组织和识别图像。"
+    },
+    {
+        "question": "link_id参数的用途是什么？",
+        "answer": "'link_id'是一个用于关联图像数据与接收系统中特定链接或上下文的标识符，是目标化图像数据传递和引用的关键。"
+    },
+    {
+        "question": "prompt参数如何影响ImageSender的行为？",
+        "answer": "'prompt'参数虽然可选，但可以用作提供额外上下文或指令的手段，对图像处理进行细微控制，从而增强ImageSender节点的功能。"
+    },
+    {
+        "question": "ImageSender如何处理PNG图像的元数据？",
+        "answer": "通过'extra_pnginfo'参数，ImageSender允许在PNG图像中包含额外信息或元数据，用于增强图像数据在接收系统中的细节。"
+    },
+    {
+        "question": "ImageSender节点的输出包含哪些信息？",
+        "answer": "ImageSender的输出以字典形式提供，包含了已发送的图像和相关的元数据，为节点的操作和结果提供全面的概览。"
+    }
+]

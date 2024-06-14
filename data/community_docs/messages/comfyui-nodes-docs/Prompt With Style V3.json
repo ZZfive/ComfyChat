@@ -1,0 +1,42 @@
+[
+    {
+        "question": "PromptWithStyleV3节点的用途是什么?",
+        "answer": "PromptWithStyleV3节点用于根据正面和负面提示的组合以及可选的风格规格生成图像样本，它简化了将风格和条件融入图像生成过程的复杂性，为用户提供了一个简单的界面来创建风格化的图像。"
+    },
+    {
+        "question": "PromptWithStyleV3节点如何管理图像的尺寸?",
+        "answer": "PromptWithStyleV3节点允许用户通过ratio_selected参数选择预定义的宽高比，或使用custom_size、custom_width和custom_height参数来指定非标准尺寸，从而精确控制生成图像的尺寸。"
+    },
+    {
+        "question": "在ComfyUI中，什么参数用于定义生成的图像数量?",
+        "answer": "PromptWithStyleV3节点中的batch_size参数控制单次处理中生成的图像数量，有助于在性能和生成图像数量之间取得平衡。"
+    },
+    {
+        "question": "如何确保在PromptWithStyleV3中生成一致的图像结果?",
+        "answer": "使用seed参数，它引入了随机性但确保使用相同种子的每次运行产生一组确定的图像，这使得结果可预测并便于微调生成过程。"
+    },
+    {
+        "question": "哪些节点适合控制图像的详细程度和外观?",
+        "answer": "PromptWithStyleV3节点的目标模式参数允许用户选择不同的缩放选项，如加倍或四倍大小，从而影响生成图像的细节水平和整体外观。"
+    },
+    {
+        "question": "PromptWithStyleV3节点使用哪些类型的模型来生成和影响图像?",
+        "answer": "PromptWithStyleV3节点使用基础模型参数和CLIP基础参数来合成图像，这两个参数分别是用于图像生成的底层模型和用于文本到图像转换的CLIP模型，同时它还提供了可选的CLIP细化参数来提高图像质量。"
+    },
+    {
+        "question": "如何查看或分析PromptWithStyleV3生成的图像样本?",
+        "answer": "通过samples输出，PromptWithStyleV3提供生成的图像样本，这是图像生成过程的主要结果，可以查看、展示或进行进一步的操作。"
+    },
+    {
+        "question": "PromptWithStyleV3如何处理正面和负面条件向量?",
+        "answer": "PromptWithStyleV3生成的正面和负面条件向量分别是base_pos_cond、base_neg_cond、refiner_pos_cond和refiner_neg_cond输出，用于指导和微调图像生成过程，以产生符合用户期望的图像。"
+    },
+    {
+        "question": "PromptWithStyleV3如何适应不同的输出类型?",
+        "answer": "PromptWithStyleV3节点的输出类型包括用于进一步处理或分析的base_model、包含图像样本的samples以及一系列用于指导或微调图像生成的conditioning输出。"
+    },
+    {
+        "question": "在使用PromptWithStyleV3节点时，如何确保所生成图像符合用户约束?",
+        "answer": "通过配置positive_prompt和negative_prompt以及采用的style参数，PromptWithStyleV3节点能确保生成的图像反映正面提示并且避免负面提示中指定的元素，以此符合用户对图像内容的具体要求和限制。"
+    }
+]

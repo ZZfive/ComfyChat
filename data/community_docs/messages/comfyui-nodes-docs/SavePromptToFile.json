@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SavePromptToFile节点是属于哪个类别的?",
+        "answer": "SavePromptToFile节点属于OneButtonPrompt类别。"
+    },
+    {
+        "question": "SavePromptToFile节点的功能是什么?",
+        "answer": "SavePromptToFile节点的功能是将提示保存到文件中，自动化文件命名和存储过程，确保清晰地记录提示及其相关数据。"
+    },
+    {
+        "question": "哪些输入是SavePromptToFile节点所必需的?",
+        "answer": "SavePromptToFile节点需要如下必需输入：filename_prefix（文件名前缀）、positive_prompt（正面提示）和negative_prompt（负面提示）。"
+    },
+    {
+        "question": "SavePromptToFile节点的输出有哪些?",
+        "answer": "SavePromptToFile节点的输出是一个状态字符串，确认提示是否已成功保存。"
+    },
+    {
+        "question": "在SavePromptToFile节点中，filename_prefix的作用是什么?",
+        "answer": "filename_prefix用于生成唯一且可识别的文件名，对于组织和引用保存的提示至关重要。"
+    },
+    {
+        "question": "SavePromptToFile节点如何处理包含日期的文件名前缀?",
+        "answer": "当检测到包含日期格式的filename_prefix时，节点会根据当前系统日期并根据平台调整格式字符串，格式化生成可识别的日期，然后将这个日期替换在文件名中。"
+    },
+    {
+        "question": "SavePromptToFile节点中包含日期占位符时，会使用哪种日期格式?",
+        "answer": "节点包含如'%date:yyyy-MM-dd-hh-ss%'这类占位符时，根据平台，例如Windows，它会转换成'%Y-%#m-%#d-%#H-%#S'或'%Y-%-m-%-d-%-H-%-S'格式的日期字符串。"
+    }
+]

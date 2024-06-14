@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LatentCompositeMasked节点的主要功能是什么？",
+        "answer": "LatentCompositeMasked节点的'composite'方法主要功能是将源潜在样本智能地混合到目标潜在样本中的指定位置，考虑掩蔽和调整大小参数，实现无缝集成。"
+    },
+    {
+        "question": "LatentCompositeMasked节点处理中哪些参数是必需的？",
+        "answer": "LatentCompositeMasked节点处理中必需的参数包括：'destination'、'source'、'x'、'y'，分别定义源样本合成到的目标潜在样本、要合成的潜在样本、水平位置和垂直位置。"
+    },
+    {
+        "question": "源样本放置的水平位置由哪个参数决定？",
+        "answer": "源样本放置的水平位置由参数'x'决定，它指定了源样本在目标潜在样本中放置的水平位置。"
+    },
+    {
+        "question": "哪些类型的输入数据可以作为'composited_latent'输出使用？",
+        "answer": "'composited_latent'输出类型的使用，封装了在指定位置使用可选掩蔽和调整大小将源潜像混合到目标之后的最终潜在样本，数据类型为LATENT，Python dtype为torch.Tensor。"
+    },
+    {
+        "question": "LatentCompositeMasked节点在什么情况下需要调整源样本的尺寸？",
+        "answer": "当'resize_source'参数设置为True时，LatentCompositeMasked节点会在合成操作之前调整源样本的尺寸，使源样本的尺寸匹配目标尺寸，增强不同潜在大小处理的灵活性。"
+    },
+    {
+        "question": "如何控制LatentCompositeMasked节点中源样本的可见性？",
+        "answer": "通过提供一个可选的'mask'参数，一个特定的张量，可以控制源样本在合成操作后哪些部分是可见的，增加对最终输出的控制层。"
+    },
+    {
+        "question": "LatentCompositeMasked节点的执行依赖于哪种硬件资源？",
+        "answer": "LatentCompositeMasked节点的执行推荐使用GPU作为硬件资源，以优化处理过程。"
+    }
+]

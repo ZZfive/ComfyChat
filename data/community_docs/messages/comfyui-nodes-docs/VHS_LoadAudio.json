@@ -1,0 +1,38 @@
+[
+    {
+        "question": "VHS_LoadAudio节点是什么？",
+        "answer": "VHS_LoadAudio节点是Video Helper Suite的一部分，用于高效加载和处理各种音频文件格式，支持跳转到音频流中的特定秒数，适合多媒体处理工作流程。"
+    },
+    {
+        "question": "VHS_LoadAudio节点支持哪些音频文件格式？",
+        "answer": "VHS_LoadAudio节点支持包括wav、mp3、ogg、m4a和flac在内的多种音频文件格式，通过ComfyUI的`vhs_path_extensions`参数控制。"
+    },
+    {
+        "question": "如何使用seek_seconds参数在VHS_LoadAudio节点中跳转音频流？",
+        "answer": "通过将seek_seconds参数设置为特定的时间偏移量（以秒为单位），VHS_LoadAudio节点可以从音频流的该点开始处理，提高处理特定音频部分的效率。"
+    },
+    {
+        "question": "VHS_LoadAudio节点的audio输出是什么类型？",
+        "answer": "LoadAudio节点的audio输出是ComfyUI中的'VHS_AUDIO'类型数据，Python中表现为bytes，代表加载并可选处理的音频数据，用于后续的音频分析或操作。"
+    },
+    {
+        "question": "在VHS_LoadAudio节点中，音频文件路径的验证如何进行？",
+        "answer": "VHS_LoadAudio节点通过validate_path函数验证音频文件路径，确保路径的有效性、可访问性和所加载文件的类型兼容性。"
+    },
+    {
+        "question": "VHS_LoadAudio节点的infra type是什么？",
+        "answer": "VHS_LoadAudio节点的infra type是CPU，意味着其计算任务主要在CPU上运行，可能影响到音视频处理任务在多线程环境下的调度和性能优化策略。"
+    },
+    {
+        "question": "VHS_LoadAudio节点的动态输入'audio_file'和'seek_seconds'如何定义？",
+        "answer": "VHS_LoadAudio节点的'audio_file'参数以STRING类型指定待加载音频文件的路径，而'seek_seconds'参数以FLOAT类型可选设置音频开始处理的时间点。"
+    },
+    {
+        "question": "哪些应用场合最适合使用VHS_LoadAudio节点？",
+        "answer": "VHS_LoadAudio节点最适合用于多媒体应用程序中，需要将音频加载、片段截取或跳转作为更多多媒体处理工作流一部分的场合，例如音频分析、处理或者电影剪辑制作。"
+    },
+    {
+        "question": "VHS_LoadAudio节点中的load_audio函数如何工作？",
+        "answer": "load_audio函数接受audio_file和seek_seconds参数，验证音频文件路径后，使用get_audio函数从指定时间偏移开始读取音频文件，完成音频数据加载。"
+    }
+]

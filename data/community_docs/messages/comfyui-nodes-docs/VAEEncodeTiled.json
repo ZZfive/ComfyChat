@@ -1,0 +1,30 @@
+[
+    {
+        "question": "VAEEncodeTiled节点的用途是什么？",
+        "answer": "VAEEncodeTiled节点用于通过分块并利用变分自编码器（VAE）高效编码图像数据到潜在空间，特别适用于高分辨率图像的处理，旨在简化并行处理和编码任务。"
+    },
+    {
+        "question": "VAEEncodeTiled节点的主要输入参数是什么？",
+        "answer": "VAEEncodeTiled节点的主要输入参数包括'pixels'和'vae'，其中'pixels'是输入的图像数据，'vae'是用于编码的变分自编码器模型。"
+    },
+    {
+        "question": "节点在编码过程中的功能如何受到'vae'参数的影响？",
+        "answer": "'vae'参数定义了编码过程的架构和参数，是节点功能实现的核心，没有它，节点将无法执行图像数据的编码。"
+    },
+    {
+        "question": "如何理解VAEEncodeTiled节点的'tile_size'参数？",
+        "answer": "'tile_size'参数可控制输入图像被分割为更小区域的大小，对处理的平铺粒度有一定的影响，可选地优化内存使用和性能。"
+    },
+    {
+        "question": "节点输出的'samples'代表什么？",
+        "answer": "'samples'输出包含经过节点处理后，图像的潜在空间编码表示，是节点的主要结果，对于后续需要压缩理解图像底层结构的任务至关重要。"
+    },
+    {
+        "question": "使用VAEEncodeTiled节点时应考虑的硬件类型是什么？",
+        "answer": "在使用VAEEncodeTiled节点时，建议的硬件类型为GPU，因为高效并行处理图像数据和使用变分自编码器通常需要GPU提供的计算能力。"
+    },
+    {
+        "question": "在ComfyUI中，执行VAEEncodeTiled节点编码功能的代码实现细节是什么？",
+        "answer": "VAEEncodeTiled节点通过调用'encode'方法实现编码功能，该方法接受'vae'、'pixels'和'tile_size'参数，利用'tile_size'参数来控制图像编码为潜在表示时的平铺处理。"
+    }
+]

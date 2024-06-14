@@ -1,0 +1,42 @@
+[
+    {
+        "question": "MaskToSEGS_for_AnimateDiff节点的目的是什么?",
+        "answer": "MaskToSEGS_for_AnimateDiff节点的主要目的是将二进制掩码转换为一组分段对象，即SEGS，以便于进一步处理或分析，特别是在详细操作中。"
+    },
+    {
+        "question": "MaskToSEGS_for_AnimateDiff节点的主要输入是什么?",
+        "answer": "节点的主要输入是'mask'，这是一个二进制掩码，定义了要执行分割的目标区域。"
+    },
+    {
+        "question": "什么是combined参数在MaskToSEGS_for_AnimateDiff节点中的作用?",
+        "answer": "combined参数决定了节点是否将掩码视为单独的区域还是整体处理，这直接影响到SEGS的生成方式。"
+    },
+    {
+        "question": "crop_factor参数在MaskToSEGS_for_AnimateDiff节点中如何被使用?",
+        "answer": "crop_factor参数用于确定掩码中裁剪区域的大小比例，影响了分割时细节的提取程度。"
+    },
+    {
+        "question": "在MaskToSEGS_for_AnimateDiff节点中，drop_size参数有何作用?",
+        "answer": "drop_size参数设定了一个阈值，只有当分割区域大于此尺寸时才会被保留，用以过滤掉无关或小尺寸的噪声。"
+    },
+    {
+        "question": "MaskToSEGS_for_AnimateDiff节点中contour_fill参数的功能是什么?",
+        "answer": "contour_fill参数指示节点是否需要填充掩码内区域的轮廓，这对需要实心分割区的应用来说十分重要。"
+    },
+    {
+        "question": "MaskToSEGS_for_AnimateDiff节点的主要输出是什么类型的数据?",
+        "answer": "主要输出类型是'SEGS'，它是一种详细分解了原始掩码中不同区域的数据格式，对于后续分析或操作至关重要。"
+    },
+    {
+        "question": "哪些节点可以将二进制掩码转换成分割对象?",
+        "answer": "ComfyUI的MaskToSEGS_for_AnimateDiff节点能够将二进制掩码转换为一组名为SEGS的分段对象，这在图像处理和分析中极为有用。"
+    },
+    {
+        "question": "MaskToSEGS_for_AnimateDiff节点中的bbox_fill参数功能是什么?",
+        "answer": "当bbox_fill参数启用时，节点会在分割结果中填充每个区域的边界框，这对于后续数据处理或分析可能是关键步骤。"
+    },
+    {
+        "question": "MaskToSEGS_for_AnimateDiff节点的工作区域类型是什么?",
+        "answer": "MaskToSEGS_for_AnimateDiff节点的工作基础设施类型是CPU，这意味着它在普通计算机处理器上运行。"
+    }
+]

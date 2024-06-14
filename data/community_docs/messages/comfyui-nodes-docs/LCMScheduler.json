@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LCMScheduler属于哪个分类？",
+        "answer": "LCMScheduler属于ComfyUI的'sampling/custom_sampling/schedulers'分类，用于为扩散模型生成sigma值的调度计划。"
+    },
+    {
+        "question": "LCMScheduler节点的用途是什么？",
+        "answer": "LCMScheduler节点的用途是为扩散模型生成一系列sigma值的调度计划，这些sigma值对控制采样步骤中的方差至关重要。"
+    },
+    {
+        "question": "计算sigma值时，LCMScheduler依赖哪些输入类型？",
+        "answer": "LCMScheduler节点依赖模型参数（'model'）和步骤参数（'steps'）作为输入类型。模型参数代表调度器将用于计算sigma值的扩散模型，而步骤参数决定了调度器计算的sigma值数量。"
+    },
+    {
+        "question": "什么模型参数（'model'）在LCMScheduler节点中扮演什么角色？",
+        "answer": "在LCMScheduler节点中，'model'参数代表调度器将用于计算sigma值的扩散模型，是必需的输入，直接影响生成的sigma调度计划，对后续的扩散步骤至关重要。"
+    },
+    {
+        "question": "可选的步骤参数（'steps'）在LCMScheduler中的作用是什么？",
+        "answer": "可选的'步骤'参数在LCMScheduler中用于决定调度器计算的sigma值数量，直接影响sigma调度计划的粒度，从而影响扩散采样过程的质量和收敛性。"
+    },
+    {
+        "question": "LCMScheduler的输出数据类型是什么？",
+        "answer": "LCMScheduler的输出类型是'SIGMAS'，代表由调度器生成的一系列sigma值，每个值对应采样中的一个特定步骤，指导在此步骤上添加或移除的噪声方差。"
+    },
+    {
+        "question": "LCMScheduler的源代码中包含哪些关键信息？",
+        "answer": "LCMScheduler的源代码关键信息包括其输入类型定义，包括'model'和'steps'，输出类型为'SIGMAS'，以及用于计算sigma值的方法'get_sigmas'，该方法使用'comfy.samplers.calculate_sigmas_scheduler'进行计算。"
+    }
+]

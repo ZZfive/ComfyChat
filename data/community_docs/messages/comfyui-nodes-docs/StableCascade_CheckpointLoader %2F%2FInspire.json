@@ -1,0 +1,46 @@
+[
+    {
+        "question": "StableCascade_CheckpointLoader 是 ComfyUI 中的哪个分类下的节点？",
+        "answer": "StableCascade_CheckpointLoader 是 ComfyUI InspirePack/Backend 分类下的一个节点，专门用于高效地加载和管理检查点，并促进模型及相关数据的检索和分类。"
+    },
+    {
+        "question": "StableCascade_CheckpointLoader 如何加快工作流程？",
+        "answer": "StableCascade_CheckpointLoader 通过提供缓存功能来显著加快工作流程，允许重用先前加载的检查点，从而加快重复任务的处理速度。"
+    },
+    {
+        "question": "stage_b 参数在 StableCascade_CheckpointLoader 中的作用是什么？",
+        "answer": "stage_b 参数指定了检查点文件名称，用于级联第二阶段模型的加载和缓存控制，直接影响后续处理和结果。"
+    },
+    {
+        "question": "哪些节点输出与第二阶段模型相关？",
+        "answer": "b_model 和 b_vae 输出分别代表从检查点加载的第二阶段模型及其相关的变分自编码器（VAE），是进一步处理和分析的关键组成部分。"
+    },
+    {
+        "question": "StableCascade_CheckpointLoader 的 cache_mode 参数如何影响节点的性能？",
+        "answer": "cache_mode 参数控制节点的缓存行为，决定检查点是从缓存中还是从文件系统加载，以及是否缓存，这显著影响节点的性能和效率。"
+    },
+    {
+        "question": "StableCascade_CheckpointLoader 如何处理未指定 key_opt_b 和 key_opt_c 的情况？",
+        "answer": "当未指定 key_opt_b 和 key_opt_c 参数时，StableCascade_CheckpointLoader 会默认使用 'stage_b' 和 'stage_c' 作为缓存中的键，用以标识检查点。"
+    },
+    {
+        "question": "clip_vision 输出在 StableCascade_CheckpointLoader 中表示什么？",
+        "answer": "clip_vision 输出是第三阶段模型的专门组件，专注于与视觉相关的任务，对于涉及图像处理和理解的应用非常重要。"
+    },
+    {
+        "question": "什么情况下会使用 'all' 作为 cache_mode 的值？",
+        "answer": "当 cache_mode 参数设置为 'all' 时，StableCascade_CheckpointLoader 会缓存第二阶段和第三阶段的所有检查点，对于需要频繁访问多个阶段数据的工作流程特别有用。"
+    },
+    {
+        "question": "哪些输入类型允许用户使用自定义命名来管理检查点？",
+        "answer": "key_opt_b 和 key_opt_c 输入类型允许用户自定义第二阶段和第三阶段检查点的命名，这对于管理检查点缓存中的特定项非常重要。"
+    },
+    {
+        "question": "StableCascade_CheckpointLoader 在何种类型的基础设施上运行更佳？",
+        "answer": "StableCascade_CheckpointLoader 节点的运行更适宜于 CPU 类型的基础设施，这可能与节点的后台处理和缓存管理特性有关。"
+    },
+    {
+        "question": "在 StableCascade_CheckpointLoader 的输出中，哪两个字符串输出用于唯一标识加载的检查点？",
+        "answer": "StableCascade_CheckpointLoader 的 key_b 和 key_c 输出用于唯一标识第二阶段和第三阶段加载的检查点，以便于后续检索和重用。"
+    }
+]

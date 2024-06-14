@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SEGSLabelFilter节点的用途是什么？",
+        "answer": "SEGSLabelFilter节点主要用于根据预定义的标签集处理和过滤段。它能够区分并分类段为两组，一组符合指定标签，另一组不符合，为ImpactPack实用程序套件内的段选择提供关键支持。"
+    },
+    {
+        "question": "使用SEGSLabelFilter节点过滤段时，'segs'参数的作用是什么？",
+        "answer": "'segs'参数表示要过滤的段集合，直接决定节点处理的输入数据集，是该节点操作的核心。"
+    },
+    {
+        "question": "在SEGSLabelFilter中，'preset'参数的功能是什么？",
+        "answer": "'preset'参数在SEGSLabelFilter中用于指定预设检测标签列表，这些标签定义了段过滤的标准。"
+    },
+    {
+        "question": "SEGSLabelFilter中的'labels'参数有哪些特点？",
+        "answer": "'labels'参数允许用户通过多行字符串形式列出希望允许的段类型，这些输入直接设置过滤的条件，使用户能够自定义过滤标准。"
+    },
+    {
+        "question": "SEGSLabelFilter节点处理后，输出的'filtered_SEGS'和'remained_SEGS'代表什么？",
+        "answer": "'filtered_SEGS'输出包含了所有符合指定标签的段，而'remained_SEGS'则包含那些不符合指定标签的段，分别作为过滤过程的主要和次要结果。"
+    },
+    {
+        "question": "SEGSLabelFilter节点在哪些环境下运行最佳？",
+        "answer": "SEGSLabelFilter节点在Infra type为CPU的环境下运行，适用于大多数标准计算机处理任务。"
+    },
+    {
+        "question": "SEGSLabelFilter如何处理'labels'参数中的'eyes'、'eyebrows'和'pupils'标签？",
+        "answer": "如果'labels'中包含特定的眼部细节如'eyes'、'eyebrows'或'pupils'，SEGSLabelFilter会将所有相关的段标签如'left_eye'和'right_eyebrow'也视为允许的段类型，从而进行了更加灵活和全面的段过滤。"
+    }
+]

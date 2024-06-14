@@ -1,0 +1,38 @@
+[
+    {
+        "question": "WAS_Image_Rescale节节点属于哪个类别？",
+        "answer": "WAS_Image_Rescale节点属于WAS Suite/Image/Transform类别，是专门为图像转换设计的。"
+    },
+    {
+        "question": "WAS_Image_Rescale节点如何处理图像尺寸变化？",
+        "answer": "WAS_Image_Rescale节点通过指定的因子缩放图像或调整图像至特定的宽度和高度来处理图像尺寸变化，支持不同的重采样过滤器和模式，如简单缩放或超采样调整大小以提高质量。"
+    },
+    {
+        "question": "哪些图像属性可以影响WAS_Image_Rescale节点的缩放结果？",
+        "answer": "输入图像的质量和尺寸，以及调整大小后的宽度和高度设置都会影响WAS_Image_Rescale节点的缩放结果。"
+    },
+    {
+        "question": "WAS_Image_Rescale节点的'supersample'输入用于什么目的？",
+        "answer": "当'supersample'输入设置为'true'时，WAS_Image_Rescale节点会通过先将图像放大再缩小的方式来提高调整大小过程的质量，实现超采样效果。"
+    },
+    {
+        "question": "节点如何支持不同的重采样模式？",
+        "answer": "通过'resampling'参数，WAS_Image_Rescale节点可以选择不同的过滤器，如lanczos、nearest、bilinear或bicubic，以适应不同的图像质量需求，进而支持多种重采样模式。"
+    },
+    {
+        "question": "在WAS_Image_Rescale节点中，'rescale_factor'输入的什么作用？",
+        "answer": "'rescale_factor'定义了WAS_Image_Rescale节点中图像的缩放比例，是决定图像尺寸调整程度的乘数。"
+    },
+    {
+        "question": "WAS_Image_Rescale节点在'resize'模式下如何设定制图尺寸？",
+        "answer": "在'resize'模式下，WAS_Image_Rescale节点通过'resize_width'和'resize_height'输入参数来设定图像调整大小后的宽度和高度，确保最终图像尺寸符合设定值。"
+    },
+    {
+        "question": "输出'scaled_image'是什么形式的？",
+        "answer": "WAS_Image_Rescale节点的'scaled_image'输出是应用了缩放或调整大小操作后的图像，数据类型为torch.Tensor，表示已经转换的图像。"
+    },
+    {
+        "question": "哪些节点可以帮助在ComfyUI中调节图像尺寸？",
+        "answer": "WASSuite中的WAS_Image_Rescale节点可以在ComfyUI中帮助调节图像尺寸，提供灵活的缩放和调整大小功能，包括按因子缩放和设定宽度和高度调整。"
+    }
+]

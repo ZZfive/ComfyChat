@@ -1,0 +1,38 @@
+[
+    {
+        "question": "LoadImage节点的功能是什么？",
+        "answer": "LoadImage节点从指定目录加载图像文件，处理图像数据，输出图像及其对应的掩码，适用于图像序列的处理，为图像相关的任务做好数据准备。"
+    },
+    {
+        "question": "LoadImage节点的输入类型是什么？",
+        "answer": "LoadImage节点的输入类型为一个必要的'image'参数，表示要处理的图像文件路径，数据类型为字符串。"
+    },
+    {
+        "question": "图像处理后，LoadImage节点输出哪些数据类型？",
+        "answer": "LoadImage节点输出'IMAGE'，表示处理后的浮点格式图像张量；和'MASK'，一个表示二进制掩码的张量，用于图像的分割或对象识别任务。"
+    },
+    {
+        "question": "LoadImage生成的输出IMAGE呈现什么格式？",
+        "answer": "IMAGE输出是一个表示处理后的图像数据的张量，已转换为浮点格式，并进行了归一化处理。"
+    },
+    {
+        "question": "如何获取图像文件路径以供LoadImage处理？",
+        "answer": "通过'image'参数提供图像文件的路径，该路径由节点接受，决定具体要加载和处理的图像。"
+    },
+    {
+        "question": "LoadImage节点的MASK输出为什么重要？",
+        "answer": "MASK输出是一个与图像相关联的二进制掩码张量，用于区分图像中的不同区域或对象，对于需要进行分割或对象识别的任务至关重要。"
+    },
+    {
+        "question": "LoadImage节点运行在什么基础设施类型上？",
+        "answer": "LoadImage节点的推荐运行环境是CPU。"
+    },
+    {
+        "question": "哪些任务可以利用LoadImage节点输出的IMAGE和MASK？",
+        "answer": "LoadImage节点的输出IMAGE和MASK可以用于后续的图像分析或操作，以及需要图像分割或对象识别的任务。"
+    },
+    {
+        "question": "LoadImage节点对图像序列进行处理的具体步骤是什么？",
+        "answer": "LoadImage节点会逐个处理图像序列中的图像，转换它们为张量形式，应用归一化，并为每个图像创建相应的掩码，最终将所有处理后的元素组合成一个输出张量。"
+    }
+]

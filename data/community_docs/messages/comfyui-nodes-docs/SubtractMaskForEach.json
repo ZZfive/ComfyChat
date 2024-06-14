@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SubtractMaskForEach节点的主要功能是什么？",
+        "answer": "SubtractMaskForEach节点的主要功能是通过从基础分割中减去掩码分割来处理分割数据，以细化分割结果并确保重叠区域被准确表示。"
+    },
+    {
+        "question": "SubtractMaskForEach节点执行的'doit'方法影响哪些分割数据？",
+        "answer": "'doit'方法影响SubtractMaskForEach节点中的基础分割和掩码分割，通过扣取操作细化分割结果。"
+    },
+    {
+        "question": "'base_segs'参数在SubtractMaskForEach节点中扮演什么角色？",
+        "answer": "'base_segs'参数在SubtractMaskForEach节点中是节点操作的基础，它包含要处理和减去掩码的分割数据。"
+    },
+    {
+        "question": "'mask_segs'参数对于SubtractMaskForEach节点有什么作用？",
+        "answer": "'mask_segs'参数定义了SubtractMaskForEach节点中将被用于修改基础分割的掩码区域，决定哪些区域将被减掉。"
+    },
+    {
+        "question": "SubtractMaskForEach节点的'base_segs'和'mask_segs'参数的数据类型是什么？",
+        "answer": "在ComfyUI的SubtractMaskForEach节点中，'base_segs'和'mask_segs'参数的数据类型均为'List[SEG]',代表分割数据在Python中的表示。"
+    },
+    {
+        "question": "SubtractMaskForEach节点的'output'数据表示了什么信息？",
+        "answer": "SubtractMaskForEach节点的'output',即'result',是减法操作后得到的修改过的分割列表，表示了图像中经过掩码分割处理后所获得的最终分割数据。"
+    },
+    {
+        "question": "SubtractMaskForEach节点执行过程中的具体算法是什么？",
+        "answer": "SubtractMaskForEach节点通过比较基础分割和掩码分割之间的每个像素点，如果两者在重叠区域都是1（表示存在），则基础分割区域的对应像素点被置为0，实现了分割数据的扣减。"
+    }
+]

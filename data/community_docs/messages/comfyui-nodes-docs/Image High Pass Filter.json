@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Image_High_Pass_Filter节点的作用是什么？",
+        "answer": "WAS_Image_High_Pass_Filter节点用于增强图像中的高频细节，通过应用高通滤波器有效去除低频噪声或模糊，使细节更加突出。"
+    },
+    {
+        "question": "哪些参数可以调整WAS_Image_High_Pass_Filter滤波器的效果？",
+        "answer": "可通过调整半径（radius）和强度（strength）参数来控制WAS_Image_High_Pass_Filter滤波器的效果强度和尺度，以及是否输出彩色图像（color_output）和是否添加中性背景（neutral_background）。"
+    },
+    {
+        "question": "WAS_Image_High_Pass_Filter节点处理的图像输出是什么类型？",
+        "answer": "WAS_Image_High_Pass_Filter节点处理后的图像输出为torch.Tensor类型，这些图像是经过高通滤波器增强高频细节后的结果。"
+    },
+    {
+        "question": "更改WAS_Image_High_Pass_Filter的半径参数会怎样影响输出图像？",
+        "answer": "更改半径参数会影响WAS_Image_High_Pass_Filter输出图像中保留的细节尺度，较大的半径值将滤除更大尺度的模糊，使细节更加鲜明。"
+    },
+    {
+        "question": "哪些图像可以作为WAS_Image_High_Pass_Filter节点的输入？",
+        "answer": "WAS_Image_High_Pass_Filter节点接受List[PIL.Image.Image]类型的图像，即一系列要进行高通滤波器处理的输入图像。"
+    },
+    {
+        "question": "WAS_Image_High_Pass_Filter节点是否可以输出灰度图像？",
+        "answer": "可以，通过将color_output参数设置为'false'，WAS_Image_High_Pass_Filter节点能够输出灰度图像，去除彩色信息，仅保留亮度细节。"
+    },
+    {
+        "question": "如何在WAS Image High Pass Filter的输出图像中添加中性背景？",
+        "answer": "通过将neutral_background参数设置为'true'，WAS Image High Pass Filter会在输出图像中添加中性颜色背景，这有助于在需要更好视觉对比度的情况下获得改善的效果。"
+    }
+]

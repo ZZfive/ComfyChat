@@ -1,0 +1,30 @@
+[
+    {
+        "question": "PolyexponentialScheduler的作用是什么?",
+        "answer": "PolyexponentialScheduler是一个自定义调度程序节点，用于为扩散模型中的sigma值生成自定义时间表，使用polyexponential函数控制噪声水平在给定步骤数内的平滑变化。"
+    },
+    {
+        "question": "上述节点属于哪个类别?",
+        "answer": "PolyexponentialScheduler节点属于sampling/custom_sampling/schedulers类别。"
+    },
+    {
+        "question": "PolyexponentialScheduler的'max_sigma'参数代表什么?",
+        "answer": "'sigma_max'参数定义了扩散过程的初始噪声水平，即sigma可能的最大值，对于设置噪声水平的上限至关重要。"
+    },
+    {
+        "question": "哪类参数用于定义噪声水平降低的速度?",
+        "answer": "可选参数'rho'调整polyexponential时间表的曲率，影响sigma值的降低速度，这对于控制噪声时间表的形状和采样动态很关键。"
+    },
+    {
+        "question": "PolyexponentialScheduler的'steps'参数如何影响噪声时间表?",
+        "answer": "'steps'参数确定了sigma值安排的间隔数，直接影响噪声时间表的精确度和持续时间，对整个采样过程有重大影响。"
+    },
+    {
+        "question": "PolyexponentialScheduler如何生成其输出sigma值序列?",
+        "answer": "使用PolyexponentialScheduler生成的sigma值序列，由'sigmas'表示，规范了每个步骤的噪声水平，直接影响采样质量和稳定性。"
+    },
+    {
+        "question": "哪些组件构成PolyexponentialScheduler节点的输入类型?",
+        "answer": "PolyexponentialScheduler节点的输入类型包括必需的'steps'、'sigma_max'、'sigma_min'以及可选的'rho'参数。"
+    }
+]

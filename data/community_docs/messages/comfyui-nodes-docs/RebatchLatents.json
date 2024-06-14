@@ -1,0 +1,30 @@
+[
+    {
+        "question": "RebatchLatents节点在ComfyUI中扮演什么角色？",
+        "answer": "RebatchLatents节点在ComfyUI中主要用于高效管理和重新组织潜在表示成批次，确保数据能根据指定的大小正确批量处理，从而优化后续计算任务的性能。"
+    },
+    {
+        "question": "RebatchLatents节点接受的'latents'输入是什么？",
+        "answer": "RebatchLatents节点的'latents'输入是一个字典列表，其中每个字典包含潜在表示和相关的元数据。这些数据作为主要输入决定了批量处理的数据。"
+    },
+    {
+        "question": "在RebatchLatents节点中，'batch_size'参数的作用是什么？",
+        "answer": "'batch_size'参数定义了每个从输入'latents'创建的批次的大小，直接影响批量处理的效率和吞吐量，是关键的配置选项。"
+    },
+    {
+        "question": "RebatchLatents节点的'output_list'输出包含什么信息？",
+        "answer": "RebatchLatents节点的'output_list'输出包含重新组织的latents批次。每个批次是一个字典，包含了'samples'、'noise_mask'和'batch_index'信息，代表了数据的批量处理结果。"
+    },
+    {
+        "question": "RebatchLatents节点的关键处理逻辑是什么？",
+        "answer": "RebatchLatents节点核心处理逻辑是按照给定的'batch_size'将'latents'输入重新组织成合适的批次，涉及对数据的分片、批处理和组合操作。"
+    },
+    {
+        "question": "哪些节点可以进行潜在表示的批量处理？",
+        "answer": "ComfyUI中的RebatchLatents节点可以进行潜在表示的批量处理，它通过重新组织潜在表示成批次，优化了计算工作流程。"
+    },
+    {
+        "question": "RebatchLatents节点的实现主要目的是什么？",
+        "answer": "RebatchLatents节点的主要实现目的是为了优化数据处理流程，通过批量处理潜在表示，提高计算效率并确保数据的正确性和容量适应性。"
+    }
+]

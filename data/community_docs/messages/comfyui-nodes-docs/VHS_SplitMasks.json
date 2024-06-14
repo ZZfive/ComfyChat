@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SplitMasks节点的功能是什么？",
+        "answer": "SplitMasks节点的功能是将给定的掩码张量根据指定的索引分成两个不同的组，这在视频掩码的分段处理或分析中非常重要，例如在视频分割或对象跟踪任务中。"
+    },
+    {
+        "question": "SplitMasks节点是由哪个项目提供的？",
+        "answer": "SplitMasks节点是由ComfyUI-VideoHelperSuite项目提供的，其代码仓库可以在https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git找到。"
+    },
+    {
+        "question": "哪些节点可以分割掩码张量？",
+        "answer": "SplitMasks节点可以分割掩码张量，它是ComfyUI-VideoHelperSuite项目中的一个自定义节点。"
+    },
+    {
+        "question": "SplitMasks节点的主要输入是什么？",
+        "answer": "SplitMasks节点的主要输入是'mask'，代表要被分割的视频掩码，其Comfy dtype类型为'MASK'，Python dtype类型为'torch.Tensor'。"
+    },
+    {
+        "question": "如何定义SplitMasks节点的分割位置？",
+        "answer": "SplitMasks节点的分割位置由'split_index'参数定义，它在确定每个结果组的大小中起关键作用，其Comfy dtype类型为'INT'，Python dtype类型为'int'。"
+    },
+    {
+        "question": "SplitMasks节点的输出分别代表什么？",
+        "answer": "SplitMasks节点的输出包括'MASK_A'和'MASK_B'，代表分割掩码的两组，分别对应第一个和第二个结果组。另外，'A_count'和'B_count'则提供了每个组中元素的数量。"
+    },
+    {
+        "question": "如何使用SplitMasks节点分割视频掩码的两部分并得到各部分的元素数量？",
+        "answer": "使用SplitMasks节点，输入视频掩码和索引值，节点会返回两组分割的掩码'MASK_A'和'MASK_B'，以及同时返回的'A_count'和'B_count'则提供了每组元素的数量。"
+    }
+]

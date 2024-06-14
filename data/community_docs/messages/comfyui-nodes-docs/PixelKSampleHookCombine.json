@@ -1,0 +1,30 @@
+[
+    {
+        "question": "PixelKSampleHookCombine是什么？",
+        "answer": "PixelKSampleHookCombine是一个ComfyUI的自定义节点，用于将两个独立的PixelKSampleHook钩子顺序应用于一系列图像处理操作，以协同完成图像预处理、解码、放大和编码的工作流程。"
+    },
+    {
+        "question": "PixelKSampleHookCombine节点的输入类型有哪些？",
+        "answer": "PixelKSampleHookCombine的输入类型包括hook1和hook2，这两个都是类型为PixelKSampleHook的钩子，分别在图像处理的早期和后期阶段发挥关键作用。"
+    },
+    {
+        "question": "使用PixelKSampleHookCombine时，hook1和hook2的顺序可以颠倒吗？",
+        "answer": "根据PixelKSampleHookCombine的设计，hook1和hook2的顺序是固定的，hook1在hook2之前执行，按顺序应用以完成图像处理的流水线操作。"
+    },
+    {
+        "question": "PixelKSampleHookCombine的输出类型是什么？",
+        "answer": "PixelKSampleHookCombine的输出是processed_pixels，表示将两个PixelKSampleHook应用在输入像素数据后的结果，其格式为COMBO[str, torch.Tensor]，适用于ComfyUI环境。"
+    },
+    {
+        "question": "哪些自定义节点用于图像处理操作的钩子协作？",
+        "answer": "PixelKSampleHookCombine 自定义节点用于图像处理操作中钩子的协作，确保第一和第二钩子按顺序执行，从而提高图像处理的效率和输出质量。"
+    },
+    {
+        "question": "PixelKSampleHookCombine节点是输出节点吗？",
+        "answer": "PixelKSampleHookCombine不是一个输出节点，它主要用于处理和转换像素数据，而不直接作为最终的输出结果展示。"
+    },
+    {
+        "question": "PixelKSampleHookCombine的infra type是什么？",
+        "answer": "PixelKSampleHookCombine的infra type是CPU，意味着它主要在CPU上执行图像处理操作，而不是依赖于GPU加速。"
+    }
+]

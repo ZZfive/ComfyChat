@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Latent_Batch的主要功能是什么？",
+        "answer": "WAS_Latent_Batch节点主要功能是将多个潜在张量组合在一起，确保它们具有相同的维度，以高效处理潜在数据。"
+    },
+    {
+        "question": "哪些参数是WAS_Latent_Batch节点的输入类型？",
+        "answer": "WAS_Latent_Batch节点的输入类型包括可选输入latent_a、latent_b、latent_c和latent_d，都是潜在张量，用于批量处理。"
+    },
+    {
+        "question": "当'latent_a'存在和缺失时，WAS_Latent_Batch节点的行为有何不同？",
+        "answer": "'latent_a'的存在影响WAS_Latent_Batch节点处理和生成一致潜在批量的能力，如果没有'latent_a'，节点将不能处理任何潜在张量。"
+    },
+    {
+        "question": "在WAS_Latent_Batch中，'latent_d'参数的作用是什么？",
+        "answer": "'latent_d'为WAS_Latent_Batch节点提供了处理更多潜在张量的进一步灵活性，尤其是当涉及多种潜在向量的场合。"
+    },
+    {
+        "question": "WAS_Latent_Batch节点输出的'latent'是什么？",
+        "answer": "输出'latent'是一个批量张量，整合了所有输入潜在张量，简化了对组合潜在表示的处理和分析。"
+    },
+    {
+        "question": "在WAS_Latent_Batch节点中，如何确保输入潜在张量的维度一致？",
+        "answer": "WAS_Latent_Batch节点内部通过`_check_latent_dimensions`方法确保所有输入张量的维度一致，如果发现不匹配，则会抛出ValueError。"
+    },
+    {
+        "question": "处理潜在张量时，WAS_Latent_Batch的infra type是什么？",
+        "answer": "WAS_Latent_Batch节点的infra type为CPU，这意味着它在中央处理器上运行潜在张量的处理与整合。"
+    }
+]

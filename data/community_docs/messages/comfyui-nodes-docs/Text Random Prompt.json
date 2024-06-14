@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Text Random Prompt类的目的和作用是什么？",
+        "answer": "Text Random Prompt类的`random_prompt`方法用于根据提供的搜索种子生成随机文本提示，如果没有提供则使用默认提示，旨在为生成式AI任务提供多样化的输入提示。"
+    },
+    {
+        "question": "WAS_Text_Random_Prompt的`random_prompt`方法如何处理未提供search_seed的情况？",
+        "answer": "如果没有提供search_seed，WAS_Text_Random_Prompt的`random_prompt`方法将从一组预定义的默认值中随机选择一个值，如'portrait'、'landscape'等，作为查询种子。"
+    },
+    {
+        "question": "WAS_Text_Random_Prompt的输出数据类型是什么？",
+        "answer": "WAS_Text_Random_Prompt的`random_prompt`方法输出的数据类型为ComfyUI的STRING类型，这是随机选取的文本提示。"
+    },
+    {
+        "question": "`search_seed`在WAS_Text_Random_Prompt中的作用是什么？",
+        "answer": "`search_seed`参数定义了生成随机文本提示的初始查询，影响生成的提示类型和从外部API检索的图像，是`random_prompt`方法中的关键输入。"
+    },
+    {
+        "question": "当WAS_Text_Random_Prompt的search_lexica_art方法无法获取图像时，会发生什么？",
+        "answer": "如果search_lexica_art方法无法从API获取图像或在请求过程中遇到错误，将返回一个表示'404 not found error'的错误信息作为提示。"
+    },
+    {
+        "question": "WAS_Text_Random_Prompt如何实现使用API获取图像列表？",
+        "answer": "WAS_Text_Random_Prompt通过调用`search_lexica_art`方法，使用包含查询的URL来访问lexica.art的API，请求与查询相关的图像列表，然后从中随机选择并返回一个图像的关联提示。"
+    },
+    {
+        "question": "若希望使用WAS_Text_Random_Prompt自定义生成文本提示，需要哪个输入字段？",
+        "answer": "要自定义WAS_Text_Random_Prompt生成的文本提示，需要在`random_prompt`方法中提供`search_seed`字段，以此来定义生成提示的初始查询。"
+    }
+]

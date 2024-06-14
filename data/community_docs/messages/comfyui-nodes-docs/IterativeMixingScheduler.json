@@ -1,0 +1,30 @@
+[
+    {
+        "question": "IterativeMixingScheduler是什么类型的节点？",
+        "answer": "IterativeMixingScheduler是ComfyUI的一个自定义节点，属于'sampling/custom_sampling/schedulers'类别，用于生成一系列用于迭代混合过程中的噪声水平（sigmas）。"
+    },
+    {
+        "question": "IterativeMixingScheduler节点的输入有哪些？",
+        "answer": "IterativeMixingScheduler节点的输入包括模型（如MODEL）、调度器（称为SCHEDULER_NAMES）、步骤数（如INT）和去噪参数（如FLOAT），这些参数分别用于采样、控制噪声水平、确定采样迭代次数和调整采样过程的精度。"
+    },
+    {
+        "question": "在IterativeMixingScheduler节点中，模型参数的作用是什么？",
+        "answer": "模型参数是IterativeMixingScheduler中必不可少的输入，用于指示从哪个生成模型抽取样本。它是设定采样过程结构与能力的基础要素。"
+    },
+    {
+        "question": "IterativeMixingScheduler节点的步骤参数如何影响输出？",
+        "answer": "步骤参数定义了IterativeMixingScheduler节点中迭代采样的总次数，直接影响输出的噪声水平序列（sigmas）的密度，从而影响最终样本的细节和精度。"
+    },
+    {
+        "question": "IterativeMixingScheduler会输出什么？",
+        "answer": "IterativeMixingScheduler节点输出一系列计算出的噪声水平（sigmas）序列，这是采样迭代过程的关键指南，直接决定着最终生成样本的特性。"
+    },
+    {
+        "question": "去噪参数在IterativeMixingScheduler节点中起何作用？",
+        "answer": "去噪参数在IterativeMixingScheduler节点中调节去噪的速率，从而实现对采样过程的精调，显著影响生成样本的清晰度与细节表现。"
+    },
+    {
+        "question": "如何调整IterativeMixingScheduler的去噪参数以影响样本的生成？",
+        "answer": "通过调整IterativeMixingScheduler中的去噪参数，可以在采样过程中控制噪声去除的效率，影响样本的清晰度和详细程度，当参数接近1时，保持高精度，相反，则可能产生更多模糊和简化的效果。"
+    }
+]

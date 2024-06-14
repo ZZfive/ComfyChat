@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MediaPipe_FaceMesh_Preprocessor_Provider_for_SEGS是什么类型的节点?",
+        "answer": "MediaPipe_FaceMesh_Preprocessor_Provider_for_SEGS 是 ComfyUI 的 InspirePack/SEGS/ControlNet 类别中的自定义节点，用以预处理图像的面部特征以进行语义分割。"
+    },
+    {
+        "question": "MediaPipe_FaceMesh_Preprocessor_Provider_for_SEGS节点的主要功能是什么?",
+        "answer": "该节点的主要功能是使用MediaPipe的FaceMesh模型来检测面部并生成分割掩码，增强输入图像的分割，尤其专注于面部特征，以获得更详细的面部分割。"
+    },
+    {
+        "question": "哪些输入参数对MediaPipe_FaceMesh_Preprocessor_Provider_for_SEGS至关重要?",
+        "answer": "max_faces、min_confidence和resolution_upscale_by参数对其至关重要，分别控制检测的面孔数量、最小置信度阈值以及输入图像的放大比例，以优化面部检测及其分割掩码的生成。"
+    },
+    {
+        "question": "max_faces参数做什么?",
+        "answer": "max_faces参数确定模型在输入图像中检测的最大面孔数，影响面部检测的粒度，从而平衡性能和准确性。"
+    },
+    {
+        "question": "min_confidence参数的作用是什么?",
+        "answer": "min_confidence参数设置面部检测的最小置信度阈值，过滤掉低于该置信度水平的检测，有助于确保生成的分割掩码质量。"
+    },
+    {
+        "question": "resize_upscale_by参数如何帮助提高准确性?",
+        "answer": "resolution_upscale_by参数通过调整输入图像的放大比例，以更高的分辨率提高检测准确性，尽管可能增加计算需求。"
+    },
+    {
+        "question": "MediaPipe_FaceMesh_Preprocessor_Provider_for_SEGS输出什么类型的数据?",
+        "answer": "该节点输出SEGS_PREPROCESSOR类型的数据，即带有检测到的面部和分割掩码的预处理图像，用于作为下游语义分割任务的输入。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MaskListSelect节点是ComfyUI中的哪个类别?",
+        "answer": "MaskListSelect节点属于ComfyUI中的face_parsing类别，它用于从一系列掩码中选择特定元素，常用于面部解析任务。"
+    },
+    {
+        "question": "MaskListSelect节点的输入掩码的数据类型是什么?",
+        "answer": "MaskListSelect节点的输入掩码数据类型为ComfyUI中的'MASK'，实际数据类型为torch.Tensor，用于存储多个掩码以供节点操作。"
+    },
+    {
+        "question": "如何使用MaskListSelect节点选择列表中的第一个掩码?",
+        "answer": "要使用MaskListSelect节点选择列表中的第一个掩码，'index'参数应保留其默认值0，因为默认值对应列表中的首个掩码位置。"
+    },
+    {
+        "question": "MaskListSelect节点输出的单个掩码将如何用于后续任务?",
+        "answer": "MaskListSelect节点的输出，即单个掩码张量，可以用于下游任务，如将掩码应用于图像、掩码的可视化或更进一步的图像分析处理，以支持后续的计算机视觉任务。"
+    },
+    {
+        "question": "哪些节点支持从多个掩码中选择特定掩码进行进一步处理?",
+        "answer": "ComfyUI的MaskListSelect节点支持从多个掩码中按指定索引选择特定掩码以进行下游任务如掩码应用或分析，满足具体图像处理需求。"
+    },
+    {
+        "question": "MaskListSelect节点在ComfyUI中的基础设施类型是什么?",
+        "answer": "MaskListSelect节点在ComfyUI中的基础设施类型是CPU，意味着它在处理任务时将使用CPU资源进行计算，因此在配置和应用该节点时需考虑到这一点。"
+    },
+    {
+        "question": "MaskListSelect节点的'selected_mask'输出的数据类型是什么?",
+        "answer": "MaskListSelect节点输出的'selected_mask'数据类型是ComfyUI中的'MASK'类型，表现为torch.Tensor，这是选定单个掩码后用于后续处理的数据格式。"
+    }
+]

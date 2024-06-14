@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SplitLongMask节点设计用于执行什么任务？",
+        "answer": "SplitLongMask节点设计用于根据指定的数量或高度将单个大型掩码分割成多个较小的掩码，以增强掩码的可管理性和在不同场景中的适用性。"
+    },
+    {
+        "question": "large_mask参数在SplitLongMask节点中的作用是什么？",
+        "answer": "large_mask是SplitLongMask节点的主要输入参数，代表了需要被分割的大型掩码，其质量和尺寸直接影响输出结果中较小掩码的特性。"
+    },
+    {
+        "question": "count参数如何影响SplitLongMask节点的输出？",
+        "answer": "count参数规定了希望输出的较小掩码的数量，它在确定结果掩码的大小和数量方面起到关键作用，尤其是在需要特定分布的掩码段的应用中。"
+    },
+    {
+        "question": "SplitLongMask节点的输出结果有哪些特点？",
+        "answer": "SplitLongMask节点输出为一个较小掩码的列表，这些掩码是从原始的large_mask派生出来的，对于涉及基于掩码操作的图像处理或机器学习任务尤为重要。"
+    },
+    {
+        "question": "SplitLongMask节点的输出类型是什么？",
+        "answer": "SplitLongMask节点的输出类型为mask列表，即一系列通过从原始large_mask中分割得到的较小掩码。"
+    },
+    {
+        "question": "哪些场景下SplitLongMask节点的应用更为突出？",
+        "answer": "SplitLongMask节点在图像分割、目标跟踪以及需要操纵和管理多个较小掩码的图像处理任务中应用突出，它增强了对复杂场景的管理和处理能力。"
+    },
+    {
+        "question": "SplitLongMask节点的基础设施运行类型是什么？",
+        "answer": "SplitLongMask节点的运行类型为CPU，这意味着它主要在CPU上执行分割掩码的运算，而不是依赖于GPU加速。"
+    }
+]

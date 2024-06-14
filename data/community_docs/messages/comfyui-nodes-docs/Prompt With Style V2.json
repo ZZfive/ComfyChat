@@ -1,0 +1,30 @@
+[
+    {
+        "question": "PromptWithStyleV2是什么?",
+        "answer": "PromptWithStyleV2 是ComfyUI Mikey类别中的一个自定义节点，用于生成并细化具有指定风格的提示，确保生成的内容与期望的艺术或主题方向一致。"
+    },
+    {
+        "question": "PromptWithStyleV2节点如何确保生成内容的艺术或主题方向一致性？",
+        "answer": "PromptWithStyleV2节点通过组合使用正向提示、负向提示和风格参数来实现，这些参数指导创作过程，确保生成的输出反映输入标准的细腻风格。"
+    },
+    {
+        "question": "哪些是PromptWithStyleV2节点的必需输入？",
+        "answer": "PromptWithStyleV2节点的必需输入包括positive_prompt（正向提示）、negative_prompt（负向提示）、style（风格参数）、ratio_selected（宽度比参数）、clip_base（基础CLIP模型）和clip_refiner（精炼CLIP模型）。"
+    },
+    {
+        "question": "positive_prompt在PromptWithStyleV2节点中的作用是什么？",
+        "answer": "positive_prompt在PromptWithStyleV2节点中是关键输入，用于设定创造性的基调并确保在输出中实现预期的风格和主题元素。"
+    },
+    {
+        "question": "PromptWithStyleV2节点中的clip_base参数有什么功能？",
+        "answer": "clip_base参数在PromptWithStyleV2节点中用于引用基础CLIP模型，这个模型将文本提示编码和解码为潜在空间表示。"
+    },
+    {
+        "question": "PromptWithStyleV2节点的输出类型有哪些？",
+        "answer": "PromptWithStyleV2节点的输出类型包括samples（样本输出，生成的潜在表示）、base_pos_cond和base_neg_cond（基于基础CLIP模型的正向和负向调节信息）、refiner_pos_cond和refiner_neg_cond（来自精炼CLIP模型的正向和负向调节）以及positive_prompt和negative_prompt的输出。"
+    },
+    {
+        "question": "batch_size参数在PromptWithStyleV2节点中有什么作用？",
+        "answer": "batch_size参数允许控制在单次操作中生成的样本数量，是一个可选参数，可以根据计算资源和具体任务需求进行调整。"
+    }
+]

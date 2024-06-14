@@ -1,0 +1,30 @@
+[
+    {
+        "question": "VHS_SplitLatents是什么类？",
+        "answer": "VHS_SplitLatents是ComfyUI Video Helper Suite中的一种节点，用于按照指定的索引将潜在变量分割成两个不同的组，便于管理和操作视频相关的潜在信息。"
+    },
+    {
+        "question": "SplitLatents节点对潜在变量进行分割的主要依据是什么？",
+        "answer": "SplitLatents节点主要依据'split_index'参数对潜在变量进行分割，该参数定义了潜在变量按哪些样本进行分割。"
+    },
+    {
+        "question": "SplitLatents节点的输出包括哪些部分？",
+        "answer": "SplitLatents节点的输出包括LATENT_A、A_count、LATENT_B和B_count，分别代表分割后的两组潜在变量及其各自数量。"
+    },
+    {
+        "question": "如何获取SplitLatents处理后的一组潜在变量的数量？",
+        "answer": "通过查看A_count或B_count输出，可以分别获取第一组和第二组潜在变量的数量。"
+    },
+    {
+        "question": "SplitLatents节点的输入参数'latents'是什么类型的？",
+        "answer": "'latents'参数为一个内含'samples'的字典类型，代表了数据中待分割的潜在变量。"
+    },
+    {
+        "question": "ComfyUI中哪些节点可以处理潜在变量数据？",
+        "answer": "ComfyUI中SplitLatents节点可以处理包含'samples'字典的潜在变量数据，分别输出分割后的两组潜变量和数量。"
+    },
+    {
+        "question": "SplitLatents节点的PYTHON dtype是什么类型？",
+        "answer": "SplitLatents节点的PYTHON dtype为字典类型Dict[str, torch.Tensor]和int，分别用于描述潜在变量和分割后组数。"
+    }
+]
