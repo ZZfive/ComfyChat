@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RescaleClassifierFreeGuidanceTest node in ComfyUI?",
+        "answer": "The RescaleClassifierFreeGuidanceTest node in ComfyUI applies a custom patch to a model, modifying its classifier-free guidance sampling function. The node aims to maintain a consistent scale of features across different guidance strengths by rescaling the guidance scale factor dynamically based on the standard deviation of the conditional and unconditional inputs."
+    },
+    {
+        "question": "What category does the RescaleClassifierFreeGuidanceTest node belong to in ComfyUI?",
+        "answer": "The RescaleClassifierFreeGuidanceTest node belongs to the 'custom_node_experiments' category in ComfyUI."
+    },
+    {
+        "question": "What effect does the 'multiplier' input have on the patched model in RescaleClassifierFreeGuidanceTest?",
+        "answer": "The 'multiplier' input in RescaleClassifierFreeGuidanceTest is a scaling factor that blends the original and rescaled guidance signals. It controls the strength of the rescaling effect on the output of the patched model."
+    },
+    {
+        "question": "What does the patched model produced by RescaleClassifierFreeGuidanceTest incorporate?",
+        "answer": "The patched model produced by RescaleClassifierFreeGuidanceTest incorporates an updated classifier-free guidance sampling function that applies dynamic rescaling based on input standard deviations."
+    },
+    {
+        "question": "How is the patched model's classifier-free guidance function updated by RescaleClassifierFreeGuidanceTest?",
+        "answer": "RescaleClassifierFreeGuidanceTest updates the patched model's classifier-free guidance function by implementing a dynamic rescaling mechanism. This mechanism modifies the guidance scale factor based on standard deviations of the conditional and unconditional inputs to maintain a consistent feature scale across different guidance strengths."
+    },
+    {
+        "question": "What infrastructure type is required for the RescaleClassifierFreeGuidanceTest node?",
+        "answer": "The RescaleClassifierFreeGuidanceTest node requires a 'GPU' infrastructure type."
+    },
+    {
+        "question": "What does the custom patch in RescaleClassifierFreeGuidanceTest specifically calculate when rescaling the guidance?",
+        "answer": "The custom patch in RescaleClassifierFreeGuidanceTest calculates the standard deviation of the conditional and unconditional inputs separately, performs the rescaling based on these calculations, and then blends the original and rescaled guidance signals with a 'multiplier' factor before applying the result."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ReferenceOnlySimple node in ComfyUI?",
+        "answer": "The ReferenceOnlySimple node in ComfyUI is designed to manipulate and extend model references for batch processing, cloning a model and applying a custom attention mechanism to blend reference samples with generated latent samples."
+    },
+    {
+        "question": "Which nodes are commonly used alongside ReferenceOnlySimple?",
+        "answer": "The nodes commonly used alongside ReferenceOnlySimple include ADE_AnimateDiffLoaderWithContext and LatentFromBatch."
+    },
+    {
+        "question": "How does the ReferenceOnlySimple node adjust noise masks for the output?",
+        "answer": "The ReferenceOnlySimple node adjusts noise masks for the output by performing operations that include repeating, concatenating, and resizing the masks as needed."
+    },
+    {
+        "question": "Which input does ReferenceOnlySimple require to clone and modify?",
+        "answer": "ReferenceOnlySimple requires the 'model' input, which is the model to be cloned and modified, serving as the base for subsequent operations including the application of a custom attention mechanism."
+    },
+    {
+        "question": "What is the dtype in Python for the 'reference' input of the ReferenceOnlySimple node?",
+        "answer": "The dtype in Python for the 'reference' input of the ReferenceOnlySimple node is Dict[str, torch.Tensor]."
+    },
+    {
+        "question": "In ReferenceOnlySimple, what determines the size of the generated latent samples?",
+        "answer": "In ReferenceOnlySimple, the size of the generated latent samples is determined by the 'batch_size' parameter, which specifies the number of samples to generate in the batch."
+    },
+    {
+        "question": "What node category does ReferenceOnlySimple belong to in ComfyUI?",
+        "answer": "ReferenceOnlySimple belongs to the 'custom_node_experiments' category in ComfyUI."
+    }
+]

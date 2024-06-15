@@ -1,0 +1,42 @@
+[
+    {
+        "question": "Create Grid Image from Batch 是什么节点，它属于哪个分类？",
+        "answer": "Create Grid Image from Batch 是 ComfyUI 中 WAS Suite/Image/Process 类别下的一个节点，也称为 WAS_Image_Grid_Image_Batch。"
+    },
+    {
+        "question": "WAS_Image_Grid_Image_Batch的功能是什么？",
+        "answer": "WAS_Image_Grid_Image_Batch 节点的功能是将一批图像智能地排列成网格布局，同时调整每个图像的大小以适应指定的最大单元格尺寸并保持宽高比，以及提供有色边框选项。"
+    },
+    {
+        "question": "哪些输入参数允许用户控制WAS_Image_Grid_Image_Batch中网格布局的列数？",
+        "answer": "number_of_columns 是一个允许用户指定网格中列数的输入参数，其默认值为6，可以按需调整。"
+    },
+    {
+        "question": "WAS_Image_Grid_Image_Batch的'max_cell_size'参数的作用是什么？",
+        "answer": "'max_cell_size'参数用于设置网格中每个图像单元格的最大尺寸（像素），控制图像缩放，确保它们在网格内适当大小。"
+    },
+    {
+        "question": "描述如何实现WAS_Image_Grid_Image_Batch中图像的智能排列和尺寸调整。",
+        "answer": "WAS_Image_Grid_Image_Batch 节点动态调整图像大小以适应指定的最大单元格尺寸，同时确保各图像的宽高比得到保持，实现智能排列和尺寸调整。"
+    },
+    {
+        "question": "哪几个参数用来设定图像边框的属性？",
+        "answer": "add_border 参数用于启用边框添加，而 border_red、border_green、border_blue 用来设定边框的颜色，border_width 则控制边框的厚度。"
+    },
+    {
+        "question": "使用WAS_Image_Grid_Image_Batch能否调整边框颜色？如何调整？",
+        "answer": "通过使用 border_red、border_green 和 border_blue 参数，用户可以分别调整边框中红色、绿色和蓝色分量，从而定制边框颜色。"
+    },
+    {
+        "question": "输出图像'output_image'的类型是什么？",
+        "answer": "'output_image'是经过节点处理的结果，其类型为IMAGE，在Python中表示为torch.Tensor，包含了网格图像的结构化布局。"
+    },
+    {
+        "question": "WAS_Image_Grid_Image_Batch的执行对于计算资源有何要求？",
+        "answer": "WAS_Image_Grid_Image_Batch节点推荐在CPU上执行，这代表其处理图像网格的任务在大多数计算设备上可轻松完成。"
+    },
+    {
+        "question": "智能网格图像布局中，调整图像大小是否意味着牺牲原始图像的宽高比？",
+        "answer": "在 WAS_Image_Grid_Image_Batch 的智能网格图像布局中，调整图像大小的同时会保持图像的原始宽高比，确保图像不会变形。"
+    }
+]
