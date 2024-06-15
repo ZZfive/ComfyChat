@@ -1146,7 +1146,7 @@ if __name__=='__main__':
     # node_name = 'ComfyUI-Manager'
     # semi_automatic_for_one_node2(node_name, qa)
 
-    # construct_data("/root/code/ComfyChat/data/comfyui_data_v1.json")
+    construct_data("/root/code/ComfyChat/data/comfyui_data_v1.json")
 
     # check_messages_json()
 
