@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_Image_Remove_Color节点有何用途?",
+        "answer": "WAS_Image_Remove_Color节点用于根据用户定义的标准处理图像，移除特定颜色并用指定颜色替换，以服务于后续分析或美化图像的目的。"
+    },
+    {
+        "question": "WAS_Image_Remove_Color节点的输入参数有哪些?",
+        "answer": "WAS_Image_Remove_Color节点的主要输入参数包括image（图像）、target_red（目标红色分量）、target_green（目标绿色分量）、target_blue（目标蓝色分量）、replace_red（替换红色分量）、replace_green（替换绿色分量）、replace_blue（替换蓝色分量）和clip_threshold（颜色差异阈值）。"
+    },
+    {
+        "question": "为什么image参数对WAS_Image_Remove_Color节点是必需的?",
+        "answer": "image参数对WAS_Image_Remove_Color节点是必需的，因为它是待处理的输入，决定了颜色移除操作的内容和格式。"
+    },
+    {
+        "question": "clip_threshold参数在WAS_Image_Remove_Color节点中起什么作用?",
+        "answer": "clip_threshold参数在WAS_Image_Remove_Color节点中用于设定颜色差异的阈值，节点根据此阈值区分目标颜色和其他颜色，对目标颜色进行精确移除。"
+    },
+    {
+        "question": "哪些输入参数直接影响WAS_Image_Remove_Color节点从图像中替换的颜色?",
+        "answer": "target_red、target_green和target_blue参数定义了要替代的颜色，而replace_red、replace_green和replace_blue参数确定用以替换的输出颜色，直接影响了WAS_Image_Remove_Color节点的色变换功能。"
+    },
+    {
+        "question": "WAS_Image_Remove_Color节点的输出包含什么?",
+        "answer": "WAS_Image_Remove_Color节点的输出类型是output_image，即已处理的图像，其中指定的颜色已被移除或替换，展示节点对图像色彩修改的效果。"
+    },
+    {
+        "question": "如何描述WAS_Image_Remove_Color节点的processing机制?",
+        "answer": "WAS_Image_Remove_Color节点通过比较图像颜色与目标颜色（由target_red、target_green和target_blue定义）的差异度，依据clip_threshold设定的阈值，确定目标颜色并将其替换为由replace_red、replace_green和replace_blue定义的替换颜色，从而实现精准的颜色替换功能。"
+    }
+]

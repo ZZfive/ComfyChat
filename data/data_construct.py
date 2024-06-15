@@ -1173,14 +1173,14 @@ if __name__=='__main__':
     # ans = eng2zh_chat2api(eng_text='America is fucking shit')
     # print(ans)
 
-    # temp = get_data_from_siliconflow('VAEEncodeTiled',
-    #                              r'D:\git_github\self\ComfyChat\data\community_docs\repos\comfyui-nodes-docs\docs\VAEEncodeTiled.md',
-    #                              model='alibaba/Qwen2-72B-Instruct',
-    #                              system_prompt=system_prompt_zh, template=template_zh)
-    # print(temp)
-    # temp = parse_json(temp)
-    # print(temp)
-    # save2json(temp, r"D:\git_github\self\ComfyChat\data\community_docs\repos\VAEEncode.json")
+    temp = get_data_from_siliconflow('CropLatent',
+                                 r'D:\\git_github\\self\\ComfyChat\\data\\community_docs\\repos\\ComfyUI-docs\\docs\\Core Nodes\\Latent\\transform\\CropLatent.md',
+                                 model='alibaba/Qwen2-72B-Instruct',
+                                 system_prompt=system_prompt2_index, template=template2_index)
+    print(temp)
+    temp = parse_json(temp)
+    print(temp)
+    save2json(temp, r"D:\git_github\self\ComfyChat\data\community_docs\messages\ComfyUI-docs\CropLatent.json")
 
     # generate_data_from_comfyui_docs()
 
@@ -1194,4 +1194,4 @@ if __name__=='__main__':
     # name, ext = extract_name_extension(name)
     # print(name, ext)
 
-    generate_data_from_comflowy()
+    # generate_data_from_comflowy()
