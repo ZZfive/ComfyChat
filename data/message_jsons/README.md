@@ -15,3 +15,9 @@
  - alpacha_gpt4_data_zh_modified.json--调整后的conversation形式的文件
 
 # v2
+&emsp;&emsp;除了v1中使用的单独从每个自定义节点github仓库中拉取的md文档，还有一些社区开发者集中为大量节点提供文档的项目，可以从中提取出大量的针对各个节点的数据。文件说明如下：
+ - comflowy_en.json--从comflowy中构建的英文问答数据
+ - comflowy_zh.json--从comflowy中构建的中文问答数据
+ - ComfyUI-docs.json--从ComfyUI-docs中构建的数据，是英文
+ - comfyui-nodes-docs.json--从comfyui-nodes-docs中构建的数据，是中文
+ - SaltAI-Web-Docs.json--congSaltAI-Web-Docs中构建的数据，是英文
