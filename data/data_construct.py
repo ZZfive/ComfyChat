@@ -1051,6 +1051,58 @@ def generate_data_from_comflowy(comflowy_path: str = r"D:\git_github\self\ComfyC
         save2json(unsuccessful_nodes, unsuccessful_node_list_path)
 
 
+def constrcut_messages_from_community_docs(base_dir: str, save_path: str) -> None:
+    messages = []
+
+    for item in os.listdir(base_dir):
+        if item.endswith('.json'):
+            try:
+                json_path = os.path.join(base_dir, item)
+                json_datas = load4json(json_path)
+                if isinstance(json_datas, dict):
+                    datas = []
+                    for k in json_datas:
+                        datas += json_datas[k]
+                else:
+                    datas = json_datas
+                for data in datas:
+                    message = construct_single_messages(data['question'], data['answer'])
+                    messages.append(message)
+            except Exception as e:
+                print(json_path)
+
+    save2json(messages, save_path)
+
+
+def constrcut_messages_from_comflowy() -> None:
+    en_messages = []
+    zh_messages = []
+    base_dir = r"D:\git_github\self\ComfyChat\data\community_docs\messages\comflowy"
+
+    for item in os.listdir(base_dir):
+        if item.endswith('.json'):
+            try:
+                json_path = os.path.join(base_dir, item)
+                json_datas = load4json(json_path)
+                if isinstance(json_datas, dict):
+                    datas = []
+                    for k in json_datas:
+                        datas += json_datas[k]
+                else:
+                    datas = json_datas
+                for data in datas:
+                    message = construct_single_messages(data['question'], data['answer'])
+                    if item.endswith(".en-US.json"):
+                        en_messages.append(message)
+                    elif item.endswith(".zh-CN.json"):
+                        zh_messages.append(message)
+            except Exception as e:
+                print(json_path)
+
+    save2json(en_messages, r"D:\git_github\self\ComfyChat\data\message_jsons\v2\comflowy_en.json")
+    save2json(zh_messages, r"D:\git_github\self\ComfyChat\data\message_jsons\v2\comflowy_zh.json")
+
+
 if __name__=='__main__':
     # md2txt()
     # construct_data_from_custom_node_list(together=True, seve_path='/root/code/ComfyChat/data/comfyui_node_data_together.json')
@@ -1146,7 +1198,7 @@ if __name__=='__main__':
     # node_name = 'ComfyUI-Manager'
     # semi_automatic_for_one_node2(node_name, qa)
 
-    construct_data("/root/code/ComfyChat/data/comfyui_data_v1.json")
+    # construct_data("/root/code/ComfyChat/data/comfyui_data_v1.json")
 
     # check_messages_json()
 
@@ -1173,14 +1225,14 @@ if __name__=='__main__':
     # ans = eng2zh_chat2api(eng_text='America is fucking shit')
     # print(ans)
 
-    temp = get_data_from_siliconflow('CropLatent',
-                                 r'D:\\git_github\\self\\ComfyChat\\data\\community_docs\\repos\\ComfyUI-docs\\docs\\Core Nodes\\Latent\\transform\\CropLatent.md',
-                                 model='alibaba/Qwen2-72B-Instruct',
-                                 system_prompt=system_prompt2_index, template=template2_index)
-    print(temp)
-    temp = parse_json(temp)
-    print(temp)
-    save2json(temp, r"D:\git_github\self\ComfyChat\data\community_docs\messages\ComfyUI-docs\CropLatent.json")
+    # temp = get_data_from_siliconflow('CropLatent',
+    #                              r'D:\\git_github\\self\\ComfyChat\\data\\community_docs\\repos\\ComfyUI-docs\\docs\\Core Nodes\\Latent\\transform\\CropLatent.md',
+    #                              model='alibaba/Qwen2-72B-Instruct',
+    #                              system_prompt=system_prompt2_index, template=template2_index)
+    # print(temp)
+    # temp = parse_json(temp)
+    # print(temp)
+    # save2json(temp, r"D:\git_github\self\ComfyChat\data\community_docs\messages\ComfyUI-docs\CropLatent.json")
 
     # generate_data_from_comfyui_docs()
 
@@ -1195,3 +1247,9 @@ if __name__=='__main__':
     # print(name, ext)
 
     # generate_data_from_comflowy()
+
+    # base_dir = r"D:\git_github\self\ComfyChat\data\community_docs\messages\SaltAI-Web-Docs"
+    # save_dir = r"D:\git_github\self\ComfyChat\data\message_jsons\v2\SaltAI-Web-Docs.json"
+    # constrcut_messages_from_community_docs(base_dir, save_dir)
+
+    constrcut_messages_from_comflowy()
