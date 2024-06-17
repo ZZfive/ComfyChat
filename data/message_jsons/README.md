@@ -21,3 +21,6 @@
  - ComfyUI-docs.json--从ComfyUI-docs中构建的数据，是英文
  - comfyui-nodes-docs.json--从comfyui-nodes-docs中构建的数据，是中文
  - SaltAI-Web-Docs.json--congSaltAI-Web-Docs中构建的数据，是英文
+ - community_en.json--英文conversations（22233）；将comflowy_en.json，ComfyUI-docs.json和SaltAI-Web-Docs.json三个文件组合
+ - community_zh.json--中文conversations（14914）；comflowy_zh.json，和comfyui-nodes-docs.json三个文件组合
+ - comfyui_data_v2_1.json--v2场景下的第一版数据集，直接将comfyui_data_v1.json和community_en.json混合，有48960条messages
