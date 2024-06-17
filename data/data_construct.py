@@ -1103,6 +1103,18 @@ def constrcut_messages_from_comflowy() -> None:
     save2json(zh_messages, r"D:\git_github\self\ComfyChat\data\message_jsons\v2\comflowy_zh.json")
 
 
+def combine_messages(message_paths: List[str], save_path: str, shuffle: bool = False) -> None:
+    messages = []
+    for path in message_paths:
+        messages.extend(load4json(path))
+
+    if shuffle:
+        random.seed(42)
+        random.shuffle(messages)
+    print(f"nums of conversations: {len(messages)}")
+    save2json(messages, save_path)
+
+
 if __name__=='__main__':
     # md2txt()
     # construct_data_from_custom_node_list(together=True, seve_path='/root/code/ComfyChat/data/comfyui_node_data_together.json')
@@ -1252,4 +1264,13 @@ if __name__=='__main__':
     # save_dir = r"D:\git_github\self\ComfyChat\data\message_jsons\v2\SaltAI-Web-Docs.json"
     # constrcut_messages_from_community_docs(base_dir, save_dir)
 
-    constrcut_messages_from_comflowy()
+    # constrcut_messages_from_comflowy()
+
+    v2_paths = [r"D:\git_github\self\ComfyChat\data\message_jsons\v1\comfyui_data_v1.json",
+                r"D:\git_github\self\ComfyChat\data\message_jsons\v2\community_en.json"]
+    save_path = r"D:\git_github\self\ComfyChat\data\message_jsons\v2\comfyui_data_v2_1.json"
+
+    combine_messages(v2_paths, save_path, shuffle=True)
+
+    # messages = load4json(r"D:\git_github\self\ComfyChat\data\message_jsons\v1\comfyui_data_v1.json")
+    # print(len(messages))
