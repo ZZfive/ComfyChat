@@ -54,8 +54,8 @@ class FileName:
         self.basename = os.path.basename(filename)
         self.origin = os.path.join(root, filename)
         self.copypath = ''
-        self._type = _type
-        self.state = True
+        self._type = _type  # 文件类型
+        self.state = True  # 是否抽取成功
         self.reason = ''
 
     def __str__(self):
@@ -82,6 +82,7 @@ class FileOperation:
                               ] + self.word_suffix + [self.ppt_suffix
                                                       ] + self.html_suffix
 
+    # 返回文件所属类型
     def get_type(self, filepath: str):
         filepath = filepath.lower()
         if filepath.endswith(self.pdf_suffix):
@@ -114,15 +115,17 @@ class FileOperation:
                 return 'html'
         return None
 
+    # 计算文件
     def md5(self, filepath: str):
         hash_object = hashlib.sha256()
         with open(filepath, 'rb') as file:
-            chunk_size = 8192
+            chunk_size = 8192  # 8 KB
             while chunk := file.read(chunk_size):
-                hash_object.update(chunk)
+                hash_object.update(chunk)  # 将每个chunk更新到hash_object中，防止文件过大导致内存不足
 
-        return hash_object.hexdigest()[0:8]
+        return hash_object.hexdigest()[0:8]  # 最终返回整个文件sha256值的前八位
 
+    # 对所有文件的处理情况进行记录
     def summarize(self, files: list):
         success = 0
         skip = 0
@@ -141,6 +144,7 @@ class FileOperation:
         logger.info('累计{}文件，成功{}个，跳过{}个，异常{}个'.format(len(files), success,
                                                       skip, failed))
 
+    # 扫描指定路径下的所有文件
     def scan_dir(self, repo_dir: str):
         files = []
         for root, _, filenames in os.walk(repo_dir):
@@ -226,6 +230,7 @@ class FileOperation:
         return text, None
     
 
+# 追踪记录query及生成对应答案，当此类的示例被销毁时，会将记录的内存写入示例初始化时设置的文件路径中
 class QueryTracker:
     """A class to track queries and log them into a file.
 
@@ -303,6 +308,7 @@ def histogram(values: list):
 
 
 if __name__ == "__main__":
-    file = "..."
+    file = "/root/code/ComfyChat/data/custom_nodes_mds/a-person-mask-generator/README.md"
     fo = FileOperation()
     chars = fo.md5(file)
+    print(chars)

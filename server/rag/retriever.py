@@ -19,10 +19,9 @@ from langchain.retrievers import ContextualCompressionRetriever
 from langchain.vectorstores.faiss import FAISS as Vectorstore
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores.utils import DistanceStrategy
-from loguru import logger
 from sklearn.metrics import precision_recall_curve
 
-from .utils import FileOperation, QueryTracker
+from .utils import FileOperation, QueryTracker, logger
 
 
 class Retriever:
