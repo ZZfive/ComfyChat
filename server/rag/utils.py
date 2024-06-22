@@ -308,7 +308,7 @@ def histogram(values: list):
 
 
 if __name__ == "__main__":
-    file = "/root/code/ComfyChat/data/custom_nodes_mds/a-person-mask-generator/README.md"
+    file = r"D:\git_github\self\ComfyChat\data\custom_nodes_mds\a-person-mask-generator\README.md"
     fo = FileOperation()
     chars = fo.md5(file)
     print(chars)

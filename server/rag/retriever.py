@@ -11,6 +11,7 @@
 """extract feature and search with user query."""
 import os
 import time
+from typing import Tuple
 
 import numpy as np
 import pytoml
@@ -25,11 +26,10 @@ from .utils import FileOperation, QueryTracker, logger
 
 
 class Retriever:
-    """Tokenize and extract features from the project's documents, for use in
-    the reject pipeline and response pipeline."""
+    """Tokenize and extract features from the project's documents, for use in the reject pipeline and response pipeline."""
+    """此类中的reject将从拒绝回答转变为RAG未检索到相关内容，直接使用llms回答的标志"""
 
-    def __init__(self, embeddings, reranker, work_dir: str,
-                 reject_throttle: float) -> None:
+    def __init__(self, embeddings, reranker, work_dir: str, reject_throttle: float) -> None:
         """Init with model device type and config."""
         self.reject_throttle = reject_throttle
         self.rejecter = None
@@ -43,13 +43,13 @@ class Retriever:
         rejection_path = os.path.join(work_dir, 'db_reject')
         retriever_path = os.path.join(work_dir, 'db_response')
 
-        if os.path.exists(rejection_path):
+        if os.path.exists(rejection_path):  # 加载判断“当前RAG能否回答”一个query的向量存储
             self.rejecter = Vectorstore.load_local(
                 rejection_path,
                 embeddings=embeddings,
                 allow_dangerous_deserialization=True)
         
-        if os.path.exists(retriever_path):
+        if os.path.exists(retriever_path):  # 加载用于RAG回答query的向量存储
             self.retriever = Vectorstore.load_local(
                 retriever_path,
                 embeddings=embeddings,
@@ -67,14 +67,14 @@ class Retriever:
         if self.retriever is None:
             logger.warning('retriever is None')
 
-    def is_relative(self, question, k=30, disable_throttle=False):
-        """If no search results below the threshold can be found from the
-        database, reject this query."""
+    def is_relative(self, question, k=30, disable_throttle=False) -> Tuple[bool, list]:
+        """If no search results below the threshold can be found from the database, reject this query."""
+        """如果从数据库中找不到低于阈值的搜索结果，则拒绝此查询。"""
 
         if self.rejecter is None:
             return False, []
 
-        if disable_throttle:
+        if disable_throttle:  # 不用卡阈值，直接搜索，但只取一个
             # for searching throttle during update sample
             docs_with_score = self.rejecter.similarity_search_with_relevance_scores(
                 question, k=1)
@@ -96,17 +96,18 @@ class Retriever:
                     max_score = score
                     top1 = (doc, score)
             relative = True if len(ret) > 0 else False
-            return relative, [top1]
+            return relative, [top1]  # 返回top_k中score最大的
 
+    # 基于设置的可以回答问题列表和不能回答问题列表，更新RAG不能回答问题的阈值
     def update_throttle(self,
                         config_path: str = 'config.ini',
-                        good_questions=[],
-                        bad_questions=[]):
+                        can_questions=[],
+                        cannot_questions=[]) -> None:
         """Update reject throttle based on positive and negative examples."""
 
-        if len(good_questions) == 0 or len(bad_questions) == 0:
+        if len(can_questions) == 0 or len(cannot_questions) == 0:
             raise Exception('good and bad question examples cat not be empty.')
-        questions = good_questions + bad_questions
+        questions = can_questions + cannot_questions
         predictions = []
         for question in questions:
             self.reject_throttle = -1
@@ -114,15 +115,15 @@ class Retriever:
             score = docs[0][1]
             predictions.append(max(0, score))
 
-        labels = [1 for _ in range(len(good_questions))
-                  ] + [0 for _ in range(len(bad_questions))]
+        labels = [1 for _ in range(len(can_questions))
+                  ] + [0 for _ in range(len(cannot_questions))]
         precision, recall, thresholds = precision_recall_curve(
             labels, predictions)
 
         # get the best index for sum(precision, recall)
         sum_precision_recall = precision[:-1] + recall[:-1]
         index_max = np.argmax(sum_precision_recall)
-        optimal_threshold = max(thresholds[index_max], 0.0)
+        optimal_threshold = max(thresholds[index_max], 0.0)  # 根据预测结果确定最优的阈值
 
         with open(config_path, encoding='utf8') as f:
             config = pytoml.load(f)
@@ -133,16 +134,13 @@ class Retriever:
             f'The optimal threshold is: {optimal_threshold}, saved it to {config_path}'  # noqa E501
         )
 
-    def query(self,
-              question: str,
-              context_max_length: int = 16000,
-              tracker: QueryTracker = None):
-        """Processes a query and returns the best match from the vector store
-        database. If the question is rejected, returns None.
+    # 从向量数据中查询与传入question相关的文本信息
+    def query(self, question: str, context_max_length: int = 16000, tracker: QueryTracker = None) -> Tuple[str, str, list]:
+        """Processes a query and returns the best match from the vector store database. If the question is rejected, returns None.
 
         Args:
             question (str): The question asked by the user.
-
+            context_max_length: The maximum length of the context to return.
         Returns:
             str: The best matching chunk, or None.
             str: The best matching text, or None
@@ -160,14 +158,14 @@ class Retriever:
 
         relative, docs = self.is_relative(question=question)
         logger.debug('retriever.docs {}'.format(docs))
-        if not relative:
+        if not relative:  # 不相关，直接返回
             if len(docs) > 0:
                 references.append(docs[0][0].metadata['source'])
             return None, None, references
 
-        docs = self.compression_retriever.get_relevant_documents(question)
+        docs = self.compression_retriever.get_relevant_documents(question)  # 基于向量数据检索到的文件
         if tracker is not None:
-            tracker.log('retrieve', [doc.metadata['source'] for doc in docs])
+            tracker.log('retrieve', [doc.metadata['source'] for doc in docs])  # 记录检索到的文件
 
         # add file text to context, until exceed `context_max_length`
 
@@ -177,35 +175,32 @@ class Retriever:
             chunks.append(chunk)
 
             if 'read' not in doc.metadata:
-                logger.error(
-                    'If you are using the version before 20240319, please rerun `python3 -m huixiangdou.service.feature_store`'
-                )
+                logger.error('If you are using the version before 20240319, please rerun `python3 -m huixiangdou.service.feature_store`')
                 raise Exception('huixiangdou version mismatch')
-            file_text, error = file_opr.read(doc.metadata['read'])
+            
+            file_text, error = file_opr.read(doc.metadata['read'])  # 读取文件原始文本
             if error is not None:
                 # read file failed, skip
                 continue
 
-            source = doc.metadata['source']
-            logger.info('target {} file length {}'.format(
-                source, len(file_text)))
+            source = doc.metadata['source']  # 文件路径
+            logger.info('target {} file length {}'.format(source, len(file_text)))
             if len(file_text) + len(context) > context_max_length:
                 if source in references:
-                    continue
+                    continue  # 没有break的原因是剩下的长度虽然不能放下当前的chunk，但可能装下后续的chunk
                 references.append(source)
                 # add and break
                 add_len = context_max_length - len(context)
                 if add_len <= 0:
                     break
                 chunk_index = file_text.find(chunk)
-                if chunk_index == -1:
-                    # chunk not in file_text
+                if chunk_index == -1: # chunk not in file_text
                     context += chunk
                     context += '\n'
                     context += file_text[0:add_len - len(chunk) - 1]
                 else:
                     start_index = max(0, chunk_index - (add_len - len(chunk)))
-                    context += file_text[start_index:start_index + add_len]
+                    context += file_text[start_index: start_index + add_len]
                 break
 
             if source not in references:
@@ -213,11 +208,9 @@ class Retriever:
                 context += '\n'
                 references.append(source)
 
-        context = context[0:context_max_length]
+        context = context[0: context_max_length]
         logger.debug('query:{} top1 file:{}'.format(question, references[0]))
-        return '\n'.join(chunks), context, [
-            os.path.basename(r) for r in references
-        ]
+        return '\n'.join(chunks), context, [os.path.basename(r) for r in references]
 
 
 class CacheRetriever:
@@ -253,14 +246,13 @@ class CacheRetriever:
             config_path='config.ini',
             work_dir='workdir'):
         if fs_id in self.cache:
-            self.cache[fs_id]['time'] = time.time()
-            return self.cache[fs_id]['retriever']
+            self.cache[fs_id]['time'] = time.time()  # 更新时间
+            return self.cache[fs_id]['retriever']  # 返回默认retriever
 
-        with open(config_path, encoding='utf8') as f:
-            reject_throttle = pytoml.load(
-                f)['feature_store']['reject_throttle']
+        with open(config_path, encoding='utf-8') as f:
+            reject_throttle = pytoml.load(f)['feature_store']['reject_throttle']  # 加载据答阈值
 
-        if len(self.cache) >= self.max_len:
+        if len(self.cache) >= self.max_len:  # cache中的retriever超过个数，删除最久远的
             # drop the oldest one
             del_key = None
             min_time = time.time()
@@ -278,12 +270,13 @@ class CacheRetriever:
         retriever = Retriever(embeddings=self.embeddings,
                               reranker=self.reranker,
                               work_dir=work_dir,
-                              reject_throttle=reject_throttle)
+                              reject_throttle=reject_throttle)  # 初始化新的retriever实例
         self.cache[fs_id] = {'retriever': retriever, 'time': time.time()}
         if retriever.rejecter is None:
             logger.warning('retriever.rejecter is None, check workdir')
         return retriever
 
+    # 删除指定retriever
     def pop(self, fs_id: str):
         if fs_id not in self.cache:
             return
