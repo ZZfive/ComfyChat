@@ -7,13 +7,6 @@
 @Desc    :   copy from https://github.com/InternLM/HuixiangDou/blob/main/huixiangdou/service/feature_store.py
 '''
 
-# TODO
-'''
-1 理清从数据特征提取、存储、搜索整个流程
-2 剔除拒识逻辑
-3 搞清楚其输出与llm的结合方式
-'''
-
 """extract feature and search with user query."""
 import argparse
 import json
@@ -492,7 +485,7 @@ def parse_args() -> argparse.Namespace:
         help='Feature store configuration path. Default value is config.ini')
     parser.add_argument(
         '--can_questions',
-        default='can_questions.json',
+        default='can ',
         help=  # noqa E251
         'Positive examples in the dataset. Default value is can_questions.json'  # noqa E501
     )

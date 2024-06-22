@@ -11,6 +11,7 @@
 """LLM client."""
 import argparse
 import json
+from typing import List, Dict, Tuple
 
 import pytoml
 import requests
@@ -37,7 +38,7 @@ class ChatClient:
             self.llm_config = config['llm']
 
     def build_prompt(self,
-                     history_pair,
+                     history_pair: List,
                      instruction: str,
                      template: str,
                      context: str = '',
@@ -75,13 +76,13 @@ class ChatClient:
         enable_local, enable_remote = (self.llm_config['enable_local'],
                                        self.llm_config['enable_remote'])
         local_len, remote_len = (
-            self.llm_config['server']['local_llm_max_text_length'],
-            self.llm_config['server']['remote_llm_max_text_length'])
+            self.llm_config['server']['local_llm_max_text_length'],  # 本地模型推理最长文本长度
+            self.llm_config['server']['remote_llm_max_text_length'])  # 远端接口推理最长文本长度
 
         max_length = local_len
         if enable_remote:
             max_length = remote_len
-
+        # 以config.ini中的配置进行修正
         if backend == 'local' and not enable_local:
             backend = self.llm_config['server']['remote_type']
             max_length = remote_len
@@ -91,7 +92,8 @@ class ChatClient:
 
         return backend, max_length
 
-    def generate_response(self, prompt, history=[], backend='local'):
+    # 生成问答结果，但不是直接调用llm，而是一个推理的中间件服务，该服务中会基于backend进行选择，并进行提示词处理
+    def generate_response(self, prompt: str, history: List[Tuple[str, str]] = [], backend: str ='local') -> str:
         """Generate a response from the chat service.
 
         Args:
@@ -109,7 +111,7 @@ class ChatClient:
             logger.warning(
                 f'prompt length {len(prompt)}  > max_length {max_length}, truncated'  # noqa E501
             )
-            prompt = prompt[0:max_length]
+            prompt = prompt[:max_length]
 
         try:
             header = {'Content-Type': 'application/json'}

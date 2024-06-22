@@ -6,6 +6,14 @@
 @Author  :   zzfive 
 @Desc    :   None
 '''
+
+# TODO 目标，可切换底层和语言的llm推理接口，最终是用于webui中，接受prompt、context和history，返回结果
+'''
+1 llm初始化、推理整个pipeline搭建起来
+2 backend切换
+3 中英提示词模板
+'''
+
 from abc import ABC, abstractmethod
 from typing import List, Dict
 

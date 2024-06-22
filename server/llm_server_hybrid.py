@@ -29,9 +29,9 @@ from utils import create_logger
 logger = create_logger("llm_server")
 
 
-def os_run(cmd: str):
-    ret = os.popen(cmd)
-    ret = ret.read().rstrip().lstrip()
+def os_run(cmd: str) -> str:
+    ret = os.popen(cmd)  # 执行命令，返回包含命令输出的文件对象
+    ret = ret.read().rstrip().lstrip()  # 读取结果返回
     return ret
 
 
@@ -47,6 +47,7 @@ def check_gpu_max_memory_gb():
     return -1
 
 
+# 构建正常的请求messages
 def build_messages(prompt, history, system: str = None):
     messages = []
     if system is not None and len(system) > 0:
@@ -58,12 +59,14 @@ def build_messages(prompt, history, system: str = None):
     return messages
 
 
+# 此类限制每分钟请求次数
 class RPM:
 
     def __init__(self, rpm: int = 30):
         self.rpm = rpm
-        self.record = {'slot': self.get_minute_slot(), 'counter': 0}
+        self.record = {'slot': self.get_minute_slot(), 'counter': 0}  # 分钟槽和计数器
 
+    # 获取分钟槽，是从午夜开始算起，可以唯一标识一天中的每一分钟
     def get_minute_slot(self):
         current_time = time.time()
         dt_object = datetime.fromtimestamp(current_time)
@@ -73,25 +76,25 @@ class RPM:
     def wait(self):
         current = time.time()
         dt_object = datetime.fromtimestamp(current)
-        minute_slot = self.get_minute_slot()
+        minute_slot = self.get_minute_slot()  # 当前时间的分钟槽
 
-        if self.record['slot'] == minute_slot:
+        if self.record['slot'] == minute_slot:  # 如果当前分钟槽与记录中分钟槽一致
             # check RPM exceed
-            if self.record['counter'] >= self.rpm:
+            if self.record['counter'] >= self.rpm:  # 计数器已大于等于RPM限制
                 # wait until next minute
-                next_minute = dt_object.replace(
-                    second=0, microsecond=0) + timedelta(minutes=1)
+                next_minute = dt_object.replace(second=0, microsecond=0) + timedelta(minutes=1)
                 _next = next_minute.timestamp()
                 sleep_time = abs(_next - current)
-                time.sleep(sleep_time)
+                time.sleep(sleep_time)  # 等待到下一分钟
 
-                self.record = {'slot': self.get_minute_slot(), 'counter': 0}
+                self.record = {'slot': self.get_minute_slot(), 'counter': 0}  # 记录的分钟槽和计数器重置
         else:
-            self.record = {'slot': self.get_minute_slot(), 'counter': 0}
+            self.record = {'slot': self.get_minute_slot(), 'counter': 0}  # 如果分钟槽不一致，重置记录
         self.record['counter'] += 1
         logger.debug(self.record)
 
 
+# 本地模型推理的一个包装类
 class InferenceWrapper:
     """A class to wrapper kinds of inference framework."""
 
@@ -172,8 +175,7 @@ class InferenceWrapper:
 
 
 class HybridLLMServer:
-    """A class to handle server-side interactions with a hybrid language
-    learning model (LLM) service.
+    """A class to handle server-side interactions with a hybrid language learning model (LLM) service.
 
     This class is responsible for initializing the local and remote LLMs,
     generating responses from these models as per the provided configuration,
@@ -183,9 +185,8 @@ class HybridLLMServer:
     def __init__(self,
                  llm_config: dict,
                  device: str = 'cuda',
-                 retry=2) -> None:
-        """Initialize the HybridLLMServer with the given configuration, device,
-        and number of retries."""
+                 retry: int =2) -> None:
+        """Initialize the HybridLLMServer with the given configuration, device, and number of retries."""
         self.device = device
         self.retry = retry
         self.llm_config = llm_config
@@ -194,8 +195,7 @@ class HybridLLMServer:
         self.enable_local = llm_config['enable_local']
 
         self.local_max_length = self.server_config['local_llm_max_text_length']
-        self.remote_max_length = self.server_config[
-            'remote_llm_max_text_length']
+        self.remote_max_length = self.server_config['remote_llm_max_text_length']
         self.remote_type = self.server_config['remote_type']
 
         model_path = self.server_config['local_llm_path']
@@ -281,8 +281,7 @@ class HybridLLMServer:
         return output_text
 
     def call_internlm(self, prompt, history):
-        """See https://internlm.intern-ai.org.cn/api/document for internlm
-        remote api."""
+        """See https://internlm.intern-ai.org.cn/api/document for internlm remote api."""
         url = 'https://internlm-chat.intern-ai.org.cn/puyu/api/v1/chat/completions'
 
         now = time.time()
@@ -385,8 +384,7 @@ class HybridLLMServer:
         return completion.choices[0].message.content
 
     def call_step(self, prompt, history):
-        """Generate a response from step, see
-        https://platform.stepfun.com/docs/overview/quickstart.
+        """Generate a response from step, see https://platform.stepfun.com/docs/overview/quickstart.
 
         Args:
             prompt (str): The prompt to send to LLM.
@@ -574,8 +572,7 @@ class HybridLLMServer:
         return text
 
     def generate_response(self, prompt, history=[], backend='local'):
-        """Generate a response from the appropriate LLM based on the
-        configuration. If failed, use exponential backoff.
+        """Generate a response from the appropriate LLM based on the configuration. If failed, use exponential backoff.
 
         Args:
             prompt (str): The prompt to send to the LLM.
@@ -601,7 +598,7 @@ class HybridLLMServer:
             backend = self.server_config['remote_type']
 
         if backend == 'local':
-            prompt = prompt[0:self.local_max_length]
+            prompt = prompt[:self.local_max_length]
             """# Caution: For the results of this software to be reliable and verifiable,  # noqa E501
             it's essential to ensure reproducibility. Thus `GenerationMode.GREEDY_SEARCH`  # noqa E501
             must enabled."""
@@ -609,10 +606,10 @@ class HybridLLMServer:
             output_text = self.inference.chat(prompt, history)
 
         else:
-            prompt = prompt[0:self.remote_max_length]
+            prompt = prompt[:self.remote_max_length]
 
             life = 0
-            while life < self.retry:
+            while life < self.retry:  # 重试
 
                 try:
                     if backend == 'kimi':
@@ -668,7 +665,7 @@ class HybridLLMServer:
                     logger.error(error)
 
                     if 'Error code: 401' in error or 'invalid api_key' in error:
-                        break
+                        break  # 此类两种错误就不重试，直接退出
 
                     life += 1
                     randval = random.randint(1, int(pow(2, life)))
@@ -744,16 +741,15 @@ def llm_serve(config_path: str, server_ready: Any):
 
 
 def start_llm_server(config_path: str):
-    server_ready = Value('i', 0)
-    server_process = Process(target=llm_serve,
-                             args=(config_path, server_ready))
-    server_process.daemon = True
+    server_ready = Value('i', 0)  # 共享变量，表示服务启动状态
+    server_process = Process(target=llm_serve, args=(config_path, server_ready))  # 子进程的方式启动服务，主进程退出、子进程也会退出
+    server_process.daemon = True  # 守护进程方式运行
     server_process.start()
     while True:
         if server_ready.value == 0:
             logger.info('waiting for server to be ready..')
             time.sleep(2)
-        elif server_ready.value == 1:
+        elif server_ready.value == 1:  # 服务启动成功，退出循环
             break
         else:
             logger.error('start local LLM server failed, quit.')
@@ -781,7 +777,7 @@ def main():
                         print(wrapper.chat(prompt=query))
                 del wrapper
 
-        start_llm_server(config_path=args.config_path)
+        start_llm_server(config_path=args.config_path)  # 启动llm server
 
         from .llm_client import ChatClient
         client = ChatClient(config_path=args.config_path)
