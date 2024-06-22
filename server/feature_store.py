@@ -32,11 +32,10 @@ from langchain.text_splitter import (MarkdownHeaderTextSplitter,
 from langchain.vectorstores.faiss import FAISS as Vectorstore
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_core.documents import Document
-from loguru import logger
 from torch.cuda import empty_cache
 
-from .utils import histogram, FileName, FileOperation
-from .retriever import CacheRetriever, Retriever
+from utils import histogram, FileName, FileOperation, logger
+from retriever import CacheRetriever, Retriever
 
 
 def read_and_save(file: FileName) -> None:
@@ -492,16 +491,16 @@ def parse_args() -> argparse.Namespace:
         default='config.ini',
         help='Feature store configuration path. Default value is config.ini')
     parser.add_argument(
-        '--good_questions',
-        default='resource/good_questions.json',
+        '--can_questions',
+        default='can_questions.json',
         help=  # noqa E251
-        'Positive examples in the dataset. Default value is resource/good_questions.json'  # noqa E501
+        'Positive examples in the dataset. Default value is can_questions.json'  # noqa E501
     )
     parser.add_argument(
-        '--bad_questions',
-        default='resource/bad_questions.json',
+        '--cannot_questions',
+        default='cannot_questions.json',
         help=  # noqa E251
-        'Negative examples json path. Default value is resource/bad_questions.json'  # noqa E501
+        'Negative examples json path. Default value is cannot_questions.json'  # noqa E501
     )
     parser.add_argument(
         '--sample', help='Input an json file, save reject and search output.')
@@ -531,13 +530,13 @@ def test_reject(retriever: Retriever, sample: str = None) -> None:
     for example in real_questions:
         relative, _ = retriever.is_relative(example)
 
-        if relative:
+        if relative:  # 相关，可以回答
             logger.warning(f'process query: {example}')
-        else:
+        else:  # 不相关，不可以回答
             logger.error(f'reject query: {example}')
 
         if sample is not None:
-            if reject:
+            if not relative:
                 with open('workdir/negative.txt', 'a+') as f:
                     f.write(example)
                     f.write('\n')

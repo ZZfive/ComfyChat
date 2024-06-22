@@ -13,18 +13,25 @@ import hashlib
 import datetime
 from typing import List, Any, Tuple
 import logging
-from logging import FileHandler, StreamHandler, Formatter
+from logging import StreamHandler, Formatter
+from logging.handlers import RotatingFileHandler
 
 import fitz
 import textract
 import pandas as pd
 from bs4 import BeautifulSoup
 
+# 初始共用的filehander
+if not os.path.exists('./logs'):
+    os.mkdir('./logs')
+    # 日志保存在app.log中，设置日志等级和格式
+# time_flag = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S-%f")[:-3]
+f_handler = RotatingFileHandler(f'./logs/ComfyChat.log', maxBytes=100*1024*1024, backupCount=7, encoding='utf-8')
+f_handler.setFormatter(Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
+f_handler.setLevel(logging.INFO)
+
 
 def create_logger(name) -> logging.Logger:
-    if not os.path.exists('./logs'):
-        os.mkdir('./logs')
-
     # 创建日志记录器
     logger = logging.getLogger(name)
     logger.setLevel(logging.INFO)
@@ -32,12 +39,9 @@ def create_logger(name) -> logging.Logger:
     # 输出到控制台
     c_handler = StreamHandler(sys.stdout)
     c_handler.setFormatter(Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
+    c_handler.setLevel(logging.INFO)
     logger.addHandler(c_handler)
     
-    # 日志保存在app.log中，设置日志等级和格式
-    time_flag = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S-%f")[:-3]
-    f_handler = FileHandler(f'./logs/{name}_{time_flag}.log', encoding='utf-8')
-    f_handler.setFormatter(Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s"))
     logger.addHandler(f_handler)
     
     return logger
