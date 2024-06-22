@@ -21,7 +21,7 @@ import os
 import re
 import shutil
 from multiprocessing import Pool
-from typing import Any, List, Optional
+from typing import Any, List, Optional, Tuple
 
 import pytoml
 from BCEmbedding.tools.langchain import BCERerank
@@ -39,20 +39,19 @@ from .utils import histogram, FileName, FileOperation
 from .retriever import CacheRetriever, Retriever
 
 
-def read_and_save(file: FileName):
-    if os.path.exists(file.copypath):
+def read_and_save(file: FileName) -> None:
+    if os.path.exists(file.copypath):  # 已存在就直接跳过
         # already exists, return
         logger.info('already exist, skip load')
         return
     file_opr = FileOperation()
-    logger.info('reading {}, would save to {}'.format(file.origin,
-                                                      file.copypath))
+    logger.info('reading {}, would save to {}'.format(file.origin, file.copypath))
     content, error = file_opr.read(file.origin)
     if error is not None:
         logger.error('{} load error: {}'.format(file.origin, str(error)))
         return
 
-    if content is None or len(content) < 1:
+    if content is None or len(content) < 1:  # 文件存在但是空的
         logger.warning('{} empty, skip save'.format(file.origin))
         return
 
@@ -60,8 +59,7 @@ def read_and_save(file: FileName):
         f.write(content)
 
 
-def _split_text_with_regex_from_end(text: str, separator: str,
-                                    keep_separator: bool) -> List[str]:
+def _split_text_with_regex_from_end(text: str, separator: str, keep_separator: bool) -> List[str]:
     # Now that we have the separator, split the text
     if separator:
         if keep_separator:
@@ -176,8 +174,7 @@ class FeatureStore:
         self.rejecter_naive_splitter = rejecter_naive_splitter
 
         logger.info('init fs with chunk_size {}'.format(chunk_size))
-        self.md_splitter = MarkdownTextSplitter(chunk_size=chunk_size,
-                                                chunk_overlap=32)
+        self.md_splitter = MarkdownTextSplitter(chunk_size=chunk_size, chunk_overlap=32)
 
         if language == 'zh':
             self.text_splitter = ChineseRecursiveTextSplitter(
@@ -195,12 +192,10 @@ class FeatureStore:
             ('###', 'Header 3'),
         ])
 
-    def split_md(self, text: str, source: None):
-        """Split the markdown document in a nested way, first extracting the
-        header.
+    def split_md(self, text: str, source: None) -> List[str]:
+        """Split the markdown document in a nested way, first extracting the header.
 
-        If the extraction result exceeds chunk_size, split it again according to
-        length.
+        If the extraction result exceeds chunk_size, split it again according to length.
         """
         docs = self.head_splitter.split_text(text)
 
@@ -233,7 +228,7 @@ class FeatureStore:
                     source, len(item)))
         return final
 
-    def clean_md(self, text: str):
+    def clean_md(self, text: str) -> str:
         """Remove parts of the markdown document that do not contain the key
         question words, such as code blocks, URL links, etc."""
         # remove ref
@@ -254,7 +249,7 @@ class FeatureStore:
         new_text = new_text.lower()
         return new_text
 
-    def get_md_documents(self, file: FileName):
+    def get_md_documents(self, file: FileName) -> Tuple[List[Document], int]:
         documents = []
         length = 0
         text = ''
@@ -264,8 +259,7 @@ class FeatureStore:
         if len(text) <= 1:
             return [], length
 
-        chunks = self.split_md(text=text,
-                               source=os.path.abspath(file.copypath))
+        chunks = self.split_md(text=text, source=os.path.abspath(file.copypath))
         for chunk in chunks:
             new_doc = Document(page_content=chunk,
                                metadata={
@@ -276,7 +270,7 @@ class FeatureStore:
             documents.append(new_doc)
         return documents, length
 
-    def get_text_documents(self, text: str, file: FileName):
+    def get_text_documents(self, text: str, file: FileName) -> List[Document]:
         if len(text) <= 1:
             return []
         chunks = self.text_splitter.create_documents([text])
@@ -288,9 +282,9 @@ class FeatureStore:
             documents.append(chunk)
         return documents
 
-    def ingress_response(self, files: list, work_dir: str):
-        """Extract the features required for the response pipeline based on the
-        document."""
+    def ingress_response(self, files: list, work_dir: str) -> None:
+        """Extract the features required for the response pipeline based on the document."""
+
         feature_dir = os.path.join(work_dir, 'db_response')
         if not os.path.exists(feature_dir):
             os.makedirs(feature_dir)
@@ -301,16 +295,14 @@ class FeatureStore:
 
         for i, file in enumerate(files):
             logger.debug('{}/{}.. {}'.format(i + 1, len(files), file.basename))
-            if not file.state:
+            if not file.state:  # 预处理失败的文件直接跳过
                 continue
 
             if file._type == 'md':
                 md_documents, md_length = self.get_md_documents(file)
                 documents += md_documents
-                logger.info('{} content length {}'.format(
-                    file._type, md_length))
+                logger.info('{} content length {}'.format(file._type, md_length))
                 file.reason = str(md_length)
-
             else:
                 # now read pdf/word/excel/ppt text
                 text, error = file_opr.read(file.copypath)
@@ -319,8 +311,7 @@ class FeatureStore:
                     file.reason = str(error)
                     continue
                 file.reason = str(len(text))
-                logger.info('{} content length {}'.format(
-                    file._type, len(text)))
+                logger.info('{} content length {}'.format(file._type, len(text)))
                 text = file.prefix + text
                 documents += self.get_text_documents(text, file)
 
@@ -329,7 +320,7 @@ class FeatureStore:
         vs = Vectorstore.from_documents(documents, self.embeddings)
         vs.save_local(feature_dir)
 
-    def analyze(self, documents: list):
+    def analyze(self, documents: list) -> None:
         """Output documents length mean, median and histogram"""
         if not self.analyze_reject:
             return
@@ -348,9 +339,8 @@ class FeatureStore:
         logger.info('document text histgram {}'.format(histogram(text_lens)))
         logger.info('document token histgram {}'.format(histogram(token_lens)))
 
-    def ingress_reject(self, files: list, work_dir: str):
-        """Extract the features required for the reject pipeline based on
-        documents."""
+    def ingress_reject(self, files: list, work_dir: str) -> None:
+        """Extract the features required for the reject pipeline based on documents."""
         feature_dir = os.path.join(work_dir, 'db_reject')
         if not os.path.exists(feature_dir):
             os.makedirs(feature_dir)
@@ -372,8 +362,7 @@ class FeatureStore:
                 if len(text) <= 1:
                     continue
 
-                chunks = self.split_md(text=text,
-                                       source=os.path.abspath(file.copypath))
+                chunks = self.split_md(text=text, source=os.path.abspath(file.copypath))
                 for chunk in chunks:
                     new_doc = Document(page_content=chunk,
                                        metadata={
@@ -402,7 +391,7 @@ class FeatureStore:
         vs = Vectorstore.from_documents(documents, self.embeddings)
         vs.save_local(feature_dir)
 
-    def preprocess(self, files: list, work_dir: str):
+    def preprocess(self, files: list, work_dir: str) -> None:
         """Preprocesses files in a given directory. Copies each file to
         'preprocess' with new name formed by joining all subdirectories with
         '_'.
@@ -424,20 +413,19 @@ class FeatureStore:
         pool = Pool(processes=16)
         file_opr = FileOperation()
         for idx, file in enumerate(files):
-            if not os.path.exists(file.origin):
+            if not os.path.exists(file.origin):  # 文件不存在，记录提取失败的状态和原因
                 file.state = False
                 file.reason = 'skip not exist'
                 continue
 
-            if file._type == 'image':
+            if file._type == 'image':  # 图片不提取
                 file.state = False
                 file.reason = 'skip image'
 
             elif file._type in ['pdf', 'word', 'excel', 'ppt', 'html']:
                 # read pdf/word/excel file and save to text format
                 md5 = file_opr.md5(file.origin)
-                file.copypath = os.path.join(preproc_dir,
-                                             '{}.text'.format(md5))
+                file.copypath = os.path.join(preproc_dir, '{}.text'.format(md5))  # 以计算的哈希值重新命名
                 pool.apply_async(read_and_save, (file, ))
 
             elif file._type in ['md', 'text']:
@@ -447,7 +435,7 @@ class FeatureStore:
                     preproc_dir,
                     file.origin.replace('/', '_')[-84:])
                 try:
-                    shutil.copy(file.origin, file.copypath)
+                    shutil.copy(file.origin, file.copypath)  # 直接复制到copypath
                     file.state = True
                     file.reason = 'preprocessed'
                 except Exception as e:
@@ -471,7 +459,7 @@ class FeatureStore:
                     file.state = False
                     file.reason = 'read error'
 
-    def initialize(self, files: list, work_dir: str):
+    def initialize(self, files: list, work_dir: str) -> None:
         """Initializes response and reject feature store.
 
         Only needs to be called once. Also calculates the optimal threshold
@@ -486,7 +474,7 @@ class FeatureStore:
         self.ingress_reject(files=files, work_dir=work_dir)
 
 
-def parse_args():
+def parse_args() -> argparse.Namespace:
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
         description='Feature store for processing directories.')
@@ -521,7 +509,7 @@ def parse_args():
     return args
 
 
-def test_reject(retriever: Retriever, sample: str = None):
+def test_reject(retriever: Retriever, sample: str = None) -> None:
     """Simple test reject pipeline."""
     if sample is None:
         real_questions = [
@@ -561,7 +549,7 @@ def test_reject(retriever: Retriever, sample: str = None):
     empty_cache()
 
 
-def test_query(retriever: Retriever, sample: str = None):
+def test_query(retriever: Retriever, sample: str = None) -> None:
     """Simple test response pipeline."""
     if sample is not None:
         with open(sample) as f:

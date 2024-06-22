@@ -215,7 +215,7 @@ class Retriever:
 
 class CacheRetriever:
 
-    def __init__(self, config_path: str, max_len: int = 4):
+    def __init__(self, config_path: str, max_len: int = 4) -> None:
         self.cache = dict()
         self.max_len = max_len
         with open(config_path, encoding='utf8') as f:
@@ -244,7 +244,7 @@ class CacheRetriever:
     def get(self,
             fs_id: str = 'default',
             config_path='config.ini',
-            work_dir='workdir'):
+            work_dir='workdir') -> Retriever:
         if fs_id in self.cache:
             self.cache[fs_id]['time'] = time.time()  # 更新时间
             return self.cache[fs_id]['retriever']  # 返回默认retriever
@@ -277,7 +277,7 @@ class CacheRetriever:
         return retriever
 
     # 删除指定retriever
-    def pop(self, fs_id: str):
+    def pop(self, fs_id: str) -> None:
         if fs_id not in self.cache:
             return
         del_value = self.cache[fs_id]

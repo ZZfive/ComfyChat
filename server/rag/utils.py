@@ -11,6 +11,7 @@ import os
 import sys
 import hashlib
 import datetime
+from typing import List, Any, Tuple
 import logging
 from logging import FileHandler, StreamHandler, Formatter
 
@@ -20,7 +21,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 
 
-def create_logger(name):
+def create_logger(name) -> logging.Logger:
     if not os.path.exists('./logs'):
         os.mkdir('./logs')
 
@@ -48,7 +49,7 @@ logger = create_logger("embedding_extract")
 class FileName:
     """Record file original name, state and copied filepath with text format."""
 
-    def __init__(self, root: str, filename: str, _type: str):
+    def __init__(self, root: str, filename: str, _type: str) -> None:
         self.root = root
         self.prefix = filename.replace('/', '_')
         self.basename = os.path.basename(filename)
@@ -58,7 +59,7 @@ class FileName:
         self.state = True  # 是否抽取成功
         self.reason = ''
 
-    def __str__(self):
+    def __str__(self) -> str:
         return '{},{},{},{}\n'.format(self.basename, self.copypath, self.state,
                                       self.reason)
 
@@ -66,7 +67,7 @@ class FileName:
 class FileOperation:
     """Encapsulate all file reading operations."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.image_suffix = ['.jpg', '.jpeg', '.png', '.bmp']
         self.md_suffix = '.md'
         self.text_suffix = ['.txt', '.text']
@@ -83,7 +84,7 @@ class FileOperation:
                                                       ] + self.html_suffix
 
     # 返回文件所属类型
-    def get_type(self, filepath: str):
+    def get_type(self, filepath: str) -> str:
         filepath = filepath.lower()
         if filepath.endswith(self.pdf_suffix):
             return 'pdf'
@@ -116,7 +117,7 @@ class FileOperation:
         return None
 
     # 计算文件
-    def md5(self, filepath: str):
+    def md5(self, filepath: str) -> str:
         hash_object = hashlib.sha256()
         with open(filepath, 'rb') as file:
             chunk_size = 8192  # 8 KB
@@ -126,7 +127,7 @@ class FileOperation:
         return hash_object.hexdigest()[0:8]  # 最终返回整个文件sha256值的前八位
 
     # 对所有文件的处理情况进行记录
-    def summarize(self, files: list):
+    def summarize(self, files: list) -> None:
         success = 0
         skip = 0
         failed = 0
@@ -145,7 +146,7 @@ class FileOperation:
                                                       skip, failed))
 
     # 扫描指定路径下的所有文件
-    def scan_dir(self, repo_dir: str):
+    def scan_dir(self, repo_dir: str) -> List[FileName]:
         files = []
         for root, _, filenames in os.walk(repo_dir):
             for filename in filenames:
@@ -155,7 +156,7 @@ class FileOperation:
                         FileName(root=root, filename=filename, _type=_type))
         return files
 
-    def read_pdf(self, filepath: str):
+    def read_pdf(self, filepath: str) -> str:
         # load pdf and serialize table
 
         text = ''
@@ -175,7 +176,7 @@ class FileOperation:
                     text += '\n'
         return text
 
-    def read_excel(self, filepath: str):
+    def read_excel(self, filepath: str) -> Any:
         table = None
         if filepath.endswith('.csv'):
             table = pd.read_csv(filepath)
@@ -186,7 +187,7 @@ class FileOperation:
         json_text = table.dropna(axis=1).to_json(force_ascii=False)
         return json_text
 
-    def read(self, filepath: str):
+    def read(self, filepath: str) -> Tuple[str, Any]:
         file_type = self.get_type(filepath)
 
         text = ''
@@ -240,12 +241,12 @@ class QueryTracker:
     are written to the file.
     """
 
-    def __init__(self, log_file_path):
+    def __init__(self, log_file_path) -> None:
         """Initialize the QueryTracker with the path of the log file."""
         self.log_file_path = log_file_path
         self.log_list = []
 
-    def log(self, key, value=''):
+    def log(self, key, value='') -> None:
         """Log a query.
 
         Args:
@@ -254,7 +255,7 @@ class QueryTracker:
         """
         self.log_list.append((key, value))
 
-    def __del__(self):
+    def __del__(self) -> None:
         """Write all logged queries into the file when the QueryTracker
         instance is destroyed.
 
