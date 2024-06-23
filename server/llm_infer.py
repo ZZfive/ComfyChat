@@ -7,17 +7,11 @@
 @Desc    :   None
 '''
 
-# TODO 目标，可切换底层和语言的llm推理接口，最终是用于webui中，接受prompt、context和history，返回结果
-'''
-1 llm初始化、推理整个pipeline搭建起来
-2 backend切换
-3 中英提示词模板
-'''
 import time
 import json
 import random
 from datetime import datetime, timedelta
-from typing import List, Dict
+from typing import List, Dict, Tuple
 
 import pytoml
 import requests
@@ -29,30 +23,8 @@ from utils import create_logger
 logger = create_logger("llm_infer")
 
 
-PROMPT_TEMPLATE = dict(
-    ZH_RAG_PROMPT_TEMPALTE="""使用以上下文来回答用户的问题。如果你不知道答案，就说你不知道。总是使用中文回答。
-        问题: {question}
-        可参考的上下文：
-        ···
-        {context}
-        ···
-        如果给定的上下文无法让你做出回答，请回答数据库中没有这个内容，你不知道。
-        有用的回答:""",
-    
-    EN_RAG_PROMPT_TEMPALTE="""Answer user questions in context. If you don’t know the answer, say you don’t know. Always answer in English.
-        Question: {question}
-        Reference context：
-        ···
-        {context}
-        ···
-        If the given context does not allow you to answer, please respond that there is no such thing in the database and you don't know it.
-        Useful answers:""",
-    
-)
-
-
 # 构建正常的请求messages
-def build_messages(prompt, history, system: str = None):
+def build_messages(prompt: str, history: List[Tuple[str, str]], system: str = None) -> List[Dict[str, str]]:
     messages = []
     if system is not None and len(system) > 0:
         messages.append({'role': 'system', 'content': system})
@@ -66,18 +38,18 @@ def build_messages(prompt, history, system: str = None):
 # 此类限制每分钟请求次数
 class RPM:
 
-    def __init__(self, rpm: int = 30):
+    def __init__(self, rpm: int = 30) -> None:
         self.rpm = rpm
         self.record = {'slot': self.get_minute_slot(), 'counter': 0}  # 分钟槽和计数器
 
     # 获取分钟槽，是从午夜开始算起，可以唯一标识一天中的每一分钟
-    def get_minute_slot(self):
+    def get_minute_slot(self) -> int:
         current_time = time.time()
         dt_object = datetime.fromtimestamp(current_time)
         total_minutes_since_midnight = dt_object.hour * 60 + dt_object.minute
         return total_minutes_since_midnight
 
-    def wait(self):
+    def wait(self) -> None:
         current = time.time()
         dt_object = datetime.fromtimestamp(current)
         minute_slot = self.get_minute_slot()  # 当前时间的分钟槽
@@ -102,7 +74,7 @@ class RPM:
 class LocalInferenceWrapper:
     """A class to wrapper kinds of local LLM framework."""
 
-    def __init__(self, model_path: str):
+    def __init__(self, model_path: str) -> None:
         """Init model handler."""
         self.tokenizer = AutoTokenizer.from_pretrained(model_path,
                                                        trust_remote_code=True)
@@ -131,7 +103,7 @@ class LocalInferenceWrapper:
                 device_map='auto',
                 torch_dtype='auto').eval()
 
-    def chat(self, prompt: str, history=[]):
+    def chat(self, prompt: str, history: List[Tuple[str, str]] = []) -> str:
         """Generate a response from local LLM.
 
         Args:
@@ -167,8 +139,7 @@ class LocalInferenceWrapper:
                 prompt = '你是一个语言专家，擅长分析语句并打分。\n' + prompt
                 output_desc, _ = self.model.chat(self.tokenizer, prompt, history, top_k=1, do_sample=False)
                 prompt = '"{}"\n请仔细阅读上面的内容，最后的得分是多少？'.format(output_desc)
-                output_text, _ = self.model.chat(self.tokenizer, prompt,
-                                                 history)
+                output_text, _ = self.model.chat(self.tokenizer, prompt, history)
             else:
                 output_text, _ = self.model.chat(self.tokenizer,
                                                  prompt,
@@ -216,7 +187,7 @@ class HybridLLMServer:
             self.inference = None
             logger.warning('local LLM disabled.')
 
-    def call_internlm(self, prompt, history):
+    def call_internlm(self, prompt: str, history: List[Tuple[str, str]]) -> str:
         """See https://internlm.intern-ai.org.cn/api/document for internlm remote api."""
         url = 'https://internlm-chat.intern-ai.org.cn/puyu/api/v1/chat/completions'
 
@@ -272,7 +243,7 @@ class HybridLLMServer:
             raise Exception('internlm model waterprint !!!')
         return output_text
 
-    def call_kimi(self, prompt, history):
+    def call_kimi(self, prompt: str, history: List[Tuple[str, str]]) -> str:
         """Generate a response from Kimi (a remote LLM).
 
         Args:
@@ -321,7 +292,7 @@ class HybridLLMServer:
         )
         return completion.choices[0].message.content
 
-    def call_step(self, prompt, history):
+    def call_step(self, prompt: str, history: List[Tuple[str, str]]) -> str:
         """Generate a response from step, see https://platform.stepfun.com/docs/overview/quickstart.
 
         Args:
@@ -367,10 +338,10 @@ class HybridLLMServer:
         return completion.choices[0].message.content
 
     def call_gpt(self,
-                 prompt,
-                 history,
+                 prompt: str,
+                 history: List[Tuple[str, str]],
                  base_url: str = None,
-                 system: str = None):
+                 system: str = None) -> str:
         """Generate a response from openai API.
 
         Args:
@@ -398,7 +369,7 @@ class HybridLLMServer:
         )
         return completion.choices[0].message.content
 
-    def call_deepseek(self, prompt, history):
+    def call_deepseek(self, prompt: str, history: List[Tuple[str, str]]) -> str:
         """Generate a response from deepseek (a remote LLM).
 
         Args:
@@ -426,7 +397,7 @@ class HybridLLMServer:
         )
         return completion.choices[0].message.content
 
-    def call_zhipuai(self, prompt, history):
+    def call_zhipuai(self, prompt: str, history: List[Tuple[str, str]]) -> str:
         """Generate a response from zhipuai (a remote LLM).
 
         Args:
@@ -451,7 +422,7 @@ class HybridLLMServer:
         )
         return completion.choices[0].message.content
 
-    def call_siliconcloud(self, prompt: str, history: list):
+    def call_siliconcloud(self, prompt: str, history: List[Tuple[str, str]]) -> str:
         self.rpm.wait()
 
         url = 'https://api.siliconflow.cn/v1/chat/completions'
@@ -479,7 +450,7 @@ class HybridLLMServer:
         text = resp_json['choices'][0]['message']['content']
         return text
 
-    def generate_response(self, prompt, history=[], backend='local'):
+    def generate_response(self, prompt: str, history: List[Tuple[str, str]] = [], backend='local') -> Tuple[str, str]:
         """Generate a response from the appropriate LLM based on the configuration. If failed, use exponential backoff.
 
         Args:
@@ -577,41 +548,46 @@ class HybridLLMServer:
     
 
 if __name__ == "__main__":
-    with open("config.ini", encoding='utf-8') as f:
-        llm_config = pytoml.load(f)['llm']
-    llm = HybridLLMServer(llm_config)
-    # print(llm.chat("What is the capital of France?", "The capital of France is Paris.", is_zh=True))
-    context = '''
-    # Diffusers Loader
+    # with open("config.ini", encoding='utf-8') as f:
+    #     llm_config = pytoml.load(f)['llm']
+    # llm = HybridLLMServer(llm_config)
+    # # print(llm.chat("What is the capital of France?", "The capital of France is Paris.", is_zh=True))
+    # context = '''
+    # # Diffusers Loader
 
-    ![Diffusers Loader node](media/DiffusersLoader.svg){ align=right width=450 }
+    # ![Diffusers Loader node](media/DiffusersLoader.svg){ align=right width=450 }
 
-    The Diffusers Loader node can be used to load a diffusion model from diffusers.
+    # The Diffusers Loader node can be used to load a diffusion model from diffusers.
 
-    ## inputs
+    # ## inputs
 
-    `model_path`
+    # `model_path`
 
-    :   path to the diffusers model.
+    # :   path to the diffusers model.
 
-    ## outputs
+    # ## outputs
 
-    `MODEL`
+    # `MODEL`
 
-    :   The model used for denoising latents.
+    # :   The model used for denoising latents.
 
-    `CLIP`
+    # `CLIP`
 
-    :   The CLIP model used for encoding text prompts.
+    # :   The CLIP model used for encoding text prompts.
 
-    `VAE`
+    # `VAE`
 
-    :   The VAE model used for encoding and decoding images to and from latent space.
+    # :   The VAE model used for encoding and decoding images to and from latent space.
 
-    ## example
+    # ## example
 
-    example usage text with workflow image
-    '''
-    question = "What is the Diffusers Loader node?"
-    prompt = PROMPT_TEMPLATE["EN_RAG_PROMPT_TEMPALTE"].format(question=question, context=context)
-    print(llm.generate_response(prompt))
+    # example usage text with workflow image
+    # '''
+    # question = "What is the Diffusers Loader node?"
+    # prompt = PROMPT_TEMPLATE["EN_RAG_PROMPT_TEMPALTE"].format(question=question, context=context)
+    # print(llm.generate_response(prompt))
+
+    rpm = RPM()
+    tmp = rpm.get_minute_slot()
+    print(type(tmp))
+    print(tmp)
