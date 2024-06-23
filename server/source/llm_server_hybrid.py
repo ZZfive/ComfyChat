@@ -679,7 +679,7 @@ class HybridLLMServer:
         time_finish = time.time()
 
         logger.debug('Q:{} A:{} \t\t backend {} timecost {} '.format(
-            prompt[-100:-1], output_text, backend,
+            prompt[-100: -1], output_text, backend,
             time_finish - time_tokenizer))
         return output_text, error
 
