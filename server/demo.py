@@ -14,6 +14,8 @@ from typing import List, Tuple, Generator
 
 import pytoml
 import gradio as gr
+import numpy as np
+from whispercpp import Whisper
 
 from llm_infer import HybridLLMServer
 from retriever import CacheRetriever
@@ -42,6 +44,9 @@ llm = HybridLLMServer(llm_config)
 # RAG检索实例
 cache = CacheRetriever(config_path=args.config_path)
 retriever = cache.get()
+# whisper实例
+w = Whisper.from_pretrained("base")
+
 
 def generate_answer(prompt: str, history: list, lang: str = 'en', backend: str = 'remote', use_rag: bool = False) -> str:
     # 默认不走RAG
@@ -64,6 +69,11 @@ def generate_answer(prompt: str, history: list, lang: str = 'en', backend: str =
                 return ANSWER_RAG_TEMPLATE["EN_PROMPT_TEMPALTE" if lang == "en" else "ZH_PROMPT_TEMPALTE"].format(answer=ans)
         else:
             return ANSWER_LLM_TEMPLATE["EN_PROMPT_TEMPALTE" if lang == "en" else "ZH_PROMPT_TEMPALTE"].format(answer=ans)
+
+
+def audio2text(audio: np.ndarray) -> str:
+    text = w.transcribe(audio[1])
+    return text
 
 
 def user(user_message: str, history: List[Tuple[str, str]]) -> Tuple[str, List[Tuple[str, str]]]:
@@ -93,6 +103,11 @@ with gr.Blocks() as demo:
             msg = gr.Textbox()
             clear = gr.Button("Clear")
 
+            # 语音输入
+            in_audio = gr.Audio()
+            audio2text_buttong = gr.Button("audio transcribe to text")
+
+        audio2text_buttong.click(audio2text, in_audio, msg)
         msg.submit(user, [msg, chatbot], [msg, chatbot], queue=False).then(bot, chatbot, chatbot)
         clear.click(lambda: None, None, chatbot, queue=False)
 
