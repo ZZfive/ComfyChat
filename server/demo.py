@@ -7,15 +7,16 @@
 @Desc    :   None
 '''
 import os
-os.environ["HF_HOME"] = '/root/code/ComfyChat/weights'
-os.environ["HUGGINGFACE_HUB_CACHE"] = '/root/code/ComfyChat/weights'
-os.environ["TRANSFORMERS_CACHE"] = '/root/code/ComfyChat/weights'
+os.environ["HF_HOME"] = r"D:\cache"
+os.environ["HUGGINGFACE_HUB_CACHE"] = r"D:\cache"
+os.environ["TRANSFORMERS_CACHE"] = r"D:\cache"
 import time
 import random
 import argparse
 from typing import List, Tuple, Generator
 
 import torch
+import torchaudio
 import pytoml
 import gradio as gr
 import numpy as np
@@ -24,6 +25,7 @@ import whisperx
 
 from llm_infer import HybridLLMServer
 from retriever import CacheRetriever
+from audio.ChatTTS import ChatTTS
 from prompt_templates import PROMPT_TEMPLATE, RAG_PROMPT_TEMPLATE, ANSWER_NO_RAG_TEMPLATE, ANSWER_RAG_TEMPLATE, ANSWER_LLM_TEMPLATE
 
 # 参数设置
@@ -36,6 +38,10 @@ parser.add_argument(
 parser.add_argument(
         '--asr-model',
         default='whispercpp'
+    )
+parser.add_argument(
+        '--tts-model',
+        default='chattts'
     )
 args = parser.parse_args()
 
@@ -56,7 +62,15 @@ elif args.asr_model == "whisperx":
     asr_model = whisperx.load_model("large-v2", device, compute_type="float16", language='en',
                             download_root='/root/code/ComfyChat/weights')
 else:
-    raise ValueError(f"{args.asr_model} is wrong")
+    raise ValueError(f"{args.asr_model} is not supported")
+# tts实例初始化
+if args.tts_model == "chattts":
+    tts_model = ChatTTS.Chat()
+    tts_model.load(compile=False, source='huggingface')
+elif args.asr_model == "whisperx":
+    tts_model = None
+else:
+    raise ValueError(f"{args.tts_model} is not supported")
 
 
 def generate_answer(prompt: str, history: list, lang: str = 'en', backend: str = 'remote', use_rag: bool = False) -> str:
@@ -93,9 +107,43 @@ def audio2text(audio_path: str) -> str:
         txts = [res['text'] for res in result['segments']]
         text = ' '.join(txts)
     else:
-        raise ValueError(f"{args.asr_model} is wrong")
+        raise ValueError(f"{args.asr_model} is not supported")
     return text
 
+
+def text2audio(text: str, seed: int = 42, refine_text_flag: bool = True) -> None:
+    torch.manual_seed(seed)# 设置采样音色的随机种子
+    if args.tts_model == "chattts":
+        rand_spk = tts_model.sample_random_speaker()  # 从高斯分布中随机采样出一个音色
+        params_infer_code = ChatTTS.Chat.InferCodeParams(
+            spk_emb=rand_spk,
+            temperature=.3,
+            top_P=0.7,
+            top_K=20)
+        params_refine_text = ChatTTS.Chat.RefineTextParams(
+            prompt='[oral_2][laugh_0][break_6]',)
+
+        torch.manual_seed(random.randint(1, 100000000))
+
+        if refine_text_flag:
+            text = tts_model.infer(text, 
+                                   skip_refine_text=False,
+                                   refine_text_only=True,
+                                   params_refine_text=params_refine_text,
+                                   params_infer_code=params_infer_code)
+
+        wavs = tts_model.infer(text,
+                               skip_refine_text=True,
+                               params_refine_text=params_refine_text,
+                               params_infer_code=params_infer_code)
+        audio_data = np.array(wavs[0]).flatten()
+    elif args.tts_model == "sovits":
+        pass
+    else:
+        raise ValueError(f"{args.tts_model} is not supported")
+    
+    text_data = text[0] if isinstance(text, list) else text
+    return [(24000, audio_data), text_data]
 
 def user(user_message: str, history: List[Tuple[str, str]]) -> Tuple[str, List[Tuple[str, str]]]:
         return "", history + [(user_message, None)]
