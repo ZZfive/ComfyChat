@@ -100,10 +100,10 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 is_half = True
 stream_mode = "close"
 media_type = "wav"
-gpt_path = ""
-sovits_path = ""
-bert_path = ""
-cnhubert_base_path = ""
+gpt_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/s1bert25hz-2kh-longer-epoch=68e-step=50232.ckpt"
+sovits_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/s2G488k.pth"
+bert_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large"
+cnhubert_base_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/chinese-hubert-base"
 default_cut_punc = ""  # 文本切分符号设定, 符号范围,.;?!、，。？！；：…
 
 # 流式返回模式
@@ -172,8 +172,8 @@ def get_bert_inf(phones, word2ph, norm_text, language):
     return bert
 
 
-def get_phones_and_bert(text,language):
-    if language in {"en","all_zh","all_ja"}:
+def get_phones_and_bert(text, language):
+    if language in {"en", "all_zh", "all_ja"}:
         language = language.replace("all_","")
         if language == "en":
             LangSegment.setfilters(["en"])
@@ -304,10 +304,10 @@ def pack_raw(audio_bytes, data, rate):
 
 
 def pack_wav(audio_bytes, rate):
-    data = np.frombuffer(audio_bytes.getvalue(),dtype=np.int16)
+    data = np.frombuffer(audio_bytes.getvalue(), dtype=np.int16)
     wav_bytes = BytesIO()
     sf.write(wav_bytes, data, rate, format='wav')
-
+    wav_bytes.seek(0)
     return wav_bytes
 
 
@@ -360,7 +360,9 @@ def only_punc(text):
     return not any(t.isalnum() or t.isalpha() for t in text)
 
 
-def get_tts_wav(ref_wav_path, prompt_text, prompt_language, text, text_language, cut_punc):
+def get_tts_wav( text, text_language, cut_punc: str = "，；。？",
+                ref_wav_path: str = "/root/code/ComfyChat/audio/output1.wav",
+                prompt_text: str = "一二三。", prompt_language: str = "zh"):
     t0 = ttime()
     if cut_punc == None:
         text = cut_text(text, default_cut_punc)
@@ -438,5 +440,24 @@ def get_tts_wav(ref_wav_path, prompt_text, prompt_language, text, text_language,
     
     if not stream_mode == "normal": 
         if media_type == "wav":
-            audio_bytes = pack_wav(audio_bytes,hps.data.sampling_rate)
+            audio_bytes = pack_wav(audio_bytes, hps.data.sampling_rate)
+            return audio_bytes
         yield audio_bytes.getvalue()
+
+
+if __name__ == '__main__':
+    audio_generator = get_tts_wav('你好，请问你是谁？', 'zh')
+
+    # 将生成器的数据写入 BytesIO 对象
+    audio_bytes = BytesIO()
+    for chunk in audio_generator:
+        audio_bytes.write(chunk)
+    
+    # 重置 BytesIO 对象的指针
+    audio_bytes.seek(0)
+    
+    # 将原始音频数据打包为 WAV 格式
+    wav_bytes = pack_wav(audio_bytes, hps.data.sampling_rate)
+
+    with open("output1-sovits.wav", "wb") as f:
+        f.write(wav_bytes.getvalue())
