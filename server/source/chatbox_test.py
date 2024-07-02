@@ -24,10 +24,13 @@ def generate_response(message):
     return response
 
 # 定义处理选择事件的回调函数
-def handle_select(evt: gr.SelectData):
-    selected_index = evt.index  # 获取用户选择的对话条目索引
-    selected_text = evt.value  # 获取用户选择的对话条目文本
-    return f"你选择了第 {selected_index} 条对话: {selected_text}"
+def handle_select(evt: gr.SelectData, use_tts: bool = False):
+    if use_tts:
+        selected_index = evt.index  # 获取用户选择的对话条目索引
+        selected_text = evt.value  # 获取用户选择的对话条目文本
+        return f"你选择了第 {selected_index} 条对话: {selected_text}"
+    else:
+        return 'hello world'
 
 
 with gr.Blocks() as demo:
@@ -35,6 +38,7 @@ with gr.Blocks() as demo:
     msg = gr.Textbox()
     clear = gr.ClearButton([msg, chatbot])
     msg_out = gr.Textbox()
+    use_tts = gr.Radio([True, False], value=False, label="Turn on TTS")
 
     def respond(message, chat_history):
         bot_message = random.choice(["How are you?", "I love you", "I'm very hungry"])
@@ -46,7 +50,7 @@ with gr.Blocks() as demo:
 
 
     # 添加 Chatbot.select 事件监听器
-    chatbot.select(handle_select, outputs=msg_out)
+    chatbot.select(handle_select, inputs=use_tts, outputs=msg_out)
 
 # 启动接口
 if __name__ == "__main__":

@@ -6,8 +6,6 @@ os.environ["TRANSFORMERS_CACHE"] = r"D:\cache"
 from typing import Tuple, List
 
 import torch
-import torchaudio
-from IPython.display import Audio
 import numpy as np
 import gradio as gr
 

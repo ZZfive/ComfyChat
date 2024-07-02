@@ -13,7 +13,7 @@ os.environ["TRANSFORMERS_CACHE"] = r"D:\cache"
 import time
 import random
 import argparse
-from typing import List, Tuple, Generator
+from typing import List, Tuple, Generator, Dict
 
 import torch
 import torchaudio
@@ -161,12 +161,26 @@ def bot(chatbot_history: List[Tuple[str, str]], lang: str = 'en', backend: str =
         yield chatbot_history
 
 
+# 定义处理选择事件的回调函数
+def chatbot_selected2tts(evt: gr.SelectData, use_tts: bool, audio_seed: int) -> List[Tuple[int, np.ndarray] | str]:
+    selected_index = evt.index  # 获取用户选择的对话条目索引
+    selected_text = evt.value   # 获取用户选择的对话条目文本
+    if use_tts and selected_index[1] == 1 and selected_text['type'] == 'text':
+        text = selected_text['value']
+        results = text2audio(text, audio_seed)
+        return results
+    else:
+        return [(None, None), None]
+
+
 with gr.Blocks() as demo:
     with gr.Row():
         with gr.Column(scale=1):
-            backend = gr.Radio(["local", "remote"], value="remote", label="inference backend")
-            lang = gr.Radio(["zh", "en"], value="en", label="language")
-            use_rag = gr.Radio([True, False], value=False, label="use RAG")
+            backend = gr.Radio(["local", "remote"], value="remote", label="Inference backend")
+            lang = gr.Radio(["zh", "en"], value="en", label="Language")
+            use_rag = gr.Radio([True, False], value=False, label="Turn on RAG")
+            use_tts = gr.Radio([True, False], value=False, label="Turn on TTS")
+            audio_seed = gr.Slider(min=1, max=100000000, step=1, value=42, label="Audio seed")
         with gr.Column(scale=11):
             chatbot = gr.Chatbot(label="ComfyChat")
             msg = gr.Textbox(interactive=False)
@@ -178,9 +192,17 @@ with gr.Blocks() as demo:
             in_audio = gr.Audio(sources="microphone", type="filepath")
             audio2text_buttong = gr.Button("audio transcribe to text")
 
+            # 设置
+            out_audio = gr.Audio(label="Click on the reply text to generate the corresponding audio",
+                                 type="numpy")
+            out_audio_text = gr.Textbox(visible=False)
+
         audio2text_buttong.click(audio2text, in_audio, msg)
         submit.click(user, [msg, chatbot], [msg, chatbot], queue=False).then(bot, chatbot, chatbot)
         clear.click(lambda: None, None, chatbot, queue=False)
+
+        # 添加 Chatbot.select 事件监听器
+        chatbot.select(chatbot_selected2tts, inputs=[use_tts, audio_seed], outputs=[out_audio, out_audio_text])
 
 demo.queue()
 demo.launch(server_name="0.0.0.0")
