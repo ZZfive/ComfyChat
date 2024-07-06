@@ -14,7 +14,7 @@ from io import BytesIO
 from time import time as ttime
 
 import sys
-now_dir = os.getcwd()
+now_dir = '/root/code/ComfyChat/audio'
 sys.path.append(now_dir)
 sys.path.append("%s/GPT-SoVITS" % (now_dir))
 sys.path.append("%s/GPT-SoVITS/GPT_SoVITS" % (now_dir))
@@ -360,7 +360,7 @@ def only_punc(text):
     return not any(t.isalnum() or t.isalpha() for t in text)
 
 
-def get_tts_wav( text, text_language, cut_punc: str = "，；。？",
+def get_tts_wav(text, text_language, cut_punc: str = "，；。？",
                 ref_wav_path: str = "/root/code/ComfyChat/audio/output1.wav",
                 prompt_text: str = "一二三。", prompt_language: str = "zh"):
     t0 = ttime()
@@ -381,7 +381,7 @@ def get_tts_wav( text, text_language, cut_punc: str = "，；。？",
         else:
             wav16k = wav16k.to(device)
             zero_wav_torch = zero_wav_torch.to(device)
-        wav16k = torch.cat([wav16k, zero_wav_torch])
+        wav16k = torch.cat([wav16k, zero_wav_torch])  # 将引导音频和初始的全零音频concat起来
         ssl_content = ssl_model.model(wav16k.unsqueeze(0))["last_hidden_state"].transpose(1, 2)  # .float()
         codes = vq_model.extract_latent(ssl_content)
         prompt_semantic = codes[0, 0]
@@ -390,7 +390,7 @@ def get_tts_wav( text, text_language, cut_punc: str = "，；。？",
     text_language = dict_language[text_language.lower()]
     phones1, bert1, norm_text1 = get_phones_and_bert(prompt_text, prompt_language)
     texts = text.split("\n")
-    audio_bytes = BytesIO()
+    audio_bytes = BytesIO()  # 在内存中读写字节数据对象
 
     for text in texts:
         # 简单防止纯符号引发参考音频泄露
@@ -425,39 +425,23 @@ def get_tts_wav( text, text_language, cut_punc: str = "，；。？",
         else:
             refer = refer.to(device)
         # audio = vq_model.decode(pred_semantic, all_phoneme_ids, refer).detach().cpu().numpy()[0, 0]
-        audio = \
-            vq_model.decode(pred_semantic, torch.LongTensor(phones2).to(device).unsqueeze(0),
-                            refer).detach().cpu().numpy()[
-                0, 0]  ###试试重建不带上prompt部分
+        audio = vq_model.decode(pred_semantic, torch.LongTensor(phones2).to(device).unsqueeze(0),
+                                refer).detach().cpu().numpy()[0, 0]  ###试试重建不带上prompt部分
         audio_opt.append(audio)
         audio_opt.append(zero_wav)
         t4 = ttime()
-        audio_bytes = pack_audio(audio_bytes,(np.concatenate(audio_opt, 0) * 32768).astype(np.int16),hps.data.sampling_rate)
+        audio_bytes = pack_audio(audio_bytes, (np.concatenate(audio_opt, 0) * 32768).astype(np.int16),
+                                 hps.data.sampling_rate)
     # logger.info("%.3f\t%.3f\t%.3f\t%.3f" % (t1 - t0, t2 - t1, t3 - t2, t4 - t3))
-        if stream_mode == "normal":
-            audio_bytes, audio_chunk = read_clean_buffer(audio_bytes)
-            yield audio_chunk
     
-    if not stream_mode == "normal": 
-        if media_type == "wav":
-            audio_bytes = pack_wav(audio_bytes, hps.data.sampling_rate)
-            return audio_bytes
-        yield audio_bytes.getvalue()
+    audio_bytes = pack_wav(audio_bytes, hps.data.sampling_rate)
+    return audio_bytes
 
 
 if __name__ == '__main__':
-    audio_generator = get_tts_wav('你好，请问你是谁？', 'zh')
+    wav_bytes = get_tts_wav('你好，请问你是谁？', 'zh',
+                            ref_wav_path='/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav')
 
-    # 将生成器的数据写入 BytesIO 对象
-    audio_bytes = BytesIO()
-    for chunk in audio_generator:
-        audio_bytes.write(chunk)
-    
-    # 重置 BytesIO 对象的指针
-    audio_bytes.seek(0)
-    
-    # 将原始音频数据打包为 WAV 格式
-    wav_bytes = pack_wav(audio_bytes, hps.data.sampling_rate)
-
-    with open("output1-sovits.wav", "wb") as f:
-        f.write(wav_bytes.getvalue())
+    # 将BytesIO对象保存为WAV文件
+with open('output1-test.wav', 'wb') as f:
+    f.write(wav_bytes.getbuffer())
