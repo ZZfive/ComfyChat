@@ -56,7 +56,7 @@ default_gpt_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/s1
 default_sovits_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/s2G488k.pth"
 bert_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large"
 cnhubert_base_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/chinese-hubert-base"
-default_cut_punc = ""  # 文本切分符号设定, 符号范围,.;?!、，。？！；：…
+default_cut_punc = ",.;?!、，。？！；：…"  # 文本切分符号设定, 符号范围
 # gpt模型相关全局变量
 hz = 50
 max_sec = None
@@ -355,7 +355,7 @@ def only_punc(text):
 
 def get_tts_wav(text,
                 text_language,
-                cut_punc: str = "，；。？",
+                cut_punc: str = ",.;?!、，。？！；：…",
                 ref_wav_path: str = "/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav",
                 prompt_text: str = "疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？", 
                 prompt_language: str = "zh",
@@ -431,7 +431,7 @@ def get_tts_wav(text,
                                  hps.data.sampling_rate)
     # logger.info("%.3f\t%.3f\t%.3f\t%.3f" % (t1 - t0, t2 - t1, t3 - t2, t4 - t3))
     
-    return (np.frombuffer(audio_bytes.getvalue(), dtype=np.int16), hps.data.sampling_rate) if return_numpy else pack_wav(audio_bytes, hps.data.sampling_rate)
+    return (hps.data.sampling_rate, np.frombuffer(audio_bytes.getvalue(), dtype=np.int16)) if return_numpy else pack_wav(audio_bytes, hps.data.sampling_rate)
 
 
 if __name__ == '__main__':
