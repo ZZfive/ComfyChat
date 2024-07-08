@@ -61,7 +61,7 @@ default_cut_punc = ",.;?!、，。？！；：…"  # 文本切分符号设定, 
 hz = 50
 max_sec = None
 t2s_model = None
-config = None
+gpt_config = None
 # SoVITS模型相关全局变量
 vq_model = None
 hps = None
@@ -90,11 +90,11 @@ class DictToAttrRecursive:
 
 
 def set_gpt_weights(gpt_path: str) -> None:
-    global max_sec, t2s_model, config
+    global max_sec, t2s_model, gpt_config
     dict_s1 = torch.load(gpt_path, map_location="cpu")
-    config = dict_s1["config"]
-    max_sec = config["data"]["max_sec"]
-    t2s_model = Text2SemanticLightningModule(config, "****", is_train=False)
+    gpt_config = dict_s1["config"]
+    max_sec = gpt_config["data"]["max_sec"]
+    t2s_model = Text2SemanticLightningModule(gpt_config, "****", is_train=False)
     t2s_model.load_state_dict(dict_s1["weight"])
     if is_half == True:
         t2s_model = t2s_model.half()
@@ -411,7 +411,7 @@ def get_tts_wav(text,
                 prompt,
                 bert,
                 # prompt_phone_len=ph_offset,
-                top_k=config['inference']['top_k'],
+                top_k=gpt_config['inference']['top_k'],
                 early_stop_num=hz * max_sec)
         t3 = ttime()
         # print(pred_semantic.shape,idx)
