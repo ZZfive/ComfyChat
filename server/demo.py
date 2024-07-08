@@ -10,6 +10,8 @@ import os
 # os.environ["HF_HOME"] = r"D:\cache"
 # os.environ["HUGGINGFACE_HUB_CACHE"] = r"D:\cache"
 # os.environ["TRANSFORMERS_CACHE"] = r"D:\cache"
+import sys
+sys.path.append('/root/code/ComfyChat')
 import time
 import random
 import argparse
@@ -64,9 +66,9 @@ elif args.asr_model == "whisperx":
                             download_root='/root/code/ComfyChat/weights')
 else:
     raise ValueError(f"{args.asr_model} is not supported")
-# tts实例初始化
-tts_model = ChatTTS.Chat()
-tts_model.load(compile=False, source='huggingface')
+# chattts实例初始化
+chattts_model = ChatTTS.Chat()
+chattts_model.load(compile=False, source='huggingface')
 
 
 def generate_answer(prompt: str, history: list, lang: str = 'en', backend: str = 'remote', use_rag: bool = False) -> str:
@@ -109,32 +111,31 @@ def audio2text(audio_path: str) -> str:
 
 def text2audio_chattts(text: str, seed: int = 42, refine_text_flag: bool = True) -> None:
     torch.manual_seed(seed)# 设置采样音色的随机种子
-    if args.tts_model == "chattts":
-        rand_spk = tts_model.sample_random_speaker()  # 从高斯分布中随机采样出一个音色
-        params_infer_code = ChatTTS.Chat.InferCodeParams(
-            spk_emb=rand_spk,
-            temperature=.3,
-            top_P=0.7,
-            top_K=20)
-        params_refine_text = ChatTTS.Chat.RefineTextParams(
-            prompt='[oral_2][laugh_0][break_6]',)
+    rand_spk = chattts_model.sample_random_speaker()  # 从高斯分布中随机采样出一个音色
+    params_infer_code = ChatTTS.Chat.InferCodeParams(
+        spk_emb=rand_spk,
+        temperature=.3,
+        top_P=0.7,
+        top_K=20)
+    params_refine_text = ChatTTS.Chat.RefineTextParams(
+        prompt='[oral_2][laugh_0][break_6]',)
 
-        torch.manual_seed(random.randint(1, 100000000))
+    torch.manual_seed(random.randint(1, 100000000))
 
-        if refine_text_flag:
-            text = tts_model.infer(text, 
-                                   skip_refine_text=False,
-                                   refine_text_only=True,
-                                   params_refine_text=params_refine_text,
-                                   params_infer_code=params_infer_code)
+    if refine_text_flag:
+        text = chattts_model.infer(text, 
+                                skip_refine_text=False,
+                                refine_text_only=True,
+                                params_refine_text=params_refine_text,
+                                params_infer_code=params_infer_code)
 
-        wavs = tts_model.infer(text,
-                               skip_refine_text=True,
-                               params_refine_text=params_refine_text,
-                               params_infer_code=params_infer_code)
-        audio_data = np.array(wavs[0]).flatten()
+    wavs = chattts_model.infer(text,
+                            skip_refine_text=True,
+                            params_refine_text=params_refine_text,
+                            params_infer_code=params_infer_code)
+    audio_data = np.array(wavs[0]).flatten()
 
-        return (24000, audio_data)
+    return (24000, audio_data)
 
 def user(user_message: str, history: List[Tuple[str, str]]) -> Tuple[str, List[Tuple[str, str]]]:
         return "", history + [(user_message, None)]
@@ -166,7 +167,10 @@ def toggle_tts_components(selected_option: str):
 
 # 使用GPT-SoVITS时随着克隆对象的变化设置对应参数
 def update_gpt_sovits(selected_option: str) -> Tuple[str]:
-    if selected_option == "派蒙":
+    if selected_option == "默认":
+        return (default_gpt_path, default_sovits_path, "/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav",
+                "疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？", "zh")
+    elif selected_option == "派蒙":
         return (default_gpt_path, default_sovits_path, "/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav",
                 "疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？", "zh")
     elif selected_option == "魈":
@@ -175,18 +179,22 @@ def update_gpt_sovits(selected_option: str) -> Tuple[str]:
 
 
 # 定义处理选择事件的回调函数
-def chatbot_selected2tts(evt: gr.SelectData, use_tts: bool, audio_seed: int) -> List[Tuple[int, np.ndarray] | str]:
+def chatbot_selected2tts(evt: gr.SelectData, use_tts: bool, tts_model: str, chattts_audio_seed: int,
+                         text_language: str, cut_punc: str, gpt_path: str, sovits_path: str, ref_wav_path: str,
+                         prompt_text: str, prompt_language: str) -> List[Tuple[int, np.ndarray] | str]:
     selected_index = evt.index  # 获取用户选择的对话条目索引
     selected_text = evt.value   # 获取用户选择的对话条目文本
     if use_tts and selected_index[1] == 1 and selected_text['type'] == 'text':
         text = selected_text['value']
-        if args.tts_model == 'chattts':
-            results = text2audio_chattts(text, audio_seed)
+        if tts_model == 'chattts':
+            results = text2audio_chattts(text, chattts_audio_seed)
             return results
-        elif args.asr_model == "gpt-sovit":
-            pass
-        else:
-            raise ValueError(f"{args.tts_model} is not supported")
+        elif tts_model == "gpt-sovit":
+            if gpt_path != default_gpt_path and sovits_path != default_sovits_path:
+                set_gpt_weights(gpt_path)
+                set_sovits_weights(sovits_path)
+            results = get_tts_wav(text, text_language, cut_punc, ref_wav_path, prompt_text, prompt_language, return_numpy=True)
+            return results
     else:
         return (None, None)
 
@@ -228,13 +236,15 @@ with gr.Blocks() as demo:
             
         use_tts.change(toggle_tts_radio, inputs=use_tts, outputs=tts_model)
         tts_model.change(toggle_tts_components, inputs=tts_model, outputs=[chattts_audio_seed, gpt_sovits_voice, cut_punc])
+        gpt_sovits_voice.change(update_gpt_sovits, inputs=gpt_sovits_voice, outputs=[gpt_path, sovits_path, ref_wav_path, prompt_text, prompt_language])
 
         audio2text_buttong.click(audio2text, in_audio, msg)
         submit.click(user, [msg, chatbot], [msg, chatbot], queue=False).then(bot, inputs=[chatbot, lang], outputs=chatbot)
         clear.click(lambda: None, None, chatbot, queue=False)
 
         # 添加 Chatbot.select 事件监听器
-        chatbot.select(chatbot_selected2tts, inputs=[use_tts, chattts_audio_seed], outputs=out_audio)
+        chatbot.select(chatbot_selected2tts, inputs=[use_tts, tts_model, chattts_audio_seed, lang, cut_punc, gpt_path,
+                                                     sovits_path, ref_wav_path, prompt_text, prompt_language], outputs=out_audio)
 
 demo.queue()
 demo.launch(server_name="0.0.0.0")
