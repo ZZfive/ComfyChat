@@ -67,8 +67,8 @@ else:
 if args.tts_model == "chattts":
     tts_model = ChatTTS.Chat()
     tts_model.load(compile=False, source='huggingface')
-elif args.asr_model == "whisperx":
-    tts_model = None
+elif args.asr_model == "gpt-sovit":
+    from audio.gptsovits import get_tts_wav
 else:
     raise ValueError(f"{args.tts_model} is not supported")
 
@@ -111,7 +111,7 @@ def audio2text(audio_path: str) -> str:
     return text
 
 
-def text2audio(text: str, seed: int = 42, refine_text_flag: bool = True) -> None:
+def text2audio_chattts(text: str, seed: int = 42, refine_text_flag: bool = True) -> None:
     torch.manual_seed(seed)# 设置采样音色的随机种子
     if args.tts_model == "chattts":
         rand_spk = tts_model.sample_random_speaker()  # 从高斯分布中随机采样出一个音色
@@ -137,13 +137,12 @@ def text2audio(text: str, seed: int = 42, refine_text_flag: bool = True) -> None
                                params_refine_text=params_refine_text,
                                params_infer_code=params_infer_code)
         audio_data = np.array(wavs[0]).flatten()
-    elif args.tts_model == "sovits":
+
+        return (24000, audio_data)
+    elif args.tts_model == "gpt-sovit":
         pass
     else:
         raise ValueError(f"{args.tts_model} is not supported")
-    
-    text_data = text[0] if isinstance(text, list) else text
-    return [(24000, audio_data), text_data]
 
 def user(user_message: str, history: List[Tuple[str, str]]) -> Tuple[str, List[Tuple[str, str]]]:
         return "", history + [(user_message, None)]
@@ -165,12 +164,17 @@ def bot(chatbot_history: List[Tuple[str, str]], lang: str = 'en', backend: str =
 def chatbot_selected2tts(evt: gr.SelectData, use_tts: bool, audio_seed: int) -> List[Tuple[int, np.ndarray] | str]:
     selected_index = evt.index  # 获取用户选择的对话条目索引
     selected_text = evt.value   # 获取用户选择的对话条目文本
-    if use_tts and selected_index[1] == 1 and selected_text['type'] == 'text':
-        text = selected_text['value']
-        results = text2audio(text, audio_seed)
-        return results
+    if args.tts_model == 'chattts':
+        if use_tts and selected_index[1] == 1 and selected_text['type'] == 'text':
+            text = selected_text['value']
+            results = text2audio_chattts(text, audio_seed)
+            return results
+        else:
+            return (None, None)
+    elif args.asr_model == "gpt-sovit":
+        pass
     else:
-        return [(None, None), None]
+        raise ValueError(f"{args.tts_model} is not supported")
 
 
 with gr.Blocks() as demo:
@@ -195,14 +199,13 @@ with gr.Blocks() as demo:
             # 设置
             out_audio = gr.Audio(label="Click on the reply text to generate the corresponding audio",
                                  type="numpy")
-            out_audio_text = gr.Textbox(visible=False)
 
         audio2text_buttong.click(audio2text, in_audio, msg)
         submit.click(user, [msg, chatbot], [msg, chatbot], queue=False).then(bot, chatbot, chatbot)
         clear.click(lambda: None, None, chatbot, queue=False)
 
         # 添加 Chatbot.select 事件监听器
-        chatbot.select(chatbot_selected2tts, inputs=[use_tts, audio_seed], outputs=[out_audio, out_audio_text])
+        chatbot.select(chatbot_selected2tts, inputs=[use_tts, audio_seed], outputs=out_audio)
 
 demo.queue()
 demo.launch(server_name="0.0.0.0")
