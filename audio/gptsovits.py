@@ -12,6 +12,7 @@ import subprocess
 import soundfile as sf
 from io import BytesIO
 from time import time as ttime
+from typing import Any, Tuple, List, Union
 
 import sys
 now_dir = '/root/code/ComfyChat/audio'
@@ -33,9 +34,53 @@ from module.mel_processing import spectrogram_torch
 from AR.models.t2s_lightning_module import Text2SemanticLightningModule
 from tools.my_utils import load_audio
 
+dict_language = {
+    "中文": "all_zh",
+    "英文": "en",
+    "日文": "all_ja",
+    "中英混合": "zh",
+    "日英混合": "ja",
+    "多语种混合": "auto",  # 多语种启动切分识别语种
+    "all_zh": "all_zh",
+    "en": "en",
+    "all_ja": "all_ja",
+    "zh": "zh",
+    "ja": "ja",
+    "auto": "auto",
+}
+device = "cuda" if torch.cuda.is_available() else "cpu"
+is_half = True
+stream_mode = "close"
+media_type = "wav"
+default_gpt_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/s1bert25hz-2kh-longer-epoch=68e-step=50232.ckpt"
+default_sovits_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/s2G488k.pth"
+bert_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large"
+cnhubert_base_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/chinese-hubert-base"
+default_cut_punc = ""  # 文本切分符号设定, 符号范围,.;?!、，。？！；：…
+# gpt模型相关全局变量
+hz = 50
+max_sec = None
+t2s_model = None
+config = None
+# SoVITS模型相关全局变量
+vq_model = None
+hps = None
+
+tokenizer = AutoTokenizer.from_pretrained(bert_path)
+bert_model = AutoModelForMaskedLM.from_pretrained(bert_path)
+cnhubert.cnhubert_base_path = cnhubert_base_path
+ssl_model = cnhubert.get_model()
+
+if is_half:
+    bert_model = bert_model.half().to(device)
+    ssl_model = ssl_model.half().to(device)
+else:
+    bert_model = bert_model.to(device)
+    ssl_model = ssl_model.to(device)
+
 
 class DictToAttrRecursive:
-    def __init__(self, input_dict):
+    def __init__(self, input_dict: Any) -> None:
         for key, value in input_dict.items():
             if isinstance(value, dict):
                 # 如果值是字典，递归调用构造函数
@@ -44,8 +89,8 @@ class DictToAttrRecursive:
                 setattr(self, key, value)
 
 
-def set_gpt_weights(gpt_path):
-    hz = 50
+def set_gpt_weights(gpt_path: str) -> None:
+    global max_sec, t2s_model, config
     dict_s1 = torch.load(gpt_path, map_location="cpu")
     config = dict_s1["config"]
     max_sec = config["data"]["max_sec"]
@@ -55,10 +100,10 @@ def set_gpt_weights(gpt_path):
         t2s_model = t2s_model.half()
     t2s_model = t2s_model.to(device)
     t2s_model.eval()
-    return hz, max_sec, t2s_model, config
 
 
-def init_sovits_weights(sovits_path):
+def set_sovits_weights(sovits_path: str) -> None:
+    global vq_model, hps
     dict_s2 = torch.load(sovits_path, map_location="cpu")
     hps = dict_s2["config"]
     hps = DictToAttrRecursive(hps)
@@ -79,64 +124,12 @@ def init_sovits_weights(sovits_path):
     vq_model.eval()
     vq_model.load_state_dict(dict_s2["weight"], strict=False)
 
-    return vq_model, hps
+
+set_gpt_weights(default_gpt_path)
+set_sovits_weights(default_sovits_path)
 
 
-dict_language = {
-    "中文": "all_zh",
-    "英文": "en",
-    "日文": "all_ja",
-    "中英混合": "zh",
-    "日英混合": "ja",
-    "多语种混合": "auto",  # 多语种启动切分识别语种
-    "all_zh": "all_zh",
-    "en": "en",
-    "all_ja": "all_ja",
-    "zh": "zh",
-    "ja": "ja",
-    "auto": "auto",
-}
-device = "cuda" if torch.cuda.is_available() else "cpu"
-is_half = True
-stream_mode = "close"
-media_type = "wav"
-gpt_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/s1bert25hz-2kh-longer-epoch=68e-step=50232.ckpt"
-sovits_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/s2G488k.pth"
-bert_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/chinese-roberta-wwm-ext-large"
-cnhubert_base_path = "/root/code/ComfyChat/weights/GPT_SoVITS/pretrained_models/chinese-hubert-base"
-default_cut_punc = ""  # 文本切分符号设定, 符号范围,.;?!、，。？！；：…
-
-# 流式返回模式
-if stream_mode.lower() in ["normal","n"]:
-    stream_mode = "normal"
-else:
-    stream_mode = "close"
-
-# 音频编码格式
-if media_type.lower() in ["aac","ogg"]:
-    media_type = media_type.lower()
-elif stream_mode == "close":
-    media_type = "wav"
-else:
-    media_type = "ogg"
-
-hz, max_sec, t2s_model, config = set_gpt_weights(gpt_path)
-vq_model, hps = init_sovits_weights(sovits_path)
-
-tokenizer = AutoTokenizer.from_pretrained(bert_path)
-bert_model = AutoModelForMaskedLM.from_pretrained(bert_path)
-cnhubert.cnhubert_base_path = cnhubert_base_path
-ssl_model = cnhubert.get_model()
-
-if is_half:
-    bert_model = bert_model.half().to(device)
-    ssl_model = ssl_model.half().to(device)
-else:
-    bert_model = bert_model.to(device)
-    ssl_model = ssl_model.to(device)
-
-
-def get_bert_feature(text, word2ph):
+def get_bert_feature(text: str, word2ph: str) -> torch.tensor:
     with torch.no_grad():
         inputs = tokenizer(text, return_tensors="pt")
         for i in inputs:
@@ -153,7 +146,7 @@ def get_bert_feature(text, word2ph):
     return phone_level_feature.T
 
 
-def clean_text_inf(text, language):
+def clean_text_inf(text: str, language: str) -> Tuple:
     phones, word2ph, norm_text = clean_text(text, language)
     phones = cleaned_text_to_sequence(phones)
     return phones, word2ph, norm_text
@@ -172,7 +165,7 @@ def get_bert_inf(phones, word2ph, norm_text, language):
     return bert
 
 
-def get_phones_and_bert(text, language):
+def get_phones_and_bert(text: str, language: str):
     if language in {"en", "all_zh", "all_ja"}:
         language = language.replace("all_","")
         if language == "en":
@@ -360,9 +353,13 @@ def only_punc(text):
     return not any(t.isalnum() or t.isalpha() for t in text)
 
 
-def get_tts_wav(text, text_language, cut_punc: str = "，；。？",
-                ref_wav_path: str = "/root/code/ComfyChat/audio/output1.wav",
-                prompt_text: str = "一二三。", prompt_language: str = "zh"):
+def get_tts_wav(text,
+                text_language,
+                cut_punc: str = "，；。？",
+                ref_wav_path: str = "/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav",
+                prompt_text: str = "疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？", 
+                prompt_language: str = "zh",
+                return_numpy: bool = False) -> Union[Tuple[np.ndarray, int], BytesIO]:
     t0 = ttime()
     if cut_punc == None:
         text = cut_text(text, default_cut_punc)
@@ -434,14 +431,12 @@ def get_tts_wav(text, text_language, cut_punc: str = "，；。？",
                                  hps.data.sampling_rate)
     # logger.info("%.3f\t%.3f\t%.3f\t%.3f" % (t1 - t0, t2 - t1, t3 - t2, t4 - t3))
     
-    audio_bytes = pack_wav(audio_bytes, hps.data.sampling_rate)
-    return audio_bytes
+    return (np.frombuffer(audio_bytes.getvalue(), dtype=np.int16), hps.data.sampling_rate) if return_numpy else pack_wav(audio_bytes, hps.data.sampling_rate)
 
 
 if __name__ == '__main__':
-    wav_bytes = get_tts_wav('你好，请问你是谁？', 'zh',
-                            ref_wav_path='/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav')
+    wav_bytes = get_tts_wav('本文件中的信息仅供学术交流使用。其目的是用于教育和研究，不得用于任何商业或法律目的。作者不保证信息的准确性、完整性或可靠性。本文件中使用的信息和数据，仅用于学术研究目的。这些数据来自公开可用的来源，作者不对数据的所有权或版权提出任何主张。', 'zh',)
 
     # 将BytesIO对象保存为WAV文件
-with open('output1-test.wav', 'wb') as f:
-    f.write(wav_bytes.getbuffer())
+    with open('/root/code/ComfyChat/audio/wavs/output1-test.wav', 'wb') as f:
+        f.write(wav_bytes.getbuffer())
