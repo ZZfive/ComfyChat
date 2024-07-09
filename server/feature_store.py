@@ -27,7 +27,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_core.documents import Document
 from torch.cuda import empty_cache
 
-from utils import histogram, FileName, FileOperation, logger
+from util import histogram, FileName, FileOperation, logger
 from retriever import CacheRetriever, Retriever
 
 

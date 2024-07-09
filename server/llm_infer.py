@@ -18,7 +18,7 @@ import requests
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from openai import OpenAI
 
-from utils import create_logger
+from util import create_logger
 
 logger = create_logger("llm_infer")
 

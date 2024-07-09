@@ -15,7 +15,7 @@ from typing import List, Dict, Tuple
 
 import pytoml
 import requests
-from utils import create_logger
+from util import create_logger
 
 logger = create_logger("llm_client")
 
