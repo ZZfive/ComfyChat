@@ -12,7 +12,7 @@ import subprocess
 import soundfile as sf
 from io import BytesIO
 from time import time as ttime
-from typing import Any, Tuple, List, Union
+from typing import Any, Tuple, List, Union, Dict
 
 import sys
 now_dir = '/root/code/ComfyChat/audio'
@@ -129,7 +129,7 @@ set_gpt_weights(default_gpt_path)
 set_sovits_weights(default_sovits_path)
 
 
-def get_bert_feature(text: str, word2ph: str) -> torch.tensor:
+def get_bert_feature(text: str, word2ph: List[int]) -> torch.tensor:
     with torch.no_grad():
         inputs = tokenizer(text, return_tensors="pt")
         for i in inputs:
@@ -146,14 +146,14 @@ def get_bert_feature(text: str, word2ph: str) -> torch.tensor:
     return phone_level_feature.T
 
 
-def clean_text_inf(text: str, language: str) -> Tuple:
+def clean_text_inf(text: str, language: str) -> Tuple[List[int] | str]:
     phones, word2ph, norm_text = clean_text(text, language)
     phones = cleaned_text_to_sequence(phones)
     return phones, word2ph, norm_text
 
 
-def get_bert_inf(phones, word2ph, norm_text, language):
-    language=language.replace("all_","")
+def get_bert_inf(phones: List[int], word2ph: List[int], norm_text: str, language: str) -> torch.tensor:
+    language = language.replace("all_","")
     if language == "zh":
         bert = get_bert_feature(norm_text, word2ph).to(device)#.to(dtype)
     else:
@@ -165,7 +165,7 @@ def get_bert_inf(phones, word2ph, norm_text, language):
     return bert
 
 
-def get_phones_and_bert(text: str, language: str):
+def get_phones_and_bert(text: str, language: str) -> Tuple[List[int] | torch.tensor | str]:
     if language in {"en", "all_zh", "all_ja"}:
         language = language.replace("all_","")
         if language == "en":
@@ -220,10 +220,10 @@ def get_phones_and_bert(text: str, language: str):
         phones = sum(phones_list, [])
         norm_text = ''.join(norm_text_list)
 
-    return phones,bert.to(torch.float16 if is_half == True else torch.float32),norm_text
+    return phones, bert.to(torch.float16 if is_half == True else torch.float32), norm_text
 
 
-def get_spepc(hps, filename):
+def get_spepc(hps: Dict, filename: str) -> torch.tensor:
     audio = load_audio(filename, int(hps.data.sampling_rate))
     audio = torch.FloatTensor(audio)
     audio_norm = audio
@@ -233,102 +233,25 @@ def get_spepc(hps, filename):
     return spec
 
 
-def pack_audio(audio_bytes, data, rate):
-    if media_type == "ogg":
-        audio_bytes = pack_ogg(audio_bytes, data, rate)
-    elif media_type == "aac":
-        audio_bytes = pack_aac(audio_bytes, data, rate)
-    else:
-        # wav无法流式, 先暂存raw
-        audio_bytes = pack_raw(audio_bytes, data, rate)
+def pack_audio(audio_bytes: BytesIO, data: np.ndarray, rate: int) -> BytesIO:
+    # wav无法流式, 先暂存raw
+    audio_bytes = pack_raw(audio_bytes, data, rate)
 
     return audio_bytes
 
 
-def pack_ogg(audio_bytes, data, rate):
-    # Author: AkagawaTsurunaki
-    # Issue:
-    #   Stack overflow probabilistically occurs
-    #   when the function `sf_writef_short` of `libsndfile_64bit.dll` is called
-    #   using the Python library `soundfile`
-    # Note:
-    #   This is an issue related to `libsndfile`, not this project itself.
-    #   It happens when you generate a large audio tensor (about 499804 frames in my PC)
-    #   and try to convert it to an ogg file.
-    # Related:
-    #   https://github.com/RVC-Boss/GPT-SoVITS/issues/1199
-    #   https://github.com/libsndfile/libsndfile/issues/1023
-    #   https://github.com/bastibe/python-soundfile/issues/396
-    # Suggestion:
-    #   Or split the whole audio data into smaller audio segment to avoid stack overflow?
-
-    def handle_pack_ogg():
-        with sf.SoundFile(audio_bytes, mode='w', samplerate=rate, channels=1, format='ogg') as audio_file:
-            audio_file.write(data)
-
-    import threading
-    # See: https://docs.python.org/3/library/threading.html
-    # The stack size of this thread is at least 32768
-    # If stack overflow error still occurs, just modify the `stack_size`.
-    # stack_size = n * 4096, where n should be a positive integer.
-    # Here we chose n = 4096.
-    stack_size = 4096 * 4096
-    try:
-        threading.stack_size(stack_size)
-        pack_ogg_thread = threading.Thread(target=handle_pack_ogg)
-        pack_ogg_thread.start()
-        pack_ogg_thread.join()
-    except RuntimeError as e:
-        # If changing the thread stack size is unsupported, a RuntimeError is raised.
-        print("RuntimeError: {}".format(e))
-        print("Changing the thread stack size is unsupported.")
-    except ValueError as e:
-        # If the specified stack size is invalid, a ValueError is raised and the stack size is unmodified.
-        print("ValueError: {}".format(e))
-        print("The specified stack size is invalid.")
-
-    return audio_bytes
-
-
-def pack_raw(audio_bytes, data, rate):
+def pack_raw(audio_bytes: BytesIO, data: np.ndarray, rate: int) -> BytesIO:
     audio_bytes.write(data.tobytes())
 
     return audio_bytes
 
 
-def pack_wav(audio_bytes, rate):
+def pack_wav(audio_bytes: BytesIO, rate: int) -> BytesIO:
     data = np.frombuffer(audio_bytes.getvalue(), dtype=np.int16)
     wav_bytes = BytesIO()
     sf.write(wav_bytes, data, rate, format='wav')
     wav_bytes.seek(0)
     return wav_bytes
-
-
-def pack_aac(audio_bytes, data, rate):
-    process = subprocess.Popen([
-        'ffmpeg',
-        '-f', 's16le',  # 输入16位有符号小端整数PCM
-        '-ar', str(rate),  # 设置采样率
-        '-ac', '1',  # 单声道
-        '-i', 'pipe:0',  # 从管道读取输入
-        '-c:a', 'aac',  # 音频编码器为AAC
-        '-b:a', '192k',  # 比特率
-        '-vn',  # 不包含视频
-        '-f', 'adts',  # 输出AAC数据流格式
-        'pipe:1'  # 将输出写入管道
-    ], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    out, _ = process.communicate(input=data.tobytes())
-    audio_bytes.write(out)
-
-    return audio_bytes
-
-
-def read_clean_buffer(audio_bytes):
-    audio_chunk = audio_bytes.getvalue()
-    audio_bytes.truncate(0)
-    audio_bytes.seek(0)
-
-    return audio_bytes, audio_chunk
 
 
 def cut_text(text: str, punc: str) -> str:
@@ -349,7 +272,7 @@ def cut_text(text: str, punc: str) -> str:
     return text
 
 
-def only_punc(text):
+def only_punc(text: str) -> bool:
     return not any(t.isalnum() or t.isalpha() for t in text)
 
 
