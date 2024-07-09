@@ -92,8 +92,8 @@ class DictToAttrRecursive:
 def set_gpt_weights(gpt_path: str) -> None:
     global max_sec, t2s_model, gpt_config
     dict_s1 = torch.load(gpt_path, map_location="cpu")
-    gpt_config = dict_s1["config"]
-    max_sec = gpt_config["data"]["max_sec"]
+    gpt_config = dict_s1["config"]  # dict
+    max_sec = gpt_config["data"]["max_sec"]  # int
     t2s_model = Text2SemanticLightningModule(gpt_config, "****", is_train=False)
     t2s_model.load_state_dict(dict_s1["weight"])
     if is_half == True:
@@ -353,8 +353,8 @@ def only_punc(text):
     return not any(t.isalnum() or t.isalpha() for t in text)
 
 
-def get_tts_wav(text,
-                text_language,
+def get_tts_wav(text: str,
+                text_language: str,
                 cut_punc: str = ",.;?!、，。？！；：…",
                 ref_wav_path: str = "/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav",
                 prompt_text: str = "疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？", 

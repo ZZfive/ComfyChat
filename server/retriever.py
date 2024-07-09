@@ -22,7 +22,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores.utils import DistanceStrategy
 from sklearn.metrics import precision_recall_curve
 
-from utils import FileOperation, QueryTracker, create_logger
+from util import FileOperation, QueryTracker, create_logger
 
 logger = create_logger("retriever")
 

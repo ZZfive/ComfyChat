@@ -24,7 +24,7 @@ from aiohttp import web
 from openai import OpenAI
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from utils import create_logger
+from util import create_logger
 
 logger = create_logger("llm_server")
 
