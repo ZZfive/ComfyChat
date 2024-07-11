@@ -312,8 +312,66 @@ def histogram(values: list):
     return log_str
 
 
+def add_first_title(md_path: str, repo_name: str) -> None:
+    heading = f'# {repo_name}\n\n'
+
+    try:
+        with open(md_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+
+         # 在最前面添加新的一级标题
+        new_content = heading + content
+
+        # 将新内容写回文件
+        with open(md_path, 'w', encoding='utf-8') as file:
+            file.write(new_content)
+    except FileNotFoundError:
+        print(f"文件 '{md_path}' 未找到")
+    except PermissionError:
+        print(f"没有权限修改文件 '{md_path}'")
+    except Exception as e:
+        print(f"修改文件时出错: {e}")
+
+
+def clean_community_docs(source: str, base_dir: str) -> None:
+    if source == "ComfyUI-docs":  # 删除每个子路径中的index.md文档
+        for item in os.listdir(base_dir):
+            temp_path = os.path.join(base_dir, item)
+            if os.path.isdir(temp_path):
+                for iitem in os.listdir(temp_path):
+                    if iitem == "index.md":
+                        ttemp_path = os.path.join(temp_path, iitem)
+                        os.remove(ttemp_path)
+            else:
+                if item == "index.md":
+                    os.remove(temp_path)
+    elif source == "SaltAI-Web-Docs":
+        for item in os.listdir(base_dir):
+            temp_path = os.path.join(base_dir, item)
+            if os.path.isdir(temp_path):
+                for iitem in os.listdir(temp_path):
+                    if iitem == "licenses.md":
+                        md_path = os.path.join(temp_path, iitem)
+                        add_first_title(md_path, item)
+    elif source == "comfyui-nodes-docs":
+        pass
+    elif source == "comflowy":
+        pass
+    else:
+        raise ValueError("Wrong Community docs")
+
+
 if __name__ == "__main__":
-    file = r"D:\git_github\self\ComfyChat\data\custom_nodes_mds\a-person-mask-generator\README.md"
-    fo = FileOperation()
-    chars = fo.md5(file)
-    print(chars)
+    # repo_dir = "/root/code/ComfyChat/server/source"
+    # fo = FileOperation()
+    # files = fo.scan_dir(repo_dir)
+    # for file in files:
+    #     print(file.origin)
+
+    source = "SaltAI-Web-Docs"
+    base_dir = "/root/code/ComfyChat/server/source/knowledges/SaltAI-Web-Docs/md"
+    clean_community_docs(source, base_dir)
+
+    # md_path = "/root/code/ComfyChat/server/source/knowledges/SaltAI-Web-Docs/md/a-person-mask-generator/licenses.md"
+    # repo_name = "a-person-mask-generator"
+    # add_first_title(md_path, repo_name)
