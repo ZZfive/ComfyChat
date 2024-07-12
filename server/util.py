@@ -9,8 +9,10 @@
 
 import os
 import sys
+import json
 import hashlib
 import datetime
+import random
 from typing import List, Any, Tuple
 import logging
 from logging import StreamHandler, Formatter
@@ -359,6 +361,49 @@ def clean_community_docs(source: str, base_dir: str) -> None:
         pass
     else:
         raise ValueError("Wrong Community docs")
+    
+
+def load4json(path: str, default_value: Any = None) -> Any:
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return data
+    except json.decoder.JSONDecodeError:
+        print(f"Error: JSONDecodeError occurred while loading file: {path}")
+        return default_value
+    except FileNotFoundError:
+        print(f"Error: File not found: {path}")
+        return default_value
+    
+
+def save2json(data: Any, path: str) -> None:
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
+    
+
+def random_sample_question(alpaca_path: str = "/root/code/ComfyChat/data/message_jsons/v1/alpaca_gpt4_data_modification.json",
+                           data_path: str = "/root/code/ComfyChat/data/message_jsons/v2/community_en.json",
+                           can_questions_path: str = "/root/code/ComfyChat/server/source/can_questions.json",
+                           cannot_questions_path: str = "/root/code/ComfyChat/server/source/cannot_questions.json"
+                           ) -> None:
+    random.seed(42)
+    can_questions = load4json(can_questions_path, [])
+    cannot_questions = load4json(cannot_questions_path, [])
+
+    can_all = load4json(data_path)
+    cannot_all = load4json(alpaca_path)
+
+    can_samples = random.sample(can_all, 100)
+    cannot_samples = random.sample(cannot_all, 65)
+
+    for sample in can_samples:
+        can_questions.append(sample["messages"][0]["content"])
+
+    for sample in cannot_samples:
+        cannot_questions.append(sample["messages"][0]["content"])
+
+    save2json(can_questions, can_questions_path)
+    save2json(cannot_questions, cannot_questions_path)
 
 
 if __name__ == "__main__":
@@ -368,10 +413,12 @@ if __name__ == "__main__":
     # for file in files:
     #     print(file.origin)
 
-    source = "SaltAI-Web-Docs"
-    base_dir = "/root/code/ComfyChat/server/source/knowledges/SaltAI-Web-Docs/md"
-    clean_community_docs(source, base_dir)
+    # source = "SaltAI-Web-Docs"
+    # base_dir = "/root/code/ComfyChat/server/source/knowledges/SaltAI-Web-Docs/md"
+    # clean_community_docs(source, base_dir)
 
     # md_path = "/root/code/ComfyChat/server/source/knowledges/SaltAI-Web-Docs/md/a-person-mask-generator/licenses.md"
     # repo_name = "a-person-mask-generator"
     # add_first_title(md_path, repo_name)
+
+    random_sample_question()
