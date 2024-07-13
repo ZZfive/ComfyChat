@@ -75,7 +75,7 @@ class FileOperation:
 
     def __init__(self) -> None:
         self.image_suffix = ['.jpg', '.jpeg', '.png', '.bmp']
-        self.md_suffix = '.md'
+        self.md_suffix = ['.md', '.mdx']
         self.text_suffix = ['.txt', '.text']
         self.excel_suffix = ['.xlsx', '.xls', '.csv']
         self.pdf_suffix = '.pdf'
@@ -83,8 +83,7 @@ class FileOperation:
         self.html_suffix = ['.html', '.htm', '.shtml', '.xhtml']
         self.word_suffix = ['.docx', '.doc']
         # 除图片后缀的所有文本文件后缀
-        self.normal_suffix = [self.md_suffix
-                              ] + self.text_suffix + self.excel_suffix + [
+        self.normal_suffix = self.md_suffix + self.text_suffix + self.excel_suffix + [
                                   self.pdf_suffix
                               ] + self.word_suffix + [self.ppt_suffix
                                                       ] + self.html_suffix
@@ -95,11 +94,12 @@ class FileOperation:
         if filepath.endswith(self.pdf_suffix):
             return 'pdf'
 
-        if filepath.endswith(self.md_suffix):
-            return 'md'
-
         if filepath.endswith(self.ppt_suffix):
             return 'ppt'
+        
+        for suffix in self.md_suffix:
+            if filepath.endswith(suffix):
+                return 'md'
 
         for suffix in self.image_suffix:
             if filepath.endswith(suffix):
@@ -280,20 +280,19 @@ class QueryTracker:
 
 
 def histogram(values: list):
-    """Print histogram log string for values"""
+    """Print histogram log string for values."""
     values.sort()
     _len = len(values)
-    if _len < 1:
+    if _len <= 1:
         return ''
-    
+
     median = values[round((_len - 1) / 2)]
     _sum = 0
     min_val = min(values)
     max_val = max(values)
-    range_width = round(0.1 * (max_val - min_val))
-    if range_width == 0:
-        logger.info("all input length = {}".format(min_val))
-    ranges = [(i * range_width, (i + 1) * range_width) for i in range((max_val // range_width) + 1)]
+    range_width = max(1, round(0.1 * (max_val - min_val)))
+    ranges = [(i * range_width, (i + 1) * range_width)
+              for i in range((max_val // range_width) + 1)]
 
     # 计算每个范围的数值总数
     total_count = len(values)
@@ -307,7 +306,8 @@ def histogram(values: list):
 
     range_percentages = [(count / total_count) * 100 for count in range_counts]
 
-    log_str = 'count {}, avg {}, median {}\n'.format(len(values), round(_sum / len(values), 2), median)
+    log_str = 'length count {}, avg {}, median {}\n'.format(
+        len(values), round(_sum / len(values), 2), median)
     for i, (start, end) in enumerate(ranges):
         log_str += f'{start}-{end}  {range_percentages[i]:.2f}%'
         log_str += '\n'

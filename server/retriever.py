@@ -119,8 +119,7 @@ class Retriever:
 
         labels = [1 for _ in range(len(can_questions))
                   ] + [0 for _ in range(len(cannot_questions))]
-        precision, recall, thresholds = precision_recall_curve(
-            labels, predictions)
+        precision, recall, thresholds = precision_recall_curve(labels, predictions)
 
         # get the best index for sum(precision, recall)
         sum_precision_recall = precision[:-1] + recall[:-1]
@@ -152,7 +151,7 @@ class Retriever:
 
         if len(question) > 512:
             logger.warning('input too long, truncate to 512')
-            question = question[0:512]
+            question = question[0: 512]
 
         chunks = []
         context = ''
@@ -222,8 +221,8 @@ class CacheRetriever:
         self.max_len = max_len
         with open(config_path, encoding='utf8') as f:
             config = pytoml.load(f)['feature_store']
-            embedding_model_path = config['embedding_model_path']
-            reranker_model_path = config['reranker_model_path']
+        embedding_model_path = config['embedding_model_path']
+        reranker_model_path = config['reranker_model_path']
 
         # load text2vec and rerank model
         logger.info('loading test2vec and rerank models')

@@ -472,12 +472,12 @@ def parse_args() -> argparse.Namespace:
         description='Feature store for processing directories.')
     parser.add_argument('--work_dir',
                         type=str,
-                        default='workdir',
+                        default='source/workdir/zh',
                         help='Working directory.')
     parser.add_argument(
         '--repo_dir',
         type=str,
-        default='repodir',
+        default='source/knowledges/zh',
         help='Root directory where the repositories are located.')
     parser.add_argument(
         '--config_path',
@@ -485,7 +485,7 @@ def parse_args() -> argparse.Namespace:
         help='Feature store configuration path. Default value is config.ini')
     parser.add_argument(
         '--can_questions',
-        default='can ',
+        default='can_questions.json',
         help=  # noqa E251
         'Positive examples in the dataset. Default value is can_questions.json'  # noqa E501
     )
@@ -496,7 +496,9 @@ def parse_args() -> argparse.Namespace:
         'Negative examples json path. Default value is cannot_questions.json'  # noqa E501
     )
     parser.add_argument(
-        '--sample', help='Input an json file, save reject and search output.')
+        '--sample',
+        default="source/questions/en/test_queries.json",
+        help='Input an json file, save reject and search output.')
     args = parser.parse_args()
     return args
 
@@ -563,7 +565,8 @@ if __name__ == '__main__':
     cache = CacheRetriever(config_path=args.config_path)
     fs_init = FeatureStore(embeddings=cache.embeddings,
                            reranker=cache.reranker,
-                           config_path=args.config_path)
+                           config_path=args.config_path,
+                           language='zh')
 
     # walk all files in repo dir
     file_opr = FileOperation()
@@ -572,19 +575,19 @@ if __name__ == '__main__':
     file_opr.summarize(files)
     del fs_init
 
-    # update reject throttle
-    retriever = cache.get(config_path=args.config_path, work_dir=args.work_dir)
-    with open(os.path.join('resource', 'good_questions.json')) as f:
-        good_questions = json.load(f)
-    with open(os.path.join('resource', 'bad_questions.json')) as f:
-        bad_questions = json.load(f)
-    retriever.update_throttle(config_path=args.config_path,
-                              good_questions=good_questions,
-                              bad_questions=bad_questions)
+    # # update reject throttle
+    # retriever = cache.get(config_path=args.config_path, work_dir=args.work_dir)
+    # with open(os.path.join('source/questions/en', 'can_questions.json')) as f:
+    #     good_questions = json.load(f)
+    # with open(os.path.join('source/questions/en', 'cannot_questions.json')) as f:
+    #     bad_questions = json.load(f)
+    # retriever.update_throttle(config_path=args.config_path,
+    #                           good_questions=good_questions,
+    #                           bad_questions=bad_questions)
 
-    cache.pop('default')
+    # cache.pop('default')
 
-    # test
-    retriever = cache.get(config_path=args.config_path, work_dir=args.work_dir)
-    test_reject(retriever, args.sample)
-    test_query(retriever, args.sample)
+    # # test
+    # retriever = cache.get(config_path=args.config_path, work_dir=args.work_dir)
+    # test_reject(retriever, args.sample)
+    # test_query(retriever, args.sample)
