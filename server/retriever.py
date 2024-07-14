@@ -11,7 +11,7 @@
 """extract feature and search with user query."""
 import os
 import time
-from typing import Tuple
+from typing import Tuple, List
 
 import numpy as np
 import pytoml
@@ -31,7 +31,8 @@ class Retriever:
     """Tokenize and extract features from the project's documents, for use in the reject pipeline and response pipeline."""
     """此类中的reject将从拒绝回答转变为RAG未检索到相关内容，直接使用llms回答的标志"""
 
-    def __init__(self, embeddings, reranker, work_dir: str, reject_throttle: float) -> None:
+    def __init__(self, embeddings, reranker, work_dir: str, reject_throttle: float,
+                 reject_index_name: str = "index", response_index_name: str = "index") -> None:
         """Init with model device type and config."""
         self.reject_throttle = reject_throttle
         self.rejecter = None
@@ -49,12 +50,14 @@ class Retriever:
             self.rejecter = Vectorstore.load_local(
                 rejection_path,
                 embeddings=embeddings,
+                index_name=reject_index_name,
                 allow_dangerous_deserialization=True)
         
         if os.path.exists(retriever_path):  # 加载用于RAG回答query的向量存储
             self.retriever = Vectorstore.load_local(
                 retriever_path,
                 embeddings=embeddings,
+                index_name=response_index_name,
                 allow_dangerous_deserialization=True,
                 distance_strategy=DistanceStrategy.MAX_INNER_PRODUCT).as_retriever(
                     search_type='similarity',
@@ -103,8 +106,9 @@ class Retriever:
     # 基于设置的可以回答问题列表和不能回答问题列表，更新RAG不能回答问题的阈值
     def update_throttle(self,
                         config_path: str = 'config.ini',
-                        can_questions=[],
-                        cannot_questions=[]) -> None:
+                        can_questions: List[str] = [],
+                        cannot_questions: List[str] = [],
+                        language: str = "en") -> None:
         """Update reject throttle based on positive and negative examples."""
 
         if len(can_questions) == 0 or len(cannot_questions) == 0:
@@ -128,7 +132,7 @@ class Retriever:
 
         with open(config_path, encoding='utf8') as f:
             config = pytoml.load(f)
-        config['feature_store']['reject_throttle'] = float(optimal_threshold)
+        config['feature_store']['reject_throttle'][language] = float(optimal_threshold)
         with open(config_path, 'w', encoding='utf8') as f:
             pytoml.dump(config, f)
         logger.info(
@@ -244,14 +248,17 @@ class CacheRetriever:
 
     def get(self,
             fs_id: str = 'default',
-            config_path='config.ini',
-            work_dir='workdir') -> Retriever:
+            config_path: str = 'config.ini',
+            work_dir: str = 'workdir',
+            languega: str = 'en',
+            reject_index_name: str = "index",
+            response_index_name: str = "index") -> Retriever:
         if fs_id in self.cache:
             self.cache[fs_id]['time'] = time.time()  # 更新时间
             return self.cache[fs_id]['retriever']  # 返回默认retriever
 
         with open(config_path, encoding='utf-8') as f:
-            reject_throttle = pytoml.load(f)['feature_store']['reject_throttle']  # 加载据答阈值
+            reject_throttle = pytoml.load(f)['feature_store']['reject_throttle'][languega]  # 加载据答阈值
 
         if len(self.cache) >= self.max_len:  # cache中的retriever超过个数，删除最久远的
             # drop the oldest one
@@ -271,7 +278,9 @@ class CacheRetriever:
         retriever = Retriever(embeddings=self.embeddings,
                               reranker=self.reranker,
                               work_dir=work_dir,
-                              reject_throttle=reject_throttle)  # 初始化新的retriever实例
+                              reject_throttle=reject_throttle,
+                              reject_index_name=reject_index_name,
+                              response_index_name=response_index_name)  # 初始化新的retriever实例
         self.cache[fs_id] = {'retriever': retriever, 'time': time.time()}
         if retriever.rejecter is None:
             logger.warning('retriever.rejecter is None, check workdir')
