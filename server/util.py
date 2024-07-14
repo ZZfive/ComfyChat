@@ -278,7 +278,6 @@ class QueryTracker:
             print(e)
 
 
-
 def histogram(values: list):
     """Print histogram log string for values."""
     values.sort()
@@ -383,8 +382,8 @@ def save2json(data: Any, path: str) -> None:
 
 def random_sample_question(alpaca_path: str = "/root/code/ComfyChat/data/message_jsons/v1/alpaca_gpt4_data_modification.json",
                            data_path: str = "/root/code/ComfyChat/data/message_jsons/v2/community_en.json",
-                           can_questions_path: str = "/root/code/ComfyChat/server/source/can_questions.json",
-                           cannot_questions_path: str = "/root/code/ComfyChat/server/source/cannot_questions.json"
+                           can_questions_path: str = "/root/code/ComfyChat/server/source/questions/en/can_questions.json",
+                           cannot_questions_path: str = "/root/code/ComfyChat/server/source/questions/en/cannot_questions.json"
                            ) -> None:
     random.seed(42)
     can_questions = load4json(can_questions_path, [])
@@ -421,4 +420,7 @@ if __name__ == "__main__":
     # repo_name = "a-person-mask-generator"
     # add_first_title(md_path, repo_name)
 
-    random_sample_question()
+    random_sample_question(alpaca_path="/root/code/ComfyChat/data/message_jsons/v1/alpaca_gpt4_data_zh_modification.json",
+                           data_path="/root/code/ComfyChat/data/message_jsons/v2/community_zh.json",
+                           can_questions_path="/root/code/ComfyChat/server/source/questions/zh/can_questions.json",
+                           cannot_questions_path="/root/code/ComfyChat/server/source/questions/zh/cannot_questions.json")

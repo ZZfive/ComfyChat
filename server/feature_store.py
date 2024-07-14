@@ -13,6 +13,7 @@ import json
 import os
 import re
 import shutil
+import threading
 from multiprocessing import Pool
 from typing import Any, List, Optional, Tuple
 
@@ -273,6 +274,31 @@ class FeatureStore:
             chunk.metadata = {'source': file.basename, 'read': file.copypath}
             documents.append(chunk)
         return documents
+    
+    def get_features_save(self, documents: List, embeddings, feature_dir: str, index_name: str = None) -> None:
+        vs = Vectorstore.from_documents(documents, embeddings)
+        if index_name is None or index_name == "":
+            vs.save_local(feature_dir)
+        else:
+            vs.save_local(feature_dir, index_name)
+
+    def features_merge(self, feature_dir: str, embeddings, n: int, index_name: str = "index") -> None:
+        feature1 = Vectorstore.load_local(
+            feature_dir,
+            embeddings=embeddings,
+            index_name=f"{index_name}{1}",
+            allow_dangerous_deserialization=True)
+        
+        for i in range(2, n+1):
+            feature = Vectorstore.load_local(
+                feature_dir,
+                embeddings=embeddings,
+                index_name=f"{index_name}{i}",
+                allow_dangerous_deserialization=True)
+            
+            feature1.merge_from(feature)
+        
+        feature1.save_local(feature_dir, "index-gpu")
 
     def ingress_response(self, files: list, work_dir: str) -> None:
         """Extract the features required for the response pipeline based on the document."""
@@ -309,8 +335,9 @@ class FeatureStore:
 
         if len(documents) < 1:
             return
-        vs = Vectorstore.from_documents(documents, self.embeddings)
-        vs.save_local(feature_dir)
+        # vs = Vectorstore.from_documents(documents, self.embeddings)
+        # vs.save_local(feature_dir)
+        self.get_features_save(documents, self.embeddings, feature_dir)
 
     def analyze(self, documents: list) -> None:
         """Output documents length mean, median and histogram"""
@@ -331,7 +358,7 @@ class FeatureStore:
         logger.info('document text histgram {}'.format(histogram(text_lens)))
         logger.info('document token histgram {}'.format(histogram(token_lens)))
 
-    def ingress_reject(self, files: list, work_dir: str) -> None:
+    def ingress_reject(self, files: list, work_dir: str, n: int = 1) -> None:
         """Extract the features required for the reject pipeline based on documents."""
         feature_dir = os.path.join(work_dir, 'db_reject')
         if not os.path.exists(feature_dir):
@@ -380,8 +407,24 @@ class FeatureStore:
         logger.info('analyze input text. {}'.format(log_str))
         logger.info('documents counter {}'.format(len(documents)))
         self.analyze(documents)
-        vs = Vectorstore.from_documents(documents, self.embeddings)
-        vs.save_local(feature_dir)
+
+        if n == 1:
+            vs = Vectorstore.from_documents(documents, self.embeddings)
+            vs.save_local(feature_dir)
+        if n > 1:
+            k, m = divmod(len(documents), n)
+            n_documents = [documents[i * k + min(i, m): (i + 1) * k + min(i + 1, m)] for i in range(n)]
+
+            threads = []
+            for i, small_documents in enumerate(n_documents):
+                thread = threading.Thread(target=self.get_features_save, args=(small_documents, self.embeddings, feature_dir, f"index{i+1}"))
+                threads.append(thread)
+                thread.start()
+
+            for thread in threads:
+                thread.join()
+
+            self.features_merge(feature_dir, self.embeddings, n)
 
     def preprocess(self, files: list, work_dir: str) -> None:
         """Preprocesses files in a given directory. Copies each file to
@@ -462,8 +505,8 @@ class FeatureStore:
             'initialize response and reject feature store, you only need call this once.'  # noqa E501
         )
         self.preprocess(files=files, work_dir=work_dir)
-        self.ingress_response(files=files, work_dir=work_dir)
-        self.ingress_reject(files=files, work_dir=work_dir)
+        # self.ingress_response(files=files, work_dir=work_dir)
+        self.ingress_reject(files=files, work_dir=work_dir, n=4)
 
 
 def parse_args() -> argparse.Namespace:
@@ -481,7 +524,7 @@ def parse_args() -> argparse.Namespace:
         help='Root directory where the repositories are located.')
     parser.add_argument(
         '--config_path',
-        default='config.ini',
+        default='/root/code/ComfyChat/server/config.ini',
         help='Feature store configuration path. Default value is config.ini')
     parser.add_argument(
         '--can_questions',
@@ -563,29 +606,31 @@ def test_query(retriever: Retriever, sample: str = None) -> None:
 if __name__ == '__main__':
     args = parse_args()
     cache = CacheRetriever(config_path=args.config_path)
-    fs_init = FeatureStore(embeddings=cache.embeddings,
-                           reranker=cache.reranker,
-                           config_path=args.config_path,
-                           language='zh')
+    # fs_init = FeatureStore(embeddings=cache.embeddings,
+    #                        reranker=cache.reranker,
+    #                        config_path=args.config_path,
+    #                        language='zh')
 
-    # walk all files in repo dir
-    file_opr = FileOperation()
-    files = file_opr.scan_dir(repo_dir=args.repo_dir)  # 获取所有待向量化的文本
-    fs_init.initialize(files=files, work_dir=args.work_dir)  # 从文本中抽取embeddings并保存
-    file_opr.summarize(files)
-    del fs_init
+    # # walk all files in repo dir
+    # file_opr = FileOperation()
+    # files = file_opr.scan_dir(repo_dir=args.repo_dir)  # 获取所有待向量化的文本
+    # fs_init.initialize(files=files, work_dir=args.work_dir)  # 从文本中抽取embeddings并保存
+    # file_opr.summarize(files)
+    # # fs_init.features_merge("/root/code/ComfyChat/server/source/workdir/zh/db_reject", fs_init.embeddings, 4)
+    # del fs_init
 
-    # # update reject throttle
-    # retriever = cache.get(config_path=args.config_path, work_dir=args.work_dir)
-    # with open(os.path.join('source/questions/en', 'can_questions.json')) as f:
-    #     good_questions = json.load(f)
-    # with open(os.path.join('source/questions/en', 'cannot_questions.json')) as f:
-    #     bad_questions = json.load(f)
-    # retriever.update_throttle(config_path=args.config_path,
-    #                           good_questions=good_questions,
-    #                           bad_questions=bad_questions)
+    # update reject throttle
+    retriever = cache.get(config_path=args.config_path, work_dir=args.work_dir, reject_index_name="index-gpu")
+    with open(os.path.join('source/questions/zh', 'can_questions.json')) as f:
+        can_questions = json.load(f)
+    with open(os.path.join('source/questions/zh', 'cannot_questions.json')) as f:
+        cannot_questions = json.load(f)
+    retriever.update_throttle(config_path=args.config_path,
+                              can_questions=can_questions,
+                              cannot_questions=cannot_questions,
+                              language='zh')
 
-    # cache.pop('default')
+    cache.pop('default')
 
     # # test
     # retriever = cache.get(config_path=args.config_path, work_dir=args.work_dir)
