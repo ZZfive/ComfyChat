@@ -57,7 +57,10 @@ llm_config = config['llm']
 llm = HybridLLMServer(llm_config)
 # RAG检索实例
 cache = CacheRetriever(config_path=args.config_path)
-retriever = cache.get(config_path=args.config_path)
+en_retriever = cache.get(fs_id="en", work_dir="/root/code/ComfyChat/server/source/workdir/en",
+                         languega="en", config_path=args.config_path)
+zh_retriever = cache.get(fs_id="zh", work_dir="/root/code/ComfyChat/server/source/workdir/zh",
+                         languega="zh", reject_index_name="index-gpu", config_path=args.config_path)
 # asr实例初始化
 if args.asr_model == "whispercpp":
     asr_model = Whisper.from_pretrained("base")
@@ -76,7 +79,7 @@ def generate_answer(prompt: str, history: list, lang: str = 'en', backend: str =
     prompt = PROMPT_TEMPLATE["EN_PROMPT_TEMPALTE" if lang == "en" else "ZH_PROMPT_TEMPALTE"].format(question=prompt)
 
     if use_rag:  # 设置了走RAG
-        chunk, context, references = retriever.query(prompt)
+        chunk, context, references = en_retriever.query(prompt) if lang == "en" else zh_retriever.query(prompt)
         if chunk is not None:  # 当RAG检索到相关上下文
             prompt = RAG_PROMPT_TEMPLATE["EN_PROMPT_TEMPALTE" if lang == "en" else "ZH_PROMPT_TEMPALTE"].format(question=prompt, context=chunk)
 
