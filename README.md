@@ -62,10 +62,10 @@ ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)收集的自定义�
  - LLaMA3微调
 
  ### 服务部署
- - 基于微调后LLMs的对话服务部署
- - RAG服务搭建
- - 服务接入TTS
- - 服务接入生图
+ - [x] 基于微调后LLMs的对话服务部署
+ - [x] RAG服务搭建
+ - [x] 服务接入TTS
+ - [ ] 服务接入生图
 
 
 ## 工作进度
@@ -76,7 +76,7 @@ ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)收集的自定义�
  - [x] 搭建RAG系统
    - [x] 系统搭建
    - [x] 构建的数据转为向量存储
- - [ ] 基于v2数据集训练模型
+ - [x] 基于v2数据集训练模型
  - [ ] 优化数据集，构建数据集v2
    - [ ] 搜集一些文档或从视频从提取数据进行构建
    - [x] 已对四个社区集中提供节点文本的项目进行数据构建
