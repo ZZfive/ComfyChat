@@ -40,7 +40,7 @@ parser.add_argument(
     )
 parser.add_argument(
         '--asr-model',
-        default='whispercpp'
+        default='whisperx'
     )
 parser.add_argument(
         '--tts-model',
@@ -208,53 +208,66 @@ def chatbot_selected2tts(evt: gr.SelectData, use_tts: bool, tts_model: str, chat
             return results
     else:
         return (None, None)
+    
+
+# 用于加载comfyui界面
+html_code = """
+<iframe src="http://127.0.0.1:8188" width="100%" height="1000px"></iframe>
+"""
+
+
+def load_html():
+    return html_code
 
 
 with gr.Blocks() as demo:
-    with gr.Row():
-        with gr.Column(scale=1):
-            backend = gr.Radio(["local", "remote"], value="remote", label="Inference backend")
-            lang = gr.Radio(["zh", "en"], value="en", label="Language")
-            use_rag = gr.Radio([True, False], value=False, label="Turn on RAG")
-            use_tts = gr.Checkbox(label="Use TTS", info="Turn on TTS")
-            tts_model = gr.Radio(["Chattts", "GPT-SoVITS"], visible=False, label="Model of TTS")
-            # Chattts相关组件
-            chattts_audio_seed = gr.Slider(minimum=1, maximum=100000000, step=1, value=42, label="Audio seed for Chattts", visible=False)
-            # GPT-SoVITS相关组件
-            gpt_sovits_voice = gr.Radio(["默认", "派蒙", "魈"], value="默认", label="Reference audio for GPT-SoVITS", visible=False)
-            cut_punc = gr.Textbox(value=",.;?!、，。？！；：…", label="Delimiters for GPT-SoVITS", visible=False)
-            # GPT-SoVITS推理时需要的参数，正常情况下保持不可见
-            gpt_path = gr.Textbox(value=default_gpt_path, visible=False)
-            sovits_path = gr.Textbox(value=default_sovits_path, visible=False)
-            ref_wav_path = gr.Textbox(value="/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav", visible=False)
-            prompt_text = gr.Textbox(value="疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？", visible=False)
-            prompt_language = gr.Textbox(value="zh", visible=False)
+    with gr.Tab("ComfyChat with LLM"):
+        with gr.Row():
+            with gr.Column(scale=1):
+                backend = gr.Radio(["local", "remote"], value="remote", label="Inference backend")
+                lang = gr.Radio(["zh", "en"], value="en", label="Language")
+                use_rag = gr.Radio([True, False], value=False, label="Turn on RAG")
+                use_tts = gr.Checkbox(label="Use TTS", info="Turn on TTS")
+                tts_model = gr.Radio(["Chattts", "GPT-SoVITS"], visible=False, label="Model of TTS")
+                # Chattts相关组件
+                chattts_audio_seed = gr.Slider(minimum=1, maximum=100000000, step=1, value=42, label="Audio seed for Chattts", visible=False)
+                # GPT-SoVITS相关组件
+                gpt_sovits_voice = gr.Radio(["默认", "派蒙", "魈"], value="默认", label="Reference audio for GPT-SoVITS", visible=False)
+                cut_punc = gr.Textbox(value=",.;?!、，。？！；：…", label="Delimiters for GPT-SoVITS", visible=False)
+                # GPT-SoVITS推理时需要的参数，正常情况下保持不可见
+                gpt_path = gr.Textbox(value=default_gpt_path, visible=False)
+                sovits_path = gr.Textbox(value=default_sovits_path, visible=False)
+                ref_wav_path = gr.Textbox(value="/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav", visible=False)
+                prompt_text = gr.Textbox(value="疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？", visible=False)
+                prompt_language = gr.Textbox(value="zh", visible=False)
 
-        with gr.Column(scale=11):
-            chatbot = gr.Chatbot(label="ComfyChat")
-            msg = gr.Textbox()
-            with gr.Row():
-                submit = gr.Button("Submit")
-                clear = gr.Button("Clear")
+            with gr.Column(scale=11):
+                chatbot = gr.Chatbot(label="ComfyChat")
+                msg = gr.Textbox()
+                with gr.Row():
+                    submit = gr.Button("Submit")
+                    clear = gr.Button("Clear")
 
-            # 语音输入
-            in_audio = gr.Audio(sources="microphone", type="filepath")
-            audio2text_buttong = gr.Button("audio transcribe to text")
+                # 语音输入
+                in_audio = gr.Audio(sources="microphone", type="filepath")
+                audio2text_buttong = gr.Button("audio transcribe to text")
 
-            # 设置
-            out_audio = gr.Audio(label="Click on the reply text to generate the corresponding audio", type="numpy")
-            
-        use_tts.change(toggle_tts_radio, inputs=use_tts, outputs=tts_model)
-        tts_model.change(toggle_tts_components, inputs=tts_model, outputs=[chattts_audio_seed, gpt_sovits_voice, cut_punc])
-        gpt_sovits_voice.change(update_gpt_sovits, inputs=gpt_sovits_voice, outputs=[gpt_path, sovits_path, ref_wav_path, prompt_text, prompt_language])
+                # 设置
+                out_audio = gr.Audio(label="Click on the reply text to generate the corresponding audio", type="numpy")
+                
+            use_tts.change(toggle_tts_radio, inputs=use_tts, outputs=tts_model)
+            tts_model.change(toggle_tts_components, inputs=tts_model, outputs=[chattts_audio_seed, gpt_sovits_voice, cut_punc])
+            gpt_sovits_voice.change(update_gpt_sovits, inputs=gpt_sovits_voice, outputs=[gpt_path, sovits_path, ref_wav_path, prompt_text, prompt_language])
 
-        audio2text_buttong.click(audio2text, in_audio, msg)
-        submit.click(user, [msg, chatbot], [msg, chatbot], queue=False).then(bot, inputs=[chatbot, lang, backend, use_rag], outputs=chatbot)
-        clear.click(lambda: None, None, chatbot, queue=False)
+            audio2text_buttong.click(audio2text, in_audio, msg)
+            submit.click(user, [msg, chatbot], [msg, chatbot], queue=False).then(bot, inputs=[chatbot, lang, backend, use_rag], outputs=chatbot)
+            clear.click(lambda: None, None, chatbot, queue=False)
 
-        # 添加 Chatbot.select 事件监听器
-        chatbot.select(chatbot_selected2tts, inputs=[use_tts, tts_model, chattts_audio_seed, lang, cut_punc, gpt_path,
-                                                     sovits_path, ref_wav_path, prompt_text, prompt_language], outputs=out_audio)
+            # 添加 Chatbot.select 事件监听器
+            chatbot.select(chatbot_selected2tts, inputs=[use_tts, tts_model, chattts_audio_seed, lang, cut_punc, gpt_path,
+                                                        sovits_path, ref_wav_path, prompt_text, prompt_language], outputs=out_audio)
+    with gr.Tab("ComfyUI for generating"):
+        gr.HTML(html_code)
 
 demo.queue()
 demo.launch(server_name="0.0.0.0")
