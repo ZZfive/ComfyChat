@@ -168,17 +168,30 @@ def toggle_tts_components(selected_option: str) -> Any:
         return (gr.update(visible=False), gr.update(visible=True), gr.update(visible=True))
     
 
-# 使用GPT-SoVITS时随着克隆对象的变化设置对应参数
+def toggle_comfyui(show: bool) -> Any:
+    return (gr.update(visible=not show), gr.update(visible=not show), gr.update(visible=show))
+    
+
+# 使用GPT-SoVITS时随着克隆对象的变化设置对应参数  # TODO 下载合适的角色音频文件替换
 def update_gpt_sovits(selected_option: str) -> Tuple[str]:
-    if selected_option == "默认":
+    if selected_option == "派蒙":
         return (default_gpt_path, default_sovits_path, "/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav",
                 "疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？", "zh")
-    elif selected_option == "派蒙":
-        return (default_gpt_path, default_sovits_path, "/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav",
-                "疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？", "zh")
+    elif selected_option == "罗刹":
+        return ("/root/code/ComfyChat/weights/GPT_SoVITS/罗刹-e10.ckpt",
+                "/root/code/ComfyChat/weights/GPT_SoVITS/罗刹_e15_s450.pth",
+                "/root/code/ComfyChat/audio/wavs/说话-行商在外，无依无靠，懂些自救的手法，心里多少有个底。.wav",
+                "说话-行商在外，无依无靠，懂些自救的手法，心里多少有个底。", "zh")
+    elif selected_option == "胡桃":
+        return ("/root/code/ComfyChat/weights/GPT_SoVITS/胡桃-e10.ckpt",
+                "/root/code/ComfyChat/weights/GPT_SoVITS/胡桃_e15_s825.pth",
+                "/root/code/ComfyChat/audio/wavs/本堂主略施小计，你就败下阵来了，嘿嘿。.wav",
+                "本堂主略施小计，你就败下阵来了，嘿嘿。", "zh")
     elif selected_option == "魈":
-        return (default_gpt_path, default_sovits_path, "/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav",
-                "疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？", "zh")
+        return ("/root/code/ComfyChat/weights/GPT_SoVITS/魈-e10.ckpt",
+                "/root/code/ComfyChat/weights/GPT_SoVITS/魈_e15_s780.pth",
+                "/root/code/ComfyChat/audio/wavs/…你的愿望，我俱已知晓。轻策庄下，确有魔神残躯。.wav",
+                "…你的愿望，我俱已知晓。轻策庄下，确有魔神残躯。", "zh")
 
 
 # 定义处理选择事件的回调函数
@@ -267,7 +280,15 @@ with gr.Blocks() as demo:
             chatbot.select(chatbot_selected2tts, inputs=[use_tts, tts_model, chattts_audio_seed, lang, cut_punc, gpt_path,
                                                         sovits_path, ref_wav_path, prompt_text, prompt_language], outputs=out_audio)
     with gr.Tab("ComfyUI for generating"):
-        gr.HTML(html_code)
+        turn_on_comfyui = gr.Checkbox(label="Tutn on ComfyUI", info="Switch the default raw image interface to ComfyUI GUI")
+        with gr.Tab("Normal Text2Img") as txt2img:
+            prompt = gr.Textbox()
+        with gr.Tab("Normal Img2Img") as img2img:
+            prompt = gr.Textbox()
+            image = gr.Image()
+        comfyui_gui = gr.HTML(html_code, visible=False)
+
+        turn_on_comfyui.change(toggle_comfyui, inputs=turn_on_comfyui, outputs=[txt2img, img2img, comfyui_gui])
 
 demo.queue()
 demo.launch(server_name="0.0.0.0")
