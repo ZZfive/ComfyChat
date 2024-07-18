@@ -15,6 +15,15 @@ import websocket
 from collections import OrderedDict, deque
 from PIL import Image
 
+'''
+TODO
+1，部分初始参数独立出来，便与后续统一从配置中读取
+2，验证几个请求comfyui接口函数中都建立websocket连接的必要性
+3，验证cache中设置module作为key必要性
+4，简化后将功能进程到demo中
+
+'''
+
 
 # 各参数默认值
 class Default:
@@ -294,7 +303,7 @@ class Function:
 class Lora:
     cache = {}
  
-    def add_node(module, workflow, node_id, model_port, clip_port):  # 构建一个该类节点适用于workflow的数据对象
+    def add_node(module, workflow, node_id, model_port, clip_port):  # 构建该类节点适用于workflow的结构化对象
         for lora in Lora.cache[module]:
             strength_model = Lora.cache[module][lora]
             strength_clip = Lora.cache[module][lora]
@@ -320,7 +329,7 @@ class Lora:
                     lora_name, weight = j.split(":")
                     lora_list[lora_name] = weight
         lora_weight = ""
-        Lora.cache[module] = {}
+        Lora.cache[module] = {}  # lora发生改变时，Lora.cache[module]都会重新赋值
         for i in lora:
             if i in lora_list:
                 weight = lora_list[i]
@@ -336,7 +345,7 @@ class Lora:
         return True, gr.update(), gr.update(value=lora_weight, visible=True)
  
     def blocks(module):
-        module = gr.Textbox(value=module, visible=False)
+        module = gr.Textbox(value=module, visible=False)  # 作为Lora.cache中的一个key
         lora = gr.Dropdown(Choices.lora, label="Lora", multiselect=True, interactive=True)
         lora_weight = gr.Textbox(label="Lora weight | Lora 权重", visible=False)
         for gr_block in [lora, lora_weight]:  # 感觉此处对lora_weight改变为用，其就是基于lora来改变的  TODO 待验证
@@ -663,11 +672,14 @@ class SD:
         module = "SD"
         ckpt_name = Function.get_model_path(ckpt_name)
         seed = Function.gen_seed(seed)
+
         if input_image is not None:
             input_image = Function.upload_image(input_image)
+
         counter = 1
         output_images = []
         node_id = 0
+
         while counter <= batch_count:
             workflow = {}
             node_id += 1
@@ -785,7 +797,9 @@ class SD:
                     SD.send_to_info = gr.Button("发送图片至 Info")
         SD.data = gr.State()
         SD.index = gr.State()
-        btn.click(fn=SD.generate, inputs=[Initial.initialized, batch_count, ckpt_name, vae_name, clip_mode, clip_skip, width, height, batch_size, negative_prompt, positive_prompt, seed, steps, cfg, sampler_name, scheduler, denoise, SD.input_image], outputs=[output, SD.data])
+        btn.click(fn=SD.generate, inputs=[Initial.initialized, batch_count, ckpt_name, vae_name, clip_mode, clip_skip, width, height,
+                                          batch_size, negative_prompt, positive_prompt, seed, steps, cfg, sampler_name, scheduler,
+                                          denoise, SD.input_image], outputs=[output, SD.data])
         btn2.click(fn=Function.post_interrupt, inputs=None, outputs=None)
         output.select(fn=Function.get_gallery_index, inputs=None, outputs=[SD.index])
 
