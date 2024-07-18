@@ -5,6 +5,7 @@ import random
 import re
 import subprocess
 import sys
+from typing import Dict, Tuple
 
 import urllib.parse
 import uuid
@@ -50,14 +51,16 @@ class Initial:
     uploaded_image = {}
 
 
+# 获取前端页面展示需要的所有内容
 class Choices:
     ws = websocket.WebSocket()
-    ws.connect("ws://{}/ws?clientId={}".format(Initial.server_address, Initial.client_id))
-    object_info = requests.get(url="http://{}/object_info".format(Initial.server_address)).json()
-    embedding = requests.get(url="http://{}/embeddings".format(Initial.server_address)).json()
+    ws.connect("ws://{}/ws?clientId={}".format(Initial.server_address, Initial.client_id))  # 与comfyui中的websocket建立连接
+    object_info = requests.get(url="http://{}/object_info".format(Initial.server_address)).json()  # 获取comfyui中所有节点
+    embedding = requests.get(url="http://{}/embeddings".format(Initial.server_address)).json()  # 获取comfyui中所有embeddings
     ws.close()
-    ckpt = []
-    ckpt_list = {}
+
+    ckpt = []  # 基模型名称，用于前端展示
+    ckpt_list = {}  # 基模型名称与具体路径列表
     ckpt_name = object_info["ImageOnlyCheckpointLoader"]["input"]["required"]["ckpt_name"][0]
     hidden_ckpt = ["stable_cascade_stage_c.safetensors", "stable_cascade_stage_b.safetensors", "svd_xt_1_1.safetensors", "control_v11p_sd15_canny_fp16.safetensors", "control_v11f1p_sd15_depth_fp16.safetensors", "control_v11p_sd15_openpose_fp16.safetensors"]
     for i in ckpt_name:
@@ -66,20 +69,23 @@ class Choices:
             ckpt.append(file)
         ckpt_list[file] = i
     ckpt = sorted(ckpt)
-    controlnet_model = []
-    controlnet_model_list = {}
+
+    controlnet_model = []  # controlnet模型名称，用于前端展示
+    controlnet_model_list = {}  # controlnet模型名称与具体路径列表
     controlnet_name = object_info["ControlNetLoader"]["input"]["required"]["control_net_name"][0]
     for i in controlnet_name:
         path, file = os.path.split(i)
         controlnet_model.append(file)
         controlnet_model_list[file] = i
     controlnet_model = sorted(controlnet_model)
-    preprocessor = ["Canny"]
+
+    preprocessor = ["Canny"]  # controlnet预处理器列表
     if "AIO_Preprocessor" in object_info:
         preprocessor = ["none", "Canny", "CannyEdgePreprocessor", "DepthAnythingPreprocessor", "DWPreprocessor", "OpenposePreprocessor"]
         for i in sorted(object_info["AIO_Preprocessor"]["input"]["optional"]["preprocessor"][0]):
             if i not in preprocessor:
                 preprocessor.append(i)
+
     if "FaceDetailer" in object_info:
         facedetailer_detector_model = []
         facedetailer_detector_model_list = {}
@@ -89,6 +95,7 @@ class Choices:
             facedetailer_detector_model.append(file)
             facedetailer_detector_model_list[file] = i
         facedetailer_detector_model = sorted(facedetailer_detector_model)
+    
     lora = object_info["LoraLoader"]["input"]["required"]["lora_name"][0]
     sampler = object_info["KSampler"]["input"]["required"]["sampler_name"][0]
     scheduler = object_info["KSampler"]["input"]["required"]["scheduler"][0]
@@ -100,7 +107,7 @@ class Choices:
 
 
 class Function:
-    def format_prompt(prompt):
+    def format_prompt(prompt):  # 提示词调整
         prompt = re.sub(r"\s+,", ",", prompt)
         prompt = re.sub(r"\s+", " ", prompt)
         prompt = re.sub(",,+", ",", prompt)
@@ -113,10 +120,10 @@ class Function:
         prompt = re.sub(": ", ":", prompt)
         return prompt
  
-    def get_model_path(model_name):
+    def get_model_path(model_name):  # 设置基模型
         return Choices.ckpt_list[model_name]
  
-    def gen_seed(seed):
+    def gen_seed(seed):  # 设置随机种子
         seed = int(seed)
         if seed < 0:
             seed = random.randint(0, 18446744073709551615)
@@ -131,12 +138,12 @@ class Function:
         ControlNet.cache = {}
         FaceDetailer.cache = {}
  
-    def upload_image(image):
+    def upload_image(image):  # 上传图片到comfyui
         buffer = io.BytesIO()
         image.save(buffer, format="png")
         image = buffer.getbuffer()
         image_hash = hash(image.tobytes())
-        if image_hash in Initial.uploaded_image:
+        if image_hash in Initial.uploaded_image:  # 通过哈希值防止图片重复上传
             return Initial.uploaded_image[image_hash]
         image_name = str(uuid.uuid4()) + ".png"
         Initial.uploaded_image[image_hash] = image_name
@@ -147,7 +154,7 @@ class Function:
         ws.close()
         return image_name
  
-    def order_workflow(workflow):
+    def order_workflow(workflow: Dict):
         link_list = {}
         for node in workflow:
             node_link = []
@@ -188,14 +195,14 @@ class Function:
                 del workflow[node]["_meta"]
         return workflow
  
-    def post_interrupt():
+    def post_interrupt():  # 中断任务
         Initial.interrupt = True
         ws = websocket.WebSocket()
         ws.connect("ws://{}/ws?clientId={}".format(Initial.server_address, Initial.client_id))
         requests.post(url="http://{}/interrupt".format(Initial.server_address))
         ws.close()
  
-    def add_embedding(embedding, negative_prompt):
+    def add_embedding(embedding, negative_prompt):  # 给负向提示词中添加选择的embeddings
         for i in Choices.embedding:
             negative_prompt = negative_prompt.replace(f"embedding:{i},", "")
         negative_prompt = Function.format_prompt(negative_prompt)
@@ -203,7 +210,7 @@ class Function:
             negative_prompt = f"embedding:{i}, {negative_prompt}"
         return negative_prompt
  
-    def gen_image(workflow, counter, batch_count, progress):
+    def gen_image(workflow, counter, batch_count, progress):  # 基于workflow请求comfyui生成图片
         if counter == 1:
             progress(0, desc="Processing...")
         if batch_count == 1:
@@ -213,33 +220,38 @@ class Function:
         workflow = Function.order_workflow(workflow)
         current_progress = 0
         Initial.interrupt = False
+
         ws = websocket.WebSocket()
         ws.connect("ws://{}/ws?clientId={}".format(Initial.server_address, Initial.client_id))
         data = {"prompt": workflow, "client_id": Initial.client_id}
-        prompt_id = requests.post(url="http://{}/prompt".format(Initial.server_address), json=data).json()["prompt_id"]
+        prompt_id = requests.post(url="http://{}/prompt".format(Initial.server_address), json=data).json()["prompt_id"]  # 请求下发任务
+
         while True:
             try:
                 ws.settimeout(0.1)
-                wsrecv = ws.recv()
+                wsrecv = ws.recv()  # 接受comfyui返回的任务处理过程中的信息
                 if isinstance(wsrecv, str):
                     data = json.loads(wsrecv)["data"]
                     if "node" in data:
                         if data["node"] is not None:
                             if "value" in data and "max" in data:
                                 if data["max"] > 1:
-                                    current_progress = data["value"]/data["max"]
+                                    current_progress = data["value"] / data["max"]  # 当前进度
                                 progress(current_progress, desc=f"{batch_info}" + workflow[data["node"]]["class_type"] + " " + str(data["value"]) + "/" + str(data["max"]))
                             else:
                                 progress(current_progress, desc=f"{batch_info}" + workflow[data["node"]]["class_type"])
                         if data["node"] is None and data["prompt_id"] == prompt_id:
-                            break
+                            break  # 任务处理结束
                 else:
                     continue
             except websocket.WebSocketTimeoutException:
                 if Initial.interrupt is True:
                     ws.close()
                     return None, None
+
+        # 请求comfyui历史信息接口，基于prompt_id获取结果
         history = requests.get(url="http://{}/history/{}".format(Initial.server_address, prompt_id)).json()[prompt_id]
+
         images = []
         file_path = ""
         for node_id in history["outputs"]:
@@ -249,6 +261,7 @@ class Function:
                     file_path = Initial.output_dir + image["filename"]
                     data = {"filename": image["filename"], "subfolder": image["subfolder"], "type": image["type"]}
                     url_values = urllib.parse.urlencode(data)
+                    # 请求comfyui的view接口获取图像
                     image_data = requests.get("http://{}/view?{}".format(Initial.server_address, url_values)).content
                     image = Image.open(io.BytesIO(image_data))
                     images.append(image)
@@ -281,22 +294,25 @@ class Function:
 class Lora:
     cache = {}
  
-    def add_node(module, workflow, node_id, model_port, clip_port):
+    def add_node(module, workflow, node_id, model_port, clip_port):  # 构建一个该类节点适用于workflow的数据对象
         for lora in Lora.cache[module]:
             strength_model = Lora.cache[module][lora]
             strength_clip = Lora.cache[module][lora]
             node_id += 1
-            workflow[str(node_id)] = {"inputs": {"lora_name": lora, "strength_model": strength_model, "strength_clip": strength_clip, "model": model_port, "clip": clip_port}, "class_type": "LoraLoader"}
+            workflow[str(node_id)] = {"inputs": {"lora_name": lora, "strength_model": strength_model,
+                                                 "strength_clip": strength_clip, "model": model_port,
+                                                 "clip": clip_port}, "class_type": "LoraLoader"}
             model_port = [str(node_id), 0]
             clip_port = [str(node_id), 1]
         return workflow, node_id, model_port, clip_port
  
-    def update_cache(module, lora, lora_weight):
+    def update_cache(module: str, lora: str, lora_weight: str):
         if Initial.initialized is False:
             Function.initialize()
         if lora == []:
             Lora.cache[module] = {}
             return True, [], gr.update(value="", visible=False)
+        # lora_weight中是已经构建好的lora特定格式的字符串
         lora_list = {}
         for i in lora_weight.split("<"):
             for j in i.split(">"):
@@ -323,7 +339,7 @@ class Lora:
         module = gr.Textbox(value=module, visible=False)
         lora = gr.Dropdown(Choices.lora, label="Lora", multiselect=True, interactive=True)
         lora_weight = gr.Textbox(label="Lora weight | Lora 权重", visible=False)
-        for gr_block in [lora, lora_weight]:
+        for gr_block in [lora, lora_weight]:  # 感觉此处对lora_weight改变为用，其就是基于lora来改变的  TODO 待验证
             gr_block.change(fn=Lora.update_cache, inputs=[module, lora, lora_weight], outputs=[Initial.initialized, lora, lora_weight])
 
 
@@ -733,7 +749,7 @@ class SD:
                         height = gr.Slider(minimum=64, maximum=2048, step=64, label="Height | 图像高度", value=Default.hight)
                         batch_count = gr.Slider(minimum=1, maximum=100, step=1, label="Batch count | 生成批次", value=1)
                     with gr.Row():
-                        if Choices.lora != []:
+                        if Choices.lora != []:  # 当comfyui中有lora模型时前端界面才会初始对应模块
                             Lora.blocks("SD")
                         if Choices.embedding != []:
                             embedding = gr.Dropdown(Choices.embedding, label="Embedding", multiselect=True, interactive=True)
@@ -1054,13 +1070,19 @@ class Info:
  
 with gr.Blocks(css="#button {background: #FFE1C0; color: #FF453A} .block.padded:not(.gradio-accordion) {padding: 0 !important;} div.form {border-width: 0; box-shadow: none; background: white; gap: 1.15em;}") as demo:
     Initial.initialized = gr.Checkbox(value=False, visible=False)
-    with gr.Tab(label="Stable Diffusion"): SD.blocks()
+    with gr.Tab(label="Stable Diffusion"):
+        SD.blocks()
     if SC.enable is True:
-        with gr.Tab(label="Stable Cascade"): SC.blocks()
+        with gr.Tab(label="Stable Cascade"):
+            SC.blocks()
     if SVD.enable is True:
-        with gr.Tab(label="Stable Video Diffusion"): SVD.blocks()
-    with gr.Tab(label="Extras"): Extras.blocks()
-    with gr.Tab(label="Info"): Info.blocks()
+        with gr.Tab(label="Stable Video Diffusion"):
+            SVD.blocks()
+    with gr.Tab(label="Extras"):
+        Extras.blocks()
+    with gr.Tab(label="Info"):
+        Info.blocks()
+    
     SD.send_to_sd.click(fn=Function.send_to, inputs=[SD.data, SD.index], outputs=[SD.input_image])
     if SC.enable is True:
         SD.send_to_sc.click(fn=Function.send_to, inputs=[SD.data, SD.index], outputs=[SC.input_image])
