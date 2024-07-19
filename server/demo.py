@@ -175,7 +175,8 @@ def toggle_comfyui(show: bool) -> Any:
 # 使用GPT-SoVITS时随着克隆对象的变化设置对应参数  # TODO 下载合适的角色音频文件替换
 def update_gpt_sovits(selected_option: str) -> Tuple[str]:
     if selected_option == "派蒙":
-        return (default_gpt_path, default_sovits_path, "/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav",
+        return (default_gpt_path, default_sovits_path,
+                "/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav",
                 "疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？", "zh")
     elif selected_option == "罗刹":
         return ("/root/code/ComfyChat/weights/GPT_SoVITS/罗刹-e10.ckpt",
@@ -217,6 +218,8 @@ def chatbot_selected2tts(evt: gr.SelectData, use_tts: bool, tts_model: str, chat
             if gpt_path != default_gpt_path and sovits_path != default_sovits_path:
                 set_gpt_weights(gpt_path)
                 set_sovits_weights(sovits_path)
+                default_gpt_path = gpt_path
+                default_sovits_path = sovits_path
             results = get_tts_wav(text, text_language, cut_punc, ref_wav_path, prompt_text, prompt_language, return_numpy=True)
             return results
     else:

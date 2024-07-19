@@ -223,8 +223,10 @@ class CacheRetriever:
     def __init__(self, config_path: str, max_len: int = 4) -> None:
         self.cache = dict()
         self.max_len = max_len
+        
         with open(config_path, encoding='utf8') as f:
             config = pytoml.load(f)['feature_store']
+
         embedding_model_path = config['embedding_model_path']
         reranker_model_path = config['reranker_model_path']
 
