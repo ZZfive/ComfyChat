@@ -37,6 +37,7 @@ class Option:
 
         # comfyui模块相关配置
         self.design_mode = config["module"]["design_mode"]
+        self.lora_weight = config["module"]["lora_weight"]
         self.controlnet_num = config["module"]["controlnet_num"]
         self.controlnet_saveimage = config["module"]["controlnet_saveimage"]
         self.prompt = config["module"]["prompt"]
@@ -313,8 +314,10 @@ def send_to(data: List[Image.Image], index: int) -> Image.Image | None:
 
 
 class Lora:
-    def __init__(self) -> None:
+    def __init__(self, opt: Option, choices: Choices) -> None:
         self.cache = {}
+        self.opt = opt
+        self.choices = choices
         # self.initialized = False
  
     def add_node(self, module: str, workflow: Dict, node_id: int, model_port: int, clip_port: int) -> Tuple[Dict, int, int, int]:  # 构建该类节点适用于workflow的结构化对象
@@ -351,7 +354,7 @@ class Lora:
             if i in lora_list:
                 weight = lora_list[i]
             else:
-                weight = opt.lora_weight
+                weight = self.opt.lora_weight
             if lora.index(i) == 0:
                 lora_weight = f"<{i}:{weight}>"
             else:
@@ -361,17 +364,18 @@ class Lora:
             self.cache[module][i] = weight
         return gr.update(), gr.update(value=lora_weight, visible=True)
  
-    def blocks(self, module: str, choices: Choices) -> None:
+    def blocks(self, module: str) -> None:
         module = gr.Textbox(value=module, visible=False)  # 作为Lora.cache中的一个key
-        lora = gr.Dropdown(choices.lora, label="Lora", multiselect=True, interactive=True)
+        lora = gr.Dropdown(self.choices.lora, label="Lora", multiselect=True, interactive=True)
         lora_weight = gr.Textbox(label="Lora weight | Lora 权重", visible=False)
         for gr_block in [lora, lora_weight]:  # 感觉此处对lora_weight改变为用，其就是基于lora来改变的  TODO 待验证
             gr_block.change(fn=self.update_cache, inputs=[module, lora, lora_weight], outputs=[lora, lora_weight])
 
 
 class Upscale:
-    def __init__(self) -> None:
+    def __init__(self, choices: Choices) -> None:
         self.cache = {}
+        self.choices = choices
  
     def add_node(self, module: str, workflow: Dict, node_id: int, image_port: int) -> Tuple[Dict, int, int]:
         upscale_method = self.cache[module]["upscale_method"]
@@ -397,12 +401,12 @@ class Upscale:
         else:
             del self.cache[module]
  
-    def blocks(self, module: str, choices: Choices) -> None:
+    def blocks(self, module: str) -> None:
         module = gr.Textbox(value=module, visible=False)
         enable = gr.Checkbox(label="Enable（放大系数大于1后自动启用）")
 
         with gr.Row():
-            upscale_method = gr.Dropdown(choices.upscale_method, label="Upscale method | 放大方法", value=choices.upscale_method[-1])
+            upscale_method = gr.Dropdown(self.choices.upscale_method, label="Upscale method | 放大方法", value=self.choices.upscale_method[-1])
             scale_by = gr.Slider(minimum=1, maximum=8, step=1, label="Scale by | 放大系数", value=1)
 
         scale_by.release(fn=self.auto_enable, inputs=[scale_by], outputs=[enable])
@@ -416,8 +420,9 @@ class Upscale:
 
 
 class UpscaleWithModel:
-    def __init__(self) -> None:
+    def __init__(self, choices: Choices) -> None:
         self.cache = {}
+        self.choices = choices
  
     def add_node(self, module: str, workflow: Dict, node_id: int, image_port: int) -> Tuple[Dict, int, int]:
         upscale_model = self.cache[module]["upscale_model"]
@@ -437,19 +442,20 @@ class UpscaleWithModel:
         else:
             del self.cache[module]
  
-    def blocks(self, module: str, choices: Choices) -> None:
+    def blocks(self, module: str) -> None:
         module = gr.Textbox(value=module, visible=False)
         enable = gr.Checkbox(label="Enable")
-        upscale_model = gr.Dropdown(choices.upscale_model, label="Upscale model | 超分模型", value=choices.upscale_model[0])
+        upscale_model = gr.Dropdown(self.choices.upscale_model, label="Upscale model | 超分模型", value=self.choices.upscale_model[0])
         inputs = [module, enable, upscale_model]
         for gr_block in inputs:
             gr_block.change(fn=self.update_cache, inputs=inputs)
 
 
 class ControlNet:
-    def __init__(self, opt: Option) -> None:
+    def __init__(self, opt: Option, choices: Choices) -> None:
         self.cache = {}
         self.opt = opt
+        self.choices = choices
 
         self.model_preprocessor_list = {
             "control_v11e_sd15_ip2p.safetensors": [],
@@ -509,8 +515,8 @@ class ControlNet:
     def auto_enable(self) -> bool:
         return True
     
-    def auto_select_model(self, preprocessor: str, choices: Choices) -> str:
-        for model in choices.controlnet_model:
+    def auto_select_model(self, preprocessor: str) -> str:
+        for model in self.choices.controlnet_model:
             if model in self.model_preprocessor_list:
                 if preprocessor in self.model_preprocessor_list[model]:
                     return gr.update(value=model)
@@ -558,7 +564,7 @@ class ControlNet:
         if enable is True:
             self.cache[module][unit_id]["preprocessor"] = preprocessor
             self.cache[module][unit_id]["model"] = choices.controlnet_model_list[model]
-            self.cache[module][unit_id]["input_image"] = upload_image(input_image)
+            self.cache[module][unit_id]["input_image"] = upload_image(self.opt, input_image)
             self.cache[module][unit_id]["resolution"] = resolution
             self.cache[module][unit_id]["strength"] = strength
             self.cache[module][unit_id]["start_percent"] = start_percent
@@ -568,15 +574,15 @@ class ControlNet:
         
         return gr.update()
  
-    def unit(self, module: str, i: int, choices: Choices) -> None:
+    def unit(self, module: str, i: int) -> None:
         module = gr.Textbox(value=module, visible=False)
         unit_id = gr.Textbox(value=i, visible=False)
         with gr.Row():
             enable = gr.Checkbox(label="Enable（上传图片后自动启用）")
             preview = gr.Checkbox(label="Preview")
         with gr.Row():
-            preprocessor = gr.Dropdown(choices.preprocessor, label="Preprocessor", value="Canny")
-            model = gr.Dropdown(choices.controlnet_model, label="ControlNet model", value="control_v11p_sd15_canny.safetensors")
+            preprocessor = gr.Dropdown(self.choices.preprocessor, label="Preprocessor", value="Canny")
+            model = gr.Dropdown(self.choices.controlnet_model, label="ControlNet model", value="control_v11p_sd15_canny.safetensors")
         with gr.Row():
             input_image = gr.Image(type="pil")
             preprocess_preview = gr.Image(label="Preprocessor preview")
@@ -638,7 +644,7 @@ class Postprocess:
 
 
 class SD:
-    def _init__(self, opt: Option, choices: Choices, lora: Lora, controlnet: ControlNet, postprocessor: Postprocess) -> None:
+    def __init__(self, opt: Option, choices: Choices, lora: Lora, controlnet: ControlNet, postprocessor: Postprocess) -> None:
         self.opt = opt
         self.choices = choices
         self.lora = lora
@@ -717,6 +723,9 @@ class SD:
             counter += 1
         return output_images, output_images
  
+    def interrupt(self):
+        post_interrupt(self.opt)
+    
     def blocks(self, sc_enable: bool, svd_enable: bool):
         with gr.Row():
             with gr.Column():
@@ -740,9 +749,10 @@ class SD:
                     with gr.Row():
                         if self.choices.lora != []:  # 当comfyui中有lora模型时前端界面才会初始对应模块
                             self.lora.blocks("SD")
-                        if Choices.embedding != []:
+                        if self.choices.embedding != []:
+                            all_embedding = gr.Dropdown(self.choices.embedding, visible=False)
                             embedding = gr.Dropdown(self.choices.embedding, label="Embedding", multiselect=True, interactive=True)
-                            embedding.change(fn=add_embedding, inputs=[self.choices, embedding, negative_prompt], outputs=[negative_prompt])
+                            embedding.change(fn=add_embedding, inputs=[all_embedding, embedding, negative_prompt], outputs=[negative_prompt])
                     with gr.Row():
                         self.input_image = gr.Image(value=None, type="pil")
                         gr.HTML("<br>上传图片即自动转为图生图模式。<br><br>文生图、图生图模式共享设置参数。<br><br>图像宽度、图像高度、批次大小对图生图无效。")
@@ -777,7 +787,7 @@ class SD:
         btn.click(fn=self.generate, inputs=[batch_count, ckpt_name, vae_name, clip_mode, clip_skip, width, height,
                                           batch_size, negative_prompt, positive_prompt, seed, steps, cfg, sampler_name, scheduler,
                                           denoise, self.input_image], outputs=[output, self.data])
-        btn2.click(fn=post_interrupt, inputs=self.opt, outputs=None)
+        btn2.click(fn=self.interrupt, inputs=None, outputs=None)
         output.select(fn=get_gallery_index, inputs=None, outputs=[self.index])
 
 
@@ -834,6 +844,9 @@ class SC:
             seed_c += 1
             counter += 1
         return output_images, output_images
+    
+    def interrupt(self):
+        post_interrupt(self.opt)
  
     def blocks(self, svd_enable):
         with gr.Row():
@@ -888,7 +901,7 @@ class SC:
         btn.click(fn=self.generate, inputs=[batch_count, positive_prompt, negative_prompt, width, height, batch_size, seed_c, steps_c, cfg_c,
                                           sampler_name_c, scheduler_c, denoise_c, seed_b, steps_b, cfg_b, sampler_name_b, scheduler_b, denoise_b,
                                           self.input_image], outputs=[output, self.data])
-        btn2.click(fn=post_interrupt, inputs=self.opt, outputs=None)
+        btn2.click(fn=self.interrupt, inputs=None, outputs=None)
         output.select(fn=get_gallery_index, inputs=None, outputs=[self.index])
 
 
@@ -920,6 +933,9 @@ class SVD:
             "7": {"inputs": {"filename_prefix": "ComfyUI", "fps": fps2, "lossless": False, "quality": quality, "method": method, "images": ["6", 0]}, "class_type": "SaveAnimatedWEBP"}
             }
         return gen_image(self.opt, workflow, 1, 1, progress)[1]
+    
+    def interrupt(self):
+        post_interrupt(self.opt)
  
     def blocks(self):
         with gr.Row():
@@ -963,7 +979,7 @@ class SVD:
         btn.click(fn=self.generate, inputs=[self.input_image, width, height, video_frames, motion_bucket_id, fps, augmentation_level,
                                             min_cfg, seed, steps, cfg, sampler_name, scheduler, denoise, fps2, lossless, quality, method],
                                             outputs=[output])
-        btn2.click(fn=post_interrupt, inputs=self.opt, outputs=None)
+        btn2.click(fn=self.interrupt, inputs=None, outputs=None)
 
 
 class Extras:
@@ -996,6 +1012,9 @@ class Extras:
         if output is not None:
             output = output[0]
         return output
+    
+    def interrupt(self):
+        post_interrupt(self.opt)
  
     def blocks(self):
         with gr.Row():
@@ -1014,7 +1033,7 @@ class Extras:
                     btn2 = gr.Button("Interrupt | 终止")
                 output = gr.Image(height=600)
         btn.click(fn=self.generate, inputs=[self.input_image], outputs=[output])
-        btn2.click(fn=post_interrupt, inputs=self.opt, outputs=None)
+        btn2.click(fn=self.interrupt, inputs=None, outputs=None)
 
 
 class Info:
@@ -1028,6 +1047,9 @@ class Info:
             return
         workflow = json.loads(image_info)
         return gen_image(self.opt, workflow, 1, 1, progress)[0]
+    
+    def interrupt(self):
+        post_interrupt(self.opt)
  
     def order_workflow(self, workflow):
         if workflow is None:
@@ -1068,7 +1090,7 @@ class Info:
     def blocks(self):
         with gr.Row():
             with gr.Column():
-                Info.input_image = gr.Image(value=None, type="pil")
+                self.input_image = gr.Image(value=None, type="pil")
                 workflow = gr.File(label="workflow_api.json", file_types=[".json"], type="binary")
                 image_info = gr.Textbox(visible=False)
             with gr.Column():
@@ -1077,7 +1099,7 @@ class Info:
                     btn2 = gr.Button("Interrupt | 终止")
                 output = gr.Gallery(preview=True, height=600)
         btn.click(fn=self.generate, inputs=[image_info], outputs=[output])
-        btn2.click(fn=post_interrupt, inputs=self.opt, outputs=None)
+        btn2.click(fn=self.interrupt, inputs=None, outputs=None)
 
         self.input_image.change(fn=self.hide_another_input, inputs=[self.input_image], outputs=[workflow])
         self.input_image.change(fn=self.get_image_info, inputs=[self.input_image], outputs=[image_info])
@@ -1088,10 +1110,10 @@ class Info:
 
 opt = Option(config_path="/root/code/ComfyChat/server/config.ini")
 choices = Choices(opt)
-lora = Lora()
-upscale = Upscale()
-upscale_model = UpscaleWithModel()
-controlnet = ControlNet(opt)
+lora = Lora(opt, choices)
+upscale = Upscale(choices)
+upscale_model = UpscaleWithModel(choices)
+controlnet = ControlNet(opt, choices)
 postprocessor = Postprocess(upscale, upscale_model)
 sd = SD(opt, choices, lora, controlnet, postprocessor)
 sc = SC(opt, choices, postprocessor)
