@@ -37,7 +37,6 @@ class Option:
 
         # comfyui模块相关配置
         self.design_mode = config["module"]["design_mode"]
-        self.design_mode = config["module"]["design_mode"]
         self.controlnet_num = config["module"]["controlnet_num"]
         self.controlnet_saveimage = config["module"]["controlnet_saveimage"]
         self.prompt = config["module"]["prompt"]
@@ -111,10 +110,6 @@ class Choices:
             self.vae.append(i)
 
 
-opt = Option(config_path="/root/code/ComfyChat/server/config.ini")
-choices = Choices(opt)
-
-
 # 提示词调整
 def format_prompt(prompt: str) -> str:
     prompt = re.sub(r"\s+,", ",", prompt)
@@ -136,7 +131,7 @@ def get_model_path(ckpt_list: List[str], model_name: str) -> str:
 
 
 # 设置随机种子
-def gen_seed(seed: int):
+def gen_seed(seed: int) -> int:
     seed = int(seed)
     if seed < 0:
         seed = random.randint(0, 18446744073709551615)
@@ -635,21 +630,29 @@ class Postprocess:
         with gr.Tab(label="图像放大"):
             with gr.Row():
                 with gr.Tab(label="算术放大"):
-                    Upscale.blocks(module)
+                    self.upscale.blocks(module)
             with gr.Row():
                 with gr.Tab(label="超分放大"):
-                    UpscaleWithModel.blocks(module)
+                    self.upscal_model.blocks(module)
             gr.HTML("注意：同时启用两种放大模式将先执行算术放大，再执行超分放大，最终放大倍数为二者放大倍数的乘积！")
 
 
 class SD:
-    def generate(initialized, batch_count, ckpt_name, vae_name, clip_mode, clip_skip, width, height, batch_size, negative_prompt, positive_prompt, seed, steps, cfg, sampler_name, scheduler, denoise, input_image, progress=gr.Progress()):
+    def _init__(self, opt: Option, choices: Choices, lora: Lora, controlnet: ControlNet, postprocessor: Postprocess) -> None:
+        self.opt = opt
+        self.choices = choices
+        self.lora = lora
+        self.controlnet = controlnet
+        self.postprocessor = postprocessor
+
+    def generate(self, batch_count, ckpt_name, vae_name, clip_mode, clip_skip, width, height, batch_size, negative_prompt,
+                 positive_prompt, seed, steps, cfg, sampler_name, scheduler, denoise, input_image, progress=gr.Progress()):
         module = "SD"
-        ckpt_name = Function.get_model_path(ckpt_name)
-        seed = Function.gen_seed(seed)
+        ckpt_name = get_model_path(self.choices.ckpt_list, ckpt_name)
+        seed = gen_seed(seed)
 
         if input_image is not None:
-            input_image = Function.upload_image(input_image)
+            input_image = upload_image(self.opt, input_image)
 
         counter = 1
         output_images = []
@@ -680,8 +683,8 @@ class SD:
             node_id += 1
             workflow[str(node_id)] = {"inputs": {"stop_at_clip_layer": -clip_skip, "clip": clip_port}, "class_type": "CLIPSetLastLayer"}
             clip_port = [str(node_id), 0]
-            if initialized is True and module in Lora.cache:
-                workflow, node_id, model_port, clip_port = Lora.add_node(module, workflow, node_id, model_port, clip_port)
+            if module in self.lora.cache:
+                workflow, node_id, model_port, clip_port = self.lora.add_node(module, workflow, node_id, model_port, clip_port)
             node_id += 1
             if clip_mode == "ComfyUI":
                 workflow[str(node_id)] = {"inputs": {"text": positive_prompt, "clip": clip_port}, "class_type": "CLIPTextEncode"}
@@ -694,19 +697,18 @@ class SD:
             else:
                 workflow[str(node_id)] = {"inputs": {"text": negative_prompt, "token_normalization": "none", "weight_interpretation": "A1111", "clip": clip_port}, "class_type": "BNK_CLIPTextEncodeAdvanced"}
             negative_port = [str(node_id), 0]
-            if initialized is True and module in ControlNet.cache:
-                workflow, node_id, positive_port, negative_port = ControlNet.add_node(module, counter, workflow, node_id, positive_port, negative_port)
+            if module in self.controlnet.cache:
+                workflow, node_id, positive_port, negative_port = self.controlnet.add_node(module, counter, workflow, node_id, positive_port, negative_port)
             node_id += 1
             workflow[str(node_id)] = {"inputs": {"seed": seed, "steps": steps, "cfg": cfg, "sampler_name": sampler_name, "scheduler": scheduler, "denoise": denoise, "model": model_port, "positive": positive_port, "negative": negative_port, "latent_image": latent_image_port}, "class_type": "KSampler"}
             samples_port = [str(node_id), 0]
             node_id += 1
             workflow[str(node_id)] = {"inputs": {"samples": samples_port, "vae": vae_port}, "class_type": "VAEDecode"}
             image_port = [str(node_id), 0]
-            if initialized is True:
-                workflow, node_id, image_port = Postprocess.add_node(module, workflow, node_id, image_port, model_port, clip_port, vae_port, positive_port, negative_port, seed, steps, cfg, sampler_name, scheduler)
+            workflow, node_id, image_port = self.postprocessor.add_node(module, workflow, node_id, image_port, model_port, clip_port, vae_port, positive_port, negative_port, seed, steps, cfg, sampler_name, scheduler)
             node_id += 1
             workflow[str(node_id)] = {"inputs": {"filename_prefix": "ComfyUI", "images": image_port}, "class_type": "SaveImage"}
-            images = Function.gen_image(workflow, counter, batch_count, progress)[0]
+            images = gen_image(self.opt, workflow, counter, batch_count, progress)[0]
             if images is None:
                 break
             for image in images:
@@ -715,111 +717,116 @@ class SD:
             counter += 1
         return output_images, output_images
  
-    def blocks():
+    def blocks(self, sc_enable: bool, svd_enable: bool):
         with gr.Row():
             with gr.Column():
-                positive_prompt = gr.Textbox(placeholder="Positive prompt | 正向提示词", show_label=False, value=Default.prompt, lines=3)
-                negative_prompt = gr.Textbox(placeholder="Negative prompt | 负向提示词", show_label=False, value=Default.negative_prompt, lines=3)
+                positive_prompt = gr.Textbox(placeholder="Positive prompt | 正向提示词", show_label=False, value=self.opt.prompt, lines=3)
+                negative_prompt = gr.Textbox(placeholder="Negative prompt | 负向提示词", show_label=False, value=self.opt.negative_prompt, lines=3)
                 with gr.Tab(label="基础设置"):
                     with gr.Row():
-                        ckpt_name = gr.Dropdown(Choices.ckpt, label="Ckpt name | Ckpt 模型名称", value=Choices.ckpt[0])
-                        vae_name = gr.Dropdown(Choices.vae, label="VAE name | VAE 模型名称", value=Choices.vae[0])
-                        if "BNK_CLIPTextEncodeAdvanced" in Choices.object_info:
+                        ckpt_name = gr.Dropdown(self.choices.ckpt, label="Ckpt name | Ckpt 模型名称", value=self.choices.ckpt[0])
+                        vae_name = gr.Dropdown(self.choices.vae, label="VAE name | VAE 模型名称", value=self.choices.vae[0])
+                        if "BNK_CLIPTextEncodeAdvanced" in self.choices.object_info:
                             clip_mode = gr.Dropdown(["ComfyUI", "WebUI"], label="Clip 编码类型", value="ComfyUI")
                         else:
                             clip_mode = gr.Dropdown(["ComfyUI", "WebUI"], label="Clip 编码类型", value="ComfyUI", visible=False)
                         clip_skip = gr.Slider(minimum=1, maximum=12, step=1, label="Clip 跳过", value=1)
                     with gr.Row():
-                        width = gr.Slider(minimum=64, maximum=2048, step=64, label="Width | 图像宽度", value=Default.width)
+                        width = gr.Slider(minimum=64, maximum=2048, step=64, label="Width | 图像宽度", value=self.opt.width)
                         batch_size = gr.Slider(minimum=1, maximum=8, step=1, label="Batch size | 批次大小", value=1)
                     with gr.Row():
-                        height = gr.Slider(minimum=64, maximum=2048, step=64, label="Height | 图像高度", value=Default.hight)
+                        height = gr.Slider(minimum=64, maximum=2048, step=64, label="Height | 图像高度", value=self.opt.hight)
                         batch_count = gr.Slider(minimum=1, maximum=100, step=1, label="Batch count | 生成批次", value=1)
                     with gr.Row():
-                        if Choices.lora != []:  # 当comfyui中有lora模型时前端界面才会初始对应模块
-                            Lora.blocks("SD")
+                        if self.choices.lora != []:  # 当comfyui中有lora模型时前端界面才会初始对应模块
+                            self.lora.blocks("SD")
                         if Choices.embedding != []:
-                            embedding = gr.Dropdown(Choices.embedding, label="Embedding", multiselect=True, interactive=True)
-                            embedding.change(fn=Function.add_embedding, inputs=[embedding, negative_prompt], outputs=[negative_prompt])
+                            embedding = gr.Dropdown(self.choices.embedding, label="Embedding", multiselect=True, interactive=True)
+                            embedding.change(fn=add_embedding, inputs=[self.choices, embedding, negative_prompt], outputs=[negative_prompt])
                     with gr.Row():
-                        SD.input_image = gr.Image(value=None, type="pil")
+                        self.input_image = gr.Image(value=None, type="pil")
                         gr.HTML("<br>上传图片即自动转为图生图模式。<br><br>文生图、图生图模式共享设置参数。<br><br>图像宽度、图像高度、批次大小对图生图无效。")
                 with gr.Tab(label="采样设置"):
                     with gr.Row():
-                        sampler_name = gr.Dropdown(Choices.sampler, label="Sampling method | 采样方法", value=Choices.sampler[12])
-                        scheduler = gr.Dropdown(Choices.scheduler, label="Schedule type | 采样计划表类型", value=Choices.scheduler[1])
+                        sampler_name = gr.Dropdown(self.choices.sampler, label="Sampling method | 采样方法", value=self.choices.sampler[12])
+                        scheduler = gr.Dropdown(self.choices.scheduler, label="Schedule type | 采样计划表类型", value=self.choices.scheduler[1])
                     with gr.Row():
                         denoise = gr.Slider(minimum=0, maximum=1, step=0.05, label="Denoise | 去噪强度", value=1)
-                        steps = gr.Slider(minimum=1, maximum=100, step=1, label="Sampling steps | 采样次数", value=Default.steps)
+                        steps = gr.Slider(minimum=1, maximum=100, step=1, label="Sampling steps | 采样次数", value=self.opt.steps)
                     with gr.Row():
                         cfg = gr.Slider(minimum=0, maximum=20, step=0.1, label="CFG Scale | CFG权重", value=7)
                         seed = gr.Slider(minimum=-1, maximum=18446744073709550000, step=1, label="Seed | 种子数", value=-1)
-                if Choices.controlnet_model != []:
-                    ControlNet.blocks("SD")
-                Postprocess.blocks("SD")
+                if self.choices.controlnet_model != []:
+                    self.controlnet.blocks("SD")
+                self.postprocessor.blocks("SD")
             with gr.Column():
                 with gr.Row():
                     btn = gr.Button("Generate | 生成", elem_id="button")
                     btn2 = gr.Button("Interrupt | 终止")
                 output = gr.Gallery(preview=True, height=600)
                 with gr.Row():
-                    SD.send_to_sd = gr.Button("发送图片至 SD")
-                    if SC.enable is True:
-                        SD.send_to_sc = gr.Button("发送图片至 SC")
-                    if SVD.enable is True:
-                        SD.send_to_svd = gr.Button("发送图片至 SVD")
-                    SD.send_to_extras = gr.Button("发送图片至 Extras")
-                    SD.send_to_info = gr.Button("发送图片至 Info")
-        SD.data = gr.State()
-        SD.index = gr.State()
-        btn.click(fn=SD.generate, inputs=[Initial.initialized, batch_count, ckpt_name, vae_name, clip_mode, clip_skip, width, height,
+                    self.send_to_sd = gr.Button("发送图片至 SD")
+                    if sc_enable is True:
+                        self.send_to_sc = gr.Button("发送图片至 SC")
+                    if svd_enable is True:
+                        self.send_to_svd = gr.Button("发送图片至 SVD")
+                    self.send_to_extras = gr.Button("发送图片至 Extras")
+                    self.send_to_info = gr.Button("发送图片至 Info")
+        self.data = gr.State()
+        self.index = gr.State()
+        btn.click(fn=self.generate, inputs=[batch_count, ckpt_name, vae_name, clip_mode, clip_skip, width, height,
                                           batch_size, negative_prompt, positive_prompt, seed, steps, cfg, sampler_name, scheduler,
-                                          denoise, SD.input_image], outputs=[output, SD.data])
-        btn2.click(fn=Function.post_interrupt, inputs=None, outputs=None)
-        output.select(fn=Function.get_gallery_index, inputs=None, outputs=[SD.index])
+                                          denoise, self.input_image], outputs=[output, self.data])
+        btn2.click(fn=post_interrupt, inputs=self.opt, outputs=None)
+        output.select(fn=get_gallery_index, inputs=None, outputs=[self.index])
 
 
 class SC:
-    if Default.design_mode == 1:
-        enable = True
-    elif "stable_cascade_stage_c.safetensors" in Choices.ckpt_list and "stable_cascade_stage_b.safetensors" in Choices.ckpt_list:
-        enable = True
-    else:
-        enable = False
+    enable = False
+
+    def __init__(self, opt: Option, choices: Choices, postprocessor: Postprocess) -> None:
+        self.opt = opt
+        self.choices = choices
+        self.postprocessor = postprocessor
+
+        if "stable_cascade_stage_c.safetensors" in self.choices.ckpt_list and "stable_cascade_stage_b.safetensors" in self.choices.ckpt_list:
+            self.enable = True
  
-    def generate(initialized, batch_count, positive_prompt, negative_prompt, width, height, batch_size, seed_c, steps_c, cfg_c, sampler_name_c, scheduler_c, denoise_c, seed_b, steps_b, cfg_b, sampler_name_b, scheduler_b, denoise_b, input_image, progress=gr.Progress()):
+    def generate(self, batch_count, positive_prompt, negative_prompt, width, height, batch_size, seed_c, steps_c, cfg_c, sampler_name_c, scheduler_c, denoise_c, seed_b, steps_b, cfg_b, sampler_name_b, scheduler_b, denoise_b, input_image, progress=gr.Progress()):
         module = "SC"
-        ckpt_name_c = Function.get_model_path("stable_cascade_stage_c.safetensors")
-        ckpt_name_b = Function.get_model_path("stable_cascade_stage_b.safetensors")
-        seed_c = Function.gen_seed(seed_c)
-        seed_b = Function.gen_seed(seed_b)
+        ckpt_name_c = get_model_path(self.choices.ckpt_list, "stable_cascade_stage_c.safetensors")
+        ckpt_name_b = get_model_path(self.choices.ckpt_list, "stable_cascade_stage_b.safetensors")
+        
+        seed_c = gen_seed(seed_c)
+        seed_b = gen_seed(seed_b)
+        
         if input_image is not None:
-            input_image = Function.upload_image(input_image)
+            input_image = upload_image(self.opt, input_image)
+
         counter = 1
         output_images = []
         while counter <= batch_count:
             workflow = {
-"1": {"inputs": {"ckpt_name": ckpt_name_c}, "class_type": "CheckpointLoaderSimple"},
-"2": {"inputs": {"image": input_image, "upload": "image"}, "class_type": "LoadImage"},
-"3": {"inputs": {"compression": 42, "image": ["2", 0], "vae": ["1", 2]}, "class_type": "StableCascade_StageC_VAEEncode"},
-"4": {"inputs": {"text": negative_prompt, "clip": ["1", 1]}, "class_type": "CLIPTextEncode"},
-"5": {"inputs": {"text": positive_prompt, "clip": ["1", 1]}, "class_type": "CLIPTextEncode"},
-"6": {"inputs": {"seed": seed_c, "steps": steps_c, "cfg": cfg_c, "sampler_name": sampler_name_c, "scheduler": scheduler_c, "denoise": denoise_c, "model": ["1", 0], "positive": ["5", 0], "negative": ["4", 0], "latent_image": ["3", 0]}, "class_type": "KSampler"},
-"7": {"inputs": {"conditioning": ["5", 0], "stage_c": ["6", 0]}, "class_type": "StableCascade_StageB_Conditioning"},
-"8": {"inputs": {"ckpt_name": ckpt_name_b}, "class_type": "CheckpointLoaderSimple"},
-"9": {"inputs": {"seed": seed_b, "steps": steps_b, "cfg": cfg_b, "sampler_name": sampler_name_b, "scheduler": scheduler_b, "denoise": denoise_b, "model": ["8", 0], "positive": ["7", 0], "negative": ["4", 0], "latent_image": ["3", 1]}, "class_type": "KSampler"},
-"10": {"inputs": {"samples": ["9", 0], "vae": ["8", 2]}, "class_type": "VAEDecode"}
-}
+                "1": {"inputs": {"ckpt_name": ckpt_name_c}, "class_type": "CheckpointLoaderSimple"},
+                "2": {"inputs": {"image": input_image, "upload": "image"}, "class_type": "LoadImage"},
+                "3": {"inputs": {"compression": 42, "image": ["2", 0], "vae": ["1", 2]}, "class_type": "StableCascade_StageC_VAEEncode"},
+                "4": {"inputs": {"text": negative_prompt, "clip": ["1", 1]}, "class_type": "CLIPTextEncode"},
+                "5": {"inputs": {"text": positive_prompt, "clip": ["1", 1]}, "class_type": "CLIPTextEncode"},
+                "6": {"inputs": {"seed": seed_c, "steps": steps_c, "cfg": cfg_c, "sampler_name": sampler_name_c, "scheduler": scheduler_c, "denoise": denoise_c, "model": ["1", 0], "positive": ["5", 0], "negative": ["4", 0], "latent_image": ["3", 0]}, "class_type": "KSampler"},
+                "7": {"inputs": {"conditioning": ["5", 0], "stage_c": ["6", 0]}, "class_type": "StableCascade_StageB_Conditioning"},
+                "8": {"inputs": {"ckpt_name": ckpt_name_b}, "class_type": "CheckpointLoaderSimple"},
+                "9": {"inputs": {"seed": seed_b, "steps": steps_b, "cfg": cfg_b, "sampler_name": sampler_name_b, "scheduler": scheduler_b, "denoise": denoise_b, "model": ["8", 0], "positive": ["7", 0], "negative": ["4", 0], "latent_image": ["3", 1]}, "class_type": "KSampler"},
+                "10": {"inputs": {"samples": ["9", 0], "vae": ["8", 2]}, "class_type": "VAEDecode"}
+                }
             if input_image is None:
                 del workflow["2"]
                 workflow["3"] = {"inputs": {"width": width, "height": height, "compression": 42, "batch_size": batch_size}, "class_type": "StableCascade_EmptyLatentImage"}
             node_id = 10
             image_port = [str(node_id), 0]
-            if initialized is True:
-                workflow, node_id, image_port = Postprocess.add_node(module, workflow, node_id, image_port)
+            workflow, node_id, image_port = self.postprocessor.add_node(module, workflow, node_id, image_port)
             node_id += 1
             workflow[str(node_id)] = {"inputs": {"filename_prefix": "ComfyUI", "images": image_port}, "class_type": "SaveImage"}
-            images = Function.gen_image(workflow, counter, batch_count, progress)[0]
+            images = gen_image(self.opt, workflow, counter, batch_count, progress)[0]
             if images is None:
                 break
             for image in images:
@@ -828,11 +835,11 @@ class SC:
             counter += 1
         return output_images, output_images
  
-    def blocks():
+    def blocks(self, svd_enable):
         with gr.Row():
             with gr.Column():
-                positive_prompt = gr.Textbox(placeholder="Positive prompt | 正向提示词", show_label=False, value=Default.prompt, lines=3)
-                negative_prompt = gr.Textbox(placeholder="Negative prompt | 负向提示词", show_label=False, value=Default.negative_prompt, lines=3)
+                positive_prompt = gr.Textbox(placeholder="Positive prompt | 正向提示词", show_label=False, value=self.opt.prompt, lines=3)
+                negative_prompt = gr.Textbox(placeholder="Negative prompt | 负向提示词", show_label=False, value=self.opt.negative_prompt, lines=3)
                 with gr.Tab(label="基础设置"):
                     with gr.Row():
                         width = gr.Slider(minimum=128, maximum=2048, step=128, label="Width | 图像宽度", value=1024)
@@ -845,8 +852,8 @@ class SC:
                         gr.HTML("<br>上传图片即自动转为图生图模式。<br><br>文生图、图生图模式共享设置参数。<br><br>图像宽度、图像高度、批次大小对图生图无效。")
                 with gr.Tab(label="Stage C 采样设置"):
                     with gr.Row():
-                        sampler_name_c = gr.Dropdown(Choices.sampler, label="Sampling method | 采样方法", value=Choices.sampler[12])
-                        scheduler_c = gr.Dropdown(Choices.scheduler, label="Schedule type | 采样计划表类型", value=Choices.scheduler[1])
+                        sampler_name_c = gr.Dropdown(self.choices.sampler, label="Sampling method | 采样方法", value=self.choices.sampler[12])
+                        scheduler_c = gr.Dropdown(self.choices.scheduler, label="Schedule type | 采样计划表类型", value=self.choices.scheduler[1])
                     with gr.Row():
                         denoise_c = gr.Slider(minimum=0, maximum=1, step=0.05, label="Denoise | 去噪强度", value=1)
                         steps_c = gr.Slider(minimum=10, maximum=30, step=1, label="Sampling steps | 采样次数", value=20)
@@ -855,64 +862,69 @@ class SC:
                         seed_c = gr.Slider(minimum=-1, maximum=18446744073709550000, step=1, label="Seed | 种子数", value=-1)
                 with gr.Tab(label="Stage B 采样设置"):
                     with gr.Row():
-                        sampler_name_b = gr.Dropdown(Choices.sampler, label="Sampling method | 采样方法", value=Choices.sampler[12])
-                        scheduler_b = gr.Dropdown(Choices.scheduler, label="Schedule type | 采样计划表类型", value=Choices.scheduler[1])
+                        sampler_name_b = gr.Dropdown(self.choices.sampler, label="Sampling method | 采样方法", value=self.choices.sampler[12])
+                        scheduler_b = gr.Dropdown(self.choices.scheduler, label="Schedule type | 采样计划表类型", value=self.choices.scheduler[1])
                     with gr.Row():
                         denoise_b = gr.Slider(minimum=0, maximum=1, step=0.05, label="Denoise | 去噪强度", value=1)
                         steps_b = gr.Slider(minimum=4, maximum=12, step=1, label="Sampling steps | 采样次数", value=10)
                     with gr.Row():
                         cfg_b = gr.Slider(minimum=0, maximum=20, step=0.1, label="CFG Scale | CFG权重", value=1.1)
                         seed_b = gr.Slider(minimum=-1, maximum=18446744073709550000, step=1, label="Seed | 种子数", value=-1)
-                Postprocess.blocks("SC")
+                self.postprocessor.blocks("SC")
             with gr.Column():
                 with gr.Row():
                     btn = gr.Button("Generate | 生成", elem_id="button")
                     btn2 = gr.Button("Interrupt | 终止")
                 output = gr.Gallery(preview=True, height=600)
                 with gr.Row():
-                    SC.send_to_sd = gr.Button("发送图片至 SD")
-                    SC.send_to_sc = gr.Button("发送图片至 SC")
-                    if SVD.enable is True:
-                        SC.send_to_svd = gr.Button("发送图片至 SVD")
-                    SC.send_to_extras = gr.Button("发送图片至 Extras")
-                    SC.send_to_info = gr.Button("发送图片至 Info")
-        SC.data = gr.State()
-        SC.index = gr.State()
-        btn.click(fn=SC.generate, inputs=[Initial.initialized, batch_count, positive_prompt, negative_prompt, width, height, batch_size, seed_c, steps_c, cfg_c, sampler_name_c, scheduler_c, denoise_c, seed_b, steps_b, cfg_b, sampler_name_b, scheduler_b, denoise_b, SC.input_image], outputs=[output, SC.data])
-        btn2.click(fn=Function.post_interrupt, inputs=None, outputs=None)
-        output.select(fn=Function.get_gallery_index, inputs=None, outputs=[SC.index])
+                    self.send_to_sd = gr.Button("发送图片至 SD")
+                    self.send_to_sc = gr.Button("发送图片至 SC")
+                    if svd_enable is True:
+                        self.send_to_svd = gr.Button("发送图片至 SVD")
+                    self.send_to_extras = gr.Button("发送图片至 Extras")
+                    self.send_to_info = gr.Button("发送图片至 Info")
+        self.data = gr.State()
+        self.index = gr.State()
+        btn.click(fn=self.generate, inputs=[batch_count, positive_prompt, negative_prompt, width, height, batch_size, seed_c, steps_c, cfg_c,
+                                          sampler_name_c, scheduler_c, denoise_c, seed_b, steps_b, cfg_b, sampler_name_b, scheduler_b, denoise_b,
+                                          self.input_image], outputs=[output, self.data])
+        btn2.click(fn=post_interrupt, inputs=self.opt, outputs=None)
+        output.select(fn=get_gallery_index, inputs=None, outputs=[self.index])
 
 
 class SVD:
-    if Default.design_mode == 1:
-        enable = True
-    elif "svd_xt_1_1.safetensors" in Choices.ckpt_list:
-        enable = True
-    else:
-        enable = False
+    enable = False
+
+    def __init__(self, opt: Option, choices: Choices, postprocessor: Postprocess) -> None:
+        self.opt = opt
+        self.choices = choices
+        self.postprocessor = postprocessor
+
+        if "svd_xt_1_1.safetensors" in self.choices.ckpt_list:
+            self.enable = True
  
-    def generate(input_image, width, height, video_frames, motion_bucket_id, fps, augmentation_level, min_cfg, seed, steps, cfg, sampler_name, scheduler, denoise, fps2, lossless, quality, method, progress=gr.Progress()):
-        ckpt_name = Function.get_model_path("svd_xt_1_1.safetensors")
-        seed = Function.gen_seed(seed)
+    def generate(self, input_image, width, height, video_frames, motion_bucket_id, fps, augmentation_level, min_cfg, seed, steps, cfg, sampler_name, scheduler, denoise, fps2, lossless, quality, method, progress=gr.Progress()):
+        ckpt_name = get_model_path(self.choices.ckpt_list, "svd_xt_1_1.safetensors")
+        seed = gen_seed(seed)
         if input_image is None:
             return
         else:
-            input_image = Function.upload_image(input_image)
+            input_image = upload_image(self.opt, input_image)
         workflow = {
-"1": {"inputs": {"ckpt_name": ckpt_name}, "class_type": "ImageOnlyCheckpointLoader"},
-"2": {"inputs": {"image": input_image, "upload": "image"}, "class_type": "LoadImage"},
-"3": {"inputs": {"width": width, "height": height, "video_frames": video_frames, "motion_bucket_id": motion_bucket_id, "fps": fps, "augmentation_level": augmentation_level, "clip_vision": ["1", 1], "init_image": ["2", 0], "vae": ["1", 2]}, "class_type": "SVD_img2vid_Conditioning"},
-"4": {"inputs": {"min_cfg": min_cfg, "model": ["1", 0]}, "class_type": "VideoLinearCFGGuidance"},
-"5": {"inputs": {"seed": seed, "steps": steps, "cfg": cfg, "sampler_name": sampler_name, "scheduler": scheduler, "denoise": denoise, "model": ["4", 0], "positive": ["3", 0], "negative": ["3", 1], "latent_image": ["3", 2]}, "class_type": "KSampler"},
-"6": {"inputs": {"samples": ["5", 0], "vae": ["1", 2]}, "class_type": "VAEDecode"},
-"7": {"inputs": {"filename_prefix": "ComfyUI", "fps": fps2, "lossless": False, "quality": quality, "method": method, "images": ["6", 0]}, "class_type": "SaveAnimatedWEBP"}
-}
-        return Function.gen_image(workflow, 1, 1, progress)[1]
+            "1": {"inputs": {"ckpt_name": ckpt_name}, "class_type": "ImageOnlyCheckpointLoader"},
+            "2": {"inputs": {"image": input_image, "upload": "image"}, "class_type": "LoadImage"},
+            "3": {"inputs": {"width": width, "height": height, "video_frames": video_frames, "motion_bucket_id": motion_bucket_id, "fps": fps, "augmentation_level": augmentation_level, "clip_vision": ["1", 1], "init_image": ["2", 0], "vae": ["1", 2]}, "class_type": "SVD_img2vid_Conditioning"},
+            "4": {"inputs": {"min_cfg": min_cfg, "model": ["1", 0]}, "class_type": "VideoLinearCFGGuidance"},
+            "5": {"inputs": {"seed": seed, "steps": steps, "cfg": cfg, "sampler_name": sampler_name, "scheduler": scheduler, "denoise": denoise, "model": ["4", 0], "positive": ["3", 0], "negative": ["3", 1], "latent_image": ["3", 2]}, "class_type": "KSampler"},
+            "6": {"inputs": {"samples": ["5", 0], "vae": ["1", 2]}, "class_type": "VAEDecode"},
+            "7": {"inputs": {"filename_prefix": "ComfyUI", "fps": fps2, "lossless": False, "quality": quality, "method": method, "images": ["6", 0]}, "class_type": "SaveAnimatedWEBP"}
+            }
+        return gen_image(self.opt, workflow, 1, 1, progress)[1]
  
-    def blocks():
+    def blocks(self):
         with gr.Row():
             with gr.Column():
-                SVD.input_image = gr.Image(value=None, type="pil")
+                self.input_image = gr.Image(value=None, type="pil")
                 with gr.Tab(label="基础设置"):
                     with gr.Row():
                         width = gr.Slider(minimum=64, maximum=2048, step=64, label="Width | 图像宽度", value=512)
@@ -928,8 +940,8 @@ class SVD:
                             min_cfg = gr.Slider(minimum=0, maximum=20, step=0.5, label="Min CFG | 最小CFG权重", value=1)
                 with gr.Tab(label="采样设置"):
                     with gr.Row():
-                        sampler_name = gr.Dropdown(Choices.sampler, label="Sampling method | 采样方法", value=Choices.sampler[12])
-                        scheduler = gr.Dropdown(Choices.scheduler, label="Schedule type | 采样计划表类型", value=Choices.scheduler[1])
+                        sampler_name = gr.Dropdown(self.choices.sampler, label="Sampling method | 采样方法", value=self.choices.sampler[12])
+                        scheduler = gr.Dropdown(self.choices.scheduler, label="Schedule type | 采样计划表类型", value=self.choices.scheduler[1])
                     with gr.Row():
                         denoise = gr.Slider(minimum=0, maximum=1, step=0.05, label="Denoise | 去噪强度", value=1)
                         steps = gr.Slider(minimum=10, maximum=30, step=1, label="Sampling steps | 采样次数", value=20)
@@ -948,97 +960,112 @@ class SVD:
                     btn = gr.Button("Generate | 生成", elem_id="button")
                     btn2 = gr.Button("Interrupt | 终止")
                 output = gr.Image(height=600)
-        btn.click(fn=SVD.generate, inputs=[SVD.input_image, width, height, video_frames, motion_bucket_id, fps, augmentation_level, min_cfg, seed, steps, cfg, sampler_name, scheduler, denoise, fps2, lossless, quality, method], outputs=[output])
-        btn2.click(fn=Function.post_interrupt, inputs=None, outputs=None)
+        btn.click(fn=self.generate, inputs=[self.input_image, width, height, video_frames, motion_bucket_id, fps, augmentation_level,
+                                            min_cfg, seed, steps, cfg, sampler_name, scheduler, denoise, fps2, lossless, quality, method],
+                                            outputs=[output])
+        btn2.click(fn=post_interrupt, inputs=self.opt, outputs=None)
 
 
 class Extras:
-    def generate(initialized, input_image, progress=gr.Progress()):
+    def __init__(self, opt: Option, choices: Choices, postprocessor: Postprocess) -> None:
+        self.opt = opt
+        self.choices = choices
+        self.postprocessor = postprocessor
+
+    def generate(self, input_image, progress=gr.Progress()):
         module = "Extras"
         if input_image is None:
             return
         else:
-            input_image = Function.upload_image(input_image)
+            input_image = upload_image(self.opt, input_image)
         workflow = {}
         node_id = 1
         workflow[str(node_id)] = {"inputs": {"image": input_image, "upload": "image"}, "class_type": "LoadImage"}
         image_port = [str(node_id), 0]
-        if initialized is True:
-            if module not in Upscale.cache and module not in UpscaleWithModel.cache:
-                return
-            if module in Upscale.cache:
-                workflow, node_id, image_port = Upscale.add_node(module, workflow, node_id, image_port)
-            if module in UpscaleWithModel.cache:
-                workflow, node_id, image_port = UpscaleWithModel.add_node(module, workflow, node_id, image_port)
-        else:
+
+        if module not in self.postprocessor.upscale.cache and module not in self.postprocessor.upscal_model.cache:
             return
+        if module in self.postprocessor.upscale.cache:
+            workflow, node_id, image_port = self.postprocessor.upscale.add_node(module, workflow, node_id, image_port)
+        if module in self.postprocessor.upscal_model.cache:
+            workflow, node_id, image_port = self.postprocessor.upscal_model.add_node(module, workflow, node_id, image_port)
+
         node_id += 1
         workflow[str(node_id)] = {"inputs": {"filename_prefix": "ComfyUI", "images": image_port}, "class_type": "SaveImage"}
-        output = Function.gen_image(workflow, 1, 1, progress)[0]
+        output = gen_image(self.opt, workflow, 1, 1, progress)[0]
         if output is not None:
             output = output[0]
         return output
  
-    def blocks():
+    def blocks(self):
         with gr.Row():
             with gr.Column():
-                Extras.input_image = gr.Image(value=None, type="pil")
+                self.input_image = gr.Image(value=None, type="pil")
                 with gr.Row():
                     with gr.Tab(label="算术放大"):
-                        Upscale.blocks("Extras")
+                        self.postprocessor.upscale.blocks("Extras")
                 with gr.Row():
                     with gr.Tab(label="超分放大"):
-                        UpscaleWithModel.blocks("Extras")
+                        self.postprocessor.upscal_model.blocks("Extras")
                 gr.HTML("注意：同时启用两种放大模式将先执行算术放大，再执行超分放大，最终放大倍数为二者放大倍数的乘积！")
             with gr.Column():
                 with gr.Row():
                     btn = gr.Button("Generate | 生成", elem_id="button")
                     btn2 = gr.Button("Interrupt | 终止")
                 output = gr.Image(height=600)
-        btn.click(fn=Extras.generate, inputs=[Initial.initialized, Extras.input_image], outputs=[output])
-        btn2.click(fn=Function.post_interrupt, inputs=None, outputs=None)
+        btn.click(fn=self.generate, inputs=[self.input_image], outputs=[output])
+        btn2.click(fn=post_interrupt, inputs=self.opt, outputs=None)
 
 
 class Info:
-    def generate(image_info, progress=gr.Progress()):
+    def __init__(self, opt: Option, choices: Choices, postprocessor: Postprocess) -> None:
+        self.opt = opt
+        self.choices = choices
+        self.postprocessor = postprocessor
+
+    def generate(self, image_info, progress=gr.Progress()):
         if not image_info or image_info is None or image_info == "仅支持API工作流！！！" or "Version:" in image_info or image_info == "None":
             return
         workflow = json.loads(image_info)
-        return Function.gen_image(workflow, 1, 1, progress)[0]
+        return gen_image(self.opt, workflow, 1, 1, progress)[0]
  
-    def order_workflow(workflow):
+    def order_workflow(self, workflow):
         if workflow is None:
             return gr.update(visible=False, value=None)
+        
         workflow = json.loads(workflow)
         if "last_node_id" in workflow:
             return gr.update(show_label=False, visible=True, value="仅支持API工作流！！！", lines=1)
-        workflow = Function.order_workflow(workflow)
+        
+        workflow = order_workflow(workflow)
         lines = len(workflow) + 5
         workflow_string = "{"
+
         for node in workflow:
             workflow_string = workflow_string + "\n" + f'"{node}": {workflow[node]},'
         workflow_string = workflow_string + "\n}"
         workflow_string = workflow_string.replace(",\n}", "\n}")
         workflow_string = workflow_string.replace("'", '"')
+
         return gr.update(label="Ordered workflow_api", show_label=True, visible=True, value=workflow_string, lines=lines)
  
-    def get_image_info(image_pil):
+    def get_image_info(self, image_pil):
         if image_pil is None:
             return gr.update(visible=False, value=None)
         else:
-            image_info = Function.get_image_info(image_pil)
+            image_info = get_image_info(image_pil)
             if image_info == "None":
                 return gr.update(visible=False, value=None)
             if "Version:" in image_info:
                 return gr.update(label="Image info", show_label=True, visible=True, value=image_info, lines=3)
             return Info.order_workflow(image_info)
  
-    def hide_another_input(this_input):
+    def hide_another_input(self, this_input):
         if this_input is None:
             return gr.update(visible=True)
         return gr.update(visible=False)
  
-    def blocks():
+    def blocks(self):
         with gr.Row():
             with gr.Column():
                 Info.input_image = gr.Image(value=None, type="pil")
@@ -1049,42 +1076,58 @@ class Info:
                     btn = gr.Button("Generate | 生成", elem_id="button")
                     btn2 = gr.Button("Interrupt | 终止")
                 output = gr.Gallery(preview=True, height=600)
-        btn.click(fn=Info.generate, inputs=[image_info], outputs=[output])
-        btn2.click(fn=Function.post_interrupt, inputs=None, outputs=None)
-        Info.input_image.change(fn=Info.hide_another_input, inputs=[Info.input_image], outputs=[workflow])
-        Info.input_image.change(fn=Info.get_image_info, inputs=[Info.input_image], outputs=[image_info])
-        workflow.change(fn=Info.hide_another_input, inputs=[workflow], outputs=[Info.input_image])
-        workflow.change(fn=Info.order_workflow, inputs=[workflow], outputs=[image_info])
+        btn.click(fn=self.generate, inputs=[image_info], outputs=[output])
+        btn2.click(fn=post_interrupt, inputs=self.opt, outputs=None)
+
+        self.input_image.change(fn=self.hide_another_input, inputs=[self.input_image], outputs=[workflow])
+        self.input_image.change(fn=self.get_image_info, inputs=[self.input_image], outputs=[image_info])
+
+        workflow.change(fn=self.hide_another_input, inputs=[workflow], outputs=[self.input_image])
+        workflow.change(fn=self.order_workflow, inputs=[workflow], outputs=[image_info])
+
+
+opt = Option(config_path="/root/code/ComfyChat/server/config.ini")
+choices = Choices(opt)
+lora = Lora()
+upscale = Upscale()
+upscale_model = UpscaleWithModel()
+controlnet = ControlNet(opt)
+postprocessor = Postprocess(upscale, upscale_model)
+sd = SD(opt, choices, lora, controlnet, postprocessor)
+sc = SC(opt, choices, postprocessor)
+svd = SVD(opt, choices, postprocessor)
+extras = Extras(opt, choices, postprocessor)
+info = Info(opt, choices, postprocessor)
 
  
 with gr.Blocks(css="#button {background: #FFE1C0; color: #FF453A} .block.padded:not(.gradio-accordion) {padding: 0 !important;} div.form {border-width: 0; box-shadow: none; background: white; gap: 1.15em;}") as demo:
-    Initial.initialized = gr.Checkbox(value=False, visible=False)
+    # Initial.initialized = gr.Checkbox(value=False, visible=False)
     with gr.Tab(label="Stable Diffusion"):
-        SD.blocks()
-    if SC.enable is True:
+        sd.blocks(sc.enable, svd.enable)
+    if sc.enable is True:
         with gr.Tab(label="Stable Cascade"):
-            SC.blocks()
-    if SVD.enable is True:
+            sc.blocks(svd.enable)
+    if svd.enable is True:
         with gr.Tab(label="Stable Video Diffusion"):
-            SVD.blocks()
+            svd.blocks()
     with gr.Tab(label="Extras"):
-        Extras.blocks()
+        extras.blocks()
     with gr.Tab(label="Info"):
-        Info.blocks()
+        info.blocks()
     
-    SD.send_to_sd.click(fn=Function.send_to, inputs=[SD.data, SD.index], outputs=[SD.input_image])
-    if SC.enable is True:
-        SD.send_to_sc.click(fn=Function.send_to, inputs=[SD.data, SD.index], outputs=[SC.input_image])
-    if SVD.enable is True:
-        SD.send_to_svd.click(fn=Function.send_to, inputs=[SD.data, SD.index], outputs=[SVD.input_image])
-    SD.send_to_extras.click(fn=Function.send_to, inputs=[SD.data, SD.index], outputs=[Extras.input_image])
-    SD.send_to_info.click(fn=Function.send_to, inputs=[SD.data, SD.index], outputs=[Info.input_image])
-    if SC.enable is True:
-        SC.send_to_sd.click(fn=Function.send_to, inputs=[SC.data, SC.index], outputs=[SD.input_image])
-        SC.send_to_sc.click(fn=Function.send_to, inputs=[SC.data, SC.index], outputs=[SC.input_image])
-        if SVD.enable is True:
-            SC.send_to_svd.click(fn=Function.send_to, inputs=[SC.data, SC.index], outputs=[SVD.input_image])
-        SC.send_to_extras.click(fn=Function.send_to, inputs=[SC.data, SC.index], outputs=[Extras.input_image])
-        SC.send_to_info.click(fn=Function.send_to, inputs=[SC.data, SC.index], outputs=[Info.input_image])
+    sd.send_to_sd.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[sd.input_image])
+    if sc.enable is True:
+        sd.send_to_sc.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[sc.input_image])
+    if svd.enable is True:
+        sd.send_to_svd.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[svd.input_image])
+    sd.send_to_extras.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[extras.input_image])
+    sd.send_to_info.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[info.input_image])
+    if sc.enable is True:
+        sc.send_to_sd.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[sd.input_image])
+        sc.send_to_sc.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[sc.input_image])
+        if svd.enable is True:
+            sc.send_to_svd.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[svd.input_image])
+        sc.send_to_extras.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[extras.input_image])
+        sc.send_to_info.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[info.input_image])
  
 demo.queue().launch()
