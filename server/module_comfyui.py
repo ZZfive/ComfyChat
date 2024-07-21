@@ -209,8 +209,8 @@ def post_interrupt(opt: Option) -> None:
 
 
 # 给负向提示词中添加选择的embeddings
-def add_embedding(choices: Choices, embedding: List[str], negative_prompt: str) -> str:
-    for embed in choices.embedding:
+def add_embedding(all_embedding: List[str], embedding: List[str], negative_prompt: str) -> str:
+    for embed in all_embedding:
         negative_prompt = negative_prompt.replace(f"embedding:{embed},", "")  # 先去除字符串中可能已有的embedding
 
     negative_prompt = format_prompt(negative_prompt)
@@ -333,7 +333,7 @@ class Lora:
 
         if lora == []:
             self.cache[module] = {}
-            return True, [], gr.update(value="", visible=False)
+            return [], gr.update(value="", visible=False)
         
         # lora_weight中是已经构建好的lora特定格式的字符串
         lora_list = {}
@@ -347,9 +347,9 @@ class Lora:
         self.cache[module] = {}  # lora发生改变时，Lora.cache[module]都会重新赋值
         for i in lora:
             if i in lora_list:
-                weight = lora_list[i]
+                weight = lora_list[i]  # 复用之前lora的权重
             else:
-                weight = self.opt.lora_weight
+                weight = self.opt.lora_weight  # 使用默认权重
             if lora.index(i) == 0:
                 lora_weight = f"<{i}:{weight}>"
             else:
@@ -536,13 +536,13 @@ class ControlNet:
             image_port = [str(node_id), 0]
         node_id += 1
         workflow[str(node_id)] = {"inputs": {"images": image_port}, "class_type": "PreviewImage"}
-        output = gen_image(workflow, 1, 1, progress)[0]
+        output = gen_image(self.opt, workflow, 1, 1, progress)[0]
         if output is not None:
             output = output[0]
         return output
  
     def update_cache(self, module: str, unit_id: int, enable: bool, preprocessor: str, model: str, input_image: Image.Image,
-                     resolution: int, strength: float, start_percent: float, end_percent: float, choices: Choices) -> bool:
+                     resolution: int, strength: float, start_percent: float, end_percent: float) -> bool:
         if module not in self.cache:
             self.cache[module] = {}
 
@@ -552,13 +552,13 @@ class ControlNet:
             del self.cache[module][unit_id]
             return False
         
-        if model not in choices.controlnet_model:
+        if model not in self.choices.controlnet_model:
             del self.cache[module][unit_id]
             return False
         
         if enable is True:
             self.cache[module][unit_id]["preprocessor"] = preprocessor
-            self.cache[module][unit_id]["model"] = choices.controlnet_model_list[model]
+            self.cache[module][unit_id]["model"] = self.choices.controlnet_model_list[model]
             self.cache[module][unit_id]["input_image"] = upload_image(self.opt, input_image)
             self.cache[module][unit_id]["resolution"] = resolution
             self.cache[module][unit_id]["strength"] = strength
@@ -745,7 +745,7 @@ class SD:
                         if self.choices.lora != []:  # 当comfyui中有lora模型时前端界面才会初始对应模块
                             self.lora.blocks("SD")
                         if self.choices.embedding != []:
-                            all_embedding = gr.Dropdown(self.choices.embedding, visible=False)
+                            all_embedding = gr.Dropdown(choices=self.choices.embedding, value=self.choices.embedding, multiselect=True, visible=False)
                             embedding = gr.Dropdown(self.choices.embedding, label="Embedding", multiselect=True, interactive=True)
                             embedding.change(fn=add_embedding, inputs=[all_embedding, embedding, negative_prompt], outputs=[negative_prompt])
                     with gr.Row():
@@ -780,8 +780,8 @@ class SD:
         self.data = gr.State()
         self.index = gr.State()
         btn.click(fn=self.generate, inputs=[batch_count, ckpt_name, vae_name, clip_mode, clip_skip, width, height,
-                                          batch_size, negative_prompt, positive_prompt, seed, steps, cfg, sampler_name, scheduler,
-                                          denoise, self.input_image], outputs=[output, self.data])
+                                          batch_size, negative_prompt, positive_prompt, seed, steps, cfg, sampler_name,
+                                          scheduler, denoise, self.input_image], outputs=[output, self.data])
         btn2.click(fn=self.interrupt, inputs=None, outputs=None)
         output.select(fn=get_gallery_index, inputs=None, outputs=[self.index])
 
