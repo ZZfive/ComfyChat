@@ -18,9 +18,7 @@ from PIL import Image
 
 '''
 TODO
-1，部分初始参数独立出来，便与后续统一从配置中读取
 2，验证几个请求comfyui接口函数中都建立websocket连接的必要性
-3，验证cache中设置module作为key必要性
 4，简化后将功能进程到demo中
 
 '''
@@ -33,10 +31,11 @@ class Option:
         # comfyui服务相关配置
         self.comfyui_port = config["server"]["port"]
         self.comfyui_file = config["server"]["file"]
+        self.comfyui_dir = config["server"]["subdir"]
         self.server_address = "127.0.0.1:" + str(self.comfyui_port)
 
         # comfyui模块相关配置
-        self.design_mode = config["module"]["design_mode"]
+        # self.design_mode = config["module"]["design_mode"]
         self.lora_weight = config["module"]["lora_weight"]
         self.controlnet_num = config["module"]["controlnet_num"]
         self.controlnet_saveimage = config["module"]["controlnet_saveimage"]
@@ -44,14 +43,9 @@ class Option:
         self.negative_prompt = config["module"]["negative_prompt"]
         self.output_dir = config["module"]["output_dir"]
 
-        if self.design_mode == 1:
-            self.width = 64
-            self.hight = 64
-            self.steps = 2
-        else:
-            self.width = 512
-            self.hight = 768
-            self.steps = 20
+        self.width = 512
+        self.hight = 768
+        self.steps = 20
 
         self.client_id = str(uuid.uuid4())
         self.uploaded_image = {}
@@ -123,6 +117,7 @@ def format_prompt(prompt: str) -> str:
     prompt = re.sub(r" $", "", prompt)
     prompt = re.sub(r",$", "", prompt)
     prompt = re.sub(": ", ":", prompt)
+    
     return prompt
 
 
@@ -1108,48 +1103,49 @@ class Info:
         workflow.change(fn=self.order_workflow, inputs=[workflow], outputs=[image_info])
 
 
-opt = Option(config_path="/root/code/ComfyChat/server/config.ini")
-choices = Choices(opt)
-lora = Lora(opt, choices)
-upscale = Upscale(choices)
-upscale_model = UpscaleWithModel(choices)
-controlnet = ControlNet(opt, choices)
-postprocessor = Postprocess(upscale, upscale_model)
-sd = SD(opt, choices, lora, controlnet, postprocessor)
-sc = SC(opt, choices, postprocessor)
-svd = SVD(opt, choices, postprocessor)
-extras = Extras(opt, choices, postprocessor)
-info = Info(opt, choices, postprocessor)
+if __name__ == '__main__':
+    opt = Option(config_path="/root/code/ComfyChat/server/config.ini")
+    choices = Choices(opt)
+    lora = Lora(opt, choices)
+    upscale = Upscale(choices)
+    upscale_model = UpscaleWithModel(choices)
+    controlnet = ControlNet(opt, choices)
+    postprocessor = Postprocess(upscale, upscale_model)
+    sd = SD(opt, choices, lora, controlnet, postprocessor)
+    sc = SC(opt, choices, postprocessor)
+    svd = SVD(opt, choices, postprocessor)
+    extras = Extras(opt, choices, postprocessor)
+    info = Info(opt, choices, postprocessor)
 
- 
-with gr.Blocks(css="#button {background: #FFE1C0; color: #FF453A} .block.padded:not(.gradio-accordion) {padding: 0 !important;} div.form {border-width: 0; box-shadow: none; background: white; gap: 1.15em;}") as demo:
-    # Initial.initialized = gr.Checkbox(value=False, visible=False)
-    with gr.Tab(label="Stable Diffusion"):
-        sd.blocks(sc.enable, svd.enable)
-    if sc.enable is True:
-        with gr.Tab(label="Stable Cascade"):
-            sc.blocks(svd.enable)
-    if svd.enable is True:
-        with gr.Tab(label="Stable Video Diffusion"):
-            svd.blocks()
-    with gr.Tab(label="Extras"):
-        extras.blocks()
-    with gr.Tab(label="Info"):
-        info.blocks()
     
-    sd.send_to_sd.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[sd.input_image])
-    if sc.enable is True:
-        sd.send_to_sc.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[sc.input_image])
-    if svd.enable is True:
-        sd.send_to_svd.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[svd.input_image])
-    sd.send_to_extras.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[extras.input_image])
-    sd.send_to_info.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[info.input_image])
-    if sc.enable is True:
-        sc.send_to_sd.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[sd.input_image])
-        sc.send_to_sc.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[sc.input_image])
+    with gr.Blocks(css="#button {background: #FFE1C0; color: #FF453A} .block.padded:not(.gradio-accordion) {padding: 0 !important;} div.form {border-width: 0; box-shadow: none; background: white; gap: 1.15em;}") as demo:
+        # Initial.initialized = gr.Checkbox(value=False, visible=False)
+        with gr.Tab(label="Stable Diffusion"):
+            sd.blocks(sc.enable, svd.enable)
+        if sc.enable is True:
+            with gr.Tab(label="Stable Cascade"):
+                sc.blocks(svd.enable)
         if svd.enable is True:
-            sc.send_to_svd.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[svd.input_image])
-        sc.send_to_extras.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[extras.input_image])
-        sc.send_to_info.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[info.input_image])
- 
-demo.queue().launch()
+            with gr.Tab(label="Stable Video Diffusion"):
+                svd.blocks()
+        with gr.Tab(label="Extras"):
+            extras.blocks()
+        with gr.Tab(label="Info"):
+            info.blocks()
+        
+        sd.send_to_sd.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[sd.input_image])
+        if sc.enable is True:
+            sd.send_to_sc.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[sc.input_image])
+        if svd.enable is True:
+            sd.send_to_svd.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[svd.input_image])
+        sd.send_to_extras.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[extras.input_image])
+        sd.send_to_info.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[info.input_image])
+        if sc.enable is True:
+            sc.send_to_sd.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[sd.input_image])
+            sc.send_to_sc.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[sc.input_image])
+            if svd.enable is True:
+                sc.send_to_svd.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[svd.input_image])
+            sc.send_to_extras.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[extras.input_image])
+            sc.send_to_info.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[info.input_image])
+    
+    demo.queue().launch()

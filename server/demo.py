@@ -10,11 +10,16 @@ import os
 # os.environ["HF_HOME"] = r"D:\cache"
 # os.environ["HUGGINGFACE_HUB_CACHE"] = r"D:\cache"
 # os.environ["TRANSFORMERS_CACHE"] = r"D:\cache"
+server_dir = os.path.dirname(__file__)
+parent_dir =  os.path.abspath(os.path.join(server_dir, '..'))
 import sys
-sys.path.append('/root/code/ComfyChat')
+sys.path.insert(0, parent_dir)
+
 import time
 import random
+import socket
 import argparse
+import threading
 from typing import List, Tuple, Generator, Dict, Any
 
 import torch
@@ -30,6 +35,7 @@ from retriever import CacheRetriever
 # from audio.ChatTTS import ChatTTS
 from audio.gptsovits import get_tts_wav, default_gpt_path, default_sovits_path, set_gpt_weights, set_sovits_weights
 from prompt_templates import PROMPT_TEMPLATE, RAG_PROMPT_TEMPLATE, ANSWER_NO_RAG_TEMPLATE, ANSWER_RAG_TEMPLATE, ANSWER_LLM_TEMPLATE
+from module_comfyui import Option, Choices, Lora, Upscale, UpscaleWithModel, ControlNet, Postprocess, SD, SC, SVD, Extras, Info, send_to
 
 # 参数设置
 parser = argparse.ArgumentParser(description='ComfyChat Server.')
@@ -72,6 +78,57 @@ else:
 # # chattts实例初始化
 # chattts_model = ChatTTS.Chat()
 # chattts_model.load(compile=False, source='huggingface')
+
+# ComfyUI组件初始化
+if config['comfyui']['enable'] == 1:
+    opt = Option(config_path=args.config_path)
+
+    comfyui_dir = os.path.join(parent_dir, opt.comfyui_dir)
+    comfyui_main_file = os.path.join(parent_dir, opt.comfyui_file)
+    comfyui_main_port = opt.comfyui_port
+    sys.path.append(comfyui_dir)
+
+    def start_comfyui(script_path, port, event):
+        # 启动服务的函数，例如使用 subprocess 启动服务
+        import subprocess
+        # 示例命令，替换为实际命令
+        cmd = f'python {script_path} --port {port}'
+        process = subprocess.Popen(cmd, shell=True)
+        
+        # 等待服务启动
+        while True:
+            try:
+                with socket.create_connection(("localhost", port), timeout=1):
+                    break
+            except OSError:
+                time.sleep(0.5)
+
+        # 服务启动后设置事件
+        event.set()
+
+    service_started_event = threading.Event()
+    thread = threading.Thread(target=start_comfyui, args=(comfyui_main_file, comfyui_main_port, service_started_event))
+    thread.setDaemon(True)
+    thread.start()
+    # 等待服务启动完成
+    service_started_event.wait()
+
+    choices = Choices(opt)
+    lora = Lora(opt, choices)
+    upscale = Upscale(choices)
+    upscale_model = UpscaleWithModel(choices)
+    controlnet = ControlNet(opt, choices)
+    postprocessor = Postprocess(upscale, upscale_model)
+    sd = SD(opt, choices, lora, controlnet, postprocessor)
+    sc = SC(opt, choices, postprocessor)
+    svd = SVD(opt, choices, postprocessor)
+    extras = Extras(opt, choices, postprocessor)
+    info = Info(opt, choices, postprocessor)
+
+    # 用于加载comfyui界面
+    html_code = f"""
+    <iframe src="http://127.0.0.1:{comfyui_main_port}" width="100%" height="1000px"></iframe>
+    """
 
 
 def generate_answer(prompt: str, history: list, lang: str = 'en', backend: str = 'remote', use_rag: bool = False) -> str:
@@ -169,7 +226,7 @@ def toggle_tts_components(selected_option: str) -> Any:
     
 
 def toggle_comfyui(show: bool) -> Any:
-    return (gr.update(visible=not show), gr.update(visible=not show), gr.update(visible=show))
+    return (gr.update(visible=not show), gr.update(visible=show))
     
 
 # 使用GPT-SoVITS时随着克隆对象的变化设置对应参数  # TODO 下载合适的角色音频文件替换
@@ -224,16 +281,6 @@ def chatbot_selected2tts(evt: gr.SelectData, use_tts: bool, tts_model: str, chat
             return results
     else:
         return (None, None)
-    
-
-# 用于加载comfyui界面
-html_code = """
-<iframe src="http://127.0.0.1:8188" width="100%" height="1000px"></iframe>
-"""
-
-
-def load_html():
-    return html_code
 
 
 with gr.Blocks() as demo:
@@ -281,17 +328,43 @@ with gr.Blocks() as demo:
 
             # 添加 Chatbot.select 事件监听器
             chatbot.select(chatbot_selected2tts, inputs=[use_tts, tts_model, chattts_audio_seed, lang, cut_punc, gpt_path,
-                                                        sovits_path, ref_wav_path, prompt_text, prompt_language], outputs=out_audio)
-    with gr.Tab("ComfyUI for generating"):
-        turn_on_comfyui = gr.Checkbox(label="Tutn on ComfyUI", info="Switch the default raw image interface to ComfyUI GUI")
-        with gr.Tab("Normal Text2Img") as txt2img:
-            prompt = gr.Textbox()
-        with gr.Tab("Normal Img2Img") as img2img:
-            prompt = gr.Textbox()
-            image = gr.Image()
-        comfyui_gui = gr.HTML(html_code, visible=False)
+                                                         sovits_path, ref_wav_path, prompt_text, prompt_language], outputs=out_audio)
+    if config['comfyui']['enable'] == 1:
+        with gr.Tab("ComfyUI for generating"):
+            turn_on_comfyui = gr.Checkbox(label="Tutn on ComfyUI", info="Switch the default raw image interface to ComfyUI GUI")
+            with gr.Group() as fixed_workflow:
+                with gr.Blocks():
+                    # Initial.initialized = gr.Checkbox(value=False, visible=False)
+                    with gr.Tab(label="Stable Diffusion"):
+                        sd.blocks(sc.enable, svd.enable)
+                    if sc.enable is True:
+                        with gr.Tab(label="Stable Cascade"):
+                            sc.blocks(svd.enable)
+                    if svd.enable is True:
+                        with gr.Tab(label="Stable Video Diffusion"):
+                            svd.blocks()
+                    with gr.Tab(label="Extras"):
+                        extras.blocks()
+                    with gr.Tab(label="Info"):
+                        info.blocks()
+                    
+                    sd.send_to_sd.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[sd.input_image])
+                    if sc.enable is True:
+                        sd.send_to_sc.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[sc.input_image])
+                    if svd.enable is True:
+                        sd.send_to_svd.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[svd.input_image])
+                    sd.send_to_extras.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[extras.input_image])
+                    sd.send_to_info.click(fn=send_to, inputs=[sd.data, sd.index], outputs=[info.input_image])
+                    if sc.enable is True:
+                        sc.send_to_sd.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[sd.input_image])
+                        sc.send_to_sc.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[sc.input_image])
+                        if svd.enable is True:
+                            sc.send_to_svd.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[svd.input_image])
+                        sc.send_to_extras.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[extras.input_image])
+                        sc.send_to_info.click(fn=send_to, inputs=[sc.data, sc.index], outputs=[info.input_image])
+            comfyui_gui = gr.HTML(html_code, visible=False)
 
-        turn_on_comfyui.change(toggle_comfyui, inputs=turn_on_comfyui, outputs=[txt2img, img2img, comfyui_gui])
+            turn_on_comfyui.change(toggle_comfyui, inputs=turn_on_comfyui, outputs=[fixed_workflow, comfyui_gui])
 
 demo.queue()
 demo.launch(server_name="0.0.0.0")
