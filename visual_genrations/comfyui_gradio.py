@@ -15,15 +15,6 @@ import websocket
 from collections import OrderedDict, deque
 from PIL import Image
 
-'''
-TODO
-1，部分初始参数独立出来，便与后续统一从配置中读取
-2，验证几个请求comfyui接口函数中都建立websocket连接的必要性
-3，验证cache中设置module作为key必要性
-4，简化后将功能进程到demo中
-
-'''
-
 
 # 各参数默认值
 class Default:
