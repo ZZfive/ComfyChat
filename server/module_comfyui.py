@@ -4,8 +4,10 @@ import re
 import sys
 import uuid
 import json
+import time
+import socket
 import random
-import subprocess
+import threading
 from collections import OrderedDict, deque
 from typing import Dict, Tuple, List, Callable
 
@@ -16,11 +18,12 @@ import urllib.parse
 import gradio as gr
 from PIL import Image
 
+server_dir = os.path.dirname(__file__)
+parent_dir =  os.path.abspath(os.path.join(server_dir, '..'))
+
 '''
 TODO
 2，验证几个请求comfyui接口函数中都建立websocket连接的必要性
-4，简化后将功能进程到demo中
-
 '''
 
 
@@ -60,11 +63,11 @@ class Option:
 # 获取前端页面展示需要的所有内容
 class Choices:
     def __init__(self, opt: Option) -> None:
-        ws = websocket.WebSocket()
-        ws.connect("ws://{}/ws?clientId={}".format(opt.server_address, opt.client_id))  # 与comfyui中的websocket建立连接
+        # ws = websocket.WebSocket()
+        # ws.connect("ws://{}/ws?clientId={}".format(opt.server_address, opt.client_id))  # 与comfyui中的websocket建立连接
         self.object_info = requests.get(url="http://{}/object_info".format(opt.server_address)).json()  # 获取comfyui中所有节点
         self.embedding = requests.get(url="http://{}/embeddings".format(opt.server_address)).json()  # 获取comfyui中所有embeddings
-        ws.close()
+        # ws.close()
 
         self.ckpt = []  # 基模型名称，用于前端展示
         self.ckpt_list = {}  # 基模型名称与具体路径列表
@@ -121,7 +124,7 @@ def format_prompt(prompt: str) -> str:
     return prompt
 
 
- # 设置基模型
+# 设置基模型
 def get_model_path(ckpt_list: List[str], model_name: str) -> str:
     return ckpt_list[model_name]
 
@@ -148,10 +151,10 @@ def upload_image(opt: Option, image: Image.Image) -> str:
     opt.uploaded_image[image_hash] = image_name
     image_file = {"image": (image_name, image)}
 
-    ws = websocket.WebSocket()
-    ws.connect("ws://{}/ws?clientId={}".format(opt.server_address, opt.client_id))
+    # ws = websocket.WebSocket()
+    # ws.connect("ws://{}/ws?clientId={}".format(opt.server_address, opt.client_id))
     requests.post(url="http://{}/upload/image".format(opt.server_address), files=image_file)
-    ws.close()
+    # ws.close()
 
     return image_name
 
@@ -202,10 +205,10 @@ def order_workflow(workflow: Dict):
 # 中断任务
 def post_interrupt(opt: Option) -> None:
     opt.interrupt = True
-    ws = websocket.WebSocket()
-    ws.connect("ws://{}/ws?clientId={}".format(opt.server_address, opt.client_id))
+    # ws = websocket.WebSocket()
+    # ws.connect("ws://{}/ws?clientId={}".format(opt.server_address, opt.client_id))
     requests.post(url="http://{}/interrupt".format(opt.server_address))
-    ws.close()
+    # ws.close()
 
 
 # 给负向提示词中添加选择的embeddings
@@ -287,7 +290,7 @@ def get_gallery_index(evt: gr.SelectData) -> int | tuple[int, int]:
 
 # 获取图片中的工作流
 def get_image_info(image_pil: Image.Image) -> List | str:
-    image_info=[]
+    image_info = []
     if image_pil is None:
         return
     for key, value in image_pil.info.items():
@@ -357,14 +360,16 @@ class Lora:
             if weight != "":
                 weight = float(weight)
             self.cache[module][i] = weight
+
         return gr.update(), gr.update(value=lora_weight, visible=True)
  
     def blocks(self, module: str) -> None:
         module = gr.Textbox(value=module, visible=False)  # 作为Lora.cache中的一个key
         lora = gr.Dropdown(self.choices.lora, label="Lora", multiselect=True, interactive=True)
-        lora_weight = gr.Textbox(label="Lora weight | Lora 权重", visible=False)
-        for gr_block in [lora, lora_weight]:  # 感觉此处对lora_weight改变为用，其就是基于lora来改变的  TODO 待验证
-            gr_block.change(fn=self.update_cache, inputs=[module, lora, lora_weight], outputs=[lora, lora_weight])
+        lora_weight = gr.Textbox(label="Lora weight | Lora 权重", visible=False, interactive=False)
+        # for gr_block in [lora, lora_weight]:  # 感觉此处对lora_weight改变为用，其就是基于lora来改变的  TODO 待验证
+        #     gr_block.change(fn=self.update_cache, inputs=[module, lora, lora_weight], outputs=[lora, lora_weight])
+        lora.change(fn=self.update_cache, inputs=[module, lora, lora_weight], outputs=[lora, lora_weight])
 
 
 class Upscale:
@@ -456,13 +461,13 @@ class ControlNet:
             "control_v11e_sd15_ip2p.safetensors": [],
             "control_v11e_sd15_shuffle.safetensors": ["ShufflePreprocessor"],
             "control_v11f1e_sd15_tile.bin": ["TilePreprocessor", "TTPlanet_TileGF_Preprocessor", "TTPlanet_TileSimple_Preprocessor"],
-            "control_v11f1p_sd15_depth.safetensors": ["DepthAnythingPreprocessor", "LeReS-DepthMapPreprocessor", "MiDaS-NormalMapPreprocessor", "MeshGraphormer-DepthMapPreprocessor", "MeshGraphormer+ImpactDetector-DepthMapPreprocessor", "MiDaS-DepthMapPreprocessor", "Zoe_DepthAnythingPreprocessor", "Zoe-DepthMapPreprocessor"],
-            "control_v11p_sd15_canny.safetensors": ["Canny", "CannyEdgePreprocessor"],
+            "control_v11f1p_sd15_depth_fp16.safetensors": ["DepthAnythingPreprocessor", "LeReS-DepthMapPreprocessor", "MiDaS-NormalMapPreprocessor", "MeshGraphormer-DepthMapPreprocessor", "MeshGraphormer+ImpactDetector-DepthMapPreprocessor", "MiDaS-DepthMapPreprocessor", "Zoe_DepthAnythingPreprocessor", "Zoe-DepthMapPreprocessor"],
+            "control_v11p_sd15_canny_fp16.safetensors": ["Canny", "CannyEdgePreprocessor"],
             "control_v11p_sd15_inpaint.safetensors": [],
             "control_v11p_sd15_lineart.safetensors": ["LineArtPreprocessor", "LineartStandardPreprocessor"],
             "control_v11p_sd15_mlsd.safetensors": ["M-LSDPreprocessor"],
             "control_v11p_sd15_normalbae.safetensors": ["BAE-NormalMapPreprocessor", "DSINE-NormalMapPreprocessor"],
-            "control_v11p_sd15_openpose.safetensors": ["DWPreprocessor", "OpenposePreprocessor", "DensePosePreprocessor"],
+            "control_v11p_sd15_openpose_fp16.safetensors": ["DWPreprocessor", "OpenposePreprocessor", "DensePosePreprocessor"],
             "control_v11p_sd15_scribble.safetensors": ["ScribblePreprocessor", "Scribble_XDoG_Preprocessor", "Scribble_PiDiNet_Preprocessor", "FakeScribblePreprocessor"],
             "control_v11p_sd15_seg.safetensors": ["AnimeFace_SemSegPreprocessor", "OneFormer-COCO-SemSegPreprocessor", "OneFormer-ADE20K-SemSegPreprocessor", "SemSegPreprocessor", "UniFormer-SemSegPreprocessor"],
             "control_v11p_sd15_softedge.safetensors": ["HEDPreprocessor", "PiDiNetPreprocessor", "TEEDPreprocessor", "DiffusionEdge_Preprocessor"],
@@ -494,7 +499,7 @@ class ControlNet:
                 node_id += 1
                 workflow[str(node_id)] = {"inputs": {"preprocessor": preprocessor, "resolution": resolution, "image": image_port}, "class_type": "AIO_Preprocessor"}
                 image_port = [str(node_id), 0]
-            if counter == 1 and self.controlnet_saveimage == 1:
+            if counter == 1 and self.opt.controlnet_saveimage == 1:
                 node_id += 1
                 workflow[str(node_id)] = {"inputs": {"filename_prefix": "ControlNet", "images": image_port}, "class_type": "SaveImage"}
             node_id += 1
@@ -521,6 +526,7 @@ class ControlNet:
                    resolution: int, progress: Callable = gr.Progress()) -> None | List[Image.Image]:
         if preview is False or input_image is None:
             return
+        
         input_image = upload_image(self.opt, input_image)
         workflow = {}
         node_id = 1
@@ -577,7 +583,7 @@ class ControlNet:
             preview = gr.Checkbox(label="Preview")
         with gr.Row():
             preprocessor = gr.Dropdown(self.choices.preprocessor, label="Preprocessor", value="Canny")
-            model = gr.Dropdown(self.choices.controlnet_model, label="ControlNet model", value="control_v11p_sd15_canny.safetensors")
+            model = gr.Dropdown(self.choices.controlnet_model, label="ControlNet model", value="control_v11p_sd15_canny_fp16.safetensors")
         with gr.Row():
             input_image = gr.Image(type="pil")
             preprocess_preview = gr.Image(label="Preprocessor preview")
@@ -587,10 +593,13 @@ class ControlNet:
         with gr.Row():
             start_percent = gr.Slider(label="Start percent", minimum=0, maximum=1, step=0.01, value=0)
             end_percent = gr.Slider(label="End percent", minimum=0, maximum=1, step=0.01, value=1)
+
         input_image.upload(fn=self.auto_enable, inputs=None, outputs=[enable])
         preprocessor.change(fn=self.auto_select_model, inputs=[preprocessor], outputs=[model])
+
         for gr_block in [preview, preprocessor, input_image]:
             gr_block.change(fn=self.preprocess, inputs=[unit_id, preview, preprocessor, input_image, resolution], outputs=[preprocess_preview])
+        
         inputs = [module, unit_id, enable, preprocessor, model, input_image, resolution, strength, start_percent, end_percent]
         for gr_block in inputs:
             if type(gr_block) is gr.components.slider.Slider:
@@ -768,7 +777,7 @@ class SD:
                 with gr.Row():
                     btn = gr.Button("Generate | 生成", elem_id="button")
                     btn2 = gr.Button("Interrupt | 终止")
-                output = gr.Gallery(preview=True, height=600)
+                output = gr.Gallery(preview=True, height=600, format='png', type='pil')
                 with gr.Row():
                     self.send_to_sd = gr.Button("发送图片至 SD")
                     if sc_enable is True:
@@ -1075,7 +1084,7 @@ class Info:
                 return gr.update(visible=False, value=None)
             if "Version:" in image_info:
                 return gr.update(label="Image info", show_label=True, visible=True, value=image_info, lines=3)
-            return Info.order_workflow(image_info)
+            return self.order_workflow(image_info)
  
     def hide_another_input(self, this_input):
         if this_input is None:
@@ -1085,7 +1094,7 @@ class Info:
     def blocks(self):
         with gr.Row():
             with gr.Column():
-                self.input_image = gr.Image(value=None, type="pil")
+                self.input_image = gr.Image(format='png', type="pil")
                 workflow = gr.File(label="workflow_api.json", file_types=[".json"], type="binary")
                 image_info = gr.Textbox(visible=False)
             with gr.Column():
@@ -1096,15 +1105,46 @@ class Info:
         btn.click(fn=self.generate, inputs=[image_info], outputs=[output])
         btn2.click(fn=self.interrupt, inputs=None, outputs=None)
 
-        self.input_image.change(fn=self.hide_another_input, inputs=[self.input_image], outputs=[workflow])
-        self.input_image.change(fn=self.get_image_info, inputs=[self.input_image], outputs=[image_info])
+        self.input_image.change(fn=self.hide_another_input, inputs=[self.input_image], outputs=[workflow]).then(fn=self.get_image_info, inputs=[self.input_image], outputs=[image_info])
+        # self.input_image.change(fn=self.get_image_info, inputs=[self.input_image], outputs=[image_info])
 
-        workflow.change(fn=self.hide_another_input, inputs=[workflow], outputs=[self.input_image])
-        workflow.change(fn=self.order_workflow, inputs=[workflow], outputs=[image_info])
+        workflow.change(fn=self.hide_another_input, inputs=[workflow], outputs=[self.input_image]).then(fn=self.order_workflow, inputs=[workflow], outputs=[image_info])
+        # workflow.change(fn=self.order_workflow, inputs=[workflow], outputs=[image_info])
 
 
 if __name__ == '__main__':
     opt = Option(config_path="/root/code/ComfyChat/server/config.ini")
+
+    comfyui_dir = os.path.join(parent_dir, opt.comfyui_dir)
+    comfyui_main_file = os.path.join(parent_dir, opt.comfyui_file)
+    comfyui_main_port = opt.comfyui_port
+    sys.path.append(comfyui_dir)
+
+    def start_comfyui(script_path, port, event):
+        # 启动服务的函数，例如使用 subprocess 启动服务
+        import subprocess
+        # 示例命令，替换为实际命令
+        cmd = f'python {script_path} --port {port}'
+        process = subprocess.Popen(cmd, shell=True)
+        
+        # 等待服务启动
+        while True:
+            try:
+                with socket.create_connection(("localhost", port), timeout=1):
+                    break
+            except OSError:
+                time.sleep(0.5)
+
+        # 服务启动后设置事件
+        event.set()
+
+    service_started_event = threading.Event()
+    thread = threading.Thread(target=start_comfyui, args=(comfyui_main_file, comfyui_main_port, service_started_event))
+    thread.setDaemon(True)
+    thread.start()
+    # 等待服务启动完成
+    service_started_event.wait()
+
     choices = Choices(opt)
     lora = Lora(opt, choices)
     upscale = Upscale(choices)
