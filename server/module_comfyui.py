@@ -21,11 +21,6 @@ from PIL import Image
 server_dir = os.path.dirname(__file__)
 parent_dir =  os.path.abspath(os.path.join(server_dir, '..'))
 
-'''
-TODO
-2，验证几个请求comfyui接口函数中都建立websocket连接的必要性
-'''
-
 
 class Option:
     def __init__(self, config_path: str) -> None:
@@ -160,7 +155,7 @@ def upload_image(opt: Option, image: Image.Image) -> str:
 
 
 # 构建工作流
-def order_workflow(workflow: Dict):
+def order_workflow(workflow: Dict) -> Dict:
     link_list = {}
     for node in workflow:
         node_link = []
@@ -330,7 +325,7 @@ class Lora:
             clip_port = [str(node_id), 1]
         return workflow, node_id, model_port, clip_port
  
-    def update_cache(self, module: str, lora: str, lora_weight: str):
+    def update_cache(self, module: str, lora: str, lora_weight: str) -> Tuple[str, str]:
         # if self.initialized is False:
         #     self.cache = {}
 
@@ -385,7 +380,7 @@ class Upscale:
         image_port = [str(node_id), 0]
         return workflow, node_id, image_port
  
-    def auto_enable(self, scale_by: int):
+    def auto_enable(self, scale_by: int) -> bool:
         if scale_by > 1:
             return True
         else:
@@ -479,7 +474,7 @@ class ControlNet:
         }
  
     def add_node(self, module: str, counter: int, workflow: Dict, node_id: int, positive_port: int, negative_port: int) -> Tuple[Dict, int, int, int]:
-        for unit_id in self.cache[module]:
+        for unit_id in self.cache[module]:  # 因为同时可能设置多个controlnet unit
             preprocessor = self.cache[module][unit_id]["preprocessor"]
             model = self.cache[module][unit_id]["model"]
             input_image = self.cache[module][unit_id]["input_image"]
@@ -527,7 +522,7 @@ class ControlNet:
         if preview is False or input_image is None:
             return
         
-        input_image = upload_image(self.opt, input_image)
+        input_image = upload_image(self.opt, input_image)  # 预处理器需要将图片上传至comfyui项目下的input路径
         workflow = {}
         node_id = 1
         workflow[str(node_id)] = {"inputs": {"image": input_image, "upload": "image"}, "class_type": "LoadImage"}
@@ -552,13 +547,13 @@ class ControlNet:
         if module not in self.cache:
             self.cache[module] = {}
 
-        self.cache[module][unit_id] = {}
+        self.cache[module][unit_id] = {}  # 本质就是当前unit从新构建一个缓存对象
 
-        if input_image is None:
+        if input_image is None:  # 图片为空，删除当前unit缓存对象
             del self.cache[module][unit_id]
             return False
         
-        if model not in self.choices.controlnet_model:
+        if model not in self.choices.controlnet_model:  # 如果controlnet模型不被支持，删除当前unit缓存对象
             del self.cache[module][unit_id]
             return False
         
@@ -599,6 +594,7 @@ class ControlNet:
 
         for gr_block in [preview, preprocessor, input_image]:
             gr_block.change(fn=self.preprocess, inputs=[unit_id, preview, preprocessor, input_image, resolution], outputs=[preprocess_preview])
+        # preview.change(fn=self.preprocess, inputs=[unit_id, preview, preprocessor, input_image, resolution], outputs=[preprocess_preview])
         
         inputs = [module, unit_id, enable, preprocessor, model, input_image, resolution, strength, start_percent, end_percent]
         for gr_block in inputs:
@@ -607,7 +603,7 @@ class ControlNet:
             else:
                 gr_block.change(fn=self.update_cache, inputs=inputs, outputs=enable)
  
-    def blocks(self, module):
+    def blocks(self, module: str) -> None:
         with gr.Tab(label="控制网络"):
             if self.opt.controlnet_num == 1:
                 self.unit(module, 1)
@@ -655,8 +651,8 @@ class SD:
         self.controlnet = controlnet
         self.postprocessor = postprocessor
 
-    def generate(self, batch_count, ckpt_name, vae_name, clip_mode, clip_skip, width, height, batch_size, negative_prompt,
-                 positive_prompt, seed, steps, cfg, sampler_name, scheduler, denoise, input_image, progress=gr.Progress()):
+    def generate(self, batch_count: int, ckpt_name: str, vae_name: str, clip_mode: str, clip_skip: int, width: int, height: int, batch_size: int, negative_prompt: str,
+                 positive_prompt: str, seed: int, steps: int, cfg: float, sampler_name: str, scheduler: str, denoise: float, input_image: Image.Image, progress=gr.Progress()) -> Tuple[List[Image.Image], List[Image.Image]]:
         module = "SD"
         ckpt_name = get_model_path(self.choices.ckpt_list, ckpt_name)
         seed = gen_seed(seed)
@@ -727,10 +723,10 @@ class SD:
             counter += 1
         return output_images, output_images
  
-    def interrupt(self):
+    def interrupt(self) -> None:
         post_interrupt(self.opt)
     
-    def blocks(self, sc_enable: bool, svd_enable: bool):
+    def blocks(self, sc_enable: bool, svd_enable: bool) -> None:
         with gr.Row():
             with gr.Column():
                 positive_prompt = gr.Textbox(placeholder="Positive prompt | 正向提示词", show_label=False, value=self.opt.prompt, lines=3)
@@ -806,7 +802,9 @@ class SC:
         if "stable_cascade_stage_c.safetensors" in self.choices.ckpt_list and "stable_cascade_stage_b.safetensors" in self.choices.ckpt_list:
             self.enable = True
  
-    def generate(self, batch_count, positive_prompt, negative_prompt, width, height, batch_size, seed_c, steps_c, cfg_c, sampler_name_c, scheduler_c, denoise_c, seed_b, steps_b, cfg_b, sampler_name_b, scheduler_b, denoise_b, input_image, progress=gr.Progress()):
+    def generate(self, batch_count: int, positive_prompt: str, negative_prompt: str, width: int, height: int, batch_size: int, seed_c: int, steps_c: int,
+                 cfg_c: float, sampler_name_c: str, scheduler_c: str, denoise_c: float, seed_b: int, steps_b: int, cfg_b: float, sampler_name_b: str, scheduler_b: str, denoise_b: float,
+                 input_image: Image.Image, progress=gr.Progress()) -> Tuple[List[Image.Image], List[Image.Image]]:
         module = "SC"
         ckpt_name_c = get_model_path(self.choices.ckpt_list, "stable_cascade_stage_c.safetensors")
         ckpt_name_b = get_model_path(self.choices.ckpt_list, "stable_cascade_stage_b.safetensors")
@@ -849,10 +847,10 @@ class SC:
             counter += 1
         return output_images, output_images
     
-    def interrupt(self):
+    def interrupt(self) -> None:
         post_interrupt(self.opt)
  
-    def blocks(self, svd_enable):
+    def blocks(self, svd_enable: bool) -> None:
         with gr.Row():
             with gr.Column():
                 positive_prompt = gr.Textbox(placeholder="Positive prompt | 正向提示词", show_label=False, value=self.opt.prompt, lines=3)
@@ -920,7 +918,8 @@ class SVD:
         if "svd_xt_1_1.safetensors" in self.choices.ckpt_list:
             self.enable = True
  
-    def generate(self, input_image, width, height, video_frames, motion_bucket_id, fps, augmentation_level, min_cfg, seed, steps, cfg, sampler_name, scheduler, denoise, fps2, lossless, quality, method, progress=gr.Progress()):
+    def generate(self, input_image: Image.Image, width: int, height: int, video_frames: int, motion_bucket_id: int, fps: int, augmentation_level: int, min_cfg: float, seed: int,
+                 steps: int, cfg: float, sampler_name: str, scheduler: str, denoise: float, fps2: int, lossless: bool, quality: float, method: str, progress=gr.Progress()) -> str:
         ckpt_name = get_model_path(self.choices.ckpt_list, "svd_xt_1_1.safetensors")
         seed = gen_seed(seed)
         if input_image is None:
@@ -938,10 +937,10 @@ class SVD:
             }
         return gen_image(self.opt, workflow, 1, 1, progress)[1]
     
-    def interrupt(self):
+    def interrupt(self) -> None:
         post_interrupt(self.opt)
  
-    def blocks(self):
+    def blocks(self) -> None:
         with gr.Row():
             with gr.Column():
                 self.input_image = gr.Image(value=None, type="pil")
@@ -992,7 +991,7 @@ class Extras:
         self.choices = choices
         self.postprocessor = postprocessor
 
-    def generate(self, input_image, progress=gr.Progress()):
+    def generate(self, input_image: Image.Image, progress=gr.Progress()) -> None | List[Image.Image]:
         module = "Extras"
         if input_image is None:
             return
@@ -1017,10 +1016,10 @@ class Extras:
             output = output[0]
         return output
     
-    def interrupt(self):
+    def interrupt(self) -> None:
         post_interrupt(self.opt)
  
-    def blocks(self):
+    def blocks(self) -> None:
         with gr.Row():
             with gr.Column():
                 self.input_image = gr.Image(value=None, type="pil")
@@ -1046,16 +1045,16 @@ class Info:
         self.choices = choices
         self.postprocessor = postprocessor
 
-    def generate(self, image_info, progress=gr.Progress()):
+    def generate(self, image_info: str, progress=gr.Progress()) -> List[Image.Image]:
         if not image_info or image_info is None or image_info == "仅支持API工作流！！！" or "Version:" in image_info or image_info == "None":
             return
         workflow = json.loads(image_info)
         return gen_image(self.opt, workflow, 1, 1, progress)[0]
     
-    def interrupt(self):
+    def interrupt(self) -> None:
         post_interrupt(self.opt)
  
-    def order_workflow(self, workflow):
+    def order_workflow(self, workflow: str) -> str:
         if workflow is None:
             return gr.update(visible=False, value=None)
         
@@ -1075,7 +1074,7 @@ class Info:
 
         return gr.update(label="Ordered workflow_api", show_label=True, visible=True, value=workflow_string, lines=lines)
  
-    def get_image_info(self, image_pil):
+    def get_image_info(self, image_pil: Image.Image) -> str:
         if image_pil is None:
             return gr.update(visible=False, value=None)
         else:
@@ -1086,12 +1085,12 @@ class Info:
                 return gr.update(label="Image info", show_label=True, visible=True, value=image_info, lines=3)
             return self.order_workflow(image_info)
  
-    def hide_another_input(self, this_input):
+    def hide_another_input(self, this_input: Image.Image) -> bool:
         if this_input is None:
             return gr.update(visible=True)
         return gr.update(visible=False)
  
-    def blocks(self):
+    def blocks(self) -> None:
         with gr.Row():
             with gr.Column():
                 self.input_image = gr.Image(format='png', type="pil")

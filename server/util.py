@@ -33,7 +33,7 @@ f_handler.setFormatter(Formatter("%(asctime)s - %(name)s - %(levelname)s - %(mes
 f_handler.setLevel(logging.INFO)
 
 
-def create_logger(name) -> logging.Logger:
+def create_logger(name: str) -> logging.Logger:
     # 创建日志记录器
     logger = logging.getLogger(name)
     logger.setLevel(logging.INFO)
@@ -252,7 +252,7 @@ class QueryTracker:
         self.log_file_path = log_file_path
         self.log_list = []
 
-    def log(self, key, value='') -> None:
+    def log(self, key: str, value: str = '') -> None:
         """Log a query.
 
         Args:
