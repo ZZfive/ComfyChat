@@ -41,16 +41,12 @@ from module_comfyui import Option, Choices, Lora, Upscale, UpscaleWithModel, Con
 parser = argparse.ArgumentParser(description='ComfyChat Server.')
 parser.add_argument(
         '--config-path',
-        default='/root/code/ComfyChat/server/config.ini',
+        default=os.path.join(server_dir, 'config.ini'),
         help=  'LLM Server configuration path. Default value is config.ini'  # noqa E501
     )
 parser.add_argument(
         '--asr-model',
         default='whisperx'
-    )
-parser.add_argument(
-        '--tts-model',
-        default='chattts'
     )
 args = parser.parse_args()
 
@@ -63,16 +59,16 @@ llm_config = config['llm']
 llm = HybridLLMServer(llm_config)
 # RAG检索实例
 cache = CacheRetriever(config_path=args.config_path)
-en_retriever = cache.get(fs_id="en", work_dir="/root/code/ComfyChat/server/source/workdir/en",
+en_retriever = cache.get(fs_id="en", work_dir=os.path.join(server_dir, config["feature_store"]["work_dir"]["en"]),
                          languega="en", config_path=args.config_path)
-zh_retriever = cache.get(fs_id="zh", work_dir="/root/code/ComfyChat/server/source/workdir/zh",
+zh_retriever = cache.get(fs_id="zh", work_dir=os.path.join(server_dir, config["feature_store"]["work_dir"]["zh"]),
                          languega="zh", reject_index_name="index-gpu", config_path=args.config_path)
 # asr实例初始化
 if args.asr_model == "whispercpp":
     asr_model = Whisper.from_pretrained("base")
 elif args.asr_model == "whisperx":
-    asr_model = whisperx.load_model("large-v2", device, compute_type="float16", language='en',
-                            download_root='/root/code/ComfyChat/weights')
+    asr_model = whisperx.load_model(config["whisperx"]["model"], device, compute_type="float16", language='en',
+                                    download_root=os.path.join(parent_dir, config["whisperx"]["download_root"]))
 else:
     raise ValueError(f"{args.asr_model} is not supported")
 # # chattts实例初始化
@@ -232,24 +228,29 @@ def toggle_comfyui(show: bool) -> Any:
 # 使用GPT-SoVITS时随着克隆对象的变化设置对应参数  # TODO 下载合适的角色音频文件替换
 def update_gpt_sovits(selected_option: str) -> Tuple[str]:
     if selected_option == "派蒙":
-        return (default_gpt_path, default_sovits_path,
-                "/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav",
-                "疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？", "zh")
+        return (os.path.join(parent_dir, config["gptsovits"]["gpt_path"]["paimeng"]),
+                os.path.join(parent_dir, config["gptsovits"]["sovits_path"]["paimeng"]),
+                os.path.join(parent_dir, config["gptsovits"]["wav"]["paimeng"]),
+                config["gptsovits"]["prompt"]["paimeng"],
+                config["gptsovits"]["language"]["paimeng"])
     elif selected_option == "罗刹":
-        return ("/root/code/ComfyChat/weights/GPT_SoVITS/罗刹-e10.ckpt",
-                "/root/code/ComfyChat/weights/GPT_SoVITS/罗刹_e15_s450.pth",
-                "/root/code/ComfyChat/audio/wavs/说话-行商在外，无依无靠，懂些自救的手法，心里多少有个底。.wav",
-                "说话-行商在外，无依无靠，懂些自救的手法，心里多少有个底。", "zh")
+        return (os.path.join(parent_dir, config["gptsovits"]["gpt_path"]["luocha"]),
+                os.path.join(parent_dir, config["gptsovits"]["sovits_path"]["luocha"]),
+                os.path.join(parent_dir, config["gptsovits"]["wav"]["luocha"]),
+                config["gptsovits"]["prompt"]["luocha"],
+                config["gptsovits"]["language"]["luocha"])
     elif selected_option == "胡桃":
-        return ("/root/code/ComfyChat/weights/GPT_SoVITS/胡桃-e10.ckpt",
-                "/root/code/ComfyChat/weights/GPT_SoVITS/胡桃_e15_s825.pth",
-                "/root/code/ComfyChat/audio/wavs/本堂主略施小计，你就败下阵来了，嘿嘿。.wav",
-                "本堂主略施小计，你就败下阵来了，嘿嘿。", "zh")
+        return (os.path.join(parent_dir, config["gptsovits"]["gpt_path"]["hutao"]),
+                os.path.join(parent_dir, config["gptsovits"]["sovits_path"]["hutao"]),
+                os.path.join(parent_dir, config["gptsovits"]["wav"]["hutao"]),
+                config["gptsovits"]["prompt"]["hutao"],
+                config["gptsovits"]["language"]["hutao"])
     elif selected_option == "魈":
-        return ("/root/code/ComfyChat/weights/GPT_SoVITS/魈-e10.ckpt",
-                "/root/code/ComfyChat/weights/GPT_SoVITS/魈_e15_s780.pth",
-                "/root/code/ComfyChat/audio/wavs/…你的愿望，我俱已知晓。轻策庄下，确有魔神残躯。.wav",
-                "…你的愿望，我俱已知晓。轻策庄下，确有魔神残躯。", "zh")
+        return (os.path.join(parent_dir, config["gptsovits"]["gpt_path"]["xiao"]),
+                os.path.join(parent_dir, config["gptsovits"]["sovits_path"]["xiao"]),
+                os.path.join(parent_dir, config["gptsovits"]["wav"]["xiao"]),
+                config["gptsovits"]["prompt"]["xiao"],
+                config["gptsovits"]["language"]["xiao"])
 
 
 # 定义处理选择事件的回调函数
@@ -261,6 +262,7 @@ def chatbot_selected2tts(evt: gr.SelectData, use_tts: bool, tts_model: str, chat
         4.37.2--selected_text是一个字典{'type': 'text', 'value': 'xxxxx'}
         4.32.2--4.32.2就是所选框中的文本
     '''
+    global default_gpt_path, default_sovits_path
     selected_index = evt.index  # 获取用户选择的对话条目索引
     selected_text = evt.value   # 获取用户选择的对话条目文本
     # if use_tts and selected_index[1] == 1 and selected_text['type'] == 'text':
@@ -295,14 +297,14 @@ with gr.Blocks() as demo:
                 # Chattts相关组件
                 chattts_audio_seed = gr.Slider(minimum=1, maximum=100000000, step=1, value=42, label="Audio seed for Chattts", visible=False)
                 # GPT-SoVITS相关组件
-                gpt_sovits_voice = gr.Radio(["默认", "派蒙", "魈"], value="默认", label="Reference audio for GPT-SoVITS", visible=False)
-                cut_punc = gr.Textbox(value=",.;?!、，。？！；：…", label="Delimiters for GPT-SoVITS", visible=False)
+                gpt_sovits_voice = gr.Radio(["派蒙", "罗刹", "胡桃", "魈"], value="派蒙", label="Reference audio for GPT-SoVITS", visible=False)
+                cut_punc = gr.Textbox(value=",.;?!、，。？！；：…", label="Delimiters for GPT-SoVITS", visible=False, interactive=False)
                 # GPT-SoVITS推理时需要的参数，正常情况下保持不可见
                 gpt_path = gr.Textbox(value=default_gpt_path, visible=False)
                 sovits_path = gr.Textbox(value=default_sovits_path, visible=False)
-                ref_wav_path = gr.Textbox(value="/root/code/ComfyChat/audio/wavs/疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？.wav", visible=False)
-                prompt_text = gr.Textbox(value="疑问—哇，这个，还有这个…只是和史莱姆打了一场，就有这么多结论吗？", visible=False)
-                prompt_language = gr.Textbox(value="zh", visible=False)
+                ref_wav_path = gr.Textbox(value=os.path.join(parent_dir, config["gptsovits"]["wav"]["paimeng"]), visible=False)
+                prompt_text = gr.Textbox(value=config["gptsovits"]["prompt"]["paimeng"], visible=False)
+                prompt_language = gr.Textbox(value=config["gptsovits"]["language"]["paimeng"], visible=False)
 
             with gr.Column(scale=11):
                 chatbot = gr.Chatbot(label="ComfyChat")

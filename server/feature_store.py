@@ -25,6 +25,7 @@ from langchain.text_splitter import (MarkdownHeaderTextSplitter,
                                      CharacterTextSplitter)
 from langchain.vectorstores.faiss import FAISS as Vectorstore
 from langchain_community.embeddings import HuggingFaceEmbeddings
+import langchain_core.embeddings as Embeddings
 from langchain_core.documents import Document
 from torch.cuda import empty_cache
 
@@ -275,14 +276,14 @@ class FeatureStore:
             documents.append(chunk)
         return documents
     
-    def get_features_save(self, documents: List, embeddings, feature_dir: str, index_name: str = None) -> None:
+    def get_features_save(self, documents: List, embeddings: Embeddings, feature_dir: str, index_name: str = None) -> None:
         vs = Vectorstore.from_documents(documents, embeddings)
         if index_name is None or index_name == "":
             vs.save_local(feature_dir)
         else:
             vs.save_local(feature_dir, index_name)
 
-    def features_merge(self, feature_dir: str, embeddings, n: int, index_name: str = "index") -> None:
+    def features_merge(self, feature_dir: str, embeddings: Embeddings, n: int, index_name: str = "index") -> None:
         feature1 = Vectorstore.load_local(
             feature_dir,
             embeddings=embeddings,
@@ -300,7 +301,7 @@ class FeatureStore:
         
         feature1.save_local(feature_dir, "index-gpu")
 
-    def ingress_response(self, files: list, work_dir: str) -> None:
+    def ingress_response(self, files: List, work_dir: str) -> None:
         """Extract the features required for the response pipeline based on the document."""
 
         feature_dir = os.path.join(work_dir, 'db_response')
@@ -339,7 +340,7 @@ class FeatureStore:
         # vs.save_local(feature_dir)
         self.get_features_save(documents, self.embeddings, feature_dir)
 
-    def analyze(self, documents: list) -> None:
+    def analyze(self, documents: List) -> None:
         """Output documents length mean, median and histogram"""
         if not self.analyze_reject:
             return
@@ -358,7 +359,7 @@ class FeatureStore:
         logger.info('document text histgram {}'.format(histogram(text_lens)))
         logger.info('document token histgram {}'.format(histogram(token_lens)))
 
-    def ingress_reject(self, files: list, work_dir: str, n: int = 1) -> None:
+    def ingress_reject(self, files: List, work_dir: str, n: int = 1) -> None:
         """Extract the features required for the reject pipeline based on documents."""
         feature_dir = os.path.join(work_dir, 'db_reject')
         if not os.path.exists(feature_dir):
@@ -426,7 +427,7 @@ class FeatureStore:
 
             self.features_merge(feature_dir, self.embeddings, n)
 
-    def preprocess(self, files: list, work_dir: str) -> None:
+    def preprocess(self, files: List, work_dir: str) -> None:
         """Preprocesses files in a given directory. Copies each file to
         'preprocess' with new name formed by joining all subdirectories with
         '_'.
@@ -494,7 +495,7 @@ class FeatureStore:
                     file.state = False
                     file.reason = 'read error'
 
-    def initialize(self, files: list, work_dir: str) -> None:
+    def initialize(self, files: List, work_dir: str) -> None:
         """Initializes response and reject feature store.
 
         Only needs to be called once. Also calculates the optimal threshold

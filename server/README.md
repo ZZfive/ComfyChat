@@ -19,7 +19,7 @@
  - [x] LLM推理
  - [x] ASR模块
  - [x] TTS模块
- - [ ] 生图模块
+ - [x] 生图模块
  
  
 ## 界面构建
@@ -64,4 +64,4 @@
 
 
 ## 生图模块
-&emsp;&emsp;
+&emsp;&emsp;ComfyUI提供了完整、灵活或者说单调、高效的api接口，在前端界面设置中开启开发者模型就能激活“保存API”功能，能将在界面上跑通的任何workflow保存为ComfyUI api能直接调用的workflow_api.json文件，而其内部就是各种节点实际参数排列组成，故可以人为构造符合ComfyUI api接口的workflow对象，与Gradio结合就能实现类似Stable Diffusion WebUI的界面。当前服务中通过上述方法实现了具有几个常规、较固定的生成工作流前端界面，感兴趣的朋友可以参考[module_comfyui.py](module_comfyui.py)。基于Gradio构建的固定workflow并不能展现ComfyUI的全部能力，故基于Gradio的页面加载能力，将ComfyUI的前端页面直接集成到了项目页面，使用者可在对话界面查询完问题后，直接在ComfyUI界面中进行验证。
