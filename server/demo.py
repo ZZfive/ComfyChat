@@ -34,7 +34,7 @@ from llm_infer import HybridLLMServer
 from retriever import CacheRetriever
 # from audio.ChatTTS import ChatTTS
 from audio.gptsovits import get_tts_wav, default_gpt_path, default_sovits_path, set_gpt_weights, set_sovits_weights
-from prompt_templates import PROMPT_TEMPLATE, RAG_PROMPT_TEMPLATE, ANSWER_NO_RAG_TEMPLATE, ANSWER_RAG_TEMPLATE, ANSWER_LLM_TEMPLATE
+from prompt_templates import PROMPT_TEMPLATE, RAG_PROMPT_TEMPLATE, ANSWER_NO_RAG_TEMPLATE, ANSWER_RAG_TEMPLATE, ANSWER_LLM_TEMPLATE, ANSWER_SUFFIXES
 from module_comfyui import Option, Choices, Lora, Upscale, UpscaleWithModel, ControlNet, Postprocess, SD, SC, SVD, Extras, Info, send_to
 
 # 参数设置
@@ -148,6 +148,12 @@ def generate_answer(prompt: str, history: list, lang: str = 'en', backend: str =
                 return ANSWER_RAG_TEMPLATE["EN_PROMPT_TEMPALTE" if lang == "en" else "ZH_PROMPT_TEMPALTE"].format(answer=ans)
         else:
             return ANSWER_LLM_TEMPLATE["EN_PROMPT_TEMPALTE" if lang == "en" else "ZH_PROMPT_TEMPALTE"].format(answer=ans)
+        
+
+def clean_answer_suffix(answer: str, suffixes: List[str] = ANSWER_SUFFIXES) -> str:
+    for suffix in suffixes:
+        answer = answer.replace(suffix, "")
+    return answer
 
 
 def audio2text(audio_path: str) -> str:
@@ -269,6 +275,7 @@ def chatbot_selected2tts(evt: gr.SelectData, use_tts: bool, tts_model: str, chat
     #     text = selected_text['value']
     if use_tts and selected_index[1] == 1:
         text = selected_text
+        text = clean_answer_suffix(text)
         if tts_model == 'Chattts':
             # results = text2audio_chattts(text, chattts_audio_seed)
             # return results
