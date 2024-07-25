@@ -15,6 +15,7 @@ from typing import List, Dict, Tuple
 
 import pytoml
 import requests
+from lmdeploy import pipeline, TurbomindEngineConfig, ChatTemplateConfig, GenerationConfig
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from openai import OpenAI
 
@@ -71,8 +72,8 @@ class RPM:
 
 
 # 本地模型推理的一个包装类
-class LocalInferenceWrapper:
-    """A class to wrapper kinds of local LLM framework."""
+class LocalTransformersInferenceWrapper:
+    """A class to wrapper kinds of local LLM framework with Transformers."""
 
     def __init__(self, model_path: str) -> None:
         """Init model handler."""
@@ -149,6 +150,27 @@ class LocalInferenceWrapper:
         return output_text
     
 
+class LocalLmdeployInferenceWrapper:
+    """A class to wrapper kinds of local LLM framework with LMDeploy."""
+    
+    def __init__(self, model_path: str) -> None:
+        self.model_path = model_path
+        self.backend_config = TurbomindEngineConfig(cache_max_entry_count=0.3,
+                                                    session_len=8192)
+        self.pipeline = pipeline(self.model_path, backend_config=self.backend_config,
+                                 chat_template_config=ChatTemplateConfig(model_name="internlm2")  # 支持的对话模型通过lmdeploy list查看 TODO 需要针对不同模型设置对应模板，不然会报错
+                                 )
+
+    def chat(self, prompt: str, history: List[Tuple[str, str]] = []) -> str:
+        gen_config = GenerationConfig(top_p=0.8, top_k=40, temperature=0.8, max_new_tokens=1024)
+        messages = build_messages(prompt=prompt,
+                                  history=history,
+                                  system='You are a helpful assistant')
+        response = self.pipeline(messages,  gen_config=gen_config)
+        
+        return response.text
+    
+
 class HybridLLMServer:
     """A class to handle server-side interactions with a hybrid language learning model (LLM) service.
 
@@ -182,7 +204,7 @@ class HybridLLMServer:
         self.token = ('', 0)
 
         if self.enable_local:
-            self.inference = LocalInferenceWrapper(model_path)
+            self.inference = LocalTransformersInferenceWrapper(model_path)
         else:
             self.inference = None
             logger.warning('local LLM disabled.')
@@ -587,7 +609,15 @@ if __name__ == "__main__":
     # prompt = PROMPT_TEMPLATE["EN_RAG_PROMPT_TEMPALTE"].format(question=question, context=context)
     # print(llm.generate_response(prompt))
 
-    rpm = RPM()
-    tmp = rpm.get_minute_slot()
-    print(type(tmp))
-    print(tmp)
+    # rpm = RPM()
+    # tmp = rpm.get_minute_slot()
+    # print(type(tmp))
+    # print(tmp)
+
+    model_path = "/group_share/finetune/v2_1_8/final_model"
+    # inference = LocalTransformersInferenceWrapper(model_path)
+    inference = LocalLmdeployInferenceWrapper(model_path)
+    res = inference.chat(prompt="你是谁？")
+    print(res)
+    res = inference.chat(prompt="ComfyUI是什么？")
+    print(res)
