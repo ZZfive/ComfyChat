@@ -589,19 +589,20 @@ class ControlNet:
             start_percent = gr.Slider(label="Start percent", minimum=0, maximum=1, step=0.01, value=0)
             end_percent = gr.Slider(label="End percent", minimum=0, maximum=1, step=0.01, value=1)
 
-        input_image.upload(fn=self.auto_enable, inputs=None, outputs=[enable])
-        preprocessor.change(fn=self.auto_select_model, inputs=[preprocessor], outputs=[model])
+        input_image.upload(fn=self.auto_enable, inputs=None, outputs=[enable])  # 上传图片时自动为True
+        preprocessor.change(fn=self.auto_select_model, inputs=[preprocessor], outputs=[model])  # 基于设置的预处理器设置对应controlnt模型
 
         for gr_block in [preview, preprocessor, input_image]:
             gr_block.change(fn=self.preprocess, inputs=[unit_id, preview, preprocessor, input_image, resolution], outputs=[preprocess_preview])
         # preview.change(fn=self.preprocess, inputs=[unit_id, preview, preprocessor, input_image, resolution], outputs=[preprocess_preview])
         
-        inputs = [module, unit_id, enable, preprocessor, model, input_image, resolution, strength, start_percent, end_percent]
-        for gr_block in inputs:
+        cache_inputs = [module, unit_id, enable, preprocessor, model, input_image, resolution, strength, start_percent, end_percent]
+        cache_changes = [enable, preprocessor, model, input_image, resolution, strength, start_percent, end_percent]
+        for gr_block in cache_changes:
             if type(gr_block) is gr.components.slider.Slider:
-                gr_block.release(fn=self.update_cache, inputs=inputs, outputs=enable)
+                gr_block.release(fn=self.update_cache, inputs=cache_inputs, outputs=enable)
             else:
-                gr_block.change(fn=self.update_cache, inputs=inputs, outputs=enable)
+                gr_block.change(fn=self.update_cache, inputs=cache_inputs, outputs=enable)
  
     def blocks(self, module: str) -> None:
         with gr.Tab(label="控制网络"):
