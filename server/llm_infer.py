@@ -153,12 +153,35 @@ class LocalTransformersInferenceWrapper:
 class LocalLmdeployInferenceWrapper:
     """A class to wrapper kinds of local LLM framework with LMDeploy."""
     
-    def __init__(self, model_path: str) -> None:
+    def __init__(self, model_path: str, model_name: str = None, cache_max_entry_count: float = 0.3) -> None:
         self.model_path = model_path
-        self.backend_config = TurbomindEngineConfig(cache_max_entry_count=0.3,
+        if model_name is not None:
+            self.model_name = model_name
+        else:
+            if 'internlm' in model_path.lower():
+                if 'internlm2' in model_path.lower():
+                    self.model_name = 'internlm2'
+                else:
+                    self.model_name = 'internlm'
+            elif 'qwen' in model_path.lower():
+                if 'qwen2' in model_path.lower():
+                    self.model_name = 'qwen2'
+                else:
+                    self.model_name = 'qwen'
+            elif 'llama' in model_path.lower():
+                if 'llama3' in model_path.lower():
+                    self.model_name = 'llama3'
+                elif 'llama2' in model_path.lower():
+                    self.model_name = 'llama2'
+                else:
+                    self.model_name = 'llama'
+            else:
+                self.model_name = 'internlm2'
+
+        self.backend_config = TurbomindEngineConfig(cache_max_entry_count=cache_max_entry_count,
                                                     session_len=8192)
         self.pipeline = pipeline(self.model_path, backend_config=self.backend_config,
-                                 chat_template_config=ChatTemplateConfig(model_name="internlm2")  # 支持的对话模型通过lmdeploy list查看 TODO 需要针对不同模型设置对应模板，不然会报错
+                                 chat_template_config=ChatTemplateConfig(model_name=self.model_name)  # 支持的对话模型通过lmdeploy list查看 TODO 需要针对不同模型设置对应模板，不然会报错
                                  )
 
     def chat(self, prompt: str, history: List[Tuple[str, str]] = []) -> str:
@@ -196,6 +219,7 @@ class HybridLLMServer:
         self.remote_type = self.server_config['remote_type']
 
         model_path = self.server_config['local_llm_path']
+        local_engin = self.server_config['local_engine']
 
         _rpm = 500
         if 'rpm' in self.server_config:
@@ -204,7 +228,10 @@ class HybridLLMServer:
         self.token = ('', 0)
 
         if self.enable_local:
-            self.inference = LocalTransformersInferenceWrapper(model_path)
+            if local_engin == "transformers":
+                self.inference = LocalTransformersInferenceWrapper(model_path)
+            else:
+                self.inference = LocalLmdeployInferenceWrapper(model_path)
         else:
             self.inference = None
             logger.warning('local LLM disabled.')
@@ -614,9 +641,10 @@ if __name__ == "__main__":
     # print(type(tmp))
     # print(tmp)
 
-    model_path = "/group_share/finetune/v2_1_8/final_model"
+    model_path = "/group_share/finetune/v2_7/final_model"
+    model_name = "internlm2"
     # inference = LocalTransformersInferenceWrapper(model_path)
-    inference = LocalLmdeployInferenceWrapper(model_path)
+    inference = LocalLmdeployInferenceWrapper(model_path, model_name)
     res = inference.chat(prompt="你是谁？")
     print(res)
     res = inference.chat(prompt="ComfyUI是什么？")
