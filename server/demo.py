@@ -264,8 +264,8 @@ with gr.Blocks() as demo:
 
             with gr.Column(scale=11):
                 chatbot = gr.Chatbot(label="ComfyChat",
-                                     avatar_images=(("source/ComfyUI_00006_.png", 
-                                                     "source/ComfyUI_00033_.png")))
+                                     avatar_images=(("source/user.webp", 
+                                                     "source/comfychat.webp")))
                 msg = gr.Textbox()
                 with gr.Row():
                     submit = gr.Button("Submit")

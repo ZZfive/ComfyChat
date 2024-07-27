@@ -71,6 +71,8 @@ ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)收集的自定义�
 
 
 ## 工作进度
+ - [ ] 优化数据集，构建数据集v3
+   - [ ] 搜集一些文档或从视频从提取数据进行构建
  - [x] 对外界面构建
    - [x] 推理模块--基于gradio
    - [x] TTS模块--基于[GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS)
@@ -80,8 +82,6 @@ ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)收集的自定义�
    - [x] 系统搭建
    - [x] 构建的数据转为向量存储
  - [x] 基于v2数据集训练模型
- - [ ] 优化数据集，构建数据集v3
-   - [ ] 搜集一些文档或从视频从提取数据进行构建
    - [x] 已对四个社区集中提供节点文本的项目进行数据构建
  - [x] 基于数据集v1，微调InternLM2-chat-1.8b和InternLM2-chat-7b，模型分别为[zzfive/ComfyChat-InternLM2-1-8b-v1](https://huggingface.co/zzfive/ComfyChat-InternLM2-1-8b-v1)和[zzfive/ComfyChat-InternLM2-7b-v1](https://huggingface.co/zzfive/ComfyChat-InternLM2-7b-v1)
  - [x] 基于收集的自定义节点项目中的文档，使用deepseek、kimi等LLMs构建了中英文微调数据集，和Aplaca-GPT4数据集混合构建了数据集v1
