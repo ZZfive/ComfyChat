@@ -7,35 +7,29 @@
 @Desc    :   None
 '''
 import os
-# os.environ["HF_HOME"] = r"D:\cache"
-# os.environ["HUGGINGFACE_HUB_CACHE"] = r"D:\cache"
-# os.environ["TRANSFORMERS_CACHE"] = r"D:\cache"
+import sys
 server_dir = os.path.dirname(__file__)
 parent_dir =  os.path.abspath(os.path.join(server_dir, '..'))
-import sys
 sys.path.insert(0, parent_dir)
 
+import re
 import time
-import random
 import socket
 import argparse
 import threading
-from typing import List, Tuple, Generator, Dict, Any
+from typing import List, Tuple, Generator
 
 import torch
-import torchaudio
 import pytoml
 import gradio as gr
 import numpy as np
-from whispercpp import Whisper
 import whisperx
 
 from llm_infer import HybridLLMServer
 from retriever import CacheRetriever
-# from audio.ChatTTS import ChatTTS
-from audio.gptsovits import get_tts_wav, default_gpt_path, default_sovits_path, set_gpt_weights, set_sovits_weights
-from prompt_templates import PROMPT_TEMPLATE, RAG_PROMPT_TEMPLATE, ANSWER_NO_RAG_TEMPLATE, ANSWER_RAG_TEMPLATE, ANSWER_LLM_TEMPLATE, ANSWER_SUFFIXES
+from module_gptsovits import get_tts_wav, default_gpt_path, default_sovits_path, set_gpt_weights, set_sovits_weights
 from module_comfyui import Option, Choices, Lora, Upscale, UpscaleWithModel, ControlNet, Postprocess, SD, SC, SVD, Extras, Info, send_to
+from prompt_templates import PROMPT_TEMPLATE, RAG_PROMPT_TEMPLATE, ANSWER_NO_RAG_TEMPLATE, ANSWER_RAG_TEMPLATE, ANSWER_LLM_TEMPLATE, ANSWER_SUFFIXES
 
 # 参数设置
 parser = argparse.ArgumentParser(description='ComfyChat Server.')
@@ -43,10 +37,6 @@ parser.add_argument(
         '--config-path',
         default=os.path.join(server_dir, 'config.ini'),
         help=  'LLM Server configuration path. Default value is config.ini'  # noqa E501
-    )
-parser.add_argument(
-        '--asr-model',
-        default='whisperx'
     )
 args = parser.parse_args()
 
@@ -64,16 +54,8 @@ en_retriever = cache.get(fs_id="en", work_dir=os.path.join(server_dir, config["f
 zh_retriever = cache.get(fs_id="zh", work_dir=os.path.join(server_dir, config["feature_store"]["work_dir"]["zh"]),
                          languega="zh", reject_index_name="index-gpu", config_path=args.config_path)
 # asr实例初始化
-if args.asr_model == "whispercpp":
-    asr_model = Whisper.from_pretrained("base")
-elif args.asr_model == "whisperx":
-    asr_model = whisperx.load_model(config["whisperx"]["model"], device, compute_type="float16", language='en',
-                                    download_root=os.path.join(parent_dir, config["whisperx"]["download_root"]))
-else:
-    raise ValueError(f"{args.asr_model} is not supported")
-# # chattts实例初始化
-# chattts_model = ChatTTS.Chat()
-# chattts_model.load(compile=False, source='huggingface')
+asr_model = whisperx.load_model(config["whisperx"]["model"], device, compute_type="float16", language='en',
+                                download_root=os.path.join(parent_dir, config["whisperx"]["download_root"]))
 
 # ComfyUI组件初始化
 if config['comfyui']['enable'] == 1:
@@ -150,54 +132,26 @@ def generate_answer(prompt: str, history: list, lang: str = 'en', backend: str =
             return ANSWER_LLM_TEMPLATE["EN_PROMPT_TEMPALTE" if lang == "en" else "ZH_PROMPT_TEMPALTE"].format(answer=ans)
         
 
-def clean_answer_suffix(answer: str, suffixes: List[str] = ANSWER_SUFFIXES) -> str:
+# 清除文本中一些不适合被TTS的内容
+def clean_text(answer: str, suffixes: List[str] = ANSWER_SUFFIXES) -> str:
+    # 清除末尾的固定说明文本
     for suffix in suffixes:
         answer = answer.replace(suffix, "")
+
+    # 清除url
+    url_pattern = r'https?://\S+'
+    answer = re.sub(url_pattern, '', answer)
+    
     return answer
 
 
 def audio2text(audio_path: str) -> str:
     audio = whisperx.load_audio(audio_path)
-    if args.asr_model == "whispercpp":
-        text = asr_model.transcribe(audio)
-    elif args.asr_model == "whisperx":
-        result = asr_model.transcribe(audio, batch_size=16)
-        # model_a, metadata = whisperx.load_align_model(language_code=result["language"], device=device)
-        # result = whisperx.align(result["segments"], model_a, metadata, audio, device, return_char_alignments=False)
-        txts = [res['text'] for res in result['segments']]
-        text = ' '.join(txts)
-    else:
-        raise ValueError(f"{args.asr_model} is not supported")
+    result = asr_model.transcribe(audio, batch_size=16)
+    txts = [res['text'] for res in result['segments']]
+    text = ' '.join(txts)
     return text
 
-
-# def text2audio_chattts(text: str, seed: int = 42, refine_text_flag: bool = True) -> None:
-#     torch.manual_seed(seed)# 设置采样音色的随机种子
-#     rand_spk = chattts_model.sample_random_speaker()  # 从高斯分布中随机采样出一个音色
-#     params_infer_code = ChatTTS.Chat.InferCodeParams(
-#         spk_emb=rand_spk,
-#         temperature=.3,
-#         top_P=0.7,
-#         top_K=20)
-#     params_refine_text = ChatTTS.Chat.RefineTextParams(
-#         prompt='[oral_2][laugh_0][break_6]',)
-
-#     torch.manual_seed(random.randint(1, 100000000))
-
-#     if refine_text_flag:
-#         text = chattts_model.infer(text, 
-#                                 skip_refine_text=False,
-#                                 refine_text_only=True,
-#                                 params_refine_text=params_refine_text,
-#                                 params_infer_code=params_infer_code)
-
-#     wavs = chattts_model.infer(text,
-#                             skip_refine_text=True,
-#                             params_refine_text=params_refine_text,
-#                             params_infer_code=params_infer_code)
-#     audio_data = np.array(wavs[0]).flatten()
-
-#     return (24000, audio_data)
 
 def user(user_message: str, history: List[Tuple[str, str]]) -> Tuple[str, List[Tuple[str, str]]]:
         return "", history + [(user_message, None)]
@@ -215,19 +169,21 @@ def bot(chatbot_history: List[Tuple[str, str]], lang: str = 'en', backend: str =
         yield chatbot_history
 
 
-# 控制tts模型选择模块可见
-def toggle_tts_radio(show: bool) -> Any:
-    return gr.update(visible=show)
+# 开启tts功能，将GPT-SoVITS涉及的两个可调模块打开
+def toggle_tts_radio(show: bool) -> Tuple[bool, bool]:
+    return gr.update(visible=show), gr.update(visible=show)
 
-# 控制tts模型相关组件可见
-def toggle_tts_components(selected_option: str) -> Any:
-    if selected_option == "Chattts":
-        return (gr.update(visible=True), gr.update(visible=False), gr.update(visible=False))
-    elif selected_option == "GPT-SoVITS":
-        return (gr.update(visible=False), gr.update(visible=True), gr.update(visible=True))
+
+# 选择local inference后开启选择推理引擎
+def toggle_local_engin(backend: str) -> bool:
+    if backend == "local":
+        return gr.update(visible=True)
+    else:
+        return gr.update(visible=False)
     
 
-def toggle_comfyui(show: bool) -> Any:
+# 开启comfyui界面
+def toggle_comfyui(show: bool) -> Tuple[bool, bool]:
     return (gr.update(visible=not show), gr.update(visible=show))
     
 
@@ -260,9 +216,8 @@ def update_gpt_sovits(selected_option: str) -> Tuple[str]:
 
 
 # 定义处理选择事件的回调函数
-def chatbot_selected2tts(evt: gr.SelectData, use_tts: bool, tts_model: str, chattts_audio_seed: int,
-                         text_language: str, cut_punc: str, gpt_path: str, sovits_path: str, ref_wav_path: str,
-                         prompt_text: str, prompt_language: str) -> Tuple[int, np.ndarray]:
+def chatbot_selected2tts(evt: gr.SelectData, use_tts: bool, text_language: str, cut_punc: str, gpt_path: str, sovits_path: str,
+                         ref_wav_path: str, prompt_text: str, prompt_language: str) -> Tuple[int, np.ndarray]:
     '''
     gradio版本不同，evt内部结构貌似不同，导致selected_text结构不同
         4.37.2--selected_text是一个字典{'type': 'text', 'value': 'xxxxx'}
@@ -271,23 +226,18 @@ def chatbot_selected2tts(evt: gr.SelectData, use_tts: bool, tts_model: str, chat
     global default_gpt_path, default_sovits_path
     selected_index = evt.index  # 获取用户选择的对话条目索引
     selected_text = evt.value   # 获取用户选择的对话条目文本
-    # if use_tts and selected_index[1] == 1 and selected_text['type'] == 'text':
+    # if use_tts and selected_index[1] == 1 and selected_text['type'] == 'text':  # 可能是gradio版本问题，导致此处取值方式存在不同
     #     text = selected_text['value']
     if use_tts and selected_index[1] == 1:
         text = selected_text
-        text = clean_answer_suffix(text)
-        if tts_model == 'Chattts':
-            # results = text2audio_chattts(text, chattts_audio_seed)
-            # return results
-            pass
-        elif tts_model == "GPT-SoVITS":
-            if gpt_path != default_gpt_path and sovits_path != default_sovits_path:
-                set_gpt_weights(gpt_path)
-                set_sovits_weights(sovits_path)
-                default_gpt_path = gpt_path
-                default_sovits_path = sovits_path
-            results = get_tts_wav(text, text_language, cut_punc, ref_wav_path, prompt_text, prompt_language, return_numpy=True)
-            return results
+        text = clean_text(text)
+        if gpt_path != default_gpt_path and sovits_path != default_sovits_path:
+            set_gpt_weights(gpt_path)
+            set_sovits_weights(sovits_path)
+            default_gpt_path = gpt_path
+            default_sovits_path = sovits_path
+        results = get_tts_wav(text, text_language, cut_punc, ref_wav_path, prompt_text, prompt_language, return_numpy=True)
+        return results
     else:
         return (None, None)
 
@@ -297,15 +247,14 @@ with gr.Blocks() as demo:
         with gr.Row():
             with gr.Column(scale=1):
                 backend = gr.Radio(["local", "remote"], value="remote", label="Inference backend")
+                local_backend_engin = gr.Radio(["Transformers", "LMDeploy"], value="Transformers", visible=False,
+                                               label="The engine used for local inference")
                 lang = gr.Radio(["zh", "en"], value="en", label="Language")
                 use_rag = gr.Radio([True, False], value=False, label="Turn on RAG")
-                use_tts = gr.Checkbox(label="Use TTS", info="Turn on TTS")
-                tts_model = gr.Radio(["Chattts", "GPT-SoVITS"], visible=False, label="Model of TTS")
-                # Chattts相关组件
-                chattts_audio_seed = gr.Slider(minimum=1, maximum=100000000, step=1, value=42, label="Audio seed for Chattts", visible=False)
+                use_tts = gr.Checkbox(label="Use TTS based on GPT-SoVITS", info="Left click on the text generated by LLM to convert it to speech")
                 # GPT-SoVITS相关组件
                 gpt_sovits_voice = gr.Radio(["派蒙", "罗刹", "胡桃", "魈"], value="派蒙", label="Reference audio for GPT-SoVITS", visible=False)
-                cut_punc = gr.Textbox(value=",.;?!、，。？！；：…", label="Delimiters for GPT-SoVITS", visible=False, interactive=False)
+                cut_punc = gr.Textbox(value=",.;?!、，。？！；：…", label="Delimiters for GPT-SoVITS", visible=False)
                 # GPT-SoVITS推理时需要的参数，正常情况下保持不可见
                 gpt_path = gr.Textbox(value=default_gpt_path, visible=False)
                 sovits_path = gr.Textbox(value=default_sovits_path, visible=False)
@@ -314,7 +263,9 @@ with gr.Blocks() as demo:
                 prompt_language = gr.Textbox(value=config["gptsovits"]["language"]["paimeng"], visible=False)
 
             with gr.Column(scale=11):
-                chatbot = gr.Chatbot(label="ComfyChat")
+                chatbot = gr.Chatbot(label="ComfyChat",
+                                     avatar_images=(("source/ComfyUI_00006_.png", 
+                                                     "source/ComfyUI_00033_.png")))
                 msg = gr.Textbox()
                 with gr.Row():
                     submit = gr.Button("Submit")
@@ -326,9 +277,9 @@ with gr.Blocks() as demo:
 
                 # 设置
                 out_audio = gr.Audio(label="Click on the reply text to generate the corresponding audio", type="numpy")
-                
-            use_tts.change(toggle_tts_radio, inputs=use_tts, outputs=tts_model)
-            tts_model.change(toggle_tts_components, inputs=tts_model, outputs=[chattts_audio_seed, gpt_sovits_voice, cut_punc])
+            
+            # backend.change(toggle_local_engin, inputs=backend, outputs=local_backend_engin)  # 做成动态的比较耗资源，暂时不开启
+            use_tts.change(toggle_tts_radio, inputs=use_tts, outputs=[gpt_sovits_voice, cut_punc])
             gpt_sovits_voice.change(update_gpt_sovits, inputs=gpt_sovits_voice, outputs=[gpt_path, sovits_path, ref_wav_path, prompt_text, prompt_language])
 
             audio2text_buttong.click(audio2text, in_audio, msg)
@@ -336,11 +287,11 @@ with gr.Blocks() as demo:
             clear.click(lambda: None, None, chatbot, queue=False)
 
             # 添加 Chatbot.select 事件监听器
-            chatbot.select(chatbot_selected2tts, inputs=[use_tts, tts_model, chattts_audio_seed, lang, cut_punc, gpt_path,
-                                                         sovits_path, ref_wav_path, prompt_text, prompt_language], outputs=out_audio)
+            chatbot.select(chatbot_selected2tts, inputs=[use_tts, lang, cut_punc, gpt_path, sovits_path, ref_wav_path,
+                                                         prompt_text, prompt_language], outputs=out_audio)
     if config['comfyui']['enable'] == 1:
         with gr.Tab("ComfyUI for generating"):
-            turn_on_comfyui = gr.Checkbox(label="Tutn on ComfyUI", info="Switch the default raw image interface to ComfyUI GUI")
+            turn_on_comfyui = gr.Checkbox(label="Turn on ComfyUI GUI", info="Switch the default raw image interface to ComfyUI GUI")
             with gr.Group() as fixed_workflow:
                 with gr.Blocks():
                     # Initial.initialized = gr.Checkbox(value=False, visible=False)
