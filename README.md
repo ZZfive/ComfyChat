@@ -2,6 +2,7 @@
 Rough LLM Interpreter of ComfyUI
 
 - [简介](#简介)
+- [架构图](#架构图)
 - [项目发展方向](#项目发展方向)
 - [数据](#数据)
 - [工作内容](#工作内容)
@@ -16,6 +17,8 @@ Rough LLM Interpreter of ComfyUI
 
 &emsp;&emsp;因兴趣原因，使用过各类Stable Diffusion模型的GUI项目，如[stable diffusion webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui)，[Fooocus](https://github.com/lllyasviel/Fooocus)，[ComfyUI](https://github.com/comfyanonymous/ComfyUI)等，ComfyUI节点式的工作方式、活跃的开源社区为其开发的各类功能强大的自定义节点和工作流，均赋予了ComfyUI强大能力，但同时也使其学习成本较高，本项目通过收集社区各中数据构建数据集，使用LLM技术，构建一个降低ComfyUI学习成本的工具。
 
+## 架构图
+![enter image description here](assets/ComfyChat.png?raw=true)
 
 ## 项目发展方向
 - 已进行
