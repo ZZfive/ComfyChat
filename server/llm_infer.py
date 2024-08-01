@@ -127,6 +127,7 @@ class LocalTransformersInferenceWrapper:
                                           return_tensors='pt').to('cuda')
             generated_ids = self.model.generate(model_inputs.input_ids,
                                                 max_new_tokens=512,
+                                                repetition_penalty=1.1,
                                                 top_k=1)
             generated_ids = [
                 output_ids[len(input_ids):] for input_ids, output_ids in zip(
@@ -146,6 +147,7 @@ class LocalTransformersInferenceWrapper:
                                                  prompt,
                                                  history,
                                                  top_k=1,
+                                                 repetition_penalty=1.1,
                                                  do_sample=False)
         return output_text
     
@@ -153,7 +155,7 @@ class LocalTransformersInferenceWrapper:
 class LocalLmdeployInferenceWrapper:
     """A class to wrapper kinds of local LLM framework with LMDeploy."""
     
-    def __init__(self, model_path: str, model_name: str = None, cache_max_entry_count: float = 0.3) -> None:
+    def __init__(self, model_path: str, model_name: str = None, cache_max_entry_count: float = 0.2) -> None:
         self.model_path = model_path
         if model_name is not None:
             self.model_name = model_name
@@ -185,7 +187,11 @@ class LocalLmdeployInferenceWrapper:
                                  )
 
     def chat(self, prompt: str, history: List[Tuple[str, str]] = []) -> str:
-        gen_config = GenerationConfig(top_p=0.8, top_k=40, temperature=0.8, max_new_tokens=1024)
+        gen_config = GenerationConfig(top_p=0.8,
+                                      top_k=1,
+                                      temperature=0.0,
+                                      repetition_penalty=1.1,
+                                      max_new_tokens=1024)
         messages = build_messages(prompt=prompt,
                                   history=history,
                                   system='You are a helpful assistant')

@@ -111,7 +111,8 @@ if config['comfyui']['enable'] == 1:
 
 def generate_answer(prompt: str, history: list, lang: str = 'en', backend: str = 'remote', use_rag: bool = False) -> str:
     # 默认不走RAG
-    prompt = PROMPT_TEMPLATE["EN_PROMPT_TEMPALTE" if lang == "en" else "ZH_PROMPT_TEMPALTE"].format(question=prompt)
+    if not use_rag:
+        prompt = PROMPT_TEMPLATE["EN_PROMPT_TEMPALTE" if lang == "en" else "ZH_PROMPT_TEMPALTE"].format(question=prompt)
 
     if use_rag:  # 设置了走RAG
         chunk, context, references = en_retriever.query(prompt) if lang == "en" else zh_retriever.query(prompt)
