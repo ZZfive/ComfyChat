@@ -240,7 +240,10 @@ def chatbot_selected2tts(evt: gr.SelectData, use_tts: bool, text_language: str, 
         results = get_tts_wav(text, text_language, cut_punc, ref_wav_path, prompt_text, prompt_language, return_numpy=True)
         return results
     else:
-        return (None, None)
+        with open(os.path.join(parent_dir, "wavs/default.wav"), "rb") as audio_file:
+            audio_bytes = audio_file.read()
+            data = np.frombuffer(audio_bytes, dtype=np.int16)
+        return (32000, data)
 
 
 with gr.Blocks() as demo:

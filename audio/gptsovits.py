@@ -353,13 +353,13 @@ def get_tts_wav(text: str,
         audio_bytes = pack_audio(audio_bytes, (np.concatenate(audio_opt, 0) * 32768).astype(np.int16),
                                  hps.data.sampling_rate)
     # logger.info("%.3f\t%.3f\t%.3f\t%.3f" % (t1 - t0, t2 - t1, t3 - t2, t4 - t3))
-    
+    print(hps.data.sampling_rate)
     return (hps.data.sampling_rate, np.frombuffer(audio_bytes.getvalue(), dtype=np.int16)) if return_numpy else pack_wav(audio_bytes, hps.data.sampling_rate)
 
 
 if __name__ == '__main__':
-    wav_bytes = get_tts_wav('本文件中的信息仅供学术交流使用。其目的是用于教育和研究，不得用于任何商业或法律目的。作者不保证信息的准确性、完整性或可靠性。本文件中使用的信息和数据，仅用于学术研究目的。这些数据来自公开可用的来源，作者不对数据的所有权或版权提出任何主张。', 'zh',)
+    wav_bytes = get_tts_wav('未开启TTS时，左键点击LLM生成的回复内容，返回本默认音频。', 'zh',)
 
     # 将BytesIO对象保存为WAV文件
-    with open('/root/code/ComfyChat/audio/wavs/output1-test.wav', 'wb') as f:
+    with open('/root/code/ComfyChat/audio/wavs/default.wav', 'wb') as f:
         f.write(wav_bytes.getbuffer())

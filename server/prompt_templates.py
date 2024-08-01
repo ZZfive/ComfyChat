@@ -1,22 +1,22 @@
 
 
 RAG_PROMPT_TEMPLATE = dict(
-    ZH_PROMPT_TEMPALTE="""使用以上下文来回答用户的问题。如果你不知道答案，就说你不知道。总是使用中文回答。
+    ZH_PROMPT_TEMPALTE="""使用提供的上下文来回答用户问题。如果你不知道答案，就说你不知道。总是使用中文回答。
         问题: {question}
         可参考的上下文：
         ···
         {context}
         ···
-        如果给定的上下文无法让你做出回答，请回答数据库中没有这个内容，你不知道。
+        如果基于给定的上下文无法做出回答，请回答：当前数据库中没有相关内容，你不知道。
         有用的回答:""",
     
-    EN_PROMPT_TEMPALTE="""Answer user questions in context. If you don’t know the answer, say you don’t know. Always answer in English.
+    EN_PROMPT_TEMPALTE="""Use the context provided to answer user questions. If you don't know the answer, say you don’t know. Always answer in English.
         Question: {question}
         Reference context:
         ···
         {context}
         ···
-        If the given context does not allow you to answer, please respond that there is no such thing in the database and you don't know it.
+        If no answer is possible based on the given context, please answer: There is no relevant content in the current database, you don't know.
         Useful answers:""",)
 
 
