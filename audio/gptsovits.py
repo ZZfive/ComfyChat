@@ -19,11 +19,14 @@ now_dir = '/root/code/ComfyChat/audio'
 sys.path.append(now_dir)
 sys.path.append("%s/GPT-SoVITS" % (now_dir))
 sys.path.append("%s/GPT-SoVITS/GPT_SoVITS" % (now_dir))
+parent_dir =  os.path.abspath(os.path.join(now_dir, '..'))
 
+import pytoml
 import torch
 import librosa
 import LangSegment
 import numpy as np
+import gradio as gr
 from transformers import AutoModelForMaskedLM, AutoTokenizer
 
 from feature_extractor import cnhubert
@@ -358,8 +361,74 @@ def get_tts_wav(text: str,
 
 
 if __name__ == '__main__':
-    wav_bytes = get_tts_wav('未开启TTS时，左键点击LLM生成的回复内容，返回本默认音频。', 'zh',)
+    # wav_bytes = get_tts_wav('未开启TTS时，左键点击LLM生成的回复内容，返回本默认音频。', 'zh',)
 
-    # 将BytesIO对象保存为WAV文件
-    with open('/root/code/ComfyChat/audio/wavs/default.wav', 'wb') as f:
-        f.write(wav_bytes.getbuffer())
+    # # 将BytesIO对象保存为WAV文件
+    # with open('/root/code/ComfyChat/audio/wavs/default.wav', 'wb') as f:
+    #     f.write(wav_bytes.getbuffer())
+
+
+    with open('/root/code/ComfyChat/server/config.ini', encoding='utf-8') as f:
+        config = pytoml.load(f)
+
+
+    def update_gpt_sovits(selected_option: str) -> Tuple[str]:
+        if selected_option == "派蒙":
+            return (os.path.join(parent_dir, config["gptsovits"]["gpt_path"]["paimeng"]),
+                    os.path.join(parent_dir, config["gptsovits"]["sovits_path"]["paimeng"]),
+                    os.path.join(parent_dir, config["gptsovits"]["wav"]["paimeng"]),
+                    config["gptsovits"]["prompt"]["paimeng"],
+                    config["gptsovits"]["language"]["paimeng"])
+        elif selected_option == "罗刹":
+            return (os.path.join(parent_dir, config["gptsovits"]["gpt_path"]["luocha"]),
+                    os.path.join(parent_dir, config["gptsovits"]["sovits_path"]["luocha"]),
+                    os.path.join(parent_dir, config["gptsovits"]["wav"]["luocha"]),
+                    config["gptsovits"]["prompt"]["luocha"],
+                    config["gptsovits"]["language"]["luocha"])
+        elif selected_option == "胡桃":
+            return (os.path.join(parent_dir, config["gptsovits"]["gpt_path"]["hutao"]),
+                    os.path.join(parent_dir, config["gptsovits"]["sovits_path"]["hutao"]),
+                    os.path.join(parent_dir, config["gptsovits"]["wav"]["hutao"]),
+                    config["gptsovits"]["prompt"]["hutao"],
+                    config["gptsovits"]["language"]["hutao"])
+        elif selected_option == "魈":
+            return (os.path.join(parent_dir, config["gptsovits"]["gpt_path"]["xiao"]),
+                    os.path.join(parent_dir, config["gptsovits"]["sovits_path"]["xiao"]),
+                    os.path.join(parent_dir, config["gptsovits"]["wav"]["xiao"]),
+                    config["gptsovits"]["prompt"]["xiao"],
+                    config["gptsovits"]["language"]["xiao"])
+
+
+    def chatbot_selected2tts(text: str, text_language: str, cut_punc: str, gpt_path: str, sovits_path: str,
+                             ref_wav_path: str, prompt_text: str, prompt_language: str) -> Tuple[int, np.ndarray]:
+        global default_gpt_path, default_sovits_path
+        if gpt_path != default_gpt_path and sovits_path != default_sovits_path:
+            set_gpt_weights(gpt_path)
+            set_sovits_weights(sovits_path)
+            default_gpt_path = gpt_path
+            default_sovits_path = sovits_path
+        results = get_tts_wav(text, text_language, cut_punc, ref_wav_path, prompt_text, prompt_language, return_numpy=True)
+        return results
+
+
+    with gr.Blocks() as demo:
+        with gr.Row():
+            with gr.Column(scale=1):
+                gpt_sovits_voice = gr.Radio(["派蒙", "罗刹", "胡桃", "魈"], value="派蒙", label="Reference audio for GPT-SoVITS")
+                cut_punc = gr.Textbox(value=",.;?!、，。？！；：…", label="Delimiters for GPT-SoVITS")
+                lang = gr.Radio(["zh", "en"], value="zh", label="Language")
+                gpt_path = gr.Textbox(value=default_gpt_path)
+                sovits_path = gr.Textbox(value=default_sovits_path)
+                ref_wav_path = gr.Textbox(value=os.path.join(parent_dir, config["gptsovits"]["wav"]["paimeng"]))
+                prompt_text = gr.Textbox(value=config["gptsovits"]["prompt"]["paimeng"])
+                prompt_language = gr.Textbox(value=config["gptsovits"]["language"]["paimeng"])
+            with gr.Column(scale=11):
+                text = gr.Textbox()
+                audio = gr.Audio(type="numpy")
+                button = gr.Button("Generate")
+
+            gpt_sovits_voice.change(update_gpt_sovits, inputs=gpt_sovits_voice, outputs=[gpt_path, sovits_path, ref_wav_path, prompt_text, prompt_language])
+            button.click(chatbot_selected2tts, inputs=[text, lang, cut_punc, gpt_path, sovits_path, ref_wav_path, prompt_text, prompt_language], outputs=audio)
+
+    demo.queue()
+    demo.launch(server_name="0.0.0.0", share=True)
