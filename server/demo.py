@@ -188,7 +188,7 @@ def toggle_comfyui(show: bool) -> Tuple[bool, bool]:
     return (gr.update(visible=not show), gr.update(visible=show))
     
 
-# 使用GPT-SoVITS时随着克隆对象的变化设置对应参数  # TODO 下载合适的角色音频文件替换
+# 使用GPT-SoVITS时随着克隆对象的变化设置对应参数
 def update_gpt_sovits(selected_option: str) -> Tuple[str]:
     if selected_option == "派蒙":
         return (os.path.join(parent_dir, config["gptsovits"]["gpt_path"]["paimeng"]),
