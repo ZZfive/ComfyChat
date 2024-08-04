@@ -240,14 +240,14 @@ def chatbot_selected2tts(evt: gr.SelectData, use_tts: bool, text_language: str, 
         results = get_tts_wav(text, text_language, cut_punc, ref_wav_path, prompt_text, prompt_language, return_numpy=True)
         return results
     else:
-        with open(os.path.join(parent_dir, "wavs/default.wav"), "rb") as audio_file:
+        with open(os.path.join(parent_dir, "audio/wavs/default.wav"), "rb") as audio_file:
             audio_bytes = audio_file.read()
             data = np.frombuffer(audio_bytes, dtype=np.int16)
         return (32000, data)
 
 
 with gr.Blocks() as demo:
-    with gr.Tab("ComfyChat with LLM"):
+    with gr.Tab("ComfyChat based on LLM"):
         with gr.Row():
             with gr.Column(scale=1):
                 backend = gr.Radio(["local", "remote"], value="remote", label="Inference backend")
@@ -268,19 +268,20 @@ with gr.Blocks() as demo:
 
             with gr.Column(scale=11):
                 chatbot = gr.Chatbot(label="ComfyChat",
-                                     avatar_images=(("source/user.webp", 
-                                                     "source/comfychat.webp")))
+                                     avatar_images=(("source/comfychat2.webp", 
+                                                     "source/comfychat3.webp")))
                 msg = gr.Textbox()
                 with gr.Row():
                     submit = gr.Button("Submit")
                     clear = gr.Button("Clear")
 
                 # 语音输入
-                in_audio = gr.Audio(sources="microphone", type="filepath")
-                audio2text_buttong = gr.Button("audio transcribe to text")
+                in_audio = gr.Audio(sources="microphone", type="filepath", label="Voice input")
+                audio2text_buttong = gr.Button("Transcribe audio to text")
 
                 # 设置
-                out_audio = gr.Audio(label="Click on the reply text to generate the corresponding audio", type="numpy")
+                out_audio = gr.Audio(label="Click on the reply text to generate the corresponding audio. If TTS is not enabled, the default audio will be returned.",
+                                     type="numpy")
             
             # backend.change(toggle_local_engin, inputs=backend, outputs=local_backend_engin)  # 做成动态的比较耗资源，暂时不开启
             use_tts.change(toggle_tts_radio, inputs=use_tts, outputs=[gpt_sovits_voice, cut_punc])
@@ -294,8 +295,8 @@ with gr.Blocks() as demo:
             chatbot.select(chatbot_selected2tts, inputs=[use_tts, lang, cut_punc, gpt_path, sovits_path, ref_wav_path,
                                                          prompt_text, prompt_language], outputs=out_audio)
     if config['comfyui']['enable'] == 1:
-        with gr.Tab("ComfyUI for generating"):
-            turn_on_comfyui = gr.Checkbox(label="Turn on ComfyUI GUI", info="Switch the default raw image interface to ComfyUI GUI")
+        with gr.Tab("ComfyUI GUI"):
+            turn_on_comfyui = gr.Checkbox(label="Switch to ComfyUI GUI", info="Switch the default raw image interface to ComfyUI GUI")
             with gr.Group() as fixed_workflow:
                 with gr.Blocks():
                     # Initial.initialized = gr.Checkbox(value=False, visible=False)
