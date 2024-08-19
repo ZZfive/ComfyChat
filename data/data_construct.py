@@ -13,6 +13,7 @@ from prompt_templates import *
 import config
 
 
+# 将拉取的自定义节点中的markdown文档转为txt文件并保存
 def md2txt(mds_dir: str="/root/code/ComfyChat/data/custom_nodes_mds") -> None:
     for item in os.listdir(mds_dir):
         item_path = os.path.join(mds_dir, item)
@@ -31,6 +32,7 @@ def md2txt(mds_dir: str="/root/code/ComfyChat/data/custom_nodes_mds") -> None:
                         print(f"Conversion of MD file {md_path} to txt failed, error {e}")
 
 
+# 针对三个问题构建了一些问题模板，然后和comfyui-manager中维护的自定义节点排列组合构建一个对话数据json文件--感觉意义不大
 def construct_data_from_custom_node_list(custom_node_list_url: str = 'https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json',
                                          custom_node_map_url: str = 'https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json',
                                          together: bool = False, save_path: str = '/root/code/ComfyChat/data/comfyui_node_data.json') -> Any: 
@@ -215,6 +217,7 @@ def eng2zh_siliconflow(eng_text: str, model: str = 'deepseek-ai/deepseek-v2-chat
     return ans
     
 
+# 与construct_data_from_custom_node_list的区别就是使用的是中文模板
 def construct_data_zh_from_custom_node_list(custom_node_list_url: str = 'https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json',
                                          custom_node_map_url: str = 'https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json',
                                          together: bool = False, save_path: str = '/root/code/ComfyChat/data/comfyui_node_data_zh.json') -> Any: 
@@ -297,6 +300,7 @@ def construct_data_zh_from_custom_node_list(custom_node_list_url: str = 'https:/
         raise ValueError(f"err: {e}")
 
 
+# 将alpacha数据集转为openai对话类型结构数据
 def alpaca_modify(alpaca_path: str, save_path: str) -> None:
     try:
         data = []
