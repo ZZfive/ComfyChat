@@ -26,9 +26,9 @@ Rough LLM Interpreter of ComfyUI
 1. 推荐使用conda或miniconda新建一个python310的虚拟环境并激活，即'conda create -n ComfyChat python=3.10'、'conda activate ComfyChat'
 2. [requirements.txt](server/requirements.txt)中已指定主要依赖库和版本，在ComfyChat中安装即可。不推荐直接使用'pip install -r requirements.txt'安装，因为依赖库较多，一个库安装失败会导致所有库安装失败。requirements.txt中各库版本是项目开发环境中使用版本，应该不会出现版本冲突，但不保证。
 3. 拉取本项目代码：git clone --recurse-submodules https://github.com/ZZfive/ComfyChat.git
-4. 为方便模型管理，服务依赖模型可统一存放在[weights](weights)路径下，其中主要存放Whisperx和GPT-SoVITS依赖模型，LLM和Embedding的模型也能存放在此路径下，只需在[config.ini](server/config.ini)正确配置即可。Whisperx依赖模型在demo.py运行时会自动下载至weights中，GPT-SoVITS依赖模型则需手动下载。先在weights路径下创建GPT-SoVITS，将相关模型存放在weights/GPT-SoVITS中；此路径接口图如下所示，其中weights/GPT_SoVITS/pretrained_models路径下存放的是GPT-SoVITS项目提供的预训练模型，可在该项目中找到下载地址；而剩下的人物角色模型是开源社区贡献的，可在[此处](https://www.yuque.com/baicaigongchang1145haoyuangong/ib3g1e/nwnaga50cazb2v93)下载
+4. 为方便模型管理，服务依赖模型可统一存放在[weights](weights)路径下，其中主要存放Whisperx和GPT-SoVITS依赖模型，LLM和Embedding的模型也能存放在此路径下，只需在[config.ini](server/config.ini)正确配置即可。Whisperx依赖模型在demo.py运行时会自动下载至weights中，GPT-SoVITS依赖模型则需手动下载。先在weights路径下创建GPT-SoVITS，将相关模型存放在weights/GPT-SoVITS中；此路径结构图如下所示，其中weights/GPT_SoVITS/pretrained_models路径下存放的是GPT-SoVITS项目提供的预训练模型，可在该项目中找到下载地址；而剩下的人物角色模型是开源社区贡献，可在[此处](https://www.yuque.com/baicaigongchang1145haoyuangong/ib3g1e/nwnaga50cazb2v93)下载
 ![enter image description here](assets/weights_gptsovits.png?raw=true)
-5. 若想开启comfyui，需要先准备一些必要模型，如Stable-diffusion、Lora、VAE、embeddings和controlnet等，可以将此类模型都存放在[weights](weights)路径下，然后修改[visual_genrations/comfyui/extra_model_paths.yaml.example](/root/code/ComfyChat/visual_genrations/comfyui/extra_model_paths.yaml.example)文件；先将文件名中的.example删掉，改为extra_model_paths.yaml，然后再按以下截图中设置模型路径。模型准备好后，将config.ini中comfyui配置中的enable设置为1
+5. 若想开启comfyui，需要先准备一些必要模型，如Stable-diffusion、Lora、VAE、embeddings和controlnet等，可以将此类模型都存放在[weights](weights)路径下，然后修改[visual_genrations/comfyui/extra_model_paths.yaml.example](visual_genrations/comfyui/extra_model_paths.yaml.example)文件。先将文件名中的.example删掉，改为extra_model_paths.yaml，然后再按以下截图中设置模型路径。模型准备好后，将config.ini中comfyui配置中的enable设置为1
 ![enter image description here](assets/comfyui_models.png?raw=true)
 6. 执行完上述操作后，正确设置[config.ini](server/config.ini)，'python demo.py'就能成功运行服务
 
@@ -75,8 +75,10 @@ ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)收集的自定义�
    - 指令微调所需的对话数据构建：已构建v1、v2数据，详细数据跳转至[此处](data/message_jsons/README.md)
 
  ### 训练
- - [x] InternLM2微调
  - [ ] LLaMA3微调
+ - [x] InternLM2.5-7b微调
+ - [x] InternLM2-7b微调
+ - [x] InternLM2-1.8b微调
 
  ### 服务部署
  - [x] 基于微调后LLMs的对话服务部署
