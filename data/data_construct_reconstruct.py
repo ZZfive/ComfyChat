@@ -14,7 +14,7 @@ from openai import OpenAI
 
 import config
 from prompt_templates import system_prompt1, template1
-from utils import create_logger
+from utils import create_logger, get_data_from_url
 
 
 logger = create_logger("data_construct")
@@ -187,10 +187,17 @@ class LLMApiGenerator:
     
 
 # TODO 基于comfyui-manager构建messages的pipeline
-class MessagesGeneratePipelineWithComfyuiManager:
+class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
+    custom_node_list_json_url = "https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json"  # 自定义节点列表
+    custom_node_map_json_url = "https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json"  # 包含自定义节点的子节点信息
+    github_stats_json_url = "https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json"  # 自定义节点的更新信息
+    model_list_json_url = "https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json"  # 常用模型的下载地址等信息
     pass
 
+
 # TODO 简化当前对四个开源社区的数据提炼过程
+class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
+    pass
 
 
 # TODO 优化各数据块混合方案
