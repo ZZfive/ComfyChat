@@ -6,11 +6,14 @@
 @Author  :   zzfive 
 @Desc    :   None
 '''
+import time
+from datetime import datetime, timedelta
 
-
+import requests
 from openai import OpenAI
 
 import config
+from prompt_templates import system_prompt1, template1
 from utils import create_logger
 
 
@@ -52,24 +55,33 @@ class RPM:
         logger.debug(self.record)
 
 
-# TODO 定义一个类，将使用不同LLM接口进行翻译的所有函数封装
-class LLMApiTranslator:
+class LLMApiGenerator:
     def __init__(self, rpm: int = 10) -> None:
         self.rpm = RPM(rpm)
-        self.backend_infos = {
-            "kimi":{base_url: "https://api.moonshot.cn/v1", defualt_model: "moonshot-v1-8k", api_key: config.MOONSHOT_API_KEY},
-            "deepseek":{base_url: "https://api.deepseek.com/v1", defualt_model: "deepseek-chat", api_key: config.DEEPSEEK_API_KEY},
-            "openrouter":{base_url: "https://openrouter.ai/api/v1", defualt_model: "google/gemma-7b-it:free", api_key: config.OPENROUTER_API_KEY},
-            "siliconflow":{base_url: "https://api.siliconflow.cn/v1/chat/completions", defualt_model: "deepseek-ai/deepseek-v2-chat", api_key: config.SILICONFLOW_API_KEY},
-            "chat2api":{base_url: "http://127.0.0.1:5005/v1/chat/completions", defualt_model: "gpt-3.5-turb", api_key: config.OPENAI_ACCESS_TOKEN},
-            }
+        self.backend_settings = {
+            "kimi":{"base_url": "https://api.moonshot.cn/v1",
+                    "defualt_model": "moonshot-v1-8k",
+                    "api_key": config.MOONSHOT_API_KEY},
+            "deepseek":{"base_url": "https://api.deepseek.com/v1",
+                        "defualt_model": "deepseek-chat",
+                        "api_key": config.DEEPSEEK_API_KEY},
+            "openrouter":{"base_url": "https://openrouter.ai/api/v1",
+                          "defualt_model": "google/gemma-7b-it:free",
+                          "api_key": config.OPENROUTER_API_KEY},
+            "siliconflow":{"base_url": "https://api.siliconflow.cn/v1/chat/completions",
+                           "defualt_model": "deepseek-ai/deepseek-v2-chat",
+                           "api_key": config.SILICONFLOW_API_KEY},
+            "chat2api":{"base_url": "http://127.0.0.1:5005/v1/chat/completions",
+                        "defualt_model": "gpt-3.5-turb",
+                        "api_key": config.OPENAI_ACCESS_TOKEN},
+        }
 
-    def eng2zh_openai(self, eng_text: str, api_key: str, base_url: str, model: str) -> str:
+    def eng2zh_openai(self, eng_text: str, base_url: str, api_key: str, model: str) -> str:
         self.rpm.wait()
         client = OpenAI(api_key=api_key, base_url=base_url)
 
         completion = client.chat.completions.create(
-            model="moonshot-v1-8k",
+            model=model,
             messages=[
                 {"role": "system", "content": "你是英汉翻译大师。 请将用户输入的英文文本准确翻译成中文。 一些专有名词可以保留而无需翻译。"},
                 {"role": "user", "content": f"将以下文字翻译成中文，不要添加任何无关内容：{eng_text}"}
@@ -79,7 +91,7 @@ class LLMApiTranslator:
         ans = completion.choices[0].message.content
         return ans
 
-    def eng2zh_requests(self, eng_text: str, api_key: str, base_url: str, model: str) -> str:
+    def eng2zh_requests(self, eng_text: str, base_url: str, api_key: str, model: str) -> str:
         self.rpm.wait()
         payload = {
             "model": model,
@@ -101,14 +113,90 @@ class LLMApiTranslator:
         return ans
 
     def eng2zh_llm(self, eng_text: str, backend: str = "kimi", api_key: str = None, base_url: str = None, model: str = None) -> str:
-        pass
+        api_key = self.backend_settings[backend]["api_key"] if api_key is None else api_key
+        base_url = self.backend_settings[backend]["base_url"] if base_url is None else base_url
+        model = self.backend_settings[backend]["defualt_model"] if model is None else model
 
+        if backend in ["kimi", "deepseek", "openrouter"]:
+            ans = self.eng2zh_openai(eng_text, base_url, api_key, model)
+        elif backend in ["siliconflow", "chat2api"]:
+            ans = self.eng2zh_requests(eng_text, base_url, api_key, model)
+        else:
+            raise ValueError(f"{backend}不支持")
+        
+        return ans
+    
+    def messages_generate_openai(self, subject: str, file_path: str, base_url: str, api_key: str, model: str,
+                                 system_prompt: str = system_prompt1, template: str = template1) -> str:
+        self.rpm.wait()
+        client = OpenAI(api_key=api_key, base_url=base_url)
 
-# TODO 定义一个类，将使用不同LLM接口生成问答数据的所有函数封装
-class LLMMessagesGenerator:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            file_content = f.read()
+
+        completion = client.chat.completions.create(
+        model=model,
+        messages=[
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": template.format(subject, file_content)},
+        ],
+        temperature=1.0,
+        )
+        return completion.choices[0].message.content
+
+    def messages_generate_requests(self, subject: str, file_path: str, base_url: str, api_key: str, model: str,
+                                   system_prompt: str = system_prompt1, template: str = template1) -> str:
+        self.rpm.wait()
+        with open(file_path, 'r', encoding='utf-8') as f:
+            file_content = f.read()
+
+        payload = {
+            "model": model,
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": template.format(subject, file_content)}
+            ]
+        }
+
+        headers = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "authorization": f"Bearer {api_key}"
+        }
+
+        response = requests.post(base_url, json=payload, headers=headers)
+
+        ans = response.json()
+        ans = ans['choices'][0]['message']['content']
+        return ans
+
+    def messages_generate_llm(self, subject: str, file_path: str, backend: str = "kimi", base_url: str = None, api_key: str = None,
+                              model: str = None, system_prompt: str = system_prompt1, template: str = template1) -> str:
+        api_key = self.backend_settings[backend]["api_key"] if api_key is None else api_key
+        base_url = self.backend_settings[backend]["base_url"] if base_url is None else base_url
+        model = self.backend_settings[backend]["defualt_model"] if model is None else model
+
+        if backend in ["kimi", "deepseek", "openrouter"]:
+            ans = self.messages_generate_openai(subject, file_path, base_url, api_key, model, system_prompt, template)
+        elif backend in ["siliconflow", "chat2api"]:
+            ans = self.messages_generate_requests(subject, file_path, base_url, api_key, model, system_prompt, template)
+        else:
+            raise ValueError(f"{backend}不支持")
+        
+        return ans
+    
+
+# TODO 基于comfyui-manager构建messages的pipeline
+class MessagesGeneratePipelineWithComfyuiManager:
     pass
 
 # TODO 简化当前对四个开源社区的数据提炼过程
 
 
 # TODO 优化各数据块混合方案
+
+
+if __name__ == "__main__":
+    generator = LLMApiGenerator()
+    eng_text = "hello world"
+    print(generator.eng2zh_llm(eng_text))
