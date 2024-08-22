@@ -3,6 +3,7 @@ import re
 import json
 import time
 import logging
+from datetime import datetime
 
 from typing import List, Any, Tuple
 
@@ -91,6 +92,25 @@ def extract_name_extension(filepath: str) -> Tuple[str, str]:
     name_ext = os.path.basename(filepath)
     name, extension = os.path.splitext(name_ext)
     return name, extension
+
+
+def get_latest_modification_time(directory: str) -> str:
+    latest_time = None
+    
+    # 遍历目录中的所有文件
+    for root, dirs, files in os.walk(directory):
+        for name in files:
+            filepath = os.path.join(root, name)
+            # 获取文件的修改时间
+            file_time = os.path.getmtime(filepath)
+            # 更新最新的修改时间和文件名
+            if latest_time is None or file_time > latest_time:
+                latest_time = file_time
+    
+    if latest_time:
+        return datetime.fromtimestamp(latest_time).strftime('%Y-%m-%d %H:%M:%S')
+    else:
+        return None
 
 
 if __name__=='__main__':

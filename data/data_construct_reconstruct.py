@@ -8,6 +8,7 @@
 '''
 import os
 import time
+from typing import Any
 from datetime import datetime, timedelta
 
 import requests
@@ -15,7 +16,7 @@ from openai import OpenAI
 
 import config
 from prompt_templates import system_prompt1, template1
-from utils import create_logger, get_data_from_url, load4json, save2json
+from utils import create_logger, get_data_from_url, load4json, save2json, get_latest_modification_time
 
 
 logger = create_logger("data_construct")
@@ -195,25 +196,38 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
     github_stats_json_url = "https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json"  # 自定义节点的更新信息
     model_list_json_url = "https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json"  # 常用模型的下载地址等信息
 
-    local_custom_node_list_path = "/root/code/ComfyChat/data/custom_node_list.json"
-    local_custom_node_map_path = "/root/code/ComfyChat/data/node_map_json.json"
-    local_github_stats_path = "/root/code/ComfyChat/data/github_stats.json"
-    local_model_list_path = "/root/code/ComfyChat/data/model_list.json"
+    local_custom_node_infos_path = "/root/code/ComfyChat/data/custom_node_infos.json"
 
     def __init__(self) -> None:
-        self.custom_node_list = self.init_info(self.local_custom_node_list_path, self.custom_node_list_json_url)
-        self.custom_node_map = self.init_info(self.local_custom_node_map_path, self.custom_node_map_json_url)
-        self.github_stats = self.init_info(self.local_github_stats_path, self.github_stats_json_url)
-        self.model_list = self.init_info(self.local_model_list_path, self.model_list_json_url)
-
-    def init_info(self, local_path: str, remote_url: str) -> Any:
-        if os.path.exists(local_path):
-            info = load4json(local_path, [])
+        if os.path.exists(self.local_custom_node_infos_path):
+            self.local_custom_node_infos = load4json(self.local_custom_node_infos_path, {})
         else:
-            info = get_data_from_url(remote_url)
-            save2json(info, local_path)
+            self.local_custom_node_infos = {}
+        self.touch_infos()
 
-        return info
+    def touch_infos(self, local_custom_node_dir: str = "/root/code/ComfyChat/data/custom_nodes_repos") -> None:
+        custom_node_list = get_data_from_url(self.custom_node_list_json_url)['custom_nodes']
+        custom_node_map = get_data_from_url(self.custom_node_map_json_url)
+        node_github_stats = get_data_from_url(self.github_stats_json_url)
+        for node_info in custom_node_list:
+            node_url = node_info['reference']
+            node_name = node_url.split("/")[-1]
+            local_path = os.path.join(local_custom_node_dir, node_name)
+            if os.path.exists(local_path) and len(os.listdir(local_path)) > 0:
+                if node_url in self.local_custom_node_infos:
+                    if self.local_custom_node_infos[node_url].get("local_last_update", None) is None:
+                        self.local_custom_node_infos[node_url]["local_last_update"] = get_latest_modification_time(local_path)
+                    self.local_custom_node_infos[node_url]["cloned"] = True
+                else:
+                    self.local_custom_node_infos[node_url] = {}
+                    self.local_custom_node_infos[node_url]["local_last_update"] = None
+                    self.local_custom_node_infos[node_url]["cloned"] = True
+                self.local_custom_node_infos[node_url]["remote_last_update"] = node_github_stats[node_url].get("last_update", None) if node_url in node_github_stats else None
+            else:
+                self.local_custom_node_infos[node_url] = {}
+                self.local_custom_node_infos[node_url]["local_last_update"] = None
+                self.local_custom_node_infos[node_url]["cloned"] = False
+                self.local_custom_node_infos[node_url]["remote_last_update"] = node_github_stats[node_url].get("last_update", None) if node_url in node_github_stats else None
 
 
 
@@ -226,6 +240,16 @@ class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
 
 
 if __name__ == "__main__":
-    generator = LLMApiGenerator()
-    eng_text = "hello world"
-    print(generator.eng2zh_llm(eng_text))
+    # generator = LLMApiGenerator()
+    # eng_text = "hello world"
+    # print(generator.eng2zh_llm(eng_text))
+
+    pipeline = DataCollectAndMessagesGeneratePipelineWithComfyuiManager()
+    i = 1
+    for node_url in pipeline.local_custom_node_infos.keys():
+        print(str(i) * 40)
+        print(node_url)
+        print(pipeline.local_custom_node_infos[node_url])
+        if i == 10:
+            break
+        i += 1
