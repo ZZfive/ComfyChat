@@ -6,6 +6,7 @@
 @Author  :   zzfive 
 @Desc    :   None
 '''
+import os
 import time
 from datetime import datetime, timedelta
 
@@ -14,7 +15,7 @@ from openai import OpenAI
 
 import config
 from prompt_templates import system_prompt1, template1
-from utils import create_logger, get_data_from_url
+from utils import create_logger, get_data_from_url, load4json, save2json
 
 
 logger = create_logger("data_construct")
@@ -55,6 +56,7 @@ class RPM:
         logger.debug(self.record)
 
 
+# 支持多种LLMs接口进行英文翻译为中文和基于comfyui相关文档生成messages类型数据
 class LLMApiGenerator:
     def __init__(self, rpm: int = 10) -> None:
         self.rpm = RPM(rpm)
@@ -192,7 +194,27 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
     custom_node_map_json_url = "https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json"  # 包含自定义节点的子节点信息
     github_stats_json_url = "https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/github-stats.json"  # 自定义节点的更新信息
     model_list_json_url = "https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/model-list.json"  # 常用模型的下载地址等信息
-    pass
+
+    local_custom_node_list_path = "/root/code/ComfyChat/data/custom_node_list.json"
+    local_custom_node_map_path = "/root/code/ComfyChat/data/node_map_json.json"
+    local_github_stats_path = "/root/code/ComfyChat/data/github_stats.json"
+    local_model_list_path = "/root/code/ComfyChat/data/model_list.json"
+
+    def __init__(self) -> None:
+        self.custom_node_list = self.init_info(self.local_custom_node_list_path, self.custom_node_list_json_url)
+        self.custom_node_map = self.init_info(self.local_custom_node_map_path, self.custom_node_map_json_url)
+        self.github_stats = self.init_info(self.local_github_stats_path, self.github_stats_json_url)
+        self.model_list = self.init_info(self.local_model_list_path, self.model_list_json_url)
+
+    def init_info(self, local_path: str, remote_url: str) -> Any:
+        if os.path.exists(local_path):
+            info = load4json(local_path, [])
+        else:
+            info = get_data_from_url(remote_url)
+            save2json(info, local_path)
+
+        return info
+
 
 
 # TODO 简化当前对四个开源社区的数据提炼过程
