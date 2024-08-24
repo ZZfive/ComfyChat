@@ -12,6 +12,7 @@ from typing import Any
 from datetime import datetime, timedelta
 
 import requests
+from git import Repo
 from openai import OpenAI
 
 import config
@@ -205,30 +206,97 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             self.local_custom_node_infos = {}
         self.touch_infos()
 
-    def touch_infos(self, local_custom_node_dir: str = "/root/code/ComfyChat/data/custom_nodes_repos") -> None:
+    def touch_infos(self, local_custom_node_repos_dir: str = "/root/code/ComfyChat/data/custom_nodes_repos",
+                    local_custom_node_mds_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds") -> None:
         custom_node_list = get_data_from_url(self.custom_node_list_json_url)['custom_nodes']
-        custom_node_map = get_data_from_url(self.custom_node_map_json_url)
         node_github_stats = get_data_from_url(self.github_stats_json_url)
         for node_info in custom_node_list:
             node_url = node_info['reference']
             node_name = node_url.split("/")[-1]
-            local_path = os.path.join(local_custom_node_dir, node_name)
-            if os.path.exists(local_path) and len(os.listdir(local_path)) > 0:
+            local_node_repo_path = os.path.join(local_custom_node_repos_dir, node_name)
+            local_node_md_path = os.path.join(local_custom_node_mds_dir, node_name)
+            if os.path.exists(local_node_repo_path) and len(os.listdir(local_node_repo_path)) > 0:  # 拉取了当前节点的github项目
                 if node_url in self.local_custom_node_infos:
                     if self.local_custom_node_infos[node_url].get("local_last_update", None) is None:
-                        self.local_custom_node_infos[node_url]["local_last_update"] = get_latest_modification_time(local_path)
-                    self.local_custom_node_infos[node_url]["cloned"] = True
+                        self.local_custom_node_infos[node_url]["local_last_update"] = get_latest_modification_time(local_node_repo_path)
+                    self.local_custom_node_infos[node_url]["repo_cloned"] = True
                 else:
                     self.local_custom_node_infos[node_url] = {}
+                    self.local_custom_node_infos[node_url]["local_last_update"] = get_latest_modification_time(local_node_repo_path)
+                    self.local_custom_node_infos[node_url]["repo_cloned"] = True
+            if os.path.exists(local_node_md_path) and len(os.listdir(local_node_md_path)) > 0:  # 从拉取的github项目中过滤出了md文档
+                if node_url in self.local_custom_node_infos:
+                    if self.local_custom_node_infos[node_url].get("md_last_update", None) is None:
+                        self.local_custom_node_infos[node_url]["md_last_update"] = get_latest_modification_time(local_node_md_path)
+                    self.local_custom_node_infos[node_url]["repo_md"] = True
+                else:
+                    self.local_custom_node_infos[node_url] = {}
+                    self.local_custom_node_infos[node_url]["md_last_update"] = get_latest_modification_time(local_node_md_path)
+                    self.local_custom_node_infos[node_url]["repo_md"] = True
+            if node_url in self.local_custom_node_infos:
+                if "local_last_update" not in self.local_custom_node_infos[node_url]:
                     self.local_custom_node_infos[node_url]["local_last_update"] = None
-                    self.local_custom_node_infos[node_url]["cloned"] = True
-                self.local_custom_node_infos[node_url]["remote_last_update"] = node_github_stats[node_url].get("last_update", None) if node_url in node_github_stats else None
+                    self.local_custom_node_infos[node_url]["repo_cloned"] = False
+                if "md_last_update" not in self.local_custom_node_infos[node_url]:
+                    self.local_custom_node_infos[node_url]["md_last_update"] = None
+                    self.local_custom_node_infos[node_url]["repo_md"] = False
             else:
                 self.local_custom_node_infos[node_url] = {}
                 self.local_custom_node_infos[node_url]["local_last_update"] = None
-                self.local_custom_node_infos[node_url]["cloned"] = False
-                self.local_custom_node_infos[node_url]["remote_last_update"] = node_github_stats[node_url].get("last_update", None) if node_url in node_github_stats else None
+                self.local_custom_node_infos[node_url]["repo_cloned"] = False
+                self.local_custom_node_infos[node_url]["md_last_update"] = None
+                self.local_custom_node_infos[node_url]["repo_md"] = False
+            self.local_custom_node_infos[node_url]["remote_last_update"] = node_github_stats[node_url].get("last_update", None) if node_url in node_github_stats else None
 
+    def refresh_all_repos(self, local_custom_node_repos_dir: str = "/root/code/ComfyChat/data/custom_nodes_repos") -> None:
+        for k, v in self.local_custom_node_infos.items():
+            node_name = k.split("/")[-1]
+            local_node_repo_path = os.path.join(local_custom_node_repos_dir, node_name)
+            if v["local_last_update"] is None:
+                try:
+                    Repo.clone_from(k, local_node_repo_path)
+                except:
+                    logger.error(f"Refresh failure: {k}")
+            if v["local_last_update"] < v["remote_last_update"]:
+                try:
+                    repo = Repo(local_node_repo_path)  # 打开本地仓库
+                    origin = repo.remotes.origin  # 获取远程仓库
+                    origin.pull()  # 从远程仓库拉取最新代码
+                except:
+                    logger.error(f"Refresh failure: {k}")
+            v["local_last_update"] = v["remote_last_update"]
+            v["repo_cloned"] = True
+
+    def refresh_one_repo(self, node_url: str, local_custom_node_repos_dir: str = "/root/code/ComfyChat/data/custom_nodes_repos") -> None:
+        node_name = node_url.split("/")[-1]
+        local_node_repo_path = os.path.join(local_custom_node_repos_dir, node_name)
+        if node_url in self.local_custom_node_infos:
+            try:
+                repo = Repo(local_node_repo_path)  # 打开本地仓库
+                origin = repo.remotes.origin  # 获取远程仓库
+                origin.pull()  # 从远程仓库拉取最新代码
+                self.local_custom_node_infos["repo_cloned"] = True
+                latest_commit = repo.head.commit
+                latest_commit_time = latest_commit.committed_datetime.strftime('%Y-%m-%d %H:%M:%S')
+                self.local_custom_node_infos["local_last_update"] = latest_commit_time
+            except:
+                logger.error(f"Refresh failure: {node_url}")
+        else:
+            try:
+                Repo.clone_from(node_url, local_node_repo_path)
+                repo = Repo(local_node_repo_path)
+                self.local_custom_node_infos["repo_cloned"] = True
+                latest_commit = repo.head.commit
+                latest_commit_time = latest_commit.committed_datetime.strftime('%Y-%m-%d %H:%M:%S')
+                self.local_custom_node_infos["local_last_update"] = latest_commit_time
+            except:
+                logger.error(f"Refresh failure: {node_url}")
+
+    def refresh_all_mds(self) -> None:
+        pass
+
+    def refresh_one_md(self, node_url: str) -> None:
+        pass
 
 
 # TODO 简化当前对四个开源社区的数据提炼过程
