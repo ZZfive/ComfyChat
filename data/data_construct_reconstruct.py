@@ -8,6 +8,7 @@
 '''
 import os
 import time
+import shutil
 from typing import Any
 from datetime import datetime, timedelta
 
@@ -17,6 +18,7 @@ from openai import OpenAI
 
 import config
 from prompt_templates import system_prompt1, template1
+from get_custom_node_markdowns import extract_md_files_from_local_repo
 from utils import create_logger, get_data_from_url, load4json, save2json, get_latest_modification_time
 
 
@@ -204,13 +206,13 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             self.local_custom_node_infos = load4json(self.local_custom_node_infos_path, {})
         else:
             self.local_custom_node_infos = {}
+        self.remote_custom_node_list = get_data_from_url(self.custom_node_list_json_url)['custom_nodes']
+        self.remote_github_stats = get_data_from_url(self.github_stats_json_url)
         self.touch_infos()
 
     def touch_infos(self, local_custom_node_repos_dir: str = "/root/code/ComfyChat/data/custom_nodes_repos",
                     local_custom_node_mds_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds") -> None:
-        custom_node_list = get_data_from_url(self.custom_node_list_json_url)['custom_nodes']
-        node_github_stats = get_data_from_url(self.github_stats_json_url)
-        for node_info in custom_node_list:
+        for node_info in self.remote_custom_node_list:
             node_url = node_info['reference']
             node_name = node_url.split("/")[-1]
             local_node_repo_path = os.path.join(local_custom_node_repos_dir, node_name)
@@ -246,56 +248,89 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                 self.local_custom_node_infos[node_url]["repo_cloned"] = False
                 self.local_custom_node_infos[node_url]["md_last_update"] = None
                 self.local_custom_node_infos[node_url]["repo_md"] = False
-            self.local_custom_node_infos[node_url]["remote_last_update"] = node_github_stats[node_url].get("last_update", None) if node_url in node_github_stats else None
+            self.local_custom_node_infos[node_url]["remote_last_update"] = self.remote_github_stats[node_url].get("last_update", None) if node_url in self.remote_github_stats else None
 
+    # 对当前self.local_custom_node_infos中的所有节点仓库进行更新
     def refresh_all_repos(self, local_custom_node_repos_dir: str = "/root/code/ComfyChat/data/custom_nodes_repos") -> None:
         for k, v in self.local_custom_node_infos.items():
             node_name = k.split("/")[-1]
             local_node_repo_path = os.path.join(local_custom_node_repos_dir, node_name)
-            if v["local_last_update"] is None:
-                try:
+            try:
+                if v["local_last_update"] is None:
                     Repo.clone_from(k, local_node_repo_path)
-                except:
-                    logger.error(f"Refresh failure: {k}")
-            if v["local_last_update"] < v["remote_last_update"]:
-                try:
+                    v["local_last_update"] = v["remote_last_update"]
+                    v["repo_cloned"] = True
+                    v["remote_last_update"] = self.remote_github_stats[node_url].get("last_update", None) if node_url in self.remote_github_stats else None
+                if v["local_last_update"] < v["remote_last_update"]:  # 以获取的远程时间进行比较，判断是否更新本地仓库
                     repo = Repo(local_node_repo_path)  # 打开本地仓库
                     origin = repo.remotes.origin  # 获取远程仓库
                     origin.pull()  # 从远程仓库拉取最新代码
-                except:
-                    logger.error(f"Refresh failure: {k}")
-            v["local_last_update"] = v["remote_last_update"]
-            v["repo_cloned"] = True
+                    v["local_last_update"] = v["remote_last_update"]
+                    v["repo_cloned"] = True
+                    v["remote_last_update"] = self.remote_github_stats[node_url].get("last_update", None) if node_url in self.remote_github_stats else None
+            except:
+                logger.error(f"Refresh failure: {k}")
 
+    # 对一个节点进行更新，如果在节点仓库之前未拉取，会直接拉取
     def refresh_one_repo(self, node_url: str, local_custom_node_repos_dir: str = "/root/code/ComfyChat/data/custom_nodes_repos") -> None:
         node_name = node_url.split("/")[-1]
         local_node_repo_path = os.path.join(local_custom_node_repos_dir, node_name)
-        if node_url in self.local_custom_node_infos:
-            try:
+        try:
+            if node_url in self.local_custom_node_infos:
                 repo = Repo(local_node_repo_path)  # 打开本地仓库
                 origin = repo.remotes.origin  # 获取远程仓库
                 origin.pull()  # 从远程仓库拉取最新代码
-                self.local_custom_node_infos["repo_cloned"] = True
-                latest_commit = repo.head.commit
-                latest_commit_time = latest_commit.committed_datetime.strftime('%Y-%m-%d %H:%M:%S')
-                self.local_custom_node_infos["local_last_update"] = latest_commit_time
-            except:
-                logger.error(f"Refresh failure: {node_url}")
-        else:
-            try:
+            else:
+                self.local_custom_node_infos[node_url] = {}
                 Repo.clone_from(node_url, local_node_repo_path)
                 repo = Repo(local_node_repo_path)
-                self.local_custom_node_infos["repo_cloned"] = True
-                latest_commit = repo.head.commit
-                latest_commit_time = latest_commit.committed_datetime.strftime('%Y-%m-%d %H:%M:%S')
-                self.local_custom_node_infos["local_last_update"] = latest_commit_time
-            except:
-                logger.error(f"Refresh failure: {node_url}")
 
-    def refresh_all_mds(self) -> None:
+            self.local_custom_node_infos[node_url]["repo_cloned"] = True
+            latest_commit = repo.head.commit
+            latest_commit_time = latest_commit.committed_datetime.strftime('%Y-%m-%d %H:%M:%S')
+            self.local_custom_node_infos[node_url]["local_last_update"] = latest_commit_time
+            self.local_custom_node_infos[node_url]["remote_last_update"] = self.remote_github_stats[node_url].get("last_update", None) if node_url in self.remote_github_stats else None
+        except:
+            logger.error(f"Refresh failure: {node_url}")
+
+    # 对当前self.local_custom_node_infos中的所有节点仓库中包含的md文档刷新
+    def refresh_all_mds(self, local_custom_node_repos_dir: str = "/root/code/ComfyChat/data/custom_nodes_repos",
+                        local_custom_node_mds_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds") -> None:
+        for k, v in self.local_custom_node_infos.items():
+            if v["md_last_update"] is None or v["md_last_update"] < v["local_last_update"]:
+                node_name = k.split("/")[-1]
+                local_node_repo_path = os.path.join(local_custom_node_repos_dir, node_name)
+                local_node_md_path = os.path.join(local_custom_node_mds_dir, node_name)
+                try:
+                    if os.path.exists(local_node_md_path):
+                        shutil.rmtree(local_node_md_path)
+                    extract_md_files_from_local_repo(local_node_repo_path, local_node_md_path)
+                    v["md_last_update"] = v["local_last_update"]
+                    v["repo_md"] = True
+                except:
+                    logger.error(f"MD refresh failure: {k}")
+
+    def refresh_one_md(self, node_url: str, local_custom_node_repos_dir: str = "/root/code/ComfyChat/data/custom_nodes_repos",
+                       local_custom_node_mds_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds") -> None:
+        node_name = node_url.split("/")[-1]
+        local_node_repo_path = os.path.join(local_custom_node_repos_dir, node_name)
+        local_node_md_path = os.path.join(local_custom_node_mds_dir, node_name)
+        try:
+            if node_url in self.local_custom_node_infos and self.local_custom_node_infos[node_url]["repo_cloned"]:
+                if os.path.exists(local_node_md_path):
+                    shutil.rmtree(local_node_md_path)
+                extract_md_files_from_local_repo(local_node_repo_path, local_node_md_path)
+            else:
+                self.refresh_one_repo(node_url)
+            self.local_custom_node_infos[node_url]["md_last_update"] = self.local_custom_node_infos[node_url]["local_last_update"]
+            self.local_custom_node_infos[node_url]["repo_md"] = True
+        except:
+            logger.error(f"MD refresh failure: {node_url}")
+
+    def refresh_all_jsons(self, local_custom_node_json_dir: str = "/root/code/ComfyChat/data/custom_nodes_jsons"):
         pass
 
-    def refresh_one_md(self, node_url: str) -> None:
+    def refresh_one_json(self):
         pass
 
 
