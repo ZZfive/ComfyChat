@@ -1216,11 +1216,15 @@ if __name__=='__main__':
 
     # temp = get_data_from_siliconflow('CropLatent',
     #                              r'D:\\git_github\\self\\ComfyChat\\data\\community_docs\\repos\\ComfyUI-docs\\docs\\Core Nodes\\Latent\\transform\\CropLatent.md',
-    #                              model='alibaba/Qwen2-72B-Instruct',
+    #                              model='Qwen/Qwen2-7B-Instruct',
     #                              system_prompt=system_prompt2_index, template=template2_index)
-    # print(temp)
-    # temp = parse_json(temp)
-    # print(temp)
+    temp = get_data_from_openrouter('a-person-mask-generator',
+                                 '/root/code/ComfyChat/data/custom_nodes_mds/a-person-mask-generator/README.md',
+                                 model='nousresearch/hermes-3-llama-3.1-405b',
+                                 system_prompt=system_prompt2_index, template=template2_index)
+    print(temp)
+    temp = parse_json(temp)
+    print(temp)
     # save2json(temp, r"D:\git_github\self\ComfyChat\data\community_docs\messages\ComfyUI-docs\CropLatent.json")
 
     # generate_data_from_comfyui_docs()
@@ -1243,11 +1247,11 @@ if __name__=='__main__':
 
     # constrcut_messages_from_comflowy()
 
-    v2_paths = [r"D:\git_github\self\ComfyChat\data\message_jsons\v1\comfyui_data_v1.json",
-                r"D:\git_github\self\ComfyChat\data\message_jsons\v2\community_en.json"]
-    save_path = r"D:\git_github\self\ComfyChat\data\message_jsons\v2\comfyui_data_v2_1.json"
+    # v2_paths = [r"D:\git_github\self\ComfyChat\data\message_jsons\v1\comfyui_data_v1.json",
+    #             r"D:\git_github\self\ComfyChat\data\message_jsons\v2\community_en.json"]
+    # save_path = r"D:\git_github\self\ComfyChat\data\message_jsons\v2\comfyui_data_v2_1.json"
 
-    combine_messages(v2_paths, save_path, shuffle=True)
+    # combine_messages(v2_paths, save_path, shuffle=True)
 
     # messages = load4json(r"D:\git_github\self\ComfyChat\data\message_jsons\v1\comfyui_data_v1.json")
     # print(len(messages))
