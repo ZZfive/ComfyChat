@@ -73,10 +73,10 @@ class LLMApiGenerator:
                         "defualt_model": "deepseek-chat",
                         "api_key": config.DEEPSEEK_API_KEY},
             "openrouter":{"base_url": "https://openrouter.ai/api/v1",
-                          "defualt_model": "google/gemma-7b-it:free",
+                          "defualt_model": "nousresearch/hermes-3-llama-3.1-405b",
                           "api_key": config.OPENROUTER_API_KEY},
             "siliconflow":{"base_url": "https://api.siliconflow.cn/v1/chat/completions",
-                           "defualt_model": "deepseek-ai/deepseek-v2-chat",
+                           "defualt_model": "internlm/internlm2_5-7b-chat",
                            "api_key": config.SILICONFLOW_API_KEY},
             "chat2api":{"base_url": "http://127.0.0.1:5005/v1/chat/completions",
                         "defualt_model": "gpt-3.5-turb",
@@ -193,7 +193,7 @@ class LLMApiGenerator:
         return ans
     
 
-# TODO 基于comfyui-manager构建messages的pipeline
+# 基于comfyui-manager构建messages的pipeline
 class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
     custom_node_list_json_url = "https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/custom-node-list.json"  # 自定义节点列表
     custom_node_map_json_url = "https://raw.githubusercontent.com/ltdrdata/ComfyUI-Manager/main/extension-node-map.json"  # 包含自定义节点的子节点信息
@@ -498,9 +498,29 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             logger.error(self.local_custom_node_infos)
             raise ValueError("各自定义节点处理信息保存失败")
 
+
 # TODO 简化当前对四个开源社区的数据提炼过程
 class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
-    pass
+    comfyui_docs_url = "https://github.com/BlenderNeko/ComfyUI-docs"
+    SaltAI_Web_Docs_url = "https://github.com/get-salt-AI/SaltAI-Web-Docs"
+    comfyui_nodes_docs_url = "https://github.com/CavinHuang/comfyui-nodes-docs"
+    comflowy_url = "https://github.com/6174/comflowy"
+
+    local_community_project_infos_path = "/root/code/ComfyChat/data/community_project_infos.json"
+    
+    def __init__(self) -> None:
+        if os.path.exists(self.local_community_project_infos_path):
+            self.local_community_project_infos = load4json(self.local_community_project_infos_path, {})
+        else:
+            self.local_community_project_infos = {}
+        
+        self.llm_generator = LLMApiGenerator(100)
+
+    def touch_infos(self, project_name: str, repos_dir: str = "/root/code/ComfyChat/data/community_docs/repos") -> None:
+        if project_name not in self.local_community_project_infos:
+            self.local_community_project_infos[project_name] = {}
+
+        pass
 
 
 # TODO 优化各数据块混合方案
