@@ -177,6 +177,7 @@ class LLMApiGenerator:
         ans = ans['choices'][0]['message']['content']
         return ans
 
+    # TODO 目前生成的都是单一对话问题，后续可以尝试生成连续对话问题
     def messages_generate_llm(self, subject: str, file_path: str, backend: str = "kimi", base_url: str = None, api_key: str = None,
                               model: str = None, system_prompt: str = system_prompt1, template: str = template1) -> str:
         api_key = self.backend_settings[backend]["api_key"] if api_key is None else api_key
@@ -363,17 +364,17 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             logger.error(f"MD refresh failure: {node_url}")
             self.local_custom_node_infos[node_url]["repo_md"] = False
 
-    def refresh_all_jsons_single(self, version: int) -> None:
+    def refresh_all_jsons(self, version: int) -> None:
         try:
             for k, v in self.local_custom_node_infos.items():
                 if not v["repo_json"] or v["json_last_update"] is None or v["json_last_update"] < v["md_last_update"]:
-                    self.refresh_one_json_single(k, version)
+                    self.refresh_one_json(k, version)
         finally:
             self.save_infos()
 
-    def refresh_one_json_single(self, node_url: str, version: int, lang: str = "en",
-                                local_custom_node_mds_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds",
-                                local_custom_node_jsons_dir: str = "/root/code/ComfyChat/data/custom_nodes_jsons") -> None:
+    def refresh_one_json(self, node_url: str, version: int, lang: str = "en",
+                         local_custom_node_mds_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds",
+                         local_custom_node_jsons_dir: str = "/root/code/ComfyChat/data/custom_nodes_jsons") -> None:
         try:
             if node_url not in self.local_custom_node_infos or not self.local_custom_node_infos[node_url]["repo_cloned"]:
                 self.refresh_one_repo(node_url)
@@ -501,10 +502,24 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
 
 # TODO 简化当前对四个开源社区的数据提炼过程
 class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
-    comfyui_docs_url = "https://github.com/BlenderNeko/ComfyUI-docs"
-    SaltAI_Web_Docs_url = "https://github.com/get-salt-AI/SaltAI-Web-Docs"
-    comfyui_nodes_docs_url = "https://github.com/CavinHuang/comfyui-nodes-docs"
-    comflowy_url = "https://github.com/6174/comflowy"
+    community_projects_infos = {
+        "ComfyUI-docs": {
+            "url": "https://github.com/BlenderNeko/ComfyUI-docs",
+            "resources_dir": "docs\Core Nodes"
+        },
+        "SaltAI-Web-Docs": {
+            "url": "https://github.com/get-salt-AI/SaltAI-Web-Docs",
+            "resources_dir": "docs\md"
+        },
+        "comfyui-nodes-docs": {
+            "url": "https://github.com/CavinHuang/comfyui-nodes-docs",
+            "resources_dir": "docs"
+        },
+        "comflowy": {
+            "url": "https://github.com/6174/comflowy",
+            "resources_dir": "pages"
+        }
+    }
 
     local_community_project_infos_path = "/root/code/ComfyChat/data/community_project_infos.json"
     
@@ -516,11 +531,74 @@ class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
         
         self.llm_generator = LLMApiGenerator(100)
 
-    def touch_infos(self, project_name: str, repos_dir: str = "/root/code/ComfyChat/data/community_docs/repos") -> None:
-        if project_name not in self.local_community_project_infos:
-            self.local_community_project_infos[project_name] = {}
+    def touch_infos(self, repos_dir: str = "/root/code/ComfyChat/data/community_docs/repos",
+                    jsons_dir: str = "/root/code/ComfyChat/data/community_docs/messages") -> None:
+        for project_name in self.community_projects_infos:
+            if project_name not in self.local_community_project_infos:
+                self.local_community_project_infos[project_name] = {}
 
+            local_repo_dir = os.path.join(repos_dir, project_name)
+            local_resources_dir = os.path.join(local_repo_dir, self.community_projects_infos[project_name]["resources_dir"])
+            if not os.path.exists(local_repo_dir) or not os.path.exists(local_resources_dir):
+                self.local_community_project_infos[project_name]["valid_repo"] = False
+            else:
+                self.local_community_project_infos[project_name]["valid_repo"] = True
+            if self.local_community_project_infos[project_name].get("local_last_update", None) is None:
+                self.local_community_project_infos[project_name]["local_last_update"] = "2024-06-27 00:00:00"
+
+            local_json_dir = os.path.join(jsons_dir, project_name)
+            if os.path.exists(local_json_dir) and len(os.listdir(local_json_dir)) > 0:
+                self.local_community_project_infos[project_name]["valid_json"] = True
+            else:
+                self.local_community_project_infos[project_name]["valid_json"] = False
+            if self.local_community_project_infos[project_name].get("json_last_update", None) is None:
+                self.local_community_project_infos[project_name]["json_last_update"] = "2024-06-27 00:00:00"
+
+    def refresh_all_projects_repos(self):  
         pass
+
+    def refresh_one_project_repo(self, project_name: str,
+                                 repos_dir: str = "/root/code/ComfyChat/data/community_docs/repos") -> None:
+        try:
+            if project_name not in self.local_community_project_infos:
+                raise ValueError(f"当前不支持{project_name}")
+            
+            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            local_repo_dir = os.path.join(repos_dir, project_name)
+            if not self.local_community_project_infos[project_name]["valid_repo"]:
+                if os.path.exists(local_repo_dir):
+                    shutil.rmtree(local_repo_dir)
+                Repo.clone_from(self.community_projects_infos[project_name]["url"], local_repo_dir)
+                self.local_community_project_infos[project_name]["json_last_update"] = current_time
+            else:
+                repo = Repo(local_repo_dir)
+                current_commit = repo.head.commit
+                origin = repo.remotes.origin
+                origin.pull()
+                new_commit = repo.head.commit
+                if current_commit != new_commit:
+                    self.local_community_project_infos[project_name]["json_last_update"] = current_time
+        finally:
+            logger.error(f"Refresh failure: {project_name}")
+            self.local_community_project_infos[project_name]["valid_repo"] = False
+
+    def refresh_all_projects_jsons(self):
+        # 最后判断json路径下是否存在文件：还是要分version
+        pass
+
+    def refresh_one_project_jsons(self, project_name: str):
+        # 时间就按生成json的时间刷新，看能否通过git判断哪些文件有更新或是新增的，对对应的文件重新生成；一个大version也可以分多个小版本
+        pass
+
+
+    def save_infos(self):
+        try:
+            save2json(self.local_community_project_infos,
+                      self.local_community_project_infos_path)
+        except:
+            print(self.local_community_project_infos)
+            logger.error(self.local_community_project_infos)
+            raise ValueError("各社区项目处理信息保存失败")
 
 
 # TODO 优化各数据块混合方案
