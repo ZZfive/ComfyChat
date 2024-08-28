@@ -216,66 +216,63 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
     def touch_infos(self, local_custom_node_repos_dir: str = "/root/code/ComfyChat/data/custom_nodes_repos",
                     local_custom_node_mds_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds",
                     local_custom_node_jsons_dir: str = "/root/code/ComfyChat/data/custom_nodes_jsons") -> None:
-        try:
-            for node_info in self.remote_custom_node_list:
-                node_url = node_info['reference']
-                node_name = node_url.split("/")[-1]
-                local_node_repo_path = os.path.join(local_custom_node_repos_dir, node_name)
-                local_node_md_path = os.path.join(local_custom_node_mds_dir, node_name)
-                local_node_json_path = os.path.join(local_custom_node_jsons_dir, node_name)
+        for node_info in self.remote_custom_node_list:
+            node_url = node_info['reference']
+            node_name = node_url.split("/")[-1]
+            local_node_repo_path = os.path.join(local_custom_node_repos_dir, node_name)
+            local_node_md_path = os.path.join(local_custom_node_mds_dir, node_name)
+            local_node_json_path = os.path.join(local_custom_node_jsons_dir, node_name)
 
-                if os.path.exists(local_node_repo_path) and len(os.listdir(local_node_repo_path)) > 0:  # 拉取了当前节点的github项目
-                    if node_url in self.local_custom_node_infos:
-                        if self.local_custom_node_infos[node_url].get("local_last_update", None) is None:
-                            self.local_custom_node_infos[node_url]["local_last_update"] = "2024-05-25 00:00:00"
-                    else:
-                        self.local_custom_node_infos[node_url] = {}
-                        self.local_custom_node_infos[node_url]["local_last_update"] = "2024-05-25 00:00:00"
-                    self.local_custom_node_infos[node_url]["repo_cloned"] = True
-                
-                if os.path.exists(local_node_md_path) and len(os.listdir(local_node_md_path)) > 0:  # 从拉取的github项目中过滤出了md文档
-                    if node_url in self.local_custom_node_infos:
-                        if self.local_custom_node_infos[node_url].get("md_last_update", None) is None:
-                            self.local_custom_node_infos[node_url]["md_last_update"] = "2024-05-25 00:00:00"
-                    else:
-                        self.local_custom_node_infos[node_url] = {}
-                        self.local_custom_node_infos[node_url]["md_last_update"] = "2024-05-25 00:00:00"
-                    self.local_custom_node_infos[node_url]["repo_md"] = True
-
-                if os.path.exists(local_node_json_path) and len(os.listdir(local_node_json_path)) > 0:  # 针对过滤后的md文档使用llm生成了问答json数据
-                    if node_url in self.local_custom_node_infos:
-                        if self.local_custom_node_infos[node_url].get("json_last_update", None) is None:
-                            self.local_custom_node_infos[node_url]["json_last_update"] = "2024-05-25 00:00:00"
-                    else:
-                        self.local_custom_node_infos[node_url] = {}
-                        self.local_custom_node_infos[node_url]["json_last_update"] = "2024-05-25 00:00:00"
-                    self.local_custom_node_infos[node_url]["repo_json"] = True
-                
+            if os.path.exists(local_node_repo_path) and len(os.listdir(local_node_repo_path)) > 0:  # 拉取了当前节点的github项目
                 if node_url in self.local_custom_node_infos:
-                    if "local_last_update" not in self.local_custom_node_infos[node_url]:
-                        self.local_custom_node_infos[node_url]["local_last_update"] = None
-                        self.local_custom_node_infos[node_url]["repo_cloned"] = False
-
-                    if "md_last_update" not in self.local_custom_node_infos[node_url]:
-                        self.local_custom_node_infos[node_url]["md_last_update"] = None
-                        self.local_custom_node_infos[node_url]["repo_md"] = False
-
-                    if "json_last_update" not in self.local_custom_node_infos[node_url]:
-                        self.local_custom_node_infos[node_url]["json_last_update"] = None
-                        self.local_custom_node_infos[node_url]["repo_json"] = False
+                    if self.local_custom_node_infos[node_url].get("local_last_update", None) is None:
+                        self.local_custom_node_infos[node_url]["local_last_update"] = "2024-05-25 00:00:00"
                 else:
                     self.local_custom_node_infos[node_url] = {}
+                    self.local_custom_node_infos[node_url]["local_last_update"] = "2024-05-25 00:00:00"
+                self.local_custom_node_infos[node_url]["repo_cloned"] = True
+            
+            if os.path.exists(local_node_md_path) and len(os.listdir(local_node_md_path)) > 0:  # 从拉取的github项目中过滤出了md文档
+                if node_url in self.local_custom_node_infos:
+                    if self.local_custom_node_infos[node_url].get("md_last_update", None) is None:
+                        self.local_custom_node_infos[node_url]["md_last_update"] = "2024-05-25 00:00:00"
+                else:
+                    self.local_custom_node_infos[node_url] = {}
+                    self.local_custom_node_infos[node_url]["md_last_update"] = "2024-05-25 00:00:00"
+                self.local_custom_node_infos[node_url]["repo_md"] = True
+
+            if os.path.exists(local_node_json_path) and len(os.listdir(local_node_json_path)) > 0:  # 针对过滤后的md文档使用llm生成了问答json数据
+                if node_url in self.local_custom_node_infos:
+                    if self.local_custom_node_infos[node_url].get("json_last_update", None) is None:
+                        self.local_custom_node_infos[node_url]["json_last_update"] = "2024-05-25 00:00:00"
+                else:
+                    self.local_custom_node_infos[node_url] = {}
+                    self.local_custom_node_infos[node_url]["json_last_update"] = "2024-05-25 00:00:00"
+                self.local_custom_node_infos[node_url]["repo_json"] = True
+            
+            if node_url in self.local_custom_node_infos:
+                if "local_last_update" not in self.local_custom_node_infos[node_url]:
                     self.local_custom_node_infos[node_url]["local_last_update"] = None
                     self.local_custom_node_infos[node_url]["repo_cloned"] = False
+
+                if "md_last_update" not in self.local_custom_node_infos[node_url]:
                     self.local_custom_node_infos[node_url]["md_last_update"] = None
                     self.local_custom_node_infos[node_url]["repo_md"] = False
+
+                if "json_last_update" not in self.local_custom_node_infos[node_url]:
                     self.local_custom_node_infos[node_url]["json_last_update"] = None
                     self.local_custom_node_infos[node_url]["repo_json"] = False
+            else:
+                self.local_custom_node_infos[node_url] = {}
+                self.local_custom_node_infos[node_url]["local_last_update"] = None
+                self.local_custom_node_infos[node_url]["repo_cloned"] = False
+                self.local_custom_node_infos[node_url]["md_last_update"] = None
+                self.local_custom_node_infos[node_url]["repo_md"] = False
+                self.local_custom_node_infos[node_url]["json_last_update"] = None
+                self.local_custom_node_infos[node_url]["repo_json"] = False
 
-                self.local_custom_node_infos[node_url]["json_version"] = 1
-                self.local_custom_node_infos[node_url]["remote_last_update"] = self.remote_github_stats[node_url].get("last_update", None) if node_url in self.remote_github_stats else None
-        finally:
-            self.save_infos()
+            self.local_custom_node_infos[node_url]["json_version"] = 1
+            self.local_custom_node_infos[node_url]["remote_last_update"] = self.remote_github_stats[node_url].get("last_update", None) if node_url in self.remote_github_stats else None
 
 
     # 对当前self.local_custom_node_infos中的所有节点仓库进行更新
@@ -365,12 +362,10 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             self.local_custom_node_infos[node_url]["repo_md"] = False
 
     def refresh_all_jsons(self, version: int) -> None:
-        try:
-            for k, v in self.local_custom_node_infos.items():
-                if not v["repo_json"] or v["json_last_update"] is None or v["json_last_update"] < v["md_last_update"]:
-                    self.refresh_one_json(k, version)
-        finally:
-            self.save_infos()
+        for k, v in self.local_custom_node_infos.items():
+            if not v["repo_json"] or v["json_last_update"] is None or v["json_last_update"] < v["md_last_update"]:
+                self.refresh_one_json(k, version)
+        self.save_infos()
 
     def refresh_one_json(self, node_url: str, version: int, lang: str = "en",
                          local_custom_node_mds_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds",
@@ -395,7 +390,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                                                                    template=template_zh)
                 rsp_json = parse_json(rsp)
 
-                if os.path.exists(local_node_json_path):
+                if not os.path.exists(local_node_json_path):
                     os.mkdir(local_node_json_path)
                 local_node_json_version_path = os.path.join(local_node_json_path, str(version))
                 if os.path.exists(local_node_json_version_path):
@@ -502,6 +497,12 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
 
 # TODO 简化当前对四个开源社区的数据提炼过程
 class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
+    # TODO 逻辑需要大改，不能与像自定义节点上分那么多状态。就直接一步到位，refresh
+    # 记录是否构建过json，和构建的时间
+    # 每个项目单独refresh，每次pull，然后判断哪些文档是修改或新增的，然后对其重新生成json
+    # 一个version，最修改过的文档重生成json，同一文档可以多个小版本
+    # 不同version下，所有文档重头生成json
+
     community_projects_infos = {
         "ComfyUI-docs": {
             "url": "https://github.com/BlenderNeko/ComfyUI-docs",
@@ -530,6 +531,7 @@ class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
             self.local_community_project_infos = {}
         
         self.llm_generator = LLMApiGenerator(100)
+        self.touch_infos()
 
     def touch_infos(self, repos_dir: str = "/root/code/ComfyChat/data/community_docs/repos",
                     jsons_dir: str = "/root/code/ComfyChat/data/community_docs/messages") -> None:
@@ -555,7 +557,9 @@ class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
                 self.local_community_project_infos[project_name]["json_last_update"] = "2024-06-27 00:00:00"
 
     def refresh_all_projects_repos(self):  
-        pass
+        for project_name in self.local_community_project_infos:
+            self.refresh_one_project_repo(project_name)
+        self.save_infos()
 
     def refresh_one_project_repo(self, project_name: str,
                                  repos_dir: str = "/root/code/ComfyChat/data/community_docs/repos") -> None:
@@ -578,15 +582,64 @@ class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
                 new_commit = repo.head.commit
                 if current_commit != new_commit:
                     self.local_community_project_infos[project_name]["json_last_update"] = current_time
-        finally:
-            logger.error(f"Refresh failure: {project_name}")
+        except Exception as e:
+            logger.error(f"Refresh failure: {project_name}, error: {e}")
             self.local_community_project_infos[project_name]["valid_repo"] = False
 
     def refresh_all_projects_jsons(self):
-        # 最后判断json路径下是否存在文件：还是要分version
         pass
 
-    def refresh_one_project_jsons(self, project_name: str):
+    def refresh_comfyui_docs_jsons(self, version: int, repos_dir: str = "/root/code/ComfyChat/data/community_docs/repos",
+                                   jsons_dir: str = "/root/code/ComfyChat/data/custom_nodes_jsons") -> None:
+        # 最后判断json路径下是否存在文件：还是要分version
+        # 时间就按生成json的时间刷新，看能否通过git判断哪些文件有更新或是新增的，对对应的文件重新生成；一个大version也可以分多个小版本
+
+        local_repo_dir = os.path.join(repos_dir, "ComfyUI-docs")
+        local_resources_dir = os.path.join(local_repo_dir, self.community_projects_infos["ComfyUI-docs"]["resources_dir"])
+        local_jsons_dir = os.path.join(jsons_dir, "ComfyUI-docs", str(version))
+
+        if not os.path.exists(local_jsons_dir):
+            os.mkdir(local_jsons_dir)
+
+        try:
+            for item in os.listdir(local_resources_dir):
+                temp_path = os.path.join(local_resources_dir, item)
+                if item != "media" and os.path.isdir(temp_path) and len(os.listdir(temp_path)) > 0:
+                    try:
+                        for item2 in os.listdir(temp_path):
+                            if item2 == "index.md" or item2 == "media":
+                                continue
+                            elif item2.endswith('.MD') or item2.endswith('.MDX') or item2.endswith('.md') or item2.endswith('.mdx'):
+                                md_path = os.path.join(temp_path, item2)
+                                md_name = os.path.splitext(item2)[0]
+                                rsp = self.llm_generator.messages_generate_llm(md_name, md_path)
+                                rsp_json = parse_json(rsp)
+                                save2json(rsp_json, os.path.join(local_jsons_dir, f"{md_name}.json"))
+                            elif os.path.exists(os.path.join(temp_path, item2)) and len(os.path.join(temp_path, item2)) > 0:
+                                temp_path2 = os.path.join(temp_path, item2)
+                                for item3 in os.listdir(temp_path2):
+                                    if item3 == "index.md" or item3 == "media":
+                                        continue
+                                    elif item3.endswith('.MD') or item3.endswith('.MDX') or item3.endswith('.md') or item3.endswith('.mdx'):
+                                        md_path = os.path.join(temp_path2, item3)
+                                        md_name = os.path.splitext(item3)[0]
+                                        rsp = self.llm_generator.messages_generate_llm(md_name, md_path)
+                                        rsp_json = parse_json(rsp)
+                                        save2json(rsp_json,os.path.join(local_jsons_dir, f"{md_name}.json"))
+                    except Exception as e:
+                        logger.error(f"{md_path}, error {e}")
+        finally:
+            pass
+
+    def refresh_SaltAI_Web_Docs_jsons(self, project_name: str) -> None:
+        # 时间就按生成json的时间刷新，看能否通过git判断哪些文件有更新或是新增的，对对应的文件重新生成；一个大version也可以分多个小版本
+        pass
+
+    def refresh_comfyui_nodes_docs_jsons(self, project_name: str) -> None:
+        # 时间就按生成json的时间刷新，看能否通过git判断哪些文件有更新或是新增的，对对应的文件重新生成；一个大version也可以分多个小版本
+        pass
+
+    def refresh_comflowy_jsons(self, project_name: str) -> None:
         # 时间就按生成json的时间刷新，看能否通过git判断哪些文件有更新或是新增的，对对应的文件重新生成；一个大version也可以分多个小版本
         pass
 
