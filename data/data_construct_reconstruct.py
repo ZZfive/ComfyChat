@@ -8,6 +8,7 @@
 '''
 import os
 import time
+import copy
 import shutil
 import random
 from typing import Any, Dict, List
@@ -18,9 +19,9 @@ from git import Repo
 from openai import OpenAI
 
 import config
-from prompt_templates import system_prompt1, template1, system_prompt_zh, template_zh
+from prompt_templates import system_prompt1, template1, system_prompt2, template2, system_prompt_zh, template_zh, system_prompt2_index, template2_index
 from get_custom_node_markdowns import extract_md_files_from_local_repo
-from utils import create_logger, get_data_from_url, load4json, save2json, get_latest_modification_time, parse_json
+from utils import create_logger, get_data_from_url, load4json, save2json, extract_name_extension, parse_json
 
 
 logger = create_logger("data_construct")
@@ -207,11 +208,11 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
         if os.path.exists(self.local_custom_node_infos_path):
             self.local_custom_node_infos = load4json(self.local_custom_node_infos_path, {})
         else:
-            self.local_custom_node_infos = {}
+            self.touch_infos()
+        
         self.remote_custom_node_list = get_data_from_url(self.custom_node_list_json_url)['custom_nodes']
         self.remote_github_stats = get_data_from_url(self.github_stats_json_url)
         self.llm_generator = LLMApiGenerator(100)
-        self.touch_infos()
 
     def touch_infos(self, local_custom_node_repos_dir: str = "/root/code/ComfyChat/data/custom_nodes_repos",
                     local_custom_node_mds_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds",
@@ -397,7 +398,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                     os.mkdir(local_node_json_version_path)
 
                 json_path = os.path.join(local_node_json_version_path, f"{md_name}{'_zh' if lang=='zh' else ''}.json")
-                if os.path.exist(json_path):
+                if os.path.exists(json_path):
                     old_json = load4json(json_path, [])
                     old_json.extend(rsp_json)
                 else:
@@ -502,12 +503,6 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
 
 # TODO 简化当前对四个开源社区的数据提炼过程
 class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
-    # TODO 逻辑需要大改，不能与像自定义节点上分那么多状态。就直接一步到位，refresh
-    # 记录是否构建过json，和构建的时间
-    # 每个项目单独refresh，每次pull，然后判断哪些文档是修改或新增的，然后对其重新生成json
-    # 一个version，最修改过的文档重生成json，同一文档可以多个小版本
-    # 不同version下，所有文档重头生成json
-
     community_projects_infos = {
         "ComfyUI-docs": {
             "url": "https://github.com/BlenderNeko/ComfyUI-docs",
@@ -533,10 +528,9 @@ class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
         if os.path.exists(self.local_community_project_infos_path):
             self.local_community_project_infos = load4json(self.local_community_project_infos_path, {})
         else:
-            self.local_community_project_infos = {}
+            self.touch_infos()
         
         self.llm_generator = LLMApiGenerator(100)
-        self.touch_infos()
 
     def touch_infos(self, repos_dir: str = "/root/code/ComfyChat/data/community_docs/repos",
                     jsons_dir: str = "/root/code/ComfyChat/data/community_docs/messages") -> None:
@@ -561,52 +555,25 @@ class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
             if self.local_community_project_infos[project_name].get("json_last_update", None) is None:
                 self.local_community_project_infos[project_name]["json_last_update"] = "2024-06-27 00:00:00"
 
-    def refresh_all_projects_repos(self):  
-        for project_name in self.local_community_project_infos:
-            self.refresh_one_project_repo(project_name)
-        self.save_infos()
+            self.local_community_project_infos[project_name]["successful_nodes"] = []
+            self.local_community_project_infos[project_name]["unsuccessful_nodes"] = []
 
-    def refresh_one_project_repo(self, project_name: str,
-                                 repos_dir: str = "/root/code/ComfyChat/data/community_docs/repos") -> None:
+    def refresh_project_json(self, project_name: str, version: int, pull: bool= False, again: bool = False,
+                             repos_dir: str = "/root/code/ComfyChat/data/community_docs/repos",
+                             jsons_dir: str = "/root/code/ComfyChat/data/custom_nodes_jsons") -> None:
         try:
-            if project_name not in self.local_community_project_infos:
-                raise ValueError(f"当前不支持{project_name}")
-            
-            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            local_repo_dir = os.path.join(repos_dir, project_name)
-            if not self.local_community_project_infos[project_name]["valid_repo"]:
-                if os.path.exists(local_repo_dir):
-                    shutil.rmtree(local_repo_dir)
-                Repo.clone_from(self.community_projects_infos[project_name]["url"], local_repo_dir)
-                self.local_community_project_infos[project_name]["json_last_update"] = current_time
-            else:
-                repo = Repo(local_repo_dir)
-                current_commit = repo.head.commit
-                origin = repo.remotes.origin
-                origin.pull()
-                new_commit = repo.head.commit
-                if current_commit != new_commit:
-                    self.local_community_project_infos[project_name]["json_last_update"] = current_time
-        except Exception as e:
-            logger.error(f"Refresh failure: {project_name}, error: {e}")
-            self.local_community_project_infos[project_name]["valid_repo"] = False
+            if project_name not in self.community_projects_infos:
+                raise ValueError(f"{project_name}项目暂未支持")
 
-    def refresh_all_projects_jsons(self):
-        pass
-
-    def refresh_comfyui_docs_jsons(self, version: int, again: bool = False,
-                                   repos_dir: str = "/root/code/ComfyChat/data/community_docs/repos",
-                                   jsons_dir: str = "/root/code/ComfyChat/data/custom_nodes_jsons") -> None:
-        try:
             if not os.path.join(jsons_dir, "ComfyUI-docs", str(version)) and version == 1:
                 raise ValueError("version为1的路径不存在时，version要大于1")
 
             current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            local_repo_dir = os.path.join(repos_dir, "ComfyUI-docs")
-            local_jsons_dir = os.path.join(jsons_dir, "ComfyUI-docs", str(version))
+            local_repo_dir = os.path.join(repos_dir, project_name)
+            local_jsons_dir = os.path.join(jsons_dir, project_name, str(version))
             if not os.path.exists(local_jsons_dir):
                 os.mkdir(local_jsons_dir)
-            local_resources_dir = os.path.join(local_repo_dir, self.community_projects_infos["ComfyUI-docs"]["resources_dir"])
+            local_resources_dir = os.path.join(local_repo_dir, self.community_projects_infos[project_name]["resources_dir"])
 
             if not self.local_community_project_infos[project_name]["valid_repo"]:  # 项目没clone到本地或主要包含有效文档的路径不存在
                 try:
@@ -615,25 +582,29 @@ class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
                     Repo.clone_from(self.community_projects_infos[project_name]["url"], local_repo_dir)
                     self.local_community_project_infos[project_name]["valid_repo"] = True  # 只从头拉取项目，不做其他操作
                 except Exception as e:
-                    logger.error(f"ComfyUI-docs更新失败, error {e}")
-                    raise ValueError("ComfyUI-docs更新失败")
+                    logger.error(f"{project_name}仓库更新失败, error {e}")
+                    raise ValueError(f"{project_name}仓库更新失败")
             else:  # 本地的项目仓库完整，有效文档路径存在
-                try:
-                    repo = Repo(local_repo_dir)
-                    old_commit = repo.head.commit
-                    origin = repo.remotes.origin
-                    origin.pull()
-                    new_commit = repo.head.commit
-                except Exception as e:
-                    logger.error(f"ComfyUI-docs更新失败, error {e}")
-                    raise ValueError("ComfyUI-docs更新失败")
+                if pull:
+                    try:
+                        repo = Repo(local_repo_dir)
+                        old_commit = repo.head.commit
+                        origin = repo.remotes.origin
+                        origin.pull()
+                        new_commit = repo.head.commit
+                    except Exception as e:
+                        logger.error(f"{project_name}仓库更新失败, error {e}")
+                        raise ValueError(f"{project_name}仓库更新失败")
 
                 if not again:
-                    # 获取拉取前后的差异
-                    diff = old_commit.diff(new_commit)
-                    # 找出被修改或新增的文件
-                    modified_or_added_files = [item.b_path for item in diff if item.change_type in ['M', 'A']]
-                    for file_path in modified_or_added_files:
+                    if pull:
+                        # 获取拉取前后的差异
+                        diff = old_commit.diff(new_commit)
+                        # 找出被修改或新增的文件
+                        updeted_files = [item.b_path for item in diff if item.change_type in ['M', 'A']]
+                    else:
+                        updeted_files = copy.deepcopy(self.community_projects_infos[project_name]["unsuccessful_nodes"])
+                    for file_path in updeted_files:
                         if os.path.commonpath([file_path, local_resources_dir]) == local_resources_dir:
                             try:
                                 file_name = os.path.basename(file_path)
@@ -648,55 +619,202 @@ class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
                                 else:
                                     old_json = rsp_json
                                 save2json(old_json, json_path)
+                                self.community_projects_infos[project_name]["successful_nodes"].append(file_path)
+                                self.community_projects_infos[project_name]["unsuccessful_nodes"].remove(file_path)
                             except Exception as e:
                                 logger.error(f"{file_path}, error {e}")
+                                if file_path not in self.community_projects_infos[project_name]["unsuccessful_nodes"]:
+                                    self.community_projects_infos[project_name]["unsuccessful_nodes"].append(file_path)
                 else:
-                    if len(os.listdir(local_jsons_dir)) > 0:
-                        raise ValueError(f"重头生成一整个版本时，{verison}已存在")
-
-                    for item in os.listdir(local_resources_dir):
-                        temp_path = os.path.join(local_resources_dir, item)
-                        if item != "media" and os.path.isdir(temp_path) and len(os.listdir(temp_path)) > 0:
-                            try:
-                                for item2 in os.listdir(temp_path):
-                                    if item2 == "index.md" or item2 == "media":
-                                        continue
-                                    elif item2.endswith('.MD') or item2.endswith('.MDX') or item2.endswith('.md') or item2.endswith('.mdx'):
-                                        md_path = os.path.join(temp_path, item2)
-                                        md_name = os.path.splitext(item2)[0]
-                                        rsp = self.llm_generator.messages_generate_llm(md_name, md_path)
-                                        rsp_json = parse_json(rsp)
-                                        save2json(rsp_json, os.path.join(local_jsons_dir, f"{md_name}.json"))
-                                    elif os.path.exists(os.path.join(temp_path, item2)) and len(os.path.join(temp_path, item2)) > 0:
-                                        temp_path2 = os.path.join(temp_path, item2)
-                                        for item3 in os.listdir(temp_path2):
-                                            if item3 == "index.md" or item3 == "media":
-                                                continue
-                                            elif item3.endswith('.MD') or item3.endswith('.MDX') or item3.endswith('.md') or item3.endswith('.mdx'):
-                                                md_path = os.path.join(temp_path2, item3)
-                                                md_name = os.path.splitext(item3)[0]
-                                                rsp = self.llm_generator.messages_generate_llm(md_name, md_path)
-                                                rsp_json = parse_json(rsp)
-                                                save2json(rsp_json,os.path.join(local_jsons_dir, f"{md_name}.json"))
-                            except Exception as e:
-                                logger.error(f"{md_path}, error {e}")
+                    if pull and len(os.listdir(local_jsons_dir)) > 0:
+                        raise ValueError(f"重头生成一整个版本时，{version}已存在")
+                    
+                    if project_name == "ComfyUI-docs":
+                        self.comfyUI_docs_again(local_resources_dir, local_jsons_dir)
+                    if project_name == "SaltAI-Web-Docs":
+                        self.saltAI_web_docs_again(local_resources_dir, local_jsons_dir)
+                    if project_name == "comfyui-nodes-docs":
+                        self.comfyui_nodes_docs_again(local_resources_dir, local_jsons_dir)
+                    if project_name == "comflowy":
+                        self.comflowy_again(local_resources_dir, local_jsons_dir)
                 
                 self.local_community_project_infos[project_name]["json_last_update"] = current_time
         finally:
             self.save_infos()
 
-    def refresh_SaltAI_Web_Docs_jsons(self, project_name: str) -> None:
-        # 时间就按生成json的时间刷新，看能否通过git判断哪些文件有更新或是新增的，对对应的文件重新生成；一个大version也可以分多个小版本
-        pass
+    def comfyUI_docs_again(self, local_resources_dir: str, local_jsons_dir: str) -> None:
+        for item in os.listdir(local_resources_dir):
+            temp_path = os.path.join(local_resources_dir, item)
+            if item != "media" and os.path.isdir(temp_path) and len(os.listdir(temp_path)) > 0:
+                try:
+                    for item2 in os.listdir(temp_path):
+                        if item2 == "index.md" or item2 == "media":
+                            continue
+                        elif item2.endswith('.MD') or item2.endswith('.MDX') or item2.endswith('.md') or item2.endswith('.mdx'):
+                            md_path = os.path.join(temp_path, item2)
+                            if md_path not in self.community_projects_infos["ComfyUI-docs"]["successful_nodes"]:
+                                md_name = os.path.splitext(item2)[0]
+                                rsp = self.llm_generator.messages_generate_llm(md_name, md_path)
+                                rsp_json = parse_json(rsp)
 
-    def refresh_comfyui_nodes_docs_jsons(self, project_name: str) -> None:
-        # 时间就按生成json的时间刷新，看能否通过git判断哪些文件有更新或是新增的，对对应的文件重新生成；一个大version也可以分多个小版本
-        pass
+                                json_path = os.path.join(local_jsons_dir, f"{md_name}.json")
+                                if os.path.exists(json_path):
+                                    old_json = load4json(json_path, [])
+                                    old_json.extend(rsp_json)
+                                else:
+                                    old_json = rsp_json
+                                save2json(old_json, json_path)
+                                self.community_projects_infos["ComfyUI-docs"]["successful_nodes"].append(md_path)
+                                if md_path in self.community_projects_infos["ComfyUI-docs"]["unsuccessful_nodes"]:
+                                    self.community_projects_infos["ComfyUI-docs"]["unsuccessful_nodes"].remove(md_path)
+                        elif os.path.exists(os.path.join(temp_path, item2)) and len(os.path.join(temp_path, item2)) > 0:
+                            temp_path2 = os.path.join(temp_path, item2)
+                            for item3 in os.listdir(temp_path2):
+                                if item3 == "index.md" or item3 == "media":
+                                    continue
+                                elif item3.endswith('.MD') or item3.endswith('.MDX') or item3.endswith('.md') or item3.endswith('.mdx'):
+                                    md_path = os.path.join(temp_path2, item3)
+                                    if md_path not in self.community_projects_infos["ComfyUI-docs"]["successful_nodes"]:
+                                        md_name = os.path.splitext(item3)[0]
+                                        rsp = self.llm_generator.messages_generate_llm(md_name, md_path)
+                                        rsp_json = parse_json(rsp)
+                                        
+                                        json_path = os.path.join(local_jsons_dir, f"{md_name}.json")
+                                        if os.path.exists(json_path):
+                                            old_json = load4json(json_path, [])
+                                            old_json.extend(rsp_json)
+                                        else:
+                                            old_json = rsp_json
+                                        save2json(old_json, json_path)
+                                        self.community_projects_infos["ComfyUI-docs"]["successful_nodes"].append(md_path)
+                                        if md_path in self.community_projects_infos["ComfyUI-docs"]["unsuccessful_nodes"]:
+                                            self.community_projects_infos["ComfyUI-docs"]["unsuccessful_nodes"].remove(md_path)
+                except Exception as e:
+                    logger.error(f"{md_path}, error {e}")
+                    if md_path not in self.community_projects_infos["ComfyUI-docs"]["unsuccessful_nodes"]:
+                        self.community_projects_infos["ComfyUI-docs"]["unsuccessful_nodes"].append(md_path)
 
-    def refresh_comflowy_jsons(self, project_name: str) -> None:
-        # 时间就按生成json的时间刷新，看能否通过git判断哪些文件有更新或是新增的，对对应的文件重新生成；一个大version也可以分多个小版本
-        pass
+    def saltAI_web_docs_again(self, local_resources_dir: str, local_jsons_dir: str) -> None:
+        for node in os.listdir(local_resources_dir):
+            node_path = os.path.join(local_resources_dir, node)
+            if os.path.isdir(node_path) and len(os.listdir(node_path)) > 0:
+                for item in os.listdir(node_path):
+                    if item == "Nodes":
+                        sub_node_dir = os.path.join(node_path, item)
+                        for sub_node in os.listdir(sub_node_dir):
+                            sub_node_path = os.path.join(sub_node_dir, sub_node)
+                            if sub_node_path not in self.community_projects_infos["SaltAI-Web-Docs"]["successful_nodes"]:
+                                try: 
+                                    sub_node_name = os.path.splitext(sub_node)[0]
+                                    rsp = self.llm_generator.messages_generate_llm(sub_node_name, sub_node_path,
+                                                                                   system_prompt=system_prompt2, template=template2)
+                                    rsp_json = parse_json(rsp)
 
+                                    json_path = os.path.join(local_jsons_dir, f"{node}+{sub_node_name}.json")
+                                    if os.path.exists(json_path):
+                                        old_json = load4json(json_path, [])
+                                        old_json.extend(rsp_json)
+                                    else:
+                                        old_json = rsp_json
+                                    save2json(old_json, json_path)
+                                    self.community_projects_infos["SaltAI-Web-Docs"]["successful_nodes"].append(sub_node_path)
+                                    if sub_node_path in self.community_projects_infos["SaltAI-Web-Docs"]["unsuccessful_nodes"]:
+                                        self.community_projects_infos["SaltAI-Web-Docs"]["unsuccessful_nodes"].remove(sub_node_path)
+                                    # break
+                                except Exception as e:
+                                    logger.error(f'Failed to extract data from file: {sub_node_path}, error: {e}')
+                                    if sub_node_path not in self.community_projects_infos["SaltAI-Web-Docs"]["unsuccessful_nodes"]:
+                                        self.community_projects_infos["SaltAI-Web-Docs"]["unsuccessful_nodes"].append(sub_node_path)
+                    elif item == "index.md":
+                        try: 
+                            index_path = os.path.join(node_path, item)
+                            if index_path not in self.community_projects_infos["SaltAI-Web-Docs"]["successful_nodes"]:
+                                rsp = self.llm_generator.messages_generate_llm(sub_node_name, index_path,
+                                                                               system_prompt=system_prompt2, template=template2)
+                                rsp_json = parse_json(rsp)
+
+                                json_path = os.path.join(local_jsons_dir, f"{node}.json")
+                                if os.path.exists(json_path):
+                                    old_json = load4json(json_path, [])
+                                    old_json.extend(rsp_json)
+                                else:
+                                    old_json = rsp_json
+                                save2json(old_json, json_path)
+                                self.community_projects_infos["SaltAI-Web-Docs"]["successful_nodes"].append(index_path)
+                                if index_path in self.community_projects_infos["SaltAI-Web-Docs"]["unsuccessful_nodes"]:
+                                    self.community_projects_infos["SaltAI-Web-Docs"]["unsuccessful_nodes"].remove(index_path)
+                        except Exception as e:
+                            logger.error(f'Failed to extract data from file: {index_path}, error: {e}')
+                            if index_path not in  self.community_projects_infos["SaltAI-Web-Docs"]["unsuccessful_nodes"]:
+                                 self.community_projects_infos["SaltAI-Web-Docs"]["unsuccessful_nodes"].append(index_path)
+                    else:
+                        continue
+
+    def comfyui_nodes_docs_again(self, local_resources_dir: str, local_jsons_dir: str) -> None:
+        for item in os.listdir(local_resources_dir):
+            md_path = os.path.join(local_resources_dir, item)
+            if not os.path.isdir(md_path):
+                name, ext = extract_name_extension(item)
+                if ext in ['.MD', '.MDX', '.md', '.mdx'] and md_path not in self.community_projects_infos["comfyui-nodes-docs"]["successful_nodes"]:
+                    try:
+                        rsp = self.llm_generator.messages_generate_llm(name, md_path,
+                                                                       system_prompt=system_prompt_zh,
+                                                                       template=template_zh)
+                        rsp_json = parse_json(rsp)
+
+                        json_path = os.path.join(local_jsons_dir, f"{name}.json")
+                        if os.path.exists(json_path):
+                            old_json = load4json(json_path, [])
+                            old_json.extend(rsp_json)
+                        else:
+                            old_json = rsp_json
+                        save2json(old_json, json_path)
+                        self.community_projects_infos["comfyui-nodes-docs"]["successful_nodes"].append(md_path)
+                        if md_path in self.community_projects_infos["comfyui-nodes-docs"]["unsuccessful_nodes"]:
+                            self.community_projects_infos["comfyui-nodes-docs"]["unsuccessful_nodes"].remove(md_path)
+                        # break
+                    except Exception as e:
+                        logger.error(f'Failed to extract data from file: {md_path}, error: {e}')
+                        if md_path not in self.community_projects_infos["comfyui-nodes-docs"]["unsuccessful_nodes"]:
+                            self.community_projects_infos["comfyui-nodes-docs"]["unsuccessful_nodes"].append(md_path)
+
+    def comflowy_again(self, local_resources_dir: str, local_jsons_dir: str) -> None:
+        for item in os.listdir(local_resources_dir):
+            md_dir = os.path.join(local_resources_dir, item)
+            if os.path.isdir(md_dir):
+                for md in os.listdir(md_dir):
+                    name, ext = extract_name_extension(md)
+                    md_path = os.path.join(md_dir, md)
+                    if ext in ['.MD', '.MDX', '.md', '.mdx'] and md_path not in self.community_projects_infos["comflowy"]["successful_nodes"]:
+                        try:
+                            _, flag = extract_name_extension(name)
+                            if flag == ".en-US":
+                                system_prompt = system_prompt2_index
+                                template = template2_index
+                            elif flag == ".zh-CN":
+                                system_prompt = system_prompt_zh
+                                template = template_zh
+                            else:
+                                raise ValueError("文件标识错误")
+                            rsp = self.llm_generator.messages_generate_llm(name, md_path,
+                                                                            system_prompt=system_prompt,
+                                                                            template=template)
+                            rsp_json = parse_json(rsp)
+
+                            json_path = os.path.join(local_jsons_dir, f"{name}.json")
+                            if os.path.exists(json_path):
+                                old_json = load4json(json_path, [])
+                                old_json.extend(rsp_json)
+                            else:
+                                old_json = rsp_json
+                            save2json(old_json, json_path)
+                            self.community_projects_infos["comflowy"]["successful_nodes"].append(md_path)
+                            if md_path in self.community_projects_infos["comflowy"]["unsuccessful_nodes"]:
+                                self.community_projects_infos["comflowy"]["unsuccessful_nodes"].remove(md_path)
+                        except Exception as e:
+                            logger.error(f'Failed to extract data from file: {md_path}, error: {e}')
+                            if md_path not in self.community_projects_infos["comflowy"]["unsuccessful_nodes"]:
+                                self.community_projects_infos["comflowy"]["unsuccessful_nodes"].append(md_path)
 
     def save_infos(self):
         try:
