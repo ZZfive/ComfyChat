@@ -393,11 +393,16 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                 if not os.path.exists(local_node_json_path):
                     os.mkdir(local_node_json_path)
                 local_node_json_version_path = os.path.join(local_node_json_path, str(version))
-                if os.path.exists(local_node_json_version_path):
+                if not os.path.exists(local_node_json_version_path):
                     os.mkdir(local_node_json_version_path)
 
-                json_path = os.path.join(local_node_json_version_path, f"{md_name}{"_zh" if lang=="zh" else ""}.json")
-                save2json(rsp_json, json_path)
+                json_path = os.path.join(local_node_json_version_path, f"{md_name}{'_zh' if lang=='zh' else ''}.json")
+                if os.path.exist(json_path):
+                    old_json = load4json(json_path, [])
+                    old_json.extend(rsp_json)
+                else:
+                    old_json = rsp_json
+                save2json(old_json, json_path)
                 self.local_custom_node_infos[node_url]["json_last_update"] = self.local_custom_node_infos[node_url]["md_last_update"]
                 self.local_custom_node_infos[node_url]["repo_json"] = True
         except:
@@ -589,47 +594,96 @@ class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
     def refresh_all_projects_jsons(self):
         pass
 
-    def refresh_comfyui_docs_jsons(self, version: int, repos_dir: str = "/root/code/ComfyChat/data/community_docs/repos",
+    def refresh_comfyui_docs_jsons(self, version: int, again: bool = False,
+                                   repos_dir: str = "/root/code/ComfyChat/data/community_docs/repos",
                                    jsons_dir: str = "/root/code/ComfyChat/data/custom_nodes_jsons") -> None:
-        # 最后判断json路径下是否存在文件：还是要分version
-        # 时间就按生成json的时间刷新，看能否通过git判断哪些文件有更新或是新增的，对对应的文件重新生成；一个大version也可以分多个小版本
-
-        local_repo_dir = os.path.join(repos_dir, "ComfyUI-docs")
-        local_resources_dir = os.path.join(local_repo_dir, self.community_projects_infos["ComfyUI-docs"]["resources_dir"])
-        local_jsons_dir = os.path.join(jsons_dir, "ComfyUI-docs", str(version))
-
-        if not os.path.exists(local_jsons_dir):
-            os.mkdir(local_jsons_dir)
-
         try:
-            for item in os.listdir(local_resources_dir):
-                temp_path = os.path.join(local_resources_dir, item)
-                if item != "media" and os.path.isdir(temp_path) and len(os.listdir(temp_path)) > 0:
-                    try:
-                        for item2 in os.listdir(temp_path):
-                            if item2 == "index.md" or item2 == "media":
-                                continue
-                            elif item2.endswith('.MD') or item2.endswith('.MDX') or item2.endswith('.md') or item2.endswith('.mdx'):
-                                md_path = os.path.join(temp_path, item2)
-                                md_name = os.path.splitext(item2)[0]
-                                rsp = self.llm_generator.messages_generate_llm(md_name, md_path)
+            if not os.path.join(jsons_dir, "ComfyUI-docs", str(version)) and version == 1:
+                raise ValueError("version为1的路径不存在时，version要大于1")
+
+            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            local_repo_dir = os.path.join(repos_dir, "ComfyUI-docs")
+            local_jsons_dir = os.path.join(jsons_dir, "ComfyUI-docs", str(version))
+            if not os.path.exists(local_jsons_dir):
+                os.mkdir(local_jsons_dir)
+            local_resources_dir = os.path.join(local_repo_dir, self.community_projects_infos["ComfyUI-docs"]["resources_dir"])
+
+            if not self.local_community_project_infos[project_name]["valid_repo"]:  # 项目没clone到本地或主要包含有效文档的路径不存在
+                try:
+                    if os.path.exists(local_repo_dir):
+                        shutil.rmtree(local_repo_dir)
+                    Repo.clone_from(self.community_projects_infos[project_name]["url"], local_repo_dir)
+                    self.local_community_project_infos[project_name]["valid_repo"] = True  # 只从头拉取项目，不做其他操作
+                except Exception as e:
+                    logger.error(f"ComfyUI-docs更新失败, error {e}")
+                    raise ValueError("ComfyUI-docs更新失败")
+            else:  # 本地的项目仓库完整，有效文档路径存在
+                try:
+                    repo = Repo(local_repo_dir)
+                    old_commit = repo.head.commit
+                    origin = repo.remotes.origin
+                    origin.pull()
+                    new_commit = repo.head.commit
+                except Exception as e:
+                    logger.error(f"ComfyUI-docs更新失败, error {e}")
+                    raise ValueError("ComfyUI-docs更新失败")
+
+                if not again:
+                    # 获取拉取前后的差异
+                    diff = old_commit.diff(new_commit)
+                    # 找出被修改或新增的文件
+                    modified_or_added_files = [item.b_path for item in diff if item.change_type in ['M', 'A']]
+                    for file_path in modified_or_added_files:
+                        if os.path.commonpath([file_path, local_resources_dir]) == local_resources_dir:
+                            try:
+                                file_name = os.path.basename(file_path)
+                                node_subject = os.path.splitext(file_name)[0]
+                                rsp = self.llm_generator.messages_generate_llm(node_subject, file_path)
                                 rsp_json = parse_json(rsp)
-                                save2json(rsp_json, os.path.join(local_jsons_dir, f"{md_name}.json"))
-                            elif os.path.exists(os.path.join(temp_path, item2)) and len(os.path.join(temp_path, item2)) > 0:
-                                temp_path2 = os.path.join(temp_path, item2)
-                                for item3 in os.listdir(temp_path2):
-                                    if item3 == "index.md" or item3 == "media":
+
+                                json_path = os.path.join(local_jsons_dir, f"{file_name}.json")
+                                if os.path.exist(json_path):
+                                    old_json = load4json(json_path, [])
+                                    old_json.extend(rsp_json)
+                                else:
+                                    old_json = rsp_json
+                                save2json(old_json, json_path)
+                            except Exception as e:
+                                logger.error(f"{file_path}, error {e}")
+                else:
+                    if len(os.listdir(local_jsons_dir)) > 0:
+                        raise ValueError(f"重头生成一整个版本时，{verison}已存在")
+
+                    for item in os.listdir(local_resources_dir):
+                        temp_path = os.path.join(local_resources_dir, item)
+                        if item != "media" and os.path.isdir(temp_path) and len(os.listdir(temp_path)) > 0:
+                            try:
+                                for item2 in os.listdir(temp_path):
+                                    if item2 == "index.md" or item2 == "media":
                                         continue
-                                    elif item3.endswith('.MD') or item3.endswith('.MDX') or item3.endswith('.md') or item3.endswith('.mdx'):
-                                        md_path = os.path.join(temp_path2, item3)
-                                        md_name = os.path.splitext(item3)[0]
+                                    elif item2.endswith('.MD') or item2.endswith('.MDX') or item2.endswith('.md') or item2.endswith('.mdx'):
+                                        md_path = os.path.join(temp_path, item2)
+                                        md_name = os.path.splitext(item2)[0]
                                         rsp = self.llm_generator.messages_generate_llm(md_name, md_path)
                                         rsp_json = parse_json(rsp)
-                                        save2json(rsp_json,os.path.join(local_jsons_dir, f"{md_name}.json"))
-                    except Exception as e:
-                        logger.error(f"{md_path}, error {e}")
+                                        save2json(rsp_json, os.path.join(local_jsons_dir, f"{md_name}.json"))
+                                    elif os.path.exists(os.path.join(temp_path, item2)) and len(os.path.join(temp_path, item2)) > 0:
+                                        temp_path2 = os.path.join(temp_path, item2)
+                                        for item3 in os.listdir(temp_path2):
+                                            if item3 == "index.md" or item3 == "media":
+                                                continue
+                                            elif item3.endswith('.MD') or item3.endswith('.MDX') or item3.endswith('.md') or item3.endswith('.mdx'):
+                                                md_path = os.path.join(temp_path2, item3)
+                                                md_name = os.path.splitext(item3)[0]
+                                                rsp = self.llm_generator.messages_generate_llm(md_name, md_path)
+                                                rsp_json = parse_json(rsp)
+                                                save2json(rsp_json,os.path.join(local_jsons_dir, f"{md_name}.json"))
+                            except Exception as e:
+                                logger.error(f"{md_path}, error {e}")
+                
+                self.local_community_project_infos[project_name]["json_last_update"] = current_time
         finally:
-            pass
+            self.save_infos()
 
     def refresh_SaltAI_Web_Docs_jsons(self, project_name: str) -> None:
         # 时间就按生成json的时间刷新，看能否通过git判断哪些文件有更新或是新增的，对对应的文件重新生成；一个大version也可以分多个小版本
