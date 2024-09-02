@@ -205,13 +205,17 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
     local_custom_node_infos_path = "/root/code/ComfyChat/data/custom_node_infos.json"
 
     def __init__(self) -> None:
+        self.remote_custom_node_list = get_data_from_url(self.custom_node_list_json_url)['custom_nodes']
+        self.remote_github_stats = get_data_from_url(self.github_stats_json_url)
+
         if os.path.exists(self.local_custom_node_infos_path):
             self.local_custom_node_infos = load4json(self.local_custom_node_infos_path, {})
         else:
-            self.touch_infos()
+            self.local_custom_node_infos = {}
         
-        self.remote_custom_node_list = get_data_from_url(self.custom_node_list_json_url)['custom_nodes']
-        self.remote_github_stats = get_data_from_url(self.github_stats_json_url)
+        if self.local_custom_node_infos == {}:
+            self.touch_infos()
+
         self.llm_generator = LLMApiGenerator(100)
 
     def touch_infos(self, local_custom_node_repos_dir: str = "/root/code/ComfyChat/data/custom_nodes_repos",
@@ -275,6 +279,9 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             self.local_custom_node_infos[node_url]["json_version"] = 1
             self.local_custom_node_infos[node_url]["remote_last_update"] = self.remote_github_stats[node_url].get("last_update", None) if node_url in self.remote_github_stats else None
 
+            self.local_custom_node_infos[node_url]["successful_files"] = []
+            self.local_custom_node_infos[node_url]["unsuccessful_files"] = []
+
 
     # 对当前self.local_custom_node_infos中的所有节点仓库进行更新
     def refresh_all_repos(self, local_custom_node_repos_dir: str = "/root/code/ComfyChat/data/custom_nodes_repos") -> None:
@@ -287,16 +294,16 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                         Repo.clone_from(k, local_node_repo_path)
                         v["local_last_update"] = v["remote_last_update"]
                         v["repo_cloned"] = True
-                        v["remote_last_update"] = self.remote_github_stats[node_url].get("last_update", None) if node_url in self.remote_github_stats else None
+                        v["remote_last_update"] = self.remote_github_stats[k].get("last_update", None) if k in self.remote_github_stats else None
                     if v["local_last_update"] < v["remote_last_update"]:  # 以获取的远程时间进行比较，判断是否更新本地仓库
                         repo = Repo(local_node_repo_path)  # 打开本地仓库
                         origin = repo.remotes.origin  # 获取远程仓库
                         origin.pull()  # 从远程仓库拉取最新代码
                         v["local_last_update"] = v["remote_last_update"]
                         v["repo_cloned"] = True
-                        v["remote_last_update"] = self.remote_github_stats[node_url].get("last_update", None) if node_url in self.remote_github_stats else None
-                except:
-                    logger.error(f"Refresh failure: {k}")
+                        v["remote_last_update"] = self.remote_github_stats[k].get("last_update", None) if k in self.remote_github_stats else None
+                except Exception as e:
+                    logger.error(f"{k} refresh failure: {e}")
         finally:
             self.save_infos()
 
@@ -319,8 +326,8 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             latest_commit_time = latest_commit.committed_datetime.strftime('%Y-%m-%d %H:%M:%S')
             self.local_custom_node_infos[node_url]["local_last_update"] = latest_commit_time
             self.local_custom_node_infos[node_url]["remote_last_update"] = self.remote_github_stats[node_url].get("last_update", None) if node_url in self.remote_github_stats else None
-        except:
-            logger.error(f"Refresh failure: {node_url}")
+        except Exception as e:
+            logger.error(f"{node_url} refresh failure: {e}")
             self.local_custom_node_infos[node_url]["repo_cloned"] = False
 
     # 对当前self.local_custom_node_infos中的所有节点仓库中包含的md文档刷新
@@ -338,8 +345,8 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                         extract_md_files_from_local_repo(local_node_repo_path, local_node_md_path)
                         v["md_last_update"] = v["local_last_update"]
                         v["repo_md"] = True
-                    except:
-                        logger.error(f"MD refresh failure: {k}")
+                    except Exception as e:
+                        logger.error(f"{k} MD refresh failure: {e}")
         finally:
             self.save_infos()
 
@@ -358,8 +365,8 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             extract_md_files_from_local_repo(local_node_repo_path, local_node_md_path)
             self.local_custom_node_infos[node_url]["md_last_update"] = self.local_custom_node_infos[node_url]["local_last_update"]
             self.local_custom_node_infos[node_url]["repo_md"] = True
-        except:
-            logger.error(f"MD refresh failure: {node_url}")
+        except Exception as e:
+            logger.error(f"{node_url} MD refresh failure: {e}")
             self.local_custom_node_infos[node_url]["repo_md"] = False
 
     def refresh_all_jsons(self, version: int) -> None:
@@ -380,34 +387,41 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             node_name = node_url.split("/")[-1]
             local_node_md_path = os.path.join(local_custom_node_mds_dir, node_name)
             local_node_json_path = os.path.join(local_custom_node_jsons_dir, node_name)
+            if not os.path.exists(local_node_json_path):
+                    os.mkdir(local_node_json_path)
+            local_node_json_version_path = os.path.join(local_node_json_path, str(version))
+            if not os.path.exists(local_node_json_version_path):
+                os.mkdir(local_node_json_version_path)
+
             for item in os.listdir(local_node_md_path):
                 md_path = os.path.join(local_node_md_path, item)
-                md_name, _ = os.path.splitext(item)
-                if lang == "en":
-                    rsp = self.llm_generator.messages_generate_llm(item, md_path)
-                if lang == "zh":
-                    rsp = self.llm_generator.messages_generate_llm(item, md_path,
-                                                                   system_prompt=system_prompt_zh,
-                                                                   template=template_zh)
-                rsp_json = parse_json(rsp)
-
-                if not os.path.exists(local_node_json_path):
-                    os.mkdir(local_node_json_path)
-                local_node_json_version_path = os.path.join(local_node_json_path, str(version))
-                if not os.path.exists(local_node_json_version_path):
-                    os.mkdir(local_node_json_version_path)
-
-                json_path = os.path.join(local_node_json_version_path, f"{md_name}{'_zh' if lang=='zh' else ''}.json")
-                if os.path.exists(json_path):
-                    old_json = load4json(json_path, [])
-                    old_json.extend(rsp_json)
-                else:
-                    old_json = rsp_json
-                save2json(old_json, json_path)
-                self.local_custom_node_infos[node_url]["json_last_update"] = self.local_custom_node_infos[node_url]["md_last_update"]
-                self.local_custom_node_infos[node_url]["repo_json"] = True
-        except:
-            logger.error(f"Json refresh failure: {node_url}")
+                if md_apth not in self.local_custom_node_infos[node_url]["successful_files"]:
+                    try:
+                        md_name, _ = os.path.splitext(item)
+                        if lang == "en":
+                            rsp = self.llm_generator.messages_generate_llm(item, md_path)
+                        if lang == "zh":
+                            rsp = self.llm_generator.messages_generate_llm(item, md_path,
+                                                                        system_prompt=system_prompt_zh,
+                                                                        template=template_zh)
+                        rsp_json = parse_json(rsp)
+                        json_path = os.path.join(local_node_json_version_path, f"{md_name}{'_zh' if lang=='zh' else ''}.json")
+                        if os.path.exists(json_path):
+                            old_json = load4json(json_path, [])
+                            old_json.extend(rsp_json)
+                        else:
+                            old_json = rsp_json
+                        save2json(old_json, json_path)
+                        self.local_custom_node_infos[node_url]["successful_files"].append(md_path)
+                        if md_path in self.local_custom_node_infos[node_url]["unsuccessful_files"]:
+                            self.local_custom_node_infos[node_url]["unsuccessful_files"].remove(md_path)
+                        self.local_custom_node_infos[node_url]["json_last_update"] = self.local_custom_node_infos[node_url]["md_last_update"]
+                        self.local_custom_node_infos[node_url]["repo_json"] = True
+                    except Exception as e:
+                        logger.error(f"Json of {md_path} refresh failure: {e}")
+                        self.local_custom_node_infos[node_url]["unsuccessful_files"].append(md_path)
+        except Exception as e:
+            logger.error(f"{node_url} Json refresh failure: {e}")
             self.local_custom_node_infos[node_url]["repo_json"] = False
         finally:
             self.local_custom_node_infos[node_url]["json_version"] = version
@@ -495,7 +509,8 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
         try:
             save2json(self.local_custom_node_infos,
                       self.local_custom_node_infos_path)
-        except:
+        except Exception as e:
+            print(str(e))
             print(self.local_custom_node_infos)
             logger.error(self.local_custom_node_infos)
             raise ValueError("各自定义节点处理信息保存失败")
@@ -820,7 +835,8 @@ class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
         try:
             save2json(self.local_community_project_infos,
                       self.local_community_project_infos_path)
-        except:
+        except Exception as e:
+            print(str(e))
             print(self.local_community_project_infos)
             logger.error(self.local_community_project_infos)
             raise ValueError("各社区项目处理信息保存失败")
@@ -834,12 +850,8 @@ if __name__ == "__main__":
     # eng_text = "hello world"
     # print(generator.eng2zh_llm(eng_text))
 
+    # 基于comfyui-manager维护的节点列表构建nodes-v2数据
     pipeline = DataCollectAndMessagesGeneratePipelineWithComfyuiManager()
-    i = 1
-    for node_url in pipeline.local_custom_node_infos.keys():
-        print(str(i) * 40)
-        print(node_url)
-        print(pipeline.local_custom_node_infos[node_url])
-        if i == 10:
-            break
-        i += 1
+    pipeline.refresh_all_repos()
+    # pipeline.refresh_all_mds()
+    # pipeline.refresh_all_jsons()
