@@ -290,18 +290,22 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                 node_name = k.split("/")[-1]
                 local_node_repo_path = os.path.join(local_custom_node_repos_dir, node_name)
                 try:
-                    if not v["repo_cloned"] or v["local_last_update"] is None:
-                        Repo.clone_from(k, local_node_repo_path)
+                    if (not v["repo_cloned"] or v["local_last_update"] is None) and not os.path.exists(local_node_repo_path):
+                        repo = Repo.clone_from(k, local_node_repo_path)
                         v["local_last_update"] = v["remote_last_update"]
                         v["repo_cloned"] = True
                         v["remote_last_update"] = self.remote_github_stats[k].get("last_update", None) if k in self.remote_github_stats else None
-                    if v["local_last_update"] < v["remote_last_update"]:  # 以获取的远程时间进行比较，判断是否更新本地仓库
+                        if v["remote_last_update"] is None:
+                            v["remote_last_update"] = repo.head.commit.committed_datetime.strftime('%Y-%m-%d %H:%M:%S')
+                    if v["local_last_update"] is not None and v["remote_last_update"] is not None and v["local_last_update"] < v["remote_last_update"]:  # 以获取的远程时间进行比较，判断是否更新本地仓库
                         repo = Repo(local_node_repo_path)  # 打开本地仓库
                         origin = repo.remotes.origin  # 获取远程仓库
                         origin.pull()  # 从远程仓库拉取最新代码
                         v["local_last_update"] = v["remote_last_update"]
                         v["repo_cloned"] = True
                         v["remote_last_update"] = self.remote_github_stats[k].get("last_update", None) if k in self.remote_github_stats else None
+                        if v["remote_last_update"] is None:
+                            v["remote_last_update"] = repo.head.commit.committed_datetime.strftime('%Y-%m-%d %H:%M:%S')
                 except Exception as e:
                     logger.error(f"{k} refresh failure: {e}")
         finally:
@@ -395,7 +399,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
 
             for item in os.listdir(local_node_md_path):
                 md_path = os.path.join(local_node_md_path, item)
-                if md_apth not in self.local_custom_node_infos[node_url]["successful_files"]:
+                if md_path not in self.local_custom_node_infos[node_url]["successful_files"]:
                     try:
                         md_name, _ = os.path.splitext(item)
                         if lang == "en":
