@@ -4,6 +4,7 @@ Rough LLM Interpreter of ComfyUI
 - [简介](#简介)
 - [架构图](#架构图)
 - [部署](#部署)
+- [模型地址](#模型地址)
 - [项目发展方向](#项目发展方向)
 - [数据](#数据)
 - [工作内容](#工作内容)
@@ -31,6 +32,10 @@ Rough LLM Interpreter of ComfyUI
 5. 若想开启comfyui，需要先准备一些必要模型，如Stable-diffusion、Lora、VAE、embeddings和controlnet等，可以将此类模型都存放在[weights](weights)路径下，然后修改[visual_genrations/comfyui/extra_model_paths.yaml.example](visual_genrations/comfyui/extra_model_paths.yaml.example)文件。先将文件名中的.example删掉，改为extra_model_paths.yaml，然后再按以下截图中设置模型路径。模型准备好后，将config.ini中comfyui配置中的enable设置为1
 ![enter image description here](assets/comfyui_models.png?raw=true)
 6. 执行完上述操作后，正确设置[config.ini](server/config.ini)，'python demo.py'就能成功运行服务
+
+## 模型地址
+- [zzfive/ComfyChat-InternLM2.5-7b-v2-1](https://huggingface.co/zzfive/ComfyChat-InternLM2.5-7b-v2-1)
+- [zzfive/ComfyChat-InternLM2-1-8b-v2-1](https://huggingface.co/zzfive/ComfyChat-InternLM2-1-8b-v2-1)
 
 ## 项目发展方向
 - 已进行
