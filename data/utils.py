@@ -1,7 +1,6 @@
 import os
 import re
 import json
-import time
 import logging
 from datetime import datetime
 
@@ -53,7 +52,7 @@ def get_data_from_url(url: str) -> Any:
 def parse_json(rsp: str) -> Any:
     try:
         return json.loads(rsp)
-    except:
+    except Exception:
         pattern = r'```json(.*)```'
         match = re.search(pattern, rsp, re.DOTALL)
         # print(match)
@@ -66,8 +65,9 @@ def create_logger(name: str, log_dir: str = '/root/code/ComfyChat/data/logs') ->
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
 
-    current_time = time.strftime("%Y%m%d:%H%M%S", time.localtime())
-    log_file = os.path.join(log_dir, f"{name}_{current_time}.log")
+    # current_time = time.strftime("%Y%m%d:%H%M%S", time.localtime())
+    # log_file = os.path.join(log_dir, f"{name}_{current_time}.log")
+    log_file = os.path.join(log_dir, f"{name}.log")
 
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)

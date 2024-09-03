@@ -56,7 +56,7 @@ def clone_repos_and_extract_md_files(repo_urls: List[str], local_base_dir: str, 
             try:
                 print(f"i: {i}, repo url: {repo_url}")
                 Repo.clone_from(repo_url, local_repo_dir)
-            except:
+            except Exception:
                 new_rejected_urls.append(repo_url)
                 continue
 
