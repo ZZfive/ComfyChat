@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the `callback_on_step_end` parameter in the MuseVdiffusers pipeline?",
+        "answer": "The `callback_on_step_end` parameter allows you to modify the denoising loop of a pipeline with custom defined functions. This is useful for dynamically adjusting pipeline attributes or modifying tensor variables."
+    },
+    {
+        "question": "What are the arguments that should be included in a callback function for the MuseVdiffusers pipeline?",
+        "answer": "The callback function should include the following arguments: `pipe` (the pipeline instance), `step_index` and `timestep` (to indicate the current position in the denoising loop), and `callback_kwargs` (a dict containing tensor variables that can be modified during the denoising loop)."
+    },
+    {
+        "question": "How can you modify the batch size of `prompt_embeds` in the MuseVdiffusers pipeline using a callback function?",
+        "answer": "In the callback function, you can modify the batch size of `prompt_embeds` by first setting `guidance_scale=0.0`, and then updating `prompt_embeds` with `prompt_embeds = prompt_embeds.chunk(2)[-1]`."
+    },
+    {
+        "question": "What should you do to execute the callback function at the end of each denoising step in the MuseVdiffusers pipeline?",
+        "answer": "To execute the callback function at the end of each denoising step, you need to pass the callback function to the `callback_on_step_end` parameter and the `prompt_embeds` to `callback_on_step_end_tensor_inputs` when calling the pipeline."
+    },
+    {
+        "question": "Is it possible to implement features like dynamic CFG in MuseVdiffusers without modifying the underlying code?",
+        "answer": "Yes, with the use of callbacks, you can implement features such as dynamic CFG without having to modify the underlying code at all."
+    },
+    {
+        "question": "What should you do if you have a cool use-case and require a callback function with a different execution point in MuseVdiffusers?",
+        "answer": "If you have a cool use-case and require a callback function with a different execution point, you can open a feature request on the HuggingFace Diffusers GitHub repository."
+    },
+    {
+        "question": "What is the current limitation of callbacks in MuseVdiffusers?",
+        "answer": "Currently, MuseVdiffusers only supports `callback_on_step_end`."
+    }
+]

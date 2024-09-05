@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-send-Eagle(slim)?",
+        "answer": "ComfyUI-send-Eagle(slim) is an extension node for ComfyUI that allows users to send generated images in webp format to Eagle."
+    },
+    {
+        "question": "What are the main features of the ComfyUI-send-Eagle(slim) extension node?",
+        "answer": "The main features of the ComfyUI-send-Eagle(slim) extension node include sending images in webp format to Eagle, embedding prompt and extra_pnginfo in webp format exif information to recreate workflows by image drop, and registering generation information in the memo (annotation) of Eagle from the KSampler and KSamplerAdvanced nodes."
+    },
+    {
+        "question": "What are the limitations of the ComfyUI-send-Eagle(slim) extension node?",
+        "answer": "The limitations of the ComfyUI-send-Eagle(slim) extension node include the possibility of not obtaining the desired generation prompt in workflows where the 'Generation prompt' and 'Hires.fix prompt' are defined differently, and the possibility of not obtaining expected information due to the high degree of freedom in ComfyUI configuration."
+    },
+    {
+        "question": "How can users install the ComfyUI-send-Eagle(slim) extension node?",
+        "answer": "To install the ComfyUI-send-Eagle(slim) extension node, users need to navigate to the ComfyUI custom nodes directory and run the command 'git clone https://github.com/shingo1228/ComfyUI-send-eagle'."
+    },
+    {
+        "question": "How can users update the ComfyUI-send-Eagle(slim) extension node?",
+        "answer": "To update the ComfyUI-send-Eagle(slim) extension node, users need to navigate to the cloned repo (e.g., 'custom_nodes/ComfyUI-send-eagle') and run the command 'git pull'."
+    },
+    {
+        "question": "What is the file naming rule used by the ComfyUI-send-Eagle(slim) extension node when sending images to Eagle?",
+        "answer": "The file naming rule used by the ComfyUI-send-Eagle(slim) extension node when sending images to Eagle is 'YYYYMMDD_HHMMss_SSSSSS-{model_name}-Smp-{steps}-{seed}-{FinalImage_width}-{FinalImage_height}.webp'."
+    },
+    {
+        "question": "What is the format for linking generation information to the memo (annotation) of Eagle in the ComfyUI-send-Eagle(slim) extension node?",
+        "answer": "The format for linking generation information to the memo (annotation) of Eagle in the ComfyUI-send-Eagle(slim) extension node is '{prompt}<br>NegativePrompt:{NegativePrompt}<br>Steps: {steps}, Sampler: {sampler_name} {scheduler}, CFG scale: {cfg}, Seed: {seed}, Size: {width}x{height}, Model: {model_name}'."
+    }
+]

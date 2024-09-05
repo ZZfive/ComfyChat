@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What are Consistency Models?",
+        "answer": "Consistency Models are a new family of models that generate high quality samples by directly mapping noise to data, proposed by Yang Song, Prafulla Dhariwal, Mark Chen, and Ilya Sutskever."
+    },
+    {
+        "question": "What are the advantages of Consistency Models over diffusion models?",
+        "answer": "Consistency Models support fast one-step generation by design, while still allowing multistep sampling to trade compute for sample quality. They also support zero-shot data editing, such as image inpainting, colorization, and super-resolution, without requiring explicit training on these tasks."
+    },
+    {
+        "question": "How can Consistency Models be trained?",
+        "answer": "Consistency Models can be trained either by distilling pre-trained diffusion models, or as standalone generative models altogether."
+    },
+    {
+        "question": "What are the performance benchmarks of Consistency Models?",
+        "answer": "Consistency Models achieve the new state-of-the-art FID of 3.55 on CIFAR-10 and 6.20 on ImageNet 64x64 for one-step generation, and can outperform existing one-step, non-adversarial generative models on standard benchmarks such as CIFAR-10, ImageNet 64x64 and LSUN 256x256."
+    },
+    {
+        "question": "Where can the original codebase and additional checkpoints for Consistency Models be found?",
+        "answer": "The original codebase can be found at openai/consistency_models on GitHub, and additional checkpoints are available at openai on HuggingFace."
+    },
+    {
+        "question": "Who contributed the pipeline for Consistency Models?",
+        "answer": "The pipeline for Consistency Models was contributed by dg845 and ayushtues."
+    },
+    {
+        "question": "How can the generation speed of Consistency Models be further increased?",
+        "answer": "For an additional speed-up, torch.compile can be used to generate multiple images in less than 1 second by compiling the unet of the pipeline with mode 'reduce-overhead' and fullgraph=True."
+    }
+]

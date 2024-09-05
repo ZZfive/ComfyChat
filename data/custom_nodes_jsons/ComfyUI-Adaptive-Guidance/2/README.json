@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is Adaptive Guidance in ComfyUI?",
+        "answer": "Adaptive Guidance is an implementation in ComfyUI that calculates the cosine similarity between the u-net's conditional and unconditional output and sets CFG to 1.0 once the similarity crosses a specified threshold, effectively skipping negative prompt calculations and speeding up inference."
+    },
+    {
+        "question": "How can one compare Adaptive Guidance vs. normal CFG in ComfyUI?",
+        "answer": "One can compare Adaptive Guidance vs. normal CFG in ComfyUI by importing the workflow provided in the link (workflows/AGExample.json?raw=1) into ComfyUI."
+    },
+    {
+        "question": "What is the recommended threshold range for the AdaptiveGuidance node in ComfyUI?",
+        "answer": "Normally, the recommended threshold range for the AdaptiveGuidance node in ComfyUI should be kept quite high, between 0.99 and 1.0."
+    },
+    {
+        "question": "Which sampler is the AdaptiveGuidance node compatible with in ComfyUI?",
+        "answer": "The AdaptiveGuidance node in ComfyUI can be used with the SamplerCustomAdvanced."
+    },
+    {
+        "question": "What happens when the cosine similarity crosses the specified threshold in the AdaptiveGuidance node?",
+        "answer": "When the cosine similarity crosses the specified threshold in the AdaptiveGuidance node, it sets CFG to 1.0, effectively skipping negative prompt calculations and speeding up inference."
+    },
+    {
+        "question": "What is the purpose of setting uncond_zero_scale to > 0 in ComfyUI-Adaptive-Guidance?",
+        "answer": "Setting uncond_zero_scale to > 0 in ComfyUI-Adaptive-Guidance enables 'uncond zero' CFG after the normal CFG gets disabled, which seems to work slightly better than just running without CFG."
+    },
+    {
+        "question": "Is the 'uncond zero' functionality stable in ComfyUI-Adaptive-Guidance?",
+        "answer": "No, the 'uncond zero' functionality in ComfyUI-Adaptive-Guidance is unstable and will probably change, so using it means your workflows likely won't be perfectly reproducible."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of this tutorial?",
+        "answer": "This tutorial teaches how to train a UNet2DModel on a subset of the Smithsonian Butterflies dataset to generate butterfly images."
+    },
+    {
+        "question": "What are the requirements before starting the tutorial?",
+        "answer": "Before starting the tutorial, you need to have 🤗 Datasets installed to load and preprocess the dataset, 🤗 Accelerate installed to simplify training on multiple GPUs, and TensorBoard or Weights & Biases installed to visualize training metrics."
+    },
+    {
+        "question": "What is the TrainingConfig class used for?",
+        "answer": "The TrainingConfig class is used to create a config object that holds all the training parameters, such as image size, batch size, number of epochs, learning rate, etc."
+    },
+    {
+        "question": "How is the dataset preprocessed before training?",
+        "answer": "The dataset is preprocessed using the preprocess function, which resizes the images to a specified size, applies random horizontal flip for data augmentation, and normalizes the pixel values to the range [-1, 1]."
+    },
+    {
+        "question": "What is the purpose of the UNet2DModel in this tutorial?",
+        "answer": "The UNet2DModel is used to generate images by predicting the noise added to the input images during the diffusion process."
+    },
+    {
+        "question": "How is the noise added to the images during training?",
+        "answer": "The noise is added to the images using the DDPMScheduler's add_noise method, which takes a random timestep and adds noise to the clean images based on the noise schedule."
+    },
+    {
+        "question": "What is the purpose of the evaluate function in the training loop?",
+        "answer": "The evaluate function is used to generate sample images at certain epochs during training, create a grid of the generated images, and save the grid image to the output directory."
+    }
+]

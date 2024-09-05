@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of comfyui-prompt-control?",
+        "answer": "ComfyUI prompt control provides nodes for LoRA and prompt scheduling that make basic operations in ComfyUI completely prompt-controllable."
+    },
+    {
+        "question": "What are some things that can be controlled via the prompt using comfyui-prompt-control?",
+        "answer": "Things that can be controlled via the prompt include prompt editing and filtering without multiple samplers, LoRA loading and scheduling, prompt masking and area control, SDXL parameters, and other miscellaneous things."
+    },
+    {
+        "question": "What is the syntax for LoRA loading in comfyui-prompt-control?",
+        "answer": "LoRAs can be loaded by referring to the filename without extension, for example, '<lora:cats:1>'. will match both 'cats.safetensors' and 'sd15/animals/cats.safetensors'."
+    },
+    {
+        "question": "How does the 'MASK' function work in comfyui-prompt-control?",
+        "answer": "The 'MASK' function allows specifying a region mask for a prompt. The values are specified as percentages or absolute pixel values. For example, 'MASK(x1 x2, y1 y2, weight, op)' specifies a region mask."
+    },
+    {
+        "question": "What is the purpose of the 'PCScheduleSettings' node in comfyui-prompt-control?",
+        "answer": "The 'PCScheduleSettings' node returns an object representing default values for the 'SDXL' function and allows configuring 'MASK_SIZE' outside the prompt."
+    },
+    {
+        "question": "What is the 'PromptControlSimple' node in comfyui-prompt-control?",
+        "answer": "The 'PromptControlSimple' node is a combination of 'PromptToSchedule', 'ScheduleToCond', 'ScheduleToModel', and 'FilterSchedule' nodes, providing a convenient way to output a model, positive and negative conds with or without filters applied."
+    },
+    {
+        "question": "What is one of the known issues with comfyui-prompt-control?",
+        "answer": "One known issue is that if execution is interrupted and LoRA scheduling is used, the models might be left in an undefined state until ComfyUI is restarted."
+    }
+]

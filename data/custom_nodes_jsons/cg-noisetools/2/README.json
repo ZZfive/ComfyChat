@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Mix Noise node in cg-noisetools?",
+        "answer": "The Mix Noise node in cg-noisetools is designed for generating small variations in order to create sets of similar images. It takes two noise inputs and produces a weighted mix, optionally with a weight mask."
+    },
+    {
+        "question": "How does the Shape Noise node in cg-noisetools affect the image?",
+        "answer": "The Shape Noise node in cg-noisetools takes a noise input and applies shaping options to push detail into the middle or out of the image. Positive weight values increase noise in the center and reduce it at the periphery, while negative values do the opposite."
+    },
+    {
+        "question": "What is the purpose of the Seperable Batch Noise node in cg-noisetools?",
+        "answer": "The Seperable Batch Noise node in cg-noisetools generates noise for a batch of images in a way that gives each entry in the batch a well-defined seed that can be reused."
+    },
+    {
+        "question": "How does the Batch Noise Simulate node in cg-noisetools work?",
+        "answer": "The Batch Noise Simulate node in cg-noisetools takes the original noise source with the original seed that was used for a batch and the number of the image in the batch you want to reproduce. It then generates noise for a single image that simulates the noise from that specific batch entry."
+    },
+    {
+        "question": "What inputs are required for the Mix Noise node in cg-noisetools?",
+        "answer": "The required inputs for the Mix Noise node are: noise1 (the original noise source), weight2 (the weight given to the second noise source), and renormalise (whether the noise should be renormalised after mixing). Optional inputs are noise2 (the secondary noise source) and mask (to multiply weight2 by the mask values)."
+    },
+    {
+        "question": "How can you generate small variations using the Mix Noise node in cg-noisetools?",
+        "answer": "To generate small variations with the Mix Noise node: 1. Connect two noise sources and set weight2 to 0. 2. Try different seeds on the first source until you get a desired image. 3. Slowly increase weight2 to get variations on the image. 4. Try different second seeds as well."
+    },
+    {
+        "question": "What inputs are required for the Shape Noise node in cg-noisetools?",
+        "answer": "The required inputs for the Shape Noise node are: noise (the original noise source), weight (the weight of the shaping), renormalise (whether the noise should be renormalised after mixing), mode (applying shaping in x, y or both directions), and shape (the shape of the weighting, e.g., sin or point)."
+    }
+]

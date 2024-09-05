@@ -1,0 +1,30 @@
+[
+    {
+        "question": "커스텀 Diffusion은 무엇이며 어떤 목적으로 사용되나요?",
+        "answer": "커스텀 Diffusion은 피사체의 이미지 몇 장만 주어지면 Stable Diffusion처럼 text-to-image 모델을 커스터마이징하는 방법입니다. 이를 통해 특정 대상에 대한 이미지를 생성하는 데 사용할 수 있습니다."
+    },
+    {
+        "question": "comfyui_musev_evolved 예제를 실행하기 전에 어떤 dependencies를 설치해야 하나요?",
+        "answer": "comfyui_musev_evolved 예제를 실행하기 전에 diffusers 라이브러리와 clip-retrieval을 설치해야 합니다. 또한 🤗Accelerate 환경을 초기화해야 합니다."
+    },
+    {
+        "question": "고양이 예제를 실행하기 위해 어떤 데이터셋을 사용해야 하나요?",
+        "answer": "고양이 예제를 실행하려면 제공된 링크에서 데이터셋을 다운로드하고 압축을 풀어야 합니다. 또한 clip-retrieval을 사용하여 실제 이미지 200개를 수집해야 합니다."
+    },
+    {
+        "question": "학습 시 'prior_preservation'와 'real_prior' regularization을 활성화하려면 어떤 플래그를 사용해야 하나요?",
+        "answer": "학습 시 'prior_preservation'와 'real_prior' regularization을 활성화하기 위해 '--with_prior_preservation --real_prior --prior_loss_weight=1.0' 플래그를 사용해야 합니다."
+    },
+    {
+        "question": "학습된 모델을 추론에 사용하려면 어떤 코드를 실행해야 하나요?",
+        "answer": "학습된 모델을 추론에 사용하려면 DiffusionPipeline을 로드하고, unet.load_attn_procs와 pipe.load_textual_inversion을 사용하여 학습된 가중치를 불러온 후, 원하는 프롬프트를 사용하여 이미지를 생성할 수 있습니다."
+    },
+    {
+        "question": "학습 과정을 추적하고 중간 결과를 저장하려면 어떤 도구를 사용하면 좋나요?",
+        "answer": "wandb(wandb.ai)를 설치하고 로그인한 후, 'report_to' 인자를 'wandb'로 설정하여 학습 과정을 추적하고 중간 결과를 저장할 수 있습니다."
+    },
+    {
+        "question": "학습된 파라미터를 허깅페이스 허브에 푸시하려면 어떤 인자를 사용해야 하나요?",
+        "answer": "학습된 파라미터를 허깅페이스 허브에 푸시하려면 '--push_to_hub' 인자를 사용해야 합니다."
+    }
+]

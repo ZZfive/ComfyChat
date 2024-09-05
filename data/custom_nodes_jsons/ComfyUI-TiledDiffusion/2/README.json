@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-TiledDiffusion?",
+        "answer": "ComfyUI-TiledDiffusion is an extension for ComfyUI that enables large image drawing and upscaling with limited VRAM using techniques like diffusion tiling algorithms and Tiled VAE."
+    },
+    {
+        "question": "What are the two diffusion tiling algorithms used in ComfyUI-TiledDiffusion?",
+        "answer": "The two diffusion tiling algorithms used in ComfyUI-TiledDiffusion are Mixture of Diffusers and MultiDiffusion."
+    },
+    {
+        "question": "Does ComfyUI-TiledDiffusion support SDXL models?",
+        "answer": "Yes, ComfyUI-TiledDiffusion supports SDXL models."
+    },
+    {
+        "question": "What is the purpose of the 'fast' option in Tiled VAE?",
+        "answer": "When Fast Mode is enabled in Tiled VAE, the original input is downsampled and passed to a separate task queue, and each tile is separately processed without any RAM-VRAM data transfer. After all tiles are processed, tiles are written to a result buffer and returned."
+    },
+    {
+        "question": "What does the 'color_fix' option in Tiled VAE do?",
+        "answer": "The 'color_fix' option in Tiled VAE estimates GroupNorm before downsampling, i.e., runs in a semi-fast mode. It can restore colors if tiles are too small. This option is only for the encoder."
+    },
+    {
+        "question": "How can the tile arrangement be specified in ComfyUI-TiledDiffusion?",
+        "answer": "The tile arrangement in ComfyUI-TiledDiffusion can be specified by dividing the 'tile_height'/'tile_width' by the number of rows/columns desired, using the Math Expression node or something similar."
+    },
+    {
+        "question": "What are the recommended tile sizes for Tiled VAE based on?",
+        "answer": "The recommended tile sizes for Tiled VAE are based on the available VRAM."
+    }
+]

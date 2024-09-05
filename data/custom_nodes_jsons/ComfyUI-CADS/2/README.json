@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the ComfyUI-CADS node?",
+        "answer": "The ComfyUI-CADS node attempts to implement the CADS algorithm for ComfyUI to potentially improve the variety of generated images."
+    },
+    {
+        "question": "What is the credit for the ComfyUI-CADS implementation?",
+        "answer": "The ComfyUI-CADS implementation credits the A1111 implementation that was used as a reference."
+    },
+    {
+        "question": "How can users compare the effect of CADS on image generations in ComfyUI?",
+        "answer": "Users can load the provided example workflow CADScompare.json into ComfyUI to compare between CADS and non-CADS generations."
+    },
+    {
+        "question": "What does the 'rescale' parameter do in the ComfyUI-CADS node?",
+        "answer": "The 'rescale' parameter applies normalization to the noised conditioning and combines them with a weighted sum in the ComfyUI-CADS node. It's disabled at 0 and at 1, only the normalized value is used."
+    },
+    {
+        "question": "How do 't1' and 't2' affect the scaling of the added noise in ComfyUI-CADS?",
+        "answer": "In the ComfyUI-CADS node, 't1' and 't2' affect the scaling of the added noise. After 't2', the noise scales down until 't1', after which no noise is added anymore and the unnoised prompt is used. The diffusion process runs backwards from 1 to 0, so 't2' is greater than 't1'."
+    },
+    {
+        "question": "What do the 'start_step' and 'total_steps' parameters do in the ComfyUI-CADS node?",
+        "answer": "The 'start_step' and 'total_steps' parameters in the ComfyUI-CADS node are optional values that affect how the noise scaling schedule is calculated. If 'start_step' is greater or equal to 'total_steps', the algorithm uses the sampler's timestep value instead which is not necessarily linear as it's affected by the sampler scheduler."
+    },
+    {
+        "question": "How does the 'apply_to' parameter work in the ComfyUI-CADS node?",
+        "answer": "The 'apply_to' parameter in the ComfyUI-CADS node allows you to apply the noise selectively, defaulting to 'uncond'. The 'key' parameter selects where to add the noise."
+    },
+    {
+        "question": "What does the 'noise_type' parameter determine in the ComfyUI-CADS node?",
+        "answer": "The 'noise_type' parameter in the ComfyUI-CADS node determines the probability distribution of the generated noise."
+    }
+]

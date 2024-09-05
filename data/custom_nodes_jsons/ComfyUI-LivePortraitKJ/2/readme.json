@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is LivePortraitKJ in ComfyUI?",
+        "answer": "LivePortraitKJ is a custom node in ComfyUI that uses the LivePortrait tool to perform face detection and image manipulation tasks."
+    },
+    {
+        "question": "What are the two alternative face detectors available in the updated version of LivePortraitKJ?",
+        "answer": "The two alternative face detectors available in the updated version of LivePortraitKJ are MediaPipe and face-alignment."
+    },
+    {
+        "question": "How does the face-alignment face detector improve detection compared to MediaPipe?",
+        "answer": "The face-alignment face detector can use the blazeface back camera model (or SFD), which is far better for detecting smaller faces than MediaPipe's blazeface short model."
+    },
+    {
+        "question": "What are some of the changes made in the rework of LivePortraitKJ?",
+        "answer": "The rework of LivePortraitKJ includes adding MediaPipe as an alternative to Insightface, proper Vid2vid with a smoothing algorithm, improved speed and efficiency, restructured nodes, auto skipping frames with no face detected, and better Mac support on MPS."
+    },
+    {
+        "question": "What is the significance of converting the landmark runner onnx model to a torch model in the update?",
+        "answer": "Converting the landmark runner onnx model to a torch model allows running LivePortraitKJ without onnxruntime, as it runs on GPU and is about as fast. This torch model is available on the MediaPipe cropper node."
+    },
+    {
+        "question": "What are some example applications of LivePortraitKJ in ComfyUI?",
+        "answer": "Some example applications of LivePortraitKJ in ComfyUI include real-time webcam feed manipulation, image-to-video conversion (Image2vid), and video-to-video conversion (Vid2Vid)."
+    },
+    {
+        "question": "What is the difference between the Insightface and MediaPipe face detectors in terms of performance and licensing?",
+        "answer": "Insightface is strictly for NON-COMMERCIAL use, while MediaPipe is licensed under MIT and Apache-2.0. MediaPipe is a bit worse at detection and can't run on GPU in Windows, but it's much faster on CPU compared to Insightface."
+    }
+]

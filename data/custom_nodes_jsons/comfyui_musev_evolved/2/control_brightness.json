@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Stable Diffusion 훈련 중 v 예측값과 v 로스를 활성화하는 방법은 무엇입니까?",
+        "answer": "train_text_to_image.py 또는 train_text_to_image_lora.py 스크립트에 --prediction_type=\"v_prediction\" 플래그를 추가하여 활성화할 수 있습니다."
+    },
+    {
+        "question": "DDIMScheduler에서 어떤 파라미터를 설정해야 합니까?",
+        "answer": "DDIMScheduler에서 rescale_betas_zero_snr=True 및 timestep_spacing=\"trailing\"을 설정해야 합니다."
+    },
+    {
+        "question": "파이프라인 호출에서 과노출을 방지하기 위해 어떤 설정을 조정해야 합니까?",
+        "answer": "파이프라인 호출에서 guidance_rescale 값을 설정하여 과노출을 방지할 수 있습니다. 예제에서는 guidance_rescale=0.7로 설정하였습니다."
+    },
+    {
+        "question": "v_prediction을 사용하여 미세 조정된 체크포인트의 예시는 무엇입니까?",
+        "answer": "v_prediction으로 미세 조정된 체크포인트의 예시는 'ptx0/pseudo-journey-v2'입니다."
+    },
+    {
+        "question": "DDIMScheduler를 파이프라인의 스케줄러로 변경하려면 어떻게 해야 합니까?",
+        "answer": "파이프라인의 스케줄러를 DDIMScheduler.from_config()를 사용하여 변경할 수 있습니다. 이때 rescale_betas_zero_snr=True 및 timestep_spacing=\"trailing\" 파라미터를 설정해야 합니다."
+    },
+    {
+        "question": "보기 예제에서 사용된 프롬프트는 무엇입니까?",
+        "answer": "사용된 프롬프트는 'A lion in galaxies, spirals, nebulae, stars, smoke, iridescent, intricate detail, octane render, 8k'입니다."
+    },
+    {
+        "question": "Stable Diffusion의 이미지 밝기 조절에 관한 논문의 내용은 무엇입니까?",
+        "answer": "논문에서는 Stable Diffusion이 매우 밝거나 어두운 이미지 생성에 성능이 평범하다고 설명하고, 제안된 솔루션으로 현재 DDIMScheduler에 구현된 기법을 사용하여 이미지의 밝기를 개선할 수 있다고 제안합니다."
+    }
+]

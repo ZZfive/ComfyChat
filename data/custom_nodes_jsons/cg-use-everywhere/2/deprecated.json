@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does the abbreviation 'UE' stand for in the context of ComfyUI nodes?",
+        "answer": "In the context of ComfyUI nodes, 'UE' stands for 'Use Everywhere'."
+    },
+    {
+        "question": "How do UE nodes function in a ComfyUI workflow?",
+        "answer": "When a UE node is placed into a ComfyUI workflow and its input is connected, every node with an unconnected input of the same type will act as if connected to it."
+    },
+    {
+        "question": "What are the types of inputs that UE nodes can automatically connect to in ComfyUI?",
+        "answer": "UE nodes can automatically connect to inputs of types CLIP, IMAGE, MODEL, VAE, CONDITIONING, LATENT, INT, MASK, CHECKPOINT, and a special node for SEEDs in ComfyUI."
+    },
+    {
+        "question": "What is the difference between UE and UE? nodes in ComfyUI?",
+        "answer": "UE? nodes are similar to UE nodes but they add two widgets, 'title' and 'input'. These widgets use Regular Expressions to determine which nodes the UE? node will send data to, based on the node title and the unconnected input name."
+    },
+    {
+        "question": "Can UE or UE? nodes with multiple outputs have their outputs converted to a widget in ComfyUI?",
+        "answer": "No, only UE or UE? nodes with just one output can have the output converted to a widget in ComfyUI."
+    },
+    {
+        "question": "Why can't the title of a UE or UE? node be changed after converting its output to a widget?",
+        "answer": "The code gets the data type from the input, and if it's a widget, the data type is not available. Therefore, the hack is to get the data type from what comes after 'UE ' in the title, preventing the title from being changed."
+    },
+    {
+        "question": "What is the purpose of the 'title' and 'input' widgets in UE? nodes in ComfyUI?",
+        "answer": "The 'title' and 'input' widgets in UE? nodes use Regular Expressions to match the node title and the unconnected input name, determining which nodes the UE? node will send data to."
+    }
+]

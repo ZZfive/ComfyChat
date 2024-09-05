@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the ComfyUI auto nodes layout extension?",
+        "answer": "The purpose of the ComfyUI auto nodes layout extension is to apply a better nodes layout algorithm to ComfyUI workflow, mainly for visualization purposes."
+    },
+    {
+        "question": "How does the existing 1-click auto-arrange graph in ComfyUI position the nodes?",
+        "answer": "The existing 1-click auto-arrange graph in ComfyUI positions the nodes according to the level of dependencies using the default 'arrange()' function of LiteGraph.js."
+    },
+    {
+        "question": "What is the ideal outcome for the ComfyUI auto nodes layout extension?",
+        "answer": "The ideal outcome for the ComfyUI auto nodes layout extension is to have all wires visible in terms of direction, flow, and connection to nodes."
+    },
+    {
+        "question": "Which type of graph do most ComfyUI workflows qualify as?",
+        "answer": "Most ComfyUI workflows can be qualified as directed acyclic graphs (DAGs)."
+    },
+    {
+        "question": "What type of graph drawing algorithm does the ComfyUI auto nodes layout extension focus on?",
+        "answer": "The ComfyUI auto nodes layout extension focuses on hierarchical graph drawing, which is the most suitable for directed acyclic graphs."
+    },
+    {
+        "question": "Why is it recommended to remove reroute nodes before applying the auto nodes layout extension?",
+        "answer": "Reroute nodes mess up ranks/depth in the graph, so it is recommended to remove them before applying the auto nodes layout extension. They can be re-added later if needed."
+    },
+    {
+        "question": "What is the minimum required ComfyUI version to use the auto nodes layout extension?",
+        "answer": "To use the auto nodes layout extension, a ComfyUI version later than PR comfyanonymous/ComfyUI#1273 or commit 'bc76b38' is required."
+    },
+    {
+        "question": "Which graph layout algorithms are implemented in the ComfyUI auto nodes layout extension?",
+        "answer": "The ComfyUI auto nodes layout extension implements Dagre layout from dagrejs/dagre and ELK 'layered' layout from kieler/elkjs."
+    }
+]

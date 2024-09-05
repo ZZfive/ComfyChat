@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is DDIMScheduler in MuseV?",
+        "answer": "DDIMScheduler is a scheduler in MuseV based on the Denoising Diffusion Implicit Models (DDIM) paper by Jiaming Song, Chenlin Meng and Stefano Ermon. It allows for faster sampling compared to DDPMs while maintaining high quality image generation."
+    },
+    {
+        "question": "How can I rescale the noise schedule to enforce zero terminal SNR in MuseV?",
+        "answer": "To rescale the noise schedule to enforce zero terminal signal-to-noise ratio (SNR) in MuseV, you can use the following code: `pipe.scheduler = DDIMScheduler.from_config(pipe.scheduler.config, rescale_betas_zero_snr=True)`."
+    },
+    {
+        "question": "How do I change the sampler to always start from the last timestep in MuseV?",
+        "answer": "To change the sampler to always start from the last timestep in MuseV, you can use the following code: `pipe.scheduler = DDIMScheduler.from_config(pipe.scheduler.config, timestep_spacing=\"trailing\")`."
+    },
+    {
+        "question": "How can I rescale classifier-free guidance to prevent over-exposure in MuseV?",
+        "answer": "To rescale classifier-free guidance to prevent over-exposure in MuseV, you can pass the `guidance_rescale` parameter when generating an image, like this: `image = pipe(prompt, guidance_rescale=0.7).images[0]`."
+    },
+    {
+        "question": "What is the purpose of the `prediction_type` argument when training a model in MuseV?",
+        "answer": "The `prediction_type` argument, set to `\"v_prediction\"`, is used when training a model with MuseV to incorporate the improvements suggested in the 'Common Diffusion Noise Schedules and Sample Steps are Flawed' paper."
+    },
+    {
+        "question": "Is the rescaling of noise schedule an experimental feature in MuseV?",
+        "answer": "Yes, rescaling the noise schedule to enforce zero terminal signal-to-noise ratio (SNR) is considered an experimental feature in MuseV."
+    },
+    {
+        "question": "What are the benefits of using DDIMs over DDPMs?",
+        "answer": "DDIMs can produce high quality samples 10× to 50× faster in terms of wall-clock time compared to DDPMs, allow trading off computation for sample quality, and can perform semantically meaningful image interpolation directly in the latent space."
+    }
+]

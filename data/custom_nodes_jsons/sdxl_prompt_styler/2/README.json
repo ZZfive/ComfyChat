@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is SDXL Prompt Styler in ComfyUI?",
+        "answer": "SDXL Prompt Styler is a custom node in ComfyUI that allows users to style prompts based on predefined templates stored in multiple JSON files. It specifically replaces a {prompt} placeholder in the 'prompt' field of each template with provided positive text."
+    },
+    {
+        "question": "How does SDXL Prompt Styler handle negative prompts?",
+        "answer": "If negative text is provided, SDXL Prompt Styler combines it with the 'negative_prompt' field from the template. If no negative text is supplied, it defaults to using the 'negative_prompt' from the JSON template."
+    },
+    {
+        "question": "What new feature was added to SDXL Prompt Styler Advanced in the commit dated 2024-01-26?",
+        "answer": "In the commit dated 2024-01-26, a new option was added to SDXL Prompt Styler Advanced to copy the positive G prompt tokens to L, removing duplicates."
+    },
+    {
+        "question": "What update was made to SDXL Prompt Styler in the commit dated 2024-01-19?",
+        "answer": "In the commit dated 2024-01-19, toggles were added to SDXL Prompt Styler to disable styling for positive, negative, or both sentiments (bypass mode)."
+    },
+    {
+        "question": "What important update was made in the commit dated 2023-08-11 regarding the file structure and naming convention for style JSONs?",
+        "answer": "In the commit dated 2023-08-11, the file structure and naming convention for style JSONs were modified. Users were advised to back up their custom styles, create a new JSON file in the styles directory, move their custom styles into this new file, ensure unique style names, and manage included JSON files."
+    },
+    {
+        "question": "How can users install SDXL Prompt Styler nodes in ComfyUI?",
+        "answer": "To install SDXL Prompt Styler nodes, users need to open a terminal, navigate to the 'ComfyUI/custom_nodes/' directory, run the command 'git clone https://github.com/twri/sdxl_prompt_styler.git', and restart ComfyUI."
+    },
+    {
+        "question": "What are the inputs and outputs of SDXL Prompt Styler?",
+        "answer": "The inputs of SDXL Prompt Styler are 'text_positive' (text for the positive base prompt), 'text_negative' (text for the negative base prompt), and 'log_prompt' (print inputs and outputs to stdout). The outputs are 'text_positive' (combined prompt with style for positive prompt) and 'text_negative' (combined prompt with style for negative prompt)."
+    }
+]

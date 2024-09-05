@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What changes were made in the Update2 refactor of ComfyUI-DynamiCrafterWrapper?",
+        "answer": "The Update2 refactor changed lots of things to better integrate with ComfyUI. It allows using clip_vision and clip models with better memory usage. New example workflows were included, but old workflows need to be updated."
+    },
+    {
+        "question": "How much VRAM is required for sampling and decoding in the ToonCrafter support update of ComfyUI-DynamiCrafterWrapper?",
+        "answer": "For 512x320 resolution, the ToonCrafter support update requires slightly under 15GB VRAM for sampling and peaks at around 17GB during decoding."
+    },
+    {
+        "question": "What is the most memory hungry operation in the ToonCrafter update and what does it require for full quality results?",
+        "answer": "Decoding is the most memory hungry operation in the ToonCrafter update. It requires XFORMERS for full quality results."
+    },
+    {
+        "question": "How can the ToonCrafter model be used with the old Dynamicrafter I2V node and what are the trade-offs?",
+        "answer": "The ToonCrafter model can be used with the old Dynamicrafter I2V node, but the quality suffers a lot more while memory usage is halved, fitting under 8GB at best."
+    },
+    {
+        "question": "What is the purpose of the fp8 option in the ToonCrafter update?",
+        "answer": "The fp8 option can further reduce memory use by 1-2GB in the ToonCrafter update."
+    },
+    {
+        "question": "How can the ComfyUI-DynamiCrafterWrapper be installed?",
+        "answer": "The ComfyUI-DynamiCrafterWrapper can be installed either by using the manager to install from git, or by cloning the repo to custom_nodes and running 'pip install -r requirements.txt'. For portable installation, run the provided command in the ComfyUI_windows_portable folder."
+    },
+    {
+        "question": "What is the recommended way to reduce memory usage when using ComfyUI-DynamiCrafterWrapper?",
+        "answer": "It is recommended to use xformers to reduce memory usage when possible. It can be installed using the provided pip command, or with the portable command if using ComfyUI_windows_portable."
+    }
+]

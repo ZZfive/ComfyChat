@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Character Face Swap workflow in ComfyUI?",
+        "answer": "The Character Face Swap workflow in ComfyUI is specialized for target character face swap, allowing users to swap faces with their favorite characters in a realistic and seamless manner."
+    },
+    {
+        "question": "What is required to use ControlNet with the Character Face Swap workflow?",
+        "answer": "To use ControlNet with the Character Face Swap workflow, you need to download the ip2p model and place it in the 'ComfyUI/models/controlnet' directory."
+    },
+    {
+        "question": "How can you install the Character Face Swap workflow in ComfyUI?",
+        "answer": "You can install the Character Face Swap workflow in ComfyUI using the ComfyUI Manager by searching for Character Face Swap and installing it. Alternatively, you can manually install it using the provided git clone command and installation script."
+    },
+    {
+        "question": "What are the main steps involved in the Character Face Swap workflow?",
+        "answer": "The main steps in the Character Face Swap workflow include choosing a checkpoint and LoRA trained for the character, uploading a base image and character face, writing prompts to describe the target face using LoRA keywords and embeddings, generating the character face, fixing the seam using inpainting, and uploading the seamless face."
+    },
+    {
+        "question": "Why is webui inpainting used for seam fixing instead of ComfyUI's inpainting?",
+        "answer": "Webui inpainting is used for seam fixing because ComfyUI currently has issues with inpainting models, as mentioned in the provided FAQ."
+    },
+    {
+        "question": "What should be done after generating the character face in the Character Face Swap workflow?",
+        "answer": "After generating the character face, you should download the face with seam and seam mask, use webui inpainting to fix the seam, upload the seamless face, and queue the prompt again."
+    },
+    {
+        "question": "Where can you find the workflows for the Character Face Swap in ComfyUI after installation?",
+        "answer": "After installation, you can find the workflows for the Character Face Swap in the 'custom_nodes/CharacterFaceSwap/workflows' directory within ComfyUI."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the onnx_export.py script in the benchmarking process?",
+        "answer": "The onnx_export.py script is used to export the model to the ONNX format before running the benchmarks."
+    },
+    {
+        "question": "How many different models were benchmarked in the provided text?",
+        "answer": "The text mentions benchmarking results for 9 different models: EfficientNet-B0, EfficientNet-B1, EfficientNet-B2, MixNet-M, TF MobileNet-V3 Large 1.0, MobileNet-V3 (RW), MnasNet-A1, MnasNet-B1."
+    },
+    {
+        "question": "What is the difference between the 'Unoptimized' and 'Optimized' versions of the models in the benchmarks?",
+        "answer": "The 'Unoptimized' version refers to the original model, while the 'Optimized' version has been processed using the onnx_optimize.py script to potentially improve performance."
+    },
+    {
+        "question": "Which model had the fastest inference time per iteration in the optimized version?",
+        "answer": "The optimized TF MobileNet-V3 Large 1.0 model had the fastest inference time per iteration at 22.0495 ms."
+    },
+    {
+        "question": "What is the purpose of the caffe2_benchmark.py script in the benchmarking process?",
+        "answer": "The caffe2_benchmark.py script is used to run the actual benchmarks on the ONNX models that were exported and optimized in previous steps."
+    },
+    {
+        "question": "How much faster was the optimized version of MobileNet-V3 (RW) compared to the unoptimized version?",
+        "answer": "The optimized version of MobileNet-V3 (RW) had an inference time of 22.0981 ms per iteration, while the unoptimized version took 24.8316 ms per iteration. The optimized version was 2.7335 ms faster per iteration."
+    },
+    {
+        "question": "What percentage of the total parameter memory is used by the Conv layer in the optimized EfficientNet-B2 model?",
+        "answer": "In the optimized EfficientNet-B2 model, the Conv layer uses 83.4024% of the total parameter memory."
+    }
+]

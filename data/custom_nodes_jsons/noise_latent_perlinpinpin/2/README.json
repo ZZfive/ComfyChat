@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does the noise_latent_perlinpinpin node do in ComfyUI?",
+        "answer": "The noise_latent_perlinpinpin node in ComfyUI allows the creation of latent spaces filled with perlin-based noise that can be used by samplers."
+    },
+    {
+        "question": "How has the noise_latent_perlinpinpin node been updated to support all resolutions?",
+        "answer": "The noise_latent_perlinpinpin node has been simplified to support all resolutions by using the line 'noise = torch.remainder(torch.abs(noise)*1000000,11)/11' which breaks the perlin pattern while keeping it predictable at all scales."
+    },
+    {
+        "question": "What are the installation requirements for noise_latent_perlinpinpin?",
+        "answer": "To install noise_latent_perlinpinpin, drop the .py file in the custom nodes folder or download the repository as zip and put it in the custom nodes folder. BlenderNeko noise related nodes are also required."
+    },
+    {
+        "question": "What is a known limitation of noise_latent_perlinpinpin?",
+        "answer": "A known limitation of noise_latent_perlinpinpin is that the exact same aspect ratios should be kept if upscaling or the patterns will not match."
+    },
+    {
+        "question": "What samplers work well with noise_latent_perlinpinpin?",
+        "answer": "Euler works well with normal noise and dpmpp2m with karras is pretty nice when using noise_latent_perlinpinpin."
+    },
+    {
+        "question": "How can the noise pattern be reinjected after an upscale using noise_latent_perlinpinpin?",
+        "answer": "After an upscale, the same noise pattern can be reinjected using noise_latent_perlinpinpin to get more coherent results."
+    },
+    {
+        "question": "How was the Perlin Merlin Rabbit example created using noise_latent_perlinpinpin?",
+        "answer": "The Perlin Merlin Rabbit example was made with SDXL using perlin-based noise, with noisy perlin injection defaults settings from the shared node, followed by SDXL Base, VAE decode, lanczos resize, VAE encode, same seed noisy perlin injection, and SDXL refiner steps."
+    }
+]

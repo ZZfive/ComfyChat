@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the CLIPSeg node in ComfyUI?",
+        "answer": "The CLIPSeg node in ComfyUI is used to generate a binary mask for a given input image and text prompt, utilizing the CLIPSeg model."
+    },
+    {
+        "question": "What are the inputs required for the CLIPSeg node?",
+        "answer": "The inputs required for the CLIPSeg node are: image (a torch.Tensor), text (a string), blur (a float), threshold (a float), and dilation_factor (a float)."
+    },
+    {
+        "question": "What does the blur parameter control in the CLIPSeg node?",
+        "answer": "The blur parameter in the CLIPSeg node controls the amount of Gaussian blur applied to the generated mask."
+    },
+    {
+        "question": "What are the outputs of the CLIPSeg node?",
+        "answer": "The outputs of the CLIPSeg node are: tensor_bw (a torch.Tensor representing the binary mask), image_out_hm (a torch.Tensor representing the heatmap overlay on the input image), and image_out_bw (a torch.Tensor representing the binary mask overlay on the input image)."
+    },
+    {
+        "question": "What is the purpose of the CombineSegMasks node in ComfyUI?",
+        "answer": "The CombineSegMasks node in ComfyUI is used to combine two or optionally three masks into a single mask to improve masking of different areas."
+    },
+    {
+        "question": "What are the inputs required for the CombineSegMasks node?",
+        "answer": "The inputs required for the CombineSegMasks node are: image (a torch.Tensor), mask1 (a torch.Tensor), mask2 (a torch.Tensor), and an optional mask3 (a torch.Tensor, defaults to None)."
+    },
+    {
+        "question": "What are the outputs of the CombineSegMasks node?",
+        "answer": "The outputs of the CombineSegMasks node are: combined_mask (a torch.Tensor representing the combined mask), image_out_hm (a torch.Tensor representing the heatmap overlay of the combined mask on the input image), and image_out_bw (a torch.Tensor representing the binary mask overlay of the combined mask on the input image)."
+    },
+    {
+        "question": "What are the steps to install and use the CLIPSeg and CombineSegMasks nodes in ComfyUI?",
+        "answer": "To install and use the CLIPSeg and CombineSegMasks nodes in ComfyUI, follow these steps: 1. Clone the repository or download the source code. 2. Put the clipseg.py file into your custom_nodes directory. 3. Make sure you have the required libraries installed to the venv of ComfyUI."
+    }
+]

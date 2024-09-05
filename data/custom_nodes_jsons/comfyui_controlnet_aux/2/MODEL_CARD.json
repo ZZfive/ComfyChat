@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is DINOv2 and who developed it?",
+        "answer": "DINOv2 refers to Vision Transformer models trained using the method described in the paper 'DINOv2: Learning Robust Visual Features without Supervision'. They were developed by Meta AI."
+    },
+    {
+        "question": "How many DINOv2 models are provided and what are their sizes?",
+        "answer": "There are 4 DINOv2 models provided: 1 ViT-g model trained from scratch, and 3 ViT-S/B/L models distilled from the ViT-g. The embedding dimensions are 384 for ViT-S, 768 for ViT-B, 1024 for ViT-L, and 1536 for ViT-g."
+    },
+    {
+        "question": "What is the patch size used in the DINOv2 Vision Transformer architecture?",
+        "answer": "The DINOv2 models use a patch size of 14 in their Vision Transformer architecture."
+    },
+    {
+        "question": "How can the DINOv2 models be used without fine-tuning?",
+        "answer": "The DINOv2 models can be used without fine-tuning by using downstream classifiers such as linear layers, k-NN classifiers on the class token, logistic regression classifiers on the class token, or linear layers on the class token and average of patch tokens. They can also be used for image retrieval using nearest neighbors."
+    },
+    {
+        "question": "Is fine-tuning recommended for the DINOv2 models?",
+        "answer": "Fine-tuning the DINOv2 models is possible but not recommended unless necessary, as the features already provide good performance out-of-the-box. Fine-tuning may provide small gains (around 2% improvement on ImageNet-1k classification)."
+    },
+    {
+        "question": "What biases have been observed in the DINOv2 models?",
+        "answer": "Significant biases toward rich households from Western countries have been observed in the DINOv2 models. Fine-tuning the models may increase these biases as they will be tuned to the fine-tuning labels."
+    },
+    {
+        "question": "How can one get started with using the DINOv2 models?",
+        "answer": "To get started with the DINOv2 models, one can use the provided PyTorch Hub code to load the desired DINOv2 model variant (dinov2_vits14, dinov2_vitb14, dinov2_vitl14, or dinov2_vitg14)."
+    }
+]

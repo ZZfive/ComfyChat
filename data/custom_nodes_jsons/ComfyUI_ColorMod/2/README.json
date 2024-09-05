@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is the purpose of the ComfyUI_ColorMod repo?",
+        "answer": "The ComfyUI_ColorMod repo contains nodes for image color manipulation, HDR, and tonemapping operations in ComfyUI."
+    },
+    {
+        "question": "How can you install the ComfyUI_ColorMod nodes?",
+        "answer": "You can install the ComfyUI_ColorMod nodes by git cloning the repo to your custom nodes folder or by installing it through the manager."
+    },
+    {
+        "question": "Is it necessary to install the requirements for ComfyUI_ColorMod?",
+        "answer": "Installing the requirements is not strictly required, but most of the core nodes will be missing without them."
+    },
+    {
+        "question": "How do the ColorMod nodes change the image color values?",
+        "answer": "The ColorMod nodes come with a small visualization tool to show how the values will affect the image. The graph represents the input values on the horizontal axis and the remapped values on the vertical axis."
+    },
+    {
+        "question": "Should clipping be enabled when using ColorMod nodes?",
+        "answer": "Yes, clipping should be enabled (unless HDR images are being manipulated) to avoid odd behavior caused by passing values outside the expected range to the VAE/UNET."
+    },
+    {
+        "question": "What is the recommended workflow for HDR images in ComfyUI_ColorMod?",
+        "answer": "For the HDR workflow, you can use the provided Sample workflow (ColorModNarrowWF.json)."
+    },
+    {
+        "question": "What should be considered when using HDR nodes in ComfyUI_ColorMod?",
+        "answer": "When using HDR nodes, be aware that different diffusion passes at different brightness levels can end up diverging, resulting in artifacts when recombining them. Controlnet and similar techniques are recommended to keep the inputs and outputs similar."
+    },
+    {
+        "question": "How do tonemapping nodes behave differently for HDR and SDR images in ComfyUI_ColorMod?",
+        "answer": "Tonemapping nodes behave slightly differently for HDR and SDR images. For HDR tonemapping, setting a multiplier of 2-3 might result in better image quality."
+    },
+    {
+        "question": "Is it recommended to use HDR images directly without tonemapping in ComfyUI_ColorMod?",
+        "answer": "Using HDR images directly without tonemapping is probably useless and has a chance to cause errors since the values are no longer in the expected [0.0, 1.0] range."
+    }
+]

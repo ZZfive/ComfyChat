@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-semantic-aware-guidance?",
+        "answer": "ComfyUI-semantic-aware-guidance is a node for Semantic-aware Guidance in ComfyUI based on the paper 'Rethinking the Spatial Inconsistency in Classifier-Free Diffusion Guidance'. It dynamically rescales CFG guidance per semantic region to a uniform level to improve image/text alignment."
+    },
+    {
+        "question": "Is ComfyUI-semantic-aware-guidance computationally expensive?",
+        "answer": "Yes, ComfyUI-semantic-aware-guidance is computationally expensive. Large resolutions, such as on an upscale pass, can trigger out of memory (OOM) issues."
+    },
+    {
+        "question": "Does ComfyUI-semantic-aware-guidance work with other resolutions?",
+        "answer": "Yes, ComfyUI-semantic-aware-guidance has been made to work with other resolutions."
+    },
+    {
+        "question": "Is ComfyUI-semantic-aware-guidance compatible with SDXL?",
+        "answer": "Yes, ComfyUI-semantic-aware-guidance has been made to work with SDXL based on guesswork, since the original paper/code didn't mention SDXL."
+    },
+    {
+        "question": "Does ComfyUI-semantic-aware-guidance work with models that don't have a U-Net backbone?",
+        "answer": "No, ComfyUI-semantic-aware-guidance only works for models with a U-Net backbone, such as SD1.x to SDXL."
+    },
+    {
+        "question": "What is the limitation of using 'sampler_cfg_function' in ComfyUI-semantic-aware-guidance?",
+        "answer": "ComfyUI-semantic-aware-guidance uses 'sampler_cfg_function', and there can only be one node active using this function. Therefore, it may conflict with other nodes using the same thing."
+    },
+    {
+        "question": "How can I install ComfyUI-semantic-aware-guidance?",
+        "answer": "You can install ComfyUI-semantic-aware-guidance in two ways: 1. Run 'git clone https://github.com/shiimizu/ComfyUI-semantic-aware-guidance.git' in a terminal into your 'ComfyUI/custom_nodes/' folder. 2. Install it via ComfyUI Manager by searching for the custom node named 's-cfg'."
+    }
+]

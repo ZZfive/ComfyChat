@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is AudioLDM 2?",
+        "answer": "AudioLDM 2 is a text-to-audio latent diffusion model that learns continuous audio representations from text embeddings. It can generate text-conditional sound effects, human speech and music."
+    },
+    {
+        "question": "Which text encoder models are used in AudioLDM 2 to compute text embeddings from a prompt input?",
+        "answer": "The text-branch of CLAP and the encoder of Flan-T5 are used as text encoder models in AudioLDM 2 to compute text embeddings from a prompt input."
+    },
+    {
+        "question": "What is the purpose of the AudioLDM2ProjectionModel in AudioLDM 2?",
+        "answer": "The AudioLDM2ProjectionModel in AudioLDM 2 projects the text embeddings from CLAP and Flan-T5 to a shared embedding space."
+    },
+    {
+        "question": "How is the GPT-2 language model used in AudioLDM 2?",
+        "answer": "The GPT-2 language model is used in AudioLDM 2 to auto-regressively predict eight new embedding vectors, conditional on the projected CLAP and Flan-T5 embeddings."
+    },
+    {
+        "question": "What makes the UNet of AudioLDM 2 unique compared to other LDMs?",
+        "answer": "The UNet of AudioLDM 2 is unique in the sense that it takes two cross-attention embeddings, as opposed to one cross-attention conditioning, as in most other LDMs."
+    },
+    {
+        "question": "What are the three variants of AudioLDM 2 checkpoints?",
+        "answer": "The three variants of AudioLDM 2 checkpoints are: audioldm2 (text-to-audio, 350M UNet model size), audioldm2-large (text-to-audio, 750M UNet model size), and audioldm2-music (text-to-music, 350M UNet model size)."
+    },
+    {
+        "question": "How can the quality and length of the predicted audio sample be controlled in AudioLDM 2?",
+        "answer": "The quality of the predicted audio sample can be controlled by the 'num_inference_steps' argument, where higher steps give higher quality audio at the expense of slower inference. The length of the predicted audio sample can be controlled by varying the 'audio_length_in_s' argument."
+    }
+]

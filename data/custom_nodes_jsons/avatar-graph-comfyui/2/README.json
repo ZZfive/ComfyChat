@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is avatar-graph-comfyui?",
+        "answer": "avatar-graph-comfyui is a custom nodes module for ComfyUI that enables the creation of real-time interactive avatars powered by the Blender bpy mesh API and Avatech Shape Flow runtime."
+    },
+    {
+        "question": "What is the recommended minimum resolution for character images used with avatar-graph-comfyui?",
+        "answer": "For optimal results, it is recommended to use character images with a minimum resolution of 768x768 when working with avatar-graph-comfyui."
+    },
+    {
+        "question": "What is the purpose of the 'Create Mesh Layer' node in avatar-graph-comfyui?",
+        "answer": "The 'Create Mesh Layer' node in avatar-graph-comfyui is used to create a mesh object from input images, which are usually segmented parts of the entire image."
+    },
+    {
+        "question": "How does the 'Match Texture Aspect Ratio' node function in avatar-graph-comfyui?",
+        "answer": "Since meshes are created in a 1:1 aspect ratio in avatar-graph-comfyui, the 'Match Texture Aspect Ratio' node is used to rescale the mesh at the end of the operation to match the desired aspect ratio."
+    },
+    {
+        "question": "What does the 'Create Shape Flow' node in avatar-graph-comfyui do?",
+        "answer": "The 'Create Shape Flow' node in avatar-graph-comfyui creates a runtime shape flow graph, allowing interactive inputs to affect shape key values in real-time."
+    },
+    {
+        "question": "What is the primary output node for the .ava file in avatar-graph-comfyui?",
+        "answer": "In avatar-graph-comfyui, the primary output node for the .ava file is the 'Avatar Main Output' node. The embedded Avatar View will automatically update with this node's output."
+    },
+    {
+        "question": "Why is the '--enable-cors-header' flag used when running ComfyUI with avatar-graph-comfyui?",
+        "answer": "The '--enable-cors-header' flag is used to enable communication between ComfyUI and the Avatech editor (https://editor.avatech.ai), which is responsible for animating static characters. It allows the exchange of character data and JSON graphs between the two applications."
+    }
+]

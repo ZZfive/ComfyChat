@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the train_text_to_image_sdxl.py script?",
+        "answer": "The train_text_to_image_sdxl.py script shows how to fine-tune Stable Diffusion XL (SDXL) on your own dataset."
+    },
+    {
+        "question": "Is the train_text_to_image_sdxl.py script experimental?",
+        "answer": "Yes, the train_text_to_image_sdxl.py script is experimental and may require trying different hyperparameters to get the best result on your dataset."
+    },
+    {
+        "question": "What is the recommended way to install the library's training dependencies?",
+        "answer": "It is highly recommended to install from source and keep the install up to date to successfully run the latest versions of the example scripts."
+    },
+    {
+        "question": "What command should be run to install the specific requirements for the examples/text_to_image folder?",
+        "answer": "After cd-ing into the examples/text_to_image folder, run pip install -r requirements_sdxl.txt"
+    },
+    {
+        "question": "How can you initialize an 🤗Accelerate environment?",
+        "answer": "You can initialize an 🤗Accelerate environment by running accelerate config, accelerate config default, or write_basic_config() in a Python script."
+    },
+    {
+        "question": "What are some of the command line arguments used when running the train_text_to_image_sdxl.py script?",
+        "answer": "Some of the command line arguments used include --pretrained_model_name_or_path, --pretrained_vae_model_name_or_path, --dataset_name, --resolution, --train_batch_size, --max_train_steps, and --output_dir."
+    },
+    {
+        "question": "What is the purpose of the --validation_prompt, --validation_epochs, and --report_to command line arguments?",
+        "answer": "The --validation_prompt, --validation_epochs, and --report_to command line arguments are used for intermediate quality validation between training epochs and logging the results to Weights and Biases."
+    },
+    {
+        "question": "What is the purpose of the --pretrained_vae_model_name_or_path command line argument?",
+        "answer": "The --pretrained_vae_model_name_or_path command line argument allows you to specify the location of a better VAE, as SDXL's VAE is known to suffer from numerical instability issues."
+    }
+]

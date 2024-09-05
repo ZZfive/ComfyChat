@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is DEISMultistepScheduler?",
+        "answer": "DEISMultistepScheduler is a fast high order solver for diffusion ordinary differential equations (ODEs) based on the Diffusion Exponential Integrator Sampler (DEIS) proposed in the paper 'Fast Sampling of Diffusion Models with Exponential Integrator' by Qinsheng Zhang and Yongxin Chen."
+    },
+    {
+        "question": "What is the purpose of DEISMultistepScheduler?",
+        "answer": "The purpose of DEISMultistepScheduler is to develop a fast sampling method for diffusion models with a much less number of steps while retaining high sample quality."
+    },
+    {
+        "question": "How does DEISMultistepScheduler differ from the original DEIS paper?",
+        "answer": "DEISMultistepScheduler modifies the polynomial fitting formula in log-rho space instead of the original linear 't' space in the DEIS paper. This modification enjoys closed-form coefficients for exponential multistep update instead of relying on the numerical solver."
+    },
+    {
+        "question": "What is the recommended setting for 'solver_order' in DEISMultistepScheduler?",
+        "answer": "It is recommended to set 'solver_order' to 2 or 3 in DEISMultistepScheduler, while 'solver_order=1' is equivalent to DDIMScheduler."
+    },
+    {
+        "question": "Does DEISMultistepScheduler support dynamic thresholding?",
+        "answer": "Yes, DEISMultistepScheduler supports dynamic thresholding from Imagen, and for pixel-space diffusion models, you can set 'thresholding=True' to use the dynamic thresholding."
+    },
+    {
+        "question": "How many steps can DEISMultistepScheduler generate high-fidelity samples in?",
+        "answer": "DEISMultistepScheduler can generate high-fidelity samples in as few as 10 steps."
+    },
+    {
+        "question": "What is the performance of DEISMultistepScheduler on CIFAR10 dataset?",
+        "answer": "When using pre-trained diffusion models, DEISMultistepScheduler achieves state-of-the-art sampling performance on CIFAR10 dataset with limited number of score function evaluation (NFE), e.g., 4.17 FID with 10 NFEs, 3.37 FID, and 9.74 IS with only 15 NFEs."
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the MUSimpleWildcard node in ComfyUI?",
+        "answer": "The MUSimpleWildcard node in ComfyUI is used to expand wildcards, variables, and functions (macros) in a prompt."
+    },
+    {
+        "question": "How does the MUSimpleWildcard node handle wildcards?",
+        "answer": "The MUSimpleWildcard node looks up the wildcard name in the directory specified by the environment variable MU_WILDCARD_BASEDIR (or the default 'wildcards' directory if unset), and randomly chooses one line from the corresponding text file as a replacement."
+    },
+    {
+        "question": "What is the special wildcard $LORA$ in MUSimpleWildcard node?",
+        "answer": "The $LORA$ wildcard in MUSimpleWildcard node is a magic wildcard that returns all LoRAs known to ComfyUI. It can be filtered like any other wildcard."
+    },
+    {
+        "question": "What is the purpose of the MUJinjaRender node in ComfyUI?",
+        "answer": "The MUJinjaRender node in ComfyUI is used to evaluate a string as a Jinja2 template with some modifications to the Jinja syntax."
+    },
+    {
+        "question": "What are the available functions and constants in Jinja templates using MUJinjaRender node?",
+        "answer": "The available functions and constants in Jinja templates using MUJinjaRender node include pi, min, max, clamp, abs, round, ceil, floor, sqrt, sin, cos, tan, asin, acos, atan, and a special steps function."
+    },
+    {
+        "question": "What does the 'steps' function do in MUJinjaRender node?",
+        "answer": "The 'steps' function in MUJinjaRender node generates a list of steps for iterating, with optional parameters for start, end, and step values. It returns steps inclusive of start and end as long as the step doesn't go past the end."
+    },
+    {
+        "question": "What is the purpose of the MUReplaceModelWeights node in ComfyUI?",
+        "answer": "The MUReplaceModelWeights node in ComfyUI replaces model weights in-place, allowing users to change a model's weights without triggering a recompilation while still keeping the speed benefits from a compiled model."
+    },
+    {
+        "question": "How does the MUReplaceModelWeights node work in ComfyUI?",
+        "answer": "To use the MUReplaceModelWeights node in ComfyUI, users need to load a checkpoint, apply Stable-Fast to the model, and then 'reapply' weights with this node afterwards. It is a hack, but it works and saves time when changing models often."
+    }
+]

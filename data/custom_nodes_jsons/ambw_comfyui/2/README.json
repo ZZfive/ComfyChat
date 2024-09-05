@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ambw_comfyui node?",
+        "answer": "The ambw_comfyui node, also known as 'advanced > auto merge block weighted', is designed to merge individual blocks from two models at various ratios, automatically rate each merge, and keep the ratio with the highest score."
+    },
+    {
+        "question": "What is the purpose of generating sample images in ambw_comfyui?",
+        "answer": "In ambw_comfyui, sample images are generated based on a given prompt to be rated by a chosen classifier model. This helps in determining the best ratio for merging blocks."
+    },
+    {
+        "question": "How does the 'Search Depth' setting work in ambw_comfyui?",
+        "answer": "The 'Search Depth' setting in ambw_comfyui determines the number of branches to take while choosing ratios to test. The ratios are calculated from powers of 0.5. For instance, a depth of 2 will examine 0.0, 0.5, and 1.0."
+    },
+    {
+        "question": "How many images will be generated if a depth of 4 and 2 samples each are used in ambw_comfyui?",
+        "answer": "If a depth of 4 and 2 samples each are used in ambw_comfyui, 450 images will be generated as there are 25 blocks to examine, 9 ratios, and 2 samples per ratio."
+    },
+    {
+        "question": "Which classifier models are available in ambw_comfyui?",
+        "answer": "The classifier models available in ambw_comfyui include Laion Aesthetic Predictor, Waifu Diffusion 1.4 aesthetic model, Cafe Waifu, and Cafe Aesthetic."
+    },
+    {
+        "question": "Are the generated images saved in ambw_comfyui?",
+        "answer": "No, the generated images are not saved in ambw_comfyui."
+    },
+    {
+        "question": "What are some known bugs in ambw_comfyui?",
+        "answer": "Some known bugs in ambw_comfyui include the merging process not using the comfy ModelPatcher method, which takes hundreds of milliseconds, and the unet probably being fp16 while the rest are fp32."
+    }
+]

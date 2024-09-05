@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyQR-scanning-nodes?",
+        "answer": "ComfyQR-scanning-nodes is a set of ComfyUI nodes to quickly test generated QR codes for scannability. It is a companion project to Comfy-QR."
+    },
+    {
+        "question": "Where is ComfyQR-scanning-nodes managed and mirrored?",
+        "answer": "ComfyQR-scanning-nodes is managed publicly on Gitlab and mirrored on Github."
+    },
+    {
+        "question": "What are the two custom nodes currently contained in ComfyQR-scanning-nodes?",
+        "answer": "The two custom nodes currently contained in ComfyQR-scanning-nodes are the 'Read QR Code' node and the 'Validate QR Code' node."
+    },
+    {
+        "question": "What library does the 'Read QR Code' node use to extract text from a QR code?",
+        "answer": "The 'Read QR Code' node uses the pyzbar library to extract text from a QR code."
+    },
+    {
+        "question": "What are the possible output values of the 'VALIDATION_CODE' in the 'Validate QR Code' node?",
+        "answer": "The 'VALIDATION_CODE' in the 'Validate QR Code' node can output 0 for a perfect match, 1 for an unreadable QR, and 2 for a text mismatch."
+    },
+    {
+        "question": "How can you reduce false negatives with pyzbar when the border size of a QR is small?",
+        "answer": "To reduce false negatives with pyzbar when the border size of a QR is small, you can add a 'Pad Image for Outpainting' node before sending it to the 'Read QR Code' node."
+    },
+    {
+        "question": "What are the pros of choosing pyzbar for QR code reading in ComfyQR-scanning-nodes?",
+        "answer": "pyzbar is chosen for QR code reading in ComfyQR-scanning-nodes based on the amount of dependencies, recency of updates, and popularity."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What are community pipelines in the context of Diffusers library?",
+        "answer": "Community pipelines refer to any implementation of the `DiffusionPipeline` class that differs from the original implementation specified in a paper. These pipelines provide additional functionality or extend the original implementation of the pipeline."
+    },
+    {
+        "question": "Where can I find official community pipelines?",
+        "answer": "You can find all official community pipelines in the Diffusers library [here](https://github.com/huggingface/diffusers/tree/main/examples/community)."
+    },
+    {
+        "question": "What should I be cautious about when loading community pipelines from the Hugging Face Hub?",
+        "answer": "When loading community pipelines from the Hugging Face Hub, you should always check the trustworthiness of the code online before automatically loading and executing it, as it implies trusting that the code is safe."
+    },
+    {
+        "question": "How do I load a community pipeline from the Hugging Face Hub?",
+        "answer": "To load a community pipeline from the Hugging Face Hub, you need to pass the repository ID of the community pipeline and the repository ID of the model (from where to load the pipeline's weights and components) as arguments. For example: ```python from diffusers import DiffusionPipeline pipeline = DiffusionPipeline.from_pretrained(     \"google/ddpm-cifar10-32\", custom_pipeline=\"hf-internal-testing/diffusers-dummy-pipeline\" ) ```"
+    },
+    {
+        "question": "Can I specify components directly when loading an official community pipeline?",
+        "answer": "Yes, when loading an official community pipeline, in addition to loading weights from the official repository ID, you can also directly specify components within that pipeline. For example, when loading the CLIP Guided Stable Diffusion pipeline, you can directly set the `clip_model` and `feature_extractor` components to be used in the pipeline."
+    },
+    {
+        "question": "Where can I find more information about community pipelines?",
+        "answer": "You can learn more about community pipelines in the [community pipelines guide](https://github.com/huggingface/diffusers/blob/main/docs/source/en/using-diffusers/custom_pipeline_examples)."
+    },
+    {
+        "question": "How can I contribute a community pipeline?",
+        "answer": "If you're interested in contributing a community pipeline, you can check out the guide on [how to contribute a pipeline](https://github.com/huggingface/diffusers/blob/main/docs/source/en/using-diffusers/contribute_pipeline)."
+    }
+]

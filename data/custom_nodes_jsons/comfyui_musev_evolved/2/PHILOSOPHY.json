@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the main purpose of Diffusers?",
+        "answer": "Diffusers provides state-of-the-art pretrained diffusion models across multiple modalities and serves as a modular toolbox for both inference and training."
+    },
+    {
+        "question": "What is the design philosophy of Diffusers regarding usability and performance?",
+        "answer": "Diffusers prioritizes usability over performance. Models are loaded with the highest precision and lowest optimization by default to ensure usability across different platforms and accelerators without requiring complex installations."
+    },
+    {
+        "question": "How does Diffusers handle device management?",
+        "answer": "Diffusers follows PyTorch's API with methods like 'DiffusionPipeline.to' to let the user handle device management."
+    },
+    {
+        "question": "What is the 'single-file policy' in Diffusers?",
+        "answer": "The single-file policy means that almost all of the code of a certain class should be written in a single, self-contained file. This design principle is followed for both pipelines and schedulers in Diffusers."
+    },
+    {
+        "question": "What are the three major classes that Diffusers consists of?",
+        "answer": "Diffusers essentially consists of three major classes: pipelines, models, and schedulers."
+    },
+    {
+        "question": "How are pipelines designed in Diffusers?",
+        "answer": "Pipelines in Diffusers are designed to be easy to use, not feature complete, and should be seen as examples of how to use models and schedulers for inference. They follow the single-file policy."
+    },
+    {
+        "question": "What is the purpose of schedulers in Diffusers?",
+        "answer": "Schedulers in Diffusers are responsible for guiding the denoising process for inference as well as defining a noise schedule for training. They are designed as individual classes with loadable configuration files and strongly follow the single-file policy."
+    }
+]
