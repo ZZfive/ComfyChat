@@ -398,8 +398,10 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
 
     def refresh_all_jsons(self, version: int) -> None:
         for k, v in self.local_custom_node_infos.items():
-            if not v["repo_json"] or v["json_last_update"] is None or v["json_last_update"] < v["md_last_update"]:
+            if not v["repo_json"] or v["json_last_update"] is None or (v["json_last_update"] is not None and v["md_last_update"] is not None and v["json_last_update"] < v["md_last_update"]):
                 self.refresh_one_json(k, version)
+            else:
+                logger.info(f"{k}未更新json")
         self.save_infos()
 
     def refresh_one_json(self, node_url: str, version: int, lang: str = "en",
@@ -412,7 +414,9 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                 self.refresh_one_md(node_url)
 
             node_name = node_url.split("/")[-1]
-            local_node_md_path = os.path.join(local_custom_node_mds_dir, node_name)
+            if ".git" in node_name:
+                node_name = node_name[:-4]
+            local_node_md_version_path = os.path.join(local_custom_node_mds_dir, node_name, str(version))
             local_node_json_path = os.path.join(local_custom_node_jsons_dir, node_name)
             if not os.path.exists(local_node_json_path):
                     os.mkdir(local_node_json_path)
@@ -420,17 +424,17 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             if not os.path.exists(local_node_json_version_path):
                 os.mkdir(local_node_json_version_path)
 
-            for item in os.listdir(local_node_md_path):
-                md_path = os.path.join(local_node_md_path, item)
+            for item in os.listdir(local_node_md_version_path):
+                md_path = os.path.join(local_node_md_version_path, item)
                 if md_path not in self.local_custom_node_infos[node_url]["successful_files"]:
                     try:
                         md_name, _ = os.path.splitext(item)
                         if lang == "en":
-                            rsp = self.llm_generator.messages_generate_llm(item, md_path)
+                            rsp = self.llm_generator.messages_generate_llm(node_name, md_path, "openrouter")
                         if lang == "zh":
-                            rsp = self.llm_generator.messages_generate_llm(item, md_path,
-                                                                        system_prompt=system_prompt_zh,
-                                                                        template=template_zh)
+                            rsp = self.llm_generator.messages_generate_llm(node_name, md_path, "siliconflow",
+                                                                           system_prompt=system_prompt_zh,
+                                                                           template=template_zh)
                         rsp_json = parse_json(rsp)
                         json_path = os.path.join(local_node_json_version_path, f"{md_name}{'_zh' if lang=='zh' else ''}.json")
                         if os.path.exists(json_path):
@@ -446,7 +450,8 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                         self.local_custom_node_infos[node_url]["repo_json"] = True
                     except Exception as e:
                         logger.error(f"Json of {md_path} refresh failure: {e}")
-                        self.local_custom_node_infos[node_url]["unsuccessful_files"].append(md_path)
+                        if md_path not in self.local_custom_node_infos[node_url]["unsuccessful_files"]:
+                            self.local_custom_node_infos[node_url]["unsuccessful_files"].append(md_path)
         except Exception as e:
             logger.error(f"{node_url} Json refresh failure: {e}")
             self.local_custom_node_infos[node_url]["repo_json"] = False
@@ -883,7 +888,7 @@ if __name__ == "__main__":
     # pipeline.refresh_one_repo("https://github.com/noarche/sd-webui-color-enhance")
     # pipeline.refresh_one_repo("https://github.com/erosDiffusion/ComfyUI-enricos-nodes")
 
-    pipeline.refresh_all_mds(version=2)
-    # pipeline.refresh_all_jsons()
+    # pipeline.refresh_all_mds(version=2)
+    pipeline.refresh_all_jsons(version=2)
 
     pipeline.save_infos()
