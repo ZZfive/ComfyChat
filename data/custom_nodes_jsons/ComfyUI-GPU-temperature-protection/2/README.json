@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ComfyUI-GPU-temperature-protection extension?",
+        "answer": "The purpose of the ComfyUI-GPU-temperature-protection extension is to pause image generation when the GPU temperature exceeds a certain threshold and resume generation when the temperature drops below a specified wake temperature."
+    },
+    {
+        "question": "What are the requirements for using the ComfyUI-GPU-temperature-protection extension?",
+        "answer": "The requirement for using the ComfyUI-GPU-temperature-protection extension is having an Nvidia GPU."
+    },
+    {
+        "question": "How can you install the ComfyUI-GPU-temperature-protection extension?",
+        "answer": "You can install the ComfyUI-GPU-temperature-protection extension in two ways: 1) by searching for 'GPU temperature protection' in ComfyUI Manager and installing it from there, or 2) by cloning the repository using Git or downloading it and copying the node files to 'ComfyUI\\custom_nodes\\ComfyUI-GPU-temperature-protection'."
+    },
+    {
+        "question": "What does the 'GPU temperature monitor minimum interval' setting do in the ComfyUI-GPU-temperature-protection extension?",
+        "answer": "The 'GPU temperature monitor minimum interval' setting in the ComfyUI-GPU-temperature-protection extension determines how often the GPU temperature is checked. Setting it to 0 effectively disables the extension, and checking the temperature too often can reduce image generation performance."
+    },
+    {
+        "question": "How does the 'Max sleep Time' setting work in the ComfyUI-GPU-temperature-protection extension?",
+        "answer": "The 'Max sleep Time' setting in the ComfyUI-GPU-temperature-protection extension determines the maximum number of seconds that the extension is allowed to pause image generation. If the time limit is reached, image generation will continue regardless of the 'GPU wake temperature'. Setting it to 0 disables the time limit, allowing the extension to pause indefinitely."
+    },
+    {
+        "question": "How can you use the ComfyUI-GPU-temperature-protection custom node in ComfyUI?",
+        "answer": "To use the ComfyUI-GPU-temperature-protection custom node in ComfyUI, you need to connect it to a node with the output being an image, such as VAE Decode. The custom node can be found under the 'utils' submenu."
+    },
+    {
+        "question": "What is the recommendation for users who have GPU temperature issues but do not have the means to improve cooling?",
+        "answer": "For users who have GPU temperature issues but do not have the means to improve cooling, it is recommended to use software like MSI Afterburner to undervolt or further power limit or thermal limit the GPU, rather than using the ComfyUI-GPU-temperature-protection extension."
+    }
+]

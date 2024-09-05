@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Segment Anything Simple Web demo?",
+        "answer": "The Segment Anything Simple Web demo is a front-end only React based web demo that shows how to load a fixed image and corresponding .npy file of the SAM image embedding, and run the SAM ONNX model in the browser using Web Assembly with multithreading enabled by SharedArrayBuffer, Web Worker, and SIMD128."
+    },
+    {
+        "question": "How can you run the Segment Anything Simple Web demo app?",
+        "answer": "To run the app, first install Yarn using 'npm install --g yarn', then build and run the app using 'yarn && yarn start'. Navigate to 'http://localhost:8081/' to see the demo."
+    },
+    {
+        "question": "What needs to be done to use a new image in the Segment Anything Simple Web demo?",
+        "answer": "To use a new image, you need to upload the image in the ONNX Model Example notebook, generate and save the corresponding embedding, and save the new image and embedding in 'src/assets/data'. Also, update the image and embedding file paths in 'App.tsx'."
+    },
+    {
+        "question": "What is the purpose of exporting the ONNX model in the Segment Anything Simple Web demo?",
+        "answer": "The quantized ONNX model needs to be exported from the ONNX Model Example notebook and saved in the '/model/' directory. If the ONNX model is changed by using a new checkpoint, the embedding also needs to be re-exported."
+    },
+    {
+        "question": "How is multithreading enabled in the Segment Anything Simple Web demo?",
+        "answer": "To enable multithreading, appropriate headers need to be set to create a cross origin isolation state which enables use of SharedArrayBuffer. The headers are set in 'configs/webpack/dev.js'."
+    },
+    {
+        "question": "What is the role of the 'App.tsx' file in the Segment Anything Simple Web demo?",
+        "answer": "The 'App.tsx' file initializes the ONNX model, loads image embedding and image, and runs the ONNX model based on input prompts."
+    },
+    {
+        "question": "What is the function of the 'maskUtils.tsx' file in the helpers directory of the Segment Anything Simple Web demo?",
+        "answer": "The 'maskUtils.tsx' file handles the conversion of the ONNX model output from an array to an HTMLImageElement."
+    }
+]

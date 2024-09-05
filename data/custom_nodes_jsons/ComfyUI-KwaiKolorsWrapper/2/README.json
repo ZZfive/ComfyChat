@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-KwaiKolorsWrapper?",
+        "answer": "ComfyUI-KwaiKolorsWrapper is a rudimentary wrapper that runs Kwai-Kolors text2image pipeline using diffusers in ComfyUI."
+    },
+    {
+        "question": "What are the requirements for installing ComfyUI-KwaiKolorsWrapper?",
+        "answer": "To install ComfyUI-KwaiKolorsWrapper, you need to clone the repository to the 'ComfyUI/custom_nodes' folder and install the dependencies in requirements.txt, with a minimum required transformers version of 4.38.0."
+    },
+    {
+        "question": "How can you load the ChatGLM3 model in ComfyUI-KwaiKolorsWrapper?",
+        "answer": "In ComfyUI-KwaiKolorsWrapper, you can load the ChatGLM3 model from a single safetensors file, and the configs are included in the repository."
+    },
+    {
+        "question": "Where are the models for ComfyUI-KwaiKolorsWrapper downloaded from?",
+        "answer": "The models for ComfyUI-KwaiKolorsWrapper are automatically downloaded from https://huggingface.co/Kwai-Kolors/Kolors/tree/main."
+    },
+    {
+        "question": "What is the model folder structure for ComfyUI-KwaiKolorsWrapper?",
+        "answer": "The model folder structure for ComfyUI-KwaiKolorsWrapper includes a model_index.json file, a scheduler folder with scheduler_config.json, a text_encoder folder with config.json and other files, and a unet folder with config.json and diffusion_pytorch_model.fp16.safetensors."
+    },
+    {
+        "question": "How much VRAM does the text encoder in ComfyUI-KwaiKolorsWrapper take?",
+        "answer": "The text encoder in ComfyUI-KwaiKolorsWrapper takes most of the VRAM, but can be quantized to fit approximately 13 GB for fp16, 8 GB for quant8, and 4 GB for quant4."
+    },
+    {
+        "question": "What is the expected VRAM usage for sampling a single image at 1024 resolution in ComfyUI-KwaiKolorsWrapper?",
+        "answer": "The expected VRAM usage for sampling a single image at 1024 resolution in ComfyUI-KwaiKolorsWrapper is similar to SDXL."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI_Cutoff?",
+        "answer": "ComfyUI_Cutoff is an implementation of the cutoff extension for ComfyUI, which allows users to limit the effect certain attributes have on specified subsets of the prompt using three custom nodes."
+    },
+    {
+        "question": "How does cutoff work in ComfyUI_Cutoff?",
+        "answer": "Cutoff in ComfyUI_Cutoff works by masking out tokens corresponding to specific words and asking CLIP to create another embedding. The difference between the original vectors and new vectors provides a direction to travel for isolated color relations in the text."
+    },
+    {
+        "question": "What are the four nodes introduced in ComfyUI_Cutoff?",
+        "answer": "The four nodes introduced in ComfyUI_Cutoff are Cutoff BasePrompt, Cutoff Set Region, Cutoff Regions To Conditioning, and Cutoff Regions To Conditioning (ADV)."
+    },
+    {
+        "question": "What does the Cutoff BasePrompt node do?",
+        "answer": "The Cutoff BasePrompt node takes the full original prompt."
+    },
+    {
+        "question": "How does the Cutoff Set Region node work?",
+        "answer": "The Cutoff Set Region node sets a 'region' of influence for specific target words. It defines the set of tokens that the target words should affect and the tokens that will be masked off."
+    },
+    {
+        "question": "What is the purpose of the Cutoff Regions To Conditioning node?",
+        "answer": "The Cutoff Regions To Conditioning node converts the base prompt and regions into an actual conditioning to be used in the rest of ComfyUI."
+    },
+    {
+        "question": "Does ComfyUI_Cutoff work with SDXL?",
+        "answer": "The nodes in ComfyUI_Cutoff won't throw any errors when used with SDXL, but at least for version 0.9, it was not found to be working very well."
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is ComfyUI-Image-Selector?",
+        "answer": "ComfyUI-Image-Selector is a custom node for ComfyUI that allows users to select one or some images from a batch for further use."
+    },
+    {
+        "question": "Why was ComfyUI-Image-Selector created?",
+        "answer": "ComfyUI-Image-Selector was created because ComfyUI doesn't handle batch generation seeds like A1111 WebUI, making it difficult to select desired images from a batch generation."
+    },
+    {
+        "question": "How can you install ComfyUI-Image-Selector?",
+        "answer": "To install ComfyUI-Image-Selector, clone the repo into the 'custom_nodes' directory of the ComfyUI location."
+    },
+    {
+        "question": "What are the two main nodes in ComfyUI-Image-Selector?",
+        "answer": "The two main nodes in ComfyUI-Image-Selector are ImageSelector and ImageDuplicator, which can be found in the 'image' category."
+    },
+    {
+        "question": "How does the ImageSelector node work?",
+        "answer": "The ImageSelector node takes a list of selected indexes, starting with 1, separated by commas, and outputs only the selected images from the input images. It also supports range selection with left bound included and right bound excluded."
+    },
+    {
+        "question": "What does the ImageDuplicator node do?",
+        "answer": "The ImageDuplicator node takes a number and duplicates input images by the given number of times."
+    },
+    {
+        "question": "What are LatentSelector and LatentDuplicator nodes?",
+        "answer": "LatentSelector and LatentDuplicator nodes are similar to their image counterparts but are used for latents. They can be found in the 'latent' category."
+    },
+    {
+        "question": "What tips are provided for using ComfyUI-Image-Selector efficiently?",
+        "answer": "To use ComfyUI-Image-Selector efficiently, it is recommended to avoid unnecessary VAE nodes and use 'encode/decode -> duplicator' instead of 'duplicator -> encode/decode' and 'selector -> encode/decode' instead of 'encode/decode -> selector' when possible."
+    }
+]

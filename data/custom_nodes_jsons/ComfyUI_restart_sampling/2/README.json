@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI_restart_sampling?",
+        "answer": "ComfyUI_restart_sampling is an unofficial ComfyUI node for restart sampling based on the paper 'Restart Sampling for Improving Generative Processes'. It allows for improved image generation using restart sampling techniques."
+    },
+    {
+        "question": "How can I install ComfyUI_restart_sampling?",
+        "answer": "To install ComfyUI_restart_sampling, navigate to the ComfyUI/custom_nodes/ directory in the command line and run the command: git clone https://github.com/ssitu/ComfyUI_restart_sampling"
+    },
+    {
+        "question": "What are the available nodes in ComfyUI_restart_sampling?",
+        "answer": "ComfyUI_restart_sampling provides several nodes, including KSampler With Restarts, KSampler With Restarts (Simple), KSampler With Restarts (Advanced), KSampler With Restarts (Custom), RestartScheduler, and RestartSampler."
+    },
+    {
+        "question": "How do I define segments for restart sampling in ComfyUI_restart_sampling?",
+        "answer": "Segments in ComfyUI_restart_sampling are defined using a sequence of comma-separated arrays in the format [N_Restart, K, t_min, t_max]. t_min and t_max can be specified as positive numeric values (sigma), negative numeric values between -0 and -1000 (timestep), or quoted string percentage values followed by a percent sign (percentage of sampling)."
+    },
+    {
+        "question": "What are the special segment values in ComfyUI_restart_sampling?",
+        "answer": "ComfyUI_restart_sampling supports special segment values such as 'default' and 'a1111'. Entering 'default' uses the default segment list, while 'a1111' emulates the A1111 WebUI's segment calculation behavior. These preset names can also be inserted at specific points within the segment definition."
+    },
+    {
+        "question": "What is chunked mode in ComfyUI_restart_sampling?",
+        "answer": "Chunked mode in ComfyUI_restart_sampling is a setting that determines how the sampler is called. When enabled, the sampler is called with as many steps as possible up to the next segment. When disabled, the sampler is called with a single step at a time. Chunked mode may improve the accuracy of certain samplers that use state from previous steps."
+    },
+    {
+        "question": "Can you provide a visual example of how restart sampling works in ComfyUI_restart_sampling?",
+        "answer": "A visual example is provided in the documentation, demonstrating how the default segments [3,2,0.06,0.30] and [3,1,0.30,0.59] are applied during the sampling process. The example shows how the restarts are performed at specific steps based on the defined segments."
+    }
+]

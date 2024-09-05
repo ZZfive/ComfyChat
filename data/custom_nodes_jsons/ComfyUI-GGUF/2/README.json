@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What version of gguf-py is required for ComfyUI-GGUF to work?",
+        "answer": "ComfyUI-GGUF currently requires the llama.cpp version of gguf-py, not the pip version, as the pip version does not have the Python quantization code yet."
+    },
+    {
+        "question": "How can you convert your initial source model to FP16 or BF16?",
+        "answer": "To convert your initial source model to FP16 or BF16, run the command: python convert.py --src E:\\models\\unet\\flux1-dev.safetensors"
+    },
+    {
+        "question": "What steps are needed to apply the provided patch to the llama.cpp repository?",
+        "answer": "To apply the provided patch to the llama.cpp repository, first checkout the b3600 tag, then apply the lcpp.patch using the command: git apply ..\\lcpp.patch"
+    },
+    {
+        "question": "How do you compile the llama-quantize binary using cmake?",
+        "answer": "To compile the llama-quantize binary using cmake, create a build directory, run cmake .., then run cmake --build . --config Debug -j10 --target llama-quantize"
+    },
+    {
+        "question": "What command is used to quantize your model to the desired format using the newly built binary?",
+        "answer": "To quantize your model to the desired format using the newly built binary, run the command: llama.cpp\\build\\bin\\Debug\\llama-quantize.exe E:\\models\\unet\\flux1-dev-BF16.gguf E:\\models\\unet\\flux1-dev-Q4_K_S.gguf Q4_K_S"
+    },
+    {
+        "question": "Why should you not use the diffusers UNET for flux?",
+        "answer": "You should not use the diffusers UNET for flux because it won't work due to q/k/v being merged into one qkv key. Instead, use the default/reference checkpoint format."
+    },
+    {
+        "question": "What should you do before quantizing SDXL, SD1, or other Conv2D heavy models?",
+        "answer": "Before quantizing SDXL, SD1, or other Conv2D heavy models, make sure to extract the UNET model first. However, note that there is little to no benefit in quantizing these models."
+    }
+]

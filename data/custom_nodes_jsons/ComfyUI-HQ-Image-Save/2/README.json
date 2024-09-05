@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-HQ-Image-Save?",
+        "answer": "ComfyUI-HQ-Image-Save is an extension for ComfyUI that allows saving and loading images and latents as 32-bit EXRs."
+    },
+    {
+        "question": "What CLI argument is recommended when using ComfyUI-HQ-Image-Save?",
+        "answer": "It is recommended to add the `--fp32-vae` CLI argument for more accurate decoding when using ComfyUI-HQ-Image-Save."
+    },
+    {
+        "question": "What is the difference between PNG and EXR shown in the scatterplot comparison?",
+        "answer": "In the scatterplot comparison, PNG quantizes the image to 256 possible values per channel (2^8), while the EXR has full floating point precision."
+    },
+    {
+        "question": "What formula is used for latent EXR viewing purposes in ComfyUI-HQ-Image-Save?",
+        "answer": "For latent EXR viewing purposes in ComfyUI-HQ-Image-Save, the following formula is used to approximate RGB values from the four latent channels: `r = (0.298 * r + 0.187 * g - 0.187 * b - 0.184 * a) * 0.18215, g = (0.207 * r + 0.286 * g + 0.189 * b - 0.271 * a) * 0.18215, b = (0.208 * r + 0.173 * g + 0.264 * b - 0.473 * a) * 0.18215`."
+    },
+    {
+        "question": "What are the known issues with ComfyUI-HQ-Image-Save?",
+        "answer": "The known issues with ComfyUI-HQ-Image-Save include no load TIFF node and the TIFF save being bad/outdated."
+    },
+    {
+        "question": "What types of nodes are available in ComfyUI-HQ-Image-Save?",
+        "answer": "ComfyUI-HQ-Image-Save provides two types of nodes: Image nodes and Latent nodes."
+    },
+    {
+        "question": "What are the save options available for EXR frames in ComfyUI-HQ-Image-Save?",
+        "answer": "When saving EXR frames in ComfyUI-HQ-Image-Save, you can optionally save the workflow as GUI .json and/or API .json."
+    }
+]

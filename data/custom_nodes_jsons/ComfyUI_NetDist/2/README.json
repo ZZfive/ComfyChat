@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI_NetDist?",
+        "answer": "ComfyUI_NetDist is a custom node in ComfyUI that allows running ComfyUI workflows on multiple local GPUs or networked machines."
+    },
+    {
+        "question": "What is the external requirement for installing ComfyUI_NetDist?",
+        "answer": "The external requirement for installing ComfyUI_NetDist is the 'requests' library, which can be installed using 'pip install requests'."
+    },
+    {
+        "question": "How can you set up a simple dual-GPU configuration using ComfyUI_NetDist?",
+        "answer": "To set up a simple dual-GPU configuration, you need at least two different ComfyUI instances with different '--port [port]' and '--cuda-device [number]' launch arguments. The 'FetchRemote' node is used to fetch the final image from the second instance."
+    },
+    {
+        "question": "What is the purpose of the 'LoadImageUrl' node in ComfyUI_NetDist?",
+        "answer": "The 'LoadImageUrl' node in ComfyUI_NetDist acts like the normal 'Load Image' node, allowing you to load an image from a URL."
+    },
+    {
+        "question": "How does the 'SaveImageUrl' node in ComfyUI_NetDist work?",
+        "answer": "The 'SaveImageUrl' node sends a POST request to the target URL with a JSON containing the image filenames as keys and the base64 encoded PNG images as values. No data is written to disk on the server."
+    },
+    {
+        "question": "What is the purpose of the remote latents feature in ComfyUI_NetDist?",
+        "answer": "The remote latents feature in ComfyUI_NetDist allows you to pass latents between nodes seamlessly. It provides nodes to save and load latents from different instances."
+    },
+    {
+        "question": "What are some of the items on the roadmap for ComfyUI_NetDist?",
+        "answer": "Some items on the roadmap for ComfyUI_NetDist include fixing edge cases like linux controlling windows, improving workflow editing for static workflows, and handling multiple separate image output nodes."
+    }
+]

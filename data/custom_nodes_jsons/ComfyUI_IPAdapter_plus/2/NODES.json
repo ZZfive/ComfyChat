@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the IPAdapter Unified Loader node in ComfyUI_IPAdapter_plus?",
+        "answer": "The IPAdapter Unified Loader node in ComfyUI_IPAdapter_plus loads the full stack of models needed for IPAdapter to function, including the ipadater and clip vision models."
+    },
+    {
+        "question": "How should multiple IPAdapter Unified Loaders be connected in a chain?",
+        "answer": "Multiple IPAdapter Unified Loaders should always be daisy chained through the 'ipadapter' in/out. For the first unified loader, the 'ipadapter' input should never be connected to avoid loading models twice."
+    },
+    {
+        "question": "What is the difference between the IPAdapter Unified Loader and the IPAdapter Model Loader?",
+        "answer": "The IPAdapter Unified Loader loads the full stack of models including the ipadater and clip vision models, while the IPAdapter Model Loader only loads the IPAdapter model."
+    },
+    {
+        "question": "What does the IPAdapter Advanced node do in ComfyUI_IPAdapter_plus?",
+        "answer": "The IPAdapter Advanced node is a drop-in replacement for the old IPAdapter Apply node, containing all the options to fine-tune the IPAdapter models."
+    },
+    {
+        "question": "What is the purpose of the 'attn_mask' input in the IPAdapter Advanced node?",
+        "answer": "The 'attn_mask' input in the IPAdapter Advanced node is used to define the area of influence of the IPAdapter models on the final image, with black zones not being affected and white zones getting maximum influence."
+    },
+    {
+        "question": "What does the 'weight_type' configuration parameter in the IPAdapter Advanced node control?",
+        "answer": "The 'weight_type' parameter in the IPAdapter Advanced node controls how the IPAdapter is applied to the UNet block, which significantly impacts how the composition reacts to text prompting."
+    },
+    {
+        "question": "What is the recommended 'weight' value for the IPAdapter Advanced node when using the default 'linear' weight_type?",
+        "answer": "For the default 'linear' weight_type in the IPAdapter Advanced node, a good starting point for the 'weight' parameter is 0.8."
+    }
+]

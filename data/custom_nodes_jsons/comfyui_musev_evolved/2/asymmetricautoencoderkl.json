@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AsymmetricAutoencoderKL model?",
+        "answer": "The AsymmetricAutoencoderKL model is an improved larger variational autoencoder (VAE) model with KL loss designed for the inpainting task in StableDiffusion."
+    },
+    {
+        "question": "What are the two simple designs proposed in the Asymmetric VQGAN?",
+        "answer": "The two simple designs proposed in the Asymmetric VQGAN are: 1) the decoder contains a conditional branch that incorporates information from task-specific priors, and 2) the decoder is much heavier than the encoder, allowing for more detailed recovery while only slightly increasing the total inference cost."
+    },
+    {
+        "question": "Is it necessary to retrain the entire StableDiffusion model when using the Asymmetric VQGAN?",
+        "answer": "No, when using the Asymmetric VQGAN, only a new asymmetric decoder needs to be retrained while keeping the vanilla VQGAN encoder and StableDiffusion unchanged."
+    },
+    {
+        "question": "Where can the evaluation results of the Asymmetric VQGAN be found?",
+        "answer": "The evaluation results of the Asymmetric VQGAN can be found in section 4.1 of the original paper."
+    },
+    {
+        "question": "What are the available checkpoints for the AsymmetricAutoencoderKL model?",
+        "answer": "The available checkpoints for the AsymmetricAutoencoderKL model are: https://huggingface.co/cross-attention/asymmetric-autoencoder-kl-x-1-5 and https://huggingface.co/cross-attention/asymmetric-autoencoder-kl-x-2."
+    },
+    {
+        "question": "How can the AsymmetricAutoencoderKL model be used in a StableDiffusionInpaintPipeline?",
+        "answer": "To use the AsymmetricAutoencoderKL model in a StableDiffusionInpaintPipeline, load the pipeline with `StableDiffusionInpaintPipeline.from_pretrained()` and then replace the VAE with `AsymmetricAutoencoderKL.from_pretrained()`."
+    },
+    {
+        "question": "What is the purpose of the AutoencoderKLOutput and DecoderOutput classes?",
+        "answer": "The AutoencoderKLOutput and DecoderOutput classes are used to represent the outputs of the AsymmetricAutoencoderKL model and its decoder, respectively."
+    }
+]

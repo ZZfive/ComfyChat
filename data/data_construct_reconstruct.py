@@ -360,7 +360,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                 if not v["repo_cloned"]:
                     continue
 
-                if force_fresh or not v["repo_md"] or v["md_last_update"] is None or (v["md_last_update"] is not None and v["local_last_update"] is not None and v["md_last_update"] < v["local_last_update"]):
+                if force_fresh or not v["repo_md"] or v["md_last_update"] is None or v["md_last_update"] == "2024-05-25 00:00:00" or (v["md_last_update"] is not None and v["local_last_update"] is not None and v["md_last_update"] < v["local_last_update"]):
                     node_name = k.split("/")[-1]
                     if ".git" in node_name:
                         node_name = node_name[:-4]
@@ -386,7 +386,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             if node_url in self.local_custom_node_infos and self.local_custom_node_infos[node_url]["repo_md"]:
                 if os.path.exists(local_node_md_path):
                     shutil.rmtree(local_node_md_path)
-            else:
+            else:d
                 self.refresh_one_repo(node_url)
 
             extract_md_files_from_local_repo(local_node_repo_path, local_node_md_path)
@@ -448,6 +448,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                             self.local_custom_node_infos[node_url]["unsuccessful_files"].remove(md_path)
                         self.local_custom_node_infos[node_url]["json_last_update"] = self.local_custom_node_infos[node_url]["md_last_update"]
                         self.local_custom_node_infos[node_url]["repo_json"] = True
+                        print(f"***{node_url}:{item} Json refresh successfully***")
                     except Exception as e:
                         logger.error(f"Json of {md_path} refresh failure: {e}")
                         if md_path not in self.local_custom_node_infos[node_url]["unsuccessful_files"]:
@@ -457,6 +458,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             self.local_custom_node_infos[node_url]["repo_json"] = False
         finally:
             self.local_custom_node_infos[node_url]["version"] = version
+            self.save_infos()
 
     def construct_single_messages(self, user_content: str, assistant_content: str) -> Dict[str, List[Dict[str, str]]]:
         user = {}

@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the pre CFG nodes in ComfyUI?",
+        "answer": "The pre CFG nodes in ComfyUI are a set of nodes that prepare the noise predictions before the CFG function. They can be chained and repeated within the same workflow and are designed to be highly compatible with most nodes."
+    },
+    {
+        "question": "What is the Gradient Scaling node in pre CFG nodes for ComfyUI?",
+        "answer": "The Gradient Scaling node in pre CFG nodes for ComfyUI is a node that uses an arithmetic scaling method to scale the intensity of values like an 'automatic cfg'. It does not noticeably slow down the sampling process."
+    },
+    {
+        "question": "What are the potential uses of the Gradient Scaling node in pre CFG nodes for ComfyUI?",
+        "answer": "The potential uses of the Gradient Scaling node in pre CFG nodes for ComfyUI include general light direction/composition influence, vignetting, color influence, and pattern matching."
+    },
+    {
+        "question": "What is the Pre CFG Automatic Scale node in pre CFG nodes for ComfyUI?",
+        "answer": "The Pre CFG Automatic Scale node in pre CFG nodes for ComfyUI applies a predictable scaling based on a specific logic. It has two modes: Automatic CFG and Strict scaling."
+    },
+    {
+        "question": "What is the purpose of the 'Support empty uncond' option in the Pre CFG Automatic Scale node?",
+        "answer": "The 'Support empty uncond' option in the Pre CFG Automatic Scale node is used to avoid getting a black image when the negative prediction is stopped earlier. It divides the positive prediction by the CFG scale."
+    },
+    {
+        "question": "What is the Pre CFG Perp-neg node in pre CFG nodes for ComfyUI?",
+        "answer": "The Pre CFG Perp-neg node in pre CFG nodes for ComfyUI applies the perp-neg logic, which is adapted from ComfyAnon's implementation."
+    },
+    {
+        "question": "What is the purpose of the Pre CFG Sharpening node in pre CFG nodes for ComfyUI?",
+        "answer": "The Pre CFG Sharpening node in pre CFG nodes for ComfyUI is an experimental node that subtracts something from the current step based on the previous step. This tends to make the images sharper and less saturated."
+    },
+    {
+        "question": "What is the purpose of the Pre CFG Exponentiation node in pre CFG nodes for ComfyUI?",
+        "answer": "The Pre CFG Exponentiation node in pre CFG nodes for ComfyUI is an experimental node that simplifies the end result and enhances saturation and contrasts when a value lower than one is used. A value higher than one does the opposite and may create a mess if pushed too far."
+    }
+]

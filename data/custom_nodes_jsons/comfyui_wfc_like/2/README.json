@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the comfyui_wfc_like custom node in ComfyUI?",
+        "answer": "The comfyui_wfc_like custom node in ComfyUI provides an opinionated implementation of the Wave Function Collapse algorithm to generate images based on specified constraints and tile arrangements."
+    },
+    {
+        "question": "How does the Sample (WFC) node in comfyui_wfc_like work?",
+        "answer": "The Sample (WFC) node analyzes an input image made of tiles and extracts each tile type, their count, and all existing 3x3 tile arrangements (constraints). This data can be sent to generator nodes to create similar images."
+    },
+    {
+        "question": "What is the purpose of the Generate (WFC) node in comfyui_wfc_like?",
+        "answer": "The Generate (WFC) node in comfyui_wfc_like generates a state using the provided sample data and starting state based on the Wave Function Collapse algorithm."
+    },
+    {
+        "question": "How can the output of the Generate (WFC) node be converted into an image in comfyui_wfc_like?",
+        "answer": "The output of the Generate (WFC) node can be converted into an image using the Decode (WFC) node in comfyui_wfc_like."
+    },
+    {
+        "question": "What does the Filter node in comfyui_wfc_like do?",
+        "answer": "The Filter node in comfyui_wfc_like sets all other tile types as empty cells in the provided state based on a given set of tiles as an image batch. If the reverse option is set to True, the same tile type cells are set to empty."
+    },
+    {
+        "question": "How does the GenParallel node in comfyui_wfc_like differ from the Generate node?",
+        "answer": "The GenParallel node in comfyui_wfc_like allows different generations to be executed in parallel when using lists as input, whereas the Generate node processes the input sequentially."
+    },
+    {
+        "question": "What is the purpose of the max_parallel_tasks parameter in the GenParallel node of comfyui_wfc_like?",
+        "answer": "The max_parallel_tasks parameter in the GenParallel node of comfyui_wfc_like defines the maximum number of generations that can run simultaneously."
+    }
+]
