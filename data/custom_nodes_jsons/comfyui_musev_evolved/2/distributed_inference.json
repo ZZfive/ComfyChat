@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of using 🤗 Accelerate or PyTorch Distributed for distributed inference?",
+        "answer": "🤗 Accelerate and PyTorch Distributed are used to run inference on multiple GPUs, which is useful when generating multiple prompts simultaneously."
+    },
+    {
+        "question": "How does 🤗 Accelerate simplify the distributed environment setup process?",
+        "answer": "🤗 Accelerate simplifies the distributed environment setup process by automatically detecting the settings, so there's no need to explicitly define `rank` or `world_size`."
+    },
+    {
+        "question": "What is the purpose of the [`~accelerate.PartialState.split_between_processes`] utility?",
+        "answer": "The [`~accelerate.PartialState.split_between_processes`] utility is used to automatically distribute prompts according to the number of processes."
+    },
+    {
+        "question": "How do you specify the number of GPUs to use when running a script with 🤗 Accelerate?",
+        "answer": "To specify the number of GPUs to use with 🤗 Accelerate, use the `--num_processes` argument when calling `accelerate launch`."
+    },
+    {
+        "question": "What does PyTorch's [`DistributedDataParallel`] support?",
+        "answer": "PyTorch's [`DistributedDataParallel`] supports data parallelism."
+    },
+    {
+        "question": "What is the purpose of the `init_process_group` function in PyTorch distributed inference?",
+        "answer": "The `init_process_group` function handles creating the distributed environment by specifying the backend type, the `rank` of the current process, and the `world_size` or the number of participating processes."
+    },
+    {
+        "question": "How do you run a distributed inference script using PyTorch?",
+        "answer": "To run a distributed inference script using PyTorch, specify the number of GPUs to use with the `--nproc_per_node` argument and call `torchrun`."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of Caffe2 conversion in ComfyUI-OOTDiffusion?",
+        "answer": "Caffe2 conversion in ComfyUI-OOTDiffusion is used to convert a detectron2 model to Caffe2 format through ONNX, allowing the model to run without detectron2 dependency in either Python or C++ and optimizing it for CPU and mobile inference."
+    },
+    {
+        "question": "What are the meta architectures supported by Caffe2 conversion in ComfyUI-OOTDiffusion?",
+        "answer": "Caffe2 conversion in ComfyUI-OOTDiffusion supports three most common meta architectures: GeneralizedRCNN, RetinaNet, and PanopticFPN."
+    },
+    {
+        "question": "What is the minimum PyTorch and ONNX version required for Caffe2 conversion?",
+        "answer": "Caffe2 conversion requires PyTorch ≥ 1.4 and ONNX ≥ 1.6."
+    },
+    {
+        "question": "What are the two files generated after converting a model using Caffe2 conversion in ComfyUI-OOTDiffusion?",
+        "answer": "After converting a model using Caffe2 conversion in ComfyUI-OOTDiffusion, two files are generated: model.pb and model_init.pb, which contain network structure and network parameters, respectively."
+    },
+    {
+        "question": "What are the input tensors required for the converted models in ComfyUI-OOTDiffusion?",
+        "answer": "The converted models in ComfyUI-OOTDiffusion take two input tensors: 'data', which is an NCHW image, and 'im_info', which is an Nx3 tensor consisting of (height, width, 1.0) for each image."
+    },
+    {
+        "question": "Does the converted model in ComfyUI-OOTDiffusion contain post-processing operations?",
+        "answer": "No, the converted model in ComfyUI-OOTDiffusion does not contain post-processing operations that transform raw layer outputs into formatted predictions."
+    },
+    {
+        "question": "What is the purpose of Caffe2Model.__call__ method in ComfyUI-OOTDiffusion?",
+        "answer": "The Caffe2Model.__call__ method in ComfyUI-OOTDiffusion is a Python wrapper around the converted model that has an interface identical to the PyTorch versions of models and internally applies pre/post-processing code to match the formats."
+    }
+]

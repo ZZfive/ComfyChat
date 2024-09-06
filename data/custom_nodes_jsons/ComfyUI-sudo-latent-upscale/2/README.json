@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-sudo-latent-upscale?",
+        "answer": "ComfyUI-sudo-latent-upscale is a custom node in ComfyUI that performs direct upscaling in the latent space. It is inspired by city96/SD-Latent-Upscaler and Ttl/ComfyUi_NNLatentUpscale."
+    },
+    {
+        "question": "What models are supported by ComfyUI-sudo-latent-upscale?",
+        "answer": "ComfyUI-sudo-latent-upscale supports models for Stable Diffusion 1.5 and SDXL. The recommended models are SwinFIR and DRCT."
+    },
+    {
+        "question": "How was the SwinFIR4x6_mse_200k_1.5 model trained?",
+        "answer": "The SwinFIR4x6_mse_200k_1.5 model was trained using the lamb optimizer with a learning rate of 3e-4, bf16 precision, a batch size of 150, and MSE loss with a weight of 0.08. It was trained on 2x4090 GPUs with ddp and gloo for 100k steps each."
+    },
+    {
+        "question": "What loss functions were used for training the DRCT-l_12x6_325k_l1_sdxl model?",
+        "answer": "The DRCT-l_12x6_325k_l1_sdxl model was trained using AdamW optimizer with a learning rate of 1e-4, bf16 precision, a batch size of 40, and L1 loss with a weight of 0.08."
+    },
+    {
+        "question": "What are some failure cases mentioned in the context of ComfyUI-sudo-latent-upscale?",
+        "answer": "Some failure cases mentioned include instability issues with SSIM, incorrect scaling factors and image ranges, and convergence problems with certain network architectures like DITN, OmniSR, HAT, Fourier, GRL, and SwinFIR with Prodigy optimizer."
+    },
+    {
+        "question": "What is the recommended batch size for training the DRCT-l_12x6_160k_l1_vaeDecode_l1_hfen_sdxl model?",
+        "answer": "The recommended batch size for training the DRCT-l_12x6_160k_l1_vaeDecode_l1_hfen_sdxl model is 3 due to the high VRAM requirements when training with VAE gradients."
+    },
+    {
+        "question": "What ideas are mentioned for potential future testing in ComfyUI-sudo-latent-upscale?",
+        "answer": "Some ideas mentioned for potential future testing include using the Huber loss function, experimenting with different Conv2D implementations like MBConv, and applying dropout before the final convolution layer."
+    }
+]

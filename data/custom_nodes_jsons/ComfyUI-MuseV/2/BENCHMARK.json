@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the benchmarks in the given context?",
+        "answer": "The benchmarks in the given context are used to measure the performance of various models, including EfficientNet, MixNet, MobileNet, and MnasNet, by running them through a series of optimization processes and comparing their execution times, FLOPs, and memory usage."
+    },
+    {
+        "question": "How were the benchmarks run according to the provided script?",
+        "answer": "The benchmarks were run by first exporting the model to ONNX format, then optimizing it, converting it to Caffe2 format, and finally benchmarking it using Caffe2. This process involved several Python scripts such as `onnx_export.py`, `onnx_optimize.py`, `onnx_to_caffe.py`, and `caffe2_benchmark.py`."
+    },
+    {
+        "question": "For the EfficientNet-B0 model, what was the percentage of time spent on Conv operations in the optimized version?",
+        "answer": "In the optimized version of the EfficientNet-B0 model, the Conv operations took up 65.002% of the time per operator type."
+    },
+    {
+        "question": "How did the optimization affect the FLOP per operator type for the Conv operation in the EfficientNet-B0 model?",
+        "answer": "After optimization, the FLOP per operator type for the Conv operation in the EfficientNet-B0 model increased from 0.76907 GFLOP (95.2696%) to 0.76907 GFLOP (98.5601%), indicating a more efficient use of computational resources."
+    },
+    {
+        "question": "What is the total parameter memory for the MixNet-M model after optimization?",
+        "answer": "After optimization, the total parameter memory for the MixNet-M model is 19.9579 MB."
+    },
+    {
+        "question": "In the optimized version of the MobileNet-V3 (RW) model, what percentage of the total FLOP is attributed to the Conv operation?",
+        "answer": "In the optimized version of the MobileNet-V3 (RW) model, the Conv operation accounts for 98.1927% of the total FLOP."
+    },
+    {
+        "question": "How does the optimization affect the 'Feature Memory Read per operator type' for the Conv operation in the MnasNet-A1 model?",
+        "answer": "Before optimization, the Conv operation in the MnasNet-A1 model accounted for 38.4109% of the feature memory read. After optimization, this increased to 52.7968%, indicating a more efficient memory usage pattern."
+    }
+]

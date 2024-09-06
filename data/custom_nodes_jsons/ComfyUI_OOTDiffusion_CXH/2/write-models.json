@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the registration mechanism in Detectron2?",
+        "answer": "The registration mechanism in Detectron2 allows you to override the behavior of certain internal components of standard models, making it easier to modify or extend existing models."
+    },
+    {
+        "question": "How can you add a new backbone to a model in Detectron2?",
+        "answer": "To add a new backbone, you need to create a class that inherits from the Backbone class, register it with the BACKBONE_REGISTRY, and then set the cfg.MODEL.BACKBONE.NAME to the name of your new backbone class."
+    },
+    {
+        "question": "What should the forward method of a custom backbone return?",
+        "answer": "The forward method of a custom backbone should return a dictionary where the keys are strings and the values are feature maps."
+    },
+    {
+        "question": "What is the purpose of the output_shape method in a custom backbone?",
+        "answer": "The output_shape method in a custom backbone returns a dictionary that describes the output shape of the backbone, including the number of channels and the stride for each feature map."
+    },
+    {
+        "question": "How can you add new abilities to the ROI heads in the Generalized R-CNN meta-architecture?",
+        "answer": "To add new abilities to the ROI heads in the Generalized R-CNN meta-architecture, you can implement a new ROIHeads subclass and put it in the ROI_HEADS_REGISTRY."
+    },
+    {
+        "question": "Where can you find examples of implementing new ROIHeads to perform new tasks?",
+        "answer": "Examples of implementing new ROIHeads to perform new tasks can be found in the densepose in detectron2 and meshrcnn projects."
+    },
+    {
+        "question": "Where can you find a complete list of registries in Detectron2?",
+        "answer": "A complete list of registries in Detectron2 can be found in the API documentation."
+    }
+]

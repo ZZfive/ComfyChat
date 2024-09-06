@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What is DPMSolverMultistepScheduler?",
+        "answer": "DPMSolverMultistepScheduler is a multistep scheduler based on the fast high-order solver DPM-Solver and its improved version DPM-Solver++ for diffusion ODEs. It allows generating high-quality samples with fewer steps compared to other methods."
+    },
+    {
+        "question": "How many steps can DPMSolver sampling generate high-quality samples?",
+        "answer": "Empirically, DPMSolver sampling can generate high-quality samples with only 20 steps, and quite good samples even in 10 steps."
+    },
+    {
+        "question": "What is the recommended solver order for guide sampling and unconditional sampling with DPMSolverMultistepScheduler?",
+        "answer": "It is recommended to set `solver_order` to 2 for guide sampling, and `solver_order=3` for unconditional sampling when using DPMSolverMultistepScheduler."
+    },
+    {
+        "question": "Does DPMSolverMultistepScheduler support dynamic thresholding from Imagen?",
+        "answer": "Yes, dynamic thresholding from Imagen is supported by DPMSolverMultistepScheduler. For pixel-space diffusion models, setting both `algorithm_type=\"dpmsolver++\"` and `thresholding=True` enables the use of dynamic thresholding. However, this thresholding method is unsuitable for latent-space diffusion models like Stable Diffusion."
+    },
+    {
+        "question": "Is the SDE variant of DPMSolver and DPM-Solver++ supported by DPMSolverMultistepScheduler?",
+        "answer": "Yes, the SDE variant of DPMSolver and DPM-Solver++ is supported by DPMSolverMultistepScheduler, but only for the first and second-order solvers. It is a fast SDE solver for the reverse diffusion SDE, and using the second-order `sde-dpmsolver++` is recommended."
+    }
+]

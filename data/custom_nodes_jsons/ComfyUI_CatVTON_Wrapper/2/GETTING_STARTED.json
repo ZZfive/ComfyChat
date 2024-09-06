@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Apply Net tool in ComfyUI_CatVTON_Wrapper?",
+        "answer": "The Apply Net tool in ComfyUI_CatVTON_Wrapper is used to visualize the results of a pre-trained model or save them to disk."
+    },
+    {
+        "question": "Which pre-trained model is used in the example command for Apply Net tool?",
+        "answer": "In the example command, the pre-trained model used is densepose_rcnn_R_50_FPN_s1x.pkl."
+    },
+    {
+        "question": "What is the purpose of the train_net.py script in ComfyUI_CatVTON_Wrapper?",
+        "answer": "The train_net.py script in ComfyUI_CatVTON_Wrapper is used to train a model, such as DensePose-RCNN with ResNet-50 FPN backbone."
+    },
+    {
+        "question": "How can you launch end-to-end DensePose-RCNN training with ResNet-50 FPN backbone on 8 GPUs following the s1x schedule?",
+        "answer": "To launch end-to-end DensePose-RCNN training with ResNet-50 FPN backbone on 8 GPUs following the s1x schedule, you can run the command: python train_net.py --config-file configs/densepose_rcnn_R_50_FPN_s1x.yaml --num-gpus 8"
+    },
+    {
+        "question": "What modifications are needed to train on 1 GPU instead of 8 GPUs?",
+        "answer": "To train on 1 GPU, you can apply the linear learning rate scaling rule by adding SOLVER.IMS_PER_BATCH 2 SOLVER.BASE_LR 0.0025 to the command."
+    },
+    {
+        "question": "How can you perform model testing in ComfyUI_CatVTON_Wrapper?",
+        "answer": "Model testing can be done in the same way as training, except for an additional flag --eval-only and model location specification through MODEL.WEIGHTS model.pth in the command line."
+    },
+    {
+        "question": "What is the purpose of the query_db tool in ComfyUI_CatVTON_Wrapper?",
+        "answer": "The query_db tool in ComfyUI_CatVTON_Wrapper is used to print or visualize DensePose data in a dataset."
+    }
+]

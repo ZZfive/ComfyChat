@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the evaluation process in ComfyUI-OOTDiffusion?",
+        "answer": "The evaluation process in ComfyUI-OOTDiffusion takes a number of input/output pairs and aggregates them to compute metrics or perform other jobs."
+    },
+    {
+        "question": "How can you perform evaluation in ComfyUI-OOTDiffusion?",
+        "answer": "You can perform evaluation in ComfyUI-OOTDiffusion by using the model directly and parsing its inputs/outputs manually, or by using the DatasetEvaluator interface implemented in detectron2."
+    },
+    {
+        "question": "What is the DatasetEvaluator interface in ComfyUI-OOTDiffusion?",
+        "answer": "The DatasetEvaluator interface in ComfyUI-OOTDiffusion is an abstract class that defines an evaluation API in detectron2. It allows computing metrics using standard dataset-specific APIs (e.g., COCO, LVIS) or implementing custom evaluators."
+    },
+    {
+        "question": "How can you implement a custom DatasetEvaluator in ComfyUI-OOTDiffusion?",
+        "answer": "You can implement a custom DatasetEvaluator in ComfyUI-OOTDiffusion by creating a class that inherits from DatasetEvaluator and implements the reset(), process(), and evaluate() methods. For example, the Counter evaluator counts the number of instances detected on the validation set."
+    },
+    {
+        "question": "How can you run evaluation using the DatasetEvaluator in ComfyUI-OOTDiffusion?",
+        "answer": "You can run evaluation using the DatasetEvaluator in ComfyUI-OOTDiffusion with the inference_on_dataset function. This function takes the model, data loader, and a list of evaluators as input and returns the evaluation results."
+    },
+    {
+        "question": "What is the benefit of using the inference_on_dataset function in ComfyUI-OOTDiffusion?",
+        "answer": "The benefit of using the inference_on_dataset function in ComfyUI-OOTDiffusion is that you can merge multiple evaluators together using DatasetEvaluators, allowing you to run all evaluations without having to go through the dataset multiple times."
+    },
+    {
+        "question": "Does the inference_on_dataset function provide speed benchmarks in ComfyUI-OOTDiffusion?",
+        "answer": "Yes, the inference_on_dataset function in ComfyUI-OOTDiffusion provides accurate speed benchmarks for the given model and dataset."
+    }
+]

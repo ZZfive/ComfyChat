@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of ComfyUI Workspace Manager?",
+        "answer": "ComfyUI Workspace Manager, also known as Comfyspace, is a tool designed for developers to manage their workspace in ComfyUI."
+    },
+    {
+        "question": "How can I clean up the IndexedDB if it's in a bad state?",
+        "answer": "To clean up the IndexedDB, you need to delete the current IndexedDB from the Application tab in the developer tools (F12 -> Application -> IndexedDB). Make sure you have .json files under 'ComfyUI/comfyui-workspace-manager/db' to recover your data."
+    },
+    {
+        "question": "How can I recover data like version history and gallery image data after deleting IndexedDB?",
+        "answer": "To recover data like version history and gallery image data, you need to delete the WORKSPACE_INDEXDB_BACKFILL key in the Local Storage of the Application tab in the developer tools (F12 -> Application -> Local Storage). This step is not necessary if you only need workflows .json data."
+    },
+    {
+        "question": "How do I install custom git hooks in ComfyUI Workspace Manager?",
+        "answer": "To install custom git hooks, navigate to the 'ui' directory and run the command 'npm run setupGithooks'. This will install hooks like automatically adding additional .gitignore logic to ignore the '/dist' folder when switching to a non-main/beta branch."
+    },
+    {
+        "question": "What is Hot Module Replacement and how can I use it in ComfyUI Workspace Manager?",
+        "answer": "Hot Module Replacement (HMR) is a feature that allows you to replace modules in a running application without a full page reload. To use HMR in ComfyUI Workspace Manager, start the project with 'npm run dev', ensure the 'dist' directory is empty or doesn't exist, and modify 'ComfyUI/web/index.html' to include the provided code snippet, ensuring the port number matches the Vite local service port."
+    },
+    {
+        "question": "What should I do if the 'dist' directory exists when using Hot Module Replacement?",
+        "answer": "If the 'dist' directory exists when using Hot Module Replacement, you should either delete the 'dist' directory or keep it empty."
+    },
+    {
+        "question": "What modifications are required in the 'ComfyUI/web/index.html' file to enable Hot Module Replacement?",
+        "answer": "To enable Hot Module Replacement, you need to add a code snippet in the 'ComfyUI/web/index.html' file. The code snippet should include the import of RefreshRuntime, the injection of the global hook, the definition of window.$RefreshReg$ and window.$RefreshSig$, setting the preamble installed flag, and appending the Vite client script and workspace main script to the head of the document."
+    }
+]

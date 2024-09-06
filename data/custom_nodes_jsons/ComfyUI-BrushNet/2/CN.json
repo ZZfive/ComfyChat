@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Canny Edge node in ComfyUI-BrushNet?",
+        "answer": "The Canny Edge node in ComfyUI-BrushNet is used to create an edge mask for inpainting, allowing users to generate images with specific edges or outlines."
+    },
+    {
+        "question": "Which repository does the Canny Edge node come from?",
+        "answer": "The Canny Edge node comes from the comfyui_controlnet_aux repository by Fannovel16."
+    },
+    {
+        "question": "What should be done to the canny edge mask before using it for inpainting?",
+        "answer": "The canny edge mask should be resized to 512 pixels before using it for inpainting."
+    },
+    {
+        "question": "What problem can occur if the inpainting mask strictly aligns with the removed object?",
+        "answer": "If the inpainting mask strictly aligns with the removed object, some unwanted objects may appear behind the main subject in the generated image."
+    },
+    {
+        "question": "How can the issue of unwanted objects appearing behind the main subject be resolved?",
+        "answer": "To remove such artifacts, the inpainting mask should be expanded a little."
+    },
+    {
+        "question": "What is the relationship between the ControlNet mask and the inpaint mask?",
+        "answer": "The ControlNet mask should be inside the inpaint mask for optimal results."
+    },
+    {
+        "question": "What problem can occur when downsampling the edge mask?",
+        "answer": "When downsampling the edge mask, the edge lines tend to break, and after some size, the mask can become a mess, leading to less accurate inpainting results."
+    }
+]

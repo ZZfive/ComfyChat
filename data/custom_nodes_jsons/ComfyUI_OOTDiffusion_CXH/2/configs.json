@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is Detectron2's config system based on?",
+        "answer": "Detectron2's config system is based on YAML and yacs."
+    },
+    {
+        "question": "What is the purpose of the `_BASE_` field in Detectron2's config system?",
+        "answer": "The `_BASE_` field in Detectron2's config system is used to load a base config first. Values in the base config will be overwritten in sub-configs if there are any conflicts."
+    },
+    {
+        "question": "How does Detectron2 handle backward compatibility in its config system?",
+        "answer": "Detectron2 provides config versioning for backward compatibility. If a config file is versioned with a config line like `VERSION: 2`, Detectron2 will still recognize it even if some keys are changed in the future."
+    },
+    {
+        "question": "What should you do if you need a feature that's not available in Detectron2's config space?",
+        "answer": "If you need something that's not available in the config space, you should write code using Detectron2's API."
+    },
+    {
+        "question": "How can you obtain Detectron2's default config in Python?",
+        "answer": "You can obtain Detectron2's default config in Python by calling `get_cfg()` from the `detectron2.config` module."
+    },
+    {
+        "question": "How can you load values from a file into a Detectron2 config object?",
+        "answer": "You can load values from a file into a Detectron2 config object using the `merge_from_file()` method, like `cfg.merge_from_file(\"my_cfg.yaml\")`."
+    },
+    {
+        "question": "What is the recommended way to handle common parts between configs in Detectron2?",
+        "answer": "The recommended way to handle common parts between configs in Detectron2 is to use the `_BASE_` field to share common parts and avoid copying or duplicating configs."
+    },
+    {
+        "question": "What is the purpose of keeping a version number in your configs in Detectron2?",
+        "answer": "The purpose of keeping a version number in your configs in Detectron2 is for backward compatibility."
+    }
+]

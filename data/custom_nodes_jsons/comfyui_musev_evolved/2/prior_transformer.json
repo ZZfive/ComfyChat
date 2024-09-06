@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Prior Transformer in the context of image generation?",
+        "answer": "The Prior Transformer is used to predict CLIP image embeddings from CLIP text embeddings through a denoising diffusion process. This allows for image generation based on text captions."
+    },
+    {
+        "question": "What are the two stages of the model proposed in the paper?",
+        "answer": "The two stages of the model are: 1) a prior that generates a CLIP image embedding given a text caption, and 2) a decoder that generates an image conditioned on the image embedding."
+    },
+    {
+        "question": "How does generating image representations explicitly improve image generation?",
+        "answer": "Explicitly generating image representations improves image diversity with minimal loss in photorealism and caption similarity."
+    },
+    {
+        "question": "What can decoders conditioned on image representations do?",
+        "answer": "Decoders conditioned on image representations can produce variations of an image that preserve both its semantics and style, while varying the non-essential details absent from the image representation."
+    },
+    {
+        "question": "What enables language-guided image manipulations in a zero-shot fashion?",
+        "answer": "The joint embedding space of CLIP enables language-guided image manipulations in a zero-shot fashion."
+    },
+    {
+        "question": "What type of models are used for the decoder in the proposed model?",
+        "answer": "Diffusion models are used for the decoder in the proposed model."
+    },
+    {
+        "question": "Which models were experimented with for the prior, and what was the finding?",
+        "answer": "Both autoregressive and diffusion models were experimented with for the prior. It was found that diffusion models are computationally more efficient and produce higher-quality samples."
+    }
+]

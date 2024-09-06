@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ControlNet-LLLite?",
+        "answer": "ControlNet-LLLite is a lightweight version of ControlNet, inspired by LoRA, that has a lightweight structure and is currently only supported by SDXL."
+    },
+    {
+        "question": "Where can I find a sample weight file for ControlNet-LLLite?",
+        "answer": "A sample weight file for ControlNet-LLLite is available at https://huggingface.co/kohya-ss/controlnet-lllite."
+    },
+    {
+        "question": "Is there a custom node available for using ControlNet-LLLite with ComfyUI?",
+        "answer": "Yes, a custom node for using ControlNet-LLLite with ComfyUI is available at https://github.com/kohya-ss/ControlNet-LLLite-ComfyUI."
+    },
+    {
+        "question": "What does a single LLLite module consist of in terms of its structure?",
+        "answer": "A single LLLite module consists of a conditioning image embedding that maps a conditioning image to a latent space and a small network with a structure similar to LoRA."
+    },
+    {
+        "question": "How is the LLLite module added to U-Net's Linear and Conv in ControlNet-LLLite?",
+        "answer": "The LLLite module is added to U-Net's Linear and Conv in the same way as LoRA in ControlNet-LLLite."
+    },
+    {
+        "question": "What are the current limitations of the inference environment for ControlNet-LLLite?",
+        "answer": "Currently, only CrossAttention (attn1 q/k/v, attn2 q) is supported and can be added in the inference environment for ControlNet-LLLite."
+    },
+    {
+        "question": "How should the conditioning image be stored when preparing the dataset for training ControlNet-LLLite?",
+        "answer": "In addition to the normal dataset, the conditioning image should be stored in the directory specified by 'conditioning_data_dir'. It must have the same basename as the training image and will be automatically resized to the same size as the training image. It does not require a caption file."
+    }
+]

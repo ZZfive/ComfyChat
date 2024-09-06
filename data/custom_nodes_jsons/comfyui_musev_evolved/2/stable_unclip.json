@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is Stable unCLIP?",
+        "answer": "Stable unCLIP is a model that conditions on CLIP image embeddings and text embeddings, allowing for text guided image variation. When combined with an unCLIP prior, it can also be used for full text to image generation."
+    },
+    {
+        "question": "How can Stable unCLIP be used for text-to-image generation?",
+        "answer": "Stable unCLIP can be used for text-to-image generation by pipelining it with the prior model of KakaoBrain's open source DALL-E 2 replication Karlo. The StableUnCLIPPipeline from MuseVdiffusers needs to be loaded with the prior tokenizer, prior text encoder, prior model and prior scheduler."
+    },
+    {
+        "question": "What is the recommended Stable unCLIP model for text-to-image generation when using the Karlo prior?",
+        "answer": "For text-to-image generation using the Karlo prior, it is recommended to use the 'stabilityai/stable-diffusion-2-1-unclip-small' model as it was trained on CLIP ViT-L/14 embeddings, same as the Karlo model prior."
+    },
+    {
+        "question": "How can Stable unCLIP be used for text guided image-to-image variation?",
+        "answer": "To use Stable unCLIP for text guided image-to-image variation, load the StableUnCLIPImg2ImgPipeline and pass an initial image along with an optional prompt. The pipeline will generate variations of the image while preserving its semantics and style based on the provided text."
+    },
+    {
+        "question": "What does the 'noise_level' parameter control in Stable unCLIP?",
+        "answer": "The 'noise_level' parameter in Stable unCLIP determines how much noise is added to the image embeddings during inference. A higher noise level increases variation in the final un-noised images. By default, no additional noise is added (noise_level = 0)."
+    },
+    {
+        "question": "What are some of the methods available in the StableUnCLIPPipeline?",
+        "answer": "Some of the methods available in the StableUnCLIPPipeline include: __call__, enable_attention_slicing, disable_attention_slicing, enable_vae_slicing, disable_vae_slicing, enable_xformers_memory_efficient_attention, disable_xformers_memory_efficient_attention."
+    },
+    {
+        "question": "What is the purpose of the ImagePipelineOutput in Stable unCLIP?",
+        "answer": "The ImagePipelineOutput is used in Stable unCLIP to store the generated images and other relevant outputs from the pipeline."
+    }
+]

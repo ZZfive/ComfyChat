@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of registering a dataset in ComfyUI?",
+        "answer": "Registering a dataset in ComfyUI tells the system how to obtain and load the dataset for training and evaluation."
+    },
+    {
+        "question": "What are the two ways to process data from its original format when registering a dataset in ComfyUI?",
+        "answer": "The two ways to process data from its original format when registering a dataset in ComfyUI are: 1) using Detectron2's standard dataset dict format, and 2) using a custom dataset dict format."
+    },
+    {
+        "question": "What information does the 'annotations' key in the standard dataset dict format contain?",
+        "answer": "The 'annotations' key in the standard dataset dict format contains a list of dictionaries, where each dictionary corresponds to annotations of one instance in the image, including bounding box coordinates, category ID, segmentation mask, keypoints, and iscrowd flag."
+    },
+    {
+        "question": "What is the purpose of the MetadataCatalog in ComfyUI?",
+        "answer": "The MetadataCatalog in ComfyUI is used to store and access metadata associated with a dataset, which contains information shared among the entire dataset and is used for augmentation, evaluation, visualization, and logging."
+    },
+    {
+        "question": "What are some examples of metadata keys used by built-in features in Detectron2?",
+        "answer": "Some examples of metadata keys used by built-in features in Detectron2 are thing_classes, thing_colors, stuff_classes, stuff_colors, keypoint_names, keypoint_flip_map, and keypoint_connection_rules."
+    },
+    {
+        "question": "How can you register a dataset in COCO format using Detectron2?",
+        "answer": "To register a dataset in COCO format using Detectron2, you can use the register_coco_instances function from detectron2.data.datasets module."
+    },
+    {
+        "question": "What config changes might be necessary when training or evaluating on new datasets in ComfyUI?",
+        "answer": "When training or evaluating on new datasets in ComfyUI, you might need to change the number of thing classes, stuff classes, and keypoints in the config file, as well as setting the proposal files for Fast R-CNN and updating any model-specific configurations."
+    }
+]

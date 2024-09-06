@@ -1,0 +1,30 @@
+[
+    {
+        "question": "什么是MuseVdiffusers?",
+        "answer": "MuseVdiffusers是一个使用扩散模型生成图像的库，它提供了多种模型和调度器，可以灵活地创建自定义扩散系统。"
+    },
+    {
+        "question": "MuseVdiffusers中的模型是什么？",
+        "answer": "MuseVdiffusers中的模型用于预测给定噪声样本的噪声残差。这些模型可以在生成过程中与不同的调度器结合使用，以生成低噪声的图像。"
+    },
+    {
+        "question": "如何在MuseVdiffusers中使用DiffusionPipeline？",
+        "answer": "使用MuseVdiffusers中的DiffusionPipeline，你可以通过指定模型检查点并调用from_pretrained()方法来加载预训练好的扩散系统。然后可以将文本提示传递给pipeline来生成图像/"
+    },
+    {
+        "question": "MuseVdiffusers中的调度器是什么？",
+        "answer": "MuseVdiffusers中的调度器负责指导去噪过程。给定模型的输出和当前的样本，调度器预测一个噪声更小的样本。"
+    },
+    {
+        "question": "如何在MuseVdiffusers中替换调度器？",
+        "answer": "在MuseVdiffusers中，使用from_config()方法可以轻松地将一个调度器替换为另一个调度器。例如，你可以使用EulerDiscreteScheduler替换默认的PNDMScheduler。"
+    },
+    {
+        "question": "如何在MuseVdiffusers中训练或微调模型？",
+        "answer": "你可以按照MuseVdiffusers文档中的训练教程来训练或微调模型，以生成自己的图像。还可以参考官方和社区的训练或微调脚本示例，了解更多使用场景。"
+    },
+    {
+        "question": "MuseVdiffusers支持哪些任务？",
+        "answer": "MuseVdiffusers支持多种生成任务，比如无条件图像生成、文本引导的图像生成、文本引导的图像到图像翻译、文本引导的图像修复和文本引导的深度到图像翻译等。"
+    }
+]

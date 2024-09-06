@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does DDIM stand for?",
+        "answer": "DDIM stands for Denoising Diffusion Implicit Models."
+    },
+    {
+        "question": "Who are the authors of the DDIM paper?",
+        "answer": "The authors of the DDIM paper are Jiaming Song, Chenlin Meng, and Stefano Ermon."
+    },
+    {
+        "question": "How do DDIMs accelerate sampling compared to DDPMs?",
+        "answer": "DDIMs accelerate sampling by constructing a class of non-Markovian diffusion processes that lead to the same training objective as DDPMs, but whose reverse process can be much faster to sample from."
+    },
+    {
+        "question": "How many times faster can DDIMs produce high quality samples compared to DDPMs?",
+        "answer": "DDIMs can produce high quality samples 10× to 50× faster in terms of wall-clock time compared to DDPMs."
+    },
+    {
+        "question": "What is the benefit of rescaling the noise schedule in the DDIMScheduler?",
+        "answer": "Rescaling the noise schedule enforces zero terminal signal-to-noise ratio (SNR), which helps address suboptimal inference generation results for Stable Diffusion."
+    },
+    {
+        "question": "How can you change the sampler to always start from the last timestep in the DDIMScheduler?",
+        "answer": "You can change the sampler to always start from the last timestep by setting the timestep_spacing parameter to 'trailing' when initializing the DDIMScheduler."
+    },
+    {
+        "question": "What is the purpose of rescaling classifier-free guidance in the DDIMScheduler?",
+        "answer": "Rescaling classifier-free guidance prevents over-exposure when generating images."
+    }
+]

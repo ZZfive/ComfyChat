@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of this document?",
+        "answer": "This document provides instructions on how to build and run ComfyUI-3D-Pack using Docker."
+    },
+    {
+        "question": "What are the requirements for running ComfyUI-3D-Pack using Docker?",
+        "answer": "To run ComfyUI-3D-Pack using Docker, you need to have Docker installed, nvidia-container-runtime installed and configured, and the required models downloaded and placed in the models folder."
+    },
+    {
+        "question": "Which models are required to use Unique3D in ComfyUI-3D-Pack?",
+        "answer": "To use Unique3D in ComfyUI-3D-Pack, you need to download the following models: ip-adapter_sd15.safetensors, model.safetensors, RealESRGAN_x4plus.pth, diffusion_pytorch_model.safetensors, and v1-5-pruned-emaonly.ckpt."
+    },
+    {
+        "question": "How can you build the Docker image for ComfyUI-3D-Pack?",
+        "answer": "You can build the Docker image for ComfyUI-3D-Pack using the command: 'DOCKER_BUILDKIT=0 docker build -t comfy3d --file Dockerfile .' or by using the docker-compose file with the command: 'DOCKER_BUILDKIT=0 docker compose build'."
+    },
+    {
+        "question": "What command can be used to run the Docker container for ComfyUI-3D-Pack?",
+        "answer": "You can run the Docker container for ComfyUI-3D-Pack using the provided 'docker run' command with specific parameters, or by using the docker-compose file with the command: 'docker compose up'."
+    },
+    {
+        "question": "How can you access the ComfyUI-3D-Pack application after running the Docker container?",
+        "answer": "After running the Docker container, you can access the ComfyUI-3D-Pack application by opening the URL 'http://localhost:8188' in your browser."
+    },
+    {
+        "question": "What workflow can be loaded to test ComfyUI-3D-Pack?",
+        "answer": "To test ComfyUI-3D-Pack, you can load the workflow '_Example_Workflows/Unique3D/Unique3D_All_Stages.json'."
+    }
+]

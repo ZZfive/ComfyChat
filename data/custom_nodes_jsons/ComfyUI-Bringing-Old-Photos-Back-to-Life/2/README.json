@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is Synchronized Batch Normalization in PyTorch?",
+        "answer": "Synchronized Batch Normalization in PyTorch is an implementation that differs from the built-in PyTorch BatchNorm. It reduces the mean and standard-deviation across all devices during training, whereas PyTorch's implementation normalizes the tensor on each device using the statistics only on that device."
+    },
+    {
+        "question": "Why is Synchronized BatchNorm important?",
+        "answer": "Synchronized BatchNorm is important because it helps in tasks where the batch size is usually very small, such as 1 per GPU. It has been proved to be significant in object detection tasks."
+    },
+    {
+        "question": "How can Synchronized BatchNorm be used in PyTorch?",
+        "answer": "Synchronized BatchNorm can be used in PyTorch with a provided, customized data parallel wrapper or by monkey patching if you are using a customized data parallel module."
+    },
+    {
+        "question": "What are the implementation details of Synchronized BatchNorm?",
+        "answer": "The implementation is in pure-python, easy to use, uses unbiased variance to update the moving average, and requires that each module on different devices should invoke the batchnorm for exactly the same amount of times in each forward pass."
+    },
+    {
+        "question": "What are the known issues with Synchronized BatchNorm?",
+        "answer": "The known issues with Synchronized BatchNorm include a runtime error on backward pass due to a PyTorch Bug and a numeric error because the library does not fuse the normalization and statistics operations in C++ (nor CUDA)."
+    },
+    {
+        "question": "Who are the authors of Synchronized BatchNorm?",
+        "answer": "The authors of Synchronized BatchNorm are Jiayuan Mao, Tete Xiao, and DTennant."
+    },
+    {
+        "question": "Under what license is Synchronized BatchNorm distributed?",
+        "answer": "Synchronized BatchNorm is distributed under the MIT License."
+    }
+]

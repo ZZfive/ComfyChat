@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the detectron2 release log?",
+        "answer": "The release log for detectron2, located at https://github.com/facebookresearch/detectron2/releases, provides information about updates and changes made to the detectron2 library over time."
+    },
+    {
+        "question": "What was the notable backward incompatible change made on 03/30/2020?",
+        "answer": "On 03/30/2020, a notable backward incompatible change was made where the custom box head's output_size was changed to output_shape."
+    },
+    {
+        "question": "What change was made to mask head and keypoint head on 02/14/2020 and 02/18/2020?",
+        "answer": "On 02/14/2020 and 02/18/2020, the mask head and keypoint head were updated to include logic for losses and inference. Custom heads should overwrite the feature computation by the layers() method."
+    },
+    {
+        "question": "What happens when using detectron2.data.detection_utils.read_image on images with exif information after the update on 11/11/2019?",
+        "answer": "After the update on 11/11/2019, detectron2.data.detection_utils.read_image transposes images with exif information."
+    },
+    {
+        "question": "What was the silent regression issue between 04/01/2020 and 05/11/2020?",
+        "answer": "Between 04/01/2020 and 05/11/2020, there was a silent regression issue where bad accuracy would result if TRAIN_ON_PRED_BOXES was set to True."
+    },
+    {
+        "question": "What was the silent regression issue between 12/19/2019 and 12/26/2019?",
+        "answer": "Between 12/19/2019 and 12/26/2019, using aspect ratio grouping caused a drop in accuracy due to a silent regression issue."
+    },
+    {
+        "question": "What was the issue with test time augmentation from the release until 11/9/2019?",
+        "answer": "From the release until 11/9/2019, test time augmentation did not predict the last category."
+    }
+]

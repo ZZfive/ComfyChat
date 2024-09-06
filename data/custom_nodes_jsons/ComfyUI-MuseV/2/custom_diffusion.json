@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ComfyUI-MuseV는 무엇에 관한 건가요?",
+        "answer": "ComfyUI-MuseV는 Custom Diffusion 학습 예제를 제공하는 스크립트로, Stable Diffusion과 같은 text-to-image 모델을 사용자의 이미지 몇 장만으로 커스터마이징하는 방법을 구현하고 보여준다."
+    },
+    {
+        "question": "커스텀 디퓨전 학습에 필요한 dependencies를 설치하는 방법은 무엇인가요?",
+        "answer": "커스텀 디퓨전 학습에 필요한 dependencies를 설치하려면, diffusers 레포지토리를 클론한 후 examples/custom_diffusion 디렉토리로 이동하여 requirements.txt 파일을 통해 필요한 패키지를 설치해야 한다."
+    },
+    {
+        "question": "고양이 예제에서 실제 이미지 수집을 위해 어떤 명령어를 사용하나요?",
+        "answer": "clip-retrieval을 사용해 고양이와 관련된 실제 이미지를 수집하려면 'python retrieve.py --class_prompt cat --class_data_dir real_reg/samples_cat --num_class_images 200' 명령어를 사용한다."
+    },
+    {
+        "question": "학습 시 VRAM 요구 사항을 줄이려면 어떤 옵션을 사용해야 하나요?",
+        "answer": "학습 시 VRAM 요구 사항을 줄이기 위해 '--enable_xformers_memory_efficient_attention' 옵션을 사용하면 된다. 이는 GPU당 16GB의 VRAM으로 더 빠르게 훈련할 수 있게 해준다."
+    },
+    {
+        "question": "ComfyUI-MuseV를 사용하여 추론을 실행하는 방법은 무엇인가요?",
+        "answer": "ComfyUI-MuseV를 사용하여 추론을 실행하려면, DiffusionPipeline을 통해 미리 학습된 모델을 로드한 다음, 원하는 프롬프트를 입력하여 이미지 생성을 수행할 수 있다."
+    },
+    {
+        "question": "학습된 체크포인트에서 추론을 수행하려면 어떤 인수를 사용해야 하나요?",
+        "answer": "학습된 체크포인트에서 추론을 수행하려면 '--checkpointing_steps' 인수를 사용할 수 있다. 이를 통해 학습 과정에서 저장된 전체 체크포인트를 사용할 수 있다."
+    },
+    {
+        "question": "메모리를 절약하기 위해 grads를 None으로 설정하는 방법은 무엇인가요?",
+        "answer": "메모리를 절약하기 위해 grads를 None으로 설정하려면 '--set_grads_to_none' 인수를 스크립트에 전달하면 된다. 이로 인해 성적이 0이 아닌 없음으로 설정되며, 메모리 절약 효과를 얻을 수 있다."
+    }
+]

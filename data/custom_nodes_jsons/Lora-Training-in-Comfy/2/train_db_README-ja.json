@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DreamBoothとは何か?",
+        "answer": "DreamBoothは、画像生成モデルに特定の主題を追加学習し、それを特定の識別子で生成する技術です。"
+    },
+    {
+        "question": "DreamBoothで何ができるようになるか?",
+        "answer": "DreamBoothを使うことで、Stable Diffusionのモデルにキャラや画風などを学ばせ、それを特定の単語で呼び出せる（生成画像に出現させる）ことができるようになります。"
+    },
+    {
+        "question": "DreamBoothのスクリプトはどのような機能追加が行われているか?",
+        "answer": "DreamBoothのスクリプトには、8bit Adam optimizerおよびlatentのキャッシュによる省メモリ化、xformersによる省メモリ化、512x512以外の任意サイズでの学習、augmentationによる品質の向上、Text Encoder+U-Netのfine tuning対応、Stable Diffusion形式でのモデルの読み書き、Aspect Ratio Bucketing、Stable Diffusion v2.0対応などの機能追加が行われています。"
+    },
+    {
+        "question": "DreamBoothでの学習を実行する際に最適なバッチサイズはどのくらいか?",
+        "answer": "DreamBoothでの学習時に、メモリ消費を抑えるためにバッチサイズを1として始めることが推奨されています。ある程度メモリがある場合は、バッチサイズを4くらいに増やすことで高速化と精度向上の可能性があります。"
+    },
+    {
+        "question": "DreamBoothで学習させる際に推奨される学習率はどのくらいか?",
+        "answer": "DreamBoothでの学習率は、Diffusers版では5e-6が一般的ですが、Stable Diffusion版では1e-6が推奨されています。"
+    },
+    {
+        "question": "DreamBoothでの学習後に生成されるモデルファイルはどのような形式か?",
+        "answer": "DreamBoothでの学習が終わると、指定した名前でsafetensors形式のファイルが生成されます。"
+    },
+    {
+        "question": "DreamBoothで学習したモデルを用いて画像生成するにはどうすればよいか?",
+        "answer": "DreamBoothで学習したモデルファイルをAutomatic1111氏のWebUIなどで読み込むことで、そのモデルを用いた画像生成を行うことができます。"
+    }
+]

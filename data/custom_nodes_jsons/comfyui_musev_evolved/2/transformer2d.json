@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Transformer2D model?",
+        "answer": "The Transformer2D model is designed for image-like data and can accept either discrete or continuous inputs."
+    },
+    {
+        "question": "Who introduced the Vision Transformer that the Transformer2D model is based on?",
+        "answer": "The Vision Transformer that the Transformer2D model is based on was introduced by Dosovitskiy et al."
+    },
+    {
+        "question": "How does the Transformer2D model handle continuous inputs?",
+        "answer": "When the input is continuous, the Transformer2D model projects the input, reshapes it to (batch_size, sequence_length, feature_dimension), applies the Transformer blocks, and then reshapes it back to an image."
+    },
+    {
+        "question": "What assumption is made when the input to the Transformer2D model is discrete?",
+        "answer": "When the input is discrete, it is assumed that one of the input classes is the masked latent pixel."
+    },
+    {
+        "question": "How does the Transformer2D model handle discrete inputs?",
+        "answer": "When the input is discrete, the Transformer2D model converts the input classes of latent pixels to embeddings, applies positional embeddings, applies the Transformer blocks, and then predicts classes of the unnoised image."
+    },
+    {
+        "question": "Does the predicted classes of the unnoised image contain a prediction for the masked pixel?",
+        "answer": "No, the predicted classes of the unnoised image do not contain a prediction for the masked pixel because the unnoised image cannot be masked."
+    },
+    {
+        "question": "What are the two types of inputs that the Transformer2DModel can accept?",
+        "answer": "The Transformer2DModel can accept two types of inputs: discrete (classes of vector embeddings) or continuous (actual embeddings)."
+    }
+]

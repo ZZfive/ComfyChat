@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DreamBooth는 어떤 종류의 모델을 개인화할 수 있습니까?",
+        "answer": "DreamBooth는 text-to-image 모델, 예를 들어 stable diffusion 모델을 개인화할 수 있습니다."
+    },
+    {
+        "question": "DreamBooth를 사용하려면 몇 장의 이미지들이 필요합니까?",
+        "answer": "DreamBooth는 한 주제에 대한 적은 이미지(3~5개)만으로 해당 모델을 개인화할 수 있습니다."
+    },
+    {
+        "question": "과적합과 language drift를 방지하기 위해 어떤 기술이 사용됩니까?",
+        "answer": "사전 보존(prior-preserving) 기술이 과적합과 language drift를 방지하기 위해 사용됩니다."
+    },
+    {
+        "question": "사전 보존을 사용할 때는 몇 개의 이미지를 생성하는 것이 좋습니까?",
+        "answer": "저자들에 따르면 사전 보존을 위해 num_epochs * num_samples 개의 이미지를 생성하는 것이 좋습니다. 200-300개에서 대부분 잘 작동합니다."
+    },
+    {
+        "question": "텍스트 인코더를 학습시키려면 최소 몇 GB의 VRAM이 필요합니까?",
+        "answer": "텍스트 인코더를 학습시키려면 최소 24GB VRAM이 필요합니다."
+    },
+    {
+        "question": "xFormers는 Flax에서 사용할 수 있습니까?",
+        "answer": "아니요, xFormers는 Flax에서 사용할 수 없습니다."
+    },
+    {
+        "question": "DreamBooth를 8GB GPU에서 학습하는 데 어떤 기술이 사용됩니까?",
+        "answer": "8GB GPU에서 DreamBooth를 학습하기 위해 DeepSpeed를 사용하여 일부 텐서를 VRAM에서 CPU 또는 NVME로 오프로드합니다."
+    }
+]

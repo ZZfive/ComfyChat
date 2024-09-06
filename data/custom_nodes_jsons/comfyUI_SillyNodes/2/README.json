@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the queueSequence node in ComfyUI_SillyNodes?",
+        "answer": "The queueSequence node in ComfyUI_SillyNodes uses rgthree's fast_group_muter and bookmark nodes, along with the pyautogui library, to simulate clicks and hotkeys, and run groups in sequence."
+    },
+    {
+        "question": "What should be noted when using the queueSequence node in ComfyUI_SillyNodes?",
+        "answer": "When using the queueSequence node in ComfyUI_SillyNodes, one should not change the hotkeys and zoom ratios of the first bookmark, and the first bookmark and fast_group_muter should be stacked on top of each other with fixed relative positions."
+    },
+    {
+        "question": "How can the center of the first group in the fast_group_muter node be measured?",
+        "answer": "After queueing once, the center of the first group in the fast_group_muter node can be measured using the ctrl+/ key combination, and the coordinates will be printed out in the console."
+    },
+    {
+        "question": "What does the totalRounds parameter control in the queueSequence node?",
+        "answer": "In the queueSequence node, the totalRounds parameter controls the number of rounds the sequence will run."
+    },
+    {
+        "question": "How is the numOfQueues parameter related to the number of groups in fast_group_muter?",
+        "answer": "In general, the numOfQueues parameter, which represents the number of groups in each sequence, corresponds to the number of groups in fast_group_muter."
+    },
+    {
+        "question": "What is the purpose of the booleanJumper node in ComfyUI_SillyNodes?",
+        "answer": "The booleanJumper node in ComfyUI_SillyNodes receives a boolean value and jumps to the appropriate node based on the definition in the node, activating and queuing it."
+    },
+    {
+        "question": "How does the screenShot node in ComfyUI_SillyNodes capture screenshots?",
+        "answer": "The screenShot node in ComfyUI_SillyNodes captures screenshots by converting the 'trigger_field' to the input and linking an INT node. Regardless of the INT input from the previous node, it takes a full screenshot and outputs an image."
+    }
+]

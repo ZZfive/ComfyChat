@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Apply Net tool in ComfyUI-OOTDiffusion?",
+        "answer": "The Apply Net tool in ComfyUI-OOTDiffusion is used to visualize the results or save them to disk. For example, it can be used for contour visualization for DensePose."
+    },
+    {
+        "question": "How can you run the Apply Net tool for contour visualization in ComfyUI-OOTDiffusion?",
+        "answer": "To run the Apply Net tool for contour visualization in ComfyUI-OOTDiffusion, you can use the following command: python apply_net.py show configs/densepose_rcnn_R_50_FPN_s1x.yaml densepose_rcnn_R_50_FPN_s1x.pkl image.jpg dp_contour,bbox --output image_densepose_contour.png"
+    },
+    {
+        "question": "What is the recommended structure for preparing the dataset for training in ComfyUI-OOTDiffusion?",
+        "answer": "The recommended structure for preparing the dataset for training in ComfyUI-OOTDiffusion is to have the dataset under the directory you'll run training scripts, with annotations and image files in their respective folders."
+    },
+    {
+        "question": "What script is used to train models in ComfyUI-OOTDiffusion?",
+        "answer": "The train_net.py script is used to train models in ComfyUI-OOTDiffusion."
+    },
+    {
+        "question": "How can you launch end-to-end DensePose-RCNN training with ResNet-50 FPN backbone on 8 GPUs in ComfyUI-OOTDiffusion?",
+        "answer": "To launch end-to-end DensePose-RCNN training with ResNet-50 FPN backbone on 8 GPUs in ComfyUI-OOTDiffusion, you can run the following command: python train_net.py --config-file configs/densepose_rcnn_R_50_FPN_s1x.yaml --num-gpus 8"
+    },
+    {
+        "question": "What flag should be added to the train_net.py script for model testing in ComfyUI-OOTDiffusion?",
+        "answer": "For model testing in ComfyUI-OOTDiffusion, you should add the --eval-only flag to the train_net.py script."
+    },
+    {
+        "question": "What are the three main tools provided in ComfyUI-OOTDiffusion?",
+        "answer": "The three main tools provided in ComfyUI-OOTDiffusion are: query_db for viewing DensePose annotated data in a dataset, apply_net for performing DensePose inference on a set of images and visualizing results, and tools for visualizing DensePose model results."
+    }
+]

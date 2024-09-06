@@ -1,0 +1,30 @@
+[
+    {
+        "question": "How can I determine whether to use sampling or beam search for inference with ComfyUI_MiniCPM-V?",
+        "answer": "Consider using sampling decoding if you require faster inference speed, wish for a streaming generation approach, or your task necessitates some open-ended responses. If your task is about providing deterministic answers, experiment with beam search to see if it can achieve better outcomes."
+    },
+    {
+        "question": "What should I do if the model generates results that are too short?",
+        "answer": "If the model generates results that end prematurely, you can improve the results by passing a `min_new_tokens` parameter to ensure that the model generates results of sufficient length."
+    },
+    {
+        "question": "How can I ensure that ComfyUI_MiniCPM-V generates results of sufficient length?",
+        "answer": "To ensure that ComfyUI_MiniCPM-V generates results of sufficient length, you can pass a `min_new_tokens` parameter when calling the `chat` function, like `min_new_tokens=100`."
+    },
+    {
+        "question": "In what scenarios might I prefer to use sampling decoding with ComfyUI_MiniCPM-V?",
+        "answer": "You might prefer to use sampling decoding with ComfyUI_MiniCPM-V if you require faster inference speed, wish for a streaming generation approach, or your task necessitates some open-ended responses."
+    },
+    {
+        "question": "When might I want to experiment with beam search for inference with ComfyUI_MiniCPM-V?",
+        "answer": "If your task is about providing deterministic answers, you might want to experiment with beam search to see if it can achieve better outcomes with ComfyUI_MiniCPM-V."
+    },
+    {
+        "question": "How can I pass the `min_new_tokens` parameter to improve the results of ComfyUI_MiniCPM-V?",
+        "answer": "You can pass the `min_new_tokens` parameter when calling the `chat` function, like `res = model.chat(image=None, msgs=msgs, tokenizer=tokenizer, min_new_tokens=100)`."
+    },
+    {
+        "question": "What is a recommended value for the `min_new_tokens` parameter to improve the results of ComfyUI_MiniCPM-V?",
+        "answer": "A recommended value for the `min_new_tokens` parameter to improve the results of ComfyUI_MiniCPM-V is 100, as shown in the example `min_new_tokens=100`."
+    }
+]

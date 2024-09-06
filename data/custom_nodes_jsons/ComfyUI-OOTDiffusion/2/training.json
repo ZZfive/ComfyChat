@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ComfyUI-OOTDiffusion training tutorial?",
+        "answer": "The ComfyUI-OOTDiffusion training tutorial aims to guide users in creating their own optimizer and writing the training logic for training custom models and data loaders."
+    },
+    {
+        "question": "What is the SimpleTrainer in ComfyUI-OOTDiffusion?",
+        "answer": "The SimpleTrainer in ComfyUI-OOTDiffusion provides minimal abstraction for single-cost, single-optimizer, single-data-source training."
+    },
+    {
+        "question": "What does the DefaultTrainer in ComfyUI-OOTDiffusion include?",
+        "answer": "The DefaultTrainer in ComfyUI-OOTDiffusion includes default configurations for learning rate schedule, logging, evaluation, checkpointing, etc."
+    },
+    {
+        "question": "How can you customize the training loops in ComfyUI-OOTDiffusion?",
+        "answer": "You can customize the training loops in ComfyUI-OOTDiffusion by either changing the behavior of DefaultTrainer by overwriting its methods in a subclass or starting from tools/plain_train_net.py to implement novel functionalities."
+    },
+    {
+        "question": "What is EventStorage in ComfyUI-OOTDiffusion?",
+        "answer": "EventStorage in ComfyUI-OOTDiffusion is a centralized storage where metrics are saved during training."
+    },
+    {
+        "question": "How can you access EventStorage and log metrics in ComfyUI-OOTDiffusion?",
+        "answer": "You can access EventStorage and log metrics in ComfyUI-OOTDiffusion by using the code: `from detectron2.utils.events import get_event_storage` and then using `storage = get_event_storage()` and `storage.put_scalar(\"some_accuracy\", value)` within the model."
+    },
+    {
+        "question": "What is EventWriter in ComfyUI-OOTDiffusion?",
+        "answer": "EventWriter in ComfyUI-OOTDiffusion is a component that saves metrics to various destinations. DefaultTrainer enables a few EventWriter with default configurations."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is TCD in ComfyUI-TCD?",
+        "answer": "TCD is a novel distillation technology that enables the distillation of knowledge from pre-trained diffusion models into a few-step sampler. It is inspired by Consistency Models and significantly improves image quality compared to LCM, with fewer steps."
+    },
+    {
+        "question": "How does TCD compare to LCM in terms of image quality and details?",
+        "answer": "TCD generates better details than LCM in the same denoise steps. It also produces better results than LCM when the number of steps is large. Additionally, TCD can control the richness of details through parameters, making the images less blurry and bland compared to LCM."
+    },
+    {
+        "question": "What are the available LoRAs for TCD?",
+        "answer": "There are two sets of LoRAs available for TCD: TCD LoRAs from the TCD Team, which include TCD-SD15-LoRA.safetensors and TCD-SDXL-LoRA.safetensors; and Hyper-SD 1-Step Unified LoRAs from the ByteDance Team, which include Hyper-SD15-1step-lora.safetensors and Hyper-SDXL-1step-lora.safetensors."
+    },
+    {
+        "question": "What is the purpose of the 'eta' parameter in the TCD Model Sampling Discrete node?",
+        "answer": "The 'eta' parameter, referred to as 'gamma' in the TCD paper, is a stochastic parameter used to control the stochasticity (detail-richness of the results) in every step. When eta = 0, it represents deterministic sampling, whereas eta = 1 indicates full stochastic sampling. It is recommended to fine-tune this parameter when adjusting steps larger and using different LoRAs. The default value is 0.3."
+    },
+    {
+        "question": "How can ComfyUI-TCD be installed?",
+        "answer": "ComfyUI-TCD can be installed by cloning the repository using the command: `git clone https://github.com/JettHu/ComfyUI-TCD`. Alternatively, it can be installed using ComfyUI-Manager."
+    },
+    {
+        "question": "What are the available scheduler types in the TCD Model Sampling Discrete node?",
+        "answer": "In the TCD Model Sampling Discrete node, there are two available scheduler types: 'simple' and 'sgm_uniform'. 'simple' behaves the same as diffusers, while 'sgm_uniform' is another scheduler recommended by the ComfyUI author for use with LCM."
+    },
+    {
+        "question": "What are the inputs and configuration parameters for the TCD Model Sampling Discrete node?",
+        "answer": "The TCD Model Sampling Discrete node has one input: 'model', which is the model loaded by 'Load Checkpoint' and other MODEL loaders. The configuration parameters include: 'steps' (the number of steps to use during denoising), 'scheduler' (the type of schedule to use), 'denoise' (how much information of the latents should be erased by noise), and 'eta' (a stochastic parameter to control the detail-richness of the results)."
+    }
+]

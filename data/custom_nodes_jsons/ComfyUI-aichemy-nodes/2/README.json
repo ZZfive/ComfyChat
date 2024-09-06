@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of ComfyUI_aichemy_nodes?",
+        "answer": "ComfyUI_aichemy_nodes is a simple node designed to handle the scaling of YOLOv8 segmentation masks in ComfyUI."
+    },
+    {
+        "question": "How can you install ComfyUI_aichemy_nodes?",
+        "answer": "You can install ComfyUI_aichemy_nodes by downloading or git cloning the repository inside the 'ComfyUI/custom_nodes/' directory or by using the Manager."
+    },
+    {
+        "question": "What issue does the YOLOv8 Segmentation node address?",
+        "answer": "The YOLOv8 Segmentation node addresses the issue of improper scaling and alignment of the returned mask when resizing it to the original resolution."
+    },
+    {
+        "question": "How does the YOLOv8 Segmentation node resolve the scaling issue?",
+        "answer": "The YOLOv8 Segmentation node removes the padding and resizes the mask to the original resolution, allowing for quick composition of images using the mask found by the YOLOv8 model."
+    },
+    {
+        "question": "What is the difference between the top and bottom rows in the YOLOv8-workflow image?",
+        "answer": "The top row shows the bad composite image created by the scaled mask from the standard YOLOv8 node, while the bottom row shows the same images using the custom node, which removes the border above shoulders and the early cropping at the bottom of the image."
+    },
+    {
+        "question": "What does the YOLOv8-comparison image demonstrate?",
+        "answer": "The YOLOv8-comparison image demonstrates the difference between the properly scaled annotated images straight from YOLOv8 (left) and the composite images created using the standard YOLOv8 node (top row) and the custom node (bottom row)."
+    },
+    {
+        "question": "How can users quickly compose images together using the YOLOv8 Segmentation node?",
+        "answer": "Users can quickly compose images together using the mask found by the YOLOv8 model and the YOLOv8 Segmentation node, which properly scales the mask to the original resolution."
+    }
+]

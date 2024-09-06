@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ONNX Runtime used for in 🤗 Diffusers?",
+        "answer": "ONNX Runtime is used in 🤗 Diffusers to provide Stable Diffusion pipelines that are compatible with ONNX, allowing Stable Diffusion to be run on all hardware that supports ONNX, including CPUs."
+    },
+    {
+        "question": "How can you install 🤗 Optimum with ONNX Runtime support?",
+        "answer": "You can install 🤗 Optimum with ONNX Runtime support by running the command: pip install optimum[\"onnxruntime\"]"
+    },
+    {
+        "question": "What pipeline should be used for inference with ONNX Runtime?",
+        "answer": "For inference with ONNX Runtime, you should use the `OnnxStableDiffusionPipeline` instead of the `StableDiffusionPipeline`."
+    },
+    {
+        "question": "How can you convert a PyTorch model to ONNX format immediately after loading it?",
+        "answer": "To convert a PyTorch model to ONNX format immediately after loading it, you should set `export=True` when using `OnnxStableDiffusionPipeline`."
+    },
+    {
+        "question": "How can you export a model to ONNX format offline for later inference?",
+        "answer": "You can export a model to ONNX format offline using the `optimum-cli export` command: optimum-cli export onnx --model runwayml/stable-diffusion-v1-5 sd_v15_onnx/"
+    },
+    {
+        "question": "What is the known issue with generating multiple prompts in a batch?",
+        "answer": "The known issue with generating multiple prompts in a batch is that it seems to use too much memory. While this is being investigated, iterative approaches may be necessary instead of batching."
+    },
+    {
+        "question": "Where can you find more examples and information about Optimum?",
+        "answer": "You can find more examples and information about Optimum in the Optimum documentation at https://huggingface.co/docs/optimum/"
+    }
+]

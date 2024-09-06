@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DreamBooth是什么?",
+        "answer": "DreamBooth是一种将特定主题添加到图像生成模型中进行学习，并使用特定识别子生成它的技术。"
+    },
+    {
+        "question": "使用DreamBooth训练时，如何最大程度地节省内存?",
+        "answer": "为了最大程度地节省内存，可以使用8位Adam优化器和潜在变量的缓存，这与Shivam Shrirao版相似。还可以使用xformers来节省内存。此外，设置 mixed_precision=\"fp16\"（在RTX30系列及更高版本中也可以设置为bf16），并指定 gradient_checkpointing。"
+    },
+    {
+        "question": "在DreamBooth训练中，如何设置训练步数?",
+        "answer": "为了实现省内存化，DreamBooth脚本中每个步骤的学习次数减半。要进行与原始Diffusers版或XavierXiao的Stable Diffusion版几乎相同的学习，请将步骤数加倍。"
+    },
+    {
+        "question": "训练完成后，如何使用训练好的模型生成图像?",
+        "answer": "训练完成后，将在指定的文件夹中以指定的名称输出safetensors文件。对于v1.4/1.5和其他派生模型，可以在此模型中使用Automatic1111先生的WebUI进行推断。请将其放置在models\\Stable-diffusion文件夹中。对于使用v2.x模型在WebUI中生成图像的情况，需要单独的.yaml文件来描述模型的规格。"
+    },
+    {
+        "question": "no_token_padding选项是什么意思?",
+        "answer": "如果指定no_token_padding选项，则不会对分词器的输出进行填充（与Diffusers版本的旧DreamBooth相同）。"
+    },
+    {
+        "question": "在DreamBooth训练中，如何设置学习率?",
+        "answer": "在Diffusers版中，学习率为5e-6，而在Stable Diffusion版中为1e-6。因此在示例命令中通常将学习率设置为1e-6。"
+    },
+    {
+        "question": "stop_text_encoder_training选项的作用是什么?",
+        "answer": "如果在stop_text_encoder_training选项中指定一个数字，则在该步骤之后，将不再对文本编码器进行训练，只会对U-Net进行训练。在某些情况下，可能会期望提高精度。"
+    }
+]

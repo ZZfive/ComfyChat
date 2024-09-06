@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the common method used to improve the quality of generated images in ComfyUI-MuseV?",
+        "answer": "The common method used to improve the quality of generated images in ComfyUI-MuseV is deterministic batch generation."
+    },
+    {
+        "question": "What does deterministic batch generation involve?",
+        "answer": "Deterministic batch generation involves generating a batch of images and selecting one image to improve in a second round of inference with a more detailed prompt."
+    },
+    {
+        "question": "How can you reuse generators for specific images in ComfyUI-MuseV?",
+        "answer": "To reuse generators for specific images, you pass a list of torch.Generators to the pipeline for batch image generation and associate each Generator with a seed."
+    },
+    {
+        "question": "What pipeline is used in the example for generating images in ComfyUI-MuseV?",
+        "answer": "In the example, the DiffusionPipeline.from_pretrained is used with the 'runwayml/stable-diffusion-v1-5' model to generate images in ComfyUI-MuseV."
+    },
+    {
+        "question": "How are the generators defined and seeds assigned in the example?",
+        "answer": "In the example, four different Generators are defined and each Generator is assigned a seed from 0 to 3."
+    },
+    {
+        "question": "How can the quality of an image be improved in the second round of inference in ComfyUI-MuseV?",
+        "answer": "To improve the quality of an image in the second round of inference, some additional text can be added to the prompt, such as specifying the image to be highly realistic, artsy, trending, or colorful."
+    },
+    {
+        "question": "How are multiple versions of an image generated with different styles in ComfyUI-MuseV?",
+        "answer": "To generate multiple versions of an image with different styles, a list of prompts with additional style specifications is created, and a Generator with the same seed is reused for each prompt."
+    }
+]

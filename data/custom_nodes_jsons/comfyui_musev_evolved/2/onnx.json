@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What can 🤗 Diffusers be used with to run Stable Diffusion on hardware that doesn't support PyTorch's accelerated version?",
+        "answer": "🤗 Diffusers can be used with ONNX Runtime to run Stable Diffusion on hardware that doesn't support PyTorch's accelerated version, including CPU."
+    },
+    {
+        "question": "How can you install 🤗 Optimum with ONNX Runtime support?",
+        "answer": "You can install 🤗 Optimum with ONNX Runtime support by running the command: pip install optimum[\"onnxruntime\"]"
+    },
+    {
+        "question": "Which pipeline should be used instead of StableDiffusionPipeline when using ONNX Runtime?",
+        "answer": "When using ONNX Runtime, you should use the OnnxStableDiffusionPipeline instead of StableDiffusionPipeline."
+    },
+    {
+        "question": "How can you immediately convert a PyTorch model to ONNX format when loading it?",
+        "answer": "You can immediately convert a PyTorch model to ONNX format by setting export=True when loading the model using OnnxStableDiffusionPipeline.from_pretrained()."
+    },
+    {
+        "question": "What command can be used to export a pipeline to ONNX format offline?",
+        "answer": "The optimum-cli export command can be used to export a pipeline to ONNX format offline."
+    },
+    {
+        "question": "Where can you find more examples and information about using ONNX Runtime with 🤗 Diffusers?",
+        "answer": "More examples and information about using ONNX Runtime with 🤗 Diffusers can be found in the Optimum documentation."
+    },
+    {
+        "question": "What is a known issue when generating multiple prompts in a batch?",
+        "answer": "A known issue when generating multiple prompts in a batch is that it seems to use a lot of memory. While this is being investigated, it may be necessary to use iteration instead of batching."
+    }
+]

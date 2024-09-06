@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Textual Inversionの学習では、どのようなデータセットを使用することが推奨されているか?",
+        "answer": "Textual Inversionの学習では、DreamBoothやclass+identifier形式のデータセットを使用するのが最も簡単で確実です。具体的には、`token_string`をトークン文字列にすることが推奨されています。"
+    },
+    {
+        "question": "Textual Inversionの学習では、`--token_string`オプションに何を指定すべきか?",
+        "answer": "Textual Inversionの学習では、`--token_string`オプションに学習時のトークン文字列を指定します。学習時のプロンプトは、この文字列を含むようにする必要があります。"
+    },
+    {
+        "question": "Textual Inversionの学習では、`--init_word`オプションに何を指定すべきか?",
+        "answer": "Textual Inversionの学習では、`--init_word`オプションにembeddingsを初期化するときのコピー元トークンの文字列を指定します。学ばせたい概念に近いものを選ぶと良いでしょう。"
+    },
+    {
+        "question": "Textual Inversionの学習では、どのようにして学習データのプロンプトにトークン文字列が含まれているかどうかを確認できるか?",
+        "answer": "Textual Inversionの学習では、`--debug_dataset`オプションを使うことで、置換後のtoken idが表示されます。これにより、49408以降のtokenが存在するかどうかで、プロンプトにトークン文字列が含まれているかどうかを確認できます。"
+    },
+    {
+        "question": "Textual Inversionの学習では、`--num_vectors_per_token`オプションにどのような値を指定すべきか?",
+        "answer": "Textual Inversionの学習では、`--num_vectors_per_token`オプションにいくつのトークンを学習で使うかを指定します。多い方が表現力が増しますが、その分多くのトークンを消費します。"
+    },
+    {
+        "question": "Textual Inversionの学習では、どのオプティマイザを使用することが推奨されているか?",
+        "answer": "Textual Inversionの学習では、メモリ消費の少ない8bit AdamWオプティマイザを使用することが推奨されています。これは、`optimizer_type=\"AdamW8bit\"`オプションを指定することで使用できます。"
+    },
+    {
+        "question": "Textual Inversionで学習したembeddingsを当リポジトリ内の画像生成スクリプトで使用するには、どうしたらよいか?",
+        "answer": "当リポジトリ内の画像生成スクリプトで、`--textual_inversion_embeddings`オプションに学習したembeddingsファイルを指定します。プロンプトでembeddingsファイルのファイル名（拡張子を除く）を使用すると、そのembeddingsが適用されます。"
+    }
+]

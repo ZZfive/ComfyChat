@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is DPMSolverSinglestepScheduler?",
+        "answer": "DPMSolverSinglestepScheduler is a single step scheduler from the papers 'DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps' and 'DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models' by Cheng Lu, Yuhao Zhou, Fan Bao, Jianfei Chen, Chongxuan Li, and Jun Zhu."
+    },
+    {
+        "question": "What is the purpose of DPMSolver and DPMSolver++?",
+        "answer": "DPMSolver and its improved version, DPMSolver++, are fast dedicated high-order solvers for diffusion ODEs with convergence order guarantee. They aim to generate high-quality samples with fewer steps."
+    },
+    {
+        "question": "How many steps does DPMSolver sampling need to generate high-quality samples?",
+        "answer": "Empirically, DPMSolver sampling with only 20 steps can generate high-quality samples, and it can generate quite good samples even in 10 steps."
+    },
+    {
+        "question": "Where can the original implementation of DPMSolver be found?",
+        "answer": "The original implementation of DPMSolver can be found at the GitHub repository LuChengTHU/dpm-solver."
+    },
+    {
+        "question": "What is the recommended solver order for guide sampling and unconditional sampling?",
+        "answer": "It is recommended to set solver_order to 2 for guide sampling and solver_order=3 for unconditional sampling."
+    },
+    {
+        "question": "Does DPMSolverSinglestepScheduler support dynamic thresholding?",
+        "answer": "Yes, DPMSolverSinglestepScheduler supports dynamic thresholding from the Imagen paper. For pixel-space diffusion models, you can set algorithm_type=\"dpmsolver++\" and thresholding=True to use dynamic thresholding."
+    },
+    {
+        "question": "Is dynamic thresholding suitable for latent-space diffusion models like Stable Diffusion?",
+        "answer": "No, the dynamic thresholding method supported by DPMSolverSinglestepScheduler is unsuitable for latent-space diffusion models such as Stable Diffusion."
+    }
+]

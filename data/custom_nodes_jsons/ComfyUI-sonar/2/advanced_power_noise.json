@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the main purpose of the SonarPowerNoise node in ComfyUI-sonar?",
+        "answer": "The SonarPowerNoise node in ComfyUI-sonar generates fractional Brownian motion (fBm) noise, which is versatile in producing various types of noise including gaussian, pink, 2D brownian noise, and all intermediates."
+    },
+    {
+        "question": "How does the 'alpha' parameter in the SonarPowerNoise node affect the generated noise?",
+        "answer": "In the SonarPowerNoise node, 'alpha' is the main parameter. When 'alpha > 0', it amplifies low frequencies; 'alpha = 1' yields pink noise, and 'alpha = 2' produces brownian noise. For 'alpha < 0', it amplifies high frequencies."
+    },
+    {
+        "question": "What does enabling the 'preview' option in the SonarPowerNoise node provide?",
+        "answer": "Enabling the 'preview' option in the SonarPowerNoise node provides a visual representation of the filter, including Fourier domain visualization, spatial visualization of the 2D kernel, and a sample of gaussian sample with shaped frequency spectrum."
+    },
+    {
+        "question": "How does the SonarPowerFilterNoise node differ from the SonarPowerNoise node?",
+        "answer": "The SonarPowerFilterNoise node allows you to connect a filter and a custom noise chain, enabling you to run any type of noise through the power noise filter."
+    },
+    {
+        "question": "What does the 'filter_norm_factor' parameter control in the SonarPowerFilterNoise node?",
+        "answer": "In the SonarPowerFilterNoise node, the 'filter_norm_factor' parameter controls how much normalization is applied to the filter. '1.0' means fully normalized, '0.0' means no normalization."
+    },
+    {
+        "question": "How does the 'compose_mode' parameter in the SonarPowerFilter node work?",
+        "answer": "In the SonarPowerFilter node, 'compose_mode' allows you to compose multiple filters. Composition occurs like 'current_filter OPERATION connected_filter'. For example, if you set 'compose_mode' to 'sub', you will get 'current_filter - connected_filter'."
+    },
+    {
+        "question": "What is the purpose of the SonarPreviewFilter node?",
+        "answer": "The SonarPreviewFilter node allows you to preview a filter. It does not modify the input filter."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-TextOnSegs?",
+        "answer": "ComfyUI-TextOnSegs is a custom node for ComfyUI that adds a node to write text on the range of SEGS detected by the Ultralytics Detector in the ComfyUI-Impact-Pack using the CR Draw Text from ComfyUI_Comfyroll_CustomNodes."
+    },
+    {
+        "question": "What are the prerequisites for using ComfyUI-TextOnSegs?",
+        "answer": "The prerequisites for using ComfyUI-TextOnSegs are the ComfyUI-Impact-Pack and ComfyUI_Comfyroll_CustomNodes extensions."
+    },
+    {
+        "question": "How can you add font files for use with ComfyUI-TextOnSegs?",
+        "answer": "You can add font files by placing the font files (*.ttf) in the 'ComfyUI_windows_portable/ComfyUI/custom_nodes/ComfyUI_Comfyroll_CustomNodes/fonts' folder. This is necessary for languages like Japanese to avoid character corruption."
+    },
+    {
+        "question": "How can you use ComfyUI-TextOnSegs to write text on faces?",
+        "answer": "To write text on faces using ComfyUI-TextOnSegs, you need to load the 'workflows/draw_text_on_face.json' file using drag and drop, change the values of the Text node and CalcMaxFontSize node in the 'Draw Text' group, and then run the workflow. If detection fails, an error will occur, but this is by design."
+    },
+    {
+        "question": "What files need to be downloaded and placed in specific folders to use ComfyUI-TextOnSegs to write text on boards?",
+        "answer": "To write text on boards, you need to download the 'Can't show this (meme) SDXL' model and place it in the 'ComfyUI_windows_portable/ComfyUI/models/loras' folder, and download the 'Board detector YOLO model (For Can't show this (meme) SDXL) [Adetailer Model] - v1.0' and place it in the 'ComfyUI_windows_portable/ComfyUI/models/ultralytics/bbox' folder."
+    },
+    {
+        "question": "How can you use ComfyUI-TextOnSegs to write text on boards?",
+        "answer": "To write text on boards using ComfyUI-TextOnSegs, after placing the necessary files in the specified folders, you need to load the 'workflows/draw_text_on_board.json' file using drag and drop, change the values of the Text node and CalcMaxFontSize node in the 'Draw Text' group, and then run the workflow. If detection fails, an error will occur, but this is by design."
+    },
+    {
+        "question": "What happens if the detection of faces or boards fails when using ComfyUI-TextOnSegs?",
+        "answer": "If the detection of faces or boards fails when using ComfyUI-TextOnSegs, an error will occur, but this is a designed behavior of the system."
+    }
+]

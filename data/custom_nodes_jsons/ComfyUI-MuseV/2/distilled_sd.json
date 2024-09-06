@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of using a distilled version of the Stable Diffusion model?",
+        "answer": "The distilled version of the Stable Diffusion model eliminates some residual and attention blocks from the UNet, reducing the model size by 51% and improving latency on CPU/GPU by 43%, thus reducing the computational burden of the inference process."
+    },
+    {
+        "question": "How can you further speed up the inference process of the distilled Stable Diffusion model?",
+        "answer": "You can further speed up the inference process by using a tiny distilled version of the Stable Diffusion VAE to denoise the latents into images, such as replacing the VAE in the distilled Stable Diffusion model with the tiny VAE."
+    },
+    {
+        "question": "What is the difference between the execution times of the original Stable Diffusion model and the distilled Stable Diffusion model?",
+        "answer": "The execution time of the original Stable Diffusion model is 45781.5 ms, while the execution time of the distilled Stable Diffusion model is 29884.2 ms, showing a significant improvement in inference speed."
+    },
+    {
+        "question": "How does the execution time change when using the distilled Stable Diffusion model with the Tiny AutoEncoder?",
+        "answer": "When using the distilled Stable Diffusion model with the Tiny AutoEncoder, the execution time further reduces to 27165.7 ms, demonstrating an additional speedup in the inference process."
+    },
+    {
+        "question": "What is the purpose of the code snippet that loads the distilled Stable Diffusion model and the original Stable Diffusion model?",
+        "answer": "The code snippet loads the distilled Stable Diffusion model and the original Stable Diffusion model to compare their inference times and demonstrate the speedup achieved by using the distilled version."
+    },
+    {
+        "question": "What are the parameters used for generating images in the code examples?",
+        "answer": "The code examples use the following parameters for generating images: NUM_ITERS_TO_RUN = 3, NUM_INFERENCE_STEPS = 25, NUM_IMAGES_PER_PROMPT = 4, and the prompt 'a golden vase with different flowers'."
+    },
+    {
+        "question": "What is the source of the distilled Stable Diffusion model used in the code examples?",
+        "answer": "The distilled Stable Diffusion model used in the code examples is from Nota AI, loaded using the model identifier 'nota-ai/bk-sdm-small'."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of registering a dataset in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "Registering a dataset in ComfyUI_OOTDiffusion_CXH allows detectron2 to know how to obtain the dataset and reuse its data loaders."
+    },
+    {
+        "question": "What are the two ways to process data from its original format when registering a dataset in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "The two ways to process data from its original format when registering a dataset in ComfyUI_OOTDiffusion_CXH are: 1. Using Detectron2's standard dataset dict, and 2. Using custom dataset dict."
+    },
+    {
+        "question": "What information does the 'annotations' key in the standard dataset dict in ComfyUI_OOTDiffusion_CXH contain?",
+        "answer": "The 'annotations' key in the standard dataset dict in ComfyUI_OOTDiffusion_CXH contains information about the annotations of one instance in the image, including 'bbox', 'bbox_mode', 'category_id', 'segmentation', 'keypoints', and 'iscrowd'."
+    },
+    {
+        "question": "What is the purpose of metadata in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "Metadata in ComfyUI_OOTDiffusion_CXH is used to store information that is shared among the entire dataset and is usually used to interpret what's in the dataset. This information is useful for augmentation, evaluation, visualization, logging, etc."
+    },
+    {
+        "question": "How can you register a COCO format dataset in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "To register a COCO format dataset in ComfyUI_OOTDiffusion_CXH, you can use the following code: register_coco_instances('my_dataset', {}, 'json_annotation.json', 'path/to/image/dir')."
+    },
+    {
+        "question": "Which config needs to be changed to set the number of thing classes for R-CNN and RetinaNet models in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "To set the number of thing classes for R-CNN and RetinaNet models in ComfyUI_OOTDiffusion_CXH, you need to change the 'MODEL.ROI_HEADS.NUM_CLASSES' and 'MODEL.RETINANET.NUM_CLASSES' configs."
+    },
+    {
+        "question": "What does the 'bbox_mode' key in the standard dataset dict in ComfyUI_OOTDiffusion_CXH represent?",
+        "answer": "The 'bbox_mode' key in the standard dataset dict in ComfyUI_OOTDiffusion_CXH represents the format of the bounding box of the instance. It must be a member of structures.BoxMode, currently supporting 'BoxMode.XYXY_ABS' and 'BoxMode.XYWH_ABS'."
+    }
+]

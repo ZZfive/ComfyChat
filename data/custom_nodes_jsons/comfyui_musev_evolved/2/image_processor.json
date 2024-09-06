@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the VaeImageProcessor in the StableDiffusionPipeline?",
+        "answer": "The VaeImageProcessor provides a unified API for StableDiffusionPipelines to prepare image inputs for VAE encoding and post-processing outputs once they're decoded."
+    },
+    {
+        "question": "What transformations does the VaeImageProcessor include?",
+        "answer": "The transformations included in the VaeImageProcessor are resizing, normalization, and conversion between PIL Image, PyTorch, and NumPy arrays."
+    },
+    {
+        "question": "What types of image inputs do all pipelines with VaeImageProcessor accept?",
+        "answer": "All pipelines with VaeImageProcessor accept PIL Image, PyTorch tensor, or NumPy arrays as image inputs."
+    },
+    {
+        "question": "How can the output type be specified when using the VaeImageProcessor?",
+        "answer": "The output type can be specified by the user with the 'output_type' argument."
+    },
+    {
+        "question": "How can you pass generated latents from one pipeline to another without leaving the latent space?",
+        "answer": "You can pass generated latents from one pipeline to another without leaving the latent space by directly passing the encoded image latents to the pipeline and returning latents from the pipeline with the 'output_type' argument set to 'latent'."
+    },
+    {
+        "question": "What does the VaeImageProcessorLDM3D accept and return?",
+        "answer": "The VaeImageProcessorLDM3D accepts RGB and depth inputs and returns RGB and depth outputs."
+    },
+    {
+        "question": "How does the VaeImageProcessor make it easier to use multiple pipelines together?",
+        "answer": "The VaeImageProcessor makes it easier to use multiple pipelines together by allowing the passing of PyTorch tensors directly between different pipelines."
+    }
+]

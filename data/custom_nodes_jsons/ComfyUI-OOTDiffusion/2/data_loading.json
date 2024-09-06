@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the default dataloader in Detectron2?",
+        "answer": "The default dataloader in Detectron2 is used to load and prepare data for training and testing models."
+    },
+    {
+        "question": "How does the build_detection_{train,test}_loader function work?",
+        "answer": "The build_detection_{train,test}_loader function works by taking the name of a registered dataset, loading a list of lightweight, canonical format dataset items, mapping each item using a function, batching the outputs of the mapper, and returning the batched data as the output of the data loader."
+    },
+    {
+        "question": "What is the role of the mapper in the default dataloader?",
+        "answer": "The role of the mapper is to transform the lightweight, canonical representation of a dataset item into a format that is ready for the model to consume, such as reading images, performing random data augmentation, and converting to torch Tensors."
+    },
+    {
+        "question": "How can you use a custom dataloader with the DefaultTrainer?",
+        "answer": "To use a custom dataloader with the DefaultTrainer, you can overwrite its build_{train,test}_loader method to use your own dataloader."
+    },
+    {
+        "question": "What should a custom dataloader produce?",
+        "answer": "A custom dataloader should produce data in the format that your model accepts."
+    },
+    {
+        "question": "What is an example of a custom dataloader?",
+        "answer": "An example of a custom dataloader is the densepose dataloader, which can be found in the projects/DensePose/train_net.py file."
+    },
+    {
+        "question": "What should you do if you want to perform custom transformations to data?",
+        "answer": "If you want to perform custom transformations to data, you often want a custom mapper."
+    }
+]

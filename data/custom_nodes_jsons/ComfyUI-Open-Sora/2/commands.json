@@ -1,0 +1,34 @@
+[
+    {
+        "question": "How can you modify inference settings in ComfyUI-Open-Sora?",
+        "answer": "You can modify the corresponding config files to change the inference settings in ComfyUI-Open-Sora."
+    },
+    {
+        "question": "What command runs inference with DiT pretrained on ImageNet in ComfyUI-Open-Sora?",
+        "answer": "The command to run inference with DiT pretrained on ImageNet is: python scripts/inference.py configs/dit/inference/1x256x256-class.py --ckpt-path DiT-XL-2-256x256.pt"
+    },
+    {
+        "question": "What command runs inference with Latte pretrained on UCF101 in ComfyUI-Open-Sora?",
+        "answer": "The command to run inference with Latte pretrained on UCF101 is: python scripts/inference.py configs/latte/inference/16x256x256-class.py --ckpt-path Latte-XL-2-256x256-ucf101.pt"
+    },
+    {
+        "question": "How do you perform inference with checkpoints saved during training in ComfyUI-Open-Sora?",
+        "answer": "To perform inference with checkpoints saved during training, run the command: torchrun --standalone --nproc_per_node 1 scripts/inference.py configs/opensora/inference/16x256x256.py --ckpt-path outputs/001-STDiT-XL-2/epoch12-global_step2000/ema.pt"
+    },
+    {
+        "question": "What are the two recommended inference hyperparameter settings in ComfyUI-Open-Sora?",
+        "answer": "The two recommended inference hyperparameter settings in ComfyUI-Open-Sora are: 1) Using DPM-solver for fast inference for images. 2) Using SVD's finetuned VAE decoder on videos for inference, which consumes more memory."
+    },
+    {
+        "question": "How can you resume training in ComfyUI-Open-Sora?",
+        "answer": "To resume training in ComfyUI-Open-Sora, run the command: torchrun --nnodes=1 --nproc_per_node=8 scripts/train.py configs/opensora/train/64x512x512.py --data-path YOUR_CSV_PATH --load YOUR_PRETRAINED_CKPT"
+    },
+    {
+        "question": "How can you enable wandb logging in ComfyUI-Open-Sora?",
+        "answer": "To enable wandb logging in ComfyUI-Open-Sora, add the --wandb flag to the training command: WANDB_API_KEY=YOUR_WANDB_API_KEY torchrun --nnodes=1 --nproc_per_node=8 scripts/train.py configs/opensora/train/64x512x512.py --data-path YOUR_CSV_PATH --wandb True"
+    },
+    {
+        "question": "What are the supported data types for training in ComfyUI-Open-Sora?",
+        "answer": "The supported data types for training in ComfyUI-Open-Sora are `fp16` and `bf16`. ColossalAI automatically enables mixed precision training for these data types."
+    }
+]

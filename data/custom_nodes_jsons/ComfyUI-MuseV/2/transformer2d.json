@@ -1,0 +1,26 @@
+[
+    {
+        "question": "What is Transformer2D and who developed it?",
+        "answer": "Transformer2D is a Transformer model for image-like data developed by CompVis. It is based on the Vision Transformer introduced by Dosovitskiy et al."
+    },
+    {
+        "question": "What are the two types of inputs that Transformer2DModel can accept?",
+        "answer": "Transformer2DModel can accept discrete inputs (classes of vector embeddings) or continuous inputs (actual embeddings)."
+    },
+    {
+        "question": "How does Transformer2DModel process continuous inputs?",
+        "answer": "When the input is continuous, Transformer2DModel projects the input, reshapes it to (batch_size, sequence_length, feature_dimension), applies the Transformer blocks, and reshapes the result back to an image."
+    },
+    {
+        "question": "How does Transformer2DModel process discrete inputs?",
+        "answer": "When the input is discrete, Transformer2DModel converts the input classes of latent pixels to embeddings, applies positional embeddings, applies the Transformer blocks, and predicts classes of the unnoised image."
+    },
+    {
+        "question": "What assumption is made about the input classes when using discrete inputs in Transformer2DModel?",
+        "answer": "It is assumed that one of the input classes is the masked latent pixel. The predicted classes of the unnoised image don't contain a prediction for the masked pixel because the unnoised image cannot be masked."
+    },
+    {
+        "question": "What is the purpose of Transformer2DModelOutput?",
+        "answer": "Transformer2DModelOutput is the output class for Transformer2DModel, which contains the processed image data after applying the Transformer blocks."
+    }
+]

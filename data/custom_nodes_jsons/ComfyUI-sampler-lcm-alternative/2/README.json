@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is ComfyUI-sampler-lcm-alternative?",
+        "answer": "ComfyUI-sampler-lcm-alternative is a custom node repository that adds three new nodes for ComfyUI to the Custom Sampler category: SamplerLCMAlternative, SamplerLCMCycle, and LCMScheduler."
+    },
+    {
+        "question": "How can one start using the custom nodes from ComfyUI-sampler-lcm-alternative?",
+        "answer": "To use the custom nodes from ComfyUI-sampler-lcm-alternative, clone the repository into your custom_nodes folder and restart ComfyUI."
+    },
+    {
+        "question": "What is the purpose of the SamplerLCMDuoFusion node?",
+        "answer": "SamplerLCMDuoFusion is a new node added to ComfyUI-sampler-lcm-alternative that is similar to DualNoise but easier to use because the weight parameter only requires tuning when you change the model rather than every time you adjust the number of steps."
+    },
+    {
+        "question": "What are the two extra parameters of SamplerLCMDuoFusion?",
+        "answer": "The two extra parameters of SamplerLCMDuoFusion are 'weight' and 'reuse_noise'. 'weight' controls how the sampler acts, with 0.0 making it act like Euler, and higher values running two denoisers at once and combining the results. 'reuse_noise' determines whether to run the second denoiser with random noise for each step or reuse the same noise every time."
+    },
+    {
+        "question": "What is the purpose of the SamplerLCMDualNoise node?",
+        "answer": "SamplerLCMDualNoise is a new sampler node that combines Euler sampling with an additional LCM sampling step after each Euler step, resulting in stunningly good results on SD1.5 with CFG 1.0 and only positive prompt."
+    },
+    {
+        "question": "What are the four extra parameters of SamplerLCMDualNoise?",
+        "answer": "The four extra parameters of SamplerLCMDualNoise are 'weight', 'normalize_steps', 'reuse_lcm_noise', and 'parallel'. 'weight' controls how strongly the results bias towards the Euler sampler, 'normalize_steps' runs the model a specified number of times at the first sigma in the schedule, 'reuse_lcm_noise' determines whether the LCM step always uses fresh noise or reuses the same noise, and 'parallel' controls whether Euler and LCM samplings are done sequentially or in parallel."
+    },
+    {
+        "question": "What is the recommended use case for SamplerLCMCycle?",
+        "answer": "SamplerLCMCycle is recommended for use in txt2img with LCM when LCM is giving boring or artificial-looking images. It repeats a cycle of Euler and LCM sampling steps until inference is done."
+    },
+    {
+        "question": "What are the three extra parameters of SamplerLCMCycle?",
+        "answer": "The three extra parameters of SamplerLCMCycle are 'euler_steps', 'lcm_steps', and 'ancestral'. 'euler_steps' sets the number of Euler steps per cycle, 'lcm_steps' sets the number of LCM steps per cycle, and 'ancestral' controls the injection of fresh randomness into the Euler steps."
+    }
+]

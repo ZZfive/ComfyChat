@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of Detectron2's config system?",
+        "answer": "Detectron2's config system is used to obtain standard, common behaviors through a key-value based configuration."
+    },
+    {
+        "question": "What are the two extra functionalities provided by Detectron2's config system?",
+        "answer": "Detectron2's config system provides the ability to load a base config first using the `_BASE_: base.yaml` field, and also offers config versioning for backward compatibility."
+    },
+    {
+        "question": "How can you load values from a file into the config object?",
+        "answer": "You can load values from a file into the config object using the `cfg.merge_from_file(\"my_cfg.yaml\")` method."
+    },
+    {
+        "question": "How can you overwrite existing values in the config file through command line?",
+        "answer": "You can overwrite existing values in the config file through command line by providing key-value pairs using the `--opts` option, like `--opts MODEL.WEIGHTS /path/to/weights INPUT.MIN_SIZE_TEST 1000`."
+    },
+    {
+        "question": "Where can you find a list of available configs in Detectron2 and their meanings?",
+        "answer": "You can find a list of available configs in Detectron2 and their meanings in the Config References section of the documentation."
+    },
+    {
+        "question": "What are the best practices for writing configs in Detectron2?",
+        "answer": "The best practices for writing configs in Detectron2 include treating configs as code and avoiding duplication, keeping configs simple, and keeping a version number in the configs for backward compatibility."
+    },
+    {
+        "question": "Why do the official configs not include version numbers?",
+        "answer": "The official configs do not include version numbers because they are meant to be always up-to-date."
+    }
+]

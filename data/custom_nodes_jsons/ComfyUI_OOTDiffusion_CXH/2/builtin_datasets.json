@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the environment variable used to specify the location of builtin datasets in Detectron2?",
+        "answer": "The environment variable used to specify the location of builtin datasets in Detectron2 is DETECTRON2_DATASETS."
+    },
+    {
+        "question": "If the DETECTRON2_DATASETS environment variable is not set, what is the default location for builtin datasets?",
+        "answer": "If the DETECTRON2_DATASETS environment variable is not set, the default location for builtin datasets is ./datasets relative to the current working directory."
+    },
+    {
+        "question": "What are the required files and directories for the COCO dataset to be used with Detectron2?",
+        "answer": "For the COCO dataset to be used with Detectron2, the required files and directories are: coco/annotations/instances_{train,val}2017.json, coco/annotations/person_keypoints_{train,val}2017.json, and coco/{train,val}2017/ containing the image files mentioned in the corresponding JSON."
+    },
+    {
+        "question": "What script should be run to prepare 'cocofied' LVIS annotations for evaluating models trained on the COCO dataset?",
+        "answer": "The script prepare_cocofied_lvis.py should be run to prepare 'cocofied' LVIS annotations for evaluating models trained on the COCO dataset."
+    },
+    {
+        "question": "What is the expected directory structure for the Cityscapes dataset in Detectron2?",
+        "answer": "The expected directory structure for the Cityscapes dataset in Detectron2 is: cityscapes/gtFine/{train,val,test}/<city_name>/*.png and cityscapes/leftImg8bit/{train,val,test}/<city_name>/*.png"
+    },
+    {
+        "question": "How can the labelTrainIds.png files for the Cityscapes dataset be created using cityscapesScripts?",
+        "answer": "The labelTrainIds.png files for the Cityscapes dataset can be created using cityscapesScripts with the following command: CITYSCAPES_DATASET=$DETECTRON2_DATASETS/cityscapes python cityscapesscripts/preparation/createTrainIdLabelImgs.py"
+    },
+    {
+        "question": "What are the required files and directories for the Pascal VOC dataset to be used with Detectron2?",
+        "answer": "For the Pascal VOC dataset to be used with Detectron2, the required files and directories are: VOC20{07,12}/Annotations/, VOC20{07,12}/ImageSets/Main/ containing trainval.txt, test.txt, and optionally train.txt or val.txt, and VOC20{07,12}/JPEGImages/."
+    }
+]

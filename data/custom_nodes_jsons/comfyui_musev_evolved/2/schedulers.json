@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of a scheduler in a diffusion pipeline?",
+        "answer": "The scheduler defines the overall denoising process in a diffusion system, including the number of denoising steps and the algorithm used to find denoised samples."
+    },
+    {
+        "question": "How can you access the scheduler in a diffusion pipeline?",
+        "answer": "The scheduler is usually a component of the pipeline, accessible through the 'scheduler' property of the pipeline instance."
+    },
+    {
+        "question": "Which schedulers are compatible with the PNDMScheduler?",
+        "answer": "The compatible schedulers with PNDMScheduler are: LMSDiscreteScheduler, DDIMScheduler, DPMSolverMultistepScheduler, EulerDiscreteScheduler, DDPMScheduler, and EulerAncestralDiscreteScheduler."
+    },
+    {
+        "question": "How can you replace the scheduler in a diffusion pipeline?",
+        "answer": "You can replace the scheduler by assigning a new scheduler instance to the pipeline's 'scheduler' property, using the 'from_config' method to initialize it with the config of the previous scheduler."
+    },
+    {
+        "question": "Which scheduler is currently considered to produce the best quality images in the shortest time?",
+        "answer": "As of the writing of the document, the DPMSolverMultistepScheduler is considered to produce the best quality images in the shortest time, with only about 20 steps needed."
+    },
+    {
+        "question": "How can you ensure similar image generation when comparing different schedulers?",
+        "answer": "To ensure similar image generation when comparing different schedulers, you can use the same prompt and fix the random seed using 'torch.Generator(device='cuda').manual_seed()'."
+    },
+    {
+        "question": "Is it possible to replace the default scheduler in a JAX/Flax diffusion pipeline?",
+        "answer": "Yes, it is possible to replace the default scheduler in a JAX/Flax diffusion pipeline. The document provides an example of using the FlaxStableDiffusionPipeline with the FlaxDPMSolverMultistepScheduler."
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of ComfyUI-Login?",
+        "answer": "ComfyUI-Login is a custom node that uses a simple password to protect ComfyUI."
+    },
+    {
+        "question": "How secure is the protection offered by ComfyUI-Login?",
+        "answer": "ComfyUI-Login offers only basic protection, and users should be aware that absolute security does not exist. It should be used at one's own risk."
+    },
+    {
+        "question": "How can users set up a new password in ComfyUI-Login?",
+        "answer": "For the first login, users can choose any password, which will be encrypted and stored in a file named 'PASSWORD' within the 'login' folder in the ComfyUI project directory."
+    },
+    {
+        "question": "What should users do if they forget their password?",
+        "answer": "If a user forgets their password, they can reset it by deleting the 'PASSWORD' file in the 'login' folder and logging in again with a new password of their choice."
+    },
+    {
+        "question": "How can users remove the login feature from ComfyUI?",
+        "answer": "To disable the login feature, users can either manually delete the ComfyUI-Login folder in the 'custom_nodes' directory and restart ComfyUI or use the ComfyUI-Manager to uninstall it."
+    },
+    {
+        "question": "How does ComfyUI-Login protect the server from unauthorized API calls?",
+        "answer": "ComfyUI-Login protects the server from unauthorized API calls by providing a token that can be found in the console. Users can validate their API calls by adding an additional argument 'token' or by adding an Authorization Bearer header."
+    },
+    {
+        "question": "Can users customize the login page in ComfyUI-Login?",
+        "answer": "Yes, users can personalize their login page by modifying the 'login.html' file."
+    },
+    {
+        "question": "What is the purpose of the 'Upload Image Incognito' node?",
+        "answer": "The 'Upload Image Incognito' node allows users to upload images securely by encrypting the image and generating a random decryption key that is never saved on disk or on the server. The image is automatically deleted by default, and the node keeps the image in cache, deleting the physical file after the first prompt runs."
+    }
+]

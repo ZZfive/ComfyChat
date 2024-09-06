@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does Pix2Pix Zero do?",
+        "answer": "Pix2Pix Zero is an image-to-image translation method that can preserve the content of the original image without manual prompting. It allows for editing real images using large-scale text-to-image generative models."
+    },
+    {
+        "question": "How does Pix2Pix Zero preserve the content structure of the edited image?",
+        "answer": "Pix2Pix Zero uses cross-attention guidance to retain the cross-attention maps of the input image throughout the diffusion process, which helps preserve the general content structure after editing."
+    },
+    {
+        "question": "Does Pix2Pix Zero require additional training for image editing?",
+        "answer": "No, Pix2Pix Zero does not need additional training for image edits and can directly use existing pre-trained text-to-image diffusion models."
+    },
+    {
+        "question": "What are the two main arguments exposed by the Pix2Pix Zero pipeline?",
+        "answer": "The Pix2Pix Zero pipeline exposes two arguments: 'source_embeds' and 'target_embeds', which let you control the direction of the semantic edits in the final generated image."
+    },
+    {
+        "question": "How can you generate source and target embeddings for Pix2Pix Zero?",
+        "answer": "You can generate source and target embeddings for Pix2Pix Zero by using a pre-trained model like Flan-T5 to generate captions and CLIP for computing embeddings on the generated captions."
+    },
+    {
+        "question": "What is the purpose of the 'cross_attention_guidance_amount' argument in the Pix2Pix Zero pipeline?",
+        "answer": "The 'cross_attention_guidance_amount' argument in the Pix2Pix Zero pipeline controls the amount of cross-attention guidance applied during the image editing process, which helps retain the content structure of the input image."
+    },
+    {
+        "question": "Can Pix2Pix Zero be conditioned on real input images?",
+        "answer": "Yes, Pix2Pix Zero can be conditioned on real input images. This is done by first obtaining an inverted noise from the input image using a DDIMInverseScheduler with the help of a generated caption, and then using the inverted noise to start the generation process."
+    }
+]

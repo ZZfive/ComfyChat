@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of MuseVdiffusers?",
+        "answer": "MuseVdiffusers is a library that provides various memory-reducing techniques to run large diffusion models on free-tier or consumer GPUs."
+    },
+    {
+        "question": "What is the benefit of using sliced VAE in MuseVdiffusers?",
+        "answer": "Sliced VAE in MuseVdiffusers enables decoding large batches of images with limited VRAM or batches with 32 images or more by decoding the batches of latents one image at a time."
+    },
+    {
+        "question": "How does tiled VAE processing work in MuseVdiffusers?",
+        "answer": "Tiled VAE processing in MuseVdiffusers enables working with large images on limited VRAM by splitting the image into overlapping tiles, decoding the tiles, and then blending the outputs together to compose the final image."
+    },
+    {
+        "question": "What is the purpose of CPU offloading in MuseVdiffusers?",
+        "answer": "CPU offloading in MuseVdiffusers offloads the weights to the CPU and only loads them on the GPU when performing the forward pass, which can save memory."
+    },
+    {
+        "question": "How does model offloading differ from CPU offloading in MuseVdiffusers?",
+        "answer": "Model offloading in MuseVdiffusers moves whole models to the GPU instead of handling each model's constituent submodules, resulting in a negligible impact on inference time while still providing some memory savings compared to CPU offloading."
+    },
+    {
+        "question": "What is the channels-last memory format in MuseVdiffusers?",
+        "answer": "The channels-last memory format in MuseVdiffusers is an alternative way of ordering NCHW tensors in memory to preserve dimension ordering, which may result in worse performance but can still be tried to see if it works for a specific model."
+    },
+    {
+        "question": "What is the purpose of tracing in MuseVdiffusers?",
+        "answer": "Tracing in MuseVdiffusers runs an example input tensor through the model and captures the operations performed on it, returning an optimized executable or ScriptFunction with just-in-time compilation."
+    },
+    {
+        "question": "What is memory-efficient attention in MuseVdiffusers?",
+        "answer": "Memory-efficient attention in MuseVdiffusers is a recent optimization technique for reducing bandwidth in the attention block, such as Flash Attention, which can generate huge speed-ups and reductions in GPU memory usage."
+    }
+]

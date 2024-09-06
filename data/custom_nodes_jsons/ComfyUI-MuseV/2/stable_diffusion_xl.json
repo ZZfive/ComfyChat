@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is Stable Diffusion XL?",
+        "answer": "Stable Diffusion XL is a latent diffusion model for text-to-image generation proposed by Dustin Podell, Zion English, Kyle Lacey, Andreas Blattmann, Tim Dockhorn, Jonas Müller, Joe Penna, and Robin Rombach in the paper 'SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis'."
+    },
+    {
+        "question": "How does Stable Diffusion XL differ from previous versions of Stable Diffusion?",
+        "answer": "Compared to previous versions of Stable Diffusion, SDXL includes a three times larger UNet backbone, which results from an increase in model parameters allowing for many attention blocks and a larger cross-attention context in SDXL's second text encoder."
+    },
+    {
+        "question": "What resolutions does Stable Diffusion XL work best with?",
+        "answer": "Stable Diffusion XL works particularly well with images between 786 and 1024 resolution."
+    },
+    {
+        "question": "What are the available checkpoints for Stable Diffusion XL?",
+        "answer": "The available checkpoints for Stable Diffusion XL are the 'Text-to-Image' checkpoint with 1024x1024 resolution using the StableDiffusionXLPipeline, and the 'Image-to-Image / Refiner' checkpoint with 1024x1024 resolution using the StableDiffusionXLImg2ImgPipeline."
+    },
+    {
+        "question": "How can Stable Diffusion XL be used for text-to-image generation with ComfyUI-MuseV?",
+        "answer": "To use Stable Diffusion XL for text-to-image generation with ComfyUI-MuseV, you need to install the required libraries (transformers, accelerate, safetensors, and invisible_watermark), load the StableDiffusionXLPipeline from the 'stabilityai/stable-diffusion-xl-base-1.0' checkpoint, and pass a prompt to the pipeline to generate an image."
+    },
+    {
+        "question": "How can Stable Diffusion XL be used for image-to-image generation with ComfyUI-MuseV?",
+        "answer": "To use Stable Diffusion XL for image-to-image generation with ComfyUI-MuseV, you need to install the required libraries, load the StableDiffusionXLImg2ImgPipeline from the 'stabilityai/stable-diffusion-xl-refiner-1.0' checkpoint, provide an initial image and a prompt, and pass them to the pipeline to generate a modified image."
+    },
+    {
+        "question": "How can Stable Diffusion XL be used for inpainting with ComfyUI-MuseV?",
+        "answer": "To use Stable Diffusion XL for inpainting with ComfyUI-MuseV, you need to load the StableDiffusionXLInpaintPipeline from the 'stabilityai/stable-diffusion-xl-base-1.0' checkpoint, provide an initial image, a mask image, and a prompt, and pass them to the pipeline to generate an inpainted image."
+    }
+]

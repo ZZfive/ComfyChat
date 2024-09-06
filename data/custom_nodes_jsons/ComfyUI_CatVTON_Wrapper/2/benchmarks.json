@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What hardware was used for benchmarking the Mask R-CNN training speed across different implementations?",
+        "answer": "The hardware used was 8 NVIDIA V100s with NVLink."
+    },
+    {
+        "question": "Which software versions were used for the benchmarking?",
+        "answer": "Python 3.7, CUDA 10.1, cuDNN 7.6.5, PyTorch 1.5, TensorFlow 1.15.0rc2, Keras 2.2.5, MxNet 1.6.0b20190820 were the software versions used."
+    },
+    {
+        "question": "What model was used for the benchmarking?",
+        "answer": "An end-to-end R-50-FPN Mask-RCNN model was used, with the same hyperparameters as the Detectron baseline config."
+    },
+    {
+        "question": "How was the throughput metric calculated for the benchmarking?",
+        "answer": "The throughput metric was calculated as the average throughput in iterations 100-500 to skip GPU warmup time."
+    },
+    {
+        "question": "Which implementation had the highest throughput (img/s) based on the results?",
+        "answer": "Detectron2 with PyTorch had the highest throughput at 62 img/s."
+    },
+    {
+        "question": "How did the Detectron implementation's speed compare to the others?",
+        "answer": "The Detectron implementation had the lowest speed at 19 img/s, likely because many of its ops run on CPUs."
+    },
+    {
+        "question": "What modification was made to the tensorpack implementation for benchmarking?",
+        "answer": "The environment variable TF_CUDNN_USE_AUTOTUNE was set to 0 for the tensorpack implementation during benchmarking."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is MusicLDM?",
+        "answer": "MusicLDM is a text-to-music latent diffusion model that takes a text prompt as input and predicts the corresponding music sample, inspired by Stable Diffusion and AudioLDM."
+    },
+    {
+        "question": "How is MusicLDM trained?",
+        "answer": "MusicLDM is trained on a corpus of 466 hours of music data, using beat-synchronous data augmentation strategies applied to the music samples in both the time domain and latent space."
+    },
+    {
+        "question": "What are the benefits of using beat-synchronous data augmentation strategies in MusicLDM?",
+        "answer": "Using beat-synchronous data augmentation strategies encourages the model to interpolate between musical training samples and generate new music within the convex hull of the training data, making the generated music more diverse while staying faithful to the corresponding style."
+    },
+    {
+        "question": "What are the components of MusicLDM?",
+        "answer": "MusicLDM adapts the contrastive language-audio pretraining model (CLAP) and the Hifi-GAN vocoder, retraining them on a collection of music data samples."
+    },
+    {
+        "question": "What are some tips for constructing effective prompts for MusicLDM?",
+        "answer": "Descriptive prompt inputs work best; use adjectives to describe the sound and make the prompt context specific where possible. Using a negative prompt can also significantly improve the quality of the generated audio."
+    },
+    {
+        "question": "How can the quality of the generated audio be controlled in MusicLDM?",
+        "answer": "The quality of the generated audio sample can be controlled by the 'num_inference_steps' argument; higher steps give higher quality audio at the expense of slower inference."
+    },
+    {
+        "question": "How can the length of the generated audio be controlled in MusicLDM?",
+        "answer": "The length of the generated audio sample can be controlled by varying the 'audio_length_in_s' argument."
+    }
+]

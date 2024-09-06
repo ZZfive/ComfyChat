@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Diffusersベースの推論スクリプトはどのような機能を持っていますか？",
+        "answer": "Diffusersベースの推論スクリプトは、SD 1.xおよび2.xモデルの対応、txt2img、img2img、inpaintingの対応、対話モードやファイルからのプロンプト読み込みの対応、プロンプト1行あたりの生成枚数の指定、全体の繰り返し回数の指定、fp16とbf16の対応、xformersの対応による高速生成、プロンプトの225トークンへの拡張、Diffusersの各種samplerの対応、Text Encoderのclip skipの対応、VAEの別途読み込み、CLIP Guided Stable Diffusion、VGG16 Guided Stable Diffusion、Highres. fix、upscaleの対応など、多数の機能があります。"
+    },
+    {
+        "question": "推論スクリプトの基本的な使い方として、インタラクティブモードでの画像生成はどのように行いますか？",
+        "answer": "インタラクティブモードでの画像生成を行うには、以下のように入力します。\n```batchfile\npython gen_img_diffusers.py --ckpt <モデル名> --outdir <画像出力先> --xformers --fp16 --interactive\n``` `--interactive`オプションで対話モードを指定しています。「Type prompt:」と表示されたらプロンプトを入力します。画像ウィンドウを選択してから何らかのキーを押すとウィンドウが閉じ、次のプロンプトが入力できます。プロンプトでCtrl+Z、エンターの順に打鍵するとスクリプトを閉じます。"
+    },
+    {
+        "question": "LoRAはどのように使用できますか？",
+        "answer": "LoRAを使用するには、`--network_module`オプションで`networks.lora`を指定し、`--network_weights`でLoRAの重みファイルを指定します。複数のLoRAを同時に使用する場合には、`--network_module`と`--network_weights`にそれぞれ複数のLoRAを指定します。また、`--network_mul`オプションでLoRAの重みを何倍にするか指定できます。"
+    },
+    {
+        "question": "img2imgはどのような機能ですか？",
+        "answer": "img2imgは、元画像を指定し、その画像をベースに画像生成を行う機能です。`--image_path`オプションでimg2imgに利用する画像を指定します。`--W`と`--H`オプションで生成画像サイズを指定すると、元画像をそのサイズにリサイズしてからimg2imgを行います。また、`--strength`オプションでimg2imgのstrengthを指定できます。"
+    },
+    {
+        "question": "ControlNetはどのように使用できますか？",
+        "answer": "ControlNetを使用するには、`--control_net_models`オプションでControlNetのモデルファイルを指定し、`--guide_image_path`でヒント画像を指定します。また、`--control_net_preps`オプションでControlNetのプリプロセスを指定できます。`--control_net_weights`でControlNetの適用時の重みを指定し、`--control_net_ratios`でControlNetを適用するstepの範囲を指定します。"
+    },
+    {
+        "question": "CLIP Guided Stable Diffusionはどのような機能ですか？",
+        "answer": "CLIP Guided Stable Diffusionは、通常のプロンプトによる生成指定に加え、追加で大規模のCLIPでプロンプトのテキストの特徴量を取得し、生成中の画像の特徴量がそのテキストの特徴量に近づくよう、生成される画像をコントロールする機能です。`--clip_guidance_scale`オプションでCLIPの特徴量を反映する度合いを数値で指定できます。"
+    },
+    {
+        "question": "推論スクリプトでは、どの種類のサンプラーが使用できますか？",
+        "answer": "推論スクリプトでは、Diffusersで提供されているddim、pndm、dpmsolver、dpmsolver+++、lms、euler、euler_aなどのサンプラーを使用できます。これらは`--sampler`オプションで指定できます。"
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the code in the provided text?",
+        "answer": "The code demonstrates how to use different adapters (LoRAs) with Stable Diffusion XL (SDXL) for inference using the 🤗 PEFT integration in 🤗 Diffusers."
+    },
+    {
+        "question": "Which method is used to load a LoRA checkpoint in the code?",
+        "answer": "The `load_lora_weights` method from the `StableDiffusionXLLoraLoaderMixin` class is used to load a LoRA checkpoint."
+    },
+    {
+        "question": "How can you switch between different LoRA checkpoints using the code?",
+        "answer": "You can switch between different LoRA checkpoints by assigning a specific `adapter_name` to each checkpoint and using the `set_adapters` method to activate the desired adapter."
+    },
+    {
+        "question": "What is the purpose of the `adapter_name` parameter when loading a LoRA checkpoint?",
+        "answer": "The `adapter_name` parameter allows you to assign a specific name to each LoRA checkpoint, making it easy to switch between different checkpoints for inference."
+    },
+    {
+        "question": "How can you combine multiple adapters for inference using the code?",
+        "answer": "You can combine multiple adapters for inference by using the `set_adapters` method and specifying the adapters to activate along with their corresponding weights."
+    },
+    {
+        "question": "What should be included in the input text prompts when combining multiple LoRA checkpoints?",
+        "answer": "When combining multiple LoRA checkpoints, it's important to ensure that the trigger words for the corresponding LoRA checkpoints are present in the input text prompts."
+    },
+    {
+        "question": "How can you disable all LoRAs and switch to only the base model?",
+        "answer": "You can disable all LoRAs and switch to only the base model by using the `disable_lora` method."
+    },
+    {
+        "question": "Which method can be used to check the list of active adapters in the pipeline?",
+        "answer": "The `get_active_adapters` method can be used to check the list of active adapters in the pipeline."
+    }
+]

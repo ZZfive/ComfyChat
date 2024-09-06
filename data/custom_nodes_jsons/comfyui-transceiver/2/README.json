@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-Transceiver?",
+        "answer": "ComfyUI-Transceiver is a python library that swiftly exchanges fundamental data structures, specifically numpy arrays, between processes to optimize AI inference tasks that utilize ComfyUI."
+    },
+    {
+        "question": "Why was ComfyUI-Transceiver developed?",
+        "answer": "ComfyUI-Transceiver was developed because when processing a large number of requests, the SaveImage and LoadImage nodes may be IO-limited, and using shared memory improves performance by passing images only through memory access, not through IO."
+    },
+    {
+        "question": "How can ComfyUI-Transceiver be installed as ComfyUI custom nodes?",
+        "answer": "To install ComfyUI-Transceiver as ComfyUI custom nodes, you need to clone the repository into the custom_nodes directory of ComfyUI, install the requirements, and launch ComfyUI."
+    },
+    {
+        "question": "What does the Save Image Transceiver node do?",
+        "answer": "The Save Image Transceiver node saves an image to shared memory. It requires an ImageTensor input and a name input, where the name is the shared memory identical name."
+    },
+    {
+        "question": "What does the Load Image Transceiver node do?",
+        "answer": "The Load Image Transceiver node loads an image from shared memory. It requires a name input, where the name is the shared memory identical name."
+    },
+    {
+        "question": "What is the purpose of the name input in the Save Image Transceiver node?",
+        "answer": "The name input in the Save Image Transceiver node is used as the shared memory identical name, which is required to save the image to shared memory."
+    },
+    {
+        "question": "What is the purpose of the name input in the Load Image Transceiver node?",
+        "answer": "The name input in the Load Image Transceiver node is used as the shared memory identical name, which is required to load the image from shared memory."
+    }
+]

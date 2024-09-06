@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What hardware is required to run Stable Diffusion on Apple Silicon?",
+        "answer": "A Mac computer with Apple Silicon (M1/M2) hardware is required to run Stable Diffusion."
+    },
+    {
+        "question": "What version of macOS is recommended for running Stable Diffusion on Apple Silicon?",
+        "answer": "macOS 13.0 or later is recommended for running Stable Diffusion on Apple Silicon, although it can run on macOS 12.6 or later."
+    },
+    {
+        "question": "What version of PyTorch is compatible with Apple Silicon for running Stable Diffusion?",
+        "answer": "PyTorch 2.0 or later is recommended, but PyTorch 1.13 is the minimum version that supports the `mps` backend for running Stable Diffusion on Apple Silicon."
+    },
+    {
+        "question": "What is the purpose of the one-time 'priming' pass when using PyTorch 1.13?",
+        "answer": "The one-time 'priming' pass is a temporary workaround for an issue in PyTorch 1.13 where the first inference pass produces slightly different results compared to subsequent passes. It only needs to be done once before the actual inference step."
+    },
+    {
+        "question": "Why is it recommended to use PyTorch 2.0 or later for running Stable Diffusion on Apple Silicon?",
+        "answer": "PyTorch 2.0 or later is recommended because it resolves several issues, including the need for a 'priming' pass that is required when using PyTorch 1.13."
+    },
+    {
+        "question": "What is attention slicing and when is it recommended to use it?",
+        "answer": "Attention slicing is a technique that breaks down the costly attention operation into multiple steps instead of performing it all at once. It is recommended to use attention slicing when the computer has less than 64GB of system RAM or when generating images at non-standard resolutions larger than 512x512 pixels to reduce memory pressure and prevent swapping."
+    },
+    {
+        "question": "What is the known issue with generating multiple prompts in batches on Apple Silicon?",
+        "answer": "Generating multiple prompts in batches can lead to crashes or unstable behavior on Apple Silicon due to an issue related to the PyTorch `mps` backend. It is recommended to use a loop instead of batches until the issue is resolved."
+    }
+]

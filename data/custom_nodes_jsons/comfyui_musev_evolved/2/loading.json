@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of DiffusionPipeline in ComfyUI-MuseV-Evolved?",
+        "answer": "DiffusionPipeline is designed to provide a simpler and more convenient API for working with diffusion models in ComfyUI-MuseV-Evolved. It integrates the complexity of diffusion models into a single pipeline API while allowing flexible customization of individual components for specific tasks."
+    },
+    {
+        "question": "How can you load a DiffusionPipeline from a local directory in ComfyUI-MuseV-Evolved?",
+        "answer": "To load a DiffusionPipeline from a local directory, you need to use the `git-lfs` command to download the checkpoint to your local disk. Then, you can pass the local path to the `DiffusionPipeline.from_pretrained` method, and it will automatically detect that the `repo_id` is a local path and not download the files from the hub."
+    },
+    {
+        "question": "What is the purpose of the `torch_dtype` argument when loading a variant in ComfyUI-MuseV-Evolved?",
+        "answer": "The `torch_dtype` argument defines the floating point type of the checkpoint to be loaded. For example, setting `torch_dtype=torch.float16` will convert the weights to `fl16` type. If not specified, the default `fp32` type weights will be loaded."
+    },
+    {
+        "question": "How can you replace components within a DiffusionPipeline in ComfyUI-MuseV-Evolved?",
+        "answer": "Components within a DiffusionPipeline can be replaced using the `from_pretrained` method and the `scheduler` argument. For example, you can replace the default `PNDMScheduler` with `EulerDiscreteScheduler` by loading it with `EulerDiscreteScheduler.from_pretrained` and then passing it to the `DiffusionPipeline.from_pretrained` method with the `scheduler` argument."
+    },
+    {
+        "question": "What is the purpose of the `variant` argument when loading a checkpoint in ComfyUI-MuseV-Evolved?",
+        "answer": "The `variant` argument defines which variant to load from the repository. For example, to load the `non_ema` checkpoint from the diffusers/stable-diffusion-variants repository, you would pass `variant=\"non_ema\"` to the loading method."
+    },
+    {
+        "question": "How can you disable the safety checker when loading a DiffusionPipeline in ComfyUI-MuseV-Evolved?",
+        "answer": "To disable the safety checker when loading a DiffusionPipeline, you can pass `safety_checker=None` to the `from_pretrained` method."
+    },
+    {
+        "question": "How can you reuse components between multiple pipelines in ComfyUI-MuseV-Evolved to avoid loading the same weights into RAM multiple times?",
+        "answer": "You can reuse components between multiple pipelines by accessing the components of one pipeline using the `components` attribute and passing them to another pipeline. This way, you can avoid loading the same weights into RAM multiple times."
+    }
+]

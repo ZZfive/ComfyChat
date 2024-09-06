@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Diffusers의 어떤 버전부터 PyTorch 2.0 가속화 지원이 가능합니까?",
+        "answer": "Diffusers의 0.13.0 버전부터 PyTorch 2.0 가속화 지원이 가능합니다."
+    },
+    {
+        "question": "PyTorch 2.0의 가속화된 트랜스포머 구현을 사용하려면 어떤 함수를 사용해야 합니까?",
+        "answer": "PyTorch 2.0의 가속화된 트랜스포머 구현을 사용하려면 `torch.nn.functional.scaled_dot_product_attention` 함수를 사용해야 합니다."
+    },
+    {
+        "question": "torch.compile을 사용하려면 PyTorch의 어떤 버전이 필요합니까?",
+        "answer": "torch.compile을 사용하려면 PyTorch 2.0 이상의 버전이 필요합니다."
+    },
+    {
+        "question": "UNet을 torch.compile로 래핑하는 이유는 무엇입니까?",
+        "answer": "UNet을 torch.compile로 래핑하는 이유는 UNet이 파이프라인에서 일반적으로 계산 비용이 가장 크기 때문입니다."
+    },
+    {
+        "question": "A100 GPU에서 배치 크기가 1일 때, Stable Diffusion text-to-image 파이프라인의 torch 2.0과 torch.compile을 사용한 속도는 얼마입니까?",
+        "answer": "A100 GPU에서 배치 크기가 1일 때, Stable Diffusion text-to-image 파이프라인의 torch 2.0과 torch.compile을 사용한 속도는 약 44.03 iterations/second입니다."
+    },
+    {
+        "question": "RTX 4090 GPU에서 배치 크기가 16일 때, Stable Diffusion image-to-image 파이프라인의 torch 2.0과 torch.compile을 사용한 속도는 얼마입니까?",
+        "answer": "RTX 4090 GPU에서 배치 크기가 16일 때, Stable Diffusion image-to-image 파이프라인의 torch 2.0과 torch.compile을 사용한 속도는 약 3.84 iterations/second입니다."
+    },
+    {
+        "question": "T4 GPU에서 배치 크기가 4일 때, IF 파이프라인의 torch 2.0과 torch.compile을 사용하지 않은 속도는 얼마입니까?",
+        "answer": "T4 GPU에서 배치 크기가 4일 때, IF 파이프라인의 torch 2.0과 torch.compile을 사용하지 않은 속도는 약 5.79 iterations/second입니다."
+    }
+]

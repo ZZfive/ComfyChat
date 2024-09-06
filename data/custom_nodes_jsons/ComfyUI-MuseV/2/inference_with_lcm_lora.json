@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-MuseV?",
+        "answer": "ComfyUI-MuseV is an extension or custom node for ComfyUI that enables performing inference with LCM-LoRAs for various tasks like text-to-image, image-to-image, inpainting, and more."
+    },
+    {
+        "question": "What are the benefits of using LCM-LoRA for inference?",
+        "answer": "LCM-LoRA enables quality image generation in typically 2-4 steps, making it possible to use diffusion models in almost real-time settings. It can be applied to any fine-tuned version of the model without distilling them separately."
+    },
+    {
+        "question": "How does ComfyUI-MuseV load LCM-LoRA weights?",
+        "answer": "ComfyUI-MuseV loads the LCM-LoRA weights using the 'pipe.load_lora_weights()' function, specifying the path to the LCM-LoRA weights."
+    },
+    {
+        "question": "What is the recommended range for the 'guidance_scale' parameter when using LCM-LoRA?",
+        "answer": "In the examples provided, the 'guidance_scale' parameter is set between [1.0, 2.0] when using LCM-LoRA. Higher values can lead to artifacts in the generated images."
+    },
+    {
+        "question": "Can LCM-LoRA be combined with other LoRAs for styled image generation?",
+        "answer": "Yes, LCM-LoRA can be combined with other LoRAs to generate styled images in very few steps (4-8). An example is provided where LCM-LoRA is combined with the 'papercut LoRA'."
+    },
+    {
+        "question": "How does ComfyUI-MuseV support inpainting with LCM-LoRA?",
+        "answer": "ComfyUI-MuseV loads the LCM-LoRA weights and uses the 'AutoPipelineForInpainting' pipeline to perform inpainting. It requires a base image, a mask image, and a prompt to generate the inpainted image."
+    },
+    {
+        "question": "Can ComfyUI-MuseV be used for animating images using LCM-LoRA?",
+        "answer": "Yes, ComfyUI-MuseV can be used with ['AnimateDiff'] and LCM-LoRA to animate images. It generates multiple frames (16-24) with just 4-8 steps for each frame, significantly speeding up the animation process."
+    }
+]

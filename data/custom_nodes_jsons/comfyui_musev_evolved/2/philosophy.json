@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of Diffusers?",
+        "answer": "Diffusers provides state-of-the-art pretrained diffusion models across multiple modalities and serves as a modular toolbox for both inference and training."
+    },
+    {
+        "question": "What design principle does Diffusers prioritize in terms of usability and performance?",
+        "answer": "Diffusers prioritizes usability over performance. Models are always loaded with the highest precision and lowest optimization by default to ensure usability across different platforms and accelerators."
+    },
+    {
+        "question": "How does Diffusers handle complex model vs. scheduler logic?",
+        "answer": "Diffusers exposes complex model vs. scheduler logic instead of magically handling it inside. Schedulers/Samplers are separated from diffusion models with minimal dependencies on each other, allowing for easier debugging and more control over the denoising process."
+    },
+    {
+        "question": "Why does Diffusers prefer copy-pasted code over hasty abstractions?",
+        "answer": "Diffusers prefers copy-pasted code over hasty abstractions because machine learning is a fast-moving field, practitioners prefer self-contained code for ideation and research, and it makes the library easier to contribute to."
+    },
+    {
+        "question": "What is the single-file policy in Diffusers?",
+        "answer": "The single-file policy in Diffusers means that almost all of the code of a certain class should be written in a single, self-contained file. This design principle is followed for both pipelines and schedulers, but only partly for diffusion models."
+    },
+    {
+        "question": "How are models designed in Diffusers?",
+        "answer": "Models in Diffusers are designed as configurable toolboxes that are natural extensions of PyTorch's Module class. They only partly follow the single-file policy and expose complexity to give clear error messages."
+    },
+    {
+        "question": "What is the purpose of schedulers in Diffusers?",
+        "answer": "Schedulers in Diffusers are responsible for guiding the denoising process for inference as well as defining a noise schedule for training. They are designed as individual classes with loadable configuration files and strongly follow the single-file policy."
+    }
+]

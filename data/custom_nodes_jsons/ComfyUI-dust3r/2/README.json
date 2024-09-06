@@ -1,0 +1,58 @@
+[
+    {
+        "question": "What is the purpose of the instructions provided?",
+        "answer": "The instructions allow generating pre-training image pairs from the Habitat simulator for the ComfyUI-dust3r project."
+    },
+    {
+        "question": "Where can the Habitat-Sim scenes be downloaded from?",
+        "answer": "The download links for Habitat-Sim scenes can be found at https://github.com/facebookresearch/habitat-sim/blob/main/DATASETS.md."
+    },
+    {
+        "question": "What should be the structure of the scene datasets directory?",
+        "answer": "The scene datasets should be placed under ./data/habitat-sim-data/scene_datasets/ with subdirectories for each dataset like hm3d, gibson, habitat-test-scenes, replica_cad_baked_lighting, replica_cad, ReplicaDataset, and scannet."
+    },
+    {
+        "question": "What are the specifications for the generated image pairs?",
+        "answer": "The image pairs should have a resolution of 256x256, a 60-degree field of view, and up to 1000 image pairs per scene."
+    },
+    {
+        "question": "How many image pairs were generated for the Scannet dataset?",
+        "answer": "For the Scannet dataset, 1097 scenes were considered, and 985,209 image pairs were generated."
+    },
+    {
+        "question": "Which datasets were used for pre-training and which were kept for validation?",
+        "answer": "The hm3d/train dataset was used for pre-training, while hm3d/val and hm3d/minival pairs were kept for validation purposes."
+    },
+    {
+        "question": "How can the image pairs be generated from the metadata?",
+        "answer": "To generate image pairs from metadata, use the command: python datasets/habitat_sim/generate_from_metadata_files.py --input_dir=$METADATA_DIR --output_dir=$PAIRS_DATASET_DIR, and then launch multiple commands in parallel using GNU Parallel."
+    },
+    {
+        "question": "What is ComfyUI-dust3r?",
+        "answer": "ComfyUI-dust3r is a custom node or extension for ComfyUI that incorporates the DUSt3R model for generating images and videos."
+    },
+    {
+        "question": "What are the available checkpoints for ComfyUI-dust3r?",
+        "answer": "There are three checkpoints available for ComfyUI-dust3r: DUSt3R_ViTLarge_BaseDecoder_224_linear.pth, DUSt3R_ViTLarge_BaseDecoder_512_linear.pth, and DUSt3R_ViTLarge_BaseDecoder_512_dpt.pth."
+    },
+    {
+        "question": "Where should the checkpoints be placed after downloading?",
+        "answer": "The checkpoints should be placed in the directory `ComfyUI\\custom_nodes\\ComfyUI-dust3r\\checkpoints`."
+    },
+    {
+        "question": "Is there a need to manually install dependencies for ComfyUI-dust3r?",
+        "answer": "No, there is no need to manually install dependencies for ComfyUI-dust3r. It will automatically install the required dependencies."
+    },
+    {
+        "question": "What is the basic workflow of using ComfyUI-dust3r?",
+        "answer": "The basic workflow of using ComfyUI-dust3r can be found in the provided image `wf.png` and the corresponding `workflow.json` file in the GitHub repository."
+    },
+    {
+        "question": "What is the original dust3r repository?",
+        "answer": "The original dust3r repository is located at https://github.com/naver/dust3r."
+    },
+    {
+        "question": "What are the training resolutions for the DUSt3R_ViTLarge_BaseDecoder_512_linear.pth checkpoint?",
+        "answer": "The training resolutions for the DUSt3R_ViTLarge_BaseDecoder_512_linear.pth checkpoint are 512x384, 512x336, 512x288, 512x256, and 512x160."
+    }
+]

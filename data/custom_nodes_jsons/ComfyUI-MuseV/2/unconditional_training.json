@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is unconditional image generation?",
+        "answer": "Unconditional image generation is a process of generating images that are similar to the training data distribution without any conditions such as text or images, unlike text-to-image or image-to-image models."
+    },
+    {
+        "question": "What needs to be installed before running the training scripts for unconditional image generation models?",
+        "answer": "Before running the training scripts for unconditional image generation models, you need to install the dependency libraries by running `pip install diffusers[training] accelerate datasets`."
+    },
+    {
+        "question": "How can you initialize the 🤗 Accelerate environment with default settings in a non-interactive shell environment?",
+        "answer": "In a non-interactive shell environment, you can initialize the 🤗 Accelerate environment with default settings by using the following Python code: `from accelerate.utils import write_basic_config; write_basic_config()`."
+    },
+    {
+        "question": "What argument should be added to the training script to upload the model to the hub?",
+        "answer": "To upload the model to the hub, you should add the `--push_to_hub` argument to the training script."
+    },
+    {
+        "question": "How often are checkpoints saved when the `--checkpointing_steps=500` argument is passed to the training script?",
+        "answer": "When the `--checkpointing_steps=500` argument is passed to the training script, checkpoints are saved every 500 steps."
+    },
+    {
+        "question": "How can you resume training from a specific checkpoint?",
+        "answer": "To resume training from a specific checkpoint, you can pass the `--resume_from_checkpoint` argument to the training script with the checkpoint name, for example: `--resume_from_checkpoint=\"checkpoint-1500\"`."
+    },
+    {
+        "question": "What is the command to fine-tune the model using the Oxford Flowers dataset?",
+        "answer": "The command to fine-tune the model using the Oxford Flowers dataset is: `accelerate launch train_unconditional.py --dataset_name=\"huggan/flowers-102-categories\" --resolution=64 --output_dir=\"ddpm-ema-flowers-64\" --train_batch_size=16 --num_epochs=100 --gradient_accumulation_steps=1 --learning_rate=1e-4 --lr_warmup_steps=500 --mixed_precision=no --push_to_hub`."
+    }
+]

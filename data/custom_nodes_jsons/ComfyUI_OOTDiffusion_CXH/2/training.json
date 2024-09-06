@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI_OOTDiffusion_CXH?",
+        "answer": "ComfyUI_OOTDiffusion_CXH is a custom node or plugin that extends the functionality of ComfyUI, a GUI that uses stable diffusion models to generate images and videos."
+    },
+    {
+        "question": "How can users create their own optimizer and write training logic in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "Users are free to create their own optimizer and write training logic in ComfyUI_OOTDiffusion_CXH using PyTorch, which allows researchers to see the entire training logic more clearly and have full control."
+    },
+    {
+        "question": "What is the purpose of the 'trainer' abstraction in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "The 'trainer' abstraction in ComfyUI_OOTDiffusion_CXH provides a standardized minimal hook system that helps simplify the standard types of training."
+    },
+    {
+        "question": "What are the two main ways to customize training loops in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "The two main ways to customize training loops in ComfyUI_OOTDiffusion_CXH are: 1) changing the behavior of DefaultTrainer by overwriting its methods in a subclass, and 2) starting from tools/plain_train_net.py to implement novel functionalities."
+    },
+    {
+        "question": "How are metrics logged during training in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "During training in ComfyUI_OOTDiffusion_CXH, metrics are saved to a centralized EventStorage. Users can access it and log metrics to it using the detectron2.utils.events.get_event_storage() function."
+    },
+    {
+        "question": "What is the purpose of EventWriter in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "In ComfyUI_OOTDiffusion_CXH, EventWriter is responsible for saving metrics to various destinations during training. DefaultTrainer enables a few EventWriter with default configurations."
+    },
+    {
+        "question": "How can users customize the behavior of DefaultTrainer in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "Users can customize the behavior of DefaultTrainer in ComfyUI_OOTDiffusion_CXH by overwriting its methods in a subclass, similar to what tools/train_net.py does."
+    }
+]

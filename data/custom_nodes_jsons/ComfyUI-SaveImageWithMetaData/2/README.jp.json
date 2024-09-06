@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is ComfyUI-SaveImageWithMetaData?",
+        "answer": "ComfyUI-SaveImageWithMetaData is a custom node for ComfyUI that adds a node to save images with metadata (PNGInfo) obtained from the input values of each node."
+    },
+    {
+        "question": "What are the installation steps for ComfyUI-SaveImageWithMetaData?",
+        "answer": "To install ComfyUI-SaveImageWithMetaData, navigate to the custom_nodes directory in your ComfyUI installation and run the command: git clone https://github.com/nkchocoai/ComfyUI-SaveImageWithMetaData.git"
+    },
+    {
+        "question": "What node is added by ComfyUI-SaveImageWithMetaData?",
+        "answer": "ComfyUI-SaveImageWithMetaData adds the 'Save Image With Metadata' node, which saves the received input 'images' as images with metadata (PNGInfo)."
+    },
+    {
+        "question": "How is metadata obtained for the 'Save Image With Metadata' node?",
+        "answer": "Metadata for the 'Save Image With Metadata' node is obtained from the inputs of the found KSampler node using 'sampler_selection_method' and previously executed node inputs."
+    },
+    {
+        "question": "What is the purpose of the 'filename_prefix' in the 'Save Image With Metadata' node?",
+        "answer": "The 'filename_prefix' in the 'Save Image With Metadata' node specifies a string (Key) that is replaced with the acquired information in the filename."
+    },
+    {
+        "question": "What methods are available for selecting the KSampler node in the 'sampler_selection_method'?",
+        "answer": "The available methods for selecting the KSampler node in the 'sampler_selection_method' are Farthest, Nearest, and By node ID."
+    },
+    {
+        "question": "What does the 'Create Extra MetaData' node do?",
+        "answer": "The 'Create Extra MetaData' node allows you to specify additional metadata to be added to the saved image."
+    },
+    {
+        "question": "What metadata is assigned to the saved images by ComfyUI-SaveImageWithMetaData?",
+        "answer": "ComfyUI-SaveImageWithMetaData assigns metadata such as Positive prompt, Negative prompt, Steps, Sampler, CFG Scale, Seed, Clip skip, Size, Model, Model hash, VAE, VAE hash, Loras, Embeddings, Batch index, Batch size, and Hashes for Model, Loras, and Embeddings, which can be used with Civitai."
+    },
+    {
+        "question": "Which nodes and extensions are compatible with ComfyUI-SaveImageWithMetaData?",
+        "answer": "The compatible nodes and extensions for ComfyUI-SaveImageWithMetaData can be found in the following files and directories: py/defs/captures.py, py/defs/samplers.py, and py/defs/ext/."
+    }
+]

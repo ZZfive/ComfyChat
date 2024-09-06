@@ -1,0 +1,30 @@
+[
+    {
+        "question": "How can SWIFT be installed quickly?",
+        "answer": "SWIFT can be quickly installed using bash commands by cloning the GitHub repository, installing the requirements, and then installing SWIFT with the llm extra."
+    },
+    {
+        "question": "What are the two ways to perform inference using SWIFT?",
+        "answer": "Inference using SWIFT can be carried out through a command line interface and via Python code."
+    },
+    {
+        "question": "What is the command to run SWIFT inference with the MiniCPM-Llama3-V-2_5 model?",
+        "answer": "The command to run SWIFT inference with the MiniCPM-Llama3-V-2_5 model is: CUDA_VISIBLE_DEVICES=0 swift infer --model_type minicpm-v-v2_5-chat"
+    },
+    {
+        "question": "What are some of the arguments that can be used when running SWIFT inference from the command line?",
+        "answer": "Some of the arguments that can be used include model_id_or_path, infer_backend, dtype, max_length, max_new_tokens, do_sample, temperature, top_k, top_p, repetition_penalty, num_beams, stop_words, quant_method, and quantization_bit."
+    },
+    {
+        "question": "How can the MiniCPM-Llama3-V-2_5 model be used for inference through SWIFT in Python code?",
+        "answer": "In Python code, the MiniCPM-Llama3-V-2_5 model can be used for inference through SWIFT by importing necessary modules, setting the model type, obtaining the template type, loading the model, constructing the template, and then performing inference with the model, template, query, and images."
+    },
+    {
+        "question": "What format should the training data be in for SWIFT?",
+        "answer": "The training data for SWIFT should be in JSONL format, with each line containing a JSON object with fields for query, response, history (optional), and images."
+    },
+    {
+        "question": "How can LoRA weights be merged with the base model for inference in SWIFT?",
+        "answer": "LoRA weights can be merged with the base model for inference in SWIFT by running the command: CUDA_VISIBLE_DEVICES=0 swift infer --ckpt_dir your/lora/save/checkpoint --merge_lora true"
+    }
+]

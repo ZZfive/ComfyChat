@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of DiffusionPipeline in ComfyUI-MuseV?",
+        "answer": "DiffusionPipeline in ComfyUI-MuseV is designed to integrate the complexity of diffusion models into a single pipeline API, while allowing flexible customization of its components for specific tasks."
+    },
+    {
+        "question": "How can you load a diffusion pipeline locally in ComfyUI-MuseV?",
+        "answer": "To load a diffusion pipeline locally in ComfyUI-MuseV, you need to use git-lfs to download the checkpoint to your local disk, and then pass the local path to the DiffusionPipeline.from_pretrained method."
+    },
+    {
+        "question": "What is the role of the safety checker in ComfyUI-MuseV pipelines?",
+        "answer": "The safety checker in ComfyUI-MuseV pipelines is used to check the generated images for any explicit content. If the safety checker is not required, it can be disabled by passing None to the safety_checker argument."
+    },
+    {
+        "question": "What are the two important arguments used when loading a variant of a checkpoint in ComfyUI-MuseV?",
+        "answer": "The two important arguments used when loading a variant of a checkpoint in ComfyUI-MuseV are torch_dtype, which defines the floating point precision of the checkpoint, and variant, which defines which variant to load from the repository."
+    },
+    {
+        "question": "What is the purpose of the subfolder argument when loading a model in ComfyUI-MuseV?",
+        "answer": "The subfolder argument is used to specify the subfolder from which to load the model. For example, the UNet model weights for runwayml/stable-diffusion-v1-5 are stored in the unet subfolder."
+    },
+    {
+        "question": "How can you replace the scheduler in a ComfyUI-MuseV pipeline?",
+        "answer": "To replace the scheduler in a ComfyUI-MuseV pipeline, you can use the SchedulerMixin.from_pretrained method to load a different scheduler, and then pass the new scheduler instance to the DiffusionPipeline's scheduler argument."
+    },
+    {
+        "question": "What information does the model_index.json file provide in a ComfyUI-MuseV pipeline?",
+        "answer": "The model_index.json file in a ComfyUI-MuseV pipeline provides information about which pipeline class to use, which version of Diffusers the models were created with, and which library and class each component was created from."
+    }
+]

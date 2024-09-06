@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is Stable unCLIP?",
+        "answer": "Stable unCLIP checkpoints are finetuned from Stable Diffusion 2.1 checkpoints to condition on CLIP image embeddings. Stable unCLIP still conditions on text embeddings and can be used for text guided image variation. When combined with an unCLIP prior, it can also be used for full text to image generation."
+    },
+    {
+        "question": "How can Stable unCLIP be used for text-to-image generation?",
+        "answer": "Stable unCLIP can be leveraged for text-to-image generation by pipelining it with the prior model of KakaoBrain's open source DALL-E 2 replication Karlo. The code example shows how to set up the pipeline using the StableUnCLIPPipeline class from the MuseVdiffusers library."
+    },
+    {
+        "question": "What is the recommended Stable unCLIP model for text-to-image generation?",
+        "answer": "For text-to-image generation, it is recommended to use the 'stabilityai/stable-diffusion-2-1-unclip-small' model as it was trained on CLIP ViT-L/14 embedding, the same as the Karlo model prior."
+    },
+    {
+        "question": "How can Stable unCLIP be used for text guided image-to-image variation?",
+        "answer": "The code example shows how to use the StableUnCLIPImg2ImgPipeline class from the MuseVdiffusers library to perform text guided image-to-image variation. An initial image is loaded and passed to the pipeline, and a prompt can optionally be provided to guide the variation."
+    },
+    {
+        "question": "What is the purpose of the noise_level parameter in Stable unCLIP?",
+        "answer": "The noise_level parameter determines how much noise is added to the image embeddings during inference with Stable unCLIP. A higher noise_level increases variation in the final un-noised images. By default, no additional noise is added to the image embeddings (noise_level = 0)."
+    },
+    {
+        "question": "What are some key classes in the MuseVdiffusers library for working with Stable unCLIP?",
+        "answer": "Some key classes in the MuseVdiffusers library for working with Stable unCLIP include: StableUnCLIPPipeline for text-to-image generation, StableUnCLIPImg2ImgPipeline for image-to-image variation, and ImagePipelineOutput for representing the output of image pipelines."
+    },
+    {
+        "question": "How can the tradeoff between scheduler speed and quality be explored when using Stable unCLIP?",
+        "answer": "To explore the tradeoff between scheduler speed and quality when using Stable unCLIP, one can refer to the Schedulers guide in the MuseVdiffusers documentation. It provides information on how to efficiently load the same components into multiple pipelines."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Open-Sora project?",
+        "answer": "The Open-Sora project aims to build an open-source version of OpenAI's Sora, which is capable of generating high-quality one-minute videos using AI."
+    },
+    {
+        "question": "Why did the Open-Sora team decide to use a 2D VAE in their first version?",
+        "answer": "The team decided to use a 2D VAE from Stability-AI because they could not find an open-source high-quality spatial-temporal VAE model."
+    },
+    {
+        "question": "What type of attention does Open-Sora use to reduce computational cost?",
+        "answer": "Open-Sora uses spatial-temporal attention to reduce computational cost, following the approach of Latte."
+    },
+    {
+        "question": "Which model did the Open-Sora team use to initialize their model?",
+        "answer": "The team initialized their model with PixArt-α, a high-quality image generation model with T5-conditioned DiT structure."
+    },
+    {
+        "question": "What progressive training strategy does Open-Sora adopt?",
+        "answer": "Open-Sora adopts a progressive training strategy that involves training on 16x256x256 on 366K pretraining datasets, and then on 16x256x256, 16x512x512, and 64x512x512 on 20K datasets."
+    },
+    {
+        "question": "How did the Open-Sora team improve the quality of their video captions?",
+        "answer": "The team collected 20k relatively high-quality videos from Pexels and labeled the videos with LLaVA, an image captioning model, using three frames and a designed prompt."
+    },
+    {
+        "question": "What learning rate did the Open-Sora team find to be too large, and what rate did they scale down to?",
+        "answer": "The team found that a learning rate of 1e-4 was too large and scaled it down to 2e-5."
+    }
+]
