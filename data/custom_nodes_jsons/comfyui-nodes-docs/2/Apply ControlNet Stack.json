@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Apply ControlNet Stack node in ComfyUI?",
+        "answer": "The Apply ControlNet Stack node in ComfyUI is designed to enhance the conditioning of positive and negative prompts by applying a series of control networks, allowing for dynamic adjustment of prompts based on specified control networks, images, and strength parameters to optimize conditioning for more targeted and efficient generation results."
+    },
+    {
+        "question": "What are the required input types for the Apply ControlNet Stack node?",
+        "answer": "The required input types for the Apply ControlNet Stack node are the positive prompt and the negative prompt, both of which are of the Comfy dtype CONDITIONING and Python dtype List[Tuple[str, Dict]]."
+    },
+    {
+        "question": "What is the optional input type for the Apply ControlNet Stack node?",
+        "answer": "The optional input type for the Apply ControlNet Stack node is cnet_stack, which is a control network stack and associated parameters applied in sequence to the positive and negative prompts, with a Comfy dtype of CONTROL_NET_STACK and a Python dtype of Optional[List[Tuple[ControlNet, torch.Tensor, float, float, float]]]."
+    },
+    {
+        "question": "What are the output types of the Apply ControlNet Stack node?",
+        "answer": "The output types of the Apply ControlNet Stack node are CONDITIONING+ and CONDITIONING-, which are the conditioned positive and negative prompts after the application of the control network stack, both with a Comfy dtype of CONDITIONING and a Python dtype of List[Tuple[str, Dict]]."
+    },
+    {
+        "question": "What is the infra type for the Apply ControlNet Stack node?",
+        "answer": "The infra type for the Apply ControlNet Stack node is CPU."
+    },
+    {
+        "question": "What does the apply_cnet_stack function do in the Apply ControlNet Stack node?",
+        "answer": "The apply_cnet_stack function in the Apply ControlNet Stack node applies the control network stack to the positive and negative prompts if provided, iteratively adjusting the conditioning based on the specified control nets, images, strengths, start percents, and end percents, and returns the conditioned positive and negative prompts."
+    },
+    {
+        "question": "What category does the Apply ControlNet Stack node belong to in ComfyUI?",
+        "answer": "The Apply ControlNet Stack node belongs to the Efficiency Nodes/Stackers category in ComfyUI."
+    }
+]

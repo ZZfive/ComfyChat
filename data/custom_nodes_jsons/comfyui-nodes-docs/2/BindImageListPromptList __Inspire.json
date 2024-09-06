@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BindImageListPromptList node in ComfyUI?",
+        "answer": "The BindImageListPromptList node in ComfyUI is designed to integrate image lists with their corresponding prompt lists, creating a rich visual-text dataset. It simplifies the process of binding images with their corresponding prompts, making the handling of visual and text data more efficient and organized for creative or analytical purposes."
+    },
+    {
+        "question": "What are the required input types for the BindImageListPromptList node?",
+        "answer": "The required input types for the BindImageListPromptList node are: images (a list of images to be bound with prompts), zipped_prompts (a list of prompts associated with the images in a compressed format), default_positive (a default positive prompt to be used when the number of prompts is less than the number of images), and default_negative (a default negative prompt used similarly to the default positive prompt to ensure all images have corresponding prompts)."
+    },
+    {
+        "question": "What output types does the BindImageListPromptList node return?",
+        "answer": "The BindImageListPromptList node returns the following output types: image (the original list of images, maintaining the integrity of the visual data), positive (a list of positive prompts, each corresponding to an image, enriching the dataset with positive text annotations), negative (a list of negative prompts, supplementing the positive prompts and providing contrasting text annotations for each image), and prompt_label (a list of labels for the prompts, offering additional context or classification information for the bound image-prompt pairs)."
+    },
+    {
+        "question": "How does the BindImageListPromptList node handle a mismatch between the number of images and prompts?",
+        "answer": "If the number of images is less than the number of prompts, the node truncates the prompts to match the number of images. If the number of images is greater than the number of prompts, it extends the prompts list by adding a default prompt tuple (consisting of default_positive, default_negative, and 'default') for each extra image."
+    },
+    {
+        "question": "What infrastructure type does the BindImageListPromptList node use?",
+        "answer": "The BindImageListPromptList node uses the 'CPU' infrastructure type."
+    },
+    {
+        "question": "Under what category does the BindImageListPromptList node fall in ComfyUI?",
+        "answer": "The BindImageListPromptList node falls under the 'InspirePack/Prompt' category in ComfyUI."
+    },
+    {
+        "question": "What is the function name used by the BindImageListPromptList node?",
+        "answer": "The BindImageListPromptList node uses the function named 'doit'."
+    }
+]

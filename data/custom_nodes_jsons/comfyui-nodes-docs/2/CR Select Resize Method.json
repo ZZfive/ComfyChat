@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_SelectResizeMethod node in ComfyUI?",
+        "answer": "The CR_SelectResizeMethod node in ComfyUI is designed to provide a selection mechanism for different image resizing methods such as 'Fit' and 'Crop'. It acts as a decision point in image processing workflows, allowing users to choose a method based on their specific requirements for image manipulation."
+    },
+    {
+        "question": "What is the significance of the 'method' parameter in the CR_SelectResizeMethod node?",
+        "answer": "The 'method' parameter in the CR_SelectResizeMethod node is crucial for determining the method used to resize the image. It decides whether the image will be resized to fit given dimensions or cropped to match these dimensions exactly."
+    },
+    {
+        "question": "What data type is accepted for the 'method' parameter in the CR_SelectResizeMethod node?",
+        "answer": "The 'method' parameter in the CR_SelectResizeMethod node accepts a string data type in both ComfyUI and Python."
+    },
+    {
+        "question": "What output does the CR_SelectResizeMethod node produce?",
+        "answer": "The CR_SelectResizeMethod node produces two outputs: 'method' and 'show_help'. The 'method' output represents the selected image resizing method, and the 'show_help' output provides a URL link to the documentation for further help."
+    },
+    {
+        "question": "What is the purpose of the 'show_help' output in the CR_SelectResizeMethod node?",
+        "answer": "The 'show_help' output in the CR_SelectResizeMethod node provides a URL link to the documentation for further help. It is particularly useful for users who need more information about the resizing methods or the functionality of the node."
+    },
+    {
+        "question": "What infrastructure type does the CR_SelectResizeMethod node use?",
+        "answer": "The CR_SelectResizeMethod node uses a CPU infrastructure type."
+    },
+    {
+        "question": "What is the source code for the CR_SelectResizeMethod class?",
+        "answer": "The source code for the CR_SelectResizeMethod class is as follows: ```class CR_SelectResizeMethod: @classmethod def INPUT_TYPES(cls): methods = ['Fit', 'Crop'] return {'required': {'method': (methods,)}} RETURN_TYPES = (any_type, 'STRING') RETURN_NAMES = ('method', 'show_help') FUNCTION = 'set_switch' CATEGORY = icons.get('Comfyroll/Utils/Other') def set_switch(self, method): show_help = 'https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/wiki/Other-Nodes#cr-select-resize-method' return (method, show_help)```"
+    }
+]

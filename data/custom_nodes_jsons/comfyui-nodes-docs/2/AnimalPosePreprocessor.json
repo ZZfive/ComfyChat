@@ -1,0 +1,30 @@
+[
+    {
+        "question": "AnimalPosePreprocessor节点的主要功能是什么？",
+        "answer": "AnimalPosePreprocessor节点专门用于检测和分析图像中的动物姿态。它利用先进的姿态估计技术来识别和处理动物形象，旨在提供详细的姿态信息，以供进一步分析或处理。"
+    },
+    {
+        "question": "AnimalPosePreprocessor节点需要哪些必需的输入类型？",
+        "answer": "AnimalPosePreprocessor节点需要的必需输入类型是image，即需要进行动物姿态检测的输入图像。这是姿态估计过程的主要输入。"
+    },
+    {
+        "question": "bbox_detector参数在AnimalPosePreprocessor节点中有什么作用？",
+        "answer": "在AnimalPosePreprocessor节点中，bbox_detector参数用于指定用于识别图像中存在动物的感兴趣区域的边界框检测器模型。这一步对于缩小姿态估计的区域范围至关重要。"
+    },
+    {
+        "question": "pose_estimator参数在AnimalPosePreprocessor节点中有什么作用？",
+        "answer": "在AnimalPosePreprocessor节点中，pose_estimator参数用于定义用于分析图像中检测到的动物形象的姿态估计模型。这个参数决定了姿态检测的准确性和有效性。"
+    },
+    {
+        "question": "AnimalPosePreprocessor节点的输出类型有哪些？",
+        "answer": "AnimalPosePreprocessor节点的输出类型包括image（返回处理后的图像，其中突出显示了检测到的动物姿态）、pose_keypoint（输出检测到的动物姿态的关键点，提供详细的姿态结构信息）和ui（提供一个用户界面组件，显示检测到的动物姿态的JSON表示）。"
+    },
+    {
+        "question": "AnimalPosePreprocessor节点使用的infra类型是什么？",
+        "answer": "AnimalPosePreprocessor节点使用的infra类型是GPU。"
+    },
+    {
+        "question": "AnimalPosePreprocessor类的estimate_pose方法有什么作用？",
+        "answer": "AnimalPosePreprocessor类的estimate_pose方法通过使用指定的边界框检测器模型和姿态估计模型来估计输入图像中动物的姿态。该方法返回处理后的图像和检测到的姿态关键点信息。"
+    }
+]

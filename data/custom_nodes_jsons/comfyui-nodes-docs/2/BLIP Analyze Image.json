@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the WAS_BLIP_Analyze_Image node in ComfyUI?",
+        "answer": "The WAS_BLIP_Analyze_Image node in ComfyUI is designed to analyze and interpret image content using the BLIP (Bootstrapped Language Image Pretraining) model. It provides the capability to generate captions and ask natural language questions about the image, offering insights into the visual and contextual aspects of the input image."
+    },
+    {
+        "question": "What are the required input types for the WAS_BLIP_Analyze_Image node?",
+        "answer": "The required input types for the WAS_BLIP_Analyze_Image node are 'image' and 'mode'. The 'image' parameter is essential for the node's operation as it is the input for the model to analyze and generate captions or answer questions. The 'mode' parameter determines the type of analysis the node will perform on the image, which can be 'caption' to generate a description or 'interrogate' to answer questions about the image content."
+    },
+    {
+        "question": "What does the 'question' parameter in the WAS_BLIP_Analyze_Image node specify?",
+        "answer": "The 'question' parameter in the WAS_BLIP_Analyze_Image node is used when the mode is set to 'interrogate'. It specifies the query that the model will attempt to answer based on the image content. The wording of the question can influence the accuracy and relevance of the answer."
+    },
+    {
+        "question": "What is the purpose of the 'blip_model' parameter in the WAS_BLIP_Analyze_Image node?",
+        "answer": "The 'blip_model' parameter in the WAS_BLIP_Analyze_Image node allows the user to provide a preloaded BLIP model for the node instead of downloading a new model. This can improve efficiency and is particularly useful when running the node multiple times."
+    },
+    {
+        "question": "What does the output of the WAS_BLIP_Analyze_Image node represent?",
+        "answer": "The output of the WAS_BLIP_Analyze_Image node represents the result of the node's analysis, which can be a caption describing the image or an answer to a proposed interrogative question. It summarizes the node's understanding of the image content."
+    },
+    {
+        "question": "What is the recommended infrastructure type for running the WAS_BLIP_Analyze_Image node?",
+        "answer": "The recommended infrastructure type for running the WAS_BLIP_Analyze_Image node is GPU."
+    },
+    {
+        "question": "How does the WAS_BLIP_Analyze_Image node handle the 'caption' mode?",
+        "answer": "In the 'caption' mode, the WAS_BLIP_Analyze_Image node uses the BLIP model to generate a caption for the input image. It utilizes a preloaded model if provided or downloads a new one. The model generates the caption using the input image tensor, and the node outputs the generated caption."
+    },
+    {
+        "question": "How does the WAS_BLIP_Analyze_Image node handle the 'interrogate' mode?",
+        "answer": "In the 'interrogate' mode, the WAS_BLIP_Analyze_Image node uses the BLIP model to answer a question about the input image based on the 'question' parameter. It utilizes a preloaded model if provided or downloads a new one. The model generates the answer using the input image tensor and the question, and the node outputs the generated answer."
+    }
+]

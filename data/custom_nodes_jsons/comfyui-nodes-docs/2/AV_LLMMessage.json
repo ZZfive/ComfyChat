@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AV_LLMMessage node in ComfyUI?",
+        "answer": "The AV_LLMMessage node is designed to create and manage messages for language model chat interfaces. It supports messages containing text and optional images, facilitating rich, interactive conversations between users and systems or assistants."
+    },
+    {
+        "question": "What are the required input types for the AV_LLMMessage node?",
+        "answer": "The required input types for the AV_LLMMessage node are 'role' (specifying the message's role such as 'system', 'user', or 'assistant') and 'text' (the main content of the message, which can be a user query, system response, or assistant's reply)."
+    },
+    {
+        "question": "What optional input types does the AV_LLMMessage node support?",
+        "answer": "The AV_LLMMessage node supports two optional input types: 'image' (an optional image to accompany the text message, enhancing the interaction through visual content) and 'messages' (a list of existing messages to which the new message will be added, allowing accumulation and management of conversation history)."
+    },
+    {
+        "question": "What is the output type of the AV_LLMMessage node?",
+        "answer": "The output type of the AV_LLMMessage node is 'messages', which returns a list of messages including the newly created message, facilitating the continuation and tracking of the conversation flow."
+    },
+    {
+        "question": "What is the infra type of the AV_LLMMessage node?",
+        "answer": "The infra type of the AV_LLMMessage node is 'CPU'."
+    },
+    {
+        "question": "Can the AV_LLMMessage node handle multiple system prompts?",
+        "answer": "No, the AV_LLMMessage node only allows one system prompt. If more than one system message is detected, it raises an exception."
+    },
+    {
+        "question": "How does the AV_LLMMessage node handle images?",
+        "answer": "If an image is provided as a tensor, the AV_LLMMessage node converts it to a PIL image, then to base64 format before including it in the message. The resulting message contains the specified role, text, and the base64-encoded image content."
+    }
+]

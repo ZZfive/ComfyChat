@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FloatUnaryOperation node in ComfyUI?",
+        "answer": "The FloatUnaryOperation node in ComfyUI applies mathematical operations to a single floating-point number, converting it into another floating-point value. It is designed to handle various unary operations, making it highly flexible for use in mathematical calculations within data processing workflows."
+    },
+    {
+        "question": "What are the required input types for the FloatUnaryOperation node?",
+        "answer": "The required input types for the FloatUnaryOperation node are 'op' and 'a'. 'op' specifies the unary mathematical operation to be performed, and 'a' represents the input floating-point value to which the unary operation will be applied."
+    },
+    {
+        "question": "What does the 'op' parameter specify in the FloatUnaryOperation node?",
+        "answer": "The 'op' parameter in the FloatUnaryOperation node specifies the unary mathematical operation to be executed. It is crucial because it determines the type of transformation applied to the input floating-point value."
+    },
+    {
+        "question": "What does the 'a' parameter represent in the FloatUnaryOperation node?",
+        "answer": "The 'a' parameter in the FloatUnaryOperation node represents the input floating-point value to which the unary operation will be applied. It is a fundamental component of the node's operation, as it is the subject of the mathematical transformation."
+    },
+    {
+        "question": "What is the output type of the FloatUnaryOperation node?",
+        "answer": "The output type of the FloatUnaryOperation node is 'result', which provides the transformed floating-point value after applying the specified unary operation. It is important because it represents the outcome of the mathematical calculation performed by the node."
+    },
+    {
+        "question": "What is the infra type for the FloatUnaryOperation node?",
+        "answer": "The infra type for the FloatUnaryOperation node is CPU."
+    },
+    {
+        "question": "What is the source code for the FloatUnaryOperation class?",
+        "answer": "The source code for the FloatUnaryOperation class is as follows:\n```\nclass FloatUnaryOperation:\n\n    @classmethod\n    def INPUT_TYPES(cls) -> Mapping[str, Any]:\n        return {'required': {'op': (list(FLOAT_UNARY_OPERATIONS.keys()),), 'a': DEFAULT_FLOAT}}\n    RETURN_TYPES = ('FLOAT',)\n    FUNCTION = 'op'\n    CATEGORY = 'math/float'\n\n    def op(self, op: str, a: float) -> tuple[float]:\n        return (FLOAT_UNARY_OPERATIONS[op](a),)\n```"
+    }
+]

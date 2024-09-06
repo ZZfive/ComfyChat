@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MultivalScaledMaskNode class in ComfyUI?",
+        "answer": "The MultivalScaledMaskNode class in ComfyUI is designed to transform a given mask tensor by scaling it within a specified range. It applies either a linear transformation or normalization based on the selected scaling type, ensuring the output mask is suitable for further processing in animation or visualization applications."
+    },
+    {
+        "question": "What are the required input parameters for the MultivalScaledMaskNode?",
+        "answer": "The required input parameters for the MultivalScaledMaskNode are min_float_val, max_float_val, and mask. min_float_val defines the lower bound of the mask tensor scaling range, max_float_val sets the upper limit for mask tensor scaling, and mask is the tensor that will be scaled according to the specified minimum and maximum float values."
+    },
+    {
+        "question": "What is the optional input parameter for the MultivalScaledMaskNode and what does it determine?",
+        "answer": "The optional input parameter for the MultivalScaledMaskNode is scaling. It determines the type of scaling to be applied to the mask tensor, which can be either absolute or relative, affecting how the mask values are adjusted within the specified range."
+    },
+    {
+        "question": "What is the output type of the MultivalScaledMaskNode?",
+        "answer": "The output type of the MultivalScaledMaskNode is a multival tensor, representing the scaled mask. It is crucial as it is the direct result of the node operation and can be used for subsequent animation or visualization tasks."
+    },
+    {
+        "question": "What are the two types of scaling that can be applied to the mask tensor in the MultivalScaledMaskNode?",
+        "answer": "The two types of scaling that can be applied to the mask tensor in the MultivalScaledMaskNode are absolute and relative. Absolute scaling applies a linear conversion to the mask tensor, while relative scaling normalizes the mask tensor within the specified range."
+    },
+    {
+        "question": "What is the infra type specified for the MultivalScaledMaskNode?",
+        "answer": "The infra type specified for the MultivalScaledMaskNode is CPU."
+    },
+    {
+        "question": "What happens if an unrecognized scaling type is provided to the MultivalScaledMaskNode?",
+        "answer": "If an unrecognized scaling type is provided to the MultivalScaledMaskNode, a ValueError is raised, indicating that the scaling type is not recognized."
+    }
+]

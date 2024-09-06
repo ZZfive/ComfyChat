@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ADE_RawSigmaSchedule node in ComfyUI?",
+        "answer": "The ADE_RawSigmaSchedule node is used to generate a sigma schedule based on a given beta schedule, which is crucial for controlling noise levels in diffusion models, particularly in the context of animations and image compositions."
+    },
+    {
+        "question": "What are the required input types for the ADE_RawSigmaSchedule node?",
+        "answer": "The required input types for the ADE_RawSigmaSchedule node are: raw_beta_schedule (COMBO[STRING]), linear_start (FLOAT), linear_end (FLOAT), sampling (COMBO[STRING]), lcm_original_timesteps (INT), and lcm_zsnr (BOOLEAN)."
+    },
+    {
+        "question": "What does the 'raw_beta_schedule' input specify in the ADE_RawSigmaSchedule node?",
+        "answer": "The 'raw_beta_schedule' input specifies the beta schedule to be converted into a sigma schedule, which is essential for determining the progression and intensity of noise levels throughout the diffusion process."
+    },
+    {
+        "question": "What is the purpose of the 'linear_start' and 'linear_end' inputs in the ADE_RawSigmaSchedule node?",
+        "answer": "The 'linear_start' input defines the starting point for linear interpolation used in sigma schedule generation, affecting the initial noise level in the diffusion process. The 'linear_end' input sets the endpoint for linear interpolation in the sigma schedule, influencing the final noise level in the diffusion process."
+    },
+    {
+        "question": "What does the 'sampling' input determine in the ADE_RawSigmaSchedule node?",
+        "answer": "The 'sampling' input determines the sampling method used in the sigma schedule, affecting how noise levels are interpolated and applied. The type 'ModelSamplingType' should be understood as a placeholder for the actual chosen sampling method."
+    },
+    {
+        "question": "What is the output type of the ADE_RawSigmaSchedule node?",
+        "answer": "The output type of the ADE_RawSigmaSchedule node is SIGMA_SCHEDULE, which represents the generated sigma schedule outlining the specific noise levels to be applied at each step of the diffusion process."
+    },
+    {
+        "question": "What is the infra type requirement for the ADE_RawSigmaSchedule node?",
+        "answer": "The infra type requirement for the ADE_RawSigmaSchedule node is CPU."
+    }
+]

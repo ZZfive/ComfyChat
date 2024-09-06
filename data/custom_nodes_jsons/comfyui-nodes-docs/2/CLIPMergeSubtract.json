@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CLIPSubtract node in ComfyUI?",
+        "answer": "The CLIPSubtract node in ComfyUI is designed to perform subtraction operations on two CLIP models. It merges key patches from one model into another, allowing for fine-tuning of model features by adjusting the influence of specific patches."
+    },
+    {
+        "question": "What are the required inputs for the CLIPSubtract node?",
+        "answer": "The required inputs for the CLIPSubtract node are clip1 and clip2. clip1 is the first CLIP model that will receive patches from the second model, while clip2 is the second CLIP model that provides the key patches to be subtracted from the first model."
+    },
+    {
+        "question": "What is the role of the multiplier input in the CLIPSubtract node?",
+        "answer": "The multiplier input in the CLIPSubtract node is an optional floating-point value that adjusts the strength of the patches merged from the second CLIP model into the first model. It controls the degree of influence the patches have on the resulting model."
+    },
+    {
+        "question": "What is the output of the CLIPSubtract node?",
+        "answer": "The output of the CLIPSubtract node is a modified CLIP model, referred to as resulting_clip, which includes the patches subtracted from the second model and adjusted according to the specified multiplier."
+    },
+    {
+        "question": "What infrastructure type is recommended for the CLIPSubtract node?",
+        "answer": "The recommended infrastructure type for the CLIPSubtract node is CPU."
+    },
+    {
+        "question": "How does the CLIPSubtract node handle key patches ending with '.position_ids' or '.logit_scale'?",
+        "answer": "The CLIPSubtract node skips key patches ending with '.position_ids' or '.logit_scale' and does not include them in the merging process."
+    },
+    {
+        "question": "In which category does the CLIPSubtract node belong?",
+        "answer": "The CLIPSubtract node belongs to the 'advanced/model_merging' category in ComfyUI."
+    }
+]

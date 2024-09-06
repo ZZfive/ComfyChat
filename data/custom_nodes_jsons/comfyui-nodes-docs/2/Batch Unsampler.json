@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BatchUnsampler node in ComfyUI?",
+        "answer": "The BatchUnsampler node in ComfyUI is designed to generate a series of reverse latent representations starting from a given latent image. It uses the model's noise schedule to gradually add noise, simulating the inverse process of latent diffusion as described in the original paper. This node is crucial for testing and analyzing the behavior of diffusion models under various noise conditions and sampling strategies."
+    },
+    {
+        "question": "What are the required input types for the BatchUnsampler node?",
+        "answer": "The required input types for the BatchUnsampler node are: model (MODEL), steps (INT), sampler_name (STRING), and latent_image (LATENT)."
+    },
+    {
+        "question": "What does the 'model' parameter provide for the BatchUnsampler node?",
+        "answer": "The 'model' parameter provides the base diffusion model that the BatchUnsampler node will use to generate latent representations. The model's noise schedule is particularly important for simulating the reverse diffusion process."
+    },
+    {
+        "question": "How does the 'steps' parameter affect the output of the BatchUnsampler node?",
+        "answer": "The 'steps' parameter determines the number of intermediate latent representations that will be generated. It is a key factor in controlling the granularity of the reverse diffusion process and the level of detail in the generated latent sequence."
+    },
+    {
+        "question": "What is the role of the 'sampler_name' parameter in the BatchUnsampler node?",
+        "answer": "The 'sampler_name' parameter specifies the type of sampler used by the BatchUnsampler node. This choice influences the method of adding noise to the latent representations, thereby affecting the characteristics of the generated sequence."
+    },
+    {
+        "question": "What is the significance of the 'latent_image' parameter in the BatchUnsampler node?",
+        "answer": "The 'latent_image' parameter is a crucial input for the BatchUnsampler node as it represents the source latent image from which the noisy latent sequence will be generated. This image serves as the starting point for the reverse diffusion process."
+    },
+    {
+        "question": "What is the output type of the BatchUnsampler node?",
+        "answer": "The output type of the BatchUnsampler node is 'latent_batch', which contains a batch of latent representations generated through the reverse diffusion process. These latent representations are important for further analysis or as inputs for other nodes in the diffusion model pipeline."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BboxDetectorCombined node in ComfyUI?",
+        "answer": "The BboxDetectorCombined node is designed to detect and segment objects in images using a pretrained bounding box detector. It processes the input image to identify regions of interest and generates a mask depicting these regions."
+    },
+    {
+        "question": "What are the required input types for the BboxDetectorCombined node?",
+        "answer": "The required input types for the BboxDetectorCombined node are bbox_detector (BBOX_DETECTOR) and image (IMAGE)."
+    },
+    {
+        "question": "What is the role of the bbox_detector parameter in the BboxDetectorCombined node?",
+        "answer": "The bbox_detector parameter is crucial for the operation of the node as it provides the pretrained model used to detect objects in the image. It is a key component that enables the node to accurately identify and locate objects."
+    },
+    {
+        "question": "What does the dilation parameter do in the BboxDetectorCombined node?",
+        "answer": "The dilation parameter is applied to the detected object masks to expand their boundaries. This is useful for refining the segmentation, ensuring that the mask encompasses the entire object even if the edges of the object are not perfectly detected."
+    },
+    {
+        "question": "What is the output type of the BboxDetectorCombined node?",
+        "answer": "The output type of the BboxDetectorCombined node is a mask (IMAGE), which is a binary image representing the segmentation of the detected objects in the input image."
+    },
+    {
+        "question": "What infrastructure type is recommended for the BboxDetectorCombined node?",
+        "answer": "The recommended infrastructure type for the BboxDetectorCombined node is GPU."
+    },
+    {
+        "question": "How does the BboxDetectorCombined node generate the mask output?",
+        "answer": "The BboxDetectorCombined node generates the mask output by using the bbox_detector.detect_combined method, which takes the input image, threshold, and dilation parameters to detect objects and generate a binary image representing the segmentation."
+    }
+]

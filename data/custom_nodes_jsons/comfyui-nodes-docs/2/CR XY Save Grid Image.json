@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the CR_XYSaveGridImage node in ComfyUI?",
+        "answer": "The CR_XYSaveGridImage node in ComfyUI is designed to save grid images to a specified output directory. It handles different save or preview image modes and supports multiple file formats."
+    },
+    {
+        "question": "What are the required input parameters for the CR_XYSaveGridImage node?",
+        "answer": "The required input parameters for the CR_XYSaveGridImage node are mode, output_folder, image, and file_format."
+    },
+    {
+        "question": "What does the mode parameter in the CR_XYSaveGridImage node determine?",
+        "answer": "The mode parameter in the CR_XYSaveGridImage node determines whether the node is in 'Save' mode to permanently save images or 'Preview' mode to temporarily save images for review."
+    },
+    {
+        "question": "What is the purpose of the filename_prefix parameter in the CR_XYSaveGridImage node?",
+        "answer": "The filename_prefix parameter in the CR_XYSaveGridImage node provides the basis for naming the saved image files. It is combined with a numeric counter to ensure unique filenames, which is important for preventing file overwrites and maintaining file organization."
+    },
+    {
+        "question": "What is the output type of the CR_XYSaveGridImage node?",
+        "answer": "The output type of the CR_XYSaveGridImage node is a dictionary (Dict[str, Any]) that provides a structured representation of the saved image, including its filename and location, which is useful for displaying the image in the user interface for review."
+    },
+    {
+        "question": "What infrastructure type does the CR_XYSaveGridImage node use?",
+        "answer": "The CR_XYSaveGridImage node uses CPU as its infrastructure type."
+    },
+    {
+        "question": "What happens when the trigger parameter is set to False in the CR_XYSaveGridImage node?",
+        "answer": "When the trigger parameter is set to False in the CR_XYSaveGridImage node, the node returns an empty tuple, indicating that the image saving process is not triggered."
+    },
+    {
+        "question": "How does the CR_XYSaveGridImage node handle the output path when the output_path parameter is not empty?",
+        "answer": "When the output_path parameter is not empty, the CR_XYSaveGridImage node checks if the path exists. If it doesn't exist, it prints a warning message and returns an empty tuple. If the path exists, it uses the output_path as the out_path for saving the image."
+    }
+]

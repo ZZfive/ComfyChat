@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_LoadImageList node in ComfyUI?",
+        "answer": "The CR_LoadImageList node is used to load and process a list of image files from a specified directory in ComfyUI. It provides the functionality to retrieve a subset of images based on a starting index and the maximum number of images to load."
+    },
+    {
+        "question": "What are the required input parameters for the CR_LoadImageList node?",
+        "answer": "The required input parameters for the CR_LoadImageList node are 'input_folder', which specifies the directory containing the images to load, 'start_index', which indicates the position in the sorted image list to start loading images from, and 'max_images', which sets the maximum number of images to load starting from the specified 'start_index'."
+    },
+    {
+        "question": "What is the purpose of the optional 'input_path' parameter in the CR_LoadImageList node?",
+        "answer": "The optional 'input_path' parameter allows users to specify a custom path to the image directory, overriding the default input directory. It provides flexibility in selecting the source of the image list and can be used to integrate images from different locations."
+    },
+    {
+        "question": "What are the output types of the CR_LoadImageList node?",
+        "answer": "The CR_LoadImageList node outputs two types of data: 'IMAGE', which provides the loaded image data as tensors for further processing or analysis within the ComfyUI framework, and 'show_help', which provides a URL link to a documentation page for further guidance and assistance."
+    },
+    {
+        "question": "What does the 'show_help' output of the CR_LoadImageList node provide?",
+        "answer": "The 'show_help' output of the CR_LoadImageList node provides a URL link to a documentation page, which serves as a useful resource for users seeking more information on how to effectively use the node."
+    },
+    {
+        "question": "How does the CR_LoadImageList node handle the 'input_path' parameter when it is not specified or is an empty string?",
+        "answer": "When the 'input_path' parameter is not specified or is an empty string, the CR_LoadImageList node uses the default input directory specified by 'folder_paths.input_directory' to load the images."
+    },
+    {
+        "question": "What does the CR_LoadImageList node do if the specified 'input_path' does not exist?",
+        "answer": "If the specified 'input_path' does not exist, the CR_LoadImageList node prints a warning message indicating that the input_path does not exist and returns an empty tuple."
+    }
+]

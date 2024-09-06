@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AV_CheckpointMerge node in the Art Venture framework?",
+        "answer": "The AV_CheckpointMerge node is designed to merge model checkpoints within the Art Venture framework. It abstracts the complex process of combining different model states into a unified checkpoint, facilitating the integration or experimentation of various model configurations in a simplified manner."
+    },
+    {
+        "question": "What are the required input types for the AV_CheckpointMerge node?",
+        "answer": "The required input types for the AV_CheckpointMerge node are: model1 (the first model to be merged), model2 (the second model to be merged), model1_weight (the weight factor for the first model), and model2_weight (the weight factor for the second model)."
+    },
+    {
+        "question": "What is the output type of the AV_CheckpointMerge node?",
+        "answer": "The output type of the AV_CheckpointMerge node is a merged model checkpoint that contains elements from the two input models."
+    },
+    {
+        "question": "What is the infra type for the AV_CheckpointMerge node?",
+        "answer": "The infra type for the AV_CheckpointMerge node is GPU."
+    },
+    {
+        "question": "What happens if the shapes of the two models being merged are different?",
+        "answer": "If the shapes of the two models being merged are different and certain conditions are met, the code will raise a RuntimeError indicating that model1 must be either the inpainting model or the instruct-pix2pix model when merging with a normal one."
+    },
+    {
+        "question": "What does the code do if a key from model1 is not found in model2?",
+        "answer": "If a key from model1 is not found in model2, the code will log a warning message and zero out the corresponding patches in the merged model."
+    },
+    {
+        "question": "What is the category of the AV_CheckpointMerge node?",
+        "answer": "The category of the AV_CheckpointMerge node is Art Venture/Model Merging."
+    }
+]

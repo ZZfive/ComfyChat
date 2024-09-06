@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_BitSchedule node in ComfyUI?",
+        "answer": "The CR_BitSchedule node is designed to generate a schedule based on a binary string input, allowing for specifying intervals and loop counts. It processes the binary string to create a series of scheduled events, which is particularly useful for animation and scheduling in projects."
+    },
+    {
+        "question": "What are the required inputs for the CR_BitSchedule node?",
+        "answer": "The required inputs for the CR_BitSchedule node are 'binary_string', which is a sequence of binary digits (0s and 1s) used to create the schedule, and 'interval', an integer value that directly affects the timing of the schedule."
+    },
+    {
+        "question": "What does the 'interval' parameter in the CR_BitSchedule node determine?",
+        "answer": "The 'interval' parameter in the CR_BitSchedule node determines the spacing between scheduled events in the sequence. It is an integer value that directly impacts the timing of the schedule."
+    },
+    {
+        "question": "What is the optional input for the CR_BitSchedule node?",
+        "answer": "The optional input for the CR_BitSchedule node is 'loops', an integer that specifies how many times the schedule should repeat, allowing customization of the duration of the schedule."
+    },
+    {
+        "question": "What outputs does the CR_BitSchedule node produce?",
+        "answer": "The CR_BitSchedule node produces two outputs: 'SCHEDULE', a string representing the sequence of scheduled events generated based on the input binary string, interval, and loops; and 'show_text', a URL pointing to help documentation that provides additional information and guidance on using the generated schedule."
+    },
+    {
+        "question": "What infrastructure type does the CR_BitSchedule node use?",
+        "answer": "The CR_BitSchedule node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the CR_BitSchedule node generate the schedule based on the binary string and interval?",
+        "answer": "The CR_BitSchedule node generates the schedule by iterating over the binary string, using the modulo operator to ensure the index continues in a single sequence, and appending the schedule index and bit value to the schedule list. The process is repeated based on the number of loops specified."
+    }
+]

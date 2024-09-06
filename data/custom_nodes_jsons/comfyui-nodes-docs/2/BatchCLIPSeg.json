@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BatchCLIPSeg node in ComfyUI?",
+        "answer": "The BatchCLIPSeg node in ComfyUI is used to segment an image or batch of images using the CLIPSeg model. It guides the segmentation process through natural language descriptions, combining the image and text description to generate segmentation masks."
+    },
+    {
+        "question": "What are the required inputs for the BatchCLIPSeg node?",
+        "answer": "The required inputs for the BatchCLIPSeg node are: images (the images to be segmented), text (the text description guiding the segmentation process), threshold (the threshold value determining segmentation sensitivity), binary_mask (whether the output mask should be binarized), combine_mask (whether to combine masks of multiple objects into a single mask), and use_cuda (whether to use CUDA for processing)."
+    },
+    {
+        "question": "How does the threshold parameter affect the segmentation process in BatchCLIPSeg?",
+        "answer": "The threshold parameter in BatchCLIPSeg determines the sensitivity of the segmentation. Adjusting this value influences the fineness of the segmentation results."
+    },
+    {
+        "question": "What does the binary_mask parameter do in BatchCLIPSeg?",
+        "answer": "The binary_mask parameter in BatchCLIPSeg decides whether the output mask will be binarized. If set to true, the mask is simplified to a binary form."
+    },
+    {
+        "question": "What is the effect of the combine_mask parameter in BatchCLIPSeg?",
+        "answer": "The combine_mask parameter in BatchCLIPSeg controls whether the masks of multiple objects are combined into a single mask. This affects the output and may merge multiple segmented regions."
+    },
+    {
+        "question": "What is the output type of the BatchCLIPSeg node?",
+        "answer": "The output type of the BatchCLIPSeg node is a segmentation mask (MASK) that corresponds to the regions of interest defined by the input image and text description."
+    },
+    {
+        "question": "How does the use_cuda parameter influence the processing in BatchCLIPSeg?",
+        "answer": "The use_cuda parameter in BatchCLIPSeg indicates whether to use CUDA for processing. On compatible hardware, using CUDA can significantly speed up the segmentation process."
+    }
+]

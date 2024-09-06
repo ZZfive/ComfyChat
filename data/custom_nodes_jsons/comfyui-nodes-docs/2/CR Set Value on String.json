@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_SetValueOnString node in ComfyUI?",
+        "answer": "The CR_SetValueOnString node is used to replace part of a string based on the presence of a specific substring. It evaluates the given test string in the input text and replaces the text with one value or another depending on whether the test string is found."
+    },
+    {
+        "question": "What are the required input types for the CR_SetValueOnString node?",
+        "answer": "The required input type for the CR_SetValueOnString node is 'text', which is the main content that the node will evaluate. It is crucial as it serves as the basis for determining the presence of the 'test_string' and which replacement value to use."
+    },
+    {
+        "question": "What does the 'test_string' parameter do in the CR_SetValueOnString node?",
+        "answer": "The 'test_string' parameter is the substring that the node searches for within the 'text'. If found, the 'value_if_true' is used as the replacement; otherwise, the 'value_if_false' is used."
+    },
+    {
+        "question": "What is the purpose of the 'value_if_true' and 'value_if_false' parameters in the CR_SetValueOnString node?",
+        "answer": "The 'value_if_true' parameter specifies the string that will replace the 'text' if the 'test_string' is found within the 'text'. The 'value_if_false' parameter defines the string that will be used to replace the 'text' if the 'test_string' is not found."
+    },
+    {
+        "question": "What output types does the CR_SetValueOnString node produce?",
+        "answer": "The CR_SetValueOnString node produces three output types: STRING, BOOLEAN, and show_help. The STRING output is the result of the conditional replacement process, the BOOLEAN output indicates whether the 'test_string' was found in the input text, and the show_help output provides a URL link to the node's documentation for further assistance."
+    },
+    {
+        "question": "What infrastructure type does the CR_SetValueOnString node use?",
+        "answer": "The CR_SetValueOnString node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the CR_SetValueOnString node determine the output values based on the presence of the 'test_string'?",
+        "answer": "If the 'test_string' is present in the input 'text', the CR_SetValueOnString node sets the 'text_out' to 'value_if_true' and the 'bool_out' to True. If the 'test_string' is not found, the node sets the 'text_out' to 'value_if_false' and the 'bool_out' to False."
+    }
+]

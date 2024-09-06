@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the cg-noise custom node in ComfyUI?",
+        "answer": "The cg-noise custom node in ComfyUI replaces KSampler and KSampler Advanced to allow for small variations in the initial noise."
+    },
+    {
+        "question": "How does the cg-noise node generate variations in images?",
+        "answer": "The cg-noise node generates variations in images by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+    },
+    {
+        "question": "What are the inputs and outputs of the cg-noise node?",
+        "answer": "The inputs of the cg-noise node are `width`, `height`, `steps`, `scale`, `seed`, `variation_seed`, and `interpolation_weight`. The outputs are `image` and `noise`."
+    },
+    {
+        "question": "How does the interpolation_weight control the variation in the cg-noise node?",
+        "answer": "The `interpolation_weight` in the cg-noise node controls how much the `variation_seed` affects the output. A value of 0 means no variation, while 1 means full variation."
+    },
+    {
+        "question": "What is the default value for interpolation_weight in the cg-noise node?",
+        "answer": "The default value for `interpolation_weight` in the cg-noise node is 0.1."
+    },
+    {
+        "question": "Is the cg-noise node compatible with existing presets?",
+        "answer": "Yes, the cg-noise node is compatible with existing presets, as long as the width, height, steps, and scale are connected. The seed and variation_seed will default to global dag seed if not connected."
+    },
+    {
+        "question": "What is the recommended range for the interpolation_weight in the cg-noise node?",
+        "answer": "The recommended range for the `interpolation_weight` in the cg-noise node is 0.1 to 0.2 for subtle variations."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is cg-noise in ComfyUI?",
+        "answer": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+    },
+    {
+        "question": "How does the cg-noise node generate variations in images?",
+        "answer": "The cg-noise node generates variations in images by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+    },
+    {
+        "question": "What are the two modes available in the cg-noise node?",
+        "answer": "The cg-noise node has two modes: 'Relative' and 'Absolute'. In 'Relative' mode, the `x` value is a percentage, while in 'Absolute' mode, `x` is an absolute number."
+    },
+    {
+        "question": "How can users switch between the two modes in the cg-noise node?",
+        "answer": "Users can switch between the two modes in the cg-noise node by connecting either a float (for 'Relative' mode) or an integer (for 'Absolute' mode) to the `x` input."
+    },
+    {
+        "question": "What is the purpose of the `variation_seed` input in the cg-noise node?",
+        "answer": "The `variation_seed` input in the cg-noise node is used to generate small variations in the initial noise. It is combined with the weight `x` and the `seed` input to create the final noise output."
+    },
+    {
+        "question": "Can the cg-noise node be used with other nodes in ComfyUI?",
+        "answer": "Yes, the cg-noise node can be used with other nodes in ComfyUI. It is designed to replace KSampler and KSampler Advanced, and can be integrated into existing workflows."
+    },
+    {
+        "question": "What is the role of the `seed` input in the cg-noise node?",
+        "answer": "The `seed` input in the cg-noise node is used in combination with the `variation_seed` and the weight `x` to generate the final noise output. It provides the base noise value which is then modified by the `variation_seed` and `x` inputs."
+    }
+]

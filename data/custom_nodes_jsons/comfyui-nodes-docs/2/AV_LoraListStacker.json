@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AV_LoraListStacker node in ComfyUI?",
+        "answer": "The AV_LoraListStacker node is designed to manage and stack the configuration of Lora models, facilitating the dynamic integration of multiple Lora models into the processing flow. It abstracts the complexity of handling Lora model parameters, ensuring the application order of the models respects the expected layering and intensity adjustments."
+    },
+    {
+        "question": "What are the required and optional input types for the AV_LoraListStacker node?",
+        "answer": "The required input type is 'data', which contains a list of Lora models and their configurations in JSON format. The optional input types are 'base_url', which provides a default URL prefix for retrieving Lora models that are not available locally, and 'lora_stack', which allows for the inclusion of an existing Lora model stack for further processing or integration with new Lora configurations."
+    },
+    {
+        "question": "What is the output type of the AV_LoraListStacker node?",
+        "answer": "The output type of the AV_LoraListStacker node is 'lora_stack', which returns an updated Lora model stack that incorporates the specified Lora model adjustments."
+    },
+    {
+        "question": "What does the 'parse_lora_list' function do in the AV_LoraListStacker node?",
+        "answer": "The 'parse_lora_list' function in the AV_LoraListStacker node parses a JSON-formatted list of Lora models and their configurations. It checks for the availability of the models locally, retrieves them from a URL if necessary, and returns a list of Lora parameters that includes the model name, model strength, and clip strength."
+    },
+    {
+        "question": "What does the 'load_list_lora' function do in the AV_LoraListStacker node?",
+        "answer": "The 'load_list_lora' function in the AV_LoraListStacker node loads a list of Lora models and their configurations from the provided 'data' input. It extends the existing 'lora_stack' with the new Lora configurations, ensuring that only valid models with non-zero strength values are included in the stack."
+    },
+    {
+        "question": "What is the infra type for the AV_LoraListStacker node?",
+        "answer": "The infra type for the AV_LoraListStacker node is 'CPU'."
+    },
+    {
+        "question": "What is the purpose of the 'base_url' input in the AV_LoraListStacker node?",
+        "answer": "The 'base_url' input in the AV_LoraListStacker node provides a default URL prefix for retrieving Lora models that are not available locally, facilitating remote model retrieval when necessary."
+    }
+]

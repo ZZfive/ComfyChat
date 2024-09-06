@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BatchCropFromMaskAdvanced node in ComfyUI?",
+        "answer": "The BatchCropFromMaskAdvanced node in ComfyUI is designed to intelligently crop images based on provided masks, ensuring consistent sizing while preserving the integrity of the masked area."
+    },
+    {
+        "question": "What are the required inputs for the BatchCropFromMaskAdvanced node?",
+        "answer": "The required inputs for the BatchCropFromMaskAdvanced node are 'original_images' and 'masks'."
+    },
+    {
+        "question": "What does the 'crop_size_mult' parameter control in BatchCropFromMaskAdvanced?",
+        "answer": "The 'crop_size_mult' parameter in BatchCropFromMaskAdvanced adjusts the size of the cropped images by controlling the proportion of the final crop size relative to the original image dimensions."
+    },
+    {
+        "question": "How does the 'bbox_smooth_alpha' parameter affect the cropping process?",
+        "answer": "The 'bbox_smooth_alpha' parameter in BatchCropFromMaskAdvanced controls the smoothness of the bounding box size across consecutive images, providing a way to maintain consistent sizing across different crops."
+    },
+    {
+        "question": "What does the 'combined_crop_image' output represent?",
+        "answer": "The 'combined_crop_image' output from BatchCropFromMaskAdvanced represents a combination of all input images after they have been cropped, useful for quick visualization and assessment of the consistency and quality of the crops."
+    },
+    {
+        "question": "What information is provided by the 'bboxes' output?",
+        "answer": "The 'bboxes' output from BatchCropFromMaskAdvanced provides the bounding box coordinates for each individual cropped image, which can be crucial for applications requiring precise localization of regions within images."
+    },
+    {
+        "question": "How is the final crop size determined in the BatchCropFromMaskAdvanced node?",
+        "answer": "The final crop size in BatchCropFromMaskAdvanced is determined by calculating the maximum bounding box size across all masks, smoothing this size based on the 'bbox_smooth_alpha', and then applying the 'crop_size_mult' parameter, ensuring the final size is a multiple of 16 and does not exceed the original image dimensions."
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the LoRA Hook Keyframe node in ComfyUI-AnimateDiff-Evolved?",
+        "answer": "The LoRA Hook Keyframe node is used to create LoRA hook keyframes, which are mechanisms to adjust the influence of LoRA (Low-Rank Adaptation) hooks at specific points in an animation sequence. It allows for dynamic scheduling of the strength of LoRA hooks, enabling precise control over their effects during the animation."
+    },
+    {
+        "question": "What are the required input types for the LoRA Hook Keyframe node?",
+        "answer": "The required input types for the LoRA Hook Keyframe node are: strength_model (FLOAT), start_percent (FLOAT), and guarantee_steps (INT)."
+    },
+    {
+        "question": "What does the strength_model input determine in the LoRA Hook Keyframe node?",
+        "answer": "The strength_model input specifies the strength of the LoRA hook at the keyframe, affecting how much the hook influences the model's behavior at that point in the animation."
+    },
+    {
+        "question": "How is the start_percent input used in the LoRA Hook Keyframe node?",
+        "answer": "The start_percent input determines the starting point of the keyframe's effect, represented as a percentage of the total animation length. It allows for precise control over the timing of the LoRA hook's influence."
+    },
+    {
+        "question": "What is the purpose of the guarantee_steps input in the LoRA Hook Keyframe node?",
+        "answer": "The guarantee_steps input specifies the minimum number of steps for which the keyframe's effect will be applied, ensuring that the LoRA hook's influence lasts for at least this duration."
+    },
+    {
+        "question": "What is the optional input type for the LoRA Hook Keyframe node?",
+        "answer": "The optional input type for the LoRA Hook Keyframe node is prev_hook_kf (LORA_HOOK_KEYFRAMES), which represents the previous LoRA hook keyframe group. If provided, the new keyframe will be added to this group, allowing for chaining of multiple keyframes to create complex animation effects."
+    },
+    {
+        "question": "What is the output type of the LoRA Hook Keyframe node?",
+        "answer": "The output type of the LoRA Hook Keyframe node is HOOK_KF (LORA_HOOK_KEYFRAMES), which returns a group of LoRA hook keyframes, including the newly created keyframe. This output allows for easy management and application of multiple keyframes in an animation."
+    },
+    {
+        "question": "Which infra type does the LoRA Hook Keyframe node use?",
+        "answer": "The LoRA Hook Keyframe node uses the CPU infra type."
+    }
+]

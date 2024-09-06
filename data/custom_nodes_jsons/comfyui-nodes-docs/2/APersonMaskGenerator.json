@@ -1,0 +1,30 @@
+[
+    {
+        "question": "APersonMaskGenerator节点的主要功能是什么？",
+        "answer": "APersonMaskGenerator节点用于生成图像中人物各个部位的分割遮罩，如头发、面部、身体和衣服。它利用图像分割技术来识别和分离这些区域，创建可用于各种图像编辑和处理任务的遮罩。"
+    },
+    {
+        "question": "APersonMaskGenerator节点的必需输入类型是什么？",
+        "answer": "APersonMaskGenerator节点的必需输入类型是images，需要生成遮罩的输入图像。这些图像是所有分割操作的基础，决定了要分离和遮罩的区域。"
+    },
+    {
+        "question": "APersonMaskGenerator节点的可选输入类型有哪些？",
+        "answer": "APersonMaskGenerator节点的可选输入类型包括：face_mask（是否生成面部遮罩）、background_mask（是否生成背景遮罩）、hair_mask（是否生成头发遮罩）、body_mask（是否生成身体遮罩）、clothes_mask（是否生成衣服遮罩）和confidence（遮罩生成的置信度阈值）。"
+    },
+    {
+        "question": "APersonMaskGenerator节点的输出类型是什么？",
+        "answer": "APersonMaskGenerator节点的输出类型是masks，输出为指定目标的遮罩集合，每个遮罩代表图像中的一个分割区域。这些遮罩可用于进一步的图像编辑或处理任务。"
+    },
+    {
+        "question": "APersonMaskGenerator节点使用的基础设施类型是什么？",
+        "answer": "APersonMaskGenerator节点使用的基础设施类型是GPU。"
+    },
+    {
+        "question": "APersonMaskGenerator节点如何处理输入图像并生成遮罩？",
+        "answer": "APersonMaskGenerator节点首先将输入图像转换为NumPy数组，然后使用MediaPipe的ImageSegmenter对图像进行分割。根据指定的遮罩类型（面部、背景、头发、身体、衣服）和置信度阈值，生成对应的遮罩数组。最后，将这些遮罩数组合并为一个最终的遮罩图像。"
+    },
+    {
+        "question": "APersonMaskGenerator节点支持的遮罩类型及其对应的索引是什么？",
+        "answer": "APersonMaskGenerator节点支持以下遮罩类型及其对应的索引：0 - 背景、1 - 头发、2 - 身体（皮肤）、3 - 面部（皮肤）、4 - 衣服、5 - 其他（配饰）。"
+    }
+]

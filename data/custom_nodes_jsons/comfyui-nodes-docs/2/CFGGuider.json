@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CFGGuider node in ComfyUI?",
+        "answer": "The CFGGuider node in ComfyUI is designed to guide the sampling process in the generation model by adjusting conditions and controlling noise predictions. It encapsulates the logic for setting conditions and configuring guidance factors, which is crucial for directing the model towards desired results."
+    },
+    {
+        "question": "What is the role of the model_patcher parameter in CFGGuider?",
+        "answer": "The model_patcher parameter is essential for CFGGuider as it provides the model options and functionalities required for the sampling process. It is responsible for managing the state of the model and ensuring that conditions are correctly applied during sampling."
+    },
+    {
+        "question": "What are the optional input types for CFGGuider?",
+        "answer": "The optional input types for CFGGuider include 'positive' and 'negative' conditions, which guide the sampling process to generate content with specific features or prevent certain features from appearing in the generated content. Another optional input is 'cfg', which represents the guidance factor and determines the strength of the conditions' influence on the sampling process, allowing fine-tuning of the model's behavior."
+    },
+    {
+        "question": "What is the output type of the CFGGuider node?",
+        "answer": "The output type of the CFGGuider node is a tensor representing the latent image sampled. It is the result of the guided sampling process and encapsulates the generated content based on the provided conditions and settings."
+    },
+    {
+        "question": "What infrastructure type is recommended for using CFGGuider?",
+        "answer": "The recommended infrastructure type for using CFGGuider is CPU."
+    },
+    {
+        "question": "What does the set_conds method do in the CFGGuider class?",
+        "answer": "The set_conds method in the CFGGuider class is used to set the positive and negative conditions for guiding the sampling process. It takes the positive and negative conditions as input and calls the inner_set_conds method to convert and store these conditions."
+    },
+    {
+        "question": "What is the purpose of the predict_noise method in the CFGGuider class?",
+        "answer": "The predict_noise method in the CFGGuider class is responsible for predicting the noise based on the input tensor x, timestep, negative and positive conditions, guidance factor (cfg), and model options. It uses the sampling_function to generate the noise prediction."
+    }
+]

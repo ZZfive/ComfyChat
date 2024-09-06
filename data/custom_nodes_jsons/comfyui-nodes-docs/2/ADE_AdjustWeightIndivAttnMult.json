@@ -1,0 +1,50 @@
+[
+    {
+        "question": "What is the purpose of the WeightAdjustIndivAttnMultNode class in ComfyUI?",
+        "answer": "The WeightAdjustIndivAttnMultNode class in ComfyUI is designed to individually adjust the weights of attention mechanisms in neural network models. It allows for fine-tuning the influence of positional encoding and attention components by multiplying them with specified factors, which is crucial for optimizing model performance by tailoring the attention process to meet specific task requirements."
+    },
+    {
+        "question": "How does the pe_MULT parameter affect the model in WeightAdjustIndivAttnMultNode?",
+        "answer": "The pe_MULT parameter is essential for scaling the positional encoding weights in the model. It directly influences the model's ability to capture the order of inputs, which is crucial for tasks such as language translation or text generation."
+    },
+    {
+        "question": "What is the role of the attn_MULT parameter in WeightAdjustIndivAttnMultNode?",
+        "answer": "The attn_MULT parameter adjusts the overall attention weight in the model, influencing how the model focuses on different parts of the input sequence. This is particularly useful for emphasizing or downplaying certain input features."
+    },
+    {
+        "question": "How does the attn_q_MULT parameter work in WeightAdjustIndivAttnMultNode?",
+        "answer": "The attn_q_MULT parameter specifically targets the query weights within the attention mechanism, allowing for modifications in how the model queries different elements of the input data."
+    },
+    {
+        "question": "What impact does the attn_k_MULT parameter have in WeightAdjustIndivAttnMultNode?",
+        "answer": "The attn_k_MULT parameter affects the key weights within the attention mechanism, determining how the model aligns the input sequence with the context."
+    },
+    {
+        "question": "What is the function of the attn_v_MULT parameter in WeightAdjustIndivAttnMultNode?",
+        "answer": "The attn_v_MULT parameter modifies the value weights within the attention mechanism, which is crucial for the model to gauge the importance of different input elements."
+    },
+    {
+        "question": "How does the attn_out_weight_MULT parameter influence the model in WeightAdjustIndivAttnMultNode?",
+        "answer": "The attn_out_weight_MULT parameter scales the output weights of the attention mechanism, which is vital for the final representation of the input sequence in the model."
+    },
+    {
+        "question": "What is the purpose of the attn_out_bias_MULT parameter in WeightAdjustIndivAttnMultNode?",
+        "answer": "The attn_out_bias_MULT parameter adjusts the bias term of the attention mechanism's output, helping to fine-tune the model's predictions."
+    },
+    {
+        "question": "How is the other_MULT parameter used in WeightAdjustIndivAttnMultNode?",
+        "answer": "The other_MULT parameter provides a generic scaling factor for other weight components in the model that are not explicitly categorized, allowing for a broad adjustment of these components."
+    },
+    {
+        "question": "What does the print_adjustment parameter control in WeightAdjustIndivAttnMultNode?",
+        "answer": "The print_adjustment parameter determines whether the node outputs a log detailing the adjustments made to the weights. This is very helpful for debugging and understanding the impact of the adjustments."
+    },
+    {
+        "question": "What is the role of the prev_weight_adjust parameter in WeightAdjustIndivAttnMultNode?",
+        "answer": "The prev_weight_adjust parameter allows for providing a previous weight adjustment group, enabling the node to build upon existing adjustments or reset and start anew."
+    },
+    {
+        "question": "What does the WeightAdjustIndivAttnMultNode output?",
+        "answer": "The node outputs a WEIGHT_ADJUST object, which encapsulates the adjustments made to the model weights. This object can be used to apply these adjustments to the model or further refine the adjustments in subsequent nodes."
+    }
+]

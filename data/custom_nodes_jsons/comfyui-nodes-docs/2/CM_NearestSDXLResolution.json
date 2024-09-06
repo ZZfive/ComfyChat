@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the NearestSDXLResolution node in ComfyUI?",
+        "answer": "The NearestSDXLResolution node in ComfyUI is designed to select the nearest supported resolution to the input image's resolution. It achieves this by calculating the input image's aspect ratio and comparing it with a list of supported resolutions, then selecting the resolution with the smallest difference."
+    },
+    {
+        "question": "What is the significance of the 'image' parameter in the NearestSDXLResolution node?",
+        "answer": "The 'image' parameter is crucial as it serves as the input to the node. It is the image whose resolution is to be matched with the supported resolutions. The operation of the node entirely depends on this input as it determines the selection of the nearest supported resolution."
+    },
+    {
+        "question": "What does the 'width' output parameter represent in the NearestSDXLResolution node?",
+        "answer": "The 'width' output parameter represents the width of the selected resolution. It is a key output as it defines the horizontal dimension of the image after the resolution matching process. This output is crucial for any subsequent graphic operations that depend on the dimensions of the image."
+    },
+    {
+        "question": "What does the 'height' output parameter represent in the NearestSDXLResolution node?",
+        "answer": "The 'height' output parameter represents the height of the selected resolution. Similar to the 'width' parameter, it is a significant output that determines the vertical dimension of the image for further processing. It ensures that the aspect ratio of the image is maintained after the resolution selection."
+    },
+    {
+        "question": "What infra type does the NearestSDXLResolution node use?",
+        "answer": "The NearestSDXLResolution node uses the CPU infra type."
+    },
+    {
+        "question": "How does the NearestSDXLResolution node determine the nearest supported resolution?",
+        "answer": "The NearestSDXLResolution node determines the nearest supported resolution by calculating the input image's aspect ratio and comparing it with a list of supported resolutions. It then selects the resolution with the smallest difference. If no suitable resolution is found, it defaults to a resolution of 1024x1024."
+    },
+    {
+        "question": "What is the function of the 'op' method in the NearestSDXLResolution class?",
+        "answer": "The 'op' method in the NearestSDXLResolution class takes an image as input and returns a tuple of two integers representing the width and height of the nearest supported resolution. It calculates the input image's aspect ratio, compares it with a list of supported resolutions, and selects the resolution with the smallest difference."
+    }
+]

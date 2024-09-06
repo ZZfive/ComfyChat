@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ComfyUI node Sigma Schedule Interpolated Mean?",
+        "answer": "The Sigma Schedule Interpolated Mean node in ComfyUI aims to create a new sigma schedule by interpolating between two given sigma schedules based on specified weight ranges and interpolation methods. It effectively fuses the characteristics of the two input schedules into a new one, enabling dynamic adjustment in the diffusion process."
+    },
+    {
+        "question": "What are the required inputs for the Sigma Schedule Interpolated Mean node?",
+        "answer": "The required inputs for the Sigma Schedule Interpolated Mean node are: schedule_A (the first sigma schedule to interpolate), schedule_B (the second sigma schedule to interpolate), weight_A_Start (the starting weight of the first sigma schedule in the interpolation), weight_A_End (the ending weight of the first sigma schedule in the interpolation), and interpolation (the interpolation method used to blend the sigma schedules)."
+    },
+    {
+        "question": "What is the output of the Sigma Schedule Interpolated Mean node?",
+        "answer": "The output of the Sigma Schedule Interpolated Mean node is the resulting interpolated sigma schedule."
+    },
+    {
+        "question": "What is the infra type specified for the Sigma Schedule Interpolated Mean node?",
+        "answer": "The infra type specified for the Sigma Schedule Interpolated Mean node is CPU."
+    },
+    {
+        "question": "In which category does the Sigma Schedule Interpolated Mean node belong in ComfyUI?",
+        "answer": "The Sigma Schedule Interpolated Mean node belongs to the Animate Diff 🎭🅐🅓/sample settings/sigma schedule category in ComfyUI."
+    },
+    {
+        "question": "How are the weights calculated in the Sigma Schedule Interpolated Mean node?",
+        "answer": "In the Sigma Schedule Interpolated Mean node, the weights are calculated using the InterpolationMethod.get_weights function, which takes into account the starting and ending weights of the first sigma schedule, the length of the schedule, and the chosen interpolation method. The weights are then reversed, as the sigmas are currently reversed."
+    },
+    {
+        "question": "How is the new sigma schedule created in the Sigma Schedule Interpolated Mean node?",
+        "answer": "In the Sigma Schedule Interpolated Mean node, the new sigma schedule is created by interpolating between the two input sigma schedules using the calculated weights. The new sigmas are computed by multiplying the first schedule's sigmas with the weights and adding the result to the product of the second schedule's sigmas and the complement of the weights. The new sigmas are then set in a clone of the first input schedule, creating the interpolated sigma schedule."
+    }
+]

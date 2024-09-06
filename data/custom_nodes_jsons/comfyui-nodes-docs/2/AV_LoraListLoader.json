@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AV_LoraListLoader node in ComfyUI?",
+        "answer": "The AV_LoraListLoader node is designed to load and stack a list of LoRA models based on provided data and configuration. It facilitates dynamic enhancement of models and clips by sequentially applying multiple LoRA adjustments, enabling complex modifications of model behavior through LoRA parameters."
+    },
+    {
+        "question": "What are the required input types for the AV_LoraListLoader node?",
+        "answer": "The required input types for the AV_LoraListLoader node are: 'model', which represents the initial model to which LoRA adjustments will be applied; 'clip', indicating the initial clip model that will be modified alongside the main model through LoRA adjustments; and 'data', containing the list of LoRA models to be loaded and applied in JSON format."
+    },
+    {
+        "question": "What does the optional 'base_url' parameter in the AV_LoraListLoader node provide?",
+        "answer": "The optional 'base_url' parameter in the AV_LoraListLoader node provides a base URL for fetching LoRA models that are not found locally. It assists in dynamically loading LoRA models from external sources."
+    },
+    {
+        "question": "What output types does the AV_LoraListLoader node return?",
+        "answer": "The AV_LoraListLoader node returns two output types: 'model', which is the modified model after applying the specified LoRA adjustments, and 'clip', the modified clip model after applying the LoRA adjustments."
+    },
+    {
+        "question": "What is the infra type for the AV_LoraListLoader node?",
+        "answer": "The infra type for the AV_LoraListLoader node is 'CPU'."
+    },
+    {
+        "question": "How does the AV_LoraListLoader node load and apply LoRA models to the input model and clip?",
+        "answer": "The AV_LoraListLoader node loads and applies LoRA models to the input model and clip by recursively calling the 'recursive_load_lora' function. This function takes the list of LoRA parameters, the current model, clip, and other necessary information, and applies each LoRA adjustment sequentially until all adjustments have been made."
+    },
+    {
+        "question": "What does the 'load_list_lora' method in the AV_LoraListLoader node do?",
+        "answer": "The 'load_list_lora' method in the AV_LoraListLoader node parses the input data to obtain LoRA parameters, and then loads and applies the LoRA models to the input model and clip using the 'recursive_load_lora' function. If no LoRA parameters are found, it returns the original model and clip."
+    }
+]

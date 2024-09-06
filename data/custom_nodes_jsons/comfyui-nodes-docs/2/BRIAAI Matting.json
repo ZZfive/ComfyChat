@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BRIAAI Matting节点的主要功能是什么？",
+        "answer": "BRIAAI Matting节点专为视频帧背景移除而设计，利用深度学习模型将前景元素与背景分离。"
+    },
+    {
+        "question": "BRIAAI Matting节点支持的输入类型有哪些？",
+        "answer": "BRIAAI Matting节点支持的输入类型包括：video_frames（视频帧序列），version（BRIAAI模型版本），fp16（是否使用FP16精度），bg_color（背景颜色），batch_size（单批处理的帧数）。"
+    },
+    {
+        "question": "BRIAAI Matting节点的输出类型是什么？",
+        "answer": "BRIAAI Matting节点的输出类型包括：image（提取的前景元素图像）和mask（指示前景区域的二值掩码）。"
+    },
+    {
+        "question": "使用BRIAAI Matting节点时，如何指定模型的版本？",
+        "answer": "通过version输入参数指定要使用的BRIAAI模型版本，允许根据版本灵活选择模型的功能。"
+    },
+    {
+        "question": "BRIAAI Matting节点如何优化性能？",
+        "answer": "BRIAAI Matting节点通过fp16输入参数（一个布尔标志）表示是否使用FP16精度进行模型计算，从而在兼容硬件上优化性能。"
+    },
+    {
+        "question": "如何调整BRIAAI Matting节点输出帧的背景颜色？",
+        "answer": "通过bg_color输入参数设置输出帧中背景的颜色，抠图后可以自定义背景外观。"
+    },
+    {
+        "question": "batch_size输入参数对BRIAAI Matting节点有什么影响？",
+        "answer": "batch_size参数决定单批处理的帧数，影响内存使用和计算效率。"
+    }
+]

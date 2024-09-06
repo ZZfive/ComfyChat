@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AV_LoraLoader node in ComfyUI?",
+        "answer": "The AV_LoraLoader node in ComfyUI is used to load and apply LoRA (Low-Rank Adaptation) models to a given neural network model and CLIP instance, allowing for targeted modifications and enhancements."
+    },
+    {
+        "question": "What are the required input parameters for the AV_LoraLoader node?",
+        "answer": "The required input parameters for the AV_LoraLoader node are: model (the neural network model to be modified), clip (the CLIP model to be adjusted alongside the main model), lora_name (the name of the LoRA model to be loaded and applied), strength_model (the strength of the LoRA adjustment to be applied to the model), and strength_clip (the strength of the LoRA adjustment to be applied to the CLIP model)."
+    },
+    {
+        "question": "What optional input parameters does the AV_LoraLoader node accept?",
+        "answer": "The AV_LoraLoader node accepts two optional input parameters: lora_override (specifies an alternative LoRA model to override the default one) and enabled (a boolean flag that determines whether to execute the LoRA loading and application process)."
+    },
+    {
+        "question": "What output types does the AV_LoraLoader node return?",
+        "answer": "The AV_LoraLoader node returns two output types: model (the modified neural network model with the LoRA adjustments applied) and clip (the modified CLIP model with the LoRA adjustments applied)."
+    },
+    {
+        "question": "What is the infra type for the AV_LoraLoader node?",
+        "answer": "The infra type for the AV_LoraLoader node is CPU."
+    },
+    {
+        "question": "What are some common nodes that can be used with the AV_LoraLoader node?",
+        "answer": "Some common nodes that can be used with the AV_LoraLoader node include Lora Loader, CLIPTextEncode (BlenderNeko Advanced + NSP), and KSamplerAdvanced."
+    },
+    {
+        "question": "How does the AV_LoraLoader node handle the case when the specified lora_override is not found?",
+        "answer": "If the specified lora_override is not found in the list of available LoRA models, the AV_LoraLoader node will print a warning message and use the originally specified lora_name instead."
+    }
+]

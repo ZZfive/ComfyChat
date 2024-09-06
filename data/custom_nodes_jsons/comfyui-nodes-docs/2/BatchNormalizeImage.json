@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BatchNormalizeImage node in ComfyUI?",
+        "answer": "The BatchNormalizeImage node in ComfyUI is used to normalize a batch of images based on a given factor. It adjusts the pixel values of each image to bring their standard deviation and mean closer to the overall characteristics of the entire batch, enhancing the consistency of the image data for further processing or analysis."
+    },
+    {
+        "question": "What are the required input types for the BatchNormalizeImage node?",
+        "answer": "The required input types for the BatchNormalizeImage node are 'images' and 'factor'. 'images' represents the batch of images to be normalized and is of Comfy dtype IMAGE. 'factor' controls the mixing of the original images with their normalized versions and is of Comfy dtype FLOAT."
+    },
+    {
+        "question": "What does the 'factor' parameter in the BatchNormalizeImage node control?",
+        "answer": "The 'factor' parameter in the BatchNormalizeImage node controls the mixing of the original images with their normalized versions. It plays a crucial role in determining the final appearance of the normalized images."
+    },
+    {
+        "question": "What is the output type of the BatchNormalizeImage node?",
+        "answer": "The output type of the BatchNormalizeImage node is 'image', which represents a batch of images that have been normalized based on the specified factor. This output is of Comfy dtype IMAGE."
+    },
+    {
+        "question": "Which infrastructure type is recommended for running the BatchNormalizeImage node?",
+        "answer": "The recommended infrastructure type for running the BatchNormalizeImage node is GPU."
+    },
+    {
+        "question": "How does the BatchNormalizeImage node adjust the pixel values of each image?",
+        "answer": "The BatchNormalizeImage node adjusts the pixel values of each image by calculating the standard deviation and mean of each channel across the batch, then normalizing each image within the channel. It then scales the normalized images by the channel's standard deviation and adds the channel's mean."
+    },
+    {
+        "question": "What is the purpose of the line 't = torch.lerp(images, t.movedim(0,-1), factor)' in the BatchNormalizeImage node's source code?",
+        "answer": "The line 't = torch.lerp(images, t.movedim(0,-1), factor)' in the BatchNormalizeImage node's source code is used to linearly interpolate between the original images and their normalized versions based on the value of 'factor'. This determines the final appearance of the normalized images."
+    }
+]

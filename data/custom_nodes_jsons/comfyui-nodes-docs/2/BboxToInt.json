@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BboxToInt node in ComfyUI?",
+        "answer": "The BboxToInt node in ComfyUI is designed to convert bounding box coordinates from a list to integer values, including calculating the center point of the bounding box, making it easier to manipulate and analyze bounding box data."
+    },
+    {
+        "question": "What are the required input parameters for the BboxToInt node?",
+        "answer": "The required input parameters for the BboxToInt node are 'bboxes', which represents the list of bounding boxes to be processed, and 'index', which specifies the position of the bounding box in the 'bboxes' list to be processed."
+    },
+    {
+        "question": "What data type is expected for the 'bboxes' parameter in the BboxToInt node?",
+        "answer": "The 'bboxes' parameter in the BboxToInt node expects a List[Tuple[int, int, int, int]] data type in Python, representing the coordinates of each bounding box."
+    },
+    {
+        "question": "What is the purpose of the 'index' parameter in the BboxToInt node?",
+        "answer": "The 'index' parameter in the BboxToInt node specifies the position of the bounding box in the 'bboxes' list to be processed, allowing for selective conversion of bounding boxes."
+    },
+    {
+        "question": "What are the output types of the BboxToInt node?",
+        "answer": "The output types of the BboxToInt node include 'x_min', 'y_min', 'width', 'height', 'center_x', and 'center_y', all of which are integer values representing the coordinates and dimensions of the selected bounding box."
+    },
+    {
+        "question": "How does the BboxToInt node calculate the center point of the selected bounding box?",
+        "answer": "The BboxToInt node calculates the center point of the selected bounding box by using the formula (x_min + width / 2) for the x-coordinate and (y_min + height / 2) for the y-coordinate."
+    },
+    {
+        "question": "What is the infra type of the BboxToInt node?",
+        "answer": "The infra type of the BboxToInt node is CPU, indicating that it runs on the CPU."
+    }
+]

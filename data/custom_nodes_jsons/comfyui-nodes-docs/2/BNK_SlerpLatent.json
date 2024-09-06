@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LatentSlerp node in ComfyUI?",
+        "answer": "The LatentSlerp node in ComfyUI performs spherical linear interpolation (slerp) between two sets of latent vectors, providing a smooth transition between different latent states. This is particularly useful for generating intermediate representations in a continuous latent space."
+    },
+    {
+        "question": "What are the required input types for the LatentSlerp node?",
+        "answer": "The required input types for the LatentSlerp node are 'latents1' (the first set of latent vectors) and 'factor' (the interpolation factor that determines the position on the path between the two sets of latent vectors)."
+    },
+    {
+        "question": "What is the optional input type 'latents2' in the LatentSlerp node?",
+        "answer": "The optional input type 'latents2' in the LatentSlerp node represents the second set of latent vectors, which serves as the endpoint for interpolation."
+    },
+    {
+        "question": "What does the optional input type 'mask' do in the LatentSlerp node?",
+        "answer": "The optional input type 'mask' in the LatentSlerp node is a mask that can be used to selectively apply interpolation to certain elements of the latent vectors."
+    },
+    {
+        "question": "What is the output type of the LatentSlerp node?",
+        "answer": "The output type of the LatentSlerp node is 'slerped_latents', which represents the resulting latent vectors after interpolation, providing a smooth transition between the input latent sets."
+    },
+    {
+        "question": "What is the infra type of the LatentSlerp node?",
+        "answer": "The infra type of the LatentSlerp node is GPU."
+    },
+    {
+        "question": "In the source code of the LatentSlerp node, what happens if the shapes of 'latents1' and 'latents2' are not the same?",
+        "answer": "In the source code of the LatentSlerp node, if the shapes of 'latents1' and 'latents2' are not the same, a warning is printed, and the function returns the original 'latents1' without performing interpolation."
+    }
+]

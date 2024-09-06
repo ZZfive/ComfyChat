@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CheckpointLoader (dirty) node in ComfyUI?",
+        "answer": "The CheckpointLoader (dirty) node is designed to load model checkpoints in a flexible way, using utility functions to find the best match and accommodate potentially mismatched or incomplete filenames. It supports loading various components of models, such as configurations and weights, to facilitate the resumption or continuation of model training and inference processes."
+    },
+    {
+        "question": "What is the significance of the 'config_name' parameter in the CheckpointLoader (dirty) node?",
+        "answer": "The 'config_name' parameter specifies the name of the configuration file for the model. It plays a crucial role in determining the model's architecture and loading parameters. The node uses utility functions to handle mismatches or missing extensions in the filename."
+    },
+    {
+        "question": "What does the 'ckpt_name' parameter represent in the CheckpointLoader (dirty) node?",
+        "answer": "The 'ckpt_name' parameter represents the name of the checkpoint file containing the model weights. This parameter is essential for identifying and loading the correct model state, and utility functions help resolve differences in filenames."
+    },
+    {
+        "question": "What are the output types of the CheckpointLoader (dirty) node?",
+        "answer": "The output types of the CheckpointLoader (dirty) node are: model (loaded model with restored architecture and weights), clip (loaded model's CLIP component, if applicable and requested), and vae (loaded model's VAE component, if applicable and requested)."
+    },
+    {
+        "question": "What is the infra type for the CheckpointLoader (dirty) node?",
+        "answer": "The infra type for the CheckpointLoader (dirty) node is GPU."
+    },
+    {
+        "question": "What is the category of the CheckpointLoader (dirty) node in ComfyUI?",
+        "answer": "The category of the CheckpointLoader (dirty) node in ComfyUI is Bmad/api/dirty loaders."
+    },
+    {
+        "question": "How does the CheckpointLoader (dirty) node handle mismatched or incomplete filenames?",
+        "answer": "The CheckpointLoader (dirty) node uses utility functions from DirtyLoaderUtils to find the best matching filename for the given config_name and ckpt_name parameters, accommodating potential mismatches or missing extensions."
+    }
+]

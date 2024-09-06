@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_InputSwitchPipe node in ComfyUI?",
+        "answer": "The CR_InputSwitchPipe node is designed to manage the data flow between different processing pipelines based on the selected input. It determines which of the two provided pipelines, 'pipe1' or 'pipe2', should be used in the subsequent workflow by evaluating the 'Input' parameter."
+    },
+    {
+        "question": "What does the 'Input' parameter in the CR_InputSwitchPipe node indicate?",
+        "answer": "The 'Input' parameter is crucial for determining the active pipeline. It accepts an integer value where 1 indicates that 'pipe1' will be used, and any other value indicates 'pipe2'. This selection mechanism is essential for guiding the workflow through the desired processing path."
+    },
+    {
+        "question": "What is the role of the 'pipe1' parameter in the CR_InputSwitchPipe node?",
+        "answer": "The 'pipe1' parameter represents the first pipeline option available to the node. If the 'Input' parameter is set to 1, it becomes the active pipeline object, allowing for the seamless integration of predefined processing paths into the workflow."
+    },
+    {
+        "question": "What is the function of the 'pipe2' parameter in the CR_InputSwitchPipe node?",
+        "answer": "The 'pipe2' parameter is the alternative pipeline option provided to the node. It becomes active when the 'Input' parameter is not equal to 1, offering a secondary path for data processing within the workflow."
+    },
+    {
+        "question": "What does the 'PIPE_LINE' output represent in the CR_InputSwitchPipe node?",
+        "answer": "The 'PIPE_LINE' output is the pipeline selected based on the 'Input' parameter. It represents either 'pipe1' or 'pipe2' chosen according to the input and is the output that will be passed on for further processing."
+    },
+    {
+        "question": "What information does the 'show_help' output provide in the CR_InputSwitchPipe node?",
+        "answer": "The 'show_help' output provides a URL to a documentation page for further assistance. It is a constant string that always points to the GitHub wiki page of the CR_InputSwitchPipe node, offering users a direct link to information about the node's usage and functionality."
+    },
+    {
+        "question": "What is the infrastructure type required for the CR_InputSwitchPipe node?",
+        "answer": "The infrastructure type required for the CR_InputSwitchPipe node is CPU."
+    }
+]

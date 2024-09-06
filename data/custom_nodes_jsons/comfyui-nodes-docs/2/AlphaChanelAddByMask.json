@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AlphaChanelAddByMask node in ComfyUI?",
+        "answer": "The AlphaChanelAddByMask node in ComfyUI is designed to add an alpha channel to a batch of images based on a specified mask and method, allowing for dynamic adjustment of image opacity."
+    },
+    {
+        "question": "What are the required input types for the AlphaChanelAddByMask node?",
+        "answer": "The required input types for the AlphaChanelAddByMask node are: images (Comfy dtype: IMAGE, Python dtype: torch.Tensor), mask (Comfy dtype: MASK, Python dtype: torch.Tensor), and method (Comfy dtype: COMBO[STRING], Python dtype: str)."
+    },
+    {
+        "question": "What does the 'method' parameter in the AlphaChanelAddByMask node specify?",
+        "answer": "The 'method' parameter in the AlphaChanelAddByMask node specifies how the mask is applied to the images, such as default or invert, affecting the way transparency is applied across the images."
+    },
+    {
+        "question": "What is the output type of the AlphaChanelAddByMask node?",
+        "answer": "The output type of the AlphaChanelAddByMask node is IMAGE (Comfy dtype: IMAGE, Python dtype: torch.Tensor), which represents the modified batch of images with the alpha channel added based on the specified mask and method."
+    },
+    {
+        "question": "What happens if the image dimensions do not match the mask dimensions in the AlphaChanelAddByMask node?",
+        "answer": "If the image dimensions do not match the mask dimensions in the AlphaChanelAddByMask node, a ValueError is raised, indicating that the image size does not match the mask size."
+    },
+    {
+        "question": "How does the AlphaChanelAddByMask node handle a mismatch between the number of images and masks?",
+        "answer": "If there is a mismatch between the number of images and masks in the AlphaChanelAddByMask node, the mask is expanded to match the number of images using mask.expand((img_count, -1, -1))."
+    },
+    {
+        "question": "What are the two methods available for applying the mask in the AlphaChanelAddByMask node?",
+        "answer": "The two methods available for applying the mask in the AlphaChanelAddByMask node are 'default' and 'invert'. In the 'default' method, the alpha channel is set to 1 minus the mask value, while in the 'invert' method, the alpha channel is set directly to the mask value."
+    }
+]

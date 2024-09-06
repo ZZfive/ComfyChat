@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BatchUnsampler class in ComfyUI?",
+        "answer": "The BatchUnsampler class in ComfyUI is designed to reverse engineer the noise schedule applied to a batch of latent variables, starting from a given latent image and working backwards step by step. It generates a sequence of progressively denoised latent variables, which can be useful for understanding the model's internal representations and noise dynamics."
+    },
+    {
+        "question": "What is the significance of the 'model' parameter in the BatchUnsampler class?",
+        "answer": "The 'model' parameter is crucial in the BatchUnsampler class because it defines the infrastructure and noise schedule used for the unsampling operation. It serves as the foundation for generating the sequence of denoised latent variables and is essential to the functionality of the node."
+    },
+    {
+        "question": "How does the 'sampler_name' parameter affect the BatchUnsampler class?",
+        "answer": "The 'sampler_name' parameter is important in the BatchUnsampler class as it determines the type of sampling method used during the unsampling process. It influences the quality and characteristics of the generated latent variables, thereby affecting the overall result of the denoised sequence."
+    },
+    {
+        "question": "What role does the 'scheduler' parameter play in the BatchUnsampler class?",
+        "answer": "The 'scheduler' parameter is crucial in the BatchUnsampler class as it decides the scheduling strategy for the noise levels applied during the unsampling operation. It affects the smoothness and coherence of the denoised latent sequence, which is vital for accurate representation."
+    },
+    {
+        "question": "How does the 'steps' parameter influence the BatchUnsampler class?",
+        "answer": "The 'steps' parameter is important in the BatchUnsampler class as it defines the number of intermediate steps used for unsampling the latent variables. It directly affects the resolution and granularity of the denoised latent sequence, influencing the node's ability to capture details in the noise schedule."
+    },
+    {
+        "question": "What is the function of the 'start_at_step' and 'end_at_step' parameters in the BatchUnsampler class?",
+        "answer": "The 'start_at_step' parameter specifies the initial step at which the unsampling begins, setting the starting point of the denoised sequence. The 'end_at_step' parameter marks the final step at which the unsampling ends, establishing the endpoint of the denoised sequence. Both parameters are crucial for controlling the range of the generated latent variables."
+    },
+    {
+        "question": "What does the 'latent_image' parameter provide in the BatchUnsampler class?",
+        "answer": "The 'latent_image' parameter is essential in the BatchUnsampler class as it provides the source latent image from which the unsampling begins. It serves as the basis for generating the entire sequence of latent variables and is indispensable for the node's operation."
+    }
+]

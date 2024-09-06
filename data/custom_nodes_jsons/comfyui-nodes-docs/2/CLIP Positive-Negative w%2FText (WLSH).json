@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WLSH_CLIP_Text_Positive_Negative node in ComfyUI?",
+        "answer": "The WLSH_CLIP_Text_Positive_Negative node in ComfyUI is designed to process text inputs through the CLIP model, encoding them into embedding vectors. It plays a crucial role in converting text data into a form suitable for further analysis or as input to machine learning models, with an emphasis on its ability to handle both positive and negative text samples, which is vital for tasks requiring sentiment analysis or contrastive learning."
+    },
+    {
+        "question": "What are the required input types for the WLSH_CLIP_Text_Positive_Negative node?",
+        "answer": "The required input types for the WLSH_CLIP_Text_Positive_Negative node include 'positive', which is a text input representing positive sentiment or context, 'negative', which is a text input representing negative sentiment or context, and 'clip', which is an instance of the CLIP model used to encode the text inputs into embedding vectors."
+    },
+    {
+        "question": "What does the 'positive' output represent in the WLSH_CLIP_Text_Positive_Negative node?",
+        "answer": "The 'positive' output in the WLSH_CLIP_Text_Positive_Negative node is the encoded representation of the positive text input. It is a key element for subsequent machine learning tasks that require sentiment analysis or an understanding of positive context."
+    },
+    {
+        "question": "What is the significance of the 'negative_text' output in the WLSH_CLIP_Text_Positive_Negative node?",
+        "answer": "The 'negative_text' output in the WLSH_CLIP_Text_Positive_Negative node retains the original negative text input provided to the node. It preserves the raw text data, which may be used in conjunction with the encoded embedding vectors for subsequent tasks."
+    },
+    {
+        "question": "How does the WLSH_CLIP_Text_Positive_Negative node encode text inputs?",
+        "answer": "The WLSH_CLIP_Text_Positive_Negative node encodes text inputs by utilizing the CLIP model instance provided as one of the inputs. The CLIP model processes the 'positive' and 'negative' text inputs, converting them into embedding vectors that can be used for analysis or as inputs to other models."
+    },
+    {
+        "question": "What infra type is recommended for the WLSH_CLIP_Text_Positive_Negative node?",
+        "answer": "The recommended infra type for the WLSH_CLIP_Text_Positive_Negative node is GPU."
+    },
+    {
+        "question": "Can you provide an example of how the WLSH_CLIP_Text_Positive_Negative node is implemented in code?",
+        "answer": "Yes, an example of the implementation of the WLSH_CLIP_Text_Positive_Negative node is as follows: ```class WLSH_CLIP_Text_Positive_Negative: @classmethod def INPUT_TYPES(s): return {'required': {'positive': ('STRING', {'multiline': True}), 'negative': ('STRING', {'multiline': True}), 'clip': ('CLIP',)}} RETURN_TYPES = ('CONDITIONING', 'CONDITIONING', 'STRING', 'STRING') RETURN_NAMES = ('positive', 'negative', 'positive_text', 'negative_text') FUNCTION = 'encode' CATEGORY = 'WLSH Nodes/conditioning' def encode(self, clip, positive, negative): return ([[clip.encode(positive), {}]], [[clip.encode(negative), {}]], positive, negative)```"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_BLIP_Model_Loader node?",
+        "answer": "The WAS_BLIP_Model_Loader node is designed to efficiently load and manage BLIP models for caption generation and interrogation tasks. It ensures the necessary packages are installed and handles the retrieval and initialization of the BLIP models."
+    },
+    {
+        "question": "What is the required input parameter for the WAS_BLIP_Model_Loader node?",
+        "answer": "The required input parameter is 'blip_model', which specifies the type of BLIP model to be loaded. It determines whether the node will initialize a model for caption generation or interrogation."
+    },
+    {
+        "question": "What does the output BLIP_MODEL represent?",
+        "answer": "The output BLIP_MODEL represents the loaded BLIP model, ready to be used for caption generation or interrogation tasks. It encapsulates the functionality of the model and serves as the central component for further processing within the application."
+    },
+    {
+        "question": "What is the infra type required for the WAS_BLIP_Model_Loader node?",
+        "answer": "The infra type required for the WAS_BLIP_Model_Loader node is GPU."
+    },
+    {
+        "question": "Which packages are required to use BLIP models in the WAS_BLIP_Model_Loader node?",
+        "answer": "The required packages are 'timm', 'transformers', and 'fairscale'. Additionally, 'transformers==4.26.1' is specifically required for BLIP models."
+    },
+    {
+        "question": "How does the WAS_BLIP_Model_Loader node handle the initialization of the BLIP model for caption generation?",
+        "answer": "When the 'blip_model' parameter is set to 'caption', the node imports the 'blip_decoder' module and loads the specified pre-trained model. The model is then set to evaluation mode and moved to the 'cpu' device."
+    },
+    {
+        "question": "How does the WAS_BLIP_Model_Loader node handle the initialization of the BLIP model for interrogation?",
+        "answer": "When the 'blip_model' parameter is set to 'interrogate', the node imports the 'blip_vqa' module and loads the specified pre-trained model. The model is then set to evaluation mode and moved to the 'cpu' device."
+    }
+]

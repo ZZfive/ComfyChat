@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AdvancedCLIPTextEncode node in ComfyUI?",
+        "answer": "The AdvancedCLIPTextEncode node in ComfyUI is designed to process and encode text input into a form suitable for advanced conditioning tasks. It leverages the capabilities of the CLIP model to generate embeddings that capture the semantic properties of the text, making it particularly suitable for applications that require a deeper understanding of the input text, such as generative models or natural language processing tasks that need a more in-depth understanding of the input text."
+    },
+    {
+        "question": "What are the required input parameters for the AdvancedCLIPTextEncode node?",
+        "answer": "The required input parameters for the AdvancedCLIPTextEncode node are: 'text', which is the main input representing the text to be encoded; 'clip', which specifies the CLIP model to be used for text encoding; 'token_normalization', which determines how tokens in the text are normalized before encoding; and 'weight_interpretation', which affects the interpretation of token weights during the encoding process."
+    },
+    {
+        "question": "What does the 'token_normalization' parameter in the AdvancedCLIPTextEncode node do?",
+        "answer": "The 'token_normalization' parameter in the AdvancedCLIPTextEncode node determines how tokens in the text are normalized before encoding. It can take different strategies such as 'none', 'mean', 'length', or 'length+mean', which affect the distribution and scale of token embeddings. This parameter is important for controlling the variance in the embeddings and can influence conditioning performance."
+    },
+    {
+        "question": "What is the role of the 'weight_interpretation' parameter in the AdvancedCLIPTextEncode node?",
+        "answer": "The 'weight_interpretation' parameter in the AdvancedCLIPTextEncode node affects the interpretation of token weights during the encoding process. It provides various options such as 'comfy', 'A1111', 'compel', 'comfy++', or 'down_weight', each potentially leading to different emphasis on certain aspects of the text. This parameter is crucial for fine-tuning the encoding to meet the specific requirements of downstream tasks."
+    },
+    {
+        "question": "What is the optional input parameter for the AdvancedCLIPTextEncode node?",
+        "answer": "The optional input parameter for the AdvancedCLIPTextEncode node is 'affect_pooled', which controls whether the pooled output of the CLIP model should be affected by the encoding process. It accepts values of 'enable' or 'disable', determining whether the pooled output is included in the final embedding."
+    },
+    {
+        "question": "What is the output of the AdvancedCLIPTextEncode node?",
+        "answer": "The output of the AdvancedCLIPTextEncode node is a tensor representing the encoded text. This tensor serves as the conditioning input for further processing or generative tasks. It contains semantic information extracted from the text, providing a rich and detailed representation that can guide subsequent steps in the workflow."
+    },
+    {
+        "question": "What is the infra type required for the AdvancedCLIPTextEncode node?",
+        "answer": "The infra type required for the AdvancedCLIPTextEncode node is CPU."
+    }
+]

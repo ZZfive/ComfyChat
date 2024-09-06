@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the `bounded_image_crop_with_mask` method in WAS_Bounded_Image_Crop_With_Mask?",
+        "answer": "The `bounded_image_crop_with_mask` method is designed to intelligently crop an image based on the boundaries defined by a corresponding mask. It focuses on the region of interest depicted by the mask to enhance the image while applying padding to ensure the cropped area maintains the desired aspect ratio or size."
+    },
+    {
+        "question": "What are the required inputs for the WAS_Bounded_Image_Crop_With_Mask class?",
+        "answer": "The required inputs for the WAS_Bounded_Image_Crop_With_Mask class are `image` and `mask`. The `image` is the input image that will be cropped according to the mask, and the `mask` defines the region of interest within the image that will determine the boundaries of the cropping operation."
+    },
+    {
+        "question": "What are the optional inputs for the WAS_Bounded_Image_Crop_With_Mask class?",
+        "answer": "The optional inputs for the WAS_Bounded_Image_Crop_With_Mask class are `padding_left`, `padding_right`, `padding_top`, and `padding_bottom`. These parameters adjust the amount of padding added to the left, right, top, and bottom of the cropped image, respectively."
+    },
+    {
+        "question": "What are the output types of the WAS_Bounded_Image_Crop_With_Mask class?",
+        "answer": "The output types of the WAS_Bounded_Image_Crop_With_Mask class are `cropped_image` and `image_bounds`. The `cropped_image` is the result of the cropping operation, including the region of interest defined by the mask and the applied padding. The `image_bounds` are the coordinates that define the boundaries of the cropped area within the original image."
+    },
+    {
+        "question": "What infra type does the WAS_Bounded_Image_Crop_With_Mask class use?",
+        "answer": "The WAS_Bounded_Image_Crop_With_Mask class uses the CPU infra type."
+    },
+    {
+        "question": "How does the WAS_Bounded_Image_Crop_With_Mask class handle different dimensions of the input image and mask?",
+        "answer": "The WAS_Bounded_Image_Crop_With_Mask class checks the dimensions of the input image and mask. If the image or mask has only one dimension, it is unsqueezed to add an extra dimension. The class then processes the image and mask based on their dimensions to ensure proper cropping."
+    },
+    {
+        "question": "What does the WAS_Bounded_Image_Crop_With_Mask class return?",
+        "answer": "The WAS_Bounded_Image_Crop_With_Mask class returns a tuple containing the cropped images stacked as torch.Tensors and a list of the bounding box coordinates (rmin, rmax, cmin, cmax) for each cropped image."
+    }
+]

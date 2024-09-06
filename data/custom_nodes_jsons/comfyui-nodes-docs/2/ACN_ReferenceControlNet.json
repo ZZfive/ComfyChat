@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ReferenceControlNetNode class in ComfyUI?",
+        "answer": "The ReferenceControlNetNode class is designed to manage the loading and application of control nets with reference options. It encapsulates the logic for creating advanced control structures that can be used to guide the behavior of the generation model, providing a flexible interface to control the generation process based on user-defined reference types and style fidelity."
+    },
+    {
+        "question": "What is the significance of the reference_type parameter in the ReferenceControlNetNode?",
+        "answer": "The reference_type parameter determines the type of control net to use, which has a significant impact on the style and behavior of the generated output. It is crucial in defining the method of the control mechanism and its influence on the final result."
+    },
+    {
+        "question": "How does the style_fidelity parameter affect the output in the ReferenceControlNetNode?",
+        "answer": "The style_fidelity parameter adjusts the degree of adherence to the reference style, affecting the consistency of the output style. It plays an important role in balancing creative output with the desired level of style control."
+    },
+    {
+        "question": "What does the ref_weight parameter do in ReferenceControlNetNode?",
+        "answer": "The ref_weight parameter sets the weight of the reference in the control net, directly affecting the intensity of the applied control. It is essential for fine-tuning the control's influence on the generation process."
+    },
+    {
+        "question": "What is the output type of the ReferenceControlNetNode?",
+        "answer": "The output of ReferenceControlNetNode is a control net object that encapsulates advanced control logic. It is significant for guiding the generation model to the desired result by applying the specified control parameters."
+    },
+    {
+        "question": "What infrastructure type is recommended for the ReferenceControlNetNode?",
+        "answer": "The recommended infrastructure type for the ReferenceControlNetNode is CPU."
+    },
+    {
+        "question": "How does the load_controlnet function in the ReferenceControlNetNode work?",
+        "answer": "The load_controlnet function takes in the reference_type, style_fidelity, and ref_weight parameters and creates a combo of these using ReferenceOptions. It then instantiates a ReferenceAdvanced object with this combo and no timestep_keyframes, returning this object as the control net."
+    }
+]

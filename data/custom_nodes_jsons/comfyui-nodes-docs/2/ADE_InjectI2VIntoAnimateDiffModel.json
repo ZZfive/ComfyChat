@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ADE_InjectI2VIntoAnimateDiffModel node in ComfyUI?",
+        "answer": "The purpose of the ADE_InjectI2VIntoAnimateDiffModel node is to integrate the I2V (Image to Video) model into the AnimateDiff framework, enhancing its functionality by introducing motion models and enriching the animation process with more dynamic movements."
+    },
+    {
+        "question": "What are the required input types for the ADE_InjectI2VIntoAnimateDiffModel node?",
+        "answer": "The required input types for the ADE_InjectI2VIntoAnimateDiffModel node are 'model_name', which specifies the name of the motion model to load, and 'motion_model', representing the motion model object to be injected into the AnimateDiff model."
+    },
+    {
+        "question": "What is the optional input type for the ADE_InjectI2VIntoAnimateDiffModel node?",
+        "answer": "The optional input type for the ADE_InjectI2VIntoAnimateDiffModel node is 'ad_settings', which allows for customizing the appearance and behavior of the animation."
+    },
+    {
+        "question": "What is the output type of the ADE_InjectI2VIntoAnimateDiffModel node?",
+        "answer": "The output type of the ADE_InjectI2VIntoAnimateDiffModel node is MOTION_MODEL_ADE, representing the enhanced AnimateDiff model with injected I2V functionality, ready for animation tasks."
+    },
+    {
+        "question": "What is the infra type for the ADE_InjectI2VIntoAnimateDiffModel node?",
+        "answer": "The infra type for the ADE_InjectI2VIntoAnimateDiffModel node is CPU."
+    },
+    {
+        "question": "What happens if the passed-in motion model does not have an img_encoder?",
+        "answer": "If the passed-in motion model does not have an img_encoder, an exception will be raised, stating that the motion model was expected to have an img_encoder but did not."
+    },
+    {
+        "question": "What does the ADE_InjectI2VIntoAnimateDiffModel node do after loading the motion module and motion settings?",
+        "answer": "After loading the motion module and motion settings, the ADE_InjectI2VIntoAnimateDiffModel node injects the img_encoder into the loaded motion model using the inject_img_encoder_into_model function and returns the enhanced motion model."
+    }
+]

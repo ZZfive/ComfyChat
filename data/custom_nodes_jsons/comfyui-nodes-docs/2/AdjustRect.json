@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AdjustRect node in ComfyUI?",
+        "answer": "The AdjustRect node in ComfyUI is designed to adjust the size and position of a rectangle based on specified modification parameters and rounding modes. It abstracts the complexity of geometric transformations and provides a simplified way to recalibrate rectangular coordinates for various application scenarios."
+    },
+    {
+        "question": "What are the required input types for the AdjustRect node?",
+        "answer": "The required input types for the AdjustRect node are: a, b, c, d, xm, ym, round_mode, input_format, and output_format. These inputs represent the original rectangle's coordinates, modification parameters for adjusting the rectangle's width and height, and parameters for determining rounding modes and input/output formats."
+    },
+    {
+        "question": "How does the AdjustRect node determine the new position of the adjusted rectangle?",
+        "answer": "The AdjustRect node determines the new position of the adjusted rectangle by calculating the center point of the original rectangle and applying the specified modification parameters (xm and ym) and rounding mode to compute the new dimensions. It then adjusts the rectangle's coordinates based on the calculated center point and new dimensions."
+    },
+    {
+        "question": "What is the purpose of the round_mode input in the AdjustRect node?",
+        "answer": "The round_mode input in the AdjustRect node determines the rounding mode applied during the adjustment process. It influences how the final dimensions of the adjusted rectangle are calculated, with options such as Floor, Ceil, Round, and Exact."
+    },
+    {
+        "question": "How does the AdjustRect node handle input and output formats?",
+        "answer": "The AdjustRect node uses the input_format and output_format parameters to interpret and convert the rectangle's coordinates. It converts the input coordinates from the specified input format to a standard format for processing and then converts the adjusted coordinates back to the desired output format before returning the result."
+    },
+    {
+        "question": "What is the output type of the AdjustRect node?",
+        "answer": "The output type of the AdjustRect node is a tuple of four integers (Tuple[int, int, int, int]), representing the adjusted rectangle's coordinates after applying the specified modification parameters and rounding mode."
+    },
+    {
+        "question": "How does the AdjustRect node ensure that the adjusted rectangle's dimensions are always even?",
+        "answer": "The AdjustRect node ensures that the adjusted rectangle's dimensions are always even by using even values for the xm and ym modification parameters and applying the selected rounding mode to calculate the half-new lengths for the x and y dimensions. This approach guarantees that the resulting dimensions are even numbers."
+    }
+]

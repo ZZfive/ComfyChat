@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Sigma Schedule Split Combine node in ComfyUI?",
+        "answer": "The Sigma Schedule Split Combine node in ComfyUI is designed to operate on sigma schedules by splitting and combining them based on specified weights and interpolation methods. It allows creating a new mixed sigma schedule from two input schedules, enabling a customized process of sigma values over time."
+    },
+    {
+        "question": "What are the required input types for the Sigma Schedule Split Combine node?",
+        "answer": "The required input types for the Sigma Schedule Split Combine node are: 1. schedule_Start (the starting sigma schedule), 2. schedule_End (the ending sigma schedule), and 3. idx_split_percent (the percentage at which the initial sigma schedule is split, determining the transition point between the two schedules)."
+    },
+    {
+        "question": "What does the idx_split_percent input represent in the Sigma Schedule Split Combine node?",
+        "answer": "The idx_split_percent input in the Sigma Schedule Split Combine node represents the percentage at which the initial sigma schedule is split, determining the transition point between the two input schedules. It is a float value with a default of 0.5, a minimum of 0.0, a maximum of 1.0, and a step of 0.001."
+    },
+    {
+        "question": "What is the output type of the Sigma Schedule Split Combine node?",
+        "answer": "The output type of the Sigma Schedule Split Combine node is a SIGMA_SCHEDULE, which is the resulting sigma schedule. It is a combination of the modified starting and ending input schedules based on the specified split percentage."
+    },
+    {
+        "question": "How does the Sigma Schedule Split Combine node create the new sigma schedule?",
+        "answer": "The Sigma Schedule Split Combine node creates the new sigma schedule by first calculating the index to act as the split based on the idx_split_percent input. It then concatenates the sigmas from the ending schedule up to the split index with the sigmas from the starting schedule from the split index onwards. The resulting new schedule is a clone of the starting schedule with the sigmas set to the newly created combination."
+    },
+    {
+        "question": "What is the infra type of the Sigma Schedule Split Combine node?",
+        "answer": "The infra type of the Sigma Schedule Split Combine node is CPU."
+    },
+    {
+        "question": "In which category is the Sigma Schedule Split Combine node located in ComfyUI?",
+        "answer": "The Sigma Schedule Split Combine node is located in the 'Animate Diff 🎭🅐🅓/sample settings/sigma schedule' category in ComfyUI."
+    }
+]

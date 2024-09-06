@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CameraPoseVisualizer节点的作用是什么？",
+        "answer": "CameraPoseVisualizer节点用于在3D图表中可视化相机姿态。它可以从指定的包含相机内参和坐标的文件中读取数据，或直接使用提供的相机控制姿态。"
+    },
+    {
+        "question": "CameraPoseVisualizer节点支持调整哪些参数？",
+        "answer": "CameraPoseVisualizer节点支持调整可视化比例、基准值，並可选择是否使用精确焦距或相对的相机到世界坐标变换。"
+    },
+    {
+        "question": "CameraPoseVisualizer节点的必需输入参数有哪些？",
+        "answer": "CameraPoseVisualizer节点的必需输入参数包括：pose_file_path（相机姿态文件路径）、base_xval（相机金字塔可视化的基准x值）、zval（相机金字塔可视化的z值）、scale（可视化的比例）、use_exact_fx（是否使用精确焦距）、relative_c2w（相机到世界坐标变换是否为相对变换）、use_viewer（是否使用外部查看器）。"
+    },
+    {
+        "question": "CameraPoseVisualizer节点的可选输入参数是什么？",
+        "answer": "CameraPoseVisualizer节点的可选输入参数是cameractrl_poses，用於直接提供用于可视化的相机控制姿态。"
+    },
+    {
+        "question": "CameraPoseVisualizer节点的输出类型是什么？",
+        "answer": "CameraPoseVisualizer节点的输出类型是image，输出的是相机姿态的3D图表视觉表示。"
+    },
+    {
+        "question": "CameraPoseVisualizer节点如何处理输入的姿态数据？",
+        "answer": "CameraPoseVisualizer节点根据输入的姿态数据（来自pose_file_path或cameractrl_poses）计算世界坐标到相机坐标的转换矩阵（w2cs），然后根据设置的参数（如use_exact_fx和relative_c2w）将其转换为相机到世界坐标的转换矩阵（c2ws），最后根据这些矩阵对相机姿态进行可视化。"
+    },
+    {
+        "question": "CameraPoseVisualizer节点可视化过程中颜色表示的意义是什么？",
+        "answer": "在CameraPoseVisualizer节点的可视化过程中，颜色表示的是帧的顺序，使用彩虹色谱映射到相机姿态的3D图表上，以区分不同帧的相机位置和方向。"
+    }
+]

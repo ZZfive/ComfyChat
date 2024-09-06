@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_CycleLoRAs node in ComfyUI?",
+        "answer": "The CR_CycleLoRAs node is designed to manage and cycle through a list of LoRA (Low-Rank Adaptation) parameters for specified animation frames, enhancing the diversity and dynamics of generated animations by sequentially applying different LoRA adjustments."
+    },
+    {
+        "question": "What does the 'mode' parameter in the CR_CycleLoRAs node determine?",
+        "answer": "The 'mode' parameter determines the operational behavior of the node. It decides whether the node is in an 'Off' state, doing nothing, or in a 'Sequential' mode, cycling through LoRA parameters. This selection significantly influences how the node processes inputs and the resulting animation sequence."
+    },
+    {
+        "question": "How does the 'lora_list' parameter contribute to the functionality of the CR_CycleLoRAs node?",
+        "answer": "The 'lora_list' parameter is the list of LoRA parameters that the node will cycle through. Each element in this list represents a different set of adjustments that can be applied to the model and clip, aiding in the diversity of the animation."
+    },
+    {
+        "question": "What role does the 'frame_interval' parameter play in the CR_CycleLoRAs node?",
+        "answer": "The 'frame_interval' parameter defines the frequency at which the node cycles through the LoRA parameters. It is crucial for controlling the rhythm and timing of the animation sequence."
+    },
+    {
+        "question": "How does the 'current_frame' parameter affect the operation of the CR_CycleLoRAs node?",
+        "answer": "The 'current_frame' parameter indicates the current position in the animation sequence. It is used to determine which LoRA parameter is applied at any given moment."
+    },
+    {
+        "question": "What are the output types of the CR_CycleLoRAs node?",
+        "answer": "The CR_CycleLoRAs node outputs three types: MODEL, which represents the model with LoRA adjustments applied according to the current frame and frame interval; CLIP, which is the visual representation using LoRA parameters adjustments alongside the MODEL; and show_help, which provides a URL link to documentation for further help or information on node operations."
+    },
+    {
+        "question": "In the source code of the CR_CycleLoRAs node, what happens if the 'mode' is set to 'Sequential'?",
+        "answer": "If the 'mode' is set to 'Sequential', the node calculates the current LoRA index based on the current frame and frame interval, applies the corresponding LoRA parameters to the model and clip, and returns the modified model and clip along with a help URL."
+    }
+]

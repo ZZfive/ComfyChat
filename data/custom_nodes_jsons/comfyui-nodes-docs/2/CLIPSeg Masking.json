@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_CLIPSeg class in ComfyUI?",
+        "answer": "The WAS_CLIPSeg class in ComfyUI is designed to perform image segmentation using text prompts. It utilizes the CLIPSeg model to generate a mask that isolates the subject described in the text within the image."
+    },
+    {
+        "question": "What is the significance of the 'image' parameter in the WAS_CLIPSeg class?",
+        "answer": "The 'image' parameter is crucial for the segmentation process as it serves as the input that the model will analyze to identify and isolate the desired subject. The quality and resolution of the image can significantly affect the accuracy of the generated mask."
+    },
+    {
+        "question": "What role does the 'text' parameter play in the WAS_CLIPSeg class?",
+        "answer": "The 'text' parameter provides a description that guides the segmentation process. It is optional but can enhance the precision of the segmentation by specifying what the model should focus on in the image."
+    },
+    {
+        "question": "How can the 'clipseg_model' parameter be utilized in the WAS_CLIPSeg class?",
+        "answer": "The 'clipseg_model' parameter allows users to provide a pre-trained CLIPSeg model for the segmentation. This can be beneficial when using custom models that have been fine-tuned for specific tasks or datasets."
+    },
+    {
+        "question": "What does the MASK output represent in the WAS_CLIPSeg class?",
+        "answer": "The MASK output is a binary mask that separates the segmented subject from the rest of the image based on the provided text description. It is essential for applications requiring object separation or background removal."
+    },
+    {
+        "question": "What is the MASK_IMAGE output in the WAS_CLIPSeg class?",
+        "answer": "The MASK_IMAGE output is an inverted image of the segmented subject highlighted by the mask. It can be used for visual verification or further processing steps that require a visual representation of the segmented image."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the WAS_CLIPSeg class?",
+        "answer": "The WAS_CLIPSeg class is recommended to be run on a GPU infrastructure for optimal performance."
+    }
+]

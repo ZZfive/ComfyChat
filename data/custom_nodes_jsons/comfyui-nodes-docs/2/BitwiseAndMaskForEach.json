@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BitwiseAndMaskForEach node in ComfyUI?",
+        "answer": "The BitwiseAndMaskForEach node in ComfyUI performs bitwise operations on segments using a mask to determine overlapping areas. It processes each base segment against a set of mask segments, identifies overlapping regions, and applies the mask to eliminate non-overlapping areas. This method is crucial for refining segmentation results, ensuring that only truly overlapping areas are preserved."
+    },
+    {
+        "question": "What are the required input types for the BitwiseAndMaskForEach node?",
+        "answer": "The BitwiseAndMaskForEach node requires two input parameters: 'base_segs' and 'mask_segs'. 'base_segs' is a collection of segmentation objects that the node will process, while 'mask_segs' consists of segmentation objects that serve as the bitmask for the operation."
+    },
+    {
+        "question": "What does the 'base_segs' parameter represent in the BitwiseAndMaskForEach node?",
+        "answer": "The 'base_segs' parameter represents a collection of segmentation objects that the BitwiseAndMaskForEach node will process. It is essential because it forms the basis for the bitwise operations performed against the mask segments. This parameter directly influences the result of the node's execution, determining which segments are considered for overlap detection."
+    },
+    {
+        "question": "What does the 'mask_segs' parameter represent in the BitwiseAndMaskForEach node?",
+        "answer": "The 'mask_segs' parameter consists of segmentation objects that serve as the bitmask for the bitwise operation. It is crucial because it defines the areas to be preserved after the operation. This parameter plays a significant role in shaping the node's final output by specifying the regions to be considered for overlap and should be retained after the operation."
+    },
+    {
+        "question": "What is the output type of the BitwiseAndMaskForEach node?",
+        "answer": "The output of the BitwiseAndMaskForEach node is a list of segmentation objects that have undergone bitwise operations. It only contains segments that have overlaps between the base segments and mask segments. This output is important as it represents the refined segmentation data after the operation."
+    },
+    {
+        "question": "What infrastructure type does the BitwiseAndMaskForEach node use?",
+        "answer": "The BitwiseAndMaskForEach node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the BitwiseAndMaskForEach node determine overlapping areas between base segments and mask segments?",
+        "answer": "The BitwiseAndMaskForEach node determines overlapping areas by iterating through each base segment and comparing it against each mask segment. It calculates the intersecting region between the base segment's crop region and the mask segment's crop region. If there is an overlap, the node sets the corresponding pixels in the base segment's cropped mask to 0 for non-overlapping areas, effectively eliminating them."
+    }
+]

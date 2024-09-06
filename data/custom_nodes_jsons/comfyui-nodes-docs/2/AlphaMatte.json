@@ -1,0 +1,30 @@
+[
+    {
+        "question": "AlphaMatte节点的主要功能是什么？",
+        "answer": "AlphaMatte节点的主要功能是提取和优化图像的alpha遮罩（透明度通道），通过分析图像及其alpha trimap（三值图），将前景与背景分离。"
+    },
+    {
+        "question": "AlphaMatte节点的输入参数中，哪个参数用于提供初步猜测以指导遮罩提取过程？",
+        "answer": "AlphaMatte节点的输入参数中，alpha_trimap参数用于提供初步猜测以指导遮荫提取过程，它是一个三值图，为前景、背景和未知区域提供初步猜测。"
+    },
+    {
+        "question": "AlphaMatte节点中的preblur参数有什么作用？",
+        "answer": "AlphaMatte节点中的preblur参数用于指定应用于trimap的预模糊量，用于平滑硬边缘并改善遮罩提取效果。"
+    },
+    {
+        "question": "AlphaMatte节点的输出类型有哪些？",
+        "answer": "AlphaMatte节点的输出类型包括alpha（提取出的alpha遮罩）、fg（估算的图像前景）和bg（估算的图像背景）。"
+    },
+    {
+        "question": "AlphaMatte节点的estimate_fg参数是什么？",
+        "answer": "AlphaMatte节点的estimate_fg参数是一个标志，指示是否除alpha遮罩外还要估算前景，提供更完整的图像元素分离。"
+    },
+    {
+        "question": "AlphaMatte节点支持哪种infra类型？",
+        "answer": "AlphaMatte节点支持的infra类型是GPU。"
+    },
+    {
+        "question": "AlphaMatte类的alpha_matte方法中是如何估算alpha遮罩的？",
+        "answer": "在AlphaMatte类的alpha_matte方法中，通过estimate_alpha_cf函数，传入图像、trimap等参数，使用拉普拉斯金字塔和共轭梯度法估算alpha遮罩。"
+    }
+]
