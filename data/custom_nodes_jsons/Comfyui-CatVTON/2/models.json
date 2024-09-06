@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of Detectron2's DatasetMapper?",
+        "answer": "The DatasetMapper in Detectron2 is used to prepare the input data for the model. It takes the raw data from the dataset loader and transforms it into a format that the model can accept. This includes tasks such as resizing, normalization, and converting the data into the network input format."
+    },
+    {
+        "question": "How does the DatasetMapper handle the output of the data loader?",
+        "answer": "The DatasetMapper takes the output of the default DatasetMapper and further transforms it into a list of dictionaries. Each dictionary in the list corresponds to one image and contains the required keys for the model. These keys include 'image', 'instances', 'proposals', 'height', 'width', and 'sem_seg'. The 'instances' key contains information about the instances in the image along with their bounding boxes, classes, masks, and keypoints. The 'proposals' key is used only in Fast R-CNN style models and contains the proposal boxes along with their scores. The 'height' and 'width' keys specify the desired output resolution for the model. The 'sem_seg' key contains the semantic segmentation ground truth."
+    },
+    {
+        "question": "What format does the DatasetMapper use for image and instances?",
+        "answer": "The DatasetMapper converts the images and instances into a format that is suitable for input to the model. The image is converted into a Tensor in the (C, H, W) format, where C is the number of channels. The instances are represented as an [Instances](https://detectron2.readthedocs.io/en/latest/modules/structures.html#detectron2.structures.Instances) object with fields like 'gt_boxes', 'gt_classes', 'gt_masks', and 'gt_keypoints'. These fields contain the ground truth bounding boxes, classes, masks, and keypoints for the instances in the image."
+    },
+    {
+        "question": "How is the model output formatted when in training mode?",
+        "answer": "When in training mode, the built-in models in Detectron2 output a dictionary with all the losses. The dictionary contains keys for individual losses such as 'loss_cls', 'loss_bbox', 'loss_mask', and 'loss_mask_mse'. The values for these keys are the numerical values of the respective losses."
+    },
+    {
+        "question": "What is the purpose of the DetectionCheckpointer?",
+        "answer": "The DetectionCheckpointer in Detectron2 is used to load or save a model checkpoint. It can load a model from a file, such as a .pth or .pkl file, and write the model's state dictionary to a file. The checkpointer also manages the storage of training statistics into an EventStorage object."
+    },
+    {
+        "question": "How is the model output formatted when in inference mode?",
+        "answer": "When in inference mode, the built-in models in Detectron2 output a list of dictionaries. Each dictionary in the list corresponds to one image and contains fields such as 'instances', 'sem_seg', 'proposals', and 'panoptic_seg'. The 'instances' field contains the predicted bounding boxes, scores, classes, masks, and keypoints for the objects in the image. The 'sem_seg' field contains the predicted semantic segmentation map. The 'proposals' field is used only in Fast R-CNN style models and contains the proposal boxes with their objectness scores. The 'panoptic_seg' field is a tuple of a tensor and a list of dictionaries, where the tensor represents the segment map and each dictionary describes one segment with its segment id, is_thing flag, and category id."
+    },
+    {
+        "question": "What are some of the features of Detectron2's custom models?",
+        "answer": "Detectron2 allows users to implement custom models that can support any arbitrary input format. The standard input format that all built-in models support is a list of dictionaries, where each dictionary corresponds to information about one image. The dictionary can contain keys such as 'image', 'instances', 'proposals', 'height', 'width', and 'sem_seg'. The 'image' key contains the input image in the form of a Tensor. The 'instances' key, if present, contains an [Instances](https://detectron2.readthedocs.io/en/latest/modules/structures.html#detectron2.structures.Instances) object with fields like 'gt_boxes', 'gt_classes', 'gt_masks', and 'gt_keypoints'. The 'proposals' key, used only in Fast R-CNN style models, contains an [Instances](https://detectron2.readthedocs.io/en/latest/modules/structures.html#detectron2.structures.Instances) object with fields like 'proposal_boxes' and 'objectness_logits'. The 'height' and 'width' keys specify the desired output resolution for the model. The 'sem_seg' key contains the semantic segmentation ground truth as a Tensor."
+    }
+]

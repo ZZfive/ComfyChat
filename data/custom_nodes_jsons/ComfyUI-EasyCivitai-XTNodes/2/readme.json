@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "subject": "Civitai Checkpoint Loader (XTNodes)",
+            "question": "What is the purpose of the Civitai Checkpoint Loader (XTNodes) node?",
+            "answer": "The Civitai Checkpoint Loader (XTNodes) node is used to load model checkpoints from a local file by calculating the BLAKE3 hash to search for the corresponding model on Civitai. It also provides image previews to help users confirm the loaded model."
+        },
+        {
+            "subject": "Civitai Checkpoint Loader (XTNodes)",
+            "question": "What input types does the Civitai Checkpoint Loader (XTNodes) node have?",
+            "answer": "The Civitai Checkpoint Loader (XTNodes) node has two input types:\n1. model_name: A STRING input representing the name of the model checkpoint file.\n2. preview_images: A BOOLEAN input indicating whether to generate image previews."
+        },
+        {
+            "subject": "Civitai LoraLoaderStacked (XTNodes)",
+            "question": "What is the primary function of the Civitai LoraLoaderStacked (XTNodes) node?",
+            "answer": "The Civitai LoraLoaderStacked (XTNodes) node is designed to stack multiple LoRAs, which can be loaded directly from Civitai using URLs or from local files. It supports custom configuration for LoRA weights and includes preview functionality."
+        },
+        {
+            "subject": "Civitai LoraLoaderStacked (XTNodes)",
+            "question": "What input types does the Civitai LoraLoaderStacked (XTNodes) node have?",
+            "answer": "The Civitai LoraLoaderStacked (XTNodes) node has several input types:\n1. url: A STRING input representing the URL of the LoRA model on Civitai.\n2. lora_weight: A FLOAT input representing the weight applied to the LoRA model.\n3. bypass: A BOOLEAN input to bypass the loading of the LoRA.\n4. append_loraname_if_empty: A BOOLEAN input to append the LoRA name as a fallback if no trigger words are found.\n5. preview_images: A BOOLEAN input indicating whether to generate image previews.\n6. lora_stack: An optional LORA_STACK input for stacking multiple LoRAs."
+        },
+        {
+            "subject": "Civitai LoraLoaderStacked (XTNodes)",
+            "question": "What output types does the Civitai LoraLoaderStacked (XTNodes) node produce?",
+            "answer": "The Civitai LoraLoaderStacked (XTNodes) node produces the following output types:\n1. LORA_STACK: An LORA_STACK output representing the final stack of LoRAs after applying the specified configurations.\n2. civitai_trigger_words: A civitai_trigger_words output containing a list of trigger words associated with the loaded LoRAs.\n3. summary: A summary output providing a textual summary of the LoRA stack, including relevant metadata and descriptions."
+        },
+        {
+            "subject": "Load Checkpoint with Previews (XTNodes)",
+            "question": "What does the Load Checkpoint with Previews (XTNodes) node do?",
+            "answer": "The Load Checkpoint with Previews (XTNodes) node allows users to load model checkpoints from a local file. When using a local file, the system calculates the BLAKE3 hash to verify the correctness of the model. It also generates image previews to help users confirm the loaded model."
+        },
+        {
+            "subject": "Load Checkpoint with Previews (XTNodes)",
+            "question": "List all the input types for the Load Checkpoint with Previews (XTNodes) node.",
+            "answer": "The Load Checkpoint with Previews (XTNodes) node has the following input types:\n1. model_name: A STRING input representing the name of the model checkpoint file.\n2. preview_images: A BOOLEAN input indicating whether to generate image previews."
+        },
+        {
+            "subject": "Load Checkpoint with Previews (XTNodes)",
+            "question": "What is one example of the output types produced by the Load Checkpoint with Previews (XTNodes) node?",
+            "answer": "One example of the output types produced by the Load Checkpoint with Previews (XTNodes) node is the MODEL output, which contains the loaded model checkpoint."
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is LoRA Power-Merger ComfyUI?",
+        "answer": "LoRA Power-Merger ComfyUI is a GUI that uses a stable diffusion model to generateimages and videos, combined with custom nodes or plugins that extend its functionality. This specific plugin, LoRA Power-Merger, focuses on merging LoRA (Low-Rank Adaptation) models using various methods, improving model performance or adaptability."
+    },
+    {
+        "question": "What is the main advantage of using LoRA Power-Merger ComfyUI?",
+        "answer": "The main advantage of using LoRA Power-Merger ComfyUI is its ability to merge multiple LoRA models effectively, enhancing the overall performance or adaptability of the merged model to new tasks by combining the strengths of each input model."
+    },
+    {
+        "question": "How does LoRA Power-Merger ComfyUI handle different merging modes?",
+        "answer": "LoRA Power-Merger ComfyUI supports multiple merging modes such as simple addition, ties, linear combination, and magnitude pruning. These modes are designed to be flexible, allowing the user to choose the best strategy based on the specific requirements of the task or application."
+    },
+    {
+        "question": "What are the parameters of the Lora Merger node?",
+        "answer": "The Lora Merger node has several parameters including `lora1` (the first LoRA model), `mode` (the merging mode), `density` (the density parameter), `device` (the device to use), and `dtype` (the data type for computations). The `lora1` parameter allows for the connection of multiple LoRA models for merging, while the `mode` parameter specifies the merging strategy. The `density` parameter is crucial for methods like ties and magnitude pruning, and `device` and `dtype` determine the computing environment and data precision, respectively."
+    },
+    {
+        "question": "What does the Lora SVD Merger node focus on?",
+        "answer": "The Lora SVD Merger node focuses on merging LoRA models using Singular Value Decomposition (SVD). This approach decomposes the weight matrices into singular vectors and values, providing a more refined and controlled merging process. The SVD-based merging supports different modes and includes parameters for adjusting the rank of the decomposed matrices."
+    },
+    {
+        "question": "How does the LoRA SVD Merger node determine the new rank after SVD calculation?",
+        "answer": "The LoRA SVD Merger node determines the new rank after Singular Value Decomposition (SVD) calculation through the `svd_rank` parameter. This parameter allows the user to set the desired rank for the merged LoRA model after SVD computation."
+    },
+    {
+        "question": "What is the purpose of the LoRA Loader node?",
+        "answer": "The LoRA Loader node is designed to load a LoRA model for feeding into merging nodes. It also allows weighting the specified LoRA model based on the module. This node is essential for preparing the LoRA models before they can be merged by the Lora Merger node."
+    }
+]

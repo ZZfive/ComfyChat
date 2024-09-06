@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is Marigold depth estimation?",
+        "answer": "Marigold depth estimation is a wrapper node in ComfyUI that implements the Marigold depth estimation algorithm."
+    },
+    {
+        "question": "What are the parameters involved in Marigold depth estimation?",
+        "answer": "The parameters involved include: `denoise_steps`, `n_repeat`, and `n_repeat_batch_size`."
+    },
+    {
+        "question": "How does `denoise_steps` impact accuracy and processing time?",
+        "answer": "`denoise_steps` refers to the steps per depth map. Increasing this values improves accuracy but also increases processing time."
+    },
+    {
+        "question": "How does `n_repeat` and `n_repeat_batch_size` affect processing time?",
+        "answer": "`n_repeat` is the amount of iterations to be ensembled into a single depth map, increasing this value enhances accuracy but also increases processing time. `n_repeat_batch_size` determines how many of the `n_repeats` are processed as a batch, which can speed up processing if sufficient VRAM is available."
+    },
+    {
+        "question": "What is the impact of setting `invert` to `True`?",
+        "answer": "`invert` is set to `True` to flip the depth map, making black represent the front instead of the back."
+    },
+    {
+        "question": "What is the purpose of the `regularizer_strength`, `reduction_method`, `max_iter`, and `tol` parameters?",
+        "answer": "These parameters are associated with the ensembling process in Marigold depth estimation, although their specific functionalities are not fully understood yet."
+    },
+    {
+        "question": "Why is the Marigold depth estimation memory-intensive and slow?",
+        "answer": "Marigold depth estimation is known for being memory-intensive and slow, especially when running at higher resolutions. Using fp16 can help halve the memory usage."
+    },
+    {
+        "question": "What is the recommended resolution for Marigold depth estimation?",
+        "answer": "Marigold depth estimation is designed to be run around 768p resolution. Resizing to higher resolutions may result in performance degradation."
+    },
+    {
+        "question": "What additional nodes were added to enhance the usage of Marigold depth estimation?",
+        "answer": "The author added a remap node to better visualize the full range of the depth map and an OpenEXR node to save the full range of the data. These enhancements greatly improve the usability of the depth map in VFX and 3D modeling applications."
+    }
+]

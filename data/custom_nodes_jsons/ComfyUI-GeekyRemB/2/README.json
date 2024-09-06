@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is ComfyUI-GeekyRemB?",
+        "answer": "ComfyUI-GeekyRemB is a custom node for ComfyUI that offers advanced background removal and image processing capabilities, combining state-of-the-art AI models with traditional image processing techniques."
+    },
+    {
+        "question": "What are some specific features of ComfyUI-GeekyRemB?",
+        "answer": "Key features include advanced background removal using various AI models, chroma key functionality, flexible image composition with scaling, positioning, and rotation, aspect ratio control, mask refinement and processing, color adjustments and filters, edge detection and shadow effects, and support for batch processing."
+    },
+    {
+        "question": "What UI elements does ComfyUI-GeekyRemB offer and what are their functions?",
+        "answer": "1. **Input Image**: The source image(s) to process. 2. **Background Removal Settings**: Toggle background removal on/off using enable_background_removal; select AI model; enable alpha matting for improved edges with alpha_matting; fine-tune using alpha_matting_foreground_threshold and alpha_matting_background_threshold; and apply additional processing using post_process_mask. 3. **Chroma Key Settings**: Select color to remove (none, green, blue, red); adjust chroma key sensitivity using chroma_threshold; and fine-tune the range of colors to remove with color_tolerance. 4. **Background Settings**: Choose output background type (transparent, color, image); set output color with background_color; and select how background images cycle (reverse, loop). 5. **Composition Settings**: Choose aspect ratio or set a custom one with custom_aspect_ratio; specify foreground scale with foreground_scale; position and rotate the foreground with x_position, y_position, and rotation; adjust opacity with opacity; mirror and flip vertically with flip_horizontal and flip_vertical. 6. **Mask Processing**: Invert the mask with invert_mask; soften mask edges with feather_amount; apply blur with mask_blur; expand or contract the mask with mask_expansion. 7. **Effects**: Add edges with edge_detection, adjust edge thickness with edge_thickness, set edge color with edge_color; add a shadow with shadow, adjust shadow softness with shadow_blur, set shadow transparency with shadow_opacity, set shadow direction with shadow_direction, and set shadow offset with shadow_distance. 8. **Color Adjustments**: Enable color modifications with color_adjustment; adjust brightness, contrast, saturation, and hue with respective sliders; and adjust sharpness with sharpness. 9. **Additional Settings**: Choose blending mode with blending_mode; adjust blend strength with blend_strength; apply image filters with filter; and adjust filter intensity with filter_strength. 10. **Output Options**: Choose output format as RGBA or RGB; select only the mask as output."
+    },
+    {
+        "question": "What are some use cases for ComfyUI-GeekyRemB?",
+        "answer": "Use cases include advanced background removal for product photography, extracting subjects from portraits for compositing or style transfer, preparing sprites or textures with transparent backgrounds for video game assets, creating custom backgrounds for memes or reaction images, extracting buildings or elements for architectural mockups, preparing clothing items for fashion design looks, and creating custom backgrounds for social media content. It's also ideal for removing backgrounds from images in educational materials like textbooks or online courses."
+    },
+    {
+        "question": "Which AI models can be used for background removal in ComfyUI-GeekyRemB?",
+        "answer": "The ComfyUI-GeekyRemB uses AI models like `u2net` for general-purpose removal and `isnet-anime` for cartoon or anime-style images. Different models can also be tried for optimal results."
+    },
+    {
+        "question": "What are some best practices for using ComfyUI-GeekyRemB?",
+        "answer": "Best practices include enabling alpha matting for images with hair or fur, adjusting mask parameters like feather_amount and mask_expansion for refined edges, using chroma key in combination with AI removal for challenging backgrounds, and applying subtle shadow effects and color adjustments for realistic integration of the foreground with new backgrounds."
+    },
+    {
+        "question": "What is the code structure of ComfyUI-GeekyRemB?",
+        "answer": "The main class `GeekyRemB` is defined in `GeekyRembv2.py`, inheriting from a base node class in ComfyUI. Key components include `INPUT_TYPES`, `RETURN_TYPES`, `process_image` for orchestrating the image processing pipeline, and several functions like `apply_chroma_key`, `process_mask`, `apply_blending_mode`, `apply_color_adjustments` for specific processing steps."
+    },
+    {
+        "question": "What are some performance considerations for ComfyUI-GeekyRemB?",
+        "answer": "Performance considerations include using GPU acceleration for faster processing, handling multiple images efficiently through batch processing, and optimizing numpy operations for fast array operations in blending modes and mask processing."
+    },
+    {
+        "question": "How can ComfyUI-GeekyRemB be extended?",
+        "answer": "ComfyUI-GeekyRemB can be extended by adding support for custom models with provider identification, introducing new blending modes by extending a predefined enum, and adding new filters through extending corresponding functions."
+    }
+]

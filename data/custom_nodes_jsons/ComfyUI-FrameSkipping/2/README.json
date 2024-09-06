@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the primary motivation behind the development of ComfyUI-FrameSkipping?",
+        "answer": "The primary motivation was to create a video where the texture of a hand changes upon touching an object. To achieve this gradient effect, the developer developed this component to allow for precise splitting of a video, rather than simply dividing it into two segments."
+    },
+    {
+        "question": "How does the Frame Selector in ComfyUI-FrameSkipping work?",
+        "answer": "The Frame Selector node selects frames in between the start and end frames by inputting these values. Additional frames can be added if needed. This was developed to simplify the process of selecting frames, which could have been cumbersome with the previous node using IntOperationsNode."
+    },
+    {
+        "question": "What is the purpose of the Mask Frame Selector in ComfyUI-FrameSkipping?",
+        "answer": "The Mask Frame Selector obtains intermediate frames by inputting the start and end frames. If continuation is needed, additional frames can be added. This node was developed because the mask and image need to be synchronized to avoid errors."
+    },
+    {
+        "question": "Explain the functionality of the Frame Truncating feature in ComfyUI-FrameSkipping.",
+        "answer": "The Frame Truncating feature retains only the first n frames. This was developed to achieve the desired animation effect by processing the first 16 frames separately from the subsequent frames."
+    },
+    {
+        "question": "How does Frame Skipping work in ComfyUI-FrameSkipping?",
+        "answer": "Frame Skipping skips the first n frames. This feature was developed to avoid animation overlap by skipping the first 16 frames."
+    },
+    {
+        "question": "What is the purpose of the Mask Frame Skipping feature in ComfyUI-FrameSkipping?",
+        "answer": "Mask Frame Skipping skips the first n mask frames. This was developed to avoid animation overlap, by skipping the first 16 mask frames."
+    },
+    {
+        "question": "What is the purpose of Mask Generator in ComfyUI-FrameSkipping?",
+        "answer": "Mask Generator generates masks of any quantity and size, in white and black. This feature was developed to prevent errors caused by masks not corresponding one-to-one with images in the workflow."
+    },
+    {
+        "question": "What is the purpose of IntOperationsNode in ComfyUI-FrameSkipping?",
+        "answer": "IntOperationsNode defines a node class that performs basic integer arithmetic operations, supporting addition and subtraction."
+    }
+]

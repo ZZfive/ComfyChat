@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is the purpose of ComfyUI and how is it used to generate images and videos?",
+        "answer": "ComfyUI is a GUI that utilizes a stable diffusion model to generate images and videos. It allows for the creation of custom nodes or plugins, such as the 'x-flux-comfyui' extension, which can extend its functionality."
+    },
+    {
+        "question": "How can the 'x-flux-comfyui' extension be installed in ComfyUI?",
+        "answer": "To install the 'x-flux-comfyui' extension in ComfyUI, one must follow these steps: Go to the 'ComfyUI/custom_nodes' directory, clone the repository, run the 'setup.py' script in the 'x-flux-comfyui' directory, and then run ComfyUI after installation. The extension can then be used to launch Flux with specific settings."
+    },
+    {
+        "question": "What does the term 'Low memory mode' refer to in the context of ComfyUI?",
+        "answer": "The 'Low memory mode' in ComfyUI allows for the use of 12GB VRAM memory, which makes it suitable for users with limited memory resources. This mode utilizes a more efficient workflow and can be activated by running ComfyUI with specific parameters."
+    },
+    {
+        "question": "What controls the use of lora or controlnet models in ComfyUI after the configuration?",
+        "answer": "To use lora or controlnet models in ComfyUI, the models need to be placed in the specifically designated folders after the initial setup. Following that, users can refresh the interface for the models to become available for use."
+    },
+    {
+        "question": "Which specific types of ControlNet checkpoints have been trained for FLUX.1 [dev]?",
+        "answer": "The ControlNet checkpoints for FLUX.1 [dev] that have been trained include Canny ControlNet, Depth ControlNet, HED ControlNet, and LoRA checkpoints."
+    },
+    {
+        "question": "How does the FLUX Finetuning scripts support low memory mode with Gu's GGuF?",
+        "answer": "The FLUX Finetuning scripts support low memory mode by utilizing Gu's GGuF to operate with 12GB VRAM memory usage. This can be achieved by following the specific installation and usage instructions provided in the script."
+    },
+    {
+        "question": "What should be updated upon installation and why?",
+        "answer": "Upon installation of the 'x-flux-comfyui' extension, users are advised to update the extension using 'git pull' or reinstall it. This is recommended to ensure that the extension is up to date with the latest features and fixes."
+    },
+    {
+        "question": "What are the steps to download and use the IP Adapter model in ComfyUI?",
+        "answer": "To download and use the IP Adapter model in ComfyUI, follow these steps: Download Clip-L model.safetensors from the specified link, put it in the ComfyUI/models/clip_vision/* directory, downloaded the IPAdapter from HuggingFace, and put it in ComfyUI/models/xlabs/ipadapters/*. Then use Flux Load IPAdapter and Apply Flux IPAdapter nodes, choose the correct CLIP model, and you can adjust it as you wish."
+    },
+    {
+        "question": "What are the limitations of the IP Adapter in ComfyUI?",
+        "answer": "The IP Adapter is currently in beta and does not guarantee immediate or excellent results. Users may need to attempt multiple configurations and settings to achieve their desired outcomes. However, the team is committed to improving the process and efficiency over time."
+    },
+    {
+        "question": "Which configuration parameters should be used to launch ComfyUI in low memory mode?",
+        "answer": "To launch ComfyUI in low memory mode, the parameters to be used are: --lowvram and --preview-method auto --use-split-cross-attention."
+    }
+]

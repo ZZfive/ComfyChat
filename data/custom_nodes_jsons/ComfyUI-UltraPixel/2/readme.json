@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does GDF stand for?",
+        "answer": "GDF stands for Generic Diffusion Framework."
+    },
+    {
+        "question": "How is the schedule defined in the GDF class?",
+        "answer": "The schedule in GDF is defined by the `CosineSchedule` class. It takes the `clamp_range` as input to define the range for which the schedule should be clamped."
+    },
+    {
+        "question": "What does the `VPScaler` class do?",
+        "answer": "The `VPScaler` class in GDF is responsible for scaling the inputs to ensure that they are in a variance preserving form. It generates a and b values for input scaling."
+    },
+    {
+        "question": "How is the loss calculated in the GDF framework?",
+        "answer": "The loss in GDF is calculated using Mean Squared Error (MSE) loss between the predicted output `pred` and the target `target`. The loss is adjusted using the `loss_weight` defined in the GDF instance."
+    },
+    {
+        "question": "What can you customize in the GDF framework?",
+        "answer": "With GDF, you can customize various aspects like the train schedule, sample schedule, input scaler, target, noise conditioning, and loss weighting strategies. This flexibility allows for the extension of the framework with custom components."
+    },
+    {
+        "question": "What is the difference between the train schedule and the sample schedule in GDF?",
+        "answer": "The train schedule in GDF is different from the sample schedule because the training process requires different parameters and calculations compared to the sampling process. The sample schedule is tailored for generating new samples from the model."
+    },
+    {
+        "question": "How can you extend the GDF framework with custom components?",
+        "answer": "You can extend the GDF framework by creating new classes for custom schedulers, scalers, targets, and loss weights. These custom components can then be defined in a similar style to the existing ones, such as the VPScaler."
+    }
+]

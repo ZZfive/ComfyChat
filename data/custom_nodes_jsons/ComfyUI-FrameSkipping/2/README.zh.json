@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ComfyUI-FrameSkipping component?",
+        "answer": "The component is developed with the intention of creating a video in which the appearance of the hand changes after it comes into contact with an object. To achieve this gradual effect, the developer created this component to fine-cut the video, rather than simply splitting it into two parts."
+    },
+    {
+        "question": "What functionality has already been developed for ComfyUI-FrameSkipping?",
+        "answer": "1. Frame Selector: Retrieves a middle frame between a start frame and an end frame, with an option to add an arbitrary number of frames for continuity.\n2. Mask Selector: Similar to Frame Selector but applied to masks.\n3. Frame Truncating: Preserves only the first n images.\n4. Frame Skipping: Skips the first n frames to avoid overlap of animation.\n5. Mask Frame Skipping: Corresponds to Frame Skipping but applied to masks.\n6. Mask Generator: Generates blank white and black masks to prevent errors in the workflow due to mismatched imagery and masks.\n7. IntOperationsNode: Calculates basic integers operations such as addition and subtraction."
+    },
+    {
+        "question": "Why was the Frame Selector node developed as part of ComfyUI-FrameSkipping?",
+        "answer": "Although previous nodes could achieve similar effects using IntOperationsNode, the process was overly cumbersome, so the Complex是将节点 developed to provide a simplified interface."
+    },
+    {
+        "question": "What is the development rationale behind the Mask Selector node in ComfyUI-FrameSkipping?",
+        "answer": "Since masks need to align with images to avoid error messages, this node retrieves masks middle frames between start and end frame."
+    },
+    {
+        "question": "What are the future development plans for ComfyUI-FrameSkipping?",
+        "answer": "1. Mask editor with built-in filters for color and texture."
+    },
+    {
+        "question": "What is the primary advantage of using ComfyUI-FrameSkipping over runtime frame skipping?",
+        "answer": "\na. Avoids re-arranging all frames manually.\nb. Supports mask frames skipping."
+    },
+    {
+        "question": "What is the intended use case for the Mask Generator node in ComfyUI-FrameSkipping?",
+        "answer": "This node is used to generate blank masks when more than one mask needs to be supplied for previous nodes to avoid runtime errors."
+    }
+]

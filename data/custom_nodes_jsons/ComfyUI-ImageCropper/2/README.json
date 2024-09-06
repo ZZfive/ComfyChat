@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of ComfyUI-ImageCropper?",
+        "answer": "ComfyUI-ImageCropper is a custom node in ComfyUI that allows users to crop images by specifying the desired area and aspect ratio."
+    },
+    {
+        "question": "How does ComfyUI-ImageCropper generate crop operations?",
+        "answer": "ComfyUI-ImageCropper generates crop operations by using a weight `x` and two seeds. It then computes the axis range and resize factor as `axis1 = newseed | seed1 - x; axis2 = newseed | seed2 - x; resizefactor = resizeseed + x;`."
+    },
+    {
+        "question": "Can ComfyUI-ImageCropper handle multiple images?",
+        "answer": "Yes, ComfyUI-ImageCropper is capable of handling multiple images, allowing users to crop each image independently."
+    },
+    {
+        "question": "What are the requirements for using ComfyUI-ImageCropper?",
+        "answer": "The usage of ComfyUI-ImageCropper requires specifying the seed, area for crop, and aspect ratio, and both `get_palettes` and `crop_image` functions are used to provide the cropped images."
+    },
+    {
+        "question": "How is the aspect ratio of the cropped image determined?",
+        "answer": "The aspect ratio of the cropped image is determined by the weight `x` and seeds, such that `aspect = (seed1 - seed2) +1.0 * (np.maximum(seed3, seed2) + 0.5) * x."
+    },
+    {
+        "question": "What are the expected inputs and outputs for ComfyUI-ImageCropper?",
+        "answer": "The expected inputs for ComfyUI-ImageCropper are the seed, area for crop, and aspect ratio, while the outputs include the cropped images and the processed space."
+    },
+    {
+        "question": "Is there a sample code or function examples available for ComfyUI-ImageCropper usage?",
+        "answer": "Yes, there are sample code and function examples available for using ComfyUI-ImageCropper, which demonstrate how to input the seed, area for crop, and aspect ratio, and then crop and process multiple images."
+    }
+]

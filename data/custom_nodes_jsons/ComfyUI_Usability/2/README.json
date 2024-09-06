@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does 'KLoadImageByPath' do?",
+        "answer": "KLoadImageByPath is used to load images by absolute path, and it generates a preview which will be automatically updated if the watchdog package is installed."
+    },
+    {
+        "question": "How does 'KLoadImageByPathAdvanced' improve upon 'KLoadImageByPath'?",
+        "answer": "KLoadImageByPathAdvanced improves upon KLoadImageByPath by including additional options. It allows for the substitution of a prefix in the input path, which can be useful for eliminating the need to manually replace the mount point path of a file path on a remote server."
+    },
+    {
+        "question": "What does 'KLoadImageDedup' do?",
+        "answer": "KLoadImageDedup is used to load images and prevent the creation of duplicate images if the image is already opened. This helps in maintaining a clean and organized image list."
+    },
+    {
+        "question": "What is the purpose of the 'overwrite_option' in 'KLoadImageDedup'?",
+        "answer": "The 'overwrite_option' in 'KLoadImageDedup' allows for control over how new images are handled in relation to existing ones. It can prevent overwriting of old images, allow overwriting with the input filename, or allow overwriting with the last rename date of the input files."
+    },
+    {
+        "question": "How is image equality checked in 'KLoadImageDedup'?",
+        "answer": "Image equality in 'KLoadImageDedup' is checked by first verifying if images with the same name already exist in the input image list, considering variations in file names generated automatically by ComfyUI in case of name conflicts. Then, it compares the hashes of those images with the hash of the new input image."
+    },
+    {
+        "question": "Describe the functionality of a 'KLoadImageByPathAdvanced'.",
+        "answer": "KLoadImageByPathAdvanced is a custom node in ComfyUI that extends the functionality of KLoadImageByPath. It allows for additional customization in image loading processes, specifically it allows the substitution of a prefix in the input path. This is particularly useful in scenarios where the local file system path needs to be adjusted to match the local server filesystem, thus eliminating the need for manual path replacement."
+    },
+    {
+        "question": "What is ComfyUI Usability and why is it important?",
+        "answer": "ComfyUI Usability is a set of custom nodes developed with the intent of enhancing the convenience and usability of ComfyUI. It addresses issues such as image clutter by preventing duplicate image creation, automating the generation of image previews, and offering advanced loading options for improved workflow efficiency."
+    }
+]

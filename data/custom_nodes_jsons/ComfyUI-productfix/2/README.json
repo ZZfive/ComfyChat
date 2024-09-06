@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is ComfyUI-productfix designed to solve?",
+        "answer": "ComfyUI-productfix is designed to keep the features (text, logo, details, etc.) of an input object while creating images. It aims to improve image quality and preserve product details, which is crucial in e-commerce environments where the fidelity of products is essential."
+    },
+    {
+        "question": "How does ComfyUI-productfix differentiate from KSampler?",
+        "answer": "ComfyUI-productfix differs from KSampler by allowing latent injection, which allows for variations in the initial noise. Unlike KSampler, ComfyUI-productfix preserves the original object only after execution, unlike KSampler which only remains after completion."
+    },
+    {
+        "question": "What does Get Text Mask do?",
+        "answer": "Get Text Mask is a custom node in ComfyUI that loads Text Mask as a Tensor using the Easy OCR package. This node helps in achieving better results wheninq product details and texts that are buried within the images."
+    },
+    {
+        "question": "Do other nodes (like comfyui-inpaint-nodes) require resetting Model Patcher's calculate weight?",
+        "answer": "Yes, other nodes like comfyui-inpaint-nodes require a custom node to reset Model Patcher's calculate weight function when applied. This resolves the issue of subsequent nodes that inject a calculate weight function from other nodes."
+    },
+    {
+        "question": "How does ComfyUI-productfix enhance text transfer?",
+        "answer": "ComfyUI-productfix enhances text transfer by utilizing controlnet along with IP-Adapter, which improves the quality of the images and maintains the details of the text, including fonts, character sizes, and rotations."
+    },
+    {
+        "question": "What application has ComphyUI-productfix in image creation?",
+        "answer": "ComfyUI-productfix is used to maintain details of e-commerce products in images, making them more realistic and professional. It can be integrated into ComfyUI to streamline the image creation process for such products."
+    },
+    {
+        "question": "What does 'latent injection' in ComphyUI-productfix do?",
+        "answer": "Latent injection in ComphyUI-productfix is a technique used with KSampler to generate variations in the initial noise while preserving the features (text, logo, details) of the input object. This technique helps in folders and maintains quality, enabling more dynamic image generation with high-fidelity."
+    },
+    {
+        "question": "How does 'latent injection' address issues with 'IC-Light + Text'?",
+        "answer": "When 'IC-Light + Text' is used, there can be changes in details due to tracing, which arise with lower-end devices like smartphones. 'Latent injection', when used with 'IC-Light + Text', helps maintain the object details by injecting latent noise during the sampling process, which provides a good balance between brightness and object details."
+    },
+    {
+        "question": "Can CG-Noise be directly applied on ComfyUI?",
+        "answer": "CG-Noise is a ComfyUI custom node that can be directly applied on ComfyUI designed in a way that helps prevent whisker noise by injecting a weight x into the noise generation process and swapping feature nodes, thereby enhancing the realism and rendering quality of images."
+    },
+    {
+        "question": "What is the difference between IC-Light and IP-Adapter?",
+        "answer": "IC-Light is an Adapter Unet that adjusts the lighting of products in images, making them appear more professional and bringing out their details better. IP-Adapter, on the other hand, is utilized to prevent formatting issues incurred while using Pilla packages with IC-Light. It ensures compatibility, especially for lower-quality input images from smartphones."
+    }
+]

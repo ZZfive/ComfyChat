@@ -1,0 +1,58 @@
+[
+    {
+        "question": "What is LF Nodes in ComfyUI?",
+        "answer": "LF Nodes for ComfyUI are custom nodes written in Python that can be used to extend the GUI's functionality. They are designed to work with ComfyUI, a toolset that uses a stable diffusion model to generate images and videos."
+    },
+    {
+        "question": "What does ComfyUI Manager do?",
+        "answer": "ComfyUI Manager is a tool used to install and manage custom nodes in ComfyUI. It helps users find and install the desired nodes for their workflow."
+    },
+    {
+        "question": "How are the images in BlurImages node processed?",
+        "answer": "The BlurImages node in LF Nodes for ComfyUI applies the Gaussian blur filter to a list of images and edits the filenames by adding the suffix '_Blur'. This process ensures that the images are de-noised and transformed to maintain visual consistency."
+    },
+    {
+        "question": "What is the purpose of LoraTag2Prompt node?",
+        "answer": "The LoraTag2Prompt node extracts keywords from a LoRA tag and counts them. This helps in preparing prompts based on the tags of LoRA files, which are beneficial for creating diverse and high-quality images."
+    },
+    {
+        "question": "What is the function of SequentialSeedsGenerator node?",
+        "answer": "The SequentialSeedsGenerator node generates a series of unique seeds based on a global seed value. It's useful in creating reproducible but changing random sequences within a workflow, ensuring that the create is predictable but different each time."
+    },
+    {
+        "question": "What type of function is Something2String node serving?",
+        "answer": "The Something2String node converts multiple inputs, including nested structures and mixed types, to strings. This function is essential in situations where it's necessary to concatenate text input or display text representations of data throughout the workflow."
+    },
+    {
+        "question": "Explain the main functionality of WriteJSON node.",
+        "answer": "The WriteJSON node allows the user to input a JSON file, which ComfyUI validates when a workflow is queued. Each 2500ms, the text gets formatted, and if there's an error, it's displayed in the title of the textarea on mouseover."
+    },
+    {
+        "question": "What is the significance of CharacterImpersonator large language model node?",
+        "answer": "The CharacterImpersonator node leverages a large language model to generate text responses as if they were produced by a character or entity described by a biography. This node supports creative writing, role-playing scenarios, and dynamic content generation based on character traits."
+    },
+    {
+        "question": "What tools are required to install the custom LF Nodes?",
+        "answer": "To install the LF Nodes into ComfyUI, users can either use ComfyUI Manager by searching and clicking to install or manually by copying the repository files into the 'ComfyUI/custom_nodes' directory and following the provided commands to install dependencies."
+    },
+    {
+        "question": "What is the input for DisplayJSON node?",
+        "answer": "DisplayJSON node takes JSON data as its input, which it then provides a visualization of. Users can click on the 'Copy' button to easily copy the JSON content."
+    },
+    {
+        "question": "What role does the LLM node serve in LF Nodes?",
+        "answer": "LLM nodes in LF Nodes for ComfyUI utilize large language models to generate various outputs including dynamic text, image descriptions, and handle complex language queries. These nodes play a crucial role in creating engaging content and interactivity within ComfyUI workflows."
+    },
+    {
+        "question": "How does theMultipleImageResizeForWeb node work?",
+        "answer": "The MultipleImageResizeForWeb node takes a list of images as input and generates eight additional images, each resized to common web resolutions along the longest edge of the original image. This node is useful for preparing images for web display, ensuring consistent and well-optimized image sizes."
+    },
+    {
+        "question": "What does the LoraTag2Prompt node do?",
+        "answer": "LoraTag2Prompt processes a LoRA tag, extracting keywords and counting them. This node is particularly useful for preparing prompts for LoRA models based on the file names, ensuring that the prompts are insightful and relevant."
+    },
+    {
+        "question": "What is the purpose of SwitchImage node?",
+        "answer": "The SwitchImage node allows dynamic switching between two input images in tensor format based on a boolean condition. This provides flexibility for automatically adapting to different scenarios or reactions within the workflow."
+    }
+]

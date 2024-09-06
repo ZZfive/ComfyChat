@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is ComfyUI-GCP-Storage?",
+        "answer": "ComfyUI-GCP-Storage is a custom node for ComfyUI that allows saving images to a Google Cloud Platform Storage Bucket."
+    },
+    {
+        "question": "How to install ComfyUI-GCP-Storage?",
+        "answer": "To install ComfyUI-GCP-Storage, use the command `git clone https://github.com/Fantaxico/ComfyUI-GCP-Storage.git` in your ComfyUI custom nodes directory."
+    },
+    {
+        "question": "What configuration is required to use ComfyUI-GCP-Storage?",
+        "answer": "For ComfyUI-GCP-Storage to work, a `config.json` file is required, which contains `{ \"gcp_service_json_path\": \"xxx\" }`, where \"xxx\" should be set to your Service Account json file path."
+    },
+    {
+        "question": "What input parameters does ComfyUI-GCP-Storage require?",
+        "answer": "When using ComfyUI-GCP-Storage, you need to pass two input parameters: the file name (which is locally saved in the folder `comfyUi/outputs`), and the bucket name."
+    },
+    {
+        "question": "What process does ComfyUI-GCP-Storage perform?",
+        "answer": "ComfyUI-GCP-Storage saves the locally generated image in the `comfyUi/outputs` directory and then uploads it to a Google Cloud Storage bucket."
+    },
+    {
+        "question": "Is ComfyUI-GCP-Storage cross-platform?",
+        "answer": "The documentation does not explicitly mention it, but since it's a custom node for ComfyUI, its compatibility with different operating systems may depend on the underlying ComfyUI compatibility."
+    },
+    {
+        "question": "Why might one want to use ComfyUI-GCP-Storage over other storage solutions?",
+        "answer": "Using ComfyUI-GCP-Storage over other storage solutions may provide advantages depending on the specific requirements of the project. For instance, Google Cloud Platform (GCP) provides robust data management and security features that might be beneficial."
+    },
+    {
+        "question": "What kind of issues might a user encounter while using ComfyUI-GCP-Storage?",
+        "answer": "Potential issues could include authorization problems due to incorrect Service Account json path in the `config.json` file, errors during GCP API calls related to network connectivity or incorrect configuration, or issues with file I/O operations occurring during image saving and uploading."
+    },
+    {
+        "question": "How to troubleshoot issues with ComfyUI-GCP-Storage?",
+        "answer": "For authorization issues, verify the Service Account json path is correctly set in the `config.json` file. For network connectivity or API call errors, check the connection to the GCP and review the GCP API configuration. For file I/O problems, ensure that there is file system access and the file paths are correct."
+    },
+    {
+        "question": "What features could make ComfyUI-GCP-Storage more usable or appealing?",
+        "answer": "Enhancements like direct support for version controlled assets in GCP storage, integration with automated cloud backup services, or support for storing assets encrypted in the cloud could make ComfyUI-GCP-Storage more usable for content sensitive projects."
+    }
+]

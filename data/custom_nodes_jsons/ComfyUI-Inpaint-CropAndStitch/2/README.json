@@ -1,0 +1,142 @@
+{
+    "questions": [
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "question": "What is the purpose of the 'Inpaint Crop' node?"
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "question": "Is it possible to crop and stitch in ComfyUI-Inpaint-CropAndStitch?"
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "question": "Where can I find an example of using ComfyUI-Inpaint-CropAndStitch?"
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "question": "How do I install ComfyUI-Inpaint-CropAndStitch?"
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "question": "What are the main advantages of using ComfyUI-Inpaint-CropAndStitch?"
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "question": "What does the 'Extend Image for Outpainting' node enable?"
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "question": "Can I use 'Inpaint Crop' and 'Inpaint Stitch' nodes for outpainting in ComfyUI-Inpaint-CropAndStitch?"
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "question": "What parameters does the 'Resize Image Before Inpainting' node support?"
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "question": "How did the 'Inpaint Stitch' node improve functionality for inpainting in ComfyUI?"
+        },
+        {
+            "subject": "ComfyUI-Manager",
+            "question": "Is there any difference between the 'Inpaint Crop' and 'Inpaint Stitch' nodes in ComfyUI-Manager?"
+        },
+        {
+            "subject": "ComfyUI-Manager",
+            "question": "How can the 'Extend Image for Outpainting' node be used with ComfyUI-Manager?"
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "question": "What effect does the 'context_expand_factor' parameter have in ComfyUI-Inpaint-CropAndStitch?"
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "question": "Explain the purpose of the 'context_expand_pixels' parameter in ComfyUI-Inpaint-CropAndStitch."
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "question": "What do the 'fill_mask_holes', 'blur_mask_pixels', and 'invert_mask' parameters do in ComfyUI-Inpaint-CropAndStitch?"
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "question": "How does the 'blend_pixels' parameter influence the stitching process in ComfyUI-Inpaint-CropAndStitch?"
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "question": "What is the difference between 'force_size' and 'ranged_size' in ComfyUI-Inpaint-CropAndStitch?"
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "question": "How is the 'mode' parameter used in relation to inpainting in ComfyUI-Inpaint-CropAndStitch?"
+        }
+    ],
+    "answers": [
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "answer": "The 'Inpaint Crop' node is designed to crop an image before sampling, providing a context area that can be specified via different parameters. This helps in creating a more accurate representation of the prompt in the generated picture."
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "answer": "Yes, ComfyUI-Inpaint-CropAndStitch allows you to crop and stitch images. The 'Inpaint Crop' node crops the image before sampling, and the 'Inpaint Stitch' node stitches the inpainted image back into the original image."
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "answer": "You can find an example of using ComfyUI-Inpaint-CropAndStitch in the [inpaint-cropandstitch](https://github.com/lquesada/ComfyUI-Inpaint-CropAndStitch) repository."
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "answer": "To install ComfyUI-Inpaint-CropAndStitch, you can either use ComfyUI-Manager or go to the custom_nodes/ directory and run: $ git clone https://github.com/lquesada/ComfyUI-Inpaint-CropAndStitch.git"
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "answer": "The main advantages of inpainting only in a masked area with ComfyUI-Inpaint-CropAndStitch are:\n1. It's significantly faster than sampling the whole image.\n2. It allows setting the right amount of context from the image, improving the accuracy of the generated picture.\n3. It enables upscaling before sampling to generate more detail, then stitching back the upscale image.\n4. It allows downscaling before sampling, avoiding artifacts like double heads or double bodies.\n5. It can force a specific resolution, such as 1024x1024 for SDXL models.\n6. It doesn't modify the unmasked part of the image, including the VAE encode and decode process.\n7. The nodes ensure good blending of the inpainted region."
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "answer": "The 'Extend Image for Outpainting' node enables leveraging the power of Inpaint Crop and Stitch for outpainting, including rescaling, blurring, blending, and restitching."
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "answer": "Yes, you can use 'Inpaint Crop' and 'Inpaint Stitch' nodes for outpainting in ComfyUI-Inpaint-CropAndStitch."
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "answer": "The 'Resize Image Before Inpainting' node supports parameters like 'rescale_algorithm' (choices are 'bilerp' and 'bicubic'), 'force_width', 'force_height', 'rescale_factor', and optionally 'padding'. This node allows you to rescale the image before inpainting to maintain more detail."
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "answer": "The 'Inpaint Stitch' node improves inpainting functionality in ComfyUI by ensuring that the inpainted image is stitched back into the original image without altering unmasked areas."
+        },
+        {
+            "subject": "ComfyUI-Manager",
+            "answer": "Yes, there is a slight difference in the way 'Inpaint Crop' and 'Inpaint Stitch' nodes function in ComfyUI-Manager. While both nodes are used for cropping and stitching images, they are implemented as part of the project management framework provided by ComfyUI-Manager, which offers additional features like task scheduling and parallel processing."
+        },
+        {
+            "subject": "ComfyUI-Manager",
+            "answer": "Yes, the 'Extend Image for Outpainting' node can be used with ComfyUI-Manager to leverage its powerful features for outpainting, including rescaling, blurring, blending, and restitching."
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "answer": "The 'context_expand_factor' parameter grows the context area around the original mask as a factor, providing more context for the sampling. It is often used to make the sampling area larger, ensuring that more context is included in the inpainting process."
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "answer": "The 'context_expand_pixels' parameter grows the context area around the original mask by a specified number of pixels, providing more context for the sampling. This parameter is useful when you want to ensure that the inpainting process has enough area to work with."
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "answer": "The 'fill_mask_holes' parameter, 'blur_mask_pixels', and 'invert_mask' parameter in ComfyUI-Inpaint-CropAndStitch are used to control the mask, grow the mask, and invert the mask, respectively. These parameters help create and manipulate masks that are used to define the area where inpainting should occur."
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "answer": "The 'blend_pixels' parameter in ComfyUI-Inpaint-CropAndStitch is used to create a stitch that is slowly blended and has no seams. By growing the stitch mask and blurring it, the inpainting process can be made seamless, reducing visual artifacts."
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "answer": "In ComfyUI-Inpaint-CropAndStitch, 'force_size' and 'ranged_size' are two different modes that determine the size of the inpained image.\n\n'force_size' upscales the content to take a specific size before sampling, then downscales before stitching back. It's particularly useful for SD models like SDXL, where you might force the size to 1024x1024.\n\nIn contrast, 'ranged_size' upscales the area as much as possible to make it fit the larger size between 'min_width', 'min_height', 'max_width', and 'max_height', with a 'padding' to align to standard sizes, then rescales before stitching back. This mode is useful when you want to ensure that the generated inpainting fits within certain boundaries."
+        },
+        {
+            "subject": "ComfyUI-Inpaint-CropAndStitch",
+            "answer": "The 'mode' parameter in ComfyUI-Inpaint-CropAndStitch is used to control the size of the inpainted image relative to the original image. It can be set to 'free size' or 'forced size'.\n\n'Free size' uses the 'rescale_factor' to optionally rescale the content before sampling and eventually scale back before stitching, allowing for more detailed inpainting. 'Padding' is used to align the inpainted area to a specific size, making it easier to work with in larger images.\n\n'Forced size' uses specific dimensions for 'force_width' and 'force_height' and upscales the content to these dimensions before sampling, then downscales before stitching back. This mode is useful for ensuring that the inpainting occurs specifically at the desired size."
+        }
+    ]
+}

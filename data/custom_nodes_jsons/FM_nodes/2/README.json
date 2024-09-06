@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does WFEN stand for in the context of ComfyUI?",
+        "answer": "WFEN stands for Face Restore in ComfyUI. It is based on the paper 'Efficient Face Super-Resolution via Wavelet-based Feature Enhancement Network'."
+    },
+    {
+        "question": "What is the purpose of the `vgg_normalised.pth` model in the context of ProPIH?",
+        "answer": "The `vgg_normalised.pth` model in ProPIH is used for the resting model in the progression from low-level to high-level styles. It helps in the harmonization of painterly images by predicting the pixel values of the original image given another painterly image with a given albedo."
+    },
+    {
+        "question": "What is the significance of the `dpdd-base.pkl` model in ConvIR?",
+        "answer": "The `dpdd-base.pkl` model in ConvIR is used for defocus deblurring. It is a part of the pretrained models that come with the ConvIR repository. The model is trained on the DPDD dataset and is capable of restoring images that were defocused, improving their clarity and definition."
+    },
+    {
+        "question": "How does StabStitch handle color artifacts?",
+        "answer": "StabStitch can handle color artifacts by using the `interpolate_mode = NORMAL` option. This ensures that color transitions are handled in a way that avoids harsh edges or abrupt changes, making the stitched video look more natural and less artificial."
+    },
+    {
+        "question": "What are the specific custom nodes or plug-ins included in the FM_nodes collection?",
+        "answer": "The FM_nodes collection includes several custom nodes or plug-ins that extend the functionality of ComfyUI. These include:\n\n1. WFEN: Face Restore, based on the paper 'Efficient Face Super-Resolution via Wavelet-based Feature Enhancement Network'.\n2. RealViformer: Based on the paper 'Investigating Attention for Real-World Video Super-Resolution'.\n3. ProPIH: Progressive Painterly Image Harmonization from Low-level Styles to High-level Styles, based on the paper 'Progressive Painterly Image Harmonization from Low-level Styles to High-level Styles'.\n4. CoLIE: Fast Context-Based Low-Light Image Enhancement via Neural Implicit Representations, based on the paper 'Fast Context-Based Low-Light Image Enhancement via Neural Implicit Representations'.\n5. VFIMamba: Video Frame Interpolation with State Space Models, based on the paper 'Video Frame Interpolation with State Space Models'.\n6. ConvIR: Revitalizing Convolutional Network for Image Restoration, based on the paper 'Revitalizing Convolutional Network for Image Restoration'.\n7. StabStitch: Eliminating Warping Shakes for Unsupervised Online Video Stitching, based on the paper 'Eliminating Warping Shakes for Unsupervised Online Video Stitching'."
+    },
+    {
+        "question": "What are the key requirements for using the `VG hazard forecasting` model in CoLIE?",
+        "answer": "The `VG hazard forecasting` model in CoLIE is primarily used for low-light image enhancement. Key requirements for using this model include:\n\n1. The low-light images should be preprocessed to ensure they meet the input requirements of the model.\n2. The model expects a specific size of input images, which typically ranges between 480x320 to 480x240 pixels.\n3. The model also assumes that the input images are grayscale, meaning they should not include any alpha or color channels."
+    },
+    {
+        "question": "In the context of FM_nodes, what is the purpose of the `vfimamba` custom node?",
+        "answer": "The `vfimamba` custom node in FM_nodes is designed to perform video frame interpolation using state space models, as detailed in the paper 'Video Frame Interpolation with State Space Models'. It can take image and batched/video as input, and is particularly useful for enhancing the resolution and stability of video data."
+    }
+]
