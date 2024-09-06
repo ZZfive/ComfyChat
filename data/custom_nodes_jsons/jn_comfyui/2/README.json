@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is JNComfy?",
+        "answer": "JNComfy is a ComfyUI extension that provides patches and nodes to enhance the functionality of ComfyUI."
+    },
+    {
+        "question": "What does the patch preview_device do?",
+        "answer": "The preview_device patch allows changing the device used for TAESD to render the preview. This is useful if the device doesn't have good cooling, as it can pause the generation and wait for the device to cool down."
+    },
+    {
+        "question": "How does the extension_device patch work?",
+        "answer": "The extension_device patch allows changing the device used by custom nodes. It uses the `comfy.model_management.get_torch_device()` function to get the device used, and it can be specified for specific nodes or all nodes from the same repository."
+    },
+    {
+        "question": "What is the purpose of the memory_estimation_multiplier setting?",
+        "answer": "The memory_estimation_multiplier setting is used to calculate the memory required for the attention process in the split attention feature. It multiplies the size of the tensor used as the base by this value."
+    },
+    {
+        "question": "What does the optimizations patch optimize?",
+        "answer": "The optimizations patch improves the performance of features like split attention and tiled VAE encode/decode. It finds the best number of steps for each process that fits the device and caches these values for faster generation in subsequent runs."
+    },
+    {
+        "question": "What are the two main ways to handle multiple inputs in a custom node?",
+        "answer": "Custom nodes can handle multiple inputs of the same type either by adding two inputs of the same type and using a copy of the node to concatenate the results, or by dynamically adding new inputs when connecting to an input using the 'multiple: True' option."
+    },
+    {
+        "question": "What does the face_crop node do?",
+        "answer": "The face_crop node is used to crop a face from an image. It can be used to extract the region of interest from a larger image, such as a person's face."
+    }
+]

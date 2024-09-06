@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is query_db and what are its two modes?",
+        "answer": "query_db is a tool used to print or visualize DensePose data from a dataset. It has two modes: print and show."
+    },
+    {
+        "question": "How is query_db used in the print mode?",
+        "answer": "In print mode, a general command of the form `python query_db.py print [-h] [-v] [--max-entries N] <dataset> <selector>` is used. The mandatory arguments include `<dataset>`, which specifies the dense pose dataset to select entries from, and `<selector>`, which is a dataset entry selector. The optional argument `--max-entries` can be used to limit the maximum number of entries to output."
+    },
+    {
+        "question": "What are the possible values for the `<selector>` in the print mode?",
+        "answer": "The `<selector>` can be a single specification of the form `field[:type]=value` for an exact match with the value, or a comma-separated list of specifications of this form for a range of values."
+    },
+    {
+        "question": "What is the difference between the print mode and the shape mode in query_db?",
+        "answer": "The print mode outputs dataset entries to standard output or overwrites them to an image file, while the shape mode visualizes the dataset entries on images without overwriting them."
+    },
+    {
+        "question": "How is query_db used in the show mode?",
+        "answer": "In show mode, a general command of the form `python query_db.py show [-h] [-v] [--max-entries N] [--output <image_file>] <dataset> <selector> <visualizations>` is used. The mandatory arguments include `<dataset>`, which specifies the dense pose dataset to select entries from, and `<selector>`, which is a dataset entry selector. The mandatory argument `<visualizations>` specifies the visualizations to show, and the optional arguments `--max-entries` and `--output` limit the maximum number of entries to visualize and specify the output image file name template, respectively."
+    },
+    {
+        "question": "What are the available visualizations that can be shown using query_db?",
+        "answer": "The available visualizations are `bbox` for bounding boxes of annotated persons, `dp_i` for annotated points colored according to the containing part, `dp_pts` for annotated points in green color, `dp_segm` for segmentation masks for annotated persons, `dp_u` for annotated points colored according to their U coordinate in part parameterization, and `dp_v` for annotated points colored according to their V coordinate in part parameterization."
+    },
+    {
+        "question": "How can query_db be used to output visualizations for a specific image from the densepose_coco_2014_train dataset?",
+        "answer": "query_db can be used to output visualizations for a specific image from the densepose_coco_2014_train dataset using the command `python query_db.py show densepose_coco_2014_train image_id:int=322 <visualizations> -v`, where `<visualizations>` are the desired visualizations (e.g. `bbox,dp_segm`)."
+    }
+]

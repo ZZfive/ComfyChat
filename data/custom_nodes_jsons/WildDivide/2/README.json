@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is WildDivide?",
+        "answer": "WildDivide is a custom node in ComfyUI that is designed to handle wildcard prompts across multiple regions within an image."
+    },
+    {
+        "question": "What functionality does WildDivide offer that other wildcard processing nodes do not?",
+        "answer": "WildDivide supports child selection weighting and child selection patterns, which are not available in other wildcard processing nodes."
+    },
+    {
+        "question": "How does the child selection weighting work in WildDivide?",
+        "answer": "In WildDivide, if a number is specified at the beginning of a list within a category, that number represents the weight to select that line. If no number is specified, it defaults to 1."
+    },
+    {
+        "question": "What is the purpose of splitting regions using '[SEP]' in WildDivide?",
+        "answer": "[SEP] is used for dividing images into distinct regions to apply different prompts to these regions. The first '[SEP]' divides the image into equal halves, while subsequent '[SEP]' divide each half into equal parts."
+    },
+    {
+        "question": "What is the current status of the 'split_1', 'split_2', and 'split_3' outputs in WildDivide?",
+        "answer": "The 'split_1', 'split_2', and 'split_3' outputs are currently not functional in WildDivide."
+    },
+    {
+        "question": "How is WildDivide used in the ComfyUI workflow?",
+        "answer": "WildDivide is used in ComfyUI by connecting its 'positives' output to another 'positives' input in another custom node or workflow."
+    },
+    {
+        "question": "What is the workflow structure for using WildDivide in ComfyUI?",
+        "answer": "The workflow structure involves connecting the 'positives' output of WildDivide to the 'positives' input in another custom node or part of the workflow, denoted as 'positives' in WildDivide."
+    }
+]

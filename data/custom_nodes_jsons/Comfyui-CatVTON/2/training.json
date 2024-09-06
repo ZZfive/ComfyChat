@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the `DefaultTrainer`?",
+        "answer": "The `DefaultTrainer` is used to provide a standardized abstraction for single-cost, single-optimizer, and single-data-source training. It includes default configurations for learning rate schedule, logging, evaluation, and checkpointing."
+    },
+    {
+        "question": "What is the role of the `EventStorage`?",
+        "answer": "The `EventStorage` is a centralized storage for saving metrics during training. Metrics can be added to it using the `put_scalar` method."
+    },
+    {
+        "question": "How does the `DefaultTrainer` work?",
+        "answer": "The `DefaultTrainer` provides a standardized configuration for training. It includes default behaviors for learning rate schedule, logging, evaluation, and checkpointing. To customize the trainer, you can either overwrite its methods in a subclass or start from the `plain_train_net.py` script and implement the desired training logic from scratch."
+    },
+    {
+        "question": "What are some of the common metrics saved to `EventStorage`?",
+        "answer": "Some common metrics saved to `EventStorage` include training loss, validation loss, and accuracy."
+    },
+    {
+        "question": "How can you access and use `EventStorage` in your code?",
+        "answer": "You can access `EventStorage` using the `get_event_storage()` method. You can then use methods like `put_scalar` to add metrics to it."
+    },
+    {
+        "question": "What are the default behaviors included in `DefaultTrainer`?",
+        "answer": "The `DefaultTrainer` includes default behaviors for learning rate schedule, logging, evaluation, and checkpointing."
+    },
+    {
+        "question": "How can you decide whether to use `DefaultTrainer` or implement your own training logic?",
+        "answer": "If your customization is similar to what `DefaultTrainer` is already doing, you can change its behavior by overwriting its methods in a subclass. If you need something very novel, you can start from `plain_train_net.py` and implement your training logic from scratch."
+    }
+]

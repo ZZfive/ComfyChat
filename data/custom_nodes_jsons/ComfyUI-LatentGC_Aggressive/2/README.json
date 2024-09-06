@@ -1,0 +1,18 @@
+[
+    {
+        "question": "Describe the function of ComfyUI LatentGC_Aggressive.",
+        "answer": "ComfyUI LatentGC_Aggressive contains a single node that, when hit, empties the cache, runs garbage collection (GC), and unloads models from VRAM. This is useful for low VRAM scenarios, and the suggested usage is placing it before/after the sampler, before VFI, etc."
+    },
+    {
+        "question": "In what scenarios is ComfyUI LatentGC_Aggressive beneficial?",
+        "answer": "ComfyUI LatentGC_Aggressive is particularly useful in low VRAM scenarios and is suggested to be placed before/after the sampler, before VFI, or as a buffer between different stages of the workflow."
+    },
+    {
+        "question": "What are the performance implications of using ComfyUI LatentGC_Aggressive?",
+        "answer": "The performance impact of unloading models from VRAM and, in some cases, forcing an immediate reload for the next node use with ComfyUI LatentGC_Aggressive appears to be negligible on the system."
+    },
+    {
+        "question": "List the resources credited for the creation of ComfyUI LatentGC_Aggressive.",
+        "answer": "ComfyUI LatentGC_Aggressive was created using resources from:\n- https://github.com/ntdviet/comfyui-ext\n- https://github.com/yolain/ComfyUI-Easy-Use"
+    }
+]

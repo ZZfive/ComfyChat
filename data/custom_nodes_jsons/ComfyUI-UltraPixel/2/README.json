@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is ComfyUI-UltraPixel?",
+        "answer": "ComfyUI-UltraPixel is a custom node in ComfyUI that utilizes the [UltraPixel algorithm](https://jingjingrenabc.github.io/ultrapixel/) to generate high-resolution images and videos."
+    },
+    {
+        "question": "What are the performance capabilities of ComfyUI-UltraPixel?",
+        "answer": "ComfyUI-UltraPixel can process images up to 4096x4096 with 16GB GPUs (for text2image) and up to 3840x4096 with 12GB GPUs (for controlnet)."
+    },
+    {
+        "question": "How does the installation process of ComfyUI-UltraPixel differ from other nodes?",
+        "answer": "ComfyUI-UltraPixel requires manual installation via git cloning and modification of the MMAutoencodingPipeline folder. Then you must install the requirements through pip in your conda/venv environment."
+    },
+    {
+        "question": "What is the purpose of the 'UltraPixel Directory' input in the UltraPixel Load node?",
+        "answer": "The 'UltraPixel Directory' input allows users to customize the directory where the UltraPixel and StableCascade model files are stored. By default, these files are stored in the 'ComfyUI/models/ultrapixel' directory."
+    },
+    {
+        "question": "List the steps for installing ComfyUI-UltraPixel.",
+        "answer": [
+            "git clone https://github.com/2kpr/ComfyUI-UltraPixel",
+            "pip install -r requirements.txt",
+            "Install the provided workflow json files by loading them in ComfyUI and hitting 'Queue Prompt'. The first node will download the necessary files."
+        ]
+    },
+    {
+        "question": "How can ControlNet be enabled in ComfyUI-UltraPixel?",
+        "answer": "To enable ControlNet, you need to load an image in ComfyUI, connect it to the 'controlnet_image' input of the 'UltraPixel Process' node. Additionally, you can attach a preview/save image node to the 'edge_preview' output of the 'UltraPixel Process' node to view ControlNet edge previews."
+    },
+    {
+        "question": "What is the main goal of the current version of ComfyUI-UltraPixel?",
+        "answer": "The main goal of the current version is to rewrite ComfyUI-UltraPixel for better integration with ComfyUI's native code, rather than merely serving as a modified wrapper around the original UltraPixel code."
+    },
+    {
+        "question": "Why is it intermittently showing [STABLE DIFFUSION] [Any Address .idx] [Corrupt] error?",
+        "answer": "This issue is related to the download stage of the UltraPixel and StableCascade model files. The problem was addressed and fixed in a recent commit to the repository. You can refer to the [commit details](https://github.com/2kpr/ComfyUI-UltraPixel/commit/45d32bbe3777f1773dc0f74deea075d77b6d9278) for more information."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-Unprompted?",
+        "answer": "ComfyUI-Unprompted is a ComfyUI node designed to process input text using the Unprompted templating language. It is currently in an early alpha release state."
+    },
+    {
+        "question": "Where are my Unprompted templates located?",
+        "answer": "Your Unprompted templates can be found in the `ComfyUI/venv/Lib/site-packages/unprompted/templates` folder. You can use this node to call files from this location, for instance, using the `[call common/examples/human/main]` command."
+    },
+    {
+        "question": "What are `string_prefix` and `string_affix`?",
+        "answer": "`string_prefix` is used to add a specified string to the beginning of a main `string_field` box, while `string_affix` appends a specified string to the end. These features are primarily designed for convenience."
+    },
+    {
+        "question": "How do you edit images with the Unprompted node?",
+        "answer": "As of version 0.2.0, the Unprompted node supports image editing through the `anything` input. To edit an image, you can utilize the `set_anything_to` widget to set an image to a `comfy_var` variable, which is then referenced via the `[image_edit]` shortcode. For instance, to edit an image, you would use the following command:\n\n```\n[image_edit input=\"comfy_var\" add_noise=500]\n```\n\nEnsure that the `return_image_var` widget refers to `comfy_var` so that the changes are visible in the Preview Image node."
+    },
+    {
+        "question": "Can I use ComfyUI-Unprompted to edit HTML or CSS files?",
+        "answer": "No, ComfyUI-Unprompted is primarily designed for text-based operations. It does not support editing HTML or CSS directly; it is focused on processing textual inputs using the Unprompted templating language."
+    },
+    {
+        "question": "Is it secure to use ComfyUI-Unprompted for sensitive data?",
+        "answer": "ComfyUI-Unprompted and its Unprompted templating language are not specifically designed for securing sensitive data. Therefore, it is not recommended to use this node for handling sensitive information without first implementing additional security measures."
+    },
+    {
+        "question": "How does ComfyUI-Unprompted handle wildcards?",
+        "answer": "ComfyUI-Unprompted supports wildcards in its input strings. This can be useful for creating flexible and generic templates. Wildcards can be used in specific contexts, depending on the command or shortcode used with the data."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Define the model name and describe briefly how it works.",
+        "answer": "The model name is {{ model_name | default('ComfyUI_CrossImageAttention') }}. This model is trained on the {{ dataset_name }} dataset using the {{ model_name | default('🤗 Diffusers') }} library. Cross-图像注意力模型通过捕获所有图像之间的内在联系来增强性能，提高图像和视频生成的质量。"
+    },
+    {
+        "question": "How should this model be used?",
+        "answer": "# TODO: add an example code snippet for running ComfyUI_CrossImageAttention again\n"
+    },
+    {
+        "question": "What are the limitations and potential biases of this model?",
+        "answer": "[TODO: provide detailed examples of latent issues and potential remediations]"
+    },
+    {
+        "question": "Can you describe the training data used for this model?",
+        "answer": "[TODO: describe the data used to train the model]"
+    },
+    {
+        "question": "What are the training hyperparameters used to develop this model?",
+        "answer": "该模型的训练超参数有：\n- 学习率: {{ learning_rate }}\n- 训练数据批大小: {{ train_batch_size }}\n- 评估数据批大小: {{ eval_batch_size }}\n- 梯度累加步数: {{ gradient_accumulation_steps }}\n- 优化器: AdamW 与 betas=({{ adam_beta1 }}, {{ adam_beta2 }}), weight_decay={{ adam_weight_decay }}和epsilon={{ adam_epsilon }}的结合\n- 学习率调度器: {{ lr_scheduler }}\n- 学习率预热步数: {{ lr_warmup_steps }}\n- EMA 倒置gamma：{{ ema_inv_gamma }}\n- EMA 倒置power：{{ ema_power }}\n- EMA 倒置最大衰减次数：{{ ema_max_decay }}\n- 混合精度：{{ mixed_precision }}"
+    },
+    {
+        "question": "What are the results from training this model?",
+        "answer": "模型训练结果显示了模型在图像和视频生成任务上的最佳性能。\n\n📈 [TensorBoard 日志](https://huggingface.co/{{ repo_name }}/tensorboard?#scalars)"
+    },
+    {
+        "question": "Is it feasible for a developer to fine-tune this ComfyUI_CrossImageAttention model with custom data?",
+        "answer": "是的，开发者可以使用自己的定制或数据rase来细化ComfyUI_CrossImageAttention模型，以更好地适应特定的应用场景。如果一个用户希望将图像颜色更改为不同的主题颜色，那么他可以准备一系列的图像和期望的歧义点标签，用于训练模型，以便它可以学习如何将特定主题的颜色应用于图像。"
+    }
+]

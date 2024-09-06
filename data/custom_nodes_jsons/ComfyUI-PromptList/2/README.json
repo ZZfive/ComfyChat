@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ComfyUI-PromptList node?",
+        "answer": "The ComfyUI-PromptList node is used for managing prompts within the ComfyUI system. It reads prompts from prompts.yaml and outputs positive and negative prompts as strings. It also allows for the modification and writing of new prompts to yaml files."
+    },
+    {
+        "question": "How does the ComfyUI-PromptList node read prompts from prompts.yaml?",
+        "answer": "The ComfyUI-PromptList node reads prompts from prompts.yaml by accessing the data stored in the file. The file must be structured in a specific YAML format, where each prompt is defined by a name, a positive prompt, and a negative prompt."
+    },
+    {
+        "question": "What are the input parameters for the ComfyUI-PromptList node?",
+        "answer": "The ComfyUI-PromptList node has the following inputs:\n1. Selection: This input is a list of prompts registered in the prompts.yaml file, and it outputs the prompt of the selected item.\n2. Prompt Name, Positive Prompt, and Negative Prompt: These are optional inputs that allow you to specify a new prompt name, the content of a positive prompt, and the content of a negative prompt, respectively. If these inputs are filled, the prompt from the selection will not be output; instead, the input prompt will be output."
+    },
+    {
+        "question": "What happens if the same Prompt Name is used to change a prompt?",
+        "answer": "If the same Prompt Name is used to change a prompt, it will overwrite the prompt in the prompts.yaml file."
+    },
+    {
+        "question": "How is the ComfyUI-PromptList node intended to be used?",
+        "answer": "The ComfyUI-PromptList node is intended to be used by selecting prompts from the list and either outputting them as strings or updating the positive and negative prompts for a specific prompt."
+    },
+    {
+        "question": "What is the intended output of the ComfyUI-PromptList node?",
+        "answer": "The intended output of the ComfyUI-PromptList node is a string representation of the prompt selected from prompts.yaml. If the optional positive and negative prompts are specified, the output will include these prompts instead of the one from the selection."
+    },
+    {
+        "question": "How do you interpret the prompts.yaml file format?",
+        "answer": "The prompts.yaml file format includes a prompt name, a positive prompt, and a negative prompt. These prompts are associated with each other in a structured format that allows for easy reading and modification by the ComfyUI-PromptList node."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does the text say about contributing to jspaint?",
+        "answer": "The text provides guidance on contributing to jspaint. It mentions that before starting work, it is recommended to open an issue or comment on an existing issue to check if the work is already being done or if there are specific plans or requirements. It advises against wasting effort by working on something that may already be addressed. Bugs and feature requests can be tracked on GitHub and, if not found on GitHub, can be reported via email. Additionally, the text provides links to relevant resources such as an online emulator for Windows 98 and the project's development setup instructions."
+    },
+    {
+        "question": "How can a developer get help with the jspaint project?",
+        "answer": "Developers can get help with the jspaint project by opening an issue or commenting on an existing issue. This allows the project maintainers to see if the issue or feature request has already been addressed. If the issue or feature request is not already covered, the developer can also email the project maintainer at isaiahodhner@gmail.com."
+    },
+    {
+        "question": "What are the important files and directories in the jspaint project?",
+        "answer": "The important files and directories in the jspaint project include:\n- `index.html` and `app.js`: main entry points for the app\n- `functions.js`: contains functions that modify global state\n- `os-gui`: a project that contains menu code and windowing code, syncing can be done using `npm i os-gui@latest --save-exact && npm run sync-os-gui`\n- `image-manipulation.js`: should contain only rendering-related code\n- `image-manipulation.js`, `tools.js`, and `functions.js`: contain some image manipulation code\n- `styles/`: contains CSS for the project\n- `localization/`: contains localization data\n\nThe project uses jQuery and conventions like prefixing variables holding jQuery objects with `$`. Some project-specific window behavior is in `$ToolWindow.js` and `$Component.js`. Localization support is provided via `localization/`."
+    },
+    {
+        "question": "What does the text say about the development setup for the jspaint project?",
+        "answer": "The development setup for the jspaint project involves the following steps:\n1. To sync changes from the `os-gui` project to jspaint, run `npm i os-gui@latest --save-exact && npm run sync-os-gui`.\n2. To link os-gui and jspaint to work together, run `npm link` in a clone of os-gui and then `npm link os-gui && npm run sync-os-gui` in jspaint after making any changes in os-gui.\n3. Optionally, the project can use git-subrepo for versioning.\n\nThe main entry points for the app are `index.html` and `app.js`. Other key files and directories include `functions.js`, which contains functions that modify global state, and `styles/`, which contains the project's CSS. Localization support is provided via `localization/`. The project uses jQuery and conventions like prefixing variables holding jQuery objects with `$`. Some project-specific window behavior is in `$ToolWindow.js` and `$Component.js`. Localization support is provided via `localization/`."
+    },
+    {
+        "question": "What does the text say about the jspaint project's relationship with the os-gui project?",
+        "answer": "The jspaint project utilizes code and resources from the os-gui project. Specifically, menu code and windowing code are contained within the os-gui project, and the jspaint project can sync these changes by running certain npm commands. To work with os-gui in the context of jspaint, the jspaint developer needs to run `npm link` in a clone of os-gui and then `npm link os-gui && npm run sync-os-gui` in jspaint after making any changes in os-gui. The os-gui project is designed to sync changes in a one-way manner."
+    },
+    {
+        "question": "What does the text say about using the jspaint project's online emulator?",
+        "answer": "The jspaint project provides an online emulator for Windows 98, which can be used as a reference for developers. This emulator can be accessed via the following link: https://copy.sh/v86/?profile=windows98."
+    },
+    {
+        "question": "What does the text say about linting the jspaint project?",
+        "answer": "The text does not provide any information about linting the jspaint project."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the dataset for training DensePose models?",
+        "answer": "The dataset is prepared to train DensePose models, includingposes of objects and backgrounds. It is structured in a specific way for training, with separate directories for training and validation datasets."
+    },
+    {
+        "question": "What are the steps required to train a DensePose-RCNN model with a ResNet-50 FPN backbone on 8 GPUs following a s1x training schedule?",
+        "answer": "1. Download and prepare the DensePose dataset as described in the document.\n2. Choose the densepose_rcnn_R_50_FPN_s1x.yaml model and its config file from the Model Zoo.\n3. Run the train_net.py script with the --config-file argument pointing to the densepose_rcnn_R_50_FPN_s1x.yaml file and the --num-gpus argument set to 8."
+    },
+    {
+        "question": "What is the function of the `train_net.py` script?",
+        "answer": "The `train_net.py` script is used to train DensePose models. It can be configured with different model architectures and training schedules by providing a configuration file targeted to the desired model structure."
+    },
+    {
+        "question": "How can one easily visualize DensePose annotated data in a dataset?",
+        "answer": "One can use the `query_db` tool to print or visualize DensePose data in a dataset. This tool helps users understand the metadata associated with DensePose annotations."
+    },
+    {
+        "question": "What is the `apply_net.py` tool used for?",
+        "answer": "The `apply_net.py` tool is a versatile utility that can be used to execute dense pose model inference, display results, and save those results to disk."
+    },
+    {
+        "question": "What is the purpose of the `show` command in the `apply_net.py` tool?",
+        "answer": "The `show` command in the `apply_net.py` tool is used to visualize the initial DensePose model's output in the densepose_rcnn_R_50_FPN_s1x.pkl file, along with the label from the annotations."
+    },
+    {
+        "question": "What additional flags are required when launching the end-to-end training of a DensePose-RCNN model with a ResNet-50 FPN backbone on 8 GPUs using the `train_net.py` script?",
+        "answer": "To launch end-to-end DensePose-RCNN training with a ResNet-50 FPN backbone on 8 GPUs, the following additional flags are required: SOLVER.IMS_PER_BATCH 2, SOLVER.BASE_LR 0.0025, and MODEL.WEIGHTS model.pth."
+    }
+]

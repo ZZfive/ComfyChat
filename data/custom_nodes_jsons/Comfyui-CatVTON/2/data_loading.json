@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the typical input format of the detectron2 data loader?",
+        "answer": "The input format of the detectron2 data loader is a lightweight, canonical representation of a dataset item. This representation includes elements like file name, annotations, and image data, but it doesn't include image loading or random data augmentation."
+    },
+    {
+        "question": "How does the `build_detection_{train,test}_loader` function work?",
+        "answer": "The `build_detection_{train,test}_loader` function takes the name of a registered dataset, loads the dataset items in a format that includes file names and annotations, applies a mapping function to convert the dataset items into a ready-to-use format for the model, batches these converted items, and returns the batched data as the output of the data loader."
+    },
+    {
+        "question": "What does the `mapper` argument in `build_detection_{train,test}_loader` do?",
+        "answer": "The `mapper` argument in `build_detection_{train,test}_loader` allows users to customize the mapping function used to convert the dataset items into the format accepted by the model. By default, the [DatasetMapper](../modules/data.html#detectron2.data.DatasetMapper) is used."
+    },
+    {
+        "question": "What role does the `DatasetMapper` function play in the detectron2 data loading pipeline?",
+        "answer": "The `DatasetMapper` function transforms the lightweight, canonical representation of a dataset item into a format that is ready for the model to consume. This includes reading images, applying random data augmentation, and converting the data into torch Tensors."
+    },
+    {
+        "question": "How does the Detectron2 custom dataloader work?",
+        "answer": "A custom dataloader in Detectron2 is simply a python iterator that produces the format your model accepts. It can be implemented using any tools you like. For example, if you want to resize all images to a fixed size for Mask R-CNN training, you can write a custom mapper function to resize the images."
+    },
+    {
+        "question": "Can you describe how to use DefaultTrainer in Combining a Custom Dataloader?",
+        "answer": "Yes, if you use DefaultTrainer, you can overwrite its `build_{train,test}_loader` method to use your own dataloader. See the densepose dataloader in the DensePose project for an example."
+    },
+    {
+        "question": "What are the advantages of writing a custom dataloader?",
+        "answer": "Writing a custom dataloader allows for more complex sampling and batching logic, enabling fine-tuning specific dataset requirements. This can be especially useful when dealing with data formats or transformation logistics not directly supported by the existing dataloader."
+    }
+]

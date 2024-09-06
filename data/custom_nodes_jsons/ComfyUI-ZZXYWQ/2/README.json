@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does PaintsUndo aim to accomplish?",
+        "answer": "PaintsUndo aims to provide base models of human drawing behaviors that future AI models can use to better align with the real needs of human artists."
+    },
+    {
+        "question": "What are some of the human behaviors that PaintsUndo can display?",
+        "answer": "PaintsUndo can display a range of human behaviors including sketching, inking, coloring, shading, transforming images, flipping images left to right, tuning color curves, changing layer visibility, and even changing ideas during the drawing process."
+    },
+    {
+        "question": "What are the key differences between the single-frame model and the multi-frame model?",
+        "answer": "The single-frame model takes one image and an operation step as input, and outputs one single image. The multi-frame model takes two images as inputs and outputs 16 intermediate frames between the two input images."
+    },
+    {
+        "question": "What changes were made to the architecture of the PaintsUndo single-frame model?",
+        "answer": "The model is a modified architecture of SD1.5. It uses a different scheduler with betas ranging from 0.00085 to 0.020. The last layer of the text encoder CLIP ViT-L/14 is permanently removed, and CLIP Skip is set to 2. The operation step condition is added to layer embeddings in a way similar to SDXL's extra embeddings."
+    },
+    {
+        "question": "What are the major changes in the architecture of the PaintsUndo multi-frame model?",
+        "answer": "The multi-frame model is trained starting from the VideoCrafter family, but the original Crafter's `lvdm` is not used, and all training/inference codes are implemented from scratch. The topology of the neural network is significantly modified, and the network behavior is now largely different from the original Crafter after extensive training."
+    },
+    {
+        "question": "What is one application of the PaintsUndo model?",
+        "answer": "One application of the PaintsUndo model is to analyze human behavior to build AI tools that can align with human behavior and human demands, facilitating seamless collaboration between AI and humans in a controlled workflow."
+    },
+    {
+        "question": "What are some potential uses of PaintsUndo?",
+        "answer": "PaintsUndo can be used for analyzing human behavior to build AI tools that align with human behavior, combining with sketch-guided image generators to achieve “PaintsRedo”, viewing different possible procedures of one's own artworks for artistic inspirations, and using its outputs as a kind of video/movie After Effects for creative purposes."
+    }
+]

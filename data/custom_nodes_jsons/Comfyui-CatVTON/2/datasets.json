@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the difference between instance detection/segmentation and semantic/panoptic segmentation?",
+        "answer": "Instance detection/segmentation focuses on detecting individual objects and identifying their instances, while semantic/panoptic segmentation deals with detecting and segmenting entire scene objects as a unified structure, including things and stuff categories."
+    },
+    {
+        "question": "What is the purpose of registering a custom dataset in the detectron2 framework?",
+        "answer": "Registering a custom dataset allows detectron2 to know how to obtain the dataset, retrieve its data items, and apply necessary transformations or batch requirements."
+    },
+    {
+        "question": "What do the keys in a standard dataset dict mean for instance detection/segmentation tasks?",
+        "answer": "For instance detection/segmentation tasks, the required keys in a standard dataset dict include 'file_name', 'height', 'width', 'image_id', 'annotations', and specific keys related to the bounding box, segmentation mask, and keypoints of each instance."
+    },
+    {
+        "question": "How can the metadata for a dataset be registered in detectron2?",
+        "answer": "The metadata for a dataset can be registered using the `MetadataCatalog.get(dataset_name).some_key = some_value` method. This method allows for the addition of generic metadata, such as the names of classes or categories, to enable features like visualization or evaluation."
+    },
+    {
+        "question": "What is the function of the 'thing_dataset_id_to_contiguous_id' mapping in COCO format?",
+        "answer": "The 'thing_dataset_id_to_contiguous_id' mapping is used in COCO format datasets to map instance class ids from the training dataset to contiguous ids in the range [0, #class) for instance detection/segmentation tasks. This is especially useful when the training dataset uses different class ids than the COCO evaluation script expects."
+    },
+    {
+        "question": "What does the function of 'load_coco_json' do?",
+        "answer": "'load_coco_json' is used to load COCO format datasets into detectron2's standard dataset dict format. It reads the COCO annotation json file and loads the data, converting it to a format that can be directly used by detectron2's dataloader and evaluation scripts."
+    },
+    {
+        "question": "What are the common keys used in a standard dataset dict for semantic segmentation tasks?",
+        "answer": "For semantic segmentation tasks, the standard dataset dict typically includes keys for 'file_name', 'height', 'width', 'image_id', 'annotations', 'sem_seg_file_name', and additional keys related to segmentation masks and labels."
+    }
+]

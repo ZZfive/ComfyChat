@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is ComfyUI-FirstOrderMM?",
+        "answer": "ComfyUI-FirstOrderMM is a set of native ComfyUI nodes designed to run First Order Motion Model for Image Animation and its non-diffusion-based successors."
+    },
+    {
+        "question": "Does ComfyUI-FirstOrderMM support face swapping?",
+        "answer": "Yes, ComfyUI-FirstOrderMM supports face swapping using Motion Supervised co-part Segmentation. Specifically, it supports swapping using models from the following links:\n\n1. [ Motion Supervised co-part Segmentation](https://github.com/AliaksandrSiarohin/motion-cosegmentation)\n2. [ Motion Representations for Articulated Animation](https://github.com/snap-research/articulated-animation)\n3. [ Thin-Plate Spline Motion Model for Image Animation](https://github.com/yoyo-nb/thin-plate-spline-motion-model)\n4. [ Learning Motion Refinement for Unsupervised Face Animation](https://github.com/JialeTao/MRFA/)\n5. [ Facial Scene Representation Transformer for Face Reenactment](https://github.com/andrerochow/fsrt)"
+    },
+    {
+        "question": "What are the main features supported by ComfyUI-FirstOrderMM?",
+        "answer": "ComfyUI-FirstOrderMM supports the following features:\n\n1. Face Swapping using Motion Supervised co-part Segmentation and related models\n2. Motion Representations for Articulated Animation\n3. Thin-Plate Spline Motion Model for Image Animation\n4. Learning Motion Refinement for Unsupervised Face Animation\n5. Facial Scene Representation Transformer for Face Reenactment\n\nThese features can be accessed through various native ComfyUI nodes."
+    },
+    {
+        "question": "How can I use the Find Best Frame feature in ComfyUI-FirstOrderMM?",
+        "answer": "To use the `find_best_frame` feature in ComfyUI-FirstOrderMM, you must follow these steps:\n\n1. Install the required dependencies by cloning the repository and running `pip install -r requirements.txt`.\n\n2. Optional: Install the `face-alignment` library if you want to use the `find_best_frame` feature.\n\n3. Place the pre-trained models and face parsing models in the specified directories to be used by ComfyUI-FirstOrderMM.\n\n4. Use the `find_best_frame` argument in the ComfyUI-FirstOrderMM workflow to specify the driving frame that best matches the source.\n\n5. Run the ComfyUI-FirstOrderMM workflow with the specified arguments and let it find the best frame."
+    },
+    {
+        "question": "What are the atypical modes for generating images in ComfyUI-FirstOrderMM?",
+        "answer": "ComfyUI-FirstOrderMM offers several modes for generating images, including:\n\n1. `relative`: This mode is similar to the `relative_movement` and `adapt_movement_scale` features in the FOMM workflow. It adjusts the movement scale based on the convex hull of the keypoints.\n\n2. `standard`: This mode is similar to the `adapt_movement_scale` feature in the FOMM workflow. It does not adjust the movement scale based on the convex hull of the keypoints.\n\n3. `avd`: This mode is similar to `relative`, but may yield better but more jittery or jumpy results."
+    },
+    {
+        "question": "How does ComfyUI-FirstOrderMM's Part Swap feature work?",
+        "answer": "ComfyUI-FirstOrderMM's Part Swap feature allows users to swap parts of an image while preserving the overall structure. Here are the main parameters of the Part Swap feature:\n\n1. `blend_scale`: This parameter determines how the blended segments are displayed. Default value is set to 1.0.\n\n2. `use_source_seg`: This parameter determines whether to use the source's segmentation or the target's segmentation. It may help if some of the target's segmentation regions are missing.\n\n3. `hard_edges`: This parameter determines whether to make the edges hard, instead of feathering.\n\n4. `use_face_parser`: This parameter is used with Seg-based models. It may help with cleaning up residual background. Note that additional cleanup face_parser masks should be used.\n\n5. `viz_alpha`: This parameter determines the opacity of the segments in the visualization."
+    },
+    {
+        "question": "What can be done with ComfyUI-FirstOrderMM's Articulate feature?",
+        "answer": "ComfyUI-FirstOrderMM's Articulate feature can be used to create articulated animations. This feature does not require any additional parameters as indicated in the provided text."
+    },
+    {
+        "question": "What are some pre-trained models available for use with ComfyUI-FirstOrderMM?",
+        "answer": "ComfyUI-FirstOrderMM provides several pre-trained models for different tasks, including:\n\n1. FOMM:\t- `vox` and `vox-adv` from AliaksandrSiarohin/first-order-model and graphemecluster/first-order-model-demo\n\n2. Part Swap:\n- `vox-5segments`, `vox-10segments`, `vox-15segments`, and `vox-first-order (partswap)` from the original repository [Motion Supervised co-part Segmentation](https://github.com/AliaksandrSiarohin/motion-cosegmentation)\n\n3. Articulate:\t- `module_articulate/models/vox256.pth` from Articulated Animation (Pre-trained checkpoints)\n\n4. Spline:\t- `module_articulate/models/vox.pth.tar` from Thin Plate Spline Motion Model (Pre-trained models)\n\n5. MRFA (celebvhq):\t- `module_mrfa/models/celebvhq.pth` from MRFA (Pre-trained checkpoints)\n\n6. MRFA (vox):\t- `module_mrfa/models/vox.pth` from MRFA (Pre-trained checkpoints)\n\n7. FSRT (kp_detector):\t- `module_fsrt/models/kp_detector.pt` from FSRT (Pretrained Checkpoints)\n\n8. FSRT (vox256):\t- `module_fsrt/models/vox256.pt` from FSRT (Pretrained Checkpoints)\n\n9. FSRT (vox256_2Source):\t- `module_fsrt/models/vox256_2Source.pt` from FSRT (Pretrained Checkpoints)\n\nNote: For Spline and FSRT, users may need to install additional tools and models in order to use `find_best_frame`. Consult the provided links for more information."
+    }
+]

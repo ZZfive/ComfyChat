@@ -1,0 +1,26 @@
+[
+    {
+        "question": "What are the main features provided by the ComfyUI-Arc2Face node library?",
+        "answer": "The main features provided by the ComfyUI-Arc2Face node library include face embedding extraction from images, multiple methods for averaging face embeddings, image generation based on face embeddings, image-to-image transformation with face embeddings, and image grid generation for easy comparison."
+    },
+    {
+        "question": "How does the Arc2Face Face Extractor node in ComfyUI work?",
+        "answer": "The Arc2Face Face Extractor node in ComfyUI extracts all faces from a single input image, averages them using the selected averaging scheme, and outputs the embedding that the generators expect. This can be useful for various tasks such as face recognition and image comparison."
+    },
+    {
+        "question": "What is the purpose of the Arc2Face Img2Img Generator node in ComfyUI?",
+        "answer": "The Arc2Face Img2Img Generator node in ComfyUI takes in embedding, initializes an image, and then denoises and performs image-to-image operations. This allows for the creation of new images based on the provided embedding, which is particularly useful for tasks like generating images that resemble the provided face or transforming images based on facial features."
+    },
+    {
+        "question": "What are the requirements for using the ComfyUI-Arc2Face node library?",
+        "answer": "To use the ComfyUI-Arc2Face node library, you need to clone the repository into your ComfyUI `custom_nodes` directory, install the required dependencies using `pip install -r requirements.txt`, and download the necessary model files from the specified GitHub repositories. Place these files in your ComfyUI models folder with the correct directory structure."
+    },
+    {
+        "question": "What are some tips for using the ComfyUI-Arc2Face node library?",
+        "answer": "When using the ComfyUI-Arc2Face node library, it's recommended to use face embeddings near 512x512 resolution for the best results. Median averaging is suggested for a few input faces, while ensemble averaging can be effective for many faces. The `n_outliers` parameter on the face extractor node can be used to remove faces that are farthest from the cluster and potentially cause issues if they're background faces."
+    },
+    {
+        "question": "What should users agree to when using the ComfyUI-Arc2Face node library?",
+        "answer": "Users should agree to legal and ethical use of the technology, obtain consent from individuals when using their likeness, refrain from creating harmful content, disclose when content has been altered, respect intellectual property rights, and not use it for fraudulent impersonation. Additionally, users acknowledge that the creator is not liable for misuse or any consequences arising from its use."
+    }
+]

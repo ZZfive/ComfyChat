@@ -26,5 +26,33 @@
     {
         "question": "What happens when sd-webui-color-enhance is applied at full strength to an already heavily saturated/colorful image?",
         "answer": "When sd-webui-color-enhance is applied at full strength to an already heavily saturated/colorful image, there should be essentially 0 change to the image, indicating how working in this color space removes the need to worry about oversaturating or blowing out an image."
+    },
+    {
+        "question": "What is the purpose of the color enhancement algorithm?",
+        "answer": "The algorithm's purpose is to enhance the color saturation of images by converting the color space to CIELCh(ab) and normalizing the chroma component. This allows for improvements in the colors displayed in the images without needing to select a VAE (Variational Autoencoder) based solely on color."
+    },
+    {
+        "question": "Does this color enhancement algorithm have any known issues or limitations?",
+        "answer": "The text does not mention any specific issues or limitations of this color enhancement algorithm."
+    },
+    {
+        "question": "How is the color enhancement algorithm implemented in CTI Web UI?",
+        "answer": "The color enhancement algorithm is implemented as a script for the CTI Web UI. It can be added to the 'Enable postprocessing operations in txt2img and img2img tabs' option in the settings."
+    },
+    {
+        "question": "What color space is the color enhancement algorithm working in?",
+        "answer": "The color enhancement algorithm works in the CIELCh(ab) color space. This is the same as the color space used by GIMP/GEGL for color enhancement."
+    },
+    {
+        "question": "What is the 'full strength' of the color enhancement algorithm?",
+        "answer": "The full strength of the color enhancement algorithm is set to `1`. This is the maximum amount of color enhancement that can be applied."
+    },
+    {
+        "question": "How does the color enhancement algorithm handle text and other non-image content?",
+        "answer": "The text does not specifically mention how the color enhancement algorithm handles text or other non-image content. However, since the algorithm is designed to only work on images and does not mention handling other forms of content, it is likely that non-image content is not enhanced by this script."
+    },
+    {
+        "question": "How does the color enhancement algorithm affect sharpness or clarity in the enhanced images?",
+        "answer": "The text does not provide information on how the color enhancement algorithm affects sharpness or clarity in the enhanced images."
     }
 ]

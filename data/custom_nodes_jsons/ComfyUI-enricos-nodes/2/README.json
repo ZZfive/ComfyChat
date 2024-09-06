@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does the Compositor Node in ComfyUI allow you to do?",
+        "answer": "The Compositor Node allows you to pass up to 8 images, visually place, rotate, and scale them to build a composition. You can also group move and rescale the images, remember the position, scaling values, and z-index across generations, use a buffer zone to park an asset, see the exported area through a green overlay, reframe the shot via multiple selection scaling, resizing, and repositioning, and flip an image via negative scaling."
+    },
+    {
+        "question": "What are the updates in version 1.0.9 of the Compositor Node?",
+        "answer": "In version 1.0.9, the updates include multiple instances being possible, zooming out no longer hiding the compositor images, saving a png with the workflow showing the compositor content, not re-triggering the execution of the flow if the image is not changed, the node being more efficient with checksums for is_changed check, and a complete refactoring that includes a lot of comments for better understanding and maintenance."
+    },
+    {
+        "question": "How can you install the Compositor Node in ComfyUI Manager?",
+        "answer": "To install the Compositor Node in ComfyUI Manager, you can either use git clone and open the custom nodes directory in your editor, or you can search for \"Compositor\" in the ComfyUI Manager dropdown, select the node from erosDiffusion and press install, or use the manager's button to install via Git URL and paste the URL."
+    },
+    {
+        "question": "What are the new features in version 1.0.8 of the Compositor Node?",
+        "answer": "In version 1.0.8, the updates include a green border indicating the exported area being overlaid on the composition."
+    },
+    {
+        "question": "How can you limit and control the use of the Compositor Node?",
+        "answer": "The Compositor Node can be limited and controlled by running the flow once for the compositor to show images, pausing/stop the flow, reconnecting the inputs (suggested setup is to always have a fixed size via resize and rembg where needed), connecting the outputs (save image, preview image,...), using the output, running again, using the output again, and using the output once more."
+    },
+    {
+        "question": "What are the limitations of using the Compositor Node?",
+        "answer": "The Compositor Node has limitation that you need to run the flow once for the compositor to show images, reloading a flow with compositor will not reload the composition, the compositor is not scaled, and it might not show images in the editor on first run."
+    },
+    {
+        "question": "What are some supporting nodes used with the Compositor Node?",
+        "answer": "Some supporting nodes used with the Compositor Node include Join Image with Alpha (from ComfyUI core), Rembg(batch) (from batchImg-rembg-ComfyUI-nodes), AlphaChanelAddByMask (from Text_Image-Composite), and controlnet depth for any model (works well with depth anything v2 preprocessor for 1.5 and xl controlnet or lineart)."
+    }
+]

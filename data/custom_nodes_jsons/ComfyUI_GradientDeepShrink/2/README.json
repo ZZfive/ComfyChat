@@ -1,0 +1,26 @@
+[
+    {
+        "question": "What is the difference between GradientPatchModelAddDownscale and GradientPatchModelAddDownscaleAdvanced?",
+        "answer": "The main difference lies in the configuration parameters. The GradientPatchModelAddDownscale node uses a downscale_factor to control the downscaling operation, whereas the GradientPatchModelAddDownscaleAdvanced node uses multiple percentage-scale factor pairs and an interpolate flag to control the downscaling operation."
+    },
+    {
+        "question": "How is the downscaling factor determined in GradientPatchModelAddDownscaleAdvanced?",
+        "answer": "In GradientPatchModelAddDownscaleAdvanced, the downscaling factor is linearly interpolated from the defined pairs based on the percentage. If the interpolate flag is set to true, and the given percentage falls between two defined pairs, the scale factor will be interpolated linearly from the two nearest pairs. If interpolate is false, the scale factor of the nearest lower percentage will be used."
+    },
+    {
+        "question": "What is the purpose of the start_percent and end_percent parameters in the GradientPatchModelAddDownscale node?",
+        "answer": "The start_percent and end_percent parameters define a range in which the downscale_factor is linearly interpolated from 1/downscale_factor to 1. The downscaling factor is extrapolated from these two parameters during the forward pass of the model. This allows for a smoother transition between the inner and outer blocks of the model."
+    },
+    {
+        "question": "How is the downscaling operation applied in the GradientPatchModelAddDownscale node?",
+        "answer": "In the GradientPatchModelAddDownscale node, the downscaling operation is applied during the forward pass of the model. It modifies the given model by adding a downscaling operation to a specific block of the model. This block is identified by the block_number parameter. The size of the block is controlled by the downscale_factor parameter."
+    },
+    {
+        "question": "What is the significance of the downscale_after_skip parameter in GradientPatchModelAddDownscale?",
+        "answer": "The downscale_after_skip parameter in GradientPatchModelAddDownscale determines whether the downscaling operation is applied after the skip connection in the block. If false, the downscaling operation is applied to the full size of the input before skipping; if true, the downscaling operation is applied to the output after skipping."
+    },
+    {
+        "question": "What are the main parameters used in the GradientPatchModelAddDownscale node?",
+        "answer": "The main parameters used in the GradientPatchModelAddDownscale node are block_number, downscale_factor, start_percent, end_percent, and downscale_after_skip. These parameters control the block where the downscaling operation is applied, the factor by which the input is scaled down, the range of percentages in which the downscaling factor is linearly interpolated from 1/downscale_factor to 1, and whether the downscaling operation is applied after the skip connection."
+    }
+]

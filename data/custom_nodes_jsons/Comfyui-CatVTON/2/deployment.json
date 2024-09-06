@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the supported format for converting a detectron2 model?",
+        "answer": "The detectron2 model can be converted to Caffe2 format through ONNX."
+    },
+    {
+        "question": "What are the dependencies required for Caffe2 conversion?",
+        "answer": "Caffe2 conversion requires PyTorch ≥ 1.4 and ONNX ≥ 1.6."
+    },
+    {
+        "question": "Which meta architectures does the conversion tool support?",
+        "answer": "It supports 3 most common meta architectures: `GeneralizedRCNN`, `RetinaNet`, `PanopticFPN`."
+    },
+    {
+        "question": "Can the conversion tool handle users' custom extensions?",
+        "answer": "Yes, it can handle users' custom extensions under these architectures as long as they do not contain control flow or operators not available in Caffe2."
+    },
+    {
+        "question": "How is the converted model accessed for use in Python or C++?",
+        "answer": "The converted model is available at the specified `caffe2_model/` directory. Two files, `model.pb` and `model_init.pb`, that contain network structure and network parameters are necessary for deployment."
+    },
+    {
+        "question": "What do the files `model.pb` and `model_init.pb` contain?",
+        "answer": "These files contain network structure and network parameters necessary for deployment."
+    },
+    {
+        "question": "How is the C++ example built?",
+        "answer": "The C++ example needs to be built with PyTorch with caffe2 inside, gflags, glog, opencv, and MKL headers if caffe2 is built with MKL."
+    }
+]

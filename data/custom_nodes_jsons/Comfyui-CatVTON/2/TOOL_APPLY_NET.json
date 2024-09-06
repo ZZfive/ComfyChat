@@ -1,0 +1,54 @@
+[
+    {
+        "question": "What is the purpose of the apply_net tool?",
+        "answer": "The purpose of the apply_net tool is to print or visualize DensePose results on a set of images."
+    },
+    {
+        "question": "What are the two modes available in the apply_net tool?",
+        "answer": "The two modes available in the apply_net tool are 'dump' and 'show'."
+    },
+    {
+        "question": "What is the general command form for the dump mode of the apply_net tool?",
+        "answer": "The general command form for the dump mode of the apply_net tool is: `python apply_net.py dump [-h] [-v] [--output <dump_file>] <config> <model> <input>`."
+    },
+    {
+        "question": "What are the three mandatory arguments for the dump mode of the apply_net tool?",
+        "answer": "The three mandatory arguments for the dump mode of the apply_net tool are: <config>, <model>, and <input>."
+    },
+    {
+        "question": "Can one additionally provide the '--output' argument for the dump mode?",
+        "answer": "Yes, one can additionally provide the '--output' argument to define the output file name, which defaults to 'output.pkl'."
+    },
+    {
+        "question": "What is an example of using the apply_net tool in the dump mode for images in a folder?",
+        "answer": "An example of using the apply_net tool in the dump mode for images in a folder is: `python apply_net.py dump configs/densepose_rcnn_R_50_FPN_s1x.yaml DensePose_ResNet50_FPN_s1x-e2e.pkl images --output dump.pkl -v`."
+    },
+    {
+        "question": "What is an example of using the apply_net tool in the dump mode for images matching a pattern?",
+        "answer": "An example of using the apply_net tool in the dump mode for images matching a pattern is: `python apply_net.py dump configs/densepose_rcnn_R_50_FPN_s1x.yaml DensePose_ResNet50_FPN_s1x-e2e.pkl 'image*.jpg' --output results.pkl -v`."
+    },
+    {
+        "question": "What does the '--output' argument do in the dump mode?",
+        "answer": "The '--output' argument defines the output file name, which defaults to 'output.pkl'."
+    },
+    {
+        "question": "What is the general command form for the show mode of the apply_net tool?",
+        "answer": "The general command form for the show mode of the apply_net tool is: `python apply_net.py show [-h] [-v] [--min_score <score>] [--nms_thresh <threshold>] [--output <image_file>] <config> <model> <input> <visualizations>`."
+    },
+    {
+        "question": "What are the four mandatory arguments for the show mode of the apply_net tool?",
+        "answer": "The four mandatory arguments for the show mode of the apply_net tool are: <config>, <model>, <input>, and <visualizations>."
+    },
+    {
+        "question": "What are the optional arguments that can be provided for the show mode?",
+        "answer": "The optional arguments that can be provided for the show mode are --min_score, --nms_thresh, and --output."
+    },
+    {
+        "question": "What examples of visualizations are available for the show mode?",
+        "answer": "The available visualizations for the show mode are: `bbox` (bounding boxes of detected persons), `dp_segm` (segmentation masks for detected persons), `dp_u` (each body part colored according to the estimated values of the U coordinate), `dp_v` (each body part colored according to the estimated values of the V coordinate), and `dp_contour` (plots contours with color-coded U and V coordinates)."
+    },
+    {
+        "question": "What is an example of using the apply_net tool in the show mode to output results using different visualizations?",
+        "answer": "An example of using the apply_net tool in the show mode to output results using different visualizations is: `python apply_net.py show configs/densepose_rcnn_R_50_FPN_s1x.yaml DensePose_ResNet50_FPN_s1x-e2e.pkl image.jpg bbox,dp_segm -v`."
+    }
+]
