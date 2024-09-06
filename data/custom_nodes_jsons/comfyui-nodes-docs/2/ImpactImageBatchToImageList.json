@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageBatchToImageList node in ComfyUI?",
+        "answer": "The ImageBatchToImageList node is designed to convert a batch of images into a list of individual images, facilitating the transition from batch processing to single image processing which is crucial for certain downstream tasks that require per-image operations."
+    },
+    {
+        "question": "In which category is the ImageBatchToImageList node found?",
+        "answer": "The ImageBatchToImageList node is found in the ImpactPack/Util category."
+    },
+    {
+        "question": "What is the 'image' parameter in the ImageBatchToImageList node?",
+        "answer": "The 'image' parameter is the input image batch to be processed. It is essential as it determines the content that will be converted into a list of individual images. The functionality of the node directly depends on the quality and format of the input images."
+    },
+    {
+        "question": "What is the output of the ImageBatchToImageList node?",
+        "answer": "The output of the ImageBatchToImageList node is 'images', which is a list of individual images derived from the input batch. Each image in the list corresponds to an element in the original batch, suitable for applications that require individual image operations or analysis."
+    },
+    {
+        "question": "What is the return type of the 'images' output in the ImageBatchToImageList node?",
+        "answer": "The return type of the 'images' output is IMAGE, specifically a List[torch.Tensor] in Python dtype."
+    },
+    {
+        "question": "What is the source code of the ImageBatchToImageList node?",
+        "answer": "The source code of the ImageBatchToImageList node is as follows: ```class ImageBatchToImageList: @classmethod def INPUT_TYPES(s): return {'required': {'image': ('IMAGE',)}} RETURN_TYPES = ('IMAGE',) OUTPUT_IS_LIST = (True,) FUNCTION = 'doit' CATEGORY = 'ImpactPack/Util' def doit(self, image): images = [image[i:i + 1, ...] for i in range(image.shape[0])] return (images,)```"
+    },
+    {
+        "question": "What is the infra type of the ImageBatchToImageList node?",
+        "answer": "The infra type of the ImageBatchToImageList node is CPU."
+    }
+]

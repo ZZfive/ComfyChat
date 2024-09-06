@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ISNetSegment node in ComfyUI?",
+        "answer": "The ISNetSegment node in ComfyUI is used to perform image segmentation using the ISNet model. It separates the foreground from the background of an image based on a specified threshold."
+    },
+    {
+        "question": "What are the required input types for the ISNetSegment node?",
+        "answer": "The required input types for the ISNetSegment node are 'images' (the images to be segmented) and 'threshold' (the threshold value for segmentation)."
+    },
+    {
+        "question": "What are the optional input types for the ISNetSegment node?",
+        "answer": "The optional input types for the ISNetSegment node are 'device_mode' (specifies the preferred computing device), 'enabled' (a flag to control whether the segmentation process is enabled), and 'isnet_model' (an optional ISNet model parameter for segmentation)."
+    },
+    {
+        "question": "What are the output types of the ISNetSegment node?",
+        "answer": "The output types of the ISNetSegment node are 'segmented' (the segmented image with foreground and background separated) and 'mask' (a binary mask indicating the segmented regions in the image)."
+    },
+    {
+        "question": "How does the ISNetSegment node handle the case when the 'enabled' input is set to False?",
+        "answer": "When the 'enabled' input is set to False, the ISNetSegment node returns the original input images and a zero-filled mask tensor, without performing any segmentation."
+    },
+    {
+        "question": "What happens if no ISNet model is provided to the ISNetSegment node?",
+        "answer": "If no ISNet model is provided to the ISNetSegment node, it automatically loads a default ISNet model from the specified checkpoints or downloads a general-use model if no checkpoints are available."
+    },
+    {
+        "question": "What is the purpose of the 'device_mode' input in the ISNetSegment node?",
+        "answer": "The 'device_mode' input in the ISNetSegment node specifies the preferred computing device for the segmentation task. It can be set to 'AUTO', 'Prefer GPU', or 'CPU' to optimize performance based on available hardware."
+    }
+]

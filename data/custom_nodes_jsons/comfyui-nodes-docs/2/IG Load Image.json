@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the IG Load Image node in ComfyUI?",
+        "answer": "The IG Load Image node in ComfyUI is designed to load images from a specified directory and provide image preprocessing functions such as orientation correction, conversion to specific color modes, and normalization."
+    },
+    {
+        "question": "What is the role of the image_path parameter in the IG Load Image node?",
+        "answer": "The image_path parameter specifies the path of the image to be loaded. It plays a key role in determining which image file will be processed, affecting the execution of the node and the final image data."
+    },
+    {
+        "question": "What does the image parameter in the output of IG Load Image node represent?",
+        "answer": "The image parameter represents the preprocessed image data that can be used for further processing or analysis."
+    },
+    {
+        "question": "What is the purpose of the mask parameter in the output of IG Load Image node?",
+        "answer": "The mask parameter provides a mask for the loaded image, which is useful for operations that require segmentation or specific region processing."
+    },
+    {
+        "question": "What is the infra type for the IG Load Image node?",
+        "answer": "The infra type for the IG Load Image node is CPU."
+    },
+    {
+        "question": "How does the IG Load Image node handle images with multiple frames?",
+        "answer": "The IG Load Image node processes each frame of the image separately, applying operations such as orientation correction and color mode conversion. It then concatenates the processed frames into a single output image and mask if there are multiple frames."
+    },
+    {
+        "question": "What does the IG Load Image node do if the image does not have an alpha channel?",
+        "answer": "If the image does not have an alpha channel, the IG Load Image node creates a mask filled with zeros of shape (64, 64) and dtype torch.float32 on the CPU."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the GeneralInversedSwitch node in ComfyUI?",
+        "answer": "The GeneralInversedSwitch node is designed to selectively process input data based on a selection parameter. It operates by iterating over a range determined by the 'select' input and conditionally adding the 'input' data to a result list. The node returns the original input when the iteration count matches the 'select' value, otherwise, it adds 'None'. This node is particularly useful in scenarios requiring conditional data display or filtering without altering the original data structure."
+    },
+    {
+        "question": "What is the significance of the 'select' parameter in the GeneralInversedSwitch node?",
+        "answer": "The 'select' parameter is crucial in the operation of the GeneralInversedSwitch node as it determines the number of iterations in the node's operation. It is essential because it controls the flow of data through the node, enabling conditional processing based on the iteration index."
+    },
+    {
+        "question": "What role does the 'input' parameter play in the GeneralInversedSwitch node?",
+        "answer": "The 'input' parameter represents the data that the GeneralInversedSwitch node may process and include in its output under certain conditions. Its significance lies in being the subject of the node's conditional logic, where the node decides whether to append the 'input' or 'None' based on the value of 'select'."
+    },
+    {
+        "question": "What is the function of the 'unique_id' parameter in the GeneralInversedSwitch node?",
+        "answer": "The 'unique_id' parameter serves as an identifier for the node operation. Although it does not directly impact the main functionality of the node, it may be used to track or associate the node's output with a specific instance or identifier within a broader system."
+    },
+    {
+        "question": "What does the output 'result' of the GeneralInversedSwitch node represent?",
+        "answer": "The output 'result' is a list that contains either the original 'input' data or 'None', depending on the value of the 'select' parameter and the iteration index. This output is significant as it encapsulates the decision-making process of the node, reflecting the purpose of conditionally including data."
+    },
+    {
+        "question": "What infrastructure type does the GeneralInversedSwitch node use?",
+        "answer": "The GeneralInversedSwitch node uses the CPU infrastructure type."
+    },
+    {
+        "question": "In the source code of GeneralInversedSwitch, what does the 'doit' function do?",
+        "answer": "In the source code of GeneralInversedSwitch, the 'doit' function performs the core operation of the node. It iterates over a range determined by 'select', and for each iteration, it appends the 'input' data to the result list if the current iteration matches the 'select' value, otherwise it appends 'None'. The function then returns this list."
+    }
+]

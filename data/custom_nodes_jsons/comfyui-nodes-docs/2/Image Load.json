@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Load_Image node in ComfyUI?",
+        "answer": "The WAS_Load_Image node is designed to efficiently load and process images from a specified path or URL in ComfyUI. It handles image conversion to the desired format and provides additional features such as creating masks from the alpha channel and extracting filenames."
+    },
+    {
+        "question": "What are the required input parameters for the WAS_Load_Image node?",
+        "answer": "The required input parameters for the WAS_Load_Image node are 'image_path', which specifies the source of the image to be loaded (either a local file path or a URL), and 'RGBA', which determines whether the image should be loaded with an alpha channel."
+    },
+    {
+        "question": "What does the 'RGBA' parameter in the WAS_Load_Image node specify?",
+        "answer": "The 'RGBA' parameter in the WAS_Load_Image node specifies whether the image should be loaded with an alpha channel, which affects the transparency of the image and may be important for certain image processing tasks."
+    },
+    {
+        "question": "What is the purpose of the 'filename_text_extension' parameter in the WAS_Load_Image node?",
+        "answer": "The 'filename_text_extension' parameter in the WAS_Load_Image node determines whether the file extension should be included in the filename text output, which may be important for downstream processes that require specific naming conventions."
+    },
+    {
+        "question": "What are the output types of the WAS_Load_Image node?",
+        "answer": "The output types of the WAS_Load_Image node are 'image', which provides the loaded and processed image data, 'mask', which is derived from the image's alpha channel (if present) to differentiate transparent areas, and 'filename_text', which is the textual representation of the image filename."
+    },
+    {
+        "question": "What is the infra type used by the WAS_Load_Image node?",
+        "answer": "The WAS_Load_Image node uses the 'CPU' infra type."
+    },
+    {
+        "question": "How does the WAS_Load_Image node handle loading images from URLs?",
+        "answer": "If the 'image_path' parameter starts with 'http', the WAS_Load_Image node uses the 'download_image' function to retrieve the image from the specified URL. It sends a GET request to the URL, and if successful, opens the image using the Image module and returns it for further processing."
+    }
+]

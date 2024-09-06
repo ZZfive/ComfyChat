@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Inference_Core_LayeredDiffusionDecodeSplit node in ComfyUI?",
+        "answer": "The Inference_Core_LayeredDiffusionDecodeSplit node in ComfyUI is used to decode images through a layered diffusion process, specially designed for handling segmented image data."
+    },
+    {
+        "question": "What are the required input types for the Inference_Core_LayeredDiffusionDecodeSplit node?",
+        "answer": "The required input types for the Inference_Core_LayeredDiffusionDecodeSplit node are samples, images, frames, sd_version, and sub_batch_size."
+    },
+    {
+        "question": "What does the 'frames' input parameter specify in the Inference_Core_LayeredDiffusionDecodeSplit node?",
+        "answer": "The 'frames' input parameter in the Inference_Core_LayeredDiffusionDecodeSplit node specifies the number of frames or segments the image is divided into, which is crucial for determining how the image is processed and decoded."
+    },
+    {
+        "question": "What is the output type of the Inference_Core_LayeredDiffusionDecodeSplit node?",
+        "answer": "The output type of the Inference_Core_LayeredDiffusionDecodeSplit node is an image (Comfy dtype: IMAGE, Python dtype: torch.Tensor), which represents the decoded image processed through the layered diffusion method."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the Inference_Core_LayeredDiffusionDecodeSplit node?",
+        "answer": "The recommended infrastructure type for running the Inference_Core_LayeredDiffusionDecodeSplit node is GPU."
+    },
+    {
+        "question": "What is the maximum number of frames allowed in the Inference_Core_LayeredDiffusionDecodeSplit node?",
+        "answer": "The maximum number of frames allowed in the Inference_Core_LayeredDiffusionDecodeSplit node is 3, as defined by the MAX_FRAMES constant in the source code."
+    },
+    {
+        "question": "How does the Inference_Core_LayeredDiffusionDecodeSplit node handle the decoding process for different frames?",
+        "answer": "The Inference_Core_LayeredDiffusionDecodeSplit node handles the decoding process for different frames by slicing the samples data, processing each frame separately, and returning a tuple of decoded images based on the number of frames specified."
+    }
+]

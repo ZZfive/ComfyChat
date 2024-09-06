@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageDuplicator node in ComfyUI?",
+        "answer": "The ImageDuplicator node in ComfyUI is designed to duplicate each image in a given batch, effectively increasing the number of images by repeating them. Its role is to expand datasets or prepare data for processes that require multiple instances of the same image."
+    },
+    {
+        "question": "What are the required input types for the ImageDuplicator node?",
+        "answer": "The required input types for the ImageDuplicator node are images (Comfy dtype: IMAGE, Python dtype: torch.Tensor), which are the images to be duplicated, and dup_times (Comfy dtype: INT, Python dtype: int), which specifies the number of times each image should be duplicated."
+    },
+    {
+        "question": "What does the dup_times parameter control in the ImageDuplicator node?",
+        "answer": "The dup_times parameter in the ImageDuplicator node controls the extent of duplication, determining the total number of images produced by the node."
+    },
+    {
+        "question": "What is the output type of the ImageDuplicator node?",
+        "answer": "The output type of the ImageDuplicator node is image (Comfy dtype: IMAGE, Python dtype: torch.Tensor), which contains the original images and their copies, effectively increasing the total number of images."
+    },
+    {
+        "question": "Is the ImageDuplicator node an output node in ComfyUI?",
+        "answer": "No, the ImageDuplicator node is not an output node in ComfyUI."
+    },
+    {
+        "question": "What infrastructure type does the ImageDuplicator node use?",
+        "answer": "The ImageDuplicator node uses the GPU infrastructure type."
+    },
+    {
+        "question": "What does the run function in the ImageDuplicator class do?",
+        "answer": "The run function in the ImageDuplicator class takes an input image tensor and duplicates it multiple times based on the dup_times parameter. It then concatenates the duplicated tensors and returns the concatenated image tensor with dimensions (batch_size * dup_times, channels, height, width)."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is cg-noise in ComfyUI?",
+        "answer": "In ComfyUI, cg-noise is a custom node that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise used for image generation."
+    },
+    {
+        "question": "How does the cg-noise node generate variations in images in ComfyUI?",
+        "answer": "The cg-noise node in ComfyUI generates variations in images by using a weight 'x' and two seeds. It calculates the noise based on the formula: random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)."
+    },
+    {
+        "question": "What are the inputs required for the cg-noise node in ComfyUI?",
+        "answer": "The cg-noise node in ComfyUI requires two inputs: 'x', which is a float value representing the weight, and 'variation_seed', which is an integer value."
+    },
+    {
+        "question": "What are the outputs produced by the cg-noise node in ComfyUI?",
+        "answer": "The cg-noise node in ComfyUI produces one output: 'noise', which is the generated noise based on the input weight 'x' and the 'variation_seed'."
+    },
+    {
+        "question": "Can the cg-noise node in ComfyUI be used to generate large variations in images?",
+        "answer": "No, the cg-noise node in ComfyUI is designed to generate only small variations in the initial noise used for image generation."
+    },
+    {
+        "question": "Is the 'seed' input required for the cg-noise node in ComfyUI?",
+        "answer": "No, the 'seed' input is not required for the cg-noise node in ComfyUI. If not provided, a random seed will be used."
+    },
+    {
+        "question": "What is the purpose of the cg-noise node in ComfyUI?",
+        "answer": "The purpose of the cg-noise node in ComfyUI is to provide a way to introduce small variations in the initial noise used for image generation, allowing for more diverse and interesting results."
+    }
+]

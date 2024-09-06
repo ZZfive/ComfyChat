@@ -1,0 +1,30 @@
+[
+    {
+        "question": "什么是 ImageBatchMulti 节点?",
+        "answer": "ImageBatchMulti 节点是一种自定义节点，用于将多个输入图像组合成一个单一批次，方便进行批量图像处理。"
+    },
+    {
+        "question": "ImageBatchMulti 节点的输入类型有哪些?",
+        "answer": "ImageBatchMulti 节点有两个必需的输入类型：inputcount（INT类型，指定批次中的图像数量）和 image_i（IMAGE类型，从 'image_1' 到 'image_{inputcount}'，表示要包含在批次中的图像）。"
+    },
+    {
+        "question": "ImageBatchMulti 节点的输出类型是什么?",
+        "answer": "ImageBatchMulti 节点的输出类型是 images（IMAGE类型），它是一个由单个输入图像聚合而成的组合图像批次。"
+    },
+    {
+        "question": "ImageBatchMulti 节点支持的基础设施类型是什么?",
+        "answer": "ImageBatchMulti 节点支持的基础设施类型是 GPU。"
+    },
+    {
+        "question": "如何使用 ImageBatchMulti 节点?",
+        "answer": "使用 ImageBatchMulti 节点时，你可以通过设置 'inputcount' 来指定批次中的图像数量，然后点击更新。节点会根据 'inputcount' 动态添加 'image_i' 输入，从而构成图像的组合批次。"
+    },
+    {
+        "question": "ImageBatchMulti 节点的 'inputcount' 参数有什么限制?",
+        "answer": "ImageBatchMulti 节点的 'inputcount' 参数的默认值为 2，最小值为 2，最大值为 1000，步长为 1。"
+    },
+    {
+        "question": "ImageBatchMulti 节点的核心功能是通过什么实现的?",
+        "answer": "ImageBatchMulti 节点的核心功能是通过 'combine' 方法实现的，该方法接受 'inputcount' 和 '**kwargs' 作为参数，使用 ImageBatch 节点将多个输入图像组合成一个单一批次。"
+    }
+]

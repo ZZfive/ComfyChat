@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the GrowMask node in ComfyUI?",
+        "answer": "The GrowMask node in ComfyUI is designed to manipulate binary masks by expanding or eroding their boundaries. It provides advanced functionality for mask modification, which is crucial for applications that require precise control over the shape and size of masked areas."
+    },
+    {
+        "question": "What is the 'mask' parameter in the GrowMask node?",
+        "answer": "The 'mask' parameter in the GrowMask node is the binary mask that is to be expanded or eroded. It plays a central role in the node's operation as it directly affects the output shape and quality of the mask."
+    },
+    {
+        "question": "What does the 'expand' parameter in the GrowMask node determine?",
+        "answer": "The 'expand' parameter in the GrowMask node determines the amount of expansion or erosion applied to the mask. Positive values lead to dilation, while negative values result in erosion. It significantly influences the final dimensions and details of the mask."
+    },
+    {
+        "question": "What is the effect of setting the 'tapered_corners' parameter to True in the GrowMask node?",
+        "answer": "When set to True, the 'tapered_corners' parameter applies a specific erosion pattern to the corners of the mask. This is important for achieving visually appealing mask shapes with rounded corners."
+    },
+    {
+        "question": "What does the 'expanded_mask' output represent in the GrowMask node?",
+        "answer": "The 'expanded_mask' output represents the result of the mask expansion or erosion process. It is important as it represents the final state of the mask after the node's operation."
+    },
+    {
+        "question": "What infrastructure type does the GrowMask node use?",
+        "answer": "The GrowMask node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the GrowMask node perform mask expansion or erosion in its source code?",
+        "answer": "In its source code, the GrowMask node performs mask expansion or erosion using a kernel and the scipy.ndimage.grey_erosion or scipy.ndimage.grey_dilation functions. It iterates over the absolute value of the 'expand' parameter and applies the appropriate operation based on whether 'expand' is negative or positive."
+    }
+]

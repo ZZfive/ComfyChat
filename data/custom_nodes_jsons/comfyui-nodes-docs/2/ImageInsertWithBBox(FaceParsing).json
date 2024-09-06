@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageInsertWithBBox node in ComfyUI?",
+        "answer": "The ImageInsertWithBBox node in ComfyUI is designed to insert one image into another image at a specified bounding box location, which is crucial for applications such as face parsing and object tracking."
+    },
+    {
+        "question": "What are the required input types for the ImageInsertWithBBox node?",
+        "answer": "The required input types for the ImageInsertWithBBox node are 'bbox' (BBOX dtype in Comfy, torch.Tensor in Python), 'image_src' (IMAGE dtype in Comfy, torch.Tensor in Python), and 'image' (IMAGE dtype in Comfy, torch.Tensor in Python)."
+    },
+    {
+        "question": "What does the 'bbox' parameter define in the ImageInsertWithBBox node?",
+        "answer": "The 'bbox' parameter in the ImageInsertWithBBox node is crucial for defining the region where the image will be inserted. It directly affects the cropping and placement of the image in the target, ensuring precise positioning and integration."
+    },
+    {
+        "question": "How does the ImageInsertWithBBox node handle resizing and padding of the source image?",
+        "answer": "The ImageInsertWithBBox node resizes the source image to fit the specified bounding box and pads it to match the dimensions of the target image, ensuring seamless insertion."
+    },
+    {
+        "question": "What is the output type of the ImageInsertWithBBox node?",
+        "answer": "The output type of the ImageInsertWithBBox node is 'result' (IMAGE dtype in Comfy, torch.Tensor in Python), which represents the final image after the source image has been inserted into the specified bounding box."
+    },
+    {
+        "question": "What infrastructure type is recommended for the ImageInsertWithBBox node?",
+        "answer": "The recommended infrastructure type for the ImageInsertWithBBox node is GPU."
+    },
+    {
+        "question": "How does the ImageInsertWithBBox node integrate the source and target images?",
+        "answer": "The ImageInsertWithBBox node integrates the source and target images by creating a mask based on the bounding box, resizing the source image to fit the bounding box, padding the resized image, and then combining the padded image with the target image using the mask."
+    }
+]

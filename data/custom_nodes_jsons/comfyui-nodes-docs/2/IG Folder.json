@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the IG Folder node in ComfyUI?",
+        "answer": "The IG Folder node in ComfyUI is used to build directory paths based on a specified parent directory and folder name. It simplifies the complexity of path operations and provides a straightforward way to generate the required paths for input or output operations within the file system."
+    },
+    {
+        "question": "What are the required input types for the IG Folder node?",
+        "answer": "The required input types for the IG Folder node are 'folder_parent' (which specifies the parent directory type and can be either an input folder or an output folder) and 'folder_name' (which defines the folder name to be appended to the parent directory path)."
+    },
+    {
+        "question": "What is the output type of the IG Folder node?",
+        "answer": "The output type of the IG Folder node is a string that represents the fully constructed directory path, which can be directly used for file system operations."
+    },
+    {
+        "question": "What is the infra type for the IG Folder node?",
+        "answer": "The infra type for the IG Folder node is CPU."
+    },
+    {
+        "question": "In the source code of the IG Folder node, how is the parent directory determined based on the 'folder_parent' input?",
+        "answer": "In the source code of the IG Folder node, the parent directory is determined based on the 'folder_parent' input by assigning 'folder_paths.input_directory' if 'folder_parent' is 'input folder', and 'folder_paths.output_directory' otherwise."
+    },
+    {
+        "question": "How is the complete directory path constructed in the IG Folder node?",
+        "answer": "The complete directory path is constructed in the IG Folder node by joining the parent directory (determined based on the 'folder_parent' input) and the 'folder_name' using 'os.path.join(parent, folder_name)'."
+    },
+    {
+        "question": "What is the category of the IG Folder node in ComfyUI?",
+        "answer": "The category of the IG Folder node in ComfyUI is '🐓 IG Nodes/IO'."
+    }
+]

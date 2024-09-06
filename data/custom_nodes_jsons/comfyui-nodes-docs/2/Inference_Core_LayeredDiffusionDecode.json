@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Inference_Core_LayeredDiffusionDecode节点的主要作用是什么？",
+        "answer": "Inference_Core_LayeredDiffusionDecode节点专门用于解码分层扩散过程，通过一系列扩散步骤将采样数据转换为图像。它利用先进技术高效处理和解码多层扩散，优化高质量图像的生成。"
+    },
+    {
+        "question": "Inference_Core_LayeredDiffusionDecode节点的输入参数samples有什么作用？",
+        "answer": "samples参数是要解码为图像的采样数据，作为扩散过程的初始输入。这个参数是整个解码过程的起点，直接影响最终生成图像的质量和特征。"
+    },
+    {
+        "question": "Inference_Core_LayeredDiffusionDecode节点的输入参数images是什么类型的数据？",
+        "answer": "images参数是一个图像张量，将通过扩散步骤进行处理，作为解码操作的基础。这些图像为解码过程提供了视觉上下文，影响最终输出的细节和风格。"
+    },
+    {
+        "question": "Inference_Core_LayeredDiffusionDecode节点如何设置扩散模型版本？",
+        "answer": "通过输入参数sd_version指定要使用的扩散模型版本，影响解码行为和输出质量。不同版本的模型可能会产生不同的解码结果，因此选择适当的版本对于满足特定需求至关重要。"
+    },
+    {
+        "question": "Inference_Core_LayeredDiffusionDecode节点的sub_batch_size参数有什么作用？",
+        "answer": "sub_batch_size参数表示处理的子批次大小，用于优化计算效率和资源使用。合理设置这个参数可以在保证输出质量的同时，提高处理速度和内存利用率。"
+    },
+    {
+        "question": "Inference_Core_LayeredDiffusionDecode节点的输出包括哪些类型？",
+        "answer": "Inference_Core_LayeredDiffusionDecode节点的输出包括从解码的扩散过程生成的图像image和与解码图像相关的alpha遮罩mask。图像是主要输出，反映了输入样本和处理参数的综合效果；遮罩提供了透明度信息，可用于增强输出图像的应用灵活性。"
+    },
+    {
+        "question": "Inference_Core_LayeredDiffusionDecode节点支持哪些基础设施类型？",
+        "answer": "Inference_Core_LayeredDiffusionDecode节点支持的基础设施类型为GPU。"
+    }
+]

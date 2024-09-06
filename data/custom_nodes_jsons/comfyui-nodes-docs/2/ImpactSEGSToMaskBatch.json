@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SEGSToMaskBatch node in ComfyUI?",
+        "answer": "The SEGSToMaskBatch node in ComfyUI is designed to convert segmentation data into a batch of masks, acting as an important intermediary in the image processing workflow by abstracting the complexity of handling individual segmentations and allowing for streamlined batch processing of masks."
+    },
+    {
+        "question": "What is the significance of the 'segs' parameter in the SEGSToMaskBatch node?",
+        "answer": "The 'segs' parameter is crucial for the operation of the SEGSToMaskBatch node as it provides the segmentation data that needs to be converted into masks. This input significantly influences the execution of the node and the quality of the generated masks."
+    },
+    {
+        "question": "What is the primary output of the SEGSToMaskBatch node?",
+        "answer": "The primary output of the SEGSToMaskBatch node is 'mask_batch', which is a collection of masks derived from the input segmentation data. It represents the main outcome of the node and is important for further analysis or processing in the workflow."
+    },
+    {
+        "question": "What is the infra type recommended for the SEGSToMaskBatch node?",
+        "answer": "The recommended infra type for the SEGSToMaskBatch node is CPU."
+    },
+    {
+        "question": "How does the SEGSToMaskBatch node convert segmentation data into masks?",
+        "answer": "The SEGSToMaskBatch node converts segmentation data into masks by first using `core.segs_to_masklist(segs)` to generate a list of masks, then applying `utils.make_3d_mask(mask)` to each mask to make them 3D, and finally concatenating these masks using `torch.concat(masks)` to form a batch."
+    },
+    {
+        "question": "What is the return type of the 'doit' function in the SEGSToMaskBatch node?",
+        "answer": "The return type of the 'doit' function in the SEGSToMaskBatch node is a tuple containing a single element, `mask_batch`, which is of type `torch.Tensor`."
+    },
+    {
+        "question": "What are the input and output data types of the SEGSToMaskBatch node in ComfyUI?",
+        "answer": "The input data type for the SEGSToMaskBatch node is 'SEGS' (List[NamedTuple]) for the 'segs' parameter. The output data type is 'MASK' (torch.Tensor) for the 'mask_batch' output."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageAndMaskPreview node in ComfyUI?",
+        "answer": "The ImageAndMaskPreview node in ComfyUI is designed to generate previews for images with the optional application of masks. It can adjust the opacity and color of the mask before overlaying it onto the image, or return just the image or mask when one is not provided."
+    },
+    {
+        "question": "What are the required input types for the ImageAndMaskPreview node?",
+        "answer": "The required input types for the ImageAndMaskPreview node are mask_opacity (FLOAT), mask_color (STRING), and pass_through (BOOLEAN)."
+    },
+    {
+        "question": "What are the optional input types for the ImageAndMaskPreview node?",
+        "answer": "The optional input types for the ImageAndMaskPreview node are image (IMAGE) and mask (MASK)."
+    },
+    {
+        "question": "What does the pass_through input determine in the ImageAndMaskPreview node?",
+        "answer": "The pass_through input in the ImageAndMaskPreview node determines whether to directly return the processed preview or save it to a file. When set to true, the preview is returned; otherwise, it is saved."
+    },
+    {
+        "question": "What output types does the ImageAndMaskPreview node produce?",
+        "answer": "The ImageAndMaskPreview node produces two output types: composite (IMAGE) and ui. The composite output returns an image with the mask applied at the specified opacity and color adjustments when both an image and a mask are provided. The ui output provides a UI element displaying the results based on the inputs."
+    },
+    {
+        "question": "How does the ImageAndMaskPreview node handle cases where only an image or mask is provided?",
+        "answer": "If only an image is provided to the ImageAndMaskPreview node, it returns the image as the preview. If only a mask is provided, it converts the mask into a preview format."
+    },
+    {
+        "question": "What is the infra type for the ImageAndMaskPreview node?",
+        "answer": "The infra type for the ImageAndMaskPreview node is GPU."
+    }
+]

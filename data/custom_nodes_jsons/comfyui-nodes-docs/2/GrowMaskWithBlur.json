@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the GrowMaskWithBlur node in ComfyUI?",
+        "answer": "The GrowMaskWithBlur node in ComfyUI is used to process a single mask or a batch of masks. It can expand or shrink the masks, optionally apply a blur effect, and perform various other transformations such as flipping, filling holes, and frame interpolation."
+    },
+    {
+        "question": "What are the required input types for the GrowMaskWithBlur node?",
+        "answer": "The required input types for the GrowMaskWithBlur node are: mask (the input mask or mask batch), expand (determines the degree to which the mask will be expanded or contracted), incremental_expandrate (specifies the rate at which the expand parameter is adjusted per frame), tapered_corners (enables gradual corners when expanding or contracting the mask), flip_input (flips the input mask horizontally before any other processing), blur_radius (applies a blur effect to the mask with a specified radius), lerp_alpha (alpha value for linear interpolation between frames), and decay_factor (decay factor applied to the mask between frames)."
+    },
+    {
+        "question": "How does the GrowMaskWithBlur node handle the expansion or contraction of masks?",
+        "answer": "The GrowMaskWithBlur node handles the expansion or contraction of masks based on the 'expand' parameter. Positive values expand the mask, while negative values contract it. The node uses a kernel to perform the expansion or contraction process iteratively for the absolute value of the rounded 'expand' parameter."
+    },
+    {
+        "question": "What is the purpose of the 'tapered_corners' parameter in the GrowMaskWithBlur node?",
+        "answer": "The 'tapered_corners' parameter in the GrowMaskWithBlur node, when enabled, applies gradual corners to the mask during the expansion or contraction process. This affects the shape of the processed mask."
+    },
+    {
+        "question": "How does the GrowMaskWithBlur node handle filling holes in the mask?",
+        "answer": "The GrowMaskWithBlur node has an optional 'fill_holes' parameter. When enabled, it fills any holes in the mask using the scipy.ndimage.binary_fill_holes function. This is useful for creating more solid or cohesive mask shapes."
+    },
+    {
+        "question": "What does the 'blur_radius' parameter do in the GrowMaskWithBlur node?",
+        "answer": "The 'blur_radius' parameter in the GrowMaskWithBlur node applies a blur effect to the mask using the specified radius. If the value is greater than 0, the blur effect is activated. The node converts the mask tensor to a PIL image, applies Gaussian blur, and then converts it back to a tensor."
+    },
+    {
+        "question": "What output types does the GrowMaskWithBlur node produce?",
+        "answer": "The GrowMaskWithBlur node produces two output types: 'mask' (the primary output mask after applying the specified transformations) and 'mask_inverted' (an inverted version of the primary output mask)."
+    }
+]

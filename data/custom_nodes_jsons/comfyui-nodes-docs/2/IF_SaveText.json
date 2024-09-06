@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the IF_SaveText node in ComfyUI?",
+        "answer": "The IF_SaveText node in ComfyUI is designed to process and optionally save text data related to interactions, such as questions, answers, and negative feedback. It supports multiple file formats and enhances data management and retrieval capabilities for further analysis or record-keeping."
+    },
+    {
+        "question": "What are the required input types for the IF_SaveText node?",
+        "answer": "The required input types for the IF_SaveText node are 'question_input' (the question part of the interaction), 'response_input' (the answer to the question), and 'negative_input' (negative feedback or input related to the interaction)."
+    },
+    {
+        "question": "What optional input types does the IF_SaveText node accept?",
+        "answer": "The IF_SaveText node accepts three optional input types: 'save_file' (a boolean flag indicating whether to save the interaction data to a file), 'file_format' (specifying the file format for saving the interaction data), and 'save_mode' (determining how the file should be saved)."
+    },
+    {
+        "question": "What output types does the IF_SaveText node produce?",
+        "answer": "The IF_SaveText node produces four output types: 'Question' (the question part of the interaction), 'Response' (the answer part of the interaction), 'Negative' (negative feedback or input related to the interaction), and 'Turn' (a formatted string containing the interaction's unique identifier, question, answer, and negative input)."
+    },
+    {
+        "question": "How does the IF_SaveText node handle file saving based on the 'save_mode' input?",
+        "answer": "The IF_SaveText node determines the file mode for saving based on the 'save_mode' input. If 'save_mode' is set to 'create' or 'overwrite', the file mode will be 'w' (write mode). Otherwise, if 'save_mode' is set to 'append', the file mode will be 'a' (append mode)."
+    },
+    {
+        "question": "What file formats does the IF_SaveText node support for saving interaction data?",
+        "answer": "The IF_SaveText node supports three file formats for saving interaction data: CSV, TXT, and JSON."
+    },
+    {
+        "question": "How does the IF_SaveText node generate unique identifiers for each interaction?",
+        "answer": "The IF_SaveText node generates unique identifiers for each interaction using the 'uuid.uuid4()' function, which creates a random UUID (Universally Unique Identifier)."
+    }
+]

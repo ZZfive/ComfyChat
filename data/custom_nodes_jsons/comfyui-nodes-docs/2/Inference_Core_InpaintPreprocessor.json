@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Inpaint Preprocessor node in ComfyUI?",
+        "answer": "The Inpaint Preprocessor node in ComfyUI is designed for preprocessing images for inpainting tasks. It applies a mask to identify the areas that need to be repaired, effectively setting the masked pixels to a specific value to prepare for subsequent processing."
+    },
+    {
+        "question": "What are the required input types for the Inpaint Preprocessor node?",
+        "answer": "The required input types for the Inpaint Preprocessor node are 'image' and 'mask'. The 'image' parameter represents the input image to be preprocessed, and the 'mask' parameter specifies the areas in the input image that need to be repaired."
+    },
+    {
+        "question": "What is the output type of the Inpaint Preprocessor node?",
+        "answer": "The output type of the Inpaint Preprocessor node is 'image'. It outputs a preprocessed image where the specified areas have been masked, ready for subsequent processing steps."
+    },
+    {
+        "question": "What is the infra type for the Inpaint Preprocessor node?",
+        "answer": "The infra type for the Inpaint Preprocessor node is 'GPU'."
+    },
+    {
+        "question": "What is the category of the Inpaint Preprocessor node in ComfyUI?",
+        "answer": "The category of the Inpaint Preprocessor node in ComfyUI is 'ControlNet Preprocessors/others'."
+    },
+    {
+        "question": "How does the Inpaint Preprocessor node modify the input image?",
+        "answer": "The Inpaint Preprocessor node modifies the input image by first interpolating the mask to match the size of the image using bilinear mode. Then, it expands the mask and sets the masked pixels in the image to -1.0, indicating them as masked pixels."
+    },
+    {
+        "question": "What does the Inpaint Preprocessor node do with the mask input?",
+        "answer": "The Inpaint Preprocessor node takes the mask input, reshapes it, interpolates it to match the size of the image, and then expands it to have the same number of channels as the image. The mask is used to identify the areas that need to be repaired in the image."
+    }
+]

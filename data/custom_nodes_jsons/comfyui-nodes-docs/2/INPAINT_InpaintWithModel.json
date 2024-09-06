@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the InpaintWithModel node in ComfyUI?",
+        "answer": "The InpaintWithModel node in ComfyUI uses deep learning models to perform image inpainting, effectively filling in missing or masked areas of an image and generating content that adapts to the surrounding content."
+    },
+    {
+        "question": "What are the required input types for the InpaintWithModel node?",
+        "answer": "The required input types for the InpaintWithModel node are: inpaint_model (INPAINT_MODEL in ComfyUI, PyTorchModel in Python), image (IMAGE in ComfyUI, torch.Tensor in Python), and mask (MASK in ComfyUI, torch.Tensor in Python)."
+    },
+    {
+        "question": "What does the inpaint_model input define for the InpaintWithModel node?",
+        "answer": "The inpaint_model input defines the specific deep learning architecture used to generate the inpainting content for the InpaintWithModel node. The model architecture directly affects the quality and accuracy of the inpainting results."
+    },
+    {
+        "question": "How does the mask input guide the InpaintWithModel node?",
+        "answer": "The mask input defines the areas of the image that need to be inpainted. It is a crucial parameter as it directs the model to focus on specific regions, ensuring that the inpainting is targeted and relevant."
+    },
+    {
+        "question": "What is the output type of the InpaintWithModel node?",
+        "answer": "The output type of the InpaintWithModel node is an output_image (IMAGE in ComfyUI, torch.Tensor in Python), which represents the result of the inpainting process with the originally masked or missing areas filled with content matching the surrounding areas."
+    },
+    {
+        "question": "What infra type is recommended for the InpaintWithModel node?",
+        "answer": "The recommended infra type for the InpaintWithModel node is GPU."
+    },
+    {
+        "question": "How does the InpaintWithModel node handle different model architectures?",
+        "answer": "The InpaintWithModel node adapts to different model architectures by checking the model_arch attribute of the inpaint_model input. It sets the required_size based on the model architecture (512 for 'MAT' and 256 for 'LaMa') and raises a ValueError if the model_arch is unknown."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "GroupChatAdvanced节点提供了什么功能？",
+        "answer": "GroupChatAdvanced节点提供了一个先进的群聊功能，可以协调多个代理之间的对话。它包含了消息过滤、发言者选择和自定义聊天介绍等特性，以增强互动的动态性。"
+    },
+    {
+        "question": "GroupChatAdvanced节点需要哪些必需的输入类型?",
+        "answer": "GroupChatAdvanced节点需要的必需输入类型包括group_manager、init_message、select_speaker_message_template、select_speaker_prompt_template、summary_method、max_turns、func_call_filter、speaker_selection_method、allow_repeat_speaker、send_introductions、role_for_select_speaker_messages和clear_history。"
+    },
+    {
+        "question": "GroupChatAdvanced节点中的select_speaker_message_template输入类型有什么作用？",
+        "answer": "select_speaker_message_template输入类型用于自定义选择下一位发言者的消息，在聊天中提供上下文和指示。字符串值将被转换为f-string, 使用'{roles}'输出代理及其角色的描述，以及'{agentlist}'表示方括号内的代理名称的逗号分隔列表。"
+    },
+    {
+        "question": "GroupChatAdvanced节点中的speaker_selection_method输入类型有什么作用?",
+        "answer": "speaker_selection_method输入类型用于定义选择下一位发言者的策略，促进有组织和动态的对话流程。可用的策略包括自动、手动、随机和轮流。"
+    },
+    {
+        "question": "GroupChatAdvanced节点中的send_introductions输入类型有什么作用？",
+        "answer": "send_introductions输入类型用于选择在聊天开始时发送介绍性消息，为对话设定舞台。"
+    },
+    {
+        "question": "GroupChatAdvanced节点的输出类型是什么?",
+        "answer": "GroupChatAdvanced节点的输出类型包括chat_history和summary。chat_history是聊天会话期间交换的消息的完整历史记录，summary是聊天会话的摘要，捕捉对话的精髓和关键点。"
+    },
+    {
+        "question": "GroupChatAdvanced节点如何处理聊天的启动和进行？",
+        "answer": "GroupChatAdvanced节点首先创建一个AutogenGroupChat对象，用于管理聊天。然后使用GroupChatManager管理聊天。最后，使用第一个代理的initiate_chat方法启动聊天，得到聊天结果。结果包括聊天历史和摘要。"
+    }
+]

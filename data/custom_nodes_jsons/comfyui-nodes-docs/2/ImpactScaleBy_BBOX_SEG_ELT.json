@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SEG_ELT_BBOX_ScaleBy node in ComfyUI?",
+        "answer": "The SEG_ELT_BBOX_ScaleBy node in ComfyUI is designed to adjust the scale of a segmentation element (SEG_ELT) by a specified factor. It does this by scaling the bounding box of the SEG_ELT and then applying zero padding to the mask to maintain the integrity of the segmentation."
+    },
+    {
+        "question": "What are the required input types for the SEG_ELT_BBOX_ScaleBy node?",
+        "answer": "The required input types for the SEG_ELT_BBOX_ScaleBy node are 'seg', which is the segmentation element to be scaled, and 'scale_by', which is the floating-point factor that determines the scaling of the SEG_ELT's bounding box."
+    },
+    {
+        "question": "How does the 'scale_by' parameter affect the SEG_ELT in the SEG_ELT_BBOX_ScaleBy node?",
+        "answer": "The 'scale_by' parameter in the SEG_ELT_BBOX_ScaleBy node determines the factor by which the bounding box of the SEG_ELT is scaled. It directly affects the resolution and coverage area of the final output."
+    },
+    {
+        "question": "What is the output type of the SEG_ELT_BBOX_ScaleBy node?",
+        "answer": "The output type of the SEG_ELT_BBOX_ScaleBy node is 'scaled_seg', which is the result of applying the scaling operation to the input SEG_ELT. It includes the scaled bounding box and the adjusted mask."
+    },
+    {
+        "question": "How does the SEG_ELT_BBOX_ScaleBy node maintain the integrity of the segmentation during scaling?",
+        "answer": "The SEG_ELT_BBOX_ScaleBy node maintains the integrity of the segmentation during scaling by applying zero padding to the mask. This ensures that the segmentation is resized correctly without losing any information in the process."
+    },
+    {
+        "question": "What infrastructure type does the SEG_ELT_BBOX_ScaleBy node use?",
+        "answer": "The SEG_ELT_BBOX_ScaleBy node uses the CPU infrastructure type."
+    },
+    {
+        "question": "What does the 'fill_zero_outside_bbox' function do in the SEG_ELT_BBOX_ScaleBy node?",
+        "answer": "The 'fill_zero_outside_bbox' function in the SEG_ELT_BBOX_ScaleBy node is used to apply zero padding outside the bounding box of the segmentation element. It ensures that the area outside the bounding box is filled with zeros, maintaining the integrity of the segmentation during scaling."
+    }
+]

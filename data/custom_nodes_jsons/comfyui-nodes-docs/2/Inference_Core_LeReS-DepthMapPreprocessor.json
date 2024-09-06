@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Inference_Core_LeReS-DepthMapPreprocessor节点的主要功能是什么？",
+        "answer": "Inference_Core_LeReS-DepthMapPreprocessor节点利用LeReS算法对输入图像进行预处理，以生成深度图。它可以通过深度估计增强过程和特定的调整来增强图像深度感知，例如移除最近的物体或背景，旨在提高深度质量以进行进一步处理或可视化。"
+    },
+    {
+        "question": "Inference_Core_LeReS-DepthMapPreprocessor节点接受哪些必需的输入类型？",
+        "answer": "Inference_Core_LeReS-DepthMapPreprocessor节点要求输入一个image参数，表示需要进行深度图生成处理的输入图像。"
+    },
+    {
+        "question": "Inference_Core_LeReS-DepthMapPreprocessor节点的可选输入参数有哪些？",
+        "answer": "Inference_Core_LeReS-DepthMapPreprocessor节点的可选输入参数包括：rm_nearest（用于在深度图中移除最近物体的阈值）、rm_background（定义深度图中背景移除的阈值）、boost（启用或禁用深度估计的增强模式）和resolution（生成深度图的分辨率）。"
+    },
+    {
+        "question": "Inference_Core_LeReS-DepthMapPreprocessor节点的输出类型是什么？",
+        "answer": "Inference_Core_LeReS-DepthMapPreprocessor节点的输出类型是一个image，即处理后的深度图图像，已针对进一步的计算任务或可视化进行了优化。"
+    },
+    {
+        "question": "Inference_Core_LeReS-DepthMapPreprocessor节点的实现代码中使用了哪个深度估计模型？",
+        "answer": "在Inference_Core_LeReS-DepthMapPreprocessor节点的实现代码中，使用了LeresDetector深度估计模型。"
+    },
+    {
+        "question": "Inference_Core_LeReS-DepthMapPreprocessor节点的作用类别是什么？",
+        "answer": "Inference_Core_LeReS-DepthMapPreprocessor节点的作用类别是ControlNet Preprocessors/Normal and Depth Estimators，即用于对图像进行预处理并生成深度图的控制网预处理器。"
+    },
+    {
+        "question": "如何通过Inference_Core_LeReS-DepthMapPreprocessor节点的参数调整增强深度图的细节？",
+        "answer": "通过将Inference_Core_LeReS-DepthMapPreprocessor节点的boost参数设置为'enable'，可以显著增强深度图的细节。"
+    }
+]

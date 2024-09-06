@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Inference_Core_AnimalPosePreprocessor node in ComfyUI?",
+        "answer": "The Inference_Core_AnimalPosePreprocessor node in ComfyUI is designed to preprocess images for animal pose estimation. It uses different model formats (TorchScript, ONNX) to detect and analyze animal poses in images."
+    },
+    {
+        "question": "What are the required and optional input types for the Inference_Core_AnimalPosePreprocessor node?",
+        "answer": "The required input type is 'image' which is the original image that needs animal pose estimation. Optional input types include 'bbox_detector' for identifying animal bounding boxes, 'pose_estimator' for estimating the pose of detected animals, and 'resolution' for resizing the input image before processing."
+    },
+    {
+        "question": "What output types does the Inference_Core_AnimalPosePreprocessor node produce?",
+        "answer": "The Inference_Core_AnimalPosePreprocessor node outputs two types: 'image' which is the original image with detected animal poses highlighted, and 'pose_keypoint' which is a structured representation of the detected animal poses including keypoints and their scores."
+    },
+    {
+        "question": "Which infra type is recommended for running the Inference_Core_AnimalPosePreprocessor node?",
+        "answer": "The recommended infra type for running the Inference_Core_AnimalPosePreprocessor node is GPU."
+    },
+    {
+        "question": "What is the category of the Inference_Core_AnimalPosePreprocessor node in ComfyUI?",
+        "answer": "The Inference_Core_AnimalPosePreprocessor node belongs to the 'ControlNet Preprocessors/Faces and Poses Estimators' category in ComfyUI."
+    },
+    {
+        "question": "How does the Inference_Core_AnimalPosePreprocessor node handle different model formats for bbox_detector and pose_estimator?",
+        "answer": "The Inference_Core_AnimalPosePreprocessor node supports different model formats (TorchScript and ONNX) for bbox_detector and pose_estimator. It downloads the appropriate model based on the provided detector and estimator names and uses them for detecting animal bounding boxes and estimating poses."
+    },
+    {
+        "question": "What is the purpose of the 'resolution' parameter in the Inference_Core_AnimalPosePreprocessor node?",
+        "answer": "The 'resolution' parameter in the Inference_Core_AnimalPosePreprocessor node is used to resize the input image before processing. It affects the accuracy and performance of detection and pose estimation."
+    }
+]

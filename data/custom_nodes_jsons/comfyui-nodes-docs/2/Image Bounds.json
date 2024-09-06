@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Image_Bounds node in ComfyUI?",
+        "answer": "The WAS_Image_Bounds node in ComfyUI is designed to calculate the boundaries of an image, providing basic spatial information for various image processing tasks."
+    },
+    {
+        "question": "What is the significance of the 'image' parameter in the WAS_Image_Bounds node?",
+        "answer": "The 'image' parameter is crucial for the operation of the WAS_Image_Bounds node as it is the data source that the node will process to determine the boundaries. Without it, the node cannot execute its intended task."
+    },
+    {
+        "question": "What does the 'image_bounds' output provide?",
+        "answer": "The 'image_bounds' output provides the spatial coordinates that define the boundaries of the input image, which is essential for tasks that require spatial awareness such as cropping, resizing, or locating elements within the image."
+    },
+    {
+        "question": "What is the 'Infra type' for the WAS_Image_Bounds node?",
+        "answer": "The 'Infra type' for the WAS_Image_Bounds node is CPU."
+    },
+    {
+        "question": "What does the source code of the WAS_Image_Bounds node indicate about the input image format?",
+        "answer": "The source code of the WAS_Image_Bounds node indicates that the input image should be formatted correctly before determining the image boundaries. If the image dimension is 3, it is unsqueezed to add an additional dimension."
+    },
+    {
+        "question": "What is the return type of the 'image_bounds' function in the WAS_Image_Bounds node?",
+        "answer": "The return type of the 'image_bounds' function in the WAS_Image_Bounds node is a list of tuples, where each tuple contains four integers representing the spatial coordinates of the image boundaries."
+    },
+    {
+        "question": "What are the input and output types of the WAS_Image_Bounds node?",
+        "answer": "The input type of the WAS_Image_Bounds node is 'image' with Comfy dtype IMAGE and Python dtype Union[torch.Tensor, PIL.Image.Image]. The output type is 'image_bounds' with Comfy dtype COMBO[Tuple[int, int, int, int]] and Python dtype List[Tuple[int, int, int, int]]."
+    }
+]

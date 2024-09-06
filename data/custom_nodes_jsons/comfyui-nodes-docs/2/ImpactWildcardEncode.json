@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ImpactWildcardEncode节点的目的是什么？",
+        "answer": "ImpactWildcardEncode节点旨在将文本数据与模型和剪辑进行整合和操作，专门处理包含通配符的文本，并利用LoRA等高级技术进行文本修改，非常适合动态文本生成和模型调节场景。"
+    },
+    {
+        "question": "ImpactWildcardEncode节点的必需输入参数有哪些？",
+        "answer": "ImpactWildcardEncode节点的必需输入参数包括：model（定义用于文本处理的模型）、clip（代表将与文本一起处理的多媒体剪辑）、wildcard_text（允许文本中包含占位符）、populated_text（实际待处理的文本）。"
+    },
+    {
+        "question": "ImpactWildcardEncode节点的可选输入参数有哪些？",
+        "answer": "ImpactWildcardEncode节点的可选输入参数包括：mode（决定文本将被填充还是保持固定）、Select to add LoRA（允许向文本中添加LoRA）、Select to add Wildcard（用于向文本中引入通配符）和seed（确保节点操作的可重复性）。"
+    },
+    {
+        "question": "ImpactWildcardEncode节点的输出类型有哪些？",
+        "answer": "ImpactWildcardEncode节点的输出类型包括：model（处理后的更新模型）、clip（已与文本数据集成的已处理多媒体剪辑）、conditioning（从文本和剪辑派生的上下文信息）和populated_text（处理后的最终文本）。"
+    },
+    {
+        "question": "ImpactWildcardEncode节点使用的基础设施类型是什么？",
+        "answer": "ImpactWildcardEncode节点使用的基础设施类型是CPU。"
+    },
+    {
+        "question": "ImpactWildcardEncode类的doit方法的作用是什么？",
+        "answer": "ImpactWildcardEncode类的doit方法接收参数，处理populated_text文本，并返回一个元组，包含处理后的model、clip、conditioning和populated_text。"
+    },
+    {
+        "question": "ImpactWildcardEncode节点需要使用哪些高级技术来进行文本修改？",
+        "answer": "ImpactWildcardEncode节点利用LoRA等高级技术进行文本修改。"
+    }
+]

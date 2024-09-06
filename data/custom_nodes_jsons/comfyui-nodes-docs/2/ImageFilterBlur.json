@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageFilterBlur node in ComfyUI?",
+        "answer": "The ImageFilterBlur node in ComfyUI applies a simple blur effect to an image by specifying horizontal and vertical dimensions. It is designed to soften the image, reducing details and noise by averaging the pixels within the defined kernel size."
+    },
+    {
+        "question": "What are the required input types for the ImageFilterBlur node?",
+        "answer": "The required input types for the ImageFilterBlur node are 'images', 'size_x', and 'size_y'. 'images' is the input image to which the blur effect will be applied, 'size_x' specifies the horizontal dimension of the blur kernel, and 'size_y' specifies the vertical dimension of the blur kernel."
+    },
+    {
+        "question": "How does the 'size_x' parameter affect the blur effect in the ImageFilterBlur node?",
+        "answer": "The 'size_x' parameter in the ImageFilterBlur node specifies the horizontal dimension of the blur kernel. A larger value will result in a stronger horizontal blur effect."
+    },
+    {
+        "question": "How does the 'size_y' parameter affect the blur effect in the ImageFilterBlur node?",
+        "answer": "The 'size_y' parameter in the ImageFilterBlur node specifies the vertical dimension of the blur kernel. A larger value will result in a stronger vertical blur effect."
+    },
+    {
+        "question": "What is the output type of the ImageFilterBlur node?",
+        "answer": "The output type of the ImageFilterBlur node is 'image', which represents the output image after applying the blur effect. The output image will maintain the original image's dimensions, but the details will be softened according to the specified blur parameters."
+    },
+    {
+        "question": "What is the infra type for the ImageFilterBlur node?",
+        "answer": "The infra type for the ImageFilterBlur node is 'GPU'."
+    },
+    {
+        "question": "How does the ImageFilterBlur node apply the blur effect to the input image in the source code?",
+        "answer": "In the source code, the ImageFilterBlur node applies the blur effect to the input image using the cv2.blur() function from the OpenCV library. The function takes the input image 'x' and the blur kernel dimensions '(size_x, size_y)' as parameters."
+    }
+]

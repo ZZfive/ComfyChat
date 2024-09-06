@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageBatchSplitter node in ComfyUI?",
+        "answer": "The ImageBatchSplitter node is designed to split a batch of images into smaller batches or individual images based on a specified split count."
+    },
+    {
+        "question": "What happens if the requested split count exceeds the number of available images in the ImageBatchSplitter node?",
+        "answer": "If the requested split count exceeds the number of available images, the ImageBatchSplitter node can pad the output with blank images to ensure that the output always matches the requested size."
+    },
+    {
+        "question": "What are the required input types for the ImageBatchSplitter node?",
+        "answer": "The required input types for the ImageBatchSplitter node are 'images' (a collection of images to be split) and 'split_count' (the number of splits or individual images to be extracted from the input batch)."
+    },
+    {
+        "question": "What is the output type of the ImageBatchSplitter node?",
+        "answer": "The output type of the ImageBatchSplitter node is 'image', which is a tuple of tensors, where each tensor represents a batch or individual image split from the original input batch, possibly including padding with blank images to meet the requested split count."
+    },
+    {
+        "question": "What is the infra type for the ImageBatchSplitter node?",
+        "answer": "The infra type for the ImageBatchSplitter node is 'GPU'."
+    },
+    {
+        "question": "In which category does the ImageBatchSplitter node belong?",
+        "answer": "The ImageBatchSplitter node belongs to the 'InspirePack/Util' category."
+    },
+    {
+        "question": "What does the 'doit' function in the ImageBatchSplitter node do?",
+        "answer": "The 'doit' function in the ImageBatchSplitter node takes the 'images' and 'split_count' as input, splits the images based on the specified split count, and returns a tuple of tensors representing the split batches or individual images, with padding if necessary."
+    }
+]

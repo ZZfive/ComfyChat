@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageBatchRemove node in ComfyUI?",
+        "answer": "The ImageBatchRemove node is designed to selectively remove images from a batch based on their index, which is crucial for operations that require excluding specific images for further processing."
+    },
+    {
+        "question": "What are the required input types for the ImageBatchRemove node?",
+        "answer": "The ImageBatchRemove node requires two input types: 'images', which specifies the batch of images to be modified, and 'index', which determines the position of the image to be removed from the batch."
+    },
+    {
+        "question": "What is the output type of the ImageBatchRemove node?",
+        "answer": "The output type of the ImageBatchRemove node is 'image', which returns a new batch of images with the specified image removed, helping to dynamically adjust the image collection."
+    },
+    {
+        "question": "What is the infra type for the ImageBatchRemove node?",
+        "answer": "The infra type for the ImageBatchRemove node is GPU."
+    },
+    {
+        "question": "In the source code, what is the default value for the 'index' input parameter?",
+        "answer": "In the source code, the default value for the 'index' input parameter is 1."
+    },
+    {
+        "question": "How does the ImageBatchRemove node handle the case when the provided index is greater than the batch size?",
+        "answer": "The ImageBatchRemove node handles this case by using the min() function to ensure that the index is within the valid range, specifically by using min(batch_size, index - 1)."
+    },
+    {
+        "question": "What does the node() function in the ImageBatchRemove class return?",
+        "answer": "The node() function in the ImageBatchRemove class returns a new tensor created by concatenating the images before and after the specified index, effectively removing the image at the given index from the batch."
+    }
+]

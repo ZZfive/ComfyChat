@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageTransformByNormalizedAmplitude node in ComfyUI?",
+        "answer": "The ImageTransformByNormalizedAmplitude node in ComfyUI applies transformations to images based on normalized amplitude values, dynamically adjusting aspects such as scale. It is designed to adjust the size of batch images according to amplitude data driven by audio, thereby achieving creative audio-visual synchronization effects."
+    },
+    {
+        "question": "What are the required input types for the ImageTransformByNormalizedAmplitude node?",
+        "answer": "The required input types for the ImageTransformByNormalizedAmplitude node are: normalized_amp (NORMALIZED_AMPLITUDE), zoom_scale (FLOAT), x_offset (INT), y_offset (INT), cumulative (BOOLEAN), and image (IMAGE)."
+    },
+    {
+        "question": "What does the 'cumulative' parameter in the ImageTransformByNormalizedAmplitude node indicate?",
+        "answer": "The 'cumulative' parameter in the ImageTransformByNormalizedAmplitude node is a boolean value that indicates whether the scaling effect should be cumulative between images in the batch."
+    },
+    {
+        "question": "What is the output type of the ImageTransformByNormalizedAmplitude node?",
+        "answer": "The output type of the ImageTransformByNormalizedAmplitude node is an IMAGE, which represents the transformed images that have been adjusted according to their corresponding normalized amplitude values, zoom scale, and position offsets."
+    },
+    {
+        "question": "How is the crop size calculated in the ImageTransformByNormalizedAmplitude node?",
+        "answer": "In the ImageTransformByNormalizedAmplitude node, the crop size is calculated based on the amplitude using the formula: int(min(width, height) * (1 - amp * zoom_scale)). The crop size is then ensured to be at least 1."
+    },
+    {
+        "question": "How are the images offset in the ImageTransformByNormalizedAmplitude node?",
+        "answer": "In the ImageTransformByNormalizedAmplitude node, the images are offset based on the amplitude. The offset magnitude is calculated by multiplying the amplitude by 10. Then, the shift in the x and y directions is calculated using the x_offset and y_offset values multiplied by the offset magnitude, ensuring the shifts do not exceed the image dimensions."
+    },
+    {
+        "question": "What infra type does the ImageTransformByNormalizedAmplitude node use?",
+        "answer": "The ImageTransformByNormalizedAmplitude node uses the 'CPU' infra type."
+    }
+]

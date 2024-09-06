@@ -1,0 +1,34 @@
+[
+    {
+        "question": "SimpleDetectorForEach节点的目的是什么？",
+        "answer": "SimpleDetectorForEach节点旨在使用边界框（bbox）检测器对单个图像执行对象检测。它处理输入图像以识别和定位对象，并应用各种阈值和膨胀技术来完善检测过程。"
+    },
+    {
+        "question": "SimpleDetectorForEach节点能否与语义感知掩码（SAM）模型集成？",
+        "answer": "是的，SimpleDetectorForEach节点能够与语义感知掩码（SAM）模型集成，以提高检测精度。这通过sam_model_opt参数实现，该参数允许指定用于创建更详细分割掩码的模型。"
+    },
+    {
+        "question": "SimpleDetectorForEach节点的image参数有什么作用？",
+        "answer": "image参数是SimpleDetectorForEach节点的主要输入。它代表了节点将分析用于对象检测的图像数据。图像的质量和分辨率直接影响节点准确检测对象的能力。"
+    },
+    {
+        "question": "SimpleDetectorForEach节点的bbox_threshold参数有什么作用？",
+        "answer": "bbox_threshold参数用于设置检测边界框的置信度水平。它是决定哪些检测到的对象被认为是有效的并因此包含在最终输出中的关键因素。"
+    },
+    {
+        "question": "SimpleDetectorForEach节点的crop_factor参数有什么作用？",
+        "answer": "crop_factor参数用于确定围绕检测到的对象的裁剪区域的缩放因子。它影响裁剪区域的大小，因此影响分割中的细节水平。"
+    },
+    {
+        "question": "SimpleDetectorForEach节点的drop_size参数是什么？",
+        "answer": "drop_size参数指定检测过程中使用的步幅或步进大小。它影响检测的粒度，允许节点在不同尺度上检测对象。"
+    },
+    {
+        "question": "SimpleDetectorForEach节点的输出类型是什么？",
+        "answer": "SimpleDetectorForEach节点的输出类型是segs，它代表节点检测到的分段对象集合。每个分段包括裁剪后的图像、掩码、置信度分数、裁剪区域、边界框和标签等详细信息。"
+    },
+    {
+        "question": "SimpleDetectorForEach节点能否处理图像批次？",
+        "answer": "SimpleDetectorForEach节点不允许处理图像批次。如果提供的图像数量超过1，节点将抛出错误异常。"
+    }
+]

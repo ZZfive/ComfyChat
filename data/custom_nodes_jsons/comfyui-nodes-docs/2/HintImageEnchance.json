@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the HintImageEnchance node in ComfyUI?",
+        "answer": "The HintImageEnchance node is designed to enhance and adjust the size of hint images to fit image generation tasks. It supports various resizing modes to match the generated image dimensions, ensuring the hint images are properly scaled and processed to work optimally during the generation process."
+    },
+    {
+        "question": "What are the required input types for the HintImageEnchance node?",
+        "answer": "The required input types for the HintImageEnchance node are: hint_image (a collection of hint images to be enhanced and resized), image_gen_width (the target width of the generated image), image_gen_height (the target height of the generated image), and resize_mode (specifies the resizing mode to be applied to the hint images, such as fitting within the target dimensions or stretching to the target dimensions)."
+    },
+    {
+        "question": "What is the output type of the HintImageEnchance node?",
+        "answer": "The output type of the HintImageEnchance node is 'image', which represents the enhanced and resized hint image that can be directly used in the image generation process."
+    },
+    {
+        "question": "Which infra type is recommended for the HintImageEnchance node?",
+        "answer": "The recommended infra type for the HintImageEnchance node is 'CPU'."
+    },
+    {
+        "question": "What are some common nodes that can be used with the HintImageEnchance node?",
+        "answer": "Some common nodes that can be used with the HintImageEnchance node are: VHS_VideoCombine, GroundingDinoSAMSegment (segment anything), and Paste By Mask."
+    },
+    {
+        "question": "How does the HintImageEnchance node handle different resizing modes?",
+        "answer": "The HintImageEnchance node handles different resizing modes by executing specific functions based on the chosen mode. If the resize_mode is set to 'RESIZE', it calls the execute_resize function. If the mode is 'OUTER_FIT', it calls the execute_outer_fit function. If the mode is 'INNER_FIT', it calls the execute_inner_fit function. These functions perform the necessary resizing operations on the hint image to fit the specified dimensions."
+    },
+    {
+        "question": "What does the high_quality_resize function in the HintImageEnchance node do?",
+        "answer": "The high_quality_resize function in the HintImageEnchance node performs super high-quality up-scaling of the control map, considering binary, segmentation, and one-pixel edges. It takes into account factors such as the size of the new dimensions, the number of unique colors in the image, and whether the new size is smaller or larger than the original. Based on these factors, it applies appropriate interpolation methods (such as cv2.INTER_NEAREST, cv2.INTER_AREA, or cv2.INTER_CUBIC) to resize the image while maintaining its quality."
+    }
+]

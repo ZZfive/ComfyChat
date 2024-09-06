@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageCaption node in ComfyUI?",
+        "answer": "The ImageCaption node in ComfyUI is designed to generate and overlay captions on images. It takes an image, a font, and a caption string as input and outputs an image with the wrapped caption text below the original image."
+    },
+    {
+        "question": "What are the required input types for the ImageCaption node?",
+        "answer": "The required input types for the ImageCaption node are: image (the base image to which the caption will be added), font (specifies the font type for the caption text), and caption (the text to be placed on the image)."
+    },
+    {
+        "question": "What are the optional input types for the ImageCaption node?",
+        "answer": "The optional input types for the ImageCaption node are: extra_pnginfo (provides additional information that certain operations might require) and prompt (guides the captioning process by providing context or specific instructions)."
+    },
+    {
+        "question": "What is the output type of the ImageCaption node?",
+        "answer": "The output type of the ImageCaption node is an image, which is the result of the captioning process and includes the original image with the caption text added."
+    },
+    {
+        "question": "How does the ImageCaption node handle long caption text?",
+        "answer": "The ImageCaption node wraps the caption text to fit within the specified width when rendered. It splits the text into words and adds them to new lines if the length of the current line plus the next word exceeds the maximum width."
+    },
+    {
+        "question": "What is the purpose of the get_text_size method in the ImageCaption node?",
+        "answer": "The get_text_size method in the ImageCaption node calculates the width and height of a text string with a given font. It is used to determine the size of the caption text when rendered on the image."
+    },
+    {
+        "question": "What is the purpose of the caption method in the ImageCaption node?",
+        "answer": "The caption method in the ImageCaption node is responsible for the main process of adding the caption to the image. It takes the input parameters, wraps the caption text, creates a new image with the caption, and combines it with the original image to produce the final output."
+    }
+]

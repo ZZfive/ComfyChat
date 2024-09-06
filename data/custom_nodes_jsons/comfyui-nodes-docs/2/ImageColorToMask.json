@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageColorToMask node in ComfyUI?",
+        "answer": "The ImageColorToMask node in ComfyUI is designed to convert a color image into a binary mask based on a specified color. It identifies pixels in the image that match the given color and converts those pixels into a mask, highlighting the regions of interest."
+    },
+    {
+        "question": "What are the required input types for the ImageColorToMask node?",
+        "answer": "The required input types for the ImageColorToMask node are 'image', which is the input color image that the node will process, and 'color', which defines the specific color in the image that should be converted into a mask."
+    },
+    {
+        "question": "What does the 'color' parameter specify in the ImageColorToMask node?",
+        "answer": "The 'color' parameter in the ImageColorToMask node defines the specific color in the image that should be converted into a mask. It is specified in a numerical format, allowing precise targeting of the desired hue."
+    },
+    {
+        "question": "What is the output type of the ImageColorToMask node?",
+        "answer": "The output type of the ImageColorToMask node is 'mask', which is a binary representation of the input image where the specified color has been converted into a mask."
+    },
+    {
+        "question": "How does the ImageColorToMask node benefit applications that require color-based masks?",
+        "answer": "The ImageColorToMask node benefits applications that require color-based masks by providing a clear delineation between regions of interest and the rest of the image, which can be used for further analysis or processing."
+    },
+    {
+        "question": "What is the infrastructure type required for running the ImageColorToMask node?",
+        "answer": "The infrastructure type required for running the ImageColorToMask node is GPU."
+    },
+    {
+        "question": "How does the ImageColorToMask node convert the specified color into a mask?",
+        "answer": "The ImageColorToMask node converts the specified color into a mask by first clamping the image values between 0 and 1.0, then multiplying by 255.0 and rounding to the nearest integer. It then performs bitwise left shift operations on the RGB channels and compares the result with the specified color. Where there is a match, the value is set to 255, and where there isn't, it is set to 0, creating a binary mask."
+    }
+]

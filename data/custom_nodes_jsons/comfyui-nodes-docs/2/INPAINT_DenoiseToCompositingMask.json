@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the INPAINT_DenoiseToCompositingMask node in ComfyUI?",
+        "answer": "The INPAINT_DenoiseToCompositingMask node is designed to convert a noisy mask into a clearer, more suitable mask for compositing purposes by adjusting the provided offset and threshold parameters to optimize the mask quality for subsequent image processing tasks."
+    },
+    {
+        "question": "What are the required input types for the INPAINT_DenoiseToCompositingMask node?",
+        "answer": "The required input types for the INPAINT_DenoiseToCompositingMask node are: mask (Comfy dtype: MASK, Python dtype: torch.Tensor), offset (Comfy dtype: FLOAT, Python dtype: float), and threshold (Comfy dtype: FLOAT, Python dtype: float)."
+    },
+    {
+        "question": "What does the offset parameter do in the INPAINT_DenoiseToCompositingMask node?",
+        "answer": "The offset parameter in the INPAINT_DenoiseToCompositingMask node allows adjusting the starting point of the mask intensity by setting a baseline to define what is considered noise, thus assisting in the denoising process."
+    },
+    {
+        "question": "What does the threshold parameter define in the INPAULT_DenoiseToCompositingMask node?",
+        "answer": "The threshold parameter defines the upper limit of mask intensity to be considered in the denoising process, helping to distinguish important parts of the mask from noise."
+    },
+    {
+        "question": "What is the output type of the INPAINT_DenoiseToCompositingMask node?",
+        "answer": "The output type of the INPAINT_DenoiseToCompositingMask node is a denoised mask (Comfy dtype: MASK, Python dtype: torch.Tensor) that has been optimized for compositing tasks by adjusting its values within a specified range."
+    },
+    {
+        "question": "What is the infra type for the INPAINT_DenoiseToCompositingMask node?",
+        "answer": "The infra type for the INPAINT_DenoiseToCompositingMask node is GPU."
+    },
+    {
+        "question": "What does the source code of the INPAINT_DenoiseToCompositingMask node's convert function do?",
+        "answer": "The source code of the INPAINT_DenoiseToCompositingMask node's convert function takes a mask tensor, offset, and threshold as inputs, and returns a denoised mask tensor. It first adjusts the mask values based on the offset and threshold, then clamps the values between 0 and 1 to ensure the mask is suitable for compositing."
+    }
+]

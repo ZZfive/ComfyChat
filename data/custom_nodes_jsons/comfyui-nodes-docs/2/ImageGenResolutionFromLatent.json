@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageGenResolutionFromLatent node in ComfyUI?",
+        "answer": "The ImageGenResolutionFromLatent node is designed to calculate the image generation resolution based on the size of a given latent representation. It extracts the height and width from the latent representation's shape and scales them to determine a suitable resolution for image generation."
+    },
+    {
+        "question": "What is the input type required for the ImageGenResolutionFromLatent node?",
+        "answer": "The required input type for the ImageGenResolutionFromLatent node is 'latent', which is a dictionary containing the latent representation. The tensor shape within this dictionary is used to calculate the desired output size."
+    },
+    {
+        "question": "What are the output types of the ImageGenResolutionFromLatent node?",
+        "answer": "The output types of the ImageGenResolutionFromLatent node are IMAGE_GEN_WIDTH (INT) and IMAGE_GEN_HEIGHT (INT), representing the calculated image generation width and height based on the latent representation size."
+    },
+    {
+        "question": "How does the ImageGenResolutionFromLatent node ensure consistency between the generated image and the input latent representation?",
+        "answer": "The ImageGenResolutionFromLatent node ensures consistency by scaling the width and height extracted from the latent representation's shape, resulting in appropriate dimensions for the generated image that match the input latent representation."
+    },
+    {
+        "question": "What is the infra type for the ImageGenResolutionFromLatent node?",
+        "answer": "The infra type for the ImageGenResolutionFromLatent node is 'CPU'."
+    },
+    {
+        "question": "Which common node is mentioned in the usage tips for the ImageGenResolutionFromLatent node?",
+        "answer": "The common node mentioned in the usage tips for the ImageGenResolutionFromLatent node is 'ImageScale'."
+    },
+    {
+        "question": "What does the execute function in the ImageGenResolutionFromLatent node do?",
+        "answer": "The execute function in the ImageGenResolutionFromLatent node takes the 'latent' input, extracts the height and width from the 'samples' tensor shape, and returns the scaled width and height (multiplied by 8) as the output."
+    }
+]

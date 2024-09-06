@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the IPAdapterEncoder node in ComfyUI?",
+        "answer": "The IPAdapterEncoder node in ComfyUI is designed to process and encode image data using a pretrained CLIPVision model. It generates embeddings that capture semantic information from images."
+    },
+    {
+        "question": "What are the required input parameters for the IPAdapterEncoder node?",
+        "answer": "The required input parameters for the IPAdapterEncoder node are: ipadapter (a dictionary containing the model information for encoding), image (an image tensor to be encoded), and weight (a float value to adjust the influence of the image content on the generated embeddings)."
+    },
+    {
+        "question": "What does the optional 'mask' parameter do in the IPAdapterEncoder node?",
+        "answer": "The optional 'mask' parameter in the IPAdapterEncoder node allows applying a spatial mask to the image data before encoding. This can be useful for focusing the node's attention on specific regions of the image or excluding irrelevant parts from the encoding process."
+    },
+    {
+        "question": "What is the purpose of the 'clip_vision' parameter in the IPAdapterEncoder node?",
+        "answer": "The 'clip_vision' parameter in the IPAdapterEncoder node is an optional model that can be provided for encoding image data. If not provided, the node will use the model specified in the 'ipadapter' parameter. This allows using different CLIPVision models for different encoding tasks."
+    },
+    {
+        "question": "What are the two output types of the IPAdapterEncoder node?",
+        "answer": "The two output types of the IPAdapterEncoder node are: pos_embed (conditional embeddings influenced by the image data and any applied mask) and neg_embed (unconditional embeddings generated without considering the image content)."
+    },
+    {
+        "question": "How can the 'weight' parameter be used to adjust the generated embeddings in the IPAdapterEncoder node?",
+        "answer": "The 'weight' parameter in the IPAdapterEncoder node allows adjusting the influence of the image content on the generated embeddings. When the weight is not equal to 1, it can scale the embeddings to emphasize or de-emphasize certain aspects of the image data."
+    },
+    {
+        "question": "What is the recommended infrastructure type for running the IPAdapterEncoder node?",
+        "answer": "The recommended infrastructure type for running the IPAdapterEncoder node is GPU, as mentioned in the usage tips."
+    }
+]

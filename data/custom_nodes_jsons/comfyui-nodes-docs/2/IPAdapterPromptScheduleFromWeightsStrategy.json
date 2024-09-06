@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the IPAdapterPromptScheduleFromWeightsStrategy class in ComfyUI?",
+        "answer": "The IPAdapterPromptScheduleFromWeightsStrategy class in ComfyUI is a node that allows users to better control the process of generating text by adjusting the weights at different stages, helping to generate text that better meets user needs."
+    },
+    {
+        "question": "What are the required input types for the IPAdapterPromptScheduleFromWeightsStrategy node?",
+        "answer": "The required input types for the IPAdapterPromptScheduleFromWeightsStrategy node are weights_strategy (WEIGHTS_STRATEGY) and prompt (STRING)."
+    },
+    {
+        "question": "What does the prompt_schedule output represent in the IPAdapterPromptScheduleFromWeightsStrategy node?",
+        "answer": "The prompt_schedule output represents the result of applying the specified method to the input weights. It contains the essence of the node's purpose, providing a synthesized form of the input data that can be used for further analysis or model training."
+    },
+    {
+        "question": "What is the infra type required for the IPAdapterPromptScheduleFromWeightsStrategy node?",
+        "answer": "The infra type required for the IPAdapterPromptScheduleFromWeightsStrategy node is GPU."
+    },
+    {
+        "question": "How does the IPAdapterPromptScheduleFromWeightsStrategy node handle prompts that are longer or shorter than the frame_count?",
+        "answer": "If the prompt is longer than the frame_count, the node truncates the prompt to the length of the frame_count. If the prompt is shorter than the frame_count, the node extends the prompt by repeating the last element until it matches the frame_count."
+    },
+    {
+        "question": "What happens when add_starting_frames and add_ending_frames are greater than 0 in the IPAdapterPromptScheduleFromWeightsStrategy node?",
+        "answer": "When add_starting_frames is greater than 0, the node adds the first prompt at the beginning. When add_ending_frames is greater than 0, the node adds the last prompt at the end."
+    },
+    {
+        "question": "What is the return type of the IPAdapterPromptScheduleFromWeightsStrategy node?",
+        "answer": "The return type of the IPAdapterPromptScheduleFromWeightsStrategy node is STRING, representing the generated prompt_schedule."
+    }
+]
