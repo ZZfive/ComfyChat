@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageBatchJoin node in ComfyUI?",
+        "answer": "The ImageBatchJoin node is used to concatenate two batches of images along the batch dimension, ensuring that the images in both batches have matching dimensions before concatenation."
+    },
+    {
+        "question": "What are the required input types for the ImageBatchJoin node?",
+        "answer": "The required input types for the ImageBatchJoin node are 'images_a' and 'images_b', both of which are of Comfy dtype 'IMAGE' and Python dtype 'torch.Tensor'."
+    },
+    {
+        "question": "What is the output type of the ImageBatchJoin node?",
+        "answer": "The output type of the ImageBatchJoin node is 'image', which is of Comfy dtype 'IMAGE' and Python dtype 'torch.Tensor'. It represents the concatenated batch of images."
+    },
+    {
+        "question": "What happens if the heights of images in 'images_a' and 'images_b' don't match?",
+        "answer": "If the heights of images in 'images_a' and 'images_b' don't match, a ValueError is raised, indicating a height mismatch. The error message suggests using ImageTransformResize to fix the issue."
+    },
+    {
+        "question": "What happens if the widths of images in 'images_a' and 'images_b' don't match?",
+        "answer": "If the widths of images in 'images_a' and 'images_b' don't match, a ValueError is raised, indicating a width mismatch. The error message suggests using ImageTransformResize to fix the issue."
+    },
+    {
+        "question": "What happens if the number of channels in images from 'images_a' and 'images_b' don't match?",
+        "answer": "If the number of channels in images from 'images_a' and 'images_b' don't match, a ValueError is raised, indicating a channel mismatch. The error message suggests using the AlphaChanel module to add or remove alpha channels."
+    },
+    {
+        "question": "What is the infra type for the ImageBatchJoin node?",
+        "answer": "The infra type for the ImageBatchJoin node is 'GPU'."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SegsBitwiseAndMask node in ComfyUI?",
+        "answer": "The SegsBitwiseAndMask node in ComfyUI is used to perform a bitwise AND operation on the provided segments (segs) and a mask, generating a refined segmentation that only contains the overlapping areas between the segments and the mask."
+    },
+    {
+        "question": "What are the required input types for the SegsBitwiseAndMask node?",
+        "answer": "The required input types for the SegsBitwiseAndMask node are 'segs' (Comfy dtype: SEGS, Python dtype: List[SEG]) and 'mask' (Comfy dtype: MASK, Python dtype: torch.Tensor)."
+    },
+    {
+        "question": "What does the 'segs' parameter represent in the SegsBitwiseAndMask node?",
+        "answer": "The 'segs' parameter in the SegsBitwiseAndMask node represents the collection of segmentation objects that the node will process. It is crucial for defining the initial segmentations that will be combined with the mask through the bitwise AND operation."
+    },
+    {
+        "question": "What does the 'mask' parameter represent in the SegsBitwiseAndMask node?",
+        "answer": "The 'mask' parameter in the SegsBitwiseAndMask node is a binary mask that will be used to filter the segmentations provided by 'segs'. It is a critical component as it determines which areas of the segmentations will be preserved after the bitwise AND operation."
+    },
+    {
+        "question": "What is the output type of the SegsBitwiseAndMask node?",
+        "answer": "The output type of the SegsBitwiseAndMask node is 'result' (Comfy dtype: SEGS, Python dtype: Tuple[List[SEG], List[SEG]]), which represents the refined segmentations after filtering with the provided mask using a bitwise AND operation."
+    },
+    {
+        "question": "What is the infra type for the SegsBitwiseAndMask node?",
+        "answer": "The infra type for the SegsBitwiseAndMask node is CPU."
+    },
+    {
+        "question": "What is the source code for the SegsBitwiseAndMask node?",
+        "answer": "The source code for the SegsBitwiseAndMask node is:\n```python\nclass SegsBitwiseAndMask:\n\n    @classmethod\n    def INPUT_TYPES(s):\n        return {'required': {'segs': ('SEGS',), 'mask': ('MASK',)}}\n    RETURN_TYPES = ('SEGS',)\n    FUNCTION = 'doit'\n    CATEGORY = 'ImpactPack/Operation'\n\n    def doit(self, segs, mask):\n        return (core.segs_bitwise_and_mask(segs, mask),)\n```"
+    }
+]

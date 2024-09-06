@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Image_Rotate node in ComfyUI?",
+        "answer": "The WAS_Image_Rotate node in ComfyUI is designed to apply specified rotations to a batch of images. It intelligently handles rotations by adjusting the angle to the nearest 90 degrees and uses a specified resampling filter to maintain image quality."
+    },
+    {
+        "question": "What are the required input parameters for the WAS_Image_Rotate node?",
+        "answer": "The required input parameters for the WAS_Image_Rotate node are 'images', which is the batch of images to be rotated, and 'rotation', which specifies the rotation angle in degrees."
+    },
+    {
+        "question": "How does the WAS_Image_Rotate node handle rotation values that are not multiples of 90?",
+        "answer": "If the rotation value is not a multiple of 90, the WAS_Image_Rotate node adjusts it to the nearest multiple of 90 for standard handling."
+    },
+    {
+        "question": "What are the optional input parameters for the WAS_Image_Rotate node?",
+        "answer": "The optional input parameters for the WAS_Image_Rotate node are 'mode', which determines the rotation strategy (either 'internal' for standard rotation or 'transpose' for rotation using image transposition), and 'sampler', which defines the resampling filter used during rotation."
+    },
+    {
+        "question": "What is the output of the WAS_Image_Rotate node?",
+        "answer": "The output of the WAS_Image_Rotate node is 'images', which contains the rotated batch of images."
+    },
+    {
+        "question": "What infrastructure type does the WAS_Image_Rotate node use?",
+        "answer": "The WAS_Image_Rotate node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the WAS_Image_Rotate node determine the resampling filter to use during rotation?",
+        "answer": "The resampling filter used during rotation is determined by the 'sampler' input parameter. If 'sampler' is 'nearest', it uses Image.NEAREST; if 'sampler' is 'bicubic', it uses Image.BICUBIC; if 'sampler' is 'bilinear', it uses Image.BILINEAR. If no valid 'sampler' is specified, it defaults to Image.BILINEAR."
+    }
+]

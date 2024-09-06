@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the DilateMaskInSEGS node in ComfyUI?",
+        "answer": "The DilateMaskInSEGS node is designed to perform a morphological dilation operation on segmentation masks in ComfyUI. It enhances the segmentation effect by expanding the boundaries of segmented regions, which is particularly useful when the boundaries of segmented regions are not clearly defined or a more robust representation is needed."
+    },
+    {
+        "question": "What are the required input types for the DilateMaskInSEGS node?",
+        "answer": "The DilateMaskInSEGS node requires two input types: 'segs', which is the collection of segmentation objects that the node will process, and 'dilation', which specifies the amount of dilation to be applied to the segmentation masks."
+    },
+    {
+        "question": "What does the 'dilation' parameter in the DilateMaskInSEGS node specify?",
+        "answer": "The 'dilation' parameter in the DilateMaskInSEGS node specifies the amount of dilation to be applied to the segmentation masks. It is a key factor in determining the extent of boundary expansion. Larger values lead to more significant expansions, which can be beneficial for certain applications but may introduce inaccuracies if overused."
+    },
+    {
+        "question": "What is the output type of the DilateMaskInSEGS node?",
+        "answer": "The output type of the DilateMaskInSEGS node is 'new_segs', which contains the modified segmentation objects after applying dilation. These objects now have expanded boundaries and can be used for further analysis or processing in subsequent steps of the workflow."
+    },
+    {
+        "question": "What infrastructure type does the DilateMaskInSEGS node use?",
+        "answer": "The DilateMaskInSEGS node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the DilateMaskInSEGS node modify the segmentation objects?",
+        "answer": "The DilateMaskInSEGS node modifies the segmentation objects by applying a dilation operation to the cropped mask of each segmentation object using the specified dilation amount. It then creates a new segmentation object with the dilated mask and other properties of the original segmentation object."
+    },
+    {
+        "question": "What is the category of the DilateMaskInSEGS node in ComfyUI?",
+        "answer": "The category of the DilateMaskInSEGS node in ComfyUI is 'ImpactPack/Util'."
+    }
+]

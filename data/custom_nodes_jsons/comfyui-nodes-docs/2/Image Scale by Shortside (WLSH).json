@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WLSH_Image_Scale_By_Shortside node in ComfyUI?",
+        "answer": "The WLSH_Image_Scale_By_Shortside node in ComfyUI is designed to resize an image by specifying the length of the short side. It intelligently determines the scaling factor based on the original dimensions of the image and applies the selected upsampling method to maintain or improve image quality."
+    },
+    {
+        "question": "What are the required input parameters for the WLSH_Image_Scale_By_Shortside node?",
+        "answer": "The required input parameters for the WLSH_Image_Scale_By_Shortside node are 'original', which represents the image to be upscaled, 'upscale_method', which defines the algorithm used for upsampling the image, and 'shortside', which determines the target length of the shorter side of the image after upsampling."
+    },
+    {
+        "question": "What does the 'upscale_method' parameter in the WLSH_Image_Scale_By_Shortside node define?",
+        "answer": "The 'upscale_method' parameter in the WLSH_Image_Scale_By_Shortside node defines the algorithm used for upsampling the image. It significantly affects the quality and characteristics of the image generated after the scaling process."
+    },
+    {
+        "question": "What are the available upsampling methods in the WLSH_Image_Scale_By_Shortside node?",
+        "answer": "The available upsampling methods in the WLSH_Image_Scale_By_Shortside node are 'nearest-exact', 'bilinear', and 'area'."
+    },
+    {
+        "question": "What are the output types of the WLSH_Image_Scale_By_Shortside node?",
+        "answer": "The output types of the WLSH_Image_Scale_By_Shortside node are 'IMAGE', which is the result of the upsampling process providing the transformed image with the specified short side length, 'width', which represents the new width of the upscaled image, and 'height', which represents the new height of the upscaled image."
+    },
+    {
+        "question": "What infrastructure type does the WLSH_Image_Scale_By_Shortside node use?",
+        "answer": "The WLSH_Image_Scale_By_Shortside node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the WLSH_Image_Scale_By_Shortside node determine the scaling factor for the image?",
+        "answer": "The WLSH_Image_Scale_By_Shortside node determines the scaling factor by dividing the target short side length by the original short side length of the image. The factor is calculated as 'shortside / max(1, old_shortside)'."
+    }
+]

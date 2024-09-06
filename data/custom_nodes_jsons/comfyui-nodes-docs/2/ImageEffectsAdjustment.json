@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageEffectsAdjustment node in ComfyUI?",
+        "answer": "The ImageEffectsAdjustment node in ComfyUI applies a series of image adjustments to a batch of images, including brightness, contrast, saturation, hue, gamma value, and sharpness, as well as RGB color scaling. It allows for fine-tuning the visual aspects of images to achieve desired effects or corrections."
+    },
+    {
+        "question": "What are the required input types for the ImageEffectsAdjustment node?",
+        "answer": "The required input types for the ImageEffectsAdjustment node are: images (the batch of images to be adjusted), brightness, contrast, saturation, hue, gamma, sharpness, red, green, and blue."
+    },
+    {
+        "question": "How does the brightness parameter affect the image in the ImageEffectsAdjustment node?",
+        "answer": "In the ImageEffectsAdjustment node, the brightness parameter adjusts the brightness level of the image. Values greater than 1.0 increase brightness, while values less than 1.0 decrease brightness."
+    },
+    {
+        "question": "What is the role of the gamma parameter in the ImageEffectsAdjustment node?",
+        "answer": "The gamma parameter in the ImageEffectsAdjustment node applies gamma correction to the image, adjusting its brightness."
+    },
+    {
+        "question": "How does the ImageEffectsAdjustment node handle RGBA images?",
+        "answer": "If the input image has an alpha channel (RGBA), the ImageEffectsAdjustment node separates the alpha channel, applies the specified adjustments to the RGB channels, and then recombines the adjusted RGB channels with the original alpha channel."
+    },
+    {
+        "question": "What is the output type of the ImageEffectsAdjustment node?",
+        "answer": "The output type of the ImageEffectsAdjustment node is a batch of images with the specified adjustments applied, which may include changes in brightness, contrast, saturation, hue, gamma value, sharpness, and RGB color scaling."
+    },
+    {
+        "question": "Does the ImageEffectsAdjustment node support GPU acceleration?",
+        "answer": "Yes, the ImageEffectsAdjustment node supports GPU acceleration, as indicated by the 'Infra type: GPU' comment in the source code."
+    }
+]

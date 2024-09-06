@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the GaussianBlurMaskInSEGS node in ComfyUI?",
+        "answer": "The GaussianBlurMaskInSEGS node in ComfyUI applies a Gaussian blur to the mask portion of each segment in a list of SEG objects. This operation enhances the smoothness of the mask edges, which can be beneficial for certain image segmentation tasks that require more diffused masks."
+    },
+    {
+        "question": "What are the required input parameters for the GaussianBlurMaskInSEGS node?",
+        "answer": "The required input parameters for the GaussianBlurMaskInSEGS node are 'segs', which is a list of SEG objects to be processed, 'kernel_size', which determines the size of the Gaussian blur kernel, and 'sigma', which controls the standard deviation of the Gaussian kernel and influences the range of the blur."
+    },
+    {
+        "question": "How does the 'kernel_size' parameter affect the Gaussian blur applied by the GaussianBlurMaskInSEGS node?",
+        "answer": "The 'kernel_size' parameter determines the size of the Gaussian blur kernel used by the GaussianBlurMaskInSEGS node. A larger kernel size will result in a more noticeable blurring effect, which can more significantly smooth the mask edges."
+    },
+    {
+        "question": "What is the effect of the 'sigma' parameter on the Gaussian blur applied by the GaussianBlurMaskInSEGS node?",
+        "answer": "The 'sigma' parameter controls the standard deviation of the Gaussian kernel used by the GaussianBlurMaskInSEGS node, affecting the range of the blur. A higher sigma value will produce a stronger blur, while a lower value will result in a milder effect."
+    },
+    {
+        "question": "What is the output of the GaussianBlurMaskInSEGS node?",
+        "answer": "The output of the GaussianBlurMaskInSEGS node is the modified list of SEG objects, with their masks altered by the Gaussian blur operation. This allows for further processing or analysis of the smoothed mask data."
+    },
+    {
+        "question": "What is the infra type required for the GaussianBlurMaskInSEGS node?",
+        "answer": "The infra type required for the GaussianBlurMaskInSEGS node is GPU."
+    },
+    {
+        "question": "In the source code of the GaussianBlurMaskInSEGS node, what does the 'doit' function do?",
+        "answer": "In the source code of the GaussianBlurMaskInSEGS node, the 'doit' function applies the Gaussian blur to the mask portion of each segment in the input list of SEG objects, creates new SEG objects with the modified masks, and returns a tuple containing the original SEG objects and the new SEG objects with blurred masks."
+    }
+]

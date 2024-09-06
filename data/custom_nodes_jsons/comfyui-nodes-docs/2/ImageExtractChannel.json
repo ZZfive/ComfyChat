@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageExtractChannel node in ComfyUI?",
+        "answer": "The ImageExtractChannel node is used to extract a specific color channel (red, green, blue, or alpha) from a given set of images, allowing for operations and analysis on individual color channels."
+    },
+    {
+        "question": "What are the required inputs for the ImageExtractChannel node?",
+        "answer": "The required inputs for the ImageExtractChannel node are 'images' (the source images from which the specific channel will be extracted) and 'channel' (the color channel to be extracted: red, green, blue, or alpha)."
+    },
+    {
+        "question": "What is the output of the ImageExtractChannel node?",
+        "answer": "The output of the ImageExtractChannel node is 'channel_data', which is the extracted channel data from the input images, provided in the form of a mask."
+    },
+    {
+        "question": "What is the infra type for the ImageExtractChannel node?",
+        "answer": "The infra type for the ImageExtractChannel node is GPU."
+    },
+    {
+        "question": "What is the shape of the input images tensor in the ImageExtractChannel node?",
+        "answer": "The input images tensor in the ImageExtractChannel node has the shape (N, H, W, C), where N is the number of images, H is the height, W is the width, and C is the number of channels."
+    },
+    {
+        "question": "What happens if the selected channel is 'A' (alpha) and the input image does not have an alpha channel?",
+        "answer": "If the selected channel is 'A' (alpha) and the input image does not have an alpha channel, an exception will be raised, indicating that the image does not have an alpha channel."
+    },
+    {
+        "question": "How is the mask created in the ImageExtractChannel node?",
+        "answer": "In the ImageExtractChannel node, the mask is created by extracting the specified color channel from the input images tensor and cloning it on the CPU."
+    }
+]

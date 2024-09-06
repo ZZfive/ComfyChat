@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is cg-noise in ComfyUI?",
+        "answer": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced. It allows for small variations in the initial noise."
+    },
+    {
+        "question": "How does cg-noise generate variations in images?",
+        "answer": "cg-noise generates variations in images by using a weight 'x' and two seeds. It generates the noise based on 'random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)'."
+    },
+    {
+        "question": "What are the inputs and outputs of the cg-noise node?",
+        "answer": "The inputs of the cg-noise node are 'seed', 'variation_seed', and 'x'. The output is a slightly varied noise that can be used as input for the 'img' node."
+    },
+    {
+        "question": "How can cg-noise be used to create variations from a single image?",
+        "answer": "By keeping the 'seed' constant and changing the 'variation_seed', cg-noise can be used to create variations from a single image in ComfyUI."
+    },
+    {
+        "question": "What is the role of the 'x' input in the cg-noise node?",
+        "answer": "The 'x' input in the cg-noise node determines the weight given to the variation_seed and seed in generating the noise. It controls the balance between the base noise and the variation."
+    },
+    {
+        "question": "Can cg-noise be used for creating video frames?",
+        "answer": "Yes, cg-noise can be used for creating video frames by using the same 'seed' and 'x', but changing the 'variation_seed' for each frame. This creates coherent variations across frames."
+    },
+    {
+        "question": "How does cg-noise provide control over the amount of variation in the generated images?",
+        "answer": "cg-noise provides control over the amount of variation in the generated images through the 'x' input, which determines the weight of the variation_seed in the noise generation process."
+    }
+]

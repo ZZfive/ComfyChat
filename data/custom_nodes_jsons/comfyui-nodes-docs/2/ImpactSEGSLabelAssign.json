@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SEGSLabelAssign node in ComfyUI?",
+        "answer": "The SEGSLabelAssign node is designed to assign labels to a series of paragraphs. It takes a list of paragraphs and corresponding labels as input, ensuring that each paragraph is associated with the correct label based on their order."
+    },
+    {
+        "question": "What is the significance of the 'segs' parameter in the SEGSLabelAssign node?",
+        "answer": "The 'segs' parameter is the collection of paragraphs that need to be labeled. It is crucial for the operation of the node as it defines the data that will receive the assigned labels. This parameter directly affects the output of the node, determining which paragraphs will be classified."
+    },
+    {
+        "question": "How does the 'labels' parameter function in the SEGSLabelAssign node?",
+        "answer": "The 'labels' parameter is a string that contains labels separated by commas. It is essential for the execution of the node as it specifies the labels that will be assigned to the paragraphs. The content of this parameter determines how the paragraphs are classified, influencing the overall output of the node."
+    },
+    {
+        "question": "What does the output 'SEGS' represent in the SEGSLabelAssign node?",
+        "answer": "The output 'SEGS' represents the collection of labeled paragraphs after the assignment process. It embodies the main result of the node, containing the paragraphs with newly assigned labels that are crucial for subsequent tasks."
+    },
+    {
+        "question": "What infrastructure type does the SEGSLabelAssign node use?",
+        "answer": "The SEGSLabelAssign node uses the CPU as its infrastructure type."
+    },
+    {
+        "question": "How are labels assigned to paragraphs in the SEGSLabelAssign node?",
+        "answer": "In the SEGSLabelAssign node, labels are assigned to paragraphs based on their order. The node checks if the number of labels matches the number of paragraphs. If a label exists for a paragraph, it is assigned; otherwise, the paragraph remains unchanged."
+    },
+    {
+        "question": "What does the 'doit' function in the SEGSLabelAssign node do?",
+        "answer": "The 'doit' function in the SEGSLabelAssign node takes the 'segs' and 'labels' as input, splits the 'labels' string by commas, and returns the result of the 'assign' function, which assigns the labels to the paragraphs."
+    }
+]

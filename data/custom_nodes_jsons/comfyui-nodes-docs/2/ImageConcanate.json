@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageConcanate node in ComfyUI?",
+        "answer": "The ImageConcanate node in ComfyUI is designed to concatenate two images in a specified direction, with an option to adjust the size of the second image to match the first."
+    },
+    {
+        "question": "What are the required inputs for the ImageConcanate node?",
+        "answer": "The required inputs for the ImageConcanate node are: image1 (the base image), image2 (the image to be concatenated), direction (specifying where image2 will be placed relative to image1), and match_image_size (a boolean flag determining whether to resize image2 to match image1's dimensions)."
+    },
+    {
+        "question": "What does the 'direction' parameter in the ImageConcanate node specify?",
+        "answer": "The 'direction' parameter in the ImageConcanate node specifies the direction in which the second image will be concatenated to the first image. The options include 'right', 'down', 'left', and 'up'."
+    },
+    {
+        "question": "How does the 'match_image_size' parameter affect the image concatenation process in the ImageConcanate node?",
+        "answer": "The 'match_image_size' parameter is a boolean flag that decides whether the second image's dimensions should be adjusted to match the first image's size before concatenation."
+    },
+    {
+        "question": "What is the output type of the ImageConcanate node?",
+        "answer": "The output type of the ImageConcanate node is a single composite image that results from concatenating the second image to the first image in the specified direction."
+    },
+    {
+        "question": "What is the infra type recommended for the ImageConcanate node?",
+        "answer": "The recommended infra type for the ImageConcanate node is GPU."
+    },
+    {
+        "question": "How does the ImageConcanate node concatenate images based on the chosen direction?",
+        "answer": "Based on the chosen direction, the ImageConcanate node concatenates images by using torch.cat() function. If 'right', image2 is concatenated to the right of image1. If 'down', image2 is concatenated below image1. If 'left', image1 is concatenated to the right of image2. If 'up', image1 is concatenated below image2."
+    }
+]

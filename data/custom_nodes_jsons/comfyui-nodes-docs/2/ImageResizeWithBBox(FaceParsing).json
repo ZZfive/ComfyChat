@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageResizeWithBBox node in ComfyUI?",
+        "answer": "The ImageResizeWithBBox node in ComfyUI is designed to resize an image while maintaining the aspect ratio and position of the bounding box, ensuring that key elements within the image are appropriately scaled and preserved for further processing."
+    },
+    {
+        "question": "What are the required input types for the ImageResizeWithBBox node?",
+        "answer": "The ImageResizeWithBBox node requires two input types: 'bbox' (Comfy dtype: BBOX, Python dtype: torch.Tensor) and 'image' (Comfy dtype: IMAGE, Python dtype: torch.Tensor)."
+    },
+    {
+        "question": "What does the 'bbox' parameter define in the ImageResizeWithBBox node?",
+        "answer": "The 'bbox' parameter is crucial for defining the region of interest within the image. It determines how the image is cropped and ensures that important features are centered and maintained during the resizing process."
+    },
+    {
+        "question": "What is the output type of the ImageResizeWithBBox node?",
+        "answer": "The output type of the ImageResizeWithBBox node is 'resized_image' (Comfy dtype: IMAGE, Python dtype: torch.Tensor), which is the resized image that meets the desired dimensions while keeping the position and aspect ratio of the bounding box intact."
+    },
+    {
+        "question": "What is the infra type for the ImageResizeWithBBox node?",
+        "answer": "The infra type for the ImageResizeWithBBox node is CPU."
+    },
+    {
+        "question": "In which category does the ImageResizeWithBBox node belong?",
+        "answer": "The ImageResizeWithBBox node belongs to the 'face_parsing' category."
+    },
+    {
+        "question": "What does the 'main' function in the ImageResizeWithBBox node do?",
+        "answer": "The 'main' function in the ImageResizeWithBBox node takes the 'bbox' and 'image' inputs, extracts the bounding box coordinates, and resizes the image using the 'functional.resize' method while maintaining the aspect ratio and position of the bounding box. It then returns the resized image."
+    }
+]

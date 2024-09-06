@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Image_History node in ComfyUI?",
+        "answer": "The WAS_Image_History node is designed to manage and retrieve historical images stored in the WASDatabase. It provides access to and displays images from the history, allowing users to view past image states or data."
+    },
+    {
+        "question": "What is the required input type for the WAS_Image_History node?",
+        "answer": "The required input type for the WAS_Image_History node is 'image', which is of type 'str' in both Comfy and Python. This parameter is crucial for specifying the historical image that the user wants to access."
+    },
+    {
+        "question": "What are the output types of the WAS_Image_History node?",
+        "answer": "The output types of the WAS_Image_History node are 'image' and 'filename_text'. 'image' is a retrieved historical image in tensor form, suitable for further processing or display purposes. 'filename_text' provides the filename of the retrieved image, which is useful for documentation, referencing, or additional metadata purposes."
+    },
+    {
+        "question": "What is the infrastructure type recommended for the WAS_Image_History node?",
+        "answer": "The infrastructure type recommended for the WAS_Image_History node is CPU."
+    },
+    {
+        "question": "How does the WAS_Image_History node retrieve historical images?",
+        "answer": "The WAS_Image_History node retrieves historical images by checking if the specified 'image' exists in the paths dictionary, which maps display names to file paths. If the image exists, it is opened, converted to RGB, and returned along with its filename."
+    },
+    {
+        "question": "What happens if the specified image does not exist in the WAS_Image_History node?",
+        "answer": "If the specified image does not exist in the WAS_Image_History node, an error message is printed, and a blank 512x512 RGB image with the filename 'null' is returned."
+    },
+    {
+        "question": "What is the purpose of the 'history_display_limit' configuration in the WAS_Image_History node?",
+        "answer": "The 'history_display_limit' configuration in the WAS_Image_History node is used to limit the number of historical image paths displayed in the node's input options. If set, the most recent paths up to the specified limit are shown."
+    }
+]

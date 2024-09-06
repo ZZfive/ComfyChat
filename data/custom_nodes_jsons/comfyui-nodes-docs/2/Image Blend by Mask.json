@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Image_Blend_Mask node in ComfyUI?",
+        "answer": "The WAS_Image_Blend_Mask node in ComfyUI is designed to seamlessly blend two images using a provided mask and blend percentage. It creates a visually coherent result where the masked area of one image is replaced by the corresponding area of another image according to the specified blend level."
+    },
+    {
+        "question": "What are the required inputs for the WAS_Image_Blend_Mask node?",
+        "answer": "The WAS_Image_Blend_Mask node requires three inputs: image_a, image_b, and mask. image_a is the primary image that will be blended with image_b. image_b is the secondary image whose masked regions will be blended onto image_a. The mask is a binary image that defines which parts of image_b should be visible in the final blend."
+    },
+    {
+        "question": "What does the blend_percentage input control in the WAS_Image_Blend_Mask node?",
+        "answer": "The blend_percentage input in the WAS_Image_Blend_Mask node determines the extent to which the masked regions of image_b are blended with image_a. It is an optional parameter that allows for fine-tuning the blending effect."
+    },
+    {
+        "question": "What is the output of the WAS_Image_Blend_Mask node?",
+        "answer": "The output of the WAS_Image_Blend_Mask node is a result_image, which is the final product of the blending process, combining image_a and image_b according to the mask and blend_percentage."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the WAS_Image_Blend_Mask node?",
+        "answer": "The WAS_Image_Blend_Mask node is recommended to be run on a CPU infrastructure type."
+    },
+    {
+        "question": "How does the WAS_Image_Blend_Mask node handle the mask input?",
+        "answer": "In the WAS_Image_Blend_Mask node, the mask input is first inverted to create a binary image that defines which parts of image_b should be visible in the final blend. This inverted mask is then resized to the size of image_a before being used in the blending process."
+    },
+    {
+        "question": "What does the image_blend_mask function in the WAS_Image_Blend_Mask node do?",
+        "answer": "The image_blend_mask function in the WAS_Image_Blend_Mask node is responsible for executing the blending process. It takes image_a, image_b, mask, and blend_percentage as inputs, performs the blending based on the mask and blend_percentage, and returns the result_image."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageListToImageBatch node in ComfyUI?",
+        "answer": "The ImageListToImageBatch node is designed to efficiently convert a list of images into a single image batch by concatenating the images along the first dimension, ensuring that all images in the batch have the same shape."
+    },
+    {
+        "question": "What is the input type for the ImageListToImageBatch node?",
+        "answer": "The required input type for the ImageListToImageBatch node is 'images', which is a list of image tensors that the node will process. The Comfy dtype is IMAGE, and the Python dtype is List[torch.Tensor]."
+    },
+    {
+        "question": "What is the output type of the ImageListToImageBatch node?",
+        "answer": "The output type of the ImageListToImageBatch node is a single image tensor representing the image batch created by concatenating the input images along the first dimension. The Comfy dtype is IMAGE, and the Python dtype is torch.Tensor."
+    },
+    {
+        "question": "What is the infra type recommended for the ImageListToImageBatch node?",
+        "answer": "The recommended infra type for the ImageListToImageBatch node is GPU."
+    },
+    {
+        "question": "In which category does the ImageListToImageBatch node belong?",
+        "answer": "The ImageListToImageBatch node belongs to the ImpactPack/Operation category."
+    },
+    {
+        "question": "What happens if the input images have different shapes in the ImageListToImageBatch node?",
+        "answer": "If the input images have different shapes, the node will upscale the second image to match the shape of the first image using the 'lanczos' method and 'center' anchor before concatenating them."
+    },
+    {
+        "question": "What does the ImageListToImageBatch node return if there is only one input image?",
+        "answer": "If there is only one input image, the ImageListToImageBatch node will return the input image as is without any modifications."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MakeImageBatch node in ComfyUI?",
+        "answer": "The MakeImageBatch node in ComfyUI is designed to efficiently combine multiple images into a single batch for further processing. It resizes the images when necessary to ensure all images in the batch have the same dimensions, and concatenates them along the batch dimension."
+    },
+    {
+        "question": "What is the role of the 'image1' parameter in the MakeImageBatch node?",
+        "answer": "The 'image1' parameter in the MakeImageBatch node serves as the first image and the reference for the image batch size. It is crucial because if subsequent images have different sizes, they will be resized to match its dimensions. The functionality of the node relies on this parameter to create a uniform batch for downstream tasks."
+    },
+    {
+        "question": "What does the 'kwargs' parameter allow in the MakeImageBatch node?",
+        "answer": "The 'kwargs' parameter in the MakeImageBatch node allows for the inclusion of additional images in the batch. Each image provided through this parameter is processed in the same way as 'image1', ensuring consistency of the batch. The flexibility of 'kwargs' enables the node to accommodate a variable number of images in different scenarios, enhancing its practicality."
+    },
+    {
+        "question": "What is the output of the MakeImageBatch node?",
+        "answer": "The output of the MakeImageBatch node is the concatenated image batch, where the images have been resized to maintain consistency within the batch. This output is important as it lays the foundation for subsequent image processing tasks, ensuring the batch is ready for operations such as neural network input or batch image editing."
+    },
+    {
+        "question": "What is the infra type recommended for the MakeImageBatch node?",
+        "answer": "The recommended infra type for the MakeImageBatch node is CPU."
+    },
+    {
+        "question": "What happens if the shapes of 'image1' and 'image2' are different in the MakeImageBatch node?",
+        "answer": "If the shapes of 'image1' and 'image2' are different in the MakeImageBatch node, 'image2' will be resized to match the shape of 'image1' using the 'common_upscale' function."
+    },
+    {
+        "question": "How are the images concatenated in the MakeImageBatch node?",
+        "answer": "In the MakeImageBatch node, the images are concatenated along the batch dimension using the 'torch.cat' function."
+    }
+]

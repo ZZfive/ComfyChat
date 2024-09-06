@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Image Motion节点通过什么方式来模拟图像运动？",
+        "answer": "Image Motion节点通过一系列变换来模拟图像运动，包括放大缩小和在x、y方向上的平移，同时应用重叠遮罩以实现更复杂的运动效果。"
+    },
+    {
+        "question": "Image Motion节点的必需输入类型有哪些？",
+        "answer": "Image Motion节点的必需输入类型包括：image（将应用运动效果的主要图像）、zoom（定义图像的缩放级别）、mask_i_feather、mask_i_overlap、x_translation（控制图像的水平移动）、y_translation（管理图像的垂直移动）和frame_counter（跟踪处理的帧数）。"
+    },
+    {
+        "question": "Image Motion节点的可选输入类型有哪些？",
+        "answer": "Image Motion节点的可选输入类型包括：noise（可选的图像，用于为运动效果添加噪声）和output_resize_width及output_resize_height（可选择调整输出图像的宽度和高度）。"
+    },
+    {
+        "question": "Image Motion节点的输出类型是什么？",
+        "answer": "Image Motion节点的输出类型包括：image（应用运动效果后的变换图像）、mask1、mask2和mask3（用于创建和增强运动效果的遮罩变换结果）。"
+    },
+    {
+        "question": "如何对输出图像的尺寸进行调整？",
+        "answer": "可以通过设置output_resize_width和output_resize_height这两个可选输入参数来调整输出图像的宽度和高度。"
+    },
+    {
+        "question": "在Image Motion节点中，遮罩overlap参数的作用是什么？",
+        "answer": "在Image Motion节点中，遮罩的overlap参数用于控制遮罩的重叠面积，从而影响运动效果。遮罩的重叠越小，运动效果越明显。"
+    },
+    {
+        "question": "Image Motion节点使用什么库对图像进行处理？",
+        "answer": "Image Motion节点使用PIL（Python Imaging Library）对图像进行处理，例如resize、paste等操作。"
+    }
+]

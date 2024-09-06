@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageTransformCropAbsolute node in ComfyUI?",
+        "answer": "The ImageTransformCropAbsolute node is used to perform absolute cropping operation on a batch of images. It crops the images to a specific rectangle size based on the specified absolute pixel coordinates, focusing on a particular region by removing the unnecessary outer parts."
+    },
+    {
+        "question": "What are the required input parameters for the ImageTransformCropAbsolute node?",
+        "answer": "The required input parameters for the ImageTransformCropAbsolute node are: images (the batch of images to be cropped), start_x (the starting x-coordinate of the crop), start_y (the starting y-coordinate of the crop), end_x (the ending x-coordinate of the crop), and end_y (the ending y-coordinate of the crop)."
+    },
+    {
+        "question": "How does the ImageTransformCropAbsolute node affect the width and height of the cropped image?",
+        "answer": "The width and height of the cropped image are determined by the difference between the end_x and start_x coordinates and the difference between the end_y and start_y coordinates, respectively."
+    },
+    {
+        "question": "What is the output type of the ImageTransformCropAbsolute node?",
+        "answer": "The output type of the ImageTransformCropAbsolute node is a cropped image (Comfy dtype: IMAGE, Python dtype: torch.Tensor)."
+    },
+    {
+        "question": "On what infra type does the ImageTransformCropAbsolute node commonly run?",
+        "answer": "The ImageTransformCropAbsolute node commonly runs on the 'GPU' infra type."
+    },
+    {
+        "question": "Does the ImageTransformCropAbsolute node include an end coordinate in the cropped image?",
+        "answer": "No, the ImageTransformCropAbsolute node does not include the end coordinates (end_x and end_y) in the cropped image. The end coordinates are exclusive and define the right and bottom boundaries of the cropping rectangle."
+    },
+    {
+        "question": "What does the 'resize_tensor' function do in the source code of the ImageTransformCropAbsolute node?",
+        "answer": "The 'resize_tensor' function in the source code of the ImageTransformCropAbsolute node converts the input tensor to an image, crops the image based on the specified start_x, start_y, end_x, and end_y coordinates, and then converts the cropped image back to a tensor."
+    }
+]

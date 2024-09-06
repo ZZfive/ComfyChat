@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageToMask node in ComfyUI?",
+        "answer": "The ImageToMask node in ComfyUI is designed to convert an input image into a mask representation. It provides a method for converting images based on intensity or alpha values, which helps create binary or single-channel masks from the input data. This is crucial for various image processing tasks such as segmentation."
+    },
+    {
+        "question": "What are the required inputs for the ImageToMask node?",
+        "answer": "The ImageToMask node requires two inputs: 'image' and 'method'. The 'image' parameter is essential as it is the main input for the node. It affects the node's execution by determining the source for the mask to be generated. The image is expected to exist in tensor format, and the node will process this tensor to produce the desired mask output. The 'method' parameter determines the conversion strategy adopted by the node, which influences whether the mask is derived based on intensity or alpha values."
+    },
+    {
+        "question": "What output does the ImageToMask node produce?",
+        "answer": "The ImageToMask node produces a single output called 'MASK', which is a tensor representing the mask derived from the input image. It is a crucial output as it encapsulates the transformed image data into a format suitable for segmentation or other mask-based applications."
+    },
+    {
+        "question": "What infrastructure type does the ImageToMask node use?",
+        "answer": "The ImageToMask node uses CPU as the infrastructure type."
+    },
+    {
+        "question": "How does the ImageToMask node convert an image based on the 'method' parameter?",
+        "answer": "If the 'method' parameter is set to 'intensity', the ImageToMask node first checks if the image has more than 3 dimensions and if the last dimension is 4. If so, it converts the image to RGB. It then converts the image to a mask using the `tensor2mask` function. If the 'method' parameter is set to 'alpha', it converts the image to RGBA and takes the first channel of the result."
+    },
+    {
+        "question": "What is the category of the ImageToMask node in ComfyUI?",
+        "answer": "The ImageToMask node belongs to the 'Masquerade Nodes' category in ComfyUI."
+    },
+    {
+        "question": "What are the possible values for the 'method' parameter in the ImageToMask node?",
+        "answer": "The 'method' parameter in the ImageToMask node can take two possible values: 'intensity' or 'alpha'."
+    }
+]

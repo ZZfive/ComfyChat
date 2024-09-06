@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Image_Edge class in ComfyUI?",
+        "answer": "The WAS_Image_Edge class in ComfyUI is designed to apply edge detection to an input image. It processes the image using either 'normal' or 'laplacian' mode to highlight edges within the image, enhancing visual features for further analysis or processing."
+    },
+    {
+        "question": "What are the required input parameters for the WAS_Image_Edge node?",
+        "answer": "The required input parameters for the WAS_Image_Edge node are 'image', which is the input image to be processed, and 'mode', which indicates the type of edge detection to be applied ('normal' or 'laplacian')."
+    },
+    {
+        "question": "What is the output of the WAS_Image_Edge node?",
+        "answer": "The output of the WAS_Image_Edge node is 'edges_image', which contains the processed image with edges highlighted according to the selected mode."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the WAS_Image_Edge node?",
+        "answer": "The recommended infrastructure type for running the WAS_Image_Edge node is CPU."
+    },
+    {
+        "question": "How does the WAS_Image_Edge node handle the 'normal' mode for edge detection?",
+        "answer": "In 'normal' mode, the WAS_Image_Edge node applies the ImageFilter.FIND_EDGES filter to the input image to detect edges."
+    },
+    {
+        "question": "How does the WAS_Image_Edge node handle the 'laplacian' mode for edge detection?",
+        "answer": "In 'laplacian' mode, the WAS_Image_Edge node applies the ImageFilter.Kernel with a specific kernel configuration to the input image to detect edges."
+    },
+    {
+        "question": "What is the output format of the 'edges_image' in the WAS_Image_Edge node?",
+        "answer": "The output format of the 'edges_image' in the WAS_Image_Edge node is a torch.Tensor, which is a PyTorch tensor data type."
+    }
+]

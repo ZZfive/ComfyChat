@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageOnlyCheckpointLoader node in ComfyUI?",
+        "answer": "The ImageOnlyCheckpointLoader node is responsible for loading checkpoints from a specified directory and returning the related model, CLIP vision module, and VAE components. It abstracts the complexity of checkpoint loading and extraction, providing a direct interface for downstream tasks."
+    },
+    {
+        "question": "What is the required input for the ImageOnlyCheckpointLoader node?",
+        "answer": "The required input for the ImageOnlyCheckpointLoader node is 'ckpt_name', which is the name of the checkpoint file to be loaded. It is crucial for identifying the specific checkpoint in the directory as it directly affects the node's operation and the generated model components."
+    },
+    {
+        "question": "What are the output types of the ImageOnlyCheckpointLoader node?",
+        "answer": "The output types of the ImageOnlyCheckpointLoader node are MODEL (the loaded model component), CLIP_VISION (the extracted CLIP vision module), and VAE (the loaded Variational Autoencoder component)."
+    },
+    {
+        "question": "What is the purpose of the CLIP vision module in the ImageOnlyCheckpointLoader node?",
+        "answer": "The CLIP vision module extracted from the checkpoint is essential for tasks involving text-to-image generation or image-text matching."
+    },
+    {
+        "question": "What is the purpose of the VAE component in the ImageOnlyCheckpointLoader node?",
+        "answer": "The Variational Autoencoder (VAE) component loaded from the checkpoint is typically used for latent space manipulation and generation tasks."
+    },
+    {
+        "question": "What is the infra type for the ImageOnlyCheckpointLoader node?",
+        "answer": "The infra type for the ImageOnlyCheckpointLoader node is CPU."
+    },
+    {
+        "question": "What is the source code for the 'load_checkpoint' function in the ImageOnlyCheckpointLoader node?",
+        "answer": "The source code for the 'load_checkpoint' function in the ImageOnlyCheckpointLoader node is: ```def load_checkpoint(self, ckpt_name, output_vae=True, output_clip=True): ckpt_path = folder_paths.get_full_path('checkpoints', ckpt_name) out = comfy.sd.load_checkpoint_guess_config(ckpt_path, output_vae=True, output_clip=False, output_clipvision=True, embedding_directory=folder_paths.get_folder_paths('embeddings')) return (out[0], out[3], out[2])```"
+    }
+]

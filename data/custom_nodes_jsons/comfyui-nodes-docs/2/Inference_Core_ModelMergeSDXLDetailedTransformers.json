@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Inference_Core_ModelMergeSDXLDetailedTransformers节点的作用是什么?",
+        "answer": "Inference_Core_ModelMergeSDXLDetailedTransformers节点专门用于融合两个SDXL transformer模型，提供详细的配置选项来调整模型架构中的transformer块，以实现增强的模型集成和性能优化。"
+    },
+    {
+        "question": "Inference_Core_ModelMergeSDXLDetailedTransformers节点需要哪些必需的输入参数？",
+        "answer": "Inference_Core_ModelMergeSDXLDetailedTransformers节点需要以下必需输入参数：model1（要融合的其中一个模型），model2（要融合的第二个模型），time_embed.（调整融合过程中时间嵌入层权重的参数），label_emb.（调整融合过程中标签嵌入层权重的参数）。"
+    },
+    {
+        "question": "Inference_Core_ModelMergeSDXLDetailedTransformers节点的输入块参数包括哪些？",
+        "answer": "Inference_Core_ModelMergeSDXLDetailedTransformers节点的输入块参数包括：input_blocks.i.j.（输入块的调整参数）、input_blocks.i.j.transformer_blocks.k.norm1（输入块中transformer块的第一个归一化层的调整参数）等一系列详细的调整参数，用于精确调整和微调模型的输入部分。"
+    },
+    {
+        "question": "Inference_Core_ModelMergeSDXLDetailedTransformers节点的中间块参数有哪些？",
+        "answer": "Inference_Core_ModelMergeSDXLDetailedTransformers节点的中间块参数包括：middle_block.i.（中间块的调整参数）、middle_block.i.transformer_blocks.j.norm1（中间块中transformer块的第一个归一化层的调整参数）等，用于调整模型中间部分的性能。"
+    },
+    {
+        "question": "Inference_Core_ModelMergeSDXLDetailedTransformers节点的输出块参数包含哪些？",
+        "answer": "Inference_Core_ModelMergeSDXLDetailedTransformers节点的输出块参数包括：output_blocks.i.j.（输出块的调整参数）、output_blocks.i.j.transformer_blocks.k.norm1（输出块中transformer块的第一个归一化层的调整参数）等，用于调整和优化模型的输出部分。"
+    },
+    {
+        "question": "Inference_Core_ModelMergeSDXLDetailedTransformers节点的输出类型是什么？",
+        "answer": "Inference_Core_ModelMergeSDXLDetailedTransformers节点的输出类型是model，表示通过详细的transformer参数调整优化后的融合模型，具有提高性能和集成效果的作用。"
+    },
+    {
+        "question": "Inference_Core_ModelMergeSDXLDetailedTransformers节点使用的基础设施类型是什么？",
+        "answer": "Inference_Core_ModelMergeSDXLDetailedTransformers节点使用的基础设施类型是GPU。"
+    }
+]

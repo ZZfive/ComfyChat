@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Image_Analyze node in ComfyUI?",
+        "answer": "The WAS_Image_Analyze node is designed to perform various image analysis operations, including black and white level adjustments, RGB channel frequency analysis, and seamless texture generation. It is a comprehensive tool for enhancing image quality and preparing images for further processing or visualization."
+    },
+    {
+        "question": "What are the required input types for the WAS_Image_Analyze node?",
+        "answer": "The required input type for the WAS_Image_Analyze node is an image, which is the image that the node will process. It serves as the basic data for all the analysis and transformation operations performed by the node."
+    },
+    {
+        "question": "What is the optional input type for the WAS_Image_Analyze node?",
+        "answer": "The optional input type for the WAS_Image_Analyze node is the mode parameter, which determines the specific analysis or transformation to be applied to the input image. It influences the operation of the node, guiding it to perform tasks such as adjusting black and white levels or analyzing channel frequencies."
+    },
+    {
+        "question": "What are the available mode options for the WAS_Image_Analyze node?",
+        "answer": "The available mode options for the WAS_Image_Analyze node are 'Black White Levels' and 'RGB Levels'."
+    },
+    {
+        "question": "What is the output type of the WAS_Image_Analyze node?",
+        "answer": "The output type of the WAS_Image_Analyze node is a result image, which is the output of the node's analysis or transformation process. It contains the changes made to the input image based on the specified mode and parameters."
+    },
+    {
+        "question": "What infrastructure type does the WAS_Image_Analyze node use?",
+        "answer": "The WAS_Image_Analyze node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the WAS_Image_Analyze node handle the image input?",
+        "answer": "In the source code of the WAS_Image_Analyze node, the image input is first converted from tensor to PIL format using the tensor2pil function. Then, depending on the selected mode, the node performs the corresponding analysis or transformation using the WAS_Tools_Class. Finally, the processed image is converted back to tensor format using the pil2tensor function before being returned as output."
+    }
+]

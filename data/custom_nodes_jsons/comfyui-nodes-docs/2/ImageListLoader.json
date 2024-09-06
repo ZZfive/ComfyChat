@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageListLoader node in ComfyUI?",
+        "answer": "The ImageListLoader node in ComfyUI is designed to load a list of images from a specified source, facilitating processing and manipulation of multiple images in batch processing or image analysis workflows."
+    },
+    {
+        "question": "What are the required inputs for the ImageListLoader node?",
+        "answer": "The required inputs for the ImageListLoader node are: folder_path (directory path to load images from), file_filter (file pattern to filter loaded images), and sort_method (determines the sorting method for loading images, either 'numerical' or 'alphabetical')."
+    },
+    {
+        "question": "What is the output of the ImageListLoader node?",
+        "answer": "The output of the ImageListLoader node is a list of loaded images, making them available for further processing or analysis in workflows that require simultaneous operation on multiple images."
+    },
+    {
+        "question": "What infrastructure type does the ImageListLoader node use?",
+        "answer": "The ImageListLoader node uses the 'CPU' infrastructure type."
+    },
+    {
+        "question": "How does the ImageListLoader node determine the sorting method for loading images?",
+        "answer": "The ImageListLoader node determines the sorting method for loading images based on the 'sort_method' input, which can be either 'numerical' or 'alphabetical'. The numerical_sort and alphabetical_sort static methods are used to implement the respective sorting methods."
+    },
+    {
+        "question": "What happens if the specified folder path does not exist?",
+        "answer": "If the specified folder path does not exist, the ImageListLoader node will raise an exception with the message 'Folder path {folder_path} does not exist.'"
+    },
+    {
+        "question": "How does the ImageListLoader node load and return the images?",
+        "answer": "The ImageListLoader node loads the images by filtering the files in the specified folder using the provided file_filter, sorting them based on the specified sort_method, and then opening and converting the filtered image files using pil2tensor. The loaded images are returned as a tuple of lists of tensors."
+    }
+]

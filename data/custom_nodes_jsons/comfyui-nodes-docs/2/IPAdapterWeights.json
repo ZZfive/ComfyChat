@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the IPAdapterWeights node in ComfyUI?",
+        "answer": "The IPAdapterWeights node in ComfyUI is designed to process and interpolate a series of weights according to a specified time function, allowing for dynamic adjustment of the influence of different components in a model or system over time."
+    },
+    {
+        "question": "What is the 'weights' parameter in the IPAdapterWeights node?",
+        "answer": "The 'weights' parameter in the IPAdapterWeights node is a string containing a comma-separated list of floating-point numbers. It is crucial for defining the initial set of weights that the node will process and interpolate over time."
+    },
+    {
+        "question": "What does the 'timing' parameter in the IPAdapterWeights node determine?",
+        "answer": "The 'timing' parameter in the IPAdapterWeights node determines the time function used to interpolate the weights at specified frames. It can be one of several predefined options, each producing a different rate of change in weights over time."
+    },
+    {
+        "question": "How does the 'frames' parameter in the IPAdapterWeights node affect the weight application?",
+        "answer": "The 'frames' parameter in the IPAdapterWeights node specifies the total number of frames over which the weights will be applied. It sets an upper limit on the duration of the weight sequence."
+    },
+    {
+        "question": "What is the role of the 'start_frame' and 'end_frame' parameters in the IPAdapterWeights node?",
+        "answer": "The 'start_frame' parameter indicates the frame number at which the weight sequence should begin, while the 'end_frame' parameter defines the frame number at which the weight sequence ends. These parameters allow for customization of the start and end points of weight application within the overall frame sequence."
+    },
+    {
+        "question": "What does the output 'weights' represent in the IPAdapterWeights node?",
+        "answer": "The output 'weights' in the IPAdapterWeights node is a list of floating-point numbers representing the processed and interpolated weights that will be applied to the frame sequence. This output directly affects the behavior of the model or system into which the weights are integrated."
+    },
+    {
+        "question": "What infrastructure type does the IPAdapterWeights node use?",
+        "answer": "The IPAdapterWeights node uses the CPU infrastructure type."
+    }
+]

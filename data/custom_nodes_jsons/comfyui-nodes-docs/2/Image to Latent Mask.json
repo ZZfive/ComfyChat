@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Image_To_Mask node in ComfyUI?",
+        "answer": "The WAS_Image_To_Mask node in ComfyUI is designed to extract specific color channels from a set of images and convert them into masks. This process is crucial for applications that require isolating specific components of an image, such as in image segmentation or object recognition tasks."
+    },
+    {
+        "question": "What are the required input types for the WAS_Image_To_Mask node?",
+        "answer": "The required input types for the WAS_Image_To_Mask node are 'images' and 'channel'. The 'images' parameter represents the input images that the node will process, and the 'channel' parameter determines which color channel will be extracted to form the mask."
+    },
+    {
+        "question": "What does the 'channel' parameter in the WAS_Image_To_Mask node specify?",
+        "answer": "The 'channel' parameter in the WAS_Image_To_Mask node specifies which color channel will be extracted from the input images to form the mask. It is a key selection that affects the appearance of the final mask and its utility in subsequent processing steps."
+    },
+    {
+        "question": "What is the output type of the WAS_Image_To_Mask node?",
+        "answer": "The output type of the WAS_Image_To_Mask node is 'MASKS'. It consists of the generated masks derived from the selected color channel of the input images. These masks are crucial for tasks that involve isolating and analyzing specific parts of an image."
+    },
+    {
+        "question": "What infrastructure type does the WAS_Image_To_Mask node use?",
+        "answer": "The WAS_Image_To_Mask node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the WAS_Image_To_Mask node convert the selected color channel into a mask?",
+        "answer": "The WAS_Image_To_Mask node converts the selected color channel into a mask by first splitting the input image into its RGBA components. It then selects the specified channel based on the 'channel' parameter, converts it to a grayscale image, and finally converts it into a float tensor."
+    },
+    {
+        "question": "What is the return type of the image_to_mask function in the WAS_Image_To_Mask class?",
+        "answer": "The return type of the image_to_mask function in the WAS_Image_To_Mask class is a tuple containing a single torch.Tensor, which represents the concatenated masks generated from the input images."
+    }
+]

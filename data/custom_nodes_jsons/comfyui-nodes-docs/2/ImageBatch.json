@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the 'batch' method in the ImageBatch node in ComfyUI?",
+        "answer": "The 'batch' method in the ImageBatch node is designed to efficiently process and combine two image inputs into a single batch. It ensures the two images have the same size by performing upsampling operations if necessary, and then concatenates them along the batch dimension."
+    },
+    {
+        "question": "What is the significance of the 'image1' parameter in the ImageBatch node?",
+        "answer": "The 'image1' parameter represents the first image in the batch. It is crucial for the node's operation as it is one of the two images that will be processed and combined. The dimensions and content of the image significantly impact the node's output and subsequent processing steps."
+    },
+    {
+        "question": "How does the ImageBatch node handle the 'image2' parameter if its dimensions differ from 'image1'?",
+        "answer": "If the dimensions of 'image2' are different from 'image1', the ImageBatch node resizes 'image2' to match the dimensions of 'image1'. This ensures consistency within the batch for uniform processing."
+    },
+    {
+        "question": "What does the 'batched_images' output represent in the ImageBatch node?",
+        "answer": "The 'batched_images' output is a tensor containing the combined images from 'image1' and 'image2'. It is the primary result of the node's operation and represents the image batch ready for downstream tasks such as model inference or further image analysis."
+    },
+    {
+        "question": "What infrastructure type is recommended for the ImageBatch node?",
+        "answer": "The recommended infrastructure type for the ImageBatch node is CPU."
+    },
+    {
+        "question": "What is the return type of the 'batch' function in the ImageBatch node?",
+        "answer": "The return type of the 'batch' function in the ImageBatch node is a torch.Tensor representing the batched images."
+    },
+    {
+        "question": "What category does the ImageBatch node belong to in ComfyUI?",
+        "answer": "The ImageBatch node belongs to the 'image' category in ComfyUI."
+    }
+]

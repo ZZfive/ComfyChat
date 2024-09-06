@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImagePadForOutpaint node in ComfyUI?",
+        "answer": "The ImagePadForOutpaint node is designed to extend the boundaries of an image, which is particularly useful for outpainting tasks. It allows extending each side of the image by a specified number of pixels and optionally adding a feathering effect to smoothly blend the new edges with the original image."
+    },
+    {
+        "question": "What are the required input parameters for the ImagePadForOutpaint node?",
+        "answer": "The required input parameters for the ImagePadForOutpaint node are 'image', which is the input image to be padded, and the number of pixels to add on each side: 'left', 'top', 'right', and 'bottom'. Additionally, the 'feathering' parameter controls the smoothness of the transition between the original image area and the newly added image area."
+    },
+    {
+        "question": "What does the 'feathering' parameter in the ImagePadForOutpaint node control?",
+        "answer": "The 'feathering' parameter in the ImagePadForOutpaint node controls the smoothness of the transition between the original image area and the newly added image area. A higher value results in a more gradual transition."
+    },
+    {
+        "question": "What are the output types of the ImagePadForOutpaint node?",
+        "answer": "The output types of the ImagePadForOutpaint node are 'new_image' and 'mask'. 'new_image' is the result of the expansion process, showing the original image padded on each side by the specified amount. 'mask' is a binary image that segments the original image area from the newly added areas, primarily used for blending purposes."
+    },
+    {
+        "question": "What is the infra type recommended for the ImagePadForOutpaint node?",
+        "answer": "The recommended infra type for the ImagePadForOutpaint node is GPU."
+    },
+    {
+        "question": "How does the ImagePadForOutpaint node blend the original image area with the newly added image area when feathering is applied?",
+        "answer": "When feathering is applied, the ImagePadForOutpaint node calculates the distance from each pixel to the nearest edge of the original image. If this distance is less than the feathering value, a blending value is computed based on the ratio of the feathering value to the distance, squared. This blending value is then used to create a smooth transition between the original image area and the newly added image area in the mask output."
+    },
+    {
+        "question": "What is the default value for the 'feathering' parameter in the ImagePadForOutpaint node?",
+        "answer": "The default value for the 'feathering' parameter in the ImagePadForOutpaint node is 40."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the InRangeHSV node in ComfyUI?",
+        "answer": "The InRangeHSV node in ComfyUI is designed to filter an image based on specified hue, saturation, and value (HSV) ranges, allowing for the isolation of specific colors or color ranges within the image."
+    },
+    {
+        "question": "What are the required input types for the InRangeHSV node?",
+        "answer": "The required input types for the InRangeHSV node are: rgb_image (the input RGB image to be converted to HSV and filtered), color_a and color_b (the two color boundaries in HSV format that define the filtering range), and hue_mode (the method for hue filtering)."
+    },
+    {
+        "question": "What does the 'hue_mode' parameter in the InRangeHSV node specify?",
+        "answer": "The 'hue_mode' parameter in the InRangeHSV node specifies the method used for hue filtering, allowing different strategies such as ignoring, splitting, or selecting the largest/smallest hue interval."
+    },
+    {
+        "question": "What is the output type of the InRangeHSV node?",
+        "answer": "The output type of the InRangeHSV node is an image, which is the result of applying the HSV range filtering to highlight pixels within the specified HSV range, effectively isolating the desired color range."
+    },
+    {
+        "question": "What infrastructure type does the InRangeHSV node use?",
+        "answer": "The InRangeHSV node uses the GPU infrastructure type."
+    },
+    {
+        "question": "How does the InRangeHSV node handle the selection of hue intervals?",
+        "answer": "The InRangeHSV node provides several methods for selecting hue intervals, such as choosing the smallest or largest interval, ignoring hue entirely, using a single check, or splitting the check. These methods are defined in the 'hue_modes_map' dictionary in the source code."
+    },
+    {
+        "question": "What is the purpose of the 'get_saturation_and_value_bounds' static method in the InRangeHSV class?",
+        "answer": "The 'get_saturation_and_value_bounds' static method in the InRangeHSV class calculates the minimum and maximum saturation and value bounds based on the provided color_a and color_b parameters, which are used for filtering the image."
+    }
+]

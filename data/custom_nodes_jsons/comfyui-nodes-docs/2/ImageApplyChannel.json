@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageApplyChannel node in ComfyUI?",
+        "answer": "The ImageApplyChannel node is designed to modify a collection of images by applying given channel data to a specific color channel (red, green, blue, Alpha) of the images, allowing precise control over the color composition and transparency of the images."
+    },
+    {
+        "question": "What are the required input types for the ImageApplyChannel node?",
+        "answer": "The required input types for the ImageApplyChannel node are: images (the collection of images to be modified), channel_data (the data to be applied to the specified channel of each image), and channel (specifies which color channel to modify in the images - red, green, blue, or Alpha)."
+    },
+    {
+        "question": "What does the channel parameter in the ImageApplyChannel node specify?",
+        "answer": "The channel parameter in the ImageApplyChannel node specifies which color channel (red, green, blue, or Alpha) to modify in the images."
+    },
+    {
+        "question": "What is the output type of the ImageApplyChannel node?",
+        "answer": "The output type of the ImageApplyChannel node is the modified image after applying the specified channel data."
+    },
+    {
+        "question": "What infrastructure type does the ImageApplyChannel node use?",
+        "answer": "The ImageApplyChannel node uses the GPU infrastructure type."
+    },
+    {
+        "question": "In the source code of ImageApplyChannel, what happens if the selected channel is 'A' and the image has less than 4 channels?",
+        "answer": "If the selected channel is 'A' (Alpha) and the image has less than 4 channels, the code adds an extra channel filled with ones to the image using torch.cat before applying the channel_data to the Alpha channel."
+    },
+    {
+        "question": "How does the ImageApplyChannel node apply the channel_data to the specified color channel of each image?",
+        "answer": "The ImageApplyChannel node applies the channel_data to the specified color channel of each image by assigning the channel_data directly to the corresponding color channel slice of the image tensor based on the channel selection."
+    }
+]

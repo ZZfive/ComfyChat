@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageUpscaleWithModelBatched node in ComfyUI?",
+        "answer": "The ImageUpscaleWithModelBatched node is an optimized image upscaling tool that uses a specified model to enlarge images. It reduces VRAM usage by processing images in batches."
+    },
+    {
+        "question": "What are the required inputs for the ImageUpscaleWithModelBatched node?",
+        "answer": "The required inputs for the ImageUpscaleWithModelBatched node are the upscale_model (the model used for upscaling), images (the batch of images to be upscaled), and per_batch (the number of images to be processed in each sub-batch)."
+    },
+    {
+        "question": "How does the per_batch parameter help in the ImageUpscaleWithModelBatched node?",
+        "answer": "The per_batch parameter allows users to control the number of images processed in each sub-batch, which helps find a balance between performance and resource usage during the upscaling process."
+    },
+    {
+        "question": "What is the output of the ImageUpscaleWithModelBatched node?",
+        "answer": "The output of the ImageUpscaleWithModelBatched node is the upscaled images, returned in the same order as the input images, making it convenient for direct comparison or further processing."
+    },
+    {
+        "question": "What infrastructure type is recommended for the ImageUpscaleWithModelBatched node?",
+        "answer": "The recommended infrastructure type for the ImageUpscaleWithModelBatched node is GPU."
+    },
+    {
+        "question": "How does the ImageUpscaleWithModelBatched node differ from the native ComfyUI model upscaling node?",
+        "answer": "The ImageUpscaleWithModelBatched node differs from the native ComfyUI model upscaling node by allowing users to set sub-batches for reduced VRAM usage, providing greater flexibility when processing large numbers of images or images that require significant computational resources."
+    },
+    {
+        "question": "What happens in the source code of the ImageUpscaleWithModelBatched node after each sub-batch of images is processed?",
+        "answer": "After each sub-batch of images is processed in the ImageUpscaleWithModelBatched node, the processed images are appended to a list, the progress bar is updated with the number of images processed in the batch, and the upscaled images are moved to the CPU."
+    }
+]

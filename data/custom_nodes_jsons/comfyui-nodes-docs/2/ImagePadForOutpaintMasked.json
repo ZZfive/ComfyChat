@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImagePadForOutpaintMasked node in ComfyUI?",
+        "answer": "The ImagePadForOutpaintMasked node is designed to extend the boundaries of an image, a process known as outpainting. It achieves this by adding extra pixels that are intelligently computed to seamlessly blend with the original content."
+    },
+    {
+        "question": "What are the required inputs for the ImagePadForOutpaintMasked node?",
+        "answer": "The required inputs for the ImagePadForOutpaintMasked node are: image, left, top, right, bottom, and feathering."
+    },
+    {
+        "question": "What does the 'feathering' parameter control in the ImagePadForOutpaintMasked node?",
+        "answer": "The 'feathering' parameter controls the smoothness of the transition between the original image and the padded area. It is particularly important for creating a natural and seamless blend, enhancing the visual effect of the outpainted image."
+    },
+    {
+        "question": "What is the purpose of the optional 'mask' parameter in the ImagePadForOutpaintMasked node?",
+        "answer": "The optional 'mask' parameter is used to define a mask for the image. It specifies areas of the image that should be preserved during the outpainting process, ensuring these areas remain unchanged."
+    },
+    {
+        "question": "What are the output types of the ImagePadForOutpaintMasked node?",
+        "answer": "The output types of the ImagePadForOutpaintMasked node are 'new_image' and 'new_mask'. 'new_image' represents the extended image with added padding, and 'new_mask' is the updated mask corresponding to the extended image."
+    },
+    {
+        "question": "What infrastructure type is recommended for the ImagePadForOutpaintMasked node?",
+        "answer": "The recommended infrastructure type for the ImagePadForOutpaintMasked node is CPU."
+    },
+    {
+        "question": "How does the ImagePadForOutpaintMasked node handle the 'mask' parameter if it is not provided?",
+        "answer": "If the 'mask' parameter is not provided, the ImagePadForOutpaintMasked node creates a new mask based on the dimensions of the extended image. It then calculates a feathering effect based on the distance from the edges of the original image, with closer pixels being more transparent."
+    }
+]

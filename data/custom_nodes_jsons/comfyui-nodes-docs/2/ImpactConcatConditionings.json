@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ConcatConditionings node in ComfyUI?",
+        "answer": "The ConcatConditionings node is designed to merge multiple conditioning inputs into a single output. It effectively combines their influences by concatenating the first element of each conditioning input with the main conditioning input."
+    },
+    {
+        "question": "What is the primary conditioning input in the ConcatConditionings node?",
+        "answer": "The primary conditioning input is 'conditioning1'. It is crucial as it forms the basis of the merged output and influences the final conditioning applied to the model."
+    },
+    {
+        "question": "What is the role of 'conditioning_from' in the ConcatConditionings node?",
+        "answer": "The 'conditioning_from' is an additional conditioning input that will be concatenated with the primary conditioning input. Each input is expected to contribute to the overall conditioning effect."
+    },
+    {
+        "question": "What happens if there are multiple conditionings in 'conditioning_from'?",
+        "answer": "If there are multiple conditionings in 'conditioning_from', a warning is issued indicating that only the first one will be applied to 'conditioning1'."
+    },
+    {
+        "question": "What is the output type of the ConcatConditionings node?",
+        "answer": "The output type of the ConcatConditionings node is 'CONDITIONING'. The output is a list of concatenated conditioning pairs, where each pair consists of a tensor formed by concatenating the main and additional conditioning tensors, and a copy of the secondary element from the original conditioning pair."
+    },
+    {
+        "question": "What is the infra type for the ConcatConditionings node?",
+        "answer": "The infra type for the ConcatConditionings node is CPU."
+    },
+    {
+        "question": "What is the category of the ConcatConditionings node in ComfyUI?",
+        "answer": "The category of the ConcatConditionings node in ComfyUI is 'ImpactPack/Util'."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Image_Crop_Face node in ComfyUI?",
+        "answer": "The WAS_Image_Crop_Face node is designed to intelligently detect and crop faces from images in ComfyUI. It uses predefined cascade classifiers to locate faces and allows for padding adjustments around the detected facial region."
+    },
+    {
+        "question": "What are the required inputs for the WAS_Image_Crop_Face node?",
+        "answer": "The required inputs for the WAS_Image_Crop_Face node are an input image from which the face will be detected and cropped. This is a mandatory parameter as the node's operation essentially depends on the presence of an image."
+    },
+    {
+        "question": "What does the crop_padding_factor parameter in the WAS_Image_Crop_Face node control?",
+        "answer": "The crop_padding_factor parameter determines the amount of padding around the detected face. A padding factor of 0.25 means that 25% of the face size will be used as padding. This parameter is optional and defaults to 0.25 if not provided."
+    },
+    {
+        "question": "What is the purpose of the cascade_xml parameter in the WAS_Image_Crop_Face node?",
+        "answer": "The cascade_xml parameter is used to specify the cascade XML file for face detection. If a face is not detected using the first XML file, the node will attempt to use multiple cascade files. This parameter is optional and if not specified, the node will use default cascade files."
+    },
+    {
+        "question": "What are the output types of the WAS_Image_Crop_Face node?",
+        "answer": "The WAS_Image_Crop_Face node outputs two types of data: cropped_face_image, which is the cropped face image adjusted for size and padding extracted from the input image, and crop_data, which provides metadata about the face crop including the original size of the face in the image and the coordinates of the crop box."
+    },
+    {
+        "question": "What is the infra type specified for the WAS_Image_Crop_Face node?",
+        "answer": "The infra type specified for the WAS_Image_Crop_Face node is CPU."
+    },
+    {
+        "question": "How does the WAS_Image_Crop_Face node handle cases where no faces are detected in the image?",
+        "answer": "If no faces are found in the image, the WAS_Image_Crop_Face node prints a warning message and returns a blank image with a size of (512, 512) and the value False."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Inference_Core_HintImageEnchance节点的设计目的是什么？",
+        "answer": "Inference_Core_HintImageEnchance节点设计用于预处理图像生成任务的提示图像，根据指定的尺寸和模式对其进行增强和缩放。"
+    },
+    {
+        "question": "Inference_Core_HintImageEnchance节点支持哪些操作？",
+        "answer": "Inference_Core_HintImageEnchance节点支持将图像缩放至指定尺寸范围内、外部和内部拟合，以及应用增强效果，如二值化阈值处理、边缘检测和基于图像alpha通道的修复。"
+    },
+    {
+        "question": "Inference_Core_HintImageEnchance节点的必需输入类型有哪些？",
+        "answer": "Inference_Core_HintImageEnchance节点的必需输入类型包括：hint_image（需要处理的提示图像）、image_gen_width（生成图像的目标宽度）、image_gen_height（生成图像的目标高度）和resize_mode（要应用的缩放模式）。"
+    },
+    {
+        "question": "Inference_Core_HintImageEnchance节点的输出类型是什么？",
+        "answer": "Inference_Core_HintImageEnchance节点的输出类型是image，表示经过处理的提示图像，根据指定参数进行了增强和缩放，可直接用于图像生成。"
+    },
+    {
+        "question": "Inference_Core_HintImageEnchance节点的执行过程中会进行哪些操作？",
+        "answer": "Inference_Core_HintImageEnchance节点的执行过程中会根据resize_mode的值执行相应的操作，如execute_resize（缩放至指定尺寸）、execute_outer_fit（外部拟合）或execute_inner_fit（内部拟合），对提示图像进行处理。"
+    },
+    {
+        "question": "Inference_Core_HintImageEnchance节点如何处理带有alpha通道的图像？",
+        "answer": "Inference_Core_HintImageEnchance节点在处理带有alpha通道的图像时，会将alpha通道单独提取并进行处理，然后在最终输出图像中将处理后的alpha通道重新与颜色通道合并。"
+    },
+    {
+        "question": "Inference_Core_HintImageEnchance节点使用了哪种插值方法进行高质量的图像缩放？",
+        "answer": "Inference_Core_HintImageEnchance节点使用了cv2.INTER_CUBIC插值方法进行高质量的图像缩放，当新尺寸较大时使用该方法进行插值计算。"
+    }
+]

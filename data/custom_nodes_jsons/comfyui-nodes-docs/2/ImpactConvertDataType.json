@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImpactConvertDataType node?",
+        "answer": "The ImpactConvertDataType node is designed to convert input data into various data types. It intelligently determines if the input can be interpreted as a number and converts it into string, float, integer, and boolean representations."
+    },
+    {
+        "question": "What is the 'value' parameter in the ImpactConvertDataType node?",
+        "answer": "The 'value' parameter is the core input of the ImpactConvertDataType node. It can be of any data type and is crucial for the node's operation as it determines the source material for the conversion process."
+    },
+    {
+        "question": "What does the 'converted_value' output from the ImpactConvertDataType node provide?",
+        "answer": "The 'converted_value' output from the ImpactConvertDataType node provides a tuple containing the original string value and its converted forms (float, integer, and boolean). This comprehensive output meets various downstream processing needs and ensures that data is appropriately formatted for further analysis or manipulation."
+    },
+    {
+        "question": "What infrastructure type does the ImpactConvertDataType node use?",
+        "answer": "The ImpactConvertDataType node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the ImpactConvertDataType node determine if an input can be interpreted as a number?",
+        "answer": "The ImpactConvertDataType node uses a regular expression pattern to determine if an input can be interpreted as a number. The pattern is '^[-+]?[0-9]*\\.?[0-9]+$', which matches strings that represent valid numbers."
+    },
+    {
+        "question": "What does the 'doit' function in the ImpactConvertDataType node do?",
+        "answer": "The 'doit' function in the ImpactConvertDataType node takes a 'value' parameter and returns a tuple containing the original string value and its converted forms (float, integer, and boolean). It first checks if the input can be interpreted as a number using the 'is_number' function, and then performs the necessary conversions."
+    },
+    {
+        "question": "What is the return type of the 'doit' function in the ImpactConvertDataType node?",
+        "answer": "The return type of the 'doit' function in the ImpactConvertDataType node is a tuple containing the original string value and its converted forms (float, integer, and boolean)."
+    }
+]

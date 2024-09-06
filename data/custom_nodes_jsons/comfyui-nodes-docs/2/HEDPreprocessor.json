@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the HEDPreprocessor node in ComfyUI?",
+        "answer": "The HEDPreprocessor node in ComfyUI uses the HED (Holistic Edge Detection) model to extract soft edge lines from an image. It preprocesses the image to enhance or separate line features, suitable for tasks that require detailed edge or line detection."
+    },
+    {
+        "question": "What are the required input types for the HEDPreprocessor node?",
+        "answer": "The required input type for the HEDPreprocessor node is 'image', which is the input image that needs to be processed for edge detection. Its Comfy dtype is IMAGE and Python dtype is torch.Tensor."
+    },
+    {
+        "question": "What are the optional input types for the HEDPreprocessor node?",
+        "answer": "The optional input types for the HEDPreprocessor node are 'safe', which is a switch to enable or disable safety checks during processing, and 'resolution', which is the resolution to resize the input image to before processing. The 'safe' input has Comfy dtype COMBO[STRING] and Python dtype str, while 'resolution' has Comfy dtype INT and Python dtype int."
+    },
+    {
+        "question": "What is the output type of the HEDPreprocessor node?",
+        "answer": "The output type of the HEDPreprocessor node is 'image', which is the processed image with enhanced or separated soft edge lines. Its Comfy dtype is IMAGE and Python dtype is torch.Tensor."
+    },
+    {
+        "question": "What are some common nodes that can be used with the HEDPreprocessor node?",
+        "answer": "Some common nodes that can be used with the HEDPreprocessor node are ControlNetApplyAdvanced, PreviewImage, and ACN_AdvancedControlNetApply."
+    },
+    {
+        "question": "What is the infra type required for the HEDPreprocessor node?",
+        "answer": "The infra type required for the HEDPreprocessor node is GPU."
+    },
+    {
+        "question": "How does the HEDPreprocessor node execute the preprocessing?",
+        "answer": "The HEDPreprocessor node executes the preprocessing by using the HEDdetector model from controlnet_aux.hed. It calls the common_annotator_call function with the model, image, resolution, and safe parameters to process the image and return the output."
+    }
+]

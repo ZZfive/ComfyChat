@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageScaleDown node in ComfyUI?",
+        "answer": "The ImageScaleDown node in ComfyUI is designed to scale down an image or a batch of images to a smaller size while maintaining the aspect ratio, with an option for center cropping to fit the specified dimensions."
+    },
+    {
+        "question": "What are the required input types for the ImageScaleDown node?",
+        "answer": "The required input types for the ImageScaleDown node are: images (the input images to be scaled down), width (the target width of the scaled-down images), height (the target height of the scaled-down images), and crop (the mode specifying whether and how the image should be cropped after scaling to ensure fitting the target dimensions)."
+    },
+    {
+        "question": "What does the 'crop' parameter in the ImageScaleDown node specify?",
+        "answer": "The 'crop' parameter in the ImageScaleDown node specifies whether and how the image should be cropped after scaling to ensure fitting the target dimensions. It has two options: 'disabled' and 'center'."
+    },
+    {
+        "question": "What is the output type of the ImageScaleDown node?",
+        "answer": "The output type of the ImageScaleDown node is 'image', which represents the scaled-down image, possibly cropped to fit the specified dimensions."
+    },
+    {
+        "question": "Which infrastructure type is recommended for the ImageScaleDown node?",
+        "answer": "The recommended infrastructure type for the ImageScaleDown node is GPU."
+    },
+    {
+        "question": "In the source code of the ImageScaleDown node, what is the default value for the 'width' and 'height' parameters?",
+        "answer": "In the source code of the ImageScaleDown node, the default value for both the 'width' and 'height' parameters is 512."
+    },
+    {
+        "question": "How does the ImageScaleDown node handle aspect ratios when scaling images?",
+        "answer": "The ImageScaleDown node handles aspect ratios by calculating the old and new aspect ratios and adjusting the x and y coordinates accordingly for center cropping. If the old aspect ratio is greater than the new aspect ratio, x is adjusted. If the old aspect ratio is less than the new aspect ratio, y is adjusted."
+    }
+]

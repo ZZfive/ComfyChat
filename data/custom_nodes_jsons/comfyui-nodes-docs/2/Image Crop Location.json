@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Image_Crop_Location class in ComfyUI?",
+        "answer": "The WAS_Image_Crop_Location class in ComfyUI is designed to precisely crop an image based on specified coordinates, allowing users to select a rectangular region within the image by defining the top, left, right, and bottom boundaries."
+    },
+    {
+        "question": "What are the required input types for the WAS_Image_Crop_Location node?",
+        "answer": "The required input types for the WAS_Image_Crop_Location node are 'image' of type PIL.Image.Image or torch.Tensor, and optional parameters 'top', 'left', 'right', and 'bottom' of type int."
+    },
+    {
+        "question": "What does the 'top' parameter in the WAS_Image_Crop_Location node specify?",
+        "answer": "The 'top' parameter in the WAS_Image_Crop_Location node specifies the vertical starting point of the cropping operation, effectively setting the upper boundary of the cropped region."
+    },
+    {
+        "question": "What is the purpose of the 'right' parameter in the WAS_Image_Crop_Location node?",
+        "answer": "The 'right' parameter in the WAS_Image_Crop_Location node defines the horizontal endpoint of the cropping operation, helping determine the width of the crop by calculating the difference between 'right' and 'left'."
+    },
+    {
+        "question": "What are the output types of the WAS_Image_Crop_Location node?",
+        "answer": "The output types of the WAS_Image_Crop_Location node are 'cropped_image' of type torch.Tensor and 'crop_data' of type Tuple[int, Tuple[int, int, int, int]], providing the cropped image and metadata about the cropping operation."
+    },
+    {
+        "question": "How does the WAS_Image_Crop_Location node ensure valid crop dimensions?",
+        "answer": "The WAS_Image_Crop_Location node checks if the crop dimensions are valid by verifying that the crop width and height are greater than 0. If the dimensions are invalid, it raises a ValueError."
+    },
+    {
+        "question": "What infrastructure type does the WAS_Image_Crop_Location node use?",
+        "answer": "The WAS_Image_Crop_Location node uses the CPU infrastructure type."
+    }
+]

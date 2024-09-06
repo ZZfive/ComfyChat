@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageDirIterator node in ComfyUI?",
+        "answer": "The ImageDirIterator node in ComfyUI is designed to iterate through images in a specified directory and allow retrieval of images by index. It is particularly useful for applications that require sequential or random access to a collection of images, such as image processing workflows or data loading for machine learning models."
+    },
+    {
+        "question": "What are the required input types for the ImageDirIterator node?",
+        "answer": "The ImageDirIterator node requires two input types: directory_path (STRING) which specifies the path to the directory containing the images to be iterated, and image_index (INT) which determines the index of the image to be retrieved from the sorted list of image files in the directory."
+    },
+    {
+        "question": "What is the output type of the ImageDirIterator node?",
+        "answer": "The output type of the ImageDirIterator node is an image tensor representation (Comfy dtype: IMAGE, Python dtype: torch.Tensor) of the image at the specified index, preprocessed and ready for further processing or as input to a model."
+    },
+    {
+        "question": "How does the ImageDirIterator node wrap the image index within the valid range of available images?",
+        "answer": "The ImageDirIterator node wraps the image index within the valid range of available images using the modulo operator. It calculates image_index % len(image_files) to ensure the index is within the valid range."
+    },
+    {
+        "question": "What image formats are supported by the ImageDirIterator node?",
+        "answer": "The ImageDirIterator node supports image files with the following extensions: .png, .jpg, .jpeg, .bmp, and .gif. It filters the files in the specified directory based on these extensions."
+    },
+    {
+        "question": "How does the ImageDirIterator node preprocess the loaded image?",
+        "answer": "The ImageDirIterator node preprocesses the loaded image by: 1) Correcting the orientation using ImageOps.exif_transpose(), 2) Ensuring the image is in RGB format using image.convert(\"RGB\"), and 3) Converting the image to a tensor representation using torch.from_numpy() and scaling the pixel values to the range [0, 1]."
+    },
+    {
+        "question": "Is the ImageDirIterator node an output node in ComfyUI?",
+        "answer": "No, the ImageDirIterator node is not an output node in ComfyUI. It is used for iterating through images in a directory and retrieving images by index."
+    }
+]

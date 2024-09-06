@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageBatchSplitter节点 in ComfyUI?",
+        "answer": "ImageBatchSplitter节点旨在通过根据用户定义的计数将图像批次拆分成更小的子集来高效管理和操作图像批次。它确保批处理大小与指定的计数对齐，即使图像的总数不能被分割计数完美整除。"
+    },
+    {
+        "question": "What is the 'images' parameter in the ImageBatchSplitter节点?",
+        "answer": "'images'参数是ImageBatchSplitter节点的主要输入，代表需要处理的图像数据集合。该参数直接影响节点的操作和输出质量，因为节点根据'split_count'将这些图像操作和组织成子集。"
+    },
+    {
+        "question": "What is the role of the 'split_count' parameter in the ImageBatchSplitter节点?",
+        "answer": "'split_count'参数对于ImageBatchSplitter节点的功能至关重要。它决定了输入图像被划分为多少个期望的子集。该参数影响了输出的粒度，并且对于确保处理后的数据满足下游机器学习模型或图像处理任务的要求至关重要。"
+    },
+    {
+        "question": "What is the output of the ImageBatchSplitter节点?",
+        "answer": "ImageBatchSplitter节点的输出是一个包含处理后的图像的元组，根据'split_count'参数组织成子集。这个输出对于后续需要统一批处理大小的操作至关重要，促进了数据在流程中的顺畅流动。"
+    },
+    {
+        "question": "What is the infra type specified for the ImageBatchSplitter节点?",
+        "answer": "The infra type specified for the ImageBatchSplitter节点 is CPU."
+    },
+    {
+        "question": "How does the ImageBatchSplitter节点 handle cases where the split_count is greater than the number of images?",
+        "answer": "If split_count is greater than the number of images, the ImageBatchSplitter节点 pads the result with empty images to match the split_count."
+    },
+    {
+        "question": "How does the ImageBatchSplitter节点 handle cases where the split_count is less than the number of images?",
+        "answer": "If split_count is less than the number of images, the ImageBatchSplitter节点 splits the first part of the images according to split_count and appends the remaining images as the last element of the result tuple."
+    }
+]

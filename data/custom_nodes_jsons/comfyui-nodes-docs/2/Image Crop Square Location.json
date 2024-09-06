@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Image_Crop_Square_Location node in ComfyUI?",
+        "answer": "The WAS_Image_Crop_Square_Location node is designed to process images by cropping them into squares based on specified location coordinates. It intelligently adjusts the cropping area to ensure that the resulting image is square, even if the specified area is not perfectly square."
+    },
+    {
+        "question": "What are the required and optional input types for the WAS_Image_Crop_Square_Location node?",
+        "answer": "The required input type for the WAS_Image_Crop_Square_Location node is 'image', which is the input image that the node will process. Optional input types include 'x' and 'y' coordinates specifying the center of the cropping operation, and 'size' which determines the side length of the cropped square image."
+    },
+    {
+        "question": "What output types does the WAS_Image_Crop_Square_Location node produce?",
+        "answer": "The WAS_Image_Crop_Square_Location node produces two output types: 'cropped_image', which is the resulting square image derived from the input image centered at the specified location coordinates, and 'crop_data', which provides metadata about the cropping process, including the size of the cropped image and the coordinates of the cropping region."
+    },
+    {
+        "question": "How does the WAS_Image_Crop_Square_Location node ensure that the cropped image is square?",
+        "answer": "The WAS_Image_Crop_Square_Location node ensures that the cropped image is square by intelligently adjusting the cropping area based on the specified 'size' parameter. It calculates the expected size from the center coordinates and adjusts the left, top, right, and bottom coordinates to fit within the image boundaries while maintaining a square aspect ratio."
+    },
+    {
+        "question": "What happens if the specified 'size' for the cropping operation is larger than the input image dimensions?",
+        "answer": "If the specified 'size' for the cropping operation is larger than the input image dimensions, the node adjusts the cropping area to stay within the image boundaries. It ensures that the right and bottom coordinates do not exceed the image width and height, respectively, while maintaining a square aspect ratio."
+    },
+    {
+        "question": "How does the WAS_Image_Crop_Square_Location node handle the case when the right or bottom coordinates exceed the image dimensions?",
+        "answer": "If the right or bottom coordinates exceed the image dimensions, the node adjusts them to stay within the boundaries. It calculates the necessary adjustments to maintain a square aspect ratio and ensures that the cropped image fits within the specified size while staying within the image dimensions."
+    },
+    {
+        "question": "What is the purpose of the 'crop_data' output type in the WAS_Image_Crop_Square_Location node?",
+        "answer": "The 'crop_data' output type in the WAS_Image_Crop_Square_Location node provides metadata about the cropping process. It includes the size of the cropped image and the coordinates of the cropping region (left, top, right, bottom). This information can be useful for further image processing or analysis."
+    }
+]

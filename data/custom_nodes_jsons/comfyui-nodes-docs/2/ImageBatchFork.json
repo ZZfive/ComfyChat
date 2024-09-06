@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageBatchFork node in ComfyUI?",
+        "answer": "The ImageBatchFork node is designed to split a batch of images into two batches based on a specified priority. This is useful for dividing image batches according to key workflows or algorithms."
+    },
+    {
+        "question": "What are the required input types for the ImageBatchFork node?",
+        "answer": "The required input types for the ImageBatchFork node are 'images' (Comfy dtype: IMAGE, Python dtype: torch.Tensor) and 'priority' (Comfy dtype: COMBO[STRING], Python dtype: str)."
+    },
+    {
+        "question": "What does the 'priority' parameter determine in the ImageBatchFork node?",
+        "answer": "The 'priority' parameter determines which of the two resulting batches may contain an extra image when the original batch size is odd. This affects the distribution of images between the two batches."
+    },
+    {
+        "question": "What are the output types of the ImageBatchFork node?",
+        "answer": "The output type of the ImageBatchFork node is 'image' (Comfy dtype: IMAGE, Python dtype: Tuple[torch.Tensor, torch.Tensor]), consisting of two separate batches of images divided according to the specified priority."
+    },
+    {
+        "question": "Which infra type does the ImageBatchFork node use?",
+        "answer": "The ImageBatchFork node uses the GPU infra type."
+    },
+    {
+        "question": "In the ImageBatchFork node's source code, how are the batch sizes determined when the original batch size is even?",
+        "answer": "When the original batch size is even, the first batch size is set to half of the original batch size (batch_size // 2), and the second batch size is set to the same value."
+    },
+    {
+        "question": "In the ImageBatchFork node's source code, how are the batch sizes determined when the original batch size is odd and the priority is set to 'first'?",
+        "answer": "When the original batch size is odd and the priority is set to 'first', the first batch size is set to half of the original batch size plus one (batch_size // 2 + 1), and the second batch size is set to half of the original batch size (batch_size // 2)."
+    }
+]

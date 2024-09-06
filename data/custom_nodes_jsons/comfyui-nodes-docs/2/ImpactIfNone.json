@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImpactIfNone node in ComfyUI?",
+        "answer": "The ImpactIfNone node is designed to evaluate the existence of an input. It returns the input itself along with a boolean value indicating whether the input was provided. This node acts as a conditional check in workflows, ensuring operations proceed only when required data is available."
+    },
+    {
+        "question": "What are the input types for the ImpactIfNone node?",
+        "answer": "The ImpactIfNone node accepts two optional inputs: 'signal' and 'any_input'. Both can be of any type. 'signal' is the data whose existence the node will evaluate, while 'any_input' serves as a generic input to trigger the node's operation or provide additional context for the 'signal' parameter."
+    },
+    {
+        "question": "What output types does the ImpactIfNone node produce?",
+        "answer": "The ImpactIfNone node produces two outputs: 'signal_opt' and 'bool'. 'signal_opt' is the original input evaluated by the node, representing the data determined to be either existent or non-existent based on the node's logic. 'bool' is a boolean value indicating whether the 'any_input' parameter was provided."
+    },
+    {
+        "question": "How does the bool output of the ImpactIfNone node assist in workflow operations?",
+        "answer": "The 'bool' output of the ImpactIfNone node provides a clear indication for downstream operations to decide whether to proceed based on the availability of input data. If 'bool' is True, it means the required input was provided, and subsequent operations can continue. If False, it signifies the absence of necessary input, and workflows can be halted or redirected accordingly."
+    },
+    {
+        "question": "What infrastructure type does the ImpactIfNone node use?",
+        "answer": "The ImpactIfNone node uses the CPU infrastructure type."
+    },
+    {
+        "question": "In the source code of the ImpactIfNone node, what does the 'doit' function do?",
+        "answer": "In the source code of the ImpactIfNone node, the 'doit' function checks if 'any_input' is None. If it is, the function returns a tuple containing the 'signal' and False. If 'any_input' is not None, it returns a tuple with the 'signal' and True. This determines the output based on the existence of the input."
+    },
+    {
+        "question": "What category does the ImpactIfNone node belong to in ComfyUI?",
+        "answer": "The ImpactIfNone node belongs to the 'ImpactPack/Logic' category in ComfyUI."
+    }
+]

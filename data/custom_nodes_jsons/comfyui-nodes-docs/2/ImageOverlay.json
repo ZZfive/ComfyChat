@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageOverlay node in ComfyUI?",
+        "answer": "The ImageOverlay node in ComfyUI seamlessly integrates a foreground image onto a background image based on a specified opacity level, creating a composite image that combines visual elements from both sources."
+    },
+    {
+        "question": "What are the required input types for the ImageOverlay node?",
+        "answer": "The required input types for the ImageOverlay node are: background_image (Comfy dtype: IMAGE, Python dtype: PIL.Image), foreground_image (Comfy dtype: IMAGE, Python dtype: PIL.Image), and opacity (Comfy dtype: FLOAT, Python dtype: float)."
+    },
+    {
+        "question": "How does the opacity parameter affect the output of the ImageOverlay node?",
+        "answer": "The opacity parameter determines the degree of blending between the foreground and background images. It is a key parameter that influences the overall appearance and transparency of the composite image."
+    },
+    {
+        "question": "What is the output type of the ImageOverlay node?",
+        "answer": "The output type of the ImageOverlay node is result_img, which represents the final composite image with the foreground image overlaid on the background image according to the specified opacity."
+    },
+    {
+        "question": "What infrastructure type is recommended for the ImageOverlay node?",
+        "answer": "The recommended infrastructure type for the ImageOverlay node is CPU."
+    },
+    {
+        "question": "How does the ImageOverlay node handle images with different sizes?",
+        "answer": "The ImageOverlay node creates a new RGB image (cropped_fg) with the same size as the background image and pastes the foreground image at the center of this new image to ensure proper alignment."
+    },
+    {
+        "question": "What is the function of the mask in the ImageOverlay node's source code?",
+        "answer": "The mask in the ImageOverlay node's source code is used to determine which parts of the background and foreground images should be blended using different formulas based on their brightness values."
+    }
+]

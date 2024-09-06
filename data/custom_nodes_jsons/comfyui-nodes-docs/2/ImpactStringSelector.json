@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the StringSelector node in ComfyUI?",
+        "answer": "The StringSelector node in ComfyUI is designed to process and select specific strings from given inputs. It can handle multi-line strings and provides options to enable or disable multi-line processing."
+    },
+    {
+        "question": "What is the significance of the 'strings' parameter in the StringSelector node?",
+        "answer": "The 'strings' parameter is the main input of the StringSelector node, containing the string data to be processed. It plays a crucial role in the node's operation as it is the source from which the selected string will be extracted."
+    },
+    {
+        "question": "How does the 'select' parameter function in the StringSelector node?",
+        "answer": "The 'select' parameter in the StringSelector node specifies the index of the string or line to be selected from the input. It is crucial in determining which part of the input data will be the output of the node."
+    },
+    {
+        "question": "What does the 'multiline' parameter do in the StringSelector node?",
+        "answer": "The 'multiline' parameter in the StringSelector node determines whether the input string should be processed as a single entity or as multiple lines. When enabled, it allows the node to process strings with newline characters and make selections based on the content of these lines."
+    },
+    {
+        "question": "What is the output of the StringSelector node?",
+        "answer": "The output of the StringSelector node is the 'selected_string', which represents the string selected based on the input parameters. It is the result of the node's processing and reflects the outcome of the string operation performed by the node."
+    },
+    {
+        "question": "What infra type does the StringSelector node use?",
+        "answer": "The StringSelector node uses the CPU infra type."
+    },
+    {
+        "question": "In the source code of the StringSelector node, how is the selected string determined when the 'multiline' option is enabled?",
+        "answer": "When the 'multiline' option is enabled, the code processes each line of the input string. It accumulates non-comment lines into a 'current_string' variable until a comment line is encountered, at which point the 'current_string' is appended to the 'result' list. The selected string is then determined by indexing the 'result' list using the 'select' parameter modulo the length of 'result'."
+    }
+]

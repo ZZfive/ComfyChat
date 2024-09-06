@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageTransformCropRelative node in ComfyUI?",
+        "answer": "The ImageTransformCropRelative node in ComfyUI provides the functionality to crop images based on relative positions. It allows dynamic cropping by specifying fractions of the image dimensions as start and end points, enabling flexible image operations without using absolute pixel values."
+    },
+    {
+        "question": "What are the required input parameters for the ImageTransformCropRelative node?",
+        "answer": "The required input parameters for the ImageTransformCropRelative node are: images (the collection of images to be cropped), start_x (the relative starting x-coordinate for the cropping operation, expressed as a fraction of the image width), start_y (the relative starting y-coordinate, expressed as a fraction of the image height), end_x (the relative ending x-coordinate, expressed as a fraction of the image width), and end_y (the relative ending y-coordinate, expressed as a fraction of the image height)."
+    },
+    {
+        "question": "What does the start_x parameter represent in the ImageTransformCropRelative node?",
+        "answer": "In the ImageTransformCropRelative node, the start_x parameter specifies the relative starting x-coordinate for the cropping operation. It is expressed as a fraction of the image width and determines the left boundary of the cropped region."
+    },
+    {
+        "question": "What does the end_y parameter represent in the ImageTransformCropRelative node?",
+        "answer": "In the ImageTransformCropRelative node, the end_y parameter specifies the relative ending y-coordinate for the cropping operation. It is expressed as a fraction of the image height and determines the bottom boundary of the cropped region."
+    },
+    {
+        "question": "What is the output type of the ImageTransformCropRelative node?",
+        "answer": "The output type of the ImageTransformCropRelative node is IMAGE, which represents the cropped version of the input image, adjusted based on the specified relative start and end coordinates."
+    },
+    {
+        "question": "What infrastructure type is recommended for the ImageTransformCropRelative node?",
+        "answer": "The recommended infrastructure type for the ImageTransformCropRelative node is GPU."
+    },
+    {
+        "question": "How does the ImageTransformCropRelative node utilize the ImageTransformCropAbsolute node in its implementation?",
+        "answer": "The ImageTransformCropRelative node utilizes the ImageTransformCropAbsolute node in its implementation by calculating the absolute pixel values for the start and end coordinates based on the relative fractions and the image dimensions. It then passes these absolute values to the ImageTransformCropAbsolute node to perform the actual cropping operation."
+    }
+]

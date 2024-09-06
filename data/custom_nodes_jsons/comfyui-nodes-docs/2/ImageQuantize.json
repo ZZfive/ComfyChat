@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Quantize节点的目的是什么？",
+        "answer": "Quantize节点旨在减少图像中使用的颜色数量，通过将连续颜色范围映射到有限数量颜色的指定调色板来实现这一点。"
+    },
+    {
+        "question": "Quantize节点支持哪些抖动技术？",
+        "answer": "Quantize节点支持多种抖动技术来提高量化图像的视觉质量，例如Floyd-Steinberg抖动和不同阶数的拜耳抖动。"
+    },
+    {
+        "question": "Quantize节点的image输入参数有什么要求？",
+        "answer": "image输入参数是表示要量化的图像的输入张量，应该是RGB格式，并且预期是规范化在0到1之间的浮点表示。"
+    },
+    {
+        "question": "Quantize节点的colors输入参数是什么？",
+        "answer": "colors输入参数指定将图像调色板减少到的颜色数量，颜色数量较少将导致文件大小的减少，但也可能导致图像细节的损失。"
+    },
+    {
+        "question": "Quantize节点的dither输入参数有什么可用选项？",
+        "answer": "dither输入参数可用的选项包括'none'、'floyd-steinberg'以及各种阶数的'bayer'抖动。"
+    },
+    {
+        "question": "Quantize节点的输出是什么？",
+        "answer": "Quantize节点的输出是quantized_image，它是一个张量，代表具有减少颜色调色板的图像。"
+    },
+    {
+        "question": "Quantize节点的源代码中定义了哪些方法？",
+        "answer": "Quantize节点的源代码中定义了__init__、INPUT_TYPES、bayer和quantize等方法。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Inference_Core_M-LSDPreprocessor class in ComfyUI?",
+        "answer": "The Inference_Core_M-LSDPreprocessor class in ComfyUI is a custom node that uses the M-LSD (Multi-scale Line Segment Detector) model to extract line segments from images. It helps with tasks that require understanding geometric shapes and structures in visual data."
+    },
+    {
+        "question": "What are the required input types for the Inference_Core_M-LSDPreprocessor node?",
+        "answer": "The required input type for the Inference_Core_M-LSDPreprocessor node is 'image', which is the input image that needs to be processed for line segment detection. It has the Comfy dtype of IMAGE and Python dtype of numpy.ndarray."
+    },
+    {
+        "question": "What does the 'score_threshold' parameter control in the Inference_Core_M-LSDPreprocessor node?",
+        "answer": "The 'score_threshold' parameter in the Inference_Core_M-LSDPreprocessor node defines the confidence threshold for line segment detection. Lines with scores below this threshold will be discarded, affecting the sensitivity of the detection process."
+    },
+    {
+        "question": "How does the 'dist_threshold' parameter influence the line segment detection in the Inference_Core_M-LSDPreprocessor node?",
+        "answer": "The 'dist_threshold' parameter in the Inference_Core_M-LSDPreprocessor node sets the distance threshold for separating line segments. This parameter helps distinguish closely spaced lines and affects the refinement of the detected lines."
+    },
+    {
+        "question": "What is the output type of the Inference_Core_M-LSDPreprocessor node?",
+        "answer": "The output type of the Inference_Core_M-LSDPreprocessor node is 'image', which is an image annotated with the detected line segments, visually showing the geometric structures recognized by the M-LSD model. It has the Comfy dtype of IMAGE and Python dtype of numpy.ndarray."
+    },
+    {
+        "question": "What infrastructure type does the Inference_Core_M-LSDPreprocessor node require?",
+        "answer": "The Inference_Core_M-LSDPreprocessor node requires the 'GPU' infrastructure type."
+    },
+    {
+        "question": "What is the purpose of the 'resolution' parameter in the Inference_Core_M-LSDPreprocessor node?",
+        "answer": "The 'resolution' parameter in the Inference_Core_M-LSDPreprocessor node specifies the resolution of the processed image. This affects the scale of the detection and may influence the detection of line segments."
+    }
+]

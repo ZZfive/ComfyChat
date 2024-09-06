@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Image_Batch node in ComfyUI?",
+        "answer": "The WAS_Image_Batch node is designed to process and batch multiple images for further operations. It ensures that all input images have matching dimensions and then merges them into a single tensor, facilitating efficient batch processing of image data."
+    },
+    {
+        "question": "What is the significance of the 'images_a' parameter in the WAS_Image_Batch node?",
+        "answer": "The 'images_a' parameter is crucial in the WAS_Image_Batch node as it provides the set of images to be batch processed. It plays a vital role in the node's operation as it directly influences what will be processed."
+    },
+    {
+        "question": "What does the 'image' output represent in the WAS_Image_Batch node?",
+        "answer": "The 'image' output represents the processed and concatenated image tensor. This is crucial for downstream tasks that require a unified batch of image data."
+    },
+    {
+        "question": "What infra type is recommended for the WAS_Image_Batch node?",
+        "answer": "The recommended infra type for the WAS_Image_Batch node is CPU."
+    },
+    {
+        "question": "How does the WAS_Image_Batch node handle mismatched image dimensions?",
+        "answer": "The WAS_Image_Batch node checks the dimensions of the input images and raises a ValueError if the dimensions do not match, specifying which images have mismatched dimensions."
+    },
+    {
+        "question": "Can the WAS_Image_Batch node process more than one set of images at a time?",
+        "answer": "Yes, the WAS_Image_Batch node can process up to four sets of images at a time, with 'images_a' being required and 'images_b', 'images_c', and 'images_d' being optional."
+    },
+    {
+        "question": "What happens if no input image is provided to the WAS_Image_Batch node?",
+        "answer": "If no input image is provided to the WAS_Image_Batch node, it raises a ValueError indicating that at least one input image must be provided."
+    }
+]

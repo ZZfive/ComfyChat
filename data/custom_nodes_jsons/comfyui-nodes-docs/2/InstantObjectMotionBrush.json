@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the InstantObjectMotionBrush node in ComfyUI?",
+        "answer": "The InstantObjectMotionBrush node in ComfyUI is designed to generate motion effects for objects in images or videos. It identifies the object's trajectory and applies motion brush effects based on specified parameters to enhance the visual representation of motion in a creative or realistic way."
+    },
+    {
+        "question": "What are the required input types for the InstantObjectMotionBrush node?",
+        "answer": "The required input types for the InstantObjectMotionBrush node are model_length (INT), brush_mask (MASK), action (COMBO), and speed (FLOAT)."
+    },
+    {
+        "question": "How does the action parameter affect the motion effect in the InstantObjectMotionBrush node?",
+        "answer": "The action parameter in the InstantObjectMotionBrush node determines the type of motion to be simulated, such as zoom in, zoom out, left, right, up, or down movement. This directly influences the motion trajectory and the visual result of the motion effect."
+    },
+    {
+        "question": "What is the output type of the InstantObjectMotionBrush node?",
+        "answer": "The output type of the InstantObjectMotionBrush node is a motion brush (MOTIONBRUSH), which represents the calculated motion trajectory and displacement information essential for rendering the final motion effect."
+    },
+    {
+        "question": "What infra type does the InstantObjectMotionBrush node use?",
+        "answer": "The InstantObjectMotionBrush node uses CPU as its infra type."
+    },
+    {
+        "question": "How does the InstantObjectMotionBrush node calculate the motion trajectory for the 'zoomin' action?",
+        "answer": "For the 'zoomin' action, the InstantObjectMotionBrush node calculates the motion trajectory by iterating over the model length and adjusting the x and y coordinates based on the speed and the distance from the center of the object. The calculated coordinates are appended to the tracking points list."
+    },
+    {
+        "question": "What is the purpose of the brush_mask input in the InstantObjectMotionBrush node?",
+        "answer": "The brush_mask input in the InstantObjectMotionBrush node is crucial for defining the region of interest in the image where the motion effect will be applied. It ensures precise control over the application of the motion effect."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageRepeat node in ComfyUI?",
+        "answer": "The ImageRepeat node in ComfyUI is designed to copy a given image a specified number of times, creating a batch of identical images. This functionality is useful for operations that require multiple instances of the same image for batch processing or augmentation."
+    },
+    {
+        "question": "What are the required input types for the ImageRepeat node?",
+        "answer": "The required input types for the ImageRepeat node are 'images' (Comfy dtype: IMAGE, Python dtype: torch.Tensor) which specifies the image to be repeated, and 'amount' (Comfy dtype: INT, Python dtype: int) which decides the number of times the input image is repeated."
+    },
+    {
+        "question": "How does the 'amount' parameter affect the output of the ImageRepeat node?",
+        "answer": "The 'amount' parameter directly affects the size of the output batch by determining how many times the input image is repeated. It allows for flexible batch creation."
+    },
+    {
+        "question": "What is the output type of the ImageRepeat node?",
+        "answer": "The output type of the ImageRepeat node is 'image' (Comfy dtype: IMAGE, Python dtype: torch.Tensor), which is a batch of images, each identical to the input image, repeated according to the specified amount."
+    },
+    {
+        "question": "What is the infra type for the ImageRepeat node?",
+        "answer": "The infra type for the ImageRepeat node is 'GPU'."
+    },
+    {
+        "question": "What are some common nodes used with the ImageRepeat node?",
+        "answer": "Some common nodes used with the ImageRepeat node are 'PreviewImage' and 'SetNode'."
+    },
+    {
+        "question": "What does the source code of the ImageRepeat node's 'rebatch' function do?",
+        "answer": "The source code of the ImageRepeat node's 'rebatch' function takes an input image tensor and an amount, and returns a new tensor that repeats the input image tensor 'amount' times along the first dimension, effectively creating a batch of identical images."
+    }
+]

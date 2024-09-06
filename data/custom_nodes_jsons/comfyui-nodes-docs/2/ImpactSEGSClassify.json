@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the SEGS_Classify node in ComfyUI?",
+        "answer": "The SEGS_Classify node is designed to classify segments of an image using a pre-trained transformer model. It processes the segments, evaluates them based on scores from the classifier to determine if they meet a certain condition, and filters the segments into two categories: those that meet the condition and those that do not."
+    },
+    {
+        "question": "What is the role of the 'classifier' parameter in the SEGS_Classify node?",
+        "answer": "The 'classifier' parameter is crucial for the operation of the SEGS_Classify node as it defines the pre-trained model used to classify the segments. The effectiveness of the classification directly depends on the quality and suitability of the classifier."
+    },
+    {
+        "question": "What does the 'segs' parameter represent in the SEGS_Classify node?",
+        "answer": "The 'segs' parameter holds the image segments that need to be classified. It is a fundamental input because all the processing of the node revolves around these segments."
+    },
+    {
+        "question": "What is the purpose of the 'preset_expr' parameter in the SEGS_Classify node?",
+        "answer": "The 'preset_expr' parameter allows users to select a predefined expression to be used for classification or choose a manual expression. It determines the condition that will be used to classify the segments."
+    },
+    {
+        "question": "When is the 'manual_expr' parameter used in the SEGS_Classify node?",
+        "answer": "The 'manual_expr' parameter is used when the 'preset_expr' is set to 'Manual expr'. This parameter is then used to input a custom expression for classifying the segments, providing flexibility for users to define their own classification criteria."
+    },
+    {
+        "question": "What is the purpose of the 'ref_image_opt' parameter in the SEGS_Classify node?",
+        "answer": "The optional 'ref_image_opt' parameter provides a reference image that can be used to crop the segments if their 'cropped_image' property is not available. It enhances the functionality of the node by providing an alternative source for the segment images when needed."
+    },
+    {
+        "question": "What does the 'filtered_SEGS' output represent in the SEGS_Classify node?",
+        "answer": "The 'filtered_SEGS' output contains the segments that satisfy the classification condition specified by the user. It is the key result of the node's operation, representing the content that has been filtered based on the classification criteria."
+    },
+    {
+        "question": "What does the 'remained_SEGS' output represent in the SEGS_Classify node?",
+        "answer": "The 'remained_SEGS' output includes the segments that do not satisfy the classification condition. It is a complementary result to 'filtered_SEGS', providing insight into segments that were not classified according to the specified criteria."
+    }
+]

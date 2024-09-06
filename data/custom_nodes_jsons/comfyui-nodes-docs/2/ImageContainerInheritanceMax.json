@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageContainerInheritanceMax node in ComfyUI?",
+        "answer": "The ImageContainerInheritanceMax node is used to process multiple image data by applying a 'maximum' operation between the images to manage them. It abstracts the complexity of handling image dimensions and pixel values, facilitating the creation of composite images where the maximum value of each pixel is considered across all images."
+    },
+    {
+        "question": "What are the required input types for the ImageContainerInheritanceMax node?",
+        "answer": "The required input types for the ImageContainerInheritanceMax node are: images_a, images_b, red, green, blue, alpha, and method."
+    },
+    {
+        "question": "What does the 'method' input parameter determine in the ImageContainerInheritanceMax node?",
+        "answer": "The 'method' input parameter determines the way the 'maximum' operation is applied between the images. The 'single' option applies the operation to create a single composite image, 'for_each_pair' generates a new image for each pair of input images, and 'for_each_matrix' creates a composite image for each possible combination of images from 'images_a' and 'images_b', significantly affecting the node's execution and results."
+    },
+    {
+        "question": "What is the output type of the ImageContainerInheritanceMax node?",
+        "answer": "The output type of the ImageContainerInheritanceMax node is a single image, which represents the composite result of applying the 'maximum' operation on all input images. It encapsulates the highest pixel value at each pixel location from the input set."
+    },
+    {
+        "question": "What infrastructure type is recommended for the ImageContainerInheritanceMax node?",
+        "answer": "The recommended infrastructure type for the ImageContainerInheritanceMax node is GPU."
+    },
+    {
+        "question": "What is the category of the ImageContainerInheritanceMax node in ComfyUI?",
+        "answer": "The category of the ImageContainerInheritanceMax node in ComfyUI is image/container."
+    },
+    {
+        "question": "Is the ImageContainerInheritanceMax node an output node in ComfyUI?",
+        "answer": "No, the ImageContainerInheritanceMax node is not an output node in ComfyUI."
+    }
+]
