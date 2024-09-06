@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of registering a custom dataset in Detectron2?",
+        "answer": "Registering a custom dataset in Detectron2 allows you to tell Detectron2 how to obtain your dataset and reuse its data loaders."
+    },
+    {
+        "question": "What are the two main steps involved in using a custom dataset with Detectron2?",
+        "answer": "The two main steps involved in using a custom dataset with Detectron2 are: 1. Register your dataset, and 2. Optionally, register metadata for your dataset."
+    },
+    {
+        "question": "What is the standard representation for a dataset in Detectron2?",
+        "answer": "In Detectron2, the standard representation for a dataset is a list of dictionaries, where each dictionary contains information about one image, such as file names and annotations."
+    },
+    {
+        "question": "What are the required fields in the standard dataset dict for instance detection and segmentation tasks?",
+        "answer": "For instance detection and segmentation tasks, the required fields in the standard dataset dict are 'file_name', 'height', 'width', 'image_id', and 'annotations'."
+    },
+    {
+        "question": "What is the purpose of metadata in Detectron2 datasets?",
+        "answer": "Metadata in Detectron2 datasets contains information that is shared among the entire dataset and is used to interpret what's in the dataset. This information is useful for augmentation, evaluation, visualization, logging, etc."
+    },
+    {
+        "question": "How can you register a COCO format dataset in Detectron2?",
+        "answer": "You can register a COCO format dataset in Detectron2 using the register_coco_instances function from detectron2.data.datasets module."
+    },
+    {
+        "question": "What config changes might be necessary when training or evaluating on new datasets in Detectron2?",
+        "answer": "When training or evaluating on new datasets in Detectron2, you might need to change configs such as MODEL.ROI_HEADS.NUM_CLASSES, MODEL.RETINANET.NUM_CLASSES, MODEL.ROI_KEYPOINT_HEAD.NUM_KEYPOINTS, MODEL.SEM_SEG_HEAD.NUM_CLASSES, and DATASETS.PROPOSAL_FILES_{TRAIN,TEST} to match the datasets."
+    }
+]

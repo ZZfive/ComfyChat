@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is Safe Stable Diffusion?",
+        "answer": "Safe Stable Diffusion is an extension of Stable Diffusion that mitigates inappropriate degeneration from Stable Diffusion models trained on unfiltered web-crawled datasets, reducing the generation of nudity, violence, images depicting self-harm, and otherwise offensive content."
+    },
+    {
+        "question": "What is the purpose of Safe Stable Diffusion?",
+        "answer": "The purpose of Safe Stable Diffusion is to combat undesired side effects like degenerated and biased human behavior that can be reinforced by text-conditioned image generation models highly relying on billion-sized datasets randomly scraped from the internet."
+    },
+    {
+        "question": "How does Safe Stable Diffusion suppress inappropriate image parts?",
+        "answer": "Safe Stable Diffusion removes and suppresses inappropriate image parts during the diffusion process, with no additional training required and no adverse effect on overall image quality or text alignment."
+    },
+    {
+        "question": "What is the `safety_concept` property in `StableDiffusionPipelineSafe`?",
+        "answer": "The `safety_concept` property in `StableDiffusionPipelineSafe` is used to check and edit the current safety concept, which includes an image showing hate, harassment, violence, suffering, humiliation, harm, suicide, sexual, nudity, bodily fluids, blood, obscene gestures, illegal activity, drug use, theft, vandalism, weapons, child abuse, brutality, and cruelty."
+    },
+    {
+        "question": "What are the available safety configurations for `StableDiffusionPipelineSafe`?",
+        "answer": "There are four safety configurations available for `StableDiffusionPipelineSafe`: `SafetyConfig.WEAK`, `SafetyConfig.MEDIUM`, `SafetyConfig.STRONG`, and `SafetyConfig.MAX`."
+    },
+    {
+        "question": "How can the safety configurations be applied in `StableDiffusionPipelineSafe`?",
+        "answer": "The safety configurations can be applied in `StableDiffusionPipelineSafe` by passing them as keyword arguments when calling the pipeline with a prompt, for example: `out = pipeline(prompt=prompt, **SafetyConfig.MAX)`."
+    },
+    {
+        "question": "What does the `StableDiffusionSafePipelineOutput` contain?",
+        "answer": "The `StableDiffusionSafePipelineOutput` contains the generated image as well as the active safety concept used during the image generation process."
+    }
+]

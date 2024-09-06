@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ParaDiGMS?",
+        "answer": "ParaDiGMS is a method to accelerate the sampling of pretrained diffusion models by denoising multiple steps in parallel."
+    },
+    {
+        "question": "How does ParaDiGMS improve sampling speed?",
+        "answer": "ParaDiGMS improves sampling speed by running denoising steps in parallel, trading compute for speed."
+    },
+    {
+        "question": "What are the two main parameters to adjust in ParaDiGMS?",
+        "answer": "The two main parameters to adjust in ParaDiGMS are 'parallel' (batch size) and 'tolerance'."
+    },
+    {
+        "question": "How does increasing the batch size in ParaDiGMS affect performance?",
+        "answer": "A higher batch size in ParaDiGMS may not fit in memory, while a lower batch size gives less parallelism."
+    },
+    {
+        "question": "What is the impact of using a higher tolerance in ParaDiGMS?",
+        "answer": "Using a higher tolerance in ParaDiGMS may result in better speedups but can risk sample quality degradation."
+    },
+    {
+        "question": "What should be done if there is quality degradation with the default tolerance in ParaDiGMS?",
+        "answer": "If there is quality degradation with the default tolerance in ParaDiGMS, a lower tolerance like 0.001 should be used."
+    },
+    {
+        "question": "What speedup can be expected from StableDiffusionParadigmsPipeline compared to StableDiffusionPipeline?",
+        "answer": "For a 1000-step DDPM on 8 A100 GPUs, a 3x speedup can be expected from StableDiffusionParadigmsPipeline compared to StableDiffusionPipeline by setting parallel=80 and tolerance=0.1."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ComfyUI-TCD是根据哪篇论文实现的？",
+        "answer": "ComfyUI-TCD是根据TCD论文中提到的TCD采样器来实现的。"
+    },
+    {
+        "question": "TCD相比LCM有什么优势？",
+        "answer": "TCD相比LCM在相同的去噪步数内可以生成细节更丰富质量更好的图片,并且TCD可以通过调节参数控制去噪过程中随机噪声的强弱来生成细节丰富程度不同的结果。在相同步数的情况下，TCD生成的图细节比LCM更好，也可以通过参数控制细节的丰富程度。此外，TCD在步数较大时，生成的结果也会比LCM更好。"
+    },
+    {
+        "question": "示例workflow文件夹下有什么内容？",
+        "answer": "示例workflow文件夹下有使用TCD节点的示例，workflow截图里已经注入了完整的workflow，可以直接加载图片或拖到ComfyUI空白的地方来导入workflow。"
+    },
+    {
+        "question": "TCD Model Sampling Discrete节点有哪些配置参数？",
+        "answer": "TCD Model Sampling Discrete节点的配置参数包括：steps（去噪步数）、scheduler（采样scheduler，包括simple和sgm_uniform两种）、denoise（降噪幅度）、eta（用于控制降噪过程中随机噪声强度的参数）。"
+    },
+    {
+        "question": "使用TCD采样器时推荐使用哪些LoRA？",
+        "answer": "推荐使用来自TCD原团队的TCD LoRAs，包括TCD-SD15-LoRA.safetensors和TCD-SDXL-LoRA.safetensors，也推荐使用来自字节Hyper-SD团队的Hyper-SD 1-Step Unified LoRAs，包括Hyper-SD15-1step-lora.safetensors和Hyper-SDXL-1step-lora.safetensors。"
+    },
+    {
+        "question": "如何安装ComfyUI-TCD？",
+        "answer": "可以通过git clone https://github.com/JettHu/ComfyUI-TCD或使用ComfyUI-Manager进行安装。"
+    },
+    {
+        "question": "TCD的eta参数是用来控制什么的？",
+        "answer": "TCD的eta参数用于控制降噪过程中随机噪声的强度，也就是生成结果的细节丰富程度。当eta=0时代表确定性抽样，当eta=1代表完全随机抽样。调大steps和使用不同的LoRA都推荐微调这个参数，默认值为0.3。"
+    }
+]

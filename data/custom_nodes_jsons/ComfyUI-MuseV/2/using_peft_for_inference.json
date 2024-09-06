@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-MuseV?",
+        "answer": "ComfyUI-MuseV is a custom node or plugin that extends the functionality of ComfyUI, a GUI that uses a stable diffusion model to generate images and videos."
+    },
+    {
+        "question": "How can you load and manage adapters for inference in ComfyUI-MuseV?",
+        "answer": "With the PEFT integration in Diffusers, it is easy to load and manage adapters for inference in ComfyUI-MuseV."
+    },
+    {
+        "question": "What is the purpose of the cg-noise custom node in ComfyUI-MuseV?",
+        "answer": "The cg-noise custom node in ComfyUI-MuseV replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+    },
+    {
+        "question": "How does the cg-noise custom node generate variations in images in ComfyUI-MuseV?",
+        "answer": "The cg-noise custom node generates variations in images by using a weight 'x' and two seeds. It generates the noise based on 'random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)'."
+    },
+    {
+        "question": "Can you combine multiple adapters for inference in ComfyUI-MuseV?",
+        "answer": "Yes, you can perform multi-adapter inference in ComfyUI-MuseV where you combine different adapter checkpoints for inference."
+    },
+    {
+        "question": "How can you monitor active adapters in ComfyUI-MuseV?",
+        "answer": "You can check the list of active adapters in ComfyUI-MuseV using the 'get_active_adapters' method."
+    },
+    {
+        "question": "Is it possible to fuse adapters into the model in ComfyUI-MuseV?",
+        "answer": "Yes, you can use PEFT to easily fuse/unfuse multiple adapters directly into the model weights in ComfyUI-MuseV, which can lead to a speed-up in inference and lower VRAM usage."
+    }
+]

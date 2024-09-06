@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What are the three key ways SDXL iterates on previous Stable Diffusion models?",
+        "answer": "SDXL iterates on previous Stable Diffusion models in three key ways: 1) the UNet is 3x larger and SDXL combines a second text encoder (OpenCLIP ViT-bigG/14) with the original text encoder to significantly increase the number of parameters, 2) introduces size and crop-conditioning to preserve training data from being discarded and gain more control over how a generated image should be cropped, and 3) introduces a two-stage model process; the base model generates an image as an input to the refiner model which adds additional high-quality details."
+    },
+    {
+        "question": "What is the recommended image size for text-to-image generation with SDXL?",
+        "answer": "By default, SDXL generates a 1024x1024 image for the best results. You can try setting the height and width parameters to 768x768 or 512x512, but anything below 512x512 is not likely to work."
+    },
+    {
+        "question": "How can you use the refiner model in SDXL?",
+        "answer": "There are two ways to use the refiner model in SDXL: 1) use the base and refiner models together to produce a refined image, and 2) use the base model to produce an image, and subsequently use the refiner model to add more details to the image."
+    },
+    {
+        "question": "What are the two types of size conditioning in SDXL?",
+        "answer": "The two types of size conditioning in SDXL are original_size conditioning and target_size conditioning. Original_size conditioning comes from upscaled images in the training batch, while target_size conditioning comes from finetuning SDXL to support different image aspect ratios."
+    },
+    {
+        "question": "What is the default value for crop coordinates in SDXL?",
+        "answer": "The default value for crop coordinates in SDXL is (0, 0), which usually correlates with centered subjects and complete faces."
+    },
+    {
+        "question": "How can you pass a different prompt to each text-encoder in SDXL?",
+        "answer": "You can pass your original prompt to prompt and the second prompt to prompt_2 (use negative_prompt and negative_prompt_2 if you're using negative prompts)."
+    },
+    {
+        "question": "What are some optimizations you can use to save memory and speed up inference with SDXL?",
+        "answer": "Some optimizations to save memory and speed up inference with SDXL include offloading the model to the CPU, using torch.compile for ~20% speed-up, and enabling xFormers to run SDXL if torch<2.0."
+    }
+]

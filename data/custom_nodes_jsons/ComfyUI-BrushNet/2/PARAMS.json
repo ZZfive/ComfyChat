@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the `start_at` parameter in the ComfyUI-BrushNet node?",
+        "answer": "The `start_at` parameter in the ComfyUI-BrushNet node allows delaying the BrushNet inference for some steps, so the base model will do all the job. The more this parameter is increased, the more the scene will be based on the prompt."
+    },
+    {
+        "question": "How does the `start_at` parameter affect the scene consistency in ComfyUI-BrushNet?",
+        "answer": "As the `start_at` parameter value is increased, the scene may lose consistency at some step. The results will depend on the type of sampler and the number of KSampler steps."
+    },
+    {
+        "question": "What is the purpose of the `end_at` parameter in the ComfyUI-BrushNet node?",
+        "answer": "The `end_at` parameter in the ComfyUI-BrushNet node switches off BrushNet at the last steps. If a deterministic sampler is used, it will only influence details on the last steps, but stochastic samplers can change the whole scene."
+    },
+    {
+        "question": "How does the `end_at` parameter affect the scene when using a deterministic sampler in ComfyUI-BrushNet?",
+        "answer": "When using a deterministic sampler, there are almost no changes when the `end_at` parameter is set to a value close to the total number of steps. However, as the `end_at` value is decreased, the scene may be completely redrawn."
+    },
+    {
+        "question": "What type of sampler and scheduler were used in the ComfyUI-BrushNet inpaint example?",
+        "answer": "In the ComfyUI-BrushNet inpaint example, the `dpmpp_2m` deterministic sampler and `karras` scheduler with 15 steps were used."
+    },
+    {
+        "question": "What prompt was used in the ComfyUI-BrushNet inpaint example?",
+        "answer": "The prompt used in the ComfyUI-BrushNet inpaint example was 'intricate teapot'."
+    },
+    {
+        "question": "What is the purpose of the Blend Inpaint node in the ELLA outpaint workflow in ComfyUI-BrushNet?",
+        "answer": "In the ELLA outpaint workflow example using ComfyUI-BrushNet, the Blend Inpaint node was initially switched off to demonstrate the effect of the `start_at` parameter on the resulting scene."
+    }
+]

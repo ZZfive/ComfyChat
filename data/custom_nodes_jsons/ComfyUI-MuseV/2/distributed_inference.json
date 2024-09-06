@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of using 🤗 Accelerate or PyTorch Distributed for distributed inference?",
+        "answer": "🤗 Accelerate and PyTorch Distributed are used to run inference on multiple GPUs, which is useful when generating multiple prompts simultaneously."
+    },
+    {
+        "question": "How does 🤗 Accelerate simplify the distributed environment setup process?",
+        "answer": "🤗 Accelerate simplifies the distributed environment setup process by automatically detecting the settings, so there's no need to explicitly define `rank` or `world_size`."
+    },
+    {
+        "question": "What is the purpose of the `accelerate.PartialState.split_between_processes` utility?",
+        "answer": "The `accelerate.PartialState.split_between_processes` utility is used to automatically distribute prompts based on the number of processes."
+    },
+    {
+        "question": "How can you specify the number of GPUs to use when running a script with 🤗 Accelerate?",
+        "answer": "You can specify the number of GPUs to use with the `--num_processes` argument when calling `accelerate launch` to run the script."
+    },
+    {
+        "question": "What does PyTorch's `DistributedDataParallel` support?",
+        "answer": "PyTorch's `DistributedDataParallel` supports data parallelism."
+    },
+    {
+        "question": "How is the distributed environment created when using PyTorch Distributed?",
+        "answer": "The distributed environment is created by setting up a distributed process group using the backend type, the current process's `rank`, and the `world_size` (number of participating processes)."
+    },
+    {
+        "question": "How can you run distributed inference using PyTorch Distributed?",
+        "answer": "To run distributed inference using PyTorch Distributed, you need to call `mp.spawn` to execute the `run_inference` function for the number of GPUs defined in `world_size`."
+    },
+    {
+        "question": "How can you specify the number of GPUs to use when running a script with PyTorch Distributed?",
+        "answer": "You can specify the number of GPUs to use with the `--nproc_per_node` argument when calling `torchrun` to run the script."
+    }
+]

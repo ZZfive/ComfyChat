@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is MBM's Music Visualizer?",
+        "answer": "MBM's Music Visualizer is an image generation based music visualizer integrated into ComfyUI as custom nodes."
+    },
+    {
+        "question": "Which library is used by the Audio Loader node in MBM's Music Visualizer?",
+        "answer": "The Audio Loader node in MBM's Music Visualizer uses the librosa library to load an audio file."
+    },
+    {
+        "question": "What does the Prompt Sequence Builder node in MBM's Music Visualizer do?",
+        "answer": "The Prompt Sequence Builder node in MBM's Music Visualizer stacks multiple ComfyUI prompts into a Prompt Sequence."
+    },
+    {
+        "question": "What is the purpose of the Prompt Sequence Interpolator node in MBM's Music Visualizer?",
+        "answer": "The Prompt Sequence Interpolator node in MBM's Music Visualizer calculates additional sub-prompts within each set of prompts in Prompt Sequence to create a weighted interpolation transition between each."
+    },
+    {
+        "question": "What does the Image Concatenator node in MBM's Music Visualizer do?",
+        "answer": "The Image Concatenator node in MBM's Music Visualizer combines multiple images into a single Tensor. Images are not visually combined and are still distinct."
+    },
+    {
+        "question": "How can you load a sequence of prompts from a JSON file in MBM's Music Visualizer?",
+        "answer": "You can use the Prompt Sequence Loader node in MBM's Music Visualizer to load a sequence of prompts from a JSON file fitting the specifications."
+    },
+    {
+        "question": "What is the purpose of the MUSIC_VIS data type in MBM's Music Visualizer?",
+        "answer": "The MUSIC_VIS data type in MBM's Music Visualizer is used for representing a music visualization with its relevant data."
+    },
+    {
+        "question": "How can you install MBM's Music Visualizer in ComfyUI?",
+        "answer": "To install MBM's Music Visualizer in ComfyUI, you need to enter ComfyUI's Python Environment, clone the MBM-Music-Visualizer repo into ComfyUI's custom_nodes directory, enter the MBM_MusicVisualizer directory, and run pip install -r .\requirements.txt to install the project's dependencies."
+    },
+    {
+        "question": "How can you preview the general flow of the visualization in MBM's Music Visualizer before committing to image generation for all frames?",
+        "answer": "You can preview the general flow of the visualization in MBM's Music Visualizer by bypassing the Prompt Sequence Renderer and its outputs, or by setting the image_limit to 1 or higher to generate only a specific number of images. This will still produce complete charts for most data sources."
+    }
+]

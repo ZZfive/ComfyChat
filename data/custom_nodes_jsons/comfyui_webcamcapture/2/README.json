@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ComfyUI Webcam Capture node?",
+        "answer": "The purpose of the Webcam Capture node in ComfyUI is to capture images one at a time from your webcam when you click generate, which is particularly useful for img2img or controlnet workflows."
+    },
+    {
+        "question": "Why was the ComfyUI Webcam Capture node created?",
+        "answer": "The ComfyUI Webcam Capture node was created because other webcam nodes were found to be buggy, producing black images or digital noise. This node aims to provide a more reliable webcam capture solution."
+    },
+    {
+        "question": "How can the ComfyUI Webcam Capture node be used?",
+        "answer": "The ComfyUI Webcam Capture node can be used by setting up an action figure in front of your webcam and using body pose estimation and a pose controlnet, or by pointing it at yourself and using a depth estimator or face pose estimator."
+    },
+    {
+        "question": "What are the suggested supporting nodes or workflows for the ComfyUI Webcam Capture node?",
+        "answer": "The suggested supporting nodes or workflows for the ComfyUI Webcam Capture node include ControlNet Preprocessors such as Faces and Poses Estimators (DensePose, DWPose, OpenPose, etc.), Normal and Depth Estimators (DepthAnything, MiDaS, etc.), and any controlnet workflow."
+    },
+    {
+        "question": "What is the 'cam_id' input in the ComfyUI Webcam Capture node?",
+        "answer": "The 'cam_id' input in the ComfyUI Webcam Capture node is the id of the webcam to capture from, which is likely 0 unless you have multiple webcams or other capture devices."
+    },
+    {
+        "question": "What are the typical resolutions supported by webcams in the ComfyUI Webcam Capture node?",
+        "answer": "The typical resolutions supported by webcams in the ComfyUI Webcam Capture node are 480x320, 640x480, 1280x720, and 1920x1080."
+    },
+    {
+        "question": "What is the purpose of the 'seed' and 'control_after_generate' inputs in the ComfyUI Webcam Capture node?",
+        "answer": "The 'seed' and 'control_after_generate' inputs in the ComfyUI Webcam Capture node are a hack to force ComfyUI to run the node and capture a new image every time you click generate. Leaving 'control_after_generate' on 'randomize' ensures a new webcam capture until you touch one of the other settings."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of evaluation in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "In ComfyUI_OOTDiffusion_CXH, evaluation is a process that takes a number of inputs/outputs pairs and aggregates them to compute metrics or perform other jobs using the data."
+    },
+    {
+        "question": "How can you perform evaluation in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "You can perform evaluation in ComfyUI_OOTDiffusion_CXH by either using the model directly and parsing its inputs/outputs manually or by using the DatasetEvaluator interface."
+    },
+    {
+        "question": "What is the DatasetEvaluator interface in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "The DatasetEvaluator interface in ComfyUI_OOTDiffusion_CXH is an interface that allows users to implement custom evaluation processes that perform jobs using the inputs/outputs pairs."
+    },
+    {
+        "question": "How can you run a DatasetEvaluator in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "You can run a DatasetEvaluator in ComfyUI_OOTDiffusion_CXH using the inference_on_dataset function, which allows you to merge evaluators together and run all evaluations without going through the dataset multiple times."
+    },
+    {
+        "question": "What is the benefit of using the inference_on_dataset function in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "The benefit of using the inference_on_dataset function in ComfyUI_OOTDiffusion_CXH is that it allows you to merge evaluators together and run all evaluations without going through the dataset multiple times, and it also provides accurate speed benchmarks for the given model and dataset."
+    },
+    {
+        "question": "What does the Counter class in the given code example do?",
+        "answer": "The Counter class in the given code example is a custom DatasetEvaluator that counts how many instances are detected on the validation set."
+    },
+    {
+        "question": "What are the three methods implemented in the Counter class?",
+        "answer": "The three methods implemented in the Counter class are reset (initializes the count to 0), process (iterates over the outputs and increments the count for each instance), and evaluate (returns the final count)."
+    }
+]

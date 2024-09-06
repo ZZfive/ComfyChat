@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the main purpose of the safetensors library?",
+        "answer": "The main purpose of the safetensors library is to provide a safe and fast file format for saving and loading tensors, which is ideal for sharing model weights as it avoids the security risks associated with Python's pickle utility."
+    },
+    {
+        "question": "How can you explicitly control the loading of '.safetensors' files in 🤗 Diffusers?",
+        "answer": "You can explicitly control the loading of '.safetensors' files in 🤗 Diffusers by setting the parameter `use_safetensors=True` when loading a DiffusionPipeline."
+    },
+    {
+        "question": "What method can be used to load Stable Diffusion weights if they are stored in a single '.safetensors' file?",
+        "answer": "If the Stable Diffusion weights are stored in a single '.safetensors' file, you can use the `from_ckpt` method from the `StableDiffusionPipeline` class to directly load the file."
+    },
+    {
+        "question": "How can you convert model weights from '.bin' format to '.safetensors' format?",
+        "answer": "You can convert model weights from '.bin' format to '.safetensors' format by using the Convert Space, which downloads the pickled weights, converts them, and opens a pull request to upload the newly converted '.safetensors' files to the Hub."
+    },
+    {
+        "question": "What parameter can you use to specify a reference to a pull request for applying new '.safetensors' weights to a model?",
+        "answer": "You can use the `revision` parameter to specify a reference to a pull request for applying new '.safetensors' weights to a model, such as `revision=\"refs/pr/22\"`."
+    },
+    {
+        "question": "Why is safetensors considered safer than Python's pickle utility?",
+        "answer": "Safetensors is considered safer than Python's pickle utility because it does not allow the execution of malicious code that can be included in pickled files, thus providing a secure way to share and load model weights."
+    },
+    {
+        "question": "How does the loading speed of safetensors compare to pickle when loading weights to a CPU?",
+        "answer": "When loading weights to a CPU, safetensors is significantly faster than pickle due to its zero-copy of tensors, although the speed difference may not be noticeable when downloading weights or loading a model for the first time."
+    }
+]

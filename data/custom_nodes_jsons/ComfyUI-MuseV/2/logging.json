@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the default verbosity level in the Diffusers library?",
+        "answer": "The default verbosity level in the Diffusers library is set to WARNING."
+    },
+    {
+        "question": "How can you change the verbosity level in the Diffusers library?",
+        "answer": "You can change the verbosity level by using one of the direct setters, such as diffusers.logging.set_verbosity_info() to change the verbosity to the INFO level."
+    },
+    {
+        "question": "Can you override the default verbosity level using an environment variable?",
+        "answer": "Yes, you can override the default verbosity by setting the environment variable DIFFUSERS_VERBOSITY to one of the following: debug, info, warning, error, critical."
+    },
+    {
+        "question": "How can you disable some warnings in the Diffusers library?",
+        "answer": "You can disable some warnings by setting the environment variable DIFFUSERS_NO_ADVISORY_WARNINGS to a true value, like 1. This disables any warning logged by logger.warning_advice."
+    },
+    {
+        "question": "How can you use the same logger as the Diffusers library in your own module or script?",
+        "answer": "You can use the same logger by importing diffusers.utils.logging, setting the verbosity level using logging.set_verbosity_info(), and then getting the logger using logging.get_logger(\"diffusers\")."
+    },
+    {
+        "question": "What are the different verbosity levels available in the Diffusers library?",
+        "answer": "The different verbosity levels in increasing order of verbosity are: CRITICAL or FATAL, ERROR, WARNING or WARN, INFO, and DEBUG."
+    },
+    {
+        "question": "How can you enable or disable the tqdm progress bars during model download in the Diffusers library?",
+        "answer": "You can use logging.disable_progress_bar() and logging.enable_progress_bar() to disable or enable the tqdm progress bars during model download."
+    }
+]

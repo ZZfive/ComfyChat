@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is UniDiffuser?",
+        "answer": "UniDiffuser is a model proposed in the paper 'One Transformer Fits All Distributions in Multi-Modal Diffusion at Scale' that can fit all distributions relevant to a set of multi-modal data in one model."
+    },
+    {
+        "question": "What tasks can UniDiffuser perform?",
+        "answer": "UniDiffuser is capable of performing unconditional image and text generation, text-to-image generation, image-to-text generation, image variation, and text variation."
+    },
+    {
+        "question": "How can you perform unconditional image and text generation with UniDiffuser?",
+        "answer": "To perform unconditional image and text generation with UniDiffuser, you can use the UniDiffuserPipeline in joint mode or let the pipeline infer the mode from the inputs."
+    },
+    {
+        "question": "Is it possible to generate only an image or only text with UniDiffuser?",
+        "answer": "Yes, you can generate only an image or only text with UniDiffuser, which the paper calls 'marginal' generation since it samples from the marginal distribution of images and text, respectively."
+    },
+    {
+        "question": "How can you perform text-to-image generation with UniDiffuser?",
+        "answer": "To perform text-to-image generation with UniDiffuser, you need to provide either an input prompt or prompt_embeds to the UniDiffuserPipeline. The text2img mode can be set manually with UniDiffuserPipeline.set_text_to_image_mode()."
+    },
+    {
+        "question": "How can you perform image-to-text generation with UniDiffuser?",
+        "answer": "To perform image-to-text generation with UniDiffuser, you need to provide an input image to the UniDiffuserPipeline. The img2text mode can be set manually with UniDiffuserPipeline.set_image_to_text_mode()."
+    },
+    {
+        "question": "How is image variation performed with UniDiffuser?",
+        "answer": "Image variation with UniDiffuser is performed through a 'round-trip' generation method, where given an input image, an image-to-text generation is first performed, and then a text-to-image generation is performed on the outputs of the first generation, producing a new image which is semantically similar to the input image."
+    },
+    {
+        "question": "How is text variation performed with UniDiffuser?",
+        "answer": "Text variation with UniDiffuser can be performed on an input prompt with a text-to-image generation followed by a image-to-text generation."
+    }
+]

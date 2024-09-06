@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the DynamicTileSplit node in ComfyUI_SimpleTiles?",
+        "answer": "The DynamicTileSplit node in ComfyUI_SimpleTiles splits an image into tiles based on the image size and tile size. It allows for tiles to have a different ratio than the original image."
+    },
+    {
+        "question": "What does the 'Overlap' value determine in the DynamicTileSplit and DynamicTileMerge nodes?",
+        "answer": "In the DynamicTileSplit and DynamicTileMerge nodes, the 'Overlap' value decides how much overlap there is between tiles on the y-axis. The x-axis overlap is calculated to have the same ratio to image height as the y-axis."
+    },
+    {
+        "question": "What is the purpose of the 'Blend' value in the DynamicTileMerge node?",
+        "answer": "In the DynamicTileMerge node, the 'Blend' value determines how many pixels the blending is done over. It should be set to a value less than the 'Overlap' value. The blending is done linearly from 0 to 1 over the blend distance."
+    },
+    {
+        "question": "What is the difference between the legacy nodes (TileSplit and TileMerge) and the new nodes (DynamicTileSplit and DynamicTileMerge) in ComfyUI_SimpleTiles?",
+        "answer": "The legacy nodes (TileSplit and TileMerge) don't work well if the image ratio and tile ratio are different. The new nodes (DynamicTileSplit and DynamicTileMerge) are more flexible and easier to use."
+    },
+    {
+        "question": "What is the purpose of the TileCalc node in ComfyUI_SimpleTiles?",
+        "answer": "The TileCalc node in ComfyUI_SimpleTiles is a utility node used to calculate the final image size based on tile sizes and overlaps."
+    },
+    {
+        "question": "How should the final image size calculated by TileCalc be used in the ComfyUI_SimpleTiles workflow?",
+        "answer": "The final image size calculated by TileCalc should be piped to the TileMerge and ImageScale nodes in the ComfyUI_SimpleTiles workflow."
+    },
+    {
+        "question": "What does the example Ipadapter image demonstrate in the context of ComfyUI_SimpleTiles?",
+        "answer": "The example Ipadapter image demonstrates a workflow using ComfyUI_SimpleTiles nodes, likely showing how to process and merge tiles using the nodes like DynamicTileSplit and DynamicTileMerge."
+    }
+]

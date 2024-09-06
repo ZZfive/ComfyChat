@@ -1,0 +1,38 @@
+[
+    {
+        "question": "How can you modify inference settings in ComfyUI-Open-Sora?",
+        "answer": "You can modify the corresponding configuration file to change inference settings in ComfyUI-Open-Sora. More detailed information can be found in the documentation."
+    },
+    {
+        "question": "What command automatically downloads pretrained weights and runs inference on ImageNet using DiT pretraining?",
+        "answer": "The command 'python scripts/inference.py configs/dit/inference/1x256x256-class.py --ckpt-path DiT-XL-2-256x256.pt' automatically downloads pretrained weights and runs inference on ImageNet using DiT pretraining."
+    },
+    {
+        "question": "Which command automatically downloads pretrained weights and runs inference on UCF101 using Latte pretraining?",
+        "answer": "The command 'python scripts/inference.py configs/latte/inference/16x256x256-class.py --ckpt-path Latte-XL-2-256x256-ucf101.pt' automatically downloads pretrained weights and runs inference on UCF101 using Latte pretraining."
+    },
+    {
+        "question": "What are the steps to perform inference using PixArt-α pretrained weights in ComfyUI-Open-Sora?",
+        "answer": "First, download T5 to './pretrained_models'. Then, run the provided commands for different resolutions like 256x256, 512x512, and 1024 multi-scale."
+    },
+    {
+        "question": "How can you perform inference using checkpoints saved during training in ComfyUI-Open-Sora?",
+        "answer": "During training, an experiment log folder is created in the 'outputs' directory. In each checkpoint folder, there is an 'ema.pt' file and a shared 'model' folder. Execute the provided commands to perform inference using either the ema model or the model."
+    },
+    {
+        "question": "What are the two solvers mentioned for inference and what are their characteristics?",
+        "answer": "The two solvers mentioned are DMP solver and SVD solver. DMP solver is good at fast image inference but not satisfactory for video inference. SVD solver uses a VAE decoder fine-tuned on video inference, but no significant improvement was observed."
+    },
+    {
+        "question": "What command should be run to continue training in ComfyUI-Open-Sora?",
+        "answer": "To continue training, run the command 'torchrun --nnodes=1 --nproc_per_node=8 scripts/train.py configs/opensora/train/64x512x512.py --data-path YOUR_CSV_PATH --load YOUR_PRETRAINED_CKPT'. The '--load' and '--ckpt-path' parameters differ in that '--load' will load the state of the optimizer and data loader."
+    },
+    {
+        "question": "How can you enable wandb logging during training in ComfyUI-Open-Sora?",
+        "answer": "To enable wandb logging, add the '--wandb' parameter to the command and set it to 'True'. Also, provide your wandb API key before the command."
+    },
+    {
+        "question": "What data types are supported for training in ComfyUI-Open-Sora?",
+        "answer": "ComfyUI-Open-Sora supports 'fp16' and 'bf16' data types for training. ColossalAI automatically enables mixed precision training for 'fp16' and 'bf16'. It is found that 'bf16' is more stable during training."
+    }
+]

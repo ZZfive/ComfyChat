@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Where can the benchmark evaluator for ComfyUI_Stable_Makeup be found?",
+        "answer": "The benchmark evaluator for ComfyUI_Stable_Makeup can be found at ./eval/benchmark/evaluator.py."
+    },
+    {
+        "question": "What is the purpose of the benchmark evaluator in ComfyUI_Stable_Makeup?",
+        "answer": "The benchmark evaluator in ComfyUI_Stable_Makeup allows extracting an extended report of metrics for each dataset."
+    },
+    {
+        "question": "How should the prediction file be structured for benchmark evaluation in ComfyUI_Stable_Makeup?",
+        "answer": "The prediction file for benchmark evaluation in ComfyUI_Stable_Makeup must follow the same data structure and file extension as the ground truth annotations available in ./data/annotations/<database_name>."
+    },
+    {
+        "question": "What does each dictionary in the data structure represent in ComfyUI_Stable_Makeup?",
+        "answer": "In ComfyUI_Stable_Makeup, each dictionary in the data structure represents an image sample."
+    },
+    {
+        "question": "What information is included in each image sample dictionary in ComfyUI_Stable_Makeup?",
+        "answer": "Each image sample dictionary in ComfyUI_Stable_Makeup includes the relative image path, bounding box, headpose, landmark database ids, landmarks, and visibilities."
+    },
+    {
+        "question": "How can the benchmark in ComfyUI_Stable_Makeup be extended for other tasks?",
+        "answer": "The benchmark in ComfyUI_Stable_Makeup can be extended for other tasks by inheriting the class structure available in ./eval/benchmark/metrics/metrics.py and developing a new task file similar to the available ones for landmarks and headpose."
+    },
+    {
+        "question": "What are the available task files for extending the benchmark in ComfyUI_Stable_Makeup?",
+        "answer": "The available task files for extending the benchmark in ComfyUI_Stable_Makeup are landmarks and headpose."
+    }
+]

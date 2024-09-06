@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is PixArt-α?",
+        "answer": "PixArt-α is a Transformer-based text-to-image diffusion model that generates high-quality images competitive with state-of-the-art image generators, supports high-resolution image synthesis up to 1024px resolution, and has a significantly lower training cost compared to other large-scale text-to-image models."
+    },
+    {
+        "question": "What are the three core designs proposed in PixArt-α to achieve its goals?",
+        "answer": "The three core designs proposed in PixArt-α are: (1) Training strategy decomposition, which separates the optimization of pixel dependency, text-image alignment, and image aesthetic quality; (2) Efficient T2I Transformer, which incorporates cross-attention modules into Diffusion Transformer to inject text conditions and streamline the computation-intensive class-condition branch; and (3) High-informative data, which emphasizes the significance of concept density in text-image pairs and leverages a large Vision-Language model to auto-label dense pseudo-captions to assist text-image alignment learning."
+    },
+    {
+        "question": "How does PixArt-α's training speed compare to existing large-scale text-to-image models?",
+        "answer": "PixArt-α's training speed is significantly faster than existing large-scale text-to-image models. For example, it only takes 10.8% of Stable Diffusion v1.5's training time (675 vs. 6,250 A100 GPU days), saving nearly $300,000 ($26,000 vs. $320,000) and reducing 90% CO2 emissions. Compared to a larger SOTA model, RAPHAEL, PixArt-α's training cost is merely 1%."
+    },
+    {
+        "question": "What type of backbone does PixArt-α use for denoising?",
+        "answer": "PixArt-α uses a Transformer backbone for denoising, similar to the architecture of DiT (Diffusion Transformer)."
+    },
+    {
+        "question": "How was PixArt-α trained in terms of text conditions?",
+        "answer": "PixArt-α was trained using text conditions computed from T5, which makes the pipeline better at following complex text prompts with intricate details."
+    },
+    {
+        "question": "What is PixArt-α particularly good at in terms of image generation?",
+        "answer": "PixArt-α is particularly good at producing high-resolution images at different aspect ratios, rivaling the quality of state-of-the-art text-to-image generation systems such as Stable Diffusion XL, Imagen, and DALL-E 2, while being more efficient than them."
+    },
+    {
+        "question": "Where can one find the original codebase and available checkpoints for PixArt-α?",
+        "answer": "The original codebase for PixArt-α can be found at PixArt-alpha/PixArt-alpha on GitHub, and all the available checkpoints can be found at PixArt-alpha on HuggingFace."
+    }
+]

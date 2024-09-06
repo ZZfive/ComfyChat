@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What is the command to extract frames from a video file using ffmpeg in comfyui-ricklove?",
+        "answer": "The command to extract frames from a video file using ffmpeg in comfyui-ricklove is: ffmpeg -i input.mp4 out%05d.png"
+    },
+    {
+        "question": "How can you convert HEIC files to PNG format in comfyui-ricklove?",
+        "answer": "In comfyui-ricklove, you can convert HEIC files to PNG format using the following command: find . -iname \"*.heic\" -exec heif-convert -q 100 {} {}.png \\;"
+    },
+    {
+        "question": "What is the command to convert a HEIC image to JPG format using ImageMagick in comfyui-ricklove?",
+        "answer": "The command to convert a HEIC image to JPG format using ImageMagick in comfyui-ricklove is: magick convert image.heic image.jpg"
+    },
+    {
+        "question": "How can you batch convert HEIF images to JPG format using ImageMagick in comfyui-ricklove?",
+        "answer": "To batch convert HEIF images to JPG format using ImageMagick in comfyui-ricklove, you can use the following command: convert *.heif -set filename:base \"%[basename]\" \"%[filename:base].jpg\""
+    },
+    {
+        "question": "What is the command to convert HEIF images to PNG format using mogrify in comfyui-ricklove?",
+        "answer": "The command to convert HEIF images to PNG format using mogrify in comfyui-ricklove is: mogrify -format png *.heif"
+    }
+]

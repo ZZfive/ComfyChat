@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of Spectrogram Diffusion?",
+        "answer": "Spectrogram Diffusion aims to be an interactive and expressive music synthesizer that can generate high-fidelity audio in realtime for arbitrary combinations of instruments and notes."
+    },
+    {
+        "question": "What are the two stages used in the Spectrogram Diffusion process?",
+        "answer": "The two stages used in the Spectrogram Diffusion process are: 1) MIDI to spectrograms with an encoder-decoder Transformer, and 2) spectrograms to audio with a generative adversarial network (GAN) spectrogram inverter."
+    },
+    {
+        "question": "What type of model is used for the decoder in Spectrogram Diffusion?",
+        "answer": "The decoder in Spectrogram Diffusion is trained as a Denoising Diffusion Probabilistic Model (DDPM)."
+    },
+    {
+        "question": "How does the Spectrogram Diffusion model take MIDI input?",
+        "answer": "The Spectrogram Diffusion model takes MIDI input by tokenizing it into a sequence of 5 second intervals. Each tokenized interval, along with positional encodings, is passed through the Note Encoder."
+    },
+    {
+        "question": "What is the role of the Context Encoder in the Spectrogram Diffusion model?",
+        "answer": "The Context Encoder in the Spectrogram Diffusion model provides the previous window's generated spectrogram representation, which is concatenated with the current MIDI window's representation from the Note Encoder."
+    },
+    {
+        "question": "What happens after the MIDI windows have been processed in the Spectrogram Diffusion model?",
+        "answer": "After all the MIDI windows have been processed, the potentially long spectrogram is converted to audio using a MelGAN decoder, which is the final result of the pipeline."
+    },
+    {
+        "question": "What is the SpectrogramDiffusionPipeline?",
+        "answer": "The SpectrogramDiffusionPipeline is a class in the Spectrogram Diffusion implementation that encapsulates the process of generating audio from MIDI input using the Spectrogram Diffusion model."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "如何将 DiffusionPipeline 放在 GPU 上以加速推理？",
+        "answer": "可以使用 pipeline.to('cuda') 将 pipeline 放在 GPU 上。"
+    },
+    {
+        "question": "如何确保生成的图像可复现？",
+        "answer": "使用 Generator 方法并设置随机数种子，以确保生成的图像可复现，例如 torch.Generator('cuda').manual_seed(0)。"
+    },
+    {
+        "question": "降低模型精度到 float16 可以如何影响推理时间？",
+        "answer": "将模型精度降低到 float16 可以将推理时间缩短近 3 倍，比如从 30 秒缩短到 11 秒。"
+    },
+    {
+        "question": "如何减少推理步数以加快推理速度？",
+        "answer": "可以使用更高效的调度器，如 DPMSolverMultistepScheduler，减少推理步数，如将 num_inference_steps 设置为 20。"
+    },
+    {
+        "question": "如何减少内存使用量以提高性能？",
+        "answer": "使用 pipeline.enable_attention_slicing() 可以节省内存，允许在一次运行中生成更多图像。"
+    },
+    {
+        "question": "如何提高生成图像的质量？",
+        "answer": "可以使用更好的 checkpoints, 更新 pipeline 组件如 autodecoder, 并改进提示词工程如提供更多细节。"
+    },
+    {
+        "question": "优化 DiffusionPipeline 的目的是什么？",
+        "answer": "优化 DiffusionPipeline 的目的是提高计算和内存效率，以及提高生成输出的质量。"
+    }
+]

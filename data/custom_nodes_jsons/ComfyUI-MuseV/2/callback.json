@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the `callback_on_step_end` parameter in the MuseV diffusers pipeline?",
+        "answer": "The `callback_on_step_end` parameter allows you to modify the denoising loop of a pipeline with custom defined functions. This enables dynamically adjusting pipeline attributes or modifying tensor variables at the end of each denoising step."
+    },
+    {
+        "question": "What are some use-cases for the `callback_on_step_end` parameter?",
+        "answer": "Some interesting use-cases include changing the prompt embeddings at each timestep, assigning different weights to the prompt embeddings, and editing the guidance scale."
+    },
+    {
+        "question": "What arguments should the callback function have?",
+        "answer": "The callback function should have the following arguments: `pipe` (the pipeline instance), `step_index` and `timestep` (to know where you are in the denoising loop), and `callback_kwargs` (a dict containing tensor variables you can modify during the denoising loop)."
+    },
+    {
+        "question": "How can you check which tensor variables you can modify in the callback function?",
+        "answer": "You can check a pipeline's `_callback_tensor_inputs` attribute for the list of variables you can modify."
+    },
+    {
+        "question": "What does the example callback function `callback_dynamic_cfg` do?",
+        "answer": "The `callback_dynamic_cfg` function disables classifier-free guidance (CFG) after 40% of the inference steps by setting `pipe._guidance_scale=0.0` and adjusting the batch size of `prompt_embeds` accordingly."
+    },
+    {
+        "question": "How do you pass the callback function to the MuseV diffusers pipeline?",
+        "answer": "You can pass the callback function to the `callback_on_step_end` parameter and the `prompt_embeds` to `callback_on_step_end_tensor_inputs` when calling the pipeline."
+    },
+    {
+        "question": "What is the execution point of the callback function in the current version of 🤗 Diffusers?",
+        "answer": "The current version of 🤗 Diffusers only supports `callback_on_step_end`, which executes the callback function at the end of each denoising step."
+    }
+]

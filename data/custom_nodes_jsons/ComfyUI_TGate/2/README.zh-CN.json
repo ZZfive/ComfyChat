@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ComfyUI_TGate 是什么?",
+        "answer": "ComfyUI_TGate 是 T-GATE 的一个 ComfyUI 插件实现，T-GATE 可以为 diffusion 模型在保持原始构图，略微降低生成图像质量的情况下带来 10%-50% 的性能提升。"
+    },
+    {
+        "question": "ComfyUI_TGate 的主要特点有哪些?",
+        "answer": "ComfyUI_TGate 的主要特点包括无需训练，与多种模型兼容，如基于 CNN-based U-Net 的 SD 类模型，Transformer 的 DiT 类模型，以及 LCM/TCD。它还可以与 DeepCache 共用，对于不同的模型和强度可以达到 10%-50% 的性能提升。"
+    },
+    {
+        "question": "ComfyUI_TGate 提供了哪些节点？",
+        "answer": "ComfyUI_TGate 提供了 TGate Apply、TGate Apply Advanced 和 TGate Apply(Deprecated) 三个节点。这些节点都可以配置参数如 start_at、only_cross_attention 和 use_cpu_cache 来调整 T-GATE 的作用。"
+    },
+    {
+        "question": "如何安装 ComfyUI_TGate？",
+        "answer": "安装 ComfyUI_TGate 只需使用 git clone 命令克隆仓库： git clone https://github.com/JettHu/ComfyUI_TGate"
+    },
+    {
+        "question": "T-GATE 与 AutomaticCFG 有何不同之处?",
+        "answer": "在保持结果构图一致的情况下，T-GATE 有最好的性能。如果不太关心结果的构图和不使用这两个插件的原结果图的差异，AutomaticCFG fatest 也可以带来差不多的性能提升。"
+    },
+    {
+        "question": "TGate Apply 节点的 start_at 参数有什么作用？",
+        "answer": "start_at 参数表示 T-GATE 起作用的百分比，越早开始性能提升越多，但细节会丢失更多，需要自己权衡。"
+    },
+    {
+        "question": "ComfyUI_TGate 是否有示例 workflow 提供?",
+        "answer": "是的，examples 文件夹下提供了使用 TGate 节点的示例 workflow，可以直接导入到 ComfyUI 中使用。"
+    }
+]

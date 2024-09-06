@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is T2I-Adapter?",
+        "answer": "T2I-Adapter is a lightweight adapter model that provides an additional conditioning input image to better control image generation. It is similar to a ControlNet but smaller in size."
+    },
+    {
+        "question": "Which model is T2I-Adapter available for training with?",
+        "answer": "The T2I-Adapter is only available for training with the Stable Diffusion XL (SDXL) model."
+    },
+    {
+        "question": "What are the steps to run the T2I-Adapter training script?",
+        "answer": "The steps to run the T2I-Adapter training script include installing the library from source, navigating to the example folder containing the training script, installing required dependencies, initializing an 🤗 Accelerate environment, and setting up a default 🤗 Accelerate environment."
+    },
+    {
+        "question": "What is the purpose of the '--pretrained_vae_model_name_or_path' parameter in the T2I-Adapter training script?",
+        "answer": "The '--pretrained_vae_model_name_or_path' parameter allows specifying a better VAE, as the SDXL VAE is known to suffer from numerical instability."
+    },
+    {
+        "question": "What are the '--conditioning_image_column' and '--proportion_empty_prompts' parameters used for in the T2I-Adapter training script?",
+        "answer": "The '--conditioning_image_column' parameter specifies the column of the conditioning images in the dataset, and the '--proportion_empty_prompts' parameter specifies the proportion of image prompts to replace with empty strings."
+    },
+    {
+        "question": "How does the T2I-Adapter training script prepare the dataset for training?",
+        "answer": "The T2I-Adapter training script prepares the dataset by tokenizing the prompt and applying transforms to the images and conditioning images."
+    },
+    {
+        "question": "How is the T2I-Adapter loaded or initialized in the training script?",
+        "answer": "In the training script, the T2I-Adapter is either loaded from a pretrained adapter using 'T2IAdapter.from_pretrained()' or randomly initialized using 'T2IAdapter()' with specified parameters."
+    }
+]

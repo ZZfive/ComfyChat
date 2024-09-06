@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Colab Notebook mentioned in the document?",
+        "answer": "The Colab Notebook provides a tutorial on how to run inference with an existing model and how to train a builtin model on a custom dataset using Detectron2 APIs."
+    },
+    {
+        "question": "How can you run inference demo with pre-trained models in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "To run inference demo with pre-trained models, you need to pick a model and its config file from the model zoo, and then use the provided 'demo.py' script with the appropriate command-line arguments."
+    },
+    {
+        "question": "What command should be used to run inference on a video file?",
+        "answer": "To run inference on a video file, replace '--input files' with '--video-input video.mp4' when running the 'demo.py' script."
+    },
+    {
+        "question": "How can you train a model using 'train_net.py' script in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "To train a model with 'train_net.py', first set up the corresponding datasets following the instructions in 'datasets/README.md', and then run the script with the appropriate config file and number of GPUs."
+    },
+    {
+        "question": "What changes are needed to train on 1 GPU instead of 8 GPUs?",
+        "answer": "To train on 1 GPU, you may need to change some parameters, such as setting '--num-gpus 1 SOLVER.IMS_PER_BATCH 2 SOLVER.BASE_LR 0.0025' when running the 'train_net.py' script."
+    },
+    {
+        "question": "Is CPU training supported for most models in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "No, for most models, CPU training is not supported in ComfyUI_OOTDiffusion_CXH."
+    },
+    {
+        "question": "How can you evaluate a model's performance using the 'train_net.py' script?",
+        "answer": "To evaluate a model's performance, use the 'train_net.py' script with the '--eval-only' flag and provide the path to the checkpoint file using 'MODEL.WEIGHTS' argument."
+    }
+]

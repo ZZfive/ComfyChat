@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DHLive-ComfyUI 中的图像数据类型有什么约定？",
+        "answer": "在 DHLive-ComfyUI 中，对图像数据类型的约定如下：Numpy 类型（通常是 cv2 的结果）使用 UINT8，表示 BGR，范围为 [0, 255]，形状为 (h, w, c)；而 float 类型，范围为 [0, 1]，形状为 (h, w, c)，通常作为中间结果。对于 Tensor 类型，float 类型表示 RGB，范围为 [0, 1]，形状为 (n, c, h, w)。"
+    },
+    {
+        "question": "DHLive-ComfyUI 中如何区分 PyTorch 的结果？",
+        "answer": "在 DHLive-ComfyUI 中，以 `_pt` 结尾的结果是 PyTorch 的结果。"
+    },
+    {
+        "question": "DHLive-ComfyUI 中 PyTorch 版本的 SSIM 支持何种计算？",
+        "answer": "DHLive-ComfyUI 中的 PyTorch 版本支持批量（batch）计算。"
+    },
+    {
+        "question": "DHLive-ComfyUI 中的颜色转换和度量计算分别在什么数据类型上进行？",
+        "answer": "在 DHLive-ComfyUI 中，颜色转换在 float32 上进行，而度量（metric）计算在 float64 上进行。"
+    },
+    {
+        "question": "DHLive-ComfyUI 中 PSNR 和 SSIM 的结果趋势是否一致？",
+        "answer": "是的，在 DHLive-ComfyUI 中，PSNR 和 SSIM 的结果趋势是一致的，通常 PSNR 高时，SSIM 也高。"
+    },
+    {
+        "question": "DHLive-ComfyUI 中的 SSIM 实现参考了哪个版本？",
+        "answer": "DHLive-ComfyUI 中的 SSIM 实现参考了 MATLAB 最原始的版本，保持了一致性，具体可参考 NTIRE17 比赛的 evaluation 代码。"
+    },
+    {
+        "question": "DHLive-ComfyUI 中 PyTorch 实现的 PSNR 和 SSIM 与 MATLAB 实现相比如何？",
+        "answer": "DHLive-ComfyUI 中的 PyTorch 实现与 MATLAB 实现基本一致，但在 GPU 运行上可能会有稍许差异。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is DiffEdit?",
+        "answer": "DiffEdit is a method that uses text-conditioned diffusion models for the task of semantic image editing, where the goal is to edit an image based on a text query."
+    },
+    {
+        "question": "What is the main contribution of DiffEdit?",
+        "answer": "The main contribution of DiffEdit is its ability to automatically generate a mask highlighting regions of the input image that need to be edited, by contrasting predictions of a diffusion model conditioned on different text prompts."
+    },
+    {
+        "question": "How does DiffEdit preserve content in regions of interest?",
+        "answer": "DiffEdit relies on latent inference to preserve content in those regions of interest and shows excellent synergies with mask-based diffusion."
+    },
+    {
+        "question": "What datasets were used to evaluate DiffEdit's performance?",
+        "answer": "DiffEdit achieves state-of-the-art editing performance on ImageNet. It was also evaluated in more challenging settings, using images from the COCO dataset as well as text-based generated images."
+    },
+    {
+        "question": "Where can the original codebase for DiffEdit be found?",
+        "answer": "The original codebase for DiffEdit can be found at Xiang-cd/DiffEdit-stable-diffusion on GitHub."
+    },
+    {
+        "question": "What are the two prompt arguments exposed by the `generate_mask` function in the StableDiffusionDiffEditPipeline?",
+        "answer": "The `generate_mask` function in the StableDiffusionDiffEditPipeline exposes two prompt arguments: `source_prompt` and `target_prompt`."
+    },
+    {
+        "question": "What should be assigned to the `prompt` argument when generating partially inverted latents using `invert`?",
+        "answer": "When generating partially inverted latents using `invert`, assign a caption or text embedding describing the overall image to the `prompt` argument to help guide the inverse latent sampling process."
+    }
+]

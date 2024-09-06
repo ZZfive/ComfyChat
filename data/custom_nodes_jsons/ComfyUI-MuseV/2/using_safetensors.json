@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is safetensors?",
+        "answer": "Safetensors is a safe and fast file format for saving and loading tensors, designed as a secure alternative to Python's pickle utility for sharing model weights."
+    },
+    {
+        "question": "How can you load a .safetensors file in ComfyUI-MuseV?",
+        "answer": "In ComfyUI-MuseV, you can load a .safetensors file by setting use_safetensors=True when calling DiffusionPipeline.from_pretrained(), or by using the StableDiffusionPipeline.from_ckpt() method if all weights are stored in a single file."
+    },
+    {
+        "question": "What should you do if model weights are not available in .safetensors format on the Hugging Face Hub?",
+        "answer": "If model weights are not available in .safetensors format, you can use the Convert Space to download, convert, and upload the weights in the new format, which also scans for malicious code."
+    },
+    {
+        "question": "Why is using safetensors important for model security?",
+        "answer": "Using safetensors is important for model security because it helps ensure that the downloaded model weights do not contain malicious code, providing a safer alternative to pickle."
+    },
+    {
+        "question": "What are the advantages of using safetensors in terms of loading speed?",
+        "answer": "Safetensors offers faster loading speeds compared to pickle, especially when loading weights to the CPU. It also supports lazy loading, which is useful for distributed settings where only some tensors need to be loaded."
+    },
+    {
+        "question": "How does safetensors handle large JSON files?",
+        "answer": "Safetensors prevents parsing of very large JSON files by keeping the current header size small."
+    },
+    {
+        "question": "How can you use model weights that have been converted to .safetensors format in a pull request?",
+        "answer": "To use model weights that have been converted to .safetensors format in a pull request, you can specify the reference to the pull request in the revision parameter when calling DiffusionPipeline.from_pretrained()."
+    }
+]

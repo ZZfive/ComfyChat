@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is Core ML and what devices does it support?",
+        "answer": "Core ML is a model format and machine learning library supported by Apple's frameworks. It can leverage all computing engines available on Apple devices, including CPU, GPU, and the Apple Neural Engine (ANE), a tensor optimized accelerator available on Apple Silicon Macs and recent iPhones/iPads."
+    },
+    {
+        "question": "How can you run Stable Diffusion on Apple devices using Core ML?",
+        "answer": "To run Stable Diffusion on Apple devices, you need to convert the PyTorch checkpoints to Core ML format. Apple engineers have developed a conversion tool based on diffusers to facilitate this. Once converted, the model can be used for inference in Python or Swift."
+    },
+    {
+        "question": "What are the different Core ML variants available for Stable Diffusion models?",
+        "answer": "The Stable Diffusion models can be converted to different Core ML variants based on the type of attention block used ('split_einsum' or 'original') and the supported inference framework ('packages' for Python inference and 'compiled' for Swift code)."
+    },
+    {
+        "question": "How can you download a specific Core ML checkpoint variant for Stable Diffusion?",
+        "answer": "You can download a specific Core ML checkpoint variant (e.g., 'original/packages') for Stable Diffusion from the Hugging Face Hub using the huggingface_hub library in Python."
+    },
+    {
+        "question": "How can you perform inference using Core ML in Python?",
+        "answer": "To perform inference using Core ML in Python, you need to install the necessary libraries (huggingface_hub and apple/ml-stable-diffusion), download the desired Core ML checkpoint variant, and then use Apple's Python script to test the model."
+    },
+    {
+        "question": "How can you perform inference using Core ML in Swift?",
+        "answer": "To perform inference using Core ML in Swift, you need to download a 'compiled' checkpoint version, clone Apple's ml-stable-diffusion repository, and then use the Swift Package Manager to run the inference command."
+    },
+    {
+        "question": "What are some limitations of Core ML models and inference code compared to Diffusers?",
+        "answer": "Core ML models are only suitable for inference, not training or fine-tuning. The ported schedulers in Swift are limited to the default scheduler used in Stable Diffusion and the DPMSolverMultistepScheduler. Advanced features like depth guidance, ControlNet, and latent upscalers are not yet available."
+    }
+]

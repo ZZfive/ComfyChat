@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-MuseV?",
+        "answer": "ComfyUI-MuseV is an extension or custom node for ComfyUI that reduces memory usage when generating images and videos using diffusion models."
+    },
+    {
+        "question": "How does ComfyUI-MuseV help overcome the challenge of large memory requirements for diffusion models?",
+        "answer": "ComfyUI-MuseV uses several memory-reducing techniques such as sliced VAE, tiled VAE, CPU offloading, model offloading, channels-last memory format, tracing, and memory-efficient attention to reduce memory usage and allow running large models on free-tier or consumer GPUs."
+    },
+    {
+        "question": "What is sliced VAE in ComfyUI-MuseV?",
+        "answer": "Sliced VAE in ComfyUI-MuseV enables decoding large batches of images with limited VRAM or batches with 32 images or more by decoding the batches of latents one image at a time."
+    },
+    {
+        "question": "How does tiled VAE in ComfyUI-MuseV work?",
+        "answer": "Tiled VAE in ComfyUI-MuseV enables working with large images on limited VRAM by splitting the image into overlapping tiles, decoding the tiles, and then blending the outputs together to compose the final image."
+    },
+    {
+        "question": "What is CPU offloading in ComfyUI-MuseV?",
+        "answer": "CPU offloading in ComfyUI-MuseV offloads the weights to the CPU and only loads them on the GPU when performing the forward pass, which can reduce memory consumption to less than 3GB."
+    },
+    {
+        "question": "How does model offloading in ComfyUI-MuseV differ from CPU offloading?",
+        "answer": "Model offloading in ComfyUI-MuseV moves whole models to the GPU instead of handling each model's constituent submodules, resulting in a negligible impact on inference time while still providing some memory savings compared to CPU offloading."
+    },
+    {
+        "question": "What is memory-efficient attention in ComfyUI-MuseV?",
+        "answer": "Memory-efficient attention in ComfyUI-MuseV, such as Flash Attention, optimizes bandwidth in the attention block, resulting in huge speed-ups and reductions in GPU memory usage."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ComfyUI-MuseV는 어떤 종류의 모델인가요?",
+        "answer": "ComfyUI-MuseV는 textual-inversion 기법을 사용하여 소수의 예시 이미지에서 새로운 콘셉트를 포착하는 모델입니다."
+    },
+    {
+        "question": "ComfyUI-MuseV 모델을 학습하는 데 필요한 의존성 라이브러리들은 무엇인가요?",
+        "answer": "ComfyUI-MuseV 모델을 학습하려면 diffusers, accelerate, transformers 라이브러리가 필요합니다."
+    },
+    {
+        "question": "ComfyUI-MuseV 모델의 학습에 사용되는 고양이 장난감 데이터셋은 어디서 얻을 수 있나요?",
+        "answer": "ComfyUI-MuseV 모델의 학습에 사용되는 고양이 장난감 데이터셋은 diffusers/cat_toy_example에서 다운로드 받을 수 있습니다."
+    },
+    {
+        "question": "ComfyUI-MuseV 모델을 학습한 후, 해당 모델을 추론에 사용하려면 어떻게 해야 하나요?",
+        "answer": "ComfyUI-MuseV 모델을 추론에 사용하려면, 학습한 모델을 StableDiffusionPipeline을 사용하여 불러온 후, load_textual_inversion 함수를 통해 텍스트 임베딩 벡터를 불러와야 합니다."
+    },
+    {
+        "question": "ComfyUI-MuseV는 어떤 방식으로 새로운 콘셉트를 포착하나요?",
+        "answer": "ComfyUI-MuseV는 textual-inversion 기법을 통해 새로운 콘셉트를 포착합니다. 이 기법은 제너레이터 모델과 학습용 이미지의 노이즈 버전을 사용하여 토큰 임베딩을 최적화합니다."
+    },
+    {
+        "question": "ComfyUI-MuseV에서 최적화되는 토큰 임베딩은 어떤 역할을 하나요?",
+        "answer": "ComfyUI-MuseV에서 최적화되는 토큰 임베딩은 제너레이터의 성능에 따라 최적화되며, 새로운 콘셉트를 성공적으로 포착하면 디퓨전 모델에 더 유용한 정보를 제공합니다."
+    },
+    {
+        "question": "ComfyUI-MuseV 모델의 학습에서 중간 로깅을 활성화하려면 어떤 인수를 추가해야 하나요?",
+        "answer": "ComfyUI-MuseV 모델의 학습에서 중간 로깅을 활성화하려면 validation_prompt, num_validation_images, validation_steps 인수를 추가해야 합니다."
+    }
+]

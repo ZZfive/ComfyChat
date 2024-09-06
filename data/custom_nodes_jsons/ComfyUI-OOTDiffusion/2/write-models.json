@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the registration mechanism in ComfyUI-OOTDiffusion?",
+        "answer": "The registration mechanism in ComfyUI-OOTDiffusion allows you to override the behavior of certain internal components of standard models, enabling you to modify or extend their functionality."
+    },
+    {
+        "question": "How can you add a new backbone in ComfyUI-OOTDiffusion?",
+        "answer": "To add a new backbone in ComfyUI-OOTDiffusion, you need to import the necessary code, create a new class that extends the Backbone class, define the __init__, forward, and output_shape methods, and register it using the @BACKBONE_REGISTRY.register() decorator."
+    },
+    {
+        "question": "What should you do after implementing a new backbone in ComfyUI-OOTDiffusion?",
+        "answer": "After implementing a new backbone in ComfyUI-OOTDiffusion, you should use `cfg.MODEL.BACKBONE.NAME = 'YourBackBoneName'` in your config object to make `build_model(cfg)` call your new backbone instead of the default one."
+    },
+    {
+        "question": "How can you add new abilities to the ROI heads in the Generalized R-CNN meta-architecture in ComfyUI-OOTDiffusion?",
+        "answer": "To add new abilities to the ROI heads in the Generalized R-CNN meta-architecture in ComfyUI-OOTDiffusion, you need to implement a new ROIHeads subclass and put it in the ROI_HEADS_REGISTRY."
+    },
+    {
+        "question": "Where can you find examples of implementing new ROIHeads to perform new tasks in ComfyUI-OOTDiffusion?",
+        "answer": "Examples of implementing new ROIHeads to perform new tasks in ComfyUI-OOTDiffusion can be found in densepose in detectron2 and meshrcnn on GitHub."
+    },
+    {
+        "question": "Where can you find more examples of implementing different architectures in ComfyUI-OOTDiffusion?",
+        "answer": "More examples of implementing different architectures in ComfyUI-OOTDiffusion can be found in the projects/ directory."
+    },
+    {
+        "question": "How can you customize different parts of a model or the entire model in ComfyUI-OOTDiffusion?",
+        "answer": "To customize different parts of a model or the entire model in ComfyUI-OOTDiffusion, you can register components in the registries listed in the API documentation."
+    }
+]

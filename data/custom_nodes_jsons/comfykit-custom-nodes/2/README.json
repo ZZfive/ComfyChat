@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is LoraStackFiveSimple (LoRA S5) in ComfyKit Custom Nodes?",
+        "answer": "LoraStackFiveSimple (LoRA S5) is a custom node in ComfyKit that accepts 5 LoRAs to blend and a weight value to apply. It applies the same weight to both the Model and CLIP."
+    },
+    {
+        "question": "Does LoraStackFiveSimple (LoRA S5) allow desynchronizing weights between Model and CLIP?",
+        "answer": "No, LoraStackFiveSimple (LoRA S5) applies the same weight to both the Model and CLIP as the creator did not find obvious positive results when desynchronizing them."
+    },
+    {
+        "question": "What is the purpose of Typecaster nodes in ComfyKit Custom Nodes?",
+        "answer": "Typecaster nodes in ComfyKit Custom Nodes recast the input as typed output without doing anything to it. This helps with workflows where one node can output 'anything' and send it to a node that can take 'anything'."
+    },
+    {
+        "question": "How do Typecaster nodes help with workflows in ComfyKit Custom Nodes?",
+        "answer": "Typecaster nodes help with workflows by allowing nodes that can output 'anything' to send it to nodes that can accept 'anything', even if the specific type is not noticed until a job is queued and fails."
+    },
+    {
+        "question": "What are the available Typecaster nodes in ComfyKit Custom Nodes?",
+        "answer": "The available Typecaster nodes in ComfyKit Custom Nodes are CLIP, Conditioning, Image, Latent, Model, and VAE."
+    },
+    {
+        "question": "How would you represent the functionality of Typecaster nodes in code?",
+        "answer": "In code, the functionality of Typecaster nodes would be represented as `emptyLatent = (Latent)emptyLatent;`."
+    },
+    {
+        "question": "What is the purpose of the images provided in the ComfyKit Custom Nodes documentation?",
+        "answer": "The images provided in the ComfyKit Custom Nodes documentation visually represent the LoraStackFiveSimple (LoRA S5) and Typecaster nodes, helping users understand their functionality and usage."
+    }
+]

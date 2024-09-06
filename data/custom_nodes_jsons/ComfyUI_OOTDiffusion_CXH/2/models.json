@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the `build_model` function in detectron2?",
+        "answer": "The `build_model` function in detectron2 is used to build the model structure and fill it with random parameters."
+    },
+    {
+        "question": "How can you load a checkpoint to a model in detectron2?",
+        "answer": "You can load a checkpoint to a model in detectron2 using the `DetectionCheckpointer` class, like this: `DetectionCheckpointer(model).load(file_path)`."
+    },
+    {
+        "question": "What is the purpose of using an `EventStorage` when training a model in detectron2?",
+        "answer": "When in training mode, all models in detectron2 are required to be used under an `EventStorage`. The training statistics will be put into the storage."
+    },
+    {
+        "question": "What is the `DefaultPredictor` in detectron2?",
+        "answer": "The `DefaultPredictor` in detectron2 is a wrapper around a model that provides basic functionality including model loading, preprocessing, and operates on single image rather than batches."
+    },
+    {
+        "question": "What is the standard input format for built-in models in detectron2?",
+        "answer": "The standard input format for built-in models in detectron2 is a `list[dict]`, where each dict corresponds to information about one image."
+    },
+    {
+        "question": "What are the possible keys in the input dict for built-in models in detectron2?",
+        "answer": "The possible keys in the input dict for built-in models in detectron2 include 'image', 'instances', 'proposals', 'height', 'width', and 'sem_seg'."
+    },
+    {
+        "question": "What is the output format of built-in models in detectron2 when in inference mode?",
+        "answer": "When in inference mode, the built-in models in detectron2 output a `list[dict]`, one dict for each image. Each dict may contain fields such as 'instances', 'sem_seg', 'proposals', and 'panoptic_seg'."
+    },
+    {
+        "question": "How can you obtain an intermediate tensor inside a model in detectron2?",
+        "answer": "You can obtain an intermediate tensor inside a model in detectron2 by either writing a (sub)model or partially executing a model using custom code."
+    }
+]

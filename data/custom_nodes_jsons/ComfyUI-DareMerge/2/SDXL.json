@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-DareMerge?",
+        "answer": "ComfyUI-DareMerge is a custom node or plugin for ComfyUI that merges additional weights into a base model."
+    },
+    {
+        "question": "What is the purpose of the 'keys' section in the ComfyUI-DareMerge documentation?",
+        "answer": "The 'keys' section lists the various weight and bias parameters of the diffusion model that can be merged using ComfyUI-DareMerge."
+    },
+    {
+        "question": "Does ComfyUI-DareMerge allow merging weights for the time embedding layer?",
+        "answer": "Yes, ComfyUI-DareMerge includes keys for merging weights and biases of the time embedding layer, such as 'diffusion_model.time_embed.0.weight' and 'diffusion_model.time_embed.0.bias'."
+    },
+    {
+        "question": "Can ComfyUI-DareMerge be used to merge transformer block parameters?",
+        "answer": "Yes, the documentation shows that ComfyUI-DareMerge supports merging various transformer block parameters, including 'to_q', 'to_k', 'to_v', and normalization weights and biases."
+    },
+    {
+        "question": "Does ComfyUI-DareMerge support merging output block parameters?",
+        "answer": "Yes, ComfyUI-DareMerge provides keys for merging weights and biases of output blocks at different layers of the model, such as 'diffusion_model.output_blocks.0.in_layers.0.weight' and 'diffusion_model.output_blocks.7.0.skip_connection.bias'."
+    },
+    {
+        "question": "Are the model sampling and noise augmentor parameters included in ComfyUI-DareMerge?",
+        "answer": "Yes, the documentation lists 'model_sampling.sigmas', 'model_sampling.log_sigmas', and various 'noise_augmentor' parameters, indicating that these can be merged using ComfyUI-DareMerge."
+    },
+    {
+        "question": "Does ComfyUI-DareMerge support merging weights for the input blocks of the diffusion model?",
+        "answer": "Yes, ComfyUI-DareMerge includes keys for merging weights and biases of input blocks at different layers, such as 'diffusion_model.input_blocks.0.0.weight' and 'diffusion_model.input_blocks.7.1.transformer_blocks.0.norm3.bias'."
+    }
+]

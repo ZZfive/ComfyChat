@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ComfyUI-MuseV에서 파이프라인을 해체하려면 어떤 구성 요소들을 분리해야 하나요?",
+        "answer": "ComfyUI-MuseV에서 파이프라인을 해체하려면 모델과 스케줄러를 분리해야 합니다. 예를 들어, 기본 파이프라인의 경우 UNet2DModel과 DDPMScheduler가 포함됩니다."
+    },
+    {
+        "question": "ComfyUI-MuseV에서 파이프라인을 해체한 후 노이즈 제거 프로세스를 어떻게 구성하나요?",
+        "answer": "노이즈 제거 프로세스를 구성하려면, 먼저 모델과 스케줄러를 불러와야 합니다. 그런 다음 노이즈 제거 프로세스를 실행할 timestep 수를 설정하고, 원하는 출력 크기의 랜덤 노이즈를 생성합니다. 이후 각 timestep에 대해 모델을 통해 노이즈 리지두얼(noisy residual)을 예측하고, 스케줄러의 step 메서드를 사용하여 이전 timestep의 이미지를 예측합니다. 이 과정을 지정된 추론 스텝 수에 도달할 때까지 반복합니다."
+    },
+    {
+        "question": "DDPMPipeline에서 사용되는 UNet2DModel이 수행하는 주요 작업은 무엇인가요?",
+        "answer": "UNet2DModel은 노이즈 제거 프로세스 중 각 timestep에서 noisy residual을 예측하는 데 사용됩니다."
+    },
+    {
+        "question": "Stable Diffusion 파이프라인에서 필요한 구성 요소들은 무엇인가요?",
+        "answer": "Stable Diffusion 파이프라인에서는 인코더, 디코더, tokenizer, 텍스트 인코더, UNet 모델 및 스케줄러가 필요합니다. 이러한 구성 요소들은 사전학습된 체크포인트에서 불러올 수 있습니다."
+    },
+    {
+        "question": "Stable Diffusion 파이프라인에서 텍스트 임베딩을 생성하는 과정은 어떻게 되나요?",
+        "answer": "텍스트 임베딩을 생성하기 위해, 먼저 텍스트를 토큰화하고 이를 기반으로 임베딩을 생성합니다. 이 텍스트 임베딩은 UNet 모델의 condition으로 사용되어 입력 프롬프트와 유사한 방향으로 diffusion 프로세스를 조정하는 데 활용됩니다."
+    },
+    {
+        "question": "Stable Diffusion 파이프라인에서 이미지의 노이즈를 제거하는 과정은 어떻게 되나요?",
+        "answer": "이미지의 노이즈를 제거하려면, 먼저 스케줄러의 timesteps를 설정하고 이를 따라 반복합니다. 각 timestep에서 UNet 모델을 호출하여 노이즈 리지두얼(noise residual)을 예측하고, 이를 스케줄러에 전달하여 이전 노이즈 샘플을 계산합니다. 이 과정을 timesteps의 끝에 도달할 때까지 반복합니다."
+    },
+    {
+        "question": "Stable Diffusion 파이프라인에서 최종 이미지를 생성하는 데 필요한 마지막 단계는 무엇인가요?",
+        "answer": "최종 이미지를 생성하려면, VAE를 사용하여 잠재 표현을 이미지로 디코딩합니다. 그런 다음 디코딩된 출력을 PIL.Image로 변환하여 생성된 이미지를 확인할 수 있습니다."
+    }
+]

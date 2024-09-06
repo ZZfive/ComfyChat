@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Where can I find the release log for Detectron2?",
+        "answer": "The release log for Detectron2 can be found at https://github.com/facebookresearch/detectron2/releases."
+    },
+    {
+        "question": "What was the notable backward incompatible change on 03/30/2020?",
+        "answer": "On 03/30/2020, the custom box head's output_size changed to output_shape."
+    },
+    {
+        "question": "What changes were made to mask head and keypoint head on 02/14/2020 and 02/18/2020?",
+        "answer": "On 02/14/2020 and 02/18/2020, mask head and keypoint head were updated to include logic for losses and inference. Custom heads should overwrite the feature computation by the layers() method."
+    },
+    {
+        "question": "What happens when using detectron2.data.detection_utils.read_image on images with exif information after 11/11/2019?",
+        "answer": "After 11/11/2019, detectron2.data.detection_utils.read_image transposes images with exif information."
+    },
+    {
+        "question": "What was the config version change from v1 to v2?",
+        "answer": "From config version v1 to v2, RPN_HEAD.NAME was renamed to RPN.HEAD_NAME, and many other configurations were renamed before release."
+    },
+    {
+        "question": "What silent regression occurred between 04/01/2020 and 05/11/2020?",
+        "answer": "Between 04/01/2020 and 05/11/2020, there was a silent regression that caused bad accuracy if TRAIN_ON_PRED_BOXES was set to True."
+    },
+    {
+        "question": "What silent regression happened between the release and 11/9/2019?",
+        "answer": "Between the release and 11/9/2019, test time augmentation did not predict the last category, which was a silent regression."
+    }
+]

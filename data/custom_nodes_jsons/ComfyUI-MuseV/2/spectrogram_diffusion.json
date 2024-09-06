@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is Spectrogram Diffusion?",
+        "answer": "Spectrogram Diffusion is a neural synthesizer that can generate audio from MIDI sequences with arbitrary combinations of instruments in realtime. It uses a two-stage process: MIDI to spectrograms with an encoder-decoder Transformer, then spectrograms to audio with a generative adversarial network (GAN) spectrogram inverter."
+    },
+    {
+        "question": "What are the advantages of Spectrogram Diffusion compared to other neural synthesizers?",
+        "answer": "Spectrogram Diffusion offers a middle ground between domain-specific models that offer detailed control of only specific instruments, and raw waveform models that can train on any music but with minimal control and slow generation. It enables training on a wide range of transcription datasets with a single model, which in turn offers note-level control of composition and instrumentation across a wide range of instruments."
+    },
+    {
+        "question": "How does the Spectrogram Diffusion model process MIDI files?",
+        "answer": "The model takes a MIDI file as input and tokenizes it into a sequence of 5 second intervals. Each tokenized interval, together with positional encodings, is passed through the Note Encoder and its representation is concatenated with the previous window's generated spectrogram representation obtained via the Context Encoder. The resulting context is then used as conditioning to sample the denoised Spectrogram from the MIDI window, and this spectrogram is concatenated to the final output and used for the context of the next MIDI window. The process repeats until all MIDI inputs have been processed."
+    },
+    {
+        "question": "What is the purpose of the MelGAN decoder in the Spectrogram Diffusion pipeline?",
+        "answer": "The MelGAN decoder converts the potentially long spectrogram to audio, which is the final result of the Spectrogram Diffusion pipeline."
+    },
+    {
+        "question": "What is the role of the SpectrogramDiffusionPipeline?",
+        "answer": "The SpectrogramDiffusionPipeline is responsible for generating audio from MIDI sequences using the Spectrogram Diffusion model. It takes a MIDI file as input and outputs the generated audio."
+    },
+    {
+        "question": "What is AudioPipelineOutput?",
+        "answer": "AudioPipelineOutput is the output of the SpectrogramDiffusionPipeline, which contains the generated audio."
+    },
+    {
+        "question": "Where can the original codebase for Spectrogram Diffusion be found?",
+        "answer": "The original codebase for Spectrogram Diffusion can be found at magenta/music-spectrogram-diffusion on GitHub."
+    }
+]

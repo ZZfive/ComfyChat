@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is the purpose of the Normalization node in ComfyUI-sonar?",
+        "answer": "The Normalization node in ComfyUI-sonar rebalances the noise to 1.0 strength and then scales it based on the factor of the node. It has three normalization settings: default, forced, and disabled."
+    },
+    {
+        "question": "How does the SONAR_CUSTOM_NOISE node work in ComfyUI-sonar?",
+        "answer": "The SONAR_CUSTOM_NOISE node in ComfyUI-sonar constitutes a chain of noise items. Most nodes add an item to the chain when using SONAR_CUSTOM_NOISE as input, with some exceptions treating it as a list or consuming the list."
+    },
+    {
+        "question": "What is the purpose of the SonarCustomNoise node in ComfyUI-sonar?",
+        "answer": "The SonarCustomNoise node in ComfyUI-sonar allows chaining different types of noise together. The order of the nodes is not important, and it has parameters like factor, rescale, and noise_type to control the noise strength and type."
+    },
+    {
+        "question": "How does the NoisyLatentLike node work in ComfyUI-sonar?",
+        "answer": "The NoisyLatentLike node in ComfyUI-sonar takes a reference latent and generates noise of the same shape. It has two main modes: generating and scaling the noise, or adding it to the input latent. It also has parameters like multiplier and inputs like custom_noise_opt, mul_by_sigmas_opt, and model_opt."
+    },
+    {
+        "question": "What is the purpose of the SamplerConfigOverride node in ComfyUI-sonar?",
+        "answer": "The SamplerConfigOverride node in ComfyUI-sonar can override configuration settings for other samplers, including the noise type. It can also override other settings like s_noise."
+    },
+    {
+        "question": "How does the SonarRepeatedNoise node work in ComfyUI-sonar?",
+        "answer": "The SonarRepeatedNoise node in ComfyUI-sonar is an experimental node that caches noise sampler results to speed up the generation process. It has a permute option to add random effects and a max_recycle setting to limit the number of times noise is reused."
+    },
+    {
+        "question": "What is the purpose of the SonarScheduledNoise node in ComfyUI-sonar?",
+        "answer": "The SonarScheduledNoise node in ComfyUI-sonar allows switching between noise types based on the percentage of sampling. It is recommended to connect a fallback noise type, such as Gaussian noise, to avoid generating no noise."
+    },
+    {
+        "question": "How does the SonarGuidedNoise node work in ComfyUI-sonar?",
+        "answer": "The SonarGuidedNoise node in ComfyUI-sonar applies guidance to the raw noise, similar to the guidance described in the main README. It can be used with the SonarScheduledNoise node to apply guidance at certain times and has two modes: euler and linear."
+    },
+    {
+        "question": "What is the purpose of the SonarRandomNoise node in ComfyUI-sonar?",
+        "answer": "The SonarRandomNoise node in ComfyUI-sonar randomly chooses between the noise types in the connected chain each time the noise sampler is called. It is generally not recommended to use rescale with this node, and the mix_count setting allows choosing and combining multiple types."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI jank HiDiffusion?",
+        "answer": "ComfyUI jank HiDiffusion is an experimental implementation of HiDiffusion for ComfyUI, a GUI that uses stable diffusion models to generate images and videos."
+    },
+    {
+        "question": "What is the purpose of the RAU-Net part in HiDiffusion?",
+        "answer": "The RAU-Net part is essentially Kohya Deep Shrink (AKA PatchModelAddDownscale). It scales down the image at the start of generation to let the model set up major details and then allows the model to refine and add detail once the scaling effect ends."
+    },
+    {
+        "question": "What is the main difference between RAU-Net and Deep Shrink?",
+        "answer": "The main difference is the downscale methods. RAU-Net uses convolution with stride/dilation and pool averaging to downscale while Deep Shrink usually uses bicubic downscaling."
+    },
+    {
+        "question": "Does MSW-MSA attention enable high res generation by itself?",
+        "answer": "No, MSW-MSA attention does not enable high res generation by itself."
+    },
+    {
+        "question": "What are the potential issues with using RAUNet component with ControlNet?",
+        "answer": "The RAUNet component may not work properly with ControlNet while the scaling effect is active."
+    },
+    {
+        "question": "What is the purpose of the ApplyMSWMSAAttentionSimple node?",
+        "answer": "The ApplyMSWMSAAttentionSimple node is a simplified version of the MSW-MSA attention node. It is used for performance improvement for SD 1.5 and may also improve generation quality at high res for both SD 1.5 and SDXL."
+    },
+    {
+        "question": "What is the purpose of the ApplyRAUNetSimple node?",
+        "answer": "The ApplyRAUNetSimple node is a simplified version of the ApplyRAUNet node. It helps avoid artifacts when generating at resolutions significantly higher than what the model normally supports."
+    }
+]

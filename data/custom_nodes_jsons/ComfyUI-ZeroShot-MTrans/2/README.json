@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-ZeroShot-MTrans?",
+        "answer": "ComfyUI-ZeroShot-MTrans is an unofficial ComfyUI custom node for ZeST (Zero-Shot Material Transfer from a Single Image)."
+    },
+    {
+        "question": "What does ZeST do?",
+        "answer": "Given an input image and a single material exemplar image, ZeST can transfer the material from the exemplar onto the input image with accurate lighting cues while keeping everything else consistent."
+    },
+    {
+        "question": "What does the ComfyUI-ZeroShot-MTrans node implement?",
+        "answer": "The ComfyUI-ZeroShot-MTrans node implements the illumination transfer part of ZeST, which is the red rect area in the paper figure."
+    },
+    {
+        "question": "What are the inputs and outputs of the ComfyUI-ZeroShot-MTrans node?",
+        "answer": "The inputs are: target_image (the original image for inpaint), subject_mask (the mask for inpaint), and brighter (a value to adjust the brightness of the subject). The output is an IMAGE with the subject in luminosity (grey) mode, used as input for the inpaint node."
+    },
+    {
+        "question": "What are some tips for using the ComfyUI-ZeroShot-MTrans node?",
+        "answer": "Some tips include: (1) For the output, the subject in middle grey is preferred. Adjust the brightness accordingly. (2) For the material image, it's suggested to remove all background and keep only the desired material. (3) Use IP-Adaptor strength, controlnet strength, and brighter to control the output first."
+    },
+    {
+        "question": "Is there a sample workflow available for ComfyUI-ZeroShot-MTrans?",
+        "answer": "Yes, you can download the zest_workflow.json from the repo for a quick start. The repo also provides a detailed usage image and sample images of the workflow, including the original input, material input, mask, subject grayout, and final output."
+    },
+    {
+        "question": "What dependencies does ComfyUI-ZeroShot-MTrans have?",
+        "answer": "ComfyUI-ZeroShot-MTrans depends on ControlNet, IP-Adaptor, and Segment Anything Model."
+    }
+]

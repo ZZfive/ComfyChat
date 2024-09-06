@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What is 🤗 Optimum?",
+        "answer": "🤗 Optimum is a library that provides Stable Diffusion pipelines compatible with OpenVINO, allowing easy inference on various Intel processors."
+    },
+    {
+        "question": "How can I install 🤗 Optimum?",
+        "answer": "You can install 🤗 Optimum by running the following command: `pip install optimum[\"openvino\"]`"
+    },
+    {
+        "question": "Which pipeline should be used to load OpenVINO models and perform inference with OpenVINO runtime?",
+        "answer": "To load OpenVINO models and perform inference with OpenVINO runtime, you should use the `OVStableDiffusionPipeline` instead of the `StableDiffusionPipeline`."
+    },
+    {
+        "question": "How can I convert a PyTorch model to OpenVINO format immediately after loading it?",
+        "answer": "To convert a PyTorch model to OpenVINO format immediately after loading it, you can set `export=True` when using `OVStableDiffusionPipeline.from_pretrained()`."
+    },
+    {
+        "question": "Where can I find more examples and information about exporting and inference of Stable Diffusion models using 🤗 Optimum?",
+        "answer": "You can find more examples and information about exporting and inference of Stable Diffusion models using 🤗 Optimum in the Optimum documentation: https://huggingface.co/docs/optimum/intel/inference#export-and-inference-of-stable-diffusion-models"
+    }
+]

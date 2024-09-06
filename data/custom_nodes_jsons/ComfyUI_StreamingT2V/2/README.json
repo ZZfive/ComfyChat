@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What should be implemented to use GLM for NLU tasks?",
+        "answer": "To use GLM for NLU tasks, you should implement a subclass of `DataProcessor` in tasks/superglue/dataset.py and a subclass of `PVP` in tasks/superglue/pvp.py."
+    },
+    {
+        "question": "What is the purpose of the `DataProcessor` subclass?",
+        "answer": "The `DataProcessor` subclass should implement methods to return examples for the train, dev, and test sets, as well as a method to return the list of possible labels."
+    },
+    {
+        "question": "What should be done after implementing a `DataProcessor` subclass?",
+        "answer": "After implementing a `DataProcessor` subclass, you should add the implemented class to the `PROCESSORS` dictionary at the end of tasks/superglue/dataset.py."
+    },
+    {
+        "question": "What is the difference between single-token and multi-token verbalizers?",
+        "answer": "Single-token verbalizers use a single token to represent a label, while multi-token verbalizers use multiple tokens to represent a label, such as when an entity is tokenized into multiple tokens with a WordPiece or BPE tokenizer."
+    },
+    {
+        "question": "What should be done when implementing a subclass of `PVP`?",
+        "answer": "When implementing a subclass of `PVP`, you should decide if your verbalizers are single-token or multi-token, set the `is_multi_token` attribute accordingly, and implement the `get_parts` and `verbalize` (for single-token) or `get_answers` (for multi-token) methods."
+    },
+    {
+        "question": "After implementing a `PVP` subclass, what should be done?",
+        "answer": "After implementing a `PVP` subclass, you should add the implemented class to the `PVPS` dictionary at the end of tasks/superglue/pvp.py."
+    },
+    {
+        "question": "What should be specified in the `DEFAULT_METRICS` dictionary?",
+        "answer": "The evaluation metrics for the task should be specified in the `DEFAULT_METRICS` dictionary in tasks/superglue/finetune.py."
+    },
+    {
+        "question": "How can you run the experiment for a new task?",
+        "answer": "To run the experiment for a new task, create a config file similar to config_tasks/task_rte.sh, specify the evaluation metrics in `DEFAULT_METRICS`, and then run the experiment using the finetune_superglue.sh script with the appropriate model and task config files."
+    }
+]

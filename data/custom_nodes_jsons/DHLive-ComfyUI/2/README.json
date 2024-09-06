@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DHLive-ComfyUI 中的输入类型有什么约定？",
+        "answer": "在 DHLive-ComfyUI 中，Numpy 类型输入一般是 cv2 的结果，使用 BGR 颜色空间，范围是 [0, 255]，形状是 (h, w, c)；而 Tensor 类型的输入使用 RGB 颜色空间，范围是 [0, 1]，形状是 (n, c, h, w)。"
+    },
+    {
+        "question": "DHLive-ComfyUI 中的颜色转换和度量计算分别在哪个精度上进行？",
+        "answer": "在 DHLive-ComfyUI 中，颜色转换在 float32 精度上进行，度量计算则在 float64 精度上进行。"
+    },
+    {
+        "question": "DHLive-ComfyUI 中的 PSNR 和 SSIM 结果趋势是否一致？",
+        "answer": "是的，在 DHLive-ComfyUI 中，PSNR 和 SSIM 的结果趋势是一致的。通常情况下，PSNR 值高时，SSIM 值也会较高。"
+    },
+    {
+        "question": "DHLive-ComfyUI 中的 SSIM 实现主要参考了哪个版本的实现？",
+        "answer": "在 DHLive-ComfyUI 中，SSIM 的实现主要参考了 MATLAB 最原始的版本，该版本被用于 NTIRE17 比赛的 evaluation 代码。"
+    },
+    {
+        "question": "DHLive-ComfyUI 中 PyTorch 实现与 MATLAB 实现的 PSNR 和 SSIM 结果对比如何？",
+        "answer": "根据表格数据，在 DHLive-ComfyUI 中，PyTorch 实现的 PSNR 和 SSIM 结果与 MATLAB 实现基本一致。在 GPU 运行上可能会有轻微差异。"
+    },
+    {
+        "question": "DHLive-ComfyUI 支持在 PyTorch 版本中进行批量计算吗？",
+        "answer": "是的，DHLive-ComfyUI 支持在 PyTorch 版本中进行批量计算。"
+    },
+    {
+        "question": "DHLive-ComfyUI 中以 '_pt' 结尾的度量代表什么？",
+        "answer": "在 DHLive-ComfyUI 中，以 '_pt' 结尾的度量表示这是 PyTorch 的计算结果。"
+    }
+]

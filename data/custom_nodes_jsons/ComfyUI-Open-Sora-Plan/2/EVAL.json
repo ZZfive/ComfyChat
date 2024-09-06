@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of ComfyUI-Open-Sora-Plan?",
+        "answer": "ComfyUI-Open-Sora-Plan is used to evaluate the quality of generated videos using various video quality metrics."
+    },
+    {
+        "question": "Which video quality metrics are supported by ComfyUI-Open-Sora-Plan?",
+        "answer": "ComfyUI-Open-Sora-Plan supports the following video quality metrics: CLIP-SCORE, FVD (Frechét Video Distance), SSIM (structural similarity index measure), LPIPS (learned perceptual image patch similarity), and PSNR (peak-signal-to-noise ratio)."
+    },
+    {
+        "question": "What are the environment requirements for running ComfyUI-Open-Sora-Plan?",
+        "answer": "To run ComfyUI-Open-Sora-Plan, you need to install Pytorch (torch>=1.7.1), CLIP, clip-score from PyPi, lpips, scipy (scipy==1.7.3/1.9.3), numpy, pillow, torchvision>=0.8.2, ftfy, regex, and tqdm."
+    },
+    {
+        "question": "What pre-trained model is required for calculating FVD in ComfyUI-Open-Sora-Plan?",
+        "answer": "To calculate FVD in ComfyUI-Open-Sora-Plan, you need to download the FVD pre-trained model (either i3d_torchscript.pt or i3d_pretrained_400.pt) and place it in the FVD folder."
+    },
+    {
+        "question": "What is the recommended minimum number of frames for calculating FVD in ComfyUI-Open-Sora-Plan?",
+        "answer": "When calculating FVD in ComfyUI-Open-Sora-Plan, the number of frames should be greater than 10, as the i3d model downsamples in the time dimension."
+    },
+    {
+        "question": "How should the data be structured for calculating CLIP-SCORE in ComfyUI-Open-Sora-Plan?",
+        "answer": "For calculating CLIP-SCORE in ComfyUI-Open-Sora-Plan, images should be stored in a single directory with .png or .jpg format, and text files should be in a separate directory with .txt format. The number of files in both directories should be equal, and they should be paired by file name."
+    },
+    {
+        "question": "How should the data be structured for calculating FVD, PSNR, SSIM, and LPIPS in ComfyUI-Open-Sora-Plan?",
+        "answer": "For calculating FVD, PSNR, SSIM, and LPIPS in ComfyUI-Open-Sora-Plan, generated images should be stored in one directory, and real images should be stored in another directory, with both directories containing corresponding .mp4 files."
+    }
+]

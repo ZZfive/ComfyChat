@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is LoRA and how is it applied to Stable Diffusion?",
+        "answer": "LoRA (Low-Rank Adaptation of Large Language Models) is a technique that has been applied to Stable Diffusion. It involves using a weight x and two seeds to generate noise based on random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)."
+    },
+    {
+        "question": "What are the two types of LoRA supported in the Lora-Training-in-Comfy repository?",
+        "answer": "The Lora-Training-in-Comfy repository supports two types of LoRA: LoRA-LierLa (LoRA for Linear Layers) and LoRA-C3Lier (LoRA for Convolutional Layers with 3x3 Kernels)."
+    },
+    {
+        "question": "What is DyLoRA and how does it differ from regular LoRA?",
+        "answer": "DyLoRA (Dynamic Search-Free Low-Rank Adaptation) is an extension of LoRA that allows for the simultaneous learning of multiple ranks of LoRA within a specified dimension, eliminating the need to search for the optimal rank. The implementation of DyLoRA in the Lora-Training-in-Comfy repository is based on the official implementation with custom extensions."
+    },
+    {
+        "question": "How can multiple LoRA models be merged using the merge_lora.py script?",
+        "answer": "The merge_lora.py script can be used to merge multiple LoRA models by specifying the models and their respective ratios. The script can also merge LoRA models into Stable Diffusion models. The merged model can then be used like a regular Stable Diffusion checkpoint."
+    },
+    {
+        "question": "What is the purpose of the extract_lora_from_models.py script?",
+        "answer": "The extract_lora_from_models.py script is used to create a LoRA model from the differences between two Stable Diffusion models, such as a fine-tuned model and its original version. This allows the differences to be approximated and applied as a LoRA model."
+    },
+    {
+        "question": "How can the resize_images_to_resolution.py script be used to preprocess training images?",
+        "answer": "The resize_images_to_resolution.py script can be used to resize training images to specified resolutions while maintaining their aspect ratios. This can be useful for preparing training data for Stable Diffusion models. The script can also copy associated files and save images in different formats."
+    },
+    {
+        "question": "What are some key differences between the Lora-Training-in-Comfy repository and cloneofsimo's repository?",
+        "answer": "The Lora-Training-in-Comfy repository extends the application of LoRA to Text Encoder's MLP, U-Net's FFN, and Transformer's input/output projections, which enhances expressiveness. However, this also increases memory usage. Additionally, the module switching mechanism is completely different between the two repositories."
+    }
+]

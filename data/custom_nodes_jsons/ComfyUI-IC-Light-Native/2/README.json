@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-IC-Light-Native?",
+        "answer": "ComfyUI-IC-Light-Native is a native implementation of IC-Light for ComfyUI, which allows users to generate and relight images using foreground and background models."
+    },
+    {
+        "question": "How can you install ComfyUI-IC-Light-Native?",
+        "answer": "You can install ComfyUI-IC-Light-Native by downloading the repository and unpacking it into the custom_nodes folder in the ComfyUI installation directory, or by cloning it via GIT."
+    },
+    {
+        "question": "Which models are available for download in ComfyUI-IC-Light-Native?",
+        "answer": "There are two models available for download in ComfyUI-IC-Light-Native: iclight_sd15_fc_unet_ldm for FG workflows and iclight_sd15_fbc_unet_ldm for BG workflows."
+    },
+    {
+        "question": "What are some recommended nodes to use with ComfyUI-IC-Light-Native?",
+        "answer": "Some recommended nodes to use with ComfyUI-IC-Light-Native include ComfyUI-KJNodes for creating light maps, ComfyUI-Easy-Use for removing backgrounds, ComfyUI_essentials for image resizing, and ComfyUI-IC-Light for preserving high-frequency details."
+    },
+    {
+        "question": "What should be done to ensure the masked area's color is correct in ComfyUI-IC-Light-Native workflows?",
+        "answer": "To ensure the masked area's color is correct in ComfyUI-IC-Light-Native workflows, use the 'IC Light Apply Mask Grey' node before passing the image to the VAE."
+    },
+    {
+        "question": "What are some common issues encountered when using ComfyUI-IC-Light-Native?",
+        "answer": "Common issues when using ComfyUI-IC-Light-Native include using the wrong model for the workflow, such as using the BG model in an FG workflow or vice versa, which can result in runtime errors related to channel mismatches."
+    },
+    {
+        "question": "How can high-frequency details be recovered from the original input image in ComfyUI-IC-Light-Native?",
+        "answer": "High-frequency details can be recovered from the original input image in ComfyUI-IC-Light-Native by using the 'DetailTransfer' node from the ComfyUI-IC-Light custom node pack."
+    }
+]

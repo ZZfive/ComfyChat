@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is Stable Diffusion?",
+        "answer": "Stable Diffusion is a text-to-image latent diffusion model created by researchers and engineers from CompVis, Stability AI, and LAION. It applies the diffusion process over a lower dimensional latent space to reduce memory and compute complexity."
+    },
+    {
+        "question": "What dataset is Stable Diffusion trained on?",
+        "answer": "Stable Diffusion is trained on 512x512 images from a subset of the LAION-5B dataset."
+    },
+    {
+        "question": "What text encoder does Stable Diffusion use?",
+        "answer": "Stable Diffusion uses a frozen CLIP ViT-L/14 text encoder to condition the model on text prompts."
+    },
+    {
+        "question": "What are the components of the Stable Diffusion model?",
+        "answer": "The Stable Diffusion model consists of an 860M UNet and a 123M text encoder."
+    },
+    {
+        "question": "Where can I find the original codebase for Stable Diffusion v1.0 and v2.0?",
+        "answer": "The original codebase for Stable Diffusion v1.0 can be found at CompVis/stable-diffusion, and for v2.0 at Stability-AI/stablediffusion."
+    },
+    {
+        "question": "Where can I find additional official checkpoints for different Stable Diffusion versions and tasks?",
+        "answer": "Additional official checkpoints for different Stable Diffusion versions and tasks can be found on the CompVis, Runway, and Stability AI Hub organizations."
+    },
+    {
+        "question": "How can I reuse pipeline components to save memory when using Stable Diffusion?",
+        "answer": "To save memory and use the same components across multiple pipelines, you can use the .components method to avoid loading weights into RAM more than once. For example, you can create a text2img pipeline and then create an img2img pipeline using the same components as the text2img pipeline."
+    }
+]

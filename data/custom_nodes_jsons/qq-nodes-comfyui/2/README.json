@@ -1,0 +1,38 @@
+[
+    {
+        "question": "How do you install qq-nodes-comfyui?",
+        "answer": "To install qq-nodes-comfyui, clone the repo into your custom_nodes folder in ComfyUI."
+    },
+    {
+        "question": "What custom mode packages are required for the XY Grid node in qq-nodes-comfyui?",
+        "answer": "The XY Grid node in qq-nodes-comfyui requires the custom mode packages from https://github.com/LEv145/images-grid-comfy-plugin and https://github.com/WASasquatch/was-node-suite-comfyui."
+    },
+    {
+        "question": "What is the purpose of the XY Grid Helper node in qq-nodes-comfyui?",
+        "answer": "The XY Grid Helper node in qq-nodes-comfyui is used to create a grid by iterating through each combination of row and column values. It requires the use of one of the 'Axis To X' nodes to convert the row and column value outputs to the correct type for connecting to other nodes."
+    },
+    {
+        "question": "How does the XY Grid Accumulator node work in qq-nodes-comfyui?",
+        "answer": "The XY Grid Accumulator node in qq-nodes-comfyui accumulates images for the grid and stops the execution of downstream connected nodes until the grid is finished. It uses node expansion to inject the images-grid-comfy-plugin nodes behind the scenes to generate the grid."
+    },
+    {
+        "question": "What does the Any List node in qq-nodes-comfyui do?",
+        "answer": "The Any List node in qq-nodes-comfyui converts any type into a LIST of that type."
+    },
+    {
+        "question": "What is the function of the Text Splitter node in qq-nodes-comfyui?",
+        "answer": "The Text Splitter node in qq-nodes-comfyui takes a string and splits it on some delimiter into a LIST that can be passed into a row or column. The output can be converted to the required type using nodes like the WAS nodes."
+    },
+    {
+        "question": "How does the Load Lines From Text File node in qq-nodes-comfyui work?",
+        "answer": "The Load Lines From Text File node in qq-nodes-comfyui is a utility node that loads prompts from a text file into a LIST for use with the XY Grid Helper. The text file should be placed in the ComfyUI input/ folder."
+    },
+    {
+        "question": "What is the purpose of the Axis Packing node in qq-nodes-comfyui?",
+        "answer": "The Axis Packing node in qq-nodes-comfyui allows packing multiple values to be used in a row or column. It can be used with the Any List node and the Axis Unpack node to split the row or column into its components. It also allows setting the label used in the final grid image."
+    },
+    {
+        "question": "What does the Any to Any node in qq-nodes-comfyui do?",
+        "answer": "The Any to Any node in qq-nodes-comfyui can take in any value (excluding primitive node or reroute nodes) and connect to any other node, regardless of type compatibility. However, it disables all type checking in ComfyUI, so sending incorrect values may result in random behavior."
+    }
+]

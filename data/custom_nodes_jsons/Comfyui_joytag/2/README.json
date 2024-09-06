@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of Comfyui_joytag's Validation Arena?",
+        "answer": "The Validation Arena in Comfyui_joytag calculates metrics for different tagging models using unseen images, so that their performance can be compared fairly on a common set of data."
+    },
+    {
+        "question": "Why does Comfyui_joytag recommend using images that are at least a couple of months old from Danbooru?",
+        "answer": "Using older images from Danbooru ensures that the images are more likely to be properly tagged and unlikely to have been included in any training set."
+    },
+    {
+        "question": "How many tags are considered after filtering by usage in the Comfyui_joytag Validation Arena results?",
+        "answer": "In the Comfyui_joytag Validation Arena results, 3993 tags are considered after filtering by usage."
+    },
+    {
+        "question": "Which model is used as the SmilingWolf model in the Comfyui_joytag Validation Arena?",
+        "answer": "The SmilingWolf model used in the Comfyui_joytag Validation Arena is the wd-v1-4-vit-tagger-v2 model."
+    },
+    {
+        "question": "What does the `download.py` script in Comfyui_joytag do?",
+        "answer": "The `download.py` script in Comfyui_joytag downloads posts and images from Danbooru starting at a given ID and descending, saving images to `originals/` by post ID and posts to `posts.jsonl`."
+    },
+    {
+        "question": "What does the `trainable.py` script in Comfyui_joytag do?",
+        "answer": "The `trainable.py` script in Comfyui_joytag validates which images can be loaded, have no transparency, aren't animated, etc. It resizes valid images to be below or within 1024x1024 and saves them to `resized/` using WebP 80% compression."
+    },
+    {
+        "question": "What does the `validate.py` script in Comfyui_joytag do?",
+        "answer": "The `validate.py` script in Comfyui_joytag runs inference using both models, reports global mean Precision, Recall, F1, and Average Precision, and saves predictions, post IDs, and detailed per-tag metrics."
+    },
+    {
+        "question": "How are the metrics in Comfyui_joytag's Validation Arena calculated?",
+        "answer": "In Comfyui_joytag's Validation Arena, all metrics are calculated with respect to tags. The reported scores are first calculated for each tag and then averaged across tags."
+    }
+]

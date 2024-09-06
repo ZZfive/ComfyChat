@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the comfyUI_TJ_NormalLighting custom node?",
+        "answer": "The comfyUI_TJ_NormalLighting custom node allows you to add virtual lighting effects to your images based on normal maps."
+    },
+    {
+        "question": "Which reflection model does comfyUI_TJ_NormalLighting use for calculating diffuse reflection?",
+        "answer": "The comfyUI_TJ_NormalLighting program calculates diffuse reflection based on the Lambert Reflection Model."
+    },
+    {
+        "question": "What are the characteristics of the Lambertian reflection model?",
+        "answer": "The Lambertian reflection model assumes that the surface is completely diffusive, the incident light is isotropically scattered, the intensity of the reflected light is proportional to the dot product of the intensity of the incident light, the surface normal vector, and the direction vector of the light, and the intensity of reflected light does not depend on the position of the viewpoint."
+    },
+    {
+        "question": "What model does comfyUI_TJ_NormalLighting use for calculating specular reflection?",
+        "answer": "In addition to diffuse reflection, comfyUI_TJ_NormalLighting uses Phong's specular reflection model to calculate specular reflection."
+    },
+    {
+        "question": "What inputs are required for using the comfyUI_TJ_NormalLighting custom node?",
+        "answer": "To use the comfyUI_TJ_NormalLighting custom node, you need to input three images: diffuse_map (normal RGB image), normal_map (normal image compatible with XYZ axes), and specular_map (specular map in RGB)."
+    },
+    {
+        "question": "What does the specular_power parameter control in comfyUI_TJ_NormalLighting?",
+        "answer": "The specular_power parameter in comfyUI_TJ_NormalLighting controls the strength of specular reflection, physically expressing the smoothness and gloss of a surface."
+    },
+    {
+        "question": "How is the output of comfyUI_TJ_NormalLighting calculated?",
+        "answer": "The output of comfyUI_TJ_NormalLighting is calculated using the formula: output_tensor = (diffuse_tensor * (ambient_light + diffuse * NormalDiffuseStrength) + specular_tensor * specular * SpecularHighlightsStrength) * TotalGain"
+    }
+]

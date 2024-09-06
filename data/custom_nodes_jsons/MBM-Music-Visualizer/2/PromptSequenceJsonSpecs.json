@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the '_v' field in the Prompt Sequence JSON specifications?",
+        "answer": "The '_v' field represents the version of the Prompt Sequence JSON file following Semantic Versioning 2.0.0 specifications."
+    },
+    {
+        "question": "What does the 'defaults' field contain in the Prompt Sequence JSON specifications?",
+        "answer": "The 'defaults' field contains a set of default values to use for optional values in the 'sequence', including default positive and negative prompts."
+    },
+    {
+        "question": "What is the purpose of the 'sequence' field in the Prompt Sequence JSON specifications?",
+        "answer": "The 'sequence' field is a list of prompt data in order from top to bottom, containing optional positive and negative prompts and time codes for each item."
+    },
+    {
+        "question": "What happens if a positive or negative prompt is not provided for an item in the 'sequence' field?",
+        "answer": "If a positive or negative prompt is not provided for an item in the 'sequence' field, the default values from the 'defaults' field will be used."
+    },
+    {
+        "question": "What does the 'timecode' field represent in the Prompt Sequence JSON specifications?",
+        "answer": "The 'timecode' field represents the time code in seconds where a prompt should reach its max influence."
+    },
+    {
+        "question": "What value is supplied if the 'timecode' field is not provided in the Prompt Sequence JSON specifications?",
+        "answer": "If the 'timecode' field is not provided, -1 will be supplied to indicate no set time code."
+    },
+    {
+        "question": "How can a prompt be set to use only the default values in the Prompt Sequence JSON specifications?",
+        "answer": "To set a prompt to use only the default values, provide an empty dictionary {} at the appropriate indexes in the 'sequence' field."
+    }
+]

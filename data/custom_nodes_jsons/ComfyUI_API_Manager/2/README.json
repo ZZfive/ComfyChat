@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ComfyUI_API_Manager package?",
+        "answer": "The ComfyUI_API_Manager package provides three custom nodes designed to streamline workflows involving API requests, dynamic text manipulation based on API responses, and image posting to APIs."
+    },
+    {
+        "question": "How can you install the ComfyUI_API_Manager package?",
+        "answer": "To install the ComfyUI_API_Manager package, clone the repository into your `custom_nodes` directory using the command: `git clone https://github.com/CC-BryanOttho/ComfyUI_API_Manager.git custom_nodes`."
+    },
+    {
+        "question": "What parameters does the API Request Node require?",
+        "answer": "The API Request Node requires parameters such as `auth_url` for specifying the authentication endpoint of the API, `auth_body_text` for entering the payload for the API authentication request, and `array_path` for navigating through the response object to locate the desired object or array."
+    },
+    {
+        "question": "How does the Text Prompt Combiner Node manipulate text dynamically?",
+        "answer": "The Text Prompt Combiner Node dynamically replaces text in a template using `$attributeName` syntax to insert values from the API response. It also uses the `id_field_name` parameter to specify the attribute name whose value is returned as a string, aiding in identifying or referencing objects."
+    },
+    {
+        "question": "What are the requirements for the Image Post Node?",
+        "answer": "The Image Post Node requires an image, an object ID as a string, and an API key for authentication. It also requires the `api_url` parameter, which is the endpoint for image posting, with `$id` used in the URL to dynamically insert the ID."
+    },
+    {
+        "question": "Can you describe an example workflow using the nodes provided by ComfyUI_API_Manager?",
+        "answer": "An example workflow could involve fetching data from an API using the API Request Node, generating a dynamic text prompt based on the fetched data using the Text Prompt Combiner Node, and then posting an image related to that prompt to another API endpoint using the Image Post Node."
+    },
+    {
+        "question": "How can users contribute to the ComfyUI_API_Manager package?",
+        "answer": "Users can contribute to the ComfyUI_API_Manager package by submitting a pull request with improvements or bug fixes, or by opening an issue to report problems or suggest enhancements."
+    }
+]

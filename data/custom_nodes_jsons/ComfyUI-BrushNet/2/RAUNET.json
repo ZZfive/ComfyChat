@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is RAUNet in ComfyUI-BrushNet?",
+        "answer": "RAUNet is a technique implemented in ComfyUI-BrushNet to alleviate the problem of morphed limbs, fingers, and faces in generated images. It uses additional downsampling and upsampling operations to generate reasonable structures with minimal impact from information loss."
+    },
+    {
+        "question": "How does RAUNet affect the generated images?",
+        "answer": "RAUNet helps in generating images with less morphed limbs, fingers, and faces. However, it can also lower the model's imagination, resulting in generating only what is described in the prompt."
+    },
+    {
+        "question": "What are the two independent parts in the RAUNet node?",
+        "answer": "The two independent parts in the RAUNet node are DU (Downsample/Upsample) and XA (CrossAttention)."
+    },
+    {
+        "question": "How does the Downsample/Upsample part in RAUNet affect the generated images?",
+        "answer": "The Downsample/Upsample part in RAUNet lowers the model's degrees of freedom. Applying it for more steps results in images with more symmetries."
+    },
+    {
+        "question": "What is the effect of the CrossAttention part in RAUNet?",
+        "answer": "The CrossAttention part in RAUNet lowers the number of objects the model tracks in the image."
+    },
+    {
+        "question": "Is RAUNet compatible with other nodes in ComfyUI-BrushNet?",
+        "answer": "Yes, RAUNet is compatible with BrushNet and most other nodes in ComfyUI-BrushNet."
+    },
+    {
+        "question": "Which models can RAUNet be applied to?",
+        "answer": "RAUNet can be applied to SD15 and SDXL models."
+    }
+]

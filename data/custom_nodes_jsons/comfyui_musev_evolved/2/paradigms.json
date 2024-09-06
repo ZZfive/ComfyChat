@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of ParaDiGMS in diffusion models?",
+        "answer": "ParaDiGMS is a method to accelerate the sampling of pretrained diffusion models by denoising multiple steps in parallel, allowing for improved sampling speed by 2-4x across a range of robotics and image generation models."
+    },
+    {
+        "question": "How does ParaDiGMS achieve parallel sampling in diffusion models?",
+        "answer": "ParaDiGMS achieves parallel sampling via Picard iterations, by guessing the solution of future denoising steps and iteratively refining until convergence."
+    },
+    {
+        "question": "What is the trade-off of using ParaDiGMS for diffusion model sampling?",
+        "answer": "The trade-off of using ParaDiGMS is that it improves sampling speed by running denoising steps in parallel, at the cost of increased total FLOPs."
+    },
+    {
+        "question": "When is it recommended to use ParaDiGMS pipeline?",
+        "answer": "It is recommended to use ParaDiGMS pipeline when running on multiple GPUs to ensure enough GPU bandwidth for faster sampling."
+    },
+    {
+        "question": "What are the two main parameters to adjust when using ParaDiGMS pipeline?",
+        "answer": "The two main parameters to adjust when using ParaDiGMS pipeline are `parallel` (batch size) and `tolerance`."
+    },
+    {
+        "question": "How can sample quality be maintained when using ParaDiGMS pipeline?",
+        "answer": "To maintain sample quality when using ParaDiGMS pipeline, a lower tolerance value like `0.001` can be used if there is quality degradation with the default tolerance."
+    },
+    {
+        "question": "What speedup can be expected from StableDiffusionParadigmsPipeline compared to StableDiffusionPipeline?",
+        "answer": "For a 1000-step DDPM on 8 A100 GPUs, you can expect around a 3x speedup from StableDiffusionParadigmsPipeline compared to the StableDiffusionPipeline by setting `parallel=80` and `tolerance=0.1`."
+    }
+]

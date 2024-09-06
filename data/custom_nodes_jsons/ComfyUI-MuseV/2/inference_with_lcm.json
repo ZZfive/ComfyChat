@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is ComfyUI-MuseV?",
+        "answer": "ComfyUI-MuseV is a tool that enables fast image generation using Latent Consistency Models (LCM) with typically 2-4 steps, making it possible to use diffusion models in almost real-time settings."
+    },
+    {
+        "question": "What is the benefit of using LCMs for image generation?",
+        "answer": "LCMs enable high-quality image generation in 2-4 steps, significantly accelerating text-to-image generation compared to traditional diffusion models."
+    },
+    {
+        "question": "How are LCMs trained?",
+        "answer": "LCMs can be distilled from any pre-trained Stable Diffusion (SD) model in only 4,000 training steps (~32 A100 GPU Hours) for generating high-quality 768 x 768 resolution images in 2-4 steps or even one step."
+    },
+    {
+        "question": "Which diffusion models are compatible with LCMs?",
+        "answer": "LCM distilled models are available for stable-diffusion-v1-5, stable-diffusion-xl-base-1.0, and the SSD-1B model."
+    },
+    {
+        "question": "How does ComfyUI-MuseV perform text-to-image inference using LCMs?",
+        "answer": "ComfyUI-MuseV uses the StableDiffusionXLPipeline with the LCMScheduler and loads the LCM-LoRA to enable fast inference workflow, overcoming the slow iterative nature of diffusion models."
+    },
+    {
+        "question": "Can LCMs be used for image-to-image tasks?",
+        "answer": "Yes, LCMs can be applied to image-to-image tasks. An example is provided using the LCM_Dreamshaper_v7 model."
+    },
+    {
+        "question": "Is it possible to combine LCMs with other styled LoRAs?",
+        "answer": "Yes, LCMs can be used with other styled LoRAs to generate styled-images in very few steps (4-8). An example is provided using the papercut LoRA with the lcm-sdxl model."
+    },
+    {
+        "question": "Can LCMs be used with ControlNet/T2I-Adapter?",
+        "answer": "Yes, LCMs can be used with ControlNet/T2I-Adapter. Examples are provided for using LCM_Dreamshaper_v7 with canny ControlNet and lcm-sdxl with Canny T2I-Adapter."
+    }
+]

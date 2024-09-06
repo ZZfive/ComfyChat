@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the basic turbo workflow in ComfyUI-Trajectory?",
+        "answer": "The basic turbo workflow in ComfyUI-Trajectory involves initializing the default view in the canvas to provide two images. Image A is sent to the canvas node, while a layer on Image B is set as the target for new generations."
+    },
+    {
+        "question": "How can users refine their work in the basic turbo workflow?",
+        "answer": "Users can refine their work in the basic turbo workflow by starting with a simple scribble in Image A. When a satisfactory image is generated, they can use CTRL-LeftClick on the duplicate layer button to copy that image and use it as a base drawing for further refinements."
+    },
+    {
+        "question": "What is the purpose of the sharpening node in the basic turbo workflow?",
+        "answer": "The sharpening node in the basic turbo workflow is used to reduce blurriness that may occur when iterating and generating images based on previous generations. By default, the sharpening node is set to bypass, meaning it takes no time and has no effect. Users can reactivate this node for a single generation to obtain a sharper output to use as a new source image."
+    },
+    {
+        "question": "What is the Multi Canvas with ControlNet workflow in ComfyUI-Trajectory?",
+        "answer": "The Multi Canvas with ControlNet workflow in ComfyUI-Trajectory uses the ControlLLite depthmap model. It requires creating another image in the canvas editor with the title 'Depth'. The workflow contains a canvas node with the title 'Depth', which will be updated directly from the image when the titles match."
+    },
+    {
+        "question": "How can users refine a manually drawn depthmap in the Multi Canvas with ControlNet workflow?",
+        "answer": "In the Multi Canvas with ControlNet workflow, users can refine a manually drawn depthmap by calculating a depthmap from a generated image. The workflow includes a small sub-unit for generating a depth map from an existing image. Users can drop the generated image into this sub-unit to acquire a calculated depthmap."
+    },
+    {
+        "question": "What is the purpose of the sub-unit for generating depth maps in the Multi Canvas with ControlNet workflow?",
+        "answer": "The sub-unit for generating depth maps in the Multi Canvas with ControlNet workflow is used to refine manually drawn depthmaps. It sits idle unless fed an image and can be useful for calculating a depthmap from a generated image, which can then be used to refine the manually drawn depthmap."
+    },
+    {
+        "question": "How can users activate the sharpening node in the basic turbo workflow?",
+        "answer": "In the basic turbo workflow, users can activate the sharpening node for a single generation to obtain a sharper output when the image becomes blurry. The sharpening node is set to bypass by default, and users need to reactivate it when needed."
+    }
+]

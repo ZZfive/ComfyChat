@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of ComfyUI-WorkflowCheckpointing?",
+        "answer": "ComfyUI-WorkflowCheckpointing automatically creates checkpoints during workflow execution to minimize progress loss if a workflow is canceled or ComfyUI crashes."
+    },
+    {
+        "question": "Where are checkpoints saved by default in ComfyUI-WorkflowCheckpointing?",
+        "answer": "By default, checkpoints are saved locally to a checkpoint folder in ComfyUI-WorkflowCheckpointing."
+    },
+    {
+        "question": "How can networked checkpoints be enabled in ComfyUI-WorkflowCheckpointing?",
+        "answer": "Networked checkpoints backed by the Salad Simple Storage Service can be enabled by setting the `SALAD_ORGANIZATION` environment variable in ComfyUI-WorkflowCheckpointing."
+    },
+    {
+        "question": "How does ComfyUI-WorkflowCheckpointing handle authentication when deployed to Salad?",
+        "answer": "When ComfyUI-WorkflowCheckpointing is deployed to Salad, authentication is automatically pulled."
+    },
+    {
+        "question": "How can an API key be applied when testing ComfyUI-WorkflowCheckpointing locally?",
+        "answer": "An API key can be applied when testing ComfyUI-WorkflowCheckpointing locally by setting the `SALAD_API_KEY` environment variable."
+    },
+    {
+        "question": "How does ComfyUI-WorkflowCheckpointing handle caching for multiple users?",
+        "answer": "If a request sent to `/prompt` contains a `client_id`, it is utilized by ComfyUI-WorkflowCheckpointing to allow independent caching of executions by multiple users."
+    },
+    {
+        "question": "How can the `FORCE_CRASH_AT` setting be used in ComfyUI-WorkflowCheckpointing?",
+        "answer": "The `FORCE_CRASH_AT` setting can be set to an integer in ComfyUI-WorkflowCheckpointing to terminate workflow execution at a given sampling step, which facilitates testing."
+    }
+]

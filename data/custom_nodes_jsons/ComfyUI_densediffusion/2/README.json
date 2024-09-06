@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI_densediffusion?",
+        "answer": "ComfyUI_densediffusion is a DenseDiffusion custom node for ComfyUI that implements the DenseDiffusion-like method for regional prompts used in the Omost project."
+    },
+    {
+        "question": "What is the original DenseDiffusion method?",
+        "answer": "The original DenseDiffusion method introduces attention manipulation on `q@k` in the normal attention calculation, making the expression look like `y=softmax(modify(q@k))@v`."
+    },
+    {
+        "question": "Which version of DenseDiffusion is implemented in ComfyUI_densediffusion?",
+        "answer": "ComfyUI_densediffusion implements the version of DenseDiffusion used in the Omost repo, as the original implementation does not perform very well according to the author's testing."
+    },
+    {
+        "question": "Where can I find information about other regional prompt methods?",
+        "answer": "You can refer to the Omost project's regional prompter section for information on other regional prompt methods: https://github.com/lllyasviel/Omost#regional-prompter."
+    },
+    {
+        "question": "How do I use ComfyUI_densediffusion?",
+        "answer": "The usage of ComfyUI_densediffusion is demonstrated visually in the provided image: https://github.com/huchenlei/ComfyUI_densediffusion/assets/20929282/d75c1354-8f62-4e84-9b9c-67698e2a5f32."
+    },
+    {
+        "question": "What is the current limitation of ComfyUI_densediffusion?",
+        "answer": "Currently, ComfyUI's attention replacements do not compose with each other, so the regional prompt method in ComfyUI_densediffusion does not compose with IPAdapter."
+    },
+    {
+        "question": "Is there a plan to address the limitation of ComfyUI_densediffusion?",
+        "answer": "Yes, the author is currently working on a universal model patcher to solve the issue of attention replacements not composing with each other in ComfyUI."
+    }
+]

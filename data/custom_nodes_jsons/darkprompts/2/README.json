@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of DarkPrompt in ComfyUI?",
+        "answer": "DarkPrompt is a tool in ComfyUI that reads lines from a file and/or text input, combines them, and selects a random line for generating prompts based on a seed input. It helps in creating random prompts for image generation."
+    },
+    {
+        "question": "How does the prefix and suffix field work in DarkPrompt?",
+        "answer": "The prefix and suffix fields in DarkPrompt allow you to include additional information with each prompt or wrap it inside a weight. For example, a prefix of '(' and a suffix of ':1.2)' could return a string '(walking a dog:1.2)' from a file named 'activities.txt' containing the line 'walking a dog'."
+    },
+    {
+        "question": "What is the purpose of the DarkCombiner node in ComfyUI?",
+        "answer": "DarkCombiner is a node in ComfyUI that accepts up to 7 text inputs and combines them with an optional delimiter (default is '\\n') into a single string output. It allows easy combination of multiple DarkPrompt nodes to generate complex prompts."
+    },
+    {
+        "question": "How is DarkLoraTagLoader different from LoraTagLoader?",
+        "answer": "DarkLoraTagLoader is a modified version of LoraTagLoader that outputs a LORA_STACK of detected LoRAs, which can be used in things like the Efficient Loader for doing XY Plots. It is licensed separately under the GPLv3 license."
+    },
+    {
+        "question": "What does DarkFaceIndexShuffle do in ComfyUI?",
+        "answer": "DarkFaceIndexShuffle allows you to enter an array of faces, shuffle the array based on a seed, and input the result into the Reactor input_faces_index input. This enables randomizing faces and the order of friends in the generated scene."
+    },
+    {
+        "question": "How does DarkCheckpointRandomizer work in ComfyUI?",
+        "answer": "DarkCheckpointRandomizer allows you to provide a text-based list of checkpoints, from which it randomly selects one for each generation. You can also specify the number of iterations to use the checkpoint for. It automatically filters out blank lines and non-existent checkpoints."
+    },
+    {
+        "question": "What is the purpose of DarkFolder in ComfyUI?",
+        "answer": "DarkFolder is used to dynamically generate folder paths for saving images. It helps organize generated images into folders based on the number of images and the specified folder size. This makes sorting and managing large numbers of generated images easier."
+    }
+]

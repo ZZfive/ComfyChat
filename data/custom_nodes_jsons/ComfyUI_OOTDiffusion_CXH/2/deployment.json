@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of converting a detectron2 model to Caffe2 format?",
+        "answer": "The converted Caffe2 model is able to run without detectron2 dependency in either Python or C++ and has a runtime optimized for CPU & mobile inference."
+    },
+    {
+        "question": "What are the requirements for Caffe2 conversion?",
+        "answer": "Caffe2 conversion requires PyTorch ≥ 1.4 and ONNX ≥ 1.6."
+    },
+    {
+        "question": "Which meta architectures are supported for Caffe2 conversion in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "ComfyUI_OOTDiffusion_CXH supports 3 most common meta architectures for Caffe2 conversion: GeneralizedRCNN, RetinaNet, and PanopticFPN."
+    },
+    {
+        "question": "Are custom extensions supported for Caffe2 conversion in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "Yes, users' custom extensions under the supported architectures are supported as long as they do not contain control flow or operators not available in Caffe2."
+    },
+    {
+        "question": "What is the tool provided for Caffe2 conversion in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "ComfyUI_OOTDiffusion_CXH provides a tool called caffe2_converter.py that uses the conversion APIs to convert a standard model."
+    },
+    {
+        "question": "What files are generated after converting a model using caffe2_converter.py in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "After converting a model using caffe2_converter.py in ComfyUI_OOTDiffusion_CXH, two files are generated: model.pb and model_init.pb, which contain network structure and network parameters respectively."
+    },
+    {
+        "question": "How can the converted model be loaded in C++ or Python using ComfyUI_OOTDiffusion_CXH?",
+        "answer": "In ComfyUI_OOTDiffusion_CXH, the converted model can be loaded in C++ using the provided caffe2_mask_rcnn.cpp example, and in Python using the Caffe2Model.__call__ method which wraps around the converted model."
+    }
+]

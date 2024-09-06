@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-ELLA?",
+        "answer": "ComfyUI-ELLA is an implementation of ELLA (Equipping Diffusion Models with LLM for Enhanced Semantic Alignment) in ComfyUI, which is a GUI that uses a stable diffusion model to generate images and videos."
+    },
+    {
+        "question": "What is the purpose of the 'ELLA Text Encode' node added in the 2024.4.30 update?",
+        "answer": "The 'ELLA Text Encode' node was added to automatically concatenate ella and clip conditions, simplifying the workflow."
+    },
+    {
+        "question": "How can LoRA trigger words be made effective in ComfyUI-ELLA?",
+        "answer": "To make LoRA trigger words effective, the ELLA output 'CONDITIONING' always needs to be linked to the 'conditioning_to' of the 'Conditioning (Concat)' node."
+    },
+    {
+        "question": "What should be done if the quality of the image is unstable while multi-batching?",
+        "answer": "If the quality of the image is unstable while multi-batching, the CLIP concat should be added, which also supports LoRA trigger words as of the 2024.4.22 update."
+    },
+    {
+        "question": "What is the significance of the SIGMAS from the 'BasicScheduler' node or TIMESTEPS by the 'Set ELLA Timesteps' node in ComfyUI-ELLA?",
+        "answer": "The SIGMAS from the 'BasicScheduler' node or TIMESTEPS by the 'Set ELLA Timesteps' node must be the same as the KSampler settings because of the introduction of Timestep-Aware Semantic Connector (TSC), which dynamically adapts semantics features over sampling time steps."
+    },
+    {
+        "question": "How can ComfyUI-ELLA be installed?",
+        "answer": "ComfyUI-ELLA can be installed by downloading or cloning the repository inside the ComfyUI/custom_nodes/ directory and then installing the dependencies."
+    },
+    {
+        "question": "What models are required for ComfyUI-ELLA to function properly?",
+        "answer": "ComfyUI-ELLA requires ELLA Models and FLAN-T5 XL Text Encoder to be placed in the corresponding directories under models for proper functioning."
+    }
+]

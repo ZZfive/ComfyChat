@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What was fixed in the 20240827 update of comfyui_jankhidiffusion?",
+        "answer": "In the 20240827 update of comfyui_jankhidiffusion, an issue with RAUNet model patching that could cause semi-non-deterministic output was fixed. However, the fix may also change seeds."
+    },
+    {
+        "question": "What changed in the 20240813 update of comfyui_jankhidiffusion?",
+        "answer": "In the 20240813 update of comfyui_jankhidiffusion, the RAUNet patch backend was refactored to work as a normal model patch. Additionally, users can now set the CA downscale factor and mode in the advanced node."
+    },
+    {
+        "question": "What was the previous default CA downscale mode in RAUNet before the 20240813 update?",
+        "answer": "Before the 20240813 update, the default CA downscale mode in RAUNet was always `avg_pool2d`."
+    },
+    {
+        "question": "What changed in the 20240802 update of comfyui_jankhidiffusion?",
+        "answer": "In the 20240802 update of comfyui_jankhidiffusion, an issue where the two stage upscale setting didn't work properly in RAUNet was fixed. Additionally, the two stage upscale is no longer a toggle and allows choosing the scale method."
+    },
+    {
+        "question": "How might the 20240802 update of comfyui_jankhidiffusion affect previous behavior?",
+        "answer": "The 20240802 update of comfyui_jankhidiffusion may change seeds. For previous behavior, users need to set the two stage upscale mode to `nearest-exact` in the advanced RAUNet node."
+    },
+    {
+        "question": "What happens to existing workflows when advanced RAUNet node parameters change?",
+        "answer": "When advanced RAUNet node parameters change, it will break existing workflows."
+    },
+    {
+        "question": "What types of changes are included in the comfyui_jankhidiffusion change log?",
+        "answer": "The comfyui_jankhidiffusion change log includes only relatively significant changes to user-visible functionality."
+    }
+]

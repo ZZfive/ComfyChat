@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is ComfyUI-Upscaler-Tensorrt?",
+        "answer": "ComfyUI-Upscaler-Tensorrt is a project that provides a Tensorrt implementation for fast image upscaling inside ComfyUI, which is 3-4x faster than other methods."
+    },
+    {
+        "question": "Under what license is ComfyUI-Upscaler-Tensorrt released?",
+        "answer": "ComfyUI-Upscaler-Tensorrt is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license, which allows free access, use, modification, and redistribution with the same license for non-commercial purposes."
+    },
+    {
+        "question": "What is the performance of ComfyUI-Upscaler-Tensorrt on an L40s device with RealESRGAN_x4 model?",
+        "answer": "On an L40s device with the RealESRGAN_x4 model, ComfyUI-Upscaler-Tensorrt can process 512x512 input resolution to 2048x2048 output resolution at 5 FPS, 960x540 to 3840x2160 at 2 FPS, and 1280x1280 to 5120x5120 at 0.7 FPS."
+    },
+    {
+        "question": "How can I install ComfyUI-Upscaler-Tensorrt?",
+        "answer": "To install ComfyUI-Upscaler-Tensorrt, navigate to the ComfyUI `/custom_nodes` directory, clone the repository using `git clone https://github.com/yuvraj108c/ComfyUI-Upscaler-Tensorrt.git`, then `cd ./ComfyUI-Upscaler-Tensorrt` and run `pip install -r requirements.txt`."
+    },
+    {
+        "question": "What are the available onnx models for building Tensorrt engine in ComfyUI-Upscaler-Tensorrt?",
+        "answer": "The available onnx models for building Tensorrt engine in ComfyUI-Upscaler-Tensorrt include 4x-AnimeSharp, 4x-UltraSharp, 4x-WTP-UDS-Esrgan, 4x_NMKD-Siax_200k, 4x_RealisticRescaler_100000_G, 4x_foolhardy_Remacri, and RealESRGAN_x4."
+    },
+    {
+        "question": "How do I use ComfyUI-Upscaler-Tensorrt after installation?",
+        "answer": "After installing ComfyUI-Upscaler-Tensorrt, insert the node by `Right Click -> tensorrt -> Upscaler Tensorrt` and choose the appropriate engine from the dropdown."
+    },
+    {
+        "question": "What are the known issues with ComfyUI-Upscaler-Tensorrt?",
+        "answer": "The known issues with ComfyUI-Upscaler-Tensorrt are that only models with ESRGAN architecture are currently working, and there is high ram usage when exporting `.pth` to `.onnx`."
+    },
+    {
+        "question": "On what environments has ComfyUI-Upscaler-Tensorrt been tested?",
+        "answer": "ComfyUI-Upscaler-Tensorrt has been tested on Ubuntu 22.04 LTS with Cuda 12.3, Tensorrt 10.0.1, Python 3.10, L40s GPU, and on Windows 11."
+    }
+]

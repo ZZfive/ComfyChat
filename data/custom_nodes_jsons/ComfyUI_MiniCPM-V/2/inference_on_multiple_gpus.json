@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of using multiple GPUs for MiniCPM-Llama3-V-2_5 inference?",
+        "answer": "The purpose of using multiple GPUs for MiniCPM-Llama3-V-2_5 inference is to distribute the model's layers across multiple devices due to the limited memory capacity of a single GPU, which may not be sufficient to load the entire model weights."
+    },
+    {
+        "question": "What library is used to distribute the layers of the model across multiple GPUs?",
+        "answer": "The `accelerate` library is used to distribute the layers of the model across multiple GPUs."
+    },
+    {
+        "question": "In the example usage for 2x16GiB GPUs, what is the suggested maximum memory to use on each GPU?",
+        "answer": "In the example usage for 2x16GiB GPUs, it is suggested to use a maximum memory of 10GiB on each GPU."
+    },
+    {
+        "question": "What is the purpose of defining the `no_split_module_classes` variable?",
+        "answer": "The `no_split_module_classes` variable is used to specify which module classes should not be split across different devices."
+    },
+    {
+        "question": "Why is it recommended to modify the `device_map` to ensure input and output layers are on the first GPU?",
+        "answer": "Modifying the `device_map` to ensure input and output layers are on the first GPU is recommended to avoid any modifications to the original inference script."
+    },
+    {
+        "question": "How can you monitor memory usage during inference?",
+        "answer": "You can use the shell script `watch -n1 nvidia-smi` to monitor memory usage during inference."
+    },
+    {
+        "question": "What should you do if there is an OOM (CUDA out of memory) error during inference?",
+        "answer": "If there is an OOM error during inference, you can try reducing the `max_memory_each_gpu` value to make memory pressure more balanced across all GPUs."
+    }
+]

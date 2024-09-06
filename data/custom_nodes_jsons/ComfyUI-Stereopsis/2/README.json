@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the primary goal of ComfyUI-Stereopsis?",
+        "answer": "ComfyUI-Stereopsis aims to integrate a stereopsis effect within ComfyUI (Stable Diffusion) to create immersive media experiences compatible with VR headsets."
+    },
+    {
+        "question": "How does the Side_by_side module contribute to the stereopsis effect in ComfyUI-Stereopsis?",
+        "answer": "The Side_by_side module concatenates two images side by side into a single image, which is a crucial step in creating the stereopsis effect for VR headset compatibility."
+    },
+    {
+        "question": "Can the Side_by_side module accept images of different heights?",
+        "answer": "No, the Side_by_side module requires the input images to have the same height and channel depth, but there is no restriction on the images' width."
+    },
+    {
+        "question": "What is the role of PyTorch in the Side_by_side module?",
+        "answer": "PyTorch is used in the Side_by_side module for image manipulation, ensuring compatibility with other PyTorch-based pipelines and operations."
+    },
+    {
+        "question": "How does the FrameDelay module contribute to creating the stereopsis effect?",
+        "answer": "The FrameDelay module introduces a delay effect in image sequences by repeating and inserting frames, which is essential for temporal adjustments in creating dynamic visual effects like stereopsis."
+    },
+    {
+        "question": "Does the FrameDelay module alter the overall batch size after frame insertion?",
+        "answer": "No, the FrameDelay module maintains the original batch size after frame insertion, ensuring consistency and compatibility with subsequent processing stages."
+    },
+    {
+        "question": "What are the customizable parameters offered by the FrameDelay module?",
+        "answer": "The FrameDelay module allows users to select the frame to delay (selected_frame) and define the extent of the delay (frame_delay), providing flexibility in adjusting the delay effect."
+    }
+]

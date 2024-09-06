@@ -1,0 +1,34 @@
+[
+    {
+        "question": "Is ComfyUI_OOTDiffusion_CXH compatible with Detectron?",
+        "answer": "No, ComfyUI_OOTDiffusion_CXH addresses some legacy issues left in Detectron, so their models are not compatible and running inference with the same model weights will produce different results in the two code bases."
+    },
+    {
+        "question": "How is the height and width of a box calculated in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "In ComfyUI_OOTDiffusion_CXH, the height and width of a box with corners (x1, y1) and (x2, y2) are computed as width = x2 - x1 and height = y2 - y1, whereas in Detectron, a '+ 1' was added to both height and width."
+    },
+    {
+        "question": "What is the difference in RPN implementation between ComfyUI_OOTDiffusion_CXH and Detectron?",
+        "answer": "In ComfyUI_OOTDiffusion_CXH, RPN uses simpler anchors with fewer quantization artifacts, whereas in Detectron, the anchors were quantized and did not have accurate areas."
+    },
+    {
+        "question": "How does ComfyUI_OOTDiffusion_CXH order class labels in classification layers?",
+        "answer": "In ComfyUI_OOTDiffusion_CXH, integer labels [0, K-1] correspond to the K object categories and the label 'K' corresponds to the special 'background' category, while in Detectron, label '0' means background and labels [1, K] correspond to the K categories."
+    },
+    {
+        "question": "What is the difference in ROIAlign implementation between ComfyUI_OOTDiffusion_CXH and Detectron?",
+        "answer": "In ComfyUI_OOTDiffusion_CXH, ROIAlign is implemented differently, where all the ROIs are shifted by half a pixel compared to Detectron to create better image-feature-map alignment, and the ROIs are not required to have a minimum size of 1."
+    },
+    {
+        "question": "How does ComfyUI_OOTDiffusion_CXH improve mask AP compared to Detectron?",
+        "answer": "In ComfyUI_OOTDiffusion_CXH, the 'paste_mask' function is different and more accurate than in Detectron, which can improve mask AP on COCO by ~0.5% absolute."
+    },
+    {
+        "question": "Is ComfyUI_OOTDiffusion_CXH compatible with Caffe2?",
+        "answer": "Yes, despite the incompatibilities with Detectron, the relevant ops have been implemented in Caffe2, so models trained with ComfyUI_OOTDiffusion_CXH can be converted in Caffe2."
+    },
+    {
+        "question": "Is ComfyUI_OOTDiffusion_CXH compatible with TensorFlow?",
+        "answer": "Most ops are available in TensorFlow, but there are some tiny differences in the implementation of resize, ROIAlign, and padding that need to be addressed. A working conversion script is provided by tensorpack FasterRCNN to run a standard ComfyUI_OOTDiffusion_CXH model in TensorFlow."
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is comfyui-replicate?",
+        "answer": "comfyui-replicate is a custom node for running Replicate models in ComfyUI."
+    },
+    {
+        "question": "Where can I find example workflows for comfyui-replicate?",
+        "answer": "You can find example workflows for comfyui-replicate in the 'example_workflows' directory of the GitHub repository."
+    },
+    {
+        "question": "How do I set my Replicate API token before running comfyui-replicate?",
+        "answer": "You need to set your REPLICATE_API_TOKEN in your environment before running comfyui-replicate. You can do this by exporting the token on MacOS or Linux using 'export REPLICATE_API_TOKEN=\"your_token\"; python main.py' or setting the token on Windows using 'set REPLICATE_API_TOKEN=\"your_token\"; python main.py'."
+    },
+    {
+        "question": "How can I install comfyui-replicate directly?",
+        "answer": "To install comfyui-replicate directly, you need to navigate to the 'ComfyUI/custom-nodes' directory, clone the GitHub repository using 'git clone https://github.com/replicate/comfyui-replicate', change to the 'comfyui-replicate' directory, and then install the requirements using 'pip install -r requirements.txt'."
+    },
+    {
+        "question": "Where can I find the supported Replicate models for comfyui-replicate?",
+        "answer": "You can find the supported Replicate models for comfyui-replicate in the 'supported_models.json' file."
+    },
+    {
+        "question": "How can I update the Replicate models in comfyui-replicate?",
+        "answer": "To update the Replicate models in comfyui-replicate, simply run './import_schemas.py' which will update all model nodes. The latest version of a model is used by default."
+    },
+    {
+        "question": "How can I add more models to comfyui-replicate?",
+        "answer": "To add more models to comfyui-replicate, you can add the model to 'supported_models.json', run './import_schemas.py' to update all schemas and import your new model, restart ComfyUI, and then use the model in your workflow. The model will have the title 'Replicate [model author/model name]'."
+    },
+    {
+        "question": "What types of models are currently supported by comfyui-replicate?",
+        "answer": "Currently, comfyui-replicate supports models that return simple text or image outputs. Models that return audio, video, JSON objects or a combination of outputs are not supported."
+    }
+]

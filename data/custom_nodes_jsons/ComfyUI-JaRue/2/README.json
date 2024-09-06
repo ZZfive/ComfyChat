@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is ComfyUI-JaRue?",
+        "answer": "ComfyUI-JaRue is a tool that takes a YouTube Video ID, pulls a transcript from the YouTube server if available, and delivers it in a format that can be linked to AnimatedDiff or any other ComfyUI batch prompt animation."
+    },
+    {
+        "question": "What is the purpose of the video_id parameter in ComfyUI-JaRue?",
+        "answer": "The video_id parameter is used to identify the YouTube video from which the transcript needs to be extracted. It can be found in the URL of any YouTube video."
+    },
+    {
+        "question": "How does the fps parameter in ComfyUI-JaRue work?",
+        "answer": "The fps (frames per second) parameter in ComfyUI-JaRue allows you to reduce a higher-framed YouTube transcript down to 10fps, which is more friendly for batch animations in ComfyUI. The frame counts will be returned based on the fps setting."
+    },
+    {
+        "question": "What does the begin parameter in ComfyUI-JaRue do?",
+        "answer": "The begin parameter in ComfyUI-JaRue allows you to start reading the transcript from a specific frame later in the timeline. The frame counts will adjust accordingly."
+    },
+    {
+        "question": "What is the purpose of the cache parameter in ComfyUI-JaRue?",
+        "answer": "The cache parameter in ComfyUI-JaRue is used to avoid spamming YouTube. When enabled, it prevents the tool from repeatedly requesting the transcript from YouTube. Disabling the cache and pressing queue will delete the prior cache and force the tool to ask YouTube for the transcripts again."
+    },
+    {
+        "question": "What additional library is required for ComfyUI-JaRue to function properly?",
+        "answer": "ComfyUI-JaRue requires the YouTube Transcript API Library to be installed. The link to the library is provided in the documentation."
+    },
+    {
+        "question": "What should be done if ComfyUI displays an error message stating that the YouTube Transcript API Library is not found?",
+        "answer": "To resolve the issue, you need to manually copy the installed API library from your Python library into your ComfyUI custom_nodes directory."
+    },
+    {
+        "question": "Is there a Text2Image tool included with ComfyUI-JaRue?",
+        "answer": "Yes, ComfyUI-JaRue includes a Text2Image tool that allows you to superimpose captions on top of the video. However, the code to tie it all together is still a work in progress."
+    }
+]

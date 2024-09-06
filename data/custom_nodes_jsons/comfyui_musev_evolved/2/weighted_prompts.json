@@ -1,0 +1,30 @@
+[
+    {
+        "question": "diffusers 라이브러리에서 프롬프트 가중치 부여 기능을 사용하는 이유는 무엇인가요?",
+        "answer": "diffusers 라이브러리는 프롬프트의 특정 부분을 강조하거나 강조하지 않기 위해 텍스트 임베딩 벡터의 크기를 조절할 수 있게 해주는 프롬프트 가중치 부여 기능을 지원합니다. 이를 통해 생성된 이미지에서 특정 요소를 더 강조하거나 약화할 수 있습니다."
+    },
+    {
+        "question": "프롬프트 가중치 부여를 수행하려면 어떤 라이브러리가 필요하나요?",
+        "answer": "프롬프트 가중치 부여를 수행하려면 compel 라이브러리가 필요합니다. 이를 설치하려면 'pip install compel' 명령어를 실행하면 됩니다."
+    },
+    {
+        "question": "Compel 오브젝트를 생성하려면 어떤 인자가 필요하나요?",
+        "answer": "Compel 오브젝트를 생성하려면 pipe의 tokenizer와 text_encoder를 인자로 전달해야 합니다. 예: Compel(tokenizer=pipe.tokenizer, text_encoder=pipe.text_encoder)"
+    },
+    {
+        "question": "프롬프트의 특정 부분을 강조하려면 어떤 기호를 사용해야 하나요?",
+        "answer": "프롬프트의 특정 부분을 강조하려면 '++' 기호를 사용해야 합니다. 예: 'a red cat playing with a ball++'"
+    },
+    {
+        "question": "프롬프트의 특정 부분을 강조하지 않으려면 어떤 기호를 사용해야 하나요?",
+        "answer": "프롬프트의 특정 부분을 강조하지 않으려면 '--' 기호를 사용해야 합니다."
+    },
+    {
+        "question": "파이프라인에 처리된 프롬프트를 전달하려면 어떤 인자를 사용해야 하나요?",
+        "answer": "파이프라인에 처리된 프롬프트를 전달하려면 'prompt_embeds' 인자를 사용해야 합니다. 예: pipe(prompt_embeds=prompt_embeds, ...)"
+    },
+    {
+        "question": "Textual Inversion을 사용하려면 어떤 클래스를 사용해야 하나요?",
+        "answer": "Textual Inversion을 사용하려면 DiffusersTextualInversionManager 클래스를 사용해야 합니다. 이 클래스의 인스턴스를 Compel 초기화에 전달합니다."
+    }
+]

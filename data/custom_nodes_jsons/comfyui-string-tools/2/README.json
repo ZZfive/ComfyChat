@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI String Tools?",
+        "answer": "ComfyUI String Tools is a custom node for ComfyUI that provides simple string nodes like `StringToolsString` and multi-line string nodes like `StringToolsText`, a node to concatenate multiple texts called `StringToolsConcat`, and a node to randomly select one from multiple texts called `StringToolsRandomChoice`."
+    },
+    {
+        "question": "Why does ComfyUI String Tools provide simple text nodes?",
+        "answer": "ComfyUI String Tools provides simple text nodes `StringToolsString` and `StringToolsText` because `StringToolsConcat` and `StringToolsRandomChoice` nodes accept strings but currently cannot accept `PrimitiveNode`."
+    },
+    {
+        "question": "What does the `StringToolsConcat` node do?",
+        "answer": "The `StringToolsConcat` node concatenates `text_*` with `separator`. These inputs cannot be changed to Widget."
+    },
+    {
+        "question": "What does the `StringToolsRandomChoice` node do?",
+        "answer": "The `StringToolsRandomChoice` node selects one from `text_*` based on `seed`. These inputs cannot be changed to Widget."
+    },
+    {
+        "question": "What is the difference between `StringToolsRandomChoice` and `StringToolsBalancedChoice`?",
+        "answer": "The difference between `StringToolsRandomChoice` and `StringToolsBalancedChoice` is in the weighting. If there is `StringToolsRandomChoice` or `StringToolsBalancedChoice` in the input of `StringToolsBalancedChoice`, weighting is performed according to the number of valid inputs, making it easier to select as the number of valid inputs increases."
+    },
+    {
+        "question": "What does the `StringToolsBalancedChoice` node do?",
+        "answer": "The `StringToolsBalancedChoice` node selects one from `text_*` based on `seed`. These inputs cannot be changed to Widget. The difference from `StringToolsRandomChoice` is that it performs weighting according to the number of valid inputs, making it easier to select as the number of valid inputs increases."
+    },
+    {
+        "question": "What is the license for ComfyUI String Tools?",
+        "answer": "The license for ComfyUI String Tools is MIT."
+    }
+]

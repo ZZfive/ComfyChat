@@ -1,0 +1,26 @@
+[
+    {
+        "question": "What is DPMSolverMultistepInverse?",
+        "answer": "DPMSolverMultistepInverse is the inverted scheduler from the research papers 'DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps' and 'DPM-Solver++: Fast Solver for Guided Sampling of Diffusion Probabilistic Models' by Cheng Lu, Yuhao Zhou, Fan Bao, Jianfei Chen, Chongxuan Li, and Jun Zhu."
+    },
+    {
+        "question": "What is the basis for the implementation of DPMSolverMultistepInverse?",
+        "answer": "The implementation of DPMSolverMultistepInverse is mostly based on the DDIM inversion definition from the research paper 'Null-text Inversion for Editing Real Images using Guided Diffusion Models' and the notebook implementation of the 'DiffEdit' latent inversion from the GitHub repository 'Xiang-cd/DiffEdit-stable-diffusion'."
+    },
+    {
+        "question": "Is dynamic thresholding supported in DPMSolverMultistepInverse?",
+        "answer": "Yes, dynamic thresholding from the research paper 'Imagen' is supported in DPMSolverMultistepInverse."
+    },
+    {
+        "question": "How can dynamic thresholding be used for pixel-space diffusion models?",
+        "answer": "For pixel-space diffusion models, dynamic thresholding can be used by setting both 'algorithm_type=\"dpmsolver++\"' and 'thresholding=True'."
+    },
+    {
+        "question": "Is dynamic thresholding suitable for latent-space diffusion models like Stable Diffusion?",
+        "answer": "No, the dynamic thresholding method used in DPMSolverMultistepInverse is unsuitable for latent-space diffusion models such as Stable Diffusion."
+    },
+    {
+        "question": "What are the two key classes mentioned in the documentation?",
+        "answer": "The two key classes mentioned in the documentation are 'DPMSolverMultistepInverseScheduler' and 'SchedulerOutput'."
+    }
+]

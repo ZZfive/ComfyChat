@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the sdxl_train.py script?",
+        "answer": "The sdxl_train.py script is used for SDXL fine-tuning. It supports DreamBooth dataset and has options like --full_bf16 for full bfloat16 training and --block_lr for specifying different learning rates for each U-Net block."
+    },
+    {
+        "question": "What is the minimum GPU memory requirement for LoRA training with SDXL?",
+        "answer": "The LoRA training for SDXL can be done with 8GB GPU memory (10GB recommended). To reduce GPU memory usage, it is recommended to train U-Net only, use gradient checkpointing, use --cache_text_encoder_outputs option, use one of the 8bit optimizers or Adafactor optimizer, and use a lower dim (4 to 8 for 8GB GPU)."
+    },
+    {
+        "question": "What is the default resolution of SDXL?",
+        "answer": "The default resolution of SDXL is 1024x1024."
+    },
+    {
+        "question": "What is the purpose of the tools/cache_latents.py script?",
+        "answer": "The tools/cache_latents.py script can be used to cache the latents to disk in advance. It helps to reduce the GPU memory usage during training."
+    },
+    {
+        "question": "What is the purpose of the --network_train_unet_only option in SDXL LoRA training?",
+        "answer": "The --network_train_unet_only option is highly recommended for SDXL LoRA training because SDXL has two text encoders, and the result of the training will be unexpected if this option is not used."
+    },
+    {
+        "question": "What is ControlNet-LLLite?",
+        "answer": "ControlNet-LLLite is a novel method for ControlNet with SDXL. It is added in the sd-scripts repository and has separate documentation for details."
+    },
+    {
+        "question": "What is the format of Textual Inversion embeddings for SDXL?",
+        "answer": "The format of Textual Inversion embeddings for SDXL is: ```python\nfrom safetensors.torch import save_file\n\nstate_dict = {\"clip_g\": embs_for_text_encoder_1280, \"clip_l\": embs_for_text_encoder_768}\nsave_file(state_dict, file)\n```"
+    }
+]

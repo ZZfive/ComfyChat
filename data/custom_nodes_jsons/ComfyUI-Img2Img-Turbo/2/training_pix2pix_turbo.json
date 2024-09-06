@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the Fill50k dataset in this training example?",
+        "answer": "The Fill50k dataset is used as an example dataset to demonstrate how to train a pix2pix-turbo model using paired data in ComfyUI-Img2Img-Turbo."
+    },
+    {
+        "question": "What command is used to download the modified Fill50k dataset?",
+        "answer": "The command used to download the modified Fill50k dataset is `bash scripts/download_fill50k.sh`."
+    },
+    {
+        "question": "What is the expected format of the dataset for the training scripts?",
+        "answer": "The training scripts expect the dataset to be in a specific format where the dataset_name folder contains train_A, train_B, train_prompts.json, test_A, test_B, and test_prompts.json subfolders and files."
+    },
+    {
+        "question": "How can you initialize the `accelerate` environment?",
+        "answer": "You can initialize the `accelerate` environment by running the command `accelerate config`."
+    },
+    {
+        "question": "What command is used to train the pix2pix-turbo model?",
+        "answer": "The command used to train the pix2pix-turbo model is `accelerate launch src/train_pix2pix_turbo.py` with various flags and arguments."
+    },
+    {
+        "question": "How can you monitor the training progress?",
+        "answer": "You can monitor the training progress using the Weights & Biases dashboard."
+    },
+    {
+        "question": "What command is used to run inference with the trained model?",
+        "answer": "The command used to run inference with the trained model is `python src/inference_paired.py` with appropriate arguments."
+    },
+    {
+        "question": "Where are the model checkpoints saved during training?",
+        "answer": "The model checkpoints are saved in the `<output_dir>/checkpoints` directory during training."
+    }
+]

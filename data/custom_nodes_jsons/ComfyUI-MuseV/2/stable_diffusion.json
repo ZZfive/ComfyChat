@@ -1,0 +1,30 @@
+[
+    {
+        "question": "如何提高 DiffusionPipeline 的计算和内存效率？",
+        "answer": "可以通过将模型精度降低至 float16，将 pipeline 放在 GPU 上，使用更高效的 scheduler 降低推理步数，以及启用 attention slicing 来提高 DiffusionPipeline 的计算和内存效率。"
+    },
+    {
+        "question": "fp16 精度对输出质量有何影响？",
+        "answer": "将 pipeline 的精度降低至 float16 可以显著提高推理速度，而对输出质量几乎没有影响。"
+    },
+    {
+        "question": "使用更高效的 scheduler 有何好处？",
+        "answer": "使用更高效的 scheduler 如 DPMSolverMultistepScheduler 可以减少推理步数，从而加快推理速度。例如，从 50 步推理减少到 20 步。"
+    },
+    {
+        "question": "如何解决 DiffusionPipeline 中的 OutOfMemoryError (OOM) 问题？",
+        "answer": "可以通过启用 attention slicing 功能来解决 DiffusionPipeline 中的 OOM 问题，它可以按顺序运行并节省大量内存。"
+    },
+    {
+        "question": "提高生成图像质量的方法有哪些？",
+        "answer": "可以通过使用更好的模型 checkpoint、替换 pipeline 组件（如使用更新的 autodecoder）、改进提示词工程等方法来提高生成图像的质量。"
+    },
+    {
+        "question": "提示词工程在提高生成图像质量方面有什么作用？",
+        "answer": "提示词工程通过精确描述想要生成的图像及其细节，引导模型朝着期望的风格生成，从而提高生成图像的质量。"
+    },
+    {
+        "question": "DiffusionPipeline 的推理速度可以提高的范围是多少？",
+        "answer": "通过将模型精度降低至 float16，使用更高效的调度器减少推理步数，启用注意力切片等方法，可以将 DiffusionPipeline 的推理时间从 30 秒缩短到 4 秒，提高约 7.5 倍。"
+    }
+]

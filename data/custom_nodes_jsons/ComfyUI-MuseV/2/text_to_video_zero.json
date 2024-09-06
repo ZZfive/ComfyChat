@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is Text2Video-Zero?",
+        "answer": "Text2Video-Zero is a low-cost approach that enables zero-shot text-to-video generation by leveraging existing text-to-image synthesis methods like Stable Diffusion, without any additional training or optimization."
+    },
+    {
+        "question": "What are the different methods for zero-shot video generation mentioned in the context?",
+        "answer": "The different methods for zero-shot video generation mentioned are: 1) Using a textual prompt, 2) Using a prompt combined with guidance from poses or edges, and 3) Video Instruct-Pix2Pix (instruction-guided video editing)."
+    },
+    {
+        "question": "How does Text2Video-Zero ensure temporal consistency in the generated videos?",
+        "answer": "Text2Video-Zero ensures temporal consistency by enriching the latent codes of the generated frames with motion dynamics to keep the global scene and background time consistent, and by using a new cross-frame attention mechanism to preserve the context, appearance, and identity of the foreground object."
+    },
+    {
+        "question": "What parameters can be changed in the pipeline call for Text-To-Video generation using ComfyUI-MuseV?",
+        "answer": "In the pipeline call for Text-To-Video generation using ComfyUI-MuseV, you can change parameters such as motion field strength (motion_field_strength_x and motion_field_strength_y), T and T' (t0 and t1), and video length (video_length)."
+    },
+    {
+        "question": "How can you generate longer videos using ComfyUI-MuseV?",
+        "answer": "To generate longer videos using ComfyUI-MuseV, you can process the video in a chunk-by-chunk manner, generating each chunk separately and then concatenating them to form the final video."
+    },
+    {
+        "question": "What is the purpose of the seed value in the code examples provided?",
+        "answer": "The seed value is used to fix the temporal consistency across the generated video frames by manually setting the seed for the random number generator."
+    },
+    {
+        "question": "Can Text-To-Video, Text-To-Video with Pose Control, and Text-To-Video with Edge Control methods be run with custom DreamBooth models in ComfyUI-MuseV?",
+        "answer": "Yes, the Text-To-Video, Text-To-Video with Pose Control, and Text-To-Video with Edge Control methods can be run with custom DreamBooth models in ComfyUI-MuseV, as demonstrated in the example provided for Canny edge ControlNet model and Avatar style DreamBooth model."
+    }
+]

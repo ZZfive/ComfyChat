@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ComfyUI中的大模型节点支持哪些类型的API接口调用？",
+        "answer": "目前暂时只支持openai类型的API接口调用。"
+    },
+    {
+        "question": "如何让大模型节点拥有记忆功能？",
+        "answer": "将大模型节点的is_memory改为disable，再运行，这时模型会清除之前的对话记录，再切换回enable，之后的运行中模型就会保留与你的对话记录。"
+    },
+    {
+        "question": "如何查看大模型节点的历史对话记录？",
+        "answer": "可以通过history来查看多轮对话的历史记录。"
+    },
+    {
+        "question": "ComfyUI中的本地LLM节点支持哪些模型？",
+        "answer": "目前支持GLM/Llama/Qwen，不过只有GLM的工具调用是完美适配的，其他两个需要大参数版本才能正常工具调用。"
+    },
+    {
+        "question": "LVM模型加载器中的max_ctx参数是什么意思？",
+        "answer": "max_ctx是LVM模型的最大上下文长度，如果超过这个长度，模型会自动截断。"
+    },
+    {
+        "question": "ComfyUI中的加载文件节点支持哪些文件格式？",
+        "answer": "适配的文件格式为：'.docx'、'.txt'、'.pdf'、'.xlsx'、'.csv'、'.py', '.js', '.java', '.c', '.cpp', '.html', '.css', '.sql', '.r', '.swift'。"
+    },
+    {
+        "question": "如何使用ComfyUI中的谷歌搜索加载器节点？",
+        "answer": "可以输入你的google_api_key和cse_id来使用该节点，根据keyword搜索相关内容。"
+    }
+]

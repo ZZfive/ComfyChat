@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the importance of reproducibility in diffusion models?",
+        "answer": "Reproducibility is important in diffusion models for testing, reproducing results, and improving image quality. It allows for consistent results across releases and platforms within a certain tolerance."
+    },
+    {
+        "question": "How can reproducibility be achieved on a CPU in ComfyUI-MuseV?",
+        "answer": "To achieve reproducibility on a CPU in ComfyUI-MuseV, you need to fix the seed using a PyTorch Generator. This ensures that the same results are produced each time the pipeline is run with the same seed."
+    },
+    {
+        "question": "Why might results differ when running a diffusion pipeline on a GPU versus a CPU?",
+        "answer": "Results may differ when running a diffusion pipeline on a GPU versus a CPU because GPUs use different random number generators than CPUs, even when using the same seed."
+    },
+    {
+        "question": "How does ComfyUI-MuseV address the issue of different results on GPU and CPU?",
+        "answer": "ComfyUI-MuseV uses the randn_tensor() function to generate random noise on the CPU and then moves the tensors to the GPU as needed. This allows for more similar results when the pipeline is run on a GPU."
+    },
+    {
+        "question": "What is the recommended approach for achieving reproducibility in complex pipelines like UnCLIPPipeline?",
+        "answer": "For complex pipelines like UnCLIPPipeline that are extremely sensitive to precision error propagation, it is recommended to run them on completely identical hardware and PyTorch versions to achieve full reproducibility."
+    },
+    {
+        "question": "How can deterministic algorithms be used to create reproducible pipelines in PyTorch?",
+        "answer": "To create reproducible pipelines using deterministic algorithms in PyTorch, you need to set the CUBLAS_WORKSPACE_CONFIG environment variable to :16:8, disable benchmarking, and enable deterministic algorithms using torch.use_deterministic_algorithms(True)."
+    },
+    {
+        "question": "What trade-offs are associated with using deterministic algorithms for reproducibility?",
+        "answer": "Deterministic algorithms may be slower and have lower performance compared to non-deterministic algorithms. However, they are the best approach when reproducibility is critical."
+    }
+]

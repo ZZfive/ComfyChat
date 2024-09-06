@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Detectron2 builtin data loading pipeline?",
+        "answer": "The Detectron2 builtin data loading pipeline is used to create a default data loader from a given config. It loads a list of dictionaries representing the dataset items in a lightweight, canonical format, maps each dictionary using a function to transform it into a format ready for the model to consume, and batches the outputs of the mapper."
+    },
+    {
+        "question": "How can users customize the mapping function in the Detectron2 data loading pipeline?",
+        "answer": "Users can customize the mapping function by specifying the 'mapper' argument in build_detection_{train,test}_loader. The default mapper is DatasetMapper."
+    },
+    {
+        "question": "What is the role of the mapper in the Detectron2 data loading pipeline?",
+        "answer": "The role of the mapper is to transform the lightweight, canonical representation of a dataset item into a format that is ready for the model to consume, including reading images, performing random data augmentation, and converting to torch Tensors."
+    },
+    {
+        "question": "How can you write a custom dataloader in Detectron2?",
+        "answer": "To write a custom dataloader in Detectron2, you can either use a different 'mapper' with build_detection_{train,test}_loader(mapper=), which works for most use cases, or write your own data loader that is simply a Python iterator producing the format your model accepts."
+    },
+    {
+        "question": "What should you do if you want to change not only the mapper but also the sampling or batching logic in the Detectron2 data loading pipeline?",
+        "answer": "If you want to change not only the mapper but also the sampling or batching logic, you can write your own data loader using any tools you like. The data loader should be a Python iterator that produces the format your model accepts."
+    },
+    {
+        "question": "How can you use a custom dataloader with DefaultTrainer in Detectron2?",
+        "answer": "If you use DefaultTrainer, you can overwrite its build_{train,test}_loader method to use your own dataloader. An example can be found in the densepose dataloader."
+    },
+    {
+        "question": "How can you use a custom dataloader in your own training loop in Detectron2?",
+        "answer": "If you write your own training loop, you can easily plug in your custom data loader."
+    }
+]

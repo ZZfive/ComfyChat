@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Lora-Training-in-Comfyはどのようなfine tuningに対応しているか?",
+        "answer": "Lora-Training-in-Comfyは、NovelAIの提案した学習手法、自動キャプションニング、タグ付け、Windows＋VRAM 12GB（SD v1.xの場合）環境等に対応したfine tuningです。"
+    },
+    {
+        "question": "Lora-Training-in-Comfyのfine tuningでは何が学習されないか?",
+        "answer": "Lora-Training-in-Comfyのfine tuningでは、LoRAやTextual Inversion、Hypernetworksは学習されません。"
+    },
+    {
+        "question": "Diffusersを用いたStable DiffusionのU-Netのfine tuningでは、どのような改善が行われているか?",
+        "answer": "Diffusersを用いたStable DiffusionのU-Netのfine tuningでは、CLIP（Text Encoder）の最後の層ではなく最後から二番目の層の出力を用いること、正方形以外の解像度での学習（Aspect Ratio Bucketing）、トークン長を75から225に拡張すること、BLIPによるキャプショニング、DeepDanbooruまたはWD14Taggerによる自動タグ付け、Hypernetworkの学習、Stable Diffusion v2.0への対応、VAEの出力をあらかじめ取得しディスクに保存しておくことで、学習の省メモリ化、高速化を図ることが挙げられる。"
+    },
+    {
+        "question": "fine tuningでは、通常どの部分が学習されるか?",
+        "answer": "fine tuningでは、通常U-Netだけが学習されます。"
+    },
+    {
+        "question": "Stable Diffusion 2.0では、どの層の出力をデフォルトで使うか?",
+        "answer": "Stable Diffusion 2.0では、最後から二番目の層をデフォルトで使います。"
+    },
+    {
+        "question": "学習解像度はどのように決定されるか?",
+        "answer": "学習解像度は、パラメータとして与えられた解像度の面積（＝メモリ使用量）を超えない範囲で、64ピクセル単位で縦横に調整、作成されます。"
+    },
+    {
+        "question": "Lora-Training-in-Comfyのfine tuningで対応しているデータセットの形式は何か?",
+        "answer": "Lora-Training-in-Comfyのfine tuningでは、メタデータを用いるfine tuning方式のみ対応しています。"
+    }
+]

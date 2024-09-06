@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of having thin abstractions in research engineering projects?",
+        "answer": "Thin abstractions allow for the possibility of doing things in new ways and make it easier to break existing abstractions and replace them with new ones."
+    },
+    {
+        "question": "Why do research engineering projects also need high-level abstractions?",
+        "answer": "High-level abstractions enable users to easily do things in standard ways without worrying too much about the details that only certain researchers care about."
+    },
+    {
+        "question": "What are the two types of interfaces in detectron2 that address the tension between thin and high-level abstractions?",
+        "answer": "The two types of interfaces in detectron2 are: 1) Functions and classes that take a config (cfg) argument, and 2) Functions and classes that have well-defined explicit arguments."
+    },
+    {
+        "question": "What do functions and classes that take a config argument in detectron2 implement?",
+        "answer": "Functions and classes that take a config argument in detectron2 implement the 'standard default' behavior, reading what they need from the config and doing the 'standard' thing."
+    },
+    {
+        "question": "What are the characteristics of functions and classes with well-defined explicit arguments in detectron2?",
+        "answer": "Functions and classes with well-defined explicit arguments in detectron2 are small building blocks of the entire system. They require users' expertise to understand what each argument should be and require more effort to stitch together into a larger system, but they can be stitched together in more flexible ways."
+    },
+    {
+        "question": "What is the purpose of the @configurable decorator in detectron2?",
+        "answer": "The @configurable decorator in detectron2 allows classes to be called with either a config or with explicit arguments, providing flexibility in how they are used."
+    },
+    {
+        "question": "What resources are available for users who need to extend detectron2 to their own needs?",
+        "answer": "For users who need to extend detectron2 to their own needs, there are tutorials available on using custom datasets, custom data loaders, using and writing models, and customizing the training loop with hooks or writing their own loop."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is eden_comfy_pipelines?",
+        "answer": "eden_comfy_pipelines is a collection of custom nodes and workflows for ComfyUI."
+    },
+    {
+        "question": "What is the CLIP_interrogator node in eden_comfy_pipelines based on?",
+        "answer": "The CLIP_interrogator node in eden_comfy_pipelines is based on clip_interrogator."
+    },
+    {
+        "question": "What does the 'keep_model_alive' option in the CLIP_interrogator node do?",
+        "answer": "The 'keep_model_alive' option in the CLIP_interrogator node prevents the removal of CLIP/BLIP models from the GPU after the node is executed, avoiding the need to reload the entire model every time a new pipeline is run, but uses more GPU memory."
+    },
+    {
+        "question": "What is the function of the 'prepend_BLIP_caption' option in the CLIP_interrogator node?",
+        "answer": "The 'prepend_BLIP_caption' option in the CLIP_interrogator node can be turned off to only get the matching modifier tags but not use a BLIP-interrogation, which is useful when using an image with IP_adapter to copy textures but not global image contents."
+    },
+    {
+        "question": "What does the 'save_prompt_to_txt_file' option in the CLIP_interrogator node do?",
+        "answer": "The 'save_prompt_to_txt_file' option in the CLIP_interrogator node allows specifying a path where the prompt is saved to disk."
+    },
+    {
+        "question": "What is the purpose of the VAEDecode_to_folder node in eden_comfy_pipelines?",
+        "answer": "The VAEDecode_to_folder node in eden_comfy_pipelines decodes VAE latents to images and saves them directly to a folder, allowing rendering of much longer videos with tools like AnimateDiff, although manual video compilation with ffmpeg is required in post."
+    },
+    {
+        "question": "What can the SaveImage node in eden_comfy_pipelines do?",
+        "answer": "The SaveImage node in eden_comfy_pipelines is a basic image saver that provides the option to add timestamps and save the entire pipeline as a .json file, allowing prompts and settings to be read directly from the .json file without loading the entire pipe."
+    }
+]

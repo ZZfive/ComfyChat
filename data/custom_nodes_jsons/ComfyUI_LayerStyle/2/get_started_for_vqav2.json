@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What are the necessary steps for setting up the environment to fine-tune BEiT-3 on VQAv2?",
+        "answer": "The necessary steps include setting up the environment as described in the README.md file, downloading the required COCO images and annotations, organizing the dataset in the specified structure, and generating the index json files using the provided Python command."
+    },
+    {
+        "question": "How many V100-32GB GPUs are required to fine-tune the BEiT-3 base model on VQAv2?",
+        "answer": "The BEiT-3 base model can be fine-tuned on VQAv2 using 8 V100-32GB GPUs."
+    },
+    {
+        "question": "What is the effective batch size when fine-tuning the BEiT-3 large model on VQAv2 with 8 V100-32GB GPUs?",
+        "answer": "The effective batch size when fine-tuning the BEiT-3 large model on VQAv2 with 8 V100-32GB GPUs is 128, calculated as 8 (number of GPUs) * 16 (batch size per GPU)."
+    },
+    {
+        "question": "Which command is used to evaluate the fine-tuned BEiT-3 base model on VQAv2 test?",
+        "answer": "The command used to evaluate the fine-tuned BEiT-3 base model on VQAv2 test is: python -m torch.distributed.launch --nproc_per_node=8 run_beit3_finetuning.py --model beit3_base_patch16_480 --input_size 480 --task vqav2 --batch_size 16 --sentencepiece_model /your_beit3_model_path/beit3.spm --finetune /your_beit3_model_path/beit3_base_patch16_480_vqa.pth --data_path /path/to/your_data --output_dir /path/to/save/your_prediction --eval --dist_eval"
+    },
+    {
+        "question": "Where should the prediction file be submitted to obtain the VQAv2 test-dev and test-std results?",
+        "answer": "The prediction file should be submitted to the evaluation server at https://eval.ai/web/challenges/challenge-page/830/overview to obtain the VQAv2 test-dev and test-std results."
+    },
+    {
+        "question": "What is the learning rate used when fine-tuning the BEiT-3 large model on VQAv2?",
+        "answer": "The learning rate used when fine-tuning the BEiT-3 large model on VQAv2 is 2e-5."
+    },
+    {
+        "question": "How many epochs are used for fine-tuning both the BEiT-3 base and large models on VQAv2?",
+        "answer": "Both the BEiT-3 base and large models are fine-tuned on VQAv2 for 10 epochs."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the TIME method in text-to-image model editing?",
+        "answer": "The purpose of the TIME method in text-to-image model editing is to edit a given implicit assumption in a pre-trained diffusion model without requiring explicit user input or costly retraining."
+    },
+    {
+        "question": "What are the inputs required by the TIME method?",
+        "answer": "The TIME method requires a pair of inputs: a 'source' under-specified prompt for which the model makes an implicit assumption, and a 'destination' prompt that describes the same setting but with a specified desired attribute."
+    },
+    {
+        "question": "Which layers of the model does the TIME method update and why?",
+        "answer": "The TIME method updates the cross-attention layers of the model, as these layers assign visual meaning to textual tokens."
+    },
+    {
+        "question": "How efficient is the TIME method in terms of parameter modification and speed?",
+        "answer": "The TIME method is highly efficient, as it modifies only 2.2% of the model's parameters in under one second."
+    },
+    {
+        "question": "What is TIMED and what does it contain?",
+        "answer": "TIMED (TIME Dataset) is a dataset introduced to evaluate model editing approaches. It contains 147 source and destination prompt pairs from various domains."
+    },
+    {
+        "question": "What are the findings from the experiments using Stable Diffusion with the TIME method?",
+        "answer": "The experiments using Stable Diffusion with the TIME method show that it is successful in model editing, generalizes well for related prompts unseen during editing, and imposes minimal effect on unrelated generations."
+    },
+    {
+        "question": "Where can additional information about model editing and the TIME method be found?",
+        "answer": "Additional information about model editing and the TIME method can be found on the project page, original codebase, and a demo space on Hugging Face."
+    }
+]

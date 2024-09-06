@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the primary goal of Open-Sora?",
+        "answer": "The primary goal of Open-Sora is to provide a high-speed training framework for diffusion models, achieving up to 55% training speed acceleration when training on 64 frames 512x512 videos."
+    },
+    {
+        "question": "Which techniques are used by Open-Sora to boost training speed?",
+        "answer": "Open-Sora boosts training speed by using techniques such as kernal optimization, hybrid parallelism including ZeRO, and gradient checkpointing for larger batch sizes."
+    },
+    {
+        "question": "How does the training speed of Open-Sora compare to OpenDiT?",
+        "answer": "The training speed of Open-Sora on images is comparable to OpenDiT, both achieving a throughput of 175 img/s/GPU and 45k tokens/s/GPU."
+    },
+    {
+        "question": "What does STDiT adopt to model video data efficiently?",
+        "answer": "STDiT adopts spatial-temporal attention to model video data more efficiently as the number of frames increases."
+    },
+    {
+        "question": "What are the two main ways to accelerate training with T5 and VAE encoding?",
+        "answer": "The two main ways to accelerate training with T5 and VAE encoding are preprocessing text and video data in advance and saving them to disk, or encoding text and video data during training and accelerating the encoding process."
+    },
+    {
+        "question": "How does Open-Sora handle the large memory requirement for VAE encoding?",
+        "answer": "Open-Sora splits the batch size into smaller ones for VAE encoding to handle the large memory requirement."
+    },
+    {
+        "question": "What is the throughput achieved by Open-Sora with both faster T5 and VAE encoding techniques applied?",
+        "answer": "With both faster T5 and VAE encoding techniques applied, Open-Sora achieves a throughput of 1.45 img/s/GPU and 23k tokens/s/GPU on 64x512 (65k) setting."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the registration mechanism in detectron2?",
+        "answer": "The registration mechanism in detectron2 allows you to override the behavior of certain internal components of standard models, making it easier to modify or extend existing models."
+    },
+    {
+        "question": "How can you add a new backbone to a model in detectron2?",
+        "answer": "To add a new backbone in detectron2, you need to import the BACKBONE_REGISTRY, Backbone, and ShapeSpec from detectron2.modeling. Then, create a new class that inherits from Backbone, define the __init__, forward, and output_shape methods. Finally, register the new backbone using the @BACKBONE_REGISTRY.register() decorator and update the config object with the new backbone name using cfg.MODEL.BACKBONE.NAME = 'YourBackBoneName'."
+    },
+    {
+        "question": "What should you do to add new abilities to the ROI heads in the Generalized R-CNN meta-architecture?",
+        "answer": "To add new abilities to the ROI heads in the Generalized R-CNN meta-architecture, you need to implement a new ROIHeads subclass and put it in the ROI_HEADS_REGISTRY."
+    },
+    {
+        "question": "Where can you find examples of implementing new ROIHeads to perform new tasks?",
+        "answer": "Examples of implementing new ROIHeads to perform new tasks can be found in densepose in detectron2 and meshrcnn."
+    },
+    {
+        "question": "Where can you find more examples that implement different architectures in detectron2?",
+        "answer": "More examples that implement different architectures in detectron2 can be found in the projects/ directory."
+    },
+    {
+        "question": "What should you do to customize different parts of a model or the entire model in detectron2?",
+        "answer": "To customize different parts of a model or the entire model in detectron2, you can register components in the registries provided in the API documentation."
+    },
+    {
+        "question": "Where can you find a complete list of registries in detectron2?",
+        "answer": "A complete list of registries in detectron2 can be found in the API documentation under the 'model-registries' section."
+    }
+]

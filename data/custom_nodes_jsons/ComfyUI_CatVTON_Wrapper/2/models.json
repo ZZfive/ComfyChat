@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ComfyUI_CatVTON_Wrapper model?",
+        "answer": "The ComfyUI_CatVTON_Wrapper model is not mentioned in the given text. The text is about using and loading models in Detectron2."
+    },
+    {
+        "question": "How can you load a checkpoint in Detectron2?",
+        "answer": "To load a checkpoint in Detectron2, you can use the DetectionCheckpointer class as follows: DetectionCheckpointer(model).load(file_path)."
+    },
+    {
+        "question": "What is the purpose of the DefaultPredictor in Detectron2?",
+        "answer": "The DefaultPredictor in Detectron2 is a wrapper around a model that provides basic functionality for simple inference using an existing model. It includes default behavior such as model loading and preprocessing, and operates on single images rather than batches."
+    },
+    {
+        "question": "What is the standard input format for builtin models in Detectron2?",
+        "answer": "The standard input format for builtin models in Detectron2 is a list[dict], where each dict corresponds to information about one image."
+    },
+    {
+        "question": "What are the possible keys in the input dict for Detectron2 models?",
+        "answer": "The possible keys in the input dict for Detectron2 models are: 'image', 'instances', 'proposals', 'height', 'width', and 'sem_seg'."
+    },
+    {
+        "question": "What is the output format of Detectron2 models when in training mode?",
+        "answer": "When in training mode, the builtin models in Detectron2 output a dict[str->ScalarTensor] with all the losses."
+    },
+    {
+        "question": "What is the output format of Detectron2 models when in inference mode?",
+        "answer": "When in inference mode, the builtin models in Detectron2 output a list[dict], one dict for each image. Each dict may contain fields such as 'instances', 'sem_seg', 'proposals', and 'panoptic_seg'."
+    }
+]

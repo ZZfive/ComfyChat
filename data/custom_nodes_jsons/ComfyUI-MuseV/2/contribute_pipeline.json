@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ComfyUI-MuseV에서 커뮤니티 파이프라인을 사용하는 이유는 무엇인가요?",
+        "answer": "커뮤니티 파이프라인을 사용하면 DiffusionPipeline 위에 원하는 추가 기능을 추가할 수 있으며, 모든 사람이 속도 저하 없이 쉽게 작업을 공유할 수 있도록 합니다."
+    },
+    {
+        "question": "ComfyUI-MuseV에서 커뮤니티 파이프라인을 생성하려면 어떤 단계가 필요하나요?",
+        "answer": "커뮤니티 파이프라인을 생성하려면 먼저 파이프라인 클래스를 정의하고 초기화해야 합니다. 그런 다음 원하는 기능을 추가하는 forward pass를 정의해야 합니다. 마지막으로 파이프라인을 공유할 수 있습니다."
+    },
+    {
+        "question": "ComfyUI-MuseV의 커뮤니티 파이프라인에서 파이프라인과 그 구성요소를 저장하려면 어떤 함수를 사용해야 하나요?",
+        "answer": "register_modules 함수를 사용하여 파이프라인과 그 구성요소(unet과 scheduler)를 저장할 수 있습니다."
+    },
+    {
+        "question": "ComfyUI-MuseV에서 커뮤니티 파이프라인을 공유하는 두 가지 방법은 무엇인가요?",
+        "answer": "커뮤니티 파이프라인은 GitHub 리포지토리에 Pull Request를 보내거나 Hugging Face Hub의 모델 리포지토리에 직접 업로드하여 공유할 수 있습니다."
+    },
+    {
+        "question": "ComfyUI-MuseV에서 커뮤니티 파이프라인을 공유할 때 GitHub와 HF Hub의 차이점은 무엇인가요?",
+        "answer": "GitHub에서 공유하는 경우 Diffusers 팀의 검토 과정을 거치며 공식 Diffusers 저장소 및 문서에 포함됩니다. HF Hub에서 공유하는 경우 검토 없이 바로 업로드할 수 있으며, 가시성을 확보하기 위해 사용자의 프로모션에 의존합니다."
+    },
+    {
+        "question": "ComfyUI-MuseV의 커뮤니티 파이프라인에서 원하는 패키지를 사용할 수 있나요?",
+        "answer": "예, 커뮤니티 파이프라인 파일에 원하는 패키지를 사용할 수 있습니다. 사용자가 패키지를 설치하기만 하면 모든 것이 정상적으로 작동합니다."
+    },
+    {
+        "question": "ComfyUI-MuseV에서 커뮤니티 파이프라인이 작동하는 원리는 무엇인가요?",
+        "answer": "커뮤니티 파이프라인은 DiffusionPipeline을 상속하는 클래스입니다. custom_pipeline 인수로 로드할 수 있으며, 모델 가중치와 스케줄러 구성은 pretrained_model_name_or_path에서 로드됩니다."
+    }
+]

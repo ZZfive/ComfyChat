@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Apply Net tool in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "The Apply Net tool in ComfyUI_OOTDiffusion_CXH is used to visualize the results or save them to disk. For example, it can be used for contour visualization for DensePose."
+    },
+    {
+        "question": "How can you run the Apply Net tool for contour visualization in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "To run the Apply Net tool for contour visualization in ComfyUI_OOTDiffusion_CXH, you can use the following command: 'python apply_net.py show configs/densepose_rcnn_R_50_FPN_s1x.yaml densepose_rcnn_R_50_FPN_s1x.pkl image.jpg dp_contour,bbox --output image_densepose_contour.png'."
+    },
+    {
+        "question": "What is the structure of the dataset for training in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "In ComfyUI_OOTDiffusion_CXH, the dataset should be prepared into the following structure: datasets/coco/annotations/ with json files and datasets/coco/{train,val}2014/ with image files mentioned in the corresponding json."
+    },
+    {
+        "question": "How can you train a model using the train_net.py script in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "In ComfyUI_OOTDiffusion_CXH, you can train a model using the train_net.py script. For example, to launch end-to-end DensePose-RCNN training with ResNet-50 FPN backbone on 8 GPUs following the s1x schedule, you can run: 'python train_net.py --config-file configs/densepose_rcnn_R_50_FPN_s1x.yaml --num-gpus 8'."
+    },
+    {
+        "question": "How can you adjust the training script for 1 GPU in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "To train on 1 GPU in ComfyUI_OOTDiffusion_CXH, you can apply the linear learning rate scaling rule by running: 'python train_net.py --config-file configs/densepose_rcnn_R_50_FPN_s1x.yaml SOLVER.IMS_PER_BATCH 2 SOLVER.BASE_LR 0.0025'."
+    },
+    {
+        "question": "How can you perform model testing in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "In ComfyUI_OOTDiffusion_CXH, model testing can be done in the same way as training, except for an additional flag --eval-only and model location specification through MODEL.WEIGHTS model.pth in the command line."
+    },
+    {
+        "question": "What tools are provided in ComfyUI_OOTDiffusion_CXH?",
+        "answer": "ComfyUI_OOTDiffusion_CXH provides tools such as query_db and apply_net. Query_db is a tool to print or visualize DensePose data in a dataset. Apply_net is a tool to print or visualize DensePose results."
+    }
+]

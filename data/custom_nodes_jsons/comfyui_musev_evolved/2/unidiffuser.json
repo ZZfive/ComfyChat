@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is UniDiffuser?",
+        "answer": "UniDiffuser is a model proposed in the paper 'One Transformer Fits All Distributions in Multi-Modal Diffusion at Scale' that can fit all distributions relevant to a set of multi-modal data in one model."
+    },
+    {
+        "question": "What tasks can UniDiffuser perform?",
+        "answer": "UniDiffuser is able to perform image, text, text-to-image, image-to-text, and image-text pair generation by setting proper timesteps without additional overhead."
+    },
+    {
+        "question": "How does UniDiffuser compare to existing models?",
+        "answer": "UniDiffuser's quantitative results (e.g., the FID and CLIP score) are not only superior to existing general-purpose models but also comparable to the bespoken models (e.g., Stable Diffusion and DALL-E 2) in representative tasks (e.g., text-to-image generation)."
+    },
+    {
+        "question": "What is the issue with using UniDiffuser on PyTorch 1.X?",
+        "answer": "There is currently an issue on PyTorch 1.X where the output images are all black or the pixel values become NaNs. This issue can be mitigated by switching to PyTorch 2.X."
+    },
+    {
+        "question": "What is unconditional generation in UniDiffuser?",
+        "answer": "Unconditional generation in UniDiffuser produces an (image, text) pair from only latents sampled from a standard Gaussian prior."
+    },
+    {
+        "question": "What is marginal generation in UniDiffuser?",
+        "answer": "Marginal generation in UniDiffuser refers to generating only an image or only text by sampling from the marginal distribution of images and text, respectively."
+    },
+    {
+        "question": "How can text variation be performed using UniDiffuser?",
+        "answer": "Text variation can be performed on an input prompt with a text-to-image generation followed by an image-to-text generation in UniDiffuser."
+    },
+    {
+        "question": "What is the original codebase for UniDiffuser?",
+        "answer": "The original codebase for UniDiffuser can be found at thu-ml/unidiffuser on GitHub."
+    }
+]

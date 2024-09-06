@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is ComfyUI-FLATTEN?",
+        "answer": "ComfyUI-FLATTEN is a set of custom nodes for ComfyUI that allows users to utilize the FLATTEN optical flow model with Stable Diffusion 1.5 models."
+    },
+    {
+        "question": "How can you install ComfyUI-FLATTEN?",
+        "answer": "You can install ComfyUI-FLATTEN by cloning or downloading the repo into your 'ComfyUI/custom_nodes/' directory or by using the ComfyUI-Manager to automatically install the nodes."
+    },
+    {
+        "question": "What is the purpose of the 'Load Checkpoint with FLATTEN model' node in ComfyUI-FLATTEN?",
+        "answer": "The 'Load Checkpoint with FLATTEN model' node in ComfyUI-FLATTEN loads any given Stable Diffusion 1.5 checkpoint with the FLATTEN optical flow model."
+    },
+    {
+        "question": "How does the 'Sample Trajectories' node in ComfyUI-FLATTEN work?",
+        "answer": "The 'Sample Trajectories' node in ComfyUI-FLATTEN takes input images and samples their optical flow into trajectories. The trajectories are created for the dimensions of the input image and must match the latent size Flatten processes."
+    },
+    {
+        "question": "What is the function of the 'Unsampler (Flatten)' node in ComfyUI-FLATTEN?",
+        "answer": "The 'Unsampler (Flatten)' node in ComfyUI-FLATTEN unsamples the input latent and creates the needed injections required for sampling."
+    },
+    {
+        "question": "What does the 'KSampler (Flatten)' node in ComfyUI-FLATTEN do?",
+        "answer": "The 'KSampler (Flatten)' node in ComfyUI-FLATTEN samples the unsampled latents and uses the injections from the Unsampler."
+    },
+    {
+        "question": "Can ComfyUI-FLATTEN be used for video editing?",
+        "answer": "Yes, ComfyUI-FLATTEN excels at editing videos with temporal consistency. The recommended settings for this are to use an Unsampler and KSampler with 'old_qk = 0', the Unsampler should use the euler sampler and the KSampler should use the dpmpp_2m sampler."
+    },
+    {
+        "question": "Does ComfyUI-FLATTEN support SDXL models?",
+        "answer": "Experiments for supporting SDXL were made and resulted in generating somewhat consistent videos, but not up-to-par with the SD1.5 implementation. The 'sdxl' branch can be checked out, but there will be no further development in this direction."
+    }
+]

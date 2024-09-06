@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is Token Merging (ToMe) and how does it work?",
+        "answer": "Token Merging (ToMe) is a technique that progressively merges duplicate tokens or patches in the forward pass of transformer-based networks, reducing the inference latency of the underlying network. It was introduced in the paper 'Token Merging: Your ViT But Faster'."
+    },
+    {
+        "question": "What is the Difference between ToMe and Fast Stable Diffusion for Token Merging?",
+        "answer": "After the release of Token Merging (ToMe), the authors introduced a version of ToMe that is more compatible with Stable Diffusion in their paper 'Token Merging for Fast Stable Diffusion'. This allows for a smooth reduction in the inference latency of the `DiffusionPipeline` when using ToMe."
+    },
+    {
+        "question": "How can ToMe be applied to the `DiffusionPipeline` using the `tomesd` library?",
+        "answer": "To apply ToMe to the `DiffusionPipeline` using the `tomesd` library, you can use the `tomesd.apply_patch()` function. This function exposes several arguments, the most important of which is `ratio`, which controls the number of tokens to be merged during the forward pass."
+    },
+    {
+        "question": "What were the results of benchmarking `tomesd` on `StableDiffusionPipeline`?",
+        "answer": "When benchmarking `tomesd` on `StableDiffusionPipeline`, it was found that as the image resolution increased, the speedup from using `tomesd` became more significant. It was also interesting to note that using `tomesd` allowed for running the pipeline at higher resolutions like 1024x1024. The speedup can be further enhanced by using `torch.compile()`."
+    },
+    {
+        "question": "How does the `ratio` parameter in ToMe affect the quality of generated images?",
+        "answer": "As reported in the ToMe paper, ToMe can preserve the quality of the generated images to a great extent while speeding up inference. By increasing the `ratio`, it is possible to further speed up inference, but this might come at the cost of a deterioration in image quality."
+    },
+    {
+        "question": "What were the different settings used to test the quality of generated samples?",
+        "answer": "To test the quality of generated samples, a few prompts were sampled from the 'Parti Prompts' and inference was performed with the `StableDiffusionPipeline` in the following settings: Vanilla `StableDiffusionPipeline`, `StableDiffusionPipeline` + ToMe, and `StableDiffusionPipeline` + ToMe + xformers."
+    },
+    {
+        "question": "What were the findings regarding the quality of the generated samples using ToMe?",
+        "answer": "No significant degradation in the quality of the generated samples was found when using ToMe. The generated samples can be viewed here: https://wandb.ai/sayakpaul/tomesd-results/runs/23j4bj3i?workspace=."
+    }
+]

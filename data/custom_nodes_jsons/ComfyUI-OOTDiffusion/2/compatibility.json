@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What are the major differences in inference between Detectron and Detectron2?",
+        "answer": "The major differences in inference between Detectron and Detectron2 are: 1) The height and width of a box is computed as width = x2 - x1 and height = y2 - y1 in Detectron2, while in Detectron, a '+ 1' was added to both height and width. 2) RPN in Detectron2 uses simpler anchors with fewer quantization artifacts. 3) Classification layers have a different ordering of class labels in Detectron2. 4) ROIAlign is implemented differently in Detectron2. 5) The mask inference function is different in Detectron2."
+    },
+    {
+        "question": "How does the change in height/width calculations affect the models in Detectron2 compared to Detectron?",
+        "answer": "The change in height/width calculations in Detectron2 most notably changes the encoding/decoding in bounding box regression and non-maximum suppression. The effect on non-maximum suppression is very negligible."
+    },
+    {
+        "question": "What is the difference in the ordering of class labels between Detectron and Detectron2?",
+        "answer": "In Detectron2, integer labels [0, K-1] correspond to the K = num_categories object categories and the label 'K' corresponds to the special 'background' category. In Detectron, label '0' means background, and labels [1, K] correspond to the K categories."
+    },
+    {
+        "question": "How is ROIAlign implemented differently in Detectron2 compared to Detectron?",
+        "answer": "In Detectron2, all the ROIs are shifted by half a pixel compared to Detectron to create better image-feature-map alignment. Also, the ROIs are not required to have a minimum size of 1, which can lead to tiny differences in the output but should be negligible."
+    },
+    {
+        "question": "What bug was fixed in Detectron2 regarding RPN.POST_NMS_TOPK_TRAIN?",
+        "answer": "In Detectron2, a bug was fixed by making RPN.POST_NMS_TOPK_TRAIN per-image, rather than per-batch. The fix may lead to a small accuracy drop for a few models (e.g. keypoint detection) and will require some parameter tuning to match the Detectron results."
+    },
+    {
+        "question": "What is the default loss in bounding box regression in Detectron2?",
+        "answer": "For simplicity, the default loss in bounding box regression in Detectron2 is changed to L1 loss, instead of smooth L1 loss. This tends to slightly decrease box AP50 while improving box AP for higher overlap thresholds (and leading to a slight overall improvement in box AP)."
+    },
+    {
+        "question": "How are coordinates in COCO bounding box and segmentation annotations interpreted in Detectron2?",
+        "answer": "In Detectron2, the coordinates in COCO bounding box and segmentation annotations are interpreted as coordinates in range [0, width] or [0, height]. The coordinates in COCO keypoint annotations are interpreted as pixel indices in range [0, width - 1] or [0, height - 1]."
+    },
+    {
+        "question": "Can models trained with Detectron2 be converted to Caffe2?",
+        "answer": "Yes, despite the incompatibilities with Detectron, the relevant ops have been implemented in Caffe2. Therefore, models trained with Detectron2 can be converted in Caffe2."
+    }
+]

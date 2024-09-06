@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI-TCD-scheduler?",
+        "answer": "ComfyUI-TCD-scheduler is a custom node repository for ComfyUI that adds TCDScheduler, SamplerTCD Euler A, and SamplerTCD nodes to the Custom Sampler category, implementing Zheng et al.'s Trajectory Consistency Distillation."
+    },
+    {
+        "question": "How can I start using ComfyUI-TCD-scheduler in ComfyUI?",
+        "answer": "To start using ComfyUI-TCD-scheduler in ComfyUI, clone the repository into your custom_nodes folder and restart ComfyUI."
+    },
+    {
+        "question": "What is the current status of the SamplerTCD node in ComfyUI-TCD-scheduler?",
+        "answer": "Currently, SamplerTCD is a work in progress (WIP) and operates as DDIM with no gamma parameter. It is recommended to use SamplerTCD Euler A for the time being."
+    },
+    {
+        "question": "What is the special parameter of LCMScheduler in ComfyUI-TCD-scheduler?",
+        "answer": "The special parameter of LCMScheduler is gamma, which is used to control the stochasticity in every step. When gamma = 0, it represents deterministic sampling, whereas gamma = 1 indicates full stochastic sampling."
+    },
+    {
+        "question": "What is the default value of the gamma parameter in LCMScheduler?",
+        "answer": "The default value of the gamma parameter in LCMScheduler is 0.3. However, it is recommended to use a higher value when increasing the number of inference steps."
+    },
+    {
+        "question": "Who has helped with converting from sigmas to timestep and SamplerTCDEulerA in ComfyUI-TCD-scheduler?",
+        "answer": "Thanks are given to @laksjdjf for their help with converting from sigmas to timestep and SamplerTCDEulerA in ComfyUI-TCD-scheduler."
+    },
+    {
+        "question": "Where can I learn more about samplers and schedulers related to ComfyUI-TCD-scheduler?",
+        "answer": "For those curious about learning more about samplers and schedulers, an article is recommended: https://www.felixsanz.dev/articles/complete-guide-to-samplers-in-stable-diffusion"
+    }
+]

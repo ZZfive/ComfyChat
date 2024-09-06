@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Highway node in ComfyUI-0246?",
+        "answer": "The Highway node in ComfyUI-0246 allows for more complex routing of data between nodes, with the ability to have multiple input and output variables."
+    },
+    {
+        "question": "How does the query syntax work for the Highway node in ComfyUI-0246?",
+        "answer": "The query syntax for the Highway node uses symbols like > for input variables, < for output variables, and ! for output variables that delete themselves. Special characters and spaces can also be used by enclosing the variable name in backticks."
+    },
+    {
+        "question": "What should be avoided when using the Highway node in ComfyUI-0246?",
+        "answer": "Cyclic connections should be avoided when using the Highway node, as they can cause recursion errors due to how ComfyUI executes nodes."
+    },
+    {
+        "question": "What is the purpose of the Junction node in ComfyUI-0246?",
+        "answer": "The Junction node in ComfyUI-0246 is used to skip data ahead for specific types using offsets, allowing for more flexible data routing. The offset information is persistent across linked Junction nodes."
+    },
+    {
+        "question": "How does the offset syntax work for the Junction node in ComfyUI-0246?",
+        "answer": "The offset syntax for the Junction node specifies the type and the index or offset value, such as 'type,1' or 'type,+2'. Multiple offsets can be defined using semicolons."
+    },
+    {
+        "question": "What is the difference between the Junction and Junction Batch nodes in ComfyUI-0246?",
+        "answer": "The Junction Batch node is similar to the Junction node but processes data in batches as lists, allowing for further processing. It also has the ability to aggregate batch inputs."
+    },
+    {
+        "question": "What is the purpose of the Beautify node in ComfyUI-0246?",
+        "answer": "The Beautify node in ComfyUI-0246 recursively displays structural data information, which is especially useful when dealing with nodes like Highway, Junction, and JunctionBatch. It has different display modes like basic, more, full, and json."
+    }
+]

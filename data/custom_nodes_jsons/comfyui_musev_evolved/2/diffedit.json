@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is DiffEdit?",
+        "answer": "DiffEdit is a method that uses text-conditioned diffusion models for semantic image editing, where the goal is to edit an image based on a text query while keeping the generated image as similar as possible to the input image."
+    },
+    {
+        "question": "What is the main contribution of DiffEdit?",
+        "answer": "The main contribution of DiffEdit is its ability to automatically generate a mask highlighting regions of the input image that need to be edited by contrasting predictions of a diffusion model conditioned on different text prompts."
+    },
+    {
+        "question": "How does DiffEdit preserve content in regions of interest?",
+        "answer": "DiffEdit relies on latent inference to preserve content in regions of interest and shows excellent synergies with mask-based diffusion."
+    },
+    {
+        "question": "Where can the original codebase of DiffEdit be found?",
+        "answer": "The original codebase of DiffEdit can be found at Xiang-cd/DiffEdit-stable-diffusion on GitHub."
+    },
+    {
+        "question": "Who contributed the DiffEdit pipeline?",
+        "answer": "The DiffEdit pipeline was contributed by clarencechen."
+    },
+    {
+        "question": "What are the two prompt arguments exposed by the `generate_mask` function in the StableDiffusionDiffEditPipeline?",
+        "answer": "The `generate_mask` function in the StableDiffusionDiffEditPipeline exposes two prompt arguments: `source_prompt` and `target_prompt`, which let you control the locations of the semantic edits in the final image to be generated."
+    },
+    {
+        "question": "What should be assigned to the `prompt` argument when generating partially inverted latents using `invert` in the StableDiffusionDiffEditPipeline?",
+        "answer": "When generating partially inverted latents using `invert` in the StableDiffusionDiffEditPipeline, a caption or text embedding describing the overall image should be assigned to the `prompt` argument to help guide the inverse latent sampling process."
+    },
+    {
+        "question": "What should be assigned to `negative_prompt` and `prompt` when calling the StableDiffusionDiffEditPipeline to generate the final edited image?",
+        "answer": "When calling the StableDiffusionDiffEditPipeline to generate the final edited image, the source concept should be assigned to `negative_prompt` and the target concept to `prompt`."
+    }
+]

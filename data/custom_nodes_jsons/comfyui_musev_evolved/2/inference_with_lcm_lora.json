@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What does LCM stand for?",
+        "answer": "LCM stands for Latent Consistency Models."
+    },
+    {
+        "question": "How do LCMs enable faster image generation compared to standard diffusion models?",
+        "answer": "LCMs enable quality image generation in typically 2-4 steps, making it possible to use diffusion models in almost real-time settings, while standard diffusion models require more steps."
+    },
+    {
+        "question": "What is the purpose of LCM-LoRA?",
+        "answer": "The purpose of LCM-LoRA is to train just a few adapter layers, specifically using LoRA, so that the number of trainable parameters is manageable and the resulting LoRAs can be applied to any fine-tuned version of the model without distilling them separately."
+    },
+    {
+        "question": "Which models are LCM-LoRAs available for?",
+        "answer": "LCM-LoRAs are available for stable-diffusion-v1-5, stable-diffusion-xl-base-1.0, and the SSD-1B model."
+    },
+    {
+        "question": "What are the benefits of using LCM-LoRAs for image generation?",
+        "answer": "LCM-LoRAs allow for fast inference times and can be combined with other LoRAs to generate styled images in very few steps (4-8). They can also be applied to various tasks such as text-to-image, image-to-image, ControlNet/T2I-Adapter, inpainting, and AnimateDiff."
+    },
+    {
+        "question": "Why is the guidance_scale set to 1.0 when using LCM-LoRA?",
+        "answer": "Setting guidance_scale to 1.0 disables classifier-free-guidance because LCM-LoRA is trained with guidance, so the batch size does not have to be doubled. This leads to faster inference times, but with the drawback that negative prompts don't have any effect on the denoising process."
+    },
+    {
+        "question": "Can LCM-LoRAs be used with any fine-tuned version of a model without distilling them separately?",
+        "answer": "Yes, LCM-LoRAs can be applied to any fine-tuned version of a model without having to distill them separately."
+    },
+    {
+        "question": "How does using LCM-LoRA with AnimateDiff benefit the animation process?",
+        "answer": "Using LCM-LoRA with AnimateDiff significantly speeds up the animation process as only 4-8 steps are needed for each frame, compared to the 16-24 frames typically required with standard SD models, which can be very slow."
+    }
+]

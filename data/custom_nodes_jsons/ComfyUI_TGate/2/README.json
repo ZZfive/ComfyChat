@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI_TGate?",
+        "answer": "ComfyUI_TGate is a custom node in ComfyUI that integrates the T-GATE model, which can bring 10%-50% speed up for different diffusion models while only slightly reducing the quality of generated images and maintaining the original composition."
+    },
+    {
+        "question": "How does T-GATE achieve speedup in image generation?",
+        "answer": "T-GATE achieves speedup by caching the output of cross-attention, which reduces the computational overhead during the diffusion process."
+    },
+    {
+        "question": "Is ComfyUI_TGate compatible with animatediff?",
+        "answer": "Yes, ComfyUI_TGate is fully compatible with animatediff. It has been updated to correctly perform when both plugins hook into `comfy.samplers.sampling_function`."
+    },
+    {
+        "question": "What is the purpose of the 'use_cpu_cache' configuration parameter in TGate Apply node?",
+        "answer": "The 'use_cpu_cache' parameter in TGate Apply node is used to reduce GPU OOM (out of memory) problems when multiple batches, such as in animatediff, are being processed. Setting it to true will cause T-GATE performance to decrease but can help avoid memory issues."
+    },
+    {
+        "question": "How does the performance of T-GATE compare to AutomaticCFG?",
+        "answer": "T-GATE performs best when maintaining the original composition of the generated image. If maintaining composition is not a priority, AutomaticCFG fastest mode brings about the same performance improvement as T-GATE."
+    },
+    {
+        "question": "What is the difference between 'TGate Apply' and 'TGate Apply Advanced' nodes?",
+        "answer": "TGate Apply Advanced node provides an additional configuration parameter 'only_cross_attention' which is recommended to be set to True. This caches only the output of cross-attention, improving performance. The Advanced node also contains an optional 'self_attn_start_at' parameter for more granular control."
+    },
+    {
+        "question": "How can T-GATE be installed in ComfyUI?",
+        "answer": "To install T-GATE in ComfyUI, you need to clone the repository using the command: `git clone https://github.com/JettHu/ComfyUI_TGate`. No additional steps are required."
+    }
+]

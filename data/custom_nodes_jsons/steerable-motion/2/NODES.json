@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the IPAdapter Unified Loader node in ComfyUI?",
+        "answer": "The IPAdapter Unified Loader node in ComfyUI loads the full stack of models needed for IPAdapter to function, including the IPAdapter and CLIP vision models."
+    },
+    {
+        "question": "How should multiple unified loaders be connected in ComfyUI?",
+        "answer": "Multiple unified loaders should always be daisy chained through the 'ipadapter' in/out. The 'ipadapter' input should never be connected for the first unified loader in the chain."
+    },
+    {
+        "question": "What does the IPAdapter Model Loader node in ComfyUI do?",
+        "answer": "The IPAdapter Model Loader node in ComfyUI loads only the IPAdapter model, contrary to the Unified Loader which contains the full stack of models."
+    },
+    {
+        "question": "What is the IPAdapter Advanced node in ComfyUI?",
+        "answer": "The IPAdapter Advanced node in ComfyUI is a drop-in replacement for the old IPAdapter Apply node. It contains all the options to fine-tune the IPAdapter models."
+    },
+    {
+        "question": "What is the purpose of the 'attn_mask' input in the IPAdapter Advanced node?",
+        "answer": "The 'attn_mask' input in the IPAdapter Advanced node is used to define the area of influence of the IPAdapter models on the final image. Black zones won't be affected, while white zones will get maximum influence."
+    },
+    {
+        "question": "What does the 'weight_type' parameter in the IPAdapter Advanced node control?",
+        "answer": "The 'weight_type' parameter in the IPAdapter Advanced node controls how the IPAdapter is applied to the UNet block. It hugely impacts how the composition reacts to the text prompting."
+    },
+    {
+        "question": "What is the recommended 'weight' value for the 'linear' 'weight_type' in the IPAdapter Advanced node?",
+        "answer": "For the 'linear' 'weight_type' in the IPAdapter Advanced node, a good starting point for the 'weight' value is 0.8."
+    },
+    {
+        "question": "What does the 'combine_embeds' parameter in the IPAdapter Advanced node control?",
+        "answer": "The 'combine_embeds' parameter in the IPAdapter Advanced node controls how the embeddings are combined when sending more than one reference image. Options include 'concat', 'average', and 'subtract'."
+    }
+]

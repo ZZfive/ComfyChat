@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is Shap-E?",
+        "answer": "Shap-E is a conditional model for generating 3D assets that can be used for video game development, interior design, and architecture."
+    },
+    {
+        "question": "How is the Shap-E model trained?",
+        "answer": "The Shap-E model is trained in two steps: 1) an encoder accepts point clouds and rendered views of a 3D asset and outputs the parameters of implicit functions that represent the asset, and 2) a diffusion model is trained on the latents produced by the encoder to generate either neural radiance fields (NeRFs) or a textured 3D mesh."
+    },
+    {
+        "question": "What libraries need to be installed before using Shap-E?",
+        "answer": "The following libraries need to be installed before using Shap-E: diffusers, transformers, accelerate, and trimesh."
+    },
+    {
+        "question": "How can you generate a gif of a 3D object using Shap-E?",
+        "answer": "To generate a gif of a 3D object, you need to pass a text prompt to the ShapEPipeline. The pipeline generates a list of image frames which are used to create the 3D object. Then, use the export_to_gif function to turn the list of image frames into a gif of the 3D object."
+    },
+    {
+        "question": "What pipeline is used to generate a 3D object from an image?",
+        "answer": "The ShapEImg2ImgPipeline is used to generate a 3D object from an image."
+    },
+    {
+        "question": "What output types can Shap-E generate?",
+        "answer": "Shap-E can generate both image outputs and mesh outputs."
+    },
+    {
+        "question": "How can you change the default viewpoint of the mesh output in Shap-E?",
+        "answer": "You can change the default viewpoint of the mesh output by applying a rotation transform using the trimesh library."
+    }
+]

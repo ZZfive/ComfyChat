@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is T2I-Adapter?",
+        "answer": "T2I-Adapter is a lightweight adapter model that provides an additional conditioning input image to better control image generation. It is similar to a ControlNet but smaller in size."
+    },
+    {
+        "question": "Which model is T2I-Adapter available for training with?",
+        "answer": "The T2I-Adapter is only available for training with the Stable Diffusion XL (SDXL) model."
+    },
+    {
+        "question": "What are the steps to run the train_t2i_adapter_sdxl.py script?",
+        "answer": "Before running the script, you need to install the library from source, navigate to the example folder containing the training script, install the required dependencies, and initialize an 🤗 Accelerate environment."
+    },
+    {
+        "question": "What are some of the T2I-Adapter relevant parameters in the training script?",
+        "answer": "Some of the T2I-Adapter relevant parameters include --pretrained_vae_model_name_or_path, --crops_coords_top_left_h and --crops_coords_top_left_w, --conditioning_image_column, and --proportion_empty_prompts."
+    },
+    {
+        "question": "What preparations are made to the dataset in the training script?",
+        "answer": "The training script prepares the dataset by tokenizing the prompt and applying transforms to the images and conditioning images."
+    },
+    {
+        "question": "How is the optimizer initialized in the training script?",
+        "answer": "In the training script, the optimizer is initialized for the T2I-Adapter parameters."
+    },
+    {
+        "question": "What is passed to the UNet in the training loop to predict the noise residual?",
+        "answer": "In the training loop, the adapter conditioning image and the text embeddings are passed to the UNet to predict the noise residual."
+    },
+    {
+        "question": "How can you monitor training progress with Weights & Biases?",
+        "answer": "To monitor training progress with Weights & Biases, add the --report_to=wandb parameter to the training command, along with --validation_image, --validation_prompt, and --validation_steps parameters."
+    },
+    {
+        "question": "What should you do after training is complete?",
+        "answer": "Once training is complete, you can use your T2I-Adapter for inference using the provided code snippet."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Slothful Attention node in ComfyUI?",
+        "answer": "The Slothful Attention node in ComfyUI allows controlling output images by reducing K and V samples on self-attentions."
+    },
+    {
+        "question": "How does the Near-sighted Tile node work in ComfyUI?",
+        "answer": "The Near-sighted Tile node in ComfyUI splits samples as Q for self-attention and serves K, V that are concatenated local and global samples by a given ratio. This may improve details of images."
+    },
+    {
+        "question": "What is the Near-sighted Attention node in ComfyUI?",
+        "answer": "The Near-sighted Attention node in ComfyUI combines the functionalities of Near-sighted Tile and Slothful Attention nodes."
+    },
+    {
+        "question": "Where should the comfyui_slothful_attention node be inserted in a ComfyUI workflow?",
+        "answer": "The comfyui_slothful_attention node should be inserted into the MODEL connection before the sampler in a ComfyUI workflow."
+    },
+    {
+        "question": "What models has the comfyui_slothful_attention node been tested with?",
+        "answer": "The comfyui_slothful_attention node has been tested with SD1.5, SDXL and SSD-1B based models, and seems to work okay with LCM-lora, Lora, Controlnet or IPAdapter."
+    },
+    {
+        "question": "How does changing the tile_size parameter in the Near-sighted Tile node affect the image?",
+        "answer": "In the Near-sighted Tile node, smaller tile_size may improve image details but may break the consistency of the image. Larger global_ratio may prevent breaking consistency but decrease details."
+    },
+    {
+        "question": "What should be considered when using low tile_size and high slothful values together in the Near-sighted Attention node?",
+        "answer": "When using low tile_size and high slothful values together in the Near-sighted Attention node, it may cause a lack of K and V, which will decrease image quality."
+    }
+]

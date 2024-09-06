@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of Detectron2's config system?",
+        "answer": "Detectron2's config system is used to obtain standard, common behaviors through a key-value based configuration."
+    },
+    {
+        "question": "What is the format used for Detectron2's config system?",
+        "answer": "Detectron2's config system uses YAML and yacs."
+    },
+    {
+        "question": "How does the `_BASE_` field in a config work?",
+        "answer": "The `_BASE_` field in a config is used to load a base config first. Values in the base config will be overwritten in sub-configs if there are any conflicts."
+    },
+    {
+        "question": "Why is config versioning provided in Detectron2?",
+        "answer": "Config versioning is provided in Detectron2 for backward compatibility."
+    },
+    {
+        "question": "What should you do if you need a feature that's not available in the config space?",
+        "answer": "If you need a feature that's not available in the config space, you should write code using Detectron2's API."
+    },
+    {
+        "question": "How can you load values from a file into a CfgNode object?",
+        "answer": "You can load values from a file into a CfgNode object using the `merge_from_file` method."
+    },
+    {
+        "question": "What is the recommended way to share common parts between configs?",
+        "answer": "Treating configs as 'code' and using the `_BASE_` field to share common parts between configs is recommended."
+    },
+    {
+        "question": "Why should you keep the configs you write simple?",
+        "answer": "Keeping configs simple means not including keys that do not affect the experimental setting."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ModelScope Text-to-Video and who developed it?",
+        "answer": "ModelScope Text-to-Video is a text-to-video synthesis model that was developed by Jiuniu Wang, Hangjie Yuan, Dayou Chen, Yingya Zhang, Xiang Wang, and Shiwei Zhang. It evolves from a text-to-image synthesis model (Stable Diffusion) and incorporates spatio-temporal blocks to ensure consistent frame generation and smooth movement transitions."
+    },
+    {
+        "question": "How many parameters does the ModelScopeT2V model have in total?",
+        "answer": "The ModelScopeT2V model has a total of 1.7 billion parameters, with 0.5 billion parameters dedicated to temporal capabilities."
+    },
+    {
+        "question": "What are the three components that make up the ModelScopeT2V model?",
+        "answer": "The ModelScopeT2V model brings together three components: VQGAN, a text encoder, and a denoising UNet."
+    },
+    {
+        "question": "How can the memory footprint be kept at bay when generating videos using Diffusers?",
+        "answer": "Diffusers supports different optimization techniques to improve the latency and memory footprint of a pipeline. Since videos are often more memory-heavy than images, CPU offloading and VAE slicing can be enabled to keep the memory footprint at bay."
+    },
+    {
+        "question": "How much GPU memory is required to generate 64 video frames using PyTorch 2.0, 'fp16' precision and the mentioned optimization techniques?",
+        "answer": "It takes just 7 GBs of GPU memory to generate the 64 video frames using PyTorch 2.0, 'fp16' precision and the optimization techniques of CPU offloading and VAE slicing."
+    },
+    {
+        "question": "What should be done to efficiently load the same components into multiple pipelines in Diffusers?",
+        "answer": "To efficiently load the same components into multiple pipelines in Diffusers, one should check out the Schedulers guide to learn how to explore the tradeoff between scheduler speed and quality, and see the 'reuse components across pipelines' section."
+    },
+    {
+        "question": "How can the scheduler be changed when generating videos using the DiffusionPipeline?",
+        "answer": "The scheduler can be changed easily using the same method as for Stable Diffusion. For example: 'pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)'."
+    }
+]
