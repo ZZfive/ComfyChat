@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is cg-noise in ComfyUI?",
+        "answer": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced. It allows for small variations in the initial noise used for image generation."
+    },
+    {
+        "question": "How does cg-noise generate variations in images?",
+        "answer": "cg-noise generates variations by using a weight `x` and two seeds. The noise is generated based on the formula: `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+    },
+    {
+        "question": "What are the two main parameters used by cg-noise?",
+        "answer": "The two main parameters used by cg-noise are `variation_seed` and `variation_weight`."
+    },
+    {
+        "question": "What does the `variation_seed` parameter in cg-noise control?",
+        "answer": "The `variation_seed` parameter in cg-noise is used to generate the initial noise variation. It determines the random seed used for generating the variation."
+    },
+    {
+        "question": "How does the `variation_weight` parameter affect the generated image in cg-noise?",
+        "answer": "The `variation_weight` parameter in cg-noise controls the influence of the variation noise on the final image. It determines the balance between the variation noise and the original noise."
+    },
+    {
+        "question": "Can cg-noise be used to generate completely random images?",
+        "answer": "No, cg-noise is designed for generating small variations in the initial noise, not for creating completely random images. The `variation_seed` is used specifically for generating noise variations."
+    },
+    {
+        "question": "Is cg-noise compatible with existing ComfyUI setups?",
+        "answer": "Yes, cg-noise can directly replace KSampler or KSampler Advanced nodes in existing ComfyUI setups without any additional modifications required."
+    }
+]

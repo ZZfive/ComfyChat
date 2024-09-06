@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FreeU node in ComfyUI?",
+        "answer": "The FreeU node in ComfyUI is designed to modify the behavior of a given model by applying patches to its output blocks. It adjusts the scale and offset parameters of the model's intermediate representations to enhance the model's performance on specific tasks."
+    },
+    {
+        "question": "What is the role of the 'model' parameter in the FreeU node?",
+        "answer": "The 'model' parameter is crucial in the FreeU node as it defines the base model to which the node will apply its patches. It is the main input for the node's operation to achieve the desired modifications."
+    },
+    {
+        "question": "How do the 'b1' and 'b2' parameters affect the model in the FreeU node?",
+        "answer": "The 'b1' and 'b2' parameters are scaling factors that influence the first half and the second quarter of the model channels respectively. They play a key role in the node's ability to adjust the model's output."
+    },
+    {
+        "question": "What is the function of the 's1' and 's2' parameters in the FreeU node?",
+        "answer": "The 's1' and 's2' parameters define the offsets applied to the first half and the second quarter of the model channels respectively, after scaling. They are core components of the node's functionality to modify the model's output."
+    },
+    {
+        "question": "What does the 'modified_model' output represent in the FreeU node?",
+        "answer": "The 'modified_model' output is the result of applying the FreeU node's patches to the input model. It represents the enhanced model with adjusted parameters."
+    },
+    {
+        "question": "What infrastructure type is recommended for the FreeU node?",
+        "answer": "The recommended infrastructure type for the FreeU node is GPU."
+    },
+    {
+        "question": "In the source code of the FreeU node, what happens if the device does not support torch.fft functions?",
+        "answer": "If the device does not support torch.fft functions, the node switches to CPU and performs the Fourier_filter operation on CPU, then moves the result back to the original device."
+    }
+]

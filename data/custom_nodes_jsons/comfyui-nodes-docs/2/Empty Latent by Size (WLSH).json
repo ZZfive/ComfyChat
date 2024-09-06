@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WLSH_Empty_Latent_Image_By_Resolution node in ComfyUI?",
+        "answer": "The WLSH_Empty_Latent_Image_By_Resolution node in ComfyUI is designed to create an empty latent image space for a given resolution. It abstracts the complexity of generating latent spaces by providing a simple interface that accepts width, height, and batch size as inputs and outputs a latent tensor along with adjusted dimensions."
+    },
+    {
+        "question": "What are the required input parameters for the WLSH_Empty_Latent_Image_By_Resolution node?",
+        "answer": "The required input parameters for the WLSH_Empty_Latent_Image_By_Resolution node are 'width' and 'height', which specify the width and height of the latent image in pixels. These parameters are crucial in determining the resolution and fidelity of the generated latent image."
+    },
+    {
+        "question": "What is the optional input parameter for the WLSH_Empty_Latent_Image_By_Resolution node?",
+        "answer": "The optional input parameter for the WLSH_Empty_Latent_Image_By_Resolution node is 'batch_size', which determines the number of latent images generated in a single operation. It can be used to efficiently process multiple images at once, improving the node's throughput."
+    },
+    {
+        "question": "What are the output types of the WLSH_Empty_Latent_Image_By_Resolution node?",
+        "answer": "The output types of the WLSH_Empty_Latent_Image_By_Resolution node are 'latent', 'width', and 'height'. 'Latent' is a tensor representing the generated latent image space, while 'width' and 'height' reflect the adjusted width and height of the latent image after the generation process."
+    },
+    {
+        "question": "What is the infra type for the WLSH_Empty_Latent_Image_By_Resolution node?",
+        "answer": "The infra type for the WLSH_Empty_Latent_Image_By_Resolution node is CPU."
+    },
+    {
+        "question": "How does the WLSH_Empty_Latent_Image_By_Resolution node calculate the adjusted width and height?",
+        "answer": "The WLSH_Empty_Latent_Image_By_Resolution node calculates the adjusted width and height by dividing the input width and height by 8, respectively. This adjustment is necessary for generating the latent tensor with the correct dimensions."
+    },
+    {
+        "question": "What is the default value for the 'batch_size' parameter in the WLSH_Empty_Latent_Image_By_Resolution node?",
+        "answer": "The default value for the 'batch_size' parameter in the WLSH_Empty_Latent_Image_By_Resolution node is 1."
+    }
+]

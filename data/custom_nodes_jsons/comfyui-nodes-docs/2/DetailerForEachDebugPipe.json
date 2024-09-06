@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DetailerForEachTestPipe类的主要目的是什么？",
+        "answer": "DetailerForEachTestPipe类的主要目的是对单个图像输入执行详细的图像处理任务，通过利用各种模型和参数增强图像，并输出包括原始图像、裁剪和增强版本的多种类型的处理过的图像。"
+    },
+    {
+        "question": "DetailerForEachTestPipe类要求的输入参数有哪些？",
+        "answer": "DetailerForEachTestPipe类的输入参数包括：image（图像）、segs（图像分割信息）、guide_size（引导大小）、max_size（最大尺寸）、seed（随机数生成器初始化）、steps（迭代次数）、cfg（配置设置）、sampler_name（采样策略）、scheduler（执行增强步骤的速度或节奏）、denoise（是否应用去噪操作）、feather（处理图像中边缘的柔和度）、noise_mask（是否应用噪声掩码）、force_inpaint（是否强制对图像应用修复操作）和basic_pipe（用于图像的基本处理流水线）。"
+    },
+    {
+        "question": "DetailerForEachTestPipe类支持哪些可选输入参数？",
+        "answer": "DetailerForEachTestPipe类支持wildcard（通配符选项）作为可选输入参数。"
+    },
+    {
+        "question": "DetailerForEachTestPipe类输出的数据类型有哪些？",
+        "answer": "DetailerForEachTestPipe类输出的数据类型包括：enhanced_img（增强后的图像）、new_segs（更新的图像分割信息）、basic_pipe（使用的基本处理流水线）、cropped（裁剪的图像列表）、cropped_enhanced（增强的裁剪图像列表）、cropped_enhanced_alpha（具有alpha通道的图像）和cnet_images（由控制网处理的图像列表）。"
+    },
+    {
+        "question": "DetailerForEachTestPipe类的'doit'方法执行过程中，如何处理输入图像？",
+        "answer": "DetailerForEachTestPipe类的'doit'方法调用DetailerForEach.do_detail函数执行详细的图像处理任务，该函数可以对输入图像进行增强、裁剪、细化等多种处理。"
+    },
+    {
+        "question": "DetailerForEachTestPipe类如何处理没有cropped、cropped_enhanced、cropped_enhanced_alpha和cnet_pil_list的情况？",
+        "answer": "DetailerForEachTestPipe类的'doit'方法中，如果没有cropped、cropped_enhanced、cropped_enhanced_alpha和cnet_pil_list的情况，会分别使用empty_pil_tensor()函数创建一个空的PIL图像张量。"
+    },
+    {
+        "question": "DetailerForEachTestPipe类的源代码中定义了哪些常量？",
+        "answer": "DetailerForEachTestPipe类的源代码定义的常量包括：RETURN_TYPES（返回类型）、RETURN_NAMES（返回名称）、OUTPUT_IS_LIST（返回是否为列表）、FUNCTION（调用函数名）和CATEGORY（分类）。"
+    }
+]

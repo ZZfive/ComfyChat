@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ClampOutliers node in ComfyUI?",
+        "answer": "The ClampOutliers node in ComfyUI is designed to adjust the values of latent representations by limiting outliers based on a specified standard deviation threshold. This process aims to normalize the data and reduce the impact of extreme values on the overall distribution."
+    },
+    {
+        "question": "What are the required input types for the ClampOutliers node?",
+        "answer": "The ClampOutliers node requires two input types: 'latents', which represents the latent representation to be adjusted, and 'std_dev', which specifies the threshold for limiting outliers based on the standard deviation from the mean."
+    },
+    {
+        "question": "What does the 'latents' parameter represent in the ClampOutliers node?",
+        "answer": "In the ClampOutliers node, the 'latents' parameter represents the latent representation that needs to be adjusted. It is crucial for determining which data points are considered outliers and subsequently clamped."
+    },
+    {
+        "question": "How does the 'std_dev' parameter affect the ClampOutliers node?",
+        "answer": "The 'std_dev' parameter in the ClampOutliers node specifies the threshold for limiting outliers based on the standard deviation from the mean. It controls the extent to which outliers are adjusted, influencing the normalization of the data."
+    },
+    {
+        "question": "What is the output type of the ClampOutliers node?",
+        "answer": "The output type of the ClampOutliers node is 'latent', which represents the adjusted latent representation after clamping outliers based on the specified standard deviation threshold."
+    },
+    {
+        "question": "What is the infra type recommended for the ClampOutliers node?",
+        "answer": "The recommended infra type for the ClampOutliers node is 'GPU'."
+    },
+    {
+        "question": "How does the ClampOutliers node limit outliers in the latent representation?",
+        "answer": "The ClampOutliers node limits outliers in the latent representation by clamping the values of each channel in the latent samples based on the specified standard deviation threshold. It calculates the standard deviation and mean of each channel and clamps the values within the range of -sd * std_dev + mean and sd * std_dev + mean."
+    }
+]

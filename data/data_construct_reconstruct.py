@@ -386,7 +386,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             if node_url in self.local_custom_node_infos and self.local_custom_node_infos[node_url]["repo_md"]:
                 if os.path.exists(local_node_md_path):
                     shutil.rmtree(local_node_md_path)
-            else:d
+            else:
                 self.refresh_one_repo(node_url)
 
             extract_md_files_from_local_repo(local_node_repo_path, local_node_md_path)

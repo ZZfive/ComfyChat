@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FloatToMask node in ComfyUI?",
+        "answer": "The FloatToMask node is used to generate masks based on input float values. Each input value determines the intensity or transparency of the corresponding mask."
+    },
+    {
+        "question": "What are the required input types for the FloatToMask node?",
+        "answer": "The required input types for the FloatToMask node are: input_values (Comfy dtype: FLOAT, Python dtype: List[float] or float), width (Comfy dtype: INT, Python dtype: int), and height (Comfy dtype: INT, Python dtype: int)."
+    },
+    {
+        "question": "What does the 'width' parameter specify in the FloatToMask node?",
+        "answer": "The 'width' parameter specifies the width of the generated masks. This dimension determines the width of each mask in the batch, directly affecting the size and shape of the masks."
+    },
+    {
+        "question": "What does the 'height' parameter specify in the FloatToMask node?",
+        "answer": "The 'height' parameter specifies the height of the generated masks. This dimension determines the height of each mask in the batch, affecting the overall size and shape of the masks."
+    },
+    {
+        "question": "What is the output type of the FloatToMask node?",
+        "answer": "The output type of the FloatToMask node is 'mask' (Comfy dtype: MASK, Python dtype: torch.Tensor). It consists of a batch of masks generated based on the input float values, with each mask having the specified width and height dimensions."
+    },
+    {
+        "question": "What is the infra type for the FloatToMask node?",
+        "answer": "The infra type for the FloatToMask node is 'CPU'."
+    },
+    {
+        "question": "How does the FloatToMask node generate a batch of masks based on the input float values?",
+        "answer": "The FloatToMask node generates a batch of masks by iterating over the input float values. For each value, it creates a mask with the specified width and height, using the float value to determine the mask's intensity. The masks are then stacked together to form the final output batch."
+    }
+]

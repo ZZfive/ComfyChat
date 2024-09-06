@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the GetImageRangeFromBatch node in ComfyUI?",
+        "answer": "The GetImageRangeFromBatch node is designed to extract a specific range of images from a given batch based on a start index and the desired number of frames. It allows for selective processing or viewing of subsets within large image collections."
+    },
+    {
+        "question": "What are the required input types for the GetImageRangeFromBatch node?",
+        "answer": "The required input types for the GetImageRangeFromBatch node are: images (the collection of images to select from), start_index (the index to start selecting images), and num_frames (the number of images to include in the selected range)."
+    },
+    {
+        "question": "What is the output type of the GetImageRangeFromBatch node?",
+        "answer": "The output type of the GetImageRangeFromBatch node is image, which represents the selected range of images from the input batch, returned as a new image batch."
+    },
+    {
+        "question": "What happens if the start_index is set to -1 in the GetImageRangeFromBatch node?",
+        "answer": "If the start_index is set to -1, it will be automatically adjusted to len(images) - num_frames, effectively selecting the last num_frames images from the batch."
+    },
+    {
+        "question": "What happens if the start_index is out of range in the GetImageRangeFromBatch node?",
+        "answer": "If the start_index is less than 0 or greater than or equal to the length of the images, a ValueError will be raised, indicating that the start index is out of range."
+    },
+    {
+        "question": "What happens if the end_index is greater than the length of the images in the GetImageRangeFromBatch node?",
+        "answer": "If the end_index, calculated as start_index + num_frames, is greater than the length of the images, a ValueError will be raised, indicating that the end index is out of range."
+    },
+    {
+        "question": "How are the chosen_images returned by the GetImageRangeFromBatch node?",
+        "answer": "The chosen_images are returned as a tuple containing a list of torch.Tensors, representing the selected range of images from the input batch."
+    }
+]

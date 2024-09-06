@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ColorBlend node in ComfyUI?",
+        "answer": "The ColorBlend node in ComfyUI is used to blend two images, specifically a black and white layer and a color layer, to generate a single image that combines the brightness of the black and white layer and the color information of the color layer."
+    },
+    {
+        "question": "What are the required input types for the ColorBlend node?",
+        "answer": "The required input types for the ColorBlend node are the black and white layer image (bw_layer) and the color layer image (color_layer), both of which are of Comfy dtype IMAGE and Python dtype numpy.ndarray."
+    },
+    {
+        "question": "What is the output type of the ColorBlend node?",
+        "answer": "The output type of the ColorBlend node is an image that is the result of blending the black and white layer and the color layer, combining the brightness of the former and the color information of the latter. The output image is of Comfy dtype IMAGE and Python dtype numpy.ndarray."
+    },
+    {
+        "question": "What infra type does the ColorBlend node use?",
+        "answer": "The ColorBlend node uses the 'CPU' infra type."
+    },
+    {
+        "question": "Which common node is mentioned in the usage tips for the ColorBlend node?",
+        "answer": "The 'PreviewImage' node is mentioned in the usage tips for the ColorBlend node."
+    },
+    {
+        "question": "How does the ColorBlend node handle images with different shapes?",
+        "answer": "If the shapes of the black and white layer image and the color layer image are different, the ColorBlend node upscales the color layer image to match the shape of the black and white layer image using bicubic interpolation and center cropping."
+    },
+    {
+        "question": "What is the return type of the 'color_blending_mode' function in the ColorBlend node?",
+        "answer": "The return type of the 'color_blending_mode' function in the ColorBlend node is a tuple containing the blended image tensor (tensor_output)."
+    }
+]

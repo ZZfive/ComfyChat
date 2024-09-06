@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CutByMask node in ComfyUI?",
+        "answer": "The CutByMask node in ComfyUI is designed to crop an image based on the bounding box of a provided mask. It can also resize the cropped image to specified dimensions if provided."
+    },
+    {
+        "question": "Can the CutByMask node handle multiple masks?",
+        "answer": "Yes, the CutByMask node can handle multiple masks. When provided with the mask_mapping_optional parameter, it can process different parts of an image based on each mask, enhancing its batch processing capability."
+    },
+    {
+        "question": "What are the required input parameters for the CutByMask node?",
+        "answer": "The required input parameters for the CutByMask node are 'image' which is the input image to be cropped, and 'mask' which defines the region of the image to be preserved after cropping."
+    },
+    {
+        "question": "What are the optional input parameters for the CutByMask node?",
+        "answer": "The optional input parameters for the CutByMask node are 'force_resize_width' and 'force_resize_height' which allow specifying the width and height of the resulting image respectively, and 'mask_mapping_optional' which is used when providing multiple masks."
+    },
+    {
+        "question": "What does the CutByMask node output?",
+        "answer": "The CutByMask node outputs the 'result' parameter, which represents the final output of the node, i.e., the image or images that have been cropped and resized according to the input parameters and mask."
+    },
+    {
+        "question": "What is the 'infra type' for the CutByMask node?",
+        "answer": "The 'infra type' for the CutByMask node is CPU."
+    },
+    {
+        "question": "How does the CutByMask node handle empty masks?",
+        "answer": "If a mask is empty, the CutByMask node sets the value of the first pixel in the mask to 1.0, processes the image, and then sets it back to 0.0. This ensures that the node can handle cases where a mask does not contain any positive values."
+    }
+]

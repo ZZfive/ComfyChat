@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FL_AudioConverter node in ComfyUI?",
+        "answer": "The FL_AudioConverter node in ComfyUI is designed to convert audio data into a format that mimics the audio quality characteristics of VHS."
+    },
+    {
+        "question": "What are the required inputs for the FL_AudioConverter node?",
+        "answer": "The FL_AudioConverter node requires two inputs: 'audio', which represents the raw audio data to be processed, and 'sample_rate', which specifies the sample rate of the audio data."
+    },
+    {
+        "question": "What is the output of the FL_AudioConverter node?",
+        "answer": "The output of the FL_AudioConverter node is a lambda function that, when called, returns the audio data bytes mimicking VHS audio quality."
+    },
+    {
+        "question": "How does the FL_AudioConverter node convert audio data?",
+        "answer": "The FL_AudioConverter node converts audio data by adjusting the sample rate of the input audio and converting it into a byte stream that represents VHS-like audio quality."
+    },
+    {
+        "question": "What is the default value for the 'sample_rate' input in the FL_AudioConverter node?",
+        "answer": "The default value for the 'sample_rate' input in the FL_AudioConverter node is 44100."
+    },
+    {
+        "question": "What is the infra type of the FL_AudioConverter node?",
+        "answer": "The infra type of the FL_AudioConverter node is CPU."
+    },
+    {
+        "question": "How does the FL_AudioConverter node handle the audio data internally?",
+        "answer": "The FL_AudioConverter node extracts the audio data and sample rate from the input tuple, converts the audio data to int16, writes the audio data to a buffer using the wave module, and returns a lambda function that returns the audio bytes."
+    }
+]

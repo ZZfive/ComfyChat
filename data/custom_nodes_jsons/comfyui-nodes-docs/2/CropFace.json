@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CropFace node in ComfyUI?",
+        "answer": "The CropFace node in ComfyUI is designed to extract and process facial regions from input images. It uses a detection model to identify faces and then crops and aligns them according to predefined templates."
+    },
+    {
+        "question": "What is the significance of the 'image' input parameter in the CropFace node?",
+        "answer": "The 'image' input parameter is crucial for the CropFace node to perform face detection and cropping. It serves as the source from which facial regions are extracted and processed. Without a valid image, the node cannot execute its intended function."
+    },
+    {
+        "question": "What does the 'facedetection' parameter in the CropFace node specify?",
+        "answer": "The 'facedetection' parameter in the CropFace node specifies the detection model used to identify faces in the input image. It influences the accuracy and efficiency of the face detection process, which in turn affects the quality of the cropped facial images."
+    },
+    {
+        "question": "What is the output of the CropFace node?",
+        "answer": "The output of the CropFace node includes cropped and aligned facial images that are ready for further processing. These outputs are the result of the node's face detection and image processing capabilities."
+    },
+    {
+        "question": "What is the infra type recommended for the CropFace node?",
+        "answer": "The recommended infra type for the CropFace node is CPU."
+    },
+    {
+        "question": "How does the CropFace node handle the situation when no faces are found in the input image?",
+        "answer": "When no faces are found in the input image, the CropFace node increments the 'next_idx' variable by 1 and continues processing the next image if available."
+    },
+    {
+        "question": "What does the CropFace node do when the number of faces found exceeds the current size of the 'out_images' array?",
+        "answer": "When the number of faces found exceeds the current size of the 'out_images' array, the CropFace node resizes the 'out_images' array to accommodate the additional faces."
+    }
+]

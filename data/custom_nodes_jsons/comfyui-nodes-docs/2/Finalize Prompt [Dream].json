@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Finalize Prompt node in ComfyUI?",
+        "answer": "The Finalize Prompt node in ComfyUI is used to complete the process of building a prompt. It applies adjustments and constraints to ensure that the various components of the prompt are within specified ranges, refining and finalizing the prompt text for direct use in content generation."
+    },
+    {
+        "question": "What are the required input types for the Finalize Prompt node?",
+        "answer": "The required input types for the Finalize Prompt node are: partial_prompt, adjustment, clamp, and adjustment_reference."
+    },
+    {
+        "question": "What does the 'adjustment' input specify in the Finalize Prompt node?",
+        "answer": "The 'adjustment' input in the Finalize Prompt node specifies the method of adjustment to be applied to the components of the prompt, such as scaling by absolute maximum value or sum, or leaving them in their raw state. This affects the final distribution of weights in the prompt."
+    },
+    {
+        "question": "What is the function of the 'clamp' input in the Finalize Prompt node?",
+        "answer": "The 'clamp' input in the Finalize Prompt node sets the maximum allowed value for the weight of any component in the prompt, ensuring that no single part overly dominates."
+    },
+    {
+        "question": "What does the 'adjustment_reference' input do in the Finalize Prompt node?",
+        "answer": "The 'adjustment_reference' input in the Finalize Prompt node provides a reference value used to balance the weights of the prompt components during scaling adjustments."
+    },
+    {
+        "question": "What output types does the Finalize Prompt node produce?",
+        "answer": "The Finalize Prompt node produces two output types: 'positive', which is the final prompt with positive weights for generating content that matches desired attributes, and 'negative', which is the final prompt with negative weights indicating content to avoid or minimize during generation."
+    },
+    {
+        "question": "What infrastructure type does the Finalize Prompt node use?",
+        "answer": "The Finalize Prompt node uses the 'CPU' infrastructure type."
+    }
+]

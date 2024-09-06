@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Conditioning Switch node in ComfyUI?",
+        "answer": "The Conditioning Switch node is designed to select and output one of multiple condition inputs based on a specified selection index, allowing flexible control over which condition data is passed through in a processing flow."
+    },
+    {
+        "question": "What is the 'select' parameter in the Conditioning Switch node?",
+        "answer": "The 'select' parameter is an integer value that determines which of the condition inputs will be output by the node. It is crucial for controlling the flow of different conditional contexts within the node."
+    },
+    {
+        "question": "What are the optional input parameters in the Conditioning Switch node?",
+        "answer": "The optional input parameters are 'con_1' to 'con_5', representing a series of selectable condition inputs. These inputs allow for dynamic selection of condition data based on the 'select' parameter value."
+    },
+    {
+        "question": "What is the output type of the Conditioning Switch node?",
+        "answer": "The output type of the Conditioning Switch node is CONDITIONING, specifically the 'con_out' parameter, which represents the selected output condition data based on the 'select' parameter."
+    },
+    {
+        "question": "What is the infra type for the Conditioning Switch node?",
+        "answer": "The infra type for the Conditioning Switch node is CPU."
+    },
+    {
+        "question": "How does the Conditioning Switch node determine which condition input to output?",
+        "answer": "The Conditioning Switch node uses a series of if-elif statements to compare the 'select' parameter value against integer values 2 through 5, setting 'con_out' to the corresponding condition input if a match is found. If no match is found, 'con_out' defaults to 'con_1'."
+    },
+    {
+        "question": "What is the category of the Conditioning Switch node in ComfyUI?",
+        "answer": "The Conditioning Switch node belongs to the 'JPS Nodes/Switches' category in ComfyUI."
+    }
+]

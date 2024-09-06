@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the GetFirstImage node in ComfyUI?",
+        "answer": "The GetFirstImage node in ComfyUI is designed to extract a specific subset of images from a batch, focusing on the selection process and ensuring the required images are isolated for further processing."
+    },
+    {
+        "question": "What is the input type required by the GetFirstImage node?",
+        "answer": "The GetFirstImage node requires an 'images' input parameter, which is a tensor containing a batch of images. The node will select specific images from this tensor based on defined criteria."
+    },
+    {
+        "question": "What is the output type of the GetFirstImage node?",
+        "answer": "The output of the GetFirstImage node is a refined subset of the input images, selected based on the specified criteria. This subset is intended for further analysis or processing."
+    },
+    {
+        "question": "What is the infra type specified in the usage tips for the GetFirstImage node?",
+        "answer": "The usage tips for the GetFirstImage node specify the infra type as CPU."
+    },
+    {
+        "question": "In the source code of the GetFirstImage node, what does the 'run' function do?",
+        "answer": "In the source code of the GetFirstImage node, the 'run' function takes a tensor of images as input and returns a subset of the images based on the specified criteria using the selected_indexes."
+    },
+    {
+        "question": "How does the GetFirstImage node handle the selected_indexes in the source code?",
+        "answer": "In the source code of the GetFirstImage node, the selected_indexes are split and processed to include specific indexes or ranges. The resulting selected_index list is then used to slice the input tensor and return the selected images."
+    },
+    {
+        "question": "Is the GetFirstImage node an output node in ComfyUI?",
+        "answer": "No, the GetFirstImage node is not an output node in ComfyUI, as indicated by the 'OUTPUT_NODE = False' line in the source code."
+    }
+]

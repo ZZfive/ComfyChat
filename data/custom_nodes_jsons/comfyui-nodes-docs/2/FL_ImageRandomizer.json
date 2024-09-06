@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FL_ImageRandomizer node in ComfyUI?",
+        "answer": "The FL_ImageRandomizer node in ComfyUI is designed to select and process images from a specified directory, offering options for random selection or sequential access. It enhances the image processing capabilities within the workflow by providing a flexible way to handle image datasets, including randomization features to produce diverse outputs."
+    },
+    {
+        "question": "What are the required inputs for the FL_ImageRandomizer node?",
+        "answer": "The FL_ImageRandomizer node requires three inputs: 'directory_path' which specifies the filesystem path of the directory containing the images, 'randomize' which is a boolean switch deciding whether to randomly select images or select them in sequence, and 'run_trigger' which is a dummy input to trigger node execution, helping to bypass caching issues."
+    },
+    {
+        "question": "What output does the FL_ImageRandomizer node produce?",
+        "answer": "The FL_ImageRandomizer node produces two outputs: 'image' which is the processed image returned in tensor format suitable for further image processing or visualization tasks, and 'path' which is the filesystem path of the selected image, providing context information or use for subsequent operations."
+    },
+    {
+        "question": "How does the 'randomize' input affect the behavior of the FL_ImageRandomizer node?",
+        "answer": "The 'randomize' input affects the behavior of the FL_ImageRandomizer node by determining whether images are selected randomly or in sequence from the specified directory. If set to true, images are randomly chosen, enhancing the diversity and unpredictability of the output. If set to false, images are selected in a sequential manner."
+    },
+    {
+        "question": "What is the role of the 'run_trigger' input in the FL_ImageRandomizer node?",
+        "answer": "The 'run_trigger' input in the FL_ImageRandomizer node is a virtual input used to trigger the execution of the node. Its primary purpose is to help bypass caching issues, ensuring that the node operates as intended even when dealing with cache-related constraints."
+    },
+    {
+        "question": "How does the FL_ImageRandomizer node handle image loading and format conversion?",
+        "answer": "The FL_ImageRandomizer node handles image loading and format conversion by first loading images from the specified directory, filtering for supported formats. It then selects an image based on the 'randomize' setting, opens and transposes it if necessary using ImageOps, converts it to RGB format, transforms it into a NumPy array, and finally converts it into a PyTorch tensor for output."
+    },
+    {
+        "question": "What is the purpose of the 'load_images' function in the FL_ImageRandomizer node?",
+        "answer": "The 'load_images' function in the FL_ImageRandomizer node is responsible for loading images from the specified directory. It filters files based on supported image formats such as 'jpg', 'jpeg', 'png', 'bmp', and 'gif', and returns a list of file paths for the images that meet the criteria."
+    }
+]

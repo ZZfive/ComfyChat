@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the DynamicThresholdingSimpleComfyNode in ComfyUI?",
+        "answer": "The DynamicThresholdingSimpleComfyNode dynamically adjusts the threshold settings of the model according to the specified percentile and scale factor, so that the model output can meet the expected characteristics."
+    },
+    {
+        "question": "What are the required input types for the DynamicThresholdingSimpleComfyNode?",
+        "answer": "The required input types for the DynamicThresholdingSimpleComfyNode are: model (Comfy dtype: MODEL, Python dtype: torch.nn.Module), mimic_scale (Comfy dtype: FLOAT, Python dtype: float), and threshold_percentile (Comfy dtype: FLOAT, Python dtype: float)."
+    },
+    {
+        "question": "What does the mimic_scale parameter do in the DynamicThresholdingSimpleComfyNode?",
+        "answer": "The mimic_scale parameter adjusts the degree to which the model output is modified to match the target feature, which has a significant impact on the overall effect of the node."
+    },
+    {
+        "question": "What is the role of the threshold_percentile parameter in the DynamicThresholdingSimpleComfyNode?",
+        "answer": "The threshold_percentile parameter determines the relative threshold for adjusting the model output, which is crucial for achieving the desired output distribution."
+    },
+    {
+        "question": "What is the output type of the DynamicThresholdingSimpleComfyNode?",
+        "answer": "The output type of the DynamicThresholdingSimpleComfyNode is a modified version of the input model with adjusted threshold parameters according to the specified target characteristics (Comfy dtype: MODEL, Python dtype: torch.nn.Module)."
+    },
+    {
+        "question": "What is the infra type for the DynamicThresholdingSimpleComfyNode?",
+        "answer": "The infra type for the DynamicThresholdingSimpleComfyNode is GPU."
+    },
+    {
+        "question": "What does the DynamicThresholdingSimpleComfyNode do in the source code?",
+        "answer": "In the source code, the DynamicThresholdingSimpleComfyNode defines a dynamic thresholding function that adjusts the model's output based on the specified parameters. It then creates a clone of the input model and sets the model sampler configuration function to the defined dynamic thresholding function."
+    }
+]

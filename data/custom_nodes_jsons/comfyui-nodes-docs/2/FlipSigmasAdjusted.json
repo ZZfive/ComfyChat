@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the 'FlipSigmasAdjusted' node in ComfyUI?",
+        "answer": "The 'FlipSigmasAdjusted' node is designed to process and adjust a set of sigma values. It flips the order of the input sigmas, optionally divides them by the last sigma value, and adjusts each sigma based on an offset and a specified divisor."
+    },
+    {
+        "question": "What does the 'sigmas' parameter represent in the 'FlipSigmasAdjusted' node?",
+        "answer": "The 'sigmas' parameter represents a sequence of values indicating the standard deviations of a noise distribution. It is crucial for the node's operation as it determines the base data to be manipulated. The flipping and adjustment process directly affects the result of the node's execution."
+    },
+    {
+        "question": "How does the 'divide_by_last_sigma' parameter affect the output of the 'FlipSigmasAdjusted' node?",
+        "answer": "When the 'divide_by_last_sigma' parameter is set to true, it causes the node to divide each sigma in the sequence by the last sigma. This operation normalizes the sigma values, which can be significant in certain noise reduction or image processing tasks."
+    },
+    {
+        "question": "What is the role of the 'divide_by' parameter in the 'FlipSigmasAdjusted' node?",
+        "answer": "The 'divide_by' parameter is a float that scales the adjusted sigma values. It plays a key role in controlling the magnitude of the sigma adjustment, especially when fine-tuning the node's output for specific applications."
+    },
+    {
+        "question": "How does the 'offset_by' parameter influence the sigma values in the 'FlipSigmasAdjusted' node?",
+        "answer": "The 'offset_by' parameter is an integer that shifts the index of each sigma by a given amount. This can introduce a transformation or warp to the sigma sequence, which may be useful for certain types of data analysis or signal processing."
+    },
+    {
+        "question": "What does the 'SIGMAS' output provide in the 'FlipSigmasAdjusted' node?",
+        "answer": "The 'SIGMAS' output provides the adjusted sigma values after the node has applied all operations. This is a crucial output for subsequent processing steps that rely on these transformed values."
+    },
+    {
+        "question": "What is the purpose of the 'sigmas_string' output in the 'FlipSigmasAdjusted' node?",
+        "answer": "The 'sigmas_string' output is a string representation of the adjusted sigma values. It is useful for visualization or logging purposes, providing a human-readable format of the data."
+    }
+]

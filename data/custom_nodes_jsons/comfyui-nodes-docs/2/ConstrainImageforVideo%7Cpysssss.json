@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ConstrainImageforVideo node in ComfyUI?",
+        "answer": "The ConstrainImageforVideo node in ComfyUI is used to adjust the size of an image to fit within specified maximum and minimum dimensions while maintaining its aspect ratio. It also provides an option to crop the image if necessary to meet the size constraints."
+    },
+    {
+        "question": "What are the required input types for the ConstrainImageforVideo node?",
+        "answer": "The required input types for the ConstrainImageforVideo node are: images (the images to be processed), max_width (the maximum allowed width for the images), max_height (the maximum allowed height for the images), min_width (the minimum allowed width for the images), min_height (the minimum allowed height for the images), and crop_if_required (a boolean value that determines whether to crop the image if resizing alone is not enough to meet the size constraints)."
+    },
+    {
+        "question": "What is the output type of the ConstrainImageforVideo node?",
+        "answer": "The output type of the ConstrainImageforVideo node is IMAGE, which represents the processed images that have been resized and cropped (if necessary) to fit within the specified size constraints."
+    },
+    {
+        "question": "How does the ConstrainImageforVideo node maintain the aspect ratio of the image while resizing?",
+        "answer": "The ConstrainImageforVideo node maintains the aspect ratio of the image by calculating the constrained width and height based on the maximum and minimum dimensions and the original aspect ratio of the image. It then resizes the image using these constrained dimensions, ensuring that the aspect ratio is preserved."
+    },
+    {
+        "question": "Under what circumstances will the ConstrainImageforVideo node crop the image?",
+        "answer": "The ConstrainImageforVideo node will crop the image if the crop_if_required input is set to 'yes' and resizing alone is not sufficient to meet the specified size constraints. In this case, the image will be cropped to fit within the maximum width and height limits."
+    },
+    {
+        "question": "What is the infra type for the ConstrainImageforVideo node?",
+        "answer": "The infra type for the ConstrainImageforVideo node is GPU."
+    },
+    {
+        "question": "What programming language is used for the source code of the ConstrainImageforVideo node?",
+        "answer": "The source code for the ConstrainImageforVideo node is written in Python."
+    }
+]

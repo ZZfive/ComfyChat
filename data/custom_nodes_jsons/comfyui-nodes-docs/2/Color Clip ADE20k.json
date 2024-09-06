@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Color Clip ADE20k node in ComfyUI?",
+        "answer": "The Color Clip ADE20k node in ComfyUI is used to adjust the color of an image based on the ADE20K dataset, allowing for color clipping of specific categories."
+    },
+    {
+        "question": "What are the required inputs for the Color Clip ADE20k node?",
+        "answer": "The required inputs for the Color Clip ADE20k node are: image (the image to be color clipped), target (defines the target operation for color clipping), complement (specifies the complementary operation), and class_name (specifies the ADE20K class name whose associated color will be used for clipping)."
+    },
+    {
+        "question": "What does the 'class_name' input specify in the Color Clip ADE20k node?",
+        "answer": "The 'class_name' input in the Color Clip ADE20k node specifies the ADE20K class name whose associated color will be used for clipping, ensuring the aesthetics of the image align with the typical colors of that class."
+    },
+    {
+        "question": "What is the output of the Color Clip ADE20k node?",
+        "answer": "The output of the Color Clip ADE20k node is the resulting image after the color clipping operation, showcasing the applied color adjustments."
+    },
+    {
+        "question": "What infrastructure type does the Color Clip ADE20k node use?",
+        "answer": "The Color Clip ADE20k node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the Color Clip ADE20k node determine the clip color?",
+        "answer": "The Color Clip ADE20k node determines the clip color by converting the associated color of the specified ADE20K class name to a list of RGB values using the formula `list((ADE20K_dic[class_name]*255).astype(np.uint8))`."
+    },
+    {
+        "question": "What is the parent class of the Color Clip ADE20k node?",
+        "answer": "The parent class of the Color Clip ADE20k node is the ColorClip class."
+    }
+]

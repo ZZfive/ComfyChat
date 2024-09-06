@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FreeU_V2 node in ComfyUI?",
+        "answer": "The FreeU_V2 node in ComfyUI is designed to enhance the capabilities of a given model by applying a patch that modifies the model's output block. It achieves this by scaling and filtering the model's hidden states in a channel dimension-sensitive way, potentially improving the model's performance or output characteristics."
+    },
+    {
+        "question": "What are the required input types for the FreeU_V2 node?",
+        "answer": "The required input types for the FreeU_V2 node are the model, which is the base model that the node will modify, and four floating-point parameters: b1, b2, s1, and s2. These parameters are scaling factors applied to certain hidden states and Fourier filtering processes in the model."
+    },
+    {
+        "question": "What does the b1 parameter in the FreeU_V2 node control?",
+        "answer": "The b1 parameter in the FreeU_V2 node is a scaling factor applied to certain hidden states of the model. It plays an important role in determining the extent of modifications applied by the node, influencing the final output of the model."
+    },
+    {
+        "question": "How does the s1 parameter affect the model's output in the FreeU_V2 node?",
+        "answer": "The s1 parameter in the FreeU_V2 node defines the scaling factor for the Fourier filtering process applied to the model's hidden states. It is important for controlling the frequency components retained in the model's output."
+    },
+    {
+        "question": "What is the output type of the FreeU_V2 node?",
+        "answer": "The output type of the FreeU_V2 node is a modified model that now includes the applied patch. This modified model is expected to produce different outputs compared to the original model, potentially offering improved performance or characteristics."
+    },
+    {
+        "question": "What infra type is recommended for the FreeU_V2 node?",
+        "answer": "The recommended infra type for the FreeU_V2 node is GPU."
+    },
+    {
+        "question": "How does the FreeU_V2 node handle devices that do not support torch.fft functions?",
+        "answer": "If a device does not support the torch.fft functions used in the FreeU_V2 node, it switches to CPU for the Fourier filtering process. The node logs a warning message indicating the switch and continues the process on the CPU."
+    }
+]

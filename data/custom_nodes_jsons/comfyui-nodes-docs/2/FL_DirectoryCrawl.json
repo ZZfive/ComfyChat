@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FL_DirectoryCrawl node in ComfyUI?",
+        "answer": "The FL_DirectoryCrawl node in ComfyUI is designed to scan image files in a specified directory and its subdirectories, supporting various common image formats. It loads these images, applies necessary orientation corrections, converts them to a uniform RGB format, and finally aggregates them into a batch of tensors for further image manipulation or analysis."
+    },
+    {
+        "question": "What is the required input for the FL_DirectoryCrawl node?",
+        "answer": "The required input for the FL_DirectoryCrawl node is the 'directory_path', which specifies the directory path where the node will scan for image files. This path is crucial as it determines the starting point for searching image files, thus influencing which images will be loaded and processed."
+    },
+    {
+        "question": "What is the output of the FL_DirectoryCrawl node?",
+        "answer": "The output of the FL_DirectoryCrawl node is a batch of images that have been loaded, correctly oriented, converted to RGB format, and normalized, encapsulated in a tensor. This output facilitates further processing or analysis in image-based machine learning workflows."
+    },
+    {
+        "question": "What are the supported image formats by the FL_DirectoryCrawl node?",
+        "answer": "The FL_DirectoryCrawl node supports various common image formats including jpg, jpeg, png, bmp, and gif."
+    },
+    {
+        "question": "How does the FL_DirectoryCrawl node correct the orientation of images?",
+        "answer": "The FL_DirectoryCrawl node corrects the orientation of images by using the ImageOps.exif_transpose() function, which transposes the image based on its EXIF orientation data."
+    },
+    {
+        "question": "What does the FL_DirectoryCrawl node convert the images to before outputting them?",
+        "answer": "Before outputting the images, the FL_DirectoryCrawl node converts them to a uniform RGB format."
+    },
+    {
+        "question": "How are the images normalized in the FL_DirectoryCrawl node?",
+        "answer": "In the FL_DirectoryCrawl node, the images are normalized by converting them to a numpy array, casting the array to float32, and dividing by 255.0."
+    }
+]

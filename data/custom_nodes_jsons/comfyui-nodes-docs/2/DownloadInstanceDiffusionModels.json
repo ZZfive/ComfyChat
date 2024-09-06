@@ -1,0 +1,30 @@
+[
+    {
+        "question": "DownloadInstanceDiffusionModels节点的作用是什么?",
+        "answer": "DownloadInstanceDiffusionModels节点负责下载并加载实例扩散过程所需的模型,包括PositionNet、Fusers和ScaleU模型,并确保它们在本地可用。如果模型不存在,则会自动下载。这个节点简化了模型准备过程,为后续的实例扩散操作奠定基础。"
+    },
+    {
+        "question": "DownloadInstanceDiffusionModels节点的输入参数中,use_segs有什么作用?",
+        "answer": "在DownloadInstanceDiffusionModels节点中,use_segs参数指示PositionNet模型是否应该使用分割信息。这会影响模型的准备和加载方式,当设置为True时,模型将考虑分割数据,可能提供更精细的位置信息。"
+    },
+    {
+        "question": "DownloadInstanceDiffusionModels节点的输入参数中,fusers_scale是如何影响Fusers模型的?",
+        "answer": "在DownloadInstanceDiffusionModels节点中,fusers_scale参数指定应用于Fusers模型的缩放因子。这会影响模型的准备和加载,允许用户根据需要的缩放调整Fusers模型的输出规模,以适应不同的应用场景。"
+    },
+    {
+        "question": "DownloadInstanceDiffusionModels节点输出的positionnet模型有什么作用?",
+        "answer": "DownloadInstanceDiffusionModels节点输出的positionnet模型是加载好的PositionNet模型,已准备就绪可用于实例扩散任务。该模型专门用于处理位置相关的信息,对于生成高质量的实例扩散结果至关重要。"
+    },
+    {
+        "question": "DownloadInstanceDiffusionModels节点输出的fusers模型有什么作用?",
+        "answer": "DownloadInstanceDiffusionModels节点输出的fusers模型是加载好的Fusers模型列表,根据指定的缩放进行调整,准备集成到实例扩散过程中。这些模型负责融合不同特征,增强生成结果的质量和多样性。"
+    },
+    {
+        "question": "DownloadInstanceDiffusionModels节点输出的scaleu模型有什么作用?",
+        "answer": "DownloadInstanceDiffusionModels节点输出的scaleu模型是加载好的ScaleU模型,使其可用于增强实例扩散能力。ScaleU模型专门处理不同尺度的特征,有助于生成更加细致和准确的实例扩散结果。"
+    },
+    {
+        "question": "DownloadInstanceDiffusionModels节点的infra类型是什么?",
+        "answer": "DownloadInstanceDiffusionModels节点的infra类型是CPU,表明该节点在运行时使用CPU资源。"
+    }
+]

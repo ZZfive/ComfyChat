@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FileNamePrefix node in ComfyUI?",
+        "answer": "The FileNamePrefix node is responsible for generating a standardized file name prefix based on the current date, custom directory name, and custom text input, ensuring that file names are unique and organized according to specified standards."
+    },
+    {
+        "question": "What are the required input types for the FileNamePrefix node?",
+        "answer": "The required input types for the FileNamePrefix node are 'date' and 'date_directory', both of which are of Comfy dtype STRING and Python dtype str."
+    },
+    {
+        "question": "What does the 'date' parameter in the FileNamePrefix node decide?",
+        "answer": "The 'date' parameter decides whether to include the current date in the file name prefix, which plays a key role in organizing files chronologically and ensuring that each file has a date-based unique identifier."
+    },
+    {
+        "question": "What is the purpose of the 'custom_directory' parameter in the FileNamePrefix node?",
+        "answer": "The 'custom_directory' parameter allows the inclusion of a user-defined directory name in the file name prefix, providing flexibility in organizing files according to specific projects or user requirements."
+    },
+    {
+        "question": "What output does the FileNamePrefix node produce?",
+        "answer": "The FileNamePrefix node produces a 'filename_prefix' output, which is the final generated prefix that combines all input parameters into a coherent and standardized string."
+    },
+    {
+        "question": "What is the infra type specified for using the FileNamePrefix node?",
+        "answer": "The infra type specified for using the FileNamePrefix node is CPU."
+    },
+    {
+        "question": "How does the FileNamePrefix node handle special characters in the 'custom_text' input?",
+        "answer": "The FileNamePrefix node removes special characters from the 'custom_text' input using the regular expression re.sub('[<>:\"/\\\\|?*]', '', custom_text), ensuring that the resulting file name prefix is valid and free of characters that could cause issues."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ExponentialScheduler node in ComfyUI?",
+        "answer": "The ExponentialScheduler node is designed to generate a noise level schedule that decreases exponentially over a specified number of steps. It is used in the context of diffusion models to control the amount of noise added to or removed from the data during the sampling process, which is crucial for generating high-quality outputs."
+    },
+    {
+        "question": "What does the 'steps' parameter define in the ExponentialScheduler node?",
+        "answer": "The 'steps' parameter defines the number of steps in the noise schedule. It is important because it determines the granularity of the noise reduction, affecting the quality and convergence of the sampling process."
+    },
+    {
+        "question": "What is the role of the 'sigma_max' parameter in the ExponentialScheduler node?",
+        "answer": "The 'sigma_max' parameter sets the initial noise level of the schedule. It is important because it determines the starting point of the noise exponential decay, influencing the initial state of the diffusion process."
+    },
+    {
+        "question": "What does the 'sigma_min' parameter specify in the ExponentialScheduler node?",
+        "answer": "The 'sigma_min' parameter specifies the final noise level in the schedule. It is important because it sets the target noise level that the sampling process aims to achieve, affecting the noise characteristics of the final output."
+    },
+    {
+        "question": "What is the output of the ExponentialScheduler node?",
+        "answer": "The output of the ExponentialScheduler node is 'SIGMAS', which provides the calculated noise level schedule following an exponential decay pattern. It is important because it directly influences the subsequent steps of the sampling process."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the ExponentialScheduler node?",
+        "answer": "The recommended infrastructure type for running the ExponentialScheduler node is CPU."
+    },
+    {
+        "question": "How does the ExponentialScheduler node generate the noise level schedule?",
+        "answer": "The ExponentialScheduler node generates the noise level schedule using the 'get_sigmas' function, which takes the 'steps', 'sigma_max', and 'sigma_min' parameters as inputs and returns the calculated noise level schedule following an exponential decay pattern."
+    }
+]

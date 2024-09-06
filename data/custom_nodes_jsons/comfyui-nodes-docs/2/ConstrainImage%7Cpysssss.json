@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ConstrainImage node in ComfyUI?",
+        "answer": "The purpose of the ConstrainImage node is to adjust the size of an image to fit within specified maximum and minimum dimensions while maintaining the image's aspect ratio. It can also optionally crop the image if it exceeds the maximum size."
+    },
+    {
+        "question": "What are the required input parameters for the ConstrainImage node?",
+        "answer": "The required input parameters for the ConstrainImage node are: images (the image to be constrained), max_width (the maximum width the image can have after processing), max_height (the maximum height the image can have after processing), min_width (the minimum width the image should have), min_height (the minimum height the image should have), and crop_if_required (a flag indicating whether the image should be cropped if it exceeds the maximum size)."
+    },
+    {
+        "question": "How does the ConstrainImage node determine the final dimensions of the output image?",
+        "answer": "The ConstrainImage node determines the final dimensions of the output image by first calculating the aspect ratio of the input image. It then constrains the width and height based on the specified maximum and minimum values. If the constrained width-to-height ratio is greater than the aspect ratio, it adjusts the width accordingly, and vice versa for height. If cropping is required, it further adjusts the dimensions to ensure the output image fits within the maximum size."
+    },
+    {
+        "question": "What is the output type of the ConstrainImage node?",
+        "answer": "The output type of the ConstrainImage node is an IMAGE, specifically a list of processed images that have been resized and potentially cropped to fit the specified constraints."
+    },
+    {
+        "question": "What infrastructure type does the ConstrainImage node use?",
+        "answer": "The ConstrainImage node uses the CPU infrastructure type."
+    },
+    {
+        "question": "Does the ConstrainImage node maintain the aspect ratio of the input image?",
+        "answer": "Yes, the ConstrainImage node maintains the aspect ratio of the input image while adjusting its size to fit within the specified maximum and minimum dimensions."
+    },
+    {
+        "question": "What is the default value for the 'crop_if_required' parameter in the ConstrainImage node?",
+        "answer": "The default value for the 'crop_if_required' parameter in the ConstrainImage node is 'no'."
+    }
+]

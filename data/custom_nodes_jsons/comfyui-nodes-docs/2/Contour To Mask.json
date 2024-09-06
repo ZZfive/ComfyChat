@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Contour To Mask node in ComfyUI?",
+        "answer": "The Contour To Mask node in ComfyUI is designed to convert contours into mask images while utilizing the specified output format. It effectively transforms the shape defined by the contour into a binary mask that can be used for various image processing tasks."
+    },
+    {
+        "question": "What are the required input types for the Contour To Mask node?",
+        "answer": "The required input types for the Contour To Mask node are: image (the input image on which the contour is to be drawn), contour (the contour to be converted into a mask), and output_format (specifies the desired output format for the mask image)."
+    },
+    {
+        "question": "What is the output type of the Contour To Mask node?",
+        "answer": "The output type of the Contour To Mask node is an image, which is the generated mask image with the specified contour filled to create a binary mask."
+    },
+    {
+        "question": "What is the infra type for the Contour To Mask node?",
+        "answer": "The infra type for the Contour To Mask node is GPU."
+    },
+    {
+        "question": "What is the category of the Contour To Mask node in ComfyUI?",
+        "answer": "The category of the Contour To Mask node in ComfyUI is Bmad/CV/Contour."
+    },
+    {
+        "question": "How does the Contour To Mask node convert the contour into a mask?",
+        "answer": "The Contour To Mask node converts the contour into a mask by first creating a zeros array of the same shape as the input image, then drawing the contour on this array using cv.drawContours with a color of (255) and thickness of -1 to fill the contour, and finally converting and returning the resulting image in the specified output format."
+    },
+    {
+        "question": "What is the return type of the draw function in the Contour To Mask node?",
+        "answer": "The return type of the draw function in the Contour To Mask node is a tuple containing a single element, which is the generated mask image."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the DenseposeSubjectEstimation node in ComfyUI?",
+        "answer": "The DenseposeSubjectEstimation node in ComfyUI is designed to process and analyze poses in the input image, selecting the most relevant poses based on specified criteria through a series of filters. It contributes to advanced pose estimation tasks by refining the input data to a more focused collection of poses that meet the required subject and physique standards."
+    },
+    {
+        "question": "What are the required input types for the DenseposeSubjectEstimation node?",
+        "answer": "The required input types for the DenseposeSubjectEstimation node are openpose_image, which is a visual input for pose detection, and subject, which defines the specific subject criteria used to filter poses."
+    },
+    {
+        "question": "What does the densepose_select_every_nth parameter control in the DenseposeSubjectEstimation node?",
+        "answer": "The densepose_select_every_nth parameter is an optional integer that determines the frequency of selecting poses from the filtered poses. It provides a mechanism to control the density of the output poses, allowing a balance between detail and computational efficiency."
+    },
+    {
+        "question": "What are the output types of the DenseposeSubjectEstimation node?",
+        "answer": "The output types of the DenseposeSubjectEstimation node are DENSEPOSE, which represents the final selected poses from the input image after being refined through a series of subject and physique-based filters, and DENSEPOSE_NAME, which provides an identifier or name for the selected pose."
+    },
+    {
+        "question": "What infrastructure type is recommended for the DenseposeSubjectEstimation node?",
+        "answer": "The recommended infrastructure type for the DenseposeSubjectEstimation node is CPU."
+    },
+    {
+        "question": "How does the apply_region_filter method work in the DenseposeSubjectEstimation node?",
+        "answer": "The apply_region_filter method in the DenseposeSubjectEstimation node works by analyzing the input openpose_image for the presence and visibility of body parts, which subsequently influences the selection of poses. It checks for the visibility of feet, upper legs, lower legs, and knees and filters the poses based on these criteria."
+    },
+    {
+        "question": "What happens if the DenseposeSubjectEstimation node finds no poses after applying all filters?",
+        "answer": "If the DenseposeSubjectEstimation node finds no poses after applying all filters, it falls back to a preset pose tagged as 'fallback'."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "FadeMaskEdges节点的主要作用是什么？",
+        "answer": "FadeMaskEdges节点主要用于对图像主体的边缘进行预乘和Alpha混合，以防止外部像素渗入。这对于具有黑色轮廓的绘图等风格化主体特别有用，通过允许不同的边缘淡化效果来优化主体与背景的混合。"
+    },
+    {
+        "question": "FadeMaskEdges节点需要哪些必需的输入类型？",
+        "answer": "FadeMaskEdges节点需要以下必需的输入类型：binary_image（需要处理的二值图像）、edge_size（定义边缘淡化的大小）、edge_tightness（控制边缘淡化的紧密度）、edge_exponent（决定淡化曲线）、smoothing_diameter（指定边缘平滑的直径）和paste_original_blacks（布尔标志，表示是否将原始黑色像素粘贴回图像）。"
+    },
+    {
+        "question": "FadeMaskEdges节点的edge_size参数有什么作用？",
+        "answer": "edge_size参数定义了边缘淡化的大小，影响主体边缘与背景的混合程度。"
+    },
+    {
+        "question": "FadeMaskEdges节点的edge_exponent参数是用来做什么的？",
+        "answer": "edge_exponent参数用于决定淡化曲线，允许自定义边缘过渡效果。"
+    },
+    {
+        "question": "使用FadeMaskEdges节点时，如何控制边缘的平滑度？",
+        "answer": "可以通过设置smoothing_diameter参数来控制边缘的平滑度，该参数指定了边缘平滑的直径，用于在预乘和Alpha设置后优化混合效果。"
+    },
+    {
+        "question": "FadeMaskEdges节点的输出类型是什么？",
+        "answer": "FadeMaskEdges节点的输出类型是image，经过处理的图像，其边缘已进行预乘和Alpha混合，可用于进一步处理或展示。"
+    },
+    {
+        "question": "在FadeMaskEdges类中，如何设置paste_original_blacks参数的默认值？",
+        "answer": "在FadeMaskEdges类的INPUT_TYPES类方法中，通过设置'required'字典中的'paste_original_blacks'键的值为('BOOLEAN', {'default': True})来设置paste_original_blacks参数的默认值为True。"
+    }
+]

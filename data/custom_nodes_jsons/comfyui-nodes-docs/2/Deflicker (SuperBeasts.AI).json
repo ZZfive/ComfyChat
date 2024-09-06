@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Deflicker node in ComfyUI?",
+        "answer": "The Deflicker node in ComfyUI is designed to reduce flickering in image sequences by adjusting the brightness of individual images based on the average brightness of surrounding images. It also incorporates additional image processing techniques such as noise reduction, gradient smoothing, and dithering to enhance the visual quality of the output."
+    },
+    {
+        "question": "What are the required input types for the Deflicker node?",
+        "answer": "The required input types for the Deflicker node are: images (a sequence of images to be processed), context_length (the number of surrounding images to consider for brightness adjustment), brightness_threshold (the minimum brightness difference between the current image and the context average brightness to trigger adjustment), blending_strength (the strength of blending between the original and processed images), noise_reduction_strength (the amount of noise reduction applied to each image), gradient_smoothing_strength (the degree of gradient smoothing for reducing visual noise), and batch_size (the number of images processed at a time)."
+    },
+    {
+        "question": "How does the Deflicker node determine if an image needs brightness adjustment?",
+        "answer": "The Deflicker node determines if an image needs brightness adjustment by comparing the absolute difference between the current image's brightness and the average brightness of the context images. If the difference exceeds the specified brightness_threshold, the image will be adjusted."
+    },
+    {
+        "question": "What is the role of the noise_reduction_strength parameter in the Deflicker node?",
+        "answer": "The noise_reduction_strength parameter in the Deflicker node controls the amount of noise reduction applied to each image, which helps improve image clarity."
+    },
+    {
+        "question": "How does the Deflicker node apply gradient smoothing to the images?",
+        "answer": "The Deflicker node applies gradient smoothing to the images by adjusting the gradient_smoothing_strength parameter, which reduces visual noise and improves image coherence."
+    },
+    {
+        "question": "What is the purpose of the batch_size parameter in the Deflicker node?",
+        "answer": "The batch_size parameter in the Deflicker node determines the number of images processed at a time, which affects performance and memory usage."
+    },
+    {
+        "question": "What is the output type of the Deflicker node?",
+        "answer": "The output type of the Deflicker node is an image sequence with flicker reduction and additional image enhancements applied, which can be used for further processing or display."
+    }
+]

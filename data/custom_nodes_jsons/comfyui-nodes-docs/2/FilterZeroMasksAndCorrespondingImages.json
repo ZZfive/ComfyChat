@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FilterZeroMasksAndCorrespondingImages node in ComfyUI?",
+        "answer": "The FilterZeroMasksAndCorrespondingImages node in ComfyUI is designed to filter out all zero-value masks from a batch of masks and optionally filter out the corresponding images based on the presence of non-zero masks. Its goal is to simplify the preprocessing of image and mask data by ensuring that only relevant, non-empty masks and their associated images are passed on for further processing."
+    },
+    {
+        "question": "What are the required inputs for the FilterZeroMasksAndCorrespondingImages node?",
+        "answer": "The required input for the FilterZeroMasksAndCorrespondingImages node is 'masks', which is a list of masks to be filtered. This parameter is crucial for identifying relevant data for further processing."
+    },
+    {
+        "question": "What is the optional input for the FilterZeroMasksAndCorrespondingImages node?",
+        "answer": "The optional input for the FilterZeroMasksAndCorrespondingImages node is 'original_images', which is a list of images corresponding to the masks. If provided, the images associated with non-zero masks are retained, aligning the image data with the filtered mask data."
+    },
+    {
+        "question": "What are the output types of the FilterZeroMasksAndCorrespondingImages node?",
+        "answer": "The output types of the FilterZeroMasksAndCorrespondingImages node are 'non_zero_masks_out' (a list of filtered non-zero masks), 'non_zero_mask_images_out' (a list of images corresponding to non-zero masks if original images are provided), 'zero_mask_images_out' (a list of images corresponding to zero masks if original images are provided), and 'zero_mask_images_out_indexes' (indexes of images corresponding to zero masks)."
+    },
+    {
+        "question": "What is the infra type for the FilterZeroMasksAndCorrespondingImages node?",
+        "answer": "The infra type for the FilterZeroMasksAndCorrespondingImages node is 'CPU'."
+    },
+    {
+        "question": "What does the FilterZeroMasksAndCorrespondingImages node do if the number of original images is not equal to the number of masks?",
+        "answer": "If the number of original images is not equal to the number of masks, the FilterZeroMasksAndCorrespondingImages node ignores the 'original_images' input and prints a warning message."
+    },
+    {
+        "question": "How does the FilterZeroMasksAndCorrespondingImages node handle zero masks and their corresponding images?",
+        "answer": "The FilterZeroMasksAndCorrespondingImages node separates the non-zero masks and their corresponding images from the zero masks and their corresponding images. It returns the filtered non-zero masks, the images corresponding to non-zero masks (if original images are provided), the images corresponding to zero masks (if original images are provided), and the indexes of images corresponding to zero masks."
+    }
+]
