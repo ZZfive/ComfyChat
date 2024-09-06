@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the DPRandomGenerator node in ComfyUI?",
+        "answer": "The DPRandomGenerator node in ComfyUI is designed to generate multiple outputs based on a set of given rules and variables. It interprets command structures and uses sampling methods to generate diversified results, ensuring a wide exploration of possible outcomes."
+    },
+    {
+        "question": "What is the required input type for the DPRandomGenerator node?",
+        "answer": "The required input type for the DPRandomGenerator node is the 'command' parameter, which defines the structure and content of the prompts to be generated. It serves as the blueprint for the sampling process and directly influences the diversity and nature of the output."
+    },
+    {
+        "question": "What is the optional input type for the DPRandomGenerator node?",
+        "answer": "The optional input type for the DPRandomGenerator node is the 'num_prompts' parameter, which specifies the maximum number of prompts the node will generate. It plays a crucial role in controlling the output range, allowing for a focused or wide-ranging output based on the set value."
+    },
+    {
+        "question": "What is the output type of the DPRandomGenerator node?",
+        "answer": "The output type of the DPRandomGenerator node is 'prompts', which represents the result of the node's execution, reflecting the application of the input command and sampling methods. The output prompts are the successfully generated diversified and relevant results based on the initial input."
+    },
+    {
+        "question": "What is the infra type for the DPRandomGenerator node?",
+        "answer": "The infra type for the DPRandomGenerator node is CPU."
+    },
+    {
+        "question": "What is the source code for the DPRandomGenerator node?",
+        "answer": "The source code for the DPRandomGenerator node is as follows:\n```python\nclass DPRandomGenerator(DPAbstractSamplerNode):\n\n    @property\n    @lru_cache(maxsize=1)\n    def context(self) -> SamplingContext:\n        return SamplingContext(wildcard_manager=self._wildcard_manager, default_sampling_method=SamplingMethod.RANDOM)\n```"
+    },
+    {
+        "question": "How does the DPRandomGenerator node ensure a wide exploration of possible outcomes?",
+        "answer": "The DPRandomGenerator node ensures a wide exploration of possible outcomes by interpreting command structures and using sampling methods to generate diversified results based on the given rules and variables."
+    }
+]

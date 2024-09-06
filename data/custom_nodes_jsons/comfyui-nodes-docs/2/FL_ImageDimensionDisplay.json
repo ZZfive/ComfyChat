@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FL_ImageDimensionDisplay node in ComfyUI?",
+        "answer": "The FL_ImageDimensionDisplay node in ComfyUI is designed to calculate and display the dimensions of an image, supporting various formats of single and batch images."
+    },
+    {
+        "question": "What are the required input types for the FL_ImageDimensionDisplay node?",
+        "answer": "The FL_ImageDimensionDisplay node requires an 'image' input, which is essential for determining the dimensions of the provided image. It supports tensor and PIL image formats."
+    },
+    {
+        "question": "What is the output type of the FL_ImageDimensionDisplay node?",
+        "answer": "The output type of the FL_ImageDimensionDisplay node is a string that provides the dimensions of the provided image, formatted to include width and height."
+    },
+    {
+        "question": "How does the FL_ImageDimensionDisplay node handle different image formats?",
+        "answer": "The FL_ImageDimensionDisplay node abstracts the complexity of handling different image representations. It adjusts its processing based on the input type to accurately return the image dimensions."
+    },
+    {
+        "question": "What infrastructure type does the FL_ImageDimensionDisplay node use?",
+        "answer": "The FL_ImageDimensionDisplay node uses the 'CPU' infrastructure type."
+    },
+    {
+        "question": "How does the FL_ImageDimensionDisplay node determine the dimensions of a tensor image?",
+        "answer": "If the image is a tensor, the FL_ImageDimensionDisplay node checks the number of dimensions in the tensor to correctly unpack the dimensions. If a batch dimension is present (4 dimensions), it unpacks accordingly. If no batch dimension is present (3 dimensions), it unpacks the height and width."
+    },
+    {
+        "question": "How does the FL_ImageDimensionDisplay node determine the dimensions of a PIL Image?",
+        "answer": "If the image is a PIL Image, the FL_ImageDimensionDisplay node uses the 'size' attribute of the PIL Image to determine the width and height."
+    }
+]

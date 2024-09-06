@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the DF_Latent_Scale_by_ratio node in ComfyUI?",
+        "answer": "The DF_Latent_Scale_by_ratio node is designed to scale the latent representation of an image by a specified ratio while maintaining the integrity of the latent space. It supports various scaling and cropping methods to fine-tune the output results."
+    },
+    {
+        "question": "What are the required input types for the DF_Latent_Scale_by_ratio node?",
+        "answer": "The required input types for the DF_Latent_Scale_by_ratio node are 'latent', 'modifier', 'scale_method', and 'crop'. 'latent' is the latent representation of the image to be scaled, 'modifier' is a scaling factor determining how much the latent dimension should be increased or decreased, 'scale_method' specifies the method used for scaling the latent image, and 'crop' defines the cropping method to be applied after scaling."
+    },
+    {
+        "question": "What does the 'scale_method' input determine in the DF_Latent_Scale_by_ratio node?",
+        "answer": "The 'scale_method' input in the DF_Latent_Scale_by_ratio node determines the method used for scaling the latent image, such as 'nearest-exact' or 'bilinear'. This affects the quality and features of the output."
+    },
+    {
+        "question": "What is the role of the 'crop' input in the DF_Latent_Scale_by_ratio node?",
+        "answer": "The 'crop' input in the DF_Latent_Scale_by_ratio node defines the cropping method to be applied after scaling, allowing adjustment of the aspect ratio or size of the latent representation."
+    },
+    {
+        "question": "What is the output type of the DF_Latent_Scale_by_ratio node?",
+        "answer": "The output type of the DF_Latent_Scale_by_ratio node is 'latent', which represents the scaled latent representation adjusted according to the specified modifier, scale method, and crop preference."
+    },
+    {
+        "question": "What infrastructure type does the DF_Latent_Scale_by_ratio node use?",
+        "answer": "The DF_Latent_Scale_by_ratio node uses the 'CPU' infrastructure type."
+    },
+    {
+        "question": "How does the DF_Latent_Scale_by_ratio node calculate the new width and height of the latent representation?",
+        "answer": "The new width and height of the latent representation in the DF_Latent_Scale_by_ratio node are calculated by multiplying the original size by the 'modifier' input and rounding to the nearest integer that is a multiple of 8."
+    }
+]

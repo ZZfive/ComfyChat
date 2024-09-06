@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ConditioningZeroOut node in ComfyUI?",
+        "answer": "The ConditioningZeroOut node is designed to manipulate the conditioning data by zeroing out specific elements such as 'pooled_output'. This process is crucial for controlling the flow of information within the neural network, allowing targeted modifications to the model's predictions without altering the underlying structure of the data."
+    },
+    {
+        "question": "What is the role of the 'conditioning' parameter in the ConditioningZeroOut node?",
+        "answer": "The 'conditioning' parameter is essential for the operation of the node as it provides the input data that will be processed. This input significantly influences the execution of the node and the result of the zeroing out operation, determining which elements in the conditioning data are targeted for modification."
+    },
+    {
+        "question": "What does the output 'conditioning' parameter represent in the ConditioningZeroOut node?",
+        "answer": "The output 'conditioning' parameter represents the modified conditioning data after the zero_out operation. It is important because it carries updated information that can directly influence subsequent steps in the neural network processing pipeline."
+    },
+    {
+        "question": "What infrastructure type is recommended for the ConditioningZeroOut node?",
+        "answer": "The recommended infrastructure type for the ConditioningZeroOut node is CPU."
+    },
+    {
+        "question": "How does the ConditioningZeroOut node modify the 'pooled_output' in the conditioning data?",
+        "answer": "The ConditioningZeroOut node modifies the 'pooled_output' by replacing it with a tensor of zeros of the same shape, effectively zeroing it out."
+    },
+    {
+        "question": "What is the return type of the ConditioningZeroOut node?",
+        "answer": "The return type of the ConditioningZeroOut node is CONDITIONING, which is a list of tuples containing a torch.Tensor and a dictionary."
+    },
+    {
+        "question": "In which category does the ConditioningZeroOut node fall under in ComfyUI?",
+        "answer": "The ConditioningZeroOut node falls under the 'advanced/conditioning' category in ComfyUI."
+    }
+]

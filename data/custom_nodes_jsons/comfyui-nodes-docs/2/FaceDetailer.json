@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FaceDetailer node in ComfyUI?",
+        "answer": "The FaceDetailer node in ComfyUI is designed to enhance and refine facial details in images. It combines the use of multiple models and algorithms to detect faces, apply detailed enhancement effects, and output images with improved facial features."
+    },
+    {
+        "question": "What are the required inputs for the FaceDetailer node?",
+        "answer": "The required inputs for the FaceDetailer node are: image (the input image on which facial detail enhancement will be performed), model (the model used for facial detail enhancement), clip (the CLIP model used to ensure the coherence and relevance of the enhanced image), and guide_size (a parameter that influences the scale of facial features the model focuses on during the enhancement process)."
+    },
+    {
+        "question": "What is the output of the FaceDetailer node?",
+        "answer": "The FaceDetailer node outputs an enhanced_image (the resulting image with enhanced facial details), cropped_enhanced (a series of cropped and possibly enhanced facial segments detected in the input image), and mask (a mask representing the enhanced facial areas)."
+    },
+    {
+        "question": "What role does the 'guide_size' parameter play in the FaceDetailer node?",
+        "answer": "The 'guide_size' parameter in the FaceDetailer node influences the scale of facial features that the model focuses on during the enhancement process. It is an important adjustment parameter used to control the level of detail in the output image."
+    },
+    {
+        "question": "How does the FaceDetailer node handle images with no detectable facial segments?",
+        "answer": "If no facial segments are detected in the input image, the FaceDetailer node returns the original input image as the enhanced image, and empty lists for cropped_enhanced and cropped_enhanced_alpha."
+    },
+    {
+        "question": "What is the purpose of the 'bbox_threshold' parameter in the FaceDetailer node?",
+        "answer": "The 'bbox_threshold' parameter in the FaceDetailer node is used to set the threshold for detecting facial segments in the input image. It is a float value ranging from 0.0 to 1.0."
+    },
+    {
+        "question": "What does the 'cycle' parameter in the FaceDetailer node control?",
+        "answer": "The 'cycle' parameter in the FaceDetailer node controls the number of times the detail enhancement process is repeated. It is an integer value ranging from 1 to 10."
+    }
+]

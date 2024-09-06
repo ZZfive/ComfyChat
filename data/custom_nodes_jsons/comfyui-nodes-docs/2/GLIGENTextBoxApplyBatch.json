@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the GLIGENTextBoxApplyBatch node in ComfyUI?",
+        "answer": "The GLIGENTextBoxApplyBatch node is used for batch processing of text box applications. It efficiently applies text overlays or modifications to multiple images or frames."
+    },
+    {
+        "question": "What are the required input types for the GLIGENTextBoxApplyBatch node?",
+        "answer": "The required input types for the GLIGENTextBoxApplyBatch node are conditioning_to, latents, clip, gligen_textbox_model, text, width, height, coordinates, and interpolation."
+    },
+    {
+        "question": "What does the 'clip' input represent in the GLIGENTextBoxApplyBatch node?",
+        "answer": "The 'clip' input represents the CLIP model used to encode the text input, which helps generate text-based features to be applied to the images."
+    },
+    {
+        "question": "What output types does the GLIGENTextBoxApplyBatch node produce?",
+        "answer": "The GLIGENTextBoxApplyBatch node outputs two types: 'conditioning' which reflects the modified conditioning data after applying the text box overlay, and 'image' which shows the final image with the applied text box overlay."
+    },
+    {
+        "question": "How does the GLIGENTextBoxApplyBatch node handle the interpolation of coordinates for the entire batch?",
+        "answer": "The GLIGENTextBoxApplyBatch node interpolates coordinates for the entire batch using either the 'CubicSpline' or 'straight' interpolation methods, depending on the specified 'interpolation' input."
+    },
+    {
+        "question": "What is the purpose of the 'plot_image_tensor' in the GLIGENTextBoxApplyBatch node?",
+        "answer": "The 'plot_image_tensor' is used to plot the interpolated coordinates on a tensor with specified dimensions, helping to visualize the positions of the text box overlays."
+    },
+    {
+        "question": "How does the GLIGENTextBoxApplyBatch node modify the conditioning data?",
+        "answer": "The GLIGENTextBoxApplyBatch node modifies the conditioning data by appending the position parameters for each batch item, which includes the encoded text, height, width, and interpolated coordinates."
+    }
+]

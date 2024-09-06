@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of GetSigma node in ComfyUI?",
+        "answer": "The GetSigma node in ComfyUI is designed to calculate a specific sigma value based on the given model, sampler, scheduler, and step parameters. It simplifies the complexity of interacting with different samplers and schedulers, providing a straightforward method for obtaining the sigma value, which is crucial for controlling noise levels in generative models."
+    },
+    {
+        "question": "What does the model parameter specify in the GetSigma node?",
+        "answer": "In the GetSigma node, the model parameter specifies the generative model to be used for sigma calculation. It is essential for determining the appropriate noise level according to the model's characteristics and configuration."
+    },
+    {
+        "question": "How does the sampler_name parameter affect the sigma value calculation in GetSigma node?",
+        "answer": "The sampler_name parameter in the GetSigma node identifies the specific sampling strategy to be used. This selection influences how the sigma value is calculated and applied, tailoring the noise injection process to the methods of the chosen sampler."
+    },
+    {
+        "question": "What role does the scheduler parameter play in the GetSigma node?",
+        "answer": "In the GetSigma node, the scheduler parameter determines the scheduling algorithm for adjusting noise levels during the generation process. It plays a key role in fine-tuning the progression of sigma values across the specified steps."
+    },
+    {
+        "question": "How do the steps, start_at_step, and end_at_step parameters impact the sigma value calculation in GetSigma node?",
+        "answer": "The steps parameter in the GetSigma node specifies the total number of steps to consider for sigma calculation. It defines the range for evaluating the starting and ending steps. The start_at_step parameter determines the initial step to begin calculating sigma, allowing flexibility in establishing the initial noise level and influencing the early stages of the generation process. The end_at_step parameter sets the final step to stop calculating sigma, affecting the outcome of the generative model's output."
+    },
+    {
+        "question": "What is the output of the GetSigma node?",
+        "answer": "The GetSigma node outputs the calculated sigma value, which is a measure of the noise level to be applied. This value is crucial for controlling the fidelity and diversity of the generation process."
+    },
+    {
+        "question": "What is the infra type required for the GetSigma node?",
+        "answer": "The infra type required for the GetSigma node is GPU."
+    }
+]

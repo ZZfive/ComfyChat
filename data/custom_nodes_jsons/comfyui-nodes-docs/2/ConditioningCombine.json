@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ConditioningCombine node in ComfyUI?",
+        "answer": "The ConditioningCombine node in ComfyUI is designed to merge two conditioning inputs into a single output, simplifying the data processing workflow and ensuring the combined conditioning information is effectively utilized in subsequent model operations."
+    },
+    {
+        "question": "What are the required input types for the ConditioningCombine node?",
+        "answer": "The ConditioningCombine node requires two input types: conditioning_1 and conditioning_2, both of which are of Comfy dtype CONDITIONING and Python dtype Any."
+    },
+    {
+        "question": "What role does the conditioning_1 input play in the ConditioningCombine node?",
+        "answer": "The conditioning_1 input is crucial for the operation of the ConditioningCombine node, as it provides a portion of the data required for the combination process. It contributes to the initial state of the combined conditioning, significantly influencing the final output."
+    },
+    {
+        "question": "How does the conditioning_2 input contribute to the ConditioningCombine node?",
+        "answer": "The conditioning_2 input is equally important as it complements the first input, completing the dataset needed for the node to generate the combined output. Its contribution to achieving a coherent and comprehensive conditioning result is essential."
+    },
+    {
+        "question": "What is the output type of the ConditioningCombine node?",
+        "answer": "The output type of the ConditioningCombine node is combined_conditioning, which is the integrated data of the two input conditions. This output serves as key information for subsequent steps in the workflow, guiding model predictions or influencing further processing."
+    },
+    {
+        "question": "What is the infra type for the ConditioningCombine node?",
+        "answer": "The infra type for the ConditioningCombine node is CPU."
+    },
+    {
+        "question": "What is the source code for the ConditioningCombine node?",
+        "answer": "The source code for the ConditioningCombine node is as follows:\n```\nclass ConditioningCombine:\n\n    @classmethod\n    def INPUT_TYPES(s):\n        return {'required': {'conditioning_1': ('CONDITIONING',), 'conditioning_2': ('CONDITIONING',)}}\n    RETURN_TYPES = ('CONDITIONING',)\n    FUNCTION = 'combine'\n    CATEGORY = 'conditioning'\n\n    def combine(self, conditioning_1, conditioning_2):\n        return (conditioning_1 + conditioning_2,)\n```"
+    }
+]

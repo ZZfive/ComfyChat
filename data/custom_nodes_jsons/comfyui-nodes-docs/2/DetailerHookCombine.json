@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is the purpose of the DetailerHookCombine node in ComfyUI?",
+        "answer": "The DetailerHookCombine node acts as a coordinator for two independent hooks during the pixel-level sampling process. It ensures that each hook is applied sequentially to the latent space, segmentation, and pasted image, enhancing the detail and consistency of the generated output."
+    },
+    {
+        "question": "What are the required input types for the DetailerHookCombine node?",
+        "answer": "The required input types for the DetailerHookCombine node are 'latent', 'segs', and 'image'."
+    },
+    {
+        "question": "What does the 'latent' parameter represent in the DetailerHookCombine node?",
+        "answer": "The 'latent' parameter represents the latent space vector being processed. It is a crucial component as it carries the encoded information needed for the detail enhancement process."
+    },
+    {
+        "question": "What does the 'segs' parameter in the DetailerHookCombine node represent?",
+        "answer": "The 'segs' parameter is a list of segmentation tensors used to refine the details of the image. Each tensor in the list corresponds to different parts of the image."
+    },
+    {
+        "question": "What is the purpose of the 'image' parameter in the DetailerHookCombine node?",
+        "answer": "The 'image' parameter is a tensor representing the pasted image that will undergo further processing to enhance its visual details."
+    },
+    {
+        "question": "What are the output types of the DetailerHookCombine node?",
+        "answer": "The output types of the DetailerHookCombine node are 'cycled_latent', 'refined_segs', and 'processed_image'."
+    },
+    {
+        "question": "What does the 'cycled_latent' output represent in the DetailerHookCombine node?",
+        "answer": "The 'cycled_latent' output is the result of applying the two hooks to the input latent vector, aiming to increase the level of detail in the latent representation."
+    },
+    {
+        "question": "What does the 'refined_segs' output represent in the DetailerHookCombine node?",
+        "answer": "The 'refined_segs' output consists of the segmentation tensors processed by the two hooks, resulting in a more detailed and accurate segmentation of the image."
+    },
+    {
+        "question": "What does the 'processed_image' output represent in the DetailerHookCombine node?",
+        "answer": "The 'processed_image' output is the final image tensor after being enhanced by the two hooks, resulting in an image with improved visual quality and detail."
+    }
+]

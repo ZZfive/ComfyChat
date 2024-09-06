@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the GetLatentsFromBatchIndexed node in ComfyUI?",
+        "answer": "The GetLatentsFromBatchIndexed node in ComfyUI is designed to select and return specific latents from a given batch of latents, facilitating the extraction of subsets of latents for further processing or analysis."
+    },
+    {
+        "question": "What are the required input types for the GetLatentsFromBatchIndexed node?",
+        "answer": "The required input types for the GetLatentsFromBatchIndexed node are 'latents', which represents the batch of latents to choose from, and 'indexes', which specifies the indexes of the latents to be selected from the batch."
+    },
+    {
+        "question": "What is the output type of the GetLatentsFromBatchIndexed node?",
+        "answer": "The output type of the GetLatentsFromBatchIndexed node is 'latent', which is a modified version of the input latent batch, containing only the latents at the specified indexes."
+    },
+    {
+        "question": "How are the indexes specified in the GetLatentsFromBatchIndexed node?",
+        "answer": "In the GetLatentsFromBatchIndexed node, the indexes are specified as a string, where each index is separated by a comma. This string is then parsed into a list of integers to select the latents at the specified indices."
+    },
+    {
+        "question": "What is the infra type recommended for the GetLatentsFromBatchIndexed node?",
+        "answer": "The recommended infra type for the GetLatentsFromBatchIndexed node is 'GPU'."
+    },
+    {
+        "question": "How does the GetLatentsFromBatchIndexed node select the latents at the specified indices?",
+        "answer": "The GetLatentsFromBatchIndexed node selects the latents at the specified indices by converting the list of indices into a PyTorch tensor and then using this tensor to index the latent samples from the input latent batch."
+    },
+    {
+        "question": "What does the GetLatentsFromBatchIndexed node return?",
+        "answer": "The GetLatentsFromBatchIndexed node returns a tuple containing a modified version of the input latent batch, with only the latents at the specified indexes included."
+    }
+]

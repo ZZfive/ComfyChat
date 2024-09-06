@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the ColorCorrect node in ComfyUI?",
+        "answer": "The ColorCorrect node in ComfyUI is designed to adjust and enhance the color attributes of an image, including temperature, hue, brightness, contrast, saturation, and gamma."
+    },
+    {
+        "question": "What are the required input types for the ColorCorrect node?",
+        "answer": "The required input types for the ColorCorrect node are: image (the input image tensor), temperature (adjusts the warmth or coolness of the image), hue (modifies the color along the spectrum), brightness (controls the brightness level), contrast (changes the contrast between light and dark areas), saturation (adjusts the intensity of colors), and gamma (applies gamma correction to the image)."
+    },
+    {
+        "question": "What is the output type of the ColorCorrect node?",
+        "answer": "The output type of the ColorCorrect node is an image tensor that has been color corrected to reflect the applied adjustments."
+    },
+    {
+        "question": "What are some common nodes that can be used with the ColorCorrect node in ComfyUI?",
+        "answer": "Some common nodes that can be used with the ColorCorrect node include YDetailer, Image Levels Adjustment, PreviewImage, CR Image Output, ImageUpscaleWithModel, SaveImage, and ColorCorrect."
+    },
+    {
+        "question": "How does the ColorCorrect node adjust the brightness of an image?",
+        "answer": "The ColorCorrect node adjusts the brightness of an image by enhancing it using the ImageEnhance.Brightness function from the PIL library, with the brightness value divided by 100 and added to 1."
+    },
+    {
+        "question": "How does the ColorCorrect node handle temperature adjustments?",
+        "answer": "If the temperature value is greater than 0, the ColorCorrect node multiplies the red channel by 1 plus the temperature value, and the green channel by 1 plus 0.4 times the temperature value. If the temperature value is less than 0, it multiplies the blue channel by 1 minus the temperature value."
+    },
+    {
+        "question": "What is the role of gamma in the ColorCorrect node?",
+        "answer": "In the ColorCorrect node, gamma is used to apply gamma correction to the image, adjusting the brightness or luminance of the image using the np.power function."
+    },
+    {
+        "question": "How does the ColorCorrect node adjust the hue of an image?",
+        "answer": "The ColorCorrect node adjusts the hue of an image by converting it to the HSV color space, modifying the hue channel by adding the specified hue value, and then converting it back to the RGB color space."
+    }
+]

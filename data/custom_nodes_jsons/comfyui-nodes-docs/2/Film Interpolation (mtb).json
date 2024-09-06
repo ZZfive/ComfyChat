@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Film Interpolation (mtb) node in ComfyUI?",
+        "answer": "The Film Interpolation (mtb) node in ComfyUI uses Google Research's FILM technology to perform frame interpolation, specially designed to handle large motions between frames. It provides a way to insert additional frames between a series of images, enhancing the smoothness and fluidity of video content."
+    },
+    {
+        "question": "What are the required input types for the Film Interpolation (mtb) node?",
+        "answer": "The required input types for the Film Interpolation (mtb) node are: 1. 'images' - The tensor of images to be interpolated. 2. 'interpolate' - An integer specifying the number of frames to interpolate between each pair of input frames. 3. 'film_model' - The FILM model instance used for interpolation."
+    },
+    {
+        "question": "What does the 'interpolate' parameter in the Film Interpolation (mtb) node control?",
+        "answer": "The 'interpolate' parameter in the Film Interpolation (mtb) node specifies the number of frames to interpolate between each pair of input frames. It directly affects the smoothness and duration of the resulting motion."
+    },
+    {
+        "question": "What is the output type of the Film Interpolation (mtb) node?",
+        "answer": "The output type of the Film Interpolation (mtb) node is 'image'. It outputs a tensor of interpolated images with additional frames created to form smoother transitions between the original images."
+    },
+    {
+        "question": "What infrastructure type does the Film Interpolation (mtb) node use?",
+        "answer": "The Film Interpolation (mtb) node uses the 'GPU' infrastructure type."
+    },
+    {
+        "question": "How does the Film Interpolation (mtb) node handle the case when the input 'images' tensor is empty?",
+        "answer": "If the input 'images' tensor is empty, the Film Interpolation (mtb) node will return the empty tensor as is."
+    },
+    {
+        "question": "What happens if a TensorFlow GPU is not available for the Film Interpolation (mtb) node?",
+        "answer": "If a TensorFlow GPU is not available, the Film Interpolation (mtb) node will fall back to using the CPU, which will be much slower in processing."
+    }
+]

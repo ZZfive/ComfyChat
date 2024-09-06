@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the FLAVR_VFI node in ComfyUI?",
+        "answer": "The FLAVR_VFI node in ComfyUI is designed to perform frame interpolation on an input sequence of frames, enhancing the smoothness and continuity of animations by generating intermediate frames and effectively doubling the frame rate."
+    },
+    {
+        "question": "What is the significance of the 'ckpt_name' parameter in the FLAVR_VFI node?",
+        "answer": "The 'ckpt_name' parameter is crucial for identifying the specific model weights used for frame interpolation. It ensures that the correct model configuration is loaded to process the frames."
+    },
+    {
+        "question": "How does the 'frames' parameter contribute to the functionality of the FLAVR_VFI node?",
+        "answer": "The 'frames' parameter is a key input that contains the sequence of images to be interpolated. It forms the basis of the interpolation process, with the node generating additional frames between the provided frames for smoother transitions."
+    },
+    {
+        "question": "What role does the 'clear_cache_after_n_frames' parameter play in the performance of the FLAVR_VFI node?",
+        "answer": "The 'clear_cache_after_n_frames' parameter determines how often the GPU cache is cleared during processing to maintain optimal performance. It helps manage memory usage effectively, preventing potential slowdowns or crashes due to memory overload."
+    },
+    {
+        "question": "How does the 'multiplier' parameter affect the output of the FLAVR_VFI node?",
+        "answer": "The 'multiplier' parameter specifies the multiple by which the frame rate should be increased. Currently, the node only supports a multiplier of 2, which effectively doubles the frame rate of the input sequence."
+    },
+    {
+        "question": "What is the function of the 'duplicate_first_last_frames' parameter in the FLAVR_VFI node?",
+        "answer": "When set to true, the 'duplicate_first_last_frames' parameter duplicates the first and last frames in the output sequence. This is useful for maintaining consistent beginnings and endings of interpolated animations."
+    },
+    {
+        "question": "How does the 'optional_interpolation_states' parameter enhance the customization of the interpolation process in the FLAVR_VFI node?",
+        "answer": "The 'optional_interpolation_states' parameter provides a way to customize the interpolation process by specifying which frames should be skipped or included. This allows for fine-tuning the interpolation to meet specific creative requirements."
+    },
+    {
+        "question": "What does the 'interpolated_frames' output of the FLAVR_VFI node contain?",
+        "answer": "The 'interpolated_frames' output contains the resulting sequence of frames after the interpolation process. These frames include both the original input frames and the newly generated intermediate frames, providing a smoother and more continuous visual output."
+    }
+]

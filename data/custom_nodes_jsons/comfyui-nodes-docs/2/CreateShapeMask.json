@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the primary purpose of the CreateShapeMask node in ComfyUI?",
+        "answer": "The CreateShapeMask node is used to generate masks or batches of masks with specified shapes, allowing for the creation of animated masks by adjusting the shape's growth across different frames."
+    },
+    {
+        "question": "What are the required input parameters for the CreateShapeMask node?",
+        "answer": "The required input parameters for the CreateShapeMask node include shape, frames, location_x, location_y, grow, frame_width, frame_height, shape_width, and shape_height."
+    },
+    {
+        "question": "What are the possible shapes that can be created using the CreateShapeMask node?",
+        "answer": "The possible shapes that can be created using the CreateShapeMask node are circle, square, and triangle."
+    },
+    {
+        "question": "What does the 'grow' parameter control in the CreateShapeMask node?",
+        "answer": "The 'grow' parameter controls the amount by which the shape grows on each frame, enabling the creation of animated masks."
+    },
+    {
+        "question": "What are the output types of the CreateShapeMask node?",
+        "answer": "The output types of the CreateShapeMask node are 'mask' and 'mask_inverted', both of which are of the Comfy dtype MASK and Python dtype torch.Tensor."
+    },
+    {
+        "question": "How is the size of the shape calculated for each frame in the CreateShapeMask node?",
+        "answer": "The size of the shape for each frame is calculated using the formula: max(0, shape_width + i*grow) for width and max(0, shape_height + i*grow) for height, where 'i' represents the frame number."
+    },
+    {
+        "question": "What is the purpose of the 'location_x' and 'location_y' parameters in the CreateShapeMask node?",
+        "answer": "The 'location_x' and 'location_y' parameters define the center position of the shape on the horizontal and vertical axes, respectively, within the frame."
+    },
+    {
+        "question": "What is the infra type required for running the CreateShapeMask node?",
+        "answer": "The CreateShapeMask node requires the 'CPU' infra type to run."
+    }
+]

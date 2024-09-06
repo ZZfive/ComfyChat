@@ -1,0 +1,30 @@
+[
+    {
+        "question": "CtrlNet OpenPose Pipe节点的主要目的是什么？",
+        "answer": "CtrlNet OpenPose Pipe节点旨在处理和应用OpenPose设置到输入数据中，便于配置和应用OpenPose参数进行姿态估计任务。它抽象了设置OpenPose配置的复杂性，使姿态估计更容易集成到更广泛的工作流程中。"
+    },
+    {
+        "question": "CtrlNet OpenPose Pipe节点的输入类型是什么？",
+        "answer": "CtrlNet OpenPose Pipe节点的必需输入类型是openpose_settings，包括源、强度、起始点、结束点，以及身体、面部和手部检测的选项。"
+    },
+    {
+        "question": "OpenPose设置中的源参数起什么作用？",
+        "answer": "在OpenPose设置中，源参数决定了OpenPose算法将应用于哪里，例如主图像或辅助图像。"
+    },
+    {
+        "question": "CtrlNet OpenPose Pipe节点的输出类型有哪些？",
+        "answer": "CtrlNet OpenPose Pipe节点的输出类型包括：openpose_source（INT，标识OpenPose处理的输入源）、openpose_strength（FLOAT，定义OpenPose效果的强度）、openpose_start（FLOAT，指定OpenPose效果的起始点）、openpose_end（FLOAT，指定OpenPose效果的结束点）、openpose_body（COMBO[STRING]，启用或禁用OpenPose中的身体检测）、openpose_face（COMBO[STRING]，启用或禁用OpenPose中的面部检测）和openpose_hand（COMBO[STRING]，启用或禁用OpenPose中的手部检测）。"
+    },
+    {
+        "question": "CtrlNet OpenPose Pipe节点的Infra type是什么？",
+        "answer": "CtrlNet OpenPose Pipe节点的Infra type是CPU。"
+    },
+    {
+        "question": "如何通过Python代码定义CtrlNet OpenPose Pipe节点的输入和输出类型？",
+        "answer": "在Python代码中，通过定义INPUT_TYPES和RETURN_TYPES类属性来指定CtrlNet OpenPose Pipe节点的输入和输出类型。例如，INPUT_TYPES指定必需的输入openpose_settings，RETURN_TYPES则详细列出了所有的输出类型和名称。"
+    },
+    {
+        "question": "CtrlNet OpenPose Pipe节点的give_values函数是如何工作的？",
+        "answer": "在CtrlNet OpenPose Pipe节点的give_values函数中，接受openpose_settings作为输入，然后解包该设置，返回openpose_source、openpose_strength、openpose_start、openpose_end、openpose_body、openpose_face和openpose_hand等输出值。"
+    }
+]

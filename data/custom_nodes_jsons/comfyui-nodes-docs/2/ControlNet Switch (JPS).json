@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ControlNet Switch node in ComfyUI?",
+        "answer": "The ControlNet Switch node in ComfyUI is designed to dynamically select one control net configuration from multiple options based on a given selection input, allowing for flexible operation of control nets within a processing flow."
+    },
+    {
+        "question": "What is the required input for the ControlNet Switch node?",
+        "answer": "The required input for the ControlNet Switch node is 'select', which specifies the index of the control net to output, determining which control net configuration is applied."
+    },
+    {
+        "question": "What are the optional inputs for the ControlNet Switch node?",
+        "answer": "The optional inputs for the ControlNet Switch node are 'ctrlnet_i' (where 'i' ranges from 1 to 5), representing the control net configuration options that can be selected based on the 'select' input."
+    },
+    {
+        "question": "What does the 'select' input determine in the ControlNet Switch node?",
+        "answer": "The 'select' input in the ControlNet Switch node determines which control net configuration is applied by specifying the index of the desired control net."
+    },
+    {
+        "question": "What is the output of the ControlNet Switch node?",
+        "answer": "The output of the ControlNet Switch node is 'ctrlnet_out', which represents the selected control net configuration based on the 'select' input."
+    },
+    {
+        "question": "What is the infra type for the ControlNet Switch node?",
+        "answer": "The infra type for the ControlNet Switch node is 'CPU'."
+    },
+    {
+        "question": "How does the ControlNet Switch node determine the output based on the 'select' input?",
+        "answer": "Based on the provided source code, the ControlNet Switch node uses a series of conditional statements (if-elif) to determine the output 'ctrlnet_out' by comparing the 'select' input value with integers 2 to 5, assigning the corresponding 'ctrlnet_i' input to 'ctrlnet_out' when a match is found."
+    }
+]

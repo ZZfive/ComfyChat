@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ConvertNormals节点的主要功能是什么？",
+        "answer": "ConvertNormals节点专门用于转换法线贴图的格式，调整其规模，并可选择性地进行归一化或填充缺失区域。"
+    },
+    {
+        "question": "ConvertNormals节点支持哪些输入模式？",
+        "answer": "ConvertNormals节点支持'BAE'、'MiDaS'和'Standard'三种输入模式。"
+    },
+    {
+        "question": "ConvertNormals节点的输出类型是什么？",
+        "answer": "ConvertNormals节点的输出类型是转换后的法线贴图张量，根据指定的输入和输出模式、缩放、归一化和可选填充进行调整。"
+    },
+    {
+        "question": "如何通过ConvertNormals节点调整法线贴图的X和Y分量？",
+        "answer": "可以通过scale_XY参数来调整法线贴图的X和Y分量，该参数是一个浮点型数据。"
+    },
+    {
+        "question": "ConvertNormals节点如何处理输入法线贴图中的黑色区域？",
+        "answer": "通过fix_black参数，当启用时，ConvertNormals节点会对法线贴图中的黑色区域进行修正，可能会基于optional_fill参数填充这些区域。"
+    },
+    {
+        "question": "optional_fill参数在ConvertNormals节点中有什么作用？",
+        "answer": "optional_fill参数是一个可选的张量，用于在启用fix_black时填充法线贴图中的黑色区域。"
+    },
+    {
+        "question": "使用ConvertNormals节点时，infra类型是什么？",
+        "answer": "使用ConvertNormals节点时，infra类型是GPU。"
+    }
+]

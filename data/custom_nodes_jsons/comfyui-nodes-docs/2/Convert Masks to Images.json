@@ -1,0 +1,26 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Mask_To_Image node in ComfyUI?",
+        "answer": "The WAS_Mask_To_Image node in ComfyUI is designed to convert mask data into image format. It plays a key role in the conversion process, ensuring a seamless transition from mask representation to visual images."
+    },
+    {
+        "question": "What is the required input type for the WAS_Mask_To_Image node?",
+        "answer": "The required input type for the WAS_Mask_To_Image node is 'masks', which defines the input mask data that needs to be converted into an image. This parameter greatly influences the operation of the node and directly affects the quality and appearance of the output image."
+    },
+    {
+        "question": "What is the output type of the WAS_Mask_To_Image node?",
+        "answer": "The output type of the WAS_Mask_To_Image node is 'IMAGES', which represents the image data converted from the input masks. It is a crucial output as it signifies the successful conversion of mask data into a visual format that can be further processed or displayed."
+    },
+    {
+        "question": "What is the infra type for the WAS_Mask_To_Image node?",
+        "answer": "The infra type for the WAS_Mask_To_Image node is CPU."
+    },
+    {
+        "question": "How does the WAS_Mask_To_Image node handle different dimensions of mask inputs?",
+        "answer": "The WAS_Mask_To_Image node intelligently handles various dimensions of mask inputs, ensuring compatibility with different types of mask data. If the input mask has 4 dimensions, it permutes the tensor and concatenates it to create an RGB tensor. If the input mask has 3 or 2 dimensions, it unsqueezes the tensor and concatenates it to create an RGB tensor."
+    },
+    {
+        "question": "What happens if the input mask has an invalid shape in the WAS_Mask_To_Image node?",
+        "answer": "If the input mask has an invalid shape, the WAS_Mask_To_Image node will print an error message using cstr('Invalid input shape. Expected [N, C, H, W] or [H, W]').error.print() and return the original mask data."
+    }
+]

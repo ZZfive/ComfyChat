@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the DetailerForEach node in ComfyUI?",
+        "answer": "The DetailerForEach node in ComfyUI is designed to enhance the details in different parts of an image. It works by applying a detailed enhancement process to each part separately, including zooming in, denoising, and pasting the enhanced parts back onto the original image."
+    },
+    {
+        "question": "What are the required input types for the DetailerForEach node?",
+        "answer": "The required input types for the DetailerForEach node include: image (the input image for detail enhancement), segs (a series of segments defining which areas to enhance), model (the model used for the enhancement process), clip (a CLIP model or similar that assists in generating context-aware image enhancements), vae (a variational autoencoder essential for encoding and decoding image data), guide_size (a parameter determining the scale of detail enhancement), and steps (the number of steps to be performed in the sampling process, directly affecting the quality and detail of the final enhanced image)."
+    },
+    {
+        "question": "What does the 'segs' input represent in the DetailerForEach node?",
+        "answer": "In the DetailerForEach node, 'segs' represents a series of segments defined within the image, with each segment representing an area to be enhanced. These segments are crucial for the node to identify which parts of the image require detailed processing."
+    },
+    {
+        "question": "How does the 'guide_size' parameter affect the detail enhancement process in the DetailerForEach node?",
+        "answer": "The 'guide_size' parameter in the DetailerForEach node is key to controlling the level of detail applied to each segment. It determines the scale at which the detail enhancement focuses, thus influencing the hierarchical application of details in each segment."
+    },
+    {
+        "question": "What is the output type of the DetailerForEach node?",
+        "answer": "The output type of the DetailerForEach node is an enhanced image, where each segment has been processed separately to achieve higher resolution and clarity."
+    },
+    {
+        "question": "What is the role of the 'clip' input in the DetailerForEach node?",
+        "answer": "In the DetailerForEach node, the 'clip' input, typically a CLIP model or similar, assists in generating image enhancements that are context-aware by providing textual descriptions of the image content."
+    },
+    {
+        "question": "What infrastructure type is recommended for the DetailerForEach node?",
+        "answer": "The DetailerForEach node is recommended to be used with GPU infrastructure for optimal performance."
+    }
+]

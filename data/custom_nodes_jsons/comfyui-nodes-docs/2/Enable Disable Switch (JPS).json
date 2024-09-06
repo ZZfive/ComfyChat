@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Enable Disable Switch node in ComfyUI?",
+        "answer": "The Enable Disable Switch node in ComfyUI is designed to switch between enabled and disabled states based on specific conditions. It evaluates the equality of two integer inputs with predefined matching conditions to determine the output state, thus enabling dynamic control flow within the system."
+    },
+    {
+        "question": "What are the required input types for the Enable Disable Switch node?",
+        "answer": "The Enable Disable Switch node requires three input types: 'select' (an integer input compared to another input to determine the switch state), 'compare' (an integer input compared to the 'select' input to determine the switch state), and 'match' (a predefined condition that decides whether the switch should be set to enable or disable based on the comparison of 'select' and 'compare' inputs)."
+    },
+    {
+        "question": "What is the output type of the Enable Disable Switch node?",
+        "answer": "The output type of the Enable Disable Switch node is 'enable_disable', which can be either 'enable' or 'disable', depending on the input conditions."
+    },
+    {
+        "question": "What is the infra type for the Enable Disable Switch node?",
+        "answer": "The infra type for the Enable Disable Switch node is 'CPU'."
+    },
+    {
+        "question": "How does the get_endisable function determine the enable_disable output?",
+        "answer": "The get_endisable function determines the enable_disable output by comparing the 'select' and 'compare' inputs based on the 'match' condition. If 'match' is set to 'Set to Enable' and the 'select' and 'compare' inputs are equal, the output is 'enable'. If 'match' is set to 'Set to Disable' and the 'select' and 'compare' inputs are equal, the output is 'disable'. If the 'select' and 'compare' inputs are not equal, the output is the opposite of the 'match' condition."
+    },
+    {
+        "question": "What is the category of the Enable Disable Switch node in ComfyUI?",
+        "answer": "The category of the Enable Disable Switch node in ComfyUI is 'JPS Nodes/Switches'."
+    },
+    {
+        "question": "What are the possible values for the 'match' input in the Enable Disable Switch node?",
+        "answer": "The possible values for the 'match' input in the Enable Disable Switch node are 'Set to Enable' and 'Set to Disable'."
+    }
+]

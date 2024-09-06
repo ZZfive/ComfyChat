@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ConditioningConcat node in ComfyUI?",
+        "answer": "The ConditioningConcat node is designed to merge two conditioning inputs into a single output. It cleverly concatenates the source conditioning input with the target conditioning input along a specified dimension, ensuring that the resulting output is well-suited for subsequent processing steps in neural network architectures."
+    },
+    {
+        "question": "What is the 'conditioning_to' parameter in the ConditioningConcat node?",
+        "answer": "The 'conditioning_to' parameter represents the target conditioning input that will be concatenated with another conditioning input. It plays a crucial role in determining the structure of the final output, as it serves as the foundation onto which additional conditioning information is appended."
+    },
+    {
+        "question": "What is the 'conditioning_from' parameter in the ConditioningConcat node?",
+        "answer": "The 'conditioning_from' parameter provides the source conditioning input that will be combined with the 'conditioning_to' input. It is important because it contributes additional context or features to the final concatenated output, potentially enhancing the model's ability to make informed predictions."
+    },
+    {
+        "question": "What is the output of the ConditioningConcat node?",
+        "answer": "The output of the ConditioningConcat node is a merged conditioning tensor that incorporates elements from both the 'conditioning_to' and 'conditioning_from' inputs. This output is strategically constructed to be compatible with downstream neural network operations."
+    },
+    {
+        "question": "What is the infra type recommended for the ConditioningConcat node?",
+        "answer": "The recommended infra type for the ConditioningConcat node is CPU."
+    },
+    {
+        "question": "What happens if the 'conditioning_from' input contains more than one condition in the ConditioningConcat node?",
+        "answer": "If the 'conditioning_from' input contains more than one condition, only the first condition will actually be applied to the 'conditioning_to' input. A warning message will be logged to inform the user about this behavior."
+    },
+    {
+        "question": "How does the ConditioningConcat node concatenate the 'conditioning_to' and 'conditioning_from' inputs?",
+        "answer": "The ConditioningConcat node concatenates the 'conditioning_to' and 'conditioning_from' inputs along the second dimension (dim=1) using the torch.cat() function. It creates a new tensor 'tw' by concatenating the first tensor of each conditioning input."
+    }
+]

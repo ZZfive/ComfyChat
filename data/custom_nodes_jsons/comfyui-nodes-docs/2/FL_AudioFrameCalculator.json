@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FL_AudioFrameCalculator node in ComfyUI?",
+        "answer": "The FL_AudioFrameCalculator node in ComfyUI is used to process audio files by calculating the number of frames within a specified number of bars in the audio. This allows for targeted analysis and manipulation of specific sections of the audio file."
+    },
+    {
+        "question": "What are the required input parameters for the FL_AudioFrameCalculator node?",
+        "answer": "The required input parameters for the FL_AudioFrameCalculator node are: audio_file_path (absolute path to the audio file), start_bar (starting bar for analysis), bar_count (number of bars to analyze), and fps (frames per second)."
+    },
+    {
+        "question": "What does the 'fps' parameter in the FL_AudioFrameCalculator node represent?",
+        "answer": "The 'fps' parameter in the FL_AudioFrameCalculator node represents the frames per second setting. This influences the calculation of the total number of frames within the specified audio segment."
+    },
+    {
+        "question": "What are the output types of the FL_AudioFrameCalculator node?",
+        "answer": "The output types of the FL_AudioFrameCalculator node are: AUDIO (processed audio segment), Frame Count (total number of frames in the specified audio segment), BPM (beats per minute determined during processing), and FPS (frames per second, returned as reference)."
+    },
+    {
+        "question": "How does the FL_AudioFrameCalculator node determine the beats per minute (BPM) of the audio?",
+        "answer": "The FL_AudioFrameCalculator node determines the beats per minute (BPM) of the audio using the librosa.beat.beat_track function, which extracts the tempo from the audio waveform."
+    },
+    {
+        "question": "What is the purpose of calculating the start and end times in seconds based on bars in the FL_AudioFrameCalculator node?",
+        "answer": "Calculating the start and end times in seconds based on bars in the FL_AudioFrameCalculator node is done to determine the specific segment of the audio file to be processed. This allows for targeted analysis and manipulation of the audio data."
+    },
+    {
+        "question": "How does the FL_AudioFrameCalculator node calculate the number of frames in the specified audio segment?",
+        "answer": "The FL_AudioFrameCalculator node calculates the number of frames in the specified audio segment by multiplying the duration of the segment in seconds by the frames per second (fps) value."
+    }
+]

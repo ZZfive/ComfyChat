@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ESAM_ModelLoader_Zho node in ComfyUI?",
+        "answer": "The ESAM_ModelLoader_Zho node is designed to load ESAM models customized for GPU or CPU environments, ensuring compatibility with the execution platform."
+    },
+    {
+        "question": "What is the required input type for the ESAM_ModelLoader_Zho node?",
+        "answer": "The required input type for the ESAM_ModelLoader_Zho node is 'device', which determines the hardware environment for loading the ESAM model."
+    },
+    {
+        "question": "What are the possible values for the 'device' parameter in the ESAM_ModelLoader_Zho node?",
+        "answer": "The possible values for the 'device' parameter in the ESAM_ModelLoader_Zho node are 'CUDA' for GPU and 'CPU'."
+    },
+    {
+        "question": "What is the output type of the ESAM_ModelLoader_Zho node?",
+        "answer": "The output type of the ESAM_ModelLoader_Zho node is 'esam_model', which represents the loaded ESAM model."
+    },
+    {
+        "question": "What is the Python data type of the 'esam_model' output in the ESAM_ModelLoader_Zho node?",
+        "answer": "The Python data type of the 'esam_model' output in the ESAM_ModelLoader_Zho node is torch.jit.ScriptModule."
+    },
+    {
+        "question": "What is the infra type specified for the ESAM_ModelLoader_Zho node?",
+        "answer": "The infra type specified for the ESAM_ModelLoader_Zho node is GPU."
+    },
+    {
+        "question": "How does the ESAM_ModelLoader_Zho node determine which ESAM model to load based on the 'device' parameter?",
+        "answer": "The ESAM_ModelLoader_Zho node determines which ESAM model to load based on the 'device' parameter by selecting the appropriate model path. If 'device' is 'CUDA', it loads the 'efficient_sam_s_gpu.jit' model. Otherwise, it loads the 'efficient_sam_s_cpu.jit' model."
+    }
+]

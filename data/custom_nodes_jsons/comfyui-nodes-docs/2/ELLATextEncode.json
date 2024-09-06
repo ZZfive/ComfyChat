@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ELLATextEncode node in ComfyUI?",
+        "answer": "The ELLATextEncode node in ComfyUI is designed to encode text input using the ELLA model, with additional processing through a T5 text embedder. Its goal is to produce conditional embeddings suitable for further processing or generation tasks."
+    },
+    {
+        "question": "What are the required inputs for the ELLATextEncode node?",
+        "answer": "The required inputs for the ELLATextEncode node are 'text' (the main text data to be encoded), 'sigma' (specifying the timestep for the ELLA model), and 'ella' (providing the ELLA model components)."
+    },
+    {
+        "question": "What does the 'sigma' parameter do in the ELLATextEncode node?",
+        "answer": "The 'sigma' parameter in the ELLATextEncode node specifies the timestep for the ELLA model, affecting the temporal aspect of the encoding process. It determines how the ELLA model interprets the conditioning over time, thus influencing the final embedding."
+    },
+    {
+        "question": "What is included in the 'ella' input for the ELLATextEncode node?",
+        "answer": "The 'ella' input for the ELLATextEncode node provides the necessary ELLA model components for the text encoding process, including the ELLA model itself and the T5 text embedder."
+    },
+    {
+        "question": "What is the output of the ELLATextEncode node?",
+        "answer": "The output of the ELLATextEncode node is a custom-tailored conditional embedding for further generation tasks. It includes embeddings from the ELLA model, with additional information such as pooled output, aimed at enhancing downstream processing."
+    },
+    {
+        "question": "What is the infrastructure type recommended for the ELLATextEncode node?",
+        "answer": "The recommended infrastructure type for the ELLATextEncode node is GPU."
+    },
+    {
+        "question": "How does the ELLATextEncode node process the 'text' input to generate the output embedding?",
+        "answer": "The ELLATextEncode node processes the 'text' input by first passing it through the T5 text embedder, then using the ELLA model to further process the embedding at the specified 'sigma' timestep. The output embedding includes the ELLA-processed embedding and additional pooled output."
+    }
+]

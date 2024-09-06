@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FacialPartColoringFromPoseKps node in ComfyUI?",
+        "answer": "The FacialPartColoringFromPoseKps node in ComfyUI is designed to color specific facial parts in pose keypoint data to enable visual distinction and analysis of facial features."
+    },
+    {
+        "question": "What are the required inputs for the FacialPartColoringFromPoseKps node?",
+        "answer": "The required inputs for the FacialPartColoringFromPoseKps node are pose_kps (pose keypoint data), mode (rendering mode for facial parts), and colors for each facial part such as skin, left_eye, right_eye, nose, upper_lip, inner_mouth, and lower_lip."
+    },
+    {
+        "question": "What are the two rendering modes supported by the FacialPartColoringFromPoseKps node?",
+        "answer": "The FacialPartColoringFromPoseKps node supports two rendering modes: point and polygon. The point mode renders facial keypoints as points, while the polygon mode fills the area around the keypoints."
+    },
+    {
+        "question": "What is the output type of the FacialPartColoringFromPoseKps node?",
+        "answer": "The output type of the FacialPartColoringFromPoseKps node is an IMAGE, which is a torch.Tensor representing the colored facial parts based on the provided specifications."
+    },
+    {
+        "question": "Does the FacialPartColoringFromPoseKps node support GPU acceleration?",
+        "answer": "Yes, the FacialPartColoringFromPoseKps node has the infra type GPU, indicating that it supports GPU acceleration."
+    },
+    {
+        "question": "What is the default color setting for facial parts in the FacialPartColoringFromPoseKps node?",
+        "answer": "The default color setting for facial parts in the FacialPartColoringFromPoseKps node is determined by the LAPA_COLORS dictionary, which provides default colors for each facial part."
+    },
+    {
+        "question": "How does the FacialPartColoringFromPoseKps node handle the scaling of facial keypoints?",
+        "answer": "The FacialPartColoringFromPoseKps node checks if the facial keypoints are normalized. If they are, it multiplies them by the canvas width and height to scale them appropriately."
+    }
+]

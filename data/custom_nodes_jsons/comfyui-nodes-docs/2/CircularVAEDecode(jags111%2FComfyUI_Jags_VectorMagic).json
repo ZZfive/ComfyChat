@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CircularVAEDecode node in ComfyUI?",
+        "answer": "The CircularVAEDecode node in ComfyUI prepares the convolutional layers of the VAE model to handle circular padding, ensuring consistency at the edges of the generated images."
+    },
+    {
+        "question": "What are the required input types for the CircularVAEDecode node?",
+        "answer": "The required input types for the CircularVAEDecode node are 'samples' (latent vectors) and 'vae' (variational autoencoder model)."
+    },
+    {
+        "question": "What does the 'samples' input represent in the CircularVAEDecode node?",
+        "answer": "The 'samples' input in the CircularVAEDecode node represents the latent vectors from the VAE encoder, which are crucial for generating images and directly influence the quality and features of the output image."
+    },
+    {
+        "question": "What does the 'vae' input represent in the CircularVAEDecode node?",
+        "answer": "The 'vae' input in the CircularVAEDecode node refers to the variational autoencoder model used to decode the latent samples into images. It encapsulates the learned data distribution and is essential for the node's functionality."
+    },
+    {
+        "question": "What is the output type of the CircularVAEDecode node?",
+        "answer": "The output type of the CircularVAEDecode node is 'image', which represents the visual representation of the encoded data and is the direct product of the node's operation."
+    },
+    {
+        "question": "What infrastructure type is recommended for the CircularVAEDecode node?",
+        "answer": "The recommended infrastructure type for the CircularVAEDecode node is GPU."
+    },
+    {
+        "question": "How does the CircularVAEDecode node modify the convolutional layers of the VAE model?",
+        "answer": "The CircularVAEDecode node modifies the convolutional layers of the VAE model by setting the padding_mode to 'circular' for each Conv2d layer in the vae.first_stage_model."
+    }
+]

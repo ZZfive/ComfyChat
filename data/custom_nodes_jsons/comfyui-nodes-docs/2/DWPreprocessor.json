@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the DWPreprocessor node in ComfyUI?",
+        "answer": "The DWPreprocessor node in ComfyUI is used for data preprocessing specifically for the DWPose pose estimation task. It converts input data into a suitable format for pose estimation, optimizing the structure and format of the input data to improve the performance of the pose estimation model."
+    },
+    {
+        "question": "What are the required input types for the DWPreprocessor node?",
+        "answer": "The required input type for the DWPreprocessor node is an image, which is used as the input image for pose estimation. The Comfy data type for the image input is IMAGE, and the corresponding Python data type is np.ndarray."
+    },
+    {
+        "question": "What are the optional input parameters for the DWPreprocessor node?",
+        "answer": "The optional input parameters for the DWPreprocessor node include detect_hand, detect_body, detect_face, resolution, bbox_detector, and pose_estimator. These parameters control various aspects of the pose estimation process, such as enabling/disabling hand, body, and face detection, setting the resolution of the input image, specifying the bounding box detector model, and determining the pose estimation model to be used."
+    },
+    {
+        "question": "What are the output types of the DWPreprocessor node?",
+        "answer": "The output types of the DWPreprocessor node are an image and pose_keypoint. The image output is the processed image after pose estimation, which can be used for further analysis or visualization. The pose_keypoint output contains the detected pose keypoints, providing detailed position information for various body parts. The Comfy data types for the outputs are IMAGE and POSE_KEYPOINT, respectively, and the corresponding Python data types are np.ndarray and List[np.ndarray]."
+    },
+    {
+        "question": "What are some common nodes that can be used with the DWPreprocessor node?",
+        "answer": "Some common nodes that can be used with the DWPreprocessor node include PreviewImage, ControlNetApplyAdvanced, ACN_AdvancedControlNetApply, ControlNetApply, PreviewBridge, and CR Multi-ControlNet Stack. These nodes can be used in conjunction with the DWPreprocessor node to perform various tasks related to pose estimation and image processing."
+    },
+    {
+        "question": "What is the infra type required for running the DWPreprocessor node?",
+        "answer": "The infra type required for running the DWPreprocessor node is GPU, indicating that a graphics processing unit is needed to support the computational requirements of the pose estimation task."
+    },
+    {
+        "question": "How does the DWPreprocessor node handle different bounding box detector and pose estimator models?",
+        "answer": "The DWPreprocessor node handles different bounding box detector and pose estimator models by checking the values of the bbox_detector and pose_estimator parameters. Depending on the specified models, the node sets the appropriate repository names (yolo_repo and pose_repo) to load the required models using the DwposeDetector class. The code supports various combinations of bounding box detectors and pose estimators, and raises a NotImplementedError if an unsupported model is specified."
+    }
+]

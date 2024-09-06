@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the primary function of the Glow node in ComfyUI?",
+        "answer": "The Glow node in ComfyUI is used to apply a glow effect to an image by adding an adjustable intensity blurred version of the image, enhancing its visual appeal."
+    },
+    {
+        "question": "What are the required input types for the Glow node?",
+        "answer": "The required input types for the Glow node are: image (torch.Tensor), intensity (float), and blur_radius (int)."
+    },
+    {
+        "question": "How does the 'intensity' parameter affect the glow effect in the Glow node?",
+        "answer": "The 'intensity' parameter controls the prominence of the glow effect. A higher value results in a more noticeable glow, allowing for fine-tuning the visual impact of the effect."
+    },
+    {
+        "question": "What role does the 'blur_radius' parameter play in the Glow node?",
+        "answer": "The 'blur_radius' parameter determines the amount of blur applied to the image for the glow effect. It influences the diffusion and smoothness of the glow, with a larger radius leading to more dispersed and widespread brightness."
+    },
+    {
+        "question": "What is the output type of the Glow node?",
+        "answer": "The output type of the Glow node is 'glowing_image' (torch.Tensor), which represents the input image enhanced with the glow effect."
+    },
+    {
+        "question": "Which infrastructure type is recommended for the Glow node?",
+        "answer": "The recommended infrastructure type for the Glow node is GPU."
+    },
+    {
+        "question": "How does the Glow node apply the glow effect to the image?",
+        "answer": "The Glow node applies the glow effect by first creating a blurred version of the input image using the gaussian_blur function, then combining the original image with the blurred image using the add_glow function, which takes into account the specified intensity."
+    }
+]

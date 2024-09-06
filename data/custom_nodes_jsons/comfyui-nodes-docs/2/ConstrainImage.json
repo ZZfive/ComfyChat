@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ConstrainImage node in ComfyUI?",
+        "answer": "The ConstrainImage node is used to resize an image to fit within specified boundaries while maintaining its aspect ratio. It scales the image to the nearest maximum and minimum dimensions and crops it if necessary to ensure it fits the defined constraints."
+    },
+    {
+        "question": "What are the required input types for the ConstrainImage node?",
+        "answer": "The required input types for the ConstrainImage node are: images (Comfy dtype: IMAGE, Python dtype: torch.Tensor), max_width (Comfy dtype: INT, Python dtype: int), max_height (Comfy dtype: INT, Python dtype: int), min_width (Comfy dtype: INT, Python dtype: int), min_height (Comfy dtype: INT, Python dtype: int), and crop_if_required (Comfy dtype: COMBO, Python dtype: str)."
+    },
+    {
+        "question": "What does the 'crop_if_required' parameter do in the ConstrainImage node?",
+        "answer": "The 'crop_if_required' parameter is a decision point that determines whether the image should be cropped after scaling if it does not fit the specified constraints. This choice affects the final result of the image transformation."
+    },
+    {
+        "question": "What is the output type of the ConstrainImage node?",
+        "answer": "The output type of the ConstrainImage node is IMAGE (Comfy dtype: IMAGE, Python dtype: torch.Tensor), representing the input image adjusted to fit the specified maximum and minimum dimensions while maintaining its aspect ratio."
+    },
+    {
+        "question": "What infra type is recommended for using the ConstrainImage node?",
+        "answer": "The recommended infra type for using the ConfyUI ConstrainImage node is CPU."
+    },
+    {
+        "question": "How does the ConstrainImage node maintain the aspect ratio of the image?",
+        "answer": "The ConstrainImage node maintains the aspect ratio of the image by calculating the constrained width and height based on the maximum and minimum dimensions and the current aspect ratio. It then resizes the image using these constrained dimensions, ensuring the aspect ratio is preserved."
+    },
+    {
+        "question": "What happens if the 'crop_if_required' parameter is set to 'yes' in the ConstrainImage node?",
+        "answer": "If the 'crop_if_required' parameter is set to 'yes', the ConstrainImage node will crop the image after resizing if the constrained dimensions exceed the maximum width or height. The cropping is done by calculating the left, top, right, and bottom coordinates based on the constrained and maximum dimensions."
+    }
+]

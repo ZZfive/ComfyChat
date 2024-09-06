@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ConditioningSetMaskAndCombine4 node in ComfyUI?",
+        "answer": "The ConditioningSetMaskAndCombine4 node is used to apply a series of masks to conditioning data and combine them based on specified intensity and area. It allows for dynamic adjustment of conditioning regions through masks, enabling precise control over the conditioning process in multi-step or complex conditioning scenarios."
+    },
+    {
+        "question": "What are the required input types for the ConditioningSetMaskAndCombine4 node?",
+        "answer": "The required input types for the ConditioningSetMaskAndCombine4 node are: positive_i (positive conditioning data), negative_i (negative conditioning data), mask_i (masks applied to conditioning data), mask_i_strength (strength of the corresponding mask), and set_cond_area (determines whether the conditioning area is set to mask bounds or default)."
+    },
+    {
+        "question": "What does the 'set_cond_area' parameter in the ConditioningSetMaskAndCombine4 node determine?",
+        "answer": "The 'set_cond_area' parameter decides whether the conditioning area is set to the bounds defined by the mask or uses the default setting, affecting how the conditioning is applied."
+    },
+    {
+        "question": "What are the output types of the ConditioningSetMaskAndCombine4 node?",
+        "answer": "The output types of the ConditioningSetMaskAndCombine4 node are: combined_positive (the resulting positive conditioning data after applying masks and combining based on specified parameters) and combined_negative (the resulting negative conditioning data reflecting the weakening or canceling effect of the masks on the original conditioning)."
+    },
+    {
+        "question": "What is the infra type for the ConditioningSetMaskAndCombine4 node?",
+        "answer": "The infra type for the ConditioningSetMaskAndCombine4 node is CPU."
+    },
+    {
+        "question": "How does the ConditioningSetMaskAndCombine4 node handle masks with dimensions less than 3?",
+        "answer": "If a mask has dimensions less than 3, the ConditioningSetMaskAndCombine4 node uses the `unsqueeze(0)` method to add an additional dimension to the mask tensor."
+    },
+    {
+        "question": "What does the `append_helper` function do in the ConditioningSetMaskAndCombine4 node?",
+        "answer": "The `append_helper` function is used to append the conditioning data to the output list based on the mask, area settings, and mask strength. It is called for each positive and negative conditioning input and their corresponding masks."
+    }
+]

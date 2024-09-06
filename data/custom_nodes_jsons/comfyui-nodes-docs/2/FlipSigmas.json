@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FlipSigmas node in ComfyUI?",
+        "answer": "The FlipSigmas node in ComfyUI is designed to manipulate the sigma values used during the sampling process. It reverses the order of the sigmas to ensure the sampling follows a specific sequence, which is crucial for the outcome in custom sampling strategies."
+    },
+    {
+        "question": "What is the input type required for the FlipSigmas node?",
+        "answer": "The FlipSigmas node requires one input type, 'sigmas', which is a tensor containing the sigma values used during the sampling process."
+    },
+    {
+        "question": "What is the output type of the FlipSigmas node?",
+        "answer": "The output type of the FlipSigmas node is 'SIGMAS', which is a tensor representing the flipped sigma values."
+    },
+    {
+        "question": "How does the FlipSigmas node impact the quality and characteristics of the generated samples?",
+        "answer": "The FlipSigmas node influences the quality and characteristics of the generated samples by manipulating the order and scale of noise reduction during the sampling process."
+    },
+    {
+        "question": "What happens if the length of the sigmas tensor is zero in the FlipSigmas node?",
+        "answer": "If the length of the sigmas tensor is zero, the FlipSigmas node returns the original sigmas tensor without any modifications."
+    },
+    {
+        "question": "What does the FlipSigmas node do if the first value of the flipped sigmas tensor is zero?",
+        "answer": "If the first value of the flipped sigmas tensor is zero, the FlipSigmas node sets it to 0.0001."
+    },
+    {
+        "question": "What is the infra type for the FlipSigmas node?",
+        "answer": "The infra type for the FlipSigmas node is CPU."
+    }
+]

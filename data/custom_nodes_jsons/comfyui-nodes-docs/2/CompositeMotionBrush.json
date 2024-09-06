@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CompositeMotionBrush node in ComfyUI?",
+        "answer": "The CompositeMotionBrush node in ComfyUI integrates multiple motion layers into a single composite layer, applying a blending algorithm based on predefined patterns and prioritizing certain motion vectors to enhance the overall motion representation."
+    },
+    {
+        "question": "What are the required input types for the CompositeMotionBrush node?",
+        "answer": "The required input types for the CompositeMotionBrush node are: model (DragNUWA), motion_brush_layer0 (MotionBrush), motion_brush_layer1 (MotionBrush), and mode (CompositeMotionBrushMode)."
+    },
+    {
+        "question": "How does the 'mode' parameter affect the output of the CompositeMotionBrush node?",
+        "answer": "The 'mode' parameter determines the blending strategy used by the CompositeMotionBrush node to integrate motion layers, with the default setting being 'override', which determines how motion vectors are prioritized in the final output."
+    },
+    {
+        "question": "What is the output type of the CompositeMotionBrush node?",
+        "answer": "The output type of the CompositeMotionBrush node is MotionBrush, representing the composite motion layer that enhances the motion representation based on the specified blending mode."
+    },
+    {
+        "question": "Which infrastructure type is recommended for running the CompositeMotionBrush node?",
+        "answer": "The recommended infrastructure type for running the CompositeMotionBrush node is CPU."
+    },
+    {
+        "question": "What does the run_inference function in the CompositeMotionBrush class do?",
+        "answer": "The run_inference function in the CompositeMotionBrush class integrates the motion_brush_layer0 and motion_brush_layer1 based on the specified mode, prioritizing motion vectors and enhancing the overall motion representation in the output composite motion layer."
+    },
+    {
+        "question": "How does the CompositeMotionBrush node prioritize motion vectors when blending motion layers?",
+        "answer": "The CompositeMotionBrush node prioritizes motion vectors by checking the absolute values of the motion vectors in motion_brush_layer1. If the values are greater than 0.0001, the node uses the motion vectors from motion_brush_layer1; otherwise, it uses the motion vectors from motion_brush_layer0."
+    }
+]

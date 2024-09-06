@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the EsheepImageSplit node in ComfyUI?",
+        "answer": "The EsheepImageSplit node is designed to split an image into a grid of tiles based on specified columns and rows, making it easier to manage and process large images."
+    },
+    {
+        "question": "What are the required input types for the EsheepImageSplit node?",
+        "answer": "The required input types for the EsheepImageSplit node are 'images' (Comfy dtype: IMAGE, Python dtype: PIL.Image or torch.Tensor), 'columns' (Comfy dtype: INT, Python dtype: int), and 'lines' (Comfy dtype: INT, Python dtype: int)."
+    },
+    {
+        "question": "How does the 'columns' parameter affect the image splitting process in EsheepImageSplit?",
+        "answer": "The 'columns' parameter determines how the image is split horizontally, directly influencing the arrangement and number of generated tiles. It is an important parameter for controlling the granularity of image segmentation."
+    },
+    {
+        "question": "What is the role of the 'lines' parameter in the EsheepImageSplit node?",
+        "answer": "Similar to the 'columns' parameter, the 'lines' parameter determines the vertical splitting of the image, affecting the shape and number of tiles. It works together with the 'columns' parameter to define the grid structure."
+    },
+    {
+        "question": "What is the output type of the EsheepImageSplit node?",
+        "answer": "The output type of the EsheepImageSplit node is 'output' (Comfy dtype: IMAGE, Python dtype: torch.Tensor), which represents the collection of tiles generated from the input image."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the EsheepImageSplit node?",
+        "answer": "The recommended infrastructure type for running the EsheepImageSplit node is CPU."
+    },
+    {
+        "question": "How does the EsheepImageSplit node's execute function process the input image?",
+        "answer": "The execute function of the EsheepImageSplit node takes the input image, converts it to a PIL.Image, and then crops it into tiles based on the specified columns and rows. The tiles are then converted back to torch.Tensor and concatenated into a single output tensor."
+    }
+]

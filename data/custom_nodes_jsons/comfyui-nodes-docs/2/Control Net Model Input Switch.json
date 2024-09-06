@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the 'control_net_switch' method in the WAS_Control_Net_Input_Switch class?",
+        "answer": "The 'control_net_switch' method is designed to intelligently select one of two control nets based on a boolean condition. It serves as a decision node in the workflow, ensuring that the appropriate control net is used at any given time, thereby enhancing the system's flexibility and adaptability."
+    },
+    {
+        "question": "What does the 'control_net_a' parameter represent in the WAS_Control_Net_Input_Switch class?",
+        "answer": "The 'control_net_a' parameter represents the first control net option that the node can switch to. It plays a key role in the decision-making process, as the node will select this network when the boolean condition is met."
+    },
+    {
+        "question": "What is the role of the 'control_net_b' parameter in the WAS_Control_Net_Input_Switch class?",
+        "answer": "The 'control_net_b' parameter is the alternative control net that the node may choose when the boolean condition is not met. It is crucial to the functionality of the node, providing a fallback option for the control net."
+    },
+    {
+        "question": "How does the 'boolean' parameter influence the output of the WAS_Control_Net_Input_Switch class?",
+        "answer": "The 'boolean' parameter acts as a conditional switch that determines whether 'control_net_a' or 'control_net_b' is returned. Its significance lies in the fact that its truth value directly influences the output of the node."
+    },
+    {
+        "question": "What does the 'selected_control_net' output represent in the WAS_Control_Net_Input_Switch class?",
+        "answer": "The 'selected_control_net' output represents the control net chosen by the node based on the boolean condition. It is essential because it determines the subsequent processing steps in the workflow."
+    },
+    {
+        "question": "What infrastructure type is recommended for the WAS_Control_Net_Input_Switch class?",
+        "answer": "The recommended infrastructure type for the WAS_Control_Net_Input_Switch class is CPU."
+    },
+    {
+        "question": "What is the return type of the 'control_net_switch' function in the WAS_Control_Net_Input_Switch class?",
+        "answer": "The return type of the 'control_net_switch' function in the WAS_Control_Net_Input_Switch class is a tuple containing a single element of type Union[comfy.sd.CONTROL_NET, torch.Tensor], representing the selected control net."
+    }
+]

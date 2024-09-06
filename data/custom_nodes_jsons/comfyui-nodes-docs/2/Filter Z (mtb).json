@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the cg-noise custom node in ComfyUI?",
+        "answer": "The cg-noise custom node in ComfyUI replaces KSampler and KSampler Advanced to allow for small variations in the initial noise used for image generation."
+    },
+    {
+        "question": "How does the cg-noise custom node generate variations in images?",
+        "answer": "The cg-noise custom node generates variations in images by using a weight 'x' and two seeds. It generates the noise based on the formula: random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)."
+    },
+    {
+        "question": "What are the inputs required by the cg-noise custom node?",
+        "answer": "The cg-noise custom node requires the following inputs: 'width', 'height', 'scale', 'seed', and 'variations'."
+    },
+    {
+        "question": "What does the 'scale' input control in the cg-noise custom node?",
+        "answer": "The 'scale' input in the cg-noise custom node controls the scale of the noise, allowing for adjustments to the level of detail in the generated variations."
+    },
+    {
+        "question": "How does the 'variations' input work in the cg-noise custom node?",
+        "answer": "The 'variations' input in the cg-noise custom node is a list of dictionaries, where each dictionary contains a 'weight' and a 'seed'. This allows for multiple variations to be generated based on different weights and seeds."
+    },
+    {
+        "question": "What is the purpose of the 'random_based_on' function in the cg-noise custom node?",
+        "answer": "The 'random_based_on' function in the cg-noise custom node is used to generate random values based on a given seed, ensuring consistent results for the same input parameters."
+    },
+    {
+        "question": "How can the cg-noise custom node be used in ComfyUI?",
+        "answer": "The cg-noise custom node can be used in ComfyUI by connecting its outputs to the appropriate inputs of other nodes, such as the 'img2img' node, to introduce controlled variations in the generated images."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Empty Images node in ComfyUI?",
+        "answer": "The Empty Images node in ComfyUI is designed to generate a batch of empty images with specified dimensions and colors. It serves as a basic tool for creating placeholder or background images in various image processing and generation tasks."
+    },
+    {
+        "question": "What are the optional input parameters for the Empty Images node?",
+        "answer": "The optional input parameters for the Empty Images node are 'num_images' which specifies the total number of images to generate, 'splits' which defines how to divide the total number of images into separate batches or groups, and 'batch_size' which determines the number of images to generate in a single batch."
+    },
+    {
+        "question": "What is the output type of the Empty Images node?",
+        "answer": "The output of the Empty Images node is a batch of images with specified dimensions and colors. The Comfy dtype is IMAGE and the Python dtype is List[torch.Tensor]."
+    },
+    {
+        "question": "What is the infra type recommended for the Empty Images node?",
+        "answer": "The recommended infra type for the Empty Images node is GPU."
+    },
+    {
+        "question": "How does the Empty Images node generate variations in color for the images?",
+        "answer": "The Empty Images node generates variations in color by cycling between a fully dynamic range of colors based on the split index. It calculates a base color and then adjusts it for each image in the batch."
+    },
+    {
+        "question": "What happens if neither 'num_images' nor 'splits' are provided?",
+        "answer": "If neither 'num_images' nor 'splits' are provided, the Empty Images node will raise an exception. At least one of these parameters must be specified."
+    },
+    {
+        "question": "How does the Empty Images node handle the case when 'num_images' is not provided but 'splits' is?",
+        "answer": "If 'num_images' is not provided but 'splits' is, the Empty Images node will set 'num_images' to be the sum of all splits."
+    }
+]

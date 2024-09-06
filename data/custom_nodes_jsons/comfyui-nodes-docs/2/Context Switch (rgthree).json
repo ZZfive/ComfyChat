@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Context Switch (rgthree) node in ComfyUI?",
+        "answer": "The Context Switch (rgthree) node in ComfyUI is designed to simplify context management by selecting the first non-empty context from a provided set, ensuring the active context is efficiently determined for subsequent operations."
+    },
+    {
+        "question": "How does the Context Switch (rgthree) node evaluate contexts?",
+        "answer": "The Context Switch (rgthree) node evaluates each context in sequence until it finds the first non-empty context and selects that context as the output."
+    },
+    {
+        "question": "What does the 'ctx_i' input represent in the Context Switch (rgthree) node?",
+        "answer": "The 'ctx_i' input is a generic placeholder for any context provided to the Context Switch (rgthree) node. It allows for flexible and dynamic context switching based on the availability of context content."
+    },
+    {
+        "question": "What data type is used for the 'ctx_i' input in the Context Switch (rgthree) node?",
+        "answer": "The 'ctx_i' input uses the RGTHREE_CONTEXT data type in ComfyUI and the dict data type in Python."
+    },
+    {
+        "question": "What output types does the Context Switch (rgthree) node provide?",
+        "answer": "The Context Switch (rgthree) node provides output types such as CONTEXT, MODEL, CLIP, VAE, POSITIVE, NEGATIVE, LATENT, IMAGE, and SEED."
+    },
+    {
+        "question": "What infrastructure type does the Context Switch (rgthree) node use?",
+        "answer": "The Context Switch (rgthree) node uses the 'CPU' infrastructure type."
+    },
+    {
+        "question": "How does the source code of the Context Switch (rgthree) node determine the output context?",
+        "answer": "The source code of the Context Switch (rgthree) node checks each context input in sequence and returns the first non-empty context using the 'switch' function, which is then processed to return the original context output tuple."
+    }
+]

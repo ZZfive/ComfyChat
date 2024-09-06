@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ConditioningAverage node in ComfyUI?",
+        "answer": "The ConditioningAverage node is designed to mix different conditioning inputs by applying a weighted average. It intelligently combines 'conditioning_from' with 'conditioning_to' based on a specified strength, allowing for fine control over the conditioning process in generative models."
+    },
+    {
+        "question": "Why is the 'conditioning_to' parameter important in the ConditioningAverage node?",
+        "answer": "The 'conditioning_to' parameter is crucial because it defines the target conditioning data to which the weighted average will be applied. It plays a significant role in determining the node's final output by influencing how the conditioning blend is executed, thus affecting the result."
+    },
+    {
+        "question": "What is the role of the 'conditioning_from' parameter in the ConditioningAverage node?",
+        "answer": "The 'conditioning_from' parameter is essential as it provides the source conditioning data that will be averaged with 'conditioning_to'. Its importance lies in determining the initial condition to be blended, thereby affecting the execution and the resulting output of the node."
+    },
+    {
+        "question": "How does the 'conditioning_to_strength' parameter influence the ConditioningAverage node's operation?",
+        "answer": "The 'conditioning_to_strength' parameter is critical in determining the extent of influence 'conditioning_to' has in the weighted average. By controlling the degree to which 'conditioning_to' overlays 'conditioning_from' in the blend, it directly impacts the functioning of the node."
+    },
+    {
+        "question": "What does the output of the ConditioningAverage node represent?",
+        "answer": "The output of the ConditioningAverage node is a list of tuples containing the modified tensors and dictionaries that may include 'pooled_output'. This output embodies the result of the weighted average blending process, which is significant for further processing in generative models."
+    },
+    {
+        "question": "What is the infra type recommended for the ConditioningAverage node?",
+        "answer": "The recommended infra type for the ConditioningAverage node is CPU."
+    },
+    {
+        "question": "How does the ConditioningAverage node handle multiple conditions in 'conditioning_from'?",
+        "answer": "If the 'conditioning_from' contains more than one condition, the ConditioningAverage node will only apply the first one to 'conditioning_to'. A warning is logged to alert the user about this behavior."
+    }
+]

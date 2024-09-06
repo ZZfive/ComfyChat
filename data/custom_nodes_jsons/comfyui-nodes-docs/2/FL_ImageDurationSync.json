@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FL_ImageDurationSync node in ComfyUI?",
+        "answer": "The FL_ImageDurationSync node is designed to synchronize the duration of a series of images with a specific musical beat per minute (BPM), frame count, and number of bars, adjusting the hold frames of each image to match the desired total duration."
+    },
+    {
+        "question": "What are the required inputs for the FL_ImageDurationSync node?",
+        "answer": "The required inputs for the FL_ImageDurationSync node are: images, frame_count, bpm, fps, and bars."
+    },
+    {
+        "question": "What does the 'images' input represent in the FL_ImageDurationSync node?",
+        "answer": "The 'images' input in the FL_ImageDurationSync node represents the sequence of images that need to be synchronized with the audio duration. This input is crucial for determining the basic visual content that will be adjusted in duration."
+    },
+    {
+        "question": "How is the total duration of the visual sequence calculated in the FL_ImageDurationSync node?",
+        "answer": "The total duration of the visual sequence in the FL_ImageDurationSync node is calculated by multiplying the duration of each bar (calculated as 60 / bpm * 4) by the number of bars."
+    },
+    {
+        "question": "What are the output types of the FL_ImageDurationSync node?",
+        "answer": "The output types of the FL_ImageDurationSync node are 'output_images' and 'hold_frames'."
+    },
+    {
+        "question": "What does the 'output_images' output represent in the FL_ImageDurationSync node?",
+        "answer": "The 'output_images' output in the FL_ImageDurationSync node represents the adjusted sequence of images to match the desired duration, ensuring synchronization with the audio track."
+    },
+    {
+        "question": "How is the number of frames to hold each image calculated in the FL_ImageDurationSync node?",
+        "answer": "The number of frames to hold each image in the FL_ImageDurationSync node is calculated by multiplying the total duration (in seconds) by the frames per second (fps)."
+    }
+]

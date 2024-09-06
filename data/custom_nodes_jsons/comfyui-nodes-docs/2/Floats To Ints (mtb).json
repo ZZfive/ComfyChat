@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is cg-noise in ComfyUI?",
+        "answer": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+    },
+    {
+        "question": "How does cg-noise allow for variations in the initial noise?",
+        "answer": "cg-noise allows for variations in the initial noise by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+    },
+    {
+        "question": "What are the two modes available in cg-noise?",
+        "answer": "The two modes available in cg-noise are 'match' and 'variations'. In 'match' mode, cg-noise tries to match the noise based on the provided image, while in 'variations' mode, it generates variations based on a weight `x` and two seeds."
+    },
+    {
+        "question": "How does cg-noise behave when the 'strength' node is connected?",
+        "answer": "When the 'strength' node is connected in cg-noise, the strength of the variations can be controlled, allowing for more fine-grained control over the generated variations."
+    },
+    {
+        "question": "Is cg-noise compatible with the 'high-res' fix in ComfyUI?",
+        "answer": "Yes, cg-noise is compatible with the 'high-res' fix in ComfyUI."
+    },
+    {
+        "question": "Can cg-noise be used with both images and videos in ComfyUI?",
+        "answer": "Yes, cg-noise can be used with both images and videos in ComfyUI."
+    },
+    {
+        "question": "Does cg-noise have a 'seed' input node?",
+        "answer": "Yes, cg-noise has a 'seed' input node that can be used to control the base seed for generating variations."
+    }
+]

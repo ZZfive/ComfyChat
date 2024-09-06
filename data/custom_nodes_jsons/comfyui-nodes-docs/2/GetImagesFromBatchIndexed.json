@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the GetImagesFromBatchIndexed node in ComfyUI?",
+        "answer": "The GetImagesFromBatchIndexed node is designed to selectively retrieve images from a given batch based on specified indexes, effectively creating a new batch that only contains images at the given positions."
+    },
+    {
+        "question": "What are the required input types for the GetImagesFromBatchIndexed node?",
+        "answer": "The required input types for the GetImagesFromBatchIndexed node are 'images' and 'indexes'. 'images' is the batch from which to select images, and 'indexes' is a string specifying the image indexes to select from the batch."
+    },
+    {
+        "question": "What is the output type of the GetImagesFromBatchIndexed node?",
+        "answer": "The output type of the GetImagesFromBatchIndexed node is 'image', which returns the selected images at the specified indexes as a new batch."
+    },
+    {
+        "question": "What infrastructure type does the GetImagesFromBatchIndexed node use?",
+        "answer": "The GetImagesFromBatchIndexed node uses the 'GPU' infrastructure type."
+    },
+    {
+        "question": "How does the GetImagesFromBatchIndexed node parse the 'indexes' input string?",
+        "answer": "The GetImagesFromBatchIndexed node parses the 'indexes' input string by splitting it at commas, stripping whitespace, and converting each index to an integer, resulting in a list of integers."
+    },
+    {
+        "question": "How does the GetImagesFromBatchIndexed node select the images at the specified indices?",
+        "answer": "The GetImagesFromBatchIndexed node selects the images at the specified indices by converting the list of indices to a PyTorch tensor and then using this tensor to index the 'images' input tensor."
+    },
+    {
+        "question": "Does the GetImagesFromBatchIndexed node modify the original image batch?",
+        "answer": "No, the GetImagesFromBatchIndexed node does not modify the original image batch. It creates a new batch containing only the selected images at the specified indices."
+    }
+]

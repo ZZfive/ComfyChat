@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the DPCombinatorialGenerator node in ComfyUI?",
+        "answer": "The DPCombinatorialGenerator node in ComfyUI is designed to generate combinations of prompts based on given contexts. It uses SamplingContext to determine the appropriate method for generating prompts, ensuring a combinatorial approach when necessary."
+    },
+    {
+        "question": "What is the role of the wildcard_manager in the DPCombinatorialGenerator node?",
+        "answer": "In the DPCombinatorialGenerator node, the wildcard_manager is crucial for handling placeholders in prompt templates. It influences how the node interprets and replaces wildcards, directly affecting the generation process and diversity of output prompts."
+    },
+    {
+        "question": "What does the default_sampling_method do in the DPCombinatorialGenerator node?",
+        "answer": "The default_sampling_method in the DPCombinatorialGenerator node determines the method used to generate prompts when no specific method is specified. It sets the foundation for the node's sampling behavior and influences the overall strategy of prompt generation."
+    },
+    {
+        "question": "What is the output type of the DPCombinatorialGenerator node?",
+        "answer": "The output type of the DPCombinatorialGenerator node is 'prompts', which represents the combinations generated based on input contexts and sampling methods. These prompts are the direct result of the node's operation and contain the essence of the combinatorial generation process."
+    },
+    {
+        "question": "What is the infra type required for the DPCombinatorialGenerator node?",
+        "answer": "The DPCombinatorialGenerator node requires a CPU infra type."
+    },
+    {
+        "question": "What is the source code for the DPCombinatorialGenerator class?",
+        "answer": "The source code for the DPCombinatorialGenerator class is as follows: ```class DPCombinatorialGenerator(DPAbstractSamplerNode): @property @lru_cache(maxsize=1) def context(self) -> SamplingContext: return SamplingContext(wildcard_manager=self._wildcard_manager, default_sampling_method=SamplingMethod.COMBINATORIAL)```"
+    },
+    {
+        "question": "What is the category of the DPCombinatorialGenerator node?",
+        "answer": "The DPCombinatorialGenerator node belongs to the 'sampling' category."
+    }
+]
