@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BatchCropImage node in ComfyUI?",
+        "answer": "The BatchCropImage node in ComfyUI is designed to process images in a directory by cropping each image to a specified size while maintaining the aspect ratio."
+    },
+    {
+        "question": "What are the required and optional input types for the BatchCropImage node?",
+        "answer": "The required input type is 'image_directory' which specifies the path to the directory containing the images to be cropped. The optional input type is 'crop_amount' which determines the proportion of the image to be cropped."
+    },
+    {
+        "question": "What is the output type of the BatchCropImage node?",
+        "answer": "The output type of the BatchCropImage node is 'image', which consists of a list of cropped images converted to tensor format, ready for further processing."
+    },
+    {
+        "question": "Which infra type is recommended for running the BatchCropImage node?",
+        "answer": "The recommended infra type for running the BatchCropImage node is CPU."
+    },
+    {
+        "question": "What image formats can the BatchCropImage node process?",
+        "answer": "The BatchCropImage node can process various image formats including PNG, JPG, JPEG, WEBP, BMP, and GIF."
+    },
+    {
+        "question": "How does the BatchCropImage node determine the size of the cropped image?",
+        "answer": "The BatchCropImage node determines the size of the cropped image based on the 'crop_amount' parameter, which specifies the proportion of the image to be cropped. The actual number of pixels to be cropped is calculated as 'int(width * crop_amount) // 8 * 8'."
+    },
+    {
+        "question": "What happens if the specified image directory does not exist?",
+        "answer": "If the specified image directory does not exist, the BatchCropImage node will raise an exception with the message 'Image directory {image_directory} does not exist'."
+    }
+]

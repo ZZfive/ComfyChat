@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_Img2ImgProcessSwitch node in ComfyUI?",
+        "answer": "The CR_Img2ImgProcessSwitch node serves as a decision component in the ComfyUI workflow. It intelligently routes the processing of image data based on the input type, whether it is text-to-image or image-to-image conversion."
+    },
+    {
+        "question": "What are the required inputs for the CR_Img2ImgProcessSwitch node?",
+        "answer": "The 'Input' parameter is required for the CR_Img2ImgProcessSwitch node. It determines the path of image processing in the workflow, indicating whether the node will perform text-to-image or image-to-image conversion."
+    },
+    {
+        "question": "What are the optional inputs for the CR_Img2ImgProcessSwitch node and when are they used?",
+        "answer": "The 'txt2img' and 'img2img' parameters are optional inputs. 'txt2img' is used when the 'Input' parameter is set to 'txt2img', representing the latent representation for text-to-image process. 'img2img' becomes relevant when 'Input' is set to 'img2img', holding the latent data required for image-to-image conversion."
+    },
+    {
+        "question": "What output types does the CR_Img2ImgProcessSwitch node produce?",
+        "answer": "The CR_Img2ImgProcessSwitch node produces two outputs: 'LATENT' which contains the processed latent data based on the selected text-to-image or image-to-image conversion, and 'show_help' which provides a URL to documentation for further help or guidance on using the node effectively."
+    },
+    {
+        "question": "What infrastructure type does the CR_Img2ImgProcessSwitch node use?",
+        "answer": "The CR_Img2ImgProcessSwitch node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the CR_Img2ImgProcessSwitch node determine which processing path to take?",
+        "answer": "The CR_Img2ImgProcessSwitch node determines the processing path based on the value of the 'Input' parameter. If 'Input' is set to 'txt2img', it returns the 'txt2img' latent data. If 'Input' is set to 'img2img', it returns the 'img2img' latent data."
+    },
+    {
+        "question": "What is the purpose of the 'show_help' output in the CR_Img2ImgProcessSwitch node?",
+        "answer": "The 'show_help' output in the CR_Img2ImgProcessSwitch node provides a URL to the documentation for further help or guidance on effectively using the node."
+    }
+]

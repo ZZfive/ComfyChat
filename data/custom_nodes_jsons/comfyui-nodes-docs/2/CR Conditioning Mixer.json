@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_ConditioningMixer node in ComfyUI?",
+        "answer": "The CR_ConditioningMixer node in ComfyUI is designed to mix or combine different conditioning inputs. It provides a way to merge or average conditioning data, which is crucial for certain machine learning applications where the input conditions are key factors in model performance."
+    },
+    {
+        "question": "What are the required input types for the CR_ConditioningMixer node?",
+        "answer": "The required input types for the CR_ConditioningMixer node are conditioning_1, conditioning_2, and mix_method. Conditioning_1 and conditioning_2 are the two conditioning inputs to be mixed or combined, while mix_method defines how the conditioning inputs are combined, such as combine, average, or concatenate."
+    },
+    {
+        "question": "What does the 'mix_method' parameter in the CR_ConditioningMixer node define?",
+        "answer": "The 'mix_method' parameter in the CR_ConditioningMixer node defines how the conditioning inputs are combined. It is a key determinant of the node's operation, allowing the use of different strategies like combining, averaging, or concatenating inputs."
+    },
+    {
+        "question": "What is the role of the 'average_strength' parameter in the CR_ConditioningMixer node?",
+        "answer": "The 'average_strength' parameter in the CR_ConditioningMixer node is used when the mix_method is set to 'Average'. It controls the blending ratio between the two conditioning inputs, influencing the final output according to the specified strength."
+    },
+    {
+        "question": "What are the output types of the CR_ConditioningMixer node?",
+        "answer": "The output types of the CR_ConditioningMixer node are CONDITIONING and show_help. CONDITIONING output is the result of applying the selected mix method to the input conditionings, containing synthesized or processed data ready for further use in the machine learning pipeline. The show_help output provides a URL link to the node's documentation."
+    },
+    {
+        "question": "What infra type is recommended for the CR_ConditioningMixer node?",
+        "answer": "The recommended infra type for the CR_ConditioningMixer node is CPU."
+    },
+    {
+        "question": "What happens when the 'Concatenate' mix_method is selected in the CR_ConditioningMixer node?",
+        "answer": "When the 'Concatenate' mix_method is selected in the CR_ConditioningMixer node, the conditionings are concatenated. A warning is displayed if the conditioning_from contains more than 1 condition, as only the first one will be applied to conditioning_to."
+    }
+]

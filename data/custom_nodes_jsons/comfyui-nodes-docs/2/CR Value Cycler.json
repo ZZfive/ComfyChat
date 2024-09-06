@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_ValueCycler node in ComfyUI?",
+        "answer": "The CR_ValueCycler node is designed to iterate through a list of string values, converting each string to floating-point and integer representations. It cycles through the provided text values, repeating the process a specified number of times, and cycles through the list within the set number of iterations."
+    },
+    {
+        "question": "What are the required input types for the CR_ValueCycler node?",
+        "answer": "The required input types for the CR_ValueCycler node are 'values', which is a multiline string containing the numeric data to be processed, and 'repeats', which indicates the number of times the node will repeat the cycling process for each item in the list."
+    },
+    {
+        "question": "What does the 'repeats' parameter in the CR_ValueCycler node control?",
+        "answer": "The 'repeats' parameter in the CR_ValueCycler node controls the number of times the cycling process will be repeated for each item in the list. It influences the scope of data processing and may affect the size of the output."
+    },
+    {
+        "question": "What is the optional input type for the CR_ValueCycler node?",
+        "answer": "The optional input type for the CR_ValueCycler node is 'loops', which specifies the total number of times the cycling process will occur. It can be used to further control the operation of the node and the generation of output."
+    },
+    {
+        "question": "What output types does the CR_ValueCycler node provide?",
+        "answer": "The CR_ValueCycler node provides three output types: 'FLOAT', which is a list of the input text values converted to floating-point numbers; 'INT', which is a list of the input text values converted to integers; and 'show_text', which is a string providing a link to the node's documentation."
+    },
+    {
+        "question": "How does the CR_ValueCycler node handle input text values?",
+        "answer": "The CR_ValueCycler node splits the input text values by newline characters and processes each item. If all characters in a stripped text item are digits or periods, it appends the float and integer representations of the text item to the respective output lists."
+    },
+    {
+        "question": "What infrastructure type does the CR_ValueCycler node use?",
+        "answer": "The CR_ValueCycler node uses the CPU infrastructure type."
+    }
+]

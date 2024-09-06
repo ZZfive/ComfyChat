@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the `bounded_image_crop` function in the WAS_Bounded_Image_Crop class?",
+        "answer": "The `bounded_image_crop` function is designed to intelligently crop an image based on specified bounds, ensuring that the cropping area is within the valid dimensions of the image. It plays a key role in image preprocessing by focusing on regions of interest without distorting the overall image structure."
+    },
+    {
+        "question": "What are the required input parameters for the WAS_Bounded_Image_Crop node?",
+        "answer": "The required input parameters for the WAS_Bounded_Image_Crop node are 'image', which represents the image data to be cropped, and 'image_bounds', which defines the region within the image to be cropped."
+    },
+    {
+        "question": "What does the 'image' parameter represent in the WAS_Bounded_Image_Crop node?",
+        "answer": "The 'image' parameter represents the core input of the node, indicating the image data that will be cropped. It is crucial for the node's execution as it determines the content to be processed. The dimensions and quality of the image directly affect the result of the cropping operation."
+    },
+    {
+        "question": "What does the 'image_bounds' parameter define in the WAS_Bounded_Image_Crop node?",
+        "answer": "The 'image_bounds' parameter defines the region within the image that will be cropped. It is crucial for specifying the exact coordinates for the cropping operation. The correctness of these bounds is vital as they determine the final appearance of the cropped image."
+    },
+    {
+        "question": "What is the output of the WAS_Bounded_Image_Crop node?",
+        "answer": "The output of the WAS_Bounded_Image_Crop node is 'cropped_image', which represents the result of the cropping operation. It is important as it directly contains the result of the cropped region from the input image."
+    },
+    {
+        "question": "What is the infrastructure type recommended for running the WAS_Bounded_Image_Crop node?",
+        "answer": "The recommended infrastructure type for running the WAS_Bounded_Image_Crop node is CPU."
+    },
+    {
+        "question": "What happens if the bounds provided in the 'image_bounds' parameter are invalid?",
+        "answer": "If the bounds provided in the 'image_bounds' parameter are invalid (i.e., if rmin is greater than rmax or cmin is greater than cmax), a ValueError will be raised, indicating that the bounds are not within the image dimensions."
+    }
+]

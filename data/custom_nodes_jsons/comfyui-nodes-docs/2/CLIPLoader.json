@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CLIPLoader node in ComfyUI?",
+        "answer": "The CLIPLoader node is designed to efficiently manage and load CLIP models based on specified types, facilitating the integration of stable diffusion or stable cascade models. It abstracts the complexity of file path management and model loading, ensuring a seamless user experience when using CLIP models."
+    },
+    {
+        "question": "What is the significance of the clip_name parameter in the CLIPLoader node?",
+        "answer": "The clip_name parameter is crucial for identifying the specific CLIP model to be loaded. It influences the execution of the node by determining from which file path the model is retrieved, thus affecting the outcome of the model loading process."
+    },
+    {
+        "question": "What are the possible values for the type parameter in the CLIPLoader node?",
+        "answer": "The type parameter in the CLIPLoader node can be either 'stable_diffusion' or 'stable_cascade', specifying the type of CLIP model to be loaded."
+    },
+    {
+        "question": "What does the output CLIP parameter represent in the CLIPLoader node?",
+        "answer": "The output CLIP parameter represents the loaded CLIP model, which is the main result of the node's operation. It signifies that the model has been successfully loaded and is ready for subsequent tasks."
+    },
+    {
+        "question": "What is the infra type for the CLIPLoader node?",
+        "answer": "The infra type for the CLIPLoader node is CPU."
+    },
+    {
+        "question": "How does the CLIPLoader node determine the clip_type based on the type parameter?",
+        "answer": "In the CLIPLoader node, if the type parameter is 'stable_cascade', the clip_type is set to comfy.sd.CLIPType.STABLE_CASCADE. Otherwise, the default clip_type is comfy.sd.CLIPType.STABLE_DIFFUSION."
+    },
+    {
+        "question": "What is the purpose of the clip_path variable in the CLIPLoader node's source code?",
+        "answer": "The clip_path variable in the CLIPLoader node's source code is used to store the full path of the CLIP model file, which is obtained using the folder_paths.get_full_path() function with the 'clip' and clip_name parameters."
+    }
+]

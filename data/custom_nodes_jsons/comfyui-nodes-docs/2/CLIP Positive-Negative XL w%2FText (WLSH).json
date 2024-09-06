@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WLSH_CLIP_Text_Positive_Negative_XL node in ComfyUI?",
+        "answer": "The WLSH_CLIP_Text_Positive_Negative_XL node in ComfyUI is designed to process and encode text inputs into a format suitable for conditional generation models. It takes positive and negative text examples and converts them into encoded representations that can be used to guide the generation process."
+    },
+    {
+        "question": "What are the required input parameters for the WLSH_CLIP_Text_Positive_Negative_XL node?",
+        "answer": "The required input parameters for the WLSH_CLIP_Text_Positive_Negative_XL node include width, height, target_width, target_height, positive_g, positive_l, negative_g, negative_l, and clip."
+    },
+    {
+        "question": "What does the 'clip' input parameter represent in the WLSH_CLIP_Text_Positive_Negative_XL node?",
+        "answer": "The 'clip' input parameter in the WLSH_CLIP_Text_Positive_Negative_XL node should be an instance of the CLIP model, which is crucial for encoding text within the node. It enables the text inputs to be transformed into a form that can be utilized by the generation model."
+    },
+    {
+        "question": "What are the output types of the WLSH_CLIP_Text_Positive_Negative_XL node?",
+        "answer": "The output types of the WLSH_CLIP_Text_Positive_Negative_XL node include 'positive', 'negative', 'positive_text', and 'negative_text'."
+    },
+    {
+        "question": "What does the 'positive_text' output represent in the WLSH_CLIP_Text_Positive_Negative_XL node?",
+        "answer": "The 'positive_text' output in the WLSH_CLIP_Text_Positive_Negative_XL node is a concatenated string of the positive guiding text, providing a readable form of the positive clues used in the generation process."
+    },
+    {
+        "question": "How does the WLSH_CLIP_Text_Positive_Negative_XL node handle the encoding of positive and negative text examples?",
+        "answer": "The WLSH_CLIP_Text_Positive_Negative_XL node uses the CLIP model to tokenize and encode the positive and negative text examples. It ensures that the length of the 'l' and 'g' tokens are equal by padding with empty tokens if necessary. The encoded representations are then returned as outputs."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the WLSH_CLIP_Text_Positive_Negative_XL node?",
+        "answer": "The recommended infrastructure type for running the WLSH_CLIP_Text_Positive_Negative_XL node is CPU."
+    }
+]

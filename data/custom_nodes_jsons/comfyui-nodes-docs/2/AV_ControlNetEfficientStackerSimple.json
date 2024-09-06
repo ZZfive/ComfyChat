@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AV_ControlNetEfficientStackerSimple node in ComfyUI?",
+        "answer": "The AV_ControlNetEfficientStackerSimple node is designed to simplify the process of stacking control nets for image manipulation. It allows multiple control net transformations to be applied to an image based on specified parameters, streamlining the integration of control nets into the image processing pipeline with a focus on efficiency and ease of use."
+    },
+    {
+        "question": "What are the required input types for the AV_ControlNetEfficientStackerSimple node?",
+        "answer": "The required input types for the AV_ControlNetEfficientStackerSimple node are: control_net_name (specifies the control net to be applied), image (the input image to be processed by the control net stack), strength (defines the influence strength of the control net on the image), and preprocessor (selects the preprocessor to be applied before the control net)."
+    },
+    {
+        "question": "What does the 'control_net_name' parameter in the AV_ControlNetEfficientStackerSimple node specify?",
+        "answer": "The 'control_net_name' parameter specifies the control net to be applied. It includes options for automatic selection based on model version or custom selection from available control nets, affecting the behavior and output of the control net."
+    },
+    {
+        "question": "What is the role of the 'strength' parameter in the AV_ControlNetEfficientStackerSimple node?",
+        "answer": "The 'strength' parameter defines the influence strength of the control net on the image, allowing for fine-tuning of the control net's effect."
+    },
+    {
+        "question": "What optional inputs does the AV_ControlNetEfficientStackerSimple node accept?",
+        "answer": "The optional inputs for the AV_ControlNetEfficientStackerSimple node include: cnet_stack (allows for sequential application of control nets), control_net_override (overrides the selected control net), timestep_keyframe (specifies the keyframe for control net application), resolution (sets the resolution for image processing), and enabled (toggles the operation of the control net stacker)."
+    },
+    {
+        "question": "What is the output type of the AV_ControlNetEfficientStackerSimple node?",
+        "answer": "The output type of the AV_ControlNetEfficientStackerSimple node is CNET_STACK, which represents the processed control net stack result. This output encapsulates the sequence of control net applications performed on the image, reflecting the cumulative effect of the specified transformations."
+    },
+    {
+        "question": "How does the AV_ControlNetEfficientStackerSimple node differ from the AVControlNetEfficientStacker node in terms of functionality?",
+        "answer": "The AV_ControlNetEfficientStackerSimple node extends the functionality of the AVControlNetEfficientStacker node by providing a simplified interface for stacking control nets. It calls the 'control_net_stacker' function with additional arguments 'start_percent=0.0' and 'end_percent=1.0', streamlining the process."
+    }
+]

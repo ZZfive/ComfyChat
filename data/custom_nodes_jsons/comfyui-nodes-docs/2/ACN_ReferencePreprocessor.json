@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ReferencePreprocessorNode in ComfyUI?",
+        "answer": "The ReferencePreprocessorNode is designed to convert input images into latent space representations using a Variational Autoencoder (VAE). It plays a crucial role in preparing images for advanced ControlNet operations by encoding visual content into a format that can be further processed by downstream nodes."
+    },
+    {
+        "question": "What are the required input types for the ReferencePreprocessorNode?",
+        "answer": "The required input types for the ReferencePreprocessorNode are 'image', 'vae', and 'latent_size'. 'image' is the raw visual input to be preprocessed, 'vae' specifies the Variational Autoencoder model used to encode the image into latent space, and 'latent_size' defines the dimensions of the latent space into which the image will be encoded."
+    },
+    {
+        "question": "What does the 'vae' input parameter specify in the ReferencePreprocessorNode?",
+        "answer": "The 'vae' input parameter in the ReferencePreprocessorNode specifies the Variational Autoencoder (VAE) model that will be used to encode the input image into a latent space representation. This model is central to the node's functionality as it defines how the image will be transformed."
+    },
+    {
+        "question": "What is the output type of the ReferencePreprocessorNode?",
+        "answer": "The output type of the ReferencePreprocessorNode is 'proc_IMAGE', which is the preprocessed image in latent representation form. This output is important as it serves as input for subsequent nodes in the ControlNet, enabling more advanced processing."
+    },
+    {
+        "question": "What is the 'latent_size' input parameter used for in the ReferencePreprocessorNode?",
+        "answer": "The 'latent_size' input parameter in the ReferencePreprocessorNode is used to define the dimensions of the latent space into which the image will be encoded. It is a key component as it determines the scale and structure of the encoded representation."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the ReferencePreprocessorNode?",
+        "answer": "The recommended infrastructure type for running the ReferencePreprocessorNode is GPU, as indicated in the usage tips."
+    },
+    {
+        "question": "How does the ReferencePreprocessorNode preprocess the input image?",
+        "answer": "The ReferencePreprocessorNode preprocesses the input image by first adjusting its dimensions, then encoding it using the specified VAE model. The encoded image is then wrapped in a ReferencePreprocWrapper and returned as output."
+    }
+]

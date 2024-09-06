@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AdainLatent node in ComfyUI?",
+        "answer": "The AdainLatent node in ComfyUI is designed to perform adaptive instance normalization on latent representations. It aligns the mean and standard deviation of the target latent space with those of a reference latent space, modulated by a specified factor. This process helps transfer style features from the reference latent space to the target latent space, enabling style manipulation and consistency in generative models."
+    },
+    {
+        "question": "What are the required inputs for the AdainLatent node?",
+        "answer": "The AdainLatent node requires three inputs: 'latents', which is the target latent representation to be normalized, 'reference', which provides the reference latent representation with the style features to be transferred, and 'factor', a modulation factor that controls the extent to which the style features from the reference latent space are applied to the target latent representation."
+    },
+    {
+        "question": "What is the output of the AdainLatent node?",
+        "answer": "The output of the AdainLatent node is the modified latent representation after applying adaptive instance normalization. It reflects the fusion of style features from the reference latent space with the original content of the target latent representation."
+    },
+    {
+        "question": "What data types are used for the inputs and output of the AdainLatent node?",
+        "answer": "For the AdainLatent node, the 'latents' and 'reference' inputs use the Comfy dtype 'LATENT' and Python dtype Dict[str, torch.Tensor]. The 'factor' input uses the Comfy dtype 'FLOAT' and Python dtype float. The output 'latent' uses the Comfy dtype 'LATENT' and Python dtype Tuple[Dict[str, torch.Tensor]]."
+    },
+    {
+        "question": "How is the 'factor' input used in the AdainLatent node?",
+        "answer": "The 'factor' input in the AdainLatent node is a modulation factor that controls the balance between preserving the original content of the target latent representation and applying the style features from the reference latent space. It allows for fine-tuning the degree of style transfer applied."
+    },
+    {
+        "question": "What infra type is recommended for the AdainLatent node?",
+        "answer": "The recommended infra type for the AdainLatent node is 'GPU'."
+    },
+    {
+        "question": "What is the function of the 'batch_normalize' method in the AdainLatent node?",
+        "answer": "The 'batch_normalize' method in the AdainLatent node performs the adaptive instance normalization process. It aligns the mean and standard deviation of each channel of the target latent representation with those of the reference latent representation, modulated by the 'factor' input. This process transfers style features from the reference to the target latent representation."
+    }
+]

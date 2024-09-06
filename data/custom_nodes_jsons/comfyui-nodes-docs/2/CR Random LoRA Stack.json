@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_RandomLoRAStack node in ComfyUI?",
+        "answer": "The CR_RandomLoRAStack node is designed to randomly stack LoRA (Low-Rank Adaptation) modules onto a base model. It intelligently handles the selection and application of LoRA modules based on specified weights, chances, and exclusivity settings, ensuring diversified and controllably enhanced model capabilities."
+    },
+    {
+        "question": "What does the 'exclusive_mode' parameter in the CR_RandomLoRAStack node control?",
+        "answer": "The 'exclusive_mode' parameter determines whether only one LoRA can be applied at a time. When set to 'On', it enforces mutual exclusivity, ensuring that the node's operations are non-redundant and focused."
+    },
+    {
+        "question": "How does the 'stride' parameter affect the operation of the CR_RandomLoRAStack node?",
+        "answer": "The 'stride' parameter defines the interval at which the node re-evaluates the LoRA stacking. It is crucial for controlling the frequency of LoRA application, thereby influencing the node's overall performance."
+    },
+    {
+        "question": "What is the function of the 'force_randomize_after_stride' parameter in the CR_RandomLoRAStack node?",
+        "answer": "When enabled, the 'force_randomize_after_stride' parameter causes the node to randomize the LoRA selection after a certain number of strides, adding an element of unpredictability to the node's operations."
+    },
+    {
+        "question": "How does the CR_RandomLoRAStack node determine the probability of applying a LoRA module?",
+        "answer": "The CR_RandomLoRAStack node uses the 'chance' parameters (e.g., 'chance_1', 'chance_2', 'chance_3') to determine the probability of applying each LoRA module. These parameters play a key role in the random behavior of the node's operations, allowing for a degree of controlled unpredictability."
+    },
+    {
+        "question": "What is the significance of the 'model_weight' and 'clip_weight' parameters in the CR_RandomLoRAStack node?",
+        "answer": "The 'model_weight' and 'clip_weight' parameters are assigned to each LoRA module (e.g., 'model_weight_1', 'clip_weight_1', etc.). They influence the impact of each LoRA module on the node's final output, allowing for fine-tuning of the node's behavior and control over the strength of the LoRA's effect."
+    },
+    {
+        "question": "What is the role of the 'switch' parameters in the CR_RandomLoRAStack node?",
+        "answer": "The 'switch' parameters (e.g., 'switch_1', 'switch_2', 'switch_3') determine whether each LoRA module is activated. They provide a simple and effective way to toggle the inclusion of LoRA modules in the node's operations."
+    }
+]

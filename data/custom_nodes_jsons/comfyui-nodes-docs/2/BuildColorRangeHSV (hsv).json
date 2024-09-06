@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the BuildColorRangeHSV node in ComfyUI?",
+        "answer": "The BuildColorRangeHSV node in ComfyUI is used to establish an HSV (Hue, Saturation, Value) color range based on given samples and modifiers. It dynamically adjusts color boundaries and determines the hue adjustment mode required for building the precise color range."
+    },
+    {
+        "question": "What are the required input types for the BuildColorRangeHSV node?",
+        "answer": "The required input types for the BuildColorRangeHSV node are: samples (HSV_SAMPLES), percentage_modifier (INT), and interval_type (COMBO[STRING])."
+    },
+    {
+        "question": "What does the 'samples' input represent in the BuildColorRangeHSV node?",
+        "answer": "The 'samples' input in the BuildColorRangeHSV node represents the HSV color samples used to derive the color range. These samples are crucial for determining the median or average values when constructing the color range."
+    },
+    {
+        "question": "How does the 'percentage_modifier' input affect the color range in the BuildColorRangeHSV node?",
+        "answer": "The 'percentage_modifier' input in the BuildColorRangeHSV node affects the size of the color range by adjusting the boundaries based on a percentage, thus influencing the narrowness or wideness of the final color range."
+    },
+    {
+        "question": "What is the purpose of the 'interval_type' input in the BuildColorRangeHSV node?",
+        "answer": "The 'interval_type' input in the BuildColorRangeHSV node specifies the method used to calculate the color range interval. This choice determines how the boundaries are adjusted, which in turn affects the final color range."
+    },
+    {
+        "question": "What are the output types of the BuildColorRangeHSV node?",
+        "answer": "The output types of the BuildColorRangeHSV node are hsv_color (HSV_COLOR) and combo[string] (COMBO[STRING])."
+    },
+    {
+        "question": "What does the 'hsv_color' output represent in the BuildColorRangeHSV node?",
+        "answer": "The 'hsv_color' output in the BuildColorRangeHSV node is a tuple containing the adjusted upper and lower boundaries of the HSV color range."
+    },
+    {
+        "question": "What does the 'combo[string]' output indicate in the BuildColorRangeHSV node?",
+        "answer": "The 'combo[string]' output in the BuildColorRangeHSV node indicates the determined hue mode for the range construction, which affects how the hue is handled within the color range."
+    }
+]

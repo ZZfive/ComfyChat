@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AnimateDiffSampler node in ComfyUI?",
+        "answer": "The AnimateDiffSampler node in ComfyUI is designed to enhance the sampling process of the generation model by introducing motion modules, which bring dynamic elements into the generated content."
+    },
+    {
+        "question": "What are the required input types for the AnimateDiffSampler node?",
+        "answer": "The required input types for the AnimateDiffSampler node are motion_module, inject_method, and frame_number."
+    },
+    {
+        "question": "How does the frame_number parameter affect the output of the AnimateDiffSampler node?",
+        "answer": "The frame_number parameter defines the length of the animation to be generated. It directly influences the node's output by determining the number of frames that will be generated, thus affecting the overall duration and scope of the animation."
+    },
+    {
+        "question": "What is the output type of the AnimateDiffSampler node?",
+        "answer": "The output type of the AnimateDiffSampler node is 'samples', which represents the generated animation frames. It is the final result of the node's processing and contains the motion and diffusion processes applied to create the animated content."
+    },
+    {
+        "question": "What is the purpose of the inject_motion_module function in the AnimateDiffSampler class?",
+        "answer": "The inject_motion_module function in the AnimateDiffSampler class is responsible for injecting the motion module into the model's diffusion process. It clones the model, sets the video length for the motion module, and uses the specified injection method to integrate the motion module into the UNet component of the model."
+    },
+    {
+        "question": "How does the AnimateDiffSampler node handle cases where the initial number of frames is less than the specified frame_number?",
+        "answer": "If the initial number of frames is less than the specified frame_number, the AnimateDiffSampler node clones the last frame, repeats it to match the desired frame_number, and concatenates it with the existing frames to form the complete animation sequence."
+    },
+    {
+        "question": "What does the eject_motion_module function in the AnimateDiffSampler class do?",
+        "answer": "The eject_motion_module function in the AnimateDiffSampler class is responsible for restoring the original beta schedule of the model, reverting the forward_timestep_embed function to its original implementation, and ejecting the motion module from the UNet component of the model using the specified injection method."
+    }
+]

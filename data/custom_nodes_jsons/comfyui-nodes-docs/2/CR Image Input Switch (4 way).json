@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_ImageInputSwitch4way node in ComfyUI?",
+        "answer": "The CR_ImageInputSwitch4way node in ComfyUI is designed to conditionally select an image input based on an integer input. It facilitates the routing of image data through a logic switch mechanism, ensuring that the appropriate image is selected and passed along."
+    },
+    {
+        "question": "What is the role of the 'Input' parameter in the CR_ImageInputSwitch4way node?",
+        "answer": "The 'Input' parameter is crucial as it determines which of the four possible image inputs will be selected. It acts as a switch operation, with the integer value corresponding to the index of the image to be routed through the node."
+    },
+    {
+        "question": "What does the 'image1' parameter represent in the CR_ImageInputSwitch4way node?",
+        "answer": "The 'image1' parameter represents the first optional image input that can be selected by the node based on the 'Input' parameter. It plays a significant role in the node's operation when 'Input' is set to 1, becoming the primary output image."
+    },
+    {
+        "question": "What is the data type of the 'IMAGE' output parameter in the CR_ImageInputSwitch4way node?",
+        "answer": "The data type of the 'IMAGE' output parameter in the CR_ImageInputSwitch4way node is torch.Tensor in Python."
+    },
+    {
+        "question": "What information does the 'show_help' output provide in the CR_ImageInputSwitch4way node?",
+        "answer": "The 'show_help' output provides a URL to the node's documentation, offering guidance on how to effectively use the node. It is a useful resource for understanding the node's functionality and purpose."
+    },
+    {
+        "question": "What infrastructure type is recommended for the CR_ImageInputSwitch4way node?",
+        "answer": "The recommended infrastructure type for the CR_ImageInputSwitch4way node is CPU."
+    },
+    {
+        "question": "How does the CR_ImageInputSwitch4way node determine which image to output based on the 'Input' value?",
+        "answer": "The CR_ImageInputSwitch4way node determines which image to output based on the 'Input' value by checking the value of 'Input'. If 'Input' is 1, it returns 'image1'. If 'Input' is 2, it returns 'image2'. If 'Input' is 3, it returns 'image3'. Otherwise, it returns 'image4'."
+    }
+]

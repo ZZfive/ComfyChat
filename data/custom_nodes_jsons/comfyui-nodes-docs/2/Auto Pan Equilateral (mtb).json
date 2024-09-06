@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does cg-noise replace in ComfyUI?",
+        "answer": "cg-noise replaces KSampler and KSampler Advanced in ComfyUI."
+    },
+    {
+        "question": "What is the purpose of cg-noise in ComfyUI?",
+        "answer": "The purpose of cg-noise is to allow for small variations in the initial noise used for generating images in ComfyUI."
+    },
+    {
+        "question": "How does cg-noise generate variations in the initial noise?",
+        "answer": "cg-noise generates variations in the initial noise by using a weight 'x' and two seeds. It calculates the noise based on the formula: random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)."
+    },
+    {
+        "question": "What are the two seeds used by cg-noise?",
+        "answer": "The two seeds used by cg-noise are 'variation_seed' and 'seed'."
+    },
+    {
+        "question": "How is the 'x' value used in cg-noise?",
+        "answer": "The 'x' value in cg-noise is used as the weight to balance the contribution of 'variation_seed' and 'seed' in generating the noise."
+    },
+    {
+        "question": "What happens when 'x' is set to 0 in cg-noise?",
+        "answer": "When 'x' is set to 0 in cg-noise, only the 'seed' value will be used to generate the noise, resulting in no variation."
+    },
+    {
+        "question": "What happens when 'x' is set to 1 in cg-noise?",
+        "answer": "When 'x' is set to 1 in cg-noise, only the 'variation_seed' value will be used to generate the noise, resulting in maximum variation."
+    }
+]

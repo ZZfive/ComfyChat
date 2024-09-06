@@ -1,0 +1,30 @@
+[
+    {
+        "question": "APISR_Zho节点的目的是什么？",
+        "answer": "APISR_Zho节点旨在使用指定模型提高图像分辨率，专注于改善输入图像的清晰度和细节。"
+    },
+    {
+        "question": "APISR_Zho节点的必需输入参数有哪些？",
+        "answer": "APISR_Zho节点的必需输入参数包括：pipe（APISRMODEL，用于图像超分辨率的模型）、image（IMAGE，要处理的输入图像）和dtype（COMBO[float32, float16]，指定模型权重和输入图像张量的数据类型）。"
+    },
+    {
+        "question": "APISR_Zho节点的可选输入参数是什么？",
+        "answer": "APISR_Zho节点的可选输入参数是crop_for_4x（BOOLEAN类型），用于决定输入图像是否应被裁剪至4的倍数尺寸。"
+    },
+    {
+        "question": "APISR_Zho节点的输出类型是什么？",
+        "answer": "APISR_Zho节点的输出类型是super_resolved_img（IMAGE类型），代表增强后的图像，具有改善的分辨率。"
+    },
+    {
+        "question": "APISR_Zho节点的源代码中，如何确定权重数据类型？",
+        "answer": "在APISR_Zho节点的源代码中，通过判断dtype参数的值来确定权重数据类型。如果dtype为'float32'，则权重数据类型为torch.float32；如果dtype为'float16'，则权重数据类型为torch.float16。"
+    },
+    {
+        "question": "APISR_Zho节点的源代码中，如何处理图像张量以适应设备和数据类型？",
+        "answer": "在APISR_Zho节点的源代码中，使用 img_tensor.permute(0, 3, 1, 2).to(device=device, dtype=weight_dtype) 将图像张量调整为适应设备和数据类型。"
+    },
+    {
+        "question": "APISR_Zho节点的源代码中，如何处理裁剪图像以适应4的倍数尺寸？",
+        "answer": "在APISR_Zho节点的源代码中，如果crop_for_4x为True，则检查图像张量的高度和宽度是否为4的倍数。如果不是，则将张量裁剪至最近的4的倍数尺寸。"
+    }
+]

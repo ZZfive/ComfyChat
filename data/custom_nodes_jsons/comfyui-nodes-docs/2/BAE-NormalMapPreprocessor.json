@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BAE-NormalMapPreprocessor node in ComfyUI?",
+        "answer": "The BAE-NormalMapPreprocessor node in ComfyUI is designed to preprocess images using the BAE (Boundary Aware Encoder) model to generate normal maps. It enhances images by estimating surface normals, preparing them for further processing or visualization."
+    },
+    {
+        "question": "What are the required input types for the BAE-NormalMapPreprocessor node?",
+        "answer": "The required input type for the BAE-NormalMapPreprocessor node is 'image', which is the input image that needs to be processed to generate a normal map. Its Comfy dtype is IMAGE and Python dtype is torch.Tensor."
+    },
+    {
+        "question": "What is the optional input type for the BAE-NormalMapPreprocessor node?",
+        "answer": "The optional input type for the BAE-NormalMapPreprocessor node is 'resolution', which is the resolution to which the input image will be resized before processing. This affects the level of detail in the generated normal map. Its Comfy dtype is INT and Python dtype is int."
+    },
+    {
+        "question": "What is the output type of the BAE-NormalMapPreprocessor node?",
+        "answer": "The output type of the BAE-NormalMapPreprocessor node is 'image', which is the output normal map generated from the input image, providing an estimate of surface normals. Its Comfy dtype is IMAGE and Python dtype is torch.Tensor."
+    },
+    {
+        "question": "What is the infra type for the BAE-NormalMapPreprocessor node?",
+        "answer": "The infra type for the BAE-NormalMapPreprocessor node is 'GPU'."
+    },
+    {
+        "question": "What category does the BAE-NormalMapPreprocessor node belong to in ComfyUI?",
+        "answer": "The BAE-NormalMapPreprocessor node belongs to the 'ControlNet Preprocessors/Normal and Depth Estimators' category in ComfyUI."
+    },
+    {
+        "question": "How does the BAE-NormalMapPreprocessor node generate normal maps from input images?",
+        "answer": "The BAE-NormalMapPreprocessor node generates normal maps from input images by using the NormalBaeDetector model from the controlnet_aux.normalbae module. It calls the common_annotator_call function with the model, image, and resolution to generate the output normal map."
+    }
+]

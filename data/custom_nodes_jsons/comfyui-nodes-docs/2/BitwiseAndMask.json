@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the main purpose of the BitwiseAndMask node in ComfyUI?",
+        "answer": "The BitwiseAndMask node is designed to perform a bitwise AND operation on two input masks, which is crucial for applications that require combining mask layers, such as in image segmentation or data filtering processes."
+    },
+    {
+        "question": "What are the required input types for the BitwiseAndMask node?",
+        "answer": "The BitwiseAndMask node requires two input masks: 'mask1' and 'mask2'. Both inputs are of Comfy data type MASK and Python data type torch.Tensor."
+    },
+    {
+        "question": "What is the role of the 'mask1' parameter in the BitwiseAndMask node?",
+        "answer": "The 'mask1' parameter is the first input mask for the bitwise AND operation. It contributes its structure and content, playing a key role in determining the final mask. The execution of the node directly depends on the 'mask1' attribute, which must be aligned with 'mask2' in shape for a valid bitwise operation."
+    },
+    {
+        "question": "What is the role of the 'mask2' parameter in the BitwiseAndMask node?",
+        "answer": "The 'mask2' parameter is the second input mask to be used alongside 'mask1' for the bitwise AND operation. Its importance is equal to that of 'mask1', as it also defines the common areas that will appear in the resulting mask. The functionality of the node relies on the shape compatibility between 'mask1' and 'mask2'."
+    },
+    {
+        "question": "What is the output type of the BitwiseAndMask node?",
+        "answer": "The output of the BitwiseAndMask node is a single mask, which is the result of the bitwise AND operation between 'mask1' and 'mask2'. It represents the common regions present in both input masks and is essential for further processing or analysis that requires a single combined mask representation."
+    },
+    {
+        "question": "What is the infra type for the BitwiseAndMask node?",
+        "answer": "The infra type for the BitwiseAndMask node is CPU."
+    },
+    {
+        "question": "What is the source code for the BitwiseAndMask node's 'doit' method?",
+        "answer": "The source code for the BitwiseAndMask node's 'doit' method is as follows:\n```class BitwiseAndMask:\n\n    @classmethod\n    def INPUT_TYPES(s):\n        return {'required': {'mask1': ('MASK',), 'mask2': ('MASK',)}}\n    RETURN_TYPES = ('MASK',)\n    FUNCTION = 'doit'\n    CATEGORY = 'ImpactPack/Operation'\n\n    def doit(self, mask1, mask2):\n        mask = bitwise_and_masks(mask1, mask2)\n        return (mask,)```\nThis code defines the input types, return types, function name, category, and the 'doit' method itself, which performs the bitwise AND operation on the two input masks and returns the resulting mask."
+    }
+]

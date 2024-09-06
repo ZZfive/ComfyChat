@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CLIPAdd node in ComfyUI?",
+        "answer": "The CLIPAdd node is designed to seamlessly integrate two separate CLIP models into a unified structure by merging key patches from one CLIP model into another, effectively combining their functionalities."
+    },
+    {
+        "question": "What is the role of the CLIPAdd node in advanced model merging techniques?",
+        "answer": "The CLIPAdd node plays a crucial role in advanced model merging techniques by allowing the creation of more complex and capable new models that leverage the strengths of the two constituent models."
+    },
+    {
+        "question": "What are the required inputs for the CLIPAdd node?",
+        "answer": "The CLIPAdd node requires two inputs: 'clip1', which is the first CLIP model that serves as the basis for the merging process, and 'clip2', which is the second CLIP model that provides the key patches to be merged into the first CLIP model."
+    },
+    {
+        "question": "What is the output of the CLIPAdd node?",
+        "answer": "The output of the CLIPAdd node is the merged CLIP model, which now contains the functionalities of both input CLIP models. This new model is ready for further use or deployment in various tasks."
+    },
+    {
+        "question": "What is the infra type for the CLIPAdd node?",
+        "answer": "The infra type for the CLIPAdd node is CPU."
+    },
+    {
+        "question": "How does the CLIPAdd node merge the two CLIP models?",
+        "answer": "The CLIPAdd node merges the two CLIP models by first cloning the 'clip1' model, then obtaining the key patches from 'clip2' and adding these patches to the cloned model, skipping any patches that end with '.position_ids' or '.logit_scale'."
+    },
+    {
+        "question": "What is the return type of the CLIPAdd node?",
+        "answer": "The return type of the CLIPAdd node is a single instance of a CLIP model class representing the merged model."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Cache node in ComfyUI?",
+        "answer": "The WAS_Cache node is designed to efficiently manage and store input data for the WAS suite. It caches latent vectors, images, and conditioning data to ensure that data is readily available for subsequent processing stages."
+    },
+    {
+        "question": "What are the required input types for the WAS_Cache node?",
+        "answer": "The required input types for the WAS_Cache node are latent_suffix, image_suffix, and conditioning_suffix, which are used to define filename suffixes for cached latent vectors, images, and conditioning data respectively."
+    },
+    {
+        "question": "What are the optional input types for the WAS_Cache node?",
+        "answer": "The optional input types for the WAS_Cache node include output_path, latent, image, and conditioning. These allow flexibility in choosing the storage location and the specific data to be cached."
+    },
+    {
+        "question": "What does the output_path parameter in the WAS_Cache node determine?",
+        "answer": "The output_path parameter determines the directory where the cached data will be stored, providing flexibility in selecting the storage location."
+    },
+    {
+        "question": "What are the output types of the WAS_Cache node?",
+        "answer": "The output types of the WAS_Cache node are latent_filename, image_filename, and conditioning_filename, which provide the filenames of the cached latent vectors, images, and conditioning data respectively."
+    },
+    {
+        "question": "What is the infra type recommended for the WAS_Cache node?",
+        "answer": "The recommended infra type for the WAS_Cache node is CPU."
+    },
+    {
+        "question": "How does the WAS_Cache node handle the caching process in its source code?",
+        "answer": "The WAS_Cache node uses joblib to dump the latent vectors, images, and conditioning data into files with specified suffixes. It then returns the filenames of the cached data."
+    }
+]

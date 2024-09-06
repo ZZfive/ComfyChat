@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AIO_Preprocessor node in ComfyUI?",
+        "answer": "The AIO_Preprocessor node is designed to dynamically select and apply specific auxiliary preprocessing operations to an image based on the selected preprocessor type. It supports various preprocessing options and can automatically configure and execute the appropriate auxiliary preprocessor to modify the image according to the requirements of the selected preprocessor."
+    },
+    {
+        "question": "What are the required input types for the AIO_Preprocessor node?",
+        "answer": "The required input type for the AIO_Preprocessor node is 'image', which is the input image to be preprocessed. This image is directly passed to the selected auxiliary preprocessor for modification."
+    },
+    {
+        "question": "What are the optional input types for the AIO_Preprocessor node?",
+        "answer": "The optional input types for the AIO_Preprocessor node are 'preprocessor' and 'resolution'. 'preprocessor' specifies the type of preprocessing to be applied to the image, determining which auxiliary preprocessor's logic will be executed, affecting the final preprocessing result of the image. 'resolution' is the resolution of the preprocessing operation, which some preprocessors may use to adjust the level of processing detail or output resolution."
+    },
+    {
+        "question": "What is the output type of the AIO_Preprocessor node?",
+        "answer": "The output type of the AIO_Preprocessor node is 'image', which is the preprocessed image modified by the selected auxiliary preprocessor."
+    },
+    {
+        "question": "What is the infra type of the AIO_Preprocessor node?",
+        "answer": "The infra type of the AIO_Preprocessor node is 'CPU'."
+    },
+    {
+        "question": "What are some common nodes that can be used with the AIO_Preprocessor node?",
+        "answer": "Some common nodes that can be used with the AIO_Preprocessor node are ControlNetApplyAdvanced, PreviewImage, ControlNetApply, and VHS_VideoCombine."
+    },
+    {
+        "question": "How does the AIO_Preprocessor node handle the case when the selected preprocessor is 'none'?",
+        "answer": "When the selected preprocessor is 'none', the AIO_Preprocessor node simply returns the input image as is, without any preprocessing applied."
+    }
+]

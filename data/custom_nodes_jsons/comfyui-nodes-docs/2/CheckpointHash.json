@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CheckpointHash node in ComfyUI?",
+        "answer": "The CheckpointHash node is designed to generate and retrieve an encrypted hash for a specified checkpoint file. It ensures the integrity and uniqueness of the checkpoint by hashing its contents."
+    },
+    {
+        "question": "What is the role of the 'ckpt_name' input parameter in the CheckpointHash node?",
+        "answer": "The 'ckpt_name' parameter is a required input that identifies the specific checkpoint file for which a hash will be generated. It is used to match the file within the checkpoint directory."
+    },
+    {
+        "question": "What is the significance of the 'prompt' object in the CheckpointHash node?",
+        "answer": "The 'prompt' object is used to store and retrieve information related to the checkpoint, such as the unique identifier and the computed hash, for subsequent use in the workflow."
+    },
+    {
+        "question": "What does the 'ckpt_hash' output represent in the CheckpointHash node?",
+        "answer": "The 'ckpt_hash' output represents the encrypted hash of the checkpoint file, ensuring its integrity and serving as a means of validation."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the CheckpointHash node?",
+        "answer": "The CheckpointHash node is recommended to be run on a CPU infrastructure."
+    },
+    {
+        "question": "How is the hash of the checkpoint file computed in the CheckpointHash node?",
+        "answer": "The hash of the checkpoint file is computed using the 'get_file_hash' function, which takes the full path of the checkpoint file as input."
+    },
+    {
+        "question": "What is the purpose of the 'unique_id' input in the CheckpointHash node?",
+        "answer": "The 'unique_id' input serves as the unique identifier for the checkpoint, allowing it to be tracked and referenced within the system."
+    }
+]

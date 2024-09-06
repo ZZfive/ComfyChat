@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of AIGCImageRemoveBackgroundRembg node in ComfyUI?",
+        "answer": "The AIGCImageRemoveBackgroundRembg node in ComfyUI is designed to seamlessly remove the background from images using advanced image segmentation techniques. It utilizes the SAM (Segment Anything Model) and GroundingDINO models to achieve high-quality background removal, providing users with clean foreground objects for further use."
+    },
+    {
+        "question": "What are the required input parameters for the AIGCImageRemoveBackgroundRembg node?",
+        "answer": "The required input parameters for the AIGCImageRemoveBackgroundRembg node are: image, text, sam_model_name, and groundingdino_model_name. The image parameter is crucial as it is the source from which the background will be removed. The text parameter guides the segmentation process to correctly identify and preserve the regions of interest."
+    },
+    {
+        "question": "What does the sam_model_name parameter specify in the AIGCImageRemoveBackgroundRembg node?",
+        "answer": "The sam_model_name parameter in the AIGCImageRemoveBackgroundRembg node specifies the pretrained SAM model to be used for segmentation. The choice of model can impact the performance of the node and the quality of the segmentation results."
+    },
+    {
+        "question": "What is the role of the groundingdino_model_name parameter in the AIGCImageRemoveBackgroundRembg node?",
+        "answer": "The groundingdino_model_name parameter in the AIGCImageRemoveBackgroundRembg node determines the GroundingDINO model to be applied for identifying regions of interest within an image. This parameter is crucial for accurate object recognition and segmentation."
+    },
+    {
+        "question": "What are the optional input parameters for the AIGCImageRemoveBackgroundRembg node?",
+        "answer": "The optional input parameters for the AIGCImageRemoveBackgroundRembg node are dino_box_threshold, highest_confidence_mode, and return_index. The dino_box_threshold parameter sets the threshold for the output of the GroundingDINO model, influencing the decision on which areas to consider for segmentation."
+    },
+    {
+        "question": "What does the highest_confidence_mode parameter control in the AIGCImageRemoveBackgroundRembg node?",
+        "answer": "The highest_confidence_mode parameter in the AIGCImageRemoveBackgroundRembg node controls the node's behavior regarding the selection of segmentation masks based on confidence scores. It is an important factor in determining the quality of the final output."
+    },
+    {
+        "question": "What are the output types of the AIGCImageRemoveBackgroundRembg node?",
+        "answer": "The output types of the AIGCImageRemoveBackgroundRembg node are new_image and mask. The new_image output contains the processed image with the background removed, ready for further use or display. The mask output provides a binary representation of the segmentation, highlighting the areas that have been removed from the original image."
+    }
+]

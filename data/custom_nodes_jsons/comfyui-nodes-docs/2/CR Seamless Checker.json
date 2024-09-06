@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_SeamlessChecker node in ComfyUI?",
+        "answer": "The CR_SeamlessChecker node is used to check the seamless tiling effect of images. It allows users to identify and evaluate the quality of image stitching by adjusting image size, generating grid layouts, and displaying scaled versions of multiple images."
+    },
+    {
+        "question": "What are the required input types for the CR_SeamlessChecker node?",
+        "answer": "The required input types for the CR_SeamlessChecker node are: image (Comfy dtype: IMAGE, Python dtype: PIL.Image.Image or torch.Tensor), rescale_factor (Comfy dtype: FLOAT, Python dtype: float), and grid_options (Comfy dtype: COMBO['2x2', '3x3', '4x4', '5x5', '6x6'], Python dtype: str)."
+    },
+    {
+        "question": "How does the rescale_factor parameter affect the image in the CR_SeamlessChecker node?",
+        "answer": "The rescale_factor parameter is used to adjust the image size, which is crucial for evaluating the seamless tiling effect of the image. Users can control the degree of image scaling through this parameter to more accurately view the details of the stitching."
+    },
+    {
+        "question": "What does the grid_options parameter define in the CR_SeamlessChecker node?",
+        "answer": "The grid_options parameter defines the layout of images in the grid, determining the number of scaled image versions displayed during the seamless tiling check. This parameter is important for displaying multiple scaled image versions and evaluating the overall grid tiling effect."
+    },
+    {
+        "question": "What is the output type of the CR_SeamlessChecker node?",
+        "answer": "The output type of the CR_SeamlessChecker node is show_help (Comfy dtype: STRING, Python dtype: str), which provides a help message with guidelines and further resource links for users to better understand and operate the node."
+    },
+    {
+        "question": "What is the infra type used by the CR_SeamlessChecker node?",
+        "answer": "The CR_SeamlessChecker node uses CPU as its infra type."
+    },
+    {
+        "question": "How does the CR_SeamlessChecker node generate the final combined image?",
+        "answer": "The CR_SeamlessChecker node generates the final combined image by rescaling the input image, applying an outline, creating a grid panel based on the grid_options parameter, and then combining the repeated images into a single image."
+    }
+]

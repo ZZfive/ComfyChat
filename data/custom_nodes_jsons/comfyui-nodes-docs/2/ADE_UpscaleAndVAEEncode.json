@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ADE_UpscaleAndVAEEncode node in ComfyUI?",
+        "answer": "The ADE_UpscaleAndVAEEncode node in ComfyUI is designed to process images by first upscaling them to a higher resolution and then encoding them into a latent representation using a Variational Autoencoder (VAE). This node is part of the AnimateDiff suite and is specifically used to enhance image quality before applying further generation or transformation processes."
+    },
+    {
+        "question": "What are the required input types for the ADE_UpscaleAndVAEEncode node?",
+        "answer": "The required input types for the ADE_UpscaleAndVAEEncode node are: image (the input image to be upscaled and encoded), vae (the Variational Autoencoder model used to encode the upscaled image into its latent representation), latent_size (the size of the latent representation to be generated), scale_method (the method used to upscale the image), and crop (the cropping method applied after upscaling)."
+    },
+    {
+        "question": "What does the 'latent_size' parameter determine in the ADE_UpscaleAndVAEEncode node?",
+        "answer": "The 'latent_size' parameter in the ADE_UpscaleAndVAEEncode node determines the size of the latent representation to be generated. It decides the dimensions of the output latent space."
+    },
+    {
+        "question": "What is the output type of the ADE_UpscaleAndVAEEncode node?",
+        "answer": "The output type of the ADE_UpscaleAndVAEEncode node is 'latent', which is a compressed representation of the input image that captures its essential features in a form suitable for further generative tasks."
+    },
+    {
+        "question": "How does the ADE_UpscaleAndVAEEncode node handle old ComfyUI versions?",
+        "answer": "The ADE_UpscaleAndVAEEncode node handles old ComfyUI versions by using a try-except block to account for the absence of the 'vae_encode_crop_pixels' attribute in the VAE. If the attribute is not present, it attempts to use the 'vae_encode_crop_pixels' function from the VAEEncode class."
+    },
+    {
+        "question": "What is the infra type required for the ADE_UpscaleAndVAEEncode node?",
+        "answer": "The infra type required for the ADE_UpscaleAndVAEEncode node is GPU."
+    },
+    {
+        "question": "In which category is the ADE_UpscaleAndVAEEncode node classified in ComfyUI?",
+        "answer": "The ADE_UpscaleAndVAEEncode node is classified in the 'Animate Diff 🎭🅐🅓/② Gen2 nodes ②/AnimateLCM-I2V' category in ComfyUI."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_ApplyModelMerge node in ComfyUI?",
+        "answer": "The CR_ApplyModelMerge node is designed to conveniently merge multiple models into a single unified model by intelligently combining model ratios and clip ratios, normalizing them if necessary, and applying the specified merge method to create a harmonious blend of the selected models."
+    },
+    {
+        "question": "What are the required input types for the CR_ApplyModelMerge node?",
+        "answer": "The required input types for the CR_ApplyModelMerge node are: model_stack (MODEL_STACK), merge_method (COMBO['Recursive', 'Weighted']), normalise_ratios (COMBO['Yes', 'No']), and weight_factor (FLOAT)."
+    },
+    {
+        "question": "What does the model_stack parameter define in the CR_ApplyModelMerge node?",
+        "answer": "The model_stack parameter defines the sequence of models to be merged and plays a core role in the execution of the node, determining which models will contribute to the final merged model."
+    },
+    {
+        "question": "How does the merge_method parameter affect the merging process in the CR_ApplyModelMerge node?",
+        "answer": "The merge_method parameter determines how the models are combined. It is a key factor in the functionality of the node, as it dictates the algorithm used for merging, which can significantly influence the characteristics of the resulting model."
+    },
+    {
+        "question": "What is the significance of the normalise_ratios parameter in the CR_ApplyModelMerge node?",
+        "answer": "The normalise_ratios parameter is important because it indicates whether the ratios should be normalized. This is crucial for ensuring that the ratios accurately reflect the intended contribution of each model to the merged result."
+    },
+    {
+        "question": "What role does the weight_factor parameter play in the CR_ApplyModelMerge node?",
+        "answer": "The weight_factor parameter influences the weight of the models during the merging process. It is essential for fine-tuning the contribution of each model to the final merged model, allowing for precise control over the outcome."
+    },
+    {
+        "question": "What are the output types of the CR_ApplyModelMerge node in ComfyUI?",
+        "answer": "The output types of the CR_ApplyModelMerge node are: MODEL (the merged model), CLIP (the associated CLIP model), model_mix_info (detailed report of the merging process), and show_help (link to documentation for further help)."
+    }
+]

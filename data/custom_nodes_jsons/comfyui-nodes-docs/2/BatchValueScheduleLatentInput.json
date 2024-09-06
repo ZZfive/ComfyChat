@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BatchValueScheduleLatentInput node in ComfyUI?",
+        "answer": "The BatchValueScheduleLatentInput node in ComfyUI is designed to process and animate a batch of latent inputs based on a given text schedule. It interprets the text to generate keyframes and interpolates these values accordingly, providing smooth transitions between keyframes."
+    },
+    {
+        "question": "What are the required input types for the BatchValueScheduleLatentInput node?",
+        "answer": "The BatchValueScheduleLatentInput node requires two input types: 'text', which is a string that defines the schedule of the latent input animation, and 'num_latents', which is a dictionary containing the latent variables to be animated."
+    },
+    {
+        "question": "What does the 'text' parameter in the BatchValueScheduleLatentInput node define?",
+        "answer": "The 'text' parameter in the BatchValueScheduleLatentInput node defines the schedule of the latent input animation. It specifies keyframes and their corresponding values used to generate the animation sequence."
+    },
+    {
+        "question": "What does the 'num_latents' parameter in the BatchValueScheduleLatentInput node represent?",
+        "answer": "The 'num_latents' parameter in the BatchValueScheduleLatentInput node is a dictionary containing the latent variables to be animated. Each key in the dictionary corresponds to a different latent variable, with the value being a tensor representing the initial state of these variables."
+    },
+    {
+        "question": "What is the function of the optional 'print_output' parameter in the BatchValueScheduleLatentInput node?",
+        "answer": "The optional 'print_output' parameter in the BatchValueScheduleLatentInput node is a boolean flag. When set to True, it prints the generated keyframes and their interpolated results to the console, which is useful for debugging or visualizing the animation sequence before further processing."
+    },
+    {
+        "question": "What are the output types of the BatchValueScheduleLatentInput node?",
+        "answer": "The BatchValueScheduleLatentInput node outputs three types: 't', which represents the interpolated keyframes generated from the input text schedule; a list of integers derived from the interpolated keyframes; and 'num_latents', which is the dictionary of latent variables after the animation process."
+    },
+    {
+        "question": "What infrastructure type does the BatchValueScheduleLatentInput node use?",
+        "answer": "The BatchValueScheduleLatentInput node uses the CPU infrastructure type."
+    }
+]

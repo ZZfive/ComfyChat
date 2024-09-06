@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_GradientInteger node in ComfyUI?",
+        "answer": "The CR_GradientInteger node in ComfyUI provides a method to interpolate between two integer values over a specified duration, starting from a start frame and lasting for a frame duration. It is particularly useful for creating smooth transitions in animations and time-based visual effects."
+    },
+    {
+        "question": "What are the required input types for the CR_GradientInteger node?",
+        "answer": "The required input types for the CR_GradientInteger node are: start_value (initial integer value), end_value (target integer value), start_frame (frame number where interpolation should start), frame_duration (total number of frames over which interpolation occurs), current_frame (current frame in the sequence for interpolation), and gradient_profile (interpolation profile defining the rate of change between start and end values)."
+    },
+    {
+        "question": "What does the 'start_value' input represent in the CR_GradientInteger node?",
+        "answer": "In the CR_GradientInteger node, the 'start_value' input represents the initial integer value from which the interpolation begins. It is crucial for establishing the starting condition of the transition."
+    },
+    {
+        "question": "How does the 'frame_duration' input affect the interpolation in the CR_GradientInteger node?",
+        "answer": "The 'frame_duration' input in the CR_GradientInteger node determines the total number of frames over which the interpolation between the start and end values occurs. It defines the length of the transition."
+    },
+    {
+        "question": "What output types does the CR_GradientInteger node produce?",
+        "answer": "The CR_GradientInteger node produces two output types: INT (interpolated integer value for the current frame, resulting from the transition between start and end values) and show_help (a URL string providing additional documentation or help for the interpolation process)."
+    },
+    {
+        "question": "How does the CR_GradientInteger node handle the current frame being outside the interpolation range?",
+        "answer": "If the current frame is less than the start frame, the CR_GradientInteger node returns the start value. If the current frame is greater than the start frame plus the frame duration, it returns the end value."
+    },
+    {
+        "question": "What infrastructure type does the CR_GradientInteger node use?",
+        "answer": "The CR_GradientInteger node uses the CPU infrastructure type."
+    }
+]

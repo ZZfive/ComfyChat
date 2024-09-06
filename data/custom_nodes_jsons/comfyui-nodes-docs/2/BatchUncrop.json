@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BatchUncrop node in ComfyUI?",
+        "answer": "The BatchUncrop node in ComfyUI is designed to restore cropped images to their original size and shape. It intelligently handles the uncropping process by resizing and blending the cropped area with the original image, considering border blending and scaling factors to ensure seamless integration."
+    },
+    {
+        "question": "What are the required input types for the BatchUncrop node?",
+        "answer": "The required input types for the BatchUncrop node are 'original_images' which holds the reference to the images before cropping, 'cropped_images' which represents the images that have been cropped and need to be restored, and 'bboxes' which defines the regions that were cropped out of the original images."
+    },
+    {
+        "question": "What does the 'border_blending' parameter control in the BatchUncrop node?",
+        "answer": "The 'border_blending' parameter in the BatchUncrop node controls the blending effect between the borders of the cropped and original images during the uncropping process. It is important for achieving a smooth transition between the images."
+    },
+    {
+        "question": "What is the function of the 'crop_rescale' parameter in the BatchUncrop node?",
+        "answer": "The 'crop_rescale' parameter in the BatchUncrop node adjusts the scaling ratio before the cropped region is pasted back onto the original image. It influences the final size of the uncropped area."
+    },
+    {
+        "question": "What does the BatchUncrop node output?",
+        "answer": "The BatchUncrop node outputs 'uncropped_images' which contains the final images after the uncropping process. It represents the restored images with the original context preserved, ready for further use or analysis."
+    },
+    {
+        "question": "What is the purpose of the 'border_top', 'border_bottom', 'border_left', and 'border_right' parameters in the BatchUncrop node?",
+        "answer": "The 'border_top', 'border_bottom', 'border_left', and 'border_right' parameters in the BatchUncrop node determine whether borders should be added at the top, bottom, left, and right of the image during the uncropping process. They are part of the node's functionality to customize the image borders."
+    },
+    {
+        "question": "What happens if the number of 'original_images' and 'cropped_images' are not the same in the BatchUncrop node?",
+        "answer": "If the number of 'original_images' and 'cropped_images' are not the same in the BatchUncrop node, it raises a ValueError indicating that the counts should be the same."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BoundingRect node in ComfyUI?",
+        "answer": "The BoundingRect node in ComfyUI is used to calculate the bounding rectangle of a contour. It abstracts the process of determining the minimum rectangle that completely encloses the contour, providing a simple way to understand the spatial extent of the contour."
+    },
+    {
+        "question": "What are the required input types for the BoundingRect node?",
+        "answer": "The required input types for the BoundingRect node are 'contour' and 'return_mode'. 'contour' is the contour for which the bounding rectangle needs to be calculated, and 'return_mode' specifies the rectangle calculation mode to be used."
+    },
+    {
+        "question": "What does the 'return_mode' input specify in the BoundingRect node?",
+        "answer": "The 'return_mode' input in the BoundingRect node specifies the rectangle calculation mode to be used. It affects how the dimensions of the bounding rectangle are calculated and returned."
+    },
+    {
+        "question": "What is the output type of the BoundingRect node?",
+        "answer": "The output type of the BoundingRect node is a tuple of four integers (x, y, width, height), where (x, y) represents the coordinates of the top-left corner of the rectangle."
+    },
+    {
+        "question": "What infrastructure type does the BoundingRect node use?",
+        "answer": "The BoundingRect node uses the 'CPU' infrastructure type."
+    },
+    {
+        "question": "What happens if the input 'contour' is None in the BoundingRect node?",
+        "answer": "If the input 'contour' is None in the BoundingRect node, it prints 'Contour = None !' and returns (0, 0, 0, 0) as the output."
+    },
+    {
+        "question": "How does the BoundingRect node convert the OpenCV boundingRect format to the desired output format?",
+        "answer": "The BoundingRect node first converts the OpenCV boundingRect format to bounds using rect_modes_map with the default mode. Then, it converts the bounds to the desired output format specified by the 'return_mode' input using rect_modes_map."
+    }
+]

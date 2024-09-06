@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_PromptText node in ComfyUI?",
+        "answer": "The CR_PromptText node is designed to simplify the process of obtaining user input through a prompt box. It is a basic component in interactive applications and is crucial for guiding application behavior."
+    },
+    {
+        "question": "What is the significance of the 'prompt' parameter in the CR_PromptText node?",
+        "answer": "The 'prompt' parameter is essential for defining the query or statement displayed to the user. It sets the context for the user's input and is crucial for the node's operation as it directly influences the interaction with the user."
+    },
+    {
+        "question": "What data type is the 'prompt' parameter in the CR_PromptText node?",
+        "answer": "The 'prompt' parameter in the CR_PromptText node is of Comfy dtype STRING and Python dtype str."
+    },
+    {
+        "question": "What does the output parameter 'prompt' represent in the CR_PromptText node?",
+        "answer": "The output parameter 'prompt' represents the user's response to the initial query. It is important because it captures the user's input, which can then be further processed by the application."
+    },
+    {
+        "question": "What does the output parameter 'show_help' provide in the CR_PromptText node?",
+        "answer": "The output parameter 'show_help' provides a URL linking to a wiki page where users can find more information or help related to the prompt. This is particularly useful for guiding users through complex or unfamiliar tasks."
+    },
+    {
+        "question": "What infra type does the CR_PromptText node use?",
+        "answer": "The CR_PromptText node uses the CPU infra type."
+    },
+    {
+        "question": "What is the source code for the CR_PromptText class?",
+        "answer": "The source code for the CR_PromptText class is as follows:\n```\nclass CR_PromptText:\n\n    @classmethod\n    def INPUT_TYPES(s):\n        return {'required': {'prompt': ('STRING', {'default': 'prompt', 'multiline': True})}}\n    RETURN_TYPES = ('STRING', 'STRING')\n    RETURN_NAMES = ('prompt', 'show_help')\n    FUNCTION = 'get_value'\n    CATEGORY = icons.get('Comfyroll/Essential/Core')\n\n    def get_value(self, prompt):\n        show_help = 'https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/wiki/Core-Nodes#cr-prompt-text'\n        return (prompt, show_help)\n```"
+    }
+]

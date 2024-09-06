@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_CycleModels node in ComfyUI?",
+        "answer": "The CR_CycleModels node is designed to manage and cycle through a list of models based on specified parameters such as mode, frame interval, and loop count, providing functionality for sequential selection and processing of models or based on a predefined list, making it a versatile tool in animation workflows requiring model switching."
+    },
+    {
+        "question": "What are the required input types for the CR_CycleModels node?",
+        "answer": "The required input types for the CR_CycleModels node include mode (COMBO[string]), model (MODEL), clip (CLIP), frame_interval (INT), loops (INT), and current_frame (INT)."
+    },
+    {
+        "question": "What does the 'mode' parameter in the CR_CycleModels node determine?",
+        "answer": "The 'mode' parameter determines the cycling behavior of the models. It can be set to 'Off' or 'Sequential', affecting how the node traverses the model list."
+    },
+    {
+        "question": "What is the function of the 'model_list' parameter in the CR_CycleModels node?",
+        "answer": "The 'model_list' parameter is an optional list of models that the node can cycle through. It provides flexibility in defining the sequence of models used in the animation."
+    },
+    {
+        "question": "What output types does the CR_CycleModels node produce?",
+        "answer": "The CR_CycleModels node produces output types of MODEL, CLIP, VAE, and show_help (STRING)."
+    },
+    {
+        "question": "How does the CR_CycleModels node handle the 'Sequential' mode?",
+        "answer": "In 'Sequential' mode, the CR_CycleModels node calculates the current model index based on the current frame and frame interval, then selects the corresponding model from the model parameters list."
+    },
+    {
+        "question": "What infrastructure type does the CR_CycleModels node use?",
+        "answer": "The CR_CycleModels node uses the CPU infrastructure type."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Checkpoint Loader node in ComfyUI?",
+        "answer": "The Checkpoint Loader node in ComfyUI is used to load model checkpoints, with a focus on image-related configurations, making it suitable for scenarios where visual content is the main focus."
+    },
+    {
+        "question": "What is the input type required by the Checkpoint Loader node?",
+        "answer": "The Checkpoint Loader node requires the 'ckpt_name' input type, which specifies the name of the checkpoint to be loaded. This parameter is crucial as it determines which specific checkpoint the node will attempt to load, thereby influencing the model's configuration and its subsequent performance."
+    },
+    {
+        "question": "What are the output types of the Checkpoint Loader node?",
+        "answer": "The Checkpoint Loader node outputs three types: 'model', which represents the overall loaded model object; 'clip', which is the CLIP model associated with the loaded checkpoint (if applicable); and 'vae', which is the VAE (Variational Autoencoder) component loaded from the checkpoint."
+    },
+    {
+        "question": "What infra type does the Checkpoint Loader node use?",
+        "answer": "The Checkpoint Loader node uses the CPU infra type."
+    },
+    {
+        "question": "How does the CheckpointLoaderSimpleWithImages class differ from the CheckpointLoaderSimple class?",
+        "answer": "The CheckpointLoaderSimpleWithImages class is a specialized version of the CheckpointLoaderSimple class. It enhances the processing of images and checkpoint names. The main difference lies in the INPUT_TYPES class method and the load_checkpoint method, where the former populates checkpoint names and the latter adjusts the 'ckpt_name' argument before calling the superclass method."
+    },
+    {
+        "question": "What is the significance of the 'model' output type in the Checkpoint Loader node?",
+        "answer": "The 'model' output type in the Checkpoint Loader node represents the loaded model object, which is the primary output of the checkpoint loading process. It signifies the model's overall structure and is prepared for further use or analysis."
+    },
+    {
+        "question": "How does the 'clip' output type relate to the loaded checkpoint in the Checkpoint Loader node?",
+        "answer": "The 'clip' output type in the Checkpoint Loader node is the CLIP model associated with the loaded checkpoint (if applicable). It is relevant for tasks involving text and image understanding or generation."
+    }
+]

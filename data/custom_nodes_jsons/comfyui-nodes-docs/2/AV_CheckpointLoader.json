@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AV_CheckpointLoader node in ComfyUI?",
+        "answer": "The AV_CheckpointLoader node is designed to load model checkpoints and optionally override specific components such as the checkpoint itself, VAE, or LoRA model. It extends the functionality of the standard checkpoint loader, allowing users to specify alternative sources for model components, thus enhancing the flexibility of model configuration and experimentation."
+    },
+    {
+        "question": "What are the required input types for the AV_CheckpointLoader node?",
+        "answer": "The required input types for the AV_CheckpointLoader node are: ckpt_name (str), vae_name (str), clip_skip (bool), lora_name (str), lora_model_strength (unknown), lora_clip_strength (unknown), positive (unknown), negative (unknown), token_normalization (unknown), weight_interpretation (unknown), empty_latent_width (unknown), empty_latent_height (unknown), and batch_size (unknown)."
+    },
+    {
+        "question": "What are the optional input types for the AV_CheckpointLoader node?",
+        "answer": "The optional input types for the AV_CheckpointLoader node are: lora_stack (unknown), cnet_stack (unknown), ckpt_override (unknown), and vae_override (unknown)."
+    },
+    {
+        "question": "What output types does the AV_CheckpointLoader node produce?",
+        "answer": "The AV_CheckpointLoader node produces the following output types: MODEL (loaded model instance), CONDITIONING+ (positive conditioning component), CONDITIONING- (negative conditioning component), LATENT (latent representation or configuration), VAE (loaded VAE model if applicable), CLIP (loaded CLIP model if applicable), and DEPENDENCIES (additional dependencies or components loaded with the main model components)."
+    },
+    {
+        "question": "What is the infra type for the AV_CheckpointLoader node?",
+        "answer": "The infra type for the AV_CheckpointLoader node is CPU."
+    },
+    {
+        "question": "What are the common nodes mentioned in the documentation for the AV_CheckpointLoader node?",
+        "answer": "The common node mentioned in the documentation for the AV_CheckpointLoader node is ImpactWildcardEncode."
+    },
+    {
+        "question": "What does the source code of the AV_CheckpointLoader node show?",
+        "answer": "The source code of the AV_CheckpointLoader node shows the class definition, input types, category, and the efficientloader method that handles the loading of checkpoints and overriding of specific components based on the provided inputs."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BatchAverageUnJittered node in ComfyUI?",
+        "answer": "The BatchAverageUnJittered node is designed to process a batch of images by applying an average or median operation to reduce jitter effects, creating smoother and more stable output images."
+    },
+    {
+        "question": "What are the required input types for the BatchAverageUnJittered node?",
+        "answer": "The required input types for the BatchAverageUnJittered node are 'images' (the batch of images to be processed) and 'operation' (specifies the operation to be applied, either 'mean' or 'median')."
+    },
+    {
+        "question": "What is the output type of the BatchAverageUnJittered node?",
+        "answer": "The output type of the BatchAverageUnJittered node is 'image', which represents the batch of images after being processed with the specified average or median operation to reduce jitter effects."
+    },
+    {
+        "question": "What infra type does the BatchAverageUnJittered node use?",
+        "answer": "The BatchAverageUnJittered node uses the 'GPU' infra type."
+    },
+    {
+        "question": "How does the BatchAverageUnJittered node apply the 'mean' operation to the images?",
+        "answer": "If the 'mean' operation is selected, the BatchAverageUnJittered node calculates the mean of every 9 images in the batch using torch.mean() and appends the result to the output batch."
+    },
+    {
+        "question": "How does the BatchAverageUnJittered node apply the 'median' operation to the images?",
+        "answer": "If the 'median' operation is selected, the BatchAverageUnJittered node calculates the median of every 9 images in the batch using torch.median() and appends the result to the output batch."
+    },
+    {
+        "question": "What does the BatchAverageUnJittered node return after processing the images?",
+        "answer": "The BatchAverageUnJittered node returns a tuple containing a single torch.Tensor, which represents the concatenated output batch of processed images."
+    }
+]

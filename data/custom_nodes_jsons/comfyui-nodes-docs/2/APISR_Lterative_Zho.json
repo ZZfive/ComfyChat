@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the APISR_Lterative_Zho node in ComfyUI?",
+        "answer": "The purpose of the APISR_Lterative_Zho node is to enhance the resolution of images using a specified model, focusing on improving the clarity and detail of the input images."
+    },
+    {
+        "question": "What are the required input parameters for the APISR_Lterative_Zho node?",
+        "answer": "The required input parameters for the APISR_Lterative_Zho node are 'pipe', which represents the model used for image super-resolution, 'image', which is the input for the super-resolution process, and 'dtype', which determines the data type used for processing."
+    },
+    {
+        "question": "What does the 'crop_for_4x' optional parameter do in the APISR_Lterative_Zho node?",
+        "answer": "The 'crop_for_4x' optional parameter is used to adjust the input image to fit the 4x scale requirement, ensuring compatibility and optimal processing."
+    },
+    {
+        "question": "What is the output type of the APISR_Lterative_Zho node?",
+        "answer": "The output type of the APISR_Lterative_Zho node is 'processed_images', which contains the super-resolution images with enhanced detail and clarity."
+    },
+    {
+        "question": "What infrastructure type is recommended for the APISR_Lterative_Zho node?",
+        "answer": "The recommended infrastructure type for the APISR_Lterative_Zho node is GPU."
+    },
+    {
+        "question": "How does the APISR_Lterative_Zho node handle different data types specified by the 'dtype' parameter?",
+        "answer": "If 'dtype' is set to 'float32', the node uses torch.float32 as the weight dtype. If 'dtype' is set to 'float16', the node uses torch.float16 as the weight dtype."
+    },
+    {
+        "question": "What does the APISR_Lterative_Zho node do if the 'crop_for_4x' parameter is set to True?",
+        "answer": "If the 'crop_for_4x' parameter is set to True, the APISR_Lterative_Zho node checks if the height and width of the image tensor are divisible by 4. If not, it crops the image tensor to make the dimensions divisible by 4."
+    }
+]

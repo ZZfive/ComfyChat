@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_OverlayTransparentImage node in ComfyUI?",
+        "answer": "The CR_OverlayTransparentImage node is designed to blend a transparent overlay image with a background image. It adjusts the transparency, position, rotation, and scale of the overlay to achieve the desired visual effect, providing a wide range of possibilities for creative applications in image processing."
+    },
+    {
+        "question": "What are the required input types for the CR_OverlayTransparentImage node?",
+        "answer": "The required input types for the CR_OverlayTransparentImage node are: back_image (the background image upon which the overlay image will be placed), overlay_image (the image that will be overlaid with transparency on the background), and transparency (the level of transparency applied to the overlay image, where 0.0 is completely opaque and 1.0 is completely transparent)."
+    },
+    {
+        "question": "What are the optional input types for the CR_OverlayTransparentImage node?",
+        "answer": "The optional input types for the CR_OverlayTransparentImage node are: offset_x (the horizontal offset applied to the overlay image from its center position), offset_y (the vertical offset applied to the overlay image from its center position), rotation_angle (the angle by which the overlay image will be rotated, in degrees), and overlay_scale_factor (the factor by which the overlay image will be scaled; values greater than 1.0 enlarge the image, while values less than 1.0 shrink it)."
+    },
+    {
+        "question": "What is the output type of the CR_OverlayTransparentImage node?",
+        "answer": "The output type of the CR_OverlayTransparentImage node is output_image, which represents the final composite image with the overlay image applied to the background, reflecting all modifications made through the node's parameters."
+    },
+    {
+        "question": "What infrastructure type does the CR_OverlayTransparentImage node use?",
+        "answer": "The CR_OverlayTransparentImage node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the CR_OverlayTransparentImage node apply transparency to the overlay image?",
+        "answer": "The CR_OverlayTransparentImage node applies transparency to the overlay image by setting its alpha channel using the formula int(255 * (1 - transparency)). This allows the overlay to blend with the background based on the specified transparency level."
+    },
+    {
+        "question": "How does the CR_OverlayTransparentImage node position the overlay image on the background?",
+        "answer": "The CR_OverlayTransparentImage node positions the overlay image on the background by calculating the center coordinates of the background image and applying the specified horizontal and vertical offsets (offset_x and offset_y) to determine the final position of the overlay."
+    }
+]
