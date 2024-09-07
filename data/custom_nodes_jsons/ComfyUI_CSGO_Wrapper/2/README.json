@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of ComfyUI_CSGO_Wrapper?",
+        "answer": "ComfyUI_CSGO_Wrapper is designed to allow users to use InstantX's CSGO in ComfyUI, providing a seamless integration between the CSGO tool and the ComfyUI GUI."
+    },
+    {
+        "question": "What are the installation steps for ComfyUI_CSGO_Wrapper?",
+        "answer": "1. Clone the ComfyUI_CSGO_Wrapper repository into the ComfyUI/custom_node directory using `git clone https://github.com/smthemex/ComfyUI_CSGO_Wrapper.git`.\n\n2. Install the required libraries by running `pip install -r requirements.txt`.\n\n3. Download the necessary models and weights for ComfyUI_CSGO_Wrapper. These include the base SDXl weights, main CSGO models, base DNA vae, e2e controlnet, image encoder, and if using LLM, the Salesforce/blip-image-captioning-large model."
+    },
+    {
+        "question": "What are the requirements for ComfyUI_CSGO_Wrapper?",
+        "answer": "For ComfyUI_CSGO_Wrapper to function correctly, all libraries in the requirements file should be available. If any libraries are missing, uncomment the respective lines in the requirements file and reinstall using `pip install -r requirements.txt`."
+    },
+    {
+        "question": "What models and weights are needed for ComfyUI_CSGO_Wrapper?",
+        "answer": "The main models and weights required for ComfyUI_CSGO_Wrapper include the base SDXl ckpt, main CSGO models, base DNA vae, e2e controlnet, image encoder, and if using LLM, the Salesforce/blip-image-captioning-large model."
+    },
+    {
+        "question": "What is the function description of nodes in ComfyUI_CSGO_Wrapper?",
+        "answer": "The function description of nodes in ComfyUI_CSGO_Wrapper includes `content_tokens`, `style_tokens`, `text_only`, and `Blip`. `content_tokens` is used to keep the content in the 4th position, while `style_tokens` is used based on the CSGO model. If the CSGO model is csgo.bin, `style_tokens` is set to 16, and if the CSGO model is csgo_4_32.bin, `style_tokens` is set to 32. `text_only` is used to specify whether the content image should be included in the output. `Blip` is not necessary."
+    },
+    {
+        "question": "What is the citation for ComfyUI_CSGO_Wrapper?",
+        "answer": "The citation for ComfyUI_CSGO_Wrapper is:\n\nCSGO\n\n@article{xing2024csgo,\n   title={CSGO: Content-Style Composition in Text-to-Image Generation},\n   author={Peng Xing and Haofan Wang and Yanpeng Sun and Qixun Wang and Xu Bai and Hao Ai and Renyuan Huang and Zechao Li},\n   year={2024},\n   journal = {arXiv 2408.16766},\n}"
+    },
+    {
+        "question": "What is the purpose of the custom Sud_UNiverse node in ComfyUI_CSGO_Wrapper?",
+        "answer": "The custom Sud_UNiverse node in ComfyUI_CSGO_Wrapper is used to generate a universal Sudoku grid. The node allows the user to input a Sudoku board, which the algorithm can then complete. The node can complete any line or column if one clue is given. If no clues are given, the node will place as few clues as possible to complete the board. The node can also handle multiple failed attempts, Clip It Node and solve a less perfect version. The node is designed to be flexible and can handle various input formats. The default input format is a text-based input, but the node can also handle a mixture of text and grid inputs."
+    }
+]

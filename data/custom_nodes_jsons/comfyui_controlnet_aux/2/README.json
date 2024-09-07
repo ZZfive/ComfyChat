@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is comfyui_controlnet_aux?",
+        "answer": "comfyui_controlnet_aux is a 'generic' implementation of EfficientNet, MixNet, MobileNetV3, etc. that covers most of the compute/parameter efficient architectures derived from the MobileNet V1/V2 block sequence, including those found via automated neural architecture search."
+    },
+    {
+        "question": "What models are implemented in comfyui_controlnet_aux?",
+        "answer": "The implemented models in comfyui_controlnet_aux include EfficientNet NoisyStudent (B0-B7, L2), EfficientNet AdvProp (B0-B8), EfficientNet (B0-B8), EfficientNet-EdgeTPU (S, M, L), EfficientNet-CondConv, EfficientNet-Lite, MixNet, MNASNet B1, A1 (Squeeze-Excite), and Small, MobileNet-V3, FBNet-C, and Single-Path NAS."
+    },
+    {
+        "question": "How can the models in comfyui_controlnet_aux be accessed?",
+        "answer": "The models in comfyui_controlnet_aux can be accessed via the PyTorch Hub API, installed via pip, or used in a nn.Sequential container for fast.ai, etc."
+    },
+    {
+        "question": "What scripts are included in comfyui_controlnet_aux for exporting models?",
+        "answer": "comfyui_controlnet_aux includes scripts to export models to ONNX, optimize ONNX graph, validate with ONNX runtime, convert ONNX model to Caffe2, validate in Caffe2, and benchmark in Caffe2 with FLOPs and parameters output."
+    },
+    {
+        "question": "What are some of the pretrained models available in comfyui_controlnet_aux?",
+        "answer": "Some of the pretrained models available in comfyui_controlnet_aux are efficientnet_b3, mixnet_xl, efficientnet_b2, mobilenetv2_120d, and efficientnet_es."
+    },
+    {
+        "question": "What are the limitations of exporting models in comfyui_controlnet_aux?",
+        "answer": "The limitations of exporting models in comfyui_controlnet_aux include: 1) TF ported weights with 'SAME' conv padding cannot be exported to ONNX unless _EXPORTABLE flag in config.py is set to True, 2) TF ported models with 'SAME' padding will have the padding fixed at export time to the resolution used for export, and 3) ONNX optimize facility doesn't work reliably in PyTorch 1.6 / ONNX 1.7."
+    },
+    {
+        "question": "What environment is recommended for using comfyui_controlnet_aux?",
+        "answer": "All development and testing for comfyui_controlnet_aux has been done in Conda Python 3 environments on Linux x86-64 systems, specifically Python 3.6.x, 3.7.x, 3.8.x. PyTorch versions 1.4, 1.5, 1.6 have been tested with this code."
+    }
+]

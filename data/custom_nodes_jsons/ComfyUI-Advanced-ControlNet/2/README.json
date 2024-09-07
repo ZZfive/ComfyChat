@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is ComfyUI-Advanced-ControlNet and what does it do?",
+        "answer": "ComfyUI-Advanced-ControlNet is a GUI developed for generating images and videos using Stable Diffusion models. It offers scheduling features for controlling the strength of ControlNets across timesteps and batched latents. It allows for sliding context sampling and supports various advanced options like ControlNet strength scheduling, attention masks, custom weight controls, and the ability to replicate features from other ControlNet extensions."
+    },
+    {
+        "question": "What are Timestep Keyframes and how do they work?",
+        "answer": "Timestep Keyframes hold the values that guide the settings for a ControlNet on a sampling step. They begin taking effect based on their start_percent, which corresponds to the step in the sampling process. They contain optional parameters like latent_keyframes, control_net_weights, and attention masks. If inherit_missing is True, optional parameters not included will be reused from the previous Timestep Keyframe."
+    },
+    {
+        "question": "What are Latent Keyframes and how do they differ from Timestep Keyframes?",
+        "answer": "Latent Keyframes determine the strength of control for specific latents in the batch. They are created by selecting the batch index and control strength through the node. If a batch index corresponding to a Latent Keyframe is not present during sampling, theLatent Keyframe will have no effect. They can be chained with other Latent Keyframes to create a schedule."
+    },
+    {
+        "question": "What are Soft Weights and how do they allow for the replication of features from sd-webui-ControlNet extension?",
+        "answer": "Soft Weights provide a way to replicate the \"My prompt is more important\" feature of the sd-webui-ControlNet extension, allowing for the use of a softness multiplier (base_multiplier) that adjusts the control strength based on the input. Additionally, Soft Weights can be used to control the importance of ControlNet features (uncond_multiplier) granularly, ranging from 0.0 to 1.0, where 0.0 gives identical results to auto1111's feature and values in the range can be used to control settings."
+    },
+    {
+        "question": "How do ControlNet preprocessors provided by ComfyUI-ControlNet Auxiliary nodes work?",
+        "answer": "ControlNet preprocessors from the comfyui_controlnet_aux nodes can be used to control the weights and latent keyframes for of timestep keyframes in scheduling. They are connected to the Timestep Keyframe nodes and allow for better scheduling of ControlNet effect."
+    },
+    {
+        "question": "What are ControlNet nodes in ComfyUI-Advanced-ControlNet and how are they used?",
+        "answer": "ControlNet nodes in ComfyUI-Advanced-ControlNet are used to apply advanced ControlNet features to the images or videos being generated. These nodes support scheduling of ControlNet strength across timesteps and batched latents, apply custom weights and attention masks, and support sliding context sampling for better image generation."
+    },
+    {
+        "question": "How many latent keyframes need to be passed in to the Apply Advanced ControlNet node and how do they operate?",
+        "answer": "To specify control strength for all latents, at least one latent keyframe is required when using the Apply Advanced ControlNet node, and if more than one is provided, each can be used separately for each latent. If the number of provided images does not meet the number of latent keyframes, the images are repeated from the beginning."
+    },
+    {
+        "question": "What are the core scheduling concepts in ComfyUI-Advanced-ControlNet?",
+        "answer": "The two core scheduling concepts are Timestep Keyframes and Latent Keyframes. Timestep Keyframes hold values guiding ControlNet settings and begin taking effect based on their start_percent. Latent Keyframes determine the strength of ControlNet for specific latents. Both can contain optional parameters for masks, weights, and latent keyframes and can be chained to create schedules."
+    },
+    {
+        "question": "What is Soft Weights in the context of ComfyUI-Advanced-ControlNet and its custom nodes?",
+        "answer": "Soft Weights in ComfyUI-Advanced-ControlNet are a feature that allow replication of the \"My prompt is more important\" feature from the sd-webui-ControlNet extension. It operates via a softness multiplier (base_multiplier) that adjusts the control strength based on the input. Additionally, Soft Weights can be used to control the importance of ControlNet features, allowing for granular control through the uncond_multiplier parameter on the Soft Weights."
+    }
+]

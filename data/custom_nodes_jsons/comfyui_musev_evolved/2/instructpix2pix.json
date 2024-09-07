@@ -1,0 +1,30 @@
+[
+    {
+        "question": "InstructPix2Pix는 무엇의 약자이며 어떤 목적으로 사용되나요?",
+        "answer": "InstructPix2Pix는 이미지 수정 지침을 따르도록 text-conditioned diffusion 모델을 파인튜닝하는 방법입니다. 이 방법을 사용하여 파인튜닝된 모델은 입력 이미지와 편집 지시문을 받아 입력 이미지에 편집 지시가 반영된 '수정된' 이미지를 출력으로 생성합니다."
+    },
+    {
+        "question": "InstructPix2Pix 학습에 사용되는 주요 스크립트는 무엇이며, 어디에서 찾을 수 있나요?",
+        "answer": "`train_instruct_pix2pix.py` 스크립트가 InstructPix2Pix 학습 절차를 구현하고 있으며, 이 스크립트는 GitHub의 diffusers 저장소의 examples/instruct_pix2pix目录에서 찾을 수 있습니다."
+    },
+    {
+        "question": "InstructPix2Pix 학습에 사용되는 기본 데이터셋은 무엇인가요?",
+        "answer": "InstructPix2Pix 학습에는 원래 데이터셋의 더 작은 버전인 'fusing/instructpix2pix-1000-samples' 데이터셋이 사용되었습니다. 더 큰 원래 데이터셋은 'timbrooks/instructpix2pix-clip-filtered'에서 찾을 수 있습니다."
+    },
+    {
+        "question": "InstructPix2Pix 모델의 추론 시 어떤 파라미터를 사용하여 속도와 품질을 제어할 수 있나요?",
+        "answer": "InstructPix2Pix 모델 추론 시 `num_inference_steps`, `image_guidance_scale`, `guidance_scale` 세 가지 파라미터를 조정하여 성능을 위한 속도와 품질을 제어할 수 있습니다. 특히 `image_guidance_scale`와 `guidance_scale`은 생성된 '수정된' 이미지에 큰 영향을 미칠 수 있습니다."
+    },
+    {
+        "question": "InstructPix2Pix 학습에서 원본 논문 저자들의 발견에 따른 이미지 해상도 일반화는 어떤 결과를 보였나요?",
+        "answer": "원본 논문에서, 저자들은 256x256 이미지 해상도로 학습한 모델로 512x512와 같은 더 큰 해상도로 잘 일반화되는 것을 발견했습니다. 이는 학습에 사용한 큰 데이터셋 때문에 가능했습니다."
+    },
+    {
+        "question": "InstructPix2Pix를 사용한 Stable Diffusion 모델 튜닝에 관한 정보는 어디에서 찾을 수 있나요?",
+        "answer": "InstructPix2Pix를 사용하여 Stable Diffusion 모델 튜닝에 대한 정보는 'Instruction-tuning Stable Diffusion with InstructPix2Pix'라는 제목의 블로그 게시물에서 찾을 수 있습니다."
+    },
+    {
+        "question": "InstructPix2Pix 학습 스크립트를 실행하기 전에 어떤 종속성을 설치해야 하나요?",
+        "answer": "InstructPix2Pix 학습 스크립트를 실행하기 전에 라이브러리의 학습 종속성을 설치해야 합니다. 이는 새 가상 환경에서 원본으로부터 diffusers 라이브러리를 설치하고, 예제 폴더로 이동하여 requirements.txt에 나열된 패키지를 설치하는過程을 포함합니다. 또한 학습을 위해 🤗Accelerate 라이브러리를 설정해야 합니다."
+    }
+]

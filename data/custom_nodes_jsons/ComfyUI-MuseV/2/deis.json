@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is DEISMultistepScheduler?",
+        "answer": "DEISMultistepScheduler is a fast high order solver for diffusion ordinary differential equations (ODEs) based on the Diffusion Exponential Integrator Sampler (DEIS) proposed in the paper 'Fast Sampling of Diffusion Models with Exponential Integrator'."
+    },
+    {
+        "question": "How does DEISMultistepScheduler modify the polynomial fitting formula compared to the original DEIS paper?",
+        "answer": "DEISMultistepScheduler modifies the polynomial fitting formula in log-rho space instead of the original linear t space used in the DEIS paper. This modification allows for closed-form coefficients for exponential multistep update instead of relying on a numerical solver."
+    },
+    {
+        "question": "What is the recommended solver_order setting for DEISMultistepScheduler?",
+        "answer": "It is recommended to set the solver_order to 2 or 3 for DEISMultistepScheduler. A solver_order of 1 is equivalent to the DDIMScheduler."
+    },
+    {
+        "question": "Does DEISMultistepScheduler support dynamic thresholding?",
+        "answer": "Yes, DEISMultistepScheduler supports dynamic thresholding from the Imagen paper. For pixel-space diffusion models, dynamic thresholding can be enabled by setting thresholding=True."
+    },
+    {
+        "question": "What is the purpose of Diffusion Exponential Integrator Sampler (DEIS)?",
+        "answer": "The purpose of Diffusion Exponential Integrator Sampler (DEIS) is to develop a fast sampling method for diffusion models that requires fewer time discretization steps while retaining high sample quality."
+    },
+    {
+        "question": "How many steps can DEIS generate high-fidelity samples in?",
+        "answer": "DEIS can generate high-fidelity samples in as few as 10 steps."
+    },
+    {
+        "question": "What is the performance of DEIS in generating images from CIFAR10?",
+        "answer": "Using pre-trained diffusion models, DEIS achieves state-of-the-art sampling performance with limited number of score function evaluations (NFE), such as 4.17 FID with 10 NFEs, and 3.37 FID and 9.74 IS with only 15 NFEs on CIFAR10. It takes about 3 minutes on one A6000 GPU to generate 50k images from CIFAR10."
+    }
+]

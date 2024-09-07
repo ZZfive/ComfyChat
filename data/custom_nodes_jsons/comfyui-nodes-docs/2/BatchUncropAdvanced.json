@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BatchUncropAdvanced node in ComfyUI?",
+        "answer": "The BatchUncropAdvanced node in ComfyUI aims to restore cropped images back into their original context within the original images by using bounding box coordinates and masks."
+    },
+    {
+        "question": "What are the required inputs for the BatchUncropAdvanced node?",
+        "answer": "The required inputs for the BatchUncropAdvanced node include original_images, cropped_images, cropped_masks, combined_crop_mask, bboxes, border_blending, crop_rescale, use_combined_mask, and use_square_mask."
+    },
+    {
+        "question": "How does the BatchUncropAdvanced node handle excess bounding boxes?",
+        "answer": "If there are more bounding boxes than original images, the BatchUncropAdvanced node drops the excess bounding boxes and prints a warning message."
+    },
+    {
+        "question": "What is the purpose of the border_blending input in the BatchUncropAdvanced node?",
+        "answer": "The border_blending input in the BatchUncropAdvanced node is a float value that determines the strength of blending between the original image and the cropped image for a smooth transition."
+    },
+    {
+        "question": "How does the use_square_mask input affect the BatchUncropAdvanced node's behavior?",
+        "answer": "When the use_square_mask input is set to True, the BatchUncropAdvanced node uses a square mask instead of the original mask shape during the blending process."
+    },
+    {
+        "question": "What is the output of the BatchUncropAdvanced node?",
+        "answer": "The output of the BatchUncropAdvanced node is the original images with the cropped regions restored to their original positions, achieving a seamless restoration of the images."
+    },
+    {
+        "question": "What is the infra type required for running the BatchUncropAdvanced node?",
+        "answer": "The infra type required for running the BatchUncropAdvanced node is CPU."
+    }
+]

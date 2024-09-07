@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SD Prompt Reader Node in ComfyUI?",
+        "answer": "The SD Prompt Reader Node in ComfyUI is used to extract metadata from images in various formats and save the images with additional metadata to ensure compatibility with metadata detection on websites like Civitai."
+    },
+    {
+        "question": "How can the Prompt Saver Node in ComfyUI be used?",
+        "answer": "The Prompt Saver Node in ComfyUI is designed to be used with the Parameter Generator Node. It writes additional metadata in the A1111 format to the output images, making them compatible with tools that support the A1111 format, including SD Prompt Reader and Civitai."
+    },
+    {
+        "question": "What is the function of the Parameter Generator Node in ComfyUI?",
+        "answer": "The Parameter Generator Node in ComfyUI is used to generate parameters and output them simultaneously to the Prompt Saver Node and KSampler Node, as it's not possible to directly extract metadata from KSampler."
+    },
+    {
+        "question": "How does the Batch Loader Node work in ComfyUI?",
+        "answer": "The Batch Loader Node in ComfyUI is designed for the Prompt Reader Node to batch-read image files in a directory. It cannot be used with other custom nodes. For batch processing, the 'IMAGE' output of the Batch Loader Node should be connected to the 'image' input of the Prompt Reader Node."
+    },
+    {
+        "question": "What is the purpose of the Parameter Extractor Node in ComfyUI?",
+        "answer": "The Parameter Extractor Node in ComfyUI is an extension of the Prompt Reader Node that retrieves the values of all parameters in the settings, including those that the Prompt Reader Node cannot output."
+    },
+    {
+        "question": "How can the Prompt Merger Node be used in ComfyUI?",
+        "answer": "The Prompt Merger Node in ComfyUI is used to combine 'text_g' and 'text_l' into a single prompt for SDXL users, as the A1111 format cannot store them separately."
+    },
+    {
+        "question": "What is the function of the Lora Loader Node and Lora Selector Node in ComfyUI?",
+        "answer": "The Lora Loader Node and Lora Selector Node in ComfyUI are used to write Lora data into metadata and support auto-detection on Civitai. They can be connected to other lora loaders or used in a chain for multiple Loras."
+    }
+]

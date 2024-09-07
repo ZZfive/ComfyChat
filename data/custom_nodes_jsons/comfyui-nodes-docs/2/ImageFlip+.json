@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is cg-noise in ComfyUI?",
+        "answer": "In ComfyUI, cg-noise is a custom node that replaces KSampler and KSampler Advanced. It allows for small variations in the initial noise used for generating images."
+    },
+    {
+        "question": "How does cg-noise generate variations in images in ComfyUI?",
+        "answer": "In ComfyUI, cg-noise generates variations in images by using a weight 'x' and two seeds. It generates the noise based on the formula: random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)."
+    },
+    {
+        "question": "What are the two main reasons for creating cg-noise in ComfyUI?",
+        "answer": "The two main reasons for creating cg-noise in ComfyUI are: 1) to avoid the need for reseeding the RNG for each image generation, which can be slow, and 2) to avoid the need for caching the entire noise image, as it can use a lot of memory."
+    },
+    {
+        "question": "What is the difference between cg-noise and the built-in noise node in ComfyUI?",
+        "answer": "The main difference between cg-noise and the built-in noise node in ComfyUI is that cg-noise generates variations in the initial noise, while the built-in noise node does not have this capability."
+    },
+    {
+        "question": "How does cg-noise avoid the need for reseeding the RNG for each image generation in ComfyUI?",
+        "answer": "In ComfyUI, cg-noise avoids the need for reseeding the RNG for each image generation by using a combination of a variation seed and the original seed. This allows for generating variations without the need for reseeding."
+    },
+    {
+        "question": "Why is caching the entire noise image not necessary with cg-noise in ComfyUI?",
+        "answer": "Caching the entire noise image is not necessary with cg-noise in ComfyUI because it generates the noise on-the-fly based on the variation seed and the original seed, eliminating the need for storing the entire noise image in memory."
+    },
+    {
+        "question": "How does cg-noise help in reducing memory usage in ComfyUI?",
+        "answer": "In ComfyUI, cg-noise helps in reducing memory usage by generating the noise on-the-fly based on the variation seed and the original seed, avoiding the need for caching the entire noise image, which can consume a lot of memory."
+    }
+]

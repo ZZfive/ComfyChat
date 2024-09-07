@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ConditioningSetMaskAndCombine5 node in ComfyUI?",
+        "answer": "The ConditioningSetMaskAndCombine5 node in ComfyUI is used to apply masks to condition data and combine multiple sets of conditions and masks with different strengths. It allows for selectively enhancing or inhibiting features in the condition data based on the applied masks, enabling complex conditional setups for generative models."
+    },
+    {
+        "question": "What are the required input types for the ConditioningSetMaskAndCombine5 node?",
+        "answer": "The ConditioningSetMaskAndCombine5 node requires the following input types: positive_i and negative_i (condition data), mask_i (masks to be applied), mask_i_strength (strength of the masks), and set_cond_area (whether to set the condition area to the mask bounds)."
+    },
+    {
+        "question": "What does the 'set_cond_area' parameter in the ConditioningSetMaskAndCombine5 node determine?",
+        "answer": "The 'set_cond_area' parameter in the ConditioningSetMaskAndCombine5 node determines whether to set the condition area to the bounds defined by the mask, allowing for more precise control over the conditional effects."
+    },
+    {
+        "question": "What are the output types of the ConditioningSetMaskAndCombine5 node?",
+        "answer": "The ConditioningSetMaskAndCombine5 node outputs two types of data: combined_positive (the combined positive condition dataset after mask application) and combined_negative (the combined negative condition dataset indicating the suppressed features in the generative model)."
+    },
+    {
+        "question": "How does the ConditioningSetMaskAndCombine5 node handle masks with dimensions less than 3?",
+        "answer": "If the input masks have dimensions less than 3, the ConditioningSetMaskAndCombine5 node unsqueezes them using 'mask_i = mask_i.unsqueeze(0)' to ensure they have the required dimensions for processing."
+    },
+    {
+        "question": "What is the purpose of the 'append_helper' function in the ConditioningSetMaskAndCombine5 node?",
+        "answer": "The 'append_helper' function in the ConditioningSetMaskAndCombine5 node is used to apply masks to the condition data and append the results to the output lists 'c' and 'c2', based on the mask strength and the 'set_area_to_bounds' parameter."
+    },
+    {
+        "question": "What does the ConditioningSetMaskAndCombine5 node return as its output?",
+        "answer": "The ConditioningSetMaskAndCombine5 node returns a tuple containing two elements: 'c' (the combined positive condition data after mask application) and 'c2' (the combined negative condition data indicating the suppressed features)."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "RandNoise节点的主要功能是什么？",
+        "answer": "RandNoise节点的主要功能是生成随机噪声图像。通过创建指定尺寸的图像，并为每个像素应用用户定义范围内的随机颜色来操作。这些噪声模式可用于数据增强、噪声过滤等图像处理任务。"
+    },
+    {
+        "question": "width和height参数在RandNoise节点中有什么作用？",
+        "answer": "width和height参数分别指定了生成的噪声图像的宽度和高度。它们决定了输出图像的分辨率，影响图像的整体尺寸和噪声模式的细节水平。"
+    },
+    {
+        "question": "value_min和value_max参数如何影响噪声图像的生成？",
+        "answer": "value_min和value_max参数分别设置了噪声强度的最小值和最大值。它们影响分配给每个像素的随机颜色值的范围，从而影响噪声图像的整体亮度和动态范围。"
+    },
+    {
+        "question": "如何通过RandNoise节点控制噪声图像中特定颜色通道的强度？",
+        "answer": "RandNoise节点提供了红色、绿色、蓝色通道的最小值和最大值参数，如red_min、red_max、green_min、green_max、blue_min、blue_max。通过设置这些参数，可以控制噪声图像中每个颜色通道的强度范围，影响图像的颜色平衡和整体色调。"
+    },
+    {
+        "question": "seed参数在RandNoise节点中的作用是什么？",
+        "answer": "seed参数用于初始化随机数生成器，确保噪声模式的可重复性。当需要在不同运行中生成相同的噪声图像时，设置相同的seed值可以得到一致的结果。"
+    },
+    {
+        "question": "RandNoise节点的输出类型是什么？",
+        "answer": "RandNoise节点的输出是一个包含随机噪声的图像，可以用于多种目的，如为机器学习添加噪声数据、测试图像处理算法或创建视觉效果。输出图像的数据类型为Comfy中的IMAGE类型，对应Python中的Tuple[str, torch.Tensor]。"
+    },
+    {
+        "question": "RandNoise节点的源代码中使用了什么技术来生成噪声图像？",
+        "answer": "在RandNoise节点的源代码中，使用了Python的random库来生成随机数，为每个像素分配随机颜色值。通过遍历图像的每个像素点，根据设定的颜色范围和随机种子，为红、绿、蓝通道分配随机值，从而生成噪声图像。"
+    }
+]

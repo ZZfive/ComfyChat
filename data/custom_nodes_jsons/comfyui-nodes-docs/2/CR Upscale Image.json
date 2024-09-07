@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the main purpose of the CR_UpscaleImage node in ComfyUI?",
+        "answer": "The main purpose of the CR_UpscaleImage node is to increase the resolution of input images using selected upscaling models, providing a range of parameters to control the scaling process and ensure high-quality output images."
+    },
+    {
+        "question": "What are the required input types for the CR_UpscaleImage node?",
+        "answer": "The required input types for the CR_UpscaleImage node are: image (Comfy dtype: IMAGE, Python dtype: PIL.Image.Image), upscale_model (Comfy dtype: COMBO[folder_paths.get_filename_list('upscale_models')], Python dtype: str), and mode (Comfy dtype: COMBO[['rescale', 'resize']], Python dtype: str)."
+    },
+    {
+        "question": "What does the 'mode' parameter in the CR_UpscaleImage node determine?",
+        "answer": "The 'mode' parameter in the CR_UpscaleImage node determines whether the image will be rescaled or resized, which affects the scaling technique and the final dimensions of the image."
+    },
+    {
+        "question": "What is the function of the 'rescale_factor' parameter in the CR_UpscaleImage node?",
+        "answer": "The 'rescale_factor' parameter is a multiplier applied to the original dimensions of the image to determine its new size, playing a key role in controlling the degree of upscaling."
+    },
+    {
+        "question": "What output types does the CR_UpscaleImage node produce?",
+        "answer": "The CR_UpscaleImage node produces two output types: IMAGE (Comfy dtype: IMAGE, Python dtype: torch.Tensor) representing the upscaled image, and show_help (Comfy dtype: STRING, Python dtype: str) providing a URL link to documentation for further help or information on node operation."
+    },
+    {
+        "question": "What does the 'supersample' parameter in the CR_UpscaleImage node indicate?",
+        "answer": "The 'supersample' parameter in the CR_UpscaleImage node indicates whether the image should be oversampled before resizing, which can improve the quality of the final image."
+    },
+    {
+        "question": "What is the purpose of the 'rounding_modulus' parameter in the CR_UpscaleImage node?",
+        "answer": "The 'rounding_modulus' parameter in the CR_UpscaleImage node is used to adjust the dimensions of the image during the upscaling process, ensuring that they can be evenly divided by a specific number, which can enhance the compatibility of the final results with certain display standards."
+    }
+]

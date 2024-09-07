@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ResizeFactor node in ComfyUI?",
+        "answer": "The ResizeFactor node is designed to adjust the size of an image by enlarging or reducing it based on a specified factor. This process is essential for adapting images to different display requirements or input specifications for subsequent image processing tasks."
+    },
+    {
+        "question": "What are the required input types for the ResizeFactor node?",
+        "answer": "The required input types for the ResizeFactor node are IMAGE, which provides the source image to be resized, and factor, which defines the scaling ratio of the image."
+    },
+    {
+        "question": "What does the factor parameter in the ResizeFactor node define?",
+        "answer": "The factor parameter in the ResizeFactor node defines how much the image will be enlarged or reduced, thereby changing its final dimensions."
+    },
+    {
+        "question": "What is the optional input type for the ResizeFactor node and what does it affect?",
+        "answer": "The optional input type for the ResizeFactor node is resampler, which is important for selecting the interpolation method used during the resizing process. It affects the quality and appearance of the resized image."
+    },
+    {
+        "question": "What is the output type of the ResizeFactor node?",
+        "answer": "The output type of the ResizeFactor node is IMAGE, which is the result of the resizing process, reflecting the new dimensions and potential quality changes based on the selected resampling method."
+    },
+    {
+        "question": "What infrastructure type does the ResizeFactor node use?",
+        "answer": "The ResizeFactor node uses the CPU as its infrastructure type."
+    },
+    {
+        "question": "How does the ResizeFactor node resize the image in the source code?",
+        "answer": "In the source code, the ResizeFactor node resizes the image by first converting the input tensor to a PIL image, calculating the new width and height based on the factor, selecting the PIL resampler, and then resizing the image using the calculated dimensions and resampler."
+    }
+]

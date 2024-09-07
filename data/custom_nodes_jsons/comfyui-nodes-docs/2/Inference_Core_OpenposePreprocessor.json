@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Inference_Core_OpenposePreprocessor node in ComfyUI?",
+        "answer": "The Inference_Core_OpenposePreprocessor node in ComfyUI is designed to estimate human poses from images. It utilizes the OpenPose model to detect and annotate various keypoints of the body, face, and hands, providing comprehensive pose estimation."
+    },
+    {
+        "question": "What are the required and optional input types for the OpenposePreprocessor node?",
+        "answer": "The required input type for the OpenposePreprocessor node is 'image', which is the input image used for pose estimation. The optional input types include 'detect_hand', 'detect_body', 'detect_face', and 'resolution', which control the detection of hand, body, and face keypoints, as well as the resolution of the pose estimation process."
+    },
+    {
+        "question": "What output types does the OpenposePreprocessor node provide?",
+        "answer": "The OpenposePreprocessor node provides three output types: 'image', which returns the pose image visualizing the estimated poses; 'pose_keypoint', which provides detailed pose keypoint data; and 'ui', which offers a JSON representation of the detected poses."
+    },
+    {
+        "question": "What is the infra type specified for the OpenposePreprocessor node?",
+        "answer": "The infra type specified for the OpenposePreprocessor node is 'GPU'."
+    },
+    {
+        "question": "What is the function of the 'estimate_pose' method in the OpenPose_Preprocessor class?",
+        "answer": "The 'estimate_pose' method in the OpenPose_Preprocessor class takes an input image and optional parameters such as 'detect_hand', 'detect_body', 'detect_face', and 'resolution'. It then uses the OpenPose model to estimate poses from the image, returning the pose image and pose keypoint data."
+    },
+    {
+        "question": "How does the OpenposePreprocessor node handle the detection of hand, body, and face keypoints?",
+        "answer": "The OpenposePreprocessor node accepts optional input parameters 'detect_hand', 'detect_body', and 'detect_face', which are set to either 'enable' or 'disable'. These parameters control whether the corresponding keypoint detection is performed during pose estimation."
+    },
+    {
+        "question": "What is the purpose of the 'resolution' parameter in the 'estimate_pose' method?",
+        "answer": "The 'resolution' parameter in the 'estimate_pose' method specifies the resolution of the pose estimation process, which affects the accuracy and scale of the output."
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What are the custom nodes included in m9-prompts-comfyui for modifying prompts in ComfyUI?",
+        "answer": "The custom nodes included in m9-prompts-comfyui for modifying prompts in ComfyUI are ScramblePrompts [m9] and TweakWeights [m9]."
+    },
+    {
+        "question": "What are the common connectors in the m9-prompts-comfyui custom nodes?",
+        "answer": "The common connectors in the m9-prompts-comfyui custom nodes are clip (input), conditioning_optional (optional input), CONDITIONING (output), and seed_optional (optional input)."
+    },
+    {
+        "question": "What are the common fields in the m9-prompts-comfyui custom nodes?",
+        "answer": "The common fields in the m9-prompts-comfyui custom nodes are prompt and print_output."
+    },
+    {
+        "question": "How does the ScramblePrompts [m9] node modify prompts in ComfyUI?",
+        "answer": "The ScramblePrompts [m9] node modifies prompts in ComfyUI by changing the order of prompts, removing prompts, and changing the weight of prompts."
+    },
+    {
+        "question": "What does the order_prompts_percent field in the ScramblePrompts [m9] node control?",
+        "answer": "The order_prompts_percent field in the ScramblePrompts [m9] node controls the percent of prompts to reorder."
+    },
+    {
+        "question": "How can prompts be kept from being removed in the ScramblePrompts [m9] node?",
+        "answer": "To keep prompts from being removed in the ScramblePrompts [m9] node, you can use the keep_prompts field to specify a comma-delimited list of keywords. Prompts that include the specified keyword will not be removed."
+    },
+    {
+        "question": "What does the max_weight field in the ScramblePrompts [m9] node control?",
+        "answer": "The max_weight field in the ScramblePrompts [m9] node sets the maximum final weight. If a change would take the weight over the max, the change is not made."
+    },
+    {
+        "question": "How can you ensure that the ScramblePrompts [m9] node generates different results for each image in ComfyUI?",
+        "answer": "To ensure that the ScramblePrompts [m9] node generates different results for each image in ComfyUI, you can add a seed primitive and connect it to the seed_optional input. This will cause the node to be reevaluated for each run, resulting in a different result for each image."
+    }
+]

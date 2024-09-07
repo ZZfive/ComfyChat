@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of ComfyUI-PixelResolutionCalculator?",
+        "answer": "The pixel resolution calculator node generates the closest \"latent friendly\" pixel resolution from the mega pixel and aspect ratio of choice."
+    },
+    {
+        "question": "How does ComfyUI-PixelResolutionCalculator compare to the original Flux demo workflow?",
+        "answer": "ComfyUI-PixelResolutionCalculator is an adaptation from the original Flux demo workflow. The pixel resolution in the Flux workflow is often discussed in terms of pixel resolution rather than pixel count. This node follows that convention."
+    },
+    {
+        "question": "What is the difference between PixelMeasureCalculator and PixelResolutionCalculator?",
+        "answer": "PixelResolutionCalculator is focused on generating a pixel resolution that is 'latent friendly', whereas PixelMeasureCalculator may handle measurements or metrics at a different level. It depends on the specific implementation but generally, PixelResolutionCalculator is involved with high-level, general purposes of shaping pixel resolutions."
+    },
+    {
+        "question": "Could you describe the functionality of LatentSizeToPixelSize?",
+        "answer": "LatentSizeToPixelSize is a node that takes a latent size input and converts it into a pixel count for width and height dimensions. It essentially maps the latent space size into the pixel domain."
+    },
+    {
+        "question": "What types of input does LatentSizeToPixelSize take?",
+        "answer": "LatentSizeToPixelSize is expected to take a latent sample as input."
+    },
+    {
+        "question": "What is the significance of specifying \"latent friendly\" for pixel resolution?",
+        "answer": "A \"latent friendly\" pixel resolution is one that allows the efficiency of generating images while maintaining a balance between the computational cost and the desired resolution. Such a resolution helps in optimizing the generation process for large language models or other computation-heavy operations."
+    },
+    {
+        "question": "What might be the differences in output between PixelMeasureCalculator and PixelResolutionCalculator?",
+        "answer": "PixelMeasureCalculator and PixelResolutionCalculator might diverge in their output in terms of whether they provide a detailed measurement or a generic resolution value. PixelResolutionCalculator likely provides a pixel resolution value suitable for key metrics like main vibe shaping, whereas PixelMeasureCalculator could provide more detail at the pixel level if the user is designing with a high level of detail or specific considerations."
+    }
+]

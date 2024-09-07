@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FL_ImagePixelator node in ComfyUI?",
+        "answer": "The FL_ImagePixelator node in ComfyUI is used to add a pixelation effect to images. It supports processing single images or batches of images in tensor or PIL format."
+    },
+    {
+        "question": "What are the required inputs for the FL_ImagePixelator node?",
+        "answer": "The required inputs for the FL_ImagePixelator node are: the image to be pixelated (in torch.Tensor or PIL.Image format), the scale_factor which determines the intensity of the pixelation effect, and the kernel_size which specifies the kernel size used in the additional processing step."
+    },
+    {
+        "question": "How does the scale_factor parameter affect the pixelation effect in FL_ImagePixelator?",
+        "answer": "The scale_factor parameter in FL_ImagePixelator determines the intensity of the pixelation effect. It works by lowering the image resolution before enlarging it, with a default value of 0.05 and a range between 0.01 and 0.2."
+    },
+    {
+        "question": "What does the kernel_size parameter do in the FL_ImagePixelator node?",
+        "answer": "The kernel_size parameter in the FL_ImagePixelator node specifies the size of the kernel used in the additional processing step after pixelation, affecting the final appearance of the pixelated image. It has a default value of 3 and a maximum value of 10."
+    },
+    {
+        "question": "What are the output types of the FL_ImagePixelator node?",
+        "answer": "The output of the FL_ImagePixelator node is the pixelated image, which can be a single image or a batch of images in the same format as the input (torch.Tensor or PIL.Image)."
+    },
+    {
+        "question": "How does the FL_ImagePixelator node handle batch image processing?",
+        "answer": "When processing a batch of images, the FL_ImagePixelator node iterates through each image in the batch, applies pixelation using the specified scale_factor, performs additional processing using the kernel_size, and concatenates the processed images along the batch dimension."
+    },
+    {
+        "question": "What is the difference between apply_pixelation_pil and apply_pixelation_tensor methods in FL_ImagePixelator?",
+        "answer": "The apply_pixelation_pil method is used to apply pixelation to PIL.Image objects, while the apply_pixelation_tensor method is used to apply pixelation to torch.Tensor objects. Both methods use the specified scale_factor to resize the image and apply the pixelation effect."
+    }
+]

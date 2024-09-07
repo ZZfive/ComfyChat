@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is SD3-Scaling in ComfyUI?",
+        "answer": "SD3-Scaling is a set of tools for scaling images and latents appropriate to SD3 in ComfyUI."
+    },
+    {
+        "question": "What is the purpose of the SD3 Image Scale To Total Pixels custom node?",
+        "answer": "The SD3 Image Scale To Total Pixels custom node is a wrapper for the builtin ImageScaleToTotalPixels that works within the desired constraint of SD3 to operate on images whose width and height are divisible by 64."
+    },
+    {
+        "question": "When should the SD3 Image Scale To Total Pixels node be used?",
+        "answer": "The SD3 Image Scale To Total Pixels node should generally only be used when scaling an input image intended to be passed to a sampler (img2img) as the SD3-specific resolution only applies to sampler inputs."
+    },
+    {
+        "question": "What are the inputs for the SD3 Image Scale To Total Pixels node?",
+        "answer": "The inputs for the SD3 Image Scale To Total Pixels node are `upscale_method` and `megapixels`."
+    },
+    {
+        "question": "What does the `megapixels` input specify?",
+        "answer": "The `megapixels` input specifies the desired total megapixels of the resulting image."
+    },
+    {
+        "question": "What is the output of the SD3 Image Scale To Total Pixels node?",
+        "answer": "The output of the SD3 Image Scale To Total Pixels node is the scaled image."
+    },
+    {
+        "question": "How does the SD3 Image Scale To Total Pixels node ensure the width and height are divisible by 64?",
+        "answer": "When scaling to a specific megapixel resolution, the resulting width and height are checked and reduced to the nearest value that is divisible by 64."
+    },
+    {
+        "question": "What may occur if either dimension needs to be reduced when using the SD3 Image Scale To Total Pixels node?",
+        "answer": "Some stretching may occur if either dimension needs to be reduced, but this probably won't be noticable if working at at least the megapixel range for the input image with SD3."
+    }
+]

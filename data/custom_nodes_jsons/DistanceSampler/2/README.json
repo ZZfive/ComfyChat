@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What does DistanceSampler do?",
+        "answer": "DistanceSampler is a modification of the Heun sampler using a custom function based on normalized distances. It's designed to work better with fewer steps, starting with 4 and recommending 10. The CFG scale is at 8."
+    },
+    {
+        "question": "What are the recommended starting steps and CFG scale for DistanceSampler?",
+        "answer": "For DistanceSampler, the recommended starting steps are 4 with a CFG scale of 8."
+    },
+    {
+        "question": "What is the effect of using a CFG scale of 1.0 for 4-8 steps?",
+        "answer": "A CFG scale of 1.0 with 4-8 steps in DistanceSampler can result in interesting variations in the generated images or videos."
+    },
+    {
+        "question": "What options for schedulers does DistanceSampler use natively?",
+        "answer": "DistanceSampler uses native AYS, AYS30, and Simple schedulers for both the Heun and the Heun CFG++ versions."
+    },
+    {
+        "question": "What are the recommended distances for the Heun scheduler?",
+        "answer": "For the Heun scheduler, only the standard 3 incredible long tail modes are included."
+    },
+    {
+        "question": "What is the purpose of the 'Heun CFG++' version?",
+        "answer": "The 'Heun CFG++' version is an alternative Euler CFGpp version from ComfyUI, which may or may not be a correct implementation of the Heun modification, but can produce good results."
+    },
+    {
+        "question": "How can the DistanceSampler parameters 's' and 'e' be interpreted?",
+        "answer": "'S' represents the number of samples to start with, and 'e' represents the number of samples to end with. For example, 's4e1' means starting with 4 samples, ending with 1 sample (which gives the Heun configuration)."
+    },
+    {
+        "question": "What is the purpose of the 'presets_to_add' file?",
+        "answer": "The 'presets_to_add' file allows users to add or remove presets to the list of available settings for DistanceSampler."
+    }
+]

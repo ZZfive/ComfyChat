@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Interpolate Clip Sequential (mtb) node in ComfyUI?",
+        "answer": "The Interpolate Clip Sequential (mtb) node is used to perform sequential interpolation of text encodings within a given base text, using specified replacement content and interpolation strength parameters in ComfyUI."
+    },
+    {
+        "question": "What are the required input parameters for the Interpolate Clip Sequential (mtb) node?",
+        "answer": "The required input parameters for the Interpolate Clip Sequential (mtb) node are base_text, text_to_replace, clip, and interpolation_strength."
+    },
+    {
+        "question": "What is the significance of the 'interpolation_strength' parameter in the Interpolate Clip Sequential (mtb) node?",
+        "answer": "The 'interpolation_strength' parameter defines the intensity of the interpolation effect and adjusts the prominence of the new text encoding blended into the base text in the Interpolate Clip Sequential (mtb) node."
+    },
+    {
+        "question": "How does the Interpolate Clip Sequential (mtb) node determine the segment that the interpolation_strength falls into?",
+        "answer": "The Interpolate Clip Sequential (mtb) node calculates the segment by dividing the interpolation_strength by the segment_length and taking the minimum value between the calculated segment index and the number of replacements minus one."
+    },
+    {
+        "question": "What is the output type of the Interpolate Clip Sequential (mtb) node?",
+        "answer": "The output type of the Interpolate Clip Sequential (mtb) node is a conditioning object that contains the mixed text encodings resulting from the interpolation process."
+    },
+    {
+        "question": "Does the Interpolate Clip Sequential (mtb) node require an infra type to run on?",
+        "answer": "Yes, the Interpolate Clip Sequential (mtb) node requires an infra type of 'CPU' to run on."
+    },
+    {
+        "question": "What happens if no replacements are provided in the Interpolate Clip Sequential (mtb) node?",
+        "answer": "If no replacements are provided in the Interpolate Clip Sequential (mtb) node, a ValueError is raised, indicating that at least one replacement should be provided."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Eff. Loader SDXL节点的主要目的是什么？",
+        "answer": "Eff. Loader SDXL节点旨在高效加载并准备用于SDXL（超级扩散XL）流程的模型和数据，负责初始化和配置基础模型和细化模型，处理clip跳过、美学评分等各种参数，以优化加载过程，从而提高生成任务的性能和效率。"
+    },
+    {
+        "question": "Eff. Loader SDXL节点的输入类型中，'base_ckpt_name'参数是用来做什么的？",
+        "answer": "'base_ckpt_name'参数用于指定基础模型的检查点名称，用于初始化模型。"
+    },
+    {
+        "question": "Eff. Loader SDXL节点的输入类型中，'refiner_ckpt_name'参数有什么作用？",
+        "answer": "'refiner_ckpt_name'参数定义了细化模型的检查点名称，使得通过细化来增强生成的输出成为可能。"
+    },
+    {
+        "question": "Eff. Loader SDXL节点如何处理美学评分？",
+        "answer": "Eff. Loader SDXL节点使用'positive_ascore'和'negative_ascore'参数来引导模型生成更具吸引力的输出，同时避免不太理想的输出。"
+    },
+    {
+        "question": "Eff. Loader SDXL节点的输出类型中，'SDXL_TUPLE'包含哪些内容？",
+        "answer": "'SDXL_TUPLE'输出类型包含基础模型和细化模型、clips以及编码后的正面和负面反馈的元组，为SDXL流程做好准备。"
+    },
+    {
+        "question": "Eff. Loader SDXL节点的输入类型中，'batch_size'参数是如何影响加载操作的？",
+        "answer": "'batch_size'参数决定了单次批处理中处理的样本数量，影响加载操作的效率和速度。"
+    },
+    {
+        "question": "Eff. Loader SDXL节点的源代码中，'efficientloaderSDXL'函数的作用是什么？",
+        "answer": "'efficientloaderSDXL'函数是Eff. Loader SDXL节点的核心函数，负责执行高效加载和准备用于SDXL流程的模型和数据的任务。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI's main function?",
+        "answer": "ComfyUI uses a stable diffusion model to generate images and videos, making it a powerful tool for visual content creation and manipulation."
+    },
+    {
+        "question": "How does ComfyUI_mittimiLoadPreset allow for quick model changes?",
+        "answer": "ComfyUI_mittimiLoadPreset enables users to quickly load and apply predefined prompts and parameters, allowing them to switch between models with minimal setup and without having to manually reset negative prompts and samplers each time."
+    },
+    {
+        "question": "What are the key components of a preset in ComfyUI_mittimiLoadPreset?",
+        "answer": "A preset in ComfyUI_mittimiLoadPreset includes 11 key components: PositivePromptA, PositivePromptC, NegativePromptA, NegativePromptC, CheckpointName, ClipSet, VAE, Steps, CFG, SamplerName, and Scheduler. These components cover essential parameters for setting up and executing a model with the desired specifications."
+    },
+    {
+        "question": "How does the screenshot in sample02 illustrate the workflow of ComfyUI_mittimiLoadPreset?",
+        "answer": "The screenshot in sample02 shows the implementation of the ComfyUI_mittimiLoadPreset workflow. It illustrates the connection between LoadAndSettingParameters and SettingParameters nodes, demonstrating how parameters are displayed in widgets and transmitted to connected output ports. This setup allows users to view and adjust model settings before execution, ensuring flexibility and control over the visual content generation process."
+    },
+    {
+        "question": "What are the differences between the SettingParameters node and the LoadAndSettingParameters node in ComfyUI_mittimiLoadPreset?",
+        "answer": "The SettingParameters node loads the preset during ComfyUI's queue execution, which means any changes made to the settings will be overwritten by the preset during execution. On the other hand, the LoadAndSettingParameters node rewrites the widget display only when a preset is selected, preventing automatic reverts to original settings unless prompted. This makes it more suitable for fine-tuning and manipulating model settings without unwanted advising by the preset."
+    },
+    {
+        "question": "What is the purpose of the presets folder in ComfyUI_mittimiLoadPreset?",
+        "answer": "The presets folder in ComfyUI_mittimiLoadPreset is used to store and manage preset data in TOML format. These presets contain essential information like positive and negative prompts, model details, and other parameters needed for specific visual content generation tasks. The folder is a centralized location for users to access and manage their predefined settings, ensuring consistent and efficient results across different models."
+    },
+    {
+        "question": "What is the recommended approach for choosing between SettingParameters and LoadAndSettingParameters nodes in ComfyUI_mittimiLoadPreset?",
+        "answer": "The recommended approach is to choose based on the specific use case and workflow. For a streamlined setup with minimal steps, LoadAndSettingParameters is suitable as it directly allows users to select a preset and adjust settings before execution. However, for users who prefer more control over each parameter change, Selecting the SettingParameters node, which loads the preset during execution, might be preferable. It all depends on the desired level of flexibility and control during the model setup process."
+    }
+]

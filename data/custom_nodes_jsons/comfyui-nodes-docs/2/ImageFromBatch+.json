@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the cg-noise custom node in ComfyUI?",
+        "answer": "The cg-noise custom node in ComfyUI replaces KSampler and KSampler Advanced to allow for small variations in the initial noise."
+    },
+    {
+        "question": "How does the cg-noise custom node generate variations in images?",
+        "answer": "The cg-noise custom node generates variations in images by using a weight 'x' and two seeds. It generates the noise based on 'random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)'."
+    },
+    {
+        "question": "What are the inputs and outputs of the cg-noise custom node?",
+        "answer": "The inputs of the cg-noise custom node are 'width', 'height', 'x', 'seed', and 'variation_seed'. The output is an image."
+    },
+    {
+        "question": "What is the role of the 'x' parameter in the cg-noise custom node?",
+        "answer": "The 'x' parameter in the cg-noise custom node is a weight that controls the balance between the variation seed and the original seed when generating noise."
+    },
+    {
+        "question": "How can the cg-noise custom node be used to create image variations in ComfyUI?",
+        "answer": "By adjusting the 'x' parameter and providing different 'variation_seed' values, the cg-noise custom node can generate various noise patterns, which can be used to create image variations in ComfyUI."
+    },
+    {
+        "question": "Is the cg-noise custom node compatible with both images and videos in ComfyUI?",
+        "answer": "Yes, the cg-noise custom node can be used for generating noise patterns for both images and videos in ComfyUI."
+    },
+    {
+        "question": "What are the benefits of using the cg-noise custom node over KSampler and KSampler Advanced?",
+        "answer": "The cg-noise custom node allows for small variations in the initial noise, which can lead to more diverse and interesting results when generating images and videos in ComfyUI compared to KSampler and KSampler Advanced."
+    }
+]

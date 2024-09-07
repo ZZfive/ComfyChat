@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is cg-noise in ComfyUI?",
+        "answer": "In ComfyUI, cg-noise is a custom node that replaces KSampler and KSampler Advanced. It allows for small variations in the initial noise by using a weight `x` and two seeds."
+    },
+    {
+        "question": "How does the cg-noise node generate variations in images?",
+        "answer": "The cg-noise node in ComfyUI generates variations in images by using the formula `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`. This allows for small variations in the initial noise."
+    },
+    {
+        "question": "What is the purpose of the `x` weight in the cg-noise node?",
+        "answer": "In the cg-noise node, the `x` weight determines the balance between the variation seed and the original seed when generating the noise. It allows for control over the amount of variation introduced."
+    },
+    {
+        "question": "How many seeds does the cg-noise node use?",
+        "answer": "The cg-noise node in ComfyUI uses two seeds: the variation seed and the original seed. These seeds are combined using the `x` weight to generate variations in the initial noise."
+    },
+    {
+        "question": "What nodes does cg-noise replace in ComfyUI?",
+        "answer": "In ComfyUI, the cg-noise node replaces the KSampler and KSampler Advanced nodes, providing an alternative way to generate variations in the initial noise."
+    },
+    {
+        "question": "Is cg-noise a built-in node in ComfyUI?",
+        "answer": "No, cg-noise is not a built-in node in ComfyUI. It is a custom node that extends the functionality of ComfyUI by providing a way to generate small variations in the initial noise."
+    },
+    {
+        "question": "What is the formula used by cg-noise to generate noise?",
+        "answer": "The cg-noise node in ComfyUI uses the formula `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)` to generate noise. This formula combines the variation seed and the original seed using the `x` weight."
+    }
+]

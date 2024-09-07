@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Intrinsic_lora_sampling节点的目的是什么？",
+        "answer": "Intrinsic_lora_sampling节点的目的是将内在LoRA（Low-Rank Adaptations）整合到给定模型中，以执行专门的采样任务，如生成深度图、表面法线、反照率和阴影。它利用内在LoRA修改模型的行为以适应特定的视觉任务，从而能够基于所选任务生成具有详细属性的图像。"
+    },
+    {
+        "question": "Intrinsic_lora_sampling节点需要哪些必需的输入类型？",
+        "answer": "Intrinsic_lora_sampling节点需要的必需输入类型包括：model（应用内在LoRA的模型），lora_name（要加载并应用于模型的内在LoRA的名称），task（指定生成图像的视觉任务），text（文本输入，引导图像生成过程），clip（用于文本编码的CLIP模型），vae（用于将采样的潜在表示解码为图像的VAE模型），per_batch（每批处理的样本数）。"
+    },
+    {
+        "question": "Intrinsic_lora_sampling节点可接受哪些可选的输入类型？",
+        "answer": "Intrinsic_lora_sampling节点可接受的可选输入类型包括：image（可选的图像输入，用于需要初始图像的任务）和optional_latent（可选的潜在表示，可用作生成过程的起点）。"
+    },
+    {
+        "question": "Intrinsic_lora_sampling节点输出哪些类型的数据？",
+        "answer": "Intrinsic_lora_sampling节点输出的数据类型包括：image（生成的图像，具有由任务指定的属性）和latent（生成图像的潜在表示）。"
+    },
+    {
+        "question": "Intrinsic_lora_sampling节点支持哪些视觉任务？",
+        "answer": "Intrinsic_lora_sampling节点支持的视觉任务包括：深度图、表面法线、反照率和阴影。"
+    },
+    {
+        "question": "Intrinsic_lora_sampling节点使用了哪种方法来避免对初始图像的需求？",
+        "answer": "Intrinsic_lora_sampling节点使用可选的潜在表示（optional_latent）作为生成过程的起点，避免了对初始图像的需求。"
+    },
+    {
+        "question": "Intrinsic_lora_sampling节点在生成图像后，对不同任务的图像进行了哪些处理？",
+        "answer": "对于深度图任务，节点将图像归一化到0-1范围内，并沿第3维取最大值。对于表面法线任务，节点将图像归一化到-1到1范围内，然后将其反转。对于其他任务，节点将图像裁剪到-1到1范围内。"
+    }
+]

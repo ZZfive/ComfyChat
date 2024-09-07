@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is AnimateDiff?",
+        "answer": "AnimateDiff is a framework that animates personalized text-to-image models by inserting a motion modeling module into the frozen text-to-image model and training it on video clips to distill reasonable motion priors."
+    },
+    {
+        "question": "What is the purpose of the motion modeling module in AnimateDiff?",
+        "answer": "The motion modeling module in AnimateDiff is responsible for adding coherent motion across image frames, allowing personalized text-to-image models to generate diverse and personalized animated images."
+    },
+    {
+        "question": "Which tasks can the AnimateDiffPipeline perform?",
+        "answer": "The AnimateDiffPipeline can perform the task of text-to-video generation with AnimateDiff."
+    },
+    {
+        "question": "What is a MotionAdapter checkpoint?",
+        "answer": "A MotionAdapter checkpoint is a collection of Motion Modules that are responsible for adding coherent motion across image frames. These modules are applied after the Resnet and Attention blocks in Stable Diffusion UNet."
+    },
+    {
+        "question": "How can you combine Motion LoRAs to create more complex animations?",
+        "answer": "You can use the PEFT backend to combine Motion LoRAs and create more complex animations by loading multiple LoRA weights and setting adapter weights."
+    },
+    {
+        "question": "What is the advantage of using AnimateDiff with finetuned Stable Diffusion models?",
+        "answer": "AnimateDiff tends to work better with finetuned Stable Diffusion models, generating higher quality and more diverse animated images."
+    },
+    {
+        "question": "What should you do if you plan on using a scheduler that can clip samples?",
+        "answer": "If you plan on using a scheduler that can clip samples, make sure to disable it by setting `clip_sample=False` in the scheduler as this can have an adverse effect on generated samples."
+    }
+]

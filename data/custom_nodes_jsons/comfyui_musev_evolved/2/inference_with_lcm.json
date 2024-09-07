@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What do Latent Consistency Models (LCM) enable?",
+        "answer": "Latent Consistency Models (LCM) enable quality image generation in typically 2-4 steps, making it possible to use diffusion models in almost real-time settings."
+    },
+    {
+        "question": "How many training steps are required to distill LCMs from a pre-trained Stable Diffusion model?",
+        "answer": "LCMs can be distilled from any pre-trained Stable Diffusion (SD) in only 4,000 training steps (~32 A100 GPU Hours)."
+    },
+    {
+        "question": "Which models are LCM distilled models available for?",
+        "answer": "LCM distilled models are available for stable-diffusion-v1-5, stable-diffusion-xl-base-1.0, and the SSD-1B model."
+    },
+    {
+        "question": "What pipeline is used for text-to-image inference with LCMs?",
+        "answer": "The StableDiffusionXLPipeline pipeline is used with the LCMScheduler for text-to-image inference with LCMs."
+    },
+    {
+        "question": "How many inference steps are typically used for LCMs compared to standard SDXL?",
+        "answer": "LCMs use only 4 steps for generation which is way less than what's typically used for standard SDXL."
+    },
+    {
+        "question": "What is the ideal range for guidance_scale when using LCMs?",
+        "answer": "The ideal range for guidance_scale when using LCMs is 3. to 13., as the UNet was trained using this range."
+    },
+    {
+        "question": "Can LCMs be used for image-to-image tasks?",
+        "answer": "Yes, LCMs can be applied to image-to-image tasks as well."
+    },
+    {
+        "question": "How can LCMs be combined with other styled LoRAs?",
+        "answer": "LCMs can be used with other styled LoRAs to generate styled-images in very few steps (4-8). An example is combining LCM with the papercut LoRA."
+    },
+    {
+        "question": "Can LCMs be used with ControlNet/T2I-Adapter?",
+        "answer": "Yes, inference can be performed with ControlNet/T2I-Adapter and a LCM. Examples include using LCM_Dreamshaper_v7 model with canny ControlNet and lcm-sdxl with Canny T2I-Adapter."
+    }
+]
