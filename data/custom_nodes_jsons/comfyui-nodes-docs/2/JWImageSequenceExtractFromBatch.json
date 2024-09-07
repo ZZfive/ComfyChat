@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of JWImageSequenceExtractFromBatch node in ComfyUI?",
+        "answer": "The JWImageSequenceExtractFromBatch node in ComfyUI is designed to extract a specified range of image sequences from a batch of images, allowing users to selectively obtain specific subsets from large image collections for further operations and analysis."
+    },
+    {
+        "question": "What are the required input parameters for the JWImageSequenceExtractFromBatch node?",
+        "answer": "The required input parameters for the JWImageSequenceExtractFromBatch node are 'images', 'i_start', 'i_stop', and 'inclusive'."
+    },
+    {
+        "question": "What does the 'inclusive' parameter in JWImageSequenceExtractFromBatch node specify?",
+        "answer": "The 'inclusive' parameter is a boolean flag that determines whether the image corresponding to the end index is included in the extraction result, providing users with more precise control options."
+    },
+    {
+        "question": "What is the output of the JWImageSequenceExtractFromBatch node?",
+        "answer": "The output of the JWImageSequenceExtractFromBatch node is a tensor containing the sequence of images extracted from the original batch according to the specified index range."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the JWImageSequenceExtractFromBatch node?",
+        "answer": "The recommended infrastructure type for running the JWImageSequenceExtractFromBatch node is GPU."
+    },
+    {
+        "question": "What is the function of the 'execute' method in the source code of JWImageSequenceExtractFromBatch node?",
+        "answer": "The 'execute' method in the source code of JWImageSequenceExtractFromBatch node loads a sequence of images based on the provided path pattern, start index, frame count, and ignore missing images flag. It then returns the loaded images as a single tensor."
+    },
+    {
+        "question": "How does the 'ignore_missing_images' parameter affect the behavior of the 'execute' method in JWImageSequenceExtractFromBatch node?",
+        "answer": "If 'ignore_missing_images' is set to 'true', the 'execute' method will remove missing images from the sequence before loading. If set to 'false', it will raise a FileNotFoundError if any image in the sequence does not exist."
+    }
+]

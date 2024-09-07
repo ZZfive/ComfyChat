@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the `build_model` function in detectron2?",
+        "answer": "The `build_model` function in detectron2 is used to build the model structure and fill it with random parameters."
+    },
+    {
+        "question": "How can you load a checkpoint to a model in detectron2?",
+        "answer": "You can load a checkpoint to a model in detectron2 using the `DetectionCheckpointer` class and calling the `load` method with the file path."
+    },
+    {
+        "question": "What is the purpose of the `DefaultPredictor` in detectron2?",
+        "answer": "The `DefaultPredictor` in detectron2 is a wrapper around a model that provides basic functionality for simple inference, including model loading and preprocessing, and operates on single images rather than batches."
+    },
+    {
+        "question": "What is the standard input format for builtin models in detectron2?",
+        "answer": "The standard input format for builtin models in detectron2 is a `list[dict]`, where each dict corresponds to information about one image."
+    },
+    {
+        "question": "What fields can be included in the dict for the standard input format in detectron2?",
+        "answer": "The dict for the standard input format in detectron2 can include fields such as 'image', 'instances', 'proposals', 'height', 'width', and 'sem_seg'."
+    },
+    {
+        "question": "What is the output format of builtin models in detectron2 during inference mode?",
+        "answer": "During inference mode, the builtin models in detectron2 output a `list[dict]`, one dict for each image, containing fields such as 'instances', 'sem_seg', 'proposals', and 'panoptic_seg'."
+    },
+    {
+        "question": "How can you partially execute a model in detectron2 to obtain an intermediate tensor?",
+        "answer": "You can partially execute a model in detectron2 by creating the model as usual and using custom code to execute it instead of its `forward()` method. This requires reading the existing forward code to understand how to write code to obtain the desired outputs."
+    }
+]

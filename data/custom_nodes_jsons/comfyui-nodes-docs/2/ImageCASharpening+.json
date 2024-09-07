@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is cg-noise in ComfyUI?",
+        "answer": "In ComfyUI, cg-noise is a custom node that replaces KSampler and KSampler Advanced. It allows for small variations in the initial noise by using a weight `x` and two seeds."
+    },
+    {
+        "question": "How does cg-noise generate variations in images?",
+        "answer": "cg-noise generates variations in images by using the formula `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`. This formula combines the variation seed and the original seed with the weight `x`."
+    },
+    {
+        "question": "What are the inputs and outputs of the cg-noise node in ComfyUI?",
+        "answer": "The inputs of the cg-noise node are 'width', 'height', 'x', and 'variation_seed'. The 'width' and 'height' inputs set the dimensions, 'x' is the weight for variations, and 'variation_seed' is a second seed for generating noise. The output is the generated noise image."
+    },
+    {
+        "question": "What is the purpose of the 'x' input in the cg-noise node?",
+        "answer": "The 'x' input in the cg-noise node determines the weight of the variations in the generated noise image. It controls how much the variation seed contributes to the final noise compared to the original seed."
+    },
+    {
+        "question": "How does the cg-noise node combine the variation seed and the original seed?",
+        "answer": "The cg-noise node combines the variation seed and the original seed using the formula `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`. This formula weights the contribution of each seed based on the value of 'x'."
+    },
+    {
+        "question": "What are the advantages of using cg-noise over KSampler and KSampler Advanced in ComfyUI?",
+        "answer": "The cg-noise node in ComfyUI replaces KSampler and KSampler Advanced, offering a more efficient and flexible way to generate variations in the initial noise by using a weight `x` and two seeds, allowing for fine-tuned control over the generated noise image."
+    },
+    {
+        "question": "Can cg-noise be used for generating image variations other than noise in ComfyUI?",
+        "answer": "The documentation does not explicitly mention using cg-noise for generating image variations other than noise. Its primary purpose is to create variations in the initial noise using a weight `x` and two seeds."
+    }
+]

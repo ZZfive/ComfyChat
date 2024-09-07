@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is comfyui_quilting?",
+        "answer": "comfyui_quilting is a set of image and latent quilting nodes for ComfyUI that utilize texture synthesis techniques from the paper 'Image quilting for texture synthesis and transfer' by Alexei A. Efros and William T. Freeman."
+    },
+    {
+        "question": "What applications and complements related to the quilting algorithm have been explored in comfyui_quilting?",
+        "answer": "The applications and complements explored in comfyui_quilting include application over latent images, automatic block size estimation, parallelization of texture generation, patch blending, and seamless texture conversion."
+    },
+    {
+        "question": "How does the 'block_size' parameter affect the quilting process in comfyui_quilting?",
+        "answer": "The 'block_size' parameter determines the size of the blocks used in the quilting process. Larger blocks can speed up generation but may struggle with texture continuity, while smaller blocks may not adequately cover different patterns. The block size can be set automatically using values within the range [-1, 2]."
+    },
+    {
+        "question": "What does the 'overlap' parameter indicate in the quilting nodes of comfyui_quilting?",
+        "answer": "The 'overlap' parameter, given as a percentage, indicates the portion of the block that overlaps with the next block when stitching. The discrete overlap value is determined by the rounded value of 'overlap * block_size'."
+    },
+    {
+        "question": "How does the 'tolerance' parameter affect patch selection in comfyui_quilting?",
+        "answer": "The 'tolerance' parameter defines the margin of acceptable patches during the stitching process. Lower tolerance selects patches that better fit their neighborhood but may result in repetition, while higher tolerance avoids repetition but may generate not-so-seamless transitions."
+    },
+    {
+        "question": "What is the purpose of the 'parallelization_lvl' parameter in comfyui_quilting?",
+        "answer": "The 'parallelization_lvl' parameter controls the level of parallel processing during the generation. Level 0 runs the algorithm sequentially, level 1 segments the generation into 4 quadrants, and level 2 or more uses a number of subprocesses equal to the parallelization level for each quadrant's process."
+    },
+    {
+        "question": "What are the differences between 'Make Seamless SP' and 'Make Seamless MP' nodes in comfyui_quilting?",
+        "answer": "Make Seamless SP is faster than MP if no lookup texture is generated, but rarely produces acceptable results. Make Seamless MP is more likely to produce good results without a lookup texture and handles intricate textures better due to its more granular approach."
+    }
+]

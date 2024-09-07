@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is Core ML and its purpose?",
+        "answer": "Core ML is an Apple framework supported model format and machine learning library. It is used to run Stable Diffusion models within macOS or iOS/iPadOS apps."
+    },
+    {
+        "question": "What are the types of attention variants available for Core ML Stable Diffusion models?",
+        "answer": "There are two main attention variants available for Core ML Stable Diffusion models: `split_einsum` which is optimized for ANE devices available on the latest iPhones, iPads, and M series computers, and the 'original' attention which is only compatible with CPU/GPU and not with ANE."
+    },
+    {
+        "question": "What are the supported inference frameworks for Stable Diffusion Core ML checkpoints?",
+        "answer": "The supported inference frameworks for Stable Diffusion Core ML checkpoints are `packages` which is suitable for Python inference, and `compiled` models which are required for Swift code."
+    },
+    {
+        "question": "What are the steps to convert a PyTorch checkpoint to a Core ML format?",
+        "answer": "To convert a PyTorch checkpoint to a Core ML format, you can follow the conversion tool developed by Apple engineers based on `diffusers`."
+    },
+    {
+        "question": "How can you run Core ML inference in Swift?",
+        "answer": "To run Core ML inference in Swift, you need to clone Apple's repository and use Swift Package Manager with a compiled checkpoint."
+    },
+    {
+        "question": "What are the limitations of Core ML models and inference codes?",
+        "answer": "Core ML models and inference codes do not support many features, options, and flexibility of 🧨 Diffusers. They are only suitable for inference, not for training or fine-tuning. They also have a limited number of schedulers ported to Swift and lack advanced features such as depth guidance, ControlNet, and latent upscalers."
+    },
+    {
+        "question": "What is the recommended scheduler for Swift?",
+        "answer": "The recommended scheduler for Swift is `DPMSolverMultistepScheduler`, which produces the same quality in about half the steps as the other available scheduler."
+    }
+]

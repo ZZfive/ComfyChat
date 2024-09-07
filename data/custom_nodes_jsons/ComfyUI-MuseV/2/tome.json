@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is Token Merging (ToMe) and how does it work?",
+        "answer": "Token Merging is a technique introduced in the paper 'Token Merging: Your ViT But Faster' that progressively merges duplicate tokens or patches in the forward pass of transformer-based networks to reduce inference latency. It allows for a smooth reduction in inference latency of the base network."
+    },
+    {
+        "question": "Which library allows for easy application of ToMe to a DiffusionPipeline?",
+        "answer": "The `tomesd` library, a convenient Python library released by the authors of ToMe, allows for easy application of ToMe to a DiffusionPipeline."
+    },
+    {
+        "question": "What is the most important argument exposed by `tomesd.apply_patch()` to balance pipeline inference speed and quality of generated tokens?",
+        "answer": "The most important argument exposed by `tomesd.apply_patch()` is the `ratio` argument, which controls the number of tokens that will be merged during the forward pass."
+    },
+    {
+        "question": "How does the speed improvement when using ToMe change with image resolution?",
+        "answer": "The speed improvement when using ToMe becomes more pronounced as the image resolution increases."
+    },
+    {
+        "question": "Is it possible to run pipelines at higher resolutions like 1024x1024 when using ToMe?",
+        "answer": "Yes, it is possible to run pipelines at higher resolutions like 1024x1024 when using ToMe."
+    },
+    {
+        "question": "What can be used to further speed up inference in addition to ToMe?",
+        "answer": "`torch.compile()` can be used to further speed up inference in addition to ToMe."
+    },
+    {
+        "question": "Did the quality of the generated samples greatly deteriorate when using ToMe in the presented setup?",
+        "answer": "No, the quality of the generated samples did not greatly deteriorate when using ToMe in the presented setup."
+    }
+]

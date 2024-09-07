@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Iterative Mixing Scheduler node in ComfyUI?",
+        "answer": "The Iterative Mixing Scheduler node in ComfyUI is designed to generate a series of noise levels, known as sigmas, which are used in the iterative mixing process when sampling from the model."
+    },
+    {
+        "question": "What are the required input types for the Iterative Mixing Scheduler node?",
+        "answer": "The required input types for the Iterative Mixing Scheduler node are: model, scheduler, steps, and denoise."
+    },
+    {
+        "question": "How does the 'denoise' parameter affect the sampling process in the Iterative Mixing Scheduler node?",
+        "answer": "The 'denoise' parameter in the Iterative Mixing Scheduler node allows for fine-tuning the sampling process by adjusting the rate at which noise is removed, which can significantly impact the clarity and detail of the generated samples."
+    },
+    {
+        "question": "What is the output type of the Iterative Mixing Scheduler node?",
+        "answer": "The output type of the Iterative Mixing Scheduler node is 'sigmas', which provides the calculated sequence of noise levels that guide the iterative sampling process."
+    },
+    {
+        "question": "What infrastructure type is recommended for the Iterative Mixing Scheduler node?",
+        "answer": "The recommended infrastructure type for the Iterative Mixing Scheduler node is CPU."
+    },
+    {
+        "question": "How does the Iterative Mixing Scheduler node determine the sigmas if the denoise value is close to 1?",
+        "answer": "If the denoise value is close to 1 or None, the Iterative Mixing Scheduler node calculates the sigmas using the model, scheduler, and steps directly."
+    },
+    {
+        "question": "What happens to the sigmas when the denoise value is less than 1 in the Iterative Mixing Scheduler node?",
+        "answer": "When the denoise value is less than 1, the Iterative Mixing Scheduler node calculates new steps based on the original steps divided by the denoise value, and then takes the last (steps + 1) sigmas from the calculated sigmas."
+    }
+]

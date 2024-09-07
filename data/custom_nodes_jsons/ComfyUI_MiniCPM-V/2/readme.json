@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What are the two main fine-tuning methods mentioned for MiniCPM-V models?",
+        "answer": "The two main fine-tuning methods mentioned for MiniCPM-V models are Full-parameter Fine-tuning and LoRA Fine-tuning."
+    },
+    {
+        "question": "What is the purpose of the `<image>` tag in the vision-language example data?",
+        "answer": "The `<image>` tag in the vision-language example data is used to define the position to insert the image embeddings. If not provided, the image will be placed at the front of the conversation."
+    },
+    {
+        "question": "How can one reduce memory usage when encountering Out of Memory (OOM) issues during training large models?",
+        "answer": "To reduce memory usage when encountering Out of Memory (OOM) issues, one can: adjust model hyperparameters like reducing `max_model_length`, lowering `batch_size`, and reducing the number of slices; reduce training model parameters by not training VPM and using LoRA finetuning; and optimize with DeepSpeed by configuring DeepSpeed Zero Stage 2 or 3."
+    },
+    {
+        "question": "What should be done if the AutoPeftModelForCausalLM encounters an error while loading a checkpoint that has undergone LoRA fine-tuning?",
+        "answer": "To resolve this issue, one should reload the fine-tuned model correctly using the provided code example, and update the `model_minicpmv.py` file to the latest version or directly download and copy it from the given sources."
+    },
+    {
+        "question": "How can one use the `flash_attention_2` implementation when loading a pretrained model?",
+        "answer": "To use the `flash_attention_2` implementation, one can add the argument `_attn_implementation=\"flash_attention_2\"` when using the `AutoModel.from_pretrained` method to load the model."
+    },
+    {
+        "question": "What is the maximum image size supported by the MiniCPM-V model for lossless encoding?",
+        "answer": "The MiniCPM-V model supports up to 1344x1344 lossless encoding for images."
+    },
+    {
+        "question": "How can one determine the maximum length for training data and specify it in the startup command?",
+        "answer": "One can use the function provided in the `finetune/dataset.py` file to sample the length of the training data. Once determined, the maximum length can be specified in the startup command using `--model_max_length xxx`."
+    }
+]

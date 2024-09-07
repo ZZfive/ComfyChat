@@ -1,0 +1,30 @@
+[
+    {
+        "question": "GroupChat节点的作用是什么？",
+        "answer": "GroupChat节点负责创建和管理多代理之间的群聊会话。它支持聊天的启动、消息的处理，以及聊天流程的管理，包括选择发言者和介绍代理，从而在群聊环境中编排复杂的多代理交互。"
+    },
+    {
+        "question": "使用GroupChat节点时，必需的输入类型都有哪些？",
+        "answer": "使用GroupChat节点时，必需的输入类型包括：group_manager（负责监督群聊的管理员）、init_message（用于启动群聊会话的初始消息）、send_introductions（指示代理是否应在聊天开始时发送自我介绍的标志）、summary_method（用于生成聊天会话摘要的方法）、max_turns（最大回合数）和clear_history（指示是否应在开始新会话前清除聊天历史的标志）。"
+    },
+    {
+        "question": "使用GroupChat节点时，可选的输入类型是什么？",
+        "answer": "使用GroupChat节点时，可选的输入类型是agent_i，代表可能参与群聊的多个代理之一，为对话的动态流程做出贡献。"
+    },
+    {
+        "question": "GroupChat节点的输出类型有哪些？",
+        "answer": "GroupChat节点的输出类型包括：chat_history（聊天会话期间交换的所有消息的记录）和summary（聊天会话的简明摘要）。"
+    },
+    {
+        "question": "GroupChat节点的infra类型是什么？",
+        "answer": "GroupChat节点的infra类型是CPU。"
+    },
+    {
+        "question": "GroupChat类的INPUT_TYPES方法返回的字典结构是什么？",
+        "answer": "GroupChat类的INPUT_TYPES方法返回一个字典，包含'required'和'optional'两部分，分别描述了必需和可选的输入类型及其数据类型和默认值。"
+    },
+    {
+        "question": "GroupChat类的start_chat方法的参数是什么？",
+        "answer": "GroupChat类的start_chat方法的参数包括：group_manager, init_message, send_introductions, summary_method, max_turns, clear_history以及**kwargs，代表可能参与群聊的多个代理。"
+    }
+]

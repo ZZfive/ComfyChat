@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of ComfyUI-EbSynth?",
+        "answer": "ComfyUI-EbSynth enables fast example-based image synthesis and style transfer by utilizing the EbSynth Python Library built from FuouM/Ezsynth."
+    },
+    {
+        "question": "Where can the documentation for EbSynth be found?",
+        "answer": "The documentation for EbSynth can be found on GitHub at [ebsynth_translate.json](workflow/ebsynth_translate.json) and [ebsynth_video.json](workflow/ebsynth_video.json)."
+    },
+    {
+        "question": "What are some parameters that can be adjusted during image synthesis?",
+        "answer": "Parameters that can be adjusted include `style_idxes`, `edge_method` (PST, Classic, PAGE), and `only_mode` (forward, reverse, none)."
+    },
+    {
+        "question": "How should edge frames be used in ComfyUI-EbSynth?",
+        "answer": "Edge frames should have absolute indices in ascending order and be separated by underscores (`_`). For example, `0_1_2_3` for four style frames."
+    },
+    {
+        "question": "What is the significance of the `feather` argument in ComfyUI-EbSynth?",
+        "answer": "The `feather` argument in ComfyUI-EbSynth affects the feathering of the masked styled frames applied on top of the original frames."
+    },
+    {
+        "question": "What factors influence the usage of Optical Flow models in ComfyUI-EbSynth?",
+        "answer": "The choice of Optical Flow model (RAFT, EF_RAFT, FLOW_DIFF) and specific model parameters (`flow_model`) influence Optical Flow usage. The `warp_weight` and `pos_weight` parameters affect the intensity of Optical Flow guides."
+    },
+    {
+        "question": "How can ComfyUI-EbSynth be installed?",
+        "answer": "ComfyUI-EbSynth can be installed using ComfyUI-Manager or manually via `git clone` and `pip install -r requirements.txt` commands. Information on installing PyTorch and Cupy or Cupyx for GPU usage is also provided."
+    }
+]

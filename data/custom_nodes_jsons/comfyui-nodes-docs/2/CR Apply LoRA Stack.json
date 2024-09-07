@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CR_ApplyLoRAStack node in ComfyUI?",
+        "answer": "The CR_ApplyLoRAStack node in ComfyUI is designed to apply a series of LoRA (Low-Rank Adaptation) modifications to a model and its associated clip. It enhances the model's capabilities by stacking multiple LoRA adjustments, allowing for fine-tuning of specific features without significantly increasing the model's size or computational load."
+    },
+    {
+        "question": "What are the required input types for the CR_ApplyLoRAStack node?",
+        "answer": "The required input types for the CR_ApplyLoRAStack node are 'model' and 'clip'. The 'model' parameter is crucial as it represents the main object of the LoRA modifications, while the 'clip' parameter is essential for providing contextual information that can be used along with the LoRA stack to influence the final output."
+    },
+    {
+        "question": "What is the optional input type for the CR_ApplyLoRAStack node?",
+        "answer": "The optional input type for the CR_ApplyLoRAStack node is 'lora_stack'. It is a collection of LoRA configurations that determine how the model and clip should be adjusted. Each element in the stack contributes to the overall transformation."
+    },
+    {
+        "question": "What are the output types of the CR_ApplyLoRAStack node?",
+        "answer": "The output types of the CR_ApplyLoRAStack node are 'MODEL', 'CLIP', and 'show_help'. The 'MODEL' output represents the modified version of the input model after applying the LoRA stack, the 'CLIP' output is the modified version of the input clip adjusted alongside the model, and 'show_help' provides a URL link to the documentation for further assistance and understanding of the LoRA stack application process."
+    },
+    {
+        "question": "What infra type is recommended for the CR_ApplyLoRAStack node?",
+        "answer": "The recommended infra type for the CR_ApplyLoRAStack node is GPU."
+    },
+    {
+        "question": "What happens if no 'lora_stack' is provided to the CR_ApplyLoRAStack node?",
+        "answer": "If no 'lora_stack' is provided to the CR_ApplyLoRAStack node, the node will return the input model and clip unchanged, along with the 'show_help' URL."
+    },
+    {
+        "question": "How does the CR_ApplyLoRAStack node apply each LoRA modification in the stack?",
+        "answer": "The CR_ApplyLoRAStack node applies each LoRA modification in the stack by iterating over the 'lora_params' list. For each tuple in the list, it unpacks the 'lora_name', 'strength_model', and 'strength_clip' values, loads the LoRA file, and then applies the LoRA to the current model and clip using the specified strengths."
+    }
+]

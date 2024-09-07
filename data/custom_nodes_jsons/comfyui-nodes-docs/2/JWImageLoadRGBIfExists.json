@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the JWImageLoadRGBIfExists node in ComfyUI?",
+        "answer": "The JWImageLoadRGBIfExists node is designed to load an RGB image from a specified path if the image exists. If the image does not exist, it returns a default image provided as input. This allows for conditional image processing based on the existence of the file."
+    },
+    {
+        "question": "What are the required inputs for the JWImageLoadRGBIfExists node?",
+        "answer": "The JWImageLoadRGBIfExists node requires two inputs: a 'default' image, which is returned if the specified image file does not exist, and a 'path' input specifying the file path of the image to be loaded."
+    },
+    {
+        "question": "What is the output type of the JWImageLoadRGBIfExists node?",
+        "answer": "The output type of the JWImageLoadRGBIfExists node is an IMAGE, which is either the loaded RGB image if the specified file exists or the default image if the file does not exist."
+    },
+    {
+        "question": "What is the infra type for the JWImageLoadRGBIfExists node?",
+        "answer": "The infra type for the JWImageLoadRGBIfExists node is GPU."
+    },
+    {
+        "question": "How does the JWImageLoadRGBIfExists node handle the case when the specified image file does not exist?",
+        "answer": "If the specified image file does not exist, the JWImageLoadRGBIfExists node returns the default image provided as input. This ensures that the node operation can continue even if the target file is not found."
+    },
+    {
+        "question": "What does the IS_CHANGED class method in the JWImageLoadRGBIfExists node do?",
+        "answer": "The IS_CHANGED class method in the JWImageLoadRGBIfExists node checks if the image file at the specified path exists and retrieves its modification time (mtime). If the file does not exist, mtime is set to None. It also returns the hash of the default image tensor. This method helps determine if the node's inputs have changed."
+    },
+    {
+        "question": "What is the category of the JWImageLoadRGBIfExists node?",
+        "answer": "The category of the JWImageLoadRGBIfExists node is jamesWalker55."
+    }
+]

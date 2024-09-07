@@ -1,0 +1,34 @@
+[
+    {
+        "question": "experimental 상태의 text-to-image 파인튜닝 스크립트의 문제점은 무엇인가요?",
+        "answer": "과적합하기 쉽고 치명적인 망각과 같은 문제에 부딪히기 쉽습니다."
+    },
+    {
+        "question": "파인튜닝 시 한계된 GPU 메모리에서 훈련을 가능하게 하는 기법 두 가지는 무엇인가요?",
+        "answer": "gradient_checkpointing 및 mixed_precision을 사용하면 단일 24GB GPU에서 모델을 파인튜닝할 수 있습니다."
+    },
+    {
+        "question": "메모리 사용량을 더 줄이기 위해 어떤 기능을 활성화할 수 있나요?",
+        "answer": "xFormers로 memory efficient attention을 활성화하여 메모리 사용량을 훨씬 더 줄일 수 있습니다."
+    },
+    {
+        "question": "하이퍼파라미터를 효율적으로 탐색하려면 어떤 툴을 사용해야 하나요?",
+        "answer": "최적의 결과를 얻으려면 다양한 하이퍼파라미터를 탐색하는 것이 좋습니다. 이를 위해 🤗Accelerate를 사용할 수 있습니다."
+    },
+    {
+        "question": "툴을 사용하기 전 어떤 초기화 작업을 수행해야 하나요?",
+        "answer": "🤗Accelerate 환경을 초기화해야 합니다. 명령어는 'accelerate config'입니다."
+    },
+    {
+        "question": "Flax를 사용해 TPU 및 GPU에서 Stable Diffusion 모델을 더 빠르게 학습하는 것은 누구의 기여로桥o나요?",
+        "answer": "Flax를 사용해 TPU 및 GPU에서 Stable Diffusion 모델을 더 빠르게 학습하는 것은 @duongna211의 기여로 가능해졌습니다."
+    },
+    {
+        "question": "파인튜닝 후 모델을 어떻게 저장하나요?",
+        "answer": "학습 스크립트에 '--push_to_hub' 인수를 추가하면 모델을 허브에 저장할 수 있습니다."
+    },
+    {
+        "question": "모델 파인튜닝을 위해 어떤 대규모 모델 학습 가속화 기술을 사용할 수 있나요?",
+        "answer": "Text-to-image 모델 파인튜닝을 위해 대규모 모델 학습을 가속화하기 위한 LoRA(Low-Rank Adaptation of Large Language Models) 기술을 사용할 수 있습니다."
+    }
+]

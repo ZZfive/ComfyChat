@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of T2I-Adapter?",
+        "answer": "T2I-Adapter aims to 'dig out' the capabilities that text-to-image (T2I) models have implicitly learned, and then explicitly use them to control the generation more granularly by aligning internal knowledge in T2I models with external control signals."
+    },
+    {
+        "question": "What are the benefits of using T2I-Adapter with Stable Diffusion models?",
+        "answer": "T2I-Adapter allows for more granular control and editing effects in the color and structure of the generated images when using Stable Diffusion models. It also has attractive properties such as composability and generalization ability."
+    },
+    {
+        "question": "How can I use the T2I-Adapter checkpoint with Diffusers for inference based on StableDiffusion-1.4/1.5?",
+        "answer": "To use a T2I-Adapter checkpoint with Diffusers for inference based on StableDiffusion-1.4/1.5, you need to first convert images into the appropriate control image format. Then, pass the control image and prompt to the StableDiffusionAdapterPipeline."
+    },
+    {
+        "question": "What is the difference between T2I-Adapter and ControlNet?",
+        "answer": "T2I-Adapter uses a smaller auxiliary network which is only run once for the entire diffusion process, while ControlNet performs slightly better. However, T2I-Adapter performs slightly worse than ControlNet."
+    },
+    {
+        "question": "How can I combine multiple adapters using MultiAdapter?",
+        "answer": "MultiAdapter can be used to apply multiple conditionings at once. You can create a MultiAdapter object with a list of T2IAdapter objects and pass it to the StableDiffusionAdapterPipeline along with the adapter_conditioning_scale to balance the relative influence of the different adapters."
+    },
+    {
+        "question": "What is the purpose of the 'adapter_conditioning_scale' parameter when using MultiAdapter?",
+        "answer": "The 'adapter_conditioning_scale' parameter is used to balance the relative influence of the different adapters when using MultiAdapter. It allows you to adjust the strength of each adapter's conditioning on the generated output."
+    },
+    {
+        "question": "Which pipelines are available for text-to-image generation with T2I-Adapter conditioning?",
+        "answer": "The available pipelines for text-to-image generation with T2I-Adapter conditioning are StableDiffusionAdapterPipeline and StableDiffusionXLAdapterPipeline."
+    }
+]

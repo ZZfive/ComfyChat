@@ -1,0 +1,102 @@
+[
+    {
+        "question": "What is Neural Neighbor in ComfyUI?",
+        "answer": "Neural Neighbor is a paper-based style transfer method that utilizes a neural network to generate style transfers. It is a part of the ComfyUI workflow and can be used for both images and videos, though it is generally not recommended for batched inputs such as videos."
+    },
+    {
+        "question": "What are the arguments for Neural Neighbor?",
+        "answer": "The Neural Neighbor method has several arguments that can be used to control its behavior. These include `size`, which determines the resolution of the input images; `scale_long`, which determines whether images are scaled by the longest or shortest side; and `flip`, which can be used to augment the style image by rotating it, potentially improving content preservation at the cost of slightly decreased stylization."
+    },
+    {
+        "question": "How does Neural Neighbor generate style transfers?",
+        "answer": "Neural Neighbor generates style transfers by scaling the input images to a desired resolution, augmenting the style image by rotating it, and then computing a content loss and style loss between the content image and the style image, respectively. The model then optimizes the style transfer using an adversarial training approach, where the style transfer network is trained to minimize the style loss and the discriminator network is trained to minimize the content loss."
+    },
+    {
+        "question": "How can Neural Neighbor be used for video style transfer?",
+        "answer": "While Neural Neighbor is generally not recommended for batched inputs such as videos, it is possible to use the output style frames generated using ComfyUI-EbSynth to propagate the style across the entire video. This can be done by running Neural Neighbor on each style frame independently and then concatenating the style frames to form the final video output."
+    },
+    {
+        "question": "What is CAST in ComfyUI?",
+        "answer": "CAST is a paper-based style transfer method that utilizes contrastive learning to enhance the style transfer process. It is a part of the ComfyUI workflow and can be used for both images and videos, though it is generally recommended for batched inputs such as videos."
+    },
+    {
+        "question": "What are the arguments for CAST?",
+        "answer": "CAST has several arguments that can be used to control its behavior. These include `size`, which determines the resolution of the input images; `model_arch`, which specifies the architecture of the style transfer network; and `style_strength`, which controls the strength of the style transfer."
+    },
+    {
+        "question": "How does CAST generate style transfers?",
+        "answer": "CAST generates style transfers by running the input images and style images through the style transfer network, which consists of a content encoder and a style encoder. The model then optimizes the style transfer using a contrastive learning approach, where the style transfer network is trained to minimize the discrepancy between the style of the input images and the style of the output images."
+    },
+    {
+        "question": "What is EFDM in ComfyUI?",
+        "answer": "EFDM is a paper-based style transfer method that utilizes exact feature distribution matching to enhance the style transfer process. It is a part of the ComfyUI workflow and can be used for both images and videos."
+    },
+    {
+        "question": "What are the arguments for EFDM?",
+        "answer": "EFDM has several arguments that can be used to control its behavior. These include `size`, which determines the resolution of the input images; `model_arch`, which specifies the architecture of the style transfer network; and `style_strength`, which controls the strength of the style transfer."
+    },
+    {
+        "question": "How does EFDM generate style transfers?",
+        "answer": "EFDM generates style transfers by running the input images and style images through the style transfer network, which consists of a content encoder and a style encoder. The model then optimizes the style transfer using an exact feature distribution matching approach, where the style transfer network is trained to reproduce the exact distribution of features in the style image in the output image."
+    },
+    {
+        "question": "What is MicroAST in ComfyUI?",
+        "answer": "MicroAST is a paper-based style transfer method that utilizes a multi-scale attention mechanism to enhance the style transfer process. It is a part of the ComfyUI workflow and can be used for both images and videos."
+    },
+    {
+        "question": "What are the arguments for MicroAST?",
+        "answer": "MicroAST has several arguments that can be used to control its behavior. These include `size`, which determines the resolution of the input images; `model_arch`, which specifies the architecture of the style transfer network; and `style_strength`, which controls the strength of the style transfer."
+    },
+    {
+        "question": "How does MicroAST generate style transfers?",
+        "answer": "MicroAST generates style transfers by running the input images and style images through the style transfer network, which consists of a content encoder and a style encoder. The model then optimizes the style transfer using a multi-scale attention mechanism, where the style transfer network is trained to focus on different scales of the style image to produce a coherent style transfer."
+    },
+    {
+        "question": "What is UniST in ComfyUI?",
+        "answer": "UniST is a paper-based style transfer method that utilizes a unified framework for joint learning of image and video style transfers. It is a part of the ComfyUI workflow and can be used for both images and videos."
+    },
+    {
+        "question": "What are the arguments for UniST?",
+        "answer": "UniST has several arguments that can be used to control its behavior. These include `size`, which determines the resolution of the input images; `model_arch`, which specifies the architecture of the style transfer network; and `style_strength`, which controls the strength of the style transfer."
+    },
+    {
+        "question": "How does UniST generate style transfers?",
+        "answer": "UniST generates style transfers by running the input images and style images through the style transfer network, which consists of a video encoder and a video decoder. The model then optimizes the style transfer using a unified framework for joint learning of image and video style transfers, where the style transfer network is trained to predict the style of the video in between two frames."
+    },
+    {
+        "question": "What is AesPA-Net in ComfyUI?",
+        "answer": "AesPA-Net is a paper-based style transfer method that utilizes aesthetic pattern-aware style transfer networks. It is a part of the ComfyUI workflow and can be used for both images and videos."
+    },
+    {
+        "question": "What are the arguments for AesPA-Net?",
+        "answer": "AesPA-Net has several arguments that can be used to control its behavior. These include `size`, which determines the resolution of the input images; `model_arch`, which specifies the architecture of the style transfer network; and `style_strength`, which controls the strength of the style transfer."
+    },
+    {
+        "question": "How does AesPA-Net generate style transfers?",
+        "answer": "AesPA-Net generates style transfers by running the input images and style images through the style transfer network, which consists of a content encoder and a style encoder. The model then optimizes the style transfer using a aesthetic pattern-aware style transfer approach, where the style transfer network is trained to generate a style transfer that matches the aesthetic pattern of the style image."
+    },
+    {
+        "question": "What is TSSAT in ComfyUI?",
+        "answer": "TSSAT is a paper-based style transfer method that utilizes a two-stage statistics-aware transformation for artistic style transfer. It is a part of the ComfyUI workflow and can be used for both images and videos."
+    },
+    {
+        "question": "What are the arguments for TSSAT?",
+        "answer": "TSSAT has several arguments that can be used to control its behavior. These include `size`, which determines the resolution of the input images; `model_arch`, which specifies the architecture of the style transfer network; and `style_strength`, which controls the strength of the style transfer."
+    },
+    {
+        "question": "How does TSSAT generate style transfers?",
+        "answer": "TSSAT generates style transfers by running the input images and style images through the style transfer network, which consists of a content encoder and a style encoder. The model then optimizes the style transfer using a two-stage statistics-aware transformation approach, where the style transfer network is trained to predict the style of the input image by first predicting the mean and standard deviation of the style and then using these statistics to generate the style transfer."
+    },
+    {
+        "question": "What is AesFA in ComfyUI?",
+        "answer": "AesFA is a paper-based style transfer method that utilizes an aesthetic feature-aware arbitrary neural style transfer. It is a part of the ComfyUI workflow and can be used for both images and videos."
+    },
+    {
+        "question": "What are the arguments for AesFA?",
+        "answer": "AesFA has several arguments that can be used to control its behavior. These include `size`, which determines the resolution of the input images; `model_arch`, which specifies the architecture of the style transfer network; and `style_strength`, which controls the strength of the style transfer."
+    },
+    {
+        "question": "How does AesFA generate style transfers?",
+        "answer": "AesFA generates style transfers by running the input images and style images through the style transfer network, which consists of a content encoder and a style encoder. The model then optimizes the style transfer using an aesthetic feature-aware arbitrary neural style transfer approach, where the style transfer network is trained to generate a style transfer that matches the aesthetic features of the style image."
+    }
+]

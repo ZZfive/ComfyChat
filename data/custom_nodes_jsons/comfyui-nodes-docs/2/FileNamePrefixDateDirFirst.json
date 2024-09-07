@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FileNamePrefixDateDirFirst node in ComfyUI?",
+        "answer": "The FileNamePrefixDateDirFirst node is designed to generate a file name prefix based on the current date and time, with options to include custom directories and text. It provides a systematic way to name files that can be customized according to specific requirements."
+    },
+    {
+        "question": "What are the required input parameters for the FileNamePrefixDateDirFirst node?",
+        "answer": "The required input parameters for the FileNamePrefixDateDirFirst node are 'date' and 'date_directory'. The 'date' parameter determines whether to include the current date in the file name prefix, and the 'date_directory' parameter controls whether a directory named with the current date should be included in the file name prefix."
+    },
+    {
+        "question": "What are the optional input parameters for the FileNamePrefixDateDirFirst node?",
+        "answer": "The optional input parameters for the FileNamePrefixDateDirFirst node are 'custom_directory' and 'custom_text'. The 'custom_directory' parameter allows the inclusion of a user-defined directory in the file name prefix, and the 'custom_text' parameter allows the addition of specific text to the file name prefix."
+    },
+    {
+        "question": "What is the output type of the FileNamePrefixDateDirFirst node?",
+        "answer": "The output type of the FileNamePrefixDateDirFirst node is 'filename_prefix', which provides the generated prefix that can be used as part of a file name. It includes the date, directory, and custom text elements specified by the input parameters."
+    },
+    {
+        "question": "What is the CATEGORY of the FileNamePrefixDateDirFirst node?",
+        "answer": "The CATEGORY of the FileNamePrefixDateDirFirst node is 'Mikey/Meta'."
+    },
+    {
+        "question": "How does the FileNamePrefixDateDirFirst node handle special characters in the custom_text input?",
+        "answer": "The FileNamePrefixDateDirFirst node removes special characters in the 'custom_text' input that are not allowed in file names, such as '<', '>', ':', '\"', '/', '\\', '|', '?', and '*' using the regular expression re.sub('[<>:\"/\\\\|?*]', '', custom_text)."
+    },
+    {
+        "question": "What INFRA type does the FileNamePrefixDateDirFirst node use?",
+        "answer": "The INFRA type used by the FileNamePrefixDateDirFirst node is CPU."
+    }
+]

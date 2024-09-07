@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the cg-noise custom node in ComfyUI?",
+        "answer": "The cg-noise custom node in ComfyUI is designed to replace KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+    },
+    {
+        "question": "How does the cg-noise custom node generate variations in images?",
+        "answer": "The cg-noise custom node generates variations in images by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+    },
+    {
+        "question": "What is the difference between the KSampler and the cg-noise custom node in ComfyUI?",
+        "answer": "The cg-noise custom node replaces KSampler and KSampler Advanced in ComfyUI, providing a more efficient way to generate small variations in the initial noise by using a weight and two seeds."
+    },
+    {
+        "question": "How does the cg-noise custom node utilize the variation_seed and seed in ComfyUI?",
+        "answer": "The cg-noise custom node uses the variation_seed and seed to generate noise based on the formula `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`, where `x` is a weight value."
+    },
+    {
+        "question": "What is the role of the weight value `x` in the cg-noise custom node?",
+        "answer": "The weight value `x` in the cg-noise custom node determines the influence of the variation_seed and seed on the generated noise, allowing for controlled variations in the initial noise."
+    },
+    {
+        "question": "How can users adjust the variations in images using the cg-noise custom node in ComfyUI?",
+        "answer": "Users can adjust the variations in images using the cg-noise custom node by modifying the weight value `x` and selecting appropriate variation_seed and seed values."
+    },
+    {
+        "question": "What is the advantage of using the cg-noise custom node over KSampler and KSampler Advanced in ComfyUI?",
+        "answer": "The advantage of using the cg-noise custom node over KSampler and KSampler Advanced in ComfyUI is its ability to generate small variations in the initial noise more efficiently by using a weight and two seeds."
+    }
+]

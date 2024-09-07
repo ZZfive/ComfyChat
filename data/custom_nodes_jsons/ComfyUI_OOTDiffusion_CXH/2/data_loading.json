@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the mapper function in Detectron2's data loading pipeline?",
+        "answer": "The mapper function in Detectron2's data loading pipeline transforms the lightweight, canonical representation of a dataset item into a format that is ready for the model to consume, including reading images, performing random data augmentation, and converting to torch Tensors."
+    },
+    {
+        "question": "How can you customize the data loading process in Detectron2?",
+        "answer": "You can customize the data loading process in Detectron2 by using a different 'mapper' with build_detection_{train,test}_loader(mapper=), which works for most use cases of custom data loading."
+    },
+    {
+        "question": "What should you do if you want to change not only the mapper but also write different sampling or batching logic in Detectron2?",
+        "answer": "If you want to change not only the mapper but also write different sampling or batching logic in Detectron2, you can write your own data loader, which is simply a python iterator that produces the format your model accepts."
+    },
+    {
+        "question": "How can you use a custom dataloader with DefaultTrainer in Detectron2?",
+        "answer": "If you use DefaultTrainer in Detectron2, you can overwrite its build_{train,test}_loader method to use your own dataloader."
+    },
+    {
+        "question": "What is the output format of the default mapper in Detectron2's data loading pipeline?",
+        "answer": "The outputs of the default mapper in Detectron2's data loading pipeline, after batching, follow the default model input format documented in Use Models."
+    },
+    {
+        "question": "What does the custom mapper example provided in the text do?",
+        "answer": "The custom mapper example provided in the text resizes all images to a fixed size (800x800) for Mask R-CNN training."
+    },
+    {
+        "question": "What is the role of the data loader in Detectron2?",
+        "answer": "The data loader in Detectron2 is a python iterator that produces the format your model accepts, and its role is to load and prepare data for the model to consume during training or testing."
+    }
+]

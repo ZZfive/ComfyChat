@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ControlNet-LLLite?",
+        "answer": "ControlNet-LLLite is a lightweight version of ControlNet, inspired by LoRA, that is currently only compatible with SDXL."
+    },
+    {
+        "question": "Where can I find sample weights and inference for ControlNet-LLLite?",
+        "answer": "Sample weights and inference for ControlNet-LLLite can be found at https://huggingface.co/kohya-ss/controlnet-lllite, and a custom node for ComfyUI is available at https://github.com/kohya-ss/ControlNet-LLLite-ComfyUI."
+    },
+    {
+        "question": "What is the structure of a single LLLite module?",
+        "answer": "A single LLLite module consists of a conditioning image embedding that maps the control image to the latent space and a small network with a structure similar to LoRA."
+    },
+    {
+        "question": "How should I prepare the dataset for training ControlNet-LLLite?",
+        "answer": "In addition to the regular dataset, you need to store the conditioning images in a directory specified by 'conditioning_data_dir'. The conditioning images must have the same basename as the training images and will be automatically resized to the same size as the training images. Caption files are not required for conditioning images."
+    },
+    {
+        "question": "What is the current limitation regarding random_crop in ControlNet-LLLite?",
+        "answer": "Currently, random_crop cannot be used in ControlNet-LLLite."
+    },
+    {
+        "question": "How can I train ControlNet-LLLite?",
+        "answer": "To train ControlNet-LLLite, run the script 'sdxl_train_control_net_lllite.py'. You can specify the dimension of the conditioning image embedding with '--cond_emb_dim' and the rank of the LoRA-like module with '--network_dim'. Other options are similar to 'sdxl_train_network.py', but specifying '--network_module' is not necessary."
+    },
+    {
+        "question": "How can I perform inference with ControlNet-LLLite?",
+        "answer": "To perform inference with ControlNet-LLLite, run the script 'sdxl_gen_img.py' and specify the LLLite model file with '--control_net_lllite_models'. The dimensions will be automatically retrieved from the model file. Specify the conditioning image to be used for inference with '--guide_image_path'."
+    }
+]

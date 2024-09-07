@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Inference_Core_PromptExpansion节点的主要目的是什么？",
+        "answer": "Inference_Core_PromptExpansion节点旨在使用预训练语言模型来增强和扩展输入提示，通过添加额外的上下文或变体来丰富提示内容，并输出扩展后的版本。"
+    },
+    {
+        "question": "Inference_Core_PromptExpansion节点需要哪些必需的输入类型?",
+        "answer": "Inference_Core_PromptExpansion节点需要的必需输入类型包括：model_name（指定用于提示扩展的模型）、text（需要扩展的初始文本提示）、seed（用于影响扩展提示的变化的整数种子）和log_prompt（控制是否记录原始和扩展后的提示的布尔标志）。"
+    },
+    {
+        "question": "Inference_Core_PromptExpansion节点的输出类型是什么？",
+        "answer": "Inference_Core_PromptExpansion节点的输出类型包括：expanded_prompt（原始提示的丰富和扩展版本）和seed（用于扩展过程的种子值）。"
+    },
+    {
+        "question": "Inference_Core_PromptExpansion节点如何处理长于256个字符的提示？",
+        "answer": "如果提示长于256个字符，Inference_Core_PromptExpansion节点会将提示拆分为多个部分，每个部分不超过256个字符，然后分别对每个部分进行扩展，最后将扩展后的部分拼接起来。"
+    },
+    {
+        "question": "Inference_Core_PromptExpansion节点如何确保扩展过程的可重复性？",
+        "answer": "Inference_Core_PromptExpansion节点使用一个整数种子（seed）来影响扩展提示的变化，从而确保了扩展过程的可重复性，允许在不同运行中获得一致的结果。"
+    },
+    {
+        "question": "Inference_Core_PromptExpansion节点如何处理非法的种子值？",
+        "answer": "如果种子值不是整数，Inference_Core_PromptExpansion节点会随机生成一个1到最大种子值（1024*1024*1024）之间的整数种子。如果种子值为负，则取其绝对值。如果种子值大于最大种子值，则对其取模。"
+    },
+    {
+        "question": "Inference_Core_PromptExpansion节点如何记录原始和扩展后的提示？",
+        "answer": "Inference_Core_PromptExpansion节点使用log_prompt参数来控制是否记录原始和扩展后的提示。如果log_prompt为True，节点会使用logger记录提示信息，如果logger不可用，则直接打印提示信息。"
+    }
+]

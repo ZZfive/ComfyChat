@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is MultiDiffusion?",
+        "answer": "MultiDiffusion is a unified framework that enables versatile and controllable image generation using a pre-trained text-to-image diffusion model, without any further training or fine-tuning."
+    },
+    {
+        "question": "What are the benefits of using MultiDiffusion for image generation?",
+        "answer": "MultiDiffusion allows for the generation of high quality and diverse images that adhere to user-provided controls, such as desired aspect ratio and spatial guiding signals, without the need for costly and long re-training or fine-tuning."
+    },
+    {
+        "question": "What types of spatial guiding signals can be used with MultiDiffusion?",
+        "answer": "MultiDiffusion can work with spatial guiding signals ranging from tight segmentation masks to bounding boxes."
+    },
+    {
+        "question": "How can the generation process be sped up when using StableDiffusionPanoramaPipeline?",
+        "answer": "When calling StableDiffusionPanoramaPipeline, specifying the view_batch_size parameter to be > 1 can speed up the generation process and increase VRAM usage on some high performance GPUs."
+    },
+    {
+        "question": "What is the recommended width value for generating panorama-like images with StableDiffusionPanoramaPipeline?",
+        "answer": "A width value of 2048 is recommended and is the default for generating panorama-like images with StableDiffusionPanoramaPipeline."
+    },
+    {
+        "question": "What is the purpose of circular padding in StableDiffusionPanoramaPipeline?",
+        "answer": "Circular padding is applied in StableDiffusionPanoramaPipeline to ensure there are no stitching artifacts when working with panoramas. It allows for a seamless transition from the rightmost part to the leftmost part of the image."
+    },
+    {
+        "question": "How does circular padding help create proper 'panorama' images?",
+        "answer": "By enabling circular padding, additional crops are applied after the rightmost point of the image, allowing the model to 'see' the transition from the rightmost part to the leftmost part. This helps maintain visual consistency in a 360-degree sense and creates a proper 'panorama' that can be viewed using 360-degree panorama viewers."
+    }
+]

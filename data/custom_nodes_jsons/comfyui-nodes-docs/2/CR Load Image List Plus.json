@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is the purpose of the CR_LoadImageListPlus node in ComfyUI?",
+        "answer": "The CR_LoadImageListPlus node is used to efficiently load and process a list of images from a specified directory in ComfyUI. It can handle large batches of images, sort them, and provide additional metadata such as filenames and dimensions."
+    },
+    {
+        "question": "What are the required input parameters for the CR_LoadImageListPlus node?",
+        "answer": "The required input parameters for the CR_LoadImageListPlus node are: input_folder (the directory to load images from), start_index (the starting point for loading images in the list), and max_images (the maximum number of images to load from the directory)."
+    },
+    {
+        "question": "What does the optional input_path parameter in CR_LoadImageListPlus allow you to specify?",
+        "answer": "The optional input_path parameter in CR_LoadImageListPlus allows you to specify an alternative path for the image directory, providing flexibility if the default directory does not meet the user's requirements."
+    },
+    {
+        "question": "What output does the CR_LoadImageListPlus node provide?",
+        "answer": "The CR_LoadImageListPlus node provides the following outputs: IMAGE (loaded images suitable for further processing), MASK (binary masks derived from the images), index (position of each image in the original list), filename (names of the loaded images), width (width of the images), height (height of the images), list_length (total number of images loaded from the directory), and show_help (documentation link for further guidance on using the node)."
+    },
+    {
+        "question": "How does the start_index parameter in CR_LoadImageListPlus help in selecting a specific range of images from the list?",
+        "answer": "The start_index parameter in CR_LoadImageListPlus determines the starting point for loading images in the list. It allows selecting a specific range of images from the list by setting the starting position."
+    },
+    {
+        "question": "What is the purpose of the max_images parameter in CR_LoadImageListPlus?",
+        "answer": "The max_images parameter in CR_LoadImageListPlus sets the maximum number of images to be loaded from the directory. It plays a key role in controlling the size of the processing batch."
+    },
+    {
+        "question": "How does CR_LoadImageListPlus handle the sorting of images in the list?",
+        "answer": "CR_LoadImageListPlus sorts the images in the list based on a key function that extracts numeric and non-numeric parts from the filenames. The sorted order helps in maintaining a consistent sequence of images."
+    },
+    {
+        "question": "What happens if the specified input_path does not exist while using CR_LoadImageListPlus?",
+        "answer": "If the specified input_path does not exist while using CR_LoadImageListPlus, a warning message is printed indicating that the input_path does not exist, and the node returns an empty result."
+    },
+    {
+        "question": "Which infrastructure type is recommended for running CR_LoadImageListPlus?",
+        "answer": "The recommended infrastructure type for running CR_LoadImageListPlus is CPU, as mentioned in the usage tips section of the documentation."
+    }
+]

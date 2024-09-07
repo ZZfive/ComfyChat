@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the cg-noise custom node in ComfyUI?",
+        "answer": "The cg-noise custom node in ComfyUI is designed to replace KSampler and KSampler Advanced, allowing for small variations in the initial noise used for image generation."
+    },
+    {
+        "question": "How does the cg-noise node generate variations in the initial noise?",
+        "answer": "The cg-noise node generates variations in the initial noise by using a weight `x` and two seeds. It calculates the noise based on the formula `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+    },
+    {
+        "question": "What are the two main modes of operation for the cg-noise node?",
+        "answer": "The cg-noise node has two main modes of operation: using a fixed seed and generating a random seed."
+    },
+    {
+        "question": "How does the cg-noise node function when using a fixed seed?",
+        "answer": "When using a fixed seed, the cg-noise node generates noise based on the provided seed value, allowing for consistent noise generation across multiple runs."
+    },
+    {
+        "question": "How does the cg-noise node function when generating a random seed?",
+        "answer": "When generating a random seed, the cg-noise node creates a new seed value for each iteration, resulting in unique noise patterns for each generated image."
+    },
+    {
+        "question": "What is the role of the weight `x` in the cg-noise node's noise generation formula?",
+        "answer": "The weight `x` in the cg-noise node's noise generation formula determines the balance between the variation seed and the base seed, controlling the extent of variation in the generated noise."
+    },
+    {
+        "question": "How can users integrate the cg-noise node into their ComfyUI projects?",
+        "answer": "Users can integrate the cg-noise node into their ComfyUI projects by installing the custom node and connecting it to the appropriate inputs and outputs within the ComfyUI interface."
+    }
+]

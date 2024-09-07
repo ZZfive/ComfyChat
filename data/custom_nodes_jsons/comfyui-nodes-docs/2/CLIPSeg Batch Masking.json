@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_CLIPSeg_Batch node in ComfyUI?",
+        "answer": "The WAS_CLIPSeg_Batch node in ComfyUI is designed to perform image segmentation based on text prompts. It utilizes the CLIPSeg model to generate masks corresponding to entities described in the images."
+    },
+    {
+        "question": "What are the required input types for the WAS_CLIPSeg_Batch node?",
+        "answer": "The required input types for the WAS_CLIPSeg_Batch node are image_a (the main image input for segmentation), text_a (the text prompt guiding the segmentation model), image_b (a secondary image input for more complex segmentation scenarios), and text_b (another text prompt complementing text_a)."
+    },
+    {
+        "question": "What does the optional input parameter image_c do in the WAS_CLIPSeg_Batch node?",
+        "answer": "The optional input parameter image_c in the WAS_CLIPSeg_Batch node allows for the inclusion of another image in the segmentation process. To be properly handled by the model, its dimensions should be the same as those of image_a."
+    },
+    {
+        "question": "What is the purpose of the MASKS_BATCH output type in the WAS_CLIPSeg_Batch node?",
+        "answer": "The MASKS_BATCH output type in the WAS_CLIPSeg_Batch node provides the generated masks that correspond to regions of interest in the input images, as described by the text prompts. These masks are essential for isolating and further processing specific parts of the images."
+    },
+    {
+        "question": "How does the MASK_IMAGES_BATCH output type differ from the IMAGES_BATCH output type in the WAS_CLIPSeg_Batch node?",
+        "answer": "The MASK_IMAGES_BATCH output type in the WAS_CLIPSeg_Batch node includes images that have been processed with masks, highlighting the segmented areas according to the text prompts. In contrast, the IMAGES_BATCH output type contains the original input images processed by the node, allowing for review and further analysis after segmentation."
+    },
+    {
+        "question": "What infrastructure type is recommended for the WAS_CLIPSeg_Batch node?",
+        "answer": "The WAS_CLIPSeg_Batch node recommends using a GPU for optimal performance."
+    },
+    {
+        "question": "Where can the source code for the WAS_CLIPSeg_Batch node be found?",
+        "answer": "The source code for the WAS_CLIPSeg_Batch node can be found in the repository referenced as https://github.com/WASasquatch/was-node-suite-comfyui."
+    }
+]

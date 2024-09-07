@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the WeightAdjustIndivMultNode class in ComfyUI?",
+        "answer": "The WeightAdjustIndivMultNode class in ComfyUI is designed to individually modify the model's weights through multiplication. It provides a way to adjust the weights of different parts of the model based on predefined multipliers such as pe_MULT, attn_MULT, and other_MULT, allowing fine-tuning of the model parameters without altering their underlying structure."
+    },
+    {
+        "question": "What does the pe_MULT parameter in WeightAdjustIndivMultNode adjust?",
+        "answer": "The pe_MULT parameter in WeightAdjustIndivMultNode is a multiplier used to adjust the weights related to positional encoding (PE) in the model. It plays a key role in fine-tuning the model's sensitivity to the order of input elements, which can significantly affect the model's performance on tasks that rely on sequence order."
+    },
+    {
+        "question": "What is the role of the attn_MULT parameter in WeightAdjustIndivMultNode?",
+        "answer": "The attn_MULT parameter in WeightAdjustIndivMultNode is a multiplier for the weights of the attention mechanism in the model. By adjusting this value, one can control the influence of the attention mechanism on the model's output, which is crucial for tasks that require a nuanced understanding of context and relationships between elements."
+    },
+    {
+        "question": "How does the other_MULT parameter in WeightAdjustIndivMultNode affect the model?",
+        "answer": "The other_MULT parameter in WeightAdjustIndivMultNode is a general multiplier that can be applied to other weights in the model not covered by pe_MULT or attn_MULT. It provides flexibility for adjusting the model's behavior in specific use cases or experimental settings."
+    },
+    {
+        "question": "What does setting the print_adjustment parameter to True in WeightAdjustIndivMultNode do?",
+        "answer": "Setting the print_adjustment parameter to True in WeightAdjustIndivMultNode enables logging of the weight adjustment details. This is useful for developers to track and verify the changes made to the model weights during the adjustment process."
+    },
+    {
+        "question": "What is the purpose of the prev_weight_adjust parameter in WeightAdjustIndivMultNode?",
+        "answer": "The prev_weight_adjust parameter in WeightAdjustIndivMultNode allows for providing a previous weight adjustment group, which can be used to build upon or modify existing weight adjustments. This parameter is particularly useful when one needs to maintain the state of previous adjustment steps in iterative tuning and further improve upon them."
+    },
+    {
+        "question": "What is the output type of WeightAdjustIndivMultNode?",
+        "answer": "The output type of WeightAdjustIndivMultNode is an AdjustGroup object that encapsulates the resulting weight adjustments applied to the model. This object can be used to further refine the model or apply the adjustments to another model instance."
+    },
+    {
+        "question": "What infra type does WeightAdjustIndivMultNode run on?",
+        "answer": "WeightAdjustIndivMultNode runs on the CPU infra type."
+    }
+]

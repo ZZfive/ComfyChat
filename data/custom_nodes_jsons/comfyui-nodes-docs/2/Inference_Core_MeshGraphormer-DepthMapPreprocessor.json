@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Inference_Core_MeshGraphormer-DepthMapPreprocessor node in ComfyUI?",
+        "answer": "The Inference_Core_MeshGraphormer-DepthMapPreprocessor node is designed to preprocess images for generating depth maps and performing hand pose estimation using the MeshGraphormer model. It converts input images into a format suitable for the model, executes inference to generate depth maps and masks, and processes these outputs for further use in hand refinement tasks."
+    },
+    {
+        "question": "What are the required inputs for the Inference_Core_MeshGraphormer-DepthMapPreprocessor node?",
+        "answer": "The required input for this node is an image or batch of images that need to be processed to generate depth maps and masks. This input directly affects the quality and accuracy of the generated depth maps and masks."
+    },
+    {
+        "question": "What does the 'mask_bbox_padding' parameter control in the Inference_Core_MeshGraphormer-DepthMapPreprocessor node?",
+        "answer": "The 'mask_bbox_padding' parameter determines the amount of padding around the detected bounding boxes, which affects the size and coverage of the generated masks."
+    },
+    {
+        "question": "What does the 'mask_type' parameter define in the Inference_Core_MeshGraphormer-DepthMapPreprocessor node?",
+        "answer": "The 'mask_type' parameter defines the mask generation strategy, which can be based on depth values or tight bounding boxes, affecting the shape and coverage of the masks."
+    },
+    {
+        "question": "What is the role of the 'mask_expand' parameter in the Inference_Core_MeshGraphormer-DepthMapPreprocessor node?",
+        "answer": "The 'mask_expand' parameter controls the expansion of the mask beyond its original boundaries, helping to ensure complete coverage of the hand region in the depth map."
+    },
+    {
+        "question": "What output types does the Inference_Core_MeshGraphormer-DepthMapPreprocessor node produce?",
+        "answer": "The node produces two output types: IMAGE, which is the processed image after depth map and mask generation that can be used for further analysis or visualization, and INPAINTING_MASK, which is a mask indicating areas that require repair or further processing, typically highlighting regions of interest such as hands."
+    },
+    {
+        "question": "What infrastructure type is recommended for the Inference_Core_MeshGraphormer-DepthMapPreprocessor node?",
+        "answer": "The recommended infrastructure type for this node is GPU."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the JWLoopImageSequence node in ComfyUI?",
+        "answer": "The JWLoopImageSequence node in ComfyUI is designed to adjust the number of frames in an image sequence to match a specified target frame count. It can either truncate the sequence to the target length or repeat the sequence (or parts of it) to reach the desired length, ensuring the output sequence has exactly the specified number of frames."
+    },
+    {
+        "question": "What are the required input types for the JWLoopImageSequence node?",
+        "answer": "The JWLoopImageSequence node requires two inputs: 'images', which is a tensor representing the image sequence to be processed, and 'target_frames', an integer specifying the desired number of frames in the output image sequence."
+    },
+    {
+        "question": "What is the output type of the JWLoopImageSequence node?",
+        "answer": "The output type of the JWLoopImageSequence node is 'image', which is a tensor representing the adjusted image sequence with the specified number of frames."
+    },
+    {
+        "question": "What infrastructure type is recommended for the JWLoopImageSequence node?",
+        "answer": "The recommended infrastructure type for the JWLoopImageSequence node is GPU."
+    },
+    {
+        "question": "What happens if the input image sequence is longer than the target frame count in the JWLoopImageSequence node?",
+        "answer": "If the input image sequence is longer than the target frame count, the JWLoopImageSequence node will truncate the sequence to the target length."
+    },
+    {
+        "question": "What happens if the input image sequence is shorter than the target frame count in the JWLoopImageSequence node?",
+        "answer": "If the input image sequence is shorter than the target frame count, the JWLoopImageSequence node will repeat the sequence (or parts of it) to reach the desired length."
+    },
+    {
+        "question": "What is the default value for the 'target_frames' input in the JWLoopImageSequence node?",
+        "answer": "The default value for the 'target_frames' input in the JWLoopImageSequence node is 16."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is cg-noise in ComfyUI?",
+        "answer": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+    },
+    {
+        "question": "How does cg-noise generate variations in images?",
+        "answer": "cg-noise generates variations in images by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+    },
+    {
+        "question": "What are the differences between cg-noise and KSampler?",
+        "answer": "The differences between cg-noise and KSampler are that cg-noise uses a different noise function and is slightly faster, but has the same interface as KSampler."
+    },
+    {
+        "question": "Does cg-noise support different noise functions?",
+        "answer": "Yes, cg-noise supports different noise functions. It can generate the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+    },
+    {
+        "question": "Is cg-noise faster than KSampler?",
+        "answer": "Yes, cg-noise is slightly faster than KSampler while providing the same functionality and interface."
+    },
+    {
+        "question": "Can cg-noise be used as a drop-in replacement for KSampler?",
+        "answer": "Yes, cg-noise can be used as a drop-in replacement for KSampler since it has the same interface and provides the same functionality with slight performance improvements."
+    },
+    {
+        "question": "What is the purpose of using two seeds in cg-noise?",
+        "answer": "The purpose of using two seeds in cg-noise is to generate small variations in the initial noise by combining the random values based on the variation seed and the original seed with a weighted sum."
+    }
+]

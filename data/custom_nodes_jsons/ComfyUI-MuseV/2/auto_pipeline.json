@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of AutoPipeline in ComfyUI-MuseV?",
+        "answer": "AutoPipeline is designed to make it easy to load a checkpoint for a task without knowing the specific pipeline class to use and to use multiple pipelines in a workflow."
+    },
+    {
+        "question": "How does AutoPipeline determine the relevant pipeline to use?",
+        "answer": "The AutoPipeline class automatically retrieves the relevant pipeline based on the task, given the name or path to the pretrained weights with the from_pretrained() method."
+    },
+    {
+        "question": "What is the benefit of using the from_pipe() method in AutoPipeline?",
+        "answer": "The from_pipe() method allows you to seamlessly switch between tasks with the same checkpoint without reallocating additional memory by transferring the components from the original pipeline to the new one."
+    },
+    {
+        "question": "What types of diffusion models are supported by AutoPipeline in ComfyUI-MuseV?",
+        "answer": "AutoPipeline supports text-to-image, image-to-image, and inpainting for diffusion models such as Stable Diffusion, ControlNet, Stable Diffusion XL (SDXL), DeepFloyd IF, Kandinsky 2.1, and Kandinsky 2.2."
+    },
+    {
+        "question": "What is AutoPipelineForText2Image in ComfyUI-MuseV?",
+        "answer": "AutoPipelineForText2Image is a specific implementation of AutoPipeline that focuses on text-to-image generation tasks."
+    },
+    {
+        "question": "How can you create an AutoPipelineForText2Image object in ComfyUI-MuseV?",
+        "answer": "You can create an AutoPipelineForText2Image object using the from_pretrained() method and specifying the path to the pretrained weights, torch dtype, and other parameters."
+    },
+    {
+        "question": "What is the role of the from_pretrained() method in AutoPipelineForText2Image?",
+        "answer": "The from_pretrained() method is used to load a checkpoint for a text-to-image task, given the name or path to the pretrained weights, in AutoPipelineForText2Image."
+    }
+]

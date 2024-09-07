@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What version of gguf-py is required to use ComfyUI_Primere_Nodes?",
+        "answer": "The llama.cpp version of gguf-py is needed, not the pip version, as the pip version does not have the Python quantization code yet."
+    },
+    {
+        "question": "How can you convert your initial source model to FP16 or BF16?",
+        "answer": "To convert your initial source model to FP16 or BF16, run the following command: python convert.py --src E:\\models\\unet\\flux1-dev.safetensors"
+    },
+    {
+        "question": "What steps are needed to apply the provided patch to the llama.cpp repo?",
+        "answer": "First, check out tags/b3600 in the llama.cpp repo. Then, apply the provided patch using the command: git apply ..\\lcpp.patch"
+    },
+    {
+        "question": "How do you compile the llama-quantize binary?",
+        "answer": "Create a build directory, navigate to it, run cmake .., and then build the target llama-quantize using cmake --build . --config Debug -j10 --target llama-quantize"
+    },
+    {
+        "question": "How can you use the newly built llama-quantize binary to quantize your model?",
+        "answer": "Use the command: llama.cpp\\build\\bin\\Debug\\llama-quantize.exe E:\\models\\unet\\flux1-dev-BF16.gguf E:\\models\\unet\\flux1-dev-Q4_K_S.gguf Q4_K_S"
+    },
+    {
+        "question": "Why shouldn't you use the diffusers UNET for flux?",
+        "answer": "The diffusers UNET won't work with flux due to q/k/v being merged into one qkv key. Instead, use the default/reference checkpoint format."
+    },
+    {
+        "question": "What should you avoid quantizing with ComfyUI_Primere_Nodes?",
+        "answer": "Avoid quantizing SDXL, SD1, or other Conv2D heavy models, as there is little to no benefit with these models. If you do quantize them, make sure to extract the UNET model first."
+    }
+]

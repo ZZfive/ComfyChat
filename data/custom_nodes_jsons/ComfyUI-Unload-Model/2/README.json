@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does the ComfyUI-Unload-Model module provide?",
+        "answer": "The ComfyUI-Unload-Model module provides two experimental nodes for manual memory management in ComfyUI: Unload Model and Unload All Models. These nodes allow users to unload one or all models at a specific point in their workflow, which can help save VRAM and improve generation speeds."
+    },
+    {
+        "question": "What is the purpose of the Unload Model node?",
+        "answer": "The Unload Model node is used to unload a specific model at a desired point in the workflow. It requires a value input and a model name input, and its output can be routed to any node that expects that value input."
+    },
+    {
+        "question": "What is the purpose of the Unload All Models node?",
+        "answer": "The Unload All Models node is used to unload all models at a desired point in the workflow. It does not require any input values and its output can be routed similarly to the Unload Model node."
+    },
+    {
+        "question": "What is the recommended use case for the Unload All Models node?",
+        "answer": "The Unload All Models node is particularly useful at the end of a workflow or when switching between different models. It can help manage memory more efficiently and can be beneficial when switching between models that have different VRAM requirements."
+    },
+    {
+        "question": "What are the potential downsides of using the ComfyUI-Unload-Model module?",
+        "answer": "The Unload Model and Unload All Models nodes are experimental and may not always function correctly. For instance, there have been issues with the GGUF loader nodes that have prevented the unload command from actually unloading the GGUF models. However, it's noted that this issue may have been resolved already."
+    },
+    {
+        "question": "How should the Unload Model node be configured and used?",
+        "answer": "To use the Unload Model node, users should add it to their workflow, providing a value and the name of the model they wish to unload. They should then route the output of the node to where the input value would be expected. For example, to unload the CLIP model after getting the embedding for a prompt, the node could be added after the `ClipTextEncode` or `ClipTextEncodeFlux` node, using Flux's conditioning as the value and the CLIP model name as the model."
+    },
+    {
+        "question": "What are the installation steps for the ComfyUI-Unload-Model module?",
+        "answer": "To install the ComfyUI-Unload-Model module, users should clone the repo into the `custom_nodes` folder, then restart the ComfyUI server."
+    }
+]
