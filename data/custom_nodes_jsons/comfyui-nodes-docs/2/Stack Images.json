@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Stack Images node in ComfyUI?",
+        "answer": "The Stack Images节点被设计用于将多个图像聚合成一个复合图像。它支持多种堆叠模式和配置，包括处理图像批次、应用特定堆叠方向，以及在水平和垂直方向上添加可选标签的能力。这个功能对于以结构化和连贯的方式可视化图像集合特别有用。"
+    },
+    {
+        "question": "What are the required input types for the Stack Images node?",
+        "answer": "The required input types for the Stack Images node are: images (a list of images to be stacked together), splits (defines how the images should be split into batches or groups for stacking), stack_mode (specifies the stacking direction within a batch), and batch_stack_mode (determines the stacking direction of image batches)."
+    },
+    {
+        "question": "What are the optional input types for the Stack Images node?",
+        "answer": "The optional input types for the Stack Images node are: horizontal_labels (optional labels for the horizontal axis when the stacking direction allows horizontal marking) and vertical_labels (optional labels for the vertical axis when the stacking direction allows vertical marking)."
+    },
+    {
+        "question": "What is the output type of the Stack Images node?",
+        "answer": "The output type of the Stack Images node is an Image, which represents the composite image resulting from the stacking process."
+    },
+    {
+        "question": "How does the Stack Images node handle the case when the sum of splits does not equal the number of images?",
+        "answer": "If the sum of splits does not equal the number of images, the Stack Images node will raise an exception indicating that the sum of splits must equal the number of images."
+    },
+    {
+        "question": "What happens if the number of horizontal or vertical labels does not match the required number based on the stacking direction and splits?",
+        "answer": "If the number of horizontal or vertical labels does not match the required number based on the stacking direction and splits, the Stack Images node will raise an exception indicating the mismatch."
+    },
+    {
+        "question": "What is the purpose of the x_label_offset and y_label_offset variables in the Stack Images node's source code?",
+        "answer": "The x_label_offset and y_label_offset variables in the Stack Images node's source code are used to adjust the positioning of the stacked images to account for the space needed for the horizontal and vertical labels, respectively."
+    }
+]

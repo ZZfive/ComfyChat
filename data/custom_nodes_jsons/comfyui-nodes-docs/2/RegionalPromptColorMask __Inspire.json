@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RegionalPromptColorMask node in ComfyUI?",
+        "answer": "The RegionalPromptColorMask node is designed to generate regional prompts based on color masks. It applies color-based segmentation to images, creating different regions that can be individually prompted for creative or targeted image generation tasks."
+    },
+    {
+        "question": "What are the required inputs for the RegionalPromptColorMask node?",
+        "answer": "The required inputs for the RegionalPromptColorMask node are basic_pipe, color_mask, mask_color, cfg, sampler_name, scheduler, wildcard_prompt, controlnet_in_pipe, and sigma_factor."
+    },
+    {
+        "question": "How does the RegionalPromptColorMask node allow for customization in the image generation process?",
+        "answer": "The RegionalPromptColorMask node allows for customization by enabling users to influence specific areas of an image through a color-encoded mask. This facilitates tailored image generation processes."
+    },
+    {
+        "question": "What is the function of the 'mask_color' input in the RegionalPromptColorMask node?",
+        "answer": "The 'mask_color' input specifies the color that defines the region of interest in the 'color_mask'. It is a string that indicates a specific color used in the color mask to delineate areas where different prompts will be applied."
+    },
+    {
+        "question": "What does the 'cfg' input adjust in the RegionalPromptColorMask node?",
+        "answer": "The 'cfg' input adjusts the configuration strength, which influences the intensity with which prompts are applied to the designated regions of the image."
+    },
+    {
+        "question": "What are the output types of the RegionalPromptColorMask node?",
+        "answer": "The output types of the RegionalPromptColorMask node are 'regional_prompts' and 'mask'. 'regional_prompts' are custom prompts generated for specified regions of the input image, and 'mask' is generated from the specified color to segment areas for prompt application."
+    },
+    {
+        "question": "How is the 'mask' output generated in the RegionalPromptColorMask node?",
+        "answer": "The 'mask' output is generated from the 'color_mask' input by converting the specified 'mask_color' into a mask that segments the regions for prompt application."
+    }
+]

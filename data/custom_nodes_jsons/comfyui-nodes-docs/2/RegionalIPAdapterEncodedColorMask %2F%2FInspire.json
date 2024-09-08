@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RegionalIPAdapterEncodedColorMask node in ComfyUI?",
+        "answer": "The RegionalIPAdapterEncodedColorMask node in ComfyUI applies a color mask to an image and encodes it for use with the IPAdapter model. It allows precise control over the application of the mask, enabling users to focus on specific regions of the image for conditional processing during generation."
+    },
+    {
+        "question": "What are the required input types for the RegionalIPAdapterEncodedColorMask node?",
+        "answer": "The required input types for the RegionalIPAdapterEncodedColorMask node are: color_mask (IMAGE), mask_color (STRING), embeds (EMBEDS), weight (FLOAT), weight_type (COMBO), start_at (FLOAT), and end_at (FLOAT)."
+    },
+    {
+        "question": "How does the 'weight' parameter affect the mask in the RegionalIPAdapterEncodedColorMask node?",
+        "answer": "The 'weight' parameter in the RegionalIPAdapterEncodedColorMask node adjusts the influence of the mask on the generation. A higher weight results in stricter adherence to the mask, while a lower weight allows for more variation."
+    },
+    {
+        "question": "What does the 'unfold_batch' optional input do in the RegionalIPAdapterEncodedColorMask node?",
+        "answer": "When enabled, the 'unfold_batch' option in the RegionalIPAdapterEncodedColorMask node allows for batch application of the mask, which is beneficial for processing multiple images at once."
+    },
+    {
+        "question": "What are the output types of the RegionalIPAdapterEncodedColorMask node?",
+        "answer": "The output types of the RegionalIPAdapterEncodedColorMask node are REGIONAL_IPADAPTER (a regionally conditioned IPAdapter object) and MASK (the processed mask image ready to be applied in the generation process)."
+    },
+    {
+        "question": "What infrastructure type is recommended for the RegionalIPAdapterEncodedColorMask node?",
+        "answer": "The recommended infrastructure type for the RegionalIPAdapterEncodedColorMask node is GPU."
+    },
+    {
+        "question": "What is the purpose of the 'embeds' input in the RegionalIPAdapterEncodedColorMask node?",
+        "answer": "The 'embeds' input in the RegionalIPAdapterEncodedColorMask node provides additional context for the model, enhancing the conditioning process. These embeddings are crucial for shaping the final output based on the input prompts and desired style."
+    }
+]

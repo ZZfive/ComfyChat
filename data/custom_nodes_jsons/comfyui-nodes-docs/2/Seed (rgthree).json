@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Seed node in ComfyUI?",
+        "answer": "The Seed node in ComfyUI is designed to manage and generate random seeds to ensure reproducibility and uniqueness in processes that require randomness."
+    },
+    {
+        "question": "What are the input types required for the Seed node?",
+        "answer": "The Seed node requires a 'seed' parameter of type INT to determine the starting point for randomness. It can use a predefined seed or trigger the generation of a new random seed."
+    },
+    {
+        "question": "What does the Seed node output?",
+        "answer": "The Seed node outputs the seed used or generated during its execution, which is essential for ensuring the reproducibility of the random processes."
+    },
+    {
+        "question": "Which common nodes are associated with the Seed node?",
+        "answer": "The common nodes associated with the Seed node include KSampler, PhotoMaker_Generation, KSampler Adv. (Efficient), and OneButtonPrompt."
+    },
+    {
+        "question": "What happens when the Seed node receives a seed value of -1, -2, or -3?",
+        "answer": "When the Seed node receives a seed value of -1, -2, or -3, it generates a new random seed and logs a warning message. If the value is -2 or -3, it also logs a message about the inability to increment or decrement the seed from the server."
+    },
+    {
+        "question": "How does the Seed node handle the generation of new random seeds?",
+        "answer": "When the Seed node generates a new random seed, it logs the event and warns about the limitations of caching when re-queuing with server-generated random seeds. It also attempts to save the new seed to the workflow and API prompt metadata if possible."
+    },
+    {
+        "question": "What is the infra type for the Seed node?",
+        "answer": "The infra type for the Seed node is CPU."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SendMessage node in ComfyUI?",
+        "answer": "The SendMessage node in ComfyUI is designed to facilitate communication between different agents. It allows one agent to send a message to another agent."
+    },
+    {
+        "question": "How does the SendMessage node ensure the integrity of the original agent instances during communication?",
+        "answer": "The SendMessage node clones the recipient and sender agents to ensure that the original agents' states are preserved after the message is sent."
+    },
+    {
+        "question": "What are the required input types for the SendMessage node?",
+        "answer": "The SendMessage node requires three inputs: the recipient agent (AGENT), the sender agent (AGENT), and the message content (STRING)."
+    },
+    {
+        "question": "What does the 'message' input in the SendMessage node support?",
+        "answer": "The 'message' input in the SendMessage node supports multiline input, allowing for more complex and detailed messages to be sent between agents."
+    },
+    {
+        "question": "What are the output types of the SendMessage node?",
+        "answer": "The SendMessage node outputs two agents: the cloned recipient agent after receiving the message and the cloned sender agent after sending the message."
+    },
+    {
+        "question": "What is the infra type for the SendMessage node?",
+        "answer": "The infra type for the SendMessage node is CPU."
+    },
+    {
+        "question": "How does the SendMessage node clone the agents before sending a message?",
+        "answer": "In the source code of the SendMessage node, the 'clone_conversable_agent' function is used to clone both the recipient and sender agents before sending a message."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the `load_weights` method in the `ScaledSoftMaskedUniversalWeights` class?",
+        "answer": "The `load_weights` method in the `ScaledSoftMaskedUniversalWeights` class is designed to process and apply a soft mask to the base weights of the control network. It accepts a mask tensor and two multipliers to scale the mask values, ensuring they fall within a specified range."
+    },
+    {
+        "question": "What does the 'mask' parameter in the `load_weights` method represent?",
+        "answer": "The 'mask' parameter in the `load_weights` method is a tensor that defines the soft mask to be applied to the control weights. It plays a key role in determining the extent to which the base weights are modified."
+    },
+    {
+        "question": "What is the function of the 'min_base_multiplier' parameter?",
+        "answer": "The 'min_base_multiplier' parameter sets the lower limit for scaling the mask values. It is crucial for controlling the minimum influence of the mask on the control weights, ensuring that the effect of the mask is not too subtle."
+    },
+    {
+        "question": "What role does the 'max_base_multiplier' parameter play in the `load_weights` method?",
+        "answer": "The 'max_base_multiplier' parameter determines the upper limit for scaling the mask values. It is essential for controlling the maximum influence of the mask on the control weights. By setting this parameter, users can prevent the mask from overpowering the base weights."
+    },
+    {
+        "question": "What does the 'CONTROL_NET_WEIGHTS' output represent?",
+        "answer": "The 'CONTROL_NET_WEIGHTS' output represents the adjusted control weights of the network after applying the scaled soft mask. This output is crucial as it directly impacts the final output of the control network, reflecting the modified behavior based on the input mask and multipliers."
+    },
+    {
+        "question": "What is the significance of the 'TIMESTEP_KEYFRAME' output?",
+        "answer": "The 'TIMESTEP_KEYFRAME' output provides a default keyframe for the control weights at a specific timestep. It is important for defining the temporal structure of the control weights, allowing for dynamic adjustments over time."
+    },
+    {
+        "question": "What is the infra type recommended for the `ScaledSoftMaskedUniversalWeights` class?",
+        "answer": "The recommended infra type for the `ScaledSoftMaskedUniversalWeights` class is CPU."
+    }
+]

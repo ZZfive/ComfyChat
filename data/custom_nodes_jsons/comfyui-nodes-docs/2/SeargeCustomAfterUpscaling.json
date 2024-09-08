@@ -1,0 +1,26 @@
+[
+    {
+        "question": "What is the purpose of the SeargeCustomAfterUpscaling class in ComfyUI?",
+        "answer": "The SeargeCustomAfterUpscaling class in ComfyUI is designed to process upscaled image data using a custom output to enhance and refine the visual quality of the image."
+    },
+    {
+        "question": "What is the required input type for the SeargeCustomAfterUpscaling node?",
+        "answer": "The required input type for the SeargeCustomAfterUpscaling node is 'custom_output', which is of Comfy dtype 'SRG_STAGE_OUTPUT' and Python dtype 'Dict[str, Any]'. This parameter is crucial as it serves as the main input for the node's processing."
+    },
+    {
+        "question": "What is the output type of the SeargeCustomAfterUpscaling node?",
+        "answer": "The output type of the SeargeCustomAfterUpscaling node is 'image', which is of Comfy dtype 'IMAGE' and Python dtype 'Any'. The output is an enhanced image resulting from processing the 'custom_output' parameter."
+    },
+    {
+        "question": "What is the infra type recommended for the SeargeCustomAfterUpscaling node?",
+        "answer": "The recommended infra type for the SeargeCustomAfterUpscaling node is CPU."
+    },
+    {
+        "question": "How does the SeargeCustomAfterUpscaling node process the custom_output parameter?",
+        "answer": "In the source code of the SeargeCustomAfterUpscaling node, the 'custom_output' parameter is first checked for None. If it is not None, the 'vae_decoded' variable is retrieved from 'custom_output' using the 'retrieve_parameter' function with Names.S_UPSCALED. Then, the 'image' variable is retrieved from 'vae_decoded' using the 'retrieve_parameter' function with Names.F_UPSCALED_IMAGE. This 'image' variable, which represents the enhanced image, is then returned."
+    },
+    {
+        "question": "Is the SeargeCustomAfterUpscaling node an output node?",
+        "answer": "No, the SeargeCustomAfterUpscaling node is not an output node. It processes the upscaled image data and returns an enhanced image."
+    }
+]

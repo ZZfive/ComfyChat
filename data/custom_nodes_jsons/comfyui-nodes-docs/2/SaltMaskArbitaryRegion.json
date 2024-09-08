@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SaltMaskArbitaryRegion节点的作用是什么？",
+        "answer": "SaltMaskArbitaryRegion节点用于在给定的掩码中根据指定的大小和阈值参数过滤任意区域，允许自定义掩码区域，适用于图像分割或物体隔离等应用场景。"
+    },
+    {
+        "question": "SaltMaskArbitaryRegion节点的输入参数有哪些？",
+        "answer": "SaltMaskArbitaryRegion节点的必需输入参数包括：掩码（masks）、大小（size）和阈值（threshold）。这些参数共同定义了需要处理的区域及其过滤方式。"
+    },
+    {
+        "question": "SaltMaskArbitaryRegion节点的size参数是如何影响过滤效果的？",
+        "answer": "SaltMaskArbitaryRegion节点的size参数指定了任意区域过滤的大小，直接影响掩码中被过滤区域的尺度。通过调整此参数，可以控制处理的精细程度。"
+    },
+    {
+        "question": "SaltMaskArbitaryRegion节点的threshold参数有什么作用？",
+        "answer": "SaltMaskArbitaryRegion节点的threshold参数决定了任意区域过滤的阈值，影响掩码中哪些部分会被纳入处理范围。通过调整此参数，可以控制过滤的敏感度。"
+    },
+    {
+        "question": "SaltMaskArbitaryRegion节点的输出类型是什么？",
+        "answer": "SaltMaskArbitaryRegion节点的输出类型是MASKS，输出的是根据指定的大小和阈值参数过滤后的修改版掩码，可用于后续的图像处理或分析任务。"
+    },
+    {
+        "question": "使用SaltMaskArbitaryRegion节点时，需要将其放在GPU上运行吗？",
+        "answer": "是的，SaltMaskArbitaryRegion节点需要在 Infra type 为 GPU 的环境中运行。"
+    },
+    {
+        "question": "SaltMaskArbitaryRegion类中的FUNCTION属性表示什么？",
+        "answer": "在SaltMaskArbitaryRegion类中，FUNCTION属性设置为'arbitrary_region'，表示该节点执行的主要功能是对掩码进行任意区域过滤。"
+    }
+]

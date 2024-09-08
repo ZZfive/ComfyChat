@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltMaskRegionLabeling node in ComfyUI?",
+        "answer": "The SaltMaskRegionLabeling node is designed to label different regions in a mask, converting it into visually distinct areas based on connectivity, and outputting these labeled areas as tensors."
+    },
+    {
+        "question": "How does the SaltMaskRegionLabeling node segment and label different regions in a mask?",
+        "answer": "The SaltMaskRegionLabeling node utilizes threshold processing and connected component analysis to segment and label different regions in the mask."
+    },
+    {
+        "question": "What is the role of the 'threshold' parameter in the SaltMaskRegionLabeling node?",
+        "answer": "The 'threshold' parameter is used for binarizing the masks through threshold processing, which is crucial for separating the regions to be labeled. If a single value is provided, it will be applied to all masks."
+    },
+    {
+        "question": "What does the SaltMaskRegionLabeling node output?",
+        "answer": "The SaltMaskRegionLabeling node outputs a tensor containing the labeled regions, with each region assigned a unique color to distinguish it from other regions."
+    },
+    {
+        "question": "What is the data type of the 'masks' input in the SaltMaskRegionLabeling node?",
+        "answer": "In ComfyUI, the data type of the 'masks' input is MASK, while in Python, it is List[torch.Tensor]."
+    },
+    {
+        "question": "What is the default value for the 'threshold' parameter in the SaltMaskRegionLabeling node?",
+        "answer": "The default value for the 'threshold' parameter is 128, with a minimum of 0, a maximum of 255, and a step of 1."
+    },
+    {
+        "question": "What infrastructure type does the SaltMaskRegionLabeling node use?",
+        "answer": "The SaltMaskRegionLabeling node uses the GPU infrastructure type."
+    }
+]

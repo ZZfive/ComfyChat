@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltScheduledBinaryComparison node in ComfyUI?",
+        "answer": "The SaltScheduledBinaryComparison node in ComfyUI performs scheduled binary comparisons on a batch of images, applying optional thresholding operations with consideration for an error margin (epsilon)."
+    },
+    {
+        "question": "What are the required inputs for the SaltScheduledBinaryComparison node?",
+        "answer": "The required inputs for the SaltScheduledBinaryComparison node are 'images' (the batch of images to process) and 'comparison_schedule' (the schedule of comparison values to use as binary thresholds)."
+    },
+    {
+        "question": "What does the 'epsilon_schedule' parameter do in the SaltScheduledBinaryComparison node?",
+        "answer": "The 'epsilon_schedule' parameter in the SaltScheduledBinaryComparison node is an optional input that allows for an error margin in the comparisons, enabling values close to the threshold to be considered a match."
+    },
+    {
+        "question": "How does the 'use_epsilon' parameter affect the functioning of the SaltScheduledBinaryComparison node?",
+        "answer": "The 'use_epsilon' parameter in the SaltScheduledBinaryComparison node determines whether to use the epsilon error margin in the comparisons, adding flexibility to the binary comparison."
+    },
+    {
+        "question": "What is the output of the SaltScheduledBinaryComparison node?",
+        "answer": "The output of the SaltScheduledBinaryComparison node is 'images', which is the result of the binary threshold operation, where each pixel in the batch of images is set to 1 or 0 based on the comparison results."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the SaltScheduledBinaryComparison node?",
+        "answer": "The recommended infrastructure type for running the SaltScheduledBinaryComparison node is 'GPU'."
+    },
+    {
+        "question": "How does the SaltScheduledBinaryComparison node handle cases where the length of 'comparison_schedule' is less than the batch size?",
+        "answer": "If the length of 'comparison_schedule' is less than the batch size, the SaltScheduledBinaryComparison node extends the schedule by repeating the last value until it matches the batch size."
+    }
+]

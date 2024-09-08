@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SaltInput节点的主要目的是什么？",
+        "answer": "SaltInput节点旨在为Salt AI平台的工作流创建和配置输入。它允许用户定义输入的各个方面，如名称、描述、类型和默认值，以及其他属性，如允许的值、是否需要用户覆盖，以及路径是否应被视为相对路径。"
+    },
+    {
+        "question": "SaltInput节点的必需输入参数有哪些？",
+        "answer": "SaltInput节点的必需输入参数包括：input_name（输入的名称），input_desc（输入的描述），input_type（输入的类型，如STRING、FLOAT、INT等），input_value（输入的默认值，可以预先填写但用户可以更改）。"
+    },
+    {
+        "question": "SaltInput节点的可选输入参数有哪些？",
+        "answer": "SaltInput节点的可选输入参数包括：input_image（提供图像作为输入），input_mask（提供蒙版作为输入），input_allowed_values（指定输入允许值的字符串），user_override_required（确定用户是否必须为默认输入值提供覆盖），relative_path（指示提供的输入路径是否应被视为相对路径）。"
+    },
+    {
+        "question": "SaltInput节点的输出类型是什么？",
+        "answer": "SaltInput节点的输出类型包括：value（输出配置的输入值）和ui（生成输入配置的用户界面表示，包括元数据和输出结果，便于交互和视觉反馈）。"
+    },
+    {
+        "question": "SaltInput节点如何处理图像类型的输入？",
+        "answer": "当输入类型为图像时，SaltInput节点首先检查是否提供了输入值（input_value），如果提供了，则尝试从指定路径加载图像。如果没有提供输入值，但提供了输入图像（input_image）或输入蒙版（input_mask），则直接将它们作为输出返回。"
+    },
+    {
+        "question": "对于非资产类型的输入，SaltInput节点如何处理输入值？",
+        "answer": "对于非资产类型的输入，SaltInput节点会根据输入类型将输入值转换为相应的数据类型，如字符串、整数、浮点数或布尔值。如果提供的输入不是允许的值之一，则会引发错误。"
+    },
+    {
+        "question": "SaltInput节点是否支持相对路径？",
+        "answer": "是的，SaltInput节点支持相对路径。当relative_path参数设置为True时，输入路径将被视为相对路径。"
+    }
+]

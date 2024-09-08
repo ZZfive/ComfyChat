@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltMaskThresholdRegion node in ComfyUI?",
+        "answer": "The SaltMaskThresholdRegion node in ComfyUI applies a threshold filter to mask regions, segmenting them based on specified black and white thresholds to isolate and enhance areas in the mask."
+    },
+    {
+        "question": "What are the required inputs for the SaltMaskThresholdRegion node?",
+        "answer": "The required inputs for the SaltMaskThresholdRegion node are 'masks' (the input masks to be processed), 'black_threshold' (the lower limit for pixel intensity), and 'white_threshold' (the upper limit for pixel intensity)."
+    },
+    {
+        "question": "What does the 'black_threshold' parameter do in the SaltMaskThresholdRegion node?",
+        "answer": "The 'black_threshold' parameter in the SaltMaskThresholdRegion node sets the lower limit for pixel intensity. Pixels with intensity below this value are set to black, helping to segment darker areas in the mask."
+    },
+    {
+        "question": "What does the 'white_threshold' parameter do in the SaltMaskThresholdRegion node?",
+        "answer": "The 'white_threshold' parameter in the SaltMaskThresholdRegion node sets the upper limit for pixel intensity. Pixels with intensity above this value are set to white, helping to segment brighter areas in the mask."
+    },
+    {
+        "question": "What is the output of the SaltMaskThresholdRegion node?",
+        "answer": "The output of the SaltMaskThresholdRegion node is the processed masks (MASKS) with the threshold filter applied, segmenting regions based on the specified black and white thresholds."
+    },
+    {
+        "question": "What is the infra type for the SaltMaskThresholdRegion node?",
+        "answer": "The infra type for the SaltMaskThresholdRegion node is GPU."
+    },
+    {
+        "question": "How does the SaltMaskThresholdRegion node handle input masks and thresholds in the source code?",
+        "answer": "In the source code, the SaltMaskThresholdRegion node iterates over the input masks, converts each mask to a PIL image, applies the threshold_region function from MaskFilters with the specified black and white thresholds, converts the resulting region mask back to a tensor, and concatenates the region tensors to return the final processed masks."
+    }
+]

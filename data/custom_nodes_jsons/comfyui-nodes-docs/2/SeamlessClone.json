@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SeamlessClone node in ComfyUI?",
+        "answer": "The SeamlessClone node in ComfyUI is designed to seamlessly blend two images together by defining the blending area using a mask and controlling the blending behavior using various cloning modes. It allows the use of advanced image compositing techniques such as normal clone, mixed clone, and monochrome transfer."
+    },
+    {
+        "question": "What are the required input types for the SeamlessClone node?",
+        "answer": "The required input types for the SeamlessClone node are: dst (target image), src (source image), src_mask (mask image defining the source image area to be cloned), flag (cloning mode), cx (x-coordinate of the clone destination center point), and cy (y-coordinate of the clone destination center point)."
+    },
+    {
+        "question": "What does the 'flag' parameter specify in the SeamlessClone node?",
+        "answer": "The 'flag' parameter in the SeamlessClone node specifies the cloning mode to be used for the operation, such as normal, mixed, or monochrome transfer. This affects how the source image is blended into the target image."
+    },
+    {
+        "question": "What is the output type of the SeamlessClone node?",
+        "answer": "The output type of the SeamlessClone node is an image, which is the result of the seamless cloning operation. It is an image that blends the source area into the target based on the specified mask and mode."
+    },
+    {
+        "question": "What infrastructure type does the SeamlessClone node use?",
+        "answer": "The SeamlessClone node uses the GPU infrastructure type."
+    },
+    {
+        "question": "In the source code of the SeamlessClone node, what does the 'paste' function do?",
+        "answer": "In the source code of the SeamlessClone node, the 'paste' function performs the seamless cloning operation. It takes the source image, destination image, source mask, cloning mode flag, and clone destination center point coordinates as inputs, and returns the blended result image."
+    },
+    {
+        "question": "What are the cloning modes available in the SeamlessClone node?",
+        "answer": "The cloning modes available in the SeamlessClone node are NORMAL_CLONE, MIXED_CLONE, and MONOCHROME_TRANSFER, which are mapped from the string values 'NORMAL', 'MIXED', and 'MONO' respectively."
+    }
+]

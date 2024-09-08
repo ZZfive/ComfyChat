@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of SpectreImg2SMPL node in ComfyUI?",
+        "answer": "The purpose of SpectreImg2SMPL node is to convert images into 3D models using the Spectre model, focusing on generating Skinned Multi-Person Linear (SMPL) models from input images."
+    },
+    {
+        "question": "What are the required inputs for the SpectreImg2SMPL node?",
+        "answer": "The required inputs for the SpectreImg2SMPL node are spectre_model (a tuple containing the face tracker and Spectre model), image (the input image to be converted into a 3D model), and chunk_size (the number of images processed in a single batch)."
+    },
+    {
+        "question": "What does the SpectreImg2SMPL node output?",
+        "answer": "The SpectreImg2SMPL node outputs SMPL_MULTIPLE_SUBJECTS (3D vertices of the generated model) and CROPPED_FACE_IMAGE (preprocessed cropped and normalized images)."
+    },
+    {
+        "question": "How does the SpectreImg2SMPL node preprocess the input images?",
+        "answer": "The SpectreImg2SMPL node preprocesses the input images by detecting facial landmarks, cropping the images around the face, and normalizing them before generating 3D representations."
+    },
+    {
+        "question": "What is the purpose of the chunk_size parameter in the SpectreImg2SMPL node?",
+        "answer": "The chunk_size parameter determines the number of images processed in a single batch, optimizing the model's performance and efficiency."
+    },
+    {
+        "question": "How does the SpectreImg2SMPL node handle overlapping chunks of images?",
+        "answer": "The SpectreImg2SMPL node processes overlapping chunks of images by filtering out invalid indices and ensuring that the processed chunks cover the entire input image without duplicating or missing frames."
+    },
+    {
+        "question": "What is the infra type required for running the SpectreImg2SMPL node?",
+        "answer": "The infra type required for running the SpectreImg2SMPL node is GPU."
+    }
+]

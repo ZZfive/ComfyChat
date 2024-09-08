@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PixelPerfectResolution node in ComfyUI?",
+        "answer": "The PixelPerfectResolution node in ComfyUI aims to calculate the optimal resolution for resizing images to achieve pixel-perfect clarity. It considers the original dimensions and target dimensions of the image, as well as the specified resize mode, to determine the most suitable resolution that maximizes visual integrity."
+    },
+    {
+        "question": "What are the required inputs for the PixelPerfectResolution node?",
+        "answer": "The required inputs for the PixelPerfectResolution node are: original_image (the original image to be resized), image_gen_width (the target width for image generation), image_gen_height (the target height for image generation), and resize_mode (specifies the resizing mode, e.g., OUTER_FIT, INNER_FIT)."
+    },
+    {
+        "question": "What is the output of the PixelPerfectResolution node?",
+        "answer": "The output of the PixelPerfectResolution node is the calculated optimal resolution (integer value) for resizing the image, ensuring pixel-perfect clarity."
+    },
+    {
+        "question": "How does the PixelPerfectResolution node determine the optimal resolution?",
+        "answer": "The PixelPerfectResolution node determines the optimal resolution by calculating the scaling factors k0 and k1 based on the target height and width, and the original image dimensions. Depending on the selected resize mode (OUTER_FIT or INNER_FIT), it uses the minimum or maximum of these factors multiplied by the smaller dimension of the original image to estimate the optimal resolution."
+    },
+    {
+        "question": "What are some common nodes used in conjunction with PixelPerfectResolution?",
+        "answer": "Some common nodes used in conjunction with PixelPerfectResolution are AIO_Preprocessor and CannyEdgePreprocessor."
+    },
+    {
+        "question": "What infrastructure type does the PixelPerfectResolution node use?",
+        "answer": "The PixelPerfectResolution node uses the CPU infrastructure type."
+    },
+    {
+        "question": "What is the function of the execute method in the PixelPerfectResolution class?",
+        "answer": "The execute method in the PixelPerfectResolution class takes the required inputs (original_image, image_gen_width, image_gen_height, and resize_mode), calculates the optimal resolution for resizing the image based on these inputs, and returns the computed resolution value."
+    }
+]

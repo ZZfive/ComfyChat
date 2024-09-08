@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SDTurboScheduler node in ComfyUI?",
+        "answer": "The SDTurboScheduler node is used to efficiently manage and schedule sampling operations within the diffusion model framework. It abstracts the complexity of the sampling steps and denoising process, providing a simplified interface for generating essential sigma values during the sampling process."
+    },
+    {
+        "question": "What is the significance of the 'model' parameter in the SDTurboScheduler node?",
+        "answer": "The 'model' parameter is crucial as it represents the diffusion model that the scheduler will operate on. It is the foundation element for the node to perform its sampling task, and the model's architecture and parameters determine the outcome of the sampling process."
+    },
+    {
+        "question": "How does the 'steps' parameter affect the sampling process in the SDTurboScheduler node?",
+        "answer": "The 'steps' parameter is essential for defining the number of iterations the sampling process will undergo. It directly influences the granularity of the sampling process and is key in controlling the trade-off between computation time and result quality."
+    },
+    {
+        "question": "What role does the 'denoise' parameter play in the SDTurboScheduler node?",
+        "answer": "The 'denoise' parameter is important as it controls the level of noise reduction applied during the sampling process. It is a key component in achieving the desired balance between detail preservation and noise elimination, thus affecting the visual fidelity of the final output."
+    },
+    {
+        "question": "What does the 'sigmas' output represent in the SDTurboScheduler node?",
+        "answer": "The 'sigmas' output is a critical component of the sampling process, representing the standard deviations used to guide the diffusion steps. It is a key determinant of the sampling quality, and its values directly impact the outcome of the generated samples."
+    },
+    {
+        "question": "What is the recommended infrastructure type for using the SDTurboScheduler node?",
+        "answer": "The recommended infrastructure type for using the SDTurboScheduler node is GPU."
+    },
+    {
+        "question": "How does the SDTurboScheduler node calculate the 'sigmas' values?",
+        "answer": "The SDTurboScheduler node calculates the 'sigmas' values by first determining the start step based on the denoise parameter, then generating a range of timesteps. It loads the required models onto the GPU and uses the model's sampling function to calculate the sigmas for the given timesteps. Finally, it concatenates the calculated sigmas with a tensor of zeros and returns the result."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the 'SaveImageIfTrue' class in ComfyUI?",
+        "answer": "The 'SaveImageIfTrue' class in ComfyUI is designed to save an image to a file based on a condition. It evaluates a save condition, and if the condition is met, it uses the 'SaveImagesMikey' class to perform the actual image saving process, including handling metadata and file naming conventions."
+    },
+    {
+        "question": "What are the required input parameters for the 'SaveImageIfTrue' class?",
+        "answer": "The required input parameters for the 'SaveImageIfTrue' class are 'image' and 'save_condition'. The 'image' parameter is crucial for the node's operation as it represents the image that may be saved. The 'save_condition' parameter acts as the switch for the saving process, determining whether the image will be saved based on its value (0 or 1)."
+    },
+    {
+        "question": "What is the purpose of the 'filename_prefix' parameter in the 'SaveImageIfTrue' class?",
+        "answer": "The 'filename_prefix' parameter in the 'SaveImageIfTrue' class is important for defining the prefix of the saved image file. It allows for custom naming conventions, which is particularly useful for organizing the saved files."
+    },
+    {
+        "question": "What does the 'result' parameter in the 'SaveImageIfTrue' class encapsulate?",
+        "answer": "The 'result' parameter in the 'SaveImageIfTrue' class encapsulates the details of the save operation. It includes information such as the filename and subfolder where the image was saved, providing a record of the saving process."
+    },
+    {
+        "question": "What infra type does the 'SaveImageIfTrue' class use?",
+        "answer": "The 'SaveImageIfTrue' class uses the CPU infra type."
+    },
+    {
+        "question": "What happens if the 'save_condition' is not met in the 'SaveImageIfTrue' class?",
+        "answer": "If the 'save_condition' is not met (i.e., it is 0) in the 'SaveImageIfTrue' class, the method returns a dictionary with empty strings for the 'filename' and 'subfolder' keys, indicating that no image was saved."
+    },
+    {
+        "question": "What is the function of the 'SaveImagesMikey' class within the 'SaveImageIfTrue' class?",
+        "answer": "Within the 'SaveImageIfTrue' class, the 'SaveImagesMikey' class is responsible for performing the actual image saving process if the save condition is met. It handles the saving of the image, including managing metadata and following file naming conventions."
+    }
+]

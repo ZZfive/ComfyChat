@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of SEGSUpscaler node in ComfyUI?",
+        "answer": "The SEGSUpscaler node in ComfyUI is designed to enhance the resolution of images by utilizing segmentation data and upscaling models. It upscales images while maintaining the integrity of segmented regions, ensuring that details within these regions are preserved and enhanced during the scaling process."
+    },
+    {
+        "question": "What are the required inputs for the SEGSUpscaler node?",
+        "answer": "The required inputs for the SEGSUpscaler node are: the input image to be upscaled and the segmentation data or 'segs' that provide information needed to distinguish and process different regions within the image."
+    },
+    {
+        "question": "What does the 'rescale_factor' parameter control in the SEGSUpscaler node?",
+        "answer": "The 'rescale_factor' parameter in the SEGSUpscaler node determines the degree of upscaling to be applied to the input image. Higher values lead to a greater increase in resolution, which can enhance details but may also introduce artifacts if not managed carefully."
+    },
+    {
+        "question": "What is the output of the SEGSUpscaler node?",
+        "answer": "The output of the SEGSUpscaler node is an enhanced image that has been upscaled to a higher resolution. This image retains the segmented regions with improved details and clarity, making it suitable for further analysis or display in high-resolution formats."
+    },
+    {
+        "question": "What infra type is recommended for running the SEGSUpscaler node?",
+        "answer": "The recommended infra type for running the SEGSUpscaler node is GPU."
+    },
+    {
+        "question": "How does the SEGSUpscaler node handle empty masks in segmentation data?",
+        "answer": "If the SEGSUpscaler node encounters an empty mask in the segmentation data, it skips processing that segment and prints a message indicating that a segment with an empty mask was skipped."
+    },
+    {
+        "question": "What happens after the SEGSUpscaler node processes a segment and generates an enhanced image?",
+        "answer": "After the SEGSUpscaler node processes a segment and generates an enhanced image, it pastes the enhanced image back onto the original image using the mask. If an upscaler hook is provided, it calls the hook's post_paste method after pasting."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RepeatImageBatch node in ComfyUI?",
+        "answer": "The RepeatImageBatch node in ComfyUI is designed to copy a single image into a batch dimension, allowing the image to be repeated within a dataset. This functionality is crucial for creating augmented datasets or scenarios where consistent images need to be repeated for batch processing."
+    },
+    {
+        "question": "What is the 'image' parameter in the RepeatImageBatch node?",
+        "answer": "The 'image' parameter in the RepeatImageBatch node is the input image that the node will process. It is essential for the node's operation as it is the object of the copying process. The parameter directly affects the node's execution because the output is a batch of images repeated based on this input."
+    },
+    {
+        "question": "What is the significance of the 'amount' parameter in the RepeatImageBatch node?",
+        "answer": "The 'amount' parameter in the RepeatImageBatch node specifies how many times the input image should be repeated along the batch dimension. It is an optional parameter with a default value of 1, meaning no repetition if not specified. This parameter is important as it determines the size of the output batch, directly influencing subsequent data processing steps."
+    },
+    {
+        "question": "What is the output of the RepeatImageBatch node?",
+        "answer": "The output of the RepeatImageBatch node is 'output_image', which is the result of the 'repeat' operation. It contains the images that have been repeated as a batch. Each image in the batch is a copy of the input image, with the batch size determined by the 'amount' parameter. This output is important as it forms the basis for further image processing or analysis in a batch processing context."
+    },
+    {
+        "question": "What infrastructure type does the RepeatImageBatch node use?",
+        "answer": "The RepeatImageBatch node uses the CPU as its infrastructure type."
+    },
+    {
+        "question": "What is the default value for the 'amount' parameter in the RepeatImageBatch node?",
+        "answer": "The default value for the 'amount' parameter in the RepeatImageBatch node is 1."
+    },
+    {
+        "question": "What are the minimum and maximum values for the 'amount' parameter in the RepeatImageBatch node?",
+        "answer": "The minimum value for the 'amount' parameter in the RepeatImageBatch node is 1, and the maximum value is 4096."
+    }
+]

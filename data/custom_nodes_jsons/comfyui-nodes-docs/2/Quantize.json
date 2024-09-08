@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Quantize node in ComfyUI?",
+        "answer": "The Quantize node in ComfyUI is designed to reduce the number of colors in an image, a process known as color quantization. This is achieved by mapping the colors of the image to a specified number of colors, which is useful for creating more stylized or retro looks."
+    },
+    {
+        "question": "What is the role of the 'image' parameter in the Quantize node?",
+        "answer": "The 'image' parameter is an input tensor representing the image to be quantized. It plays a crucial role in the node's operation, as the entire quantization process is applied to this image. The quality and characteristics of the quantized image largely depend on the input image."
+    },
+    {
+        "question": "How does the 'colors' parameter affect the output of the Quantize node?",
+        "answer": "The 'colors' parameter specifies the number of colors to which the image will be reduced. This is an important setting as it directly affects the level of detail and appearance of the quantized image. More colors will retain more details but result in a larger file size."
+    },
+    {
+        "question": "What does the 'dither' parameter in the Quantize node do?",
+        "answer": "The 'dither' parameter determines whether a dithering algorithm is applied to the image during the quantization process. Dithering can help create more visually appealing results by reducing the visibility of color banding. The choice between 'none' and 'floyd-steinberg' affects the quality of the final image."
+    },
+    {
+        "question": "What is the output of the Quantize node?",
+        "answer": "The output of the Quantize node is the 'quantized_image', which is the result of the color quantization process. It is a tensor representing the image with a reduced number of colors. This output is important as it is the direct result of the node's operation and can be used for further processing or display."
+    },
+    {
+        "question": "What is the default value for the 'colors' parameter in the Quantize node?",
+        "answer": "The default value for the 'colors' parameter in the Quantize node is 256."
+    },
+    {
+        "question": "What is the infra type for the Quantize node?",
+        "answer": "The infra type for the Quantize node is CPU."
+    }
+]

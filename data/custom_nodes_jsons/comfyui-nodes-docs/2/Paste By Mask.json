@@ -1,0 +1,30 @@
+[
+    {
+        "question": "PasteByMask节点的主要功能是什么？",
+        "answer": "PasteByMask节点旨在使用遮罩确定位置，将一个图像粘贴到另一个图像上。它智能地调整要粘贴的图像的大小以适应遮罩的尺寸，有选项可以保持原始纵横比或完全填充遮罩区域。"
+    },
+    {
+        "question": "PasteByMask节点的必需输入类型有哪些？",
+        "answer": "PasteByMask节点的必需输入类型包括：image_base（基础图像）、image_to_paste（要粘贴的图像）、mask（决定粘贴位置的遮罩）和resize_behavior（调整要粘贴图像大小的方式）。"
+    },
+    {
+        "question": "PasteByMask节点的可选输入类型是什么？",
+        "answer": "PasteByMask节点的可选输入类型是mask_mapping_optional，它指定了特定的image_to_paste应该粘贴到哪个基础图像上。"
+    },
+    {
+        "question": "PasteByMask节点的输出类型是什么？",
+        "answer": "PasteByMask节点的输出类型是result，最终的输出图像，根据遮罩和resize_behavior参数，将image_to_paste应用到image_base上。"
+    },
+    {
+        "question": "PasteByMask节点支持哪些resize_behavior参数选项？",
+        "answer": "PasteByMask节点支持的resize_behavior参数选项包括：'resize'、'keep_ratio_fill'、'keep_ratio_fit'、'source_size'和'source_size_unmasked'。"
+    },
+    {
+        "question": "在使用PasteByMask节点时，infra类型是什么？",
+        "answer": "在使用PasteByMask节点时，infra类型是CPU。"
+    },
+    {
+        "question": "PasteByMask节点如何处理遮罩为空的情况？",
+        "answer": "PasteByMask节点会检查遮罩是否为空，如果为空，则跳过相应的处理步骤。"
+    }
+]

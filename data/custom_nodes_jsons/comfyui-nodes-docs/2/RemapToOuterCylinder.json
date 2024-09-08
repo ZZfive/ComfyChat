@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RemapToOuterCylinder node in ComfyUI?",
+        "answer": "The RemapToOuterCylinder node is designed to convert an image into a form that maps it onto the surface of a virtual outer cylinder. It adjusts the perspective of the image to simulate the visual effect of the image being wrapped on the surface of a cylinder, taking into account the field of view angle and whether the x and y coordinates need to be swapped."
+    },
+    {
+        "question": "What are the required input types for the RemapToOuterCylinder node?",
+        "answer": "The required input types for the RemapToOuterCylinder node are 'fov' (field of view) and 'swap_xy'. 'fov' specifies the field of view angle in degrees and affects the curvature and perspective of the reprojected image. 'swap_xy' determines whether to swap the x and y coordinates, which affects the orientation of the reprojected image."
+    },
+    {
+        "question": "What is the output type of the RemapToOuterCylinder node?",
+        "answer": "The output type of the RemapToOuterCylinder node is 'remap'. It provides a mapping from x and y coordinates to the original image pixels, used to transform the image onto the outer cylinder surface."
+    },
+    {
+        "question": "What infra type does the RemapToOuterCylinder node use?",
+        "answer": "The RemapToOuterCylinder node uses the 'CPU' infra type."
+    },
+    {
+        "question": "What does the 'fov' parameter of the RemapToOuterCylinder node specify?",
+        "answer": "The 'fov' parameter of the RemapToOuterCylinder node specifies the field of view angle in degrees. It affects the curvature and perspective of the reprojected image."
+    },
+    {
+        "question": "What does the 'swap_xy' parameter of the RemapToOuterCylinder node determine?",
+        "answer": "The 'swap_xy' parameter of the RemapToOuterCylinder node determines whether to swap the x and y coordinates, which affects the orientation of the reprojected image."
+    },
+    {
+        "question": "What is the source code of the RemapToOuterCylinder node?",
+        "answer": "The source code of the RemapToOuterCylinder node defines a class 'OuterCylinderRemap' that inherits from 'RemapBase'. It specifies the required input types 'fov' and 'swap_xy', and a 'send_remap' method that calls the 'remap_outer_cylinder' function with the provided arguments."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SeargeIntegerConstant node in ComfyUI?",
+        "answer": "The SeargeIntegerConstant node provides a constant integer value in the workflow. It is designed to provide a stable and unchanging integer that can be used in various calculations or comparisons without requiring external input or data processing."
+    },
+    {
+        "question": "What is the required input type for the SeargeIntegerConstant node?",
+        "answer": "The required input type for the SeargeIntegerConstant node is 'value', which represents the fixed integer that the node will always return. It serves as the core component in the workflow, ensuring that downstream operations can access a consistent and predefined integer value."
+    },
+    {
+        "question": "What is the Comfy dtype and Python dtype for the 'value' input parameter?",
+        "answer": "The Comfy dtype for the 'value' input parameter is INT, and the Python dtype is int."
+    },
+    {
+        "question": "What is the output type of the SeargeIntegerConstant node?",
+        "answer": "The output type of the SeargeIntegerConstant node is 'value', which is the constant integer set as the input. Its importance lies in ensuring that the integer remains unchanged throughout the workflow, thus facilitating predictable and stable operations."
+    },
+    {
+        "question": "What is the infra type for the SeargeIntegerConstant node?",
+        "answer": "The infra type for the SeargeIntegerConstant node is CPU."
+    },
+    {
+        "question": "In which category is the SeargeIntegerConstant node located?",
+        "answer": "The SeargeIntegerConstant node is located in the Searge/_deprecated_/Integers category."
+    },
+    {
+        "question": "What is the source code for the SeargeIntegerConstant class?",
+        "answer": "The source code for the SeargeIntegerConstant class is as follows:\n```\nclass SeargeIntegerConstant:\n\n    @classmethod\n    def INPUT_TYPES(s):\n        return {'required': {'value': ('INT', {'default': 0, 'min': 0, 'max': 18446744073709551615})}}\n    RETURN_TYPES = ('INT',)\n    RETURN_NAMES = ('value',)\n    FUNCTION = 'get_value'\n    CATEGORY = 'Searge/_deprecated_/Integers'\n\n    def get_value(self, value):\n        return (value,)\n```"
+    }
+]

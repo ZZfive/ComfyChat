@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RescaleClassifierFreeGuidance node in ComfyUI?",
+        "answer": "The RescaleClassifierFreeGuidance node in ComfyUI is designed to modify a given model by introducing a rescaling operation. It adjusts the model's internal configuration, applying a dynamic scaling factor to the classifier's guidance signal, allowing for finer control over the model's behavior."
+    },
+    {
+        "question": "What are the required input types for the RescaleClassifierFreeGuidance node?",
+        "answer": "The required input types for the RescaleClassifierFreeGuidance node are 'model' and 'multiplier'. 'model' represents the machine learning model to be modified, and 'multiplier' is a float that controls the degree of rescaling applied to the model's guidance signal."
+    },
+    {
+        "question": "What does the 'multiplier' parameter in the RescaleClassifierFreeGuidance node control?",
+        "answer": "The 'multiplier' parameter in the RescaleClassifierFreeGuidance node controls the degree of rescaling applied to the model's guidance signal. It is a float value that determines the balance between the original configuration and the rescaled configuration, directly influencing the output of the patched model."
+    },
+    {
+        "question": "What is the output type of the RescaleClassifierFreeGuidance node?",
+        "answer": "The output type of the RescaleClassifierFreeGuidance node is 'modified_model'. It is the result of applying the 'patch' method to the input model, with the scaling factor of the guidance signal adjusted, potentially leading to different results based on the specified multiplier."
+    },
+    {
+        "question": "What infrastructure type is recommended for the RescaleClassifierFreeGuidance node?",
+        "answer": "The recommended infrastructure type for the RescaleClassifierFreeGuidance node is GPU."
+    },
+    {
+        "question": "How does the 'patch' method in the RescaleClassifierFreeGuidance node work?",
+        "answer": "The 'patch' method in the RescaleClassifierFreeGuidance node modifies the given model by introducing a rescaling operation. It defines a 'rescale_cfg' function that adjusts the model's internal configuration, applying a dynamic scaling factor to the classifier's guidance signal based on the 'multiplier' parameter."
+    },
+    {
+        "question": "What does the 'rescale_cfg' function in the RescaleClassifierFreeGuidance node do?",
+        "answer": "The 'rescale_cfg' function in the RescaleClassifierFreeGuidance node adjusts the model's internal configuration by applying a dynamic scaling factor to the classifier's guidance signal. It calculates the standard deviation of the conditional and unconditional signals, rescales the signals, and combines them based on the 'multiplier' parameter."
+    }
+]

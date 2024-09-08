@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RemapMaskRange node in ComfyUI?",
+        "answer": "The purpose of the RemapMaskRange node is to adjust the value range of a mask to a newly specified minimum and maximum value, ensuring the mask values are appropriately scaled into this new range."
+    },
+    {
+        "question": "What are the required inputs for the RemapMaskRange node?",
+        "answer": "The required inputs for the RemapMaskRange node are: mask (the mask whose values need to be remapped), min (specifies the new minimum value for the remapped range), and max (defines the new maximum value for the remapped range)."
+    },
+    {
+        "question": "What data type does the RemapMaskRange node output?",
+        "answer": "The RemapMaskRange node outputs a 'MASK' data type, which is a torch.Tensor in the Python environment."
+    },
+    {
+        "question": "How does the RemapMaskRange node handle cases where the maximum mask value is zero?",
+        "answer": "If the maximum mask value is zero, the RemapMaskRange node avoids division by zero by setting the maximum value to 1 before scaling the mask values to the new range."
+    },
+    {
+        "question": "What is the default value for the 'min' input in the RemapMaskRange node?",
+        "answer": "The default value for the 'min' input in the RemapMaskRange node is 0.0."
+    },
+    {
+        "question": "What is the default value for the 'max' input in the RemapMaskRange node?",
+        "answer": "The default value for the 'max' input in the RemapMaskRange node is 1.0."
+    },
+    {
+        "question": "How does the RemapMaskRange node ensure that the output mask values are within the range of 0.0 to 1.0?",
+        "answer": "The RemapMaskRange node ensures that the output mask values are within the range of 0.0 to 1.0 by using the torch.clamp() function to clamp the scaled mask values."
+    }
+]

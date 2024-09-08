@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltListLinearInterpolation node in ComfyUI?",
+        "answer": "The SaltListLinearInterpolation node in ComfyUI is designed to perform linear interpolation between two lists of scheduling values, based on a specified interpolation factor. It is crucial for creating smooth transitions between different states or values in scheduling."
+    },
+    {
+        "question": "What are the required input types for the SaltListLinearInterpolation node?",
+        "answer": "The required input types for the SaltListLinearInterpolation node are: schedule_list_a (the first list of scheduling values), schedule_list_b (the second list of scheduling values), and interpolation_factor (a float value between 0.0 and 1.0 that determines the weight of each input list in the interpolation output)."
+    },
+    {
+        "question": "What does the interpolation_factor input determine in the SaltListLinearInterpolation node?",
+        "answer": "In the SaltListLinearInterpolation node, the interpolation_factor input is a float value between 0.0 and 1.0 that determines the weight of each input list in the interpolation output. When the factor is 0.0, the output is the first list; when it is 1.0, the output is the second list."
+    },
+    {
+        "question": "What is the output type of the SaltListLinearInterpolation node?",
+        "answer": "The output type of the SaltListLinearInterpolation node is a list (Comfy dtype: LIST, Python dtype: List[float]) representing the interpolated scheduling values."
+    },
+    {
+        "question": "What infrastructure type does the SaltListLinearInterpolation node use?",
+        "answer": "The SaltListLinearInterpolation node uses the CPU infrastructure type."
+    },
+    {
+        "question": "What happens if the input lists have different lengths in the SaltListLinearInterpolation node?",
+        "answer": "If the input lists have different lengths in the SaltListLinearInterpolation node, a ValueError will be raised, as the schedule lists must have the same length."
+    },
+    {
+        "question": "How does the SaltListLinearInterpolation node calculate the interpolated values?",
+        "answer": "The SaltListLinearInterpolation node calculates the interpolated values using the formula: (1 - interpolation_factor) * a + interpolation_factor * b, where a and b are corresponding values from the input lists, and interpolation_factor is the weight factor."
+    }
+]

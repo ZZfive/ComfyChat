@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PrepareImageAndMaskForInpaint node in ComfyUI?",
+        "answer": "The PrepareImageAndMaskForInpaint node in ComfyUI is used to prepare an image and its corresponding mask for the inpainting process. It applies various preprocessing steps such as resizing, blurring, and adjusting the mask to ensure proper alignment and suitability for the inpainting algorithm."
+    },
+    {
+        "question": "What are the required input types for the PrepareImageAndMaskForInpaint node?",
+        "answer": "The required input types for the PrepareImageAndMaskForInpaint node are: image (the input image tensor for inpainting), mask (the mask tensor indicating the areas to be inpainted), mask_blur (an integer specifying the amount of blur to apply to the mask), inpaint_masked (a boolean indicating whether to inpaint the masked areas), and mask_padding (an integer defining the padding around the mask)."
+    },
+    {
+        "question": "What are the output types of the PrepareImageAndMaskForInpaint node?",
+        "answer": "The output types of the PrepareImageAndMaskForInpaint node are: inpaint_image (the inpainted image after applying the inpainting algorithm), inpaint_mask (the preprocessed mask ready for the inpainting process), overlay_image (an image combining the original and inpainted images for visual comparison), and crop_region (the selected region of the image for inpainting, indicating the focus area of the inpainting process)."
+    },
+    {
+        "question": "What infrastructure type is recommended for the PrepareImageAndMaskForInpaint node?",
+        "answer": "The recommended infrastructure type for the PrepareImageAndMaskForInpaint node is GPU."
+    },
+    {
+        "question": "What happens if the image and mask have different batch sizes or dimensions in the PrepareImageAndMaskForInpaint node?",
+        "answer": "If the image and mask have different batch sizes or dimensions in the PrepareImageAndMaskForInpaint node, a ValueError will be raised, indicating that the image and mask must have the same batch size and dimensions."
+    },
+    {
+        "question": "How does the mask_blur parameter affect the inpainting process in the PrepareImageAndMaskForInpaint node?",
+        "answer": "The mask_blur parameter in the PrepareImageAndMaskForInpaint node specifies the amount of blur to apply to the mask. A higher value of mask_blur results in a smoother edge for the mask, leading to more natural-looking inpainting results."
+    },
+    {
+        "question": "What is the purpose of the mask_padding parameter in the PrepareImageAndMaskForInpaint node?",
+        "answer": "The mask_padding parameter in the PrepareImageAndMaskForInpaint node defines the padding around the mask. It is used to adjust the focus area of the inpainting process."
+    }
+]

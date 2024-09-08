@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltAudioMixer node in ComfyUI?",
+        "answer": "The SaltAudioMixer node is designed to mix two audio inputs into a single output by overlaying one audio segment onto another at a specified mix time. This functionality is crucial for creating composite audio tracks from multiple sound sources in multimedia projects."
+    },
+    {
+        "question": "What are the required input types for the SaltAudioMixer node?",
+        "answer": "The required input types for the SaltAudioMixer node are: audio_a (the first audio input to be mixed), audio_b (the second audio input to be mixed), and mix_time_seconds (the time offset in seconds at which the second audio input will be overlaid onto the first)."
+    },
+    {
+        "question": "What does the mix_time_seconds parameter control in the SaltAudioMixer node?",
+        "answer": "The mix_time_seconds parameter specifies the time offset in seconds at which the second audio input (audio_b) will be overlaid onto the first audio input (audio_a). This parameter allows precise control over the timing of the audio mixing."
+    },
+    {
+        "question": "What is the output type of the SaltAudioMixer node?",
+        "answer": "The output type of the SaltAudioMixer node is mixed_audio, which is the audio result obtained after mixing the two input audios. This output is a single track that combines elements of the two input tracks."
+    },
+    {
+        "question": "What is the infra type of the SaltAudioMixer node?",
+        "answer": "The infra type of the SaltAudioMixer node is CPU."
+    },
+    {
+        "question": "What is the category of the SaltAudioMixer node in ComfyUI?",
+        "answer": "The category of the SaltAudioMixer node in ComfyUI is SALT/Audio/Process."
+    },
+    {
+        "question": "How does the SaltAudioMixer node mix two audio inputs in its source code?",
+        "answer": "In the source code, the SaltAudioMixer node mixes two audio inputs by first converting them into AudioSegment objects, then overlaying the second audio segment onto the first at the specified position (calculated from mix_time_seconds), and finally returning the mixed audio segment as bytes."
+    }
+]

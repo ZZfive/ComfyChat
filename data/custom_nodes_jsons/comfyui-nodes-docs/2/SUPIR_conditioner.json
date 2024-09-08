@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SUPIR_conditioner node in ComfyUI?",
+        "answer": "The SUPIR_conditioner node in ComfyUI is designed to prepare input data for the SUPIR model, integrating various conditioning elements such as positive and negative prompts to tailor the model's output to specific expected results."
+    },
+    {
+        "question": "What are the required input types for the SUPIR_conditioner node?",
+        "answer": "The required input types for the SUPIR_conditioner node include SUPIR_model, latents, positive_prompt, and negative_prompt."
+    },
+    {
+        "question": "What does the 'captions' optional input type in the SUPIR_conditioner node provide?",
+        "answer": "The 'captions' optional input type in the SUPIR_conditioner node provides additional context or guidance for the conditioning process, allowing further customization of the output."
+    },
+    {
+        "question": "What are the output types of the SUPIR_conditioner node?",
+        "answer": "The output types of the SUPIR_conditioner node are 'positive' which prepares data for further processing by the SUPIR model, and 'negative' which balances the generation process by avoiding certain patterns or themes."
+    },
+    {
+        "question": "How does the SUPIR_conditioner node handle input when the number of captions does not match the number of tiles?",
+        "answer": "If the number of captions does not match the number of tiles, the SUPIR_conditioner node assumes tiled captioning and processes each caption accordingly, combining it with the positive prompt."
+    },
+    {
+        "question": "What happens when the number of captions matches the incoming image batch in the SUPIR_conditioner node?",
+        "answer": "When the number of captions matches the incoming image batch, the SUPIR_conditioner node applies batch captioning, where each image uses the corresponding caption, combining them with the positive prompt."
+    },
+    {
+        "question": "What is the infra type of the SUPIR_conditioner node?",
+        "answer": "The infra type of the SUPIR_conditioner node is 'CPU'."
+    }
+]

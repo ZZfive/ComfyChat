@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PruneByMask node in ComfyUI?",
+        "answer": "The PruneByMask node is designed to selectively filter images from a batch based on the quality of associated masks. It keeps only those images whose masks have an average pixel value that reaches or exceeds a threshold of 0.5, ensuring that further processing focuses on images with sufficiently clear masks."
+    },
+    {
+        "question": "What are the required input types for the PruneByMask node?",
+        "answer": "The PruneByMask node requires two input parameters: 'image', which represents the batch of images to be processed, and 'mask', which corresponds to the associated masks of the images in the batch. Both parameters are of Comfy dtype IMAGE and Python dtype torch.Tensor."
+    },
+    {
+        "question": "What is the output type of the PruneByMask node?",
+        "answer": "The output type of the PruneByMask node is 'filtered_images', which contains a subset of the input images that have passed the node's filtering criteria based on the average pixel value of their associated masks. The output is of Comfy dtype IMAGE and Python dtype torch.Tensor."
+    },
+    {
+        "question": "Which infra type is recommended for the PruneByMask node?",
+        "answer": "The recommended infra type for the PruneByMask node is CPU."
+    },
+    {
+        "question": "What is the criteria for filtering images in the PruneByMask node?",
+        "answer": "The PruneByMask node filters images based on the average pixel value of their associated masks. Only images whose masks have an average pixel value of at least 0.5 are kept."
+    },
+    {
+        "question": "How does the PruneByMask node calculate the average pixel value of the masks?",
+        "answer": "The PruneByMask node calculates the average pixel value of the masks by first converting the mask to a tensor using the tensor2mask function, then computing the mean along dimensions 2 and 1 of the mask tensor using torch.mean."
+    },
+    {
+        "question": "What category does the PruneByMask node belong to in ComfyUI?",
+        "answer": "The PruneByMask node belongs to the 'Masquerade Nodes' category in ComfyUI."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltMaskBilateralFilter node in ComfyUI?",
+        "answer": "The SaltMaskBilateralFilter node in ComfyUI applies a bilateral filter to mask regions, smoothing the regions while preserving edges, in order to improve the quality of the mask regions by reducing noise and maintaining structural integrity."
+    },
+    {
+        "question": "What is the required input type for the SaltMaskBilateralFilter node?",
+        "answer": "The required input type for the SaltMaskBilateralFilter node is 'masks', which are the input masks to be processed by the bilateral filter, aiming to smooth the mask regions while preserving their edges."
+    },
+    {
+        "question": "What are the optional input parameters for the SaltMaskBilateralFilter node?",
+        "answer": "The optional input parameters for the SaltMaskBilateralFilter node are 'diameter', which specifies the diameter of each pixel neighborhood used in the filtering process, 'sigmaColor', which represents the filter sigma in the color space and controls the degree of color blending within the neighborhood, and 'sigmaSpace', which determines the filter sigma in the coordinate space and influences the spatial closeness of the pixels to be considered in the filtering process."
+    },
+    {
+        "question": "What is the output type of the SaltMaskBilateralFilter node?",
+        "answer": "The output type of the SaltMaskBilateralFilter node is 'MASKS', which is a tensor of the region outputs after applying the bilateral filter, where each region has been smoothed while preserving its edges."
+    },
+    {
+        "question": "What is the infra type required for the SaltMaskBilateralFilter node?",
+        "answer": "The infra type required for the SaltMaskBilateralFilter node is 'GPU'."
+    },
+    {
+        "question": "What is the default value for the 'diameter' parameter in the SaltMaskBilateralFilter node?",
+        "answer": "The default value for the 'diameter' parameter in the SaltMaskBilateralFilter node is 9."
+    },
+    {
+        "question": "What is the range of valid values for the 'sigmaColor' and 'sigmaSpace' parameters in the SaltMaskBilateralFilter node?",
+        "answer": "The valid range of values for the 'sigmaColor' and 'sigmaSpace' parameters in the SaltMaskBilateralFilter node is from 0.0 to 200.0, with a step of 0.1."
+    }
+]

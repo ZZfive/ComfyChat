@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SEGSPaste node in ComfyUI?",
+        "answer": "The SEGSPaste node in ComfyUI is designed to integrate fragments from a segmentation graph into a given image, enhancing the visual details of the image. It aligns and blends the fragments using specified feathering and alpha values to ensure seamless and detailed results."
+    },
+    {
+        "question": "What are the required input types for the SEGSPaste node?",
+        "answer": "The required input types for the SEGSPaste node are 'image' (Comfy dtype: IMAGE, Python dtype: torch.Tensor) and 'segs' (Comfy dtype: SEGS, Python dtype: List[SEG])."
+    },
+    {
+        "question": "What does the 'feather' parameter control in the SEGSPaste node?",
+        "answer": "The 'feather' parameter in the SEGSPaste node controls the softness of the edges when pasting fragments. It is an important factor in achieving a natural blend between the fragments and the image."
+    },
+    {
+        "question": "What does the 'alpha' parameter adjust in the SEGSPaste node?",
+        "answer": "The 'alpha' parameter in the SEGSPaste node adjusts the opacity of the pasted fragments, allowing control over the visibility and blending strength with the underlying image."
+    },
+    {
+        "question": "What is the purpose of the optional 'ref_image_opt' input in the SEGSPaste node?",
+        "answer": "The optional 'ref_image_opt' input in the SEGSPaste node provides an additional reference image for context when pasting fragments. It can be used to match the fragments with the lighting or color of the reference image."
+    },
+    {
+        "question": "What is the output type of the SEGSPaste node?",
+        "answer": "The output type of the SEGSPaste node is 'result' (Comfy dtype: IMAGE, Python dtype: torch.Tensor), which represents the enhanced image with seamlessly integrated fragments from the segmentation graph."
+    },
+    {
+        "question": "What is the infra type required for the SEGSPaste node?",
+        "answer": "The infra type required for the SEGSPaste node is GPU."
+    }
+]

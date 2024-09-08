@@ -1,0 +1,34 @@
+[
+    {
+        "question": "SaltParallaxMotion节点的作用是什么？",
+        "answer": "SaltParallaxMotion节点旨在为音视频演示中的视差运动效果生成参数计划表。它利用各种输入动态调整元素的运动和深度，从而创造出更具沉浸感和吸引力的体验。"
+    },
+    {
+        "question": "SaltParallaxMotion节点需要哪些必需的输入类型？",
+        "answer": "SaltParallaxMotion节点需要以下必需的输入类型：zoom_preset、horizontal_pan_preset、vertical_pan_preset、custom_x_min、custom_x_max、custom_y_min、custom_y_max、custom_z_min、custom_z_max、parallax_intensity和zoom_intensity。"
+    },
+    {
+        "question": "SaltParallaxMotion节点输出的参数都有哪些？",
+        "answer": "SaltParallaxMotion节点输出以下参数：front_x_min、front_x_max、front_y_min、front_y_max、front_z_min、front_z_max、back_x_min、back_x_max、back_y_min、back_y_max、back_z_min和back_z_max。"
+    },
+    {
+        "question": "SaltParallaxMotion节点如何处理随机选择的缩放预设（zoom_preset）？",
+        "answer": "如果zoom_preset设置为“Select Random”，SaltParallaxMotion节点将从除“None”、“Custom”和“Select Random”之外的可用预设中随机选择一个预设。"
+    },
+    {
+        "question": "SaltParallaxMotion节点如何应用所选的缩放预设（zoom_preset）？",
+        "answer": "如果所选的zoom_preset存在于zoom_presets字典中，SaltParallaxMotion节点将使用该预设的z_min和z_max值。"
+    },
+    {
+        "question": "SaltParallaxMotion节点如何处理自定义的缩放、水平平移和垂直平移值？",
+        "answer": "如果zoom_preset、horizontal_pan_preset或vertical_pan_preset设置为“Custom”，SaltParallaxMotion节点将使用相应的custom_z_min、custom_z_max、custom_x_min、custom_x_max、custom_y_min和custom_y_max值。"
+    },
+    {
+        "question": "SaltParallaxMotion节点如何根据视差强度（parallax_intensity）计算后层的值？",
+        "answer": "SaltParallaxMotion节点根据视差强度计算后层的X和Y轴的最小值和最大值。如果对应的最小值或最大值不为0，则将其除以parallax_intensity。Z轴的值不受视差强度的影响。"
+    },
+    {
+        "question": "SaltParallaxMotion节点如何根据缩放强度（zoom_intensity）调整前后层的缩放？",
+        "answer": "SaltParallaxMotion节点根据缩放强度调整前层的Z轴最小值和最大值。前层的缩放可以根据强度值增加。后层的缩放可以保持不变，也可以根据需要应用不同的公式进行调整。"
+    }
+]

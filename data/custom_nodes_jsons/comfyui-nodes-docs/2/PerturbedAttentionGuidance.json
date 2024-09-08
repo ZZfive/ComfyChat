@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PerturbedAttentionGuidance class?",
+        "answer": "The PerturbedAttentionGuidance class introduces a method to modify the model's attention mechanism by injecting perturbations, aiming to enhance the model's robustness and adaptability to various conditions."
+    },
+    {
+        "question": "What are the required input types for the PerturbedAttentionGuidance class?",
+        "answer": "The required input types for the PerturbedAttentionGuidance class are 'model' (Comfy dtype: MODEL, Python dtype: torch.nn.Module) and 'scale' (Comfy dtype: FLOAT, Python dtype: float)."
+    },
+    {
+        "question": "What does the 'scale' parameter adjust in the PerturbedAttentionGuidance class?",
+        "answer": "The 'scale' parameter adjusts the strength of the perturbation, significantly influencing how the model's attention is altered, thereby affecting the quality of the output."
+    },
+    {
+        "question": "What is the output type of the PerturbedAttentionGuidance class?",
+        "answer": "The output type of the PerturbedAttentionGuidance class is 'model' (Comfy dtype: MODEL, Python dtype: torch.nn.Module), which is a modified version of the input model with enhanced perturbed attention guidance."
+    },
+    {
+        "question": "What is the infra type for the PerturbedAttentionGuidance class?",
+        "answer": "The infra type for the PerturbedAttentionGuidance class is CPU."
+    },
+    {
+        "question": "How does the post_cfg_function modify the model's output?",
+        "answer": "The post_cfg_function modifies the model's output by calculating a new cfg_result based on the original cfg_result, the difference between the conditional prediction and the perturbed attention guidance, and the scale parameter."
+    },
+    {
+        "question": "What does the perturbed_attention function do in the PerturbedAttentionGuidance class?",
+        "answer": "In the PerturbedAttentionGuidance class, the perturbed_attention function simply returns the value 'v', which is used to replace the original attention function in the model."
+    }
+]

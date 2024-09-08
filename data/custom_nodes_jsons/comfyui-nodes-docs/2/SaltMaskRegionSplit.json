@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltMaskRegionSplit node in ComfyUI?",
+        "answer": "The SaltMaskRegionSplit node in ComfyUI is designed to isolate and split different regions in a given set of masks, effectively segmenting them into separate areas based on connectivity. This node is particularly useful in image processing and computer vision tasks, helping to identify and analyze separate regions or objects within complex images."
+    },
+    {
+        "question": "What is the input type required for the SaltMaskRegionSplit node?",
+        "answer": "The SaltMaskRegionSplit node requires an input type of 'masks', which represents the input masks to be split into different regions. This parameter is crucial for determining the segmentation results, as it directly affects the isolation of different regions within the masks."
+    },
+    {
+        "question": "What are the output types of the SaltMaskRegionSplit node?",
+        "answer": "The SaltMaskRegionSplit node has six output types: region1, region2, region3, region4, region5, and region6. Each output represents a separate region isolated from the input masks, with region1 corresponding to the largest or most prominent connected area, and the subsequent regions following in order of importance or size."
+    },
+    {
+        "question": "What is the infra type recommended for the SaltMaskRegionSplit node?",
+        "answer": "The recommended infra type for the SaltMaskRegionSplit node is GPU."
+    },
+    {
+        "question": "How does the SaltMaskRegionSplit node isolate regions in the input masks?",
+        "answer": "The SaltMaskRegionSplit node isolates regions in the input masks by first inverting the mask using ImageOps.invert, then converting it to a grayscale image. Next, it uses the cv2.connectedComponents function to identify connected components in the mask array. Finally, it creates separate output arrays for each identified region (up to 6) and assigns the corresponding pixel values to each region."
+    },
+    {
+        "question": "What is the maximum number of regions that the SaltMaskRegionSplit node can output?",
+        "answer": "The SaltMaskRegionSplit node can output a maximum of 6 separate regions from the input masks."
+    },
+    {
+        "question": "What programming language is the SaltMaskRegionSplit node implemented in?",
+        "answer": "The SaltMaskRegionSplit node is implemented in Python."
+    }
+]

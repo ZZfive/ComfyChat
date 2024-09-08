@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RegionalIPAdapterEncodedMask class in ComfyUI?",
+        "answer": "The RegionalIPAdapterEncodedMask class is designed to apply regional masks to image processing adapters, allowing for conditional processing of generated images based on specified masks."
+    },
+    {
+        "question": "What are the required input types for the RegionalIPAdapterEncodedMask node?",
+        "answer": "The required input types for the RegionalIPAdapterEncodedMask node are mask (MASK), embeds (embeds), weight (FLOAT), weight_type (COMBO), start_at (FLOAT), and end_at (FLOAT)."
+    },
+    {
+        "question": "How does the weight parameter affect the image generation process in the RegionalIPAdapterEncodedMask node?",
+        "answer": "The weight parameter adjusts the influence of the mask and embedding vectors on the image generation. By adjusting this value, users can control the impact of the mask and embedding vectors on the final output, balancing between desired visual elements and the natural generation process."
+    },
+    {
+        "question": "What is the function of the start_at and end_at parameters in the RegionalIPAdapterEncodedMask node?",
+        "answer": "The start_at parameter defines the starting position of the mask's influence on the image, while the end_at parameter specifies the ending position. Together, they define the range of the mask's influence, allowing for precise control over the regional conditioning of the generated image."
+    },
+    {
+        "question": "What is the output type of the RegionalIPAdapterEncodedMask node?",
+        "answer": "The output type of the RegionalIPAdapterEncodedMask node is a modified conditional image adapter (REGIONAL_IPADAPTER) based on the input mask, embedding vectors, and other parameters."
+    },
+    {
+        "question": "What infrastructure type is recommended for the RegionalIPAdapterEncodedMask node?",
+        "answer": "The recommended infrastructure type for the RegionalIPAdapterEncodedMask node is GPU."
+    },
+    {
+        "question": "Is the unfold_batch parameter required or optional in the RegionalIPAdapterEncodedMask node?",
+        "answer": "The unfold_batch parameter is optional in the RegionalIPAdapterEncodedMask node. It allows for manipulation of the batch dimension when applying the mask and embedding vectors, which is useful for efficiently processing large batches of images."
+    }
+]

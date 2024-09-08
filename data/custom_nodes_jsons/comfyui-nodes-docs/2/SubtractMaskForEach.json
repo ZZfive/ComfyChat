@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SubtractMaskForEach node in ComfyUI?",
+        "answer": "The purpose of the SubtractMaskForEach node is to process segmentation data by subtracting mask segments from base segments, modifying the base segments based on the identified overlapping areas between them."
+    },
+    {
+        "question": "What are the required input types for the SubtractMaskForEach node?",
+        "answer": "The required input types for the SubtractMaskForEach node are 'base_segs' and 'mask_segs', both of which are of the Comfy dtype 'SEGS' and Python dtype 'List[SEG]'."
+    },
+    {
+        "question": "What does the 'base_segs' parameter represent in the SubtractMaskForEach node?",
+        "answer": "The 'base_segs' parameter represents the collection of segmentation data that the node will process. It is crucial as it forms the basis of the subtraction operation performed by the node."
+    },
+    {
+        "question": "What does the 'mask_segs' parameter represent in the SubtractMaskForEach node?",
+        "answer": "The 'mask_segs' parameter contains the mask segments that will be subtracted from the base segments. It is essential for defining the areas of the segmentation that will be modified."
+    },
+    {
+        "question": "What is the output type of the SubtractMaskForEach node?",
+        "answer": "The output type of the SubtractMaskForEach node is 'result', which is a modified list of segmentation items after the subtraction operation. It is of the Comfy dtype 'SEGS' and Python dtype 'Tuple[str, List[SEG]]'."
+    },
+    {
+        "question": "How does the SubtractMaskForEach node identify and modify overlapping areas between base and mask segments?",
+        "answer": "The SubtractMaskForEach node iterates through each base segment and mask segment, identifies the overlapping regions, and modifies the base segment's cropped mask accordingly by setting the overlapping pixels to 0."
+    },
+    {
+        "question": "What infrastructure type does the SubtractMaskForEach node use?",
+        "answer": "The SubtractMaskForEach node uses the CPU infrastructure type."
+    }
+]

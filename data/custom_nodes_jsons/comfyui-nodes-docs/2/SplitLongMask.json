@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SplitLongMask node in ComfyUI?",
+        "answer": "The SplitLongMask node is designed to split a single large mask into multiple smaller masks based on a specified quantity or height, enhancing manageability and applicability in various scenarios such as image segmentation or object tracking."
+    },
+    {
+        "question": "What is the main input parameter for the SplitLongMask node?",
+        "answer": "The main input parameter for the SplitLongMask node is 'long_mask', which represents the large mask that needs to be split. The quality and dimensions of this mask directly influence the output, determining the characteristics of the smaller masks in the result."
+    },
+    {
+        "question": "What does the optional 'count' parameter in the SplitLongMask node specify?",
+        "answer": "The optional 'count' parameter in the SplitLongMask node specifies the desired number of smaller masks to be output. It plays a crucial role in determining the size and quantity of the resulting masks, which is essential for applications that require a specific distribution of mask segments."
+    },
+    {
+        "question": "What is the output of the SplitLongMask node?",
+        "answer": "The output of the SplitLongMask node is 'masks', a list of smaller masks derived from the original 'long_mask'. These masks are vital for applications that benefit from segmented mask inputs, such as image processing or machine learning tasks involving mask-based operations."
+    },
+    {
+        "question": "What is the 'Infra type' for the SplitLongMask node?",
+        "answer": "The 'Infra type' for the SplitLongMask node is CPU, indicating that it is designed to run on a computer's central processing unit."
+    },
+    {
+        "question": "How does the SplitLongMask node split the input mask?",
+        "answer": "In the source code of the SplitLongMask node, the large input mask is split into smaller masks by calculating a new height (nh) based on the desired count of smaller masks. If nh multiplied by the count equals the original height of the long_mask, the mask is split accordingly; otherwise, it is split using the original height of the long_mask."
+    },
+    {
+        "question": "What is the function of the 'run' method in the SplitLongMask class?",
+        "answer": "The 'run' method in the SplitLongMask class takes the 'long_mask' and 'count' as inputs and processes the large mask to split it into smaller masks. It then returns a tuple containing the list of smaller masks as the output."
+    }
+]

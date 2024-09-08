@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SizeSelector node in ComfyUI?",
+        "answer": "The SizeSelector node in ComfyUI provides a mechanism to select a specific size configuration (width and height) based on a predefined list of size options. It allows users to choose from a human-readable list of size options, which is then translated into the corresponding numeric width and height values."
+    },
+    {
+        "question": "What is the required input type for the SizeSelector node?",
+        "answer": "The required input type for the SizeSelector node is 'size_selected', which allows users to select a size from a predefined list of size options. Each option corresponds to a specific resolution, and the selected option determines the output width and height of the node."
+    },
+    {
+        "question": "What are the output types of the SizeSelector node?",
+        "answer": "The output types of the SizeSelector node are 'width' and 'height'. 'width' represents the width component of the selected size configuration as an integer, while 'height' represents the height component of the selected size configuration as an integer."
+    },
+    {
+        "question": "What is the infra type for the SizeSelector node?",
+        "answer": "The infra type for the SizeSelector node is 'CPU'."
+    },
+    {
+        "question": "How does the SizeSelector node determine the available size options?",
+        "answer": "The SizeSelector node determines the available size options by reading from a 'sizes.json' file located in the same directory as the node's source code. The file contains a dictionary of size options, where each option is associated with a specific width, height, and name."
+    },
+    {
+        "question": "What is the return type of the 'return_res' function in the SizeSelector node?",
+        "answer": "The 'return_res' function in the SizeSelector node returns a tuple containing three elements: the width (int), height (int), and name (str) of the selected size configuration."
+    },
+    {
+        "question": "Is the SizeSelector node an output node?",
+        "answer": "Yes, the SizeSelector node is an output node, as indicated by the 'OUTPUT_NODE = True' statement in its source code."
+    }
+]

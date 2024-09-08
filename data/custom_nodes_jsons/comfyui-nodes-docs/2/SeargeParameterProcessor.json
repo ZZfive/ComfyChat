@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SeargeParameterProcessor node in ComfyUI?",
+        "answer": "The SeargeParameterProcessor node is designed to process and optimize input parameters for image generation tasks, ensuring that the parameters are properly configured to achieve the desired output quality and style."
+    },
+    {
+        "question": "What is the input type for the SeargeParameterProcessor node?",
+        "answer": "The input type for the SeargeParameterProcessor node is 'inputs', which provides the initial set of parameters that the node will process and optimize. It is of Comfy dtype Dict[str, Any] and Python dtype Dict[str, Any]."
+    },
+    {
+        "question": "What is the output type of the SeargeParameterProcessor node?",
+        "answer": "The output type of the SeargeParameterProcessor node is 'parameters', which represents the processed and optimized set of parameters that are ready for use in the subsequent stages of the image generation process. It is of Comfy dtype Dict[str, Any] and Python dtype Dict[str, Any]."
+    },
+    {
+        "question": "What are the possible values for the 'refiner_intensity' parameter in the SeargeParameterProcessor node?",
+        "answer": "The possible values for the 'refiner_intensity' parameter in the SeargeParameterProcessor node are 'hard' and 'soft'."
+    },
+    {
+        "question": "What does the 'noise_offset' parameter in the SeargeParameterProcessor node depend on?",
+        "answer": "The 'noise_offset' parameter in the SeargeParameterProcessor node depends on the value of the 'refiner_intensity' parameter. If 'refiner_intensity' is set to 'soft', the 'noise_offset' is set to 1, otherwise it is set to 0."
+    },
+    {
+        "question": "What are the possible values for the 'operation_mode' parameter in the SeargeParameterProcessor node?",
+        "answer": "The possible values for the 'operation_mode' parameter in the SeargeParameterProcessor node are 'text to image', 'image to image', and 'inpainting'."
+    },
+    {
+        "question": "How does the 'prompt_style' parameter affect the 'prompt_style_selector' and 'prompt_style_group' parameters in the SeargeParameterProcessor node?",
+        "answer": "The 'prompt_style' parameter in the SeargeParameterProcessor node determines the values of the 'prompt_style_selector' and 'prompt_style_group' parameters based on the chosen prompt style from a list of options such as 'simple', '3 prompts G+L-N', 'subject focus', 'style focus', 'weighted', 'overlay', 'subject - style', 'style - subject', 'style only', 'weighted - overlay', and 'overlay - weighted'."
+    }
+]

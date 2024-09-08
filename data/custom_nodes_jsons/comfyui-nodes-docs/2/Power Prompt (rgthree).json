@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Power Prompt node in ComfyUI?",
+        "answer": "The Power Prompt node in ComfyUI is designed to process text prompts, potentially enhancing them by adding extra context or modifications before further processing. It utilizes utilities for handling specific text patterns and integrates with other text encoding components, aiming to prepare inputs for more complex text-to-image or text-to-text applications."
+    },
+    {
+        "question": "What are the required and optional input types for the Power Prompt node?",
+        "answer": "The required input type for the Power Prompt node is 'prompt', which is the main text input to be processed. The optional input types include 'opt_model' for selecting a specific model to process the prompt, 'opt_clip' for encoding the prompt with a CLIP model if provided, 'insert_lora' for including LORA adjustments, 'insert_embedding' for inserting predefined embeddings, and 'insert_saved' for including saved prompts from a predefined list."
+    },
+    {
+        "question": "What output types does the Power Prompt node produce?",
+        "answer": "The Power Prompt node produces the following output types: 'CONDITIONING' which is a conditioning vector generated from the prompt and optional 'opt_clip' parameter using a CLIP model, 'MODEL' which is the selected model used for processing the prompt, 'CLIP' which is the CLIP model used for encoding the prompt if specified, and 'TEXT' which is the processed or enhanced prompt ready for further application or processing."
+    },
+    {
+        "question": "How does the Power Prompt node handle LORA tags in the prompt?",
+        "answer": "If the 'insert_lora' option is set to 'DISABLE LORAS', the Power Prompt node will disable all found LORAs and strip the LORA tags for the TEXT output. If 'opt_model' and 'opt_clip' are provided, it will load and apply the LORAs specified in the prompt. If LORA tags are found in the prompt but no model and clip are supplied, it will keep the LORA tags for the TEXT output without processing them."
+    },
+    {
+        "question": "What does the 'conditioning' output represent in the Power Prompt node?",
+        "answer": "The 'conditioning' output in the Power Prompt node represents a conditioning vector generated from the prompt and the optional 'opt_clip' parameter using a CLIP model. This vector can be used for further processing in text-to-image or other generative tasks."
+    },
+    {
+        "question": "How does the Power Prompt node utilize the 'opt_clip' parameter?",
+        "answer": "If the 'opt_clip' parameter is provided, the Power Prompt node uses the specified CLIP model to encode the prompt along with the 'opt_clip' value. This allows for generating a conditioning vector that can be used for further processing."
+    },
+    {
+        "question": "What is the purpose of the 'insert_saved' parameter in the Power Prompt node?",
+        "answer": "The 'insert_saved' parameter in the Power Prompt node allows for including saved prompts from a predefined list. This can add more depth or context to the main prompt."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltMaskAdd node in ComfyUI?",
+        "answer": "The SaltMaskAdd node in ComfyUI is used to perform element-wise addition of two mask tensors and ensure the result values fall within a specified range by applying a clamp operation. It is important for merging mask regions to create a composite mask or enhancing certain features within a mask by adding the values of another mask."
+    },
+    {
+        "question": "What are the required input types for the SaltMaskAdd node?",
+        "answer": "The required input types for the SaltMaskAdd node are masks_a and masks_b, both of which are mask tensors that will be added together to create the composite mask."
+    },
+    {
+        "question": "What is the output type of the SaltMaskAdd node?",
+        "answer": "The output type of the SaltMaskAdd node is MASKS, representing the composite mask created by adding the input masks, with values clamped to ensure they remain within a valid range."
+    },
+    {
+        "question": "What is the infra type for the SaltMaskAdd node?",
+        "answer": "The infra type for the SaltMaskAdd node is GPU."
+    },
+    {
+        "question": "What is the category of the SaltMaskAdd node in ComfyUI?",
+        "answer": "The category of the SaltMaskAdd node in ComfyUI is SALT/Masking/Filter."
+    },
+    {
+        "question": "What is the return type of the SaltMaskAdd node?",
+        "answer": "The return type of the SaltMaskAdd node is MASK."
+    },
+    {
+        "question": "What is the function used by the SaltMaskAdd node to add masks?",
+        "answer": "The SaltMaskAdd node uses the add_masks function to add masks, which takes masks_a and masks_b as inputs, checks their shapes, performs element-wise addition, clamps the results between 0 and 255, and returns the added masks."
+    }
+]

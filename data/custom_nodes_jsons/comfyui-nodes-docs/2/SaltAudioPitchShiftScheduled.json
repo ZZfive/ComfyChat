@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltAudioPitchShiftScheduled node in ComfyUI?",
+        "answer": "The SaltAudioPitchShiftScheduled node in ComfyUI is used to apply scheduled pitch shifting to audio data, allowing for dynamic adjustment of pitch over time."
+    },
+    {
+        "question": "What are the required inputs for the SaltAudioPitchShiftScheduled node?",
+        "answer": "The required inputs for the SaltAudioPitchShiftScheduled node are 'audio' (the audio data to be pitch shifted) and 'schedule' (a list of semitone values specifying the pitch shift at different time points)."
+    },
+    {
+        "question": "What does the optional 'interpolate' input do in the SaltAudioPitchShiftScheduled node?",
+        "answer": "The optional 'interpolate' input in the SaltAudioPitchShiftScheduled node is a boolean flag that indicates whether to interpolate between the points specified in the schedule for smoother pitch shift transitions."
+    },
+    {
+        "question": "What is the output of the SaltAudioPitchShiftScheduled node?",
+        "answer": "The output of the SaltAudioPitchShiftScheduled node is the resulting audio data after applying the scheduled pitch shifting, reflecting the dynamic pitch changes specified in the input schedule."
+    },
+    {
+        "question": "How does the SaltAudioPitchShiftScheduled node handle interpolation when the 'interpolate' input is set to True?",
+        "answer": "When the 'interpolate' input is set to True, the SaltAudioPitchShiftScheduled node uses linear interpolation to match the length of the audio, creating a smooth transition between the scheduled pitch shift points."
+    },
+    {
+        "question": "What is the infra type of the SaltAudioPitchShiftScheduled node?",
+        "answer": "The infra type of the SaltAudioPitchShiftScheduled node is 'CPU'."
+    },
+    {
+        "question": "How does the SaltAudioPitchShiftScheduled node process the audio data in chunks?",
+        "answer": "The SaltAudioPitchShiftScheduled node processes the audio data in chunks of 100 milliseconds duration. It applies the pitch shift to each chunk based on the corresponding semitone value from the pitch schedule and the chunk's frame rate."
+    }
+]

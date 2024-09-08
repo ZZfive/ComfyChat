@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the OffsetImage node in ComfyUI?",
+        "answer": "The OffsetImage node in ComfyUI is designed to perform a translation operation on the input image, moving pixels according to the provided x and y axis percentage values. It is crucial in creating visual effects and can be used for various image processing tasks such as alignment, composition, or data augmentation."
+    },
+    {
+        "question": "What are the required input parameters for the OffsetImage node?",
+        "answer": "The required input parameters for the OffsetImage node are 'pixels', 'x_percent', and 'y_percent'. 'pixels' represents the image data to be operated on, 'x_percent' specifies the percentage of the image width to move pixels along the x-axis, and 'y_percent' determines the percentage of the image height to move pixels along the y-axis."
+    },
+    {
+        "question": "What does the 'x_percent' parameter in the OffsetImage node specify?",
+        "answer": "The 'x_percent' parameter in the OffsetImage node specifies the percentage of the image width to move pixels along the x-axis, affecting the horizontal position of the image after the operation."
+    },
+    {
+        "question": "What does the 'y_percent' parameter in the OffsetImage node determine?",
+        "answer": "The 'y_percent' parameter in the OffsetImage node determines the percentage of the image height to move pixels along the y-axis, which is crucial for determining the vertical position of the image after the translation."
+    },
+    {
+        "question": "What is the output of the OffsetImage node?",
+        "answer": "The output of the OffsetImage node is 'offset_image', which is the result of applying the translation to the input image. It represents the shifted image that can be used for further processing or display."
+    },
+    {
+        "question": "What infrastructure type does the OffsetImage node use?",
+        "answer": "The OffsetImage node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the OffsetImage node's 'run' function work?",
+        "answer": "The 'run' function of the OffsetImage node takes the input parameters 'pixels', 'x_percent', and 'y_percent'. It calculates the number of pixels to move along the x and y axes based on the percentage values and the image dimensions. The function then rolls the pixels tensor by the calculated x and y values to perform the translation and returns the resulting shifted image."
+    }
+]

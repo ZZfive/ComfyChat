@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltRGBAFromMask node in ComfyUI?",
+        "answer": "The SaltRGBAFromMask node in ComfyUI is used to convert a mask into an RGBA image, adding transparency to the resulting image based on the input mask."
+    },
+    {
+        "question": "What are the required inputs for the SaltRGBAFromMask node?",
+        "answer": "The required inputs for the SaltRGBAFromMask node are: source image (Comfy dtype: IMAGE), input mask (Comfy dtype: MASK), threshold value (Comfy dtype: FLOAT), and invert_mask boolean value (Comfy dtype: BOOLEAN)."
+    },
+    {
+        "question": "How does the threshold value affect the transparency in the resulting RGBA image?",
+        "answer": "The threshold value determines the cutoff point for transparency in the mask. Pixels above this value in the mask will be more opaque in the resulting RGBA image."
+    },
+    {
+        "question": "What does the invert_mask input do in the SaltRGBAFromMask node?",
+        "answer": "The invert_mask input is a boolean value that indicates whether to invert the mask before applying it to the image. Inverting the mask swaps the areas considered transparent and opaque."
+    },
+    {
+        "question": "What is the output type of the SaltRGBAFromMask node?",
+        "answer": "The output type of the SaltRGBAFromMask node is an RGBA image (Comfy dtype: IMAGE, Python dtype: PIL.Image) with transparency applied based on the input mask."
+    },
+    {
+        "question": "How does the SaltRGBAFromMask node handle different image and mask ratios?",
+        "answer": "The SaltRGBAFromMask node calculates the scale factor based on the image and mask ratios, resizes the mask using the scale factor, and then pastes the resized mask onto a new mask with the same size as the image."
+    },
+    {
+        "question": "What infrastructure type does the SaltRGBAFromMask node use?",
+        "answer": "The SaltRGBAFromMask node uses the CPU infrastructure type."
+    }
+]

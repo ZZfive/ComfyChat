@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SplitImage node in ComfyUI?",
+        "answer": "The SplitImage node is designed to split the input image into smaller image grids and generate corresponding masks. It enhances the image processing workflow by enabling the creation of segmented outputs that can be used for various applications such as image editing, feature extraction, and data augmentation."
+    },
+    {
+        "question": "What are the required input types for the SplitImage node?",
+        "answer": "The required input types for the SplitImage node are 'image' (Comfy dtype: IMAGE, Python dtype: PIL.Image) and 'num' (Comfy dtype: INT, Python dtype: int)."
+    },
+    {
+        "question": "What does the 'num' parameter determine in the SplitImage node?",
+        "answer": "The 'num' parameter determines the number of segments the image will be divided into. It is important as it affects the granularity of the segmented images and the level of detail in the masks."
+    },
+    {
+        "question": "What is the purpose of the 'seed' parameter in the SplitImage node?",
+        "answer": "The 'seed' parameter is used to control the randomness of the grid coordinates. It is important for ensuring repeatability in the image segmentation process, especially when the node is used in larger workflows that require consistent results."
+    },
+    {
+        "question": "What are the output types of the SplitImage node?",
+        "answer": "The output types of the SplitImage node are 'grids' (Comfy dtype: _GRID, Python dtype: List[Tuple[int, int, int, int]]), 'grid' (Comfy dtype: _GRID, Python dtype: Tuple[int, int, int, int]), and 'mask' (Comfy dtype: MASK, Python dtype: PIL.Image)."
+    },
+    {
+        "question": "What does the 'grids' output represent in the SplitImage node?",
+        "answer": "The 'grids' output represents the collection of segmented images derived from the original input. It showcases the effectiveness of the image segmentation."
+    },
+    {
+        "question": "What is the 'mask' output in the SplitImage node?",
+        "answer": "The 'mask' output is a binary image corresponding to the selected 'grid'. It is crucial for isolating and highlighting specific regions of the image for further analysis or manipulation."
+    }
+]

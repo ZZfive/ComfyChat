@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltMaskSkeletonization node in ComfyUI?",
+        "answer": "The SaltMaskSkeletonization node in ComfyUI is designed to convert input mask images into their skeletonized versions, effectively simplifying the masks to their simplest form while preserving their overall geometric structure."
+    },
+    {
+        "question": "What are the required inputs for the SaltMaskSkeletonization node?",
+        "answer": "The required input for the SaltMaskSkeletonization node is 'masks', which represents the input masks that need to be processed into skeletonized form."
+    },
+    {
+        "question": "What does the 'iterations' parameter control in the SaltMaskSkeletonization node?",
+        "answer": "The 'iterations' parameter in the SaltMaskSkeletonization node specifies the number of times the erosion operation is applied to each mask, affecting the fineness of the resulting skeleton."
+    },
+    {
+        "question": "How does the 'strength' parameter affect the output of the SaltMaskSkeletonization node?",
+        "answer": "The 'strength' parameter in the SaltMaskSkeletonization node determines the intensity of the skeletonization process, influencing the prominence of the resulting skeleton structure."
+    },
+    {
+        "question": "What is the output of the SaltMaskSkeletonization node?",
+        "answer": "The output of the SaltMaskSkeletonization node is a tensor containing the skeletonized versions of the input masks, with each skeleton representing the minimal structure of the original mask."
+    },
+    {
+        "question": "What is the infra type required for the SaltMaskSkeletonization node?",
+        "answer": "The infra type required for the SaltMaskSkeletonization node is 'GPU'."
+    },
+    {
+        "question": "How does the SaltMaskSkeletonization node perform the skeletonization process?",
+        "answer": "The SaltMaskSkeletonization node performs the skeletonization process by iteratively applying erosion and dilation operations on the input masks using a structuring element, followed by subtracting the eroded image from the original image and combining the results with the skeleton image until the eroded image becomes zero."
+    }
+]

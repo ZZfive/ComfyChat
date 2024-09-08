@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ReplaceImagesInBatch node in ComfyUI?",
+        "answer": "The ReplaceImagesInBatch node in ComfyUI is used to replace a portion of images in an image batch with new images, starting from a specified index position."
+    },
+    {
+        "question": "What are the required inputs for the ReplaceImagesInBatch node?",
+        "answer": "The required inputs for the ReplaceImagesInBatch node are: original_images (the original batch of images), replacement_images (the new set of images to replace part of the original batch), and start_index (the index position in the original batch to start the replacement)."
+    },
+    {
+        "question": "What data type should the 'original_images' and 'replacement_images' inputs be in ComfyUI?",
+        "answer": "In ComfyUI, both 'original_images' and 'replacement_images' inputs should be of the IMAGE data type."
+    },
+    {
+        "question": "What does the 'start_index' parameter specify in the ReplaceImagesInBatch node?",
+        "answer": "The 'start_index' parameter in the ReplaceImagesInBatch node specifies the index position in the original batch where the replacement of images should start."
+    },
+    {
+        "question": "What is the output of the ReplaceImagesInBatch node?",
+        "answer": "The output of the ReplaceImagesInBatch node is the modified batch of images after the replacement operation, represented by the 'image' output of IMAGE data type."
+    },
+    {
+        "question": "What happens if the 'start_index' is greater than or equal to the length of 'original_images' in the ReplaceImagesInBatch node?",
+        "answer": "If the 'start_index' is greater than or equal to the length of 'original_images' in the ReplaceImagesInBatch node, a ValueError will be raised, indicating that the start index is out of range."
+    },
+    {
+        "question": "How does the ReplaceImagesInBatch node update the original batch of images with the replacement images?",
+        "answer": "The ReplaceImagesInBatch node creates a copy of the original_images tensor and then replaces the portion of images starting from 'start_index' to 'end_index' (calculated as start_index + length of replacement_images) with the replacement_images."
+    }
+]

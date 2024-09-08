@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the UnJitterImage node in ComfyUI?",
+        "answer": "The UnJitterImage node in ComfyUI is designed to eliminate or reduce jitter effects in images. It uses a predefined matrix to adjust the position of pixels in the image, with the goal of restoring the original or more stable visual representation."
+    },
+    {
+        "question": "What are the required input types for the UnJitterImage node?",
+        "answer": "The UnJitterImage node requires three inputs: 'images' (the input image to be processed for jitter correction), 'jitter_scale' (a float value defining the scale of jitter correction to be applied), and 'oflow_align' (a boolean flag indicating whether optical flow alignment should be used as part of the jitter correction process)."
+    },
+    {
+        "question": "What does the 'jitter_scale' parameter do in the UnJitterImage node?",
+        "answer": "The 'jitter_scale' parameter in the UnJitterImage node adjusts the intensity of the jitter correction effect, allowing for fine-tuning of the correction process."
+    },
+    {
+        "question": "How does the 'oflow_align' parameter affect the jitter correction process in the UnJitterImage node?",
+        "answer": "The 'oflow_align' parameter, when set to true, incorporates optical flow alignment into the jitter correction process, enhancing the correction effect by aligning frames based on detected motion."
+    },
+    {
+        "question": "What is the output type of the UnJitterImage node?",
+        "answer": "The output type of the UnJitterImage node is 'image', which represents the image after jitter correction has been applied, expected to have reduced or eliminated jitter effects."
+    },
+    {
+        "question": "What infra type does the UnJitterImage node use?",
+        "answer": "The UnJitterImage node uses the 'GPU' infra type."
+    },
+    {
+        "question": "How does the UnJitterImage node apply jitter correction when 'oflow_align' is set to false?",
+        "answer": "When 'oflow_align' is set to false, the UnJitterImage node applies jitter correction by adjusting the position of pixels using a predefined matrix scaled by the 'jitter_scale' parameter."
+    }
+]

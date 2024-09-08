@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SampleColorHSV node in ComfyUI?",
+        "answer": "The SampleColorHSV node in ComfyUI is designed to sample pixels from an RGB image and convert these samples into the HSV color space. It facilitates the analysis and manipulation of color information within images by providing a representative subset of image color distribution in HSV format."
+    },
+    {
+        "question": "What are the required inputs for the SampleColorHSV node?",
+        "answer": "The required inputs for the SampleColorHSV node are: 1) rgb_image - the RGB image from which pixels will be sampled, 2) sample_size - the number of pixels to be sampled from the RGB image, and 3) sampling_seed - the seed value for the random number generator used to sample pixels."
+    },
+    {
+        "question": "What does the output of the SampleColorHSV node represent?",
+        "answer": "The output of the SampleColorHSV node, hsv_samples, is a set of sampled pixels converted from RGB to HSV color space, providing a basis for further color analysis or manipulation."
+    },
+    {
+        "question": "What is the infra type for the SampleColorHSV node?",
+        "answer": "The infra type for the SampleColorHSV node is GPU."
+    },
+    {
+        "question": "How does the SampleColorHSV node ensure the repeatability of sampled subsets across different runs?",
+        "answer": "The SampleColorHSV node ensures the repeatability of sampled subsets across different runs by using a sampling_seed input, which is the seed value for the random number generator used to sample pixels."
+    },
+    {
+        "question": "What is the default value for the sample_size input in the SampleColorHSV node?",
+        "answer": "The default value for the sample_size input in the SampleColorHSV node is 1000."
+    },
+    {
+        "question": "How does the SampleColorHSV node convert sampled pixels from RGB to HSV color space?",
+        "answer": "The SampleColorHSV node converts sampled pixels from RGB to HSV color space using the cv.cvtColor function from OpenCV."
+    }
+]

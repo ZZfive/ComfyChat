@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the SAMDetectorSegmented node in ComfyUI?",
+        "answer": "The SAMDetectorSegmented node is designed to detect and segment objects in an image using the SAM (Segment Anything Model) model. It processes an input image and segmentation prompts to generate a combined mask and a batch of individual masks, which are crucial for further analysis and manipulation within the ImpactPack framework."
+    },
+    {
+        "question": "What are the required input types for the SAMDetectorSegmented node?",
+        "answer": "The required input types for the SAMDetectorSegmented node are sam_model (SAM_MODEL), segs (SEGS), and image (IMAGE)."
+    },
+    {
+        "question": "What does the sam_model input parameter define?",
+        "answer": "The sam_model input parameter defines the machine learning model that will be used for the segmentation task. It directly affects the node's ability to accurately detect and segment objects in the image."
+    },
+    {
+        "question": "What is the purpose of the segs input parameter?",
+        "answer": "The segs input parameter contains segmentation prompts that guide the SAM model to detect specific areas in the image. It plays an important role in improving the node's performance by focusing the detection process on regions of interest."
+    },
+    {
+        "question": "What are the output types of the SAMDetectorSegmented node?",
+        "answer": "The output types of the SAMDetectorSegmented node are combined_mask (MASK) and batch_masks (MASK)."
+    },
+    {
+        "question": "What does the combined_mask output parameter represent?",
+        "answer": "The combined_mask output parameter represents the aggregated result of the segmentation process. It is a single mask containing all detected objects, providing an integrated view of the segmentation results."
+    },
+    {
+        "question": "What does the batch_masks output parameter provide?",
+        "answer": "The batch_masks output parameter provides an array of individual masks corresponding to each detected object. This allows detailed analysis and manipulation of each object in the context of segmentation."
+    },
+    {
+        "question": "What is the infra type for the SAMDetectorSegmented node?",
+        "answer": "The infra type for the SAMDetectorSegmented node is GPU."
+    }
+]

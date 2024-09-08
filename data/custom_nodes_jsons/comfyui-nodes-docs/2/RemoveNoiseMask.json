@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RemoveNoiseMask node in ComfyUI?",
+        "answer": "The RemoveNoiseMask node in ComfyUI is designed to process and optimize data by removing unwanted noise from the input samples, ensuring that subsequent analysis or processing steps are based on cleaner and more reliable information."
+    },
+    {
+        "question": "What is the key input parameter for the RemoveNoiseMask node?",
+        "answer": "The key input parameter for the RemoveNoiseMask node is 'samples', which contains the data to be processed. The node's functionality focuses on identifying and removing noise from these samples to improve the quality of the data."
+    },
+    {
+        "question": "What is the data type of the 'samples' input parameter in the RemoveNoiseMask node?",
+        "answer": "In ComfyUI, the data type of the 'samples' input parameter is LATENT, while in Python, it is represented as Dict[str, torch.Tensor]."
+    },
+    {
+        "question": "What is the output of the RemoveNoiseMask node?",
+        "answer": "The output of the RemoveNoiseMask node is 'res', which contains the denoised samples. It represents the refined data that can be used for further processing or analysis."
+    },
+    {
+        "question": "What is the data type of the 'res' output in the RemoveNoiseMask node?",
+        "answer": "In ComfyUI, the data type of the 'res' output is LATENT, while in Python, it is represented as Dict[str, torch.Tensor]."
+    },
+    {
+        "question": "What is the infra type recommended for using the RemoveNoiseMask node?",
+        "answer": "The recommended infra type for using the RemoveNoiseMask node is CPU."
+    },
+    {
+        "question": "How does the RemoveNoiseMask node remove noise from the input samples?",
+        "answer": "The RemoveNoiseMask node removes noise from the input samples by creating a new dictionary 'res' that includes all key-value pairs from the 'samples' dictionary, except for the 'noise_mask' key. This effectively removes the noise mask from the samples."
+    }
+]

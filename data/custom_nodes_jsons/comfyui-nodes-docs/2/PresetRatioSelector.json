@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PresetRatioSelector node in ComfyUI?",
+        "answer": "The PresetRatioSelector node in ComfyUI is designed to calculate and select image dimensions based on predefined presets. It allows for customization of latent dimensions, content-to-edge ratios, target dimensions, and cropping parameters."
+    },
+    {
+        "question": "What does the select_preset parameter do in the PresetRatioSelector node?",
+        "answer": "The select_preset parameter is crucial for determining which preset ratio to apply. It serves as the starting point for the node's calculation process and is essential for achieving the desired image dimensions."
+    },
+    {
+        "question": "How does the swap_axis parameter affect the image dimensions in the PresetRatioSelector node?",
+        "answer": "The swap_axis parameter allows users to swap the width and height dimensions of the selected preset. This can be important in scenarios where adjusting the orientation of the image is necessary."
+    },
+    {
+        "question": "What is the function of the use_preset_seed parameter in the PresetRatioSelector node?",
+        "answer": "The use_preset_seed parameter determines whether a seed value should be used to select the preset. This introduces variability in the selection process, allowing for a more diverse set of image ratios to be chosen."
+    },
+    {
+        "question": "What role does the seed parameter play in the PresetRatioSelector node?",
+        "answer": "The seed parameter works in conjunction with the use_preset_seed flag to influence the selection of preset ratios. It adds an additional layer of control over randomness in the selection process."
+    },
+    {
+        "question": "What are the output types of the PresetRatioSelector node?",
+        "answer": "The output types of the PresetRatioSelector node include latent_w, latent_h, cte_w, cte_h, target_w, target_h, crop_w, and crop_h. These represent the calculated dimensions for the latent space, content-to-edge ratios, target dimensions, and cropping parameters."
+    },
+    {
+        "question": "How does the PresetRatioSelector node determine the values for latent_w and latent_h?",
+        "answer": "The PresetRatioSelector node determines the values for latent_w and latent_h based on the selected preset from the ratio_config. If the swap_axis parameter is set to 'true', it swaps the values of latent_w and latent_h."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SaveImageExtended节点的主要功能是什么?",
+        "answer": "SaveImageExtended节点扩展了ComfyUI中图像保存功能,允许更高级的自定义和元数据处理。它支持使用自定义文件名和路径保存图像、在图像文件中嵌入元数据,以及可选择保存与图像相关的作业数据。该节点适用于需要对图像输出过程进行详细控制的高级场景,包括图像元数据的管理和已保存图像的组织。"
+    },
+    {
+        "question": "SaveImageExtended节点的必需输入参数有哪些?",
+        "answer": "SaveImageExtended节点的必需输入参数包括:images(要保存的图像集合), filename_prefix(添加到文件名的前缀), filename_keys(从生成参数中包含在文件名中的键), foldername_prefix(保存图像的文件夹名称的前缀), foldername_keys(要包含在文件夹名称中的生成参数键), delimiter(用于分隔文件名和文件夹名称中的元素的字符), save_job_data(控制是否将作业相关数据与图像一起保存), job_data_per_image(确定是否应为每个图像单独保存作业相关数据), job_custom_text(要包含在作业相关数据中的自定义文本), save_metadata(控制是否在保存的图像中嵌入元数据), counter_digits(确定图像计数器的位数), counter_position(指定计数器在文件名中的位置), one_counter_per_folder(指定是为文件夹中的所有图像使用单个计数器,还是每个文件夹有自己的计数器), image_preview(控制是否显示已保存图像的预览)。"
+    },
+    {
+        "question": "SaveImageExtended节点的可选输入参数有哪些?",
+        "answer": "SaveImageExtended节点的可选输入参数包括:positive_text_opt(与正面提示相关的可选文本)和 negative_text_opt(与负面提示相关的可选文本)。"
+    },
+    {
+        "question": "SaveImageExtended节点的输出类型是什么?",
+        "answer": "SaveImageExtended节点的输出类型是ui,提供用户界面元素以显示结果,包括已保存的图像、其文件名和子文件夹路径,增强用户与节点输出的交互。"
+    },
+    {
+        "question": "生成自定义文件名时使用什么方法?",
+        "answer": "生成自定义文件名使用generate_custom_name方法,该方法需要keys_to_extract, prefix, delimiter_char, resolution和prompt作为输入参数。"
+    },
+    {
+        "question": "如何获取最新的计数器值?",
+        "answer": "通过调用get_latest_counter方法并提供one_counter_per_folder, folder_path, filename_prefix, counter_digits和counter_position作为输入参数来获取最新的计数器值。"
+    },
+    {
+        "question": "如何将作业数据保存为JSON格式?",
+        "answer": "通过调用save_job_to_json方法并提供save_job_data, prompt, filename_prefix, positive_text_opt, negative_text_opt, job_custom_text, resolution, output_path和filename作为输入参数来将作业数据保存为JSON格式。"
+    }
+]

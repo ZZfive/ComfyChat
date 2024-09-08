@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RandomImageFromDir node in ComfyUI?",
+        "answer": "The RandomImageFromDir node in ComfyUI is designed to randomly select an image from a specified directory. This functionality is particularly useful in applications that require variability and unpredictability in image selection, such as data augmentation processes or simulating diverse scenarios in a given context."
+    },
+    {
+        "question": "What is the required input type for the RandomImageFromDir node?",
+        "answer": "The required input type for the RandomImageFromDir node is 'folder_path', which specifies the directory path from which the image will be randomly selected. This parameter is crucial for determining the pool of images available for random selection."
+    },
+    {
+        "question": "What are the output types of the RandomImageFromDir node?",
+        "answer": "The output types of the RandomImageFromDir node are 'image' and 'mask'. The 'image' output returns the randomly selected image from the specified directory, while the 'mask' output provides the associated mask (if applicable) to facilitate further image processing tasks."
+    },
+    {
+        "question": "What is the infra type for the RandomImageFromDir node?",
+        "answer": "The infra type for the RandomImageFromDir node is 'CPU'."
+    },
+    {
+        "question": "How does the RandomImageFromDir node handle images with an alpha channel?",
+        "answer": "If an image contains an alpha channel ('A' in the image bands), the RandomImageFromDir node extracts the alpha channel, converts it to a float tensor, and returns it as the 'mask' output. The alpha channel values are inverted (1 - alpha) to represent the mask."
+    },
+    {
+        "question": "What happens if the selected image is a multi-frame image (e.g., GIF) in the RandomImageFromDir node?",
+        "answer": "If the selected image is a multi-frame image, the RandomImageFromDir node processes each frame separately, converting them to RGB format and stacking the resulting image tensors along a new dimension. The output will be a single tensor containing all the frames."
+    },
+    {
+        "question": "What does the 'IS_CHANGED' class method in the RandomImageFromDir node indicate?",
+        "answer": "The 'IS_CHANGED' class method in the RandomImageFromDir node always returns float('NaN'), indicating that the node does not track changes in the input image."
+    }
+]

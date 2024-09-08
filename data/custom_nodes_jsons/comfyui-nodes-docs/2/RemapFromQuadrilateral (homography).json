@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RemapFromQuadrilateral node in ComfyUI?",
+        "answer": "The RemapFromQuadrilateral node in ComfyUI is designed to remap an image from a specified quadrilateral shape to a rectangular shape using a homography transformation."
+    },
+    {
+        "question": "What are the required input types for the RemapFromQuadrilateral node?",
+        "answer": "The required input types for the RemapFromQuadrilateral node are: src_mask_with_i_points (a source image mask with four points defining the quadrilateral to be transformed), width (the width of the target rectangle), and height (the height of the target rectangle)."
+    },
+    {
+        "question": "What does the src_mask_with_i_points input specify in the RemapFromQuadrilateral node?",
+        "answer": "The src_mask_with_i_points input in the RemapFromQuadrilateral node specifies the source image mask with four points that define the quadrilateral to be transformed. This input is crucial for determining the corner points of the quadrilateral used in the homography calculation."
+    },
+    {
+        "question": "How do the width and height inputs affect the output of the RemapFromQuadrilateral node?",
+        "answer": "The width and height inputs in the RemapFromQuadrilateral node define the dimensions of the target rectangle. These parameters affect the aspect ratio and size of the transformed output image."
+    },
+    {
+        "question": "What is the output type of the RemapFromQuadrilateral node?",
+        "answer": "The output type of the RemapFromQuadrilateral node is remap, which represents the transformed image data based on the calculated homography matrix, remapping the specified quadrilateral to a rectangular shape."
+    },
+    {
+        "question": "What infrastructure type does the RemapFromQuadrilateral node use?",
+        "answer": "The RemapFromQuadrilateral node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How is the homography matrix calculated in the RemapFromQuadrilateral node?",
+        "answer": "In the RemapFromQuadrilateral node, the homography matrix is calculated based on the source image's quadrilateral points and the dimensions of the target rectangle, allowing for perspective correction or transformation of the image."
+    }
+]

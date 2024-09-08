@@ -1,0 +1,26 @@
+[
+    {
+        "question": "What is the purpose of the RetrieveBackendDataNumberKey node in ComfyUI?",
+        "answer": "The RetrieveBackendDataNumberKey node is designed to retrieve and return relevant data from the backend cache using a numeric key. It abstracts the complexity of the data retrieval process and allows for efficient access to cached data through keys, supporting the processing of data as lists based on the structure of the cached content."
+    },
+    {
+        "question": "What is the significance of the key parameter in the RetrieveBackendDataNumberKey node?",
+        "answer": "The key parameter is a numeric identifier used to retrieve specific data from the backend cache. It plays a crucial role in efficiently accessing the required data."
+    },
+    {
+        "question": "What data type is the key parameter in the RetrieveBackendDataNumberKey node?",
+        "answer": "In ComfyUI, the key parameter is of the INT data type, while in Python, it is of the int data type."
+    },
+    {
+        "question": "What does the data output represent in the RetrieveBackendDataNumberKey node?",
+        "answer": "The data output represents the data retrieved from the backend cache using a numeric key. Depending on the structure of the cached content, it can be returned as a single item or a list."
+    },
+    {
+        "question": "What infra type does the RetrieveBackendDataNumberKey node use?",
+        "answer": "The RetrieveBackendDataNumberKey node uses the CPU infra type."
+    },
+    {
+        "question": "What is the source code for the RetrieveBackendDataNumberKey class in Python?",
+        "answer": "The source code for the RetrieveBackendDataNumberKey class in Python is as follows:\n```python\nclass RetrieveBackendDataNumberKey(RetrieveBackendData):\n    @classmethod\n    def INPUT_TYPES(s):\n        return {\n            \"required\": {\n                \"key\": (\"INT\", {\"default\": 0, \"min\": 0, \"max\": 0xffffffffffffffff}),\n            }\n        }\n```\nThis code defines the input types for the class, specifying the required key parameter of the INT data type."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ResizeMask node in ComfyUI?",
+        "answer": "The ResizeMask node is designed to resize a given single mask or a batch of masks to specified dimensions, with an option to maintain the original aspect ratio."
+    },
+    {
+        "question": "What are the required inputs for the ResizeMask node?",
+        "answer": "The required inputs for the ResizeMask node are: mask (the input mask or batch of masks to be resized), width (the target width for the resizing operation), height (the target height for the resizing operation), and keep_proportions (a boolean flag indicating whether to maintain the mask's original proportions during resizing)."
+    },
+    {
+        "question": "What does the 'keep_proportions' parameter do in the ResizeMask node?",
+        "answer": "The 'keep_proportions' parameter is a boolean flag that indicates whether the original aspect ratio of the mask should be maintained during the resizing operation."
+    },
+    {
+        "question": "What are the output types of the ResizeMask node?",
+        "answer": "The output types of the ResizeMask node are: mask (the resized mask or batch of masks), width (the actual width of the resized mask, which may differ from the input target width if proportions are kept), and height (the actual height of the resized mask, which may differ from the input target height if proportions are kept)."
+    },
+    {
+        "question": "How does the ResizeMask node maintain the aspect ratio of the mask when 'keep_proportions' is set to True?",
+        "answer": "When 'keep_proportions' is set to True, the ResizeMask node calculates the ratio of the target width to the original width and the target height to the original height, and uses the smaller of the two ratios to determine the final width and height that maintain the original aspect ratio."
+    },
+    {
+        "question": "What interpolation mode does the ResizeMask node use for resizing masks?",
+        "answer": "The ResizeMask node uses the 'nearest' interpolation mode for resizing masks."
+    },
+    {
+        "question": "In which category does the ResizeMask node belong in ComfyUI?",
+        "answer": "The ResizeMask node belongs to the KJNodes/masking category in ComfyUI."
+    }
+]

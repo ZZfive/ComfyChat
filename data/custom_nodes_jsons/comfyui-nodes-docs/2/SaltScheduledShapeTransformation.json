@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SaltScheduledShapeTransformation 节点的作用是什么？",
+        "answer": "SaltScheduledShapeTransformation 节点旨在对图像执行预定的形状变换，能够根据预先定义的各种参数（如大小、位置和旋转）的调度，在一系列帧上动态调整图像形状，用于创建复杂的动画效果或进行逐帧的图像处理。"
+    },
+    {
+        "question": "SaltScheduledShapeTransformation 节点支持哪些必需的输入类型？",
+        "answer": "SaltScheduledShapeTransformation 节点支持的必需输入类型包括：max_frames（形状变换序列的最大帧数）、image_width（输出图像的宽度）、image_height（输出图像的高度）、initial_width（变换开始前形状的初始宽度）、initial_height（变换开始前形状的初始高度）、initial_x_coord（形状初始位置的 x 坐标）、initial_y_coord（形状初始位置的 y 坐标）、initial_rotation（形状的初始旋转角度）、shape_mode（定义要变换的形状的模式或类型）。"
+    },
+    {
+        "question": "SaltScheduledShapeTransformation 节点支持哪些可选的输入类型？",
+        "answer": "SaltScheduledShapeTransformation 节点支持的可选输入类型包括：shape（要变换的特定形状）、width_schedule（宽度变换的调度列表）、height_schedule（高度变换的调度列表）、x_schedule（x 坐标变换的调度列表）、y_schedule（y 坐标变换的调度列表）、rotation_schedule（旋转角度变换的调度列表）。"
+    },
+    {
+        "question": "SaltScheduledShapeTransformation 节点输出的结果类型是什么？",
+        "answer": "SaltScheduledShapeTransformation 节点输出的结果类型是 images，表示预定形状变换的结果图像，即一系列经过变换处理的图像帧。"
+    },
+    {
+        "question": "SaltScheduledShapeTransformation 节点的 shape_mode 输入支持哪些形状类型？",
+        "answer": "SaltScheduledShapeTransformation 节点的 shape_mode 输入支持的形状类型包括：circle（圆形）、diamond（菱形）、triangle（三角形）、square（正方形）、hexagon（六边形）和 octagon（八边形）。"
+    },
+    {
+        "question": "SaltScheduledShapeTransformation 节点如何根据调度列表控制形状的变化？",
+        "answer": "SaltScheduledShapeTransformation 节点使用调度列表，如 width_schedule、height_schedule、x_schedule、y_schedule 和 rotation_schedule 来控制形状的变化。对于每一帧，它根据调度列表中对应的因子来调整形状的宽度、高度、位置和旋转角度，从而实现形状的动态变换。"
+    },
+    {
+        "question": "SaltScheduledShapeTransformation 节点在没有提供 shape 输入时如何绘制形状？",
+        "answer": "当 SaltScheduledShapeTransformation 节点没有提供 shape 输入时，它根据 shape_mode 输入的形状类型，使用 ImageDraw 模块在空白图像上绘制相应的基本形状，如圆形、正方形、菱形等。"
+    }
+]

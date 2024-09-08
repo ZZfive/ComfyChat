@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltCyclicalSchedule node in ComfyUI?",
+        "answer": "The SaltCyclicalSchedule node is designed to generate cyclical patterns within a given schedule list in ComfyUI. It allows for repeating specific segments of the schedule, with the option to include a ping-pong effect for mirrored repetitions, enhancing the dynamic range and variability of the schedule."
+    },
+    {
+        "question": "What are the required inputs for the SaltCyclicalSchedule node?",
+        "answer": "The required inputs for the SaltCyclicalSchedule node are: schedule_list, start_index, end_index, and repetitions. The schedule_list is the list of schedule items to process for cyclical repetition; start_index and end_index define the segment of the list to be repeated; repetitions determines how many times the specified segment should be repeated."
+    },
+    {
+        "question": "What does the 'ping_pong' optional input do in the SaltCyclicalSchedule node?",
+        "answer": "The 'ping_pong' optional input, when enabled, adds a mirrored repetition of the segment to the loop, creating a back-and-forth pattern that enhances the complexity of the schedule."
+    },
+    {
+        "question": "What is the output of the SaltCyclicalSchedule node?",
+        "answer": "The output of the SaltCyclicalSchedule node is a list called schedule_list, which contains the result after applying the cyclical pattern, including the repeated segments and, if enabled, the mirrored repetitions."
+    },
+    {
+        "question": "What data type is used for the 'repetitions' input in the SaltCyclicalSchedule node?",
+        "answer": "The data type used for the 'repetitions' input in the SaltCyclicalSchedule node is INT, with a minimum value of 1."
+    },
+    {
+        "question": "What is the infra type for the SaltCyclicalSchedule node?",
+        "answer": "The infra type for the SaltCyclicalSchedule node is CPU."
+    },
+    {
+        "question": "What happens if the end_index is smaller than the start_index in the SaltCyclicalSchedule node?",
+        "answer": "If the end_index is smaller than the start_index in the SaltCyclicalSchedule node, a ValueError is raised with the message 'Schedule end_index must be greater than or equal to start_index.'"
+    }
+]

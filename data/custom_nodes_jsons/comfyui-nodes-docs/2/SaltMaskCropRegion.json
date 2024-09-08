@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltMaskCropRegion node in ComfyUI?",
+        "answer": "The SaltMaskCropRegion node is designed to crop regions within a mask based on specific criteria (such as dominant or minority areas) and apply padding around these regions. It aims to optimize mask data by isolating and adjusting the size of specific areas, facilitating targeted analysis or manipulation of mask-based data."
+    },
+    {
+        "question": "What are the required input parameters for the SaltMaskCropRegion node?",
+        "answer": "The required input parameters for the SaltMaskCropRegion node are 'masks', 'padding', and 'region_type'. 'masks' specifies the input masks to be cropped, 'padding' defines the amount of padding to add around the cropped areas, and 'region_type' determines the cropping criteria, either 'dominant' or 'minority' regions within the masks."
+    },
+    {
+        "question": "What does the 'region_type' parameter in the SaltMaskCropRegion node specify?",
+        "answer": "The 'region_type' parameter in the SaltMaskCropRegion node decides the cropping criteria, selecting either 'dominant' or 'minority' regions within the masks. This selection guides the cropping process to target specific areas of interest."
+    },
+    {
+        "question": "What are the output types of the SaltMaskCropRegion node?",
+        "answer": "The output types of the SaltMaskCropRegion node are 'cropped_masks', 'crop_data_batch', 'top_int', 'left_int', 'right_int', 'bottom_int', 'width_int', and 'height_int'. These outputs provide the cropped masks after applying the specified cropping and padding, along with detailed data about the performed cropping operations, including dimensions and positions of the cropped regions."
+    },
+    {
+        "question": "What does the 'cropped_masks' output of the SaltMaskCropRegion node represent?",
+        "answer": "The 'cropped_masks' output of the SaltMaskCropRegion node represents the masks after applying the specified cropping and padding. These cropped masks can be used for further processing or analysis."
+    },
+    {
+        "question": "What is the purpose of the 'crop_data_batch' output in the SaltMaskCropRegion node?",
+        "answer": "The 'crop_data_batch' output in the SaltMaskCropRegion node provides a detailed batch of data describing the performed cropping operations, including the dimensions and positions of the cropped regions."
+    },
+    {
+        "question": "How does the 'padding' parameter influence the output of the SaltMaskCropRegion node?",
+        "answer": "The 'padding' parameter in the SaltMaskCropRegion node specifies the amount of padding to be added around the cropped areas. It affects the size of the output cropped masks by extending the cropped regions, thereby making the use of masks more flexible."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is ComfyUI?",
+        "answer": "ComfyUI is a GUI that uses a stable diffusion model to generate images and videos."
+    },
+    {
+        "question": "What are custom nodes or plugins in ComfyUI?",
+        "answer": "Custom nodes or plugins are extensions that enhance the functionality of ComfyUI."
+    },
+    {
+        "question": "What is cg-noise in ComfyUI?",
+        "answer": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+    },
+    {
+        "question": "How does cg-noise in ComfyUI generate variations in images?",
+        "answer": "cg-noise generates variations in images by using a weight 'x' and two seeds. It generates the noise based on 'random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)'."
+    },
+    {
+        "question": "What are the configuration options for cg-noise in ComfyUI?",
+        "answer": "The configuration options for cg-noise include 'cg_noise_weight', which is the weight 'x' determining the influence of the variation on the initial noise, and 'cg_variation_seed', which is the seed used for the variation."
+    },
+    {
+        "question": "What is the default value for 'cg_noise_weight' in cg-noise?",
+        "answer": "The default value for 'cg_noise_weight' in cg-noise is 0.15."
+    },
+    {
+        "question": "Is 'cg_variation_seed' a required parameter in cg-noise?",
+        "answer": "No, 'cg_variation_seed' is an optional parameter in cg-noise. If not provided, it defaults to the value of 'seed'."
+    }
+]

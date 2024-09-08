@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ScaleBatchPromptSchedule node in ComfyUI?",
+        "answer": "The ScaleBatchPromptSchedule node in ComfyUI is designed to adapt a batch schedule table from one frame count to another, effectively scaling the schedule to fit the new frame duration. This is particularly useful in scenarios where the animation or video frame rate is being modified, ensuring that the timing of prompts or actions remains synchronized with the new frame length."
+    },
+    {
+        "question": "What are the required inputs for the ScaleBatchPromptSchedule node?",
+        "answer": "The ScaleBatchPromptSchedule node requires three inputs: 'input_str', which is a string representation of the original batch schedule table specifying keyframes and their associated values; 'old_frame_count', which is the original number of frames for the batch schedule table; and 'new_frame_count', which is the target number of frames that the original schedule will be scaled to."
+    },
+    {
+        "question": "What does the 'input_str' parameter represent in the ScaleBatchPromptSchedule node?",
+        "answer": "The 'input_str' parameter in the ScaleBatchPromptSchedule node represents the string format of the original batch schedule table. It specifies keyframes and their associated values, serving as the basis for scaling to the new frame count."
+    },
+    {
+        "question": "What is the role of the 'old_frame_count' parameter in the ScaleBatchPromptSchedule node?",
+        "answer": "The 'old_frame_count' parameter in the ScaleBatchPromptSchedule node represents the original number of frames for the batch schedule table. This value is crucial for calculating the scaling factor required to adjust the schedule table to the new frame count."
+    },
+    {
+        "question": "What is the significance of the 'new_frame_count' parameter in the ScaleBatchPromptSchedule node?",
+        "answer": "The 'new_frame_count' parameter in the ScaleBatchPromptSchedule node represents the target number of frames that the original schedule table will be scaled to. This determines the new timing and distribution of keyframes in the schedule."
+    },
+    {
+        "question": "What output does the ScaleBatchPromptSchedule node produce?",
+        "answer": "The ScaleBatchPromptSchedule node outputs a scaled batch schedule table in string format, reflecting the adjusted keyframes and values for the new frame count."
+    },
+    {
+        "question": "How does the ScaleBatchPromptSchedule node calculate the scaling factor?",
+        "answer": "The ScaleBatchPromptSchedule node calculates the scaling factor by dividing the new frame count minus one by the old frame count minus one. This factor is then used to adjust the original schedule table to fit the new frame duration."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Prepare Image Tiled IPA (JPS)节点的目的是什么？",
+        "answer": "Prepare Image Tiled IPA (JPS)节点旨在为分块图像处理配置并应用图像准备设置，根据输入规格调整模型类型、权重类型、噪声水平和图像分块选项等参数，以实现图像的定制化预处理，从而增强图像合成或处理任务的效果。"
+    },
+    {
+        "question": "Prepare Image Tiled IPA (JPS)节点的必需输入类型有哪些？",
+        "answer": "Prepare Image Tiled IPA (JPS)节点的必需输入类型包括：图像(image)、目标宽度(target_w)、目标高度(target_h)、缩放级别(zoom)、水平偏移量(offset_w)、垂直偏移量(offset_h)、插值方法(interpolation)、锐化程度(sharpening)、分块最短边的基础长度(tile_short)和准备类型(prepare_type)。"
+    },
+    {
+        "question": "Prepare Image Tiled IPA (JPS)节点的输出类型是什么？",
+        "answer": "Prepare Image Tiled IPA (JPS)节点的输出类型是经过处理的图像(IMAGE)，已应用分块、插值和锐化设置，可供进一步使用或分析。"
+    },
+    {
+        "question": "如果prepare_type设置为9，Prepare Image Tiled IPA (JPS)节点会如何处理图像？",
+        "answer": "如果prepare_type设置为9，Prepare Image Tiled IPA (JPS)节点会直接返回原图像，无需进行任何处理。"
+    },
+    {
+        "question": "Prepare Image Tiled IPA (JPS)节点如何根据不同的prepare_type值调整目标宽度和高度？",
+        "answer": "当prepare_type为4时，目标宽度和高度设置为输入图像的宽度和高度；当为5时，同样设置为输入图像的宽高，但prepare_type改为2；当为6时，也设置为输入图像的宽高，但prepare_type改为3；当为7时，根据目标宽高比调整目标宽度或高度；当为8时，目标宽高设为tilelength。"
+    },
+    {
+        "question": "在Prepare Image Tiled IPA (JPS)节点中，如何根据缩放因子调整图像大小？",
+        "answer": "在Prepare Image Tiled IPA (JPS)节点中，通过计算所需的宽度和高度的缩放比例，确定最小缩放因子。如果缩放因子小于或等于最小缩放因子，则使用最小缩放因子进行缩放。此外，节点会根据缩放因子调整图像的宽度和高度。"
+    },
+    {
+        "question": "Prepare Image Tiled IPA (JPS)节点如何应用锐化处理？",
+        "answer": "在Prepare Image Tiled IPA (JPS)节点中，如果锐化程度大于0，会使用对比度自适应锐化方法对图像进行锐化处理。"
+    }
+]

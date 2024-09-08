@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the main purpose of the SaltImagePasteCrop node in ComfyUI?",
+        "answer": "The main purpose of the SaltImagePasteCrop node is to perform image fusion and sharpening operations, particularly focusing on pasting cropped images onto target images while allowing adjustments to blending and sharpening parameters."
+    },
+    {
+        "question": "What are the required input types for the SaltImagePasteCrop node?",
+        "answer": "The required input types for the SaltImagePasteCrop node are: images (the base layer for pasting), crop_images (the cropped images to be pasted), crop_data_batch (data specifying the position and size of each cropped area), crop_blending (determines the blending strength between the original and cropped images), and crop_sharpening (specifies the sharpening level to be applied to the cropped images)."
+    },
+    {
+        "question": "What does the crop_blending parameter control in the SaltImagePasteCrop node?",
+        "answer": "The crop_blending parameter in the SaltImagePasteCrop node controls the blending strength between the original and cropped images, affecting the smoothness of the transition."
+    },
+    {
+        "question": "How does the SaltImagePasteCrop node handle cases where no valid crop data is found for an image?",
+        "answer": "When no valid crop data is found for an image, the SaltImagePasteCrop node prints a message indicating 'No valid crop data found for Image {i}', and the original image is returned as is, with an empty mask."
+    },
+    {
+        "question": "What are the output types of the SaltImagePasteCrop node?",
+        "answer": "The output types of the SaltImagePasteCrop node are images (the result of pasting the cropped images onto the original images with blending and sharpening adjustments) and masks (indicating the areas affected by the pasting operation)."
+    },
+    {
+        "question": "How does the paste_image function in the SaltImagePasteCrop node handle sharpening of the cropped image?",
+        "answer": "The paste_image function in the SaltImagePasteCrop node sharpens the cropped image by applying the ImageFilter.SHARPEN filter to the cropped image for the number of times specified by the sharpen_amount parameter."
+    },
+    {
+        "question": "What is the purpose of the lingrad function in the SaltImagePasteCrop node?",
+        "answer": "The lingrad function in the SaltImagePasteCrop node is used to create linear gradients for blending the edges of the cropped image when pasting it onto the original image, allowing for smooth transitions."
+    }
+]

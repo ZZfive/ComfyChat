@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the TwoSamplersForMask node in ComfyUI?",
+        "answer": "The TwoSamplersForMask node in ComfyUI is designed to coordinate the sampling process by integrating two different sampling mechanisms, allowing for the generation of latent representations that conform to specific mask standards."
+    },
+    {
+        "question": "What are the required input types for the TwoSamplersForMask node?",
+        "answer": "The required input types for the TwoSamplersForMask node are: latent_image (Comfy dtype: LATENT, Python dtype: dict), base_sampler (Comfy dtype: KSAMPLER, Python dtype: KSamplerWrapper or KSamplerAdvancedWrapper), mask_sampler (Comfy dtype: KSAMPLER, Python dtype: KSamplerWrapper or KSamplerAdvancedWrapper), and mask (Comfy dtype: MASK, Python dtype: torch.Tensor)."
+    },
+    {
+        "question": "What role does the base_sampler play in the TwoSamplersForMask node?",
+        "answer": "In the TwoSamplersForMask node, the base_sampler is responsible for initially generating the latent image, laying the foundation for further refinement and operation by the mask_sampler."
+    },
+    {
+        "question": "What is the function of the mask parameter in the TwoSamplersForMask node?",
+        "answer": "The mask parameter in the TwoSamplersForMask node is a binary representation that determines which areas of the latent image should be retained or discarded, guiding the mask_sampler to focus on certain features while ignoring others."
+    },
+    {
+        "question": "What is the output type of the TwoSamplersForMask node?",
+        "answer": "The output type of the TwoSamplersForMask node is a latent_image (Comfy dtype: LATENT, Python dtype: dict), which is a refined representation that encapsulates the desired features and suppresses irrelevant features according to the mask."
+    },
+    {
+        "question": "What is the infra type required for the TwoSamplersForMask node?",
+        "answer": "The infra type required for the TwoSamplersForMask node is GPU."
+    },
+    {
+        "question": "What does the source code of the TwoSamplersForMask node's doit function do?",
+        "answer": "The source code of the TwoSamplersForMask node's doit function takes in the required inputs, generates an inverse mask, updates the latent_image with the noise_mask, samples a new latent image using the base_sampler, updates the new latent image with the noise_mask, samples the new latent image using the mask_sampler, removes the noise_mask from the new latent image, and returns the refined latent_image."
+    }
+]

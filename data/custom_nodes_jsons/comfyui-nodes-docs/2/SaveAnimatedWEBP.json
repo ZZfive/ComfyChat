@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaveAnimatedWEBP node in ComfyUI?",
+        "answer": "The SaveAnimatedWEBP node in ComfyUI is designed to efficiently save a series of images as an animated WEBP file. It utilizes the PIL library to convert images into a format suitable for animation, allowing control over frame rate, lossless compression, and quality settings."
+    },
+    {
+        "question": "What are the required input parameters for the SaveAnimatedWEBP node?",
+        "answer": "The required input parameters for the SaveAnimatedWEBP node are: images (a list of torch.Tensor), fps (float), lossless (bool), quality (int), and method ( Literal['default', 'fastest', 'slowest'])."
+    },
+    {
+        "question": "How does the 'fps' parameter affect the output of the SaveAnimatedWEBP node?",
+        "answer": "The 'fps' parameter determines the frame rate of the animation, which is a key factor influencing the perception of motion in the final output. It controls the speed at which frames are displayed, affecting the smoothness of the entire animation."
+    },
+    {
+        "question": "What is the role of the 'lossless' parameter in the SaveAnimatedWEBP node?",
+        "answer": "The 'lossless' parameter is important for controlling the compression method used when saving images. When set to True, it ensures that the saved animation maintains the highest quality without losing image data."
+    },
+    {
+        "question": "How does the 'quality' parameter impact the output of the SaveAnimatedWEBP node?",
+        "answer": "The 'quality' parameter affects the balance between file size and image quality in the saved animation. Higher values result in better image quality but larger file sizes, while lower values have the opposite effect."
+    },
+    {
+        "question": "What does the 'method' parameter in the SaveAnimatedWEBP node select?",
+        "answer": "The 'method' parameter selects the compression algorithm used when creating the animated WEBP file. Different methods offer varying levels of compression efficiency and speed, impacting the final file size and the time required to save the animation."
+    },
+    {
+        "question": "What is the output of the SaveAnimatedWEBP node?",
+        "answer": "The output of the SaveAnimatedWEBP node is a dictionary containing details of the saved images, including filenames and subfolders. It serves as a record of the node's generated output, providing users with a reference to the location and nature of the saved animated files."
+    }
+]

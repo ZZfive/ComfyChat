@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the OffsetMaskByNormalizedAmplitude node in ComfyUI?",
+        "answer": "The OffsetMaskByNormalizedAmplitude node in ComfyUI is used to transform a mask based on the normalized amplitude of an audio signal. It adjusts the direction and position of the mask, using the amplitude to determine the degree of rotation and displacement, thereby achieving dynamic visual effects synchronized with the audio intensity."
+    },
+    {
+        "question": "What are the required input types for the OffsetMaskByNormalizedAmplitude node?",
+        "answer": "The required input types for the OffsetMaskByNormalizedAmplitude node are: normalized_amp (normalized amplitude value array of the audio signal), mask (the mask to be transformed), x (horizontal displacement factor), y (vertical displacement factor), rotate (boolean value indicating whether to rotate the mask based on the normalized amplitude), and angle_multiplier (multiplication factor for the rotation angle)."
+    },
+    {
+        "question": "What is the output type of the OffsetMaskByNormalizedAmplitude node?",
+        "answer": "The output type of the OffsetMaskByNormalizedAmplitude node is a transformed mask (with the 'MASK' comfy dtype and torch.Tensor Python dtype) that has been adjusted by applying rotation and displacement based on the audio's normalized amplitude."
+    },
+    {
+        "question": "How does the OffsetMaskByNormalizedAmplitude node determine the degree of rotation and displacement?",
+        "answer": "The OffsetMaskByNormalizedAmplitude node determines the degree of rotation and displacement based on the normalized amplitude of the audio signal. It uses the 'rotate' input to decide whether to rotate the mask, and the 'angle_multiplier' input to scale the effect of the normalized amplitude on the mask's rotation. The 'x' and 'y' inputs determine the horizontal and vertical displacement factors respectively."
+    },
+    {
+        "question": "What is the infra type of the OffsetMaskByNormalizedAmplitude node?",
+        "answer": "The infra type of the OffsetMaskByNormalizedAmplitude node is 'CPU'."
+    },
+    {
+        "question": "How does the OffsetMaskByNormalizedAmplitude node work as a bridge to the AudioScheduler nodes?",
+        "answer": "The OffsetMaskByNormalizedAmplitude node works as a bridge to the AudioScheduler nodes by offsetting masks based on the normalized amplitude of the audio signal, thereby allowing for dynamic visual effects that are synchronized with the audio intensity."
+    },
+    {
+        "question": "What programming language is used to implement the OffsetMaskByNormalizedAmplitude node?",
+        "answer": "The OffsetMaskByNormalizedAmplitude node is implemented using the Python programming language."
+    }
+]

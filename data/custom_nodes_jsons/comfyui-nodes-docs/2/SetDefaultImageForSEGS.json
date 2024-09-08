@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the 'DefaultImageForSEGS' node in ComfyUI?",
+        "answer": "The 'DefaultImageForSEGS' node in ComfyUI is designed to process segmentations (SEGS) by scaling them to match the dimensions of a given image. It also provides an option to override existing cropped images with new ones based on the segmentation's cropping region."
+    },
+    {
+        "question": "What are the required input types for the 'DefaultImageForSEGS' node?",
+        "answer": "The required input types for the 'DefaultImageForSEGS' node are 'segs', which is a collection of segmentation objects, and 'image', which represents the reference image the segmentations will be scaled to match."
+    },
+    {
+        "question": "What does the 'override' parameter do in the 'DefaultImageForSEGS' node?",
+        "answer": "The 'override' parameter is a boolean flag. When set to True, it instructs the node to generate new cropped images for the segmentations, ignoring any existing cropped images. This is useful for refreshing cropped images based on updated segmentation data."
+    },
+    {
+        "question": "What is the output type of the 'DefaultImageForSEGS' node?",
+        "answer": "The output type of the 'DefaultImageForSEGS' node is 'segs'. It contains the processed segmentation objects. Each object has been scaled to match the dimensions of the input image and may have had its cropped image overridden if the 'override' parameter was set to True."
+    },
+    {
+        "question": "What infrastructure type does the 'DefaultImageForSEGS' node run on?",
+        "answer": "The 'DefaultImageForSEGS' node runs on the CPU infrastructure type."
+    },
+    {
+        "question": "What happens if the 'override' parameter is set to False in the 'DefaultImageForSEGS' node?",
+        "answer": "If the 'override' parameter is set to False in the 'DefaultImageForSEGS' node, the node will not generate new cropped images for the segmentations if they already exist. Instead, it will use the existing cropped images."
+    },
+    {
+        "question": "What is the function of the 'doit' method in the 'DefaultImageForSEGS' class?",
+        "answer": "The 'doit' method in the 'DefaultImageForSEGS' class processes the segmentation objects by scaling them to match the dimensions of the given image. It also generates new cropped images for the segmentations if the 'override' parameter is set to True."
+    }
+]

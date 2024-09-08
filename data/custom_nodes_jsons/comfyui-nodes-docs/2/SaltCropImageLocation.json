@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltCropImageLocation node in ComfyUI?",
+        "answer": "The SaltCropImageLocation node is designed to crop images based on specified locations, allowing for precise adjustments and modifications to image datasets. It focuses on enhancing or isolating specific areas within images for further processing or analysis."
+    },
+    {
+        "question": "What are the required input types for the SaltCropImageLocation node?",
+        "answer": "The required input types for the SaltCropImageLocation node are 'images' (a collection of images to be cropped), 'top' (specifying the top boundary of the cropping area), 'left' (defining the left boundary), 'right' (setting the right boundary), and 'bottom' (indicating the bottom boundary)."
+    },
+    {
+        "question": "What optional input type does the SaltCropImageLocation node accept?",
+        "answer": "The SaltCropImageLocation node accepts an optional input type called 'crop_data_batch', which is used to specify multiple cropping areas for a group of images, enabling batch processing of images with different cropping specifications."
+    },
+    {
+        "question": "What output types does the SaltCropImageLocation node produce?",
+        "answer": "The SaltCropImageLocation node produces two output types: 'images' (the resulting cropped images) and 'crop_data_batch' (the corresponding cropping data batch for the processed images, providing detailed information about the applied cropping areas)."
+    },
+    {
+        "question": "How does the SaltCropImageLocation node handle invalid crop dimensions?",
+        "answer": "If the SaltCropImageLocation node encounters invalid crop dimensions (i.e., crop_width or crop_height is less than or equal to 0), it raises a ValueError to indicate the issue."
+    },
+    {
+        "question": "What is the purpose of the 'master_size' variable in the SaltCropImageLocation node?",
+        "answer": "The 'master_size' variable in the SaltCropImageLocation node is used to store the size of the first processed crop, adjusted to be divisible by 8 in both width and height. This size is then used to resize all subsequent crops, ensuring consistent dimensions."
+    },
+    {
+        "question": "What Infra type does the SaltCropImageLocation node use?",
+        "answer": "The SaltCropImageLocation node uses the 'CPU' Infra type."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltMaskSharpeningFilter node in ComfyUI?",
+        "answer": "The SaltMaskSharpeningFilter node is used to apply a sharpening filter to a set of masks, enhancing their edges and details based on the specified strength, in order to optimize the visual effect of the masks by iteratively applying the sharpening effect."
+    },
+    {
+        "question": "What are the required inputs for the SaltMaskSharpeningFilter node?",
+        "answer": "The required input for the SaltMaskSharpeningFilter node is 'masks', which is the set of masks that need to be sharpened. This input is crucial for determining the areas where the sharpening filter will be applied."
+    },
+    {
+        "question": "What is the optional input for the SaltMaskSharpeningFilter node?",
+        "answer": "The optional input for the SaltMaskSharpeningFilter node is 'strength', which defines the intensity of the sharpening effect. The higher the value, the more pronounced the sharpening effect on the masks."
+    },
+    {
+        "question": "What is the output of the SaltMaskSharpeningFilter node?",
+        "answer": "The output of the SaltMaskSharpeningFilter node is a tensor of sharpened masks. Each mask undergoes a specified number of sharpening iterations to enhance its details."
+    },
+    {
+        "question": "What is the infra type for the SaltMaskSharpeningFilter node?",
+        "answer": "The infra type for the SaltMaskSharpeningFilter node is 'GPU'."
+    },
+    {
+        "question": "How does the SaltMaskSharpeningFilter node apply sharpening to the masks?",
+        "answer": "The SaltMaskSharpeningFilter node applies sharpening to the masks by converting each mask to a PIL image, inverting it, and then iteratively applying the ImageFilter.SHARPEN filter based on the specified strength value. The resulting sharpened PIL image is then converted back to a mask tensor."
+    },
+    {
+        "question": "What are the default, minimum, and maximum values for the 'strength' parameter in the SaltMaskSharpeningFilter node?",
+        "answer": "The default value for the 'strength' parameter is 1, the minimum value is 1, and the maximum value is 12, with a step of 1."
+    }
+]

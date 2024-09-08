@@ -1,0 +1,38 @@
+[
+    {
+        "question": "SaltAudioFramesyncSchedule节点的目的是什么？",
+        "answer": "SaltAudioFramesyncSchedule节点旨在通过基于音频分析来调度帧以实现音频与视觉元素的同步。"
+    },
+    {
+        "question": "SaltAudioFramesyncSchedule节点需要的必填输入类型有哪些？",
+        "answer": "SaltAudioFramesyncSchedule节点需要的必填输入类型包括：audio, amp_control, amp_offset, frame_rate, start_frame, end_frame以及curves_mode。"
+    },
+    {
+        "question": "SaltAudioFramesyncSchedule节点的可选输入类型有哪些？",
+        "answer": "SaltAudioFramesyncSchedule节点的可选输入类型包括：frequency_low和frequency_high。"
+    },
+    {
+        "question": "SaltAudioFramesyncSchedule节点输出的数据类型有哪些？",
+        "answer": "SaltAudioFramesyncSchedule节点输出的数据类型主要包括：调度帧列表如left_low_schedule等，以及整数类型的frame_count和frame_rate。"
+    },
+    {
+        "question": "如何设置音频分析的振幅灵敏度？",
+        "answer": "通过调整输入参数amp_control可以控制音频分析的振幅灵敏度。"
+    },
+    {
+        "question": "frame_rate参数的作用是什么？",
+        "answer": "frame_rate参数决定了视觉元素与音频同步的帧率，影响同步的时间精度。"
+    },
+    {
+        "question": "curves_mode参数是如何影响帧调度的？",
+        "answer": "curves_mode参数指定用于振幅控制的缓动函数，影响视觉效果对音频的动态响应。"
+    },
+    {
+        "question": "频率范围的上下限参数是如何影响帧调度的？",
+        "answer": "frequency_low和frequency_high参数决定了音频分析考虑的频率范围的上下限，这影响了影响帧调度的音频内容的选择。"
+    },
+    {
+        "question": "SaltAudioFramesyncSchedule节点的实现函数是什么？",
+        "answer": "SaltAudioFramesyncSchedule节点的实现函数是schedule，通过音频分析来调度帧实现音视频同步。"
+    }
+]
