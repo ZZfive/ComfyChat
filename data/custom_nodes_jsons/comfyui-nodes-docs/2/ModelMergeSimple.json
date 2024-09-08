@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ModelMergeSimple node in ComfyUI?",
+        "answer": "The ModelMergeSimple node is designed to seamlessly integrate two different models into a single, unified unit by merging key patches from one model into another, allowing for balanced combinations based on specified ratios."
+    },
+    {
+        "question": "What is the 'model1' parameter in the ModelMergeSimple node?",
+        "answer": "The 'model1' parameter represents the primary model that will be merged with another model. It is a crucial element in the merging process as it forms the foundation of the final combined model. The execution and results of the node are largely influenced by the characteristics and structure of 'model1'."
+    },
+    {
+        "question": "What is the 'model2' parameter in the ModelMergeSimple node?",
+        "answer": "The 'model2' parameter is the secondary model that provides patches to be merged into 'model1'. Its role is important as it contributes differentiated elements that will be integrated into the final model, thus affecting the overall functionality and performance."
+    },
+    {
+        "question": "What does the 'ratio' parameter control in the ModelMergeSimple node?",
+        "answer": "The 'ratio' parameter determines the influence of 'model2' on the merged model. It is a float value ranging from 0.0 to 1.0, where 1.0 signifies full influence of 'model2'. This parameter is essential for controlling the balance between the two models during the merging process."
+    },
+    {
+        "question": "What is the output of the ModelMergeSimple node?",
+        "answer": "The output of the ModelMergeSimple node, 'merged_model', represents the result of merging 'model1' and 'model2' based on the specified 'ratio'. It encapsulates the combined functionalities and characteristics of both models, providing a unified model for further use or analysis."
+    },
+    {
+        "question": "What is the infra type for the ModelMergeSimple node?",
+        "answer": "The infra type for the ModelMergeSimple node is CPU."
+    },
+    {
+        "question": "How does the ModelMergeSimple node perform the merging of models in its source code?",
+        "answer": "In the source code of ModelMergeSimple node, the merging is performed by cloning 'model1', obtaining key patches from 'model2' with prefix 'diffusion_model.', and then adding these patches to the cloned model using the specified ratio for balancing between the two models."
+    }
+]

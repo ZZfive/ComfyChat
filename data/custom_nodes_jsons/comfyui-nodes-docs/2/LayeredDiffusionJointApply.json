@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LayeredDiffusionJoint node in ComfyUI?",
+        "answer": "The LayeredDiffusionJoint node in ComfyUI is designed to perform single-batch inference, generating foreground, background, and blended images. It can handle complex image generation tasks by applying layered diffusion techniques, allowing for the creation of images with intricate details and layered effects."
+    },
+    {
+        "question": "What are the required input types for the LayeredDiffusionJoint node?",
+        "answer": "The required input types for the LayeredDiffusionJoint node are 'model' and 'config'. The 'model' parameter is crucial as it defines the underlying model used in the diffusion process. The 'config' parameter specifies the settings for the layered diffusion process."
+    },
+    {
+        "question": "What are the optional input types for the LayeredDiffusionJoint node?",
+        "answer": "The optional input types for the LayeredDiffusionJoint node are 'fg_cond', 'bg_cond', and 'blended_cond'. These parameters allow for specific guidance and fine-tuning of the diffusion process for the foreground, background, and blended aspects of the generated image."
+    },
+    {
+        "question": "What is the output type of the LayeredDiffusionJoint node?",
+        "answer": "The output type of the LayeredDiffusionJoint node is 'model'. This represents a patched version of the input model, now equipped with layered diffusion capabilities, ready to generate images with layered effects."
+    },
+    {
+        "question": "Which infrastructure type is recommended for using the LayeredDiffusionJoint node?",
+        "answer": "The recommended infrastructure type for using the LayeredDiffusionJoint node is GPU."
+    },
+    {
+        "question": "What does the 'transformer_options' setting in the 'model_options' dictionary of the LayeredDiffusionJoint node specify?",
+        "answer": "The 'transformer_options' setting in the 'model_options' dictionary of the LayeredDiffusionJoint node specifies the 'cond_overwrite' parameter, which is set based on the provided 'fg_cond', 'bg_cond', and 'blended_cond' inputs."
+    },
+    {
+        "question": "How does the LayeredDiffusionJoint node apply layered diffusion to the input model?",
+        "answer": "The LayeredDiffusionJoint node applies layered diffusion to the input model by first identifying the appropriate layered diffusion model based on the provided config string. It then asserts that the stable diffusion version of the input model matches the identified model. If attention sharing is enabled, it applies the layered diffusion with attention sharing and sets the 'cond_overwrite' parameter based on the optional conditioning inputs."
+    }
+]

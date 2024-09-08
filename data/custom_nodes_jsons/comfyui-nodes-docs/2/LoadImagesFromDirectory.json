@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoadImagesFromDirectory node in ComfyUI?",
+        "answer": "The LoadImagesFromDirectory node in ComfyUI is designed to load images from a specified directory, handle various image formats, and optionally apply transformations such as EXIF orientation correction and conversion to a consistent color space."
+    },
+    {
+        "question": "What are the required and optional input parameters for the LoadImagesFromDirectory node?",
+        "answer": "The required input parameter is 'directory', which specifies the path to the directory from which images will be loaded. The optional input parameters are 'image_load_cap' and 'start_index', which limit the number of images loaded and specify the starting index of the first image to load, respectively."
+    },
+    {
+        "question": "What output types does the LoadImagesFromDirectory node produce?",
+        "answer": "The LoadImagesFromDirectory node outputs three types: 'image' (a batch of loaded images converted to tensors), 'mask' (a corresponding batch of masks for images with transparency), and 'int' (the total number of images successfully loaded from the directory)."
+    },
+    {
+        "question": "How does the LoadImagesFromDirectory node handle image transparency?",
+        "answer": "If an image has transparency (indicated by the presence of an 'A' channel), the LoadImagesFromDirectory node generates a corresponding mask by extracting the alpha channel, converting it to a float tensor, and inverting the values."
+    },
+    {
+        "question": "What happens if the specified directory contains no images or if no images can be loaded?",
+        "answer": "If the specified directory contains no images or if no images can be loaded, the LoadImagesFromDirectory node raises a FileNotFoundError with an appropriate error message."
+    },
+    {
+        "question": "Does the LoadImagesFromDirectory node have any limitations on the number of images it can load?",
+        "answer": "Yes, the LoadImagesFromDirectory node allows limiting the number of images loaded from the directory using the 'image_load_cap' parameter. If this parameter is set to a positive value, the node will load only up to that number of images."
+    },
+    {
+        "question": "Is the LoadImagesFromDirectory node an output node in ComfyUI?",
+        "answer": "No, the LoadImagesFromDirectory node is not an output node in ComfyUI."
+    }
+]

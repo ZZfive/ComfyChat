@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of TextJoin node in ComfyUI?",
+        "answer": "The TextJoin node in ComfyUI is used to generate images and masks from text. It supports adjusting character spacing, line spacing, horizontal and vertical arrangement, and setting random variations in the size and position of the text."
+    },
+    {
+        "question": "How can the font folder be customized in the TextJoin node?",
+        "answer": "The font folder can be customized by editing the resource_dir.ini file located in the plugin root directory. The 'FONT_dir=' line should be edited with the custom folder path name. All .ttf and .otf files in the specified folder will be collected and displayed in the node's list during ComfyUI initialization."
+    },
+    {
+        "question": "What are the required input types for the TextJoin node?",
+        "answer": "The required input types for the TextJoin node are: text (STRING), font_file (STRING), spacing (INT), leading (INT), horizontal_border (FLOAT), vertical_border (FLOAT), scale (FLOAT), variation_range (INT), variation_seed (INT), layout (STRING), width (INT), height (INT), text_color (STRING), and background_color (STRING)."
+    },
+    {
+        "question": "What does the 'size_as' optional input in the TextJoin node do?",
+        "answer": "The 'size_as' optional input in the TextJoin node allows you to input an image or mask, and the output image and mask will be generated according to the dimensions of the input. This input takes precedence over the 'width' and 'height' settings."
+    },
+    {
+        "question": "What are the output types of the TextJoin node?",
+        "answer": "The output types of the TextJoin node are image (IMAGE) and mask (MASK)."
+    },
+    {
+        "question": "What is the purpose of the 'layout' input in the TextJoin node?",
+        "answer": "The 'layout' input in the TextJoin node determines the text layout. It has two options: horizontal and vertical arrangement."
+    },
+    {
+        "question": "What does the 'variation_range' input in the TextJoin node control?",
+        "answer": "The 'variation_range' input in the TextJoin node controls the range of random variations in the size and position of characters. A higher value results in a greater degree of variation."
+    }
+]

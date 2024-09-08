@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoadImage node in the Inspire package?",
+        "answer": "The LoadImage node in the Inspire package is used to load and preprocess images for further use in image processing workflows."
+    },
+    {
+        "question": "What are the two required inputs for the LoadImage node?",
+        "answer": "The two required inputs for the LoadImage node are 'image' and 'image_data'. The 'image' input specifies the image file to be loaded, while the 'image_data' input provides the image data in base64 encoded string format."
+    },
+    {
+        "question": "What does the 'image' output of the LoadImage node represent?",
+        "answer": "The 'image' output of the LoadImage node represents the processed image that can be used for subsequent image processing tasks. It is returned as a normalized tensor."
+    },
+    {
+        "question": "What is the purpose of the 'mask' output in the LoadImage node?",
+        "answer": "The 'mask' output in the LoadImage node provides a mask for images, which is particularly useful for images with transparency. It indicates areas of interest or areas to be excluded in further processing steps."
+    },
+    {
+        "question": "How does the LoadImage node handle images with transparency?",
+        "answer": "If an image has transparency (i.e., it contains an alpha channel 'A'), the LoadImage node creates a mask by extracting the alpha channel, normalizing its values, and subtracting it from 1 to create the mask tensor."
+    },
+    {
+        "question": "What infrastructure type is recommended for the LoadImage node?",
+        "answer": "The recommended infrastructure type for the LoadImage node is GPU."
+    },
+    {
+        "question": "What does the LoadImage node do if the image does not have an alpha channel?",
+        "answer": "If the image does not have an alpha channel, the LoadImage node creates a mask tensor filled with zeros, with a shape of (64, 64) and a data type of torch.float32 on the CPU."
+    }
+]

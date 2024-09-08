@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the IterativeMixingKSampler node in ComfyUI?",
+        "answer": "The IterativeMixingKSampler node in ComfyUI is used to refine a batch of latent representations by progressively introducing guidance from a set of reference latent representations through iterative mixing, with the aim of improving the quality of generated samples."
+    },
+    {
+        "question": "What is the 'model' input parameter in the IterativeMixingKSampler node?",
+        "answer": "The 'model' input parameter in the IterativeMixingKSampler node is the generative model used for denoising and refining the latent representations. Its Comfy data type is MODEL and Python data type is torch.nn.Module."
+    },
+    {
+        "question": "How is the 'latent_image_batch' input parameter used in the IterativeMixingKSampler node?",
+        "answer": "The 'latent_image_batch' input parameter in the IterativeMixingKSampler node is the batch of latent representations that need to be denoised and refined. Its Comfy data type is LATENT and Python data type is torch.Tensor."
+    },
+    {
+        "question": "What does the 'denoise' parameter control in the IterativeMixingKSampler node?",
+        "answer": "The 'denoise' parameter in the IterativeMixingKSampler node controls the amount of denoising applied at each step. It is a float value between 0 and 1."
+    },
+    {
+        "question": "What is the function of the 'alpha_1' parameter in the IterativeMixingKSampler node?",
+        "answer": "The 'alpha_1' parameter in the IterativeMixingKSampler node influences the rate at which the reference latent representations are mixed with the denoised samples. It is a float value between 0.1 and 10.0."
+    },
+    {
+        "question": "What does the 'reverse_batch' parameter indicate in the IterativeMixingKSampler node?",
+        "answer": "The 'reverse_batch' parameter in the IterativeMixingKSampler node is a boolean flag indicating whether the batch should be reversed before processing."
+    },
+    {
+        "question": "What is the output of the IterativeMixingKSampler node?",
+        "answer": "The output of the IterativeMixingKSampler node is the refined batch of latent representations after the iterative denoising process. Its Comfy data type is LATENT and Python data type is torch.Tensor."
+    }
+]

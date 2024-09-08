@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the AutoAdjust class in ComfyUI?",
+        "answer": "The AutoAdjust class in ComfyUI automatically adjusts the brightness, contrast, and white balance of an image, with some manual adjustment options to make up for the shortcomings of automatic adjustment."
+    },
+    {
+        "question": "What are the required input types for the AutoAdjust class?",
+        "answer": "The required input types for the AutoAdjust class are: image (torch.Tensor), strength (int), brightness (int), contrast (int), saturation (int), red (int), green (int), and blue (int)."
+    },
+    {
+        "question": "What is the output type of the AutoAdjust class?",
+        "answer": "The output type of the AutoAdjust class is an image (torch.Tensor)."
+    },
+    {
+        "question": "How does the AutoAdjust class handle images with an alpha channel?",
+        "answer": "If the input image has an alpha channel (RGBA mode), the AutoAdjust class splits the image into RGBA channels, processes the RGB channels, and then merges the processed RGB channels back with the original alpha channel."
+    },
+    {
+        "question": "What is the range of valid values for the 'strength' parameter in the AutoAdjust class?",
+        "answer": "The 'strength' parameter in the AutoAdjust class has a valid range of 0 to 100, with a default value of 100."
+    },
+    {
+        "question": "How does the AutoAdjust class apply brightness, contrast, and saturation adjustments?",
+        "answer": "The AutoAdjust class applies brightness, contrast, and saturation adjustments using the ImageEnhance module from the Python Imaging Library (PIL), with the adjustment values calculated based on the input parameters."
+    },
+    {
+        "question": "What infrastructure type does the AutoAdjust class require?",
+        "answer": "The AutoAdjust class requires a GPU infrastructure type."
+    }
+]

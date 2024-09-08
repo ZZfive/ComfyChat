@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the cg-noise custom node in ComfyUI?",
+        "answer": "The cg-noise custom node in ComfyUI replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+    },
+    {
+        "question": "How does the cg-noise custom node generate variations in images?",
+        "answer": "The cg-noise custom node generates variations in images by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+    },
+    {
+        "question": "What are the inputs and outputs of the cg-noise custom node?",
+        "answer": "The cg-noise custom node has inputs of `width`, `height`, `steps`, `scale`, `seed`, `variation_seed`, and `variation_weight`. Its output is a `CGImage`."
+    },
+    {
+        "question": "How does the variation_weight input affect the image variations in the cg-noise custom node?",
+        "answer": "The `variation_weight` input determines the balance between the variation seed and the original seed when generating noise. A value of 0 means no variation, while a value of 1 means full variation."
+    },
+    {
+        "question": "What is the default value for the variation_weight input in the cg-noise custom node?",
+        "answer": "The default value for the `variation_weight` input in the cg-noise custom node is 0.1."
+    },
+    {
+        "question": "How does the cg-noise custom node handle invalid values for the variation_weight input?",
+        "answer": "If an invalid value (less than 0 or greater than 1) is provided for the `variation_weight` input, the cg-noise custom node will clamp the value to the valid range of 0 to 1."
+    },
+    {
+        "question": "Is the cg-noise custom node a drop-in replacement for the KSampler node in ComfyUI?",
+        "answer": "Yes, the cg-noise custom node is designed to be a drop-in replacement for the KSampler node in ComfyUI, with the addition of the `variation_seed` and `variation_weight` inputs."
+    }
+]

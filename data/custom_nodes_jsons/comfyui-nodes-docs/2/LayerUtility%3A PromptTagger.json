@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PromptTagger class in ComfyUI?",
+        "answer": "The PromptTagger class in ComfyUI is used to generate prompt text for Stable Diffusion based on an input image. It can also set replacement words to modify the generated prompt."
+    },
+    {
+        "question": "Which API does the PromptTagger class use as its backend service?",
+        "answer": "The PromptTagger class currently uses the Google Gemini API as its backend service."
+    },
+    {
+        "question": "What steps are needed to use the Google Gemini API with PromptTagger?",
+        "answer": "To use the Google Gemini API with PromptTagger, you need to apply for an API key on Google AI Studio, fill it in the api_key.ini file located in the plugin root directory, and change the file extension from .example to .ini."
+    },
+    {
+        "question": "What are the required input types for the PromptTagger class?",
+        "answer": "The required input types for the PromptTagger class are: image (Comfy dtype: IMAGE), api (Comfy dtype: ['gemini-pro-vision']), token_limit (Comfy dtype: INT), exclude_word (Comfy dtype: STRING), and replace_with_word (Comfy dtype: STRING)."
+    },
+    {
+        "question": "What is the output type of the PromptTagger class?",
+        "answer": "The output type of the PromptTagger class is text (Comfy dtype: STRING)."
+    },
+    {
+        "question": "How does the PromptTagger class handle the exclude_word and replace_with_word inputs?",
+        "answer": "If the exclude_word input is provided, the PromptTagger class replaces it and its synonyms with the replace_with_word in the generated text. If only the replace_with_word is provided, it is enclosed in parentheses in the output text."
+    },
+    {
+        "question": "What is the function of the refine_model in the PromptTagger class?",
+        "answer": "The refine_model in the PromptTagger class is used to replace the exclude_word and its synonyms with the replace_with_word in the generated text and correct any grammar errors based on the first step."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the KfCurveConstant node in ComfyUI?",
+        "answer": "The KfCurveConstant node is designed to generate a constant curve within a keyframed framework. It encapsulates a single value provided as input and represents it as a constant curve that does not change over time. This node is very useful for creating steady states or fixed points in dynamic systems where a constant value is needed for a period of time."
+    },
+    {
+        "question": "What is the significance of the 'value' parameter in the KfCurveConstant node?",
+        "answer": "The 'value' parameter is crucial in the KfCurveConstant node as it defines the constant value of the curve. It is the only input to the node and directly influences the output, ensuring that the curve remains unchanged throughout its duration. This parameter is essential for establishing a steady state in simulations."
+    },
+    {
+        "question": "What data type is accepted for the 'value' parameter in the KfCurveConstant node?",
+        "answer": "The 'value' parameter in the KfCurveConstant node accepts a float data type in ComfyUI, corresponding to the Python float data type."
+    },
+    {
+        "question": "What does the output 'curve' represent in the KfCurveConstant node?",
+        "answer": "The output 'curve' in the KfCurveConstant node represents a constant curve in the keyframed framework. It is generated based on the input value and is used to create a curve that does not fluctuate over time. This output is important as it provides a visual and computational representation of the constant state in the system."
+    },
+    {
+        "question": "What data type is used for the output 'curve' in the KfCurveConstant node?",
+        "answer": "The output 'curve' in the KfCurveConstant node uses the KEYFRAMED_CURVE data type in ComfyUI, which corresponds to the keyframed.Curve data type in Python."
+    },
+    {
+        "question": "What infrastructure type does the KfCurveConstant node use?",
+        "answer": "The KfCurveConstant node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How is the constant curve generated in the source code of the KfCurveConstant node?",
+        "answer": "In the source code of the KfCurveConstant node, the constant curve is generated using the input 'value' parameter. The curve is created by calling kf.Curve(value), which returns a curve object representing the constant value over time."
+    }
+]

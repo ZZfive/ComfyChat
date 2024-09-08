@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Mask_Ceiling_Region node in ComfyUI?",
+        "answer": "The WAS_Mask_Ceiling_Region node in ComfyUI is designed to process input masks and identify the topmost region within them."
+    },
+    {
+        "question": "What is the required input type for the ceiling_region method of WAS_Mask_Ceiling_Region node?",
+        "answer": "The required input type for the ceiling_region method is 'masks', which provides the raw mask data that the node will process."
+    },
+    {
+        "question": "What does the MASKS output parameter represent in the WAS_Mask_Ceiling_Region node?",
+        "answer": "The MASKS output parameter represents a tensor containing the processed regions from the input masks, which is used for subsequent tasks in the image analysis pipeline."
+    },
+    {
+        "question": "What is the infra type for the WAS_Mask_Ceiling_Region node?",
+        "answer": "The infra type for the WAS_Mask_Ceiling_Region node is CPU."
+    },
+    {
+        "question": "How does the WAS_Mask_Ceiling_Region node handle input masks with dimensions greater than 3?",
+        "answer": "If the input masks have dimensions greater than 3, the WAS_Mask_Ceiling_Region node processes each mask separately, applies the ceiling effect, and then concatenates the results into a single tensor."
+    },
+    {
+        "question": "What is the purpose of converting the mask to a PIL image in the ceiling_region method?",
+        "answer": "The mask is converted to a PIL image in the ceiling_region method to apply the ceiling effect and isolate the topmost region."
+    },
+    {
+        "question": "How is the final processed mask tensor obtained in the WAS_Mask_Ceiling_Region node?",
+        "answer": "After applying the ceiling effect, the resulting mask is converted back to a tensor format suitable for further image processing tasks using the pil2mask function."
+    }
+]

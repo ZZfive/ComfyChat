@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Mask_Combine_Batch node in ComfyUI?",
+        "answer": "The WAS_Mask_Combine_Batch node is designed to combine multiple mask images into a single, seamless mask, which is particularly useful for applications that require further processing or visualization."
+    },
+    {
+        "question": "What is the expected data type for the 'masks' input parameter in the WAS_Mask_Combine_Batch node?",
+        "answer": "The 'masks' input parameter expects a list of mask images, with the Comfy data type being List[Image] and the corresponding Python data type being List[PIL.Image.Image]."
+    },
+    {
+        "question": "What does the 'combined_mask' output represent in the WAS_Mask_Combine_Batch node?",
+        "answer": "The 'combined_mask' output is a single image that represents the collective coverage area of all the input masks, suitable for applications such as masks in image segmentation or visual effects."
+    },
+    {
+        "question": "Is WAS_Mask_Combine_Batch an output node in ComfyUI?",
+        "answer": "No, the WAS_Mask_Combine_Batch node is not an output node in ComfyUI."
+    },
+    {
+        "question": "What infrastructure type does the WAS_Mask_Combine_Batch node use?",
+        "answer": "The WAS_Mask_Combine_Batch node uses the CPU infrastructure type."
+    },
+    {
+        "question": "What is the return type of the WAS_Mask_Combine_Batch node's combine_masks function?",
+        "answer": "The return type of the WAS_Mask_Combine_Batch node's combine_masks function is a tuple containing the combined mask, with the Comfy data type being Image and the corresponding Python data type being PIL.Image.Image."
+    },
+    {
+        "question": "How does the combine_masks function in the WAS_Mask_Combine_Batch node work?",
+        "answer": "The combine_masks function in the WAS_Mask_Combine_Batch node works by summing up the input masks using torch.sum, stacking them along a new dimension using torch.stack, and clamping the values between 0 and 1 using torch.clamp."
+    }
+]

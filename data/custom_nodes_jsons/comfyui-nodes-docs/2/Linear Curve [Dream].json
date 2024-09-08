@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Linear Curve node in ComfyUI?",
+        "answer": "The Linear Curve node provides a linear interpolation between an initial value and a final value based on a series of frames, typically used for creating smooth transitions or animation effects."
+    },
+    {
+        "question": "What is the role of the 'frame_counter' input in the Linear Curve node?",
+        "answer": "The 'frame_counter' input tracks the progress of frames, determining the current position in the interpolation process. It is crucial to the entire interpolation process and directly affects the calculation of output values."
+    },
+    {
+        "question": "What does the 'initial_value' input specify in the Linear Curve node?",
+        "answer": "The 'initial_value' input specifies the starting value of the linear interpolation, serving as the basis for the animation or transition. This value determines the starting point of the interpolation and is crucial to the initial state of the entire process."
+    },
+    {
+        "question": "What does the 'final_value' input define in the Linear Curve node?",
+        "answer": "The 'final_value' input defines the end value of the linear interpolation, determining the target of the animation or transition. This value sets the final state of the interpolation and has a decisive impact on the result of the entire process."
+    },
+    {
+        "question": "What are the output types of the Linear Curve node?",
+        "answer": "The Linear Curve node has two output types: FLOAT, which outputs the interpolated floating-point number for the current frame, reflecting the state of the linear process, and INT, which outputs the interpolated value rounded to the nearest integer, providing discrete steps of the process."
+    },
+    {
+        "question": "What is the infra type of the Linear Curve node?",
+        "answer": "The infra type of the Linear Curve node is CPU."
+    },
+    {
+        "question": "How does the Linear Curve node calculate the interpolated value?",
+        "answer": "The Linear Curve node calculates the interpolated value using the formula: initial_value + frame_counter.progress * (final_value - initial_value). The result is then returned as both a floating-point number and an integer rounded to the nearest whole number."
+    }
+]

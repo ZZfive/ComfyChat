@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MaskOrImageToWeight node in ComfyUI?",
+        "answer": "The MaskOrImageToWeight node is used to calculate the average value of the input mask or image in ComfyUI. It cannot process both at the same time."
+    },
+    {
+        "question": "What are the supported output types for the average values calculated by MaskOrImageToWeight node?",
+        "answer": "The MaskOrImageToWeight node supports converting the calculated average values into different output types including list, pandas series or tensor, depending on the specified output type."
+    },
+    {
+        "question": "What is the required input parameter for the MaskOrImageToWeight node?",
+        "answer": "The required input parameter for the MaskOrImageToWeight node is 'output_type', which specifies the output format for the calculated average values. It can be a list, pandas series or tensor."
+    },
+    {
+        "question": "What are the optional input parameters for the MaskOrImageToWeight node?",
+        "answer": "The optional input parameters for the MaskOrImageToWeight node are 'images' and 'masks'. 'images' is a list of images used to calculate the average values, and 'masks' is a list of masks used to calculate the average values. If one is provided, the other should not be used."
+    },
+    {
+        "question": "What is the output type of the MaskOrImageToWeight node?",
+        "answer": "The output type of the MaskOrImageToWeight node is FLOAT, which represents the calculated average values of the input mask or image, returned in the format specified by the 'output_type' parameter."
+    },
+    {
+        "question": "What is the infra type of the MaskOrImageToWeight node?",
+        "answer": "The infra type of the MaskOrImageToWeight node is CPU."
+    },
+    {
+        "question": "Can the MaskOrImageToWeight node process both masks and images at the same time?",
+        "answer": "No, the MaskOrImageToWeight node cannot process both masks and images at the same time. It will raise an exception if both masks and images are provided as inputs."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LeReS-DepthMapPreprocessor controlComfyUI的节点的目的是什么？",
+        "answer": "LeReS-DepthMapPreprocessor旨在增强图像的深度图估计。它利用LeReS模型对图像进行预处理，提供了移除最近物体和背景的选项，以及可选的增强模式以改进深度估计。"
+    },
+    {
+        "question": "LeReS-DepthMapPreprocessor节点需要的输入参数有哪些？",
+        "answer": "LeReS-DepthMapPreprocessor节点需要以下输入参数：\n1. image（输入图像，numpy.ndarray类型）\n2. rm_nearest（从深度图中移除最近物体的阈值，浮点类型）\n3. rm_background（深度图中背景移除的阈值，浮点类型）\n4. boost（增强模式，字符串类型）\n5. resolution（执行深度图估计的分辨率，整数类型）"
+    },
+    {
+        "question": "LeReS-DepthMapPreprocessor节点的输出类型是什么？",
+        "answer": "LeReS-DepthMapPreprocessor节点的输出类型是经过增强的深度图图像，numpy.ndarray类型。"
+    },
+    {
+        "question": "LeReS-DepthMapPreprocessor节点使用的Infrastructure类型是什么？",
+        "answer": "LeReS-DepthMapPreprocessor节点使用的Infrastructure类型是GPU。"
+    },
+    {
+        "question": "LeReS-DepthMapPreprocessor节点通常与哪些其他节点一起使用？",
+        "answer": "LeReS-DepthMapPreprocessor节点通常与ControlNetApplyAdvanced和PreviewImage节点一起使用。"
+    },
+    {
+        "question": "如何在ComfyUI中使用LeReS-DepthMapPreprocessor节点？",
+        "answer": "您可以通过设置所需的输入参数并连接到适当的输出节点来在ComfyUI中使用LeReS-DepthMapPreprocessor节点。以下是节点的Python实现代码示例:"
+    },
+    {
+        "question": "控制深度图中移除最近物体的参数是什么？",
+        "answer": "控制深度图中移除最近物体的参数是rm_nearest，取值范围为0.0到100，默认值为0.0。"
+    }
+]

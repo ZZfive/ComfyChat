@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of LatentKeyframeInterpolationNode in ComfyUI?",
+        "answer": "LatentKeyframeInterpolationNode is designed to interpolate keyframes in latent space, allowing for smooth transitions during the generation process. It calculates intermediate keyframes based on specified strengths and interpolation methods, which can be linear or various easing functions."
+    },
+    {
+        "question": "What are the required input types for LatentKeyframeInterpolationNode?",
+        "answer": "The required input types for LatentKeyframeInterpolationNode are batch_index_from, strength_from, batch_index_to_excl, strength_to, and interpolation."
+    },
+    {
+        "question": "What does the batch_index_from parameter represent in LatentKeyframeInterpolationNode?",
+        "answer": "In LatentKeyframeInterpolationNode, batch_index_from represents the batch index to start the interpolation from, defining the initial position in the keyframe sequence. This is crucial for determining the starting point of the transition."
+    },
+    {
+        "question": "What is the function of the interpolation parameter in LatentKeyframeInterpolationNode?",
+        "answer": "In LatentKeyframeInterpolationNode, the interpolation parameter specifies the type of interpolation to use between keyframes, which can be linear or an easing function, to achieve more natural transitions."
+    },
+    {
+        "question": "What is the output type of LatentKeyframeInterpolationNode?",
+        "answer": "The output type of LatentKeyframeInterpolationNode is LATENT_KF, which represents the generated interpolated latent keyframe group, depicting the transition between initial and final states."
+    },
+    {
+        "question": "What infra type does LatentKeyframeInterpolationNode use?",
+        "answer": "LatentKeyframeInterpolationNode uses the CPU infra type."
+    },
+    {
+        "question": "How does LatentKeyframeInterpolationNode handle the prev_latent_kf optional input?",
+        "answer": "If prev_latent_kf is provided, LatentKeyframeInterpolationNode clones it and incorporates the cloned keyframes into the current latent keyframe group. If it is not provided, a new LatentKeyframeGroup is created."
+    }
+]

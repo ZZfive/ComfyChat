@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PurgeVRAM class in ComfyUI?",
+        "answer": "The purpose of the PurgeVRAM class in ComfyUI is to clear the GPU memory (VRAM) and RAM of garbage objects. It is typically placed after nodes that complete inference tasks, such as the VAE Decode node."
+    },
+    {
+        "question": "What are the required input types for the PurgeVRAM class?",
+        "answer": "The required input types for the PurgeVRAM class are: 1) anything - any input, 2) purge_cache - a boolean value indicating whether to clear the cache, and 3) purge_models - a boolean value indicating whether to clear the models."
+    },
+    {
+        "question": "What infrastructure type does the PurgeVRAM class use?",
+        "answer": "The PurgeVRAM class uses the CPU infrastructure type."
+    },
+    {
+        "question": "Does the PurgeVRAM class have any optional input types?",
+        "answer": "No, the PurgeVRAM class does not have any optional input types."
+    },
+    {
+        "question": "What happens when the purge_cache input is set to True in the PurgeVRAM class?",
+        "answer": "When the purge_cache input is set to True in the PurgeVRAM class, if CUDA is available, it will collect garbage, empty the CUDA cache, and collect IPC memory."
+    },
+    {
+        "question": "What happens when the purge_models input is set to True in the PurgeVRAM class?",
+        "answer": "When the purge_models input is set to True in the PurgeVRAM class, it will unload all models using the comfy.model_management.unload_all_models() function."
+    },
+    {
+        "question": "Is PurgeVRAM an output node in ComfyUI?",
+        "answer": "Yes, PurgeVRAM is an output node in ComfyUI."
+    }
+]

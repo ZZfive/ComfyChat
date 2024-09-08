@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Logical_AND node in ComfyUI?",
+        "answer": "The WAS_Logical_AND node is designed to perform a logical AND operation in ComfyUI. It evaluates two boolean inputs to determine if both conditions are true and returns a boolean result representing the logical AND of the inputs."
+    },
+    {
+        "question": "What are the required input types for the WAS_Logical_AND node?",
+        "answer": "The WAS_Logical_AND node requires two boolean inputs: boolean_a and boolean_b. Both inputs are crucial for the logical AND operation, as the final result will only be true if both conditions are met."
+    },
+    {
+        "question": "What is the output type of the WAS_Logical_AND node?",
+        "answer": "The output type of the WAS_Logical_AND node is a boolean value named 'result'. It represents the final result of the logical AND operation performed on the two input boolean values."
+    },
+    {
+        "question": "What is the infra type for the WAS_Logical_AND node?",
+        "answer": "The infra type for the WAS_Logical_AND node is CPU, meaning it runs on the processor."
+    },
+    {
+        "question": "What is the source code for the WAS_Logical_AND node?",
+        "answer": "The source code for the WAS_Logical_AND node is as follows:\n```\nclass WAS_Logical_AND(WAS_Logical_Comparisons):\n\n    def do(self, boolean_a, boolean_b):\n        return (boolean_a and boolean_b,)\n```"
+    },
+    {
+        "question": "What is the parent class of the WAS_Logical_AND node?",
+        "answer": "The parent class of the WAS_Logical_AND node is WAS_Logical_Comparisons."
+    },
+    {
+        "question": "How does the WAS_Logical_AND node determine the result of the logical AND operation?",
+        "answer": "The WAS_Logical_AND node determines the result of the logical AND operation by evaluating the two input boolean values, boolean_a and boolean_b, using the 'and' operator in its 'do' method. If both boolean_a and boolean_b are true, the method returns true; otherwise, it returns false."
+    }
+]

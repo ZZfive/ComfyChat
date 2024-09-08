@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PixelSpread class in ComfyUI?",
+        "answer": "The PixelSpread class in ComfyUI is used to perform pixel expansion pre-processing on the edge part of the image mask, which can effectively improve the edge of image synthesis."
+    },
+    {
+        "question": "What are the required input types for the PixelSpread node?",
+        "answer": "The required input types for the PixelSpread node are: image (Comfy dtype: IMAGE, Python dtype: torch.Tensor), invert_mask (Comfy dtype: BOOLEAN, Python dtype: bool), and mask_grow (Comfy dtype: INT, Python dtype: int)."
+    },
+    {
+        "question": "What is the optional input type for the PixelSpread node?",
+        "answer": "The optional input type for the PixelSpread node is mask (Comfy dtype: MASK, Python dtype: torch.Tensor)."
+    },
+    {
+        "question": "What is the output type of the PixelSpread node?",
+        "answer": "The output type of the PixelSpread node is image (Comfy dtype: IMAGE, Python dtype: torch.Tensor)."
+    },
+    {
+        "question": "What is the infra type used by the PixelSpread node?",
+        "answer": "The infra type used by the PixelSpread node is CPU."
+    },
+    {
+        "question": "How does the PixelSpread node handle the mask input if provided?",
+        "answer": "If the mask input is provided, the PixelSpread node converts it to a PIL image and applies inversion if specified by the invert_mask input. The mask is then expanded and blurred based on the mask_grow input."
+    },
+    {
+        "question": "What does the PixelSpread node do if the input image size is different from the mask size?",
+        "answer": "If the input image size is different from the mask size, the PixelSpread node logs an error message and returns the original input image without processing."
+    }
+]

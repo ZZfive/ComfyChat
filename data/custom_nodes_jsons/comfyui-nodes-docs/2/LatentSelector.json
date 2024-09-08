@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LatentSelector node in ComfyUI?",
+        "answer": "The LatentSelector node in ComfyUI is designed to filter and select specific latent images from a given collection based on user-defined indexes, allowing for targeted manipulation or analysis of the latent image dataset."
+    },
+    {
+        "question": "What are the required input types for the LatentSelector node?",
+        "answer": "The required input types for the LatentSelector node are 'latent_image' and 'selected_indexes'. 'latent_image' is the set of latent images to be filtered, provided as a mapping from string identifiers to tensors. 'selected_indexes' is a string specifying the indexes of the latent images to be selected."
+    },
+    {
+        "question": "What type of index selection does the LatentSelector node support?",
+        "answer": "The LatentSelector node supports single indexes and ranges for selecting latent images. The indexes are specified in a comma-separated string, and ranges can be indicated using a colon (':') separator."
+    },
+    {
+        "question": "What is the output type of the LatentSelector node?",
+        "answer": "The output type of the LatentSelector node is 'latent', which represents the filtered set of latent images based on the specified indexes, returned as a subset of the input images."
+    },
+    {
+        "question": "What is the infra type of the LatentSelector node?",
+        "answer": "The infra type of the LatentSelector node is 'CPU'."
+    },
+    {
+        "question": "How does the LatentSelector node handle invalid or out-of-range indexes?",
+        "answer": "The LatentSelector node catches exceptions when parsing the 'selected_indexes' input and skips any invalid or out-of-range indexes, only selecting valid indexes within the range of the input latent images."
+    },
+    {
+        "question": "What happens if no valid indexes are selected in the LatentSelector node?",
+        "answer": "If no valid indexes are selected in the LatentSelector node, it prints a message indicating that no latents were selected and passes through the original latent_image input unchanged."
+    }
+]

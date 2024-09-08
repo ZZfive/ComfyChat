@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the `batch` method in the LatentBatch class?",
+        "answer": "The `batch` method in the LatentBatch class is designed to efficiently merge two sets of latent samples into a single batch. It ensures that the sample dimensions from the two sets are compatible before concatenating them and appending the batch indices accordingly."
+    },
+    {
+        "question": "What is the significance of the 'samples1' parameter in the `batch` method?",
+        "answer": "The 'samples1' parameter represents the first set of latent samples to be batch processed. It plays a crucial role in determining the final shape and structure of the combined batch, especially in terms of the dimensions in the latent space."
+    },
+    {
+        "question": "Why is the 'samples2' parameter important in the `batch` method?",
+        "answer": "The 'samples2' parameter is essential for the `batch` method as it represents the second set of latent samples for batch processing. It is crucial for the method to compare and match the dimensions with 'samples1' to create a coherent data batch."
+    },
+    {
+        "question": "What does the 'samples_out' parameter represent in the `batch` method?",
+        "answer": "The 'samples_out' parameter is the output of the batching process, containing the combined latent samples from 'samples1' and 'samples2'. It is significant because it represents the data prepared and ready for downstream tasks."
+    },
+    {
+        "question": "What is the infra type recommended for running the `batch` method?",
+        "answer": "The recommended infra type for running the `batch` method is CPU."
+    },
+    {
+        "question": "How does the `batch` method handle mismatched shapes between 'samples1' and 'samples2'?",
+        "answer": "If the shapes of 'samples1' and 'samples2' do not match, the `batch` method upscales 'samples2' using bilinear interpolation to match the shape of 'samples1' before concatenating them."
+    },
+    {
+        "question": "What is the return type of the `batch` method?",
+        "answer": "The return type of the `batch` method is a tuple containing a single element, which is a Dict[str, torch.Tensor] representing the combined latent samples."
+    }
+]

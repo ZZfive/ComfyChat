@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MaskBatchMulti node in ComfyUI?",
+        "answer": "The MaskBatchMulti node is designed to create a batch of images by combining multiple masks. It allows for dynamically adjusting the number of inputs so that a variable number of masks can be combined into a single batch."
+    },
+    {
+        "question": "What are the required input types for the MaskBatchMulti node?",
+        "answer": "The required input types for the MaskBatchMulti node are 'inputcount' (INT) which specifies the number of input masks to combine, and 'mask_i' (MASK) where 'i' can be from 1 to the number specified by 'inputcount', representing each mask to include in the batch."
+    },
+    {
+        "question": "What is the purpose of the 'inputcount' parameter in the MaskBatchMulti node?",
+        "answer": "The 'inputcount' parameter in the MaskBatchMulti node allows the user to specify the number of input masks to combine into a single batch, enabling dynamic adjustment of the node's input capacity."
+    },
+    {
+        "question": "What does the 'mask_i' input represent in the MaskBatchMulti node?",
+        "answer": "The 'mask_i' input in the MaskBatchMulti node represents each individual mask to be included in the batch, where 'i' can range from 1 to the number specified by 'inputcount'. Each mask contributes to the aggregated batch, enabling complex mask combinations for advanced image processing tasks."
+    },
+    {
+        "question": "What is the output type of the MaskBatchMulti node?",
+        "answer": "The output type of the MaskBatchMulti node is 'masks' (MASK), which is the combined batch of masks aggregated from the input masks."
+    },
+    {
+        "question": "What is the infra type required for the MaskBatchMulti node?",
+        "answer": "The infra type required for the MaskBatchMulti node is GPU."
+    },
+    {
+        "question": "What does the MaskBatchMulti node do in its 'combine' function?",
+        "answer": "In the 'combine' function, the MaskBatchMulti node takes the 'inputcount' and 'mask_i' inputs and combines them into a single batch of masks. It starts with 'mask_1' and iteratively concatenates additional masks ('mask_2', 'mask_3', etc.) up to 'inputcount', resizing masks if necessary to match the shape of 'mask_1', and returns the combined batch of masks."
+    }
+]

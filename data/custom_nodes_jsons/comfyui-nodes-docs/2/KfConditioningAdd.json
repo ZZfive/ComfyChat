@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the KfConditioningAdd node in ComfyUI?",
+        "answer": "The KfConditioningAdd node is used to add two conditioning inputs together to produce a comprehensive conditioning output, enhancing the overall conditioning effect without changing the respective data structures."
+    },
+    {
+        "question": "What are the required input types for the KfConditioningAdd node?",
+        "answer": "The KfConditioningAdd node requires two inputs: conditioning_1 and conditioning_2, both of which are of the CONDITIONING Comfy dtype and Tuple[torch.Tensor, Dict[str, Any]] Python dtype."
+    },
+    {
+        "question": "What is the output type of the KfConditioningAdd node?",
+        "answer": "The output type of the KfConditioningAdd node is CONDITIONING, which represents the combined conditioning set after adding the two inputs. It has a Comfy dtype of CONDITIONING and a Python dtype of List[Tuple[torch.Tensor, Dict[str, Any]]]."
+    },
+    {
+        "question": "What infrastructure type does the KfConditioningAdd node use?",
+        "answer": "The KfConditioningAdd node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the KfConditioningAdd node combine the two conditioning inputs?",
+        "answer": "The KfConditioningAdd node combines the two conditioning inputs by adding the corresponding tensors and pooled_output values (if present) from each input, resulting in a new comprehensive conditioning set."
+    },
+    {
+        "question": "Does the KfConditioningAdd node change the data structures of the input conditionings?",
+        "answer": "No, the KfConditioningAdd node does not change the data structures of the input conditionings. It only combines them to enhance the overall conditioning effect."
+    },
+    {
+        "question": "What does the 'deepcopy' function do in the KfConditioningAdd node's source code?",
+        "answer": "The 'deepcopy' function creates a deep copy of the input conditioning objects, ensuring that the original objects are not modified during the combination process."
+    }
+]

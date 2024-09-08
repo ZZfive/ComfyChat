@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MikeySamplerBaseOnlyAdvanced node?",
+        "answer": "The MikeySamplerBaseOnlyAdvanced node is designed to perform advanced sampling techniques for generating models. It combines components such as image scaling, model magnification, and latent space operations to produce high-quality samples."
+    },
+    {
+        "question": "What is the significance of the seed parameter in the MikeySamplerBaseOnlyAdvanced node?",
+        "answer": "The seed parameter is crucial for the reproducibility of the sampling process, ensuring that the samples generated in different runs are consistent. It plays an important role in determining the initial state of the random number generator, which in turn affects the entire sampling process."
+    },
+    {
+        "question": "What determines the method or model used for image magnification in the MikeySamplerBaseOnlyAdvanced node?",
+        "answer": "The upscale_model parameter determines the method or model used for image magnification in the MikeySamplerBaseOnlyAdvanced node. It can be a string representing the scaling method or a PyTorch module for more complex models. This parameter significantly influences the quality and resolution of the magnified image during the sampling process."
+    },
+    {
+        "question": "What does the latent parameter represent in the output of the MikeySamplerBaseOnlyAdvanced node?",
+        "answer": "The latent parameter represents the encoded version of the magnified image, which is a key output of the sampling process. It captures the underlying structure of the image in a compressed form, allowing for further operations or analysis in the latent space."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the MikeySamplerBaseOnlyAdvanced node?",
+        "answer": "The recommended infrastructure type for running the MikeySamplerBaseOnlyAdvanced node is GPU."
+    },
+    {
+        "question": "How does the MikeySamplerBaseOnlyAdvanced node handle image magnification when the upscale_by parameter is set to 0?",
+        "answer": "When the upscale_by parameter is set to 0, the MikeySamplerBaseOnlyAdvanced node does not perform any image magnification and directly returns the sample without magnification."
+    },
+    {
+        "question": "What happens when the hires_denoise parameter is set to 0 in the MikeySamplerBaseOnlyAdvanced node?",
+        "answer": "When the hires_denoise parameter is set to 0, the MikeySamplerBaseOnlyAdvanced node skips the denoising process and directly returns the encoded version of the magnified image without any further denoising."
+    }
+]

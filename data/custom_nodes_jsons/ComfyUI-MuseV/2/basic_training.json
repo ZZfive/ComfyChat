@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ComfyUI-MuseV는 어떤 모델을 사용하여 이미지를 생성합니까?",
+        "answer": "ComfyUI-MuseV는 이미지 생성을 위해 UNet2DModel을 사용합니다."
+    },
+    {
+        "question": "ComfyUI-MuseV에서 사용되는 UNet2DModel의 구조는 어떻게 됩니까?",
+        "answer": "ComfyUI-MuseV에서 사용되는 UNet2DModel은 각 UNet 블록당 2개의 ResNet 레이어를 갖습니다. 블록당 출력 채널 수는 (128, 128, 256, 256, 512, 512)입니다. 다운샘플링 블록 타입으로 'DownBlock2D'와 'AttnDownBlock2D'를 사용하고, 업샘플링 블록 타입으로 'UpBlock2D'와 'AttnUpBlock2D'를 사용합니다."
+    },
+    {
+        "question": "학습을 위한 데이터셋은 어떻게 전처리됩니까?",
+        "answer": "데이터셋의 이미지는 전처리 과정에서 크기가 조정되고(Crop), 랜덤하게 수평 뒤집기(RamdomHorizontalFlip)됩니다. 그리고 픽셀 값의 범위를 [-1, 1]로 정규화(Normalize)합니다."
+    },
+    {
+        "question": "ComfyUI-MuseV에서 사용되는 스케줄러는 무엇이며 어떤 역할을 합니까?",
+        "answer": "ComfyUI-MuseV에서 사용되는 스케줄러는 DDPMScheduler입니다. 이 스케줄러는 이미지에 노이즈를 추가하고, 특정 타임스텝에서 모델의 출력을 가져와 노이즈 스케줄과 업데이트 규칙에 따라 이미지를 생성합니다."
+    },
+    {
+        "question": "ComfyUI-MuseV에서 이미지 생성 결과는 어떤 식으로 시각화 됩니까?",
+        "answer": "ComfyUI-MuseV에서 생성된 이미지들은 'evaluate' 함수를 통해 배치 크기만큼 샘플링되고, 그리드 형태로 조립되어 저장됩니다. 이 과정에서 make_grid 함수를 sử dụng합니다."
+    },
+    {
+        "question": "ComfyUI-MuseV의 학습 과정에서 사용되는 옵티마이저와 학습률 스케줄러는 무엇입니까?",
+        "answer": "ComfyUI-MuseV의 학습 과정에서 AdamW 옵티마이저와 Cosine 스케줄러(get_cosine_schedule_with_warmup)를 사용합니다."
+    },
+    {
+        "question": "ComfyUI-MuseV에서 혼합 정밀도(mixed precision) 학습을 어떻게 수행합니까?",
+        "answer": "ComfyUI-MuseV에서는 🤗 Accelerate 라이브러리를 사용하여 혼합 정밀도 학습을 수행합니다. Accelerator 객체를 초기화할 때 mixed_precision 파라미터에 'fp16'을 전달하여 자동 혼합 정밀도를 사용할 수 있습니다."
+    }
+]

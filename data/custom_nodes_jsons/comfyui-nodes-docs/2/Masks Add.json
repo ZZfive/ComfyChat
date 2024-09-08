@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Mask_Add node in ComfyUI?",
+        "answer": "The WAS_Mask_Add node is designed to perform the operation of adding two mask images together. It is skilled at merging mask data to create composite masks, which is crucial in image processing workflows that require layered masks."
+    },
+    {
+        "question": "What are the required input parameters for the WAS_Mask_Add node?",
+        "answer": "The required input parameters for the WAS_Mask_Add node are 'masks_a' and 'masks_b'. 'masks_a' represents the first set of mask images to be added, and 'masks_b' is the second set of mask images to be integrated with 'masks_a'."
+    },
+    {
+        "question": "What is the output of the WAS_Mask_Add node?",
+        "answer": "The output of the WAS_Mask_Add node is 'MASKS', which is the result of the addition operation performed by the node. It is a composite mask that contains the combined features of the input masks, ready for use in downstream image processing tasks."
+    },
+    {
+        "question": "What is the infra type supported by the WAS_Mask_Add node?",
+        "answer": "The WAS_Mask_Add node supports the CPU infra type."
+    },
+    {
+        "question": "How does the WAS_Mask_Add node handle mask addition when both input masks have dimensions greater than 2?",
+        "answer": "When both input masks ('masks_a' and 'masks_b') have dimensions greater than 2, the WAS_Mask_Add node performs a straightforward addition of the masks using the equation: added_masks = masks_a + masks_b."
+    },
+    {
+        "question": "What does the WAS_Mask_Add node do when the input masks have dimensions less than or equal to 2?",
+        "answer": "When the input masks have dimensions less than or equal to 2, the WAS_Mask_Add node uses torch.clamp to add the masks while ensuring the result is within the valid range of 0 to 255. The masks are first unsqueezed, added, and then squeezed back to their original dimensions."
+    },
+    {
+        "question": "What is the return type of the 'add_masks' function in the WAS_Mask_Add node?",
+        "answer": "The 'add_masks' function in the WAS_Mask_Add node returns a tuple containing the added masks, with a data type of torch.Tensor."
+    }
+]

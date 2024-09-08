@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoadImageMask node in ComfyUI?",
+        "answer": "The LoadImageMask node in ComfyUI is designed to load and process image files, with a focus on extracting specific color channels or the alpha channel to create masks."
+    },
+    {
+        "question": "What are the required input types for the LoadImageMask node?",
+        "answer": "The required input types for the LoadImageMask node are 'image' which specifies the image file to load, and 'channel' which indicates the color channel to be used for generating the mask."
+    },
+    {
+        "question": "What does the 'channel' parameter in the LoadImageMask node specify?",
+        "answer": "The 'channel' parameter in the LoadImageMask node specifies which color channel of the image is to be used to generate the mask. It plays a key role in defining the specific channel to be extracted and processed."
+    },
+    {
+        "question": "What is the output type of the LoadImageMask node?",
+        "answer": "The output type of the LoadImageMask node is 'MASK', which represents the mask tensor derived from the specified image and channel. It is a normalized tensor that can be immediately used for subsequent operations."
+    },
+    {
+        "question": "What infrastructure type does the LoadImageMask node use?",
+        "answer": "The LoadImageMask node uses CPU as its infrastructure type."
+    },
+    {
+        "question": "How does the LoadImageMask node handle images with bands other than 'RGBA'?",
+        "answer": "If the image does not have 'RGBA' bands, the LoadImageMask node converts it to 'RGBA' format. If the image mode is 'I', it is first converted using a point operation."
+    },
+    {
+        "question": "How does the LoadImageMask node generate a mask if the specified channel is not found in the image?",
+        "answer": "If the specified channel is not found in the image, the LoadImageMask node generates a mask of zeros with dimensions (64, 64) and dtype torch.float32 on the CPU."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Load ELLA Model node in ComfyUI-ELLA?",
+        "answer": "The Load ELLA Model node is used to load an ELLA model in ComfyUI-ELLA. It takes a 'name' parameter to specify the ELLA model to load and outputs the loaded ELLA model."
+    },
+    {
+        "question": "What are the inputs required for the Apply ELLA node in ComfyUI-ELLA?",
+        "answer": "The Apply ELLA node requires the following inputs: 'model' (loaded using Load Checkpoint or other model loaders), 'ella' (ELLA model loaded using Load ELLA Model node), 'positive' and 'negative' (both ELLA_EMBEDS)."
+    },
+    {
+        "question": "What does the ELLA Encode node do in ComfyUI-ELLA?",
+        "answer": "The ELLA Encode node in ComfyUI-ELLA takes an ELLA model (loaded using Load ELLA Model node and Set ELLA Timesteps) and ELLA_EMBEDS as inputs, and outputs 'conds' (CONDITIONING) for KSamplers."
+    },
+    {
+        "question": "How does the ELLA Text Encode node handle optional CLIP input in ComfyUI-ELLA?",
+        "answer": "If a CLIP model is provided to the ELLA Text Encode node along with 'text_clip' input, it will automatically concatenate the ELLA condition and CLIP condition in the output 'conds' (CONDITIONING) for KSamplers."
+    },
+    {
+        "question": "What is the purpose of the T5 Text Encode node in ComfyUI-ELLA?",
+        "answer": "The T5 Text Encode node in ComfyUI-ELLA is used to encode a prompt ('text' input) using a T5 text encoder model. It outputs 'ella_embeds' (ELLA_EMBEDS) that can be used for further processing."
+    },
+    {
+        "question": "What does the Combine CLIP & ELLA Embeds node do in ComfyUI-ELLA?",
+        "answer": "The Combine CLIP & ELLA Embeds node in ComfyUI-ELLA takes 'cond' (CONDITIONING) and 'embeds' (ELLA_EMBEDS) as inputs and combines them to output 'embeds' (ELLA_EMBEDS)."
+    },
+    {
+        "question": "What are the inputs and outputs of the Set ELLA Timesteps node in ComfyUI-ELLA?",
+        "answer": "The Set ELLA Timesteps node in ComfyUI-ELLA takes the following inputs: 'model' (loaded using Load Checkpoint or other model loaders), 'ella' (ELLA model loaded using Load ELLA Model node), 'scheduler' (consistent with Ksamper), 'steps' (consistent with Ksamper), and 'denoise' (consistent with Ksamper). It outputs the ELLA model with timesteps injected."
+    }
+]

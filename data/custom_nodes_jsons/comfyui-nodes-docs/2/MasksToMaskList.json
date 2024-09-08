@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is the purpose of the MasksToMaskList node in ComfyUI?",
+        "answer": "The MasksToMaskList node in ComfyUI is designed to process a series of mask images and convert them into a list of 3D mask tensors suitable for further image processing tasks."
+    },
+    {
+        "question": "What is the required input type for the MasksToMaskList node?",
+        "answer": "The required input type for the MasksToMaskList node is 'masks', which is a collection of mask images that the node will process."
+    },
+    {
+        "question": "What is the Comfy dtype for the 'masks' input parameter?",
+        "answer": "The Comfy dtype for the 'masks' input parameter is MASK."
+    },
+    {
+        "question": "What is the Python dtype for the 'masks' input parameter?",
+        "answer": "The Python dtype for the 'masks' input parameter is List[torch.Tensor]."
+    },
+    {
+        "question": "What is the output type of the MasksToMaskList node?",
+        "answer": "The output type of the MasksToMaskList node is 'mask_list', which is a series of processed 3D mask tensors ready for subsequent image processing tasks."
+    },
+    {
+        "question": "What is the Comfy dtype for the 'mask_list' output?",
+        "answer": "The Comfy dtype for the 'mask_list' output is MASK."
+    },
+    {
+        "question": "What is the Python dtype for the 'mask_list' output?",
+        "answer": "The Python dtype for the 'mask_list' output is List[torch.Tensor]."
+    },
+    {
+        "question": "What is the infra type recommended for the MasksToMaskList node?",
+        "answer": "The recommended infra type for the MasksToMaskList node is CPU."
+    },
+    {
+        "question": "What does the MasksToMaskList node do if the input 'masks' is None?",
+        "answer": "If the input 'masks' is None, the MasksToMaskList node creates an empty mask tensor of shape (64, 64) with a dtype of torch.float32 on the CPU and returns it as the only element in a list."
+    },
+    {
+        "question": "How does the MasksToMaskList node process each mask in the input 'masks'?",
+        "answer": "The MasksToMaskList node processes each mask in the input 'masks' by applying the make_3d_mask function to convert each mask into a 3D mask tensor."
+    }
+]

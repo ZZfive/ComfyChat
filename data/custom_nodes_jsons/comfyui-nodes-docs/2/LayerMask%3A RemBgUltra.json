@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RemBgUltra node in ComfyUI?",
+        "answer": "The RemBgUltra node in ComfyUI is used to remove the background from an image while preserving high edge details."
+    },
+    {
+        "question": "Which two existing nodes' functionalities are combined in the RemBgUltra node?",
+        "answer": "The RemBgUltra node combines the functionalities of the Alpha Matte node from spacepxl's ComfyUI-Image-Filters and the ComfyUI-BRIA_AI-RMBG node by ZHO-ZHO-ZHO."
+    },
+    {
+        "question": "From where should the BRIA Background Removal v1.4 model file be downloaded?",
+        "answer": "The BRIA Background Removal v1.4 model file (model.pth) should be downloaded from https://huggingface.co/briaai/RMBG-1.4 and placed in the ComfyUI/models/rmbg/RMBG-1.4 folder."
+    },
+    {
+        "question": "What are the required input types for the RemBgUltra node?",
+        "answer": "The required input types for the RemBgUltra node are: image (Comfy dtype: IMAGE, Python dtype: torch.Tensor), detail_range (Comfy dtype: INT, Python dtype: int), black_point (Comfy dtype: FLOAT, Python dtype: float), white_point (Comfy dtype: FLOAT, Python dtype: float), and process_detail (Comfy dtype: BOOLEAN, Python dtype: bool)."
+    },
+    {
+        "question": "What does setting process_detail to False do?",
+        "answer": "Setting process_detail to False will skip the edge processing step to save runtime."
+    },
+    {
+        "question": "What are the output types of the RemBgUltra node?",
+        "answer": "The output types of the RemBgUltra node are: image (Comfy dtype: IMAGE, Python dtype: torch.Tensor) and mask (Comfy dtype: MASK, Python dtype: torch.Tensor)."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the RemBgUltra node?",
+        "answer": "The recommended infrastructure type for running the RemBgUltra node is CPU."
+    }
+]

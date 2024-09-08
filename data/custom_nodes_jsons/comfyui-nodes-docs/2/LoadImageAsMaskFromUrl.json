@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoadImageAsMaskFromUrl node in ComfyUI?",
+        "answer": "The LoadImageAsMaskFromUrl node is designed to load an image from a URL and convert it into a mask based on a specified color channel. It supports selecting from the alpha, red, green, or blue channels to create the mask, facilitating various image processing and manipulation tasks that require masks."
+    },
+    {
+        "question": "What are the required input parameters for the LoadImageAsMaskFromUrl node?",
+        "answer": "The required input parameters for the LoadImageAsMaskFromUrl node are 'url' and 'channel'. 'url' specifies the URL from which the image is loaded and supports multiple URLs separated by line breaks. 'channel' specifies the color channel used to create the mask, which can be 'alpha', 'red', 'green', or 'blue'."
+    },
+    {
+        "question": "What is the output type of the LoadImageAsMaskFromUrl node?",
+        "answer": "The output type of the LoadImageAsMaskFromUrl node is 'masks', which are the output masks generated from the image based on the selected color channel. These masks are suitable for various image processing applications that require isolating or highlighting specific areas."
+    },
+    {
+        "question": "What is the infra type required for the LoadImageAsMaskFromUrl node?",
+        "answer": "The infra type required for the LoadImageAsMaskFromUrl node is 'GPU'."
+    },
+    {
+        "question": "How does the LoadImageAsMaskFromUrl node handle multiple URLs?",
+        "answer": "The LoadImageAsMaskFromUrl node handles multiple URLs by splitting them based on line breaks. It then loads images from these URLs using the 'load_images_from_url' function."
+    },
+    {
+        "question": "How does the LoadImageAsMaskFromUrl node convert an image into a mask?",
+        "answer": "The LoadImageAsMaskFromUrl node converts an image into a mask by selecting the specified color channel ('alpha', 'red', 'green', or 'blue') from the image. It then converts the selected channel into a numpy array, normalizes the values to be between 0 and 1, and subtracts the result from 1 to create the mask."
+    },
+    {
+        "question": "What is the return type of the 'load_image' function in the LoadImageAsMaskFromUrl node?",
+        "answer": "The return type of the 'load_image' function in the LoadImageAsMaskFromUrl node is a tuple containing a single torch.Tensor, which represents the stack of generated masks."
+    }
+]

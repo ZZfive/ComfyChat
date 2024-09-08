@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the ModelSamplingContinuousEDM module in ComfyUI?",
+        "answer": "The ModelSamplingContinuousEDM module in ComfyUI facilitates the sampling process in continuous energy distance modeling (EDM) by encapsulating the logic for setting up and managing sigma values, which are crucial for the diffusion process."
+    },
+    {
+        "question": "What is the role of the sigma_min parameter in the ModelSamplingContinuousEDM module?",
+        "answer": "The sigma_min parameter in the ModelSamplingContinuousEDM module defines the lower bound of sigma values used during the sampling process. It influences the diffusion rate and the quality of generated samples, ensuring a balance between sampling speed and fidelity of the results."
+    },
+    {
+        "question": "How does the sigma_max parameter affect the sampling process in ModelSamplingContinuousEDM?",
+        "answer": "The sigma_max parameter sets the upper limit for sigma values during sampling. It determines the scale of the diffusion process, with higher values leading to more diverse samples but potentially requiring more computation, while lower values accelerate the process but may result in reduced variation."
+    },
+    {
+        "question": "What is the significance of the sigma_data parameter in ModelSamplingContinuousEDM?",
+        "answer": "The sigma_data parameter represents the assumed noise level in the data. It affects the initial conditions of the sampling process, and correctly setting it is crucial for aligning the model's assumptions with the actual data characteristics, leading to more accurate and reliable sampling results."
+    },
+    {
+        "question": "What is the purpose of the model_config parameter in ModelSamplingContinuousEDM?",
+        "answer": "The model_config parameter provides necessary settings for the sampling process in ModelSamplingContinuousEDM. It is a dictionary containing parameters such as 'sigma_min', 'sigma_max', and 'sigma_data' that define the range and initial values of sigma. This parameter is essential for initializing the sampling parameters and tuning the sampling behavior to specific requirements of a particular model."
+    },
+    {
+        "question": "What does the sigmas output represent in ModelSamplingContinuousEDM?",
+        "answer": "The sigmas output in ModelSamplingContinuousEDM is a tensor containing a series of sigma values spaced logarithmically between sigma_min and sigma_max. These values are used to control the diffusion steps throughout the sampling process and are a fundamental component of the sampling strategy, enabling the model to generate a series of samples that gradually refine towards the target distribution."
+    },
+    {
+        "question": "What is the purpose of the log_sigmas output in ModelSamplingContinuousEDM?",
+        "answer": "The log_sigmas output in ModelSamplingContinuousEDM is a tensor representing the natural logarithm of the sigmas. It is used in the sampling process for computational efficiency, particularly when dealing with exponential functions. The log_sigmas tensor allows for faster computations and is an important component in optimizing the sampling routine."
+    },
+    {
+        "question": "What infrastructure type is recommended for using ModelSamplingContinuousEDM in ComfyUI?",
+        "answer": "The recommended infrastructure type for using ModelSamplingContinuousEDM in ComfyUI is GPU, as it provides the necessary computational power for efficient sampling in continuous energy distance modeling."
+    }
+]

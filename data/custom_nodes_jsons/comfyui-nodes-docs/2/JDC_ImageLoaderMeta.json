@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoadImagePathWithMetadata node in ComfyUI?",
+        "answer": "The LoadImagePathWithMetadata node is designed to load image files along with their associated metadata. It can handle both local and remote image paths, extract prompts and negative prompts from various image formats, and return an array of image data, mask, prompt, negative prompt, width, and height."
+    },
+    {
+        "question": "What are the required input types for the LoadImagePathWithMetadata node?",
+        "answer": "The required input type for the LoadImagePathWithMetadata node is 'image', which is the path to the image file to be processed. It can be a local file path or a URL to a remote image."
+    },
+    {
+        "question": "What is the 'mask' output in the LoadImagePathWithMetadata node?",
+        "answer": "The 'mask' output is the alpha channel extracted from the image, if available, which can be used for segmentation purposes. It represents the transparency information of the image and is particularly useful for applications that require isolating the background."
+    },
+    {
+        "question": "How does the LoadImagePathWithMetadata node handle image metadata?",
+        "answer": "The LoadImagePathWithMetadata node extracts prompts and negative prompts from the image metadata. It supports various formats such as PNG and handles different metadata structures like 'parameters', 'negative_prompt', 'sd-metadata', 'Dream', 'NovelAI', and 'XML:com.adobe.xmp'."
+    },
+    {
+        "question": "What is the purpose of the 'negative' output in the LoadImagePathWithMetadata node?",
+        "answer": "The 'negative' output includes any instructions aimed at guiding away from certain image features or attributes. This is particularly useful for refining the output of image generation algorithms by specifying content that should be avoided."
+    },
+    {
+        "question": "What does the 'height' output represent in the LoadImagePathWithMetadata node?",
+        "answer": "The 'height' output provides the height of the loaded image in pixels, complementing the width to give a comprehensive understanding of the image's dimensions."
+    },
+    {
+        "question": "What infrastructure type is recommended for the LoadImagePathWithMetadata node?",
+        "answer": "The recommended infrastructure type for the LoadImagePathWithMetadata node is CPU."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the JWMaskSequenceFromMask node in ComfyUI?",
+        "answer": "The JWMaskSequenceFromMask node is used to convert a single input mask into a mask sequence, enabling batch processing of the mask. It simplifies workflows where the same mask needs to be applied uniformly across multiple items."
+    },
+    {
+        "question": "What are the required input types for the JWMaskSequenceFromMask node?",
+        "answer": "The required input types for the JWMaskSequenceFromMask node are 'mask', which is the input mask to be converted into a sequence, and 'batch_size', which specifies the number of times the input mask should be replicated in the resulting mask sequence."
+    },
+    {
+        "question": "What is the output type of the JWMaskSequenceFromMask node?",
+        "answer": "The output type of the JWMaskSequenceFromMask node is 'mask_sequence', which is a sequence of masks where each mask is a replica of the input mask. This arrangement facilitates batch processing of the same mask across multiple items."
+    },
+    {
+        "question": "What is the infra type for the JWMaskSequenceFromMask node?",
+        "answer": "The infra type for the JWMaskSequenceFromMask node is 'GPU'."
+    },
+    {
+        "question": "What does the 'batch_size' parameter in the JWMaskSequenceFromMask node specify?",
+        "answer": "The 'batch_size' parameter in the JWMaskSequenceFromMask node specifies the number of times the input mask should be copied in the resulting mask sequence, allowing parallel processing of the same mask across multiple items."
+    },
+    {
+        "question": "How does the JWMaskSequenceFromMask node convert an input mask into a mask sequence?",
+        "answer": "The JWMaskSequenceFromMask node converts an input mask into a mask sequence by reshaping the input mask and then repeating it based on the specified batch size. The input mask is first reshaped into a tensor of shape (1, 1, *mask.shape), and then repeated 'batch_size' times along the first dimension."
+    },
+    {
+        "question": "What are the Comfy dtype and Python dtype of the 'mask' input in the JWMaskSequenceFromMask node?",
+        "answer": "The Comfy dtype of the 'mask' input is 'MASK', and the corresponding Python dtype is 'torch.Tensor.'"
+    }
+]

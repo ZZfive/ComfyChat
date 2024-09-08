@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoadPromptsFromFile node in ComfyUI?",
+        "answer": "The LoadPromptsFromFile node is designed to read and parse prompt files from a specified directory. It extracts positive and negative text paragraphs from each file, following a predefined format, and organizes them into tuples."
+    },
+    {
+        "question": "What is the required input type for the LoadPromptsFromFile node?",
+        "answer": "The required input type for the LoadPromptsFromFile node is 'prompt_file', which is a string specifying the relative path of the text file containing the prompts."
+    },
+    {
+        "question": "What does the 'ZIPPED_PROMPT' output of the LoadPromptsFromFile node provide?",
+        "answer": "The 'ZIPPED_PROMPT' output provides a list of tuples, where each tuple contains the extracted positive and negative text paragraphs from the prompt file, along with the name of the file. This structured data is essential for downstream tasks."
+    },
+    {
+        "question": "What is the infra type required for running the LoadPromptsFromFile node?",
+        "answer": "The infra type required for running the LoadPromptsFromFile node is CPU."
+    },
+    {
+        "question": "How does the LoadPromptsFromFile node process the prompt files?",
+        "answer": "The LoadPromptsFromFile node reads the content of the prompt file, splits it into prompt lists, and then uses a regular expression pattern to extract the positive and negative text from each prompt. The extracted data is then organized into tuples and returned."
+    },
+    {
+        "question": "What happens if the LoadPromptsFromFile node encounters an invalid prompt format in a file?",
+        "answer": "If the LoadPromptsFromFile node encounters an invalid prompt format in a file, it prints a warning message indicating the issue with the specific file."
+    },
+    {
+        "question": "What happens if an error occurs while processing a prompt file in the LoadPromptsFromFile node?",
+        "answer": "If an error occurs while processing a prompt file in the LoadPromptsFromFile node, it prints an error message along with the details of the error and the specific file where the error occurred."
+    }
+]

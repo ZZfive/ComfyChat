@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the KfDrawSchedule node in ComfyUI?",
+        "answer": "The KfDrawSchedule node is designed to visualize the scheduling plan defined in keyframed, abstracting the complex scheduling process into an easy-to-understand graphical representation. It converts the scheduling plan into a series of weight curves, each corresponding to the contribution of a keyframe, facilitating analysis and understanding of the scheduling dynamics."
+    },
+    {
+        "question": "What is the significance of the 'schedule' parameter in the KfDrawSchedule node?",
+        "answer": "The 'schedule' parameter is crucial as it defines the keyframed curves and their associated parameters that will be visualized by the node. It is the main input for generating the weight curves and the resulting graph."
+    },
+    {
+        "question": "How does the 'n' parameter affect the output of the KfDrawSchedule node?",
+        "answer": "The 'n' parameter determines the resolution of the graph by influencing the number of points at which the curves are sampled. This can impact the clarity and detail of the visualization."
+    },
+    {
+        "question": "What does the 'show_legend' parameter control in the KfDrawSchedule node?",
+        "answer": "The 'show_legend' parameter controls whether a legend is displayed on the graph. This helps distinguish between different weight curves and understand their respective contributions to the overall schedule."
+    },
+    {
+        "question": "What does the output 'img_tensor' represent in the KfDrawSchedule node?",
+        "answer": "The output 'img_tensor' represents the graphical visualization of the input schedule, encapsulating the weight curves and their dynamics. It provides a clear and concise graphical summary of the scheduling process."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the KfDrawSchedule node?",
+        "answer": "The recommended infrastructure type for running the KfDrawSchedule node is CPU."
+    },
+    {
+        "question": "How is the KfDrawSchedule node implemented in terms of code?",
+        "answer": "The KfDrawSchedule node is implemented as a class with methods for defining input and output types, and a main method that takes the 'schedule', 'n', and 'show_legend' parameters as inputs, converts the schedule to weight curves, plots the curves, and returns the resulting image tensor."
+    }
+]

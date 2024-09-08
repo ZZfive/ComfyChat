@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MaskStroke node in ComfyUI?",
+        "answer": "The MaskStroke node in ComfyUI is used to apply a stroke effect to a mask."
+    },
+    {
+        "question": "What are the required input types for the MaskStroke node?",
+        "answer": "The required input types for the MaskStroke node are: mask (Comfy dtype: MASK, Python dtype: torch.Tensor), invert_mask (Comfy dtype: BOOLEAN, Python dtype: bool), stroke_grow (Comfy dtype: INT, Python dtype: int), stroke_width (Comfy dtype: INT, Python dtype: int), and blur (Comfy dtype: INT, Python dtype: int)."
+    },
+    {
+        "question": "What does the invert_mask input do in the MaskStroke node?",
+        "answer": "The invert_mask input in the MaskStroke node determines whether to invert the input mask or not."
+    },
+    {
+        "question": "How is the stroke effect created in the MaskStroke node?",
+        "answer": "In the MaskStroke node, the stroke effect is created by first calculating the inner and outer stroke values based on the stroke_grow and stroke_width inputs. Then, the inner and outer masks are expanded using the expand_mask function with the calculated values and the blur input. Finally, the stroke mask is obtained by subtracting the inner mask from the outer mask using the subtract_mask function."
+    },
+    {
+        "question": "What is the output type of the MaskStroke node?",
+        "answer": "The output type of the MaskStroke node is mask (Comfy dtype: MASK, Python dtype: torch.Tensor)."
+    },
+    {
+        "question": "Does the MaskStroke node support optional input types?",
+        "answer": "No, the MaskStroke node does not have any optional input types."
+    },
+    {
+        "question": "What is the infra type specified for the MaskStroke node?",
+        "answer": "The infra type specified for the MaskStroke node is CPU."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LLMVectorStoreIndexAdv节点的目的是什么？",
+        "answer": "LLMVectorStoreIndexAdv节点旨在优化大型语言模型中的向量存储和索引操作，采用先进技术管理向量数据，目标是以可扩展的方式提升检索和存储过程的效率。"
+    },
+    {
+        "question": "LLMVectorStoreIndexAdv节点需要哪些必需的输入类型？",
+        "answer": "LLMVectorStoreIndexAdv节点需要以下必需的输入类型：llm_model（指定用于生成嵌入的大型语言模型）和document（待索引的输入文档）。"
+    },
+    {
+        "question": "LLMVectorStoreIndexAdv节点的可选输入类型有哪些？",
+        "answer": "LLMVectorStoreIndexAdv节点的可选输入类型包括：chunk_size（定义文本处理的分块大小）、chunk_overlap（指定连续文本块之间的重叠部分）和optional_llm_context（根据大型语言模型的特定需求或配置来自定义索引过程的可选上下文参数）。"
+    },
+    {
+        "question": "LLMVectorStoreIndexAdv节点的输出类型是什么？",
+        "answer": "LLMVectorStoreIndexAdv节点的输出类型是llm_index，一个索引对象，能够高效存储和检索向量嵌入，代表已处理的文档。"
+    },
+    {
+        "question": "LLMVectorStoreIndexAdv节点的基础设施类型是什么？",
+        "answer": "LLMVectorStoreIndexAdv节点的基础设施类型为GPU。"
+    },
+    {
+        "question": "LLMVectorStoreIndexAdv节点如何处理文档的元数据？",
+        "answer": "LLMVectorStoreIndexAdv节点使用MockTokenizer处理文档的元数据，如果元数据的标记计数超过1024，则对元数据进行截断。"
+    },
+    {
+        "question": "LLMVectorStoreIndexAdv节点的index函数如何创建VectorStoreIndex？",
+        "answer": "LLMVectorStoreIndexAdv节点的index函数通过调用VectorStoreIndex.from_documents()方法创建VectorStoreIndex，传入documents、embed_model、service_context和transformations（包含splitter的列表）作为参数。"
+    }
+]

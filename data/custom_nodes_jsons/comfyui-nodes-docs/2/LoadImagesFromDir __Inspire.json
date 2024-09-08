@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoadImagesFromDir __Inspire node in ComfyUI?",
+        "answer": "The LoadImagesFromDir __Inspire node is designed to load images in bulk from a specified directory, preparing them for image processing or machine learning tasks. It efficiently handles image loading, optional resizing, and format normalization to ensure compatibility with downstream processing."
+    },
+    {
+        "question": "What are the required and optional input parameters for the LoadImagesFromDir __Inspire node?",
+        "answer": "The required input parameter is 'directory', which specifies the path to the directory from which images will be loaded. Optional input parameters include 'image_load_cap' to limit the number of images loaded, 'start_index' to determine the starting index for loading images, and 'load_always' to indicate whether images should always be loaded under other conditions."
+    },
+    {
+        "question": "What output types does the LoadImagesFromDir __Inspire node provide?",
+        "answer": "The LoadImagesFromDir __Inspire node provides three output types: 'image' (loaded and processed images), 'mask' (optional masks associated with loaded images), and 'int' (total count of loaded images)."
+    },
+    {
+        "question": "How does the LoadImagesFromDir __Inspire node handle image formats and masks?",
+        "answer": "The node filters files by valid image extensions (.jpg, .jpeg, .png, .webp) and loads them. If an image has an alpha channel ('A'), it generates a mask based on the inverted alpha values. If no alpha channel is present, it creates a zero-filled mask. The node also handles the case of single or multiple loaded images and resizes masks if necessary."
+    },
+    {
+        "question": "What happens if the specified directory does not exist or is empty?",
+        "answer": "If the specified directory does not exist or is empty, the LoadImagesFromDir __Inspire node will raise a FileNotFoundError with an appropriate message."
+    },
+    {
+        "question": "How does the node determine the number of images to load?",
+        "answer": "The number of images to load is determined by the 'image_load_cap' optional input parameter. If it is set to a positive value, the node will limit the number of loaded images to that value. If it is zero or negative, there will be no limit on the number of images loaded."
+    },
+    {
+        "question": "What is the infra type and common nodes associated with the LoadImagesFromDir __Inspire node?",
+        "answer": "The infra type for the LoadImagesFromDir __Inspire node is 'GPU', and the common nodes are listed as 'unknown'."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the JagsCombineMasks node in ComfyUI?",
+        "answer": "The JagsCombineMasks node in ComfyUI is used to consolidate multiple mask tensors into a unified representation, making it easier to integrate segmented areas in a given image context."
+    },
+    {
+        "question": "What are the required inputs for the JagsCombineMasks node?",
+        "answer": "The required inputs for the JagsCombineMasks node are an input image, a primary mask (mask_1), and a secondary mask (mask_2)."
+    },
+    {
+        "question": "What is the role of the input image in the JagsCombineMasks node?",
+        "answer": "The input image serves as the foundation layer for merging and visualizing the masks, providing the necessary spatial context to accurately overlay and integrate the masks."
+    },
+    {
+        "question": "What does the optional mask_3 input provide for the JagsCombineMasks node?",
+        "answer": "The optional mask_3 input provides an additional dimension to the mask combination, allowing for more complex and detailed segmentation when needed."
+    },
+    {
+        "question": "What are the output types of the JagsCombineMasks node?",
+        "answer": "The output types of the JagsCombineMasks node are a combined mask, a heatmap mask, and a black and white (BW) mask."
+    },
+    {
+        "question": "How does the JagsCombineMasks node combine the input masks?",
+        "answer": "The JagsCombineMasks node combines the input masks by adding them together. If mask_3 is provided, the combined mask is the sum of mask_1, mask_2, and mask_3. Otherwise, it is the sum of mask_1 and mask_2."
+    },
+    {
+        "question": "What infrastructure type does the JagsCombineMasks node use?",
+        "answer": "The JagsCombineMasks node uses the CPU as its infrastructure type."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "BatchCreativeInterpolationNode 的目的是什么？",
+        "answer": "BatchCreativeInterpolationNode 旨在对一批图像执行创意插值。它利用各种参数来控制插值过程中帧的分布、关键帧影响和强度值。该节点特别适用于在不同图像状态之间生成平滑过渡，并且它提供了对最终输出的高控制度，使其适用于广泛的创意应用。"
+    },
+    {
+        "question": "BatchCreativeInterpolationNode 的输入类型有哪些？",
+        "answer": "BatchCreativeInterpolationNode 的输入类型包括：positive、negative、images、model、ipadapter、clip_vision、type_of_frame_distribution、type_of_key_frame_influence、type_of_strength_distribution 等必需输入，以及一些可选输入如 linear_frame_distribution_value、dynamic_frame_distribution_values 等。"
+    },
+    {
+        "question": "BatchCreativeInterpolationNode 的输出类型有哪些？",
+        "answer": "BatchCreativeInterpolationNode 的输出类型包括：GRAPH、POSITIVE、NEGATIVE、MODEL、KEYFRAME_POSITIONS、BATCH_SIZE。这些输出类型提供了对不同帧如何受到影响的洞察，以及在插值过程中使用的条件和模型等信息。"
+    },
+    {
+        "question": "如何确定 BatchCreativeInterpolationNode 中的关键帧位置？",
+        "answer": "关键帧位置是通过 get_keyframe_positions 函数确定的，该函数基于 type_of_frame_distribution、dynamic_frame_distribution_values、images 和 linear_frame_distribution_value 的值来计算关键帧的位置。"
+    },
+    {
+        "question": "BatchCreativeInterpolationNode 中的线性和动态强度值如何提取？",
+        "answer": "线性和动态强度值是通过 extract_strength_values 函数提取的，该函数基于 type_of_strength_distribution、dynamic_strength_values、keyframe_positions 和 linear_strength_value 的值来计算强度值。"
+    },
+    {
+        "question": "BatchCreativeInterpolationNode 中的权重如何计算？",
+        "answer": "权重是通过 calculate_weights 函数计算的，该函数考虑了多个参数，如 batch_index_from、batch_index_to、strength_from、strength_to 等，以生成插值过程中的权重分布。"
+    },
+    {
+        "question": "BatchCreativeInterpolationNode 的使用技巧有哪些？",
+        "answer": "BatchCreativeInterpolationNode 的使用技巧包括：Infra type: GPU，这表明该节点适合在 GPU 硬件上运行以获得最佳性能。"
+    }
+]

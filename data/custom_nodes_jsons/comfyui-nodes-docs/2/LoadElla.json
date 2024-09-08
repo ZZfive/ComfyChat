@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoadElla node in ComfyUI?",
+        "answer": "The LoadElla node is designed to initialize and load the ELLA model and the specified T5 model into the system, preparing them for subsequent text encoding and processing tasks."
+    },
+    {
+        "question": "What are the required input types for the LoadElla node?",
+        "answer": "The required input types for the LoadElla node are 'ella_model' and 't5_model', both of which specify the directory paths for loading the respective models."
+    },
+    {
+        "question": "What does the 'ella_model' input specify?",
+        "answer": "The 'ella_model' input specifies the directory path of the ELLA model to be loaded, which is crucial for locating and initializing the ELLA model for further operations."
+    },
+    {
+        "question": "What does the 't5_model' input indicate?",
+        "answer": "The 't5_model' input indicates the directory path of the T5 model to be loaded alongside ELLA, which is essential for the text embedding process that occurs before ELLA's conditioning tasks."
+    },
+    {
+        "question": "What is the output type of the LoadElla node?",
+        "answer": "The output type of the LoadElla node is 'ella', which returns a dictionary containing the initialized ELLA and T5 models that can be used for text encoding and processing tasks."
+    },
+    {
+        "question": "What is the infra type for the LoadElla node?",
+        "answer": "The infra type for the LoadElla node is 'GPU'."
+    },
+    {
+        "question": "What does the LoadElla node do with the loaded models?",
+        "answer": "The LoadElla node loads the state dictionaries of the ELLA and T5 models, configures them to run on the specified device and data type, and returns a dictionary containing the initialized models for further use."
+    }
+]

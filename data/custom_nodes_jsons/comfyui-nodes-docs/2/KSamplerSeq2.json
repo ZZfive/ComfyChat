@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the KSamplerSeq2 node in ComfyUI?",
+        "answer": "The KSamplerSeq2 node in ComfyUI is designed to facilitate the application of advanced sampling techniques in generative models. It manages the complexity of seed generation and manipulation, allowing the use of various sampling strategies such as incremental, decremental, random, and fixed seed modes."
+    },
+    {
+        "question": "What are the required input types for the KSamplerSeq2 node?",
+        "answer": "The required input types for the KSamplerSeq2 node are 'model' and 'seed'. The 'model' parameter is crucial as it defines the generative model to be used for sampling, while the 'seed' parameter is essential for initializing the random number generation process."
+    },
+    {
+        "question": "What does the 'seed_mode_seq' parameter in the KSamplerSeq2 node determine?",
+        "answer": "The 'seed_mode_seq' parameter in the KSamplerSeq2 node determines how the seed values are adjusted or selected throughout the sampling sequence, affecting the diversity and consistency of the generated samples."
+    },
+    {
+        "question": "What is the output type of the KSamplerSeq2 node?",
+        "answer": "The output type of the KSamplerSeq2 node is 'samples', which represents the generated collection of latent vectors. These vectors contain encoded information about the sampled data that can be further processed or analyzed."
+    },
+    {
+        "question": "What infrastructure type is recommended for the KSamplerSeq2 node?",
+        "answer": "The recommended infrastructure type for the KSamplerSeq2 node is GPU."
+    },
+    {
+        "question": "How does the KSamplerSeq2 node handle seed updating in different modes?",
+        "answer": "The KSamplerSeq2 node updates the seed based on the selected mode. For 'increment' mode, it returns seed + 1; for 'decrement' mode, it returns seed - 1; for 'random' mode, it returns a random seed; and for 'fixed' mode, it returns the same seed."
+    },
+    {
+        "question": "What does the 'inject_noise' function in the KSamplerSeq2 node do?",
+        "answer": "The 'inject_noise' function in the KSamplerSeq2 node adds noise to the latent image based on the specified noise strength. It generates noise using torch.randn_like and adjusts it by multiplying with the noise_strength parameter."
+    }
+]

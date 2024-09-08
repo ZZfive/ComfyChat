@@ -381,7 +381,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                        local_custom_node_mds_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds", version: int = 1) -> None:
         node_name = node_url.split("/")[-1]
         local_node_repo_path = os.path.join(local_custom_node_repos_dir, node_name)
-        local_node_md_path = os.path.join(local_custom_node_mds_dir, node_name)
+        local_node_md_path = os.path.join(local_custom_node_mds_dir, node_name, str(version))
         try:
             if node_url in self.local_custom_node_infos and self.local_custom_node_infos[node_url]["repo_md"]:
                 if os.path.exists(local_node_md_path):
@@ -398,6 +398,8 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
 
     def refresh_all_jsons(self, version: int) -> None:
         for k, v in self.local_custom_node_infos.items():
+            if urlparse(k).netloc in ["gist.github.com", "civitai.com"]:
+                continue
             if not v["repo_json"] or v["json_last_update"] is None or (v["json_last_update"] is not None and v["md_last_update"] is not None and v["json_last_update"] < v["md_last_update"]):
                 self.refresh_one_json(k, version)
             else:
@@ -417,6 +419,9 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             if ".git" in node_name:
                 node_name = node_name[:-4]
             local_node_md_version_path = os.path.join(local_custom_node_mds_dir, node_name, str(version))
+            if len(os.listdir(local_node_md_version_path)) == 0:
+                logger.info(f"{node_url}仓库中没有md文档")
+                raise ValueError(f"{node_url}仓库中没有md文档")
             local_node_json_path = os.path.join(local_custom_node_jsons_dir, node_name)
             if not os.path.exists(local_node_json_path):
                     os.mkdir(local_node_json_path)
@@ -891,6 +896,13 @@ if __name__ == "__main__":
     # pipeline.refresh_one_repo("https://github.com/erosDiffusion/ComfyUI-enricos-nodes")
 
     # pipeline.refresh_all_mds(version=2)
-    pipeline.refresh_all_jsons(version=2)
+    # pipeline.refresh_one_md("https://github.com/Extraltodeus/DistanceSampler", version=2)
+    # pipeline.refresh_all_jsons(version=2)
+    # pipeline.refresh_one_json("https://github.com/Fannovel16/comfyui_controlnet_aux", version=2)
 
+    for k in pipeline.local_custom_node_infos:
+        if pipeline.local_custom_node_infos[k]["unsuccessful_files"] != []:
+            # print(k)
+            pipeline.refresh_one_json(k, version=2)
+    
     pipeline.save_infos()

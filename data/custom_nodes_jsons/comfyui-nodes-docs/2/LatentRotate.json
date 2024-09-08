@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LatentRotate node in ComfyUI?",
+        "answer": "The LatentRotate node in ComfyUI is designed to perform rotation operations on latent samples. It can handle various rotation angles such as 90, 180, or 270 degrees, transforming the latent space data accordingly."
+    },
+    {
+        "question": "What is the significance of the 'samples' parameter in the LatentRotate node?",
+        "answer": "The 'samples' parameter is crucial for the operation of the LatentRotate node as it represents the latent space data that needs to be rotated. The effectiveness of the node in transforming data is directly related to the quality and format of the input samples."
+    },
+    {
+        "question": "What does the 'rotation' parameter specify in the LatentRotate node?",
+        "answer": "The 'rotation' parameter in the LatentRotate node specifies the rotation angle to be applied to the latent samples. It is a key input that determines the direction of the rotated data, influencing the output of the node."
+    },
+    {
+        "question": "What is the output of the LatentRotate node?",
+        "answer": "The output of the LatentRotate node is the 'rotated_samples' parameter, which represents the rotated latent space data. It is significant as it is the direct result of the node's operation, containing the transformed data ready for downstream tasks."
+    },
+    {
+        "question": "What infrastructure type does the LatentRotate node use?",
+        "answer": "The LatentRotate node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the LatentRotate node determine the value of 'rotate_by' based on the 'rotation' parameter?",
+        "answer": "In the LatentRotate node, the 'rotate_by' value is determined based on the 'rotation' parameter. If 'rotation' starts with '90', 'rotate_by' is set to 1. If it starts with '180', 'rotate_by' is set to 2, and if it starts with '270', 'rotate_by' is set to 3."
+    },
+    {
+        "question": "What operation is performed on the 'samples' tensor in the LatentRotate node?",
+        "answer": "In the LatentRotate node, the 'samples' tensor undergoes a torch.rot90 operation, which rotates it by 'rotate_by' times 90 degrees in the dimensions [3, 2]."
+    }
+]

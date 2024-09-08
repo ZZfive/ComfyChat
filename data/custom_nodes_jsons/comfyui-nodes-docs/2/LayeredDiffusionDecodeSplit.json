@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LayeredDiffusionDecodeSplit class in ComfyUI?",
+        "answer": "The LayeredDiffusionDecodeSplit class is designed to efficiently decode RGBA images in sub-batches, improving processing throughput and memory management."
+    },
+    {
+        "question": "What are the required input types for the LayeredDiffusionDecodeSplit class?",
+        "answer": "The required input types for the LayeredDiffusionDecodeSplit class are 'samples' (Comfy dtype: LATENT), 'images' (Comfy dtype: IMAGE), 'frames' (Comfy dtype: INT), 'sd_version' (Comfy dtype: ENUM), and 'sub_batch_size' (Comfy dtype: INT)."
+    },
+    {
+        "question": "How does the 'frames' parameter influence the decoding process in LayeredDiffusionDecodeSplit?",
+        "answer": "The 'frames' parameter determines the frequency of image decoding, effectively controlling the size of the sub-batches. It plays a key role in balancing computational efficiency and memory usage."
+    },
+    {
+        "question": "What does the 'sd_version' parameter specify in the LayeredDiffusionDecodeSplit class?",
+        "answer": "The 'sd_version' parameter specifies the version of the Stable Diffusion model to be used, which is crucial for determining the decoding algorithm and its compatibility with the input data."
+    },
+    {
+        "question": "What is the role of the 'sub_batch_size' parameter in the LayeredDiffusionDecodeSplit class?",
+        "answer": "The 'sub_batch_size' parameter is essential for managing the computational load, as it defines the number of images processed in each sub-batch. It plays an important role in optimizing the speed and resource allocation of the decoding process."
+    },
+    {
+        "question": "What are the output types of the LayeredDiffusionDecodeSplit class?",
+        "answer": "The output types of the LayeredDiffusionDecodeSplit class are 'image' (Comfy dtype: IMAGE) and 'alpha' (Comfy dtype: IMAGE)."
+    },
+    {
+        "question": "What infrastructure type is recommended for the LayeredDiffusionDecodeSplit class?",
+        "answer": "The recommended infrastructure type for the LayeredDiffusionDecodeSplit class is GPU."
+    }
+]

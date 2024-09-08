@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoadImageListFromDir __Inspire node in ComfyUI?",
+        "answer": "The LoadImageListFromDir __Inspire node in ComfyUI is designed to load a list of images from a specified directory, facilitating batch processing or simultaneous analysis of multiple images."
+    },
+    {
+        "question": "What are the required and optional input parameters for the LoadImageListFromDir __Inspire node?",
+        "answer": "The required input parameter is 'directory', which specifies the directory path from which to load the images. The optional input parameters are 'image_load_cap', 'start_index', and 'load_always'."
+    },
+    {
+        "question": "What does the 'image_load_cap' parameter control in the LoadImageListFromDir __Inspire node?",
+        "answer": "The 'image_load_cap' parameter limits the number of images loaded from the directory, allowing control over resource usage and processing time."
+    },
+    {
+        "question": "How does the 'start_index' parameter affect the loading of images in the LoadImageListFromDir __Inspire node?",
+        "answer": "The 'start_index' parameter determines the starting index for loading images, enabling selective reading of images from a larger collection."
+    },
+    {
+        "question": "What is the purpose of the 'load_always' flag in the LoadImageListFromDir __Inspire node?",
+        "answer": "The 'load_always' flag, when set, forces the node to load images regardless of other conditions that may prevent loading."
+    },
+    {
+        "question": "What are the output types of the LoadImageListFromDir __Inspire node?",
+        "answer": "The output types of the LoadImageListFromDir __Inspire node are 'image' and 'mask'. 'image' is a list of loaded and processed images ready for further use in the workflow, while 'mask' is a list of corresponding masks suitable for operations requiring image segmentation or modification."
+    },
+    {
+        "question": "How does the LoadImageListFromDir __Inspire node handle images with transparency?",
+        "answer": "If an image has an alpha channel, the LoadImageListFromDir __Inspire node converts it into a mask. The mask is created by taking the alpha channel, converting it to a float32 array, normalizing the values, and subtracting from 1."
+    }
+]

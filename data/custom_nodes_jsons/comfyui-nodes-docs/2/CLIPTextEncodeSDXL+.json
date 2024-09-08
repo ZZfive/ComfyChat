@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is cg-noise in ComfyUI?",
+        "answer": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+    },
+    {
+        "question": "How does cg-noise generate variations in images?",
+        "answer": "cg-noise generates variations in images by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+    },
+    {
+        "question": "What are the inputs and outputs of the cg-noise node?",
+        "answer": "The cg-noise node has inputs of `seed`, `variation_seed`, and `x`. The output is the generated noise image."
+    },
+    {
+        "question": "How can the variation amount be adjusted in cg-noise?",
+        "answer": "The variation amount in cg-noise can be adjusted by changing the value of `x` between 0 and 1, with 0 giving no variation and 1 giving maximum variation."
+    },
+    {
+        "question": "Is cg-noise deterministic?",
+        "answer": "Yes, cg-noise is deterministic, meaning that the same seeds and `x` value will always produce the same noise image."
+    },
+    {
+        "question": "What is the role of the `seed` input in cg-noise?",
+        "answer": "The `seed` input in cg-noise determines the base noise image, which is then modified by the `variation_seed` and `x` inputs to create variations."
+    },
+    {
+        "question": "How can cg-noise be used to create a series of related noise images?",
+        "answer": "To create a series of related noise images with cg-noise, you can keep the `seed` constant while varying the `variation_seed` and/or `x` values."
+    }
+]

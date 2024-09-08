@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LatentKeyframeNode in ComfyUI?",
+        "answer": "The LatentKeyframeNode is designed to manage and manipulate keyframes within control nets, focusing on integrating new keyframes based on batch index and strength parameter sets."
+    },
+    {
+        "question": "What is the significance of the batch_index input in the LatentKeyframeNode?",
+        "answer": "The batch_index is a crucial parameter that determines the position of the keyframe in the batch processing sequence. It is essential for the node to correctly organize and reference keyframes, ensuring accurate data flow and synchronization within the system."
+    },
+    {
+        "question": "How does the strength input affect the functioning of the LatentKeyframeNode?",
+        "answer": "The strength parameter influences the weight of the keyframe's impact on the overall control network. It plays a critical role in determining the degree to which the keyframe affects the final output."
+    },
+    {
+        "question": "What is the role of the prev_latent_kf input in the LatentKeyframeNode?",
+        "answer": "The prev_latent_kf input represents a previous set of keyframes that the node uses to build upon and integrate new keyframes. It is important for maintaining continuity and consistency in control net operations."
+    },
+    {
+        "question": "What does the output of the LatentKeyframeNode represent?",
+        "answer": "The output of the LatentKeyframeNode is an updated keyframe group that includes newly added keyframes. This output is important as it reflects the progress of the control network and the changes and adjustments made through node operations."
+    },
+    {
+        "question": "What is the infra type recommended for the LatentKeyframeNode?",
+        "answer": "The recommended infra type for the LatentKeyframeNode is CPU."
+    },
+    {
+        "question": "What happens if no prev_latent_kf is provided to the LatentKeyframeNode?",
+        "answer": "If no prev_latent_kf is provided, the node creates a new LatentKeyframeGroup. If one exists, it clones the existing group and adds the new keyframe to it."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MaskMorphologyNode class in ComfyUI?",
+        "answer": "The MaskMorphologyNode class is designed to perform morphological operations on image masks in ComfyUI. It provides capabilities for dilation, erosion, opening, and closing operations, which are crucial for image processing tasks such as denoising and feature enhancement."
+    },
+    {
+        "question": "What are the required input types for the MaskMorphologyNode?",
+        "answer": "The required input types for the MaskMorphologyNode are: an image tensor representing the input image mask, a distance parameter determining the range of the morphological operation, and an op parameter specifying the type of morphological operation to be performed, which can be dilation, erosion, opening, or closing."
+    },
+    {
+        "question": "How does the distance parameter affect the morphological operations in the MaskMorphologyNode?",
+        "answer": "The distance parameter in the MaskMorphologyNode determines the scope of the morphological operation, such as the size of the kernel used for dilation or erosion. It significantly influences the result of the node's processing."
+    },
+    {
+        "question": "What are the possible values for the op parameter in the MaskMorphologyNode?",
+        "answer": "The possible values for the op parameter in the MaskMorphologyNode are 'dilate', 'erode', 'open', and 'close', which correspond to the dilation, erosion, opening, and closing morphological operations, respectively."
+    },
+    {
+        "question": "What is the output type of the MaskMorphologyNode?",
+        "answer": "The output type of the MaskMorphologyNode is an output image, which is the result of applying the selected morphological operation to the input image. It is a transformed version of the original image mask, reflecting the effect of the chosen operation."
+    },
+    {
+        "question": "What is the infrastructure type recommended for running the MaskMorphologyNode?",
+        "answer": "The recommended infrastructure type for running the MaskMorphologyNode is GPU."
+    },
+    {
+        "question": "How does the dilate function in the MaskMorphologyNode work?",
+        "answer": "The dilate function in the MaskMorphologyNode performs dilation by using the torch.max_pool2d function to apply a max pooling operation on the image with a kernel size determined by the distance parameter, effectively expanding the white regions in the image mask."
+    }
+]

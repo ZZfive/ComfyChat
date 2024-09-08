@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MaskListToMaskBatch node in ComfyUI?",
+        "answer": "The MaskListToMaskBatch node in ComfyUI is designed to consolidate a series of mask images into a single batch tensor, ensuring they are in a 3D format suitable for batch processing. This node plays a crucial role in preparing batch input data required for downstream machine learning models."
+    },
+    {
+        "question": "What is the required input type for the MaskListToMaskBatch node?",
+        "answer": "The required input type for the MaskListToMaskBatch node is 'mask,' which is a list of mask images. This parameter is essential for the node's operation as it directly influences the output batch tensor."
+    },
+    {
+        "question": "What is the output type of the MaskListToMaskBatch node?",
+        "answer": "The output type of the MaskListToMaskBatch node is 'mask_batch,' which is a single tensor representing the batch of masks. This tensor is formatted to be compatible with machine learning models expecting batch input data."
+    },
+    {
+        "question": "How does the MaskListToMaskBatch node handle a single mask input?",
+        "answer": "If the MaskListToMaskBatch node receives a single mask input, it converts that mask into a 3D format and returns it as the output tensor."
+    },
+    {
+        "question": "How does the MaskListToMaskBatch node handle multiple mask inputs?",
+        "answer": "For multiple mask inputs, the MaskListToMaskBatch node converts each mask into a 3D format and then concatenates them into a single tensor for batch processing. If the masks have different shapes, the node upscales them to match the shape of the first mask."
+    },
+    {
+        "question": "What does the MaskListToMaskBatch node return if no masks are provided?",
+        "answer": "If no masks are provided to the MaskListToMaskBatch node, it returns an empty mask tensor with a shape of (1, 64, 64), using a float32 data type on the CPU device."
+    },
+    {
+        "question": "What infrastructure type is recommended for the MaskListToMaskBatch node?",
+        "answer": "The recommended infrastructure type for the MaskListToMaskBatch node is CPU."
+    }
+]

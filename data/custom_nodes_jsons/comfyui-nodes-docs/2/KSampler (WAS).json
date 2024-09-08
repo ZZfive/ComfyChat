@@ -1,0 +1,30 @@
+[
+    {
+        "question": "WAS_KSampler节点的关键输入参数是什么？",
+        "answer": "WAS_KSampler节点的关键输入参数包括：模型（model）、种子（seed）、采样器名称（sampler_name）、调度器（scheduler）、正向条件（positive）、负向条件（negative）以及潜在图像（latent_image）。"
+    },
+    {
+        "question": "WAS_KSampler节点中的正向和负向参数有什么作用？",
+        "answer": "在WAS_KSampler节点中，正向参数（positive）提供正向条件信息，引导采样过程生成具有所需特征的图像。而负向参数（negative）提供负向条件信息，以防止采样图像中包含不需要的特征。"
+    },
+    {
+        "question": "WAS_KSampler节点如何控制生成图像的保真度？",
+        "answer": "WAS_KSampler节点通过调整无分类器指导比例（cfg）参数来控制生成图像与输入条件的保真度。该参数在生成图像中平衡内容和随机性。"
+    },
+    {
+        "question": "WAS_KSampler节点的输入中步数（steps）参数有什么作用？",
+        "answer": "在WAS_KSampler节点中，步数（steps）参数决定了采样过程中的迭代次数。更多的步数通常会导致更精细的输出，因为它影响最终潜在图像的收敛和细节。"
+    },
+    {
+        "question": "WAS_KSampler节点的输出类型是什么？",
+        "answer": "WAS_KSampler节点的输出类型是潜在输出（latent），它代表以编码形式采样的图像，可以进一步处理或用作后续图像生成任务的输入。"
+    },
+    {
+        "question": "WAS_KSampler节点如何修改采样过程中的噪声减少级别？",
+        "answer": "WAS_KSampler节点通过去噪（denoise）参数控制采样过程中应用的噪声减少级别。这是一个微调选项，可以提高最终图像的清晰度。"
+    },
+    {
+        "question": "WAS_KSampler使用了哪些基础设施类型？",
+        "answer": "WAS_KSampler节点的使用提示中说明，其使用的基础设施类型为GPU。"
+    }
+]

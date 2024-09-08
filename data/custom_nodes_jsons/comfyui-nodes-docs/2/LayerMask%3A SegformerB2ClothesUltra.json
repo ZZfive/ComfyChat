@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Segformer_B2_Clothes节点的主要功能是什么？",
+        "answer": "Segformer_B2_Clothes节点用于为人物生成脸、头发、手臂、腿以及服饰的遮罩，主要用于分割服装。它相比于comfyui_segformer_b2_clothes节点具有超高的边缘细节。"
+    },
+    {
+        "question": "使用Segformer_B2_Clothes节点需要下载哪些文件？",
+        "answer": "需要从https://huggingface.co/mattmdjaga/segformer_b2_clothes下载全部文件至ComfyUI/models/segformer_b2_clothes文件夹。"
+    },
+    {
+        "question": "Segformer_B2_Clothes节点支持哪些边缘处理方法？",
+        "answer": "Segformer_B2_Clothes节点支持的边缘处理方法包括VITMatte, VITMatte(local), PyMatting, GuidedFilter等。"
+    },
+    {
+        "question": "Segformer_B2_Clothes节点的detail_erode参数是什么意思？",
+        "answer": "detail_erode参数表示遮罩边缘向内侵蚀的范围，数值越大，向内修复的范围越大。"
+    },
+    {
+        "question": "Segformer_B2_Clothes节点的detail_dilate参数是什么意思？",
+        "answer": "detail_dilate参数表示遮罩边缘向外扩张的范围，数值越大，向外修复的范围越大。"
+    },
+    {
+        "question": "Segformer_B2_Clothes节点的black_point和white_point参数是用来做什么的？",
+        "answer": "black_point参数表示边缘黑色采样阈值，white_point参数表示边缘白色采样阈值，它们用于对遮罩进行直方图重映射。"
+    },
+    {
+        "question": "如何跳过Segformer_B2_Clothes节点的边缘处理以节省运行时间？",
+        "answer": "将Segformer_B2_Clothes节点的process_detail参数设为False可以跳过边缘处理以节省运行时间。"
+    }
+]

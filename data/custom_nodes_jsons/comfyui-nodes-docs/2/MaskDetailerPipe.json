@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MaskDetailerPipe node in ComfyUI?",
+        "answer": "The MaskDetailerPipe node in ComfyUI is designed to process and enhance image details based on a provided mask. It refines and enhances the masked areas in the image, focusing on improving the visual quality and details of the specified regions."
+    },
+    {
+        "question": "What are the required inputs for the MaskDetailerPipe node?",
+        "answer": "The required inputs for the MaskDetailerPipe node are: image (the input image for processing), mask (defines the regions of interest within the image), and basic_pipe (a set of pre-trained models and configurations for initial image processing and analysis)."
+    },
+    {
+        "question": "What does the 'guide_size' parameter influence in the MaskDetailerPipe node?",
+        "answer": "The 'guide_size' parameter in the MaskDetailerPipe node influences the scale of detail enhancement. It determines the level of detail the node will focus on during processing."
+    },
+    {
+        "question": "What are the output types of the MaskDetailerPipe node?",
+        "answer": "The output types of the MaskDetailerPipe node are: enhanced_img_batch (a batch of enhanced images with refined details based on the input mask and parameters) and cropped_enhanced_list (a series of cropped and enhanced image segments, each corresponding to a region defined by the input mask)."
+    },
+    {
+        "question": "How does the MaskDetailerPipe node handle input images with multiple batches?",
+        "answer": "The MaskDetailerPipe node does not allow image batches. If an image with multiple batches is provided, it raises an exception and refers the user to the documentation for more information on batching with the detailer."
+    },
+    {
+        "question": "What happens if no mask is provided to the MaskDetailerPipe node?",
+        "answer": "If no mask is provided to the MaskDetailerPipe node, it treats the entire image as a single segment and processes it accordingly, without focusing on specific regions."
+    },
+    {
+        "question": "What is the default value for the 'batch_size' parameter in the MaskDetailerPipe node?",
+        "answer": "The default value for the 'batch_size' parameter in the MaskDetailerPipe node is 1."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the floor_region method in the WAS_Mask_Floor_Region class?",
+        "answer": "The floor_region method is designed to process a given mask or batch of masks to identify and operate on the lowest intensity region(s) within the mask(s)."
+    },
+    {
+        "question": "What is the data type of the input masks parameter?",
+        "answer": "In ComfyUI, the data type of the input masks parameter is MASK, and in Python, it is torch.Tensor."
+    },
+    {
+        "question": "How does the floor_region method determine the lowest intensity region in a mask?",
+        "answer": "The method converts the mask to a NumPy array, applies a threshold to isolate non-black pixels, and then determines the minimum value among these pixels."
+    },
+    {
+        "question": "Can the floor_region method process a batch of masks?",
+        "answer": "Yes, the floor_region method can handle both a single mask and a batch of masks, returning a tensor representing the processed region(s)."
+    },
+    {
+        "question": "What does the output parameter MASKS represent?",
+        "answer": "The output parameter MASKS represents the result of the floor_region method's processing, containing the lowest intensity region(s) identified in the input mask(s)."
+    },
+    {
+        "question": "What is the infra type recommended for the WAS_Mask_Floor_Region class?",
+        "answer": "The recommended infra type for the WAS_Mask_Floor_Region class is CPU."
+    },
+    {
+        "question": "How is the final region tensor created in the floor_region method?",
+        "answer": "The final region tensor is created by converting the region mask back to a tensor using pil2mask and unsqueezing it twice to add dimensions, resulting in a tensor with a shape that can be concatenated or directly returned."
+    }
+]

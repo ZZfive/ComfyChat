@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MaskEdgeUltraDetail class in ComfyUI?",
+        "answer": "The MaskEdgeUltraDetail class in ComfyUI is used to process relatively rough masks to obtain ultra-fine edges."
+    },
+    {
+        "question": "Which two methods are provided by MaskEdgeUltraDetail to process mask edges?",
+        "answer": "MaskEdgeUltraDetail provides two methods to process mask edges: PyMatting and OpenCV-GuidedFilter."
+    },
+    {
+        "question": "What is the difference between the PyMatting and OpenCV-GuidedFilter methods?",
+        "answer": "The PyMatting method processes mask edges more slowly compared to OpenCV-GuidedFilter. However, for videos, using PyMatting is recommended to obtain a smoother mask sequence."
+    },
+    {
+        "question": "What does the mask_grow parameter in MaskEdgeUltraDetail do?",
+        "answer": "The mask_grow parameter controls the expansion or contraction of the mask. Positive values expand the mask outward, while negative values shrink the mask inward. For rough masks, using negative values to shrink the edges usually yields better results."
+    },
+    {
+        "question": "How can the fix_gap parameter be used to improve the mask?",
+        "answer": "The fix_gap parameter can be used to fill gaps in the mask. If the mask has noticeable gaps, increasing this value appropriately can help repair those gaps."
+    },
+    {
+        "question": "What does the detail_range parameter control in MaskEdgeUltraDetail?",
+        "answer": "The detail_range parameter controls the range of edge details when processing the mask."
+    },
+    {
+        "question": "What are the black_point and white_point parameters used for in MaskEdgeUltraDetail?",
+        "answer": "The black_point and white_point parameters are used as the black and white sampling thresholds for the edges of the mask."
+    }
+]

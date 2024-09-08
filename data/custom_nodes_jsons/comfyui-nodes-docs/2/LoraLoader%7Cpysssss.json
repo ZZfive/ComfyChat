@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoraLoader custom node in ComfyUI?",
+        "answer": "The LoraLoader custom node in ComfyUI is used to load and apply LoRA (Low-Rank Adaptation) adjustments to models and CLIP, enhancing their functionality or changing their behavior based on specified LoRA configurations."
+    },
+    {
+        "question": "What are the required input types for the LoraLoader node?",
+        "answer": "The required input types for the LoraLoader node are: model (MODEL dtype in Comfy, torch.nn.Module in Python), clip (CLIP dtype in Comfy, torch.nn.Module in Python), lora_name (COMBO[STRING] dtype in Comfy, str in Python), strength_model (FLOAT dtype in Comfy, float in Python), and strength_clip (FLOAT dtype in Comfy, float in Python)."
+    },
+    {
+        "question": "What does the 'strength_model' input define in the LoraLoader node?",
+        "answer": "The 'strength_model' input in the LoraLoader node defines the strength of the LoRA adjustment applied to the model, allowing for fine control over the modifications."
+    },
+    {
+        "question": "What are the output types of the LoraLoader node?",
+        "answer": "The output types of the LoraLoader node are: model (MODEL dtype in Comfy, torch.nn.Module in Python) which is the model with the LoRA adjustment applied, and clip (CLIP dtype in Comfy, torch.nn.Module in Python) which is the CLIP model with the LoRA adjustment applied."
+    },
+    {
+        "question": "What infrastructure type does the LoraLoader node use?",
+        "answer": "The LoraLoader node uses the GPU infrastructure type."
+    },
+    {
+        "question": "How does the LoraLoaderWithImages class differ from the base LoraLoader class?",
+        "answer": "The LoraLoaderWithImages class extends the base LoraLoader class by adding image-specific LoRA configuration handling, making it versatile for various multimedia applications. It overrides the INPUT_TYPES class method to populate items related to 'loras' and modifies the load_lora method to handle the 'lora_name' input differently."
+    },
+    {
+        "question": "What is the purpose of the 'lora_name' input in the LoraLoader node?",
+        "answer": "The 'lora_name' input in the LoraLoader node specifies the name of the LoRA configuration to be applied, determining the specific adjustments and enhancements made to the model and CLIP."
+    }
+]

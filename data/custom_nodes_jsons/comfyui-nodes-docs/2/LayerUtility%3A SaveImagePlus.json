@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SaveImagePlus节点的作用是什么？",
+        "answer": "SaveImagePlus是一个增强版的保存图片节点，可以自定义保存图片的目录，文件名添加时间戳，选择保存格式，设置图片压缩率，设置是否保存工作流，以及可选择为图片添加隐形水印。"
+    },
+    {
+        "question": "在SaveImagePlus节点中，如何使用预定义的变量在文件名中添加日期和时间？",
+        "answer": "可以在文件名前缀中使用%date表示当前日期(YY-mm-dd)，%time表示当前时间(HH-MM-SS)。例如%date/name_%time将输出图片到YY-mm-dd文件夹下，以name_HH-MM-SS为文件名前缀。"
+    },
+    {
+        "question": "使用SaveImagePlus节点保存图片时，支持哪些图片格式？",
+        "answer": "SaveImagePlus节点目前支持png和jpg两种图片格式。需要注意的是，RGBA模式的图片仅支持png格式。"
+    },
+    {
+        "question": "SaveImagePlus节点能否将工作流信息保存到图片中？如果可以，如何设置？",
+        "answer": "SaveImagePlus节点可以将工作流信息保存到png格式的图片中。如果不希望泄露工作流，可以将meta_data参数设置为false。"
+    },
+    {
+        "question": "如何使用SaveImagePlus节点为图片添加隐形水印？",
+        "answer": "在SaveImagePlus节点中，可以在blind_watermark参数中输入要转换为二维码的文字，节点会将其作为隐形水印保存到图片中。注意有水印的图片建议保存为png格式，质量较低的jpg格式可能导致水印信息丢失。"
+    },
+    {
+        "question": "SaveImagePlus节点能否在保存图片的同时输出工作流为json文件？",
+        "answer": "可以，SaveImagePlus节点提供了save_workflow_as_json参数，如果设置为true，节点会在保存图片时同时将工作流输出为json文件，图片和json文件会保存在同一目录。"
+    },
+    {
+        "question": "SaveImagePlus节点的源代码中，是如何实现图片的保存功能的？",
+        "answer": "在SaveImagePlus类的save_image_plus方法中，通过获取各种参数设置，如图片格式、质量、文件名等，然后使用PIL库的save方法将图片保存到指定目录。同时还处理了添加隐形水印、保存工作流信息等附加功能。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoraLoader node in ComfyUI?",
+        "answer": "The LoraLoader node is designed to manage the loading and application of LoRA (Low-Rank Adaptation) modifications to models. It efficiently handles integrating LoRA adjustments into the model and clip components, allowing for fine-tuning of model behavior with minimal computational overhead."
+    },
+    {
+        "question": "What are the required input types for the LoraLoader node?",
+        "answer": "The required input types for the LoraLoader node are: model (Comfy dtype: MODEL, Python dtype: torch.nn.Module), clip (Comfy dtype: CLIP, Python dtype: torch.nn.Module), and lora_name (Comfy dtype: folder_paths.get_filename_list('loras'), Python dtype: str)."
+    },
+    {
+        "question": "What does the lora_name parameter in the LoraLoader node specify?",
+        "answer": "The lora_name parameter identifies the specific LoRA configuration to be loaded. It is crucial as it determines the set of modifications that will be applied to the model, shaping the functionality of the node and the adaptive behavior of the model."
+    },
+    {
+        "question": "What is the purpose of the strength_model parameter in the LoraLoader node?",
+        "answer": "The strength_model parameter adjusts the strength of the LoRA modifications applied to the model. It plays a key role in fine-tuning model behavior, providing a balance between the capabilities of the original model and the adapted model."
+    },
+    {
+        "question": "What are the output types of the LoraLoader node?",
+        "answer": "The output types of the LoraLoader node are: model_lora (Comfy dtype: MODEL, Python dtype: torch.nn.Module) and clip_lora (Comfy dtype: CLIP, Python dtype: torch.nn.Module)."
+    },
+    {
+        "question": "How does the LoraLoader node handle the loading of LoRA configurations?",
+        "answer": "The LoraLoader node checks if the requested LoRA configuration is already loaded. If it is, the node uses the loaded configuration. If not, it loads the LoRA configuration from the specified path and updates the loaded_lora attribute."
+    },
+    {
+        "question": "What infra type does the LoraLoader node use?",
+        "answer": "The LoraLoader node uses the CPU infra type."
+    }
+]

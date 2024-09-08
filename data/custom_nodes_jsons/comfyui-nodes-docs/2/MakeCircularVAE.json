@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MakeCircularVAE node in ComfyUI?",
+        "answer": "The MakeCircularVAE node in ComfyUI is designed to modify a Variational Autoencoder (VAE) model to enable circular padding for convolutional layers, allowing the model to handle data with periodic boundary conditions."
+    },
+    {
+        "question": "What are the input types required for the MakeCircularVAE node?",
+        "answer": "The MakeCircularVAE node requires three input parameters: 'vae' (the VAE model to be modified), 'tiling' (how to apply circular padding), and 'copy_vae' (whether to modify the original model or create a copy)."
+    },
+    {
+        "question": "What does the 'tiling' parameter in the MakeCircularVAE node control?",
+        "answer": "The 'tiling' parameter in the MakeCircularVAE node determines how circular padding is applied to the VAE model's convolutional layers, controlling whether padding is applied to both dimensions or only one dimension."
+    },
+    {
+        "question": "What is the function of the 'copy_vae' parameter in the MakeCircularVAE node?",
+        "answer": "The 'copy_vae' parameter in the MakeCircularVAE node decides whether to directly modify the original VAE model or create a copy of the model before applying modifications."
+    },
+    {
+        "question": "What is the output type of the MakeCircularVAE node?",
+        "answer": "The output type of the MakeCircularVAE node is a modified or copied Variational Autoencoder (VAE) model with circular padding applied to its convolutional layers."
+    },
+    {
+        "question": "What infra type is recommended for the MakeCircularVAE node?",
+        "answer": "The recommended infra type for the MakeCircularVAE node is GPU."
+    },
+    {
+        "question": "How does the MakeCircularVAE node apply circular padding to the VAE model?",
+        "answer": "The MakeCircularVAE node applies circular padding to the VAE model by calling the 'make_circular_asymm' function with the appropriate arguments based on the 'tiling' parameter."
+    }
+]

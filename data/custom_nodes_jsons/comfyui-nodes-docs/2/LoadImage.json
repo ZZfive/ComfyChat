@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoadImage node in ComfyUI?",
+        "answer": "The LoadImage node in ComfyUI is designed to ingest image files from a specified directory, process them, and output the images along with their corresponding masks. It can handle image sequences and convert them into a format suitable for further processing, emphasizing its role in preparing data for image-related tasks."
+    },
+    {
+        "question": "What is the 'image' parameter in the LoadImage node?",
+        "answer": "The 'image' parameter in the LoadImage node is the path to the image file that needs to be processed. It is crucial for the node's operation as it determines the specific image to be loaded and manipulated."
+    },
+    {
+        "question": "What does the 'IMAGE' output represent in the LoadImage node?",
+        "answer": "The 'IMAGE' output in the LoadImage node is a tensor representing the processed image data, which has been converted to a float format and normalized. This output is important as it serves as the primary data structure for subsequent image analysis or manipulation tasks."
+    },
+    {
+        "question": "What does the 'MASK' output represent in the LoadImage node?",
+        "answer": "The 'MASK' output in the LoadImage node is a tensor representing a binary mask associated with the image, used to differentiate between different regions or objects within the image. It is essential for tasks that require segmentation or object recognition."
+    },
+    {
+        "question": "What infrastructure type does the LoadImage node use?",
+        "answer": "The LoadImage node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the LoadImage node handle image sequences?",
+        "answer": "The LoadImage node processes each image in the sequence using the ImageSequence.Iterator. It converts each image to RGB format, normalizes the pixel values, and converts them to tensors. If an alpha channel is present, it is used to create a mask. The processed images and masks are then concatenated into a single tensor if there are multiple images in the sequence."
+    },
+    {
+        "question": "How does the LoadImage node validate the inputs?",
+        "answer": "The LoadImage node validates the inputs by checking if the specified image file exists in the annotated file path. If the file does not exist, it returns an error message indicating an invalid image file."
+    }
+]

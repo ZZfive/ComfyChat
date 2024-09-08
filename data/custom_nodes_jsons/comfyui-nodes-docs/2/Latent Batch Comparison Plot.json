@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LatentBatchComparator node in ComfyUI?",
+        "answer": "The purpose of the LatentBatchComparator node is to compare two batches of latent variables by generating a visualization that shows the differences between them."
+    },
+    {
+        "question": "What input parameters are required for the LatentBatchComparator node?",
+        "answer": "The LatentBatchComparator node requires two input parameters: latent_batch_1 and latent_batch_2, both of which are of the 'LATENT' Comfy dtype and represent the two batches of latent variables to be compared."
+    },
+    {
+        "question": "What is the output of the LatentBatchComparator node?",
+        "answer": "The output of the LatentBatchComparator node is a plot_image, which is an image representing the cosine similarity matrix between the two input batches of latent variables."
+    },
+    {
+        "question": "How does the LatentBatchComparator node quantify the differences between latent vectors?",
+        "answer": "The LatentBatchComparator node quantifies the differences between latent vectors using a cosine similarity matrix, which provides a clear, intuitive understanding of their relative positions in the latent space."
+    },
+    {
+        "question": "What is the infra type specified for the LatentBatchComparator node?",
+        "answer": "The infra type specified for the LatentBatchComparator node is CPU."
+    },
+    {
+        "question": "What is the expected shape of the input latent batches in the LatentBatchComparator node?",
+        "answer": "The expected shape of the input latent batches in the LatentBatchComparator node is (B, C, H, W), where B is the batch size, C is the number of channels, H is the height, and W is the width of the latent variables."
+    },
+    {
+        "question": "What happens if the input latent batches have different shapes in the LatentBatchComparator node?",
+        "answer": "If the input latent batches have different shapes in the LatentBatchComparator node, a ValueError is raised with a message indicating that the latent batches must have the same shape."
+    }
+]

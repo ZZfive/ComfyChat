@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LLMSummaryIndex node in ComfyUI?",
+        "answer": "The LLMSummaryIndex node in ComfyUI is designed to utilize language models to create summaries of documents. It processes and condenses the input document using a summary model with the goal of capturing key information in a concise format."
+    },
+    {
+        "question": "What are the required input types for the LLMSummaryIndex node?",
+        "answer": "The required input types for the LLMSummaryIndex node are 'llm_model', which specifies the language model to be used for summarization, and 'document', which represents the input document that needs to be summarized."
+    },
+    {
+        "question": "What is the optional input type for the LLMSummaryIndex node?",
+        "answer": "The optional input type for the LLMSummaryIndex node is 'optional_llm_context', which allows for providing additional context or parameters to the language model for customizing the summary output."
+    },
+    {
+        "question": "What is the output type of the LLMSummaryIndex node?",
+        "answer": "The output type of the LLMSummaryIndex node is 'llm_index', which provides a structured and easy-to-understand summary representation of the input document."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the LLMSummaryIndex node?",
+        "answer": "The recommended infrastructure type for running the LLMSummaryIndex node is GPU."
+    },
+    {
+        "question": "What does the LLMSummaryIndex node do if the token count of the metadata exceeds 1024?",
+        "answer": "If the token count of the metadata exceeds 1024, the LLMSummaryIndex node truncates the metadata using the tokenizer."
+    },
+    {
+        "question": "How does the LLMSummaryIndex node handle the summarization of multiple documents?",
+        "answer": "The LLMSummaryIndex node handles the summarization of multiple documents by iterating over each document in the input, processing its text and metadata, and then creating a SummaryIndex from the documents using the specified embedding model and optional service context."
+    }
+]

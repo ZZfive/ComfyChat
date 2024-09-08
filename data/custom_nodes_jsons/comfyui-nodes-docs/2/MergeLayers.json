@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the MergeLayers node in ComfyUI?",
+        "answer": "The MergeLayers node is designed to integrate multiple layers onto a base image. It processes a series of images and their corresponding layers, applying each layer to the base image at specified positions, with optional scaling, to generate a composite image and a mask that outlines the layered areas."
+    },
+    {
+        "question": "What are the required input types for the MergeLayers node?",
+        "answer": "The MergeLayers node requires two input types: 'layers' and 'images'. 'layers' is a list of dictionaries, where each dictionary represents a layer to be merged onto the base image. 'images' is a list of base images onto which the layers will be merged."
+    },
+    {
+        "question": "What does the 'layers' input parameter represent in the MergeLayers node?",
+        "answer": "The 'layers' input parameter is a list of dictionaries, where each dictionary contains the image, mask, and position attributes for a layer to be merged onto the base image. These attributes are crucial for determining the final composition of the layered image."
+    },
+    {
+        "question": "What does the 'images' input parameter represent in the MergeLayers node?",
+        "answer": "The 'images' input parameter is a list of base images onto which the layers will be merged. Each image should be in tensor format, representing the raw pixel data that will serve as the canvas for the layering process."
+    },
+    {
+        "question": "What are the output types of the MergeLayers node?",
+        "answer": "The MergeLayers node outputs two types: 'IMAGE' and 'MASK'. 'IMAGE' is a tensor representing the final composite image formed by merging the input layers onto the base image. 'MASK' is a tensor representing the mask applied during the layering process, used to identify the layered areas of the image."
+    },
+    {
+        "question": "What does the 'IMAGE' output represent in the MergeLayers node?",
+        "answer": "The 'IMAGE' output is a tensor that represents the final composite image formed by merging the input layers onto the base image. It contains the visual result of the layering process."
+    },
+    {
+        "question": "What does the 'MASK' output represent in the MergeLayers node?",
+        "answer": "The 'MASK' output is a tensor that represents the mask applied during the layering process. It is used to identify the layered areas of the image, clearly distinguishing between different layers."
+    },
+    {
+        "question": "What is the recommended infrastructure type for running the MergeLayers node?",
+        "answer": "The recommended infrastructure type for running the MergeLayers node is CPU."
+    }
+]
