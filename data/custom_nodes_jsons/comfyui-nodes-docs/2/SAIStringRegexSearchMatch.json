@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SAIStringRegexSearchMatch node in ComfyUI?",
+        "answer": "The SAIStringRegexSearchMatch node is designed to perform search operations within a given text using a specified regular expression pattern and return all matches. It facilitates complex text analysis and extraction tasks by leveraging the power of regular expression patterns."
+    },
+    {
+        "question": "What are the required inputs for the SAIStringRegexSearchMatch node?",
+        "answer": "The required inputs for the SAIStringRegexSearchMatch node are 'text_input', which is the text to search for matches, and 'regex_pattern', which is the regular expression pattern used to identify matches within the text input."
+    },
+    {
+        "question": "What type of data does the 'text_input' parameter accept?",
+        "answer": "The 'text_input' parameter accepts a string data type in ComfyUI, which corresponds to a 'str' data type in Python. It allows multiline text, enabling searches within complex documents or text blocks."
+    },
+    {
+        "question": "What type of data does the 'regex_pattern' parameter accept?",
+        "answer": "The 'regex_pattern' parameter accepts a string data type in ComfyUI, which corresponds to a 'str' data type in Python. It defines the criteria for a match, allowing precise and flexible text analysis."
+    },
+    {
+        "question": "What is the output of the SAIStringRegexSearchMatch node?",
+        "answer": "The output of the SAIStringRegexSearchMatch node is a list of all text segments in the input text that match the specified regular expression pattern."
+    },
+    {
+        "question": "What is the infra type for the SAIStringRegexSearchMatch node?",
+        "answer": "The infra type for the SAIStringRegexSearchMatch node is 'CPU'."
+    },
+    {
+        "question": "What is the source code for the 'search_matches' function in the SAIStringRegexSearchMatch node?",
+        "answer": "The source code for the 'search_matches' function in the SAIStringRegexSearchMatch node is: ```python def search_matches(self, text_input, regex_pattern): matches = re.findall(regex_pattern, text_input) return (matches,) ```"
+    }
+]

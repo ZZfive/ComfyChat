@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PencilSketch node in ComfyUI?",
+        "answer": "The PencilSketch node in ComfyUI is designed to convert images into a pencil sketch style by applying a series of image processing techniques."
+    },
+    {
+        "question": "What are the required input types for the PencilSketch node?",
+        "answer": "The required input types for the PencilSketch node are: image (Comfy dtype: IMAGE, Python dtype: torch.Tensor), blur_radius (Comfy dtype: INT, Python dtype: int), and sharpen_alpha (Comfy dtype: FLOAT, Python dtype: float)."
+    },
+    {
+        "question": "What does the blur_radius parameter control in the PencilSketch node?",
+        "answer": "The blur_radius parameter controls the amount of blur applied to the image before the sketch effect is applied. It plays an important role in determining the smoothness of the final sketch."
+    },
+    {
+        "question": "What does the sharpen_alpha parameter adjust in the PencilSketch node?",
+        "answer": "The sharpen_alpha parameter adjusts the intensity of the sharpening effect applied to the final image. It is important for fine-tuning the contrast and clarity of the pencil sketch."
+    },
+    {
+        "question": "What is the output type of the PencilSketch node?",
+        "answer": "The output type of the PencilSketch node is output_image (Comfy dtype: IMAGE, Python dtype: torch.Tensor), which represents the final stylized image in the form of a pencil sketch."
+    },
+    {
+        "question": "What is the infra type for the PencilSketch node?",
+        "answer": "The infra type for the PencilSketch node is CPU."
+    },
+    {
+        "question": "How does the PencilSketch node apply the sketch effect to the input image?",
+        "answer": "The PencilSketch node applies the sketch effect by first converting the image to grayscale, inverting the colors, applying Gaussian blur, and then using a dodge function to combine the blurred and grayscale images. Finally, a sharpening effect is applied if the sharpen_alpha value is not 0.0."
+    }
+]

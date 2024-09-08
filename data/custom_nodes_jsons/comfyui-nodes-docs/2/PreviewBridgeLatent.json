@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PreviewBridgeLatent class in ComfyUI?",
+        "answer": "The PreviewBridgeLatent class in ComfyUI serves as an efficient bridge for visualizing and managing image latent representations. It provides a method to convert these latent representations into a preview format that can be easily interpreted and utilized within the system."
+    },
+    {
+        "question": "What are the required input parameters for the PreviewBridgeLatent class?",
+        "answer": "The required input parameters for the PreviewBridgeLatent class are 'latent', 'image', and 'preview_method'. The 'latent' parameter contains the encoded representation of the image that needs to be visualized, the 'image' parameter identifies the specific image to be processed, and the 'preview_method' parameter determines the method used to generate visual representations from the latent data."
+    },
+    {
+        "question": "What role does the 'vae_opt' parameter play in the PreviewBridgeLatent class?",
+        "answer": "When provided, the 'vae_opt' parameter allows the use of a specific VAE model to decode the latent data. Its inclusion can significantly influence the quality and style of the final preview image."
+    },
+    {
+        "question": "What are the output types of the PreviewBridgeLatent class?",
+        "answer": "The output types of the PreviewBridgeLatent class are 'ui' and 'result'. The 'ui' output provides a user interface representation of the processed image including information such as file name and subfolder location. The 'result' output contains the latent representation and mask of the processed image."
+    },
+    {
+        "question": "How does the 'unique_id' parameter contribute to the efficiency of the PreviewBridgeLatent class?",
+        "answer": "The 'unique_id' parameter is used to track and manage the cache of processed images. It contributes to the efficiency of the node by helping avoid redundant processing and ensuring the latest version of an image is always available."
+    },
+    {
+        "question": "What is the function of the 'mask' in the PreviewBridgeLatent class?",
+        "answer": "The 'mask' in the PreviewBridgeLatent class is used to apply transparency effects to the decoded image. If the 'noise_mask' is present in the latent representation, it is used as the mask. If not, a mask filled with ones is created."
+    },
+    {
+        "question": "What does the 'Infra type: CPU' usage tip signify in the PreviewBridgeLatent class documentation?",
+        "answer": "The 'Infra type: CPU' usage tip in the PreviewBridgeLatent class documentation indicates that this class utilizes CPU resources for its operations."
+    }
+]

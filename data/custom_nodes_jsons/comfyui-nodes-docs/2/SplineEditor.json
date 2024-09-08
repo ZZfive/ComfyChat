@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SplineEditor节点的主要功能是什么？",
+        "answer": "SplineEditor节点是一个专为创建和操作样条曲线设计的图形编辑器，用于生成各种类型的输出数据。它允许对样条曲线的形状和特征进行精细控制，特别适用于需要自定义调度、批量掩码或坐标转换的应用场景。"
+    },
+    {
+        "question": "SplineEditor节点需要哪些必需的输入类型？",
+        "answer": "SplineEditor节点要求以下必需的输入类型：points_store、coordinates、mask_width、mask_height、points_to_sample、sampling_method、interpolation、tension、repeat_output和float_output_type。这些输入参数用于定义样条曲线的形状、掩码尺寸、采样点数量等。"
+    },
+    {
+        "question": "SplineEditor节点支持哪些可选的输入类型？",
+        "answer": "SplineEditor节点支持两个可选的输入类型：min_value和max_value。它们用于指定输出的最小值和最大值，为生成的数据设置上下限。"
+    },
+    {
+        "question": "SplineEditor节点输出哪些类型的数据？",
+        "answer": "SplineEditor节点可以输出四种类型的数据：mask（掩码批次）、coord_str（坐标字符串表示）、float（浮点数列表、pandas系列或张量）和count（整数计数）。"
+    },
+    {
+        "question": "SplineEditor节点的采样方法有哪些？",
+        "answer": "SplineEditor节点提供了两种采样方法：time（沿时间轴采样，用于调度）和path（沿路径采样，用于坐标）。"
+    },
+    {
+        "question": "SplineEditor节点支持哪些插值方法？",
+        "answer": "SplineEditor节点支持的插值方法包括：cardinal、monotone、basis、linear、step-before、step-after、polar和polar-reverse。这些方法影响样条曲线的平滑度和形状。"
+    },
+    {
+        "question": "如何在SplineEditor节点的图形编辑器中添加和删除控制点？",
+        "answer": "在SplineEditor节点的图形编辑器中，Shift + 点击可以在末尾添加控制点，Ctrl + 点击可以在两点之间添加控制点（细分），右键单击某个点可以删除它（注意不能从起始/结束点删除）。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RemapToQuadrilateral node in ComfyUI?",
+        "answer": "The RemapToQuadrilateral node in ComfyUI is used to transform images based on quadrilateral shapes. It can adjust the perspective of an image or map an image to a quadrilateral shape and back using various methods including homography."
+    },
+    {
+        "question": "What are the required inputs for the RemapToQuadrilateral node?",
+        "answer": "The required inputs for the RemapToQuadrilateral node are 'dst_mask_with_i_points' which specifies the target mask with four points defining the quadrilateral the image will be remapped to, and 'mode' which defines the method used for the remapping process, such as homography or other quadrilateral remapping techniques."
+    },
+    {
+        "question": "What does the 'mode' input determine in the RemapToQuadrilateral node?",
+        "answer": "The 'mode' input in the RemapToQuadrilateral node determines the method used for the remapping process, such as homography or other quadrilateral remapping techniques. The choice of mode affects how the image is transformed."
+    },
+    {
+        "question": "What are the output types of the RemapToQuadrilateral node?",
+        "answer": "The output types of the RemapToQuadrilateral node are 'remap' which provides details on the remapping process including the transformed image and any applied geometric transformations, and 'ui' which outputs the image transformed according to the specified quadrilateral shape and remapping method."
+    },
+    {
+        "question": "What infrastructure type does the RemapToQuadrilateral node use?",
+        "answer": "The RemapToQuadrilateral node uses the 'CPU' infrastructure type."
+    },
+    {
+        "question": "How does the RemapToQuadrilateral node's homography method work?",
+        "answer": "In the RemapToQuadrilateral node, the homography method works by using a homography matrix and a bounding box to warp the perspective of the source image. It returns the warped image, mask (if provided), and the bounding box."
+    },
+    {
+        "question": "What is the purpose of the 'custom_data' in the homography method of the RemapToQuadrilateral node?",
+        "answer": "In the homography method of the RemapToQuadrilateral node, the 'custom_data' contains the homography matrix and the bounding box which are used to warp the perspective of the source image."
+    }
+]

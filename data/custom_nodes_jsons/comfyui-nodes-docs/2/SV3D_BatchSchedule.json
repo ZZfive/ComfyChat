@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SV3D_BatchSchedule node in ComfyUI?",
+        "answer": "The SV3D_BatchSchedule node is designed for SV3D (Stability AI's video model) to schedule the azimuth and elevation conditions, allowing users to define how the camera's azimuth and elevation change over time to enhance the generation of 3D videos."
+    },
+    {
+        "question": "What are the required input types for the SV3D_BatchSchedule node?",
+        "answer": "The required input types for the SV3D_BatchSchedule node are: clip_vision, init_image, vae, width, height, batch_size, interpolation, azimuth_points_string, and elevation_points_string."
+    },
+    {
+        "question": "What does the 'interpolation' input parameter control in the SV3D_BatchSchedule node?",
+        "answer": "The 'interpolation' input parameter determines the interpolation method between keyframes, affecting the smoothness of the transition between generated video frames."
+    },
+    {
+        "question": "How are the azimuth_points_string and elevation_points_string used in the SV3D_BatchSchedule node?",
+        "answer": "The azimuth_points_string and elevation_points_string are used to define the changes in the camera's azimuth and elevation over the video timeline. They are parsed into lists of tuples, sorted by frame number, and used to calculate interpolated values for each frame."
+    },
+    {
+        "question": "What are the output types of the SV3D_BatchSchedule node?",
+        "answer": "The output types of the SV3D_BatchSchedule node are 'positive', 'negative', and 'latent', which represent the positive conditioning, negative conditioning, and the latent representation of the video, respectively."
+    },
+    {
+        "question": "What infra type is required for the SV3D_BatchSchedule node?",
+        "answer": "The infra type required for the SV3D_BatchSchedule node is 'GPU'."
+    },
+    {
+        "question": "What ease functions are available for interpolation in the SV3D_BatchSchedule node?",
+        "answer": "The SV3D_BatchSchedule node supports four ease functions for interpolation: 'linear', 'ease_in', 'ease_out', and 'ease_in_out'."
+    }
+]

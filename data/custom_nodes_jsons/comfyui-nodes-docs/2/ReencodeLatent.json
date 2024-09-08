@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ReencodeLatent node in ComfyUI?",
+        "answer": "The ReencodeLatent node is used to re-encode latent representations through a pair of variational autoencoders (VAEs). It first decodes the input samples into pixel space using the input VAE, and then re-encodes them back into latent space using the output VAE."
+    },
+    {
+        "question": "What are the required input parameters for the ReencodeLatent node?",
+        "answer": "The required input parameters for the ReencodeLatent node are 'samples', 'tile_mode', 'input_vae', and 'output_vae'."
+    },
+    {
+        "question": "What does the 'samples' parameter represent in the ReencodeLatent node?",
+        "answer": "The 'samples' parameter represents the latent representations that will be re-encoded by the ReencodeLatent node. It is a crucial input as it determines the data that will undergo the decoding and encoding process."
+    },
+    {
+        "question": "What are the possible values for the 'tile_mode' parameter in the ReencodeLatent node?",
+        "answer": "The 'tile_mode' parameter can be set to 'None', 'Both', 'Decode(input) only', or 'Encode(output) only'. This determines whether the node performs both operations or selectively performs the decoding or encoding step."
+    },
+    {
+        "question": "What does the 'input_vae' parameter specify in the ReencodeLatent node?",
+        "answer": "The 'input_vae' parameter specifies the variational autoencoder used to initially decode the latent samples into pixel space. It plays an important role in the node's functionality as it determines the model that influences the initial transformation of the data."
+    },
+    {
+        "question": "What does the 'output_vae' parameter define in the ReencodeLatent node?",
+        "answer": "The 'output_vae' parameter defines the variational autoencoder responsible for re-encoding the pixel data back into latent representations. This parameter is crucial as it determines the model that will form the node's final output."
+    },
+    {
+        "question": "What is the purpose of the 'tile_size' parameter in the ReencodeLatent node?",
+        "answer": "The 'tile_size' parameter is an optional input that sets the tile size used during the decoding and encoding processes. It is particularly important when 'tile_mode' is set to 'Both' or 'Decode(input) only', affecting the resolution of the processed pixel data."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RAFTEstimate node in ComfyUI?",
+        "answer": "The RAFTEstimate node in ComfyUI is designed to estimate the optical flow between two images using the RAFT algorithm. It provides a simple and straightforward way to obtain motion vectors describing the apparent motion of objects between consecutive images."
+    },
+    {
+        "question": "What are the required input types for the RAFTEstimate node?",
+        "answer": "The required input types for the RAFTEstimate node are 'image_a' and 'image_b', both of which are of the Comfy dtype 'IMAGE' and Python dtype 'torch.Tensor'."
+    },
+    {
+        "question": "What does the 'image_a' input represent in the RAFTEstimate node?",
+        "answer": "In the RAFTEstimate node, 'image_a' represents the first image in the sequence used for calculating the optical flow. It serves as the reference frame for measuring motion."
+    },
+    {
+        "question": "What does the 'image_b' input represent in the RAFTEstimate node?",
+        "answer": "In the RAFTEstimate node, 'image_b' represents the second image in the sequence, immediately following 'image_a'. It is compared with the first image to estimate the motion vectors."
+    },
+    {
+        "question": "What is the output type of the RAFTEstimate node?",
+        "answer": "The output type of the RAFTEstimate node is 'raft_flow', which is a tensor representing the estimated optical flow. It encapsulates the motion vectors between the two input images."
+    },
+    {
+        "question": "Which infra type is recommended for the RAFTEstimate node?",
+        "answer": "The recommended infra type for the RAFTEstimate node is 'GPU'."
+    },
+    {
+        "question": "What is the source of the code used in the RAFTEstimate node?",
+        "answer": "The code used in the RAFTEstimate node is derived from the PyTorch Vision example: https://pytorch.org/vision/main/auto_examples/plot_optical_flow.html"
+    }
+]

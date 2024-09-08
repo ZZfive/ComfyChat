@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the OpenposePreprocessor node in ComfyUI?",
+        "answer": "The OpenposePreprocessor node in ComfyUI is designed to estimate human poses from images. It utilizes the OpenPose model to detect and annotate various keypoints on the human body, face, and hands, providing comprehensive pose estimation."
+    },
+    {
+        "question": "What are the required input types for the OpenposePreprocessor node?",
+        "answer": "The required input type for the OpenposePreprocessor node is an image, which is the input image used for pose estimation. This is the primary data that the pose detection algorithm operates on."
+    },
+    {
+        "question": "What optional input allows detailed hand pose analysis in the OpenposePreprocessor node?",
+        "answer": "The optional input 'detect_hand' in the OpenposePreprocessor node decides whether to detect hand keypoints during the pose estimation process. Enabling this option allows for detailed hand pose analysis."
+    },
+    {
+        "question": "What does the 'resolution' input parameter control in the OpenposePreprocessor node?",
+        "answer": "The 'resolution' input parameter in the OpenposePreprocessor node controls the resolution to which the input image is resized before processing. Higher resolutions may improve detection accuracy but will increase computational burden."
+    },
+    {
+        "question": "What are the output types provided by the OpenposePreprocessor node?",
+        "answer": "The OpenposePreprocessor node provides three output types: 'image' which is the output image with annotated keypoints visually displaying the pose estimation results, 'pose_keypoint' which is a dictionary containing the detected keypoints for body, face, and hands supporting detailed pose analysis, and 'ui' which provides a JSON representation of the detected keypoints for further analysis or visualization of the pose estimation results."
+    },
+    {
+        "question": "Which infra type is recommended for the OpenposePreprocessor node?",
+        "answer": "The recommended infra type for the OpenposePreprocessor node is GPU."
+    },
+    {
+        "question": "What are some common nodes that can be used with the OpenposePreprocessor node?",
+        "answer": "Some common nodes that can be used with the OpenposePreprocessor node include PreviewImage, CR Multi-ControlNet Stack, ControlNetApply, ImageScaleToTotalPixels, Reroute, VHS_VideoCombine, and MagicAnimate."
+    }
+]

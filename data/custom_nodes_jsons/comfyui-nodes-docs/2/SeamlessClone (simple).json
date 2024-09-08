@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SeamlessClone node in ComfyUI?",
+        "answer": "The SeamlessClone node provides a comprehensive interface for performing seamless cloning operations on images in ComfyUI. It is designed to facilitate complex image blending tasks by seamlessly integrating source images into destination images."
+    },
+    {
+        "question": "What are the required input types for the SeamlessClone node?",
+        "answer": "The required input types for the SeamlessClone node are: dst (destination image), src (source image), src_mask (mask image indicating the region of the source image to be cloned), and flag (specifying the cloning mode to be used)."
+    },
+    {
+        "question": "What does the SeamlessClone node output?",
+        "answer": "The SeamlessClone node outputs the resulting image after the seamless cloning operation."
+    },
+    {
+        "question": "What is the infra type for the SeamlessClone node?",
+        "answer": "The infra type for the SeamlessClone node is GPU."
+    },
+    {
+        "question": "How does the SeamlessClone node determine the center of the source mask?",
+        "answer": "The SeamlessClone node determines the center of the source mask using the get_center static method, which calculates the center based on the bounding rectangle of the source mask."
+    },
+    {
+        "question": "What is the function of the paste method in the SeamlessCloneSimpler class?",
+        "answer": "The paste method in the SeamlessCloneSimpler class performs the seamless cloning operation by calling the paste method of the SeamlessClone class with the provided source image, destination image, source mask, cloning mode flag, and the calculated center coordinates of the source mask."
+    },
+    {
+        "question": "What is the return type of the paste method in the SeamlessCloneSimpler class?",
+        "answer": "The return type of the paste method in the SeamlessCloneSimpler class is IMAGE, indicating that it returns the resulting image after the seamless cloning operation."
+    }
+]

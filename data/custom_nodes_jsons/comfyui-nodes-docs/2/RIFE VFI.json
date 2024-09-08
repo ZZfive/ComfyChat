@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the main purpose of the RIFE_VFI node in ComfyUI?",
+        "answer": "The main purpose of the RIFE_VFI node in ComfyUI is to perform video frame interpolation using a specified checkpoint model, generating interpolated frames between input frames to effectively double the frame rate."
+    },
+    {
+        "question": "What is the significance of the 'ckpt_name' parameter in the RIFE_VFI node?",
+        "answer": "The 'ckpt_name' parameter is crucial for selecting the appropriate checkpoint model to be used for frame interpolation in the RIFE_VFI node. It determines the specific weights and architecture that will be applied to generate interpolated frames."
+    },
+    {
+        "question": "How does the 'multiplier' parameter affect the output of the RIFE_VFI node?",
+        "answer": "The 'multiplier' parameter determines the number of output frames generated for each input frame in the RIFE_VFI node. For example, with a multiplier of 2, each input frame will result in two output frames, effectively creating an interpolated frame between them."
+    },
+    {
+        "question": "What does the 'clear_cache_after_n_frames' parameter do in the RIFE_VFI node?",
+        "answer": "The 'clear_cache_after_n_frames' parameter helps manage memory usage during the interpolation process in the RIFE_VFI node. It specifies the number of frames to process before clearing the CUDA cache to prevent memory overflow, which can be adjusted based on the system's memory capacity and the number of input frames."
+    },
+    {
+        "question": "How can the 'fast_mode' parameter be used in the RIFE_VFI node?",
+        "answer": "The 'fast_mode' parameter is an optional boolean flag that, when set to True, enables a faster but potentially less accurate interpolation process in the RIFE_VFI node. This is useful for quick previews or when processing a large number of frames."
+    },
+    {
+        "question": "What is the purpose of the 'scale_factor' parameter in the RIFE_VFI node?",
+        "answer": "The 'scale_factor' parameter in the RIFE_VFI node adjusts the resolution of input frames before processing. It is particularly useful for handling different frame sizes and can affect the clarity and detail of the final output."
+    },
+    {
+        "question": "What does the 'ensemble' parameter do in the RIFE_VFI node?",
+        "answer": "The 'ensemble' parameter in the RIFE_VFI node allows combining multiple interpolation models to improve the quality of interpolated frames. When enabled, it may increase processing time but can result in more stable and higher fidelity results."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SDXL Prompt Styler node in ComfyUI?",
+        "answer": "The SDXL Prompt Styler node in ComfyUI is designed to enhance and beautify text prompts used for image generation tasks. It processes and combines user-defined positive and negative prompts with predefined templates, incorporating additional style elements such as artist and movie references to create more detailed and focused prompts for generating images."
+    },
+    {
+        "question": "What are the required input types for the SDXL Prompt Styler node?",
+        "answer": "The required input types for the SDXL Prompt Styler node are: text_positive_g, text_positive_l, text_negative, artist, movie, style, fooocus_enhance, fooocus_negative, and universal_negative."
+    },
+    {
+        "question": "What does the 'artist' input parameter do in the SDXL Prompt Styler node?",
+        "answer": "The 'artist' input parameter in the SDXL Prompt Styler node is used to inject elements reminiscent of the specified artist's work style into the generated image."
+    },
+    {
+        "question": "How does the SDXL Prompt Styler node handle the 'text_positive_g' and 'text_positive_l' inputs if they are the same?",
+        "answer": "If the 'text_positive_g' and 'text_positive_l' inputs are the same, the SDXL Prompt Styler node checks if the processed prompts are different from the original inputs. If they are different, it clears the 'text_positive_l' input and reprocesses the prompts. If only one of the processed prompts is different, it sets both processed prompts to the same value."
+    },
+    {
+        "question": "What is the purpose of the 'fooocus_enhance' parameter in the SDXL Prompt Styler node?",
+        "answer": "The 'fooocus_enhance' parameter in the SDXL Prompt Styler node is an optional parameter used to further enhance the focus on certain elements in the generated image. When set to 'ON', it adds additional negative prompts to exclude elements like low quality, bad anatomy, and artifacts."
+    },
+    {
+        "question": "How does the 'universal_negative' parameter affect the output of the SDXL Prompt Styler node?",
+        "answer": "When the 'universal_negative' parameter is set to 'ON', the SDXL Prompt Styler node adds a set of global negative prompts to the 'text_neg_style' output, excluding elements like text, watermark, low-quality, and distortion from the generated image, regardless of other specified prompts."
+    },
+    {
+        "question": "What are the output types of the SDXL Prompt Styler node?",
+        "answer": "The output types of the SDXL Prompt Styler node are: text_positive_g (processed and enhanced main positive prompt), text_positive_l (processed and enhanced secondary positive prompt), text_positive (combined full positive prompt), and text_negative (processed and integrated negative prompt)."
+    }
+]

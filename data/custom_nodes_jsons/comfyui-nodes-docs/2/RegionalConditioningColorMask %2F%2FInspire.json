@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RegionalConditioningColorMask node in ComfyUI?",
+        "answer": "The RegionalConditioningColorMask node in ComfyUI is designed to apply color masks to the text encodings of the CLIP model, enhancing the model's focus on specific regions of the image. It does this by converting the color mask image into a binary mask, which is then used to condition the text encoding."
+    },
+    {
+        "question": "What are the required input types for the RegionalConditioningColorMask node?",
+        "answer": "The required input types for the RegionalConditioningColorMask node are: clip (CLIP model's input text prompt), color_mask (image defining the region of interest), mask_color (color used for masking in the color_mask image), strength (controls the intensity of the mask's influence on the text encoding), and prompt (a detailed text description refining the image generation process)."
+    },
+    {
+        "question": "What does the 'strength' parameter control in the RegionalConditioningColorMask node?",
+        "answer": "The 'strength' parameter in the RegionalConditioningColorMask node controls the intensity of the mask's influence on the text encoding. Higher values increase the emphasis on the masked region, potentially leading to more pronounced features in the generated image."
+    },
+    {
+        "question": "What is the role of the 'set_cond_area' parameter in the RegionalConditioningColorMask node?",
+        "answer": "The 'set_cond_area' parameter determines how the mask is applied to the conditioning. It can use default behavior or explicitly set mask boundaries. This selection can influence the node's ability to enhance regional conditioning for specific areas within the image."
+    },
+    {
+        "question": "What are the output types of the RegionalConditioningColorMask node?",
+        "answer": "The output types of the RegionalConditioningColorMask node are: conditioning (text encoding modified by the color mask) and mask (binary mask derived from the color_mask image)."
+    },
+    {
+        "question": "How is the binary mask used in the RegionalConditioningColorMask node?",
+        "answer": "The binary mask in the RegionalConditioningColorMask node is used to apply regional conditioning to the text encoding, allowing for more precise control over the image generation process."
+    },
+    {
+        "question": "What infrastructure type is recommended for the RegionalConditioningColorMask node?",
+        "answer": "The recommended infrastructure type for the RegionalConditioningColorMask node is GPU."
+    }
+]

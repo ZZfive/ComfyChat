@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the primary function of the NormalMapSimple node in ComfyUI?",
+        "answer": "The NormalMapSimple node in ComfyUI is designed to generate normal maps from input images, simulating surface variations and depth effects based on lighting."
+    },
+    {
+        "question": "What is the significance of the 'images' input in the NormalMapSimple node?",
+        "answer": "The 'images' input is crucial for determining the texture and depth information that will be converted into a normal map. It represents the source image from which the normal map will be generated."
+    },
+    {
+        "question": "How does the 'scale_XY' parameter affect the output of the NormalMapSimple node?",
+        "answer": "The 'scale_XY' parameter adjusts the intensity of the surface variation effect in the generated normal map. Higher values increase the perceived depth by scaling the x and y components of the normal vectors."
+    },
+    {
+        "question": "What does the output of the NormalMapSimple node represent?",
+        "answer": "The output of the NormalMapSimple node is a transformed version of the input image, presented as a normal map. This map encodes surface direction and depth information, enhancing the 3D appearance of the original 2D image."
+    },
+    {
+        "question": "What is the infra type recommended for the NormalMapSimple node?",
+        "answer": "The recommended infra type for the NormalMapSimple node is GPU."
+    },
+    {
+        "question": "In the source code of the NormalMapSimple node, what does the normal_map function do?",
+        "answer": "In the source code, the normal_map function takes the input images and the scale_XY parameter to generate the normal map. It processes the image gradients to create a texture representing surface directions in 3D space."
+    },
+    {
+        "question": "How is the normal map data processed and normalized in the NormalMapSimple node's source code?",
+        "answer": "In the source code, the normal map data is processed by applying the Scharr operator to calculate gradients, then normalizing the resulting vectors. The x and y components are scaled by the scale_XY parameter before normalization."
+    }
+]

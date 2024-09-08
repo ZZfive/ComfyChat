@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RemapRange node in ComfyUI?",
+        "answer": "The RemapRange node in ComfyUI is designed to adjust the brightness range of an image by remapping its black point and white point. This process can enhance the visual contrast of the image or adjust the overall brightness level."
+    },
+    {
+        "question": "What are the required inputs for the RemapRange node?",
+        "answer": "The required inputs for the RemapRange node are: image (the input image to be processed), blackpoint (the lower limit of the brightness range to be remapped to black), and whitepoint (the upper limit of the brightness range to be remapped to white)."
+    },
+    {
+        "question": "What does the blackpoint input in the RemapRange node represent?",
+        "answer": "The blackpoint input in the RemapRange node represents the lower limit of the brightness range to be remapped to black. Values below this point will be adjusted to black, affecting the contrast and brightness of the image."
+    },
+    {
+        "question": "What does the whitepoint input in the RemapRange node represent?",
+        "answer": "The whitepoint input in the RemapRange node represents the upper limit of the brightness range to be remapped to white. Values above this point will be adjusted to white, affecting the contrast and brightness level of the image."
+    },
+    {
+        "question": "What is the output of the RemapRange node?",
+        "answer": "The output of the RemapRange node is an image that has been remapped based on the specified black point and white point, with its brightness levels adjusted."
+    },
+    {
+        "question": "What is the infra type for the RemapRange node?",
+        "answer": "The infra type for the RemapRange node is GPU."
+    },
+    {
+        "question": "How does the RemapRange node adjust the brightness range of an image in its source code?",
+        "answer": "In the source code, the RemapRange node adjusts the brightness range of an image by first calculating the scale based on the whitepoint and blackpoint inputs. It then clips the image pixels values between 0 and 1 after subtracting the blackpoint value and multiplying by the scale."
+    }
+]

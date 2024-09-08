@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SUPIR_tiles 节点的主要功能是什么？",
+        "answer": "SUPIR_tiles 节点专门用于图像分块处理，将大型图像分割成更小、更易管理的块或瓦片，以便在 SUPIR 框架中高效处理大型图像。"
+    },
+    {
+        "question": "SUPIR_tiles 节点的三个必需的输入类型是什么？",
+        "answer": "SUPIR_tiles 节点需要三个输入类型：image（需要进行分块处理的输入图像）、tile_size（定义每个瓦片的大小）和 tile_stride（指定分块的步幅）。"
+    },
+    {
+        "question": "SUPIR_tiles 节点支持哪些输出类型？",
+        "answer": "SUPIR_tiles 节点支持三个输出类型：image_tiles（生成的图像瓦片集）、tile_size（分块处理中使用的瓦片大小）和 tile_stride（分块处理中使用的步幅）。"
+    },
+    {
+        "question": "SUPIR_tiles 节点的 image 输入类型的 Comfy dtype 和 Python dtype 分别是什么？",
+        "answer": "对于 SUPIR_tiles 节点的 image 输入类型，其 Comfy dtype 为 IMAGE，Python dtype 为 torch.Tensor。"
+    },
+    {
+        "question": "SUPIR_tiles 节点的 tile_size 输出类型的 Comfy dtype 和 Python dtype 分别是什么？",
+        "answer": "对于 SUPIR_tiles 节点的 tile_size 输出类型，其 Comfy dtype 为 INT，Python dtype 为 int。"
+    },
+    {
+        "question": "SUPIR_tiles 节点的 tile_stride 输入类型的取值范围是多少？",
+        "answer": "SUPIR_tiles 节点的 tile_stride 输入类型的取值范围为最小值 64，最大值 8192，步长 64，默认值为 256。"
+    },
+    {
+        "question": "SUPIR_tiles 节点如何处理图像中的瓦片？",
+        "answer": "SUPIR_tiles 节点使用 _sliding_windows 函数来生成图像中的瓦片坐标，然后根据这些坐标将图像分割成小块，并将这些小块存储在 tiles 列表中。"
+    }
+]

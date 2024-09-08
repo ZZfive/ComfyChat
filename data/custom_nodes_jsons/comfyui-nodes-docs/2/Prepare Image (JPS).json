@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Prepare Image node in ComfyUI?",
+        "answer": "The Prepare Image node is designed to process and adjust images based on specified parameters, including resizing, cropping, padding, and applying transformations such as interpolation and sharpening, in order to prepare them for further processing or analysis and ensure they meet the required dimensions and quality standards."
+    },
+    {
+        "question": "What are the required input types for the Prepare Image node?",
+        "answer": "The required input types for the Prepare Image node include: image (the input image to be processed), target_w (the target width of the processed image), target_h (the target height of the processed image), crop_w_percent (the percentage of image width to keep after cropping), crop_h_percent (the percentage of image height to keep after cropping), offset_w (the horizontal offset to apply to the image), offset_h (the vertical offset to apply to the image), interpolation (the interpolation method to use when resizing the image), and sharpening (the level of sharpening to apply to the image)."
+    },
+    {
+        "question": "What does the crop_w_percent parameter control in the Prepare Image node?",
+        "answer": "The crop_w_percent parameter controls the percentage of the image width that will be retained after cropping. It allows precise control over the width of the cropped area."
+    },
+    {
+        "question": "How does the Prepare Image node determine the minimum zoom factor required?",
+        "answer": "The Prepare Image node calculates the minimum zoom factor required by comparing the resize_needed_w (target width divided by input width and crop width percentage) and resize_needed_h (target height divided by input height and crop height percentage) values. The larger of the two values is selected as the minimum zoom factor."
+    },
+    {
+        "question": "What is the purpose of the offset_w and offset_h parameters in the Prepare Image node?",
+        "answer": "The offset_w and offset_h parameters are used to apply horizontal and vertical offsets to the image, respectively. These parameters can be used to shift the image horizontally or vertically before applying other transformations."
+    },
+    {
+        "question": "How does the Prepare Image node handle sharpening?",
+        "answer": "The Prepare Image node applies sharpening to the image if the sharpening parameter is greater than 0. The level of sharpening is determined by the value of the sharpening parameter, which enhances the details and clarity of the image."
+    },
+    {
+        "question": "What is the output type of the Prepare Image node?",
+        "answer": "The output type of the Prepare Image node is an IMAGE, which represents the processed image after applying the specified adjustments and transformations."
+    }
+]

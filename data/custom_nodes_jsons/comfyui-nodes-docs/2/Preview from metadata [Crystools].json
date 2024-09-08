@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the 'Preview from metadata' node in ComfyUI?",
+        "answer": "The 'Preview from metadata' node in ComfyUI is designed to generate previews of image metadata, including details such as filenames, resolutions, dates, and sizes. It also handles additional metadata related to images, such as prompts and workflows, providing a comprehensive overview in a text format."
+    },
+    {
+        "question": "What is the optional input type for the 'Preview from metadata' node?",
+        "answer": "The optional input type for the 'Preview from metadata' node is 'metadata_raw', which includes raw metadata containing image information and any associated prompts or workflows."
+    },
+    {
+        "question": "What are the output types of the 'Preview from metadata' node in ComfyUI?",
+        "answer": "The output types of the 'Preview from metadata' node are 'Metadata RAW', which contains the processed image metadata information, and 'ui', which includes a text preview of the image metadata and any related images structured for display in the user interface."
+    },
+    {
+        "question": "What infra type does the 'Preview from metadata' node use?",
+        "answer": "The 'Preview from metadata' node uses the 'CPU' infra type."
+    },
+    {
+        "question": "How does the 'Preview from metadata' node handle the display of images?",
+        "answer": "The 'Preview from metadata' node resolves images based on the filename provided in the metadata. It checks if the image path is valid and within the input folder, and then includes the image details in the output for display in the user interface."
+    },
+    {
+        "question": "What happens if no metadata_raw is provided to the 'Preview from metadata' node?",
+        "answer": "If no metadata_raw is provided, the 'Preview from metadata' node will either use cached data if available or return a message indicating that the source is empty."
+    },
+    {
+        "question": "How does the 'Preview from metadata' node structure the output data?",
+        "answer": "The 'Preview from metadata' node structures the output data with a 'result' field containing the processed metadata and a 'ui' field that includes the text preview and any resolved images for display in the user interface."
+    }
+]

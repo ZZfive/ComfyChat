@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the 'repeat' method in the RepeatLatentBatch node?",
+        "answer": "The 'repeat' method in the RepeatLatentBatch node is designed to copy latent space samples. It takes a batch of latent samples and an integer specifying the number of repetitions and returns a new batch where the samples are repeated the specified number of times."
+    },
+    {
+        "question": "What is the significance of the 'samples' parameter in the RepeatLatentBatch node?",
+        "answer": "The 'samples' parameter is a crucial input for the RepeatLatentBatch node as it contains the latent representations that need to be repeated. The effectiveness of the method in copying these representations is directly related to the quality and structure of the input samples."
+    },
+    {
+        "question": "What does the 'amount' parameter determine in the RepeatLatentBatch node?",
+        "answer": "The 'amount' parameter decides how many times each sample in the 'samples' input will be repeated. It is a fundamental factor in controlling the size of the output batch and the extent of data augmentation."
+    },
+    {
+        "question": "What is the output type of the RepeatLatentBatch node?",
+        "answer": "The output type of the RepeatLatentBatch node is 'repeated_samples', which is a batch of latent representations repeated according to the specified 'amount'. It serves as the main output for further processing or analysis in subsequent stages of the workflow."
+    },
+    {
+        "question": "What infra type does the RepeatLatentBatch node use?",
+        "answer": "The RepeatLatentBatch node uses the CPU as its infra type."
+    },
+    {
+        "question": "What is the Python dtype of the 'samples' parameter in the RepeatLatentBatch node?",
+        "answer": "The Python dtype of the 'samples' parameter in the RepeatLatentBatch node is Dict[str, torch.Tensor]."
+    },
+    {
+        "question": "What is the default value for the 'amount' parameter in the RepeatLatentBatch node?",
+        "answer": "The default value for the 'amount' parameter in the RepeatLatentBatch node is 1."
+    }
+]

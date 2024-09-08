@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageRebatch node in ComfyUI?",
+        "answer": "The ImageRebatch node in ComfyUI is designed to efficiently reorganize image data into smaller batches for parallel processing or batch-based machine learning tasks."
+    },
+    {
+        "question": "What are the required input types for the ImageRebatch node?",
+        "answer": "The required input types for the ImageRebatch node are 'images', which is a collection of image data that the node will process, and 'batch_size', which determines the number of images each output batch will contain."
+    },
+    {
+        "question": "What does the 'batch_size' parameter in the ImageRebatch node determine?",
+        "answer": "The 'batch_size' parameter in the ImageRebatch node determines the number of images that each output batch will contain. It is a crucial parameter that decides the granularity of the batching process and directly affects the performance of the node and subsequent processing or training steps."
+    },
+    {
+        "question": "What is the output type of the ImageRebatch node?",
+        "answer": "The output type of the ImageRebatch node is 'output_list', which is a list of image batches. Each batch is a tensor of images prepared according to the specified batch size."
+    },
+    {
+        "question": "How does the ImageRebatch node process the input images?",
+        "answer": "The ImageRebatch node processes the input images by first collecting all individual images from the input. It then iterates through these images, grouping them into batches based on the specified 'batch_size'. Each batch is a concatenation of a certain number of images."
+    },
+    {
+        "question": "What is the significance of the 'output_list' in the ImageRebatch node?",
+        "answer": "The 'output_list' in the ImageRebatch node is significant as it represents the primary deliverable of the node. It can be further processed or input into subsequent nodes or models in a machine learning workflow."
+    },
+    {
+        "question": "What is the recommended infrastructure type for running the ImageRebatch node?",
+        "answer": "The recommended infrastructure type for running the ImageRebatch node is CPU."
+    }
+]

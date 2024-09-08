@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Text_Random_Prompt class in ComfyUI?",
+        "answer": "The WAS_Text_Random_Prompt class in ComfyUI is designed to generate a random text prompt based on a given search seed using the `random_prompt` method. If no search seed is provided, it uses a set of default prompts."
+    },
+    {
+        "question": "What is the role of the search_seed parameter in the WAS_Text_Random_Prompt class?",
+        "answer": "The search_seed parameter in the WAS_Text_Random_Prompt class is used to define the initial query for generating random text prompts. It is crucial because it directly influences the type of prompt generated and the subsequent images retrieved from the external API."
+    },
+    {
+        "question": "What does the prompt parameter represent in the WAS_Text_Random_Prompt class?",
+        "answer": "The prompt parameter in the WAS_Text_Random_Prompt class represents the output of the `random_prompt` method. It is a randomly selected text prompt based on the input query, and it forms the basis for any subsequent processing or analysis of the generated prompt."
+    },
+    {
+        "question": "What happens if no search_seed is provided to the WAS_Text_Random_Prompt class?",
+        "answer": "If no search_seed is provided to the WAS_Text_Random_Prompt class, it uses a default set of prompts to generate a random text prompt. The default prompts include 'portrait', 'landscape', 'anime', 'superhero', 'animal', 'nature', and 'scenery'."
+    },
+    {
+        "question": "How does the WAS_Text_Random_Prompt class retrieve prompts from the Lexica API?",
+        "answer": "The WAS_Text_Random_Prompt class retrieves prompts from the Lexica API by sending a GET request to the Lexica API endpoint with the provided search seed as the query parameter. It then randomly selects an image from the retrieved list and extracts the associated prompt."
+    },
+    {
+        "question": "What does the WAS_Text_Random_Prompt class return if the Lexica API request fails or returns no images?",
+        "answer": "If the Lexica API request fails or returns no images, the WAS_Text_Random_Prompt class returns the string '404 not found error' as the prompt."
+    },
+    {
+        "question": "What is the infra type specified for the WAS_Text_Random_Prompt class?",
+        "answer": "The infra type specified for the WAS_Text_Random_Prompt class is CPU."
+    }
+]

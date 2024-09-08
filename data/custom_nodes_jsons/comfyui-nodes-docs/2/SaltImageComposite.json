@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltImageComposite node in ComfyUI?",
+        "answer": "The SaltImageComposite node is designed to create complex image composites by mixing or overlaying multiple images according to a specified scheduling schedule, enabling the dynamic combination of images and helping to create visually rich and diverse outputs."
+    },
+    {
+        "question": "What are the required inputs for the SaltImageComposite node?",
+        "answer": "The required inputs for the SaltImageComposite node are: images_a (the first set of images for the compositing process), images_b (the second set of images for the compositing process), and mode (which defines the method of blending the two sets of images)."
+    },
+    {
+        "question": "What are the optional inputs for the SaltImageComposite node?",
+        "answer": "The optional inputs for the SaltImageComposite node are: masks (optional masks that can be applied to the images during the compositing process) and blend_schedule (an optional schedule for controlling the intensity or method of blending over time, allowing for dynamic changes in the compositing process)."
+    },
+    {
+        "question": "What is the output of the SaltImageComposite node?",
+        "answer": "The output of the SaltImageComposite node is images, which are the resulting images after applying the compositing operation. This output shows the final compositing effect, blending all input images according to the defined mode and scheduling schedule."
+    },
+    {
+        "question": "How does the SaltImageComposite node handle different image sizes?",
+        "answer": "In the SaltImageComposite node, if the two sets of images have different sizes, the second image (img_b) is resized to the size of the first image (img_a) using the LANCZOS resampling filter."
+    },
+    {
+        "question": "What happens if the length of the blend_schedule is less than the minimum length of the image sets in the SaltImageComposite node?",
+        "answer": "If the length of the blend_schedule is less than the minimum length of the image sets, the blend_schedule is extended by appending the last value of the schedule until it matches the minimum length of the image sets."
+    },
+    {
+        "question": "How does the SaltImageComposite node apply masks to the images?",
+        "answer": "In the SaltImageComposite node, if masks are provided, they are resized to the size of the first image using the LANCZOS resampling filter and converted to a single-channel image (mode 'L'). The mask is then used to composite the output image with the first image."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SaltMaskAdaptiveThresholdingRegion节点的作用是什么？",
+        "answer": "SaltMaskAdaptiveThresholdingRegion节点对一组遮罩图像应用自适应阈值处理，根据局部像素值的变化将其转换为二值图像，旨在通过动态调整整个图像的阈值，增强不同照明区域中特征的可见性。"
+    },
+    {
+        "question": "SaltMaskAdaptiveThresholdingRegion节点的必需输入类型是什么？",
+        "answer": "SaltMaskAdaptiveThresholdingRegion节点的必需输入类型是masks，即需要进行自适应阈值处理的输入遮罩。"
+    },
+    {
+        "question": "SaltMaskAdaptiveThresholdingRegion节点的可选输入类型有哪些？",
+        "answer": "SaltMaskAdaptiveThresholdingRegion节点有两个可选输入类型：block_size和constant。block_size用于计算每个像素阈值的局部区域大小，constant是从block_size计算的平均值或加权平均值中减去的常数。"
+    },
+    {
+        "question": "SaltMaskAdaptiveThresholdingRegion节点的输出类型是什么？",
+        "answer": "SaltMaskAdaptiveThresholdingRegion节点的输出类型是MASKS，包含应用自适应阈值处理后的区域的输出张量。"
+    },
+    {
+        "question": "SaltMaskAdaptiveThresholdingRegion节点的infra类型是什么？",
+        "answer": "SaltMaskAdaptiveThresholdingRegion节点的infra类型是GPU。"
+    },
+    {
+        "question": "SaltMaskAdaptiveThresholdingRegion节点的实现函数是怎样的？",
+        "answer": "SaltMaskAdaptiveThresholdingRegion节点的实现函数名为adaptive_thresholding，接受masks、block_size和constant作为参数，返回一个包含处理后区域的张量。"
+    },
+    {
+        "question": "在SaltMaskAdaptiveThresholdingRegion节点的adaptive_thresholding函数中，如何处理block_size和constant参数？",
+        "answer": "在adaptive_thresholding函数中，如果block_size和constant不是列表，则会将其转换为列表。然后将block_size中的每个值转换为最近的奇数。之后，对每个遮罩使用当前的block_size和常量值进行自适应阈值处理。"
+    }
+]

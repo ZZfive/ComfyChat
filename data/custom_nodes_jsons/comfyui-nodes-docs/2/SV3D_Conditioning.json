@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the SV3D_Conditioning node in ComfyUI?",
+        "answer": "The SV3D_Conditioning node in ComfyUI is designed to process and encode visual and spatial information to generate 3D conditioning data."
+    },
+    {
+        "question": "What are the required inputs for the SV3D_Conditioning node?",
+        "answer": "The required inputs for the SV3D_Conditioning node are clip_vision, init_image, vae, width, and height."
+    },
+    {
+        "question": "What does the clip_vision input parameter do in the SV3D_Conditioning node?",
+        "answer": "The clip_vision parameter is crucial for the SV3D_Conditioning node as it provides the vision model used to encode the initial image. This input directly affects the quality and accuracy of the encoded image representation, which is essential for the subsequent 3D model generation process."
+    },
+    {
+        "question": "What is the role of the vae input parameter in the SV3D_Conditioning node?",
+        "answer": "The vae parameter represents the Variational Autoencoder (VAE) used within the node to encode pixel data into latent space. This conversion is crucial for creating a rich feature representation that can be used to modulate 3D model generation."
+    },
+    {
+        "question": "What optional inputs does the SV3D_Conditioning node accept?",
+        "answer": "The SV3D_Conditioning node accepts two optional inputs: video_frames and elevation."
+    },
+    {
+        "question": "What does the video_frames input parameter control in the SV3D_Conditioning node?",
+        "answer": "The video_frames parameter determines the number of frames to be generated for video output. It is an optional input that can be adjusted based on the specific requirements of the 3D model generation task."
+    },
+    {
+        "question": "What are the output types of the SV3D_Conditioning node?",
+        "answer": "The output types of the SV3D_Conditioning node are positive, negative, and latent."
+    },
+    {
+        "question": "What does the positive output of the SV3D_Conditioning node represent?",
+        "answer": "The positive output of the SV3D_Conditioning node consists of the encoded image embeddings and spatial parameters, serving as the positive conditioning signal for 3D model generation. This output is crucial as it directly contributes to shaping the final 3D model based on the input image and spatial context."
+    }
+]

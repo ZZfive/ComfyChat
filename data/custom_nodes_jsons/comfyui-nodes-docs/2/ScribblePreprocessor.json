@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ScribblePreprocessor node in ComfyUI?",
+        "answer": "The ScribblePreprocessor node is designed to pre-process images to detect scribble lines. It uses a specific model to analyze and process the input image, aiming to highlight or extract scribble-like patterns."
+    },
+    {
+        "question": "What are the required input types for the ScribblePreprocessor node?",
+        "answer": "The required input type for the ScribblePreprocessor node is 'image', which is the input image that needs to be processed for scribble line detection. This parameter is crucial as it provides the visual data for the scribble detection model to operate on."
+    },
+    {
+        "question": "What is the optional input type for the ScribblePreprocessor node?",
+        "answer": "The optional input type for the ScribblePreprocessor node is 'resolution', which specifies the resolution to which the input image should be resized before processing. This affects the level of detail in the scribble line detection."
+    },
+    {
+        "question": "What is the output type of the ScribblePreprocessor node?",
+        "answer": "The output type of the ScribblePreprocessor node is 'image', which is the processed image that has detected or highlighted scribble lines. This output is useful for further processing or visualization of the scribble patterns."
+    },
+    {
+        "question": "What is the infra type recommended for the ScribblePreprocessor node?",
+        "answer": "The recommended infra type for the ScribblePreprocessor node is 'GPU'."
+    },
+    {
+        "question": "What are some common nodes that can be used with the ScribblePreprocessor node?",
+        "answer": "Some common nodes that can be used with the ScribblePreprocessor node include 'PreviewImage' and 'ControlNetApplyAdvanced'."
+    },
+    {
+        "question": "How does the ScribblePreprocessor node execute the scribble line detection?",
+        "answer": "The ScribblePreprocessor node executes the scribble line detection by using the 'ScribbleDetector' model from 'controlnet_aux.scribble'. It then returns the result of 'common_annotator_call(model, image, resolution=resolution)'."
+    }
+]

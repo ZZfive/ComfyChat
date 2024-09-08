@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SplitTrackingPoints node in ComfyUI?",
+        "answer": "The SplitTrackingPoints node is designed to process and manipulate tracking points from pose keypoint data. It facilitates the segmentation of tracking points into different entities, allowing for more detailed analysis and tracking operations. This node is particularly useful for applications that require detailed tracking of human motion within defined regions, helping to understand motion patterns more intricately."
+    },
+    {
+        "question": "What are the required input types for the SplitTrackingPoints node?",
+        "answer": "The required input types for the SplitTrackingPoints node are: pose_kps (POSE_KEYPOINT), split_index (INT), height (INT), and width (INT)."
+    },
+    {
+        "question": "What does the 'split_index' parameter control in the SplitTrackingPoints node?",
+        "answer": "The 'split_index' parameter controls the segmentation of tracking points, allowing for the separation of different entities within the tracking data. This is crucial for the node to function correctly and achieve the desired segmentation of the tracking points."
+    },
+    {
+        "question": "What is the role of the 'height' and 'width' parameters in the SplitTrackingPoints node?",
+        "answer": "The 'height' parameter defines the vertical dimension of the tracking area, while the 'width' parameter sets the horizontal dimension. Both parameters are essential for filtering and processing tracking points within the specified boundaries, ensuring that tracking operations are constrained to the relevant areas."
+    },
+    {
+        "question": "What is the optional input type for the SplitTrackingPoints node?",
+        "answer": "The optional input type for the SplitTrackingPoints node is last_pose_kps (POSE_KEYPOINT). When provided, it serves as a reference for the initial tracking points, enhancing the continuity and consistency of the tracking process over time."
+    },
+    {
+        "question": "What is the output type of the SplitTrackingPoints node?",
+        "answer": "The output type of the SplitTrackingPoints node is tracking_points (STRING), which provides a JSON-formatted representation of the segmented tracking points. This output is crucial for further analysis and integration into downstream applications."
+    },
+    {
+        "question": "What is the infra type used by the SplitTrackingPoints node?",
+        "answer": "The SplitTrackingPoints node uses CPU as its infra type."
+    }
+]

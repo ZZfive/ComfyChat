@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltAudioVisualizer node in ComfyUI?",
+        "answer": "The SaltAudioVisualizer node in ComfyUI is designed to create visual representations of audio data. It processes audio input to generate visualizations that can be used for analysis or aesthetic purposes, highlighting the structure, frequency content, and dynamic characteristics of the audio."
+    },
+    {
+        "question": "What are the required input parameters for the SaltAudioVisualizer node?",
+        "answer": "The required input parameters for the SaltAudioVisualizer node are 'audio' and 'frame_rate'. The 'audio' parameter represents the audio data to be visualized, while the 'frame_rate' parameter specifies the frame rate of the visualization, affecting the temporal resolution of the generated visual output."
+    },
+    {
+        "question": "What are the optional input parameters for the SaltAudioVisualizer node?",
+        "answer": "The optional input parameters for the SaltAudioVisualizer node are 'start_frame' and 'end_frame'. The 'start_frame' parameter defines the starting point of the audio segment to be visualized, allowing selective visualization of specific parts of the audio. The 'end_frame' parameter determines the endpoint of the audio segment to be visualized, enabling customization of the visualization length."
+    },
+    {
+        "question": "Does the SaltAudioVisualizer node have any output types?",
+        "answer": "No, the SaltAudioVisualizer node does not have any output types."
+    },
+    {
+        "question": "What is the infra type of the SaltAudioVisualizer node?",
+        "answer": "The infra type of the SaltAudioVisualizer node is 'CPU'."
+    },
+    {
+        "question": "How does the SaltAudioVisualizer node handle stereo audio inputs?",
+        "answer": "If the input audio has two channels (stereo), the SaltAudioVisualizer node reshapes the samples into a two-column array and calculates the average of the two channels to obtain a mono audio signal for visualization."
+    },
+    {
+        "question": "What is the purpose of the 'gen_hash' static method in the SaltAudioVisualizer class?",
+        "answer": "The 'gen_hash' static method in the SaltAudioVisualizer class generates a hash value based on the input dictionary. It sorts the keys of the dictionary, converts it to a JSON string, and then computes the SHA-256 hash of the sorted JSON string. This hash value is used to determine if the node's input has changed."
+    }
+]

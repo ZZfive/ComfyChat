@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the StepsScheduleHookProvider node in ComfyUI?",
+        "answer": "The StepsScheduleHookProvider node in ComfyUI is designed to facilitate the creation and management of scheduling hooks for iterative processes. It abstracts the complexity of defining schedules, allowing users to specify the schedule type and target steps for the iterative process."
+    },
+    {
+        "question": "What are the required input parameters for the StepsScheduleHookProvider node?",
+        "answer": "The required input parameters for the StepsScheduleHookProvider node are 'schedule_for_iteration' and 'target_steps'. 'schedule_for_iteration' determines the type of scheduling hook to use, and 'target_steps' defines the number of steps to be taken in the iterative process."
+    },
+    {
+        "question": "What is the role of the 'schedule_for_iteration' parameter in the StepsScheduleHookProvider node?",
+        "answer": "The 'schedule_for_iteration' parameter is crucial for determining the type of scheduling hook to be used. It decides the behavior of the iterative process by selecting from predefined schedules, directly influencing the execution strategy and the resulting schedule pattern."
+    },
+    {
+        "question": "What is the significance of the 'target_steps' parameter in the StepsScheduleHookProvider node?",
+        "answer": "The 'target_steps' parameter defines the number of steps to be taken in the iterative process. It is a key factor in controlling the duration and scope of the process, and is essential for adjusting the operation of the node to meet specific requirements or constraints of the current task."
+    },
+    {
+        "question": "What is the output type of the StepsScheduleHookProvider node?",
+        "answer": "The output type of the StepsScheduleHookProvider node is 'hook', which is a scheduling hook object that encapsulates the logic for managing the iterative process based on the specified schedule and target steps."
+    },
+    {
+        "question": "What is the infra type required for the StepsScheduleHookProvider node?",
+        "answer": "The infra type required for the StepsScheduleHookProvider node is CPU."
+    },
+    {
+        "question": "How does the StepsScheduleHookProvider node determine the appropriate scheduling hook based on the 'schedule_for_iteration' parameter?",
+        "answer": "In the source code of the StepsScheduleHookProvider node, it checks if the 'schedule_for_iteration' parameter is 'simple'. If it is, it assigns the hook variable with an instance of hooks.SimpleStepsScheduleHook, passing the 'target_steps' as the argument."
+    }
+]

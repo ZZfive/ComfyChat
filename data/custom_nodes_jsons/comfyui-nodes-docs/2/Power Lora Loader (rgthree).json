@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Power Lora Loader node in ComfyUI?",
+        "answer": "The Power Lora Loader node in ComfyUI is designed to enhance models and CLIP by dynamically adding multiple Lora modifications. It provides a flexible interface for integrating Loras into existing structures, thereby extending their functionality and performance."
+    },
+    {
+        "question": "What are the required input parameters for the Power Lora Loader node?",
+        "answer": "The required input parameters for the Power Lora Loader node are 'model' and 'clip'. The 'model' parameter represents the model to which Loras will be added, while the 'clip' parameter specifies the clip that will be modified with Loras."
+    },
+    {
+        "question": "What does the 'model' parameter represent in the Power Lora Loader node?",
+        "answer": "In the Power Lora Loader node, the 'model' parameter represents the model to which Loras will be added. It is crucial for defining the base structure that will be enhanced through the addition of Loras."
+    },
+    {
+        "question": "What does the 'clip' parameter represent in the Power Lora Loader node?",
+        "answer": "In the Power Lora Loader node, the 'clip' parameter represents the clip that will be modified with Loras. It plays a key role in specifying the target of the enhancements, ensuring that the modifications are applied correctly."
+    },
+    {
+        "question": "What are the output types of the Power Lora Loader node?",
+        "answer": "The output types of the Power Lora Loader node are 'MODEL' and 'CLIP'. It returns the modified model with the applied Loras, reflecting the enhancements made, and the enhanced clip with the integrated Loras, showcasing the modifications applied."
+    },
+    {
+        "question": "How does the Power Lora Loader node apply Loras to the model and clip?",
+        "answer": "The Power Lora Loader node applies Loras to the model and clip by looping over the provided Loras in the 'kwargs' dictionary and applying the valid ones. It checks for keys starting with 'LORA_' and verifies if the 'on' flag is set and the strength values for the model and clip are not zero. If the conditions are met, it loads the Lora using the 'LoraLoader' and applies it to the model and clip with the specified strengths."
+    },
+    {
+        "question": "What happens if only one strength value is provided for applying Loras in the Power Lora Loader node?",
+        "answer": "If only one strength value is provided for applying Loras in the Power Lora Loader node, it will be used for both the model and the clip. If a second strength value ('strengthTwo') is provided, then 'strength' will be used for the model, and 'strengthTwo' will be used for the clip."
+    }
+]

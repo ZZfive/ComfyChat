@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SplitImageWithAlpha node in ComfyUI?",
+        "answer": "The SplitImageWithAlpha node is designed to separate the color information of an image from its alpha channel. It performs a basic function in image processing by splitting the input image into two parts: a color image and an alpha mask."
+    },
+    {
+        "question": "What is the significance of the 'image' parameter in the SplitImageWithAlpha node?",
+        "answer": "The 'image' parameter is an input tensor containing the image data. It is crucial as it serves as the primary source of information for the node to process. The node relies on this input to extract the color and alpha components, which are then used in subsequent image operations."
+    },
+    {
+        "question": "What does the 'color_image' output represent in the SplitImageWithAlpha node?",
+        "answer": "The 'color_image' output contains the color information extracted from the input image. It is important because it represents the visual content without the transparency layer, which can be directly used for display or further processing."
+    },
+    {
+        "question": "How is the 'alpha_mask' output different from the original alpha in the SplitImageWithAlpha node?",
+        "answer": "The 'alpha_mask' output is the alpha channel of the input image, representing the transparency information. It is inverted compared to the original alpha, so that it can be used in common compositing operations where higher values indicate greater opacity."
+    },
+    {
+        "question": "What is the infra type recommended for the SplitImageWithAlpha node?",
+        "answer": "The recommended infra type for the SplitImageWithAlpha node is GPU."
+    },
+    {
+        "question": "What are the input types required for the SplitImageWithAlpha node?",
+        "answer": "The SplitImageWithAlpha node requires one input type: 'image', which is a torch.Tensor."
+    },
+    {
+        "question": "What are the output types of the SplitImageWithAlpha node?",
+        "answer": "The SplitImageWithAlpha node has two output types: 'color_image' and 'alpha_mask', both of which are torch.Tensors."
+    }
+]

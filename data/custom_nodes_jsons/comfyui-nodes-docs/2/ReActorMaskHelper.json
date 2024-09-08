@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the ReActorMaskHelper node in ComfyUI?",
+        "answer": "The ReActorMaskHelper node is designed to assist in the mask processing within the ReActor framework, specifically for tasks like face swapping or repair, by combining, dilating, and optimizing masks."
+    },
+    {
+        "question": "What are the two essential input parameters for the ReActorMaskHelper node?",
+        "answer": "The two essential input parameters for the ReActorMaskHelper node are 'image' and 'swapped_image'. 'image' serves as the main input for mask-related operations, and 'swapped_image' represents the image after a face swap operation, which may require further mask processing or adjustments."
+    },
+    {
+        "question": "What role does the 'bbox_model_name' parameter play in the ReActorMaskHelper node?",
+        "answer": "The 'bbox_model_name' parameter specifies the model name used for bounding box detection, influencing the initial step of mask generation."
+    },
+    {
+        "question": "How does the 'sam_model_name' parameter contribute to mask optimization in the ReActorMaskHelper node?",
+        "answer": "The 'sam_model_name' parameter is crucial for optimizing mask details as it specifies the model used for Semantic Attention Mask (SAM) prediction."
+    },
+    {
+        "question": "What does the 'morphology_operation' parameter in the ReActorMaskHelper node define?",
+        "answer": "The 'morphology_operation' parameter defines the type of morphological operation (such as dilation or erosion) applied to the mask, affecting its shape and boundaries."
+    },
+    {
+        "question": "How does the 'blur_radius' parameter influence the mask in the ReActorMaskHelper node?",
+        "answer": "The 'blur_radius' parameter influences the mask by softening its edges or blending it more seamlessly with the image through blurring."
+    },
+    {
+        "question": "What is the purpose of the 'mask_optional' input in the ReActorMaskHelper node?",
+        "answer": "The 'mask_optional' input allows for additional mask operations or adjustments by providing an optional mask input."
+    },
+    {
+        "question": "What outputs are produced by the ReActorMaskHelper node?",
+        "answer": "The ReActorMaskHelper node outputs four types of data: 'IMAGE' which is the processed image after mask modifications, 'MASK' which is the final mask generated or modified by the node, 'MASK_PREVIEW' for visualizing or debugging purposes, and 'SWAPPED_FACE' which is the image after a face swap operation, possibly including mask adjustments to improve integration."
+    }
+]

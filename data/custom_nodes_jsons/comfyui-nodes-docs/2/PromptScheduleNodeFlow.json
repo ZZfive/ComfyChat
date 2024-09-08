@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PromptScheduleNodeFlow node in ComfyUI?",
+        "answer": "The PromptScheduleNodeFlow node is designed to operate on and schedule strings based on a given frame count. It allows users to add or modify text content at specific frame intervals, which is crucial for applications that require time-structured information."
+    },
+    {
+        "question": "What are the required input parameters for the PromptScheduleNodeFlow node?",
+        "answer": "The required input parameters for the PromptScheduleNodeFlow node are 'text' and 'num_frames'. 'text' is used to define the content to add to the schedule, while 'num_frames' represents the current frame count when performing operations."
+    },
+    {
+        "question": "What are the optional input parameters for the PromptScheduleNodeFlow node?",
+        "answer": "The optional input parameters for the PromptScheduleNodeFlow node are 'in_text' and 'max_frames'. 'in_text' allows modifying existing text entries in the schedule, while 'max_frames' specifies the maximum frame count at which text should be added or modified."
+    },
+    {
+        "question": "What output types does the PromptScheduleNodeFlow node produce?",
+        "answer": "The PromptScheduleNodeFlow node produces two output types: 'new_max' and 'new_text'. 'new_max' represents the updated maximum frame count after adding or modifying text, while 'new_text' is the updated text content of the schedule after the addition or modification."
+    },
+    {
+        "question": "What is the infra type for the PromptScheduleNodeFlow node?",
+        "answer": "The infra type for the PromptScheduleNodeFlow node is CPU."
+    },
+    {
+        "question": "How does the PromptScheduleNodeFlow node update the maximum frame count?",
+        "answer": "The PromptScheduleNodeFlow node updates the maximum frame count by adding 'num_frames' to 'max_frames'. If 'max_frames' is 0, it uses 'num_frames' as the new maximum frame count."
+    },
+    {
+        "question": "How does the PromptScheduleNodeFlow node modify the text content in the schedule?",
+        "answer": "The PromptScheduleNodeFlow node modifies the text content in the schedule by appending the new text to the existing 'in_text'. If 'in_text' is not empty, it adds a comma and space before appending the new text in the format '\"{new_max}\": \"{text}\"'."
+    }
+]

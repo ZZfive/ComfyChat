@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltCLIPSegLoader node in ComfyUI?",
+        "answer": "The SaltCLIPSegLoader node in ComfyUI is designed to load and initialize the CLIPSeg model for image segmentation tasks. It simplifies the process of retrieving the model and its processor from the specified source and caches them locally for efficient reuse."
+    },
+    {
+        "question": "What is the required input type for the SaltCLIPSegLoader node?",
+        "answer": "The required input type for the SaltCLIPSegLoader node is 'model', which specifies the identifier of the CLIPSeg model to be loaded. It provides flexibility in selecting different versions or configurations of the CLIPSeg model."
+    },
+    {
+        "question": "What is the output type of the SaltCLIPSegLoader node?",
+        "answer": "The output type of the SaltCLIPSegLoader node is 'clipseg_model', which returns a tuple containing the CLIPSeg processor and CLIPSeg model that can be directly used for image segmentation tasks."
+    },
+    {
+        "question": "What is the infra type recommended for the SaltCLIPSegLoader node?",
+        "answer": "The recommended infra type for the SaltCLIPSegLoader node is 'GPU'."
+    },
+    {
+        "question": "What are the Python data types used for the input and output of the SaltCLIPSegLoader node?",
+        "answer": "The input 'model' parameter of the SaltCLIPSegLoader node uses the Python data type 'str', while the output 'clipseg_model' is a tuple containing the CLIPSeg processor and CLIPSeg model, represented as 'Tuple[CLIPSegProcessor, CLIPSegForImageSegmentation]'."
+    },
+    {
+        "question": "Which class is used to load the CLIPSeg processor in the SaltCLIPSegLoader node?",
+        "answer": "The SaltCLIPSegLoader node uses the 'CLIPSegProcessor' class from the 'transformers' module to load the CLIPSeg processor."
+    },
+    {
+        "question": "Which class is used to load the CLIPSeg model in the SaltCLIPSegLoader node?",
+        "answer": "The SaltCLIPSegLoader node uses the 'CLIPSegForImageSegmentation' class from the 'transformers' module to load the CLIPSeg model."
+    }
+]

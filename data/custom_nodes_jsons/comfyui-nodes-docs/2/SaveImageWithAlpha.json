@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaveImageWithAlpha node in ComfyUI?",
+        "answer": "The SaveImageWithAlpha node in ComfyUI is used to save images with an alpha channel, enabling transparency effects."
+    },
+    {
+        "question": "What are the required inputs for the SaveImageWithAlpha node?",
+        "answer": "The required inputs for the SaveImageWithAlpha node are: images (the image to be saved with transparency), mask (the mask defining the transparency level for each pixel), and filename_prefix (the prefix for identifying and organizing the saved images)."
+    },
+    {
+        "question": "What is the output of the SaveImageWithAlpha node?",
+        "answer": "The output of the SaveImageWithAlpha node is a UI parameter that returns a dictionary containing the paths of the saved images, facilitating user interaction and file retrieval."
+    },
+    {
+        "question": "How does the SaveImageWithAlpha node handle metadata when saving images?",
+        "answer": "When saving images, the SaveImageWithAlpha node adds metadata to the PNG file, including prompt information and extra PNG info, unless the --disable-metadata argument is used."
+    },
+    {
+        "question": "What is the default value for the filename_prefix input in the SaveImageWithAlpha node?",
+        "answer": "The default value for the filename_prefix input in the SaveImageWithAlpha node is 'ComfyUI'."
+    },
+    {
+        "question": "How does the SaveImageWithAlpha node ensure that the mask matches the image size?",
+        "answer": "The SaveImageWithAlpha node resizes the mask to match the image size using the Lanczos resampling method before applying it as the alpha channel."
+    },
+    {
+        "question": "What is the function of the file_counter() method in the SaveImageWithAlpha node?",
+        "answer": "The file_counter() method in the SaveImageWithAlpha node determines the next available numeric value for naming the saved image files, ensuring unique filenames and preventing overwriting."
+    }
+]

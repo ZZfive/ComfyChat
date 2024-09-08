@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Triangle Event Curve node in ComfyUI?",
+        "answer": "The Triangle Event Curve node in ComfyUI is designed to generate a triangular-shaped time curve for creating dynamic, event-driven animations. It calculates values based on a frame counter and parameters defining the curve's peak, width, and center, making it suitable for timed animations and transition effects."
+    },
+    {
+        "question": "What are the required input types for the Triangle Event Curve node?",
+        "answer": "The required input types for the Triangle Event Curve node are: frame_counter (FRAME_COUNTER), max_value (FLOAT), min_value (FLOAT), width_seconds (FLOAT), and center_seconds (FLOAT)."
+    },
+    {
+        "question": "What does the 'max_value' parameter represent in the Triangle Event Curve node?",
+        "answer": "In the Triangle Event Curve node, the 'max_value' parameter represents the peak value of the triangular curve, defining its maximum height."
+    },
+    {
+        "question": "What does the 'width_seconds' parameter represent in the Triangle Event Curve node?",
+        "answer": "In the Triangle Event Curve node, the 'width_seconds' parameter represents the duration (in seconds) required for the curve to reach its peak value from the baseline value."
+    },
+    {
+        "question": "What output types does the Triangle Event Curve node produce?",
+        "answer": "The Triangle Event Curve node produces two output types: FLOAT (the floating-point value of the curve calculated for the current frame) and INT (the integer representation of the curve value for the current frame)."
+    },
+    {
+        "question": "What is the infra type of the Triangle Event Curve node?",
+        "answer": "The infra type of the Triangle Event Curve node is CPU."
+    },
+    {
+        "question": "How does the Triangle Event Curve node calculate the curve value for a given frame?",
+        "answer": "The Triangle Event Curve node calculates the curve value for a given frame using the current time in seconds (x) and the input parameters. If x is between the start time (center_seconds - width_seconds * 0.5) and the center time (center_seconds), it uses a linear value calculation between the min_value and max_value. If x is between the center time and the end time (center_seconds + width_seconds * 0.5), it uses a linear value calculation between the max_value and min_value. Otherwise, the curve value is set to the min_value."
+    }
+]

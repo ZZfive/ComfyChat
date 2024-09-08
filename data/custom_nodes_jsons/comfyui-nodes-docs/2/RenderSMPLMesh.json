@@ -1,0 +1,30 @@
+[
+    {
+        "question": "什么是RenderSMPLMesh节点？",
+        "answer": "RenderSMPLMesh节点是ComfyUI中的一个节点，用于根据SMPL模型渲染3D人体网格。它可以将SMPL参数转换为3D视觉表示，方便在三维环境中可视化人体姿态和形状。"
+    },
+    {
+        "question": "RenderSMPLMesh节点需要哪些必需的输入类型？",
+        "answer": "RenderSMPLMesh节点需要以下必需的输入类型：smpl（SMPL模型参数）、draw_platform（是否在渲染图像中绘制平台）、depth_only（是否只渲染深度图）、yfov（相机在y轴上的视场角）、move_x（相机的水平移动）、move_y（相机的垂直移动）、move_z（相机的深度移动）、rotate_x（相机绕x轴旋转）、rotate_y（相机绕y轴旋转）、rotate_z（相机绕z轴旋转）、background_hex_color（渲染图像的背景颜色）、frame_width（渲染图像的框架宽度）、frame_height（渲染图像的框架高度）。"
+    },
+    {
+        "question": "RenderSMPLMesh节点的可选输入类型是什么？",
+        "answer": "RenderSMPLMesh节点有一个可选的输入类型：normals（指示渲染中是否应包含法线，影响3D网格的视觉纹理和光照效果）。"
+    },
+    {
+        "question": "RenderSMPLMesh节点的输出类型是什么？",
+        "answer": "RenderSMPLMesh节点有两个输出类型：IMAGE（根据SMPL参数渲染的3D网格的视觉表示图像）和DEPTH_MAP（渲染的3D网格的深度图，提供图像中每个像素的空间深度信息）。"
+    },
+    {
+        "question": "RenderSMPLMesh节点的返回值是什么？",
+        "answer": "RenderSMPLMesh节点的返回值是一个元组，包含三个元素：color_frames（渲染后的彩色图像张量）、depth_frames（渲染的深度图张量）和white_mask_tensor（白色遮罩张量）。"
+    },
+    {
+        "question": "RenderSMPLMesh节点支持哪些基础设施类型？",
+        "answer": "RenderSMPLMesh节点支持GPU基础设施类型。"
+    },
+    {
+        "question": "如何使用RenderSMPLMesh节点渲染SMPL模型？",
+        "answer": "要使用RenderSMPLMesh节点渲染SMPL模型，需要提供必需的输入参数，如SMPL模型参数、相机设置、渲染分辨率等。然后，RenderSMPLMesh节点会根据这些参数生成彩色渲染图像和对应的深度图。"
+    }
+]

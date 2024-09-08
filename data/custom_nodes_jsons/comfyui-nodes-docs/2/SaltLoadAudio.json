@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltLoadAudio node in ComfyUI?",
+        "answer": "The SaltLoadAudio node is designed to load audio files into the system for further processing or analysis, serving as the initial step in the audio processing workflow."
+    },
+    {
+        "question": "What are the required input types for the SaltLoadAudio node?",
+        "answer": "The required input types for the SaltLoadAudio node are file_path (STRING), start_seconds (FLOAT), manual_bpm (FLOAT), and frame_rate (INT)."
+    },
+    {
+        "question": "What does the 'start_seconds' parameter in the SaltLoadAudio node specify?",
+        "answer": "The 'start_seconds' parameter in the SaltLoadAudio node defines the starting point for loading the audio, allowing partial loading of the audio file for targeted analysis or manipulation."
+    },
+    {
+        "question": "What is the purpose of the 'manual_bpm' parameter in the SaltLoadAudio node?",
+        "answer": "The 'manual_bpm' parameter in the SaltLoadAudio node allows users to manually specify the beats per minute (BPM), which can be used to override automatic BPM detection. This is useful for audio processing that relies on accurate rhythm information."
+    },
+    {
+        "question": "What optional input type does the SaltLoadAudio node accept?",
+        "answer": "The SaltLoadAudio node accepts an optional input type called 'duration_seconds' (FLOAT), which determines the duration of the audio loaded from the starting point, enabling selective processing of audio segments."
+    },
+    {
+        "question": "What output types does the SaltLoadAudio node produce?",
+        "answer": "The SaltLoadAudio node produces the following output types: audio (AUDIO), bpm (FLOAT), frame_rate (INT), and frame_count (INT)."
+    },
+    {
+        "question": "How is the 'frame_count' output calculated in the SaltLoadAudio node?",
+        "answer": "The 'frame_count' output in the SaltLoadAudio node is calculated based on the duration of the loaded audio segment and the frame rate, determined by the duration_ms and frame_rate parameters."
+    }
+]

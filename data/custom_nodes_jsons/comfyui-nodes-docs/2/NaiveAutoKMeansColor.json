@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the NaiveAutoKMeansColor node in ComfyUI?",
+        "answer": "The NaiveAutoKMeansColor node in ComfyUI is designed to automatically determine the optimal number of colors for image K-means clustering without requiring the user to specify the number of colors."
+    },
+    {
+        "question": "How does the NaiveAutoKMeansColor node simplify the image color quantization process?",
+        "answer": "The NaiveAutoKMeansColor node simplifies the image color quantization process by iteratively applying K-means clustering with increasing numbers of clusters until a specific condition is met."
+    },
+    {
+        "question": "What is the role of the 'max_k' parameter in the NaiveAutoKMeansColor node?",
+        "answer": "The 'max_k' parameter sets the maximum number of clusters that the K-means clustering algorithm will consider. It puts an upper limit on the number of colors the algorithm will attempt to quantify."
+    },
+    {
+        "question": "How does the 'rc_threshold' parameter help in identifying the optimal number of clusters?",
+        "answer": "The 'rc_threshold' parameter helps identify the optimal number of clusters by recognizing the 'elbow point' in the compactness graph, which represents the most effective number of clusters, balancing detail retention and computational efficiency."
+    },
+    {
+        "question": "What does the 'max_iterations' parameter control in the NaiveAutoKMeansColor node?",
+        "answer": "The 'max_iterations' parameter controls the maximum number of iterations for each K-means clustering attempt, helping to manage the computational complexity of the algorithm."
+    },
+    {
+        "question": "What is the significance of the 'eps' parameter in the NaiveAutoKMeansColor node?",
+        "answer": "The 'eps' parameter represents the epsilon value for convergence. If the change in centroids is smaller than this value, the algorithm stops, indicating that it has converged. This parameter is crucial for determining when the algorithm has sufficiently minimized the within-cluster variance, affecting the accuracy of color quantization."
+    },
+    {
+        "question": "What outputs does the NaiveAutoKMeansColor node provide?",
+        "answer": "The NaiveAutoKMeansColor node provides two outputs: the processed image reflecting the optimal number of colors determined by the K-means clustering algorithm, and an integer representing the optimal number of colors identified by the algorithm."
+    }
+]

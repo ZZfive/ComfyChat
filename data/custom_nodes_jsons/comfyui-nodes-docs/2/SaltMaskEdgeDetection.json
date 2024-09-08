@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltMaskEdgeDetection node in ComfyUI?",
+        "answer": "The SaltMaskEdgeDetection node in ComfyUI applies edge detection algorithms to mask areas to enhance the edges within the masks, making the outlines and boundaries of objects more distinct for further processing or analysis."
+    },
+    {
+        "question": "What are the two main methods used by SaltMaskEdgeDetection for edge detection?",
+        "answer": "The SaltMaskEdgeDetection node uses Canny or Sobel methods for edge detection."
+    },
+    {
+        "question": "What does the 'low_threshold' parameter control in the SaltMaskEdgeDetection node?",
+        "answer": "The 'low_threshold' parameter in the SaltMaskEdgeDetection node sets the lower limit for the threshold processing of the edge detection algorithm. It helps filter out noise and less obvious edges, focusing on more significant boundaries."
+    },
+    {
+        "question": "What does the 'high_threshold' parameter control in the SaltMaskEdgeDetection node?",
+        "answer": "The 'high_threshold' parameter in the SaltMaskEdgeDetection node defines the upper limit for the threshold processing of the edge detection algorithm. It ensures that only the most prominent edges are enhanced."
+    },
+    {
+        "question": "What is the purpose of the 'sobel_ksize' parameter in the SaltMaskEdgeDetection node?",
+        "answer": "The 'sobel_ksize' parameter in the SaltMaskEdgeDetection node determines the kernel size of the Sobel operator. It affects the smoothness and precision of edge detection when using the Sobel method."
+    },
+    {
+        "question": "What is the data type of the output from the SaltMaskEdgeDetection node?",
+        "answer": "The output data type from the SaltMaskEdgeDetection node is MASK, which represents a tensor containing the enhanced edges of the input masks."
+    },
+    {
+        "question": "How does the SaltMaskEdgeDetection node handle input thresholds and sobel_ksize values?",
+        "answer": "If the input thresholds (low_threshold and high_threshold) and sobel_ksize are not provided as lists, the SaltMaskEdgeDetection node converts them into lists. This allows the node to process the input masks with the corresponding threshold and kernel size values."
+    }
+]

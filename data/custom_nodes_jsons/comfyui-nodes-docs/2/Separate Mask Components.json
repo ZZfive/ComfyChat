@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SeparateMaskComponents node in ComfyUI?",
+        "answer": "The SeparateMaskComponents node in ComfyUI is designed to separate a single mask into its constituent contiguous components by applying morphological operations to identify unique segments within the mask."
+    },
+    {
+        "question": "What are the required inputs for the SeparateMaskComponents node?",
+        "answer": "The SeparateMaskComponents node requires an input mask, which is the key parameter representing the initial data from which contiguous components are to be separated."
+    },
+    {
+        "question": "What does the output 'mask' represent in the SeparateMaskComponents node?",
+        "answer": "The output 'mask' from the SeparateMaskComponents node is a series of separated masks, each corresponding to a unique contiguous component identified in the input mask."
+    },
+    {
+        "question": "What is the purpose of 'mask_mappings' in the output of SeparateMaskComponents node?",
+        "answer": "The 'mask_mappings' output provides a mapping that associates each separated mask with its corresponding position in the original batch, which is crucial for maintaining data relationship integrity throughout the processing pipeline."
+    },
+    {
+        "question": "What infrastructure type is recommended for the SeparateMaskComponents node?",
+        "answer": "The recommended infrastructure type for the SeparateMaskComponents node is CPU."
+    },
+    {
+        "question": "How does the SeparateMaskComponents node identify unique segments within the mask?",
+        "answer": "The SeparateMaskComponents node identifies unique segments within the mask by applying morphological operations and using a loop with max_pool2d to differentiate the components until no further changes are detected."
+    },
+    {
+        "question": "What is the function of the 'separate' method in the SeparateMaskComponents class?",
+        "answer": "The 'separate' method in the SeparateMaskComponents class processes the input mask to separate it into contiguous components and returns both the separated masks and a mapping that can be used in downstream processes to relate the individual components back to their original batch positions."
+    }
+]

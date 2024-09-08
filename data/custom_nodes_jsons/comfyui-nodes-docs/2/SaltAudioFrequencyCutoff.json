@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltAudioFrequencyCutoff node in ComfyUI?",
+        "answer": "The SaltAudioFrequencyCutoff node in ComfyUI is used to apply a frequency cutoff to an audio file using FFmpeg, filtering out frequencies above or below a specified cutoff point."
+    },
+    {
+        "question": "What are the required input types for the SaltAudioFrequencyCutoff node?",
+        "answer": "The required input types for the SaltAudioFrequencyCutoff node are: audio (the raw audio data to be processed), filter_type (the type of filter to be applied, e.g., lowpass or highpass), and cutoff_frequency (the frequency threshold for the filter)."
+    },
+    {
+        "question": "What does the filter_type parameter specify in the SaltAudioFrequencyCutoff node?",
+        "answer": "The filter_type parameter in the SaltAudioFrequencyCutoff node specifies the type of filter to be applied, such as lowpass or highpass, determining whether frequencies above or below the cutoff frequency will be attenuated."
+    },
+    {
+        "question": "What is the purpose of the cutoff_frequency parameter in the SaltAudioFrequencyCutoff node?",
+        "answer": "The cutoff_frequency parameter in the SaltAudioFrequencyCutoff node specifies the frequency threshold for the filter. Depending on the filter type, frequencies above or below this value will be attenuated."
+    },
+    {
+        "question": "What is the output type of the SaltAudioFrequencyCutoff node?",
+        "answer": "The output type of the SaltAudioFrequencyCutoff node is modified audio data after applying the frequency cutoff, reflecting the changes made to the audio spectrum."
+    },
+    {
+        "question": "What is the infra type for the SaltAudioFrequencyCutoff node?",
+        "answer": "The infra type for the SaltAudioFrequencyCutoff node is CPU."
+    },
+    {
+        "question": "How does the SaltAudioFrequencyCutoff node apply the frequency cutoff to the audio data?",
+        "answer": "The SaltAudioFrequencyCutoff node applies the frequency cutoff to the audio data using FFmpeg by constructing a command with the specified filter type and cutoff frequency, and then running the command using subprocess.run()."
+    }
+]

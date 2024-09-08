@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SEGSPreview node in ComfyUI?",
+        "answer": "The SEGSPreview node in ComfyUI is designed to handle and preview segmented images. It takes segmentation data and optional parameters to control alpha blending and minimum alpha value, then generates a preview image that visually represents the segmentation."
+    },
+    {
+        "question": "What is the role of the 'segs' parameter in the SEGSPreview node?",
+        "answer": "The 'segs' parameter is crucial for the SEGSPreview node as it provides the segmentation data that the node will process. This input directly affects how the preview image is generated and its quality."
+    },
+    {
+        "question": "How does the 'alpha_mode' parameter affect the preview in the SEGSPreview node?",
+        "answer": "The 'alpha_mode' parameter determines whether alpha blending is enabled in the preview. It plays an important role in handling the transparency of the segmentation mask in the final output."
+    },
+    {
+        "question": "What is the function of the 'min_alpha' parameter in the SEGSPreview node?",
+        "answer": "The 'min_alpha' parameter sets the minimum alpha value for the mask, ensuring that the segmentation is visible even in areas where the mask's confidence is low. This is crucial for the visual clarity of the segmentation in the preview."
+    },
+    {
+        "question": "What does the 'fallback_image_opt' parameter do in the SEGSPreview node?",
+        "answer": "The 'fallback_image_opt' parameter provides an optional image that is used when segmentation data is not available. It ensures that the node can still generate a preview even in such situations."
+    },
+    {
+        "question": "What does the 'ui' output of the SEGSPreview node contain?",
+        "answer": "The 'ui' output contains the user interface element of the preview, which includes a list of processed images that are ready to be displayed."
+    },
+    {
+        "question": "What does the 'result' output of the SEGSPreview node represent?",
+        "answer": "The 'result' output is a list of batches of combined images representing the segmentation preview. It is important because it contains the actual visual data of the segmentation."
+    }
+]

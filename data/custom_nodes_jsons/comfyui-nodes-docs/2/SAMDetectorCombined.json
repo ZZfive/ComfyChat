@@ -1,0 +1,30 @@
+[
+    {
+        "question": "SAMDetectorCombined节点的目的是什么？",
+        "answer": "SAMDetectorCombined节点旨在使用SAM（Segment Anything Model）检测和分割图像中的物体。它使用指定的SAM模型、分割提示和其他参数处理输入图像，以生成勾勒出检测到的物体的掩码。"
+    },
+    {
+        "question": " SAMDetectorCombined节点的输入参数有哪些？",
+        "answer": "SAMDetectorCombined节点的输入参数包括：sam_model（SAM模型）、segs（分割提示）、image（输入图像）、detection_hint（检测策略类型）、dilation（膨胀参数）、threshold（阈值参数）、bbox_expansion（边界框扩展参数）、mask_hint_threshold（掩码提示阈值参数）和mask_hint_use_negative（使用负掩码提示参数）。"
+    },
+    {
+        "question": "SAMDetectorCombined节点的输出类型是什么？",
+        "answer": "SAMDetectorCombined节点的输出类型是MASK，它是经过检测和分割过程后的最终分割掩码。"
+    },
+    {
+        "question": "SAMDetectorCombined节点的sam_model参数有什么作用？",
+        "answer": "SAMDetectorCombined节点的sam_model参数指定了用于检测和分割图像中物体的SAM模型。模型的选择直接影响节点准确识别和分割图像中物体的能力。"
+    },
+    {
+        "question": "SAMDetectorCombined节点的segs参数有什么用途？",
+        "answer": "SAMDetectorCombined节点的segs参数提供分割提示，指导SAM模型检测图像中的特定区域。这些提示对于提高分割过程的准确性至关重要，特别是在具有多个对象的复杂场景中。"
+    },
+    {
+        "question": "SAMDetectorCombined节点的threshold参数有什么作用？",
+        "answer": "SAMDetectorCombined节点的threshold参数用于确定将对象视为已检测的置信度水平。它直接影响节点在图像中识别对象的敏感性。"
+    },
+    {
+        "question": "SAMDetectorCombined节点的MASK输出可以用来做什么？",
+        "answer": "SAMDetectorCombined节点的MASK输出可以用于进一步分析或用于需要对象分割的下游任务。"
+    }
+]

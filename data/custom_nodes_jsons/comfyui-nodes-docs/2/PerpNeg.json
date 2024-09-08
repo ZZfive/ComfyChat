@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PerpNeg node in ComfyUI?",
+        "answer": "The PerpNeg node in ComfyUI is designed to manipulate the sampling process of the model by introducing negative conditioning aspects. It achieves this by altering the model's denoising steps, incorporating a negative scale factor, which helps guide the generation process towards more diverse results."
+    },
+    {
+        "question": "What are the required input types for the PerpNeg node?",
+        "answer": "The required input types for the PerpNeg node are 'model' and 'empty_conditioning'. The 'model' parameter represents the machine learning model to be modified, while 'empty_conditioning' serves as a placeholder for the input condition that the model will use."
+    },
+    {
+        "question": "What is the role of the 'neg_scale' parameter in the PerpNeg node?",
+        "answer": "The 'neg_scale' parameter in the PerpNeg node is used to control the strength of the negative conditioning effect. It is particularly important as it directly influences the node's ability to diversify sampling results, providing a balance between positive and negative influences."
+    },
+    {
+        "question": "What does the PerpNeg node output?",
+        "answer": "The PerpNeg node outputs a modified version of the input model that now includes negative conditioning aspects. This modified model can then be used for sampling, potentially leading to more diverse and creative results."
+    },
+    {
+        "question": "What is the recommended infrastructure type for running the PerpNeg node?",
+        "answer": "The recommended infrastructure type for running the PerpNeg node is CPU."
+    },
+    {
+        "question": "How does the PerpNeg node modify the model's denoising steps?",
+        "answer": "The PerpNeg node modifies the model's denoising steps by introducing a negative scale factor and using empty conditioning as part of the process. It defines a 'cfg_function' that alters how the model applies conditioning during sampling, incorporating both positive and negative conditioning effects."
+    },
+    {
+        "question": "Is the PerpNeg node an output node in ComfyUI?",
+        "answer": "No, the PerpNeg node is not an output node in ComfyUI. Its purpose is to modify the input model and provide a modified version as output, which can then be used for further processing or sampling."
+    }
+]

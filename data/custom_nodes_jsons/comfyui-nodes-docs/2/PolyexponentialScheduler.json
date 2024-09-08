@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PolyexponentialScheduler node in ComfyUI?",
+        "answer": "The PolyexponentialScheduler node is designed to generate custom schedules for sigma values in diffusion models. It uses a polyexponential function to smoothly vary the noise levels within a given number of steps, which is crucial for controlling the learning dynamics and ensuring stable sampling results."
+    },
+    {
+        "question": "What does the 'steps' parameter define in the PolyexponentialScheduler node?",
+        "answer": "The 'steps' parameter in the PolyexponentialScheduler node defines the number of intervals at which sigma values will be scheduled. It is essential because it directly affects the granularity and duration of the noise schedule, influencing the overall sampling process."
+    },
+    {
+        "question": "What does the 'sigma_max' parameter represent in the PolyexponentialScheduler node?",
+        "answer": "The 'sigma_max' parameter in the PolyexponentialScheduler node represents the maximum value of sigma, which is the initial noise level in the diffusion process. It is important because it sets the upper limit for the noise level, thus affecting the convergence and quality of the final samples."
+    },
+    {
+        "question": "What does the 'sigma_min' parameter indicate in the PolyexponentialScheduler node?",
+        "answer": "The 'sigma_min' parameter in the PolyexponentialScheduler node indicates the minimum value of sigma, corresponding to the target noise level at the end of the diffusion process. It is crucial because it determines the final noise level, affecting the clarity and accuracy of the generated samples."
+    },
+    {
+        "question": "How does the 'rho' parameter influence the PolyexponentialScheduler node?",
+        "answer": "The 'rho' parameter in the PolyexponentialScheduler node adjusts the curvature of the polyexponential schedule. It affects the rate at which sigma values decrease from 'sigma_max' to 'sigma_min', thus influencing the overall shape of the noise schedule and the sampling dynamics."
+    },
+    {
+        "question": "What is the output of the PolyexponentialScheduler node?",
+        "answer": "The output of the PolyexponentialScheduler node is a sequence of sigma values, denoted as 'SIGMAS'. These values are crucial for the sampling process as they dictate the noise level at each step, directly impacting the quality and stability of the resulting samples."
+    },
+    {
+        "question": "On what infrastructure type does the PolyexponentialScheduler node operate?",
+        "answer": "The PolyexponentialScheduler node operates on the CPU infrastructure type."
+    }
+]

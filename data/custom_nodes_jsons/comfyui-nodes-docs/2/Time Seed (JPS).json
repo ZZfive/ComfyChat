@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Time Seed node in ComfyUI?",
+        "answer": "The Time Seed node in ComfyUI generates a unique seed value based on the current time, or allows specifying a fixed seed value. This ensures the repeatability of randomized processes by providing a consistent starting point for the random number generator."
+    },
+    {
+        "question": "What is the required input for the Time Seed node?",
+        "answer": "The required input for the Time Seed node is 'fixed_seed', which is an integer value. If set to 0, a time-based seed will be generated, ensuring variation each time it is executed. If set to a non-zero value, that value will be used as the fixed seed."
+    },
+    {
+        "question": "What is the output of the Time Seed node?",
+        "answer": "The output of the Time Seed node is 'seed', which is an integer value representing the generated seed. This seed value is used to initialize the random number generator."
+    },
+    {
+        "question": "How does the Time Seed node generate a seed value?",
+        "answer": "The Time Seed node generates a seed value by getting the current time using datetime.now(), converting it to a string format '%Y%m%d%H%M%S', and adding a random integer between 0 and 999999. If a non-zero 'fixed_seed' value is provided, that value will be used as the seed instead."
+    },
+    {
+        "question": "What is the infra type for the Time Seed node?",
+        "answer": "The infra type for the Time Seed node is 'CPU'."
+    },
+    {
+        "question": "In which category is the Time Seed node located in ComfyUI?",
+        "answer": "The Time Seed node is located in the 'JPS Nodes/Text' category in ComfyUI."
+    },
+    {
+        "question": "What does the IS_CHANGED class method do in the Time Seed node?",
+        "answer": "The IS_CHANGED class method in the Time Seed node generates a 'forceupdate' value by combining the current time string and a random integer between 0 and 99999999 with the 'seed_out' value. This 'forceupdate' value is used to determine if the node has changed."
+    }
+]

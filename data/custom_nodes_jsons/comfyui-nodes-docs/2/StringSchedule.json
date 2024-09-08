@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the StringSchedule node in ComfyUI?",
+        "answer": "The StringSchedule node is designed to handle and animate schedules based on text. It abstracts the complexity of frame-based animation into a simple, text-driven interface, generating a series of prompts for animation or scheduling purposes."
+    },
+    {
+        "question": "What are the required input parameters for the StringSchedule node?",
+        "answer": "The required input parameters for the StringSchedule node include 'text', 'max_frames', and 'current_frame'. 'text' is the raw text input for generating the animated prompts, 'max_frames' defines the maximum number of frames for the animation sequence, and 'current_frame' indicates the current position in the animation sequence."
+    },
+    {
+        "question": "What does the 'print_output' parameter do in the StringSchedule node?",
+        "answer": "The 'print_output' parameter is an optional flag that, when set to True, prints the output of the animated prompts to the console. This is useful for debugging or visualizing the animation sequence in a text-based format."
+    },
+    {
+        "question": "What is the function of the 'pre_text' and 'app_text' parameters in the StringSchedule node?",
+        "answer": "The 'pre_text' parameter is used to add text before each frame's prompt, allowing for adding context or additional information that should appear at the beginning of each prompt in the animation sequence. The 'app_text' parameter is added after each frame's prompt, allowing for appending ending or supplementary text to the animation sequence."
+    },
+    {
+        "question": "What role do the 'pw_a', 'pw_b', 'pw_c', and 'pw_d' parameters play in the StringSchedule node?",
+        "answer": "The 'pw_a', 'pw_b', 'pw_c', and 'pw_d' parameters are weighting factors used in the interpolation process of the animated prompts. They influence the balance and distribution of the prompts within the animation, allowing for fine-tuning the progression of the animation."
+    },
+    {
+        "question": "What are the output types of the StringSchedule node?",
+        "answer": "The StringSchedule node outputs two types of prompts: 'POS' and 'NEG'. The 'POS' output represents the current positive prompt derived from the input text and parameters, providing the affirmative or primary content for a given frame. The 'NEG' output represents the current negative prompt, complementing the 'POS' output by providing contrasting or alternative content, enhancing the overall depth and complexity of the animation."
+    },
+    {
+        "question": "Does the StringSchedule node require a GPU for operation?",
+        "answer": "No, the StringSchedule node does not require a GPU for operation. It is mentioned that the infra type for this node is CPU."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SeargeFloatConstant node in ComfyUI?",
+        "answer": "The SeargeFloatConstant node is designed to provide a constant floating-point value in a workflow, ensuring consistent and unchanging values are used across different parts of the system or experiment, which helps improve the reliability and reproducibility of results."
+    },
+    {
+        "question": "What is the required input parameter for the SeargeFloatConstant node?",
+        "answer": "The required input parameter for the SeargeFloatConstant node is 'value', which is the constant floating-point number that the node will provide."
+    },
+    {
+        "question": "What is the Comfy dtype and Python dtype for the 'value' input parameter in the SeargeFloatConstant node?",
+        "answer": "The Comfy dtype for the 'value' input parameter is FLOAT, and the Python dtype is float."
+    },
+    {
+        "question": "What does the output 'value' represent in the SeargeFloatConstant node?",
+        "answer": "The output 'value' represents the constant floating-point number that was set as the input. It is important as it represents the unchanged, predefined constant that will be used in subsequent operations or analyses."
+    },
+    {
+        "question": "What is the infra type for the SeargeFloatConstant node?",
+        "answer": "The infra type for the SeargeFloatConstant node is CPU."
+    },
+    {
+        "question": "What is the category of the SeargeFloatConstant node in ComfyUI?",
+        "answer": "The category of the SeargeFloatConstant node is 'Searge/_deprecated_/Floats'."
+    },
+    {
+        "question": "What is the source code for the SeargeFloatConstant class?",
+        "answer": "The source code for the SeargeFloatConstant class is as follows:\n```python\nclass SeargeFloatConstant:\n\n    @classmethod\n    def INPUT_TYPES(s):\n        return {'required': {'value': ('FLOAT', {'default': 0.0, 'step': 0.01})}}\n    RETURN_TYPES = ('FLOAT',)\n    RETURN_NAMES = ('value',)\n    FUNCTION = 'get_value'\n    CATEGORY = 'Searge/_deprecated_/Floats'\n\n    def get_value(self, value):\n        return (value,)\n```"
+    }
+]

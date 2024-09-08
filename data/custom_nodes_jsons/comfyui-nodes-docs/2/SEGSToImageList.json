@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SEGSToImageList node in ComfyUI?",
+        "answer": "The SEGSToImageList node in ComfyUI is designed to convert segmentation data into a list of image tensors. It scales and processes the segmentation data to match the dimensions of the provided alternate image, or generates a default tensor if no image is provided."
+    },
+    {
+        "question": "What is the significance of the 'segs' parameter in the SEGSToImageList node?",
+        "answer": "The 'segs' parameter is the collection of segmentation data that the node processes. It is crucial for the node's operation as it directly affects the content and structure of the output image list."
+    },
+    {
+        "question": "What is the role of the optional 'fallback_image_opt' parameter in the SEGSToImageList node?",
+        "answer": "The optional 'fallback_image_opt' parameter provides a default image to be used when no segmented image is available. It ensures that the node can still produce consistent output even when data is incomplete."
+    },
+    {
+        "question": "What is the data type of the 'results' output in the SEGSToImageList node?",
+        "answer": "The 'results' output is a list of image tensors derived from the segmentation data. Its Comfy dtype is IMAGE and its Python dtype is List[torch.Tensor]."
+    },
+    {
+        "question": "What infrastructure type does the SEGSToImageList node use?",
+        "answer": "The SEGSToImageList node uses CPU as its infrastructure type."
+    },
+    {
+        "question": "What happens if the 'results' list is empty in the SEGSToImageList node?",
+        "answer": "If the 'results' list is empty, the SEGSToImageList node appends an empty PIL tensor to the list."
+    },
+    {
+        "question": "What category does the SEGSToImageList node belong to in ComfyUI?",
+        "answer": "The SEGSToImageList node belongs to the ImpactPack/Util category in ComfyUI."
+    }
+]

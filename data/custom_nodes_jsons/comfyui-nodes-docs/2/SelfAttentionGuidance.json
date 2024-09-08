@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SelfAttentionGuidance class in ComfyUI?",
+        "answer": "The SelfAttentionGuidance class in ComfyUI is designed to enhance the attention mechanism in models by providing self-attention-based guidance. It modifies the model's attention process to incorporate additional context, potentially improving the model's ability to focus on relevant parts of the input data."
+    },
+    {
+        "question": "What are the required input types for the SelfAttentionGuidance node?",
+        "answer": "The required input types for the SelfAttentionGuidance node are: model (Comfy dtype: MODEL, Python dtype: torch.nn.Module), scale (Comfy dtype: FLOAT, Python dtype: float), and blur_sigma (Comfy dtype: FLOAT, Python dtype: float)."
+    },
+    {
+        "question": "What does the scale parameter in SelfAttentionGuidance node adjust?",
+        "answer": "The scale parameter in the SelfAttentionGuidance node adjusts the influence of self-attention guidance on the model's output. It is a crucial component that allows for fine-tuning the node's impact on the model's attention process."
+    },
+    {
+        "question": "What is the function of the blur_sigma parameter in the SelfAttentionGuidance node?",
+        "answer": "The blur_sigma parameter in the SelfAttentionGuidance node defines the degree of blurring applied in the model's post-configuration function. It is important as it can affect the visual quality and detail preservation of the model's output."
+    },
+    {
+        "question": "What is the output type of the SelfAttentionGuidance node?",
+        "answer": "The output type of the SelfAttentionGuidance node is modified_model (Comfy dtype: MODEL, Python dtype: torch.nn.Module), which represents the result of applying the SelfAttentionGuidance patch to the input model."
+    },
+    {
+        "question": "What infra type is recommended for using the SelfAttentionGuidance node?",
+        "answer": "The recommended infra type for using the SelfAttentionGuidance node is GPU."
+    },
+    {
+        "question": "How does the SelfAttentionGuidance node modify the model's attention process?",
+        "answer": "The SelfAttentionGuidance node modifies the model's attention process by applying a patch to the input model, using the attn_and_record function to record attention scores, and then using the post_cfg_function to incorporate self-attention guidance based on the recorded scores and other parameters like scale and blur_sigma."
+    }
+]

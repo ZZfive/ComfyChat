@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the OverlayInpaintedImage node in ComfyUI?",
+        "answer": "The OverlayInpaintedImage node is designed to overlay an inpainted image onto another image, possibly within a specified crop region. It ensures that the overlay operation respects the dimensions and batch size of the input images, seamlessly blending them to produce a composite output."
+    },
+    {
+        "question": "What are the required inputs for the OverlayInpaintedImage node?",
+        "answer": "The required inputs for the OverlayInpaintedImage node are: 'inpainted' (the inpainted image tensor to be overlaid), 'overlay_image' (the base image tensor on which the inpainted image will be overlaid), and 'crop_region' (the tensor specifying the region where the inpainted image should be overlaid on the base image)."
+    },
+    {
+        "question": "What does the 'crop_region' input specify in the OverlayInpaintedImage node?",
+        "answer": "The 'crop_region' input in the OverlayInpaintedImage node specifies the region on the base image where the inpainted image should be overlaid. It allows precise control over the placement and integration of the inpainted content within the larger image context."
+    },
+    {
+        "question": "What is the output type of the OverlayInpaintedImage node?",
+        "answer": "The output type of the OverlayInpaintedImage node is 'image', which represents the resulting image tensor after overlaying the inpainted image onto the base image, within the specified crop region if applicable. This image combines the visual elements of the two inputs in a unified manner."
+    },
+    {
+        "question": "What is the infra type of the OverlayInpaintedImage node?",
+        "answer": "The infra type of the OverlayInpaintedImage node is 'GPU'."
+    },
+    {
+        "question": "What happens if the batch size of 'inpainted' and 'overlay_image' or 'crop_region' don't match in the OverlayInpaintedImage node?",
+        "answer": "If the batch size of 'inpainted' and 'overlay_image' or 'crop_region' don't match in the OverlayInpaintedImage node, a ValueError will be raised, indicating that they must have the same batch size."
+    },
+    {
+        "question": "How are the inpainted image and overlay image blended in the OverlayInpaintedImage node?",
+        "answer": "In the OverlayInpaintedImage node, the inpainted image and overlay image are blended using alpha compositing. The inpainted image is converted to RGBA mode, and the overlay image is also in RGBA mode. The alpha_composite function is used to blend the two images together."
+    }
+]

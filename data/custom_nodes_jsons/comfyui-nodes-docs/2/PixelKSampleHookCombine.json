@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PixelKSampleHookCombine node in ComfyUI?",
+        "answer": "The PixelKSampleHookCombine node is designed to apply two independent hooks sequentially to a series of image processing operations, coordinating the hooks for a specific order of preprocessing, decoding, upscaling, and encoding pixel data to ensure a coordinated workflow for image manipulation tasks."
+    },
+    {
+        "question": "What are the required input types for the PixelKSampleHookCombine node?",
+        "answer": "The required input types for the PixelKSampleHookCombine node are hook1 and hook2, both of which are PixelKSampleHook objects."
+    },
+    {
+        "question": "What is the role of hook1 in the PixelKSampleHookCombine node?",
+        "answer": "hook1 is the first hook to be applied sequentially in the PixelKSampleHookCombine node. It plays a crucial role in the initial stage of image processing, laying the foundation for subsequent operations."
+    },
+    {
+        "question": "What is the role of hook2 in the PixelKSampleHookCombine node?",
+        "answer": "hook2 is the second hook to be applied sequentially in the PixelKSampleHookCombine node. It further refines the image processing pipeline after the first hook is applied, enhancing the overall output quality."
+    },
+    {
+        "question": "What is the output type of the PixelKSampleHookCombine node?",
+        "answer": "The output type of the PixelKSampleHookCombine node is processed_pixels, which represents the result of applying the two hooks to the input pixel data, indicating the final state of the image after all processing steps are complete."
+    },
+    {
+        "question": "What is the infra type used by the PixelKSampleHookCombine node?",
+        "answer": "The infra type used by the PixelKSampleHookCombine node is CPU."
+    },
+    {
+        "question": "What does the 'touch_scaled_size' method in the PixelKSampleHookCombine node do?",
+        "answer": "The 'touch_scaled_size' method in the PixelKSampleHookCombine node first applies the 'touch_scaled_size' method of hook1 to the width and height, then applies the 'touch_scaled_size' method of hook2 to the modified width and height, and returns the result."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SUPIR_model_loader_v2 node in ComfyUI?",
+        "answer": "The SUPIR_model_loader_v2 node is used to initialize and prepare the SUPIR model for use by loading the model state from a specified path and optionally adjusting its precision to improve memory efficiency."
+    },
+    {
+        "question": "What are the required inputs for the SUPIR_model_loader_v2 node?",
+        "answer": "The required inputs for the SUPIR_model_loader_v2 node are: model, clip, vae, supir_model, fp8_unet, and diffusion_dtype."
+    },
+    {
+        "question": "What does the 'fp8_unet' parameter do in the SUPIR_model_loader_v2 node?",
+        "answer": "The 'fp8_unet' parameter is a boolean flag that, when set, converts the model weights to a lower precision format (torch.float8_e4m3fn) to save VRAM, but with a slight impact on quality."
+    },
+    {
+        "question": "What is the purpose of the 'diffusion_dtype' parameter in the SUPIR_model_loader_v2 node?",
+        "answer": "The 'diffusion_dtype' parameter determines the data type for diffusion operations, providing options such as fp16, bf16, fp32, or auto. The auto option automatically selects the data type based on the execution environment."
+    },
+    {
+        "question": "What are the output types of the SUPIR_model_loader_v2 node?",
+        "answer": "The output types of the SUPIR_model_loader_v2 node are SUPIR_model (the loaded SUPIR model) and SUPIR_VAE (the loaded SUPIR VAE component)."
+    },
+    {
+        "question": "How does the SUPIR_model_loader_v2 node handle the loading of SDXL and SUPIR models?",
+        "answer": "The SUPIR_model_loader_v2 node loads the SDXL model from node inputs and merges it with the SUPIR model. It also loads two clip models from the SDXL checkpoint and replaces their prefixes to integrate them into the SUPIR model."
+    },
+    {
+        "question": "What is the significance of the 'high_vram' optional input in the SUPIR_model_loader_v2 node?",
+        "answer": "The 'high_vram' optional input is a boolean flag that, when enabled, uses high VRAM mode to load model weights, which may improve model loading speed."
+    }
+]

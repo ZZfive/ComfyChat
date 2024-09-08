@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Prompt_Styles_Selector node in ComfyUI?",
+        "answer": "The WAS_Prompt_Styles_Selector node is designed to manage and retrieve styles for text prompts. It plays a crucial role in loading predefined styles that are essential for generating contextually relevant and stylistically consistent text output."
+    },
+    {
+        "question": "What is the significance of the 'style' parameter in the WAS_Prompt_Styles_Selector node?",
+        "answer": "The 'style' parameter is crucial for determining which style configuration to load. It influences the node's operation by specifying the particular style from the available styles to be applied to the text prompt."
+    },
+    {
+        "question": "What does the 'positive_string' output provide in the WAS_Prompt_Styles_Selector node?",
+        "answer": "The 'positive_string' output provides the positive prompt associated with the selected style, which is important for guiding the text generation process towards the desired direction."
+    },
+    {
+        "question": "How does the 'negative_string' output contribute to the text generation process in the WAS_Prompt_Styles_Selector node?",
+        "answer": "The 'negative_string' output provides the negative prompt corresponding to the selected style, which helps refine the text generation by preventing undesired elements from appearing."
+    },
+    {
+        "question": "What infrastructure type does the WAS_Prompt_Styles_Selector node use?",
+        "answer": "The WAS_Prompt_Styles_Selector node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the WAS_Prompt_Styles_Selector node load styles?",
+        "answer": "The WAS_Prompt_Styles_Selector node loads styles by reading from a styles file located at a specific path. If the styles file exists and is not empty, the node loads the styles using JSON. If the styles file does not exist or the specified style is 'None', the node returns empty strings for both the positive and negative prompts."
+    },
+    {
+        "question": "What happens if the styles file does not exist or the specified style is 'None' in the WAS_Prompt_Styles_Selector node?",
+        "answer": "If the styles file does not exist or the specified style is 'None', the WAS_Prompt_Styles_Selector node returns empty strings for both the positive and negative prompts."
+    }
+]

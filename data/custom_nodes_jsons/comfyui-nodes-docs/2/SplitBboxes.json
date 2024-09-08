@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SplitBboxes node in ComfyUI?",
+        "answer": "The SplitBboxes node is used to split a list of bounding boxes (bboxes) into two separate lists at a specified index. This functionality is crucial for processing and manipulating bounding box data in various computer vision tasks, allowing targeted operations on specific portions of the data."
+    },
+    {
+        "question": "What are the required input types for the SplitBboxes node?",
+        "answer": "The required input types for the SplitBboxes node are 'bboxes' (a list of bounding boxes) and 'index' (an integer specifying the position where the list should be split)."
+    },
+    {
+        "question": "What does the 'bboxes' parameter represent in the SplitBboxes node?",
+        "answer": "The 'bboxes' parameter represents the list of bounding boxes that need to be split. It is essential for determining the data segment to be processed and divided at the specified index."
+    },
+    {
+        "question": "What does the 'index' parameter specify in the SplitBboxes node?",
+        "answer": "The 'index' parameter specifies the position where the bounding box list should be split. It plays a key role in dividing the bounding box list into two different parts."
+    },
+    {
+        "question": "What are the output types of the SplitBboxes node?",
+        "answer": "The output types of the SplitBboxes node are 'bboxes_a' (the first list of bounding boxes, containing elements from the start of the original list up to, but not including, the specified index) and 'bboxes_b' (the second list of bounding boxes, containing elements from the specified index to the end of the original list)."
+    },
+    {
+        "question": "What is the infra type for the SplitBboxes node?",
+        "answer": "The infra type for the SplitBboxes node is 'CPU'."
+    },
+    {
+        "question": "How does the SplitBboxes node split the bounding box list in the source code?",
+        "answer": "In the source code, the SplitBboxes node splits the bounding box list using the 'splitbbox' function, which takes the 'bboxes' and 'index' parameters as inputs. It creates two sub-lists: 'bboxes_a' (containing elements from the start of 'bboxes' up to, but not including, the 'index') and 'bboxes_b' (containing elements from the 'index' to the end of 'bboxes')."
+    }
+]
