@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ModelSamplerTonemapNoiseTest node in ComfyUI?",
+        "answer": "The ModelSamplerTonemapNoiseTest node in ComfyUI is designed to enhance the sampling process of a given model by applying tonemapping and noise reduction techniques. It works by adjusting the noise predictions in the context of Reinhard tonemapping operation to improve the visual quality and consistency of the sampling output."
+    },
+    {
+        "question": "What is the required input type for the ModelSamplerTonemapNoiseTest node?",
+        "answer": "The required input type for the ModelSamplerTonemapNoiseTest node is 'model', which represents the machine learning model to be sampled. It is a Comfy dtype of MODEL and a Python dtype of torch.nn.Module."
+    },
+    {
+        "question": "What is the optional input type for the ModelSamplerTonemapNoiseTest node?",
+        "answer": "The optional input type for the ModelSamplerTonemapNoiseTest node is 'multiplier', which is used to scale the noise reduction effect. It allows fine-tuning the intensity of the noise filtering process according to the specific needs of the task at hand. It is a Comfy dtype of FLOAT and a Python dtype of float."
+    },
+    {
+        "question": "What is the output type of the ModelSamplerTonemapNoiseTest node?",
+        "answer": "The output type of the ModelSamplerTonemapNoiseTest node is 'model'. It is a modified version of the input model, now equipped with an enhanced sampling function that incorporates tonemapping and noise reduction techniques to improve the output quality. It is a Comfy dtype of MODEL and a Python dtype of torch.nn.Module."
+    },
+    {
+        "question": "What infra type is recommended for the ModelSamplerTonemapNoiseTest node?",
+        "answer": "The recommended infra type for the ModelSamplerTonemapNoiseTest node is GPU."
+    },
+    {
+        "question": "What does the sampler_tonemap_reinhard function do in the ModelSamplerTonemapNoiseTest node?",
+        "answer": "The sampler_tonemap_reinhard function in the ModelSamplerTonemapNoiseTest node adjusts the noise predictions in the context of Reinhard tonemapping operation. It calculates the mean and standard deviation of the noise prediction vector magnitude, adjusts the magnitude based on the multiplier, and returns a modified noise prediction that incorporates tonemapping and noise reduction."
+    },
+    {
+        "question": "How does the ModelSamplerTonemapNoiseTest node modify the input model?",
+        "answer": "The ModelSamplerTonemapNoiseTest node modifies the input model by cloning it and setting a custom model sampler configuration function (sampler_tonemap_reinhard) to enhance the sampling process with tonemapping and noise reduction techniques."
+    }
+]

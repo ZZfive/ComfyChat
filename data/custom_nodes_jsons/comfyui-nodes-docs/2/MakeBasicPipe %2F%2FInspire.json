@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MakeBasicPipe节点的目的是什么？",
+        "answer": "MakeBasicPipe节点旨在为生成模型简化和操作文本提示的过程。它处理正面和负面提示，集成了先进的编码技术来精炼模型生成的输入数据，以改善生成输出。"
+    },
+    {
+        "question": "MakeBasicPipe节点的必需输入参数有哪些？",
+        "answer": "MakeBasicPipe节点的必需输入参数包括：ckpt_name，positive_wildcard_text和negative_wildcard_text。其中ckpt_name用于识别特定的模型状态，positive_wildcard_text和negative_wildcard_text分别指导生成过程的正面和负面方向。"
+    },
+    {
+        "question": "MakeBasicPipe节点输出的basic_pipe是什么？",
+        "answer": "MakeBasicPipe节点输出的basic_pipe是一个结构化的流程，包括模型、编码器和处理过的提示，准备进行生成过程。它封装了节点在准备数据以有效利用模型的功能。"
+    },
+    {
+        "question": "MakeBasicPipe节点输出的cache_key有什么用途？",
+        "answer": "MakeBasicPipe节点输出的cache_key是缓存的检查点和提示数据的唯一标识符，可用于后续的检索和处理。它对于保持生成工作流的一致性和效率至关重要。"
+    },
+    {
+        "question": "MakeBasicPipe节点推荐的基础设施类型是什么？",
+        "answer": "MakeBasicPipe节点的推荐基础设施类型是CPU。"
+    },
+    {
+        "question": "MakeBasicPipe节点如何处理正面和负面通配符文本？",
+        "answer": "MakeBasicPipe节点使用ImpactWildcardEncode自定义节点来处理正面和负面通配符文本，将它们与模型和clip编码器一起处理，以生成更高质量和相关性的输出。"
+    },
+    {
+        "question": "使用MakeBasicPipe节点需要安装哪个扩展包？",
+        "answer": "要使用MakeBasicPipe节点，需要安装'Impact Pack'扩展包。如果未安装，节点会尝试自动安装并提示用户。"
+    }
+]

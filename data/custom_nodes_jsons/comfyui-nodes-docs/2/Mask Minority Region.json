@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the minority_region method in the WAS_Mask_Minority_Region class?",
+        "answer": "The minority_region method is designed to process input masks and identify minority regions within them. It is particularly useful for applications that focus on less prominent or minority regions in images, such as in image segmentation or feature extraction tasks."
+    },
+    {
+        "question": "What is the significance of the 'masks' input parameter in the minority_region method?",
+        "answer": "The 'masks' input parameter is crucial for the minority_region method as it defines the regions of interest within the image. This parameter affects how the method identifies and processes minority regions, which is vital for the accuracy of the results."
+    },
+    {
+        "question": "How does the 'threshold' parameter influence the minority_region method?",
+        "answer": "The 'threshold' parameter determines the cutoff point between different regions within the mask. It plays a significant role in the minority_region method by influencing which areas are considered part of the minority region. The default value is set to 128, allowing for flexibility when applying the threshold."
+    },
+    {
+        "question": "What does the MASKS output parameter represent in the minority_region method?",
+        "answer": "The MASKS output parameter represents the minority regions processed from the input masks. It is a key output as it provides the final result of the minority_region method, highlighting the less prominent areas in the original image."
+    },
+    {
+        "question": "What is the infra type recommended for the WAS_Mask_Minority_Region class?",
+        "answer": "The recommended infra type for the WAS_Mask_Minority_Region class is CPU."
+    },
+    {
+        "question": "How does the minority_region method handle input masks with dimensions greater than 3?",
+        "answer": "If the input masks have dimensions greater than 3, the minority_region method processes each mask separately, converts them to PIL images, applies the threshold to distinguish different regions, isolates the smallest regions, and then concatenates the results into a single tensor."
+    },
+    {
+        "question": "What is the output format of the minority_region method?",
+        "answer": "The output format of the minority_region method is a tuple containing a tensor representing the processed minority regions from the input masks."
+    }
+]

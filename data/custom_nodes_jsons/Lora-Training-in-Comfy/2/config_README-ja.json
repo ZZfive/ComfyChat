@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the dataset configuration file in Lora-Training-in-Comfy?",
+        "answer": "The dataset configuration file in Lora-Training-in-Comfy allows users to make detailed settings for the dataset, such as specifying multiple datasets, setting different resolutions for each dataset, and changing settings for each subset."
+    },
+    {
+        "question": "What format can the dataset configuration file be written in?",
+        "answer": "The dataset configuration file can be written in JSON or TOML format, with TOML being recommended for ease of description."
+    },
+    {
+        "question": "What are the three main sections in the dataset configuration file?",
+        "answer": "The three main sections in the dataset configuration file are [general], [[datasets]], and [[datasets.subsets]]. [general] applies options to all datasets or subsets, [[datasets]] applies options to individual datasets, and [[datasets.subsets]] applies options to individual subsets."
+    },
+    {
+        "question": "Can DreamBooth and fine tuning methods be used together in Lora-Training-in-Comfy?",
+        "answer": "Yes, in Lora-Training-in-Comfy, both DreamBooth and fine tuning methods can be used together. Different methods can be specified for different datasets."
+    },
+    {
+        "question": "What should be done if an error occurs while using the dataset configuration file?",
+        "answer": "If an error occurs while using the dataset configuration file, the user should check for missing required options, incorrect option names, or incorrect value formats. The error message will provide details on the location and type of error."
+    },
+    {
+        "question": "What happens if there are duplicate subsets within a dataset?",
+        "answer": "If there are duplicate subsets within a dataset, the second and subsequent duplicates will be ignored. However, if the duplicates are in different datasets, they will not be considered duplicates and will both be used in training."
+    },
+    {
+        "question": "What is the recommended way to organize metadata files for fine tuning subsets?",
+        "answer": "It is strongly recommended to prepare metadata files for each image directory and register them as separate subsets. Placing metadata spanning directories in a single metadata file should be avoided."
+    }
+]

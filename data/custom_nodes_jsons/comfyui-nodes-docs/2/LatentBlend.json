@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LatentBlend node in ComfyUI?",
+        "answer": "The LatentBlend node is designed to seamlessly blend and mix two sets of latent samples through a specified blend factor. It operates by adjusting the contribution of each sample set, allowing the creation of a composite representation that can be used for further processing or visualization."
+    },
+    {
+        "question": "What are the required inputs for the LatentBlend node?",
+        "answer": "The required inputs for the LatentBlend node are: samples1 (the first set of latent samples to be blended), samples2 (the second set of latent samples to be blended), and blend_factor (a float that determines the degree to which the second set of samples is blended with the first set)."
+    },
+    {
+        "question": "What is the purpose of the blend_factor input in the LatentBlend node?",
+        "answer": "The blend_factor input is a float that determines the degree to which the second set of samples is blended with the first set. It is crucial for controlling the balance between the two sets of samples in the output."
+    },
+    {
+        "question": "What is the optional input for the LatentBlend node?",
+        "answer": "The optional input for the LatentBlend node is blend_mode, which specifies the blending mode to use when combining the samples. Currently, the only supported option is 'normal'."
+    },
+    {
+        "question": "What is the output type of the LatentBlend node?",
+        "answer": "The output type of the LatentBlend node is samples_out, which is a set of blended latent samples resulting from the combination of the input samples with the specified blend factor."
+    },
+    {
+        "question": "What infra type does the LatentBlend node use?",
+        "answer": "The LatentBlend node uses the CPU infra type."
+    },
+    {
+        "question": "What happens if the shapes of samples1 and samples2 do not match in the LatentBlend node?",
+        "answer": "If the shapes of samples1 and samples2 do not match, samples2 is permuted to (0, 3, 1, 2), upscaled to match samples1's shape using bicubic interpolation and center cropping, and then permuted back to (0, 2, 3, 1) before blending."
+    }
+]

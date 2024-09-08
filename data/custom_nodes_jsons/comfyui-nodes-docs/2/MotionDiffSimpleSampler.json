@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MotionDiffSimpleSampler node in ComfyUI?",
+        "answer": "The MotionDiffSimpleSampler node in ComfyUI is designed to simplify the sampling process in the motion diffusion framework, especially for generating or transforming motion data. It abstracts the complexity of selecting and applying different sampling strategies to generate or modify motion sequences based on given conditions and inputs."
+    },
+    {
+        "question": "What are the required input types for the MotionDiffSimpleSampler node?",
+        "answer": "The required input types for the MotionDiffSimpleSampler node are: sampler_name, md_model, md_clip, md_cond, motion_data, and seed."
+    },
+    {
+        "question": "What does the 'sampler_name' input specify in the MotionDiffSimpleSampler node?",
+        "answer": "The 'sampler_name' input in the MotionDiffSimpleSampler node specifies the name of the sampling strategy to be used, affecting the choice of algorithm for generating or transforming motion data."
+    },
+    {
+        "question": "What is the purpose of the 'seed' input in the MotionDiffSimpleSampler node?",
+        "answer": "The 'seed' input in the MotionDiffSimpleSampler node is used to ensure the reproducibility of the generated or transformed motion data."
+    },
+    {
+        "question": "What are the output types of the MotionDiffSimpleSampler node?",
+        "answer": "The output type of the MotionDiffSimpleSampler node is 'motion_data', which includes the generated or transformed motion sequence, motion mask, and motion length."
+    },
+    {
+        "question": "What infrastructure type is recommended for the MotionDiffSimpleSampler node?",
+        "answer": "The recommended infrastructure type for the MotionDiffSimpleSampler node is GPU."
+    },
+    {
+        "question": "How does the MotionDiffSimpleSampler node handle the motion data after sampling?",
+        "answer": "After sampling, the MotionDiffSimpleSampler node returns the output motion data, which includes the predicted motion, motion mask, and motion length. The predicted motion is obtained by scaling the output with the dataset's standard deviation and adding the dataset's mean, and then detaching it from the GPU."
+    }
+]

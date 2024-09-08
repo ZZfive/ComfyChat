@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoadInstanceFusersNode?",
+        "answer": "The LoadInstanceFusersNode is designed to load and prepare instance fuser models from a specified directory and adjust their scale according to the provided parameters. It facilitates the dynamic integration of fuser models in the instance diffusion process, enabling enhanced control over the fusion of instance-specific features."
+    },
+    {
+        "question": "What are the required input types for the LoadInstanceFusersNode?",
+        "answer": "The required input types for the LoadInstanceFusersNode are 'model_filename' (COMBO[STRING] in Comfy dtype, str in Python dtype) and 'fusers_scale' (FLOAT in Comfy dtype, float in Python dtype)."
+    },
+    {
+        "question": "What does the 'model_filename' parameter specify?",
+        "answer": "The 'model_filename' parameter specifies the name of the model file to be loaded. This parameter is crucial for identifying and retrieving the correct fuser model from the specified directory."
+    },
+    {
+        "question": "What is the role of the 'fusers_scale' parameter?",
+        "answer": "The 'fusers_scale' parameter determines the scaling factor to be applied to the fusers, affecting their influence in the instance fusion process. It allows for fine-tuning the impact of the fusers on the generated instances."
+    },
+    {
+        "question": "What is the output type of the LoadInstanceFusersNode?",
+        "answer": "The output type of the LoadInstanceFusersNode is 'fusers' (FUSERS in Comfy dtype, Dict[str, List[torch.nn.Module]] in Python dtype), which provides a list of loaded and scaled fuser models that can be directly integrated into the instance diffusion process."
+    },
+    {
+        "question": "What is the infra type of the LoadInstanceFusersNode?",
+        "answer": "The infra type of the LoadInstanceFusersNode is 'GPU'."
+    },
+    {
+        "question": "What category does the LoadInstanceFusersNode belong to?",
+        "answer": "The LoadInstanceFusersNode belongs to the 'instance/loaders' category."
+    }
+]

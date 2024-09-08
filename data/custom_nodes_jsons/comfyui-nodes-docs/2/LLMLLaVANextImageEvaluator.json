@@ -1,0 +1,30 @@
+[
+    {
+        "question": "什么是LLMLLaVANextImageEvaluator节点？",
+        "answer": "LLMLLaVANextImageEvaluator节点是ComfyUI中的一个自定义节点，用于使用LLaVA Next V1模型评估图像，基于提供的提示和图像生成描述或标题。"
+    },
+    {
+        "question": "LLMLLaVANextImageEvaluator节点的必需输入类型有哪些？",
+        "answer": "LLMLLaVANextImageEvaluator节点的必需输入类型包括：lnv1_model（LLaVA Next V1模型），images（一批图像），max_tokens（每个图像描述生成的最大令牌数），prompt_format（用于构建模型提示的格式）和prompt（给予模型生成图像描述的具体提示或指令）。"
+    },
+    {
+        "question": "LLMLLaVANextImageEvaluator节点的输出类型有哪些？",
+        "answer": "LLMLLaVANextImageEvaluator节点的输出类型包括：strings（生成的图像描述的原始字符串），list（原始字符串的列表，每个字符串代表输入图像的生成描述）和documents（Document对象的集合，每个对象封装了生成的图像描述以及额外的元数据）。"
+    },
+    {
+        "question": "LLMLLaVANextImageEvaluator节点的infra类型是什么？",
+        "answer": "LLMLLaVANextImageEvaluator节点的infra类型是GPU。"
+    },
+    {
+        "question": "LLMLLaVANextImageEvaluator节点的max_tokens参数有什么作用？",
+        "answer": "max_tokens参数指定为每个图像描述生成的最大令牌数，用于控制输出标题的详细程度和细节水平。"
+    },
+    {
+        "question": "LLMLLaVANextImageEvaluator节点的prompt_format参数有什么作用？",
+        "answer": "prompt_format参数用于构建模型提示的格式，将图像和用户指令整合到结构化模板中。"
+    },
+    {
+        "question": "LLMLLaVANextImageEvaluator节点如何处理输入的图像？",
+        "answer": "LLMLLaVANextImageEvaluator节点通过一个循环来处理输入的图像，对每个图像应用LLaVA Next V1模型生成描述，然后将生成的描述、用户提示和图像缩略图封装成Document对象。"
+    }
+]

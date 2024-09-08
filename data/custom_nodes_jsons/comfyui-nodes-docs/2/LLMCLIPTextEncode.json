@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LLMCLIPTextEncode node in ComfyUI?",
+        "answer": "The LLMCLIPTextEncode node in ComfyUI encodes text input through the CLIP model and integrates session elements to improve the conditional context for downstream tasks."
+    },
+    {
+        "question": "What are the required input types for the LLMCLIPTextEncode node?",
+        "answer": "The required input types for the LLMCLIPTextEncode node are 'clip' (CLIP model) and 'text' (input data to be processed and encoded)."
+    },
+    {
+        "question": "What is the output type of the LLMCLIPTextEncode node?",
+        "answer": "The output type of the LLMCLIPTextEncode node is CONDITIONING, which provides a conditioned representation that can serve as context for further processing or as the basis for generating a response."
+    },
+    {
+        "question": "What infrastructure type is recommended for the LLMCLIPTextEncode node?",
+        "answer": "The recommended infrastructure type for the LLMCLIPTextEncode node is CPU."
+    },
+    {
+        "question": "What happens if the response status code is not 200 in the LLMCLIPTextEncode node?",
+        "answer": "If the response status code is not 200, the LLMCLIPTextEncode node will encode the text using the CLIP model and return the conditioned representation along with the pooled output."
+    },
+    {
+        "question": "How does the LLMCLIPTextEncode node handle the response if the last message is not from the assistant?",
+        "answer": "If the last message is not from the assistant, the LLMCLIPTextEncode node will encode the text using the CLIP model and return the conditioned representation along with the pooled output."
+    },
+    {
+        "question": "What does the LLMCLIPTextEncode node do with the 'result' variable obtained from the response?",
+        "answer": "The LLMCLIPTextEncode node removes any '<image>' or '<edit>' tags from the 'result' variable, tokenizes the remaining text using the CLIP model, encodes the tokens, and returns the conditioned representation along with the pooled output."
+    }
+]

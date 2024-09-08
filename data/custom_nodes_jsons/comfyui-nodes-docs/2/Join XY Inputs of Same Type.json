@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the 'Join XY Inputs of Same Type' node in ComfyUI?",
+        "answer": "The purpose of the 'Join XY Inputs of Same Type' node is to merge two XY inputs of the same type into a single output, ensuring compatibility and using specific merging strategies based on the input types."
+    },
+    {
+        "question": "What are the required input types for the 'Join XY Inputs of Same Type' node?",
+        "answer": "The required input types for the 'Join XY Inputs of Same Type' node are XY_i, which represents one of the XY inputs to be merged. Its type and value are crucial for determining the merging strategy and ensuring compatibility with the other XY input."
+    },
+    {
+        "question": "What is the output type of the 'Join XY Inputs of Same Type' node?",
+        "answer": "The output type of the 'Join XY Inputs of Same Type' node is a merged XY output, which combines the data from the two input XY nodes based on their types and the specific merging logic implemented for each type."
+    },
+    {
+        "question": "What infrastructure type does the 'Join XY Inputs of Same Type' node use?",
+        "answer": "The 'Join XY Inputs of Same Type' node uses the 'CPU' infrastructure type."
+    },
+    {
+        "question": "How does the 'Join XY Inputs of Same Type' node handle merging when the input types are 'Seeds++ Batch'?",
+        "answer": "When the input types are 'Seeds++ Batch', the node combines the lengths of the two input values and creates a new list with a range of the combined length as the output value."
+    },
+    {
+        "question": "How does the 'Join XY Inputs of Same Type' node handle merging when the input types are 'Positive Prompt S/R' or 'Negative Prompt S/R'?",
+        "answer": "When the input types are 'Positive Prompt S/R' or 'Negative Prompt S/R', the node combines the first value of the first input with the second value of the second input, creating a new list of tuples as the output value."
+    },
+    {
+        "question": "What happens if the input types of the two XY inputs do not match in the 'Join XY Inputs of Same Type' node?",
+        "answer": "If the input types of the two XY inputs do not match, the 'Join XY Inputs of Same Type' node will print an error message stating 'Join XY Inputs Error: Input types must match' and return 'None' as the output."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Mask_Smooth_Region node in ComfyUI?",
+        "answer": "The WAS_Mask_Smooth_Region node is designed to process input masks and apply a smoothing effect to their regions, which is particularly useful for generating seamless textures or preparing masks for further image processing tasks."
+    },
+    {
+        "question": "What technique does the WAS_Mask_Smooth_Region node use to smooth the mask regions?",
+        "answer": "The node uses Gaussian blur technology to smooth the regions within the mask, with the degree of smoothing controlled by the 'sigma' parameter."
+    },
+    {
+        "question": "What is the 'masks' parameter in the WAS_Mask_Smooth_Region node?",
+        "answer": "The 'masks' parameter is the key input of the node, expecting a mask or a batch of masks. It directly affects the operation of the node as it determines the regions to be smoothed."
+    },
+    {
+        "question": "How does the 'sigma' parameter affect the output of the WAS_Mask_Smooth_Region node?",
+        "answer": "The 'sigma' parameter, a floating-point number, adjusts the standard deviation of the Gaussian blur applied to the mask regions. Higher values result in more noticeable smoothing effects."
+    },
+    {
+        "question": "What does the 'MASKS' output of the WAS_Mask_Smooth_Region node provide?",
+        "answer": "The 'MASKS' output provides the smoothed mask or batch of masks obtained by applying the Gaussian blur defined by the 'sigma' parameter. This output is important as it represents the processed data that can be used for subsequent operations or as the final output for texture generation."
+    },
+    {
+        "question": "What is the infra type of the WAS_Mask_Smooth_Region node?",
+        "answer": "The infra type of the WAS_Mask_Smooth_Region node is CPU."
+    },
+    {
+        "question": "How does the WAS_Mask_Smooth_Region node handle input masks with dimensions greater than 3?",
+        "answer": "For input masks with dimensions greater than 3, the node processes each mask in the batch separately, applies smoothing, converts the result back to a tensor, and then concatenates all the smoothed region tensors into a single tensor as the output."
+    }
+]

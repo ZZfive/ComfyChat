@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MorphologicSkeletoning node in ComfyUI?",
+        "answer": "The MorphologicSkeletoning node is used to calculate the morphological skeleton of an image. It converts the input image into a minimized but fully representative skeleton form that preserves the structure and connectivity of the original shape."
+    },
+    {
+        "question": "What is the significance of the src parameter in the MorphologicSkeletoning node?",
+        "answer": "The src parameter represents the source image that needs to be processed. It is crucial for determining the structure and connectivity of the original shape in the skeleton transformation. The quality and features of the source image directly affect the accuracy and representativeness of the final skeleton."
+    },
+    {
+        "question": "What is the output of the MorphologicSkeletoning node?",
+        "answer": "The output of the MorphologicSkeletoning node is a skeletal representation of the input image. This representation preserves the structure and connectivity of the original shape in a minimized form. The skeleton image usually appears as thin line structures, highlighting the main features and topological structure of the original image."
+    },
+    {
+        "question": "What is the infra type recommended for the MorphologicSkeletoning node?",
+        "answer": "The recommended infra type for the MorphologicSkeletoning node is GPU."
+    },
+    {
+        "question": "What is the function of the skeletonize method used in the MorphologicSkeletoning node?",
+        "answer": "The skeletonize method is used to compute the skeleton of the binary image. It reduces the binary image to a skeleton by iteratively removing pixels from the edges of the image while preserving the connectivity and structure of the original shape."
+    },
+    {
+        "question": "Why is the input image thresholded before applying the skeletonize method in the MorphologicSkeletoning node?",
+        "answer": "The input image is thresholded to ensure that it is binary and has a maximum value of 1. This is necessary because the skeletonize method expects a binary image as input, where the foreground pixels have a value of 1 and the background pixels have a value of 0."
+    },
+    {
+        "question": "What is the purpose of multiplying the skeletonized image by 255 in the MorphologicSkeletoning node?",
+        "answer": "The skeletonized image is multiplied by 255 to scale the pixel values from the range [0, 1] to the range [0, 255]. This is done to convert the skeleton image back to the original image format, where pixel values are typically in the range [0, 255]."
+    }
+]

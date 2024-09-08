@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the BlendIfMask node in ComfyUI?",
+        "answer": "The BlendIfMask node in ComfyUI is used to reproduce the blending color band function of Photoshop layer styles. It outputs a mask that can be used for layer synthesis in the ImageBlend or ImageBlendAdvance nodes."
+    },
+    {
+        "question": "What are the required input types for the BlendIfMask node?",
+        "answer": "The required input types for the BlendIfMask node are: image (Comfy dtype: IMAGE, Python dtype: torch.Tensor), invert_mask (Comfy dtype: BOOLEAN, Python dtype: bool), blend_if (Comfy dtype: ENUM, Python dtype: str, with options: gray, red, green, blue), black_point (Comfy dtype: INT, Python dtype: int, range: 0-255), black_range (Comfy dtype: INT, Python dtype: int), white_point (Comfy dtype: INT, Python dtype: int, range: 0-255), and white_range (Comfy dtype: INT, Python dtype: int)."
+    },
+    {
+        "question": "What does the 'blend_if' parameter in the BlendIfMask node specify?",
+        "answer": "The 'blend_if' parameter in the BlendIfMask node specifies the channel selection for the blending color band. It has four options: gray, red, green, and blue."
+    },
+    {
+        "question": "How does the 'black_range' parameter affect the output mask in the BlendIfMask node?",
+        "answer": "The 'black_range' parameter in the BlendIfMask node controls the transition range of the dark part of the mask. A larger value results in a richer transition hierarchy in the dark part of the mask."
+    },
+    {
+        "question": "What is the output type of the BlendIfMask node?",
+        "answer": "The output type of the BlendIfMask node is a mask (Comfy dtype: MASK, Python dtype: torch.Tensor)."
+    },
+    {
+        "question": "What is the infra type required for the BlendIfMask node?",
+        "answer": "The infra type required for the BlendIfMask node is GPU."
+    },
+    {
+        "question": "How does the BlendIfMask node handle input images with an alpha channel?",
+        "answer": "If the input image has an alpha channel (RGBA mode), the BlendIfMask node splits the image and uses the last channel (alpha channel) as the input mask."
+    }
+]

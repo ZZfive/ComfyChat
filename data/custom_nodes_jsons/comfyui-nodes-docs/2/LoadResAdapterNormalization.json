@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the 'load_res_adapter' method in the LoadResAdapterNormalization class?",
+        "answer": "The 'load_res_adapter' method is designed to integrate ResAdapter normalization weights into a given model. It ensures that the weights are properly loaded from a specified path and applied to the model's normalization layers, enhancing the model's ability to handle input data with standardized features."
+    },
+    {
+        "question": "What are the required input parameters for the LoadResAdapterNormalization class?",
+        "answer": "The LoadResAdapterNormalization class requires two input parameters: 'model', which represents the machine learning model to which the ResAdapter normalization weights will be applied, and 'resadapter_path', which specifies the directory path where the ResAdapter normalization weights are stored."
+    },
+    {
+        "question": "What is the output of the LoadResAdapterNormalization class?",
+        "answer": "The output of the LoadResAdapterNormalization class is 'model_clone', which is a clone of the original model with the ResAdapter normalization weights applied. It signifies the successful integration of the weights, allowing the model to utilize standardized features to improve data processing."
+    },
+    {
+        "question": "What is the infra type recommended for the LoadResAdapterNormalization class?",
+        "answer": "The recommended infra type for the LoadResAdapterNormalization class is CPU."
+    },
+    {
+        "question": "How does the LoadResAdapterNormalization class handle mismatched tensor shapes?",
+        "answer": "If the original tensor shape and the new tensor shape do not match, the LoadResAdapterNormalization class will print a message indicating that there is no match for the specific key and will not attempt to patch the model with the mismatched tensor."
+    },
+    {
+        "question": "What is the category of the LoadResAdapterNormalization class?",
+        "answer": "The LoadResAdapterNormalization class belongs to the 'KJNodes/experimental' category."
+    },
+    {
+        "question": "What is the potential error message if the model cannot be patched with ResAdapter weights?",
+        "answer": "If the model cannot be patched with ResAdapter weights, an exception will be raised with the message: 'Could not patch model, this way of patching was added to ComfyUI on March 3rd 2024, is your ComfyUI up to date?'."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the primary purpose of the WAS_Mask_Batch node in ComfyUI?",
+        "answer": "The primary purpose of the WAS_Mask_Batch node is to efficiently process and batch multiple mask inputs, ensuring they conform to a uniform size and stacking them into a single batch for further processing."
+    },
+    {
+        "question": "What are the optional input parameters for the WAS_Mask_Batch node?",
+        "answer": "The optional input parameters for the WAS_Mask_Batch node are 'masks_a', 'masks_b', 'masks_c', and 'masks_d', all of which are of the MASK data type in ComfyUI and can be either torch.Tensor or None in Python."
+    },
+    {
+        "question": "What does the 'masks' output of the WAS_Mask_Batch node represent?",
+        "answer": "The 'masks' output of the WAS_Mask_Batch node represents a batched tensor containing all the processed input masks, serving as the main output of the node prepared for subsequent operations."
+    },
+    {
+        "question": "Which infrastructure type is recommended for the WAS_Mask_Batch node?",
+        "answer": "The recommended infrastructure type for the WAS_Mask_Batch node is CPU."
+    },
+    {
+        "question": "How does the WAS_Mask_Batch node check for mismatched mask dimensions?",
+        "answer": "The WAS_Mask_Batch node checks for mismatched mask dimensions by comparing the shape of each input tensor and raising a ValueError if the dimensions do not match, specifying the names of the mismatched masks."
+    },
+    {
+        "question": "What happens if no input masks are provided to the WAS_Mask_Batch node?",
+        "answer": "If no input masks are provided to the WAS_Mask_Batch node, a ValueError is raised, indicating that at least one input mask must be provided."
+    },
+    {
+        "question": "How are the processed masks returned by the WAS_Mask_Batch node?",
+        "answer": "The processed masks are returned by the WAS_Mask_Batch node as a single batched tensor, which is unsqueezed to add an extra dimension using the `unsqueeze(1)` method."
+    }
+]

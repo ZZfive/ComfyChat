@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LLMPostProcessDocuments node in ComfyUI?",
+        "answer": "The LLMPostProcessDocuments node in ComfyUI is designed to refine and filter a collection of documents based on specified keywords. It allows the inclusion of documents containing specific required keywords while excluding those with specified unnecessary keywords, effectively tailoring the document set according to user-defined criteria."
+    },
+    {
+        "question": "What is the required input type for the LLMPostProcessDocuments node?",
+        "answer": "The required input type for the LLMPostProcessDocuments node is 'document', which represents the collection of documents to be processed. It is the main data operated on by the node, determining which documents to retain based on the presence or absence of specified keywords."
+    },
+    {
+        "question": "What are the optional input types for the LLMPostProcessDocuments node?",
+        "answer": "The optional input types for the LLMPostProcessDocuments node are 'required_keywords' and 'exclude_keywords'. 'required_keywords' is a comma-separated list of keywords that a document must contain to be included in the output. 'exclude_keywords' is a comma-separated list of keywords that, if present in a document, will cause it to be excluded from the output."
+    },
+    {
+        "question": "What is the output type of the LLMPostProcessDocuments node?",
+        "answer": "The output type of the LLMPostProcessDocuments node is 'documents', which represents the processed collection of documents containing only those that match the required keywords and do not contain any of the excluded keywords."
+    },
+    {
+        "question": "What infrastructure type does the LLMPostProcessDocuments node use?",
+        "answer": "The LLMPostProcessDocuments node uses the 'CPU' infrastructure type."
+    },
+    {
+        "question": "How does the LLMPostProcessDocuments node filter documents based on required and excluded keywords?",
+        "answer": "The LLMPostProcessDocuments node filters documents by checking if the required keywords are not disjoint with the document's keywords and if the excluded keywords are disjoint with the document's keywords. Only the documents that satisfy both conditions are included in the output."
+    },
+    {
+        "question": "What is the function name used by the LLMPostProcessDocuments node?",
+        "answer": "The function name used by the LLMPostProcessDocuments node is 'process_documents'."
+    }
+]

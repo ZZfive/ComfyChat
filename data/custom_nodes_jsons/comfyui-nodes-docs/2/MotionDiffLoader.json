@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MotionDiffLoader node in ComfyUI?",
+        "answer": "The MotionDiffLoader node in ComfyUI is used to load and initialize the Motion Diffusion Model (MDM) and its associated CLIP wrapper based on a specified model dataset. It plays a crucial role in preparing the generation model for subsequent processing or inference tasks."
+    },
+    {
+        "question": "What is the required input type for the MotionDiffLoader node?",
+        "answer": "The required input type for the MotionDiffLoader node is 'model_dataset', which specifies the dataset model to be loaded. This choice determines the configuration of the motion diffusion model and its CLIP wrapper, affecting the behavior and performance of the generation."
+    },
+    {
+        "question": "What are the output types of the MotionDiffLoader node?",
+        "answer": "The MotionDiffLoader node outputs two types: 'md_model' and 'md_clip'. 'md_model' returns a wrapped motion diffusion model instance that can be used for generation tasks, while 'md_clip' returns a CLIP wrapper configured for the loaded motion diffusion model to enable text-conditioned generation."
+    },
+    {
+        "question": "What is the infra type for the MotionDiffLoader node?",
+        "answer": "The infra type for the MotionDiffLoader node is 'GPU'."
+    },
+    {
+        "question": "What is the category of the MotionDiffLoader node in ComfyUI?",
+        "answer": "The MotionDiffLoader node belongs to the 'MotionDiff' category in ComfyUI."
+    },
+    {
+        "question": "What function is used by the MotionDiffLoader node to load the MDM?",
+        "answer": "The MotionDiffLoader node uses the 'load_mdm' function to load the Motion Diffusion Model (MDM)."
+    },
+    {
+        "question": "How does the MotionDiffLoader node create the MDM and CLIP wrapper?",
+        "answer": "The MotionDiffLoader node creates the MDM using the 'create_mdm_model' function with the specified model configuration. It then returns a MotionDiffModelWrapper instance for the MDM and a MotionDiffCLIPWrapper instance for the CLIP wrapper."
+    }
+]

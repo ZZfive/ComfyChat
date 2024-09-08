@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ColorCorrectLevels node in ComfyUI?",
+        "answer": "The ColorCorrectLevels node in ComfyUI is used to apply LUTs to images. It only supports .cube format LUT files."
+    },
+    {
+        "question": "What are the required inputs for the ColorCorrectLevels node?",
+        "answer": "The required inputs for the ColorCorrectLevels node are: an input image of Comfy dtype IMAGE and Python dtype torch.Tensor, a LUT selection from the available .cube files in the designated LUT folder, and a color space selection between 'linear' and 'log'."
+    },
+    {
+        "question": "How can you set a custom LUT folder for the ColorCorrectLevels node?",
+        "answer": "To set a custom LUT folder for the ColorCorrectLevels node, you need to edit the 'resource_dir.ini' file located in the plugin's root directory. Look for the line starting with 'LUT_dir=' and edit the path after the '=' to your custom folder path. This folder should contain the .cube files that will be collected and displayed in the node's list during ComfyUI initialization."
+    },
+    {
+        "question": "What should you do if the 'resource_dir.ini' file has the extension '.example'?",
+        "answer": "If the 'resource_dir.ini' file has the extension '.example', you need to remove the '.example' extension for the file to be recognized and used by the plugin. The file should be named 'resource_dir.ini' for it to work properly."
+    },
+    {
+        "question": "What happens if the designated LUT folder in the 'resource_dir.ini' file is invalid?",
+        "answer": "If the designated LUT folder in the 'resource_dir.ini' file is invalid, the plugin will use its built-in LUT folder."
+    },
+    {
+        "question": "Which color space option should be selected for ordinary images in the ColorCorrectLevels node?",
+        "answer": "For ordinary images in the ColorCorrectLevels node, the 'linear' color space option should be selected."
+    },
+    {
+        "question": "What is the output type of the ColorCorrectLevels node?",
+        "answer": "The output type of the ColorCorrectLevels node is an image with Comfy dtype IMAGE and Python dtype torch.Tensor."
+    }
+]

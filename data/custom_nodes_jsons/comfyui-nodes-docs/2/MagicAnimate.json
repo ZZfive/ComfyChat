@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MagicAnimate node in ComfyUI?",
+        "answer": "The MagicAnimate node in ComfyUI is used to create animated content by combining the appearance of an input image with the motion captured in a pose video. It generates new frames that reflect the desired motion and style."
+    },
+    {
+        "question": "What are the required input types for the MagicAnimate node?",
+        "answer": "The required input types for the MagicAnimate node are: magic_animate_model (MAGIC_ANIMATE_MODEL), image (IMAGE), pose_video (IMAGE), and seed (INT)."
+    },
+    {
+        "question": "What does the magic_animate_model parameter define in the MagicAnimate node?",
+        "answer": "The magic_animate_model parameter defines the generative architecture used for animation. It encapsulates the pipeline, configuration, and various components required for the generation process."
+    },
+    {
+        "question": "What is the role of the seed parameter in the MagicAnimate node?",
+        "answer": "The seed parameter ensures the reproducibility and consistency of the generated animation. By setting a specific seed, the node can generate the same animation result under identical conditions, which is crucial for iterative improvements and debugging."
+    },
+    {
+        "question": "What is the output type of the MagicAnimate node?",
+        "answer": "The output type of the MagicAnimate node is IMAGE, which represents the generated animation. It is a sequence of frames that combine the appearance of the input image with the motion of the pose video."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the MagicAnimate node?",
+        "answer": "The recommended infrastructure type for running the MagicAnimate node is GPU."
+    },
+    {
+        "question": "How does the MagicAnimate node handle input images with dimensions different from the specified size?",
+        "answer": "If the input image dimensions do not match the specified size, the MagicAnimate node resizes the image using the resize_image_frame method to ensure it has the correct dimensions for the generation process."
+    }
+]

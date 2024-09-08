@@ -1,0 +1,34 @@
+[
+    {
+        "question": "MiDaS_Background_Foreground_Removal使用的深度估计模型是什么？",
+        "answer": "MiDaS_Background_Foreground_Removal使用MiDaS模型对图像进行深度估计。"
+    },
+    {
+        "question": "MiDaS_Background_Foreground_Removal的目的是什么？",
+        "answer": "MiDaS_Background_Foreground_Removal的目的是利用深度估计模型从图像中移除背景或前景，以提高图像的视觉清晰度和焦点。"
+    },
+    {
+        "question": "MiDaS_Background_Foreground_Removal支持哪些MiDaS模型？",
+        "answer": "MiDaS_Background_Foreground_Removal支持三种MiDaS模型尺寸：DPT_Large, DPT_Hybrid和DPT_Small。"
+    },
+    {
+        "question": "MiDaS_Background_Foreground_Removal如何控制移除背景还是前景？",
+        "answer": "通过'remove'参数指定应从图像中移除背景还是前景，取值可以是'background'或'foreground'。"
+    },
+    {
+        "question": "MiDaS_Background_Foreground_Removal如何设置移除部分的颜色？",
+        "answer": "通过设置background_red, background_green, background_blue三个参数指定填充移除区域的背景颜色的RGB分量。"
+    },
+    {
+        "question": "MiDaS_Background_Foreground_Removal的输出结果包括哪几部分？",
+        "answer": "MiDaS_Background_Foreground_Removal有两个输出：result_image是处理后的图像，已移除指定的背景或前景元素；depth_map是从输入图像推导出的深度图。"
+    },
+    {
+        "question": "MiDaS_Background_Foreground_Removal如何控制平滑程度？",
+        "answer": "通过设置'smoothing'参数控制应用于深度图的平滑程度，取值范围0.0-16.0，默认值为0.25。"
+    },
+    {
+        "question": "MiDaS_Background_Foreground_Removal如何应用阈值处理？",
+        "answer": "通过将'threshold'参数设为'true'可以对深度图应用阈值，'threshold_low'/'threshold_mid'/'threshold_high'参数控制阈值范围的下限、中点和上限。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the primary purpose of the LLMInputToDocuments node in ComfyUI?",
+        "answer": "The LLMInputToDocuments node in ComfyUI is designed to convert input data into a structured document format, integrating additional information and supporting the connection of inputs to enhance the document creation process."
+    },
+    {
+        "question": "What are the required and optional input types for the LLMInputToDocuments node?",
+        "answer": "The required input type is 'input_data', which is the main data to be converted into document format. Optional input types include 'extra_info', a JSON-formatted string for including metadata, and 'concat_input', a boolean flag indicating whether to concatenate input data into a single document or process each input as separate documents."
+    },
+    {
+        "question": "How does the 'concat_input' option affect the output of the LLMInputToDocuments node?",
+        "answer": "The 'concat_input' option determines whether the input data is concatenated into a single document or if each input is processed as separate documents, influencing the structure and granularity of the resulting documents."
+    },
+    {
+        "question": "What is the output type of the LLMInputToDocuments node?",
+        "answer": "The output type of the LLMInputToDocuments node is 'documents', which are the converted structured document(s) containing the content of the input data, enriched with optional metadata and adjusted according to the concatenation settings."
+    },
+    {
+        "question": "How does the LLMInputToDocuments node handle different data types such as dict and list?",
+        "answer": "For a dictionary input, the node creates documents by joining keys and values if 'concat_input' is True, or by creating separate documents for each key-value pair if 'concat_input' is False. For a list input, it behaves similarly by joining list items into a single document or creating separate documents for each item based on the 'concat_input' setting."
+    },
+    {
+        "question": "Can the LLMInputToDocuments node process image tensors?",
+        "answer": "Yes, the LLMInputToDocuments node can process image tensors by converting them to PIL images, saving them to a temporary directory, and then loading them as documents using a SimpleDirectoryReader."
+    },
+    {
+        "question": "What is the role of the 'extra_info' parameter in the document creation process?",
+        "answer": "The 'extra_info' parameter allows for the inclusion of metadata in the documents, enriching the content and usability of the documents by adding additional context or information."
+    }
+]

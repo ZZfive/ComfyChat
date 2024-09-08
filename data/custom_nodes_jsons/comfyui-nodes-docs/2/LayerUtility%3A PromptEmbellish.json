@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PromptEmbellish class in ComfyUI?",
+        "answer": "The PromptEmbellish class in ComfyUI takes a simple prompt as input and outputs an embellished version of the prompt, optionally using an image as reference. It uses the Google Gemini API as the backend service."
+    },
+    {
+        "question": "What are the required inputs for the PromptEmbellish node?",
+        "answer": "The required inputs for the PromptEmbellish node are: api (API list), token_limit (token limit), and describe (description)."
+    },
+    {
+        "question": "What is the optional input for the PromptEmbellish node?",
+        "answer": "The optional input for the PromptEmbellish node is an image."
+    },
+    {
+        "question": "What is the output type of the PromptEmbellish node?",
+        "answer": "The output type of the PromptEmbellish node is a string (text)."
+    },
+    {
+        "question": "How do you set up the API key for the Google Gemini API in ComfyUI?",
+        "answer": "To set up the API key for the Google Gemini API in ComfyUI, you need to apply for an API key on Google AI Studio, and then fill it in the api_key.ini file located in the plugin root directory. The default file name is api_key.ini.example, which needs to be renamed to api_key.ini."
+    },
+    {
+        "question": "What happens if both describe and image inputs are provided to the PromptEmbellish node?",
+        "answer": "If both describe and image inputs are provided, the PromptEmbellish node will first embellish the describe input and then modify it to match the provided image. It will also find objects similar to the describe content in the image and replace them with the describe content."
+    },
+    {
+        "question": "What is the infra type required for the PromptEmbellish node?",
+        "answer": "The infra type required for the PromptEmbellish node is CPU."
+    }
+]

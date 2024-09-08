@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Mask_Fill_Region node in ComfyUI?",
+        "answer": "The WAS_Mask_Fill_Region node in ComfyUI is designed to process image masks and fill specified regions, which is crucial for applications involving image segmentation or region-based operations."
+    },
+    {
+        "question": "How does the WAS_Mask_Fill_Region node execute the actual filling of regions?",
+        "answer": "The WAS_Mask_Fill_Region node utilizes the capabilities of WAS_Tools_Class to execute the actual filling, ensuring that the filled regions are properly integrated into the mask."
+    },
+    {
+        "question": "What is the significance of the 'masks' parameter in the WAS_Mask_Fill_Region node?",
+        "answer": "The 'masks' parameter is a critical input for the WAS_Mask_Fill_Region node as it defines the binary masks to be processed. It directly influences the regions to be filled and expects an array of masks where each mask corresponds to a region to be filled."
+    },
+    {
+        "question": "What does the 'MASKS' output parameter represent in the WAS_Mask_Fill_Region node?",
+        "answer": "The 'MASKS' output parameter represents the result of the node's operation, which is an array of filled regions within the masks. This output is important as it provides processed masks that can be used for further analysis or rendering in various applications."
+    },
+    {
+        "question": "What is the infra type specified for the WAS_Mask_Fill_Region node?",
+        "answer": "The infra type specified for the WAS_Mask_Fill_Region node is CPU."
+    },
+    {
+        "question": "How does the WAS_Mask_Fill_Region node handle input masks with dimensions greater than 3?",
+        "answer": "For input masks with dimensions greater than 3, the WAS_Mask_Fill_Region node processes each mask in the array separately, converting them to PIL images, filling the regions, and then converting them back to tensors. The individual region tensors are then concatenated into a single tensor."
+    },
+    {
+        "question": "What is the output of the WAS_Mask_Fill_Region node when the input mask dimensions are 3 or less?",
+        "answer": "When the input mask dimensions are 3 or less, the WAS_Mask_Fill_Region node converts the mask to a PIL image, fills the region, and then converts it back to a tensor, returning this single region tensor."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CreateLoraNames node in ComfyUI?",
+        "answer": "The CreateLoraNames node simplifies the process of extracting and organizing names from a given text, specifically designed for handling lists of Lora font names. It cleans up the input text, removes any extraneous characters or blank lines, and separates the names from their file extensions, providing a clean list of names and prompts for further use."
+    },
+    {
+        "question": "What is the required input type for the CreateLoraNames node?",
+        "answer": "The required input type for the CreateLoraNames node is 'lora_names', which is a string containing the Lora font names, expected to be in a multiline format for processing. This parameter is crucial as it serves as the main data source for the node's operations."
+    },
+    {
+        "question": "What are the output types of the CreateLoraNames node?",
+        "answer": "The CreateLoraNames node outputs two types of data: 'lora_names' and 'prompt'. 'lora_names' is a cleaned-up list of Lora font names without any extraneous characters or blank lines, ready for further processing or use. 'prompt' is a list of prompts derived from the Lora font names, with the file extensions removed, suitable for generating creative or thematic content."
+    },
+    {
+        "question": "What infra type does the CreateLoraNames node use?",
+        "answer": "The CreateLoraNames node uses the CPU infra type."
+    },
+    {
+        "question": "How does the CreateLoraNames node process the input 'lora_names'?",
+        "answer": "The CreateLoraNames node processes the input 'lora_names' by splitting it into a list based on newline characters, removing any leading or trailing whitespace from each name, and filtering out any empty names. It then creates a list of prompts by removing the file extensions from the cleaned-up Lora font names."
+    },
+    {
+        "question": "What is the return type of the 'run' function in the CreateLoraNames node?",
+        "answer": "The 'run' function in the CreateLoraNames node returns a tuple containing two lists: 'lora_names' and 'prompts'. 'lora_names' is a list of cleaned-up Lora font names, and 'prompts' is a list of prompts derived from the Lora font names with the file extensions removed."
+    },
+    {
+        "question": "In which category is the CreateLoraNames node classified in ComfyUI?",
+        "answer": "The CreateLoraNames node is classified in the '♾️Mixlab/Utils' category in ComfyUI."
+    }
+]

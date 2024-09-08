@@ -1,0 +1,30 @@
+[
+    {
+        "question": "MeshGraphormer-DepthMapPreprocessor节点的目的是什么？",
+        "answer": "MeshGraphormer-DepthMapPreprocessor节点旨在精细化手部深度图和预测图像空间中的2D关节位置，使用基于Graphormer的模型。它处理输入图像以生成增强的深度图和相应的掩码，利用深度学习技术提高手部姿势估计的准确性。"
+    },
+    {
+        "question": "MeshGraphormer-DepthMapPreprocessor节点的输入包括哪些必需和可选类型？",
+        "answer": "必需的输入类型是`image`，表示要处理的手部图像。可选的输入类型包括`mask_bbox_padding`,`resolution`,`mask_type`,`mask_expand`,`rand_seed`,`detect_thr`和`presence_thr`，用于控制深度图和掩码的生成过程。"
+    },
+    {
+        "question": "MeshGraphormer-DepthMapPreprocessor节点如何控制输出掩码的大小和覆盖范围？",
+        "answer": "通过参数`mask_bbox_padding`，用户可以定义手部边界框周围的填充，从而影响输出掩码的大小和覆盖范围。此外，`mask_expand`参数允许微调掩码大小以更好地进行深度图精细化。"
+    },
+    {
+        "question": "MeshGraphormer-DepthMapPreprocessor节点的`resolution`参数有什么作用？",
+        "answer": "参数`resolution`指定了处理输入图像的分辨率，进而影响生成的深度图和掩码的细节水平。"
+    },
+    {
+        "question": "MeshGraphormer-DepthMapPreprocessor节点支持哪些掩码生成方法？",
+        "answer": "MeshGraphormer-DepthMapPreprocessor节点提供了多种掩码生成方法，包括'based_on_depth'（基于深度图生成掩码）、'tight_bboxes'（基于紧凑边界框生成掩码）和'original'（使用原始掩码）。这由`mask_type`参数控制。"
+    },
+    {
+        "question": "MeshGraphormer-DepthMapPreprocessor节点如何确保生成过程的可重复性？",
+        "answer": "通过设置`rand_seed`参数，用户可以确保在多次运行节点时掩码和深度图的生成过程保持一致，这有助于在使用相同输入多次运行节点时保持一致性。"
+    },
+    {
+        "question": "MeshGraphormer-DepthMapPreprocessor节点的输出类型是什么？",
+        "answer": "MeshGraphormer-DepthMapPreprocessor节点的输出类型是`IMAGE`和`INPAINTING_MASK`，分别表示精细化的深度图和对应的生成掩码，用于手部姿势估计。"
+    }
+]

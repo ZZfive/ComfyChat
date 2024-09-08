@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ModelClamp node in ComfyUI?",
+        "answer": "The ModelClamp node is designed to pass model data through without any modification, acting as a placeholder or checkpoint in the data processing pipeline. It can be used to maintain the integrity of model data or serve as an intermediate step in complex processing workflows."
+    },
+    {
+        "question": "What is the required input type for the ModelClamp node?",
+        "answer": "The required input type for the ModelClamp node is 'model', which represents the model data that needs to be passed through the node. It is crucial for maintaining the structure and information of the model throughout the processing pipeline."
+    },
+    {
+        "question": "What is the Comfy dtype and Python dtype for the 'model' input in the ModelClamp node?",
+        "answer": "The Comfy dtype for the 'model' input is MODEL, and the Python dtype is torch.nn.Module."
+    },
+    {
+        "question": "What is the output type of the ModelClamp node?",
+        "answer": "The output type of the ModelClamp node is 'model', which is the unmodified model data passed through the node. This ensures that the structure and information of the model remain intact."
+    },
+    {
+        "question": "What is the Comfy dtype and Python dtype for the 'model' output in the ModelClamp node?",
+        "answer": "The Comfy dtype for the 'model' output is MODEL, and the Python dtype is torch.nn.Module."
+    },
+    {
+        "question": "What is the infra type and common nodes for the ModelClamp node?",
+        "answer": "The infra type for the ModelClamp node is CPU, and the common nodes are unknown."
+    },
+    {
+        "question": "What is the source code for the ModelClamp node?",
+        "answer": "The source code for the ModelClamp node is as follows:\n```python\nclass ModelClamp:\n    def __init__(self):\n        pass\n\n    @classmethod\n    def INPUT_TYPES(cls):\n        return {\n            \"required\": {\n                \"model\": (\"MODEL\",),\n            },\n        }\n\n    RETURN_TYPES = (\"MODEL\",)\n    FUNCTION = \"node\"\n    CATEGORY = \"clamp\"\n\n    def node(self, model):\n        return (model,)\n```"
+    }
+]

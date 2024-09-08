@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageShift node in ComfyUI?",
+        "answer": "The ImageShift node in ComfyUI is used to shift an image by a specified number of pixels along the X and Y axes. It also supports outputting a seam mask for creating continuous textures."
+    },
+    {
+        "question": "What are the required input types for the ImageShift node?",
+        "answer": "The required input types for the ImageShift node are: image (torch.Tensor), shift_x (int), shift_y (int), cyclic (bool), background_color (str), border_mask_width (int), and border_mask_blur (int)."
+    },
+    {
+        "question": "What are the optional input types for the ImageShift node?",
+        "answer": "The optional input type for the ImageShift node is mask (torch.Tensor)."
+    },
+    {
+        "question": "What are the output types of the ImageShift node?",
+        "answer": "The output types of the ImageShift node are: image (torch.Tensor), mask (torch.Tensor), and border_mask (torch.Tensor)."
+    },
+    {
+        "question": "What does the 'cyclic' parameter in the ImageShift node control?",
+        "answer": "The 'cyclic' parameter in the ImageShift node determines whether the image should be repeated cyclically when shifted."
+    },
+    {
+        "question": "How is the border mask created in the ImageShift node?",
+        "answer": "In the ImageShift node, the border mask is created by drawing a border with a specified width and color, resizing it to the canvas size, shifting it along with the image, and applying a Gaussian blur with a specified blur value."
+    },
+    {
+        "question": "What is the infra type specified for the ImageShift node?",
+        "answer": "The infra type specified for the ImageShift node is CPU."
+    }
+]

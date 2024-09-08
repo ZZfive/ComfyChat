@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoadLatent node in ComfyUI?",
+        "answer": "The LoadLatent node in ComfyUI is designed to retrieve and process latent data from a specified directory, ensuring that the data is properly scaled and formatted for further use in the system."
+    },
+    {
+        "question": "What is the required input type for the LoadLatent node?",
+        "answer": "The required input type for the LoadLatent node is 'latent', which specifies the latent file to be loaded and contains the data needed for the node's operation."
+    },
+    {
+        "question": "What is the output type of the LoadLatent node?",
+        "answer": "The output type of the LoadLatent node is 'samples', which provides the processed latent data that has been scaled and prepared for use in the system."
+    },
+    {
+        "question": "Which infrastructure type is recommended for the LoadLatent node?",
+        "answer": "The recommended infrastructure type for the LoadLatent node is CPU."
+    },
+    {
+        "question": "How does the LoadLatent node handle different latent format versions?",
+        "answer": "The LoadLatent node checks if 'latent_format_version_0' is present in the latent data. If it is not present, a multiplier of 1.0 / 0.18215 is applied to the latent tensor."
+    },
+    {
+        "question": "What does the IS_CHANGED class method in the LoadLatent node do?",
+        "answer": "The IS_CHANGED class method in the LoadLatent node checks if the latent file has changed by calculating the SHA256 hash of the file and returning the hexadecimal digest."
+    },
+    {
+        "question": "What does the VALIDATE_INPUTS class method in the LoadLatent node do?",
+        "answer": "The VALIDATE_INPUTS class method in the LoadLatent node checks if the specified latent file exists and returns 'Invalid latent file: [filename]' if it doesn't, or True if it does."
+    }
+]

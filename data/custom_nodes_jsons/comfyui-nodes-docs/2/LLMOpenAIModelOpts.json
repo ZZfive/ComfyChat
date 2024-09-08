@@ -1,0 +1,30 @@
+[
+    {
+        "question": "LLMOpenAIModelOpts节点的主要功能是什么？",
+        "answer": "LLMOpenAIModelOpts节点提供了一个全面的接口，用于配置各种语言模型的选项，包括OpenAI的模型。它允许用户微调模型参数，如温度、令牌限制和API重试限制，以及嵌入模型设置，如批处理大小和维度，旨在为语言模型的使用提供灵活的设置，以满足文本生成和嵌入任务的特定需求。"
+    },
+    {
+        "question": "LLMOpenAIModelOpts节点的输入包括哪些必需参数？",
+        "answer": "LLMOpenAIModelOpts节点的必需输入参数是llm_model，一个指定要使用的语言模型的参数。"
+    },
+    {
+        "question": "LLMOpenAIModelOpts节点的可选参数model_temperature如何影响语言模型的输出？",
+        "answer": "model_temperature参数指定语言模型的温度，影响输出的随机性。较低的值会产生更确定性的输出，而较高的值会增加创造性。"
+    },
+    {
+        "question": "LLMOpenAIModelOpts节点如何设置嵌入操作的批处理大小？",
+        "answer": "通过可选参数embed_batch_size，可以设置处理嵌入的批处理大小，影响性能和资源使用。"
+    },
+    {
+        "question": "LLMOpenAIModelOpts节点如何允许用户传递额外的关键字参数给模型？",
+        "answer": "通过可选参数model_additional_kwargs和embed_additional_kwargs，用户可以向模型和嵌入操作传递额外的关键字参数，提供进一步的自定义选项。"
+    },
+    {
+        "question": "对于多模态输入，LLMOpenAIModelOpts节点提供了哪些配置选项？",
+        "answer": "对于多模态输入，用户可以通过multimodal_max_new_tokens参数指定最大新令牌数，通过multimodal_image_detail参数确定图像的详细程度，可能的值为'low'、'high'或'auto'。"
+    },
+    {
+        "question": "LLMOpenAIModelOpts节点的输出类型是什么？",
+        "answer": "LLMOpenAIModelOpts节点的输出类型是LLM_MODEL，包含更新后的语言模型和嵌入模型对象的字典，反映了应用的配置选项。"
+    }
+]

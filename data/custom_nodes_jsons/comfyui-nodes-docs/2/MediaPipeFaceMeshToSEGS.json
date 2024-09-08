@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of MediaPipeFaceMeshToSEGS node in ComfyUI?",
+        "answer": "The MediaPipeFaceMeshToSEGS node in ComfyUI is designed to process facial images and convert them into a structured segmentation format. It utilizes the MediaPipe FaceMesh model to detect facial landmarks and then generates segmentation masks for specified facial features."
+    },
+    {
+        "question": "What are the required input types for the MediaPipeFaceMeshToSEGS node?",
+        "answer": "The required input types for the MediaPipeFaceMeshToSEGS node are 'image' of Comfy dtype IMAGE and Python dtype torch.Tensor."
+    },
+    {
+        "question": "What does the 'crop_factor' parameter do in the MediaPipeFaceMeshToSEGS node?",
+        "answer": "The 'crop_factor' parameter in the MediaPipeFaceMeshToSEGS node is used to adjust the size of the segmentation output. It is an optional setting that allows the user to control the level of detail in the segmentation by adjusting the output dimensions."
+    },
+    {
+        "question": "How does the 'bbox_fill' parameter affect the segmentation output?",
+        "answer": "The 'bbox_fill' parameter determines whether the bounding box around the segmented facial features should be filled. This boolean flag can be used to customize the appearance of the segmentation masks."
+    },
+    {
+        "question": "What is the role of the 'dilation' parameter in the MediaPipeFaceMeshToSEGS node?",
+        "answer": "The 'dilation' parameter in the MediaPipeFaceMeshToSEGS node is applied to the segmentation masks to increase the size of the segmented areas. This is particularly useful for refining the segmentation of smaller facial features."
+    },
+    {
+        "question": "What does the 'face' parameter indicate in the MediaPipeFaceMeshToSEGS node?",
+        "answer": "The 'face' parameter is a boolean flag that indicates whether the facial region should be included in the segmentation. It allows for selective segmentation of facial features according to user needs."
+    },
+    {
+        "question": "What is the output type of the MediaPipeFaceMeshToSEGS node?",
+        "answer": "The output type of the MediaPipeFaceMeshToSEGS node is 'SEGS', which provides a structured representation of the facial feature segmentation. It includes the dimensions of the segmentation masks and a list containing tuples of labels and their corresponding segmentation mask tensors."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the MediaPipeFaceMeshToSEGS node?",
+        "answer": "The recommended infrastructure type for running the MediaPipeFaceMeshToSEGS node is CPU."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MirroredImage node in ComfyUI?",
+        "answer": "The MirroredImage node in ComfyUI is designed to create mirrored versions of input images by reflecting them along the horizontal axis. It is a basic tool in image processing tasks, where mirrored images can be used for various purposes such as augmenting datasets, creating visual effects, or conducting symmetry-based analyses."
+    },
+    {
+        "question": "What is the required input type for the MirroredImage node?",
+        "answer": "The required input type for the MirroredImage node is 'image', which is a collection of images that the node will process. Each image should be in a format that can be read and manipulated by the node's internal image processing functions."
+    },
+    {
+        "question": "What is the output type of the MirroredImage node?",
+        "answer": "The output type of the MirroredImage node is a list of mirrored images. Each image in the list is the result of horizontally reflecting the corresponding input image."
+    },
+    {
+        "question": "What infrastructure type does the MirroredImage node use?",
+        "answer": "The MirroredImage node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the MirroredImage node create mirrored images?",
+        "answer": "The MirroredImage node creates mirrored images by iterating through the input images, converting each image to a PIL image, transposing it using the Image.FLIP_LEFT_RIGHT method to flip it horizontally, converting the mirrored image back to a tensor, and appending it to the result list."
+    },
+    {
+        "question": "Does the MirroredImage node accept multiple images as input?",
+        "answer": "Yes, the MirroredImage node accepts a collection of images as input and processes each image in the collection to create mirrored versions."
+    },
+    {
+        "question": "What are the ComfyUI data types for the input and output of the MirroredImage node?",
+        "answer": "The ComfyUI data type for the input 'image' parameter is COMBO[IMAGE], and the output data type is also COMBO[IMAGE]."
+    }
+]

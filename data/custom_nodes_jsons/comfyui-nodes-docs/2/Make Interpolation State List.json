@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MakeInterpolationStateList node in ComfyUI?",
+        "answer": "The MakeInterpolationStateList node is designed to manage and create interpolation state lists, which is crucial for the frame interpolation process. It determines which frames are included or skipped during interpolation, optimizing computational workload and ensuring smooth and coherent frame transitions."
+    },
+    {
+        "question": "What is the 'frame_indices' parameter in the MakeInterpolationStateList node?",
+        "answer": "The 'frame_indices' parameter specifies a comma-separated list of frame indices that the node uses to determine which frames are included or skipped during the interpolation process. It is essential for the correct operation of the node and directly affects the result of frame interpolation."
+    },
+    {
+        "question": "What is the 'is_skip_list' parameter in the MakeInterpolationStateList node?",
+        "answer": "The 'is_skip_list' parameter controls whether the specified frame indices should be skipped or included during the interpolation process. It plays an important role in the overall operation of the node, as it determines the behavior of the node during frame selection."
+    },
+    {
+        "question": "What is the output of the MakeInterpolationStateList node?",
+        "answer": "The output of the MakeInterpolationStateList node is an InterpolationStateList object, which encapsulates decisions about which frames to include or skip. This object is essential for subsequent operations that rely on these decisions to perform the actual frame interpolation."
+    },
+    {
+        "question": "What is the 'Infra type' for the MakeInterpolationStateList node?",
+        "answer": "The 'Infra type' for the MakeInterpolationStateList node is CPU."
+    },
+    {
+        "question": "How does the MakeInterpolationStateList node create the interpolation state list?",
+        "answer": "The MakeInterpolationStateList node creates the interpolation state list by taking the 'frame_indices' string, splitting it by commas, and converting each item to an integer. It then creates an InterpolationStateList object using the frame_indices_list and the 'is_skip_list' parameter."
+    },
+    {
+        "question": "What is the category of the MakeInterpolationStateList node in ComfyUI?",
+        "answer": "The category of the MakeInterpolationStateList node in ComfyUI is 'ComfyUI-Frame-Interpolation/VFI'."
+    }
+]

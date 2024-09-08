@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the HLFrequencyDetailRestore node in ComfyUI?",
+        "answer": "The HLFrequencyDetailRestore node in ComfyUI uses low-frequency filtering and retains high-frequency to restore image details. Compared to kijai's DetailTransfer, this node has better integration with the environment while preserving details."
+    },
+    {
+        "question": "What are the required inputs for the HLFrequencyDetailRestore node?",
+        "answer": "The required inputs for the HLFrequencyDetailRestore node are: image (torch.Tensor), detail_image (torch.Tensor), keep_high_freq (int), erase_low_freq (int), and mask_blur (int)."
+    },
+    {
+        "question": "What does the 'keep_high_freq' parameter in the HLFrequencyDetailRestore node control?",
+        "answer": "The 'keep_high_freq' parameter in the HLFrequencyDetailRestore node controls the range of high-frequency details preserved. A higher value retains richer high-frequency details."
+    },
+    {
+        "question": "What does the 'erase_low_freq' parameter in the HLFrequencyDetailRestore node control?",
+        "answer": "The 'erase_low_freq' parameter in the HLFrequencyDetailRestore node controls the range of low-frequency components erased. A higher value erases a larger range of low-frequency components."
+    },
+    {
+        "question": "What is the optional input for the HLFrequencyDetailRestore node?",
+        "answer": "The optional input for the HLFrequencyDetailRestore node is 'mask' (torch.Tensor), which is used to restore details only in the masked area if provided."
+    },
+    {
+        "question": "What is the output type of the HLFrequencyDetailRestore node?",
+        "answer": "The output type of the HLFrequencyDetailRestore node is an image (torch.Tensor)."
+    },
+    {
+        "question": "Which infrastructure type does the HLFrequencyDetailRestore node use?",
+        "answer": "The HLFrequencyDetailRestore node uses the CPU infrastructure type."
+    }
+]

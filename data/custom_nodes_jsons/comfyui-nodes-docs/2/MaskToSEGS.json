@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MaskToSEGS node in ComfyUI?",
+        "answer": "The MaskToSEGS node is designed to convert a binary mask into a series of segmented objects represented by SEG objects. It processes the input mask to identify different regions and outputs them as a collection of segmented objects that can be further used for various image processing tasks."
+    },
+    {
+        "question": "What is the role of the 'mask' parameter in the MaskToSEGS node?",
+        "answer": "The 'mask' parameter is a binary mask that defines the regions of interest within an image. It is crucial for the node's operation as it directly influences the segmentation process and the resulting SEG objects."
+    },
+    {
+        "question": "How does the 'combined' parameter affect the output of the MaskToSEGS node?",
+        "answer": "The 'combined' parameter determines whether the node should merge overlapping regions in the mask into a single SEG object. This can be important for simplifying the representation of complex scenes."
+    },
+    {
+        "question": "What does the 'crop_factor' parameter control in the MaskToSEGS node?",
+        "answer": "The 'crop_factor' parameter controls the size of the cropping area around the bounding box of each mask segment. It affects the level of detail of the SEG objects by determining how much context is included around each segment."
+    },
+    {
+        "question": "What is the function of the 'bbox_fill' parameter in the MaskToSEGS node?",
+        "answer": "The 'bbox_fill' parameter specifies whether the bounding boxes within the cropping area should be filled with a solid value. This can be used to highlight or isolate specific regions within the SEG objects."
+    },
+    {
+        "question": "What does the 'drop_size' parameter set in the MaskToSEGS node?",
+        "answer": "The 'drop_size' parameter sets the minimum size of mask segments to be included in the output. Smaller segments that do not meet this size threshold will be discarded, potentially reducing noise in the segmentation."
+    },
+    {
+        "question": "What is the purpose of the 'contour_fill' parameter in the MaskToSEGS node?",
+        "answer": "The 'contour_fill' parameter indicates whether the node should fill the areas inside the mask contours. This can be used to create solid SEG objects from contour-based masks."
+    }
+]

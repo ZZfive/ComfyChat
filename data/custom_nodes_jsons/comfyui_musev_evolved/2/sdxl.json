@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is SDXL?",
+        "answer": "SDXL (Stable Diffusion XL) is a powerful text-to-image generation model that iterates on the previous Stable Diffusion models in three key ways: 1) the UNet is 3x larger and SDXL combines a second text encoder with the original text encoder to significantly increase the number of parameters, 2) introduces size and crop-conditioning to preserve training data from being discarded and gain more control over how a generated image should be cropped, and 3) introduces a two-stage model process with a base model and a refiner model."
+    },
+    {
+        "question": "How can you load model checkpoints for SDXL?",
+        "answer": "You can load model checkpoints for SDXL using the `from_pretrained` method if the weights are stored in separate subfolders on the Hub or locally, or the `from_single_file` method to load a model checkpoint stored in a single file format (.ckpt or .safetensors) from the Hub or locally."
+    },
+    {
+        "question": "What is the recommended image size for text-to-image generation with SDXL?",
+        "answer": "By default, SDXL generates a 1024x1024 image for the best results. You can try setting the height and width parameters to 768x768 or 512x512, but anything below 512x512 is not likely to work well."
+    },
+    {
+        "question": "How does the ensemble of expert denoisers approach work in SDXL?",
+        "answer": "In the ensemble of expert denoisers approach, the base model serves as the expert during the high-noise diffusion stage and the refiner model serves as the expert during the low-noise diffusion stage. The number of timesteps for each model to run through their respective stages is defined by the denoising_end parameter for the base model and the denoising_start parameter for the refiner model."
+    },
+    {
+        "question": "What is micro-conditioning in SDXL?",
+        "answer": "SDXL training involves several additional conditioning techniques, referred to as micro-conditioning. These include original image size, target image size, and cropping parameters. The micro-conditionings can be used at inference time to create high-quality, centered images."
+    },
+    {
+        "question": "How can you pass different prompts to each text-encoder in SDXL?",
+        "answer": "You can pass your original prompt to the prompt parameter and the second prompt to the prompt_2 parameter (use negative_prompt and negative_prompt_2 if you're using negative prompts)."
+    },
+    {
+        "question": "What are some optimizations you can use to save memory and speed up inference with SDXL?",
+        "answer": "Some optimizations to save memory and speed up inference with SDXL include: 1) Offload the model to the CPU with enable_model_cpu_offload, 2) Use torch.compile for ~20% speed-up (requires torch>=2.0), 3) Enable xFormers to run SDXL if torch<2.0."
+    }
+]

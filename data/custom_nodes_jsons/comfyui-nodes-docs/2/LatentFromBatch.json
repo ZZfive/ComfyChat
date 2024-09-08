@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LatentFromBatch node in ComfyUI?",
+        "answer": "The LatentFromBatch node is designed to extract a specific length of latent samples from a given batch, starting from a specific batch index, ensuring the integrity of the extracted samples and masks (if present)."
+    },
+    {
+        "question": "What is the 'samples' parameter in the LatentFromBatch node?",
+        "answer": "The 'samples' parameter is crucial as it holds the latent representations from which a batch is to be extracted. It directly influences the output of the node by determining the source of the latent data."
+    },
+    {
+        "question": "What does the 'batch_index' parameter in the LatentFromBatch node define?",
+        "answer": "The 'batch_index' parameter defines the starting point from which latent data is extracted from the samples. It is important as it determines the specific section of the batch that will be used in subsequent operations."
+    },
+    {
+        "question": "What does the 'length' parameter in the LatentFromBatch node specify?",
+        "answer": "The 'length' parameter specifies the number of samples to be extracted from the batch. It plays a significant role in determining the output size and the range of latent data to be processed."
+    },
+    {
+        "question": "What does the 'latent_samples' output of the LatentFromBatch node contain?",
+        "answer": "The 'latent_samples' output contains the latent representations extracted based on the provided batch index and length parameters. It is important as it represents the core data to be further utilized in the workflow."
+    },
+    {
+        "question": "What is the infra type recommended for the LatentFromBatch node?",
+        "answer": "The recommended infra type for the LatentFromBatch node is CPU."
+    },
+    {
+        "question": "How does the LatentFromBatch node handle 'noise_mask' in the samples?",
+        "answer": "If 'noise_mask' exists in the samples, the LatentFromBatch node ensures it is properly indexed and cloned along with the samples. If the mask's shape is less than the sample's shape, it is repeated to match the sample's shape before extraction."
+    }
+]

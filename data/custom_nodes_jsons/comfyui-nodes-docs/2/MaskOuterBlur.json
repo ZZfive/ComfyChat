@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the primary function of the MaskOuterBlur node in ComfyUI?",
+        "answer": "The MaskOuterBlur node is a specialized tool for advanced image processing that applies a blur effect to the outer area of a mask in an image."
+    },
+    {
+        "question": "What are the required inputs for the MaskOuterBlur node?",
+        "answer": "The required inputs for the MaskOuterBlur node are the source image (src), the mask image (mask), and the kernel size (kernel_size)."
+    },
+    {
+        "question": "How does the MaskOuterBlur node utilize CPU and GPU performance?",
+        "answer": "The MaskOuterBlur node uses the performance advantages of CPU and GPU to efficiently process images, supporting various kernel sizes and shapes to achieve the desired blur effect."
+    },
+    {
+        "question": "What is the purpose of the paste_src parameter in the MaskOuterBlur node?",
+        "answer": "The paste_src parameter is an optional input that allows the original source image to be pasted back onto the blurred image, creating a combination of blurred and clear areas within the same image."
+    },
+    {
+        "question": "What does the MaskOuterBlur node do if the size of the mask does not match the size of the image?",
+        "answer": "If the size of the mask does not match the size of the image, the MaskOuterBlur node will resize the mask to fit the image."
+    },
+    {
+        "question": "How does the MaskOuterBlur node extend the image borders for processing?",
+        "answer": "The MaskOuterBlur node extends the image borders by adding a border size equal to half the kernel size, using the cv.BORDER_REPLICATE method."
+    },
+    {
+        "question": "What is the output of the MaskOuterBlur node?",
+        "answer": "The output of the MaskOuterBlur node is the resulting image after applying the blur effect to the specified area, which may include a combination of blurred and clear areas depending on the mask and paste_src parameter settings."
+    }
+]

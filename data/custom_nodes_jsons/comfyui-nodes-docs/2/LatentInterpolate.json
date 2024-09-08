@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LatentInterpolate node in ComfyUI?",
+        "answer": "The LatentInterpolate node in ComfyUI is designed to interpolate between two sets of latent samples. It calculates a weighted sum of the input samples, with the weights determined by a specified ratio. This node is particularly useful for creating smooth transitions between different latent representations, which is crucial in applications such as image morphing or style transfer."
+    },
+    {
+        "question": "What are the required input types for the LatentInterpolate node?",
+        "answer": "The required input types for the LatentInterpolate node are: samples1 (the first set of latent samples to be interpolated), samples2 (the second set of latent samples to be interpolated), and ratio (a parameter that controls the degree of interpolation between the two sets of samples)."
+    },
+    {
+        "question": "What does the ratio parameter in the LatentInterpolate node control?",
+        "answer": "The ratio parameter in the LatentInterpolate node controls the degree of interpolation between the two sets of samples. Values closer to 0 will produce outputs nearer to samples1, while values closer to 1 will produce outputs nearer to samples2."
+    },
+    {
+        "question": "What is the output type of the LatentInterpolate node?",
+        "answer": "The output type of the LatentInterpolate node is a set of interpolated latent samples. These samples are a blend of the input samples based on the specified ratio, providing a seamless transition between the two."
+    },
+    {
+        "question": "What is the infra type for the LatentInterpolate node?",
+        "answer": "The infra type for the LatentInterpolate node is CPU."
+    },
+    {
+        "question": "How does the LatentInterpolate node calculate the interpolated samples?",
+        "answer": "The LatentInterpolate node calculates the interpolated samples by first normalizing the input samples, then performing a weighted sum of the normalized samples based on the ratio, and finally denormalizing the result using a weighted sum of the original norms."
+    },
+    {
+        "question": "What is the category of the LatentInterpolate node in ComfyUI?",
+        "answer": "The category of the LatentInterpolate node in ComfyUI is latent/advanced."
+    }
+]

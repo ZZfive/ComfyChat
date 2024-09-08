@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MaskComposite node in ComfyUI?",
+        "answer": "The MaskComposite node in ComfyUI is designed to perform various logical and arithmetic operations on two mask tensors. It plays a crucial role in image processing tasks, particularly in the field of face parsing, where it can combine masks to refine the segmentation of facial features."
+    },
+    {
+        "question": "How does the MaskComposite node operate on the input masks?",
+        "answer": "The MaskComposite node operates on the input masks based on the principle of element-wise operations, ensuring that the output mask is the result of applying the specified operation to each corresponding pair of elements in the input masks."
+    },
+    {
+        "question": "What is the significance of the 'destination' parameter in the MaskComposite node?",
+        "answer": "The 'destination' parameter in the MaskComposite node is a tensor representing the initial mask upon which the operation will be applied. It is crucial for the execution of the node as it determines the base mask that will be modified according to the specified operation."
+    },
+    {
+        "question": "What role does the 'source' parameter play in the MaskComposite node?",
+        "answer": "The 'source' parameter in the MaskComposite node is another tensor that will be used in conjunction with the destination tensor to perform the specified operation. It is essential as it provides the secondary input that will interact with the destination mask to produce the final mask result."
+    },
+    {
+        "question": "How does the 'operation' parameter influence the output of the MaskComposite node?",
+        "answer": "The 'operation' parameter in the MaskComposite node indicates the type of element-wise operation to be performed between the destination and source tensors. It is a key determinant of how the final mask is computed, allowing for various forms of mask manipulation."
+    },
+    {
+        "question": "What does the 'mask_result' output parameter represent in the MaskComposite node?",
+        "answer": "The 'mask_result' output parameter in the MaskComposite node is the tensor obtained after applying the specified operation to the input destination and source tensors. It represents the final combined mask after the operation has been executed."
+    },
+    {
+        "question": "What is the recommended infrastructure type for running the MaskComposite node?",
+        "answer": "The recommended infrastructure type for running the MaskComposite node is CPU."
+    }
+]

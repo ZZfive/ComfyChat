@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoadMotionBrushFromOpticalFlow node in ComfyUI?",
+        "answer": "The LoadMotionBrushFromOpticalFlow node in ComfyUI is used to generate a motion brush from optical flow data, enabling users to utilize motion information for various applications such as video processing or animation."
+    },
+    {
+        "question": "What are the required input types for the LoadMotionBrushFromOpticalFlow node?",
+        "answer": "The LoadMotionBrushFromOpticalFlow node requires two input types: 'model' (Comfy dtype: DragNUWA, Python dtype: torch.nn.Module) and 'optical_flow' (Comfy dtype: OPTICAL_FLOW, Python dtype: torch.Tensor)."
+    },
+    {
+        "question": "What does the 'model' input represent in the LoadMotionBrushFromOpticalFlow node?",
+        "answer": "The 'model' input in the LoadMotionBrushFromOpticalFlow node represents the model parameters that are crucial for the motion brush generation process, defining the basic structure and parameters of the generation process."
+    },
+    {
+        "question": "Why is the 'optical_flow' input important for the LoadMotionBrushFromOpticalFlow node?",
+        "answer": "The 'optical_flow' input is essential for the LoadMotionBrushFromOpticalFlow node because it provides the motion information required to create the motion brush."
+    },
+    {
+        "question": "What is the output type of the LoadMotionBrushFromOpticalFlow node?",
+        "answer": "The output type of the LoadMotionBrushFromOpticalFlow node is 'MotionBrush' (Comfy dtype: MOTION_BRUSH, Python dtype: torch.Tensor), which represents the generated motion brush encapsulating the motion information in a structured format."
+    },
+    {
+        "question": "What is the infra type required for the LoadMotionBrushFromOpticalFlow node?",
+        "answer": "The LoadMotionBrushFromOpticalFlow node requires a GPU as the infra type."
+    },
+    {
+        "question": "What is the source code for the LoadMotionBrushFromOpticalFlow node?",
+        "answer": "The source code for the LoadMotionBrushFromOpticalFlow node is as follows:\n```python\nclass LoadMotionBrushFromOpticalFlow:\n    @classmethod\n    def INPUT_TYPES(cls):\n        return {'required': {'model': ('DragNUWA',), 'optical_flow': ('OPTICAL_FLOW',)}}\n    RETURN_TYPES = ('MotionBrush',)\n    FUNCTION = 'run_inference'\n    CATEGORY = 'DragNUWA'\n    def run_inference(self, model, optical_flow):\n        return (model.load_motionbrush_from_optical_flow(optical_flow),)\n```"
+    }
+]

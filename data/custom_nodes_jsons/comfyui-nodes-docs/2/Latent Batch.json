@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Latent_Batch node in ComfyUI?",
+        "answer": "The WAS_Latent_Batch node is designed to combine multiple latent tensors together, ensuring they have the same dimensions. It plays a key role in managing and organizing latent space representations, enabling efficient processing of latent data across various applications."
+    },
+    {
+        "question": "What are the optional input types for the WAS_Latent_Batch node?",
+        "answer": "The optional input types for the WAS_Latent_Batch node are latent_a, latent_b, latent_c, and latent_d. These inputs represent latent tensors that can be included in the batch for processing."
+    },
+    {
+        "question": "What is the output type of the WAS_Latent_Batch node?",
+        "answer": "The output type of the WAS_Latent_Batch node is 'latent', which is a batched tensor that integrates all the input latent tensors into a single structure, allowing streamlined processing and analysis of the combined latent representations."
+    },
+    {
+        "question": "What is the infra type recommended for the WAS_Latent_Batch node?",
+        "answer": "The recommended infra type for the WAS_Latent_Batch node is CPU."
+    },
+    {
+        "question": "How does the WAS_Latent_Batch node handle mismatched dimensions in input latent tensors?",
+        "answer": "The WAS_Latent_Batch node checks the dimensions of the input latent tensors and raises a ValueError if the dimensions do not match, specifically mentioning the latents with mismatched dimensions."
+    },
+    {
+        "question": "What does the WAS_Latent_Batch node do if no input latent is provided?",
+        "answer": "If no input latent is provided to the WAS_Latent_Batch node, it raises a ValueError indicating that at least one input latent must be provided."
+    },
+    {
+        "question": "How does the WAS_Latent_Batch node combine the input latent tensors?",
+        "answer": "The WAS_Latent_Batch node combines the input latent tensors by concatenating them along dimension 0 (dim=0) using torch.cat, after ensuring they have the same dimensions."
+    }
+]

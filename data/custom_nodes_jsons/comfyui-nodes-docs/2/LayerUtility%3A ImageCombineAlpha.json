@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the ImageCombineAlpha class in ComfyUI?",
+        "answer": "The purpose of the ImageCombineAlpha class in ComfyUI is to merge an image with a mask into an RGBA image that contains an alpha channel."
+    },
+    {
+        "question": "What are the required input types for the ImageCombineAlpha class?",
+        "answer": "The required input types for the ImageCombineAlpha class are an RGB image (Comfy dtype: IMAGE, Python dtype: torch.Tensor) and a mask (Comfy dtype: MASK, Python dtype: torch.Tensor)."
+    },
+    {
+        "question": "What is the output type of the ImageCombineAlpha class?",
+        "answer": "The output type of the ImageCombineAlpha class is an RGBA image (Comfy dtype: IMAGE, Python dtype: torch.Tensor)."
+    },
+    {
+        "question": "Which infrastructure type is recommended for the ImageCombineAlpha class?",
+        "answer": "The recommended infrastructure type for the ImageCombineAlpha class is CPU."
+    },
+    {
+        "question": "How does the ImageCombineAlpha class handle input images and masks with different dimensions?",
+        "answer": "If the input mask has only 2 dimensions, the ImageCombineAlpha class adds an extra dimension using torch.unsqueeze. It then processes the images and masks in batches, using the last image or mask if there are fewer images than masks or vice versa."
+    },
+    {
+        "question": "What is the function name and category of the ImageCombineAlpha class?",
+        "answer": "The function name of the ImageCombineAlpha class is 'image_combine_alpha', and the category is '😺dzNodes/LayerUtility'."
+    },
+    {
+        "question": "What does the image_channel_split function do in the ImageCombineAlpha class?",
+        "answer": "In the ImageCombineAlpha class, the image_channel_split function splits the input image into separate color channels (red, green, blue) after converting it to RGB format using tensor2pil."
+    },
+    {
+        "question": "What does the image_channel_merge function do in the ImageCombineAlpha class?",
+        "answer": "In the ImageCombineAlpha class, the image_channel_merge function merges the separated color channels (red, green, blue) and the mask (converted to grayscale using tensor2pil) into an RGBA image."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the KfGetScheduleConditionSlice node in ComfyUI?",
+        "answer": "The KfGetScheduleConditionSlice node is designed to extract and process condition data from a given schedule over a specified time interval. It does this by splitting the schedule into a series of time slices, evaluating the condition for each slice, and then summarizing the results to provide a comprehensive overview of the conditions within the specified time span."
+    },
+    {
+        "question": "What are the required and optional input types for the KfGetScheduleConditionSlice node?",
+        "answer": "The required input type for the KfGetScheduleConditionSlice node is the 'schedule' parameter, which is of Comfy dtype SCHEDULE and Python dtype dict. The optional input types include 'start' (Comfy dtype FLOAT, Python dtype float), 'step' (Comfy dtype FLOAT, Python dtype float), and 'n' (Comfy dtype INT, Python dtype int). These parameters define the start time, step interval, and number of time slices respectively."
+    },
+    {
+        "question": "What is the output type of the KfGetScheduleConditionSlice node?",
+        "answer": "The output type of the KfGetScheduleConditionSlice node is CONDITIONING, which provides a detailed and structured representation of the conditions extracted from the schedule over the specified time interval. It is of Comfy dtype CONDITIONING and Python dtype list."
+    },
+    {
+        "question": "How does the 'start' parameter affect the functioning of the KfGetScheduleConditionSlice node?",
+        "answer": "The 'start' parameter specifies the beginning of the time interval over which the KfGetScheduleConditionSlice node processes the schedule. It sets the starting point for the time slicing operation."
+    },
+    {
+        "question": "What role does the 'step' parameter play in the KfGetScheduleConditionSlice node?",
+        "answer": "The 'step' parameter defines the interval between each time slice in the KfGetScheduleConditionSlice node. It is important because it influences the granularity of the extracted condition data."
+    },
+    {
+        "question": "How does the 'n' parameter impact the operation of the KfGetScheduleConditionSlice node?",
+        "answer": "The 'n' parameter determines the number of time slices into which the schedule is divided by the KfGetScheduleConditionSlice node. It is crucial because it determines the number of individual evaluations performed by the node."
+    },
+    {
+        "question": "What is the infra type specified for the KfGetScheduleConditionSlice node?",
+        "answer": "The infra type specified for the KfGetScheduleConditionSlice node is CPU."
+    }
+]

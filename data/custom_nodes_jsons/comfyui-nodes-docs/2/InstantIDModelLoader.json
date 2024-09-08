@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the InstantIDModelLoader node in ComfyUI?",
+        "answer": "The InstantIDModelLoader node is designed to efficiently load and manage InstantID-specific models, ensuring that the appropriate model is retrieved and prepared for use within the system."
+    },
+    {
+        "question": "What is the required input parameter for the InstantIDModelLoader node?",
+        "answer": "The required input parameter for the InstantIDModelLoader node is 'instantid_file', which specifies the exact InstantID model file to be loaded. It determines the identity and version of the model to be used in subsequent operations."
+    },
+    {
+        "question": "What is the output type of the InstantIDModelLoader node?",
+        "answer": "The output type of the InstantIDModelLoader node is 'INSTANTID', which represents the loaded InstantID model. This output is crucial for the system to perform tasks related to the model's functionality."
+    },
+    {
+        "question": "What is the infra type used by the InstantIDModelLoader node?",
+        "answer": "The InstantIDModelLoader node uses the 'CPU' infra type."
+    },
+    {
+        "question": "How does the InstantIDModelLoader node load the model from the specified file?",
+        "answer": "The InstantIDModelLoader node uses the 'comfy.utils.load_torch_file()' function to load the model from the specified 'instantid_file'. If the file path ends with '.safetensors', the model is loaded using the safe_load=True parameter."
+    },
+    {
+        "question": "How does the InstantIDModelLoader node handle models with '.safetensors' file extension?",
+        "answer": "If the model file has a '.safetensors' extension, the InstantIDModelLoader node creates a new dictionary 'st_model' with 'image_proj' and 'ip_adapter' keys. It then populates these keys with the corresponding values from the loaded model, replacing the original model with the 'st_model' dictionary."
+    },
+    {
+        "question": "What is the return value of the 'load_model' function in the InstantIDModelLoader node?",
+        "answer": "The 'load_model' function in the InstantIDModelLoader node returns a tuple containing the loaded model, which is either the original loaded model or the 'st_model' dictionary if the file has a '.safetensors' extension."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the primary purpose of the Modelscopev2v node in ComfyUI?",
+        "answer": "The primary purpose of the Modelscopev2v node in ComfyUI is to perform inter-domain transformations of visual content, utilizing advanced models for high-level understanding and manipulation of visual data."
+    },
+    {
+        "question": "What are the required inputs for the Modelscopev2v node?",
+        "answer": "The required inputs for the Modelscopev2v node include video_frames, prompt, negative_prompt, model_path, strength, num_inference_steps, guidance_scale, seed, enable_forward_chunking, and enable_vae_slicing."
+    },
+    {
+        "question": "How does the seed parameter affect the output of the Modelscopev2v node?",
+        "answer": "The seed parameter ensures the reproducibility of the transformation process by setting up a deterministic generator if provided."
+    },
+    {
+        "question": "What is the default value for the model_path parameter in the Modelscopev2v node?",
+        "answer": "The default value for the model_path parameter in the Modelscopev2v node is 'cerspense/zeroscope_v2_XL'."
+    },
+    {
+        "question": "How does the Modelscopev2v node optimize memory usage during the transformation process?",
+        "answer": "The Modelscopev2v node optimizes memory usage by enabling forward chunking and VAE slicing based on the provided toggles enable_forward_chunking and enable_vae_slicing."
+    },
+    {
+        "question": "What is the output type of the Modelscopev2v node?",
+        "answer": "The output type of the Modelscopev2v node is an IMAGE, representing the transformed video frames after the specified visual content transformation."
+    },
+    {
+        "question": "How does the node convert the transformed video frames to the required output format?",
+        "answer": "The node converts the transformed video frames to the required output format by ensuring they are a PyTorch tensor, normalizing the tensor values between 0 and 1 if needed, and converting the tensor to CPU."
+    }
+]

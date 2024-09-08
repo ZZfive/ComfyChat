@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the FacialFeatureSegment class in ComfyUI?",
+        "answer": "The FacialFeatureSegment class in ComfyUI is used to detect and segment facial features such as eyes, eyebrows, lips, and teeth using the Mediapipe model."
+    },
+    {
+        "question": "What are the required input types for the FacialFeatureSegment class?",
+        "answer": "The required input types for the FacialFeatureSegment class are: image (Comfy dtype: IMAGE, Python dtype: torch.Tensor), left_eye (Comfy dtype: BOOLEAN, Python dtype: bool), left_eyebrow (Comfy dtype: BOOLEAN, Python dtype: bool), right_eye (Comfy dtype: BOOLEAN, Python dtype: bool), right_eyebrow (Comfy dtype: BOOLEAN, Python dtype: bool), lips (Comfy dtype: BOOLEAN, Python dtype: bool), and tooth (Comfy dtype: BOOLEAN, Python dtype: bool)."
+    },
+    {
+        "question": "What are the output types of the FacialFeatureSegment class?",
+        "answer": "The output types of the FacialFeatureSegment class are: image (Comfy dtype: IMAGE, Python dtype: torch.Tensor) and mask (Comfy dtype: MASK, Python dtype: torch.Tensor)."
+    },
+    {
+        "question": "How does the FacialFeatureSegment class process the input image?",
+        "answer": "The FacialFeatureSegment class processes the input image by first converting it to RGB format, then resizing it by a scale factor of 4. It then uses the Mediapipe Face Mesh model to detect facial landmarks and draws the selected facial features (eyes, eyebrows, lips, teeth) on a mask. The mask is then blurred, resized back to the original image size, and applied to the input image."
+    },
+    {
+        "question": "What is the purpose of the scale_factor variable in the FacialFeatureSegment class?",
+        "answer": "The scale_factor variable in the FacialFeatureSegment class is used to resize the input image before processing. It is set to 4, which means the image is scaled up by a factor of 4 before detecting facial landmarks."
+    },
+    {
+        "question": "How does the FacialFeatureSegment class handle multiple input images?",
+        "answer": "The FacialFeatureSegment class processes multiple input images by iterating over each image in the input tensor, applying the facial feature segmentation process to each image, and then concatenating the processed images and masks into a single tensor for each output type."
+    },
+    {
+        "question": "What is the purpose of the gaussian_blur function in the FacialFeatureSegment class?",
+        "answer": "The gaussian_blur function in the FacialFeatureSegment class is used to apply a Gaussian blur to the mask after drawing the facial features. This helps to smooth the edges of the mask and create a more natural-looking segmentation."
+    }
+]

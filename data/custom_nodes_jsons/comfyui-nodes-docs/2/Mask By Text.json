@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of ClipSegNode in ComfyUI?",
+        "answer": "ClipSegNode is designed to automatically generate a mask from an input image based on the provided text prompt. It uses a pre-trained model to understand the text description and apply it to the visual content, creating a segmentation mask that isolates the described subject in the image."
+    },
+    {
+        "question": "What are the required inputs for ClipSegNode?",
+        "answer": "The required inputs for ClipSegNode are: image (the main visual content for generating the mask), prompt (a descriptive text guiding the node to identify the subject for the mask), precision (a float value determining the threshold for deciding which pixels belong to the mask), and normalize (indicating whether the resulting mask should be normalized to a range between 0 and 1)."
+    },
+    {
+        "question": "What does the 'normalize' parameter do in ClipSegNode?",
+        "answer": "The 'normalize' parameter in ClipSegNode indicates whether the resulting mask should be normalized to a range between 0 and 1. Normalization can be useful in applications that require consistent mask intensity."
+    },
+    {
+        "question": "What is the purpose of the optional 'negative_prompt' input in ClipSegNode?",
+        "answer": "The optional 'negative_prompt' input in ClipSegNode helps refine the mask by indicating what should be excluded from the segmentation. It provides additional context to the model, improving the accuracy of the mask."
+    },
+    {
+        "question": "What are the output types of ClipSegNode?",
+        "answer": "The output types of ClipSegNode are 'thresholded_mask' (the main output representing a binary segmentation of the image based on the provided text prompt) and 'raw_mask' (providing a continuous-valued representation of the segmentation mask before any threshold is applied)."
+    },
+    {
+        "question": "What is the recommended infrastructure type for running ClipSegNode?",
+        "answer": "The recommended infrastructure type for running ClipSegNode is GPU."
+    },
+    {
+        "question": "How does ClipSegNode handle multiple prompts and negative prompts?",
+        "answer": "ClipSegNode splits the prompts and negative prompts using a delimiter and processes each separately. It then combines the results to create the final mask, taking into account both the positive and negative prompts."
+    }
+]

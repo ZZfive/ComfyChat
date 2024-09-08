@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LatentBatchSeedBehavior node in ComfyUI?",
+        "answer": "The LatentBatchSeedBehavior node in ComfyUI is designed to manipulate the seed behavior of a batch of latent samples, allowing the seeds to be set as 'random' or 'fixed', which is crucial for certain types of model training or analysis that require consistent or varied latent space exploration."
+    },
+    {
+        "question": "What are the required input types for the LatentBatchSeedBehavior node?",
+        "answer": "The required input types for the LatentBatchSeedBehavior node are 'samples', which contains the latent representations that the node will process, and 'seed_behavior', which indicates how the node will handle the seeds of the latent samples."
+    },
+    {
+        "question": "What does the 'seed_behavior' parameter in the LatentBatchSeedBehavior node specify?",
+        "answer": "The 'seed_behavior' parameter in the LatentBatchSeedBehavior node specifies how the seeds of the latent samples will be handled, with options being 'random' or 'fixed'. This is crucial for the repeatability or variability of the latent space exploration."
+    },
+    {
+        "question": "What is the default setting for the 'seed_behavior' parameter in the LatentBatchSeedBehavior node?",
+        "answer": "The default setting for the 'seed_behavior' parameter in the LatentBatchSeedBehavior node is 'fixed', which ensures consistent results unless explicitly set to 'random'."
+    },
+    {
+        "question": "What does the 'samples_out' parameter represent in the LatentBatchSeedBehavior node?",
+        "answer": "The 'samples_out' parameter in the LatentBatchSeedBehavior node represents the processed batch of latent samples with the applied seed behavior, carrying the results of the node's operation and reflecting the impact of the seed behavior on the latent space exploration."
+    },
+    {
+        "question": "What infrastructure type is recommended for the LatentBatchSeedBehavior node?",
+        "answer": "The recommended infrastructure type for the LatentBatchSeedBehavior node is CPU."
+    },
+    {
+        "question": "How does the LatentBatchSeedBehavior node handle the 'batch_index' in the 'samples_out' when the 'seed_behavior' is set to 'random'?",
+        "answer": "When the 'seed_behavior' is set to 'random', the LatentBatchSeedBehavior node removes the 'batch_index' from the 'samples_out' if it is present."
+    }
+]

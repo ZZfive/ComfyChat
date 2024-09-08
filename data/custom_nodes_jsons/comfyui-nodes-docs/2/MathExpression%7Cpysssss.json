@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MathExpression node in ComfyUI?",
+        "answer": "The MathExpression node in ComfyUI allows users to evaluate mathematical expressions, including basic arithmetic operations, function calls, and variable references."
+    },
+    {
+        "question": "What are the required and optional input types for the MathExpression node?",
+        "answer": "The required input type is 'expression', which is a string representing the mathematical expression to be evaluated. The optional input types are 'a', 'b', and 'c', which can be integers, floats, images, or latent types."
+    },
+    {
+        "question": "What are the output types of the MathExpression node?",
+        "answer": "The output types of the MathExpression node are 'int' and 'float', representing the result of the evaluated mathematical expression. It also provides a 'ui' output for displaying the result in the user interface."
+    },
+    {
+        "question": "How does the MathExpression node handle complex types like LATENT and IMAGE?",
+        "answer": "When using complex types (LATENT/IMAGE) in the MathExpression node, users need to reference their width or height properties, such as 'a.width' or 'b.height'."
+    },
+    {
+        "question": "What is the purpose of the 'IS_CHANGED' class method in the MathExpression node?",
+        "answer": "The 'IS_CHANGED' class method in the MathExpression node checks if the 'expression' input contains the word 'random'. If it does, the method returns 'float(\"nan\")', indicating a change in the expression."
+    },
+    {
+        "question": "How does the MathExpression node evaluate mathematical expressions?",
+        "answer": "The MathExpression node evaluates mathematical expressions by parsing the expression using 'ast.parse()' and then recursively evaluating each node in the parsed expression tree using the 'eval_expr()' function."
+    },
+    {
+        "question": "What is the purpose of the 'get_widget_value' method in the MathExpression node?",
+        "answer": "The 'get_widget_value' method in the MathExpression node retrieves the value of a specific widget from a node in the workflow based on the provided 'extra_pnginfo', 'prompt', 'node_name', and 'widget_name' parameters."
+    }
+]

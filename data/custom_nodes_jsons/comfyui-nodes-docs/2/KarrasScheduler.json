@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the KarrasScheduler node in ComfyUI?",
+        "answer": "The KarrasScheduler node in ComfyUI is designed to generate a noise schedule according to the method by Karras et al. (2022). It plays a crucial role in the custom sampling process by providing a series of σ values that determine the level of noise added to the data during sampling iterations."
+    },
+    {
+        "question": "What does the 'steps' parameter in the KarrasScheduler node define?",
+        "answer": "The 'steps' parameter in the KarrasScheduler node defines the number of iterations in the sampling process. It is crucial as it directly affects the granularity of the noise schedule, which in turn impacts the quality of the sampling result."
+    },
+    {
+        "question": "How does the 'sigma_max' parameter influence the sampling process in the KarrasScheduler node?",
+        "answer": "The 'sigma_max' parameter specifies the maximum standard deviation of noise in the sampling process. It is a key determining factor in forming the initial noise level and is crucial for the overall fidelity of the sampling."
+    },
+    {
+        "question": "What role does the 'sigma_min' parameter play in the KarrasScheduler node?",
+        "answer": "The 'sigma_min' parameter sets the minimum standard deviation of the noise, affecting the final clarity of the sampled data. It plays an important role in fine-tuning the noise schedule towards the end of the sampling process."
+    },
+    {
+        "question": "How does the 'rho' parameter affect the sampling iterations in the KarrasScheduler node?",
+        "answer": "The 'rho' parameter controls the rate at which the standard deviation of noise decreases during the sampling iterations. It is a key factor in scheduling the noise reduction plan, influencing the convergence of the sampling algorithm."
+    },
+    {
+        "question": "What is the output of the KarrasScheduler node?",
+        "answer": "The output of the KarrasScheduler node is 'SIGMAS', which is a series of σ values representing the noise schedule for the sampling process. This schedule is crucial for the algorithm to gradually reduce noise and generate a clear data representation."
+    },
+    {
+        "question": "On what infrastructure type is the KarrasScheduler node recommended to be used?",
+        "answer": "The KarrasScheduler node is recommended to be used on the CPU infrastructure type."
+    }
+]

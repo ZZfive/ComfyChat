@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LLMChatBot node in ComfyUI?",
+        "answer": "The LLMChatBot node in ComfyUI is designed to facilitate interactive chat conversations by leveraging large language models (LLMs). It combines user input, context information, and preset parameters to generate conversational responses, simulating a natural and vivid dialogue experience."
+    },
+    {
+        "question": "What are the required input types for the LLMChatBot node?",
+        "answer": "The required input types for the LLMChatBot node are: llm_model (specifies the large language model to be used for the chatbot), llm_context (provides additional context or settings specific to the chat session), and prompt (the user's input message or question that triggers the chatbot to generate a reply)."
+    },
+    {
+        "question": "What does the optional input 'reset_engine' do in the LLMChatBot node?",
+        "answer": "The optional input 'reset_engine' is a flag used to reset the chat engine, allowing users to start a new conversation thread or clear history. This is useful for managing long-term conversations or switching topics."
+    },
+    {
+        "question": "What output types does the LLMChatBot node generate?",
+        "answer": "The LLMChatBot node generates the following output types: chat_history (the accumulated dialogue history between the user and the chatbot), response (the chatbot's direct response to the user's latest prompt), and chat_token_count (the total number of tokens used in the chat session, reflecting the complexity and length of the conversation)."
+    },
+    {
+        "question": "How does the LLMChatBot node handle cases where the conversation exceeds the maximum number of tokens?",
+        "answer": "If the conversation exceeds the maximum number of tokens, the LLMChatBot node prunes messages from the history. It removes tokens from the beginning of each message if possible, or removes entire messages if necessary, until the total token count is within the specified limit."
+    },
+    {
+        "question": "What is the role of the 'user_nickname' and 'system_nickname' inputs in the LLMChatBot node?",
+        "answer": "The 'user_nickname' and 'system_nickname' inputs allow for customization of the user's and chatbot's names in the conversation. This adds a layer of personalization to the chat session, enhancing the conversational experience."
+    },
+    {
+        "question": "How is the chat history structured in the output of the LLMChatBot node?",
+        "answer": "The chat history in the output of the LLMChatBot node is structured as a string that includes the user's prompts and the chatbot's responses, along with their respective nicknames. Each exchange is formatted with the nickname followed by the corresponding message."
+    }
+]

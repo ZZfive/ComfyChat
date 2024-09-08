@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ImageAutoCrop class in ComfyUI?",
+        "answer": "The ImageAutoCrop class in ComfyUI is designed to automatically crop images and change their background color based on a specified aspect ratio and size. It is mainly used for generating training model image materials."
+    },
+    {
+        "question": "What are the required input types for the ImageAutoCrop class?",
+        "answer": "The required input types for the ImageAutoCrop class include: image, background_color, aspect_ratio, proportional_width, proportional_height, scale_to_longest_side, longest_side, detect, border_reserve, ultra_detail_range, matting_method, sam_model, grounding_dino_model, sam_threshold, and sam_prompt."
+    },
+    {
+        "question": "What are the output types of the ImageAutoCrop class?",
+        "answer": "The output types of the ImageAutoCrop class are: cropped_image (the cropped image with replaced background), box_preview (a preview of the cropping position), and cropped_mask (the cropped mask)."
+    },
+    {
+        "question": "How does the aspect_ratio parameter work in the ImageAutoCrop class?",
+        "answer": "The aspect_ratio parameter in the ImageAutoCrop class specifies the output aspect ratio of the cropped image. It provides common aspect ratios such as 1:1, 3:2, 4:3, 16:9, etc. If 'custom' is selected, the aspect ratio is determined by the proportional_width and proportional_height parameters."
+    },
+    {
+        "question": "What is the purpose of the border_reserve parameter in the ImageAutoCrop class?",
+        "answer": "The border_reserve parameter in the ImageAutoCrop class specifies the number of pixels to extend the cropping range beyond the detected mask's main body area."
+    },
+    {
+        "question": "What are the two matting methods available in the ImageAutoCrop class?",
+        "answer": "The two matting methods available in the ImageAutoCrop class are Segment Anything and RMBG 1.4. RMBG 1.4 runs faster than Segment Anything."
+    },
+    {
+        "question": "What is the function of the ultra_detail_range parameter in the ImageAutoCrop class?",
+        "answer": "The ultra_detail_range parameter in the ImageAutoCrop class specifies the range for ultra-detailed processing of the mask edges. A value of 0 means no processing, which can save generation time."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ComfyUI中的ImageHub节点有什么功能？",
+        "answer": "ImageHub节点可以从多路输入图片和遮罩中切换其中一组输出，支持9组输入。如果一组输入中只有image或者只有mask，缺失项将输出为None。"
+    },
+    {
+        "question": "ImageHub节点的必需输入参数有哪些？",
+        "answer": "ImageHub节点有两个必需的输入参数：output（输出，数据类型为INT）和random_output（随机输出，数据类型为BOOLEAN）。"
+    },
+    {
+        "question": "ImageHub节点的可选输入参数有哪些？",
+        "answer": "ImageHub节点有多个可选输入参数，从input1_image、input1_mask到input9_image、input9_mask，分别代表9组输入图片和遮罩。"
+    },
+    {
+        "question": "ImageHub节点的输出类型是什么？",
+        "answer": "ImageHub节点的输出类型包括输出图片（image，数据类型为IMAGE）和输出遮罩（mask，数据类型为MASK）。"
+    },
+    {
+        "question": "ImageHub节点在随机输出模式下如何选择输出？",
+        "answer": "在随机输出模式下（random_output为True），ImageHub节点会从已连接的输入组随机选择一个作为输出。"
+    },
+    {
+        "question": "如果ImageHub节点的某组输入中缺少图片或遮罩，会发生什么情况？",
+        "answer": "如果ImageHub节点的某组输入中只有图片或只有遮罩，缺失的项目将输出为None。"
+    },
+    {
+        "question": "ImageHub节点的源代码中定义的类名是什么？",
+        "answer": "ImageHub节点的源代码中定义的类名为ImageHub。"
+    }
+]

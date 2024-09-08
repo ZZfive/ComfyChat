@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the JagsCLIPSeg node in ComfyUI?",
+        "answer": "The JagsCLIPSeg node in ComfyUI is designed to perform image segmentation using text prompts and image inputs. It utilizes the power of the CLIPSeg model to generate detailed masks corresponding to the provided text description."
+    },
+    {
+        "question": "What are the required input parameters for the JagsCLIPSeg node?",
+        "answer": "The required input parameters for the JagsCLIPSeg node are 'image' and 'text'. The 'image' parameter provides the visual context for the segmentation process, while the 'text' parameter describes the content or features to focus on in the image."
+    },
+    {
+        "question": "How does the 'blur' parameter affect the segmentation mask in JagsCLIPSeg?",
+        "answer": "The 'blur' parameter influences the smoothness of the segmentation mask in JagsCLIPSeg. Higher values lead to more generalized masks, while lower values preserve more details in the mask."
+    },
+    {
+        "question": "What does the 'threshold' parameter control in the JagsCLIPSeg node?",
+        "answer": "The 'threshold' parameter determines the cutoff point for binarizing the segmentation mask in the JagsCLIPSeg node. Values above the threshold are retained, while values below the threshold are discarded, affecting the appearance of the final mask."
+    },
+    {
+        "question": "How does the 'dilation_factor' parameter impact the segmentation mask in JagsCLIPSeg?",
+        "answer": "The 'dilation_factor' parameter controls the expansion of the segmentation mask in the JagsCLIPSeg node. Higher values result in more aggressive dilation, while lower values lead to more conservative expansion."
+    },
+    {
+        "question": "What are the output types produced by the JagsCLIPSeg node?",
+        "answer": "The JagsCLIPSeg node produces three output types: 'Mask', 'Heatmap Mask', and 'BW Mask'. The 'Mask' output is a binary representation highlighting the elements described by the text prompt. The 'Heatmap Mask' provides a visual gradient representing the confidence levels of the segmentation. The 'BW Mask' is a black and white version of the mask, offering a direct visual representation suitable for further analysis or processing."
+    },
+    {
+        "question": "Which infrastructure type is recommended for running the JagsCLIPSeg node?",
+        "answer": "The JagsCLIPSeg node is recommended to be run on a GPU infrastructure for optimal performance."
+    }
+]

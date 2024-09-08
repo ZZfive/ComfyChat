@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the CropByMaskV2 custom node in ComfyUI?",
+        "answer": "The CropByMaskV2 custom node in ComfyUI is an upgraded version of CropByMask that allows cropping layers based on a mask input. It supports an additional crop_box input to crop layers to the same size."
+    },
+    {
+        "question": "What are the required inputs for the CropByMaskV2 node?",
+        "answer": "The required inputs for the CropByMaskV2 node are: image (input image), mask (mask for cropping), invert_mask (whether to invert the mask), detect (detection method), and reserve values for top, bottom, left, and right (how much to reserve on each side when cropping)."
+    },
+    {
+        "question": "What is the purpose of the optional crop_box input in the CropByMaskV2 node?",
+        "answer": "The optional crop_box input in the CropByMaskV2 node allows specifying a cropping box directly. If provided, the mask detection is ignored, and the specified crop_box is used for cropping instead."
+    },
+    {
+        "question": "What are the output types returned by the CropByMaskV2 node?",
+        "answer": "The CropByMaskV2 node returns the following output types: cropped_image (the cropped image), cropped_mask (the cropped mask), crop_box (the cropping box data used, which can be used for restoring the cropped area in the RestoreCropBox node), and box_preview (a preview image showing the detected range in red and the actual cropped range with reserved borders in green)."
+    },
+    {
+        "question": "What infra type does the CropByMaskV2 node use?",
+        "answer": "The CropByMaskV2 node uses the GPU infra type."
+    },
+    {
+        "question": "How does the CropByMaskV2 node handle multiple mask inputs?",
+        "answer": "If multiple mask inputs are provided to the CropByMaskV2 node, it uses only the first mask and logs a warning message indicating that multiple mask inputs were provided, and only the first one is used."
+    },
+    {
+        "question": "What does the CropByMaskV2 node do if the invert_mask input is set to true?",
+        "answer": "If the invert_mask input is set to true in the CropByMaskV2 node, the mask is inverted before being used for cropping."
+    }
+]

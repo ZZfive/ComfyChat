@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LLMDocumentListAppend node in ComfyUI?",
+        "answer": "The LLMDocumentListAppend node is designed to append a list of documents to an existing list of documents, with the option to update their metadata with additional information. It facilitates the dynamic expansion of document collections, allowing data to be aggregated from multiple sources."
+    },
+    {
+        "question": "What are the required input types for the LLMDocumentListAppend node?",
+        "answer": "The required input types for the LLMDocumentListAppend node are 'llm_documents' and 'append_llm_documents'. 'llm_documents' represents the initial list of documents to which new documents will be appended. 'append_llm_documents' is the list of new documents to be appended to the existing list."
+    },
+    {
+        "question": "What is the optional input type for the LLMDocumentListAppend node?",
+        "answer": "The optional input type for the LLMDocumentListAppend node is 'extra_info'. It is a JSON string containing additional metadata that will be merged into the metadata of the documents being appended, allowing enrichment of the document data."
+    },
+    {
+        "question": "What is the output type of the LLMDocumentListAppend node?",
+        "answer": "The output type of the LLMDocumentListAppend node is 'documents'. After appending new documents and optionally updating their metadata, it returns the updated list of documents."
+    },
+    {
+        "question": "What is the infra type for the LLMDocumentListAppend node?",
+        "answer": "The infra type for the LLMDocumentListAppend node is 'CPU'."
+    },
+    {
+        "question": "What is the category of the LLMDocumentListAppend node in ComfyUI?",
+        "answer": "The category of the LLMDocumentListAppend node is defined as '{MENU_NAME}/{SUB_MENU_NAME}/Documents' in the source code."
+    },
+    {
+        "question": "How does the document_append function update the metadata of the documents being appended in the LLMDocumentListAppend node?",
+        "answer": "In the document_append function of the LLMDocumentListAppend node, the metadata of each document in 'append_llm_documents' is updated by merging the 'extra_info' JSON string into it. If the metadata is a dictionary, it updates it with 'extra_info'. If the metadata is None, it sets the metadata to 'extra_info'."
+    }
+]

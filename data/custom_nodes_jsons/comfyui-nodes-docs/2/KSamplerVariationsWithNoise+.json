@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is cg-noise in ComfyUI?",
+        "answer": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+    },
+    {
+        "question": "What are the two main modes of operation for cg-noise?",
+        "answer": "The two main modes of operation for cg-noise are 'match_histogram' which matches the histogram of the generated noise to the reference noise, and 'replace_noise' which completely replaces the noise with the new one."
+    },
+    {
+        "question": "How does cg-noise generate variations in images?",
+        "answer": "cg-noise generates variations in images by using a weight 'x' and two seeds. It generates the noise based on 'random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)'."
+    },
+    {
+        "question": "What does the 'match_histogram' mode in cg-noise do?",
+        "answer": "In the 'match_histogram' mode, cg-noise matches the histogram of the generated noise to the reference noise, allowing for variations while preserving the overall structure."
+    },
+    {
+        "question": "What does the 'replace_noise' mode in cg-noise do?",
+        "answer": "In the 'replace_noise' mode, cg-noise completely replaces the noise with the new one, resulting in more drastic variations in the generated image."
+    },
+    {
+        "question": "Is cg-noise compatible with the KSampler and KSampler Advanced nodes?",
+        "answer": "Yes, cg-noise is designed to be compatible with KSampler and KSampler Advanced nodes in ComfyUI."
+    },
+    {
+        "question": "Does cg-noise support variations in images?",
+        "answer": "Yes, cg-noise allows for small variations in the initial noise used for generating images in ComfyUI."
+    }
+]

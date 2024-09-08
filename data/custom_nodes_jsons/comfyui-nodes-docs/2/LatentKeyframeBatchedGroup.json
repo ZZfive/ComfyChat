@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of LatentKeyframeBatchedGroupNode in ComfyUI?",
+        "answer": "LatentKeyframeBatchedGroupNode is designed to manage and create a batch of latent keyframes with different strengths. It allows integrating previous latent keyframes and provides the functionality to print keyframe details."
+    },
+    {
+        "question": "What is the role of the 'float_strengths' parameter in LatentKeyframeBatchedGroupNode?",
+        "answer": "The 'float_strengths' parameter is crucial for determining the strength of each keyframe in the batch. It can be a single float or an iterable of floats, directly affecting the creation of keyframes within the node."
+    },
+    {
+        "question": "How can previous latent keyframes be integrated using LatentKeyframeBatchedGroupNode?",
+        "answer": "Previous latent keyframes can be integrated by passing them through the 'prev_latent_kf' parameter, which allows building on top of existing keyframe structures."
+    },
+    {
+        "question": "What does the 'print_keyframes' parameter do in LatentKeyframeBatchedGroupNode?",
+        "answer": "When the 'print_keyframes' parameter is set to True, it enables logging of keyframe information, which is helpful for debugging and understanding the flow of keyframes through the node."
+    },
+    {
+        "question": "What is the output type of LatentKeyframeBatchedGroupNode?",
+        "answer": "The output type of LatentKeyframeBatchedGroupNode is 'LATENT_KF', which represents a batch of latent keyframes resulting from processing input strengths and integrating any previous keyframes."
+    },
+    {
+        "question": "What infrastructure type does LatentKeyframeBatchedGroupNode use?",
+        "answer": "LatentKeyframeBatchedGroupNode uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does LatentKeyframeBatchedGroupNode handle different types of input for 'float_strengths'?",
+        "answer": "If 'float_strengths' is a float or int, it logs a message that no new keyframes will be created. If it is an iterable, it creates new keyframes based on the strengths provided. If it is neither, it raises a ValueError."
+    }
+]

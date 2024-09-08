@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_Mask_Subtract node in ComfyUI?",
+        "answer": "The WAS_Mask_Subtract node in ComfyUI is designed to subtract one set of masks from another, ensuring the result falls within a valid pixel value range. It facilitates operations that require removing one mask from another, such as in image processing or mask application."
+    },
+    {
+        "question": "What are the required input types for the WAS_Mask_Subtract node?",
+        "answer": "The required input types for the WAS_Mask_Subtract node are 'masks_a' and 'masks_b', both of which are of the Comfy dtype 'MASK' and Python dtype 'torch.Tensor'."
+    },
+    {
+        "question": "What does the 'masks_a' parameter represent in the WAS_Mask_Subtract node?",
+        "answer": "The 'masks_a' parameter in the WAS_Mask_Subtract node represents the first set of masks used in the subtraction operation. It is crucial as it defines the base from which the second set of masks will be subtracted."
+    },
+    {
+        "question": "What does the 'masks_b' parameter represent in the WAS_Mask_Subtract node?",
+        "answer": "The 'masks_b' parameter in the WAS_Mask_Subtract node represents the second set of masks that will be subtracted from the first set. This parameter significantly impacts the result of the operation."
+    },
+    {
+        "question": "What is the output type of the WAS_Mask_Subtract node?",
+        "answer": "The output type of the WAS_Mask_Subtract node is 'MASKS', which is of the Comfy dtype 'MASK' and Python dtype 'torch.Tensor'. It represents the result of the subtraction operation between the two sets of masks, limited to ensure valid pixel values."
+    },
+    {
+        "question": "What infrastructure type does the WAS_Mask_Subtract node use?",
+        "answer": "The WAS_Mask_Subtract node uses the 'CPU' infrastructure type."
+    },
+    {
+        "question": "How does the WAS_Mask_Subtract node ensure valid pixel values in the subtracted masks?",
+        "answer": "The WAS_Mask_Subtract node ensures valid pixel values in the subtracted masks by using the torch.clamp function to limit the result of the subtraction operation between 'masks_a' and 'masks_b' to the range of 0 to 255."
+    }
+]

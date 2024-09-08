@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the JWSaveImageSequence node in ComfyUI?",
+        "answer": "The JWSaveImageSequence node is designed to save a sequence of images to a specified path in batches, allowing for custom file naming and indexing, and providing the option to overwrite existing files."
+    },
+    {
+        "question": "What are the required inputs for the JWSaveImageSequence node?",
+        "answer": "The required inputs for the JWSaveImageSequence node are: images (the image tensors to be saved), path_pattern (a string pattern defining the file naming convention and path for each image in the sequence), start_index (the starting index for naming the saved image files), and overwrite (a string indicating whether to overwrite existing files at the target save location, accepting 'true' or 'false')."
+    },
+    {
+        "question": "Does the JWSaveImageSequence node have any output types?",
+        "answer": "No, the JWSaveImageSequence node does not have any output types."
+    },
+    {
+        "question": "What is the infra type for the JWSaveImageSequence node?",
+        "answer": "The infra type for the JWSaveImageSequence node is CPU."
+    },
+    {
+        "question": "How does the JWSaveImageSequence node handle missing images when loading an image sequence?",
+        "answer": "If the ignore_missing_images option is set to 'true', the JWSaveImageSequence node will remove missing images from the image sequence. If it is set to 'false', the node will raise a FileNotFoundError if any image in the sequence does not exist."
+    },
+    {
+        "question": "What happens if the JWSaveImageSequence node encounters an empty image sequence?",
+        "answer": "If the JWSaveImageSequence node encounters an empty image sequence, it will raise a RuntimeError with the message 'Image sequence empty - no images to load'."
+    },
+    {
+        "question": "How does the JWSaveImageSequence node load and concatenate images in a sequence?",
+        "answer": "The JWSaveImageSequence node loads each image in the sequence using the load_image function, which returns a tensor of shape [1, 768, 768, 3]. It then concatenates these image tensors along dimension 0 using torch.cat to create a single tensor representing the loaded image sequence."
+    }
+]

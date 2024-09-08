@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the Merge Latent Batch Gridwise node in ComfyUI?",
+        "answer": "The Merge Latent Batch Gridwise node is used to merge a batch of latent representations into a single grid layout, enabling efficient organization and visualization of multiple latent samples."
+    },
+    {
+        "question": "What is the role of the 'batch' input in the Merge Latent Batch Gridwise node?",
+        "answer": "The 'batch' input provides the latent representation batch to be merged into the grid. It plays a crucial role in determining the final merged output by providing the individual samples to be arranged."
+    },
+    {
+        "question": "How is the 'mask' input used in the Merge Latent Batch Gridwise node?",
+        "answer": "The 'mask' input is used to obtain the dimensions of the grid layout. Although not directly used in the merging process, it is essential for determining the dimensions of the grid."
+    },
+    {
+        "question": "What do the 'rows' and 'columns' inputs define in the Merge Latent Batch Gridwise node?",
+        "answer": "The 'rows' input defines the number of rows in the grid layout, determining how the latent samples are vertically arranged in the grid. The 'columns' input defines the number of columns in the grid layout, determining how the latent samples are horizontally arranged in the grid."
+    },
+    {
+        "question": "What is the output of the Merge Latent Batch Gridwise node?",
+        "answer": "The output of the Merge Latent Batch Gridwise node is a merged latent representation in a grid layout, combining multiple individual samples into a single composite representation."
+    },
+    {
+        "question": "What is the infra type recommended for the Merge Latent Batch Gridwise node?",
+        "answer": "The recommended infra type for the Merge Latent Batch Gridwise node is GPU."
+    },
+    {
+        "question": "How does the Merge Latent Batch Gridwise node merge the latent representations?",
+        "answer": "The Merge Latent Batch Gridwise node merges the latent representations by creating an empty tensor of size (1, cs, hs, ws) and filling it with the samples from the batch input based on the specified rows and columns, using a nested loop to assign each sample to its corresponding position in the grid."
+    }
+]

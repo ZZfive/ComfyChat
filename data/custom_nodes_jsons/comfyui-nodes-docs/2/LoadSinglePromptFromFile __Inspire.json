@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LoadSinglePromptFromFile node in ComfyUI?",
+        "answer": "The LoadSinglePromptFromFile node in ComfyUI is designed to load specific prompt text from a file, allowing targeted retrieval of text prompts based on an index. It helps extract creative or instructive content from structured text files, enhancing the flexibility and specificity of content generation workflows."
+    },
+    {
+        "question": "What are the required input types for the LoadSinglePromptFromFile node?",
+        "answer": "The required input types for the LoadSinglePromptFromFile node are 'prompt_file' (COMBO[STRING], str) which specifies the file path to load the prompt text from, and 'index' (INT, int) which determines the specific prompt to be loaded from the file."
+    },
+    {
+        "question": "What is the output type of the LoadSinglePromptFromFile node?",
+        "answer": "The output type of the LoadSinglePromptFromFile node is 'zipped_prompt' (ZIPPED_PROMPT, List[Tuple[str, str, str]]), which returns a list of tuples, each containing the positive and negative text extracted from the specified prompt, along with the file name."
+    },
+    {
+        "question": "What is the infra type of the LoadSinglePromptFromFile node?",
+        "answer": "The infra type of the LoadSinglePromptFromFile node is 'CPU'."
+    },
+    {
+        "question": "What is the category of the LoadSinglePromptFromFile node?",
+        "answer": "The category of the LoadSinglePromptFromFile node is 'InspirePack/Prompt'."
+    },
+    {
+        "question": "How does the LoadSinglePromptFromFile node handle invalid prompt formats?",
+        "answer": "If the LoadSinglePromptFromFile node encounters an invalid prompt format in the specified file, it prints a warning message indicating the issue with the prompt format in that file."
+    },
+    {
+        "question": "How does the LoadSinglePromptFromFile node handle errors that occur while processing a file?",
+        "answer": "If an error occurs while the LoadSinglePromptFromFile node is processing a file, it prints an error message stating that an error occurred while processing the specific file, along with the error details."
+    }
+]
