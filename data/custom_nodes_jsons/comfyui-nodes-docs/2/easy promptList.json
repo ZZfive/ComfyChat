@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the promptList node in ComfyUI?",
+        "answer": "The promptList node simplifies the process of aggregating and processing text input to generate a list of prompts. It emphasizes efficient handling of string data, ensuring the node's role in the workflow is to concentrate and organize text information."
+    },
+    {
+        "question": "What are the required input types for the promptList node?",
+        "answer": "The required input types for the promptList node are prompt_1, prompt_2, prompt_3, prompt_4, and prompt_5. These inputs are essential for the node to operate, providing the initial context for subsequent prompt processing and aggregation."
+    },
+    {
+        "question": "What does the optional input 'optional_prompt_list' do in the promptList node?",
+        "answer": "The optional input 'optional_prompt_list' allows the promptList node to manage and process a larger amount of text data when provided, enhancing the comprehensiveness of the output."
+    },
+    {
+        "question": "What are the output types of the promptList node?",
+        "answer": "The output types of the promptList node are 'prompt_list', which is an integrated list of prompts representing the processed text inputs, and 'prompt_strings', which is a serialized version of the prompt list presenting the aggregated text data as a single string."
+    },
+    {
+        "question": "What infra type does the promptList node use?",
+        "answer": "The promptList node uses the CPU infra type."
+    },
+    {
+        "question": "How does the promptList node handle the input prompts?",
+        "answer": "The promptList node first checks for the optional 'optional_prompt_list' and appends its contents to the prompts list. Then, it sorts the remaining keys in the kwargs dictionary and appends the non-empty string values to the prompts list."
+    },
+    {
+        "question": "What does the promptList node return?",
+        "answer": "The promptList node returns a tuple containing the aggregated prompts list and the same prompts list, which is (prompts, prompts)."
+    }
+]

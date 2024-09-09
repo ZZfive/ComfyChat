@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the imageSplitList class in ComfyUI-Easy-Use?",
+        "answer": "The imageSplitList class is used to split a list of images into multiple subsets based on specific criteria, enhancing the organization and processing capabilities of image data within a workflow."
+    },
+    {
+        "question": "What is the required input type for the imageSplitList class?",
+        "answer": "The required input type for the imageSplitList class is 'images', which is of Comfy dtype IMAGE and Python dtype List[PIL.Image.Image]. It serves as the main input for the node's operation and determines the subsequent splitting process and output structure."
+    },
+    {
+        "question": "What are the output types of the imageSplitList class?",
+        "answer": "The output type of the imageSplitList class is 'images', which is of Comfy dtype IMAGE and Python dtype Tuple[List[PIL.Image.Image], List[PIL.Image.Image], List[PIL.Image.Image]]. It represents the reorganized image subsets that are crucial for further analysis or processing in the workflow."
+    },
+    {
+        "question": "Which infrastructure type does the imageSplitList class use?",
+        "answer": "The imageSplitList class uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the imageSplitList class split the images when the number of images is divisible by 3?",
+        "answer": "When the number of images is divisible by 3, the imageSplitList class splits the images into three subsets. Images with an index divisible by 3 are appended to the first subset, images with an index that leaves a remainder of 1 when divided by 3 are appended to the second subset, and images with an index that leaves a remainder of 2 when divided by 3 are appended to the third subset."
+    },
+    {
+        "question": "How does the imageSplitList class split the images when the number of images is divisible by 2 but not by 3?",
+        "answer": "When the number of images is divisible by 2 but not by 3, the imageSplitList class splits the images into two subsets. Images with an even index are appended to the first subset, while images with an odd index are appended to the second subset."
+    },
+    {
+        "question": "What happens if the number of images is neither divisible by 2 nor by 3 in the imageSplitList class?",
+        "answer": "The provided source code does not specify how the images are split when the number of images is neither divisible by 2 nor by 3. In this case, the images will not be split and will remain in a single list."
+    }
+]

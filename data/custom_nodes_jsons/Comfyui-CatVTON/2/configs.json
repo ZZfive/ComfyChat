@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of Detectron2's config system?",
+        "answer": "Detectron2's config system is used to obtain standard, common behaviors through a key-value based configuration."
+    },
+    {
+        "question": "What are the two extra functionalities provided by Detectron2's config system?",
+        "answer": "The two extra functionalities provided by Detectron2's config system are: 1) the ability to load a base config using the '_BASE_: base.yaml' field, and 2) config versioning for backward compatibility."
+    },
+    {
+        "question": "How can you overwrite existing values in a config file using the command line?",
+        "answer": "You can overwrite existing values in a config file by providing key-value pairs in the command line. For example: '--opts MODEL.WEIGHTS /path/to/weights INPUT.MIN_SIZE_TEST 1000'."
+    },
+    {
+        "question": "What is the recommended way to handle common parts between configs?",
+        "answer": "It is recommended to use the '_BASE_' field to share common parts between configs, treating them as 'code' and avoiding duplication."
+    },
+    {
+        "question": "How should you keep the configs you write?",
+        "answer": "You should keep the configs you write simple by not including keys that do not affect the experimental setting."
+    },
+    {
+        "question": "What is the purpose of keeping a version number in your configs?",
+        "answer": "Keeping a version number in your configs, such as 'VERSION: 2', is important for backward compatibility."
+    },
+    {
+        "question": "Why do the official configs not include a version number?",
+        "answer": "The official configs do not include a version number because they are meant to be always up-to-date."
+    }
+]

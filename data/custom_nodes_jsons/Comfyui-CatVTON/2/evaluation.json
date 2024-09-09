@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the evaluation process in ComfyUI-CatVTON?",
+        "answer": "The evaluation process in ComfyUI-CatVTON takes a number of input/output pairs and aggregates them to compute metrics or perform other jobs using the data."
+    },
+    {
+        "question": "How can you perform evaluation in ComfyUI-CatVTON?",
+        "answer": "You can perform evaluation in ComfyUI-CatVTON by using the model directly and parsing its inputs/outputs manually, or by using the DatasetEvaluator interface implemented in detectron2."
+    },
+    {
+        "question": "What is the benefit of using the inference_on_dataset function for evaluation in ComfyUI-CatVTON?",
+        "answer": "The benefit of using the inference_on_dataset function for evaluation in ComfyUI-CatVTON is that you can merge evaluators together using DatasetEvaluators, allowing you to run all evaluations without having to go through the dataset multiple times."
+    },
+    {
+        "question": "What does the Counter class in the given example do?",
+        "answer": "The Counter class in the given example is a custom DatasetEvaluator that counts how many instances are detected on the validation set."
+    },
+    {
+        "question": "What are the three methods implemented in the Counter class?",
+        "answer": "The three methods implemented in the Counter class are reset (initializes the count to 0), process (increments the count based on the length of 'instances' in the output), and evaluate (returns the final count)."
+    },
+    {
+        "question": "How can you use the inference_on_dataset function to run evaluation with multiple DatasetEvaluators?",
+        "answer": "You can use the inference_on_dataset function to run evaluation with multiple DatasetEvaluators by passing them as a list to the DatasetEvaluators class, like inference_on_dataset(model, val_data_loader, DatasetEvaluators([COCOEvaluator(...), Counter()]))."
+    },
+    {
+        "question": "What additional benefit does the inference_on_dataset function provide?",
+        "answer": "In addition to allowing the merging of evaluators, the inference_on_dataset function also provides accurate speed benchmarks for the given model and dataset."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the primary purpose of the ttN multiModelMerge node in ComfyUI?",
+        "answer": "The primary purpose of the ttN multiModelMerge node is to merge multiple models and/or CLIP models according to specified configurations and interpolation ratios, abstracting the complexities of model merging and allowing flexible integration and manipulation of model attributes to achieve desired effects."
+    },
+    {
+        "question": "What input types are required for the ttN multiModelMerge node?",
+        "answer": "The required input types for the ttN multiModelMerge node include names for checkpoints (ckpt_A_name, ckpt_B_name, ckpt_C_name), configurations (config_A_name, config_B_name, config_C_name), model interpolation and multiplier, CLIP interpolation and multiplier, and save options (save_model, save_prefix)."
+    },
+    {
+        "question": "What are the optional input types for the ttN multiModelMerge node?",
+        "answer": "The optional input types for the ttN multiModelMerge node allow for overriding specific attributes of the models (model_A_override, model_B_override, model_C_override) and CLIP models (clip_A_override, clip_B_override, clip_C_override), and including an optional VAE model."
+    },
+    {
+        "question": "How does the ttN multiModelMerge node handle the merging of CLIP models?",
+        "answer": "The ttN multiModelMerge node handles the merging of CLIP models by specifying the interpolation ratio between them, allowing precise control over their integration. This ratio determines the balance of CLIP model features in the merged output, enabling customized adjustments to the final CLIP model’s functionality."
+    },
+    {
+        "question": "What does the 'model_multiplier' parameter in the ttN multiModelMerge node do?",
+        "answer": "The 'model_multiplier' parameter influences the intensity of the second model's attributes in the merge, allowing for customization of the secondary model's dominance in the integrated model."
+    },
+    {
+        "question": "How does the 'save_model' parameter affect the output of the ttN multiModelMerge node?",
+        "answer": "The 'save_model' parameter, when set to True, saves the merged model to disk, affecting the workflow by providing a tangible output that can be used for subsequent processing or further analysis."
+    },
+    {
+        "question": "What output types can be expected from the ttN multiModelMerge node?",
+        "answer": "The output types from the ttN multiModelMerge node include the merged model ('model'), the merged CLIP model if applicable ('clip'), and the merged VAE model if applicable ('vae')."
+    }
+]

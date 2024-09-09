@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the imageInsetCrop node in ComfyUI?",
+        "answer": "The imageInsetCrop node in ComfyUI allows users to precisely crop images by defining the crop region in pixel values or image dimension percentages, enhancing image processing workflows without the need for complex calculations."
+    },
+    {
+        "question": "What are the required input parameters for the imageInsetCrop node?",
+        "answer": "The required input parameters for the imageInsetCrop node are: image (the source image for cropping), measurement (determines if crop values are input as absolute pixels or relative percentages), left (distance from the left edge of the image to the start of the crop region), right (distance from the right edge of the image to the end of the crop region), top (distance from the top of the image to the start of the crop region), and bottom (distance from the bottom of the image to the end of the crop region)."
+    },
+    {
+        "question": "How does the 'measurement' parameter affect the cropping operation in imageInsetCrop?",
+        "answer": "The 'measurement' parameter in imageInsetCrop determines whether the crop values are input as absolute pixels or relative percentages, significantly influencing how the crop region is calculated and ultimately affecting the final dimensions of the cropped image."
+    },
+    {
+        "question": "What does the output of the imageInsetCrop node represent?",
+        "answer": "The output of the imageInsetCrop node is the resulting image after the cropping operation, representing the portion of the original image that remains after applying the specified padding, capturing the desired visual content."
+    },
+    {
+        "question": "What infrastructure type does the imageInsetCrop node utilize?",
+        "answer": "The imageInsetCrop node utilizes CPU as its infrastructure type."
+    },
+    {
+        "question": "How does the imageInsetCrop node handle cases where the cropping dimensions are invalid?",
+        "answer": "If the cropping dimensions are invalid, such as when the top exceeds the bottom or the left exceeds the right, the imageInsetCrop node raises a ValueError indicating the specific invalid dimensions."
+    },
+    {
+        "question": "What does the imageInsetCrop node do when all cropping values (left, right, top, bottom) are zero?",
+        "answer": "When all cropping values (left, right, top, bottom) are zero, the imageInsetCrop node returns the original image without performing any cropping operation."
+    }
+]

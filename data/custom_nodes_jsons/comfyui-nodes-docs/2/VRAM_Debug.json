@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the VRAM_Debug node in ComfyUI?",
+        "answer": "The VRAM_Debug node in ComfyUI is designed to monitor and manage the video memory (VRAM) usage in the computing environment. It provides features like clearing memory cache, unloading all models from memory, and performing garbage collection to free up VRAM."
+    },
+    {
+        "question": "What are the required input types for the VRAM_Debug node?",
+        "answer": "The required input types for the VRAM_Debug node are 'empty_cache', 'gc_collect', and 'unload_all_models', which are all of the Comfy dtype 'BOOLEAN'."
+    },
+    {
+        "question": "What does the 'empty_cache' input do in the VRAM_Debug node?",
+        "answer": "The 'empty_cache' input in the VRAM_Debug node specifies whether to clear PyTorch's cache, which can potentially free up a large amount of VRAM."
+    },
+    {
+        "question": "What is the function of the 'gc_collect' input in the VRAM_Debug node?",
+        "answer": "The 'gc_collect' input in the VRAM_Debug node determines whether to perform garbage collection, which helps in releasing unused memory and optimizing VRAM usage."
+    },
+    {
+        "question": "What optional input types does the VRAM_Debug node accept?",
+        "answer": "The VRAM_Debug node accepts the following optional input types: 'any_input' of Comfy dtype '*', 'image_pass' of Comfy dtype 'IMAGE', and 'model_pass' of Comfy dtype 'MODEL'."
+    },
+    {
+        "question": "What output types does the VRAM_Debug node return?",
+        "answer": "The VRAM_Debug node returns the following output types: 'any_output' of Comfy dtype '*', 'image_pass' of Comfy dtype 'IMAGE', 'model_pass' of Comfy dtype 'MODEL', 'freemem_before' of Comfy dtype 'INT', and 'freemem_after' of Comfy dtype 'INT'."
+    },
+    {
+        "question": "What information does the 'freemem_before' and 'freemem_after' outputs provide?",
+        "answer": "The 'freemem_before' output provides the amount of available VRAM before executing the node operations, while the 'freemem_after' output provides the amount of available VRAM after executing the node operations, highlighting the effectiveness of memory management."
+    }
+]

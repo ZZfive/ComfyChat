@@ -1,0 +1,30 @@
+[
+    {
+        "question": "easy XYInputs: ControlNet节点的目的是什么?",
+        "answer": "easy XYInputs: ControlNet节点旨在简化控制网络参数的应用过程,使用户能够在一系列值上动态调整图像处理,基于控制网络的强度和位置。它提供了一个多功能工具,增强了微调图像生成或修改任务的能力。"
+    },
+    {
+        "question": "easy XYInputs: ControlNet节点需要哪些必需的输入参数?",
+        "answer": "easy XYInputs: ControlNet节点需要以下必需的输入参数:control_net_name、image、target_parameter、batch_count、first_strength、last_strength、first_start_percent、last_start_percent、first_end_percent、last_end_percent、strength、start_percent、end_percent。"
+    },
+    {
+        "question": "easy XYInputs: ControlNet节点中的control_net_name参数是什么?",
+        "answer": "control_net_name参数用于指定要应用的控制网络的名称,对于识别操作过程中要使用哪种控制网络配置至关重要。"
+    },
+    {
+        "question": "easy XYInputs: ControlNet节点中的target_parameter参数是什么?",
+        "answer": "target_parameter参数用于确定要变化的特定控制网络参数,如强度或位置,指导节点的处理和输出生成。"
+    },
+    {
+        "question": "easy XYInputs: ControlNet节点中的batch_count参数是什么?",
+        "answer": "batch_count参数用于定义要生成的变体数量,允许在单次操作中探索一系列控制网络调整。"
+    },
+    {
+        "question": "easy XYInputs: ControlNet节点如何处理不同种类的target_parameter参数?",
+        "answer": "对不同种类的target_parameter参数,easy XYInputs: ControlNet节点采用不同的处理方式。如果target_parameter为'strength',节点会根据提供的强度值范围和图片生成对应数量的控制网络调整结果,沿图像轴分布。对于'start_percent'和'end_percent',节点也会类似地根据提供的范围生成一系列值,用于探索和微调图像处理任务。"
+    },
+    {
+        "question": "easy XYInputs: ControlNet节点输出的数据类型是什么?",
+        "answer": "easy XYInputs: ControlNet节点输出的数据类型是X_Y,它代表基于指定的控制网络参数输出一系列值或配置,便于探索和微调图像处理任务。"
+    }
+]

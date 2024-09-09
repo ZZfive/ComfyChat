@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is AuraSR-ComfyUI?",
+        "answer": "AuraSR-ComfyUI is a ComfyUI implementation of the Aura-SR model, which also supports AuraSR v2."
+    },
+    {
+        "question": "What issue does AuraSR v1 model have with compressed images?",
+        "answer": "AuraSR v1 model is ultra sensitive to any kind of image compression, and when given such images, the output will probably be terrible."
+    },
+    {
+        "question": "How can you improve the results when using compressed images with AuraSR v1?",
+        "answer": "You can try using a compression artifact-removal model such as DeJPG_OmniSR before passing the image to AuraSR v1."
+    },
+    {
+        "question": "Does AuraSR v2 have the same issue with compressed images as v1?",
+        "answer": "No, AuraSR v2 seems to no longer suffer from the issue with compressed images that v1 has."
+    },
+    {
+        "question": "How do you install AuraSR-ComfyUI?",
+        "answer": "To install AuraSR-ComfyUI, create a folder named 'Aura-SR' inside '\\models', download the .safetensors and config.json files from HuggingFace, place them in '\\models\\Aura-SR', install with ComfyUI Manager, restart, then reload the browser's page."
+    },
+    {
+        "question": "What does the 'reapply_transparency' parameter do in AuraSR-ComfyUI?",
+        "answer": "When given a valid mask AND/OR a single RGBA image, the 'reapply_transparency' parameter will attempt to reapply the transparency of the original image to the upscaled one."
+    },
+    {
+        "question": "What's new in AuraSR-ComfyUI v3.0.0?",
+        "answer": "In AuraSR-ComfyUI v3.0.0, batch image input is now supported, and the ability to add an 'aura-sr' entry to extra_model_paths.yaml was added, allowing you to set a custom location for your AuraSR models."
+    }
+]

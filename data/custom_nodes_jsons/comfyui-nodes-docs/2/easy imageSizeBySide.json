@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the imageSizeBySide node in ComfyUI?",
+        "answer": "The imageSizeBySide node is used to classify images based on a specified side standard and provide a simplified resolution value according to the user's preference for the longer or shorter side of the image."
+    },
+    {
+        "question": "What are the required input types for the imageSizeBySide node?",
+        "answer": "The required input types for the imageSizeBySide node are 'image' (Comfy dtype: IMAGE, Python dtype: PIL.Image) and 'side' (Comfy dtype: COMBO, Python dtype: str)."
+    },
+    {
+        "question": "What does the 'side' parameter in the imageSizeBySide node determine?",
+        "answer": "The 'side' parameter determines the standard for resolution assessment, focusing either on the longest or shortest side of the image, which significantly influences the result of the node function."
+    },
+    {
+        "question": "What is the output type of the imageSizeBySide node?",
+        "answer": "The output type of the imageSizeBySide node is 'resolution' (Comfy dtype: INT, Python dtype: int), which provides a single integer value representing the dimension of the image based on the selected side parameter."
+    },
+    {
+        "question": "Is the imageSizeBySide node an output node?",
+        "answer": "Yes, the imageSizeBySide node is an output node."
+    },
+    {
+        "question": "What is the infra type for the imageSizeBySide node?",
+        "answer": "The infra type for the imageSizeBySide node is CPU."
+    },
+    {
+        "question": "In the source code, how does the imageSizeBySide node determine the resolution based on the 'side' parameter?",
+        "answer": "In the source code, the imageSizeBySide node determines the resolution by comparing the width and height of the image. If the 'side' parameter is set to 'Longest', the node returns the larger value between width and height. If the 'side' parameter is set to 'Shortest', the node returns the smaller value between width and height."
+    }
+]

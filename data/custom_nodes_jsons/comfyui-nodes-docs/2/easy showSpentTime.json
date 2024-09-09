@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the showSpentTime node in ComfyUI?",
+        "answer": "The showSpentTime node in ComfyUI is designed to provide feedback on the processing time of a workflow. It captures the time spent on inference and displays it in the UI, allowing users to gain insights into the efficiency of the system."
+    },
+    {
+        "question": "What is the significance of the pipe parameter in the showSpentTime node?",
+        "answer": "The pipe parameter is crucial in the showSpentTime node as it represents the data pipeline being processed. It contains all the information necessary for the node to function properly, including the loader settings that may contain the spent_time."
+    },
+    {
+        "question": "What happens if the spent_time parameter is not provided in the showSpentTime node?",
+        "answer": "If the spent_time parameter is not provided, the showSpentTime node will attempt to retrieve the spent time from the loader settings of the pipe."
+    },
+    {
+        "question": "What is the role of the unique_id parameter in the showSpentTime node?",
+        "answer": "The unique_id parameter is used to identify a specific node within the workflow. This is essential for associating the spent time with the correct node in the workflow."
+    },
+    {
+        "question": "What does the extra_pnginfo parameter contain in the showSpentTime node?",
+        "answer": "The extra_pnginfo parameter contains additional information about the image processing workflow, including the workflow itself. It is used to locate the specific node associated with the unique_id."
+    },
+    {
+        "question": "What is the output of the showSpentTime node?",
+        "answer": "The showSpentTime node outputs a dictionary containing text to be displayed in the user interface, providing information about the spent time. It also outputs an empty dictionary labeled 'result', indicating that the primary purpose of this node is to display information rather than pass data for further processing."
+    },
+    {
+        "question": "What infrastructure type does the showSpentTime node use?",
+        "answer": "The showSpentTime node uses the CPU infrastructure type."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the cleanGPUUsed node in ComfyUI?",
+        "answer": "The cleanGPUUsed node in ComfyUI aims to optimize computational resources by managing GPU memory. Its main function is to release any unused GPU memory to ensure subsequent operations can run efficiently without being interrupted due to insufficient memory."
+    },
+    {
+        "question": "What is the required input type for the cleanGPUUsed node?",
+        "answer": "The required input type for the cleanGPUUsed node is 'anything', which is a placeholder to ensure compatibility with various input types. It does not directly affect the execution of the node."
+    },
+    {
+        "question": "What is the purpose of the 'unique_id' optional input parameter in the cleanGPUUsed node?",
+        "answer": "The 'unique_id' optional input parameter, although not required, can be used to track the execution of the cleanGPUUsed node. It can help with logging and debugging processes."
+    },
+    {
+        "question": "What is the purpose of the 'extra_pnginfo' optional input parameter in the cleanGPUUsed node?",
+        "answer": "The 'extra_pnginfo' optional input parameter can store additional information related to the execution of the cleanGPUUsed node. While not critical to the node's operation, it may be useful for further analysis."
+    },
+    {
+        "question": "Does the cleanGPUUsed node output any values?",
+        "answer": "No, the cleanGPUUsed node does not output any values. It is an output node that performs the function of emptying the GPU cache if available."
+    },
+    {
+        "question": "What is the infra type for the cleanGPUUsed node?",
+        "answer": "The infra type for the cleanGPUUsed node is GPU, indicating that it operates on GPU resources."
+    },
+    {
+        "question": "How does the cleanGPUUsed node release unused GPU memory?",
+        "answer": "The cleanGPUUsed node releases unused GPU memory by calling the 'torch.cuda.empty_cache()' function if a GPU is available."
+    }
+]

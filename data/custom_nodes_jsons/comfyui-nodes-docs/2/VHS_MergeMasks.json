@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MergeMasks node in ComfyUI?",
+        "answer": "The MergeMasks node in ComfyUI is designed to merge two input masks into a single mask. It intelligently handles differences in mask sizes using specified merge strategies and scaling methods to ensure seamless integration of the masks."
+    },
+    {
+        "question": "What are the required inputs for the MergeMasks node?",
+        "answer": "The required inputs for the MergeMasks node are: mask_A (the first mask to be merged), mask_B (the second mask to be merged), merge_strategy (defines how the two masks should be merged), scale_method (specifies the method for scaling masks to match dimensions), and crop (indicates the cropping technique to be applied during the scaling process)."
+    },
+    {
+        "question": "What does the 'merge_strategy' input define in the MergeMasks node?",
+        "answer": "The 'merge_strategy' input in the MergeMasks node defines how the two masks should be merged, whether by matching one mask's dimensions to the other or by choosing the smaller or larger of the two."
+    },
+    {
+        "question": "What output does the MergeMasks node produce?",
+        "answer": "The MergeMasks node outputs a combined mask that represents the integrated structure of the input masks, along with a count of the merged masks, providing insight into the number of layers integrated in the final mask."
+    },
+    {
+        "question": "What is the Infra type for the MergeMasks node?",
+        "answer": "The Infra type for the MergeMasks node is CPU."
+    },
+    {
+        "question": "In the source code of MergeMasks, what happens if the dimensions of mask_A and mask_B are different?",
+        "answer": "If the dimensions of mask_A and mask_B are different, the code determines which mask to use as the template based on the merge_strategy. It then upscales one of the masks to match the dimensions of the template mask using the specified scale_method and crop technique."
+    },
+    {
+        "question": "How are the merged masks combined in the output of the MergeMasks node?",
+        "answer": "In the MergeMasks node, the merged masks are combined by concatenating them along dimension 0 using torch.cat after the necessary scaling and cropping operations have been performed."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ComfyUI中的VideoInfo节点的主要功能是什么？",
+        "answer": "VideoInfo节点的主要功能是从提供的视频信息字典中提取并返回关键的视频信息，例如帧率、帧数、时长和尺寸，适用于视频的源状态和加载后状态。"
+    },
+    {
+        "question": "VideoInfo节点的'video_info'输入参数的作用是什么？",
+        "answer": "video_info'参数是节点所需的视频元数据的来源，它包含了视频的详细属性，如帧率、帧数和尺寸，无论是在原始状态还是加载后状态。"
+    },
+    {
+        "question": "VideoInfo节点输出中的'source_fps'代表什么？",
+        "answer": "source_fps'输出提供原始视频源的每秒帧数，这是理解视频播放速度的一个基本参数。"
+    },
+    {
+        "question": "VideoInfo节点如何输出视频的宽度和高度信息？",
+        "answer": "VideoInfo节点通过'source_width'和'source_height'输出提供视频的宽度和高度，以像素为单位，这是视频分辨率的关键维度。"
+    },
+    {
+        "question": "VideoInfo节点的'loaded_fps'输出与'source_fps'输出有什么区别？",
+        "answer": "loaded_fps'输出表示视频加载后的每秒帧数，可能由于处理或播放调整与源视频不同，而'source_fps'则提供原始视频源的每秒帧数。"
+    },
+    {
+        "question": "VideoInfo节点如何处理和输出视频加载后的信息？",
+        "answer": "VideoInfo节点通过'loaded_frame_count'、'loaded_duration'、'loaded_width'和'loaded_height'输出分别反映了视频加载后的总帧数、持续时间、宽度和高度。"
+    },
+    {
+        "question": "使用VideoInfo节点需要注意哪些事项？",
+        "answer": "使用VideoInfo节点需要确保提供正确的'video_info'输入参数，该参数应包含视频的详细属性。同时，VideoInfo节点需要在CPU上运行。"
+    }
+]

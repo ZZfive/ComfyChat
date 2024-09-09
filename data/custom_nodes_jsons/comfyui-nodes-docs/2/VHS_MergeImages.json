@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the MergeImages node in ComfyUI?",
+        "answer": "The MergeImages node in ComfyUI is designed to merge two sets of images into a single array by applying scaling and cropping techniques based on a specified merge strategy. It is crucial for preparing a unified image dataset when further processing or visualization is needed."
+    },
+    {
+        "question": "What are the required input parameters for the MergeImages node?",
+        "answer": "The required input parameters for the MergeImages node are 'images_A' (the first set of images to merge), 'images_B' (the second set of images to merge), 'merge_strategy' (how to combine the two sets of images), 'scale_method' (the technique for adjusting image sizes to match dimensions), and 'crop' (how to crop the images after scaling to fit the merged image array)."
+    },
+    {
+        "question": "What does the 'merge_strategy' parameter determine in the MergeImages node?",
+        "answer": "The 'merge_strategy' parameter in the MergeImages node determines how to combine the two sets of images. It is crucial for resolving size mismatches and guides the scaling and cropping process to maintain visual consistency in the merged output."
+    },
+    {
+        "question": "What output does the MergeImages node produce?",
+        "answer": "The MergeImages node outputs a merged image array ('IMAGE') and a count ('count') of the total number of images in the merged array. The 'IMAGE' output contains visual data combined from 'images_A' and 'images_B' based on the specified merge strategy and scaling parameters, while 'count' is an integer value."
+    },
+    {
+        "question": "How does the MergeImages node handle size mismatches between 'images_A' and 'images_B'?",
+        "answer": "If there is a size mismatch between 'images_A' and 'images_B', the MergeImages node uses the 'merge_strategy' to determine which set of images to use as the template. It then upscales the other set of images to match the template's dimensions using the specified 'scale_method' and 'crop' parameters."
+    },
+    {
+        "question": "What is the infra type recommended for the MergeImages node?",
+        "answer": "The recommended infra type for the MergeImages node is CPU."
+    },
+    {
+        "question": "What is the function of the 'count' output in the MergeImages node?",
+        "answer": "The 'count' output in the MergeImages node provides the total number of images in the merged array. This integer value is significant for indexing and further processing steps that rely on knowing the exact number of images."
+    }
+]

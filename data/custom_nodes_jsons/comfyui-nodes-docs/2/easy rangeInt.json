@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the RangeInt class in ComfyUI?",
+        "answer": "The RangeInt class in ComfyUI encapsulates the logic for generating a series of integers based on user-defined parameters, making it convenient to create value ranges for various applications."
+    },
+    {
+        "question": "What are the required input parameters for the RangeInt class?",
+        "answer": "The required input parameters for the RangeInt class are range_mode, start, stop, step, num_steps, and end_mode."
+    },
+    {
+        "question": "How does the 'range_mode' parameter affect the output of RangeInt?",
+        "answer": "The 'range_mode' parameter determines the method of range generation, either through a fixed 'step' size or a specified 'num_steps'. This is crucial for defining the structure and distribution of the output range."
+    },
+    {
+        "question": "What does the 'end_mode' parameter specify in RangeInt?",
+        "answer": "The 'end_mode' parameter specifies whether the stop value in the range is inclusive or exclusive, affecting whether the upper limit is included in the generated sequence."
+    },
+    {
+        "question": "What are the output types of the RangeInt class?",
+        "answer": "The output types of the RangeInt class are 'range', which is a list of integers representing the sequence of values within the defined range, and 'range_sizes', which provides a count of integers in each individually generated range."
+    },
+    {
+        "question": "What is the infra type used by RangeInt?",
+        "answer": "The infra type used by RangeInt is CPU."
+    },
+    {
+        "question": "How does the RangeInt class generate the output based on the 'range_mode' parameter?",
+        "answer": "If 'range_mode' is set to 'step', RangeInt generates values using the range function with start, stop, and step parameters. If 'range_mode' is set to 'num_steps', it uses numpy's linspace function to generate evenly spaced values between start and stop."
+    }
+]

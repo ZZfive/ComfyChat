@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the poseEditor node in ComfyUI?",
+        "answer": "The purpose of the poseEditor node is to process and manipulate image data to extract and transform pose-related features from the input image."
+    },
+    {
+        "question": "What is the required input type for the poseEditor node?",
+        "answer": "The required input type for the poseEditor node is 'image', which defines the source image to be processed by the node."
+    },
+    {
+        "question": "What does the output type 'output_pose' represent in the poseEditor node?",
+        "answer": "The 'output_pose' represents the processed image data that has been transformed and prepared for further analysis, focusing on pose-related features extracted from the input image."
+    },
+    {
+        "question": "What infrastructure type does the poseEditor node use?",
+        "answer": "The poseEditor node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the poseEditor node handle input images starting with 'http'?",
+        "answer": "If the input image starts with 'http', the poseEditor node uses the 'util.get_image_from_uri' function from 'worker.components.utils' to retrieve the image."
+    },
+    {
+        "question": "What does the poseEditor node do with the input image before returning the output_pose?",
+        "answer": "The poseEditor node converts the input image to RGB format, normalizes the pixel values to be between 0 and 1, and converts the image to a PyTorch tensor."
+    },
+    {
+        "question": "What does the IS_CHANGED class method in the poseEditor node do?",
+        "answer": "The IS_CHANGED class method calculates the SHA256 hash of the input image file to determine if the image has changed."
+    }
+]

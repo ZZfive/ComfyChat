@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the imageRatio node in ComfyUI?",
+        "answer": "The imageRatio node in ComfyUI is designed to process an image and calculate the greatest common divisor (GCD) of its dimensions, thereby determining the aspect ratio in terms of integers and floating-point numbers."
+    },
+    {
+        "question": "What is the importance of the 'image' parameter for the imageRatio node?",
+        "answer": "The 'image' parameter is crucial for the imageRatio node because it is the primary input that is analyzed to calculate the aspect ratio. Without this input, the node cannot perform its intended function."
+    },
+    {
+        "question": "What does the 'result' output of the imageRatio node provide?",
+        "answer": "The 'result' output of the imageRatio node provides the calculated aspect ratio of the input image in both integer and floating-point formats. This clearly illustrates the relationship between the image dimensions, which is very useful for various image processing tasks."
+    },
+    {
+        "question": "What is the purpose of the 'ui' output in the imageRatio node?",
+        "answer": "The 'ui' output is a dictionary containing text information that provides a human-readable summary of the image aspect ratio. This output is useful for displaying results in a user interface, enhancing the user experience by presenting data in an easy-to-understand format."
+    },
+    {
+        "question": "What is the infra type required for the imageRatio node?",
+        "answer": "The infra type required for the imageRatio node is CPU."
+    },
+    {
+        "question": "How does the imageRatio node calculate the greatest common divisor (GCD) of the image dimensions?",
+        "answer": "The imageRatio node calculates the GCD of the image dimensions using a while loop that continuously updates the values of 'a' and 'b' until 'b' becomes 0. At that point, 'a' is the GCD."
+    },
+    {
+        "question": "What happens if the width or height of the image is None in the imageRatio node?",
+        "answer": "If the width or height of the image is None, the imageRatio node sets the width_ratio and height_ratio to 0 and returns a result tuple of (0, 0, 0.0, 0.0)."
+    }
+]

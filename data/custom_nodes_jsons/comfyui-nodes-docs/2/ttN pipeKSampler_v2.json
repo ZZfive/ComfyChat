@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ttN pipeKSampler_v2节点的主要功能是什么?",
+        "answer": "ttN pipeKSampler_v2节点专门用于高级图像采样,利用各种输入如模型配置、LoRA调整和可选参数来生成或修改图像。它集成了复杂的功能,如噪声管理、去噪控制和可选的模型增强,以定制图像生成过程,旨在根据给定的输入提供灵活和可定制的输出。"
+    },
+    {
+        "question": "ttN pipeKSampler_v2节点需要的必需输入参数有哪些?",
+        "answer": "ttN pipeKSampler_v2节点需要的必需输入参数有:pipe、lora_name、lora_strength、upscale_method、upscale_model_name、factor、rescale、percent、width、height、longer_side、crop、sampler_state、steps、cfg、sampler_name、scheduler、denoise、image_output和save_prefix。"
+    },
+    {
+        "question": "ttN pipeKSampler_v2节点的可选输入参数有哪些?",
+        "answer": "ttN pipeKSampler_v2节点的可选输入参数有:seed、optional_model、optional_positive、optional_negative、optional_latent、optional_vae、optional_clip、input_image_override和adv_xyPlot。"
+    },
+    {
+        "question": "ttN pipeKSampler_v2节点的输出类型是什么?",
+        "answer": "ttN pipeKSampler_v2节点的输出类型包括:PIPE_LINE、MODEL、CONDITIONING、LATENT、VAE、CLIP、IMAGE和INT。"
+    },
+    {
+        "question": "ttN pipeKSampler_v2节点如何处理Lora:",
+        "answer": "ttN pipeKSampler_v2节点在采样过程中,如果指定了Lora名称(lora_name),则会加载相应的Lora模型,并将其应用到当前的模型和裁剪器上,以调整模型的行为和输出。"
+    },
+    {
+        "question": "如何在ttN pipeKSampler_v2节点中调整图像的分辨率?",
+        "answer": "在ttN pipeKSampler_v2节点中,可以通过改变upscale_method、factor、rescale、percent、width、height和longer_side等参数来调整图像的分辨率。upscale_method参数可以选择不同的上采样方法,factor参数可以设置上采样的倍数,rescale参数可以设置是否按百分比或宽高比缩放,percent、width、height、longer_side参数可以分别设置缩放的百分比、宽度、高度和更长边的长度。"
+    },
+    {
+        "question": "ttN pipeKSampler_v2节点如何处理噪声和去噪?",
+        "answer": "ttN pipeKSampler_v2节点通过调整去噪系数(denoise)和采样器状态(sampler_state)来控制图片的噪声水平。在采样过程中,去噪系数决定了对噪声的去除强度,而采样器状态决定了采样过程的进行方式。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the VPScheduler node in ComfyUI?",
+        "answer": "The purpose of the VPScheduler node is to generate a continuous variance-preserving (VP) noise schedule for diffusion models, which plays a crucial role in the sampling process by determining the noise level at each step."
+    },
+    {
+        "question": "What does the 'steps' parameter define in the VPScheduler node?",
+        "answer": "The 'steps' parameter in the VPScheduler node defines the number of steps in the noise schedule. It is a fundamental aspect of the sampling process as it determines the granularity of the noise level applied at each step, directly affecting the quality of the final output."
+    },
+    {
+        "question": "How does the 'beta_d' parameter influence the noise schedule in the VPScheduler node?",
+        "answer": "The 'beta_d' parameter in the VPScheduler node controls the rate of noise increase in the schedule. It is important because it affects the distribution of noise in the steps, which in turn impacts the convergence and detail of the generated samples."
+    },
+    {
+        "question": "What is the significance of the 'beta_min' parameter in the VPScheduler node?",
+        "answer": "The 'beta_min' parameter in the VPScheduler node sets the minimum level of noise in the schedule. It is important because it ensures that the initial steps of the sampling process have sufficient noise to promote the generation of diverse and detailed outputs."
+    },
+    {
+        "question": "What role does the 'eps_s' parameter play in the VPScheduler node?",
+        "answer": "The 'eps_s' parameter in the VPScheduler node specifies the ending value of the noise schedule. It is a key factor in determining the final noise level applied during the sampling process, which is crucial for the subtle details and overall quality of the generated samples."
+    },
+    {
+        "question": "What does the 'sigmas' output represent in the VPScheduler node?",
+        "answer": "The 'sigmas' output in the VPScheduler node represents the calculated noise levels for each step in the VP noise schedule. It is important because it forms the basis of the sampling process, guiding the generation of the final output."
+    },
+    {
+        "question": "On what infrastructure type does the VPScheduler node run?",
+        "answer": "The VPScheduler node runs on the CPU infrastructure type."
+    }
+]

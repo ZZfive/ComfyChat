@@ -1,0 +1,34 @@
+[
+    {
+        "question": "XYImage节点的主要目的是什么？",
+        "answer": "XYImage节点设计用于复杂的图像生成和操作任务，包括图像分割、翻转和批量堆叠。它支持在不同轴上添加标签，并能够在多维（启用z轴）环境中处理图像，使其适用于各种图像处理和可视化需求。"
+    },
+    {
+        "question": "XYImage节点的必需输入参数有哪些？",
+        "answer": "XYImage节点的必需输入参数包括：images（要处理的图像列表）、splits（定义如何分割图像）、flip_axis（指定应沿哪些轴翻转图像）、batch_stack_mode（决定如何将图像批量堆叠在一起）和z_enabled（指示是否启用z轴进行图像处理）。"
+    },
+    {
+        "question": "XYImage节点的可选输入参数有哪些？",
+        "answer": "XYImage节点的可选输入参数包括：x_main_label（x轴的主要标签）、y_main_label（y轴的主要标签）、z_main_label（z轴的主要标签）、x_labels（x轴上每个段的标签）、y_labels（y轴上每个段的标签）和z_labels（z轴上每个段的标签）。"
+    },
+    {
+        "question": "XYImage节点的输出类型是什么？",
+        "answer": "XYImage节点的输出类型是Image，它表示应用分割、翻转和堆叠等操作后的处理图像。这个输出很重要，因为它代表了节点图像操作能力的集大成者，可以进行进一步使用或分析。"
+    },
+    {
+        "question": "当z_enabled设置为True时，XYImage节点需要满足什么条件？",
+        "answer": "当z_enabled设置为True时，XYImage节点要求必须提供x_labels和y_labels。"
+    },
+    {
+        "question": "XYImage节点如何处理图像的翻转？",
+        "answer": "XYImage节点通过flip_axis参数指定沿哪些轴翻转图像。这个参数允许调整图像方向，增强图像展示和分析的灵活性。"
+    },
+    {
+        "question": "XYImage节点如何处理图像的堆叠？",
+        "answer": "XYImage节点通过batch_stack_mode参数决定如何将图像批量堆叠在一起。这个参数对定义组合图像输出的整体结构和布局至关重要。"
+    },
+    {
+        "question": "XYImage节点如何处理标签？",
+        "answer": "XYImage节点允许为不同轴（x、y、z）添加主要标签和每个段的标签。这些标签参数有助于增强图像的可解释性和分析理解。"
+    }
+]

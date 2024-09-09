@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the imagePixelPerfect node in ComfyUI?",
+        "answer": "The imagePixelPerfect node in ComfyUI aims to optimize image resolution by calculating the ideal number of pixels while maintaining the image's aspect ratio within specified dimensions."
+    },
+    {
+        "question": "What is the significance of the 'image' parameter in the imagePixelPerfect node?",
+        "answer": "The 'image' parameter is crucial in the imagePixelPerfect node because it serves as the source for the node's operations. It influences the entire process by determining the initial size and quality of the image that the node will process."
+    },
+    {
+        "question": "How does the 'resize_mode' parameter affect the image processing in the imagePixelPerfect node?",
+        "answer": "The 'resize_mode' parameter in the imagePixelPerfect node affects how the image is resized, either by maximizing or minimizing the aspect ratio to fit the given constraints. This is important for achieving the desired visual result after resizing."
+    },
+    {
+        "question": "What does the 'resolution' output provide in the imagePixelPerfect node?",
+        "answer": "The 'resolution' output in the imagePixelPerfect node provides the calculated ideal number of pixels, which is the result of the node's processing. It is important because it determines the final size of the image after scaling."
+    },
+    {
+        "question": "What infrastructure type does the imagePixelPerfect node use?",
+        "answer": "The imagePixelPerfect node uses the CPU infrastructure type."
+    },
+    {
+        "question": "How does the imagePixelPerfect node calculate the ideal number of pixels?",
+        "answer": "The imagePixelPerfect node calculates the ideal number of pixels by first determining the scaling factors k0 and k1 based on the height and width of the image. It then uses these factors, along with the specified resize mode, to estimate the ideal number of pixels, which is either the minimum or maximum of the scaling factors multiplied by the smaller dimension of the original image."
+    },
+    {
+        "question": "What is the return type of the 'execute' function in the imagePixelPerfect node?",
+        "answer": "The 'execute' function in the imagePixelPerfect node returns a dictionary containing the UI text and the calculated ideal number of pixels as the result."
+    }
+]

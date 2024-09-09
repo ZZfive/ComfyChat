@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the primary function of the VAEEncodeForInpaint node in ComfyUI?",
+        "answer": "The primary function of the VAEEncodeForInpaint node is to convert image pixels into a latent space representation suitable for inpainting tasks using a Variational Autoencoder (VAE)."
+    },
+    {
+        "question": "What are the required inputs for the VAEEncodeForInpaint node?",
+        "answer": "The required inputs for the VAEEncodeForInpaint node are 'pixels' (image data), 'vae' (Variational Autoencoder model), and 'mask' (defines the area to be inpainted)."
+    },
+    {
+        "question": "What does the 'grow_mask_by' parameter in the VAEEncodeForInpaint node do?",
+        "answer": "The 'grow_mask_by' parameter allows the mask area to be expanded by a specified number of pixels, ensuring a smooth and well-defined transition between the masked and unmasked areas."
+    },
+    {
+        "question": "What are the output types of the VAEEncodeForInpaint node?",
+        "answer": "The output types of the VAEEncodeForInpaint node are 'samples' (latent space representation of the input image pixels) and 'noise_mask' (a binary tensor indicating the masked area ready for inpainting)."
+    },
+    {
+        "question": "How does the VAEEncodeForInpaint node ensure that only the specified area is modified during the inpainting process?",
+        "answer": "The VAEEncodeForInpaint node uses the input 'mask' to identify which parts of the 'pixels' should be masked during the encoding process, ensuring that only the specified area is converted to the latent space."
+    },
+    {
+        "question": "What is the purpose of the 'vae' input in the VAEEncodeForInpaint node?",
+        "answer": "The 'vae' input represents the Variational Autoencoder model used by the node to encode the image data. The choice of VAE architecture can significantly impact the node's performance and the encoded data's suitability for inpainting tasks."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the VAEEncodeForInpaint node?",
+        "answer": "The recommended infrastructure type for running the VAEEncodeForInpaint node is GPU."
+    }
+]

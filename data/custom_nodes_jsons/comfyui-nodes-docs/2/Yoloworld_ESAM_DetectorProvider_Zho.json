@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of Yoloworld_ESAM_DetectorProvider_Zho?",
+        "answer": "Yoloworld_ESAM_DetectorProvider_Zho使用基于YOLO的模型在图像中检测指定对象，并可选择使用ESAM进行对象分割。其目的是提供准确的边界框和分割检测，增强对图像中视觉内容的理解。"
+    },
+    {
+        "question": "What are the required input types for Yoloworld_ESAM_DetectorProvider_Zho?",
+        "answer": "Yoloworld_ESAM_DetectorProvider_Zho的必需输入类型包括：yolo_world_model（定义了用于图像中对象识别的神经网络架构）、categories（指导检测过程专注于相关类别）、iou_threshold（影响检测的精确度）和with_class_agnostic_nms（减少重叠检测和提高检测结果的准确性）。"
+    },
+    {
+        "question": "What is the function of the esam_model_opt input parameter?",
+        "answer": "esam_model_opt是Yoloworld_ESAM_DetectorProvider_Zho的可选输入参数。提供ESAM模型选项时，通过启用检测到的对象的分割，增强了检测过程，提供了对图像内容更详细的分析。"
+    },
+    {
+        "question": "What output types does Yoloworld_ESAM_DetectorProvider_Zho provide?",
+        "answer": "Yoloworld_ESAM_DetectorProvider_Zho提供了BBOX_DETECTOR输出类型，给出检测到的对象的边界框；以及SEGM_DETECTOR输出类型，提供检测到的对象的分割掩码。"
+    },
+    {
+        "question": "What is the role of iou_threshold in Yoloworld_ESAM_DetectorProvider_Zho?",
+        "answer": "iou_threshold是一个关键参数，通过控制预测边界框与真实边界框之间的重叠标准，影响Yoloworld_ESAM_DetectorProvider_Zho检测的精确度。"
+    },
+    {
+        "question": "What is the impact of setting with_class_agnostic_nms to True?",
+        "answer": "在Yoloworld_ESAM_DetectorProvider_Zho中，将with_class_agnostic_nms设置为True会启用类别不可知的非极大值抑制，这对于减少重叠检测和提高检测结果的准确性很重要。"
+    },
+    {
+        "question": "Does Yoloworld_ESAM_DetectorProvider_Zho require a GPU for execution?",
+        "answer": "是的，Yoloworld_ESAM_DetectorProvider_Zho需要GPU来执行。"
+    }
+]

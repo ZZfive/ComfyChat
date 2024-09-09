@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WLSH_VAE_Encode_For_Inpaint_Padding node in ComfyUI?",
+        "answer": "The WLSH_VAE_Encode_For_Inpaint_Padding node in ComfyUI is used to encode image data using a Variational Autoencoder (VAE) model for image inpainting tasks while considering padding."
+    },
+    {
+        "question": "What are the required input types for the WLSH_VAE_Encode_For_Inpaint_Padding node?",
+        "answer": "The required input types for the WLSH_VAE_Encode_For_Inpaint_Padding node are 'pixels' (image pixels), 'vae' (VAE model), and 'mask' (mask defining the region of interest for inpainting)."
+    },
+    {
+        "question": "What is the purpose of the 'mask_padding' parameter in the WLSH_VAE_Encode_For_Inpaint_Padding node?",
+        "answer": "The 'mask_padding' parameter in the WLSH_VAE_Encode_For_Inpaint_Padding node defines the size of the padding around the mask for erosion operation, which helps refine the noise mask used in the encoding process."
+    },
+    {
+        "question": "What are the output types of the WLSH_VAE_Encode_For_Inpaint_Padding node?",
+        "answer": "The output types of the WLSH_VAE_Encode_For_Inpaint_Padding node are 'samples' (encoded latent representation of the input image) and 'noise_mask' (provides information about the masked region in the image)."
+    },
+    {
+        "question": "What is the recommended infrastructure type for running the WLSH_VAE_Encode_For_Inpaint_Padding node?",
+        "answer": "The recommended infrastructure type for running the WLSH_VAE_Encode_For_Inpaint_Padding node is GPU."
+    },
+    {
+        "question": "How does the WLSH_VAE_Encode_For_Inpaint_Padding node preprocess the input image and mask?",
+        "answer": "The WLSH_VAE_Encode_For_Inpaint_Padding node resizes the input image and mask based on the model's input requirements, interpolates the mask, and adjusts the pixel values of the image based on the mask."
+    },
+    {
+        "question": "What operations are performed on the mask to create the noise mask in the WLSH_VAE_Encode_For_Inpaint_Padding node?",
+        "answer": "In the WLSH_VAE_Encode_For_Inpaint_Padding node, the mask undergoes erosion using a kernel tensor, and the resulting mask_erosion is clamped between 0 and 1 to create the noise mask."
+    }
+]
