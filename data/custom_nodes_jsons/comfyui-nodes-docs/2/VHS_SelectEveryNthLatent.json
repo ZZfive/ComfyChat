@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SelectEveryNthLatent node in ComfyUI?",
+        "answer": "The purpose of the SelectEveryNthLatent node is to filter a series of latent representations, keeping every nth element as specified by the user. It aims to reduce data dimensionality while preserving key information, which is crucial for subsequent processing steps in video analysis or generation tasks."
+    },
+    {
+        "question": "What are the required input types for the SelectEveryNthLatent node?",
+        "answer": "The required input types for the SelectEveryNthLatent node are 'latents' (Comfy dtype: LATENT, Python dtype: torch.Tensor) and 'select_every_nth' (Comfy dtype: INT, Python dtype: int)."
+    },
+    {
+        "question": "What does the 'latents' input parameter represent in the SelectEveryNthLatent node?",
+        "answer": "The 'latents' input parameter represents the input latent representations that correspond to a series of compressed video frames or other visual data that need to be processed. This parameter is essential because it forms the basis of the node's operation, determining the data to be filtered and subsequently used in downstream tasks."
+    },
+    {
+        "question": "How does the 'select_every_nth' parameter affect the output of the SelectEveryNthLatent node?",
+        "answer": "The 'select_every_nth' parameter determines the interval at which latent representations are selected from the input sequence. It is a key factor in deciding the output density and the computational efficiency of the node, as it directly influences the number of elements processed."
+    },
+    {
+        "question": "What are the output types of the SelectEveryNthLatent node?",
+        "answer": "The output types of the SelectEveryNthLatent node are 'LATENT' (Comfy dtype: LATENT, Python dtype: torch.Tensor) and 'count' (Comfy dtype: INT, Python dtype: int)."
+    },
+    {
+        "question": "What does the 'LATENT' output contain in the SelectEveryNthLatent node?",
+        "answer": "The 'LATENT' output contains a sequence of compressed latent representations with every nth element retained from the input. This filtered data can be used for further analysis or generating lower-resolution videos while maintaining key visual information."
+    },
+    {
+        "question": "What does the 'count' output indicate in the SelectEveryNthLatent node?",
+        "answer": "The 'count' output indicates the number of latent representations retained after the selection process. It provides a measure for understanding the reduction in data dimensionality and can be used to adjust subsequent processing steps."
+    }
+]

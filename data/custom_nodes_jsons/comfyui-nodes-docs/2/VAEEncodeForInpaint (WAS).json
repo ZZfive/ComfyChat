@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WAS_VAEEncodeForInpaint node in ComfyUI?",
+        "answer": "The WAS_VAEEncodeForInpaint node in ComfyUI is designed to encode image pixels into a latent space representation suitable for image inpainting tasks. It utilizes a pre-trained VAE (Variational Autoencoder) to achieve this conversion while also considering a mask that defines the inpainting region."
+    },
+    {
+        "question": "What are the required input types for the WAS_VAEEncodeForInpaint node?",
+        "answer": "The required input types for the WAS_VAEEncodeForInpaint node are 'pixels' (the raw image data), 'vae' (the pre-trained Variational Autoencoder model), and 'mask' (a binary mask identifying the region to be inpainted)."
+    },
+    {
+        "question": "What does the 'mask_offset' parameter do in the WAS_VAEEncodeForInpaint node?",
+        "answer": "The 'mask_offset' parameter in the WAS_VAEEncodeForInpaint node allows for the modification of the mask's boundaries, which is useful for controlling the range of inpainting. Positive values expand the mask, while negative values shrink it."
+    },
+    {
+        "question": "What are the output types of the WAS_VAEEncodeForInpaint node?",
+        "answer": "The output types of the WAS_VAEEncodeForInpaint node are 'samples' (the encoded latent space representation of the input image) and 'noise_mask' (a binary mask indicating the region targeted for inpainting)."
+    },
+    {
+        "question": "How does the WAS_VAEEncodeForInpaint node prepare the input data for the VAE?",
+        "answer": "The WAS_VAEEncodeForInpaint node prepares the input data for the VAE by adjusting the image and mask dimensions, modifying the mask based on the 'mask_offset' parameter, and applying the mask to the image pixels."
+    },
+    {
+        "question": "What is the role of the 'vae' input in the WAS_VAEEncodeForInpaint node?",
+        "answer": "The 'vae' input in the WAS_VAEEncodeForInpaint node represents the pre-trained Variational Autoencoder model used to encode the image data into the latent space. The choice of VAE model significantly impacts the encoding process and the quality of the latent representation."
+    },
+    {
+        "question": "What infrastructure type is recommended for the WAS_VAEEncodeForInpaint node?",
+        "answer": "The recommended infrastructure type for the WAS_VAEEncodeForInpaint node is GPU."
+    }
+]

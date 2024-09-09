@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SplitImages node in ComfyUI?",
+        "answer": "The SplitImages node in ComfyUI is designed to split a series of images into two different groups based on a specified index. It plays a key role in image processing workflows where splitting data is crucial for subsequent operations such as analysis, sorting, or applying special treatments to different subsets."
+    },
+    {
+        "question": "What are the required input types for the SplitImages node?",
+        "answer": "The required input types for the SplitImages node include 'images', which is the collection of image data that the node will process, and 'split_index', which defines the position where the input images are split into two groups."
+    },
+    {
+        "question": "What does the 'split_index' parameter in the SplitImages node define?",
+        "answer": "The 'split_index' parameter in the SplitImages node defines the position where the input images are split into two groups. It is crucial for determining the size of each group and thus influences the result of the node's operation."
+    },
+    {
+        "question": "What are the output types of the SplitImages node?",
+        "answer": "The output types of the SplitImages node include 'IMAGE_A' and 'IMAGE_B', which contain the first and second group of images after the split, respectively, and 'A_count' and 'B_count', which provide the count of images in each group."
+    },
+    {
+        "question": "What does the 'A_count' output in the SplitImages node represent?",
+        "answer": "The 'A_count' output in the SplitImages node represents the number of images in the first group after the split. This count is important for tracking the distribution of images or for downstream processing that requires knowledge of the group size."
+    },
+    {
+        "question": "How does the SplitImages node split the images?",
+        "answer": "The SplitImages node splits the images by dividing the input 'images' tensor into two groups. The first group 'group_a' contains images from the start up to the 'split_index', and the second group 'group_b' contains the remaining images after the 'split_index'."
+    },
+    {
+        "question": "What infra type does the SplitImages node run on?",
+        "answer": "The SplitImages node runs on the CPU infra type."
+    }
+]

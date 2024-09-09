@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ComfyUI中的XY Input: Control Net节点的主要作用是什么？",
+        "answer": "XY Input: Control Net节点旨在生成和操作用于控制网络的XY输入数据，方便探索不同控制参数在图像批次中的变化。"
+    },
+    {
+        "question": "XY Input: Control Net节点支持的输入图像格式是什么？",
+        "answer": "XY Input: Control Net节点的图像输入格式为Comfy dtype的IMAGE类型，Python dtype为object。"
+    },
+    {
+        "question": "能否在XY Input: Control Net节点中设置多个控制网络效果的层叠？",
+        "answer": "可以，XY Input: Control Net节点支持可选的cnet_stack输入，以实现额外控制网络配置的堆栈。"
+    },
+    {
+        "question": "XY Input: Control Net节点中控制网络参数的变化范围是怎么确定的？",
+        "answer": "XY Input: Control Net节点通过first和last前缀的参数来设定控制网络参数的变化范围，如first_strength和last_strength。"
+    },
+    {
+        "question": "在使用XY Input: Control Net节点时，如何指定要变化的特定控制网络参数？",
+        "answer": "通过设置target_parameter输入来指定要在批次中变化的特定控制网络参数，如强度、起始百分比或结束百分比。"
+    },
+    {
+        "question": "XY Input: Control Net节点支持的最小和最大batch_count值是多少？",
+        "answer": "XY Input: Control Net节点的batch_count的最小值为0，最大值由XYPLOT_LIM常量定义。"
+    },
+    {
+        "question": "XY Input: Control Net节点的输出类型是什么？",
+        "answer": "XY Input: Control Net节点输出X或Y轴值，Comfy dtype为XY类型，Python dtype为tuple。"
+    }
+]

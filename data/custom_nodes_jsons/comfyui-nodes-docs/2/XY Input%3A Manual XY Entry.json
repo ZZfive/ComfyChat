@@ -1,0 +1,29 @@
+[
+    {
+        "question": "What is the purpose of the XY Input: Manual XY Entry node in ComfyUI?",
+        "answer": "The XY Input: Manual XY Entry node in ComfyUI is designed to allow users to manually input X and Y values for plotting purposes, enabling them to directly define and manipulate XY data points for customizing the visualization of XY charts."
+    },
+    {
+        "question": "What are the required input types for the XY Input: Manual XY Entry node?",
+        "answer": "The required input types for the XY Input: Manual XY Entry node are 'plot_type', which specifies the type of chart to be generated and influences the interpretation and visualization of the XY data, and 'plot_value', which determines the specific values used for plotting, directly affecting the appearance of the chart and the representation of the data."
+    },
+    {
+        "question": "What output type does the XY Input: Manual XY Entry node produce?",
+        "answer": "The XY Input: Manual XY Entry node outputs either an X value or a Y value, depending on the node's processing, which is suitable for further visualization or analysis."
+    },
+    {
+        "question": "How does the 'validate_value' function in the XY Input: Manual XY Entry node work?",
+        "answer": "The 'validate_value' function in the XY Input: Manual XY Entry node validates a given value based on its corresponding value type and predefined bounds. It checks if the value meets the criteria for specific types such as 'Seeds++ Batch', 'Steps', 'StartStep', 'EndStep', 'CFG Scale', 'Sampler', 'Scheduler', 'Denoise', 'VAE', 'Checkpoint', 'Clip Skip', and 'LoRA', and returns the validated value or None if the validation fails."
+    },
+    {
+        "question": "When the 'plot_type' is 'Seeds++ Batch', the XY Input: Manual XY Entry node sets up the structure for 'Seeds++ Batch' by converting the single validated value into a range of values from 0 to the given batch count."
+    },
+    {
+        "question": "How does the XY Input: Manual XY Entry node handle the 'LoRA' plot type?",
+        "answer": "For the 'LoRA' plot type, the XY Input: Manual XY Entry node nests the validated 'LoRA' values in another array to reflect LoRA stack changes."
+    },
+    {
+        "question": "What happens when the 'plot_type' is 'Nothing' in the XY Input: Manual XY Entry node?",
+        "answer": "When the 'plot_type' is 'Nothing', the XY Input: Manual XY Entry node cleans the X/Y values by setting the 'plot_value' to an empty string."
+    }
+]

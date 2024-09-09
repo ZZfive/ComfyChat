@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SplitMasks node in ComfyUI?",
+        "answer": "The SplitMasks node in ComfyUI is designed to split a given mask tensor into two different groups based on a specified index. It is crucial for applications that require manipulation of video masks, such as object tracking or segmentation tasks."
+    },
+    {
+        "question": "What is the 'mask' parameter in the SplitMasks node?",
+        "answer": "The 'mask' parameter is the main input of the SplitMasks node, representing the video mask to be split. It is essential as it determines the data to be segmented. The structure and content of the mask directly affect the operation of the node and the segmentation result."
+    },
+    {
+        "question": "What does the 'split_index' parameter define in the SplitMasks node?",
+        "answer": "The 'split_index' parameter defines the position where the input mask will be split. It plays a key role in determining the size of each resulting group in the splitting operation. The effectiveness of the split largely depends on the appropriate selection of this index."
+    },
+    {
+        "question": "What does the output 'MASK_A' represent in the SplitMasks node?",
+        "answer": "The output 'MASK_A' represents the first group of the split mask. It is important as it allows for separate processing or analysis of the initial segment of the video mask."
+    },
+    {
+        "question": "What information does the output 'A_count' provide in the SplitMasks node?",
+        "answer": "The output 'A_count' provides the count of elements in the first group of the split mask, giving an understanding of the size of the initial segment."
+    },
+    {
+        "question": "What does the output 'MASK_B' correspond to in the SplitMasks node?",
+        "answer": "The output 'MASK_B' corresponds to the second group of the split mask, allowing for different processing or examination of the subsequent segment of the video mask."
+    },
+    {
+        "question": "What does the output 'B_count' indicate in the SplitMasks node?",
+        "answer": "The output 'B_count' indicates the number of elements in the second group of the split mask, highlighting the size of the latter segment."
+    }
+]

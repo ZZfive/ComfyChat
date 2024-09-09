@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the VAEDecodeBatched node in ComfyUI?",
+        "answer": "The VAEDecodeBatched node in ComfyUI is designed to efficiently reconstruct images from latent samples using a Variational Autoencoder (VAE) model. It processes multiple samples in batches, which is especially useful for large datasets or when computational resources are limited."
+    },
+    {
+        "question": "What are the required input types for the VAEDecodeBatched node?",
+        "answer": "The required input types for the VAEDecodeBatched node are 'samples' (Comfy dtype: LATENT, Python dtype: torch.Tensor) and 'vae' (Comfy dtype: VAE, Python dtype: torch.nn.Module)."
+    },
+    {
+        "question": "What does the 'samples' parameter represent in the VAEDecodeBatched node?",
+        "answer": "The 'samples' parameter in the VAEDecodeBatched node contains the latent representations that need to be decoded into images. The quality and structure of the latent samples directly affect the output images produced by the node."
+    },
+    {
+        "question": "What does the 'vae' parameter specify in the VAEDecodeBatched node?",
+        "answer": "The 'vae' parameter in the VAEDecodeBatched node specifies the Variational Autoencoder model used to decode the latent samples. The architecture and trained weights of the model are crucial for generating high-quality reconstructed images."
+    },
+    {
+        "question": "What is the optional input type for the VAEDecodeBatched node?",
+        "answer": "The optional input type for the VAEDecodeBatched node is 'per_batch' (Comfy dtype: INT, Python dtype: int), which determines the number of samples processed in each batch during the decoding process."
+    },
+    {
+        "question": "What is the output type of the VAEDecodeBatched node?",
+        "answer": "The output type of the VAEDecodeBatched node is 'decoded_images' (Comfy dtype: IMAGE, Python dtype: torch.Tensor), which is a tensor containing the reconstructed images obtained from decoding the input latent samples."
+    },
+    {
+        "question": "What infrastructure type is recommended for running the VAEDecodeBatched node?",
+        "answer": "The recommended infrastructure type for running the VAEDecodeBatched node is GPU, as mentioned in the usage tips."
+    }
+]

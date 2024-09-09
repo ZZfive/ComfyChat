@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of GetImageCount node in ComfyUI?",
+        "answer": "The GetImageCount node in ComfyUI is designed to efficiently determine the total number of images present in a given dataset. It is a critical component in video processing workflows, offering a straightforward method to understand the size of the dataset without delving into the complexities of individual image data."
+    },
+    {
+        "question": "What is the input type required for the GetImageCount node?",
+        "answer": "The required input type for the GetImageCount node is 'images', which is the input dataset containing image data. It is the fundamental element of the node's operation as it directly influences the count result. The node processes this input to determine the total number of images, which is crucial for various downstream tasks such as analysis, indexing, and resource allocation."
+    },
+    {
+        "question": "What Comfy dtype and Python dtype does the 'images' input expect?",
+        "answer": "The 'images' input expects a Comfy dtype of IMAGE and a Python dtype of torch.Tensor."
+    },
+    {
+        "question": "What is the output type of the GetImageCount node?",
+        "answer": "The output type of the GetImageCount node is 'count', which provides the total number of images processed by the node. It is a single integer value representing the scale of the dataset in terms of the number of images."
+    },
+    {
+        "question": "What Comfy dtype and Python dtype does the 'count' output return?",
+        "answer": "The 'count' output returns a Comfy dtype of INT and a Python dtype of int."
+    },
+    {
+        "question": "What is the infra type recommended for the GetImageCount node?",
+        "answer": "The recommended infra type for the GetImageCount node is CPU."
+    },
+    {
+        "question": "What is the source code for the GetImageCount class?",
+        "answer": "The source code for the GetImageCount class is as follows: ```class GetImageCount: @classmethod def INPUT_TYPES(s): return {'required': {'images': ('IMAGE',)}} CATEGORY = 'Video Helper Suite 🎥，存于🅥🅗🅢/image' RETURN_TYPES = ('INT',) RETURN_NAMES = ('count',) FUNCTION = 'count_input' def count_input(self, images: Tensor): return (images.size(0),)```"
+    }
+]

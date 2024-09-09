@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ttN_pipeKSamplerAdvanced_v2 node in ComfyUI?",
+        "answer": "The ttN_pipeKSamplerAdvanced_v2 node in ComfyUI is designed to enhance the sampling process in the generation model by introducing advanced noise management and image quality improvement techniques. It utilizes various parameters to fine-tune the generation process, aiming to produce higher quality outputs and have greater control over sampling dynamics."
+    },
+    {
+        "question": "What are the required input types for the ttN_pipeKSamplerAdvanced_v2 node?",
+        "answer": "The required input types for the ttN_pipeKSamplerAdvanced_v2 node include pipe, lora_name, lora_strength, upscale_method, upscale_model_name, factor, rescale, percent, width, height, longer_side, crop, sampler_state, add_noise, noise, steps, start_at_step, end_at_step, cfg, sampler_name, scheduler, return_with_leftover_noise, image_output, and save_prefix."
+    },
+    {
+        "question": "What are the optional input types for the ttN_pipeKSamplerAdvanced_v2 node?",
+        "answer": "The optional input types for the ttN_pipeKSamplerAdvanced_v2 node include noise_seed, optional_model, optional_positive, optional_negative, optional_latent, optional_vae, optional_clip, input_image_override, and adv_xyPlot."
+    },
+    {
+        "question": "What output types does the ttN_pipeKSamplerAdvanced_v2 node produce?",
+        "answer": "The ttN_pipeKSamplerAdvanced_v2 node produces output types such as pipe, model, positive, negative, latent, vae, clip, image, and seed."
+    },
+    {
+        "question": "How does the ttN_pipeKSamplerAdvanced_v2 node handle noise management?",
+        "answer": "The ttN_pipeKSamplerAdvanced_v2 node allows for small variations in the initial noise by using a weight 'x' and two seeds. It generates the noise based on 'random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)'."
+    },
+    {
+        "question": "What is the infra type required for the ttN_pipeKSamplerAdvanced_v2 node?",
+        "answer": "The infra type required for the ttN_pipeKSamplerAdvanced_v2 node is GPU."
+    },
+    {
+        "question": "What is the purpose of the force_full_denoise parameter in the ttN_pipeKSamplerAdvanced_v2 node?",
+        "answer": "The force_full_denoise parameter in the ttN_pipeKSamplerAdvanced_v2 node is set to True by default. If the return_with_leftover_noise option is enabled, force_full_denoise is set to False."
+    }
+]

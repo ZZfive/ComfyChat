@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ipadapterApplyEncoder node in ComfyUI?",
+        "answer": "The ipadapterApplyEncoder node is designed to efficiently process and adapt image data for encoding purposes within models. It facilitates the integration of various image inputs and presets, applying selected encoding methods to generate embedding vectors that can be used for further analysis or model training."
+    },
+    {
+        "question": "What are the required inputs for the ipadapterApplyEncoder node?",
+        "answer": "The required inputs for the ipadapterApplyEncoder node are: model (the machine learning model that will process input images and generate embedding vectors), image1 (the raw data that the model will process to extract meaningful features), preset (determines the specific settings and parameters of the model to be used), and num_embeds (the number of image embedding vectors to be generated)."
+    },
+    {
+        "question": "What does the 'combine_method' parameter in the ipadapterApplyEncoder node do?",
+        "answer": "The 'combine_method' parameter determines how individual embedding vectors are aggregated. By applying operations such as concatenation, addition, or averaging, it can significantly alter the resulting embedding vectors."
+    },
+    {
+        "question": "What are the output types of the ipadapterApplyEncoder node?",
+        "answer": "The output types of the ipadapterApplyEncoder node are: model (an updated version of the input model, now equipped with the processed embedding vectors), ipadapter (the encoding portion of the node's operation, encapsulating the processed embedding vectors), pos_embed (represents the encoded features of input images that are consistent with desired results), and neg_embed (corresponds to input images that do not meet desired standards)."
+    },
+    {
+        "question": "What is the role of 'pos_embed' in the ipadapterApplyEncoder node?",
+        "answer": "The 'pos_embed' in the ipadapterApplyEncoder node represents the encoded features of input images that are consistent with desired results. They play an important role in guiding the model's learning process and improving its predictions."
+    },
+    {
+        "question": "What is the role of 'neg_embed' in the ipadapterApplyEncoder node?",
+        "answer": "The 'neg_embed' in the ipadapterApplyEncoder node corresponds to input images that do not meet desired standards. They help the model distinguish between relevant and irrelevant features, improving its ability to make accurate judgments."
+    },
+    {
+        "question": "What is the infra type recommended for the ipadapterApplyEncoder node?",
+        "answer": "The recommended infra type for the ipadapterApplyEncoder node is CPU."
+    }
+]

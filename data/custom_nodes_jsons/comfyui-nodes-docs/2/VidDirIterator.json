@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the VidDirIterator node in ComfyUI?",
+        "answer": "The VidDirIterator node in ComfyUI is designed to browse directories containing video files and retrieve video file paths based on an index. Its functionality helps organize and select video content within a specified directory, simplifying the process of accessing and using video files across various applications."
+    },
+    {
+        "question": "What are the required input types for the VidDirIterator node?",
+        "answer": "The required input types for the VidDirIterator node are 'directory_path' of Comfy dtype STRING and Python dtype str, which specifies the directory path containing the video files, and 'video_index' of Comfy dtype INT and Python dtype int, which determines the index to retrieve a video file from the sorted list of video files in the directory."
+    },
+    {
+        "question": "What is the output type of the VidDirIterator node?",
+        "answer": "The output type of the VidDirIterator node is 'string', which returns the path of the video file at the specified index in the directory. The Comfy dtype of the output is STRING, and the Python dtype is str."
+    },
+    {
+        "question": "How does the VidDirIterator node handle cases where the video_index exceeds the number of video files in the directory?",
+        "answer": "The VidDirIterator node wraps the index around using the modulo operation, ensuring that the index stays within the valid range of available video files in the directory."
+    },
+    {
+        "question": "What criteria are used to sort the video files in the VidDirIterator node?",
+        "answer": "In the VidDirIterator node, the video files are sorted based on their modification time, with the most recently modified files appearing first in the sorted list."
+    },
+    {
+        "question": "What is the infra type specified for the VidDirIterator node?",
+        "answer": "The infra type specified for the VidDirIterator node is CPU."
+    },
+    {
+        "question": "What file extensions are considered as video files by the VidDirIterator node?",
+        "answer": "The VidDirIterator node considers files with the extensions '.mov' and '.mp4' (case-insensitive) as video files."
+    }
+]

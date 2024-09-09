@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ttN pipeLoader_v2 node in ComfyUI?",
+        "answer": "The ttN pipeLoader_v2 node is used to load and initialize various task pipelines within the tinyterraNodes framework, providing convenience for setting up and configuring data processing and model interaction pipelines."
+    },
+    {
+        "question": "What are the required input parameters for the ttN pipeLoader_v2 node?",
+        "answer": "The required input parameters for the ttN pipeLoader_v2 node include ckpt_name, config_name, vae_name, clip_skip, loras, positive, positive_token_normalization, positive_weight_interpretation, negative, negative_token_normalization, negative_weight_interpretation, empty_latent_aspect, empty_latent_width, empty_latent_height, and seed."
+    },
+    {
+        "question": "What does the 'clip_skip' parameter in the ttN pipeLoader_v2 node do?",
+        "answer": "The 'clip_skip' parameter is an integer value used to skip certain layers of the CLIP model, optimizing performance based on specific requirements."
+    },
+    {
+        "question": "What are the optional input parameters for the ttN pipeLoader_v2 node?",
+        "answer": "The optional input parameters for the ttN pipeLoader_v2 node include model_override, clip_override, optional_lora_stack, optional_controlnet_stack, prepend_positive, and prepend_negative."
+    },
+    {
+        "question": "What is the purpose of the 'prepend_positive' and 'prepend_negative' parameters in the ttN pipeLoader_v2 node?",
+        "answer": "The 'prepend_positive' and 'prepend_negative' parameters are optional texts used to prepend to the positive and negative conditions respectively, enriching the context of desired and undesired attributes."
+    },
+    {
+        "question": "What are the output types of the ttN pipeLoader_v2 node?",
+        "answer": "The output types of the ttN pipeLoader_v2 node include pipe, model, positive, negative, latent, vae, clip, seed, width, height, pos_string, and neg_string."
+    },
+    {
+        "question": "How does the ttN pipeLoader_v2 node handle the loading of main models and embeddings?",
+        "answer": "The ttN pipeLoader_v2 node cleans models from loaded_objects and then uses the loader.load_main3 function to load the main models (model, clip, vae) based on the provided inputs. It also uses the loader.embedding_encode function to encode the positive and negative embeddings."
+    }
+]

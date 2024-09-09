@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WidgetToString node in ComfyUI?",
+        "answer": "The WidgetToString node is designed to extract and return the value of a specific widget from a specified node in the workflow. It focuses on retrieving the widget value as a string and can optionally aggregate all widget values of the specified node."
+    },
+    {
+        "question": "What are the required input types for the WidgetToString node?",
+        "answer": "The required input types for the WidgetToString node are: 'id' (INT) which specifies the unique identifier of the node from which to extract the widget value, 'widget_name' (STRING) which determines which specific widget's value to extract from the node, and 'return_all' (BOOLEAN) which is a flag that when set to true, changes the node's behavior to return all widget values of the specified node."
+    },
+    {
+        "question": "What does the 'return_all' input parameter do in the WidgetToString node?",
+        "answer": "The 'return_all' input parameter is a boolean flag. When set to true, it changes the behavior of the WidgetToString node to return all widget values of the specified node, rather than just a single widget's value."
+    },
+    {
+        "question": "What is the output type of the WidgetToString node?",
+        "answer": "The output type of the WidgetToString node is STRING, which represents the extracted widget value(s) as string(s). It can represent either a single widget's value or, if 'return_all' is true, the concatenated values of multiple widgets."
+    },
+    {
+        "question": "How does the WidgetToString node determine which node to extract widget values from?",
+        "answer": "The WidgetToString node determines which node to extract widget values from based on the 'id' input parameter, which specifies the unique identifier of the node in the workflow."
+    },
+    {
+        "question": "What happens if the specified widget is not found in the node?",
+        "answer": "If the specified widget is not found in the node, the WidgetToString node will raise a NameError with the message 'Widget not found: {id}.{widget_name}'."
+    },
+    {
+        "question": "What happens if the specified node is not found in the workflow?",
+        "answer": "If the specified node is not found in the workflow, the WidgetToString node will raise a NameError with the message 'Node not found: {id}'."
+    }
+]

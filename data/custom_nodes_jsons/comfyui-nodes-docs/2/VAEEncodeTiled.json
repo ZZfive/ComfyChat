@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the VAEEncodeTiled node in ComfyUI?",
+        "answer": "The VAEEncodeTiled node in ComfyUI is designed to efficiently and parallelly encode image data into latent space representations using a Variational Autoencoder (VAE). It operates by dividing large images into smaller independently processable regions, which are then reassembled."
+    },
+    {
+        "question": "What type of input data does the VAEEncodeTiled node expect for the 'pixels' parameter?",
+        "answer": "The VAEEncodeTiled node expects the input image data for the 'pixels' parameter to be in a format compatible with the VAE model used for encoding, typically involving image pixels."
+    },
+    {
+        "question": "What does the 'vae' parameter represent in the VAEEncodeTiled node?",
+        "answer": "The 'vae' parameter in the VAEEncodeTiled node represents the Variational Autoencoder model that the node will use to encode the image data."
+    },
+    {
+        "question": "What is the role of the 'tile_size' parameter in the VAEEncodeTiled node?",
+        "answer": "The 'tile_size' parameter determines the size of the tiles into which the input image is divided for processing in the VAEEncodeTiled node. It is an optional parameter that allows users to control the granularity of the tiles, which can impact performance and memory usage."
+    },
+    {
+        "question": "What does the 'samples' output of the VAEEncodeTiled node contain?",
+        "answer": "The 'samples' output of the VAEEncodeTiled node contains the encoded representation of the input image in the latent space. This is the main result of the node's operation and is crucial for any subsequent tasks that need to understand the underlying structure of the image in a compressed form."
+    },
+    {
+        "question": "What infrastructure type is recommended for the VAEEncodeTiled node?",
+        "answer": "The recommended infrastructure type for the VAEEncodeTiled node is GPU."
+    },
+    {
+        "question": "What is the default value for the 'tile_size' parameter in the VAEEncodeTiled node?",
+        "answer": "The default value for the 'tile_size' parameter in the VAEEncodeTiled node is 512."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the easy fooocusInpaintLoader node in ComfyUI?",
+        "answer": "The easy fooocusInpaintLoader node is designed to simplify the process of loading and applying repair models and patches in the ComfyUI framework. It focuses on integrating repair functions into the model processing flow to enhance or correct images by applying learned repair patterns."
+    },
+    {
+        "question": "What are the required input parameters for the easy fooocusInpaintLoader node?",
+        "answer": "The easy fooocusInpaintLoader node requires two input parameters: 'head' and 'patch'. The 'head' parameter represents the repair model head to be loaded, which is crucial in determining the repair behavior and output image quality. The 'patch' parameter refers to the specific repair patch to be applied, which modifies the model's behavior to allow targeted repairs based on the provided patch information."
+    },
+    {
+        "question": "What is the output type of the easy fooocusInpaintLoader node?",
+        "answer": "The output type of the easy fooocusInpaintLoader node is 'INPAINT_PATCH', which is a tuple containing the repair head model and LoRA patch that can be directly applied to the model to perform repair tasks."
+    },
+    {
+        "question": "What is the infra type recommended for the easy fooocusInpaintLoader node?",
+        "answer": "The recommended infra type for the easy fooocusInpaintLoader node is 'CPU'."
+    },
+    {
+        "question": "In which category does the easy fooocusInpaintLoader node belong?",
+        "answer": "The easy fooocusInpaintLoader node belongs to the 'EasyUse/Inpaint' category."
+    },
+    {
+        "question": "What is the function used in the easy fooocusInpaintLoader node?",
+        "answer": "The function used in the easy fooocusInpaintLoader node is 'apply'."
+    },
+    {
+        "question": "How does the easy fooocusInpaintLoader node load the repair model head and patch?",
+        "answer": "The easy fooocusInpaintLoader node loads the repair model head and patch by first checking if the inpaint_head_model is None. If it is, the InpaintHead model is initialized and the state dict is loaded from the head_file. The patch_file is then loaded using the comfy.utils.load_torch_file function with safe_load set to True."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the VideoLinearCFGGuidance node in ComfyUI?",
+        "answer": "The VideoLinearCFGGuidance node in ComfyUI is designed to provide a method for modifying the guidance in the video model sampling process. It achieves this by patching the model using a linear configuration function, which smoothly mixes unconditional and conditional sampling based on a minimum configuration ratio."
+    },
+    {
+        "question": "What are the required input parameters for the VideoLinearCFGGuidance node?",
+        "answer": "The required input parameters for the VideoLinearCFGGuidance node are 'model' and 'min_cfg'. 'model' represents the video model to be patched, and 'min_cfg' determines the minimum configuration ratio of the linear guidance function within the node."
+    },
+    {
+        "question": "What does the 'min_cfg' parameter in the VideoLinearCFGGuidance node control?",
+        "answer": "The 'min_cfg' parameter in the VideoLinearCFGGuidance node controls the minimum configuration ratio of the linear guidance function. It is a key factor in controlling the mixture between unconditional and conditional sampling, thus influencing the characteristics of the output video."
+    },
+    {
+        "question": "What is the output of the VideoLinearCFGGuidance node?",
+        "answer": "The output of the VideoLinearCFGGuidance node is a modified video model that incorporates a linear configuration function. This allows for a more nuanced approach to video generation, offering greater flexibility and control over the final output."
+    },
+    {
+        "question": "What infrastructure type is recommended for the VideoLinearCFGGuidance node?",
+        "answer": "The recommended infrastructure type for the VideoLinearCFGGuidance node is GPU."
+    },
+    {
+        "question": "How does the VideoLinearCFGGuidance node modify the video model?",
+        "answer": "The VideoLinearCFGGuidance node modifies the video model by cloning it and setting a model sampler configuration function that uses a linear configuration function. This function calculates a scale based on the minimum configuration ratio and the conditional scale, and applies it to mix unconditional and conditional sampling."
+    },
+    {
+        "question": "In the source code of VideoLinearCFGGuidance, what does the 'linear_cfg' function do?",
+        "answer": "In the source code of VideoLinearCFGGuidance, the 'linear_cfg' function calculates a scale using the 'min_cfg' and 'cond_scale' parameters, and applies this scale to mix unconditional and conditional sampling. It generates a linear scale tensor based on the minimum configuration ratio and the conditional scale, and uses this scale to interpolate between the unconditional and conditional sampling."
+    }
+]

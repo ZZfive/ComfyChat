@@ -1,0 +1,30 @@
+[
+    {
+        "question": "ComfyUI中的XY Plot节点有什么作用？",
+        "answer": "XY Plot节点旨在生成和操作XY图表，支持多种操作，如翻转坐标轴、调整标签方向、缓存模型以及处理图表生成的唯一标识符。它可以适应不同类型的图表输入和配置。"
+    },
+    {
+        "question": "XY Plot节点的必需输入参数有哪些？",
+        "answer": "必需的输入参数包括：grid_spacing（图表中网格线间距）、XY_flip（是否翻转XY轴）、Y_label_orientation（Y轴标签方向）、cache_models（是否缓存模型数据）、ksampler_output_image（来自ksampler的输出图像）。"
+    },
+    {
+        "question": "XY Plot节点的可选输入参数有哪些？",
+        "answer": "可选的输入参数包括：dependencies（可选依赖项，如额外数据源或配置）、X（图表的X轴值或数据点）、Y（图表的Y轴值或数据点）。"
+    },
+    {
+        "question": "XY Plot节点输出什么类型的数据？",
+        "answer": "XY Plot节点输出SCRIPT类型的数据，一个包含XY图表脚本配置的字典，包括图表参数和数据点。"
+    },
+    {
+        "question": "使用XY Plot节点时，X和Y输入类型必须满足什么条件？",
+        "answer": "使用XY Plot节点时，X和Y的输入类型必须不同。如果X和Y的类型相同，且不是'Nothing'，则会报错。另外，对于某些特定的图表类型，dependencies输入必须连接。"
+    },
+    {
+        "question": "XY Plot节点如何处理翻转坐标轴？",
+        "answer": "如果XY_flip参数设置为'True'，XY Plot节点会将X和Y的类型及值进行互换，实现翻转坐标轴的效果。"
+    },
+    {
+        "question": "XY Plot节点的infra类型是什么？",
+        "answer": "XY Plot节点的infra类型是CPU。"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the fullLoader class in ComfyUI?",
+        "answer": "The fullLoader class in ComfyUI encapsulates the functionality of loading and preparing various models and components needed for the pipeline. It simplifies the process of integrating checkpoints, VAE, CLIP, and condition data, providing a coherent interface for model initialization and setup."
+    },
+    {
+        "question": "What are the required input types for the fullLoader class?",
+        "answer": "The required input types for the fullLoader class include ckpt_name, config_name, vae_name, and clip_skip. These parameters are essential for identifying the specific model to load and use in the pipeline, determining the model's settings and hyperparameters, selecting the appropriate variational autoencoder model, and controlling the level of the CLIP model applied in the pipeline."
+    },
+    {
+        "question": "What is the purpose of the clip_skip parameter in the fullLoader class?",
+        "answer": "The clip_skip parameter in the fullLoader class is important for controlling the level at which the CLIP model is applied in the pipeline. It affects the granularity of text conditioning and the model's responsiveness to text prompts."
+    },
+    {
+        "question": "What does the pipe output represent in the fullLoader class?",
+        "answer": "The pipe output in the fullLoader class represents the comprehensive pipeline setup, providing a coherent interface for model initialization and setup. It ensures seamless integration of all components and is the backbone of the generation process."
+    },
+    {
+        "question": "How does the fullLoader class handle different resolution settings?",
+        "answer": "If the resolution setting is not '自定义 x 自定义', the fullLoader class maps the resolution string to integers for width and height. It then sets empty_latent_width and empty_latent_height based on these values."
+    },
+    {
+        "question": "What happens if the vae_name is not 'Baked VAE' or 'Baked-VAE' in the fullLoader class?",
+        "answer": "If the vae_name is not 'Baked VAE' or 'Baked-VAE', the fullLoader class loads a different VAE using the vae_name."
+    },
+    {
+        "question": "What does the fullLoader class return as its output?",
+        "answer": "The fullLoader class returns a dictionary containing the pipeline setup ('pipe'), the model, the VAE, the CLIP, the positive and negative embeddings, and the samples."
+    }
+]

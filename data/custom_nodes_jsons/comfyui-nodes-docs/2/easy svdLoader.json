@@ -1,0 +1,30 @@
+[
+    {
+        "question": "svdLoader节点的主要功能是什么？",
+        "answer": "svdLoader节点主要用于加载和处理模型检查点、VAE和CLIP模型，促进了复杂生成管道的初始化和设置，简化了将各种模型集成到工作流中的过程。"
+    },
+    {
+        "question": "svdLoader节点的输入参数中，ckpt_name有什么作用？",
+        "answer": "ckpt_name参数对于指定要加载的模型检查点至关重要，它构成了生成过程的基础，决定了生成输出的质量和特性。"
+    },
+    {
+        "question": "svdLoader节点的vae_name输入参数的作用是什么？",
+        "answer": "vae_name参数对于选择适当的变分自编码器至关重要，它在生成模型的降维和潜在空间形成中起着重要作用。"
+    },
+    {
+        "question": "svdLoader节点如何处理init_image输入参数？",
+        "answer": "init_image参数提供了作为生成模型参考的初始视觉输入，svdLoader节点通过CLIP的视觉编码器对其进行编码，从而显著影响生成内容的方向和质量。"
+    },
+    {
+        "question": "在svdLoader节点中，resolution参数是如何处理的？",
+        "answer": "resolution参数在确定生成图像的大小和比例方面至关重要。svdLoader节点会将其分解为宽度和高度，并据此调整潜在空间的大小。"
+    },
+    {
+        "question": "svdLoader节点的输出类型有哪些？",
+        "answer": "svdLoader节点的输出类型包括pipe、model和vae。其中pipe是一个综合性结构，包含了生成管道所需的所有必要组件；model代表加载的生成模型；vae是变分自编码器模型。"
+    },
+    {
+        "question": "svdLoader节点的源代码中，是如何加载和设置生成模型、VAE和CLIP的？",
+        "answer": "在svdLoader的源代码中，它通过调用easyCache.load_checkpoint()方法来加载生成模型、VAE和CLIP，并根据输入的ckpt_name和其他参数来设置它们。"
+    }
+]

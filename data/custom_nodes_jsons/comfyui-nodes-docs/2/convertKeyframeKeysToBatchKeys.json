@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the 'convertKeyframeKeysToBatchKeys' node in ComfyUI?",
+        "answer": "The 'convertKeyframeKeysToBatchKeys' node in ComfyUI is designed to efficiently combine keyframe data into a single batch for processing, which is crucial for optimizing the handling of keyframe data in large-scale animations or simulations."
+    },
+    {
+        "question": "How does the 'convertKeyframeKeysToBatchKeys' node create a batch sequence suitable for batch operations?",
+        "answer": "The 'convertKeyframeKeysToBatchKeys' node achieves this by multiplying the number of input keyframes by the number of latent dimensions, thereby creating a contiguous sequence that is suitable for batch operations."
+    },
+    {
+        "question": "What does the 'input' parameter represent in the 'convertKeyframeKeysToBatchKeys' node?",
+        "answer": "The 'input' parameter in the 'convertKeyframeKeysToBatchKeys' node represents the number of keyframes to be processed, which is essential as it directly affects the size of the batch created and consequently the efficiency of subsequent processing steps."
+    },
+    {
+        "question": "What is the role of the 'num_latents' parameter in the 'convertKeyframeKeysToBatchKeys' node?",
+        "answer": "The 'num_latents' parameter in the 'convertKeyframeKeysToBatchKeys' node specifies the number of latent dimensions to be considered in the keyframe data, which is crucial for determining the final structure of the batch, ensuring that the data is appropriately organized to accommodate downstream tasks."
+    },
+    {
+        "question": "What does the 'result' output provide in the 'convertKeyframeKeysToBatchKeys' node?",
+        "answer": "The 'result' output in the 'convertKeyframeKeysToBatchKeys' node provides the calculated batch key sequence, which is the product of the input keyframe count and the number of latent dimensions. This output is important as it forms the basis for further processing and analysis in the animation or simulation pipeline."
+    },
+    {
+        "question": "Which infrastructure type is recommended for using the 'convertKeyframeKeysToBatchKeys' node?",
+        "answer": "The recommended infrastructure type for using the 'convertKeyframeKeysToBatchKeys' node is CPU."
+    },
+    {
+        "question": "In the source code of 'convertKeyframeKeysToBatchKeys', what does the 'concat' function do?",
+        "answer": "In the source code of 'convertKeyframeKeysToBatchKeys', the 'concat' function calculates the batch key sequence by multiplying the input (number of keyframes) by the number of latent dimensions and subtracting 1, returning the result."
+    }
+]

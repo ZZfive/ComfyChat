@@ -1,0 +1,34 @@
+[
+    {
+        "question": "Is Detectron2 fully compatible with Detectron?",
+        "answer": "No, Detectron2 addresses some legacy issues left in Detectron, resulting in incompatibilities. Running inference with the same model weights will produce different results in the two code bases."
+    },
+    {
+        "question": "What is the major difference in height and width calculation of a box between Detectron and Detectron2?",
+        "answer": "In Detectron2, the height and width of a box with corners (x1, y1) and (x2, y2) is computed more naturally as width = x2 - x1 and height = y2 - y1. In Detectron, a '+ 1' was added to both height and width."
+    },
+    {
+        "question": "How does the RPN in Detectron2 differ from Detectron?",
+        "answer": "In Detectron2, the RPN uses simpler anchors with fewer quantization artifacts. The anchors are center-aligned to feature grid points and not quantized."
+    },
+    {
+        "question": "What is the difference in the ordering of class labels between Detectron and Detectron2?",
+        "answer": "In Detectron2, integer labels [0, K-1] correspond to the K = num_categories object categories and the label 'K' corresponds to the special 'background' category. In Detectron, label '0' means background, and labels [1, K] correspond to the K categories."
+    },
+    {
+        "question": "Is the ROIAlign implementation in Detectron2 different from Detectron?",
+        "answer": "Yes, the ROIAlign in Detectron2 is implemented differently. The ROIs are shifted by half a pixel to create better image-feature-map alignment, and the ROIs are not required to have a minimum size of 1."
+    },
+    {
+        "question": "What is the difference in the mask inference function between Detectron and Detectron2?",
+        "answer": "In Detectron2, the 'paste_mask' function is different and should be more accurate than in Detectron. This change can improve mask AP on COCO by ~0.5% absolute."
+    },
+    {
+        "question": "Can models trained with Detectron2 be converted to Caffe2?",
+        "answer": "Yes, despite the incompatibilities with Detectron, the relevant ops have been implemented in Caffe2. Therefore, models trained with Detectron2 can be converted in Caffe2."
+    },
+    {
+        "question": "Is Detectron2 compatible with TensorFlow?",
+        "answer": "Most ops are available in TensorFlow, although some tiny differences in the implementation of resize / ROIAlign / padding need to be addressed. A working conversion script is provided by tensorpack FasterRCNN to run a standard Detectron2 model in TensorFlow."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the imageSaveSimple node in ComfyUI?",
+        "answer": "The imageSaveSimple node in ComfyUI simplifies the process of saving image data by providing a direct mechanism to save visual outputs. It supports optional image compression and preview generation, ensuring that images can be easily used for subsequent use or inspection."
+    },
+    {
+        "question": "What are the required inputs for the imageSaveSimple node?",
+        "answer": "The required input for the imageSaveSimple node is the 'images' parameter, which carries the visual data to be saved. It influences the entire operation by determining what is stored and how the output looks."
+    },
+    {
+        "question": "What is the purpose of the 'filename_prefix' parameter in the imageSaveSimple node?",
+        "answer": "The 'filename_prefix' parameter in the imageSaveSimple node is used to predefine the naming convention for saving images. It is crucial for organizing and identifying files in the output directory."
+    },
+    {
+        "question": "What does the 'only_preview' parameter control in the imageSaveSimple node?",
+        "answer": "The 'only_preview' parameter in the imageSaveSimple node controls whether to generate and save a preview of the image. It influences the operation of the node by determining the type of output generated."
+    },
+    {
+        "question": "What is the output type of the imageSaveSimple node?",
+        "answer": "The output type of the imageSaveSimple node is None, as the output is not a data object but the action of saving the image. No return value indicates that the save process has completed."
+    },
+    {
+        "question": "What is the infra type for the imageSaveSimple node?",
+        "answer": "The infra type for the imageSaveSimple node is CPU."
+    },
+    {
+        "question": "How does the imageSaveSimple node handle the saving of images in its source code?",
+        "answer": "In the source code of the imageSaveSimple node, the 'save' function checks if 'only_preview' is True. If so, it calls the 'save_images' method of the PreviewImage class. Otherwise, it calls the 'save_images' method of the SaveImage class to save the images."
+    }
+]

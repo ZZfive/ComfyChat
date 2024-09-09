@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the cascadeLoader node class in ComfyUI?",
+        "answer": "The cascadeLoader node class in ComfyUI aims to simplify the loading and processing of various models and data in the pipeline. It encapsulates the complexity of model retrieval, enhancement through LORA, and applying CLIP embeddings to positive and negative inputs, providing seamless integration of these components."
+    },
+    {
+        "question": "What are the required input parameters for the cascadeLoader node?",
+        "answer": "The required input parameters for the cascadeLoader node are stage_c, resolution, stage_b, stage_a, clip_name, lora_name, lora_model_strength, lora_clip_strength, empty_latent_width, empty_latent_height, compression, positive, negative, and batch_size."
+    },
+    {
+        "question": "What is the purpose of the resolution input parameter in the cascadeLoader node?",
+        "answer": "The resolution input parameter in the cascadeLoader node is crucial for defining the dimensions of the latent space and the output image. It affects the quality and resolution of the generated content, thereby influencing the overall result of the pipeline."
+    },
+    {
+        "question": "What does the pipe output of the cascadeLoader node encapsulate?",
+        "answer": "The pipe output of the cascadeLoader node encapsulates the processed model, embeddings, and other relevant data prepared for downstream tasks. It is a key output that enables further operations and refinement in the pipeline."
+    },
+    {
+        "question": "How does the cascadeLoader node handle the loading of LORA models?",
+        "answer": "The cascadeLoader node checks if a LORA model can be loaded, then loads the specified LORA model and applies it to the main model and CLIP. The LORA model information is then appended to the pipe_lora_stack for further processing."
+    },
+    {
+        "question": "What is the purpose of the positive and negative input parameters in the cascadeLoader node?",
+        "answer": "The positive and negative input parameters in the cascadeLoader node are used for processing the prompt. They are tokenized and encoded using CLIP, and the resulting embeddings are used for further processing in the pipeline."
+    },
+    {
+        "question": "What is the output of the cascadeLoader node?",
+        "answer": "The output of the cascadeLoader node is a dictionary containing the processed pipeline ('pipe'), the patched models ('model_c' and 'model_b'), and the VAE ('vae'). The 'pipe' includes the loaded model, positive and negative embeddings, VAE, CLIP, samples, images, seed, and loader settings."
+    }
+]

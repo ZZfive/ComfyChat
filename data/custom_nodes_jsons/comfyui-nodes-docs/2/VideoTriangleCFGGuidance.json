@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the VideoTriangleCFGGuidance node in ComfyUI?",
+        "answer": "The VideoTriangleCFGGuidance node is designed to enhance the controllability of video models by applying a patch that introduces a configurable guidance function. It modifies the sampling process to mix conditional and unconditional outputs based on a linear configuration ratio, allowing for fine-tuning the generated video content."
+    },
+    {
+        "question": "What are the required inputs for the VideoTriangleCFGGuidance node?",
+        "answer": "The required inputs for the VideoTriangleCFGGuidance node are the 'model' parameter, which represents the video model to be guided and modified, and the 'min_cfg' parameter, which determines the minimum ratio of the configuration used to mix the video model's conditional and unconditional outputs."
+    },
+    {
+        "question": "What does the 'model' input represent in the VideoTriangleCFGGuidance node?",
+        "answer": "The 'model' input represents the video model that will be guided and modified by the VideoTriangleCFGGuidance node. It is crucial for the node to apply the patch and adjust the sampling behavior accordingly."
+    },
+    {
+        "question": "What is the role of the 'min_cfg' parameter in the VideoTriangleCFGGuidance node?",
+        "answer": "The 'min_cfg' parameter determines the minimum ratio of the configuration used to mix the video model's conditional and unconditional outputs. It plays a key role in controlling the extent of guidance applied during the sampling process."
+    },
+    {
+        "question": "What is the output of the VideoTriangleCFGGuidance node?",
+        "answer": "The output of the VideoTriangleCFGGuidance node is the 'modified_model', which represents the updated video model with the new sampling guidance applied. It is the direct result of applying the patch through the VideoTriangleCFGGuidance node, enabling the generation of videos with adjusted content features."
+    },
+    {
+        "question": "What is the infra type recommended for the VideoTriangleCFGGuidance node?",
+        "answer": "The recommended infra type for the VideoTriangleCFGGuidance node is CPU."
+    },
+    {
+        "question": "How does the linear_cfg function in the VideoTriangleCFGGuidance node work?",
+        "answer": "The linear_cfg function in the VideoTriangleCFGGuidance node calculates a scale value based on the 'min_cfg' and 'cond_scale' parameters, as well as the period and values derived from the input conditional and unconditional data. It then returns the result of blending the unconditional output with the scaled difference between the conditional and unconditional outputs."
+    }
+]

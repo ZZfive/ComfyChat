@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the imageScaleDown node in ComfyUI?",
+        "answer": "The imageScaleDown node is designed to adjust the image to the specified width and height, which may involve center cropping to maintain the integrity of the aspect ratio. This is crucial for preprocessing image data to fit the input dimensions required by various machine learning models and applications."
+    },
+    {
+        "question": "What are the required inputs for the imageScaleDown node?",
+        "answer": "The required inputs for the imageScaleDown node are the images to be scaled down, the desired width, and the desired height. The width and height set the horizontal and vertical dimensions of the output, affecting the resizing process."
+    },
+    {
+        "question": "What is the significance of the 'crop' parameter in the imageScaleDown node?",
+        "answer": "The 'crop' parameter determines the cropping method applied when resizing. It is important because it decides whether the image is centered before scaling, which can enhance the visual presentation of the output."
+    },
+    {
+        "question": "What does the imageScaleDown node output?",
+        "answer": "The imageScaleDown node outputs the resized image. This is the main output of the node, representing the transformed data ready for further processing or analysis."
+    },
+    {
+        "question": "On what infrastructure type does the imageScaleDown node run?",
+        "answer": "The imageScaleDown node runs on a CPU infrastructure type."
+    },
+    {
+        "question": "How is the image resized in the source code of the imageScaleDown node?",
+        "answer": "In the source code, the image is resized using the Image.LANCZOS method after converting it to RGB format."
+    },
+    {
+        "question": "What does the imageScaleDown node do if the 'crop' parameter is set to 'center'?",
+        "answer": "If the 'crop' parameter is set to 'center', the imageScaleDown node calculates the appropriate x and y coordinates to center crop the image before resizing."
+    }
+]

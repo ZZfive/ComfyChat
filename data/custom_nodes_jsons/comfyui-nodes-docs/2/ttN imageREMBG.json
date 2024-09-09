@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ttN_imageREMBG node in ComfyUI?",
+        "answer": "The ttN_imageREMBG node is designed to remove the background from an image using the REMBG library functionality, abstracting the complexity of background removal into a simple interface for easy integration into image processing workflows."
+    },
+    {
+        "question": "What are the required inputs for the ttN_imageREMBG node?",
+        "answer": "The required inputs for the ttN_imageREMBG node are: the input image that needs its background removed, the image_output specifying the output mode for the processed image, and the save_prefix for the filename prefix when saving the processed image."
+    },
+    {
+        "question": "What does the image_output parameter in the ttN_imageREMBG node specify?",
+        "answer": "The image_output parameter in the ttN_imageREMBG node specifies the output mode for the processed image, including options such as 'Hide', 'Preview', 'Save', and 'Hide/Save', allowing flexible handling of the output image."
+    },
+    {
+        "question": "What are the output types of the ttN_imageREMBG node?",
+        "answer": "The output types of the ttN_imageREMBG node are the processed image with the background removed (Comfy dtype: IMAGE) and a mask indicating the areas where the background was removed (Comfy dtype: MASK)."
+    },
+    {
+        "question": "How does the ttN_imageREMBG node handle images with transparency?",
+        "answer": "If the input image has transparency (an alpha channel), the ttN_imageREMBG node converts it to an RGBA image and creates a mask from the alpha channel. The mask is then inverted so that it indicates the areas where the background was removed."
+    },
+    {
+        "question": "What happens if the input image does not have an alpha channel?",
+        "answer": "If the input image does not have an alpha channel, the ttN_imageREMBG node creates a mask filled with zeros, effectively treating the entire image as opaque."
+    },
+    {
+        "question": "How are the processed images handled based on the image_output parameter?",
+        "answer": "If image_output is set to 'Disabled', no results are returned. Otherwise, the processed images are saved or previewed based on the image_output value ('Hide', 'Preview', 'Save', 'Hide/Save'). If 'Hide' or 'Hide/Save' is selected, the processed image tensor and mask are returned."
+    }
+]
