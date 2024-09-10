@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What types of output are available with the StringFunction node?",
+        "answer": "The StringFunction node provides a single output type, which is the result of the string operation. This output is of type 'STRING'."
+    },
+    {
+        "question": "What is the purpose of the StringFunction node in ComfyUI?",
+        "answer": "The StringFunction node serves the purpose of performing complex string operations with ease through a simple interface. It abstracts away the complexity of string manipulation commonly required in various text processing tasks."
+    },
+    {
+        "question": "What actions can be performed using the StringFunction node?",
+        "answer": "The StringFunction node supports two actions: 'append' and 'replace'. The 'append' action concatenates the string inputs text_a, text_b, and text_c while ignoring any control characters. The 'replace' action replaces occurrences of text_b with text_c in text_a, or replaces text_b entirely with text_c if text_b is a regular expression."
+    },
+    {
+        "question": "How does the tid y_tags input affect the string operation in the StringFunction node?",
+        "answer": "The tidy_tags input determines whether to remove HTML tags from the text before performing the string operation. If 'yes', it removes control characters from the combined string. If 'no', control characters and whitespace are preserved as they are."
+    },
+    {
+        "question": "What does the INPUT_TYPES method in the StringFunction node return for the 'action' input?",
+        "answer": "The INPUT_TYPES method in the StringFunction node specifies that the 'action' input is required and accepts values from the drop-down list ['append', 'replace']. It does not accept any additional arguments."
+    },
+    {
+        "question": "Can the StringFunction node remove HTML tags from the returned output?",
+        "answer": "Yes, the StringFunction node can remove HTML tags from the output if the tidy_tags input is set to 'yes'. This is done to ensure that HTML formatting is not included in the final output."
+    },
+    {
+        "question": "How is the result processed for the APPEND operation in the StringFunction node?",
+        "answer": "For the APPEND operation, the StringFunction node combines the text_a, text_b, and text_c inputs into a single string. It concatenates the values with a comma and space in between if 'tidy_tags' is set to 'yes'. Control characters (including spaces, commas, and exceptionally dots) are removed when the 'tidy_tags' is set to 'yes'."
+    }
+]

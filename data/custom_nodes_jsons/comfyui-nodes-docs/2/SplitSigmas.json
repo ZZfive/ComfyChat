@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SplitSigmas node?",
+        "answer": "The SplitSigmas node is designed to split a set of sigma values into two subsets based on a specified step index, providing the foundation for more complex sampling workflows."
+    },
+    {
+        "question": "What are the required input types for the SplitSigmas node?",
+        "answer": "The input types for the SplitSigmas node are required and include 'sigmas', with a Comfy dtype of FLOAT and a Python dtype of List[float]."
+    },
+    {
+        "question": "What are the output types of the SplitSigmas node?",
+        "answer": "The output types of the SplitSigmas node are 'sigmas1' and 'sigmas2', both with a Comfy dtype of FLOAT and a Python dtype of List[float]."
+    },
+    {
+        "question": "What are the usage tips for the SplitSigmas node?",
+        "answer": "The usage tips for the SplitSigmas node include that it operates on a CPU infrastructure type."
+    },
+    {
+        "question": "In which category does the SplitSigmas node fall under in ComfyUI?",
+        "answer": "The SplitSigmas node falls under the 'sampling/custom_sampling/sigmas' category in ComfyUI."
+    },
+    {
+        "question": "Describe the SplitSigmas class including its function and capabilities.",
+        "answer": "SplitSigmas is a class designed to split sigma values into two subsets based on a step value. The core operations involve slicing the input sigma list to produce the two output sigmas, performed by the class method 'get_sigmas().'"
+    },
+    {
+        "question": "Provide a code snippet demonstrating the usage of the SplitSigmas node.",
+        "answer": "class SplitSigmas:\n\n    @classmethod\n    def INPUT_TYPES(s):\n        return {'required': {'sigmas': ('SIGMAS',), 'step': ('INT', {'default': 0, 'min': 0, 'max': 10000})}}\n    RETURN_TYPES = ('SIGMAS', 'SIGMAS')\n    CATEGORY = 'sampling/custom_sampling/sigmas'\n    FUNCTION = 'get_sigmas'\n\n    def get_sigmas(self, sigmas, step):\n        sigmas1 = sigmas[:step + 1]\n        sigmas2 = sigmas[step:]\n        return (sigmas1, sigmas2)"
+    }
+]

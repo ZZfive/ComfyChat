@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What are Evo.ext_shared_defaults_abstract in ComfyUI?",
+        "answer": "Evo.ext_shared_defaults_abstract is a custom node in ComfyUI that abstracts the `Evo`, Evo.extend, `extend` or Evo.extend_base, `extend_base` calls. It allows users to save simple hooks and extensions of classes into multiple places. Any `Evo` classes or other libraries included in this process will be shared among multiple nodes."
+    },
+    {
+        "question": "What are the benefits of using Evo.ext_shared_defaults_abstract in ComfyUI?",
+        "answer": "Some of the benefits of using Evo.ext_shared_defaults_abstract in ComfyUI are:\n1. Shared defaults among all `Evo` classes/libraries included in `shared def`.\n2. Common hooks and simple extensions among all `Evo` classes/libraries included in `shared def`.\n3. Parameters can be saved, setting them to a specific value from its default."
+    },
+    {
+        "question": "How does Evo.ext_shared_defaults_abstract work within a ComfyUI environment?",
+        "answer": "Evo.ext_shared_defaults_abstract works by defining a dictionary that contains the shared defaults and common hooks. This method removes the need for using `Evo` extend class methods to define shared defaults or common hooks across all nodes. It's also similar to using `Evo` extend, bypassing the need for `Evo` extend and `Evo` extend_base nodes each time."
+    },
+    {
+        "question": "What limitations might be associated with Evo.ext_shared_defaults_abstract?",
+        "answer": "Some potential limitations with Evo.ext_shared_defaults_abstract could include:\n1. Incompatibilities with certain nodes or libraries that do not use `Evo`.\n2. Complexity in maintaining consistency across all nodes, especially when there are significant updates or changes."
+    },
+    {
+        "question": "Can Evo.ext_shared_defaults_abstract be used to abstract calls other than `Evo`, Evo.extend, `extend` or Evo.extend_base, `extend_base`?",
+        "answer": "Yes, Evo.ext_shared_defaults_abstract can be used to abstract calls other than `Evo`, `Evo.extend`, `extend`, `Evo.extend_base` and `extend_base`. It supports abstracting any class method call, not just `{Evo}, {Evo.extend}, extend or {Evo.extend_base}, {extend_base}` calls."
+    },
+    {
+        "question": "What is the syntax for using Evo.ext_shared_defaults_abstract?",
+        "answer": "The syntax for using Evo.ext_shared_defaults_abstract involves defining a dictionary called `_shared_def` within a custom node. This dictionary contains the shared defaults or common hooks that need to be used across multiple nodes. The shared default values are then added to the `_shared_def` dictionary, and the `Evo.ext_shared_defaults_abstract` method is called to implement the shared defaults. This allows each node to access the shared default values by calling `self.get_shared_def()`, loading the `_shared_def` attribute from the custom node."
+    },
+    {
+        "question": "How does Evo.ext_shared_defaults_abstract handle parameters that should be saved?",
+        "answer": "Evo.ext_shared_defaults_abstract allows parameters to be saved by setting them to a specific value from their default. This is achieved by defining the parameters in the `_shared_def` dictionary. When a node needs to set a parameter to a specific value, it calls the `setattr` method on the parameter, and the parameter is saved in the `_shared_def` dictionary."
+    }
+]

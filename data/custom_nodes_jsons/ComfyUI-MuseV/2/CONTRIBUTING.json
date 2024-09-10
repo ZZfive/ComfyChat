@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is cg-noise?",
+        "answer": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+    },
+    {
+        "question": "How does cg-noise generate variations in images?",
+        "answer": "cg-noise generates variations in images by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`. This allows for random `s1` and `s2` to be generated in spherical coordinates for the [ComfyUI Matrix Config](https://github.com/CompVis/ComfyUI/blob/8281d254c5f6fc3d9fe9605287ff1014fb814b3/src/ComfyUI/ComfyConfig.py#L95) definition."
+    },
+    {
+        "question": "What are the relevant API calls for generating variations in images with cg-noise?",
+        "answer": "The relevant API calls for generating variations in images with cg-noise are `random_based_on()` and `ComfyUI.calculate_transform()`. The `random_based_on()` function generates random values between -1 and 1 based on the given seed, and the `calculate_transform()` function generates the transformation matrix for the input image based on the spherical coordinates provided."
+    },
+    {
+        "question": "Can cg-noise be used to generate variations in images beyond ComfyUI?",
+        "answer": "cg-noise is designed to work within the ComfyUI GUI and can be used with other tools or models that generate images or videos, but it would require additional setup to integrate with those tools or models."
+    },
+    {
+        "question": "What are the benefits of using cg-noise over traditional diffusion models?",
+        "answer": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise. This can lead to more varied and interesting outputs in terms of image quality and style, as the initial noise affects the final image quality. Traditional diffusion models typically use fixed noise distributions, which can result in more consistently rendered images with fewer variations."
+    },
+    {
+        "question": "How is cg-noise used in the context of custom nodes in ComfyUI?",
+        "answer": "Custom nodes in ComfyUI are powerful components that enable users to customize their workflow. cg-noise is one such custom node that can be used in conjunction with other nodes to generate high-quality images and videos with realistic textures and lighting. By adding variations to the initial noise, cg-noise can make the algorithm iterate through the space more efficiently, leading to faster and better learning."
+    },
+    {
+        "question": "What is the typical workflow when using cg-noise in ComfyUI?",
+        "answer": "The typical workflow when using cg-noise in ComfyUI involves specifying the input images and parameters for the loss function in ComfyUI, and then choosing the desired values for `s1` and `s2` in the `ComfyUI Matrix Config` to control the amount of noise variance. Users can then open the configuration settings and adjust the parameters to fine-tune the generated images or videos."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is necessary to install detectron2?",
+        "answer": "To install detectron2, you need a Linux or macOS system with Python ≥ 3.6, PyTorch ≥ 1.4, and torchvision matched to the same PyTorch version. OpenCV is optional but needed for demo and visualization."
+    },
+    {
+        "question": "What are the issues that can arise during detectron2 installation?",
+        "answer": "During detectron2 installation, one might encounter issues like undefined symbols from torch/aten/caffe2, segmentation faults, undefined C++ symbols, issues related to GPU detection, missing CUDA symbols, or an ImportError related to the import of _C."
+    },
+    {
+        "question": "Please explain the steps to build detectron2 from source.",
+        "answer": "To build detectron2 from source, first, ensure you have gcc, g++, and ninja installed. Install detectron2 using pip with the command `python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'` or follow the instructions in the cloned repository. To rebuild detectron2, clean the old build with `rm -rf build/ **/*.so`. This is required after reinstalling PyTorch."
+    },
+    {
+        "question": "What is the purpose of the Dockerfile in detectron2 installation?",
+        "answer": "The Dockerfile is used to facilitate the installation of detectron2 by providing a script that installs detectron2 with a few simple commands. This can be particularly useful for automating the installation process or ensuring consistent setup across different environments."
+    },
+    {
+        "question": "How do I install a pre-built detectron2?",
+        "answer": "To install a pre-built detectron2, one can use the command `python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/index.html` replacing cu101 with 'cu{100,92}' or 'cpu'. Note that this method is limited by the PyTorch version required by the detectron2 build, which might not be compatible with other versions."
+    },
+    {
+        "question": "What is the purpose of collect_env utilities in detectron2?",
+        "answer": "`collect_env` is a utility in detectron2 that helps diagnose installation issues by collecting an environment report. It serves as a diagnostic tool that lists all necessary dependencies and their versions from where detectron2 is installed, providing insights into potential conflicts and helping troubleshoot issues."
+    },
+    {
+        "question": "Can I run detectron2 on a machine without GPU support?",
+        "answer": "Yes, most models in detectron2 can run inference without GPU support. However, using GPUs can significantly speed up the processing time."
+    }
+]

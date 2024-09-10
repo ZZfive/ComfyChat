@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What can cause a permission error during the installation of ComfyUI-Impact-Pack?",
+        "answer": "A permission error can occur during the installation process if the package is already being used by another custom node that has been loaded. This issue specifically affects Windows."
+    },
+    {
+        "question": "How can I resolve a permission error during the installation of ComfyUI-Impact-Pack?",
+        "answer": "To resolve a permission error, close ComfyUI and execute the install script directly using Python in the custom_nodes/ComfyUI-Impact-Pack directory. In case of a portable version, navigate to the ComfyUI_windows_portable directory in cmd and execute the script using the embedded Python. In a venv setup, activate the venv and run the script using Python. Adjust the path of 'python' according to your Python environment settings."
+    },
+    {
+        "question": "What should I do if nodes of the Impact Pack are hanging during execution?",
+        "answer": "If nodes of the Impact Pack are hanging during execution, this might be due to compatibility issues with your computer's environment, especially during processes related to dilation. To resolve this, set `disable_gpu_opencv = True` in the `ComfyUI-Impact-Pack/impact-pack.ini` file. This might help avoid issues that arise when the OpenCV GPU mode is activated."
+    },
+    {
+        "question": "How can I update ComfyUI-Impact-Pack?",
+        "answer": "To resolve issues related to importing Ultralytics, update ComfyUI-Manager to version 1.1.2 or above."
+    },
+    {
+        "question": "What can cause an issue with 'cv2' module?",
+        "answer": "An issue with the 'cv2' module can occur if 'opencv-python' and 'opencv-python-headless' are not up to the latest version. In such cases, update these packages to the latest version, or downgrade back to version 4.6.0.66 if needed. Follow the provided instructions for updating or downgrading these packages, depending on your installation type."
+    },
+    {
+        "question": "What can cause destortion issues in Detailer?",
+        "answer": "Destortion issues in Detailer could be due to a bug in xformers version 0.0.18. If you encounter this problem, try adjusting the guide_size parameter."
+    },
+    {
+        "question": "How can I avoid destortion issues in Detailer?",
+        "answer": "To avoid destortion issues in Detailer, you can try adjusting the guide_size parameter from 256 to 192."
+    }
+]

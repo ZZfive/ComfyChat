@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the Film node used for?",
+        "answer": "The Film node simulates film grain, dark edges, and edge blur, and supports input depth maps for simulating out of focus."
+    },
+    {
+        "question": "What are the input types required by the Film node?",
+        "answer": "The Film node accepts image (IMAGE, Comfy dtype: IMAGE, Python dtype: torch.Tensor) as required input, alongside center_x, center_y for the dark edge and radial blur center coordinates, and various parameters for grain, vignette, blur, and other effects."
+    },
+    {
+        "question": "What is the function of the Film node?",
+        "answer": "The Film node processes the input image according to the provided parameters, generating an enhanced image with applied effects."
+    },
+    {
+        "question": "How does the Film node handle optional input depth_map?",
+        "answer": "If a depth_map is provided, the Film node uses it to simulate an out of focus effect; otherwise, it applies radial blur if depth_map is not provided."
+    },
+    {
+        "question": "What are the default values for the Film node parameters?",
+        "answer": "The default values for parameters like center_x, center_y, saturation, vignette_intensity, grain_power, grain_scale, grain_sat, grain_shadows, grain_highs, blur_strength, blur_focus_spread, and focal_depth are set for ease of use."
+    },
+    {
+        "question": "What is the output type of the Film node?",
+        "answer": "The Film node returns an image (IMAGE, Comfy dtype: IMAGE, Python dtype: torch.Tensor) as its output."
+    },
+    {
+        "question": "What is the purpose of the mask output by the Film node?",
+        "answer": "The Film node also outputs a mask (MASK, Comfy dtype: MASK, Python dtype: torch.Tensor) which may be used for further processing or combining with other nodes."
+    }
+]

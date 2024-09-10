@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is cg-noise?",
+        "answer": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, enabling the ability to adjust the initial noise for hot pixels and mitigate the effect of critical sampling settings."
+    },
+    {
+        "question": "How does cg-noise modify the initial noise in images?",
+        "answer": "cg-noise adjusts the initial noise in images by multiplying the noise by a weight `x` in the range of `[0.6, 1]`, and then adding the result of multiplying the noise by `(1-x)` and the output of setting the randomness of the variation seed."
+    },
+    {
+        "question": "Can cg-noise mitigate the effect of critical sampling settings?",
+        "answer": "Yes, cg-noise can mitigate the effect of critical sampling settings by experiencing the same start noise plateau in the first 1000 iterations."
+    },
+    {
+        "question": "How does cg-noise handle hot pixels?",
+        "answer": "cg-noise handles hot pixels by using a method that can potentially improve the color of the input images while preserving the hot pixels."
+    },
+    {
+        "question": "What are the parameters of cg-noise?",
+        "answer": "The parameters of cg-noise include the weight `x` in the range of `[0.6, 1]`, and the seeds `variation_seed` and `seed` that determine the randomness of the initial noise."
+    },
+    {
+        "question": "What is the purpose of the variation seed in cg-noise?",
+        "answer": "The variation seed in cg-noise is used to set the randomness level of the output noise, with a range of `[0, 10]` when not connected to a UI."
+    },
+    {
+        "question": "How does cg-noise affect the onset of the initial noise?",
+        "answer": "cg-noise affects the onset of the initial noise by allowing the noise to increase in a sigmoid-like curve and then decrease again after the first 1000 iterations, following a similar pattern to the onset of the initial noise."
+    }
+]

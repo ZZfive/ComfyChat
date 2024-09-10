@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the primary function of the ComfyUI-Manager extension?",
+        "answer": "The ComfyUI-Manager extension serves as a graphics manager for generating 3D rendering images, enabling users to create high-quality images with fewer nodes."
+    },
+    {
+        "question": "How does the ComfyUI-Manager extension improve the imaging process?",
+        "answer": "The extension optimizes the imaging process by serving as a generic graphics manager that can generate 3D rendering images with a fewer number of nodes and no need for a distributed algorithm block, thereby enhancing the efficiency and quality of image generation."
+    },
+    {
+        "question": "List the key features of the ComfyUI-Manager extension.",
+        "answer": "Key features include:\n1. Serves as a generic graphics manager\n2. Generates 3D rendering images with fewer nodes\n3. No need for a distributed algorithm block\n4. Enhances image generation efficiency and quality"
+    },
+    {
+        "question": "How does the ComfyUI-Manager extension handle noise in generated images?",
+        "answer": "The ComfyUI-Manager extension can synthetic good noise for a ground truth image by either processing the generated image through the method `model(noise_seed) * x + model(seed) * (1 - x)` with a weight `x` or directly generating the noise using `random_based_on(variation_seed) * x + random_based_on(seed) * (1 - x)`."
+    },
+    {
+        "question": "What are the advantages of using the ComfyUI-Manager extension over traditional methods?",
+        "answer": "The advantages include:\n1. Faster generation of high-quality images\n2. Reduced need for complex algorithms\n3. Enhanced workflow efficiency\n4. Improved visual quality of generated images"
+    },
+    {
+        "question": "Explain the concept behind the 'adjust' custom node used by the ComfyUI-Manager extension.",
+        "answer": "The 'adjust' custom node within the ComfyUI-Manager extension is used to adjust and modify the attributes of a node. When run, it updates the node to use the parameters provided by the node it is adjusting, enabling users to tweak and adjust key values to optimize their images."
+    },
+    {
+        "question": "What is the purpose of the 'detailadjust' custom node in the ComfyUI-Manager extension?",
+        "answer": "The 'detailadjust' custom node is used to adjust the detail level of an existing image or video, allowing users to improve the clarity, sharpness, and overall detail aspects without significantly increasing the model cost or complexity."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the WildcardEncodeInspire node?",
+        "answer": "The WildcardEncodeInspire node is designed to handle and encode text input that contains wildcards and LoRa blocks, integrating them into the model and clip conditions for stable diffusion. It dynamically generates prompts based on user input or fixed text to fill in wildcard templates, enhancing the creativity and adaptability of the output content."
+    },
+    {
+        "question": "What are the input types of the WildcardEncodeInspire node?",
+        "answer": "The required input types are:\n1. model: Model parameters are crucial as they define the underlying AI model for text encoding and processing. The input determines the quality and characteristics of the generated content.\n2. clip: The clip parameter is essential for integrating text with visual context, enabling the node to generate prompts that not only textually connect but also visually correspond.\n3. token_normalization: Token normalization parameters significantly impact the efficiency and accuracy of the text encoding process, standardizing token values to ensure better handling by the AI model.\n4. weight_interpretation: The weight interpretation parameter is critical for controlling how the node interprets and applies weights during encoding, influencing the emphasis on different text parts, which can greatly affect the focus and detail in the final output.\n5. wildcard_text: This parameter is central to the node's function as it includes template text with wildcards that will be filled or replaced during encoding, laying the groundwork for dynamic and adaptable prompts."
+    },
+    {
+        "question": "What is the purpose of the weight_interpretation parameter?",
+        "answer": "The weight_interpretation parameter determines how the node interprets and applies weights during the encoding process. It influences the emphasis placed on different parts of the text, which can significantly alter the focus and level of detail in the final output."
+    },
+    {
+        "question": "What does the wildcard_text parameter contain?",
+        "answer": "The wildcard_text parameter includes template text that contains wildcards. These wildcards will be dynamically filled or replaced during the encoding process, enabling the generation of dynamic and adaptable prompts."
+    },
+    {
+        "question": "What is the purpose of the Select to add LoRA parameter?",
+        "answer": "The Select to add LoRA parameter allows users to incorporate specific LoRa blocks into the text. By adding extra contextual information, this can significantly enhance the depth and relevance of the AI-generated content."
+    },
+    {
+        "question": "What does the populated_text output contain?",
+        "answer": "The populated_text output is the final processed text after wildcard filling or replacement. This text is ready for use in the AI model's generation process."
+    },
+    {
+        "question": "What is the mode parameter used for?",
+        "answer": "The mode parameter controls whether the node generates a dynamic prompt for user input (Populate) or uses a fixed text template (Fixed). This setting is crucial for determining the adaptability and flexibility of the generated prompts."
+    }
+]

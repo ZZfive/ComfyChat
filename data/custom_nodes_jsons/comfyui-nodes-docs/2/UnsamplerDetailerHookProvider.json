@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of UnsamplerDetailerHookProvider?",
+        "answer": "UnsamplerDetailerHookProvider is a custom node in ComfyUI designed to enhance the details of sampled data through anti-sampling. It operates by applying detailed anti-sampling hooks during the sampling process, allowing for the generation of finer output."
+    },
+    {
+        "question": "What types of inputs are required for UnsamplerDetailerHookProvider?",
+        "answer": "UnsamplerDetailerHookProvider requires the following inputs: model (a model parameter that defines the underlying model for anti-sampling), steps (the number of steps for the anti-sampling process), start_end_at_step (specifies the step range for when details should start to be gradually reduced), end_end_at_step (marks the final step of the anti-sampling process), cfg (adjusts the anti-sampling config settings), sampler_name (identifies the specific sampling method), scheduler (defines the anti-sampling step scheduling strategy), normalize (determines whether data normalization is applied), positive (provides positive conditioning), negative (provides negative conditioning), and schedule_for_cycle (indicates whether the anti-sampling process should follow a cyclic schedule)."
+    },
+    {
+        "question": "What is the output of UnsamplerDetailerHookProvider?",
+        "answer": "The output of UnsamplerDetailerHookProvider is a detailed anti-sampling hook that can be used to inject additional detail into the sampling process, resulting in higher quality outcomes."
+    },
+    {
+        "question": "What are the categories and usage tips for UnsamplerDetailerHookProvider?",
+        "answer": "UnsamplerDetailerHookProvider is categorized as an ImpactPack/Detailer custom node. It is recommended to be run on a CPU infrastructure type."
+    },
+    {
+        "question": "How is UnsamplerDetailerHookProvider used in a code snippet?",
+        "answer": "Here's an example of how UnsamplerDetailerHookProvider can be used in a code snippet:\n\n```python\nunsampler_detailer_hook_provider = UnsamplerDetailerHookProvider(model, steps, start_end_at_step, end_end_at_step, cfg, sampler_name, scheduler, normalize, positive, negative, schedule_for_cycle)\n```"
+    },
+    {
+        "question": "How does the UnsamplerDetailerHookProvider's configuration affect the anti-sampling process?",
+        "answer": "The configuration of UnsamplerDetailerHookProvider, such as the value of cfg (which adjusts anti-sampling settings), the chosen sampler_name (which determines the sampling method), and the scheduler (which defines the scheduling strategy), all significantly influence the details and quality of the anti-sampling process and, consequently, the final output."
+    },
+    {
+        "question": "What errors may occur if UnsamplerDetailerHookProvider is not properly installed?",
+        "answer": "If UnsamplerDetailerHookProvider is not properly installed, such as the 'BlenderNeko/ComfyUI Noise' extension, errors may occur during execution. The error message will inform the user that the custom node isn't installed and provide information on how to install the necessary extension to use the node."
+    }
+]

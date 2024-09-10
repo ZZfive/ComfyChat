@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What does the `adv_pipeloader` method in ComfyLoader do?",
+        "answer": "The `adv_pipeloader` method in ComfyLoader simplifies the process of loading and preparing models and data for advanced use cases. It integrates various components like VAE, CLIP, and LORA to create a comprehensive pipeline that enables the generation and manipulation of high-quality images based on user-provided prompts and preferences."
+    },
+    {
+        "question": "What is the purpose of the `lora_model_strength` parameter?",
+        "answer": "The `lora_model_strength` parameter adjusts the impact of the LORA layer on the model's output, directly affecting the refinement process for image generation and the quality of the final images."
+    },
+    {
+        "question": "How does the `positive` and `negative` parameters influence image generation?",
+        "answer": "The `positive` and `negative` parameters guide the image generation process by providing positive and negative prompts. These prompts help the model focus on certain characteristics while avoiding undesired features, thereby fine-tuning the image generation to match user preferences."
+    },
+    {
+        "question": "What does the `clip_skip` parameter do?",
+        "answer": "The `clip_skip` parameter controls the interaction with the CLIP model, impacting how the node utilizes semantic information to enhance image generation. A value of `-1` disables the CLIP model."
+    },
+    {
+        "question": "What is the significance of the `ckpt_name` parameter?",
+        "answer": "The `ckpt_name` parameter is crucial as it determines the specific model configuration to be used in the process. It influences the overall performance and output of the node by defining the model's architecture and learned parameters."
+    },
+    {
+        "question": "How does the `vae_name` parameter affect image generation?",
+        "answer": "The `vae_name` parameter selects the appropriate variational autoencoder (VAE) model, which plays a significant role in generating and operating with images at the latent level. Different VAE models impact the quality and diversity of the generated images."
+    },
+    {
+        "question": "What does the `lora_name` parameter do?",
+        "answer": "The `lora_name` parameter is used to enable model fine-tuning with LORA layers, allowing for customization based on user-specific preferences. It specifies the name of the LORA layer configuration to be applied to the model."
+    },
+    {
+        "question": "Explain the role of the `resolutions` parameter in image generation with ComfyLoader.",
+        "answer": "The `resolutions` parameter determines the dimensions of the output images. It significantly affects the level of detail in the generated images and the computational resources required for the generation process. The supported resolutions are provided as strings in the format \"width x height\"."
+    },
+    {
+        "question": "What is the `empty_latent_width` parameter used for?",
+        "answer": "The `empty_latent_width` parameter sets the width of the latent space, which defines the range of potential image variations that can be generated. A wider latent space allows for a greater diversity of images."
+    },
+    {
+        "question": "What does the `batch_size` parameter control?",
+        "answer": "The `batch_size` parameter determines the number of images to be processed simultaneously. It affects the throughput and computational efficiency of the image generation process."
+    }
+]

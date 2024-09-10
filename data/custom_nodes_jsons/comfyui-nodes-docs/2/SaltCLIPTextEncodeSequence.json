@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SaltCLIPTextEncodeSequence node?",
+        "answer": "The SaltCLIPTextEncodeSequence node is used to generate a series of conditions for audio visualization based on textual prompts. It encodes the text prompts into conditions using the CLIP model, adjusts the conditions based on the specified number of frames, and applies token normalization and weight interpretation strategies to generate output tailored to specific visualization needs."
+    },
+    {
+        "question": "What does text need to be in SaltCLIPTextEncodeSequence?",
+        "answer": "The text input to SaltCLIPTextEncodeSequence must be a structured format that defines the time schedule for the sequence. Each frame in the sequence is associated with a specific text prompt that describes the content and timing of that frame."
+    },
+    {
+        "question": "What are the input types for SaltCLIPTextEncodeSequence?",
+        "answer": "The required input types are: clip (CLIP model used to encode text prompts), token_normalization (method of standardizing tokens from text prompts), weight_interpretation (strategy for interpreting weights in encoding), frame_count (total number of frames in the sequence), and text (structured text schedule for each frame)."
+    },
+    {
+        "question": "What are the output types of SaltCLIPTextEncodeSequence?",
+        "answer": "The output types are conditioning_sequence (generated conditions for audio visualization) and frame_count (total number of conditions generated)."
+    },
+    {
+        "question": "What is the category of SaltCLIPTextEncodeSequence?",
+        "answer": "SaltCLIPTextEncodeSequence belongs to the category of SALT/Scheduling/Conditioning."
+    },
+    {
+        "question": "What is a typical usage of SaltCLIPTextEncodeSequence?",
+        "answer": "SaltCLIPTextEncodeSequence can be used to generate conditions for audio visualization based on a given text prompt schedule, ensuring that the conditions are appropriately encoded and normalized to suit the visual output desired."
+    },
+    {
+        "question": "What are the available token normalization methods?",
+        "answer": "The available token normalization methods are 'none', 'mean', 'length', and 'length+mean'."
+    }
+]

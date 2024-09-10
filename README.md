@@ -35,6 +35,7 @@ Rough LLM Interpreter of ComfyUI
 
 ## 模型地址
 - [zzfive/ComfyChat-InternLM2.5-7b-v2-1](https://huggingface.co/zzfive/ComfyChat-InternLM2.5-7b-v2-1)
+- [zzfive/ComfyChat-InternLM2-7b-v2-1](https://huggingface.co/zzfive/ComfyChat-InternLM2-7b-v2-1)
 - [zzfive/ComfyChat-InternLM2-1-8b-v2-1](https://huggingface.co/zzfive/ComfyChat-InternLM2-1-8b-v2-1)
 
 ## 项目发展方向

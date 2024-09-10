@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is the purpose of the 'bbox_shift' parameter in ComfyUI-MuseTalk?",
+        "answer": "The 'bbox_shift' parameter determines the region of the head segmentation box in ComfyUI-MuseTalk, which ensures the integrity of the face feature in the dataset."
+    },
+    {
+        "question": "What do you mean by 'the upper-bound of the mask' in context of ComfyUI-MuseTalk?",
+        "answer": "In ComfyUI-MuseTalk, the term 'upper-bound of the mask' refers to the highest point of the segmentation box that defines the boundary around the face in the processed images."
+    },
+    {
+        "question": "What is the significance of landmark27, landmark28, and landmark30 in ComfyUI-MuseTalk?",
+        "answer": "Landmark27, landmark28, and landmark30 are key points in the facial landmarks that correspond to 15%, 63%, and 22% proportions in the dataset, particularly affecting the upper boundary of the segmentation box and lip motion."
+    },
+    {
+        "question": "What is the influence of 'bbox_shift' on mouth shapes and audio features in ComfyUI-MuseTalk?",
+        "answer": "Positive values of 'bbox_shift' (moving towards the lower half) generally increase mouth openness, while negative values (moving towards the upper half) generally decrease mouth openness. However, users need to adjust this parameter according to their specific needs and desired effects."
+    },
+    {
+        "question": "Describe the process of adjusting the 'bbox_shift' parameter in ComfyUI-MuseTalk.",
+        "answer": "The 'bbox_shift' parameter can be adjusted by running the inference script within a specified range, observing the effect on mouth shapes and audio features, and then adjusting the parameter value accordingly to meet the desired outcomes."
+    },
+    {
+        "question": "What decisions should be taken based on the experimental observations regarding 'bbox_shift'?",
+        "answer": "Based on the experimental observations, users should select a 'bbox_shift' value in the range [-9, 9] that corresponds to positive values (moving towards the lower half) for increased mouth openness and negative values (moving towards the upper half) for decreased mouth openness, considering their specific needs and desired effects."
+    },
+    {
+        "question": "Can 'bbox_shift' directly control the mouth openness in ComfyUI-MuseTalk?",
+        "answer": "While 'bbox_shift' does not directly control mouth openness, it can influence the orientation and area covered by the mask, which in turn affects the extent of mouth movements represented in the dataset."
+    },
+    {
+        "question": "What is the significance of the 'landmark' coordinates in determining the 'bbox_shift' parameter?",
+        "answer": "The 'landmark' coordinates, specifically landmark27, landmark28, and landmark30, play a crucial role in defining the upper boundary of the segmentation box and its contribution towards mouth motion and facial details, affecting the value of 'bbox_shift' chosen during parameter adjustment."
+    },
+    {
+        "question": "What is the purpose of adjusting the 'bbox_shift' parameter in ComfyUI-MuseTalk with 'upper-bound of the mask' close to landmark30?",
+        "answer": "When the 'upper-bound of the mask' is close to landmark30, it aims to maximize the contribution of audio features to lip motion."
+    },
+    {
+        "question": "Why might a user want to adjust 'bbox_shift' in ComfyUI-MuseTalk with 'upper-bound of the mask' moved away from landmark28?",
+        "answer": "A user might want the 'upper-bound of the mask' moved away from landmark28 to adjust it towards landmark30 for further focusing on generating details of facial disappearance, as these features seem to play a more significant role in this context."
+    }
+]

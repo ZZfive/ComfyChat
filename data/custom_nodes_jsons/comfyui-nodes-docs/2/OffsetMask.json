@@ -1,0 +1,26 @@
+[
+    {
+        "question": "What is the purpose of the OffsetMask node in ComfyUI?",
+        "answer": "The OffsetMask node in ComfyUI is used to manipulate and transform masks by applying specified offset, rotation, and duplication factors. It allows for the creation of multiple variants of a given mask, enabling dynamic adjustments in position and direction, which is particularly useful in image processing and enhancement tasks."
+    },
+    {
+        "question": "What is the NodeRange in the OffsetMask class?",
+        "answer": "In the provided code snippet, NodeRange does not appear as an attribute or parameter within the OffsetMask class. Therefore, it seems there may be a misunderstanding or typo in the question."
+    },
+    {
+        "question": "What are the input types required for the OffsetMask node?",
+        "answer": "The required input types for the OffsetMask node are: \n1. mask: The input mask or mask batch to be transformed. \n2. x: The horizontal offset to be applied to the mask. \n3. y: The vertical offset to be applied to the mask. \n4. angle: The rotation angle of the mask (in degrees). \n5. duplication_factor: The number of times the mask should be duplicated to form a batch. \n6. roll: A boolean flag indicating whether to apply edge wrapping during the offset process. \n7. incremental: A boolean flag indicating whether to apply the offset incrementally. \n8. padding_mode: A padding mode to be used when converting the mask. The valid options are 'empty', 'border', and 'reflection'."
+    },
+    {
+        "question": "How can you use the OffsetMask node in ComfyUI for image enhancement?",
+        "answer": "To use the OffsetMask node in ComfyUI for image enhancement, you would typically pass an input image with its corresponding mask to represent the areas of interest. You can then adjust the parameters such as horizontal and vertical offsets, rotation angle, duplication factor, and padding mode to experiment with different transformation effects. For instance, increasing the offset values and angle can simulate a shift or skew in the image, while changing the duplication factor can create multiple variations of the original image. The padding mode can be set to 'empty', which means no additional padding is applied, or 'border' or 'reflection' for certain effects. After adjusting the parameters, the node will output a new image with the applied transformations, which can potentially enhance the visual appeal or highlight specific aspects of the original image."
+    },
+    {
+        "question": "What is the padding_mode parameter in the OffsetMask node?",
+        "answer": "The padding_mode parameter in the OffsetMask node is used to specify the padding mode to be applied when converting the mask. The valid options are 'empty', 'border', and 'reflection'.\n\n- 'empty': No additional padding is applied.\n- 'border': The border pixels will be filled with edge values of the image.\n- 'reflection': The border pixels will be filled with reflection values of the image."
+    },
+    {
+        "question": "What kind of impact does the angle parameter have on the OffsetMask node?",
+        "answer": "The angle parameter in the OffsetMask node has a significant impact on the transformation applied to the mask. It defines the rotation of the mask around its center by the specified angle (in degrees). When the angle is set to a non-zero value, the mask will be rotated accordingly. This rotation can be seen as a form of extrusion or warping, which can be useful for producing various visual effects or enhancing the realism of images and videos."
+    }
+]

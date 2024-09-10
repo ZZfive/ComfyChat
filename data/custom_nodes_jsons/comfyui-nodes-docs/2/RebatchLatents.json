@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the LatentRebatch node in ComfyUI?",
+        "answer": "The LatentRebatch node is designed to efficiently manage and rearrange latent representations into batches. It plays a crucial role in preparing data for further processing by ensuring that latent representations are properly batched according to the specified size. This is essential for the performance of subsequent computational tasks."
+    },
+    {
+        "question": "What are the input types required for the LatentRebatch node?",
+        "answer": "The required input type for the LatentRebatch node is 'latents', which is a dictionary list where each dictionary contains the latent representation and relevant metadata. The data type for this parameter in ComfyUI is 'LATENT', and in Python, it is a list of dictionaries containing either torch.Tensors or integers."
+    },
+    {
+        "question": "What are the output types of the LatentRebatch node?",
+        "answer": "The output of the LatentRebatch node is a list of dictionaries containing the reorganized latent batches. Each dictionary includes 'samples', 'noise_mask', and 'batch_index', representing the results of rebatching the latent representations. The output data type is 'LATENT' in ComfyUI and a list of dictionaries containing either torch.Tensors or lists of integers in Python."
+    },
+    {
+        "question": "Can you explain how the LatentRebatch node handles the 'latents' input?",
+        "answer": "The 'latents' input to the LatentRebatch node is a dictionary list where each dictionary contains the latent representation and related metadata. This parameter is critical as it determines the data that will be batched and processed. The node uses this input to generate batches of latent representations, each containing a specified number of samples, a noise mask, and a batch index."
+    },
+    {
+        "question": "How does the LatentRebatch node handle the 'batch_size' parameter?",
+        "answer": "The 'batch_size' parameter in the LatentRebatch node defines the size of each batch created from the input 'latents'. It is a crucial parameter as it affects the efficiency and throughput of the batching process. The node uses this parameter to determine how many samples to include in each batch."
+    },
+    {
+        "question": "What are the main usage tips provided for the LatentRebatch node?",
+        "answer": "The main usage tip for the LatentRebatch node is that it is designed to operate on a CPU infrastructure type. This is important to consider when designing the workflows that incorporate the node. Additionally, the node is recommended to be used on an Infra shape of 'CPU'."
+    },
+    {
+        "question": "How does the LatentRebatch node split the indexable object into slices?",
+        "answer": "The LatentRebatch node divides an indexable object, such as a list or array, into multiple slices of a specified length ('batch_size'), and determines the remainder. This is useful when dealing with large datasets or complex workflows where data needs to be processed in smaller, manageable chunks."
+    }
+]

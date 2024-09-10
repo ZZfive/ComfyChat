@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the PFG node?",
+        "answer": "The purpose of the PFG node is to enhance the condition process in a generative model by applying learned transformations to condition vectors. It uses pre-trained models to calculate features from input images and then scales these features and combines them with the original condition vectors to produce enhanced condition vectors that better guide the generation process."
+    },
+    {
+        "question": "What are the input types required by PFG and their corresponding Comfy and Python data types?",
+        "answer": "The required input types for PFG are: positive (Conditioning, torch.Tensor), negative (Conditioning, torch.Tensor), pfg_scale (Float, float), image (Image, PIL.Image.Image), and model_name (Combo[STRING], str)."
+    },
+    {
+        "question": "What are the output types provided by PFG and their corresponding Comfy and Python data types?",
+        "answer": "The output types provided by PFG are: conditioning, which includes both positive and negative conditioning vectors (Conditioning, List[List[torch.Tensor, Dict]])."
+    },
+    {
+        "question": "How is the PFG feature vector calculated from the input image?",
+        "answer": "The PFG feature vector is calculated by passing the input image through the tagger model using the `infer` method. This results in probabilities that are reshaped and scaled to produce the final PFG feature vector."
+    },
+    {
+        "question": "What are the parameters that can be adjusted to control the impact of the PFG feature vector on the condition vector?",
+        "answer": "The parameters that can be adjusted are `pfg_scale`, which controls the scaling factor of the PFG feature vector, and the individual elements in the positive and negative conditioning vectors, including `cond` and `uncond`, which are repeated based on the feature vector to adjust their influence on the final condition vector."
+    },
+    {
+        "question": "What is the process for preparing the input images for use with the PFG model?",
+        "answer": "The input image is scaled by 255, converted to a NumPy array of type uint8, and then converted back to a PIL Image object. This preparation step ensures that the image can be properly processed by the model."
+    },
+    {
+        "question": "Which class and method are used to implement the PFG feature extraction functionality?",
+        "answer": "The `PFG` class contains the `infer` method, which is used to perform inference on input images using the PFG model. This method computes the probabilities of various classes associated with the input image."
+    }
+]

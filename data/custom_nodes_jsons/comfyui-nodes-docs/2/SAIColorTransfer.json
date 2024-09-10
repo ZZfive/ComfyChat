@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SAIColorTransfer node?",
+        "answer": "The SAIColorTransfer node is specifically designed to apply colour migration techniques between images. It enables the modification of the target image's colour palette to match that of the source image, aiding in coordinating colours between different images and achieving specific aesthetic effects."
+    },
+    {
+        "question": "How is the target image's colour palette modified by the SAIColorTransfer node?",
+        "answer": "The target image's colour palette is modified by the SAIColorTransfer node by transferring the colour palette from the source image. This means that the colours in the source image will be adjusted to match the colours in the target image."
+    },
+    {
+        "question": "What are the input types required for the SAIColorTransfer node?",
+        "answer": "The input types required for the SAIColorTransfer node are target_images, source_images, and mode. target_images is a list of image objects that need their colour palette modified. source_images is a list of image objects that provide the colour palette to be transferred. mode determines the colour migration method to be used, such as PDF重组, 均值迁移, or LAB色彩空间迁移."
+    },
+    {
+        "question": "What are the output types provided by the SAIColorTransfer node?",
+        "answer": "The output types provided by the SAIColorTransfer node are images. This output is a list of image objects that represent the images with their colour palettes adjusted."
+    },
+    {
+        "question": "What are the recommended usage tips for the SAIColorTransfer node?",
+        "answer": "The recommended usage tips for the SAIColorTransfer node include specifying the correct target and source images and choosing the appropriate colour migration method. It is important to ensure that the target and source images are in the correct format and size. The colour migration method should be chosen based on the desired colour adaption effects."
+    },
+    {
+        "question": "Can you describe the SAIColorTransfer node's source code architecture?",
+        "answer": "The SAIColorTransfer node's source code architecture includes a class definition for the node, taking input parameters, and defining the output types and return names. The node includes a transfer function that applies the colour migration technique based on the selected mode. The node also includes classes and methods for colour transfer operations."
+    },
+    {
+        "question": "What are the available modes for colour migration using the SAIColorTransfer node?",
+        "answer": "The available modes for colour migration using the SAIColorTransfer node are 'pdf_regrain', 'mean_transfer', and 'lab_transfer'. Each mode represents a different algorithm that can be used to adapt the colours in the target image to match the colours in the source image."
+    }
+]

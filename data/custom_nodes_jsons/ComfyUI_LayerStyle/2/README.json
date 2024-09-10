@@ -26,5 +26,33 @@
     {
         "question": "In which conference was BEiT-3 accepted?",
         "answer": "BEiT-3 was accepted by CVPR 2023."
+    },
+    {
+        "question": "What is the purpose of the ComfyUI_LayerStyle plugin?",
+        "answer": "The ComfyUI_LayerStyle plugin migrates some basic functions of PhotoShop to ComfyUI, aiming to centralize the workflow and reduce the frequency of software switching."
+    },
+    {
+        "question": "How can I install the ComfyUI_LayerStyle plugin?",
+        "answer": "You can install the plugin by using the ComfyUI Manager or by opening the cmd window in the plugin directory of ComfyUI and typing 'git clone https://github.com/chflame163/ComfyUI_LayerStyle.git'. You can also download the zip file and copy the resulting folder to the 'ComfyUI\\custom_Nodes' directory."
+    },
+    {
+        "question": "What should I do if I encounter the error 'ModuleNotFoundError: No module named 'psd_tools'?",
+        "answer": "This error occurs when the 'psd_tools' package is not installed correctly. To fix this, close ComfyUI, open the terminal window in the plugin directory, and execute the command: '..\\..\\..\\python_embeded\\python.exe -s -m pip install psd_tools'. If there are errors during installation, such as 'ModuleNotFoundError: No module named 'docopt'', download the 'docopt' whl file and install it manually using the command: '..\\..\\..\\python_embeded\\python.exe -s -m pip install path/docopt-0.6.2-py2.py3-none-any.whl', where 'path' is the path name of the whl file."
+    },
+    {
+        "question": "What is the purpose of the MaskEdgeUltraDetailV2 node?",
+        "answer": "The MaskEdgeUltraDetailV2 node is an upgraded version of MaskEdgeUltraDetail that adds the VITMatte edge processing method. This method is suitable for handling semi-transparent areas."
+    },
+    {
+        "question": "What is the purpose of the ImageToMask node?",
+        "answer": "The ImageToMask node is used to convert an image into a mask. It supports converting any channel in LAB, RGBA, YUV, and HSV modes into masks and provides color scale adjustment. It also supports mask optional input to obtain masks that only include valid parts."
+    },
+    {
+        "question": "What is the purpose of the Shadow & Highlight Mask node?",
+        "answer": "The Shadow & Highlight Mask node is used to generate masks for the dark and bright parts of an image."
+    },
+    {
+        "question": "What is the difference between the MaskGradient and CreateGradientMask nodes?",
+        "answer": "The MaskGradient node creates a gradient for the mask from one side, while the CreateGradientMask node creates a gradient mask."
     }
 ]

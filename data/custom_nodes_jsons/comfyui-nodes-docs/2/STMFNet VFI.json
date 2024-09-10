@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the STMFNet_VFI class?",
+        "answer": "The STMFNet_VFI class is designed to perform frame interpolation within ComfyUI, enhancing the smoothness of frame transitions within video sequences by generating intermediate frames that are not present in the original source."
+    },
+    {
+        "question": "What is the input type requirement for the 'ckpt_name' parameter?",
+        "answer": "The 'ckpt_name' parameter, which is a string, is a required input type that specifies the checkpoint (checkpoint script files) that holds the pre-trained model weights for the frame interpolation process."
+    },
+    {
+        "question": "What does the 'multiplier' parameter signify?",
+        "answer": "The 'multiplier' parameter, which is an integer, is used to determine the increase in frame rate by multiplying the original frame rate. However, it should be noted that in the current implementation, only a multiplier of 2 is supported."
+    },
+    {
+        "question": "What is the function signature of the vfi method?",
+        "answer": "The vfi method in the STMFNet_VFI class has the following signature:\n\n```python\n@classmethod\n    def vfi(cls, ckpt_name: typing.AnyStr, frames: torch.Tensor, clear_cache_after_n_frames=10, multiplier: typing.SupportsInt=2, duplicate_first_last_frames: bool=False, optional_interpolation_states: InterpolationStateList=None, **kwargs):\n```"
+    },
+    {
+        "question": "What are the possible values for the 'clear_cache_after_n_frames' parameter?",
+        "answer": "The 'clear_cache_after_n_frames' parameter can take an integer value ranging from 1 to 1000, where 1 is the lowest and 1000 is the highest value, with 10 being the default."
+    },
+    {
+        "question": "What is the output of the STMFNet_VFI node?",
+        "answer": "The STMFNet_VFI node outputs a list of interpolated frames, where each frame is a tensor representing the generated interpolated Frame."
+    },
+    {
+        "question": "What are the parameters you should provide to the vfi method?",
+        "answer": "To invoke the vfi method, you should provide the following parameters: 'ckpt_name', 'frames', 'clear_cache_after_n_frames', 'multiplier', 'duplicate_first_last_frames', and optionally 'optional_interpolation_states'."
+    }
+]

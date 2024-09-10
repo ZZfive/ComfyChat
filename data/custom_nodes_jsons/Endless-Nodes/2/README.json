@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What are the features of the Endless-Nodes custom nodes for ComfyUI?",
+        "answer": "The Endless-Nodes custom nodes for ComfyUI offer several features including:\n\n1. An image saver for saving images and JSON files to a base folder or custom folders.\n2. Two aesthetic scoring models, one based on the same approach as AUTO1111, and the other based on Image Reward.\n3. Converters that can convert between various numerical types and to strings.\n4. Switches for text and numbers.\n5. Parameter collection nodes for capturing user inputs.\n6. A node that can connect six float values to any other float input.\n7. A lightweight image saver node that can save images to separate folders and allows for custom timestamping.\n8. A node for loading scoring models such as chadscorer or ImageReward.\n9. A node for displaying an aesthetic score in number format.\n10. A node that allows users to connect six float values to output to six different output slots.\n\nThe nodes are designed to work seamlessly with ComfyUI for Stable Diffusion."
+    },
+    {
+        "question": "What are the requirements for installing and using the Endless-Nodes?",
+        "answer": "To install and use the Endless-Nodes, you will need:\n\n1. Git: Download the executable from [here](https://git-scm.com/download/win).\n2. Python: The standalone version of ComfyUI includes Python.\n3. Pip: The Python folder should be added to your environment's PATH.\n4. The Endless-Nodes code: Either append it to the custom_nodes folder of your ComfyUI installation or use ComfyUI Manager if installed.\n\nOnce installed, you can use the Endless-Nodes in ComfyUI following their instructions."
+    },
+    {
+        "question": "What are the potential issues with installing CLIP?",
+        "answer": "Some users have reported issues with installing CLIP from OpenAI, especially when using ComfyUI Manager. This may be due to conflicts with OpenAI's GitHub issues. The author of the Endless-Nodes has resolved this issue on a new PC without any software except Windows. They recommend following these steps:\n\n1. Install Python and GIT.\n2. Set the Python and Pip paths in your PATH environment variable.\n3. Use GIT to install the Endless-Nodes.\n\nIf the above steps do not resolve the issue, the author suggests contacting them for assistance with specific modules."
+    },
+    {
+        "question": "What are the inputs of the image saver node?",
+        "answer": "The image saver node allows for the following inputs:\n\n1. Save location: Determines the location where the image is saved.\n2. Save type: Determines whether to save the image or the JSON file.\n3. Base folder: Base folder to save the image.\n4. JSON folder: Folder to save the JSON file.\n5. Python timestamping: Whether to use a Python timestamp or a WAS timestamp for the filename.\n\nThe node also has metadata outputs that can store the filename, path, and timestamp for reference."
+    },
+    {
+        "question": "What is the difference between the Aesthetic Scorer and the Image Reward node?",
+        "answer": "The Aesthetic Scorer and the Image Reward node are both scoring nodes designed for ComfyUI. The main difference is in their underlying scoring mechanisms:\n\n- Aesthetic Scorer: This node outputs a predicted aesthetic score as a number and displays it with the appropriate node. The scorer is based on the [MLP class code](https://github.com/christophschuhmann/improved-aesthetic-predictor) from Christoph Schuhmann and is repurposed from the [strimmlarn](https://github.com/strimmlarn/ComfyUI-Strimmlarns-Aesthetic-Score) custom nodes.\n- Image Reward: This node outputs a predicted aesthetic score as a number and displays it with the appropriate node. The scorer is based on the [ImageReward](https://github.com/THUDM/ImageReward) model and uses 137K input samples that were scored by humans.\n\nBoth nodes add about 7-10 seconds to a workflow on the author's Nvidia 3060 12 GB card, but they often score differently, leading to interesting discussions about the quality of the generated images."
+    },
+    {
+        "question": "What is the purpose of the Aesthetic Scorer node?",
+        "answer": "The Aesthetic Scorer node is designed to output a predicted aesthetic score as a number and display it with the appropriate node. It is based on a scoring model from strimmlarn and combines the model loader and score calculator into one. The node requires you to load a scoring model, such as chadscorer, which is available from GitHub. The scorer adds about 7-10 seconds to a workflow, although this may vary depending on the user's hardware and the complexity of the workflow."
+    },
+    {
+        "question": "How do I use the Endless Nodes Parameterizer?",
+        "answer": "The Endless Nodes Parameterizer allows you to set various parameters for the CLIP text encoder and refiners in your Stable Diffusion workflows. Here's how you can use it:\n\n1. Open the ComfyUI interface and load the Endless Nodes Parameterizer plugin.\n2. Check the available inputs for parameters such as base width, base height, base cropped width, base cropped height, base target width, and base target height.\n3. Set the values for these parameters according to your specific needs.\n4. Repeat this process for the refiner parameters if necessary.\n5. Once you have set all the parameters, click the 'Save' button to store the configuration.\n\nThis node is a comprehensive tool for configuring the CLIP text encoder and refiners in Stable Diffusion workflows. It simplifies the process of setting up parameters that can make a significant difference in the quality of the generated images."
+    },
+    {
+        "question": "How do I install the Endless-Nodes?",
+        "answer": "To install the Endless-Nodes, follow these steps:\n\n1. Navigate to your ComfyUI custom_nodes folder.\n2. Right-click and select 'Command Prompt here' to open a command prompt.\n3. Type the following command:\n\n```python -m pip install -r requirements.txt```\n\nThis will install the necessary dependencies for the Endless-Nodes.\n\n4. Once the installation is complete, you can load the Endless-Nodes in ComfyUI by going to the 'Node and Plugin Library' section and searching for the 'tusharbhutt/Endless-Nodes' repository.\n\nThat's it! You should now have the Endless-Nodes installed and ready to use in your ComfyUI interface."
+    }
+]

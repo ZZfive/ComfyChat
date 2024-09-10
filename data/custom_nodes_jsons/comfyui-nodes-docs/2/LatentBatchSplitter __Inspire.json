@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is the purpose of the LatentBatchSplitter node?",
+        "answer": "The LatentBatchSplitter node is designed to split a batch of latent representations into smaller batches or individual samples based on a specified count. This functionality is crucial for managing and operating data batches, especially in scenarios where smaller subsets or individual projects within a large batch need to be processed."
+    },
+    {
+        "question": "What are the required input parameters for the LatentBatchSplitter node?",
+        "answer": "The required input parameters for the LatentBatchSplitter node are 'latent' and 'split_count'. 'latent' represents the batch of latent representations to be split, while 'split_count' specifies the number of splits or individual samples to be extracted from the input batch."
+    },
+    {
+        "question": "What does the output of the LatentBatchSplitter node consist of?",
+        "answer": "The output of the LatentBatchSplitter node is a tuple containing the smaller batches or individual latent representations derived from the original input batch based on the specified split count."
+    },
+    {
+        "question": "What are the common nodes that can be used in conjunction with the LatentBatchSplitter node?",
+        "answer": "The common nodes that can be used in conjunction with the LatentBatchSplitter node are unknown."
+    },
+    {
+        "question": "What are the possible use cases for the LatentBatchSplitter node?",
+        "answer": "The LatentBatchSplitter node can be used in scenarios where there is a need to process smaller subsets or individual projects within a large batch, which is crucial for managing and operating data batches."
+    },
+    {
+        "question": "What is the default value for the 'split_count' parameter in the LatentBatchSplitter node?",
+        "answer": "The default value for the 'split_count' parameter in the LatentBatchSplitter node is 4."
+    },
+    {
+        "question": "What is the lowest possible value for the 'split_count' parameter in the LatentBatchSplitter node?",
+        "answer": "The lowest possible value for the 'split_count' parameter in the LatentBatchSplitter node is 0."
+    },
+    {
+        "question": "What is the highest possible value for the 'split_count' parameter in the LatentBatchSplitter node?",
+        "answer": "The highest possible value for the 'split_count' parameter in the LatentBatchSplitter node is 50."
+    },
+    {
+        "question": "How does the LatentBatchSplitter node handle cases where the specified 'split_count' is greater than the number of samples in the input batch?",
+        "answer": "If the specified 'split_count' is greater than the number of samples in the input batch, the LatentBatchSplitter node will create additional batches containing empty latent representations until the 'split_count' is reached. This ensures that the output is exactly as specified by the 'split_count'."
+    },
+    {
+        "question": "How does the LatentBatchSplitter node handle cases where the specified 'split_count' is less than the number of samples in the input batch?",
+        "answer": "If the specified 'split_count' is less than the number of samples in the input batch, the LatentBatchSplitter node will extract the first 'split_count' number of samples from the input batch and create additional batches containing the remaining samples."
+    }
+]

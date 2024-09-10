@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the LatentReceiver node in ComfyUI?",
+        "answer": "The LatentReceiver node is used to process and handle latent data, which is crucial for converting and loading potential representations. This is necessary for various machine learning tasks."
+    },
+    {
+        "question": "What package is the LatentReceiver node included in ComfyUI?",
+        "answer": "The LatentReceiver node is part of the ImpactPack/Util category in ComfyUI."
+    },
+    {
+        "question": "What is the 'doit' method responsible for in the LatentReceiver node?",
+        "answer": "The 'doit' method in the LatentReceiver node handles the processing of latent files. It accepts a latent file path and outputs a tensor representing the latent space."
+    },
+    {
+        "question": "What details does the 'doit' method extract from the latent file?",
+        "answer": "The 'doit' method extracts the latent tensor from the latent file, performs scaling (if necessary based on the format version), and then returns the scaled tensor as part of the 'samples' output."
+    },
+    {
+        "question": "Explain how the 'doit' method handles non-latent files?",
+        "answer": "If the latent file path ends with '.latent.png', the 'doit' method calls the 'load_preview_latent' method to load a preview of the latent data from the image file."
+    },
+    {
+        "question": "What is the purpose of the 'link_id' parameter in the 'doit' method?",
+        "answer": "The 'link_id' parameter is used as an identifier to track or link the latent data, which can be helpful in larger systems to organize or reference the data."
+    },
+    {
+        "question": "What is the 'trigger_always' parameter in the 'doit' method responsible for?",
+        "answer": "The 'trigger_always' parameter is a boolean flag that, when set to true, causes the node to always initiate its process, disregarding any changes in the input data."
+    },
+    {
+        "question": "What are the return types of the 'doit' method?",
+        "answer": "The 'doit' method returns two outputs: a tensor called 'result', which represents the processed latent data, and a dictionary called 'ui', which may contain UI elements like images to preview the data."
+    }
+]

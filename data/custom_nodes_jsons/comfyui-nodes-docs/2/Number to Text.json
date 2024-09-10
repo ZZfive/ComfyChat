@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What is the primary function of the WAS Number To Text class in ComfyUI?",
+        "answer": "The WAS Number To Text class in ComfyUI is designed to convert numeric inputs into text representations, making it easier for downstream nodes or applications to understand and use the number inputs."
+    },
+    {
+        "question": "What are the input types required by the WAS Number To Text class?",
+        "answer": "The required input type for the WAS Number To Text class is 'number'. This parameter is crucial for the node's operation as it serves as the input that will be converted to text. The 'number' parameter must support Comfy Data Type (NUMBER) and Python Data Types (Union[int, float, complex])."
+    },
+    {
+        "question": "What are the output types provided by the WAS Number To Text class?",
+        "answer": "The WAS Number To Text class provides the output type 'text'. This output represents the textual representation of the input number, resulting from the node's conversion process. It supports Comfy Data Type (TEXT) and Python Data Type (str)."
+    },
+    {
+        "question": "What are the usage tips provided for the WAS Number To Text class?",
+        "answer": "The usage tips for the WAS Number To Text class indicate that it is an infra type for CPU."
+    },
+    {
+        "question": "What is the source code implementation of the WAS Number To Text class?",
+        "answer": "The WAS Number To Text class implementation can be viewed in the following source code snippet. It includes the class definition, method annotations, and the core logic that converts numbers to text.\n\n```python\n\nclass WAS_Number_To_Text:\n\n    def __init__(self):\n        pass\n\n    @classmethod\n    def INPUT_TYPES(cls):\n        return {'required': {'number': ('NUMBER',)}\n    RETURN_TYPES = (TEXT_TYPE,)\n    FUNCTION = 'number_to_text'\n    CATEGORY = 'WAS Suite/Number/Operations'\n\n    def number_to_text(self, number):\n        return (str(number),)\n    ```"
+    }
+]

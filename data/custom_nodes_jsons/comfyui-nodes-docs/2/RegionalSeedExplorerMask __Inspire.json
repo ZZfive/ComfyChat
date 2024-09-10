@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the main purpose of RegionalSeedExplorerMask?",
+        "answer": "The main purpose of RegionalSeedExplorerMask is to change the noise pattern according to seed hints and masks, exploring diverse visual effects in the specified region. It uses masks to focus changes, enabling directed modification and enhancement in the image generation process."
+    },
+    {
+        "question": "What are the required input types for RegionalSeedExplorerMask?",
+        "answer": "The required input types for RegionalSeedExplorerMask are:\n\n1. mask: Specifies the area for applying seed hint changes in the noise mode, allowing for directed modification with Comfy dtype of MASK and Python dtype of torch.Tensor.\n\n2. noise: Represents the initial noise mode, which is the foundation for generating various visual effects with Comfy dtype of NOISE and Python dtype of torch.Tensor.\n\n3. seed_prompt: Contains the seed hints for defining noise pattern changes, guiding the generation of specific visual effects with Comfy dtype of STRING, Python dtype of str, and supports multiline input.\n\n4. enable_additional: Controls whether additional seed hints and their corresponding intensities are included in the modification process, allowing for more complex adjustments with Comfy dtype of BOOLEAN and Python dtype of bool.\n\n5. additional_seed: When enabling additional modifications, this specifies the additional seed hints to be applied with Comfy dtype of INT and Python dtype of str.\n\n6. additional_strength: Determines the impact strength of additional seed hints on the noise pattern, allowing for fine-tuning adjustments with Comfy dtype of FLOAT and Python dtype of float.\n\n7. noise_mode: Specifies on which device the processing should be performed, affecting performance and resource utilization with Comfy dtype of COMBO[STRING] and Python dtype of str."
+    },
+    {
+        "question": "What are the possible values for enable_additional?",
+        "answer": "The possible values for enable_additional are: true and false."
+    },
+    {
+        "question": "What happens when enable_additional is enabled?",
+        "answer": "When enable_additional is enabled, an additional seed and strength are included in the noise change process, allowing for more complex modification."
+    },
+    {
+        "question": "What type of values can additional_seed and additional_strength take?",
+        "answer": "Both additional_seed and additional_strength must take integer and floating-point values, respectively, within specific ranges."
+    },
+    {
+        "question": "In which return types does RegionalSeedExplorerMask produce?",
+        "answer": "RegionalSeedExplorerMask produces a noise return type, which is the modified noise pattern reflecting the changes applied in the specified mask region."
+    },
+    {
+        "question": "What method does RegionalSeedExplorerMask use for processing?",
+        "answer": "RegionalSeedExplorerMask uses the `doit` method for processing."
+    }
+]

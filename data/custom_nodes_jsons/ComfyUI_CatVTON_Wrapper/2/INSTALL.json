@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What are the installation steps for detectron2?",
+        "answer": "To install detectron2, you can either follow the step-by-step instructions provided in [our Colab Notebook](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5) or use the provided [Dockerfile](docker). The requirements for installation are: Linux or macOS with Python ≥ 3.6, PyTorch ≥ 1.4, [torchvision](https://github.com/pytorch/vision/) that matches the PyTorch installation, OpenCV (optional for demo and visualization), and pycocotools."
+    },
+    {
+        "question": "What is the recommended method to build detectron2 from source?",
+        "answer": "The recommended method to build detectron2 from source involves using [ninja](https://ninja-build.org/) for faster builds. To build detectron2 from source, install gcc & g++ ≥ 5, then run `python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'` or if you have a local clone, `python -m pip install -e detectron2`. To rebuild detectron2, use `rm -rf build/ **/*.so` to clean the old build first."
+    },
+    {
+        "question": "What are the common installation issues when using detectron2?",
+        "answer": "Common installation issues when using detectron2 include undefined torch/aten/caffe2 symbols or segmentation fault when running the library, undefined C++ symbols, issues with GPU support, and undefined CUDA symbols. Solutions include ensuring the versions of PyTorch, torchvision, and detectron2 match, using the correct CUDA version, and fixing C++ symbol compatibility issues."
+    },
+    {
+        "question": "How can you install detectron2 pre-built?",
+        "answer": "Detectron2 can be installed pre-built using the command `python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/index.html` for CUDA 10.1 compatibility. You can replace 'cu101' with 'cu{100,92}' or 'cpu'. Note that pre-built installations may only work with certain versions of PyTorch and may not be compatible with the latest master branch of detectron2."
+    },
+    {
+        "question": "What is the purpose of the Dockerfile provided?",
+        "answer": "The Dockerfile provided is used to automate the installation process of detectron2 by automating the installation of detectron2 and its dependencies in a Docker environment. This can be beneficial for consistency and reproducibility in development and testing."
+    },
+    {
+        "question": "What are the prerequisites for using detectron2?",
+        "answer": "The prerequisites for using detectron2 include Linux or macOS with Python ≥ 3.6, PyTorch ≥ 1.4, torchvision that matches the PyTorch version, OpenCV (optional for demo and visualization), and pycocotools."
+    },
+    {
+        "question": "What are some common problems that may occur during detectron2 installation?",
+        "answer": "Common installation problems that may occur during detectron2 installation include undefined torch/aten/caffe2 symbols or segmentation faults, undefined C++ symbols, issues with GPU support, and undefined CUDA symbols. Solving these issues often requires verifying the versions of PyTorch, torchvision, detectron2, and CUDA and ensuring they are compatible."
+    }
+]

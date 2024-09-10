@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does the ReferenceOnlySimple class 'reference_only' method do?",
+        "answer": "It integrates reference structures into the given model to enhance the model. This is done by cloning the input model and applying a custom reference application function to its attention mechanism, thereby enabling the integration of additional potential samples."
+    },
+    {
+        "question": "What is the purpose of integrating reference structures into the given model?",
+        "answer": "It is used to enhance the model by incorporating additional structures that have been proven to boost performance or enable new capabilities."
+    },
+    {
+        "question": "How do you interpret the 'batch_size' parameter in the 'reference_only' method?",
+        "answer": "The 'batch_size' parameter determines the size of the batches in which the model operates. It impacts the efficiency of the node as well as its memory usage and can be customized according to the specific requirements of the hand-on task."
+    },
+    {
+        "question": "What is the output of the 'reference_only' method of the ReferenceOnlySimple class?",
+        "answer": "The output comprises the model_reference, which is the revised model that has integrated the reference structures, and the latent object which includes updated potential space samples."
+    },
+    {
+        "question": "Explain how the reference only method in the ReferenceOnlySimple class modifies the model.",
+        "answer": "It operates by cloning the input model and applying a custom reference application function to its attention mechanism. This custom function enables the integration of additional potential samples, thereby enhancing the model's performance or enabling new functionalities."
+    },
+    {
+        "question": "What is the purpose of the 'noise_mask' parameter in the ReferenceOnlySimple class?",
+        "answer": "It is used to mask out specific portions of the output when certain conditions are met. For example, it can be used to control which outputs of the model are actually used as part of the latent, potentially applied to resampling."
+    },
+    {
+        "question": "How does the 'reference_apply' function within the ReferenceOnlySimple class perform?",
+        "answer": "The function is designed to repeat and expand elements of the 'k' tensor to match the number of heads specified by the 'query' tensor. It fills out patterns using repeated elements within the 'k' tensor and based on the remaining 'slices' of 'query' tensor."
+    }
+]

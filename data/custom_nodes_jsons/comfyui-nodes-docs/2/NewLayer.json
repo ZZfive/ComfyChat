@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the NewLayer class?",
+        "answer": "The NewLayer class is used to create and manage a layered image structure where each layer can be positioned and scaled independently within a canvas, enhancing visual composition and layering effects."
+    },
+    {
+        "question": "What is the significance of the scale_option parameter?",
+        "answer": "The scale_option parameter determines how the layer will be scaled. It supports three options: 'width' for scaling to fit the new width and preserve the original height, 'height' for scaling to fit the new height and preserve the original width, or 'overall' to scale based on an overall scaling factor for both width and height. This option is useful for maintaining aspect ratios or applying uniform scaling."
+    },
+    {
+        "question": "What does the mask parameter in the NewLayer class do?",
+        "answer": "The mask parameter is used to define specific regions of the layer that should be visible or modified. It allows for more precise control over which parts of the layer's visual content are affected during composition or transformation."
+    },
+    {
+        "question": "What is the default value for the z_index parameter in the NewLayer class?",
+        "answer": "The default value for the z_index parameter is 0. This indicates that the layer will initially be placed on top of all other layers, allowing flexibility in managing the visibility of layers and their depth in the composition."
+    },
+    {
+        "question": "What are the input types for the NewLayer class?",
+        "answer": "The NewLayer class accepts the following input types:\n- x: Integer, representing the horizontal position of the layer within the canvas.\n- y: Integer, defining the vertical position of the layer.\n- width: Integer, setting the width of the layer.\n- height: Integer, determining the height of the layer.\n- z_index: Integer, establishing the stack order of the layer relative to others.\n- scale_option: Choices of 'width', 'height', or 'overall', deciding the scaling method for the layer.\n- image: Image, the visual content source for the layer.\n- mask: Optional image mask, defining specific regions for visibility or modification.\n- layers: Optional list of layers, allowing additional layers to be included in the composition.\n- canvas: Optional image canvas, providing a base image for the new layer to be placed upon."
+    },
+    {
+        "question": "What does the image parameter in the NewLayer class do?",
+        "answer": "The image parameter is used to specify the visual content that will be displayed and operated on by the NewLayer node. It can be either an image or a mixture of binary data and image data for composite layers."
+    },
+    {
+        "question": "What is the 'canvas' parameter in the NewLayer class used for?",
+        "answer": "The 'canvas' parameter is used to define the image that serves as the base or initial visual environment for the new layer. It provides a foundation upon which the layer can be placed and integrated, allowing for complex compositions where the new layer's appearance is dependent on the underlying canvas."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the output of the GetColorToneV2 class?",
+        "answer": "The output of the GetColorToneV2 class includes an image, the main color in RGB hex format, and the HSV color values of the image."
+    },
+    {
+        "question": "What does the 'color_of' parameter in GetColorToneV2 do?",
+        "answer": "The 'color_of' parameter in GetColorToneV2 can be set to 'entire', 'background', or 'subject', which corresponds to choosing the background color, the color of the area outside the provided mask (involved data), or the color of the data inside the provided mask (involved data), respectively."
+    },
+    {
+        "question": "How is the mask in the GetColorToneV2 class handled?",
+        "answer": "The mask in the GetColorToneV2 class can be provided as a mask tensor. If provided, the mask will be used to apply a color tone or average only to the data within the mask."
+    },
+    {
+        "question": "What roles do 'mode' and 'remove_bkgd_method' play in the GetColorToneV2 class?",
+        "answer": "The 'mode' parameter specifies whether the output color is a main color or an average color of the entire image. The 'remove_bkgd_method' parameter determines the method used for background removal, with options 'BiRefNet' and 'RMBG V1.4'."
+    },
+    {
+        "question": "How are input types handled in the GetColorToneV2 class?",
+        "answer": "The input types handled in the GetColorToneV2 class include an image tensor, a mode string ('main_color' or 'average'), a color_tone_of string ('entire', 'background' or 'subject'), a remove_bkgd_method string ('BiRefNet' or 'RMBG 1.4'), an invert_mask boolean, and a mask_grow integer that determines the mask expansion."
+    },
+    {
+        "question": "How does the GetColorToneV2 class handle the input image?",
+        "answer": "The input image is treated as a tensor and converted to a PIL image by calling tensor2pil(). The mode of the PIL image is then used to determine whether the image is RGB or RGBA. Based on the mode, different methods are applied for background removal, mask expansion, color tone application, and mask revert."
+    },
+    {
+        "question": "What are the typical usage tips for the GetColorToneV2 class?",
+        "answer": "Typical usage tips for the GetColorToneV2 class include information about the required backend (GPU), and common manipulation controls for masks, speeds, masks, and msks."
+    }
+]

@@ -1,0 +1,32 @@
+{
+    "qa_pairs": [
+        {
+            "question": "What is cg-noise used for?",
+            "answer": "cg-noise is used as a custom node in ComfyUI to allow for small variations in the initial noise, replacing the functionality of KSampler and KSampler Advanced."
+        },
+        {
+            "question": "What is the purpose of cg-noise?",
+            "answer": "The main purpose of cg-noise in ComfyUI is to enable small variations in the initial noise, serving as an alternative to the more advanced features of KSampler and KSampler Advanced."
+        },
+        {
+            "question": "How does cg-noise generate its variations?",
+            "answer": "cg-noise generates variations by using a weight `x` and two seeds. It calculates the noise based on the expression `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+        },
+        {
+            "question": "Can cg-noise be used interchangeably with KSampler?",
+            "answer": "No, cg-noise is not interchangeable with KSampler or KSampler Advanced. It serves as a custom node introduced in ComfyUI to provide an alternative solution for generating variations in images."
+        },
+        {
+            "question": "How does the `x` weight influence the noise generation?",
+            "answer": "The `x` weight in cg-noise affects the variety of noise generated. A higher value for `x` will result in noise that is more dependent on `variation_seed`, while a lower value will make the noise more dependent on `seed`."
+        },
+        {
+            "question": "What software is cg-noise part of?",
+            "answer": "Cg-noise is a part of ComfyUI, a GUI that utilizes a stable diffusion model to generate images and videos."
+        },
+        {
+            "question": "How is cg-noise integrated into ComfyUI?",
+            "answer": "Cg-noise is integrated into ComfyUI as a custom node. This means that it extends the functionality of ComfyUI by introducing the ability to generate images with small variations in the initial noise."
+        }
+    ]
+}
