@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the SamplerDPMPP_SDE node in ComfyUI?",
+        "answer": "The SamplerDPMPP_SDE node is designed to provide a custom sampling method for generating samples from diffusion models. It enhances the sampling process using the DPM-PP (Diffusion Probability Model Prior Prediction) framework with SDE (Stochastic Differential Equations) methods. This node is crucial for users who require precise control over sampling parameters to achieve desired characteristics in the generated samples."
+    },
+    {
+        "question": "What are the input types required for the SamplerDPMPP_SDE node?",
+        "answer": "The required input types for the SamplerDPMPP_SDE node are 'eta' (FLOAT), 's_noise' (FLOAT), 'r' (FLOAT), and 'noise_device' (either 'gpu' or 'cpu'). 'eta' controls the noise level in the sampling process; 's_noise' determines the initial noise scale; 'r' adjusts the convergence rate of the sampling algorithm; 'noise_device' specifies the device used to generate noise."
+    },
+    {
+        "question": "What are the output types for the SamplerDPMPP_SDE node?",
+        "answer": "The output type for the SamplerDPMPP_SDE node is 'sampler', which is an instance of a custom sampling algorithm tailored to the specific noise characteristics and convergence standards required by the user."
+    },
+    {
+        "question": "What are the usage tips for the SamplerDPMPP_SDE node?",
+        "answer": "The node is optimized for GPU infrastructure."
+    },
+    {
+        "question": "What is the default value for the 'eta' parameter in the SamplerDPMPP_SDE node?",
+        "answer": "The default value for the 'eta' parameter is 1.0."
+    },
+    {
+        "question": "What are the valid values for the 'noise_device' parameter in the SamplerDPMPP_SDE node?",
+        "answer": "The valid values for the 'noise_device' parameter are 'gpu' and 'cpu'."
+    },
+    {
+        "question": "How is the 'sampler' output type defined in the SamplerDPMPP_SDE node?",
+        "answer": "The 'sampler' output type is defined as the instance of a custom sampling algorithm provided by the KSAMPLER class."
+    }
+]

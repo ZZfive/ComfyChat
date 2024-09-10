@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is RectGrabCut?",
+        "answer": "RectGrabCut is a custom node in ComfyUI that performs image segmentation using the GrabCut algorithm. It aims to separate the foreground and background within a predefined rectangular area, enhancing the focus on the desired objects or regions in the image."
+    },
+    {
+        "question": "What input types does RectGrabCut require?",
+        "answer": "RectGrabCut requires the following input types:\n\n- image: The input image to be segmented. This image will undergo foreground and background separation within the specified rectangle.\n  - Comfy dtype: IMAGE\n  - Python dtype: torch.Tensor\n- x1: The x-coordinate of the top-left corner of the rectangle.\n  - Comfy dtype: INT\n  - Python dtype: int\n- y1: The y-coordinate of the top-left corner of the rectangle.\n  - Comfy dtype: INT\n  - Python dtype: int\n- x2: The x-coordinate of the bottom-right corner of the rectangle.\n  - Comfy dtype: INT\n  - Python dtype: int\n- y2: The y-coordinate of the bottom-right corner of the rectangle.\n  - Comfy dtype: INT\n  - Python dtype: int\n- iterations: The number of iterations the GrabCut algorithm should run to optimize the segmentation.\n  - Comfy dtype: INT\n  - Python dtype: int\n- output_format: The format in which the segmented image should be output, affecting how the image is processed and displayed after segmentation.\n  - Comfy dtype: COMBO[STRING]\n  - Python dtype: str"
+    },
+    {
+        "question": "What does RectGrabCut do with the input image?",
+        "answer": "RectGrabCut performs image segmentation on the input image using the GrabCut algorithm. It identifies and separates the foreground and background within the specified rectangular area, enhancing the focus on the desired objects or regions in the image."
+    },
+    {
+        "question": "What output types does RectGrabCut produce?",
+        "answer": "RectGrabCut produces the following output types:\n\n- image: The segmented image with foreground and background separated within the specified rectangle.\n  - Comfy dtype: IMAGE\n  - Python dtype: torch.Tensor"
+    },
+    {
+        "question": "What are some common nodes used with RectGrabCut?",
+        "answer": "Some common nodes used with RectGrabCut are unknown."
+    },
+    {
+        "question": "What are some options available for RectGrabCut?",
+        "answer": "Some options available for RectGrabCut include:\n\n- Option to crop or not the section outside the rect.\n- Option to exclude PR_BGD or include PR_FGD in outputMask."
+    },
+    {
+        "question": "How is RectGrabCut designed to improve image segmentation?",
+        "answer": "RectGrabCut is designed to improve image segmentation by using the GrabCut algorithm. It identifies and separates the foreground and background within a predefined rectangular area, leading to more accurate and precise segmentation results."
+    },
+    {
+        "question": "What is the purpose of the output_format parameter in RectGrabCut?",
+        "answer": "The output_format parameter in RectGrabCut is used to specify the format in which the segmented image should be output. This parameter affects how the image is processed and displayed after segmentation."
+    },
+    {
+        "question": "What are the default values and constraints for the parameters in RectGrabCut?",
+        "answer": "The default values and constraints for the parameters in RectGrabCut are as follows:\n\n- iterations: The default value is 25, and it has a minimum of 0, a maximum of 200, and a step of 1.\n- output_format: The default value is image_output_formats_options[0]."
+    }
+]

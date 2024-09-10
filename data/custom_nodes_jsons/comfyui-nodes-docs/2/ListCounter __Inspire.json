@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of ListCounter?",
+        "answer": "ListCounter is designed to maintain and increment counts associated with unique identifiers, allowing the tracking of occurrences or iterations of specific actions or items within a list. It provides a mechanism for generating ordered counts that can be reset or continued based on unique identifiers, which is particularly useful in dynamic or iterative contexts where counting is required."
+    },
+    {
+        "question": "What are the input types required for ListCounter?",
+        "answer": "The input types required for ListCounter are 'signal' and 'base_value'. 'signal' acts as the trigger for the count operation, indicating when to increase the count. It is essential for initiating the incremental count process. 'base_value' sets the starting point for the count, allowing it to begin from a specified value other than zero. This flexibility is useful when customizing the starting point of the count."
+    },
+    {
+        "question": "What are the output types provided by ListCounter?",
+        "answer": "ListCounter provides an output type of 'int'. This output represents the incremented current count, adjusted according to the base value. It is crucial for tracking the progression of the count in the specified context."
+    },
+    {
+        "question": "What are the usage tips for ListCounter?",
+        "answer": "ListCounter can be used on 'CPU'. It is commonly associated with unknown nodes."
+    },
+    {
+        "question": "What is the function of the doit method in ListCounter?",
+        "answer": "The doit method in ListCounter increases the count associated with the unique identifier provided. If the unique identifier is not present in the list_counter_map, the count is initialized to zero. Otherwise, the existing count is incremented by one. The updated count, adjusted by the base value, is then returned."
+    },
+    {
+        "question": "What is the category of ListCounter?",
+        "answer": "ListCounter belongs to the category 'InspirePack/Util'."
+    },
+    {
+        "question": "What is the source code for ListCounter?",
+        "answer": "The source code for ListCounter is provided in Python and defines a class called ListCounter with a class method INPUT_TYPES and a static method RETURN_TYPES. The INPUT_TYPES method specifies the required and hidden input types for the ListCounter. The RETURN_TYPES method defines the output types. The doit method performs the count increment operation based on the signal and base_value inputs."
+    }
+]

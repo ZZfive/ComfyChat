@@ -1,0 +1,26 @@
+[
+    {
+        "question": "What is the purpose of MikeySamplerBaseOnly node?",
+        "answer": "The MikeySamplerBaseOnly node is designed to perform advanced sampling operations on a base model, utilizing various conditions and VAE models to generate latent representations. It adaptively adjusts the sampling process based on image complexity and upscales the resolution to improve detail."
+    },
+    {
+        "question": "What input types does MikeySamplerBaseOnly node require?",
+        "answer": "MikeySamplerBaseOnly node requires the input types: base_model (base model for sampling), samples (number of samples to be generated), positive_cond_base (conditioning for generation), negative_cond_base (conditioning for removal), vae (VAE for encoding and decoding), model_name (upsample model for improving resolution), seed (random seed), upscale_by (scaling factor for upscaling images), hires_strength (strength of hires enhancement), and smooth_step (transitional smoothness for sampling)."
+    },
+    {
+        "question": "What output types does MikeySamplerBaseOnly node produce?",
+        "answer": "MikeySamplerBaseOnly node produces the output type: latent_representation (latent representation of sampled image passes)."
+    },
+    {
+        "question": "How can the MikeySamplerBaseOnly node be used in practical scenarios?",
+        "answer": "In practical scenarios, MikeySamplerBaseOnly node can be used to generate images from latent vectors, with controllable parameters for the sampling process, such as the complexity of the sampling, the resolution of the output, and the type of upscaling used. This allows for the generation of images with varying characteristics and levels of detail."
+    },
+    {
+        "question": "What is the recommended range for the upscale_by parameter?",
+        "answer": "The upscale_by parameter can be used to control the upscaling process. It is recommended to set this parameter within the range of 0 and 10, with a step size of 0.1, to effectively scale the output images."
+    },
+    {
+        "question": "How does the upscale_method parameter affect the output?",
+        "answer": "The upscale_method parameter influences the method used for upsampling the images. This affects the overall quality and detail of the output, with a higher upscaling factor leading to more detailed results if a suitable method is chosen."
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the LatentFlip node in ComfyUI?",
+        "answer": "The LatentFlip node is designed to transform latent space representations by applying a flip operation along a specified axis. This node plays a crucial role in manipulating latent features, which is essential for tasks such as data augmentation or exploring the structure of the latent space."
+    },
+    {
+        "question": "What must the 'samples' parameter contain for the LatentFlip node to function correctly?",
+        "answer": "The 'samples' parameter must contain the latent representations that the node will process. This directly impacts the node's ability to perform a flip operation and subsequently affect the output."
+    },
+    {
+        "question": "How does the 'flip_method' parameter determine the nature of the transformation applied to the latent space?",
+        "answer": "The 'flip_method' parameter determines which axis the latent sample will be flipped along. This is a critical component as it dictates the type of transformation that is applied to the latent space."
+    },
+    {
+        "question": "What does the 'flip' method of the LatentFlip node do?",
+        "answer": "The 'flip' method of the LatentFlip node performs a flip operation on the input samples based on the specified flip method. If the method starts with 'x', it flips along the 2nd dimension (vertically); if it starts with 'y', it flips along the 3rd dimension (horizontally)."
+    },
+    {
+        "question": "What does the 'samples' output of the LatentFlip node contain?",
+        "answer": "The 'samples' output of the LatentFlip node contains the flipped latent representations. This output is significant as it represents the data that can be used for further processing in downstream tasks."
+    },
+    {
+        "question": "What types of GPU are supported for the LatentFlip node?",
+        "answer": "The LatentFlip node is designed to be used on GPU."
+    },
+    {
+        "question": "What are the input types required for the LatentFlip node?",
+        "answer": "The required input types for the LatentFlip node are samples (of type LATENT, in dictionary format) and a flip method (as a string that can either be 'x-axis: vertically' or 'y-axis: horizontally')."
+    },
+    {
+        "question": "What are the output types of the LatentFlip node?",
+        "answer": "The output types of the LatentFlip node are samples (of type LATENT, in dictionary format)."
+    }
+]

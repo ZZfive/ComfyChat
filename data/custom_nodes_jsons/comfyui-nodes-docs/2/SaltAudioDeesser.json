@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the main purpose of the SaltAudioDeesser node?",
+        "answer": "The main purpose of the SaltAudioDeesser node is to reduce enamel noise in audio recordings. It applies specific audio filters based on user-defined parameters such as intensity, amount, and frequency retention to weaken the strength of sibilance consonants often found in human voice tracks."
+    },
+    {
+        "question": "What are the required input types for the SaltAudioDeesser node?",
+        "answer": "The required input types for the SaltAudioDeesser node are 'audio', 'intensity', 'amount', and 'frequency_keep'. The 'audio' input should be the original audio data to be processed, while the other inputs control the intensity of noise reduction, the amount of noise to be reduced, and the frequency range to be preserved, respectively."
+    },
+    {
+        "question": "What is the default value of 'intensity' input in the SaltAudioDeesser node?",
+        "answer": "The default value of the 'intensity' input in the SaltAudioDeesser node is 0.125, which represents the threshold level for the deesser effect, controlling the intensity of noise reduction."
+    },
+    {
+        "question": "How does the SaltAudioDeesser node apply noise reduction to audio recordings?",
+        "answer": "The SaltAudioDeesser node applies noise reduction to audio recordings by using the FFMPEG library to write the audio data to temporary files, apply advanced audio processing using deesser filter, and then read the processed data back and return it as the output. The deesser filter is configured with the specified parameters such as intensity, amount, and frequency keep to achieve the desired noise reduction."
+    },
+    {
+        "question": "What are the output types of the SaltAudioDeesser node?",
+        "answer": "The output types of the SaltAudioDeesser node are 'audio'. This output represents the processed audio data after deesser processing, with reduced enamel noise."
+    },
+    {
+        "question": "Please provide an example usage of the SaltAudioDeesser node.",
+        "answer": "An example usage of the SaltAudioDeesser node can be realized when there is an audio recording with noticeable enamel noise. In this case, the SaltAudioDeesser node can be connected to the audio input, and the values of 'intensity', 'amount', and 'frequency_keep' would be set based on the desired level of noise reduction and frequency preservation. Following this, the node will process the audio and produce a deesser audio with reduced enamel noise."
+    },
+    {
+        "question": "What is the function of the SaltAudioDeesser class 'apply_deesser' method?",
+        "answer": "The SaltAudioDeesser class 'apply_deesser' method is responsible for applying the deesser effect to the input audio data. It takes the audio data, along with the deesser parameters such as intensity, amount, and frequency keep, and processes the audio to remove enamel noise. The processed audio is then returned as the output."
+    }
+]

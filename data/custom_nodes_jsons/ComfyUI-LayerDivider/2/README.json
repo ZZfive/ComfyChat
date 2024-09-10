@@ -1,0 +1,46 @@
+[
+    {
+        "question": "What does ComfyUI LayerDivider do?",
+        "answer": "ComfyUI LayerDivider is a custom nodes extension for ComfyUI that generates layered psd files, allowing for multi-layer segmentation and processing within ComfyUI."
+    },
+    {
+        "question": "What are the two main segmentation modes available in ComfyUI LayerDivider?",
+        "answer": "The two main segmentation modes are Color Base and Segment Mask. Color Base layers based on similar colors, while Segment Mask first segments the image using SAM to generate masks and then layers are created based on these masks."
+    },
+    {
+        "question": "Explain the parameters used in the Color Base mode.",
+        "answer": "In the Color Base mode, the parameters are: loops, which determines the number of iterations over the image; init_cluster, which is the initial cluster size; ciede_threshold, which is the color difference threshold for cluster assignment; and blur_size, which is the size of the blur applied to the image before segmentation."
+    },
+    {
+        "question": "What is the purpose of the Segment Mask mode?",
+        "answer": "The Segment Mask mode is used to first segment the image using SAM to generate corresponding masks, and then layers are created based on these masks."
+    },
+    {
+        "question": "What are the parameters for the Layer Divider node in the Segment Mask mode?",
+        "answer": "The Layer Divider node in the Segment Mask mode has parameters: area_th, which determines the number of partitions; pred_iou_thresh, which is the prediction intersection over union threshold; stability_score_thresh, which is the stability score threshold; and min_mask_region_area, which is the minimum mask region area."
+    },
+    {
+        "question": "What are the layer modes available for generating layers in ComfyUI LayerDivider?",
+        "answer": "The two layer modes available are normal and composite. The normal mode generates three layers: base, bright, and shadow, while the composite mode generates five layers: base, screen, multiply, subtract, and addition."
+    },
+    {
+        "question": "How does the normal mode in ComfyUI LayerDivider generate layers?",
+        "answer": "In the normal mode, three layers are generated for each region: the base layer, the bright layer, which focuses on the brightest parts of the image, and the shadow layer, which deals with the darker parts of the image."
+    },
+    {
+        "question": "What are the installation methods supported for ComfyUI LayerDivider?",
+        "answer": "The installation methods supported are: using ComfyUI embedded python and ComfyUI Manager, using conda with Python 3.11 and CUDA 12.1, using Anaconda and Python 3.11, and using Ubuntu with conda and Python 3.11, and CUDA 12.1."
+    },
+    {
+        "question": "What installation steps are required for using ComfyUI LayerDivider with ComfyUI Manager?",
+        "answer": "To install ComfyUI LayerDivider with ComfyUI Manager, you need to clone the repo directly inside `comfyUI/custom_notes`, or use ComfyUI Manager to load the extension."
+    },
+    {
+        "question": "What installation steps are required for using ComfyUI LayerDivider with conda?",
+        "answer": "To install ComfyUI LayerDivider with conda, you need to create a conda environment, activate it, and then install the required Python packages and dependencies from the repository."
+    },
+    {
+        "question": "What are the known issues with ComfyUI Layerdivider?",
+        "answer": "One known issue is that the composite mode may fail on some images, such as the ComfyUI example image. The cause of this issue is still under investigation."
+    }
+]

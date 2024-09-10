@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Explain the purpose of the `gradient_overlay_v2` function in the provided documentation.",
+        "answer": "The `gradient_overlay_v2` function in the provided documentation is designed to create an image with a layer style that includes a gradient overlay. It takes various parameters such as background and layer images, opacity, blend mode, start and end colors, angle, and invert mask. It also accepts an optional parameter `layer_mask` for additional precision in scene composition."
+    },
+    {
+        "question": "What is the default value for the opacity parameter in the `gradient_overlay_v2` function?",
+        "answer": "The default value for the opacity parameter in the `gradient_overlay_v2` function is 100, which represents full opacity."
+    },
+    {
+        "question": "How does the `gradient_overlay_v2` function handle a `mask` with a different size from the layer image?",
+        "answer": "If the `mask` size does not match the layer image size, the `gradient_overlay_v2` function creates a new mask of the same size as the layer image and fills it with white. It then logs a warning message indicating that the mask mismatch has occurred and the image was dropped."
+    },
+    {
+        "question": "What is the purpose of `start_color` and `end_color` parameters in the `gradient_overlay_v2` function?",
+        "answer": "The `start_color` and `end_color` parameters in the `gradient_overlay_v2` function determine the colors at each end of the gradient. The start color will be at the start of the gradient, and the end color will be at the end of the gradient."
+    },
+    {
+        "question": "What data types are expected for the `background_image` and `layer_image` parameters in the `gradient_overlay_v2` function?",
+        "answer": "The `background_image` and `layer_image` parameters in the `gradient_overlay_v2` function are expected to be Comfy dtype `IMAGE` and Python dtype `torch.Tensor`."
+    },
+    {
+        "question": "What is the purpose of the `angle` parameter in the `gradient_overlay_v2` function?",
+        "answer": "The `angle` parameter in the `gradient_overlay_v2` function determines the angle of rotation for the gradient."
+    },
+    {
+        "question": "What is the default blend mode for the `blend_mode` parameter in the `gradient_overlay_v2` function?",
+        "answer": "The default blend mode for the `blend_mode` parameter in the `gradient_overlay_v2` function is `chop_mode_v2`, which is a specific blend mode provided by the ComfyUI framework."
+    }
+]

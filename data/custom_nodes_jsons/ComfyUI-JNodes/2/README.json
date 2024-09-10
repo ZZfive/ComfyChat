@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What are the capabilities of the ExifReader library?",
+        "answer": "ExifReader is a JavaScript library that parses image files and extracts metadata. It can also extract an embedded thumbnail. It is highly and easily configurable, and the resulting bundle can be as small as 4 KiB if only specific tags are required. It supports module formats ESM, AMD, CommonJS, and globals, making it easily usable from frameworks like Webpack, RequireJS, Browserify, or Node.js. ExifReader supports reading from various file formats like JPEG, TIFF, PNG, HEIC, and WebP, parsing Exif, IPTC, XMP, ICC, and MPF metadata, and supports loading both local files and remote URLs or file objects."
+    },
+    {
+        "question": "How does ExifReader work with files?",
+        "answer": "ExifReader can load files by either having it handle the loading or by loading the file yourself first and passing in the file buffer. When using the asynchronous API, ExifReader loads the file, and when using the synchronous API, you load the file yourself. The library supports loading local files using File objects, file system paths, Node.js buffers, and URLs for remote files. ExifReader automatically parses JPEG, TIFF, PNG, HEIC, and WebP files, extracting Exif, IPTC, XMP, ICC, and MPF metadata depending on the file type."
+    },
+    {
+        "question": "What are the supported file types by ExifReader?",
+        "answer": "ExifReader supports parsing metadata from JPEG, TIFF, PNG, HEIC, and WebP files. It extracts Exif, IPTC, XMP, ICC, and MPF metadata, depending on the file type. JPEG files support all types of metadata (Exif, IPTC, XMP, ICC, MPF), while TIFF files support Exif, IPTC, and XMP but not ICC or MPF. PNG files only support Exif, IPTC is not supported, and XMP is not supported either. HEIC/HEIF files support Exif, IPTC is not supported, and XMP is not supported either. WebP files support Exif, IPTC is not supported, and XMP is supported."
+    },
+    {
+        "question": "How do I load tags from a file?",
+        "answer": "You can load tags from a file by either using the asynchronous or synchronous API. For the asynchronous API, you call `ExifReader.load(file)` where `file` is a File object from a form file upload, a file system path, a URL, or a metadata buffer. For the synchronous API, you call `ExifReader.load(fileBuffer)` where `fileBuffer` is an ArrayBuffer or SharedArrayBuffer (from a browser file object) or a Buffer (from Node.js). The tags will be returned in the `tags` object, which you can access further to get the description or value of the tags."
+    },
+    {
+        "question": "What are the options available to configure ExifReader?",
+        "answer": "You can configure ExifReader to include or exclude specific functionalities or tags by specifying include and exclude patterns in your `package.json` file. Include patterns start with an empty set and include the specific features or tags you need. Exclude patterns start with the full functionality and exclude specific tags or features. For instance, to only include JPEG files and Exif tags, you can use `exifreader: { include: { jpeg: true, exif: true } }`. To exclude XMP tags, you can use `exifreader: { exclude: { xmp: true } }`. After configuring, rebuild the library using `npm rebuild exifreader` and the custom build will be available."
+    },
+    {
+        "question": "What are the notes about GPS in ExifReader?",
+        "answer": "ExifReader's GPS functionality splits the full GPS information into two different tags for each direction: the coordinate value (`GPSLatitude`, `GPSLongitude`) and the reference value (`GPSLatitudeRef`, `GPSLongitudeRef`). These values need to be used together to correctly interpret the GPS coordinates, where negative values indicate south of the equator, west of the IRM, or below sealevel. For some platforms like Google Maps, north and east are represented as positive values, and south and west are represented as negative values. ExifReader also provides pre-calculated GPS values if needed."
+    },
+    {
+        "question": "How can I use ExifReader in a React Native application?",
+        "answer": "To use ExifReader in a React Native application, you first import it like so: `import ExifReader from './node_modules/exifreader/src/exif-reader.js'`. Make sure to update the path to point to where your `node_modules` is located. To read a file in React Native, you first load the file using `RNFS.readFile()`. Here is some sample code to load an image file and extract the EXIF tags:\n\n```javascript\nimport RNFS from 'react-native-fs';\nimport {decode} from 'base64-arraybuffer';\nimport ExifReader from 'exifreader';\n\nRNFS.readFile('YOUR_IMAGE_URI', 'base64')\n  .then(b64Buffer => {\n    const fileBuffer = decode(b64Buffer);\n    const tags = ExifReader.load(fileBuffer, {expanded: true});\n    console.log(tags);\n  })\n  .catch(error => {\n    console.error(error);\n  });\n```"
+    }
+]

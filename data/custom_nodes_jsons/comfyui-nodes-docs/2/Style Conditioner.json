@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the StyleConditioner node in ComfyUI?",
+        "answer": "The StyleConditioner node is designed to manage and apply style conditions to the generation process. It allows for the integration of positive and negative style hints, enabling the generation of content that can be micro-tuned to meet specific style attributes."
+    },
+    {
+        "question": "What does the 'style' parameter in StyleConditioner do?",
+        "answer": "The 'style' parameter is crucial for determining the style direction of the generation process. It influences the selection of positive and negative hints, which in turn shape the output result."
+    },
+    {
+        "question": "What does the 'base_clip' parameter in StyleConditioner represent?",
+        "answer": "The 'base_clip' parameter is critical for encoding basic positive and negative style prompts into a form that can be processed by the generation model."
+    },
+    {
+        "question": "What is the difference between 'positive_cond_base' and 'positive_cond_refiner'?",
+        "answer": "The 'positive_cond_base' parameter represents the basic positive condition elements that will be combined with new positive prompts to fine-tune the generated style. The 'positive_cond_refiner' parameter, on the other hand, is used to further refine the style in the generation process."
+    },
+    {
+        "question": "What is the role of the 'use_seed' and 'seed' parameters in StyleConditioner?",
+        "answer": "The 'use_seed' parameter determines whether a specific style is selected based on the provided seed, adding a layer of control to the style selection process. The 'seed' parameter is used in conjunction with 'use_seed' to specify the starting point for style selection when a seed is used."
+    },
+    {
+        "question": "What are the types of input and output for the StyleConditioner node?",
+        "answer": "The StyleConditioner node takes several input types, including 'style', 'strength', 'positive_cond_base', 'negative_cond_base', 'positive_cond_refiner', 'negative_cond_refiner', 'base_clip', 'refiner_clip', 'use_seed', and 'seed'. The outputs include 'base_pos_cond', 'base_neg_cond', 'refiner_pos_cond', 'refiner_neg_cond', and 'style_str'."
+    },
+    {
+        "question": "What are the possible values for the 'style' parameter in StyleConditioner?",
+        "answer": "The 'style' parameter can take values from the 'styles' list in the StyleConditioner class."
+    }
+]

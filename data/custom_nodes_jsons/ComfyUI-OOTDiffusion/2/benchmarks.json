@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the benchmarking study?",
+        "answer": "The purpose of the benchmarking study is to compare the training speed of a Mask R-CNN model in detectron2 with other popular open source Mask R-CNN implementations."
+    },
+    {
+        "question": "What hardware and software settings were used for the benchmarking?",
+        "answer": "The hardware used was 8 NVIDIA V100s with NVLink. The software included Python 3.7, CUDA 10.1, cuDNN 7.6.5, PyTorch 1.5, TensorFlow 1.15.0rc2, Keras 2.2.5, and MxNet 1.6.0b20190820."
+    },
+    {
+        "question": "Which model was used for the benchmarking?",
+        "answer": "An end-to-end R-50-FPN Mask-RCNN model was used for the benchmarking, using the same hyperparameters as the Detectron baseline config."
+    },
+    {
+        "question": "How was the throughput metric calculated?",
+        "answer": "The throughput metric was calculated by taking the average throughput in iterations 100-500 to skip GPU warmup time."
+    },
+    {
+        "question": "Which implementation had the highest throughput in the benchmarking results?",
+        "answer": "Detectron2 with PyTorch had the highest throughput at 62 img/s."
+    },
+    {
+        "question": "Which implementation had the lowest throughput in the benchmarking results?",
+        "answer": "matterport/Mask_RCNN with TensorFlow had the lowest throughput at 14 img/s."
+    },
+    {
+        "question": "How many different implementations were compared in the benchmarking study?",
+        "answer": "A total of 7 different Mask R-CNN implementations were compared in the benchmarking study."
+    }
+]

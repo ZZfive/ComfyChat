@@ -1,0 +1,26 @@
+[
+    {
+        "question": "What is the purpose of List Length (ListLengthNode) in ComfyUI?",
+        "answer": "The List Length (ListLengthNode) in ComftyUI is used to calculate the length of a given list. It simplifies the process of determining the number of elements in a list, providing a convenient method to directly obtain this information."
+    },
+    {
+        "question": "What are the input types required by List Length (ListLengthNode)?",
+        "answer": "The input types required by List Length (ListLengthNode) include an 'In' field, which represents the input list that needs to be calculated for length. The list's length determines the node's output result."
+    },
+    {
+        "question": "What are the output types of List Length (ListLengthNode)?",
+        "answer": "The output type of List Length (ListLengthNode) is an integer, specifically named 'Length', which represents the length of the input list, i.e., the number of elements it contains."
+    },
+    {
+        "question": "What are the recommended infra types for List Length (ListLengthNode)?",
+        "answer": "The recommended infra type for List Length (ListLengthNode) is 'CPU'."
+    },
+    {
+        "question": "What are some common nodes used with List Length (ListLengthNode)?",
+        "answer": "The common nodes used with List Length (ListLengthNode) are unknown as per the documentation."
+    },
+    {
+        "question": "What is the source code for List Length (ListLengthNode)?",
+        "answer": "@class\nListLengthNode:\n    def __init__(self) -> None:\n        pass\n    \n    @classmethod\ndef INPUT_TYPES(self) -> Dict[str, Dict[str, Any]]:\n        return {\n            \"required\": {\n                \"In\": (any_type, {})\n            }\n        }\n    \n    RETURN_TYPES = (\"INT\",)\n    RETURN_NAMES = (\"Length\",)\n    INPUT_IS_LIST = True\n    OUTPUT_IS_LIST = (False,)\n    FUNCTION = \"get_len\"\n    \n    CATEGORY = \"List Stuff\"\n    \n    def get_len(self, In: List[Any]) -> Tuple[int]:\n        return (len(In),)"
+    }
+]

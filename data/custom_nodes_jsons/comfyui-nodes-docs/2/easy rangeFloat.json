@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What does the 'range_mode' parameter define in ComfyUI's 'RangeFloat' node?",
+        "answer": "The 'range_mode' parameter determines the logic used for generating the range sequence in ComfyUI's 'RangeFloat' node. It can be set to either 'step' or 'num_steps'. When set to 'step', it generates the range based on a fixed 'step' value. When set to 'num_steps', it generates the range based on a specified 'num_steps' value."
+    },
+    {
+        "question": "What are the input types for ComfyUI's 'RangeFloat' node?",
+        "answer": "The input types for ComfyUI's 'RangeFloat' node include 'range_mode' (of type COMBO[String]), 'start' (of type FLOAT), 'stop' (of type FLOAT), 'step' (of type FLOAT), 'end_mode' (of type COMBO[String]), and an optional 'num_steps' (of type INT). The 'end_mode' parameter can be set to 'Inclusive' or 'Exclusive', determining whether the end value is included in the range sequence."
+    },
+    {
+        "question": "What does the 'step' parameter in ComfyUI's 'RangeFloat' node control?",
+        "answer": "The 'step' parameter in ComfyUI's 'RangeFloat' node controls the increment between each value in the generated range sequence. The value of 'step' directly affects the granularity and pattern of the generated sequence."
+    },
+    {
+        "question": "What are the output types for ComfyUI's 'RangeFloat' node?",
+        "answer": "The output types for ComfyUI's 'RangeFloat' node include 'range' (of type LIST[FLOAT]) and 'range_sizes' (of type LIST[INT]). The 'range' output provides the sequence of generated float numbers, while the 'range_sizes' output provides the number of values in each individual range sequence generated."
+    },
+    {
+        "question": "What is the default behavior of ComfyUI's 'RangeFloat' node if the 'step' parameter is not provided?",
+        "answer": "If the 'step' parameter is not provided in ComfyUI's 'RangeFloat' node, it defaults to the difference between the 'stop' value and the 'start' value divided by the 'num_steps' value minus one. This ensures that the generated range sequence is evenly distributed."
+    },
+    {
+        "question": "How does ComfyUI's 'RangeFloat' node handle the 'end_mode' parameter?",
+        "answer": "ComfyUI's 'RangeFloat' node handles the 'end_mode' parameter by determining whether the 'stop' value is included in the generated range sequence. If 'end_mode' is set to 'Inclusive', the 'stop' value is included in the sequence. If 'end_mode' is set to 'Exclusive', the 'stop' value is excluded from the sequence."
+    },
+    {
+        "question": "What role does the ' end_mode' parameter play in ComfyUI's 'RangeFloat' node?",
+        "answer": "The 'end_mode' parameter in ComfyUI's 'RangeFloat' node is used to determine whether the 'stop' value should be included in the generated range sequence. If set to 'Inclusive', the 'stop' value is included. If set to 'Exclusive', the 'stop' value is excluded."
+    }
+]

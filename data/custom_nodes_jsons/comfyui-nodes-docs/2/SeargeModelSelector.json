@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is the purpose of the SeargeModelSelector node?",
+        "answer": "The SeargeModelSelector node simplifies the process of selecting and combining model checkpoints for further processing. It encapsulates the complexity of handling various checkpoint types, allowing users to focus on model analysis and application without worrying about the underlying technical details."
+    },
+    {
+        "question": "What are the input types for the SeargeModelSelector node?",
+        "answer": "The input types for the SeargeModelSelector node include base_checkpoint, refiner_checkpoint, and vae_checkpoint as required inputs. Optional input includes data."
+    },
+    {
+        "question": "What is the format for the base_checkpoint input?",
+        "answer": "The base_checkpoint input is of type UI.CHECKPOINTS() which means it expects a string type."
+    },
+    {
+        "question": "What is the data input type?",
+        "answer": "The data input type is SRG_DATA_STREAM, which is a dictionary type in Python."
+    },
+    {
+        "question": "What is the purpose of the refiner_checkpoint input?",
+        "answer": "The refiner_checkpoint input is used to improve the performance of the base model by introducing a completion model prediction, thus enhancing the quality of the final output."
+    },
+    {
+        "question": "What is the format for the refiner_checkpoint input?",
+        "answer": "The refiner_checkpoint input is of type UI.CHECKPOINTS_WITH_NONE(), which means it expects either a string or None as the type."
+    },
+    {
+        "question": "What is the purpose of the vae_checkpoint input?",
+        "answer": "The vae_checkpoint input plays a critical role in integrating variational autoencoders during the workflow. It enables the inclusion of latent representations, which may be essential for complex data processing tasks."
+    },
+    {
+        "question": "What is the format for the vae_checkpoint input?",
+        "answer": "The vae_checkpoint input is of type UI.VAE_WITH_EMBEDDED(), which means it expects a list of strings."
+    }
+]

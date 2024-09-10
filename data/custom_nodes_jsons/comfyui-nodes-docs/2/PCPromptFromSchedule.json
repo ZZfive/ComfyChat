@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What is PCPromptFromSchedule for?",
+        "answer": "PCPromptFromSchedule is a node in ComfyUI that allows for extracting prompts from a predefined schedule at a specified point in time. It ensures that the generated prompts are relevant and timely within their context."
+    },
+    {
+        "question": "What are the input types for PCPromptFromSchedule?",
+        "answer": "The required input types are:\n- prompt_schedule: The prompt schedule is a critical input that defines the structure and content of the prompts as they change over time. It's essential for the node's proper functioning and the production of meaningful output.\n- at: The 'at' parameter precisely specifies the time point from which the prompt should be extracted from the schedule. This parameter directly impacts the chosen prompt and its relevance.\n\nOptional input types are:\n- tags: The 'tags' parameter allows filtering the prompt schedule based on specific tags, which can refine the output to target particular themes or categories."
+    },
+    {
+        "question": "What are the output types for PCPromptFromSchedule?",
+        "answer": "The output type is:\n- prompt: This is the prompt selected from the schedule at the specified time, serving as the basis for further processing or analysis."
+    },
+    {
+        "question": "What is the category of PCPromptFromSchedule?",
+        "answer": "PCPromptFromSchedule belongs to the 'promptcontrol' category in ComfyUI."
+    },
+    {
+        "question": "How is PCPromptFromSchedule implemented?",
+        "answer": "PCPromptFromSchedule is implemented as a class method in Python, defined by the `ap...` function. The method takes in the prompt schedule, an at parameter indicating the desired time point, and optional tags for filtering. It then applies these parameters to the prompt schedule to find and return the appropriate prompt."
+    },
+    {
+        "question": "What is the expected range for the 'at' parameter?",
+        "answer": "The 'at' parameter, which specifies the time point for extracting the prompt, is expected to be a float value ranging from 0.0 to 1.0 with a step of 0.01. This ensures precise timing within the prompt schedule."
+    },
+    {
+        "question": "How can the prompt schedule be filtered?",
+        "answer": "The prompt schedule can be filtered using the 'tags' parameter, which accepts a string value. This allows for the selection of prompts that match specific tags, enhancing the relevance and focus of the output to particular topics or categories."
+    },
+    {
+        "question": "What might be the default value for the 'tags' parameter?",
+        "answer": "If not specified, the default value for the 'tags' parameter in PCPromptFromSchedule is an empty string, indicating no specific tags are used for filtering the prompt schedule."
+    }
+]

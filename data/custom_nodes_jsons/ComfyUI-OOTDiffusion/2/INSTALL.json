@@ -1,0 +1,30 @@
+[
+    {
+        "question": "How should I install ComfyUI?",
+        "answer": "You can install ComfyUI by following the step-by-step instructions provided in our [Colab Notebook](https://colab.research.google.com/drive/16jcaJoc6bCFAQ96jDe2HwtXj7BMD_-m5). Alternatively, you can use the provided [Dockerfile](docker) to automate the installation process."
+    },
+    {
+        "question": "What are the prerequisites for using ComfyUI?",
+        "answer": "ComfyUI requires you to have Linux or macOS with Python ≥ 3.6 installed, as well as PyTorch ≥ 1.4 and(torchvision). Additionally, OpenCV is required for the demo and visualization, but optional. Also, pycocotools needs to be installed using the command: `pip install cython; pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'`."
+    },
+    {
+        "question": "Can I build ComfyUI from source?",
+        "answer": "Yes, you can build ComfyUI from source. To do so, run the command: `python -m pip install 'git+https://github.com/facebookresearch/detectron2.git'` after ensuring your system has the necessary build tools installed, such as gcc & g++ ≥ 5. If you are on macOS, you can use `CC=clang CXX=clang++ python -m pip install -e detectron2`."
+    },
+    {
+        "question": "What are common installation issues with ComfyUI?",
+        "answer": "Common installation issues include undefined symbols that could be due to detectron2 or torchvision not being compiled with the correct version of PyTorch, undefined C++ symbols, and issues related to GPU support. If you encounter any of these issues, please refer to the solutions provided in the installation issues section provided."
+    },
+    {
+        "question": "How can I resolve undefined torch/aten/caffe2 symbols?",
+        "answer": "The issue usually arises when detectron2 or torchvision is not compiled with the correct version of PyTorch. You should uninstall and reinstall PyTorch and torchvision following the instructions from [pytorch.org](http://pytorch.org) to ensure compatibility. If the issue persists after compiling from source, you can rebuild detectron2."
+    },
+    {
+        "question": "What is the best way to handle undefined C++ symbols?",
+        "answer": "If you encounter undefined C++ symbols, it is usually because the library is compiled with a different C++ runtime version. The solution is to run your code using a matching C++ runtime version. One way to do this is by using `LD_PRELOAD=/path/to/libstdc++.so`."
+    },
+    {
+        "question": "What should you do if you encounter 'Not compiled with GPU support' or 'Detectron2 CUDA Compiler: not available' issues?",
+        "answer": "For these issues, make sure that CUDA is found when building detectron2. Most models can run inference without GPU support, but if you need GPU support, set `MODEL.DEVICE='cpu'` in the config."
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the YoloV8Detect class?",
+        "answer": "The YoloV8Detect class is designed to detect and process objects using the YoloV8 model in ComfyUI, particularly for tasks such as detecting faces, hands, boxing regions, or segmenting individuals. It is useful for applications requiring object detection and processing."
+    },
+    {
+        "question": "What is the input required for the yolo_detect method?",
+        "answer": "The yolo_detect method requires three inputs: an image tensor, a selected YOLO model file, and a mode to merge masks ('all' or a numerical value specifying how many masks to merge)."
+    },
+    {
+        "question": "What are the output types of the yolo_detect method?",
+        "answer": "The yolo_detect method produces three outputs: a mask tensor, an image tensor with YOLO object detection results, and an image tensor of masks corresponding to the detected objects."
+    },
+    {
+        "question": "How is the YoloV8 model used in the yolo_detect method?",
+        "answer": "In the yolo_detect method, the YoloV8 model is used to process input images and generate object detection results, including bounding boxes and masks. The detected objects are then visualized as masks and plotted images."
+    },
+    {
+        "question": "What happens when no mask is detected by the YoloV8 model?",
+        "answer": "If no mask is detected by the YoloV8 model, the method generates a black mask and adds it to the results. This ensures that every input image receives a mask, even if no specific object mask is produced."
+    },
+    {
+        "question": "How is the YoloV8 mask merged in the yolo_detect method?",
+        "answer": "In the yolo_detect method, the YoloV8 mask can be merged in two ways. 'all' mode merges all detected masks into a single output. Alternatively, a numerical value specifies how many masks to merge based on their confidence."
+    },
+    {
+        "question": "Can the YoloV8Detect class handle other types of input images?",
+        "answer": "The YoloV8Detect class can handle PyTorch tensor images as input. These tensors are expected to be in the format required by ComfyUI."
+    }
+]

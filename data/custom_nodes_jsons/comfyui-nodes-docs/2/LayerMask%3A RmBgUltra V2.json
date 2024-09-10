@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the function of RmBgUltraV2 class?",
+        "answer": "The RmBgUltraV2 class is used to remove the background of images using a layer mask. It incorporates the VITMatte edge detection method, which is improved in the V2 version compared to the original RemBgUltra."
+    },
+    {
+        "question": "How does RmBgUltraV2 process images?",
+        "answer": "RmBgUltraV2 processes images by converting them to tensors, applying a layer mask for background removal, and then converting the result back to an image. It also allows for additional processing of edges using different methods like VITMatte or GuidedFilter."
+    },
+    {
+        "question": "What does the input type \"image\" mean in RmBgUltraV2?",
+        "answer": "\"image\" in RmBgUltraV2 represents the input image to be processed. It expects an image of type Comfy dtype IMAGE and Python dtype torch.Tensor."
+    },
+    {
+        "question": "What are the optional input types for RmBgUltraV2?",
+        "answer": "The optional input types for RmBgUltraV2 include detail_method, detail_erode, detail_dilate, black_point, and white_point. These are used to specify the details handling method and the parameters for edge processing."
+    },
+    {
+        "question": "What is the output type of RmBgUltraV2?",
+        "answer": "The output type of RmBgUltraV2 is \"IIMAGE\", which represents a background-removed image."
+    },
+    {
+        "question": "What is the pytorch method used to convert a tensor to a PIL image that can be saved as JPEG?",
+        "answer": "The pytorch method used to convert a tensor to a PIL image that can be saved as JPEG is 'tensor2pil'."
+    },
+    {
+        "question": "How does RmBgUltraV2 handle image edges?",
+        "answer": "RmBgUltraV2 can handle image edges using different methods like VITMatte or GuidedFilter. The method 'VITMatte' uses a weight 'x' and two seeds to generate variations based on the variations and seeds. The method 'GuidedFilter' processes edges using the GuidedFilter alpha method. The method 'PyMatting' uses the mask_edge_detail method."
+    }
+]

@@ -1,0 +1,32 @@
+{
+    "data": [
+        {
+            "question": "What does the CG-Noise extension in ComfyUI offer?",
+            "answer": "The CG-Noise extension in ComfyUI provides functionality that replaces KSampler and KSampler Advanced, allowing for the generation of small variations in initial noise."
+        },
+        {
+            "question": "How does the CG-Noise extension in ComfyUI generate variations in images?",
+            "answer": "The CG-Noise extension generates variations in images using a custom formula that combines three random seeds: a variability seed, an additional input seed, and a weight parameter `x`. The formula calculates the noise based on these seeds and weights."
+        },
+        {
+            "question": "Describe the purpose of the extra `s` parameter in the GC-Noise extension?",
+            "answer": "The extra `s` parameter in the CG-Noise extension serves as a flag that determines whether to add a correction term to the noise generation formula. Depending on the value of `s`, the formula adjusts the order of terms, applying the correction term in two potential ways: it can be added or subtracted. This flexibility allows users to experiment with different noise generation mechanics based on their specific requirements."
+        },
+        {
+            "question": "Explain the function of the variation seed in the CG-Noise extension?",
+            "answer": "The variation seed in the CG-Noise extension is a critical component that influences the noise pattern generation. It acts as a multiplier for the RNG result, affecting the output of the noise generator. This feature enables users to adjust the scale of the variation they wish to apply to their images or videos."
+        },
+        {
+            "question": "How does the CG-Noise extension replace KSampler and KSampler Advanced?",
+            "answer": "The CG-Noise extension replaces KSampler and KSampler Advanced by providing a direct replacement with similar functionality. This means that the weighted average of two seeds can be directly calculated using the CG-Noise extension, eliminating the need for KSampler and KSampler Advanced plugins. Users can achieve the same effect simply by creating a KComposer formula that calls the CG-Noise node within it."
+        },
+        {
+            "question": "Why is the CG-Noise extension beneficial in hybrid rendering pipe?",
+            "answer": "The CG-Noise extension is beneficial in hybrid rendering pipes because it provides a choice between using different formulas for noise generation. This flexibility accommodates the need for different types of noise patterns, helping to achieve realistic effects in the final visuals. By offering different noise generation options, the extension allows for a more tailored approach to noise handling in the rendering process."
+        },
+        {
+            "question": "What is the purpose of the weight parameter `x` in the CG-Noise extension?",
+            "answer": "The weight parameter `x` in the CG-Noise extension acts as a modulating factor to control the amount of noise influence applied to the image or video. By adjusting the value of `x`, the intensity of the noise effect can be varied, allowing for precise control over the level of randomness or detail in the final output."
+        }
+    ]
+}

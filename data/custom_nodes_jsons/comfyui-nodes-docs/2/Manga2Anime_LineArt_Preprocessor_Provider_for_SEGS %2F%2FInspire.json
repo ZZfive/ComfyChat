@@ -1,0 +1,26 @@
+[
+    {
+        "question": "What is the purpose of Manga2Anime_LineArt_Preprocessor_Provider_for_SEGS?",
+        "answer": "Manga2Anime_LineArt_Preprocessor_Provider_for_SEGS is designed to serve as a provider for the Manga2Anime line art preprocessor in ComfyUI. It focuses on separating and enhancing manga-style line art from images, aiming to preserve the integrity and visual appeal of the original artistic work."
+    },
+    {
+        "question": "What are the input types required by Manga2Anime_LineArt_Preprocessor_Provider_for_SEGS?",
+        "answer": "Manga2Anime_LineArt_Preprocessor_Provider_for_SEGS requires two input types:\n1. image: This is the input image that will be preprocessed for line art. It is a crucial parameter as it is the primary data source for the node's operations. The node processes images to enhance and clarify line art features.\n2. mask: An optional mask image that can be used to guide the preprocessing of line art. The mask can influence the node's execution by directing the processing to specific areas of the image."
+    },
+    {
+        "question": "What are the output types produced by Manga2Anime_LineArt_Preprocessor_Provider_for_SEGS?",
+        "answer": "Manga2Anime_LineArt_Preprocessor_Provider_for_SEGS produces one output type:\n1. SEGS_PREPROCESSOR: This is the output of the preprocessed line art image, which has been enhanced for segmentation purposes. This output is important as it lays the foundation for subsequent segmentation tasks in the workflow."
+    },
+    {
+        "question": "What is the use case for Manga2Anime_LineArt_Preprocessor_Provider_for_SEGS?",
+        "answer": "Manga2Anime_LineArt_Preprocessor_Provider_for_SEGS is useful for preprocessing manga-style line art in ComfyUI. It provides a way to optimize and enhance line art from manga images, making them suitable for purposes like segmentation and style transfer in manga to anime conversion workflows."
+    },
+    {
+        "question": "What is the recommended infrastructure type for Manga2Anime_LineArt_Preprocessor_Provider_for_SEGS?",
+        "answer": "The recommended infrastructure type for Manga2Anime_LineArt_Preprocessor_Provider_for_SEGS is CPU."
+    },
+    {
+        "question": "What is the source code for Manga2Anime_LineArt_Preprocessor_Provider_for_SEGS?",
+        "answer": "The source code for Manga2Anime_LineArt_Preprocessor_Provider_for_SEGS is provided as follows:\n\n```\nclass Manga2Anime_LineArt_Preprocessor_Provider_for_SEGS:\n\n    @classmethod\n    def INPUT_TYPES(s):\n        return {'required': {}}\n    RETURN_TYPES = ('SEGS_PREPROCESSOR',)\n    FUNCTION = 'doit'\n    CATEGORY = 'InspirePack/SEGS/ControlNet'\n\n    def doit(self):\n        obj = Manga2Anime_LineArt_Preprocessor_wrapper()\n        return (obj,)\n```"
+    }
+]

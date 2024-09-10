@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is WAS_Mask_Combine used for?",
+        "answer": "WAS_Mask_Combine is used to merge multiple mask images into a single, coherent mask. It can be used for various applications such as image processing, graphic design, and visual effects."
+    },
+    {
+        "question": "What are the required inputs for WAS_Mask_Combine?",
+        "answer": "The required inputs for WAS_Mask_Combine are mask_a and mask_b, both of which must be of Comfy dtype MASK and Python dtype PIL.Image.Image or numpy.ndarray."
+    },
+    {
+        "question": "Can WAS_Mask_Combine take optional inputs?",
+        "answer": "Yes, WAS_Mask_Combine can receive optional inputs - mask_c, mask_d, mask_e, and mask_f. These must also be of Comfy dtype MASK and Python dtype PIL.Image.Image or numpy.ndarray."
+    },
+    {
+        "question": "What is the output type of WAS_Mask_Combine?",
+        "answer": "The output type of WAS_Mask_Combine is combined_mask, which is a single mask containing the visual data from all input masks. It is of Comfy dtype MASK and Python dtype torch.Tensor."
+    },
+    {
+        "question": "What is the recommended infrastructure type for WAS_Mask_Combine?",
+        "answer": "The recommended infrastructure type for WAS_Mask_Combine is CPU."
+    },
+    {
+        "question": "How does WAS_Mask_Combine combine the input masks?",
+        "answer": "WAS_Mask_Combine combines the masks by summing the stacked masks and then clamping the result to be between 0 and 1."
+    },
+    {
+        "question": "Can WAS_Mask_Combine handle more than two input masks?",
+        "answer": "Yes, WAS_Mask_Combine can handle up to six input masks, given that incomplete information was provided in the response. When additional masks are provided, they are appended to the list of masks and included in the final combination."
+    }
+]

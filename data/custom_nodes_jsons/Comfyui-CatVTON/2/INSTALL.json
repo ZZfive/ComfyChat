@@ -1,0 +1,22 @@
+[
+    {
+        "question": "What are the requirements for installing Detectron2?",
+        "answer": "The requirements for installing Detectron2 are Linux or macOS with Python ≥ 3.6, PyTorch ≥ 1.4, and [torchvision](https://github.com/pytorch/vision/) that matches the PyTorch installation. OpenCV, optional, is needed by demo and visualization. pycocotools can also be installed by running `pip install cython; pip install -U 'git+https://github.com/cocodataset/cocoapi.git#subdirectory=PythonAPI'`.\n\nFor building Detectron2 from source, gcc & g++ ≥ 5 are required, and [ninja](https://ninja-build.org/) is recommended for faster builds."
+    },
+    {
+        "question": "How can I install Pre-Built Detectron2?",
+        "answer": "You can install Pre-Built Detectron2 by running `python -m pip install detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/{cuda_version}/index.html` where `{cuda_version}` can be replaced with `cu101`, `cu100`, `cu92`, or `cpu`. Note that such installation has to be used with certain versions of official PyTorch release. It will not work with a different version of PyTorch or a non-official build of PyTorch."
+    },
+    {
+        "question": "What are the common installation issues with Detectron2?",
+        "answer": "Some common installation issues with Detectron2 include undefined symbols from PyTorch or torchvision, undefined C++ symbols, issues related to CUDA support, undefined CUDA symbols, and ImportError due to not installing Detectron2 properly."
+    },
+    {
+        "question": "What should you do if you meet issues using Pre-Built Detectron2?",
+        "answer": "If you meet issues using Pre-Built Detectron2, you should uninstall it and try building Detectron2 from source."
+    },
+    {
+        "question": "What is the purpose of `cd ..` before running `python -m detectron2.utils.collect_env`?",
+        "answer": "The command `cd ..` before running `python -m detectron2.utils.collect_env` changes the working directory to the parent directory of the detectron2 root directory. This is necessary because running `python -m detectron2.utils.collect_env` is typically done outside the detectron2 root directory to avoid mixture of the installed files and source files, which might lead to import errors."
+    }
+]

@@ -1,0 +1,34 @@
+[
+    {
+        "question": "What does the 'ComfyUI-Manager' extension do?",
+        "answer": "The 'ComfyUI-Manager' extension enables advanced image and video generation capabilities in ComfyUI, incorporating a stable diffusion model for enhanced image quality and detail."
+    },
+    {
+        "question": "What is the purpose of the MikeySamplerTiledAdvancedBaseOnly node?",
+        "answer": "The MikeySamplerTiledAdvancedBaseOnly node is designed for executing advanced image sampling and upsampling operations. It integrates base models, variational autoencoders (VAEs), and tiling techniques to improve image resolution and detail."
+    },
+    {
+        "question": "What role does the NoelOCK model play in the MikeySamplerTiledAdvancedBaseOnly node?",
+        "answer": "The NoelOCK model acts as the conv layer part of the MikeySamplerTiledAdvancedBaseOnly node, affecting the smoother convolution operations that form an integral part of the image upsampling process."
+    },
+    {
+        "question": "How does the MikeySamplerTiledAdvancedBaseOnly node work?",
+        "answer": "The MikeySamplerTiledAdvancedBaseOnly node operates by using the configured node model for upsampling operations. It first scales up the input image by a specified factor, then applies additional upsampling by dividing the image size in both dimensions by the specified 'upscale_by' factor."
+    },
+    {
+        "question": "What kind of input types does the MikeySamplerTiledAdvancedBaseOnly node require?",
+        "answer": "The node requires 'base_model', 'vae', 'samples', 'positive_cond_base', 'negative_cond_base', 'model_name', 'seed', and optional 'denoise_image', 'steps', 'cfg', 'sampler_name', 'scheduler', 'upscale_button', and 'tiler_denoise'. The main required types are 'base_model' (node model), 'denoise_image' (boolean flag), 'samples' (latent samples), 'vae' (variational autoencoder), 'positive_cond_base' and 'negative_cond_base' (conditioning tensors), 'model_name' (string for the upscale model), and 'seed' (integer random seed)."
+    },
+    {
+        "question": "Explain the use of the base_model parameter in the MikeySamplerTiledAdvancedBaseOnly node.",
+        "answer": "The base_model parameter is crucial as it defines the underlying model used for image sampling. It has a significant impact on the quality and characteristics of the generated samples, which are fundamental for attaining the desired upsampled and enhanced image outcomes."
+    },
+    {
+        "question": "What does the upsample_button parameter do?",
+        "answer": "The upsample_button parameter is used to control the detail of the generated image by altering the upsampling factor. It further refines the detail of the rendered image, with a higher factor resulting in a more detailed image."
+    },
+    {
+        "question": "How does the node model differ from other models?",
+        "answer": "The MikeySamplerTiledAdvancedBaseOnly node model differs in that it employs a stable diffusion model, which provides a smooth convolution operation during the image upsampling process. This unique attribute contributes to the enhanced quality and detail of the generated images."
+    }
+]

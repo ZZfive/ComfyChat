@@ -1,0 +1,62 @@
+[
+    {
+        "question": "Can CG-exporter be used with other nodes too?",
+        "answer": "Yes, the CG-exporter can be used with other nodes too. It exports image nodes as cg and GIF nodes as gifs."
+    },
+    {
+        "question": "Is there a specific syntax for using the CG-exporter?",
+        "answer": "Yes, for exporting image nodes, you need to place the CG-exporter after the image node. For GIF nodes, you need to place the GIF exporter after the GIF node."
+    },
+    {
+        "question": "What are the benefits of using CG-exporter for animations?",
+        "answer": "Using the CG-exporter for animations results in stable animation even after repeatedly changing the seed. It also provides small variations in the initial noise."
+    },
+    {
+        "question": "How do I fine-tune CG-exporter for optimal results?",
+        "answer": "To fine-tune the CG-exporter, you can use CG nousie which generates random values for CG animation from a seed. You can use 'overwrite_files' if you want to overwrite files and 'additional_args' for additional arguments supplied to the CG Soonie."
+    },
+    {
+        "question": "How does the noise generator work in CG Soonie?",
+        "answer": "The noise generator in CG Soonie generates noise to add effect to the animation. By default, it adds noise to 0-255 RGBA, 0-127 grayscale, and HSV values."
+    },
+    {
+        "question": "Can PGB-exporter export other file formats?",
+        "answer": "No, PGb Export can only export PGbits to PG files. It does not export to other file formats."
+    },
+    {
+        "question": "How do I specify which node the PGB Exporter will export?",
+        "answer": "To specify which node the PGB Exporter should export data for, you need to place the PG Exporter after the desired node. From that node onward, everything exported will be listed in the PG File, for whatever next is."
+    },
+    {
+        "question": "What is the error message shown when attempting to export to a non-existent directory?",
+        "answer": "The error message shown is \"No directory found please provide the correct directory.\"."
+    },
+    {
+        "question": "How can I fine-tune the PG Bother?",
+        "answer": "To fine-tune the PG Bother, you can change the number of threads to decide how fast the rendering which will make the project finish faster."
+    },
+    {
+        "question": "What is unique about PG-neo?",
+        "answer": "PG-neo is unique because it supports object nodes in the json file and uses ffmpeg to convert videos."
+    },
+    {
+        "question": "How should I use PG-neo to create a video?",
+        "answer": "To use PG-neo to create a video, you need to place the PG-neo before the image exporting nodes. From then on, all the images will be stored in the json file and passed as video frames to ffmpeg."
+    },
+    {
+        "question": "How can I add custom nodes to ComfyUI?",
+        "answer": "To add custom nodes to ComfyUI, you can use notebook nodes to prototype, version control, and make it into an extension."
+    },
+    {
+        "question": "What capabilities does the CG-nuit package offer?",
+        "answer": "The CG-nuit package offers several advanced features, such as controlling the opacity of the effects, accessing the 'variables' node to change the effects options even after exporting, and controlling the tendency affects the sg input based on the sg seed to altitude the effects."
+    },
+    {
+        "question": "Is there a way to enable zooming in the UI?",
+        "answer": "Yes, you can zoom in the UI by opening pgjson in the desired json browser and scrolling to zoom."
+    },
+    {
+        "question": "How can I adjust the contrast of the exported images?",
+        "answer": "To adjust the contrast of the exported images, you need to use the Contrast node or the cont node."
+    }
+]

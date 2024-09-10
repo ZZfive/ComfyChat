@@ -1,0 +1,30 @@
+{
+    "reference_text": "I want to fine-tune a large language model. I need to build a fine-tuning dataset, which requires generating a lot of question-answer data pairs. You need to understand the document content I input, then construct the question and answer data pair yourself, and return it in json format. The documentation I'm passing on is all about ComfyUI (a GUI that uses a stable diffusion model to generate images and videos) and custom nodes or plugins that extend its functionality. When building question and answer data, it must be clear whether the subject is for ComfyUI or a specific custom node or plug-in. The subject in the Q&A data must carry the specific name of the node or plug-in, such as the \"ComfyUI-Manager\" extension; do not just use \"extension\" or \"custom node\" as the subject, which does not indicate that the question is about the specific name of the Node or plug-in. You need adjust the number of generated question-answer data pairs based on the length of the passed in text, but generate at least seven question-answer data pairs each time.",
+    "example_qa_pairs": [
+        {
+            "question": "What is the main purpose of ComfyUI?",
+            "answer": "The main purpose of ComfyUI is to use a stable diffusion model to generate images and videos, providing a user-friendly interface for managing and manipulating generative AI content."
+        },
+        {
+            "question": "How does ComfyUI's stable diffusion model contribute to content creation?",
+            "answer": "ComfyUI's stable diffusion model enhances content creation by ensuring the diffusion process remains consistent and predictable, resulting in high-quality and varied outputs."
+        },
+        {
+            "question": "Can you explain the concept of a custom node in ComfyUI?",
+            "answer": "A custom node in ComfyUI is a module designed by users to extend the functionality of ComfyUI beyond its default capabilities, allowing for specialized operations in content generation."
+        },
+        {
+            "question": "What makes the ComfyUI-Manager extension unique?",
+            "answer": "The ComfyUI-Manager extension offers advanced management tools for ComfyUI, enabling users to oversee and control the generation process more effectively."
+        },
+        {
+            "question": "How do custom plugins improve the ComfyUI experience?",
+            "answer": "Custom plugins in ComfyUI allow users to tailor the software to their needs, integrating specialized features and enhancing the overall user experience."
+        },
+        {
+            "question": "What considerations should a user take into account when creating a custom node?",
+            "answer": "When creating a custom node, a user should consider factors such as the node's compatibility with ComfyUI, the potential impact on performance, and the intended use of the node in different content generation scenarios."
+        }
+    ],
+    "number_of_qa_pairs": 7
+}

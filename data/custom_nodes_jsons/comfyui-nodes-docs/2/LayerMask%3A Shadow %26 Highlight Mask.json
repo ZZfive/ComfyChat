@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the ShadowAndHighlightMask extension in ComfyUI?",
+        "answer": "The ShadowAndHighlightMask extension in ComfyUI is used to generate masks that highlight and shadow the source image, creating a more dynamic contrast and depth."
+    },
+    {
+        "question": "What is the main functionality of the ShadowAndHighlightMask extension?",
+        "answer": "The main functionality of the ShadowAndHighlightMask extension is to generate shadow and highlight masks based on the input image. It uses parameters like 'shadow_level_offset', 'shadow_range', 'highlight_level_offset', and 'highlight_range' to control the intensity and range of shadows and highlights in the generated image."
+    },
+    {
+        "question": "What are the input types required by the ShadowAndHighlightMask extension?",
+        "answer": "The input types required by the ShadowAndHighlightMask extension are: image (an IMAGE input of ComfyUI type), shadow_level_offset (an INT input with parameters), shadow_range (a FLOAT input with parameters), highlight_level_offset (an INT input with parameters), and highlight_range (a FLOAT input with parameters). Additionally, there is an optional input called mask (MASK type) for enhanced masking."
+    },
+    {
+        "question": "What are the output types provided by the ShadowAndHighlightMask extension?",
+        "answer": "The extension provides output in the MASK format. Two resulting masks are generated: shadow_mask and highlight_mask."
+    },
+    {
+        "question": "What is the difference between shadow_level_offset and highlight_level_offset?",
+        "answer": "shadow_level_offset and highlight_level_offset determine the offsets for where maskedicients will be applied. A bigger shadow_level_offset moves more areas from a bright to a light state, and a smaller highlight_level_offset moves more areas from a dark to a light."
+    },
+    {
+        "question": "What are the ranges for the shadow_range and highlight_range parameters?",
+        "answer": "The shadow_range and highlight_range parameters adjust the range in which shadows and highlights will be generated. Both are floating-point inputs ranging from 0.01 to 0.99, with a default value of 0.25."
+    },
+    {
+        "question": "How does the ShadowAndHighlightMask extension handle optional input masks?",
+        "answer": "If an optional mask is provided, the extension will adjust only the pixels within the mask, preserving the values outside the mask region unaltered. The mask must be provided as a torch.Tensor in RGBA mode for this to work."
+    }
+]

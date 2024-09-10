@@ -1,0 +1,26 @@
+[
+    {
+        "question": "What is the purpose of the JoinStrings node in ComfyUI?",
+        "answer": "The JoinStrings node aims to merge two input strings into a single string, effectively concatenating them into a continuous sequence of characters. It plays a crucial role in tasks where multiple strings need to be combined into a single string, such as data formatting or preparing for further processing."
+    },
+    {
+        "question": "What are the required input types for the JoinStrings node?",
+        "answer": "The required input types for the JoinStrings node are 'string1' and 'string2', both of which must be of the 'STRING' Comfy dtype and Python dtype: str. These represent the two input strings that need to be joined."
+    },
+    {
+        "question": "What is the usage of the 'delimiter' input type for the JoinStrings node?",
+        "answer": "The 'delimiter' input type for the JoinStrings node is optional and represents the character or character sequence to be inserted between the two input strings. This delimiter determines the final string's reading structure and can be adjusted based on the specific requirements of the task."
+    },
+    {
+        "question": "What is the output type of the JoinStrings node?",
+        "answer": "The output type of the JoinStrings node is 'joined_string', which is the concatenated string resulting from joining the two input strings with the specified delimiter. This output is crucial as it represents the node's final product, ready for use in subsequent tasks or workflows."
+    },
+    {
+        "question": "What is the recommended infrastructure type for the JoinStrings node?",
+        "answer": "The recommended infrastructure type for the JoinStrings node is CPU."
+    },
+    {
+        "question": "What is the source code implementation of the JoinStrings node?",
+        "answer": "The source code implementation of the JoinStrings node is as follows:\n```python\nclass JoinStrings:\n\n    @classmethod\n    def INPUT_TYPES(cls):\n        return {'required': {'string1': ('STRING', {'default': '', 'forceInput': True}), 'string2': ('STRING', {'default': '', 'forceInput': True}), 'delimiter': ('STRING', {'default': ' ', 'multiline': False})}}\nRETURN_TYPES = ('STRING',)\nFUNCTION = 'joinstring'\nCATEGORY = 'KJNodes/constants'\n\n    def joinstring(self, string1, string2, delimiter):\n        joined_string = string1 + delimiter + string2\n        return (joined_string,)\n```"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of SaltAdvancedAudioCompressor?",
+        "answer": "The SaltAdvancedAudioCompressor node in ComfyUI provides advanced audio compression functionality, allowing for precise control of the compression process through parameters like threshold, ratio, etc. It utilizes the ffmpeg application for compression, offering a method to adjust the dynamic range of audio for various applications."
+    },
+    {
+        "question": "How can Salt Advanced Audio Compressor node be used to control audio compression?",
+        "answer": "Salt Advanced Audio Compressor node can be used to control audio compression by setting parameters such as threshold_dB (defines the compression start level in dB), ratio (controls the compression intensity), attack_ms (defines the start time in milliseconds for compression to kick in), release_ms (defines the time in milliseconds until compression effect is released), and makeup_gain (applies compensation gain after compression to maintain overall audio level)."
+    },
+    {
+        "question": "What is difference between Salt Advanced Audio Compressor and regular audio compression?",
+        "answer": "Salt Advanced Audio Compressor, as opposed to regular audio compression, offers precise control over the compression process via parameters like threshold, ratio, attack time, release time, and makeup gain. This gives users more nuanced control over maintaining audio quality, especially when dealing with high frequency or transient sounds."
+    },
+    {
+        "question": "How does Salt Advanced Audio Compressor use ffmpeg?",
+        "answer": "Salt Advanced Audio Compressor uses the ffmpeg application for audio compression. It lets users execute various ffmpeg commands internally to achieve the desired compression effect. This ensures compatible and fine-grained spacing of audio properties in the processed data."
+    },
+    {
+        "question": "What file extensions should be used when saving audio data in SaltAdvancedAudioCompressor node?",
+        "answer": "For optimal processing in the SaltAdvancedAudioCompressor node, audio data should be provided in the WAV file format. The node expect the input audio to be in WAV format, which is suitable for complex and detailed audio processing."
+    },
+    {
+        "question": "What is return type of the SaltAdvancedAudioCompressor?",
+        "answer": "SaltAdvancedAudioCompressor compresses the input audio data and returns the compressed audio data as the only summary object inComfyUI which has Comfy dtype 'AUDIO' and Python dtype 'bytes'."
+    },
+    {
+        "question": "What are the requirements for using Salt Advanced Audio Compressor?",
+        "answer": "Salt Advanced Audio Compressor requires the input audio data to be provided as a bytes object and the threshold_dB, ratio, attack_ms, release_ms, and makeup_gain parameters to be floats or integers according to their specified allowed ranges. The audio data is used for compression, and the other parameters are used to define the compression properties."
+    }
+]

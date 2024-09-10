@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the output type of VHS_LoadVideoPath?",
+        "answer": "The output type of VHS_LoadVideoPath is IMAGE, INT, VHS_AUDIO, and VHS_VIDEOINFO."
+    },
+    {
+        "question": "What is the purpose of VHS_LoadVideoPath?",
+        "answer": "VHS_LoadVideoPath is used to load video files from a specified path in order to integrate them into a video processing workflow. It ensures the video file is accessible, verifies the path, and prepares the video for subsequent processing or analysis tasks."
+    },
+    {
+        "question": "What does the hash_path function do in VHS_LoadVideoPath?",
+        "answer": "The hash_path function calculates the hash value of a file path. In the context of VHS_LoadVideoPath, it's used to determine if the loaded video has changed from the previous run. By using the hash value, VHS_LoadVideoPath can avoid unnecessary reloading and reprocessing of the video if the file hasn't changed."
+    },
+    {
+        "question": "Can VHS_LoadVideoPath load a video from a URL?",
+        "answer": "No, VHS_LoadVideoPath is designed to load video files from a specified path on the file system. It does not support loading videos from a URL. For video loading from a URL, you might want to consider using nodes or plugins specifically designed for this purpose."
+    },
+    {
+        "question": "What is the function of validate_path in VHS_LoadVideoPath?",
+        "answer": "validate_path in VHS_LoadVideoPath checks if the provided video path is valid. It returns True if the path is valid and can be accessed, and False otherwise. This is important because it ensures that the content of the video file can be loaded and processed before attempting to perform any video-related tasks."
+    },
+    {
+        "question": "How can VHS_LoadVideoPath be used in a video processing pipeline?",
+        "answer": "VHS_LoadVideoPath can be used as the first node in a video processing pipeline to load the initial video file that will be processed. It provides the necessary metadata about the video, such as its resolution and frame rate, which can then be used by subsequent nodes in the pipeline for further processing or analysis. For example, if you want to crop a video, you would typically annotate the video with crop metadata in order to ensure the final output is cropped correctly."
+    },
+    {
+        "question": "How can VHS-loadVideoPath be used for video batch processing?",
+        "answer": "For video batch processing, you can use the "
+    }
+]

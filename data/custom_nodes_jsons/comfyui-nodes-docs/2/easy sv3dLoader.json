@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of the sv3DLoader node?",
+        "answer": "The sv3DLoader node is designed to efficiently load and process 3D models and their associated data. It simplifies the initialization and management of model states, prepares images and latent vectors for further processing in the pipeline."
+    },
+    {
+        "question": "What are the required input types for the sv3DLoader node?",
+        "answer": "The required input types for the sv3DLoader node include:\n\n- ckpt_name: The checkpoint name for identifying the specific model state to be loaded. This affects model initialization and output quality.\n- vae_name: The VAE (Variational Autoencoder) name, crucial for choosing the appropriate variational autoencoder. This influences encoding and decoding processes, impacting the fidelity of the final output.\n- init_image: The initial image for setting the context and direction of content for 3D model generation. It directly affects the visual elements and the thematic coherence of the resultant model.\n- empty_latent_width: This parameter defines the width of the latent space for model generation. It is important as it affects the model's ability to capture details and output diversity.\n- empty_latent_height: Similar to empty_latent_width, this parameter sets the height of the latent space. It impacts the model's capability to generate high-resolution outputs.\n- batch_size: The batch size parameter is crucial for managing computational resources and determining the number of models the node can process simultaneously. It affects the overall efficiency and speed of the pipeline.\n- interp_easing: The easing method for interpolation determines how the model transitions between different states. It influences the smoothness and continuity of the output sequence.\n- easing_mode: This parameter controls the type of easing to be applied, whether it's azimuth, elevation, or custom. It affects the trajectory of the model's movement in space."
+    },
+    {
+        "question": "What are the optional input types for the sv3DLoader node?",
+        "answer": "The optional input types for the sv3DLoader node include:\n\n- scheduler: This provides scheduling parameters, allowing for detailed control over the transition points for the model in the latent space, enabling precise manipulation of the model's progression."
+    },
+    {
+        "question": "What are the output types for the sv3DLoader node?",
+        "answer": "The output types for the sv3DLoader node include:\n\n- pipe: The pipeline output, a composite structure containing the loaded model, encoded images, and other relevant data. It is essential for passing necessary information to subsequent processing steps in the pipeline.\n- model: The model output provides the initialized and prepared 3D model, serving as the core component for further operations and content generation.\n- interp_log: The interpolation log records the azimuth and elevation values used by the model during processing. It serves as a reference for understanding the model's progression in the latent space."
+    },
+    {
+        "question": "What is the purpose of the adv_pipeloader function?",
+        "answer": "The adv_pipeloader function initializes and configures the sv3DLoader node, loading a checkpoint, VAE, and initializing an image. It then encodes the image, generates a latent space, and sets up the model for processing. The function also handles scheduling and interpolation, determining the easing method and mode for the model's movement in space."
+    },
+    {
+        "question": "What does the schedulers parameter allow for?",
+        "answer": "The schedulers parameter allows for detailed control over the transition points in the latent space, enabling precise manipulation of the model's progression. It can be used to specify scheduling information in a multi-line string format."
+    },
+    {
+        "question": "What are the usage tips for the sv3DLoader node?",
+        "answer": "The usage tips for the sv3DLoader node include:\n\n- Infrastructure type: CPU. This indicates that the sv3DLoader node is designed to operate on CPU infrastructure."
+    }
+]

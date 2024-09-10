@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the function of the modal builder?",
+        "answer": "The modal builder is a standalone docker fast api app that takes in a snapshot of the machine and builds it as a new modal app, returning the deployment url."
+    },
+    {
+        "question": "How can one run the modal builder locally?",
+        "answer": "To run the modal builder locally, one should execute \"docker build -t bennykok/comfydeploy-builder:dev . && docker run --env-file .env -p 8080:8080 bennykok/comfydeploy-builder:dev\"."
+    },
+    {
+        "question": "What are the environment variables required for the modal builder?",
+        "answer": "The environment variables required are MODAL_TOKEN_ID and MODAL_TOKEN_SECRET."
+    },
+    {
+        "question": "Describe the installation process for Fly.io on Mac/Linux.",
+        "answer": "To install Fly.io on Mac/Linux, one must first ensure Homebrew is installed, and then run \"brew install flyctl\". If Homebrew is not installed, the install script \"curl -L https://fly.io/install.sh | sh\" can be used."
+    },
+    {
+        "question": "Who is the target audience for the modal builder?",
+        "answer": "The target audience for the modal builder is individuals or teams looking to deploy modal apps and require a simple process for generating deployment urls."
+    },
+    {
+        "question": "What is the difference between running \"fly launch\" and \"fly deploy\"?",
+        "answer": "When deploying for the first time, one should run \"fly launch\". For subsequent deployments, \"fly deploy\" should be used."
+    },
+    {
+        "question": "What is the purpose of setting MODAL_TOKEN_ID and MODAL_TOKEN_SECRET in Fly.io?",
+        "answer": "Setting MODAL_TOKEN_ID and MODAL_TOKEN_SECRET in Fly.io is necessary to authenticate and authorize the deployment process."
+    }
+]

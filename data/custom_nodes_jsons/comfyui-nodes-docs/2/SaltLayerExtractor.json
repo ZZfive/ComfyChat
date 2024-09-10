@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What is the purpose of SaltLayerExtractor?",
+        "answer": "The SaltLayerExtractor node is used to extract specific layer data from a group of animated layers. It focuses on parallax motion scheduling, processing input animated layers to generate scaling, x and y value schedules, which are then used to facilitate the creation of dynamic, multi-dimensional animations."
+    },
+    {
+        "question": "What are the input types required for SaltLayerExtractor?",
+        "answer": "The required input types for SaltLayerExtractor are float_layers, which is a list of animation layers. Each layer contains scaling, x, and y frame data. The other required input is layer_index, which specifies the index from the provided animation layers list of the layer data to be extracted. This indexing allows for targeted extraction of animation data, providing precise control over parallax motion scheduling."
+    },
+    {
+        "question": "What are the output types for SaltLayerExtractor?",
+        "answer": "The output types for SaltLayerExtractor are zoom_schedule_list, x_schedule_list, and y_schedule_list. These outputs contain lists of scaling values, x coordinate values, and y coordinate values, respectively. These lists are extracted from the specified animation layer to schedule zoom, horizontal, and vertical movement effects in parallax motion."
+    },
+    {
+        "question": "What is meant by \"SaltLayerExtractor node is used to extract specific layer data from a group of animated layers\"?",
+        "answer": "The SaltLayerExtractor node is designed to isolate and retrieve data from individual layers within a set of animated frames. This is especially useful when working with complex animations that involve multiple layers, as it allows for the precise manipulation and scheduling of the parallax movement effect in these animations."
+    },
+    {
+        "question": "How does SaltLayerExtractor handle input errors?",
+        "answer": "SaltLayerExtractor raises a ValueError if the layer_index specified in the input argument is greater than or equal to the length of the float_layers list. This ensures that the node only attempts to extract data from existing layers and handles potential input errors effectively."
+    },
+    {
+        "question": "What does the SaltyLayerExtractor node do with the specified zoom_values, x_values, and y_values?",
+        "answer": "The SaltLayerExtractor node logs the zoom_values, x_values, and y_values to the console, which can be used to monitor and debug the parallax movement effect in the generated animations."
+    },
+    {
+        "question": "What is the expected input data type for the zoom_values, x_values, and y_values in the SaltLayerExtractor node?",
+        "answer": "The zoom_values, x_values, and y_values are expected to be lists of floating-point numbers. Each list corresponds to one of the output types (zoom_schedule_list, x_schedule_list, y_schedule_list), and contains the data extracted from the specified animation layer."
+    }
+]

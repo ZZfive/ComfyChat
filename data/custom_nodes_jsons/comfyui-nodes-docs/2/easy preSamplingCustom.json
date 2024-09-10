@@ -1,0 +1,30 @@
+[
+    {
+        "question": "What are the input types for the easy preSamplingCustom node?",
+        "answer": "The required input types for the easy preSamplingCustom node are: \n- pipe (specifies the pipeline configuration) \n- guider (defines the sampling process's guiding strategy) \n- cfg (controls the condition factor) \n- cfg_negative (specifies the negative condition factor) \n- sampler_name (selects the pre-sampling process's specific sampler) \n- scheduler (selects the control sampler steps scheduler) \n- steps (defines the number of steps in the sampling process) \n- sigma_max (sets the maximum noise adjustment sigma value) \n- sigma_min (determines the minimum sigma value) \n- rho (adjusts the rho parameter, influencing the sampling dynamics) \n- beta_d (controls the beta_d parameter, affecting the sampling process's diffusion) \n- beta_min (sets the beta's minimum value) \n- eps_s (specifies the epsilon_s parameter, adjusting the sampling process's step size) \n- flip_sigmas (enables or disables sigma value flipping, changing the noise mode in the sampling process) \n- denoise (adjusts the denoising factor, affecting image clarity and quality) \n- add_noise (enables or disables noise addition, influencing image texture and details) \n- seed (sets the seed for random number generation, ensuring the sampling process's reproducibility)"
+    },
+    {
+        "question": "What are the notable functions and classes mentioned in the documentation?",
+        "answer": "The notable functions and classes mentioned in the documentation are: \n- sample_inversed_euler (implemented in the reversed_euler_sampler class) \n- get_inversed_euler_sampler (implemented in the samplerCustomSettings class) \n- get_custom_cls (implemented in the samplerCustomSettings class) \n- settings (implemented in the samplerCustomSettings class) \n- getter methods and classes in the custom_samplers module (e.g., CFGGuider, DualCFGGuider, BasicGuider, KSamplerSelect, VPScheduler, KarrasScheduler, ExponentialScheduler, PolyexponentialScheduler, sdturboScheduler, alignYourStepsScheduler)"
+    },
+    {
+        "question": "What does the input parameter 'pipe' represent?",
+        "answer": "The 'pipe' parameter represents the pipeline configuration, including the model, positive and negative prompts, other settings, and more. It serves as the foundation for the pre-sampling process."
+    },
+    {
+        "question": "What are the implementation details of the 'sample_inversed_euler' function?",
+        "answer": "The 'sample_inversed_euler' function implements Algorithm 2 (Euler steps) from the paper 'Training Generative Adversarial Networks with Adversarial Universality' by Alekh Agarwal et al. (2022). It takes the name of the model, a vector of tensors representing inputs (x), a list of sigma values (sigmas), and additional arguments (extra_args) as inputs. It returns a vector of tensors (x) that represents the sampled outputs after performing the Euler steps."
+    },
+    {
+        "question": "What are the major categories and functions covered in the code?",
+        "answer": "The main categories and functions covered in the code are:\n- Input types: Required and optional types for the preSamplingCustom node\n- Functions and methods: Initialization, getter methods for custom samplers, and helper functions for integrated pipeline and input types"
+    },
+    {
+        "question": "What is the core functionality of the easy preSamplingCustom node?",
+        "answer": "The core functionality of the easy preSamplingCustom node is to provide customization options for the pre-sampling stage in ComfyUI, allowing users to define conditions and parameters that affect the sampling dynamics of the underlying diffusion model. This enables users to control factors such as the guide strategy, noise levels, and sampling steps, optimizing the image generation process."
+    },
+    {
+        "question": "What are the output types available to the easy preSamplingCustom node?",
+        "answer": "The output types available to the easy preSamplingCustom node are: \n- pipe (returns the modified pipeline configuration with integrated custom pre-sampling settings) \n- images (returns the input images) \n- samples (returns the latent sample)"
+    }
+]

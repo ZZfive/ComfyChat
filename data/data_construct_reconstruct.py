@@ -144,14 +144,17 @@ class LLMApiGenerator:
             file_content = f.read()
 
         completion = client.chat.completions.create(
-        model=model,
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": template.format(subject, file_content)},
-        ],
-        temperature=1.0,
+            model=model,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": template.format(subject, file_content)},
+            ],
+            temperature=1.0,
         )
-        return completion.choices[0].message.content
+        if completion.choices is not None or completion.choices[0].message.content != '':
+            return completion.choices[0].message.content
+        else:
+            raise ValueError(f"{file_path}使用llms生成结果时报错或无结果")
 
     def messages_generate_requests(self, subject: str, file_path: str, base_url: str, api_key: str, model: str,
                                    system_prompt: str = system_prompt1, template: str = template1) -> str:
@@ -316,7 +319,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
         finally:
             self.save_infos()
 
-    # 对一个节点进行更新，如果在节点仓库之前未拉取，会直接拉取
+    # 对一个节点进行更新，如果该节点仓库之前未拉取，会直接拉取
     def refresh_one_repo(self, node_url: str, local_custom_node_repos_dir: str = "/root/code/ComfyChat/data/custom_nodes_repos") -> None:
         node_name = node_url.split("/")[-1]
         local_node_repo_path = os.path.join(local_custom_node_repos_dir, node_name)
@@ -372,6 +375,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                         extract_md_files_from_local_repo(local_node_repo_path, local_node_md_verison_path)
                         v["md_last_update"] = v["local_last_update"]
                         v["repo_md"] = True
+                        v["version"] = version
                     except Exception as e:
                         logger.error(f"{k} MD refresh failure: {e}")
         finally:
@@ -392,6 +396,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             extract_md_files_from_local_repo(local_node_repo_path, local_node_md_path)
             self.local_custom_node_infos[node_url]["md_last_update"] = self.local_custom_node_infos[node_url]["local_last_update"]
             self.local_custom_node_infos[node_url]["repo_md"] = True
+            self.local_custom_node_infos[node_url]["version"] = version
         except Exception as e:
             logger.error(f"{node_url} MD refresh failure: {e}")
             self.local_custom_node_infos[node_url]["repo_md"] = False
@@ -406,7 +411,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                 logger.info(f"{k}未更新json")
         self.save_infos()
 
-    def refresh_one_json(self, node_url: str, version: int, lang: str = "en",
+    def refresh_one_json(self, node_url: str, version: int, model: str = "openrouter", lang: str = "en",
                          local_custom_node_mds_dir: str = "/root/code/ComfyChat/data/custom_nodes_mds",
                          local_custom_node_jsons_dir: str = "/root/code/ComfyChat/data/custom_nodes_jsons") -> None:
         try:
@@ -435,9 +440,9 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                     try:
                         md_name, _ = os.path.splitext(item)
                         if lang == "en":
-                            rsp = self.llm_generator.messages_generate_llm(node_name, md_path, "openrouter")
+                            rsp = self.llm_generator.messages_generate_llm(node_name, md_path, model)
                         if lang == "zh":
-                            rsp = self.llm_generator.messages_generate_llm(node_name, md_path, "siliconflow",
+                            rsp = self.llm_generator.messages_generate_llm(node_name, md_path, model,
                                                                            system_prompt=system_prompt_zh,
                                                                            template=template_zh)
                         rsp_json = parse_json(rsp)
@@ -455,6 +460,8 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                         self.local_custom_node_infos[node_url]["repo_json"] = True
                         print(f"***{node_url}:{item} Json refresh successfully***")
                     except Exception as e:
+                        if rsp:
+                            print(rsp)
                         logger.error(f"Json of {md_path} refresh failure: {e}")
                         if md_path not in self.local_custom_node_infos[node_url]["unsuccessful_files"]:
                             self.local_custom_node_infos[node_url]["unsuccessful_files"].append(md_path)
@@ -898,11 +905,11 @@ if __name__ == "__main__":
     # pipeline.refresh_all_mds(version=2)
     # pipeline.refresh_one_md("https://github.com/Extraltodeus/DistanceSampler", version=2)
     # pipeline.refresh_all_jsons(version=2)
-    # pipeline.refresh_one_json("https://github.com/Fannovel16/comfyui_controlnet_aux", version=2)
+    # pipeline.refresh_one_json("https://github.com/pzc163/Comfyui-CatVTON", version=2, model="siliconflow")
 
     for k in pipeline.local_custom_node_infos:
         if pipeline.local_custom_node_infos[k]["unsuccessful_files"] != []:
             # print(k)
-            pipeline.refresh_one_json(k, version=2)
+            pipeline.refresh_one_json(k, version=2, model="openrouter")
     
     pipeline.save_infos()
