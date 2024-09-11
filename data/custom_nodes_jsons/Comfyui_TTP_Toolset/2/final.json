@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Comfyui_TTP_Toolset?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Comfyui_TTP_Toolset is a workflow for a simple logic amazing upscale node for DIT models, which can be commonly used for Flux, Hunyuan, and SD3. It tiles the initial image into pieces and uses image-interrogator to get prompts for each tile for a more accurate upscale process."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Image Tile batch node do in Comfyui_TTP_Toolset?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Image Tile batch node in Comfyui_TTP_Toolset cuts an image into pieces automatically based on the set width and height, and records necessary information for further use."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Image Assy node work in Comfyui_TTP_Toolset?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Image Assy node in Comfyui_TTP_Toolset assembles the image pieces back into one while preventing possible lines between the pieces of images. It works in pixel mode."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the Tile image size node in Comfyui_TTP_Toolset?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Tile image size node in Comfyui_TTP_Toolset decides how many pieces you want to divide the image into using the Image Tile batch node. It obtains information from the original image and calculates the resolution for the tiled image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the CoordinateSplitter node work in Comfyui_TTP_Toolset?"
+            },
+            {
+                "role": "assistant",
+                "content": "The CoordinateSplitter node in Comfyui_TTP_Toolset converts the Position information into Coordinates and connects it to the positions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Cond to Batch node in Comfyui_TTP_Toolset?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Cond to Batch node in Comfyui_TTP_Toolset converts the condition list into a batch and is kept for future function expansion. It connects to the conditions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Condition merge node function in Comfyui_TTP_Toolset?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Condition merge node in Comfyui_TTP_Toolset merges all the tiled conditions into one piece, ready for building the image. It connects with the CoordinateSplitter node and Cond to Batch node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can Comfyui_TTP_Toolset support ControlNet Tile to enhance the upscale?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, Comfyui_TTP_Toolset can support ControlNet Tile to enhance the upscale if it is ready. An example of using a tile for Hunyuan DiT is provided."
+            }
+        ]
+    }
+]

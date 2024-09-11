@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the ComfyUI-svd_txt2vid node replace in the Stable Video Diffusion model?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-svd_txt2vid node replaces the init_image conditioning in the Stable Video Diffusion image to video model with text embeds and a conditioning frame."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended input state for the latents in ComfyUI-svd_txt2vid?"
+            },
+            {
+                "role": "assistant",
+                "content": "It is recommended to input the latents in a noisy state when using ComfyUI-svd_txt2vid."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does default ComfyUI noise create optimal results for ComfyUI-svd_txt2vid?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, default ComfyUI noise does not create optimal results for ComfyUI-svd_txt2vid. Using other noise like Power-Law Noise is recommended."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What inputs are preserved for the conditioning frame in ComfyUI-svd_txt2vid?"
+            },
+            {
+                "role": "assistant",
+                "content": "Motion bucket, fps, and augmentation level are preserved as possible inputs for the conditioning frame in ComfyUI-svd_txt2vid."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How long does it take for the video generation to stabilize in ComfyUI-svd_txt2vid?"
+            },
+            {
+                "role": "assistant",
+                "content": "The video generation in ComfyUI-svd_txt2vid needs a couple of frames time to get on its feet and run."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you get more color into the generated video using ComfyUI-svd_txt2vid?"
+            },
+            {
+                "role": "assistant",
+                "content": "Maxing out EDM sigma and using additional prompts like 'realistic' can help get more color into the generated video when using ComfyUI-svd_txt2vid."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What helps with image quality consistency when using ComfyUI-svd_txt2vid?"
+            },
+            {
+                "role": "assistant",
+                "content": "Keeping a small CFG guidance spread of around 2 using VideoLinearCFGGuidance helps with image quality consistency when using ComfyUI-svd_txt2vid."
+            }
+        ]
+    }
+]

@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI Extra Samplers extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI Extra Samplers extension provides additional samplers, K-Sampling nodes, and Guider nodes to enhance the functionality and flexibility of the ComfyUI image generation process."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which sampler in the ComfyUI Extra Samplers extension supports different types of noise other than generic gaussian?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LCM Custom Noise sampler in the ComfyUI Extra Samplers extension supports different types of noise other than generic gaussian."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the ImageAssistedCFGGuider node in ComfyUI Extra Samplers do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ImageAssistedCFGGuider node in ComfyUI Extra Samplers samples the conditioning and then adds in the latent image using vector projection onto the CFG. The image latent should be of the same size as the diffusion latent."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the default step_method in the Supreme Sampler?"
+            },
+            {
+                "role": "assistant",
+                "content": "The default step_method in the Supreme Sampler is Euler."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the edge_enhancement feature in the Supreme Sampler work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The edge_enhancement feature in the Supreme Sampler sharpens the latent and then applies a bilateral blur, leaving the edges sharpened. It defaults to a value of 0.25."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the substeps feature in the Supreme Sampler do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The substeps feature in the Supreme Sampler determines the number of times to iterate over each step and average the results. It can be useful for obtaining higher quality at a given step count and is inspired by ReNoise. The default value is 2."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the reversible_dampen setting in the Supreme Sampler?"
+            },
+            {
+                "role": "assistant",
+                "content": "The reversible_dampen setting in the Supreme Sampler is a multiplier of the reversible correction in the reversible_ samplers. Increasing the value leads to less reversibility, while decreasing it results in more reversibility. Values lower than 0.5 with low steps may cause issues."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the modulation_dims options in the Supreme Sampler's noise modulation functionality?"
+            },
+            {
+                "role": "assistant",
+                "content": "The modulation_dims options in the Supreme Sampler's noise modulation functionality allow choosing between C (channels), HW (height + width), or CHW (channels + height + width) of the latent."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Dynamic step method in the Supreme Sampler work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Dynamic step method in the Supreme Sampler chooses a sampler based on the error, which is calculated using the same method as in adaptive_rk. The choices range from high error to low error: RKF45, RK4, Bogacki_Shampine, Trapezoidal, and Euler. The order may change in the future."
+            }
+        ]
+    }
+]

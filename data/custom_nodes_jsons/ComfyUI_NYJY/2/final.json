@@ -1,0 +1,362 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_NYJY 支持哪些翻译服务?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_NYJY 支持Google翻译和百度翻译。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "安装ComfyUI_NYJY需要安装哪个新的包?"
+            },
+            {
+                "role": "assistant",
+                "content": "安装ComfyUI_NYJY需要安装pygtrans包。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "最近更新的节点有哪些?"
+            },
+            {
+                "role": "assistant",
+                "content": "最近更新的节点包括JoyCaption节点和JoyTag节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "JoyTag节点有什么新的特性?"
+            },
+            {
+                "role": "assistant",
+                "content": "JoyTag节点增加了安全模式和自定义tag。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_NYJY如何解决模型重复下载问题?"
+            },
+            {
+                "role": "assistant",
+                "content": "在2024-08-14的更新中，ComfyUI_NYJY解决了模型重复下载问题。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_NYJY可以通过哪两种方式安装?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_NYJY可以通过ComfyUI Manager安装或手动拷贝安装。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "手动拷贝安装ComfyUI_NYJY需要将文件解压到哪个目录?"
+            },
+            {
+                "role": "assistant",
+                "content": "手动拷贝安装ComfyUI_NYJY需要将文件解压到你的ComfyUI目录下的custom_nodes文件夹中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the ComfyUI_NYJY plugin used for?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI_NYJY plugin is used for generating images along with captions. It includes the JoyCaption feature, which uses large language models and CLIP models to analyze and generate text-based captions for images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the differences between JoyCaption and the original JoyCaption plugin?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI_NYJY plugin implements an enhanced version of JoyCaption by including additional functions like setting the maximum number of tokens for generation and clearing the cache in between iterations, which may help manage memory usage and improve overall performance."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the configuration parameters available for the JoyCaption node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The JoyCaption node allows for the following configuration options: image, prompt, model, max_new_tokens, top_k, temperature, and clear_cache."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the role of the 'image' parameter in the JoyCaption node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'image' parameter is used to specify the image for which you want to generate a caption. You can either input the image directly or load it from a local file path."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'max_new_tokens' option do in the JoyCaption node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'max_new_tokens' option sets the maximum number of new tokens that can be generated for the caption. This parameter enables control over the length of the output text."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is it possible to clear the cache in the JoyCaption node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, the 'clear_cache' option in the JoyCaption node allows for the clearing of the cache during execution. This can be beneficial for managing memory usage, especially on devices with limited storage capacity or those running under high load conditions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between text and image data in the joy caption node?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the joy caption node, text data is used to generate captions for images. The text data is processed by a large language model to output an ancillary text. Image data, on the other hand, is input into the node to be analyzed by the language model to produce captions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the most important factors for selecting inputs in the joy caption node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The input selection in the joy caption node involves specifying both image data and text data. Proper input selection is crucial for generating accurate and relevant captions. In terms of image data, it's important to choose high-quality, relevant images that correspond with the text data input to produce the most coherent captions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do the parameters prompt, model, and top_k influence the quality of captions produced by the joy caption node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The parameters prompt, model, and top_k play critical roles in determining the quality of the captions produced by the joy caption node. The prompt parameters specify the type of features or details to be extracted from the image, the model determines the complexity and size of the language model used, and the top_k setting influences the variety of possible outputs."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the original repository of the JoyTag plugin?"
+            },
+            {
+                "role": "assistant",
+                "content": "The original repository of the JoyTag plugin can be found at https://github.com/fpgaminer/joytag."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where are the required models stored when JoyTag is running?"
+            },
+            {
+                "role": "assistant",
+                "content": "When JoyTag is running, the downloaded required models are stored in the directory [comfyui根目录]/costom_nodes/ComfyUI_NYJY/models/joytag."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is it necessary to manually create the required model directory?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, the plugin will automatically download the necessary models and create the required directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the `THRESHOLD` parameter in JoyTag?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `THRESHOLD` parameter is used to control the number of tags generated. It takes a float value between 0.1 and 1, and affects the output by determining the number of tags."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the 'safe_mode' parameter in JoyTag?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'safe_mode' parameter operates in a security mode that automatically filters out tags containing explicit keywords such as '血腥' and '色情'. This feature is under continuous development with expanding blacklist."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the positive prompt words in JoyTag?"
+            },
+            {
+                "role": "assistant",
+                "content": "Positive prompt words are additional phrases or sentences that can be custom-defined. These words are appended to the generated tag list after the image has been analyzed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the role of the negative prompt words in JoyTag?"
+            },
+            {
+                "role": "assistant",
+                "content": "Negative prompt words are used to filter unwanted tags after analyzing the image. These words must be included in the tag list if their absence is desired in the final output."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI_NYJY node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI_NYJY node is designed to facilitate translations using either Google or Baidu as the translation platform."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the options available for translation platforms within ComfyUI_NYJY?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI_NYJY node provides two translation platforms: Google and Baidu."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I translate using the Google platform in ComfyUI_NYJY?"
+            },
+            {
+                "role": "assistant",
+                "content": "To translate using the Google platform in ComfyUI_NYJY, simply ensure that the VPN is running and the node configuration remains unchanged."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What steps are required to set up translation using the Baidu platform in ComfyUI_NYJY?"
+            },
+            {
+                "role": "assistant",
+                "content": "Setting up translation using the Baidu platform in ComfyUI_NYJY involves modifying the `config.json` file to record the `AppId` and `Secret` from the Baidu translation platform, and then visiting the Baidu website to obtain the necessary API."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is needed to register a translation API with Baidu?"
+            },
+            {
+                "role": "assistant",
+                "content": "To register a translation API with Baidu, the user must log into the Baidu translation platform, then visit [https://api.fanyi.baidu.com/product/11] to register for the \"通用文本翻译API\"."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I access the `config.json` file to update translation settings in ComfyUI_NYJY?"
+            },
+            {
+                "role": "assistant",
+                "content": "To access the `config.json` file for updates, the user must navigate to the root directory of ComfyUI_NYJY and open or create the `config.json` file as necessary."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the workflow example (including a diagram) for translation using ComfyUI_NYJY?"
+            },
+            {
+                "role": "assistant",
+                "content": "The workflow example includes a diagram that illustrates managing translations using ComfyUI_NYJY, which includes steps like opening the settings and adjusting node configurations."
+            }
+        ]
+    }
+]

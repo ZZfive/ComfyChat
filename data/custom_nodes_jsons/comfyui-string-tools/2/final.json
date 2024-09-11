@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI String Tools?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI String Tools is a custom node for ComfyUI that provides simple string nodes like `StringToolsString` and multi-line string nodes like `StringToolsText`, a node to concatenate multiple texts called `StringToolsConcat`, and a node to randomly select one from multiple texts called `StringToolsRandomChoice`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why does ComfyUI String Tools provide simple text nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI String Tools provides simple text nodes `StringToolsString` and `StringToolsText` because `StringToolsConcat` and `StringToolsRandomChoice` nodes accept strings but currently cannot accept `PrimitiveNode`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `StringToolsConcat` node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `StringToolsConcat` node concatenates `text_*` with `separator`. These inputs cannot be changed to Widget."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `StringToolsRandomChoice` node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `StringToolsRandomChoice` node selects one from `text_*` based on `seed`. These inputs cannot be changed to Widget."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between `StringToolsRandomChoice` and `StringToolsBalancedChoice`?"
+            },
+            {
+                "role": "assistant",
+                "content": "The difference between `StringToolsRandomChoice` and `StringToolsBalancedChoice` is in the weighting. If there is `StringToolsRandomChoice` or `StringToolsBalancedChoice` in the input of `StringToolsBalancedChoice`, weighting is performed according to the number of valid inputs, making it easier to select as the number of valid inputs increases."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `StringToolsBalancedChoice` node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `StringToolsBalancedChoice` node selects one from `text_*` based on `seed`. These inputs cannot be changed to Widget. The difference from `StringToolsRandomChoice` is that it performs weighting according to the number of valid inputs, making it easier to select as the number of valid inputs increases."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the license for ComfyUI String Tools?"
+            },
+            {
+                "role": "assistant",
+                "content": "The license for ComfyUI String Tools is MIT."
+            }
+        ]
+    }
+]

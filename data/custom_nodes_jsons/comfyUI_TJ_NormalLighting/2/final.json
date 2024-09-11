@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the comfyUI_TJ_NormalLighting custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The comfyUI_TJ_NormalLighting custom node allows you to add virtual lighting effects to your images based on normal maps."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which reflection model does comfyUI_TJ_NormalLighting use for calculating diffuse reflection?"
+            },
+            {
+                "role": "assistant",
+                "content": "The comfyUI_TJ_NormalLighting program calculates diffuse reflection based on the Lambert Reflection Model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the characteristics of the Lambertian reflection model?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Lambertian reflection model assumes that the surface is completely diffusive, the incident light is isotropically scattered, the intensity of the reflected light is proportional to the dot product of the intensity of the incident light, the surface normal vector, and the direction vector of the light, and the intensity of reflected light does not depend on the position of the viewpoint."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What model does comfyUI_TJ_NormalLighting use for calculating specular reflection?"
+            },
+            {
+                "role": "assistant",
+                "content": "In addition to diffuse reflection, comfyUI_TJ_NormalLighting uses Phong's specular reflection model to calculate specular reflection."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What inputs are required for using the comfyUI_TJ_NormalLighting custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use the comfyUI_TJ_NormalLighting custom node, you need to input three images: diffuse_map (normal RGB image), normal_map (normal image compatible with XYZ axes), and specular_map (specular map in RGB)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the specular_power parameter control in comfyUI_TJ_NormalLighting?"
+            },
+            {
+                "role": "assistant",
+                "content": "The specular_power parameter in comfyUI_TJ_NormalLighting controls the strength of specular reflection, physically expressing the smoothness and gloss of a surface."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is the output of comfyUI_TJ_NormalLighting calculated?"
+            },
+            {
+                "role": "assistant",
+                "content": "The output of comfyUI_TJ_NormalLighting is calculated using the formula: output_tensor = (diffuse_tensor * (ambient_light + diffuse * NormalDiffuseStrength) + specular_tensor * specular * SpecularHighlightsStrength) * TotalGain"
+            }
+        ]
+    }
+]

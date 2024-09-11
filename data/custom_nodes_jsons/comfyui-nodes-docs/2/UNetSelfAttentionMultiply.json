@@ -1,17 +1,10 @@
-{
-    "file_name": "comfyui-nodes-docs",
-    "content": [
-        "ComfyUI's functionality can be extended through the use of custom nodes or plugins. These nodes and plugins can be used to generate images or videos with specific settings and parameters.\n\nComfyUI provides a wide range of custom nodes and plugins that can be used to generate complex images and videos. These nodes and plugins can be easily integrated into ComfyUI, allowing users to customize their image and video generation process.\n\nComfyUI supports over 60 node types and plugins, including CustomFoldersPosition, MagicSearch, and cg-noise. These nodes and plugins can be easily downloaded and integrated into ComfyUI.",
-        "ComfyUI's cybersecurity measures include using HTTPS and encrypting all data locally. Additionally, it uses git and Docker for version control and containerization.",
-        "节点的参数以及标签\n1. 视频节点支持\n----\n...\n\n2. 其他节点\n----\n...\n\n3. 声音节点支持\n----\n..."
-    ],
-    "subject_name": "ComfyUI",
-    "questions": [
-        "What is cg-noise in ComfyUI?"
-    ],
-    "answers": [
-        "Cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
-    ],
-    "continuing_question": "How does cg-noise generate variations in images?",
-    "continuing_answer": "Cg-noise generates variations in images by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`. This ensures that the generated noise is consistent but slightly different each time, adding an element of unpredictability to the image generation process."
-}
+[
+    {
+        "question": "What is cg-noise in ComfyUI?",
+        "answer": "Cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+    },
+    {
+        "question": "How does cg-noise generate variations in images?",
+        "answer": "Cg-noise generates variations in images by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`. This ensures that the generated noise is consistent but slightly different each time, adding an element of unpredictability to the image generation process."
+    }
+]

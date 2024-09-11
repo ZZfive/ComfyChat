@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the comfyui-prompt-reader-node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The comfyui-prompt-reader-node is a custom node in ComfyUI that allows users to read prompts and generate images based on those prompts using Stable Diffusion."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the significance of renaming 'calculate_model_hash' to 'calculate_hash' in v1.3.0?"
+            },
+            {
+                "role": "assistant",
+                "content": "Starting from v1.3.0, 'calculate_model_hash' was renamed to 'calculate_hash' to support auto-detection on Civitai. This change enables the node to temporarily store model hash values, improving generation speed after the initial calculation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which nodes were added in v1.3.0 of comfyui-prompt-reader-node?"
+            },
+            {
+                "role": "assistant",
+                "content": "In v1.3.0, the 'Lora Loader' node and 'Lora Selector' node were added to the comfyui-prompt-reader-node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What feature was added to the 'Prompt Reader' node in v1.2.0?"
+            },
+            {
+                "role": "assistant",
+                "content": "In v1.2.0, a model matching feature was added to the 'Prompt Reader' node, allowing it to match prompts with specific models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which node was added in v1.1.0 to support processing single files or lists of files?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Batch Loader' node was added in v1.1.0 to support processing either a single file or a list of files."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was the purpose of the new file-naming mechanism introduced in v1.0.1?"
+            },
+            {
+                "role": "assistant",
+                "content": "The new file-naming mechanism introduced in v1.0.1 was designed to ensure naming uniqueness and prevent overwriting existing images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "In which version was the 'Parameter Extractor' node added to comfyui-prompt-reader-node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Parameter Extractor' node was added to comfyui-prompt-reader-node in version 1.2.0."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the SD Prompt Reader Node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SD Prompt Reader Node in ComfyUI is used to extract metadata from images in various formats and save the images with additional metadata to ensure compatibility with metadata detection on websites like Civitai."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the Prompt Saver Node in ComfyUI be used?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Prompt Saver Node in ComfyUI is designed to be used with the Parameter Generator Node. It writes additional metadata in the A1111 format to the output images, making them compatible with tools that support the A1111 format, including SD Prompt Reader and Civitai."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the Parameter Generator Node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Parameter Generator Node in ComfyUI is used to generate parameters and output them simultaneously to the Prompt Saver Node and KSampler Node, as it's not possible to directly extract metadata from KSampler."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Batch Loader Node work in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Batch Loader Node in ComfyUI is designed for the Prompt Reader Node to batch-read image files in a directory. It cannot be used with other custom nodes. For batch processing, the 'IMAGE' output of the Batch Loader Node should be connected to the 'image' input of the Prompt Reader Node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Parameter Extractor Node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Parameter Extractor Node in ComfyUI is an extension of the Prompt Reader Node that retrieves the values of all parameters in the settings, including those that the Prompt Reader Node cannot output."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the Prompt Merger Node be used in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Prompt Merger Node in ComfyUI is used to combine 'text_g' and 'text_l' into a single prompt for SDXL users, as the A1111 format cannot store them separately."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the Lora Loader Node and Lora Selector Node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Lora Loader Node and Lora Selector Node in ComfyUI are used to write Lora data into metadata and support auto-detection on Civitai. They can be connected to other lora loaders or used in a chain for multiple Loras."
+            }
+        ]
+    }
+]

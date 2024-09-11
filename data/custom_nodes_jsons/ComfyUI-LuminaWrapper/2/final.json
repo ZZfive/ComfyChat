@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-LuminaWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-LuminaWrapper is a custom node for ComfyUI that allows users to utilize Lumina-next text-to-image models within the ComfyUI interface."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install ComfyUI-LuminaWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-LuminaWrapper, clone the repo into the 'custom_nodes' folder and install the dependencies using 'pip install -r requirements.txt' or the appropriate command for your setup."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is sampling slow without 'flash_attn'?"
+            },
+            {
+                "role": "assistant",
+                "content": "Without 'flash_attn', the attention code will fallback to torch SDP attention, which is at least twice as slow and memory hungry compared to using 'flash_attn'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What text encoder does Lumina-next use?"
+            },
+            {
+                "role": "assistant",
+                "content": "Lumina-next uses Google's Gemma-2b large language model as its text encoder. To download it, users need to have a Huggingface account and request access."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which Lumina models are supported by ComfyUI-LuminaWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-LuminaWrapper supports Lumina-next text-to-image models such as Lumina-Next-SFT and Lumina-Next-T2I, which are automatically downloaded to the 'ComfyUI/models/lumina' folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I find example workflows for ComfyUI-LuminaWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "Example workflows for ComfyUI-LuminaWrapper can be found in the 'examples' folder of the repo."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the original repository for Lumina-T2X?"
+            },
+            {
+                "role": "assistant",
+                "content": "The original repository for Lumina-T2X is located at https://github.com/Alpha-VLLM/Lumina-T2X."
+            }
+        ]
+    }
+]

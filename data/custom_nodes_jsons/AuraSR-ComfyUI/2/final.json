@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the Creative Commons Attribution-ShareAlike 4.0 International Public License?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Creative Commons Attribution-ShareAlike 4.0 International Public License allows the user to reproduce, share, and adapt the licensed material under certain conditions. The user must attribute the original creator and the license, and if sharing the adapted material, the user must use a similar license or a BY-SA compatible license and attribute the original material."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the document say about exceptions and limitations?"
+            },
+            {
+                "role": "assistant",
+                "content": "The document states that exceptions and limitations such as fair use or fair dealing apply to the use of the licensed material, and do not restrict the exercise of the licensed rights under the terms of this Public License."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the document specify about the use of the Licensed Material?"
+            },
+            {
+                "role": "assistant",
+                "content": "The document specifies that the user may reproduce, share, and adapt the Licensed Material under certain conditions, including providing proper attribution and using a similar license or BY-SA-compatible license when sharing adapted material."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the document?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of the document is to outline the terms and conditions of the Creative Commons Attribution-ShareAlike 4.0 International Public License. This license allows the user to reproduce, share, and adapt the licensed material under certain conditions, such as providing proper attribution and using a similar license or BY-SA-compatible license when sharing adapted material."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the document say about the conditions of use?"
+            },
+            {
+                "role": "assistant",
+                "content": "The conditions of use for the licensed material include providing proper attribution and using a similar license or BY-SA-compatible license when sharing adapted material. The user also cannot offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the document say about the use of the Adapter's License?"
+            },
+            {
+                "role": "assistant",
+                "content": "If the user shares adapted material, the Adapter's License must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License. The user must also include the text of the Adapter's License when sharing adapted material."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the document say about the waiver of warranties and limitation of liability?"
+            },
+            {
+                "role": "assistant",
+                "content": "The document waives any warranties of title, merchantability, fitness for a particular purpose, and non-infringement. It also limits the liability of the Licensor to the user, excluding liability for direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of the use of the Licensed Material."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is AuraSR-ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "AuraSR-ComfyUI is a ComfyUI implementation of the Aura-SR model, which also supports AuraSR v2."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What issue does AuraSR v1 model have with compressed images?"
+            },
+            {
+                "role": "assistant",
+                "content": "AuraSR v1 model is ultra sensitive to any kind of image compression, and when given such images, the output will probably be terrible."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you improve the results when using compressed images with AuraSR v1?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can try using a compression artifact-removal model such as DeJPG_OmniSR before passing the image to AuraSR v1."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does AuraSR v2 have the same issue with compressed images as v1?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, AuraSR v2 seems to no longer suffer from the issue with compressed images that v1 has."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you install AuraSR-ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install AuraSR-ComfyUI, create a folder named 'Aura-SR' inside '\\models', download the .safetensors and config.json files from HuggingFace, place them in '\\models\\Aura-SR', install with ComfyUI Manager, restart, then reload the browser's page."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'reapply_transparency' parameter do in AuraSR-ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "When given a valid mask AND/OR a single RGBA image, the 'reapply_transparency' parameter will attempt to reapply the transparency of the original image to the upscaled one."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What's new in AuraSR-ComfyUI v3.0.0?"
+            },
+            {
+                "role": "assistant",
+                "content": "In AuraSR-ComfyUI v3.0.0, batch image input is now supported, and the ability to add an 'aura-sr' entry to extra_model_paths.yaml was added, allowing you to set a custom location for your AuraSR models."
+            }
+        ]
+    }
+]

@@ -1,0 +1,182 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI-PromptList node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-PromptList node is used for managing prompts within the ComfyUI system. It reads prompts from prompts.yaml and outputs positive and negative prompts as strings. It also allows for the modification and writing of new prompts to yaml files."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the ComfyUI-PromptList node read prompts from prompts.yaml?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-PromptList node reads prompts from prompts.yaml by accessing the data stored in the file. The file must be structured in a specific YAML format, where each prompt is defined by a name, a positive prompt, and a negative prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the input parameters for the ComfyUI-PromptList node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-PromptList node has the following inputs:\n1. Selection: This input is a list of prompts registered in the prompts.yaml file, and it outputs the prompt of the selected item.\n2. Prompt Name, Positive Prompt, and Negative Prompt: These are optional inputs that allow you to specify a new prompt name, the content of a positive prompt, and the content of a negative prompt, respectively. If these inputs are filled, the prompt from the selection will not be output; instead, the input prompt will be output."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What happens if the same Prompt Name is used to change a prompt?"
+            },
+            {
+                "role": "assistant",
+                "content": "If the same Prompt Name is used to change a prompt, it will overwrite the prompt in the prompts.yaml file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is the ComfyUI-PromptList node intended to be used?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-PromptList node is intended to be used by selecting prompts from the list and either outputting them as strings or updating the positive and negative prompts for a specific prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the intended output of the ComfyUI-PromptList node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The intended output of the ComfyUI-PromptList node is a string representation of the prompt selected from prompts.yaml. If the optional positive and negative prompts are specified, the output will include these prompts instead of the one from the selection."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you interpret the prompts.yaml file format?"
+            },
+            {
+                "role": "assistant",
+                "content": "The prompts.yaml file format includes a prompt name, a positive prompt, and a negative prompt. These prompts are associated with each other in a structured format that allows for easy reading and modification by the ComfyUI-PromptList node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-PromptList?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-PromptList is a simple prompt management node for ComfyUI that exports prompts stored in a prompts.yaml file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the primary features of ComfyUI-PromptList?"
+            },
+            {
+                "role": "assistant",
+                "content": "The main features include:\n1. Loading prompts from prompts.yaml and outputting positive and negative prompts as strings.\n2. Writing new prompts to the yaml file.\n3. Modifying prompts already registered in the yaml file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install ComfyUI-PromptList when using ComfyUI-Manager?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-PromptList using ComfyUI-Manager:\n1. Click Manager -> Install via Git URL.\n2. Paste the URL 'https://github.com/NakamuraShippo/ComfyUI-PromptList' into the text box and click OK.\n3. Once the installation is complete, restart ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install ComfyUI-PromptList when not using ComfyUI-Manager?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-PromptList without using ComfyUI-Manager:\n1. Move to the custom_nodes directory in ComfyUI.\n2. Clone the repository using 'git clone https://github.com/NakamuraShippo/ComfyUI-PromptList'\n3. Restart ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the possible inputs for the ComfyUI-PromptList node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The inputs are:\n- 'selection': The list of prompts from prompts.yaml that will output the selected prompt.\n- 'Prompt Name': The name of the new prompt or the name to update.\n- 'Positive Prompt': The content of the positive prompt.\n- 'Negative Prompt': The content of the negative prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is the format of prompts.yaml?"
+            },
+            {
+                "role": "assistant",
+                "content": "The format of prompts.yaml is:\n~~~\nprompt name:\n  positive: positive prompt\n  negative: negative prompt\n...\n~~~"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should I do to apply changes to ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To apply changes to ComfyUI, edit prompts.yaml or add/edit new prompts, and then refresh ComfyUI by pressing the Refresh button in the main menu."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is there a way to support improved and removed features?"
+            },
+            {
+                "role": "assistant",
+                "content": "Contributions through bug reports, feature requests, and pull requests are welcome."
+            }
+        ]
+    }
+]

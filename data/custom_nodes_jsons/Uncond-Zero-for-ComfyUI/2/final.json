@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of Uncond-Zero-for-ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Uncond-Zero-for-ComfyUI allows sampling without generating any negative prediction with Stable Diffusion while following certain rules to enhance the sampling and take advantage of acceleration methods like tensor RT engines."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does Uncond Zero node work when CFG scale is at 1 or if there is no negative prompt?"
+            },
+            {
+                "role": "assistant",
+                "content": "When the CFG scale is at 1 or if there is no negative prompt, Uncond Zero node uses the previous step to modify the current one to get better quality and sharpness in the generated image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'pre_fix' option in Uncond Zero node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'pre_fix' option in Uncond Zero node uses the previous step to modify the current one, which helps in achieving better quality and sharpness in the generated image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Conditioning combine positive and negative node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Conditioning combine positive and negative node affects the positive conditioning with the negative, treating them equally in case you want to use it during normal sampling, but its main purpose is for the positive."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Conditioning crop or fill node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Conditioning crop or fill node allows using longer or shorter prompts with Tensor RT engines by cropping the conditioning if it is longer and concatenating an empty one if it is shorter until the desired context length is reached."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the interrupt on NaN node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The interrupt on NaN node cancels the sampling if any invalid value is detected, which helps in avoiding random black images that tensor RT might sometimes throw."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the CLIP temperature be changed in Uncond-Zero-for-ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The CLIP temperature can be changed in Uncond-Zero-for-ComfyUI by using the temperature node created by Extraltodeus, which can greatly change the output of the generated image."
+            }
+        ]
+    }
+]

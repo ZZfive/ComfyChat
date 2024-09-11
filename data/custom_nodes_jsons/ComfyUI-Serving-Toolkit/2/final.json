@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI Serving Toolkit?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI Serving Toolkit is designed to simplify the process of serving image generation workflows in Discord and other platforms, making it easier to create image generation bots."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What types of media can be served using ComfyUI Serving Toolkit?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI Serving Toolkit allows serving both images and videos."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users provide input to the serving toolkit?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can provide input to the serving toolkit by adding arguments with default values, which can then be modified by the users."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the ComfyUI Serving Toolkit be installed?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI Serving Toolkit can be installed using ComfyUI Manager or by placing all the files inside the custom_nodes folder and running the provided command."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Auto Queue' setting in the serving toolkit?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Auto Queue' setting needs to be enabled to ensure that the serving toolkit processes all messages and keeps the ComfyUI and computer running."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the DiscordServing node in the toolkit?"
+            },
+            {
+                "role": "assistant",
+                "content": "The DiscordServing node is an essential part of the serving process. It queues the prompt, waits for a single message, processes it, and optionally returns the generated image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ServingInputText node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ServingInputText node allows you to grab text arguments from the user's request, such as the prompt or negative prompts, and use them in the image generation process."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the ServingOutput node handle the generated media?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ServingOutput node takes the generated image or video as input and returns it back to the user. If multiple images are provided, it will return a video instead of a single image."
+            }
+        ]
+    }
+]

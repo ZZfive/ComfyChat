@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `TrainConfig` node do in the ComfyUI-Paint3D-Nodes workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `TrainConfig` node pre-configures and saves all parameters required for the next steps, sharing them through the `TrainConfigPipe` node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of setting negative prompts for albedo textures in ComfyUI-Paint3D-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "Negative prompts like `strong light, bright light, intense light, dazzling light, brilliant light, radiant light, shade, darkness, silhouette, dimness, obscurity, shadow, glasses` are set to minimize lighting and shadows during the sampling process."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `GenerateDepthImage` node do in the ComfyUI-Paint3D-Nodes workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `GenerateDepthImage` node creates two depth images of the model rendered from the mesh information and specified camera positions (0~25). These images are stitched into one and used as the depth ControlNet for sampling."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the primary support version for the UV Pos ControlNet in ComfyUI-Paint3D-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The UV Pos ControlNet specifically supports the SD1.5 version."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `GenerateInpaintUVMap` node do in the ComfyUI-Paint3D-Nodes workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `GenerateInpaintUVMap` node creates a UV Pos image from the model, which is used as the image for the UV Pos ControlNet to create a light-less texture (removing light and shadow). Finally, the UV Pos map is used as a mask image to inpaint the boundary areas of the projection and unprojected square areas."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of rotating and inpainting four times using images rotated 45°/90°/135° to the left/right and up/down from the front in ComfyUI-Paint3D-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "This process involves inpainting four times using images rotated 45°/90°/135° to the left/right and up/down from the front. The paper only uses left/right 45° and up/down images from the front, but adding two more steps enhances the detail of the UV Pos ControlNet in the next stage."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `SaveUVMapImage` node do in the ComfyUI-Paint3D-Nodes workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `SaveUVMapImage` node upscales the generated texture to 2k resolution and saves it as a PNG file."
+            }
+        ]
+    }
+]

@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI Workspace Manager extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI Workspace Manager extension is used to organize and manage workflows, models, and generated images in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users install the ComfyUI Workspace Manager extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can install the ComfyUI Workspace Manager extension either via the ComfyUI Manager by searching for it and installing, or via git by running the command 'cd custom_nodes && git clone https://github.com/11cafe/comfyui-workspace-manager.git' in the ComfyUI root folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some key features of the ComfyUI Workspace Manager?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some key features of the ComfyUI Workspace Manager include easy switching between workflows, drag and drop to insert subworkflows, organizing workflows with folders, saving and syncing workflows in a local folder, version control of workflows, bulk importing workflows, one-click installing models from Civitai, browsing installed models, and saving generated images in a gallery for each workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users save their workflows in ComfyUI Workspace Manager?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can save their workflows by clicking the floppy disk icon button or using the Shift+S shortcut. Each save creates a new record in the Version History, allowing users to revert to any version."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where are the workflows and workspace data stored by ComfyUI Workspace Manager?"
+            },
+            {
+                "role": "assistant",
+                "content": "All workflows are saved in a folder in '/ComfyUI/my_workflows'. Other metadata such as versions and gallery images are stored in the browser cache (IndexedDB) and backed up on disk under '/ComfyUI/custom_nodes/comfyui-workspace-manager/db/'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some upcoming features planned for ComfyUI Workspace Manager?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some upcoming features include one-click install for missing models, a modular system for custom nodes, multi-workflow projects, and cloud running/easy deployment of workflows."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users try out beta features of ComfyUI Workspace Manager?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can switch to the beta branch to receive latest feature updates pre-launch by using git commands in the terminal, fetching the beta branch, and checking it out. However, users should be cautious as the beta branch can be unstable, and they should make backups of their workflows and workspace data before switching."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI Workspace Manager?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI Workspace Manager, also known as Comfyspace, is a tool designed for developers to manage their workspace in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I clean up the IndexedDB if it's in a bad state?"
+            },
+            {
+                "role": "assistant",
+                "content": "To clean up the IndexedDB, you need to delete the current IndexedDB from the Application tab in the developer tools (F12 -> Application -> IndexedDB). Make sure you have .json files under 'ComfyUI/comfyui-workspace-manager/db' to recover your data."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I recover data like version history and gallery image data after deleting IndexedDB?"
+            },
+            {
+                "role": "assistant",
+                "content": "To recover data like version history and gallery image data, you need to delete the WORKSPACE_INDEXDB_BACKFILL key in the Local Storage of the Application tab in the developer tools (F12 -> Application -> Local Storage). This step is not necessary if you only need workflows .json data."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install custom git hooks in ComfyUI Workspace Manager?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install custom git hooks, navigate to the 'ui' directory and run the command 'npm run setupGithooks'. This will install hooks like automatically adding additional .gitignore logic to ignore the '/dist' folder when switching to a non-main/beta branch."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Hot Module Replacement and how can I use it in ComfyUI Workspace Manager?"
+            },
+            {
+                "role": "assistant",
+                "content": "Hot Module Replacement (HMR) is a feature that allows you to replace modules in a running application without a full page reload. To use HMR in ComfyUI Workspace Manager, start the project with 'npm run dev', ensure the 'dist' directory is empty or doesn't exist, and modify 'ComfyUI/web/index.html' to include the provided code snippet, ensuring the port number matches the Vite local service port."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should I do if the 'dist' directory exists when using Hot Module Replacement?"
+            },
+            {
+                "role": "assistant",
+                "content": "If the 'dist' directory exists when using Hot Module Replacement, you should either delete the 'dist' directory or keep it empty."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What modifications are required in the 'ComfyUI/web/index.html' file to enable Hot Module Replacement?"
+            },
+            {
+                "role": "assistant",
+                "content": "To enable Hot Module Replacement, you need to add a code snippet in the 'ComfyUI/web/index.html' file. The code snippet should include the import of RefreshRuntime, the injection of the global hook, the definition of window.$RefreshReg$ and window.$RefreshSig$, setting the preamble installed flag, and appending the Vite client script and workspace main script to the head of the document."
+            }
+        ]
+    }
+]

@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Image-Selector?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Image-Selector is a custom node for ComfyUI that allows users to select one or some images from a batch for further use."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why was ComfyUI-Image-Selector created?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Image-Selector was created because ComfyUI doesn't handle batch generation seeds like A1111 WebUI, making it difficult to select desired images from a batch generation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you install ComfyUI-Image-Selector?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-Image-Selector, clone the repo into the 'custom_nodes' directory of the ComfyUI location."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the two main nodes in ComfyUI-Image-Selector?"
+            },
+            {
+                "role": "assistant",
+                "content": "The two main nodes in ComfyUI-Image-Selector are ImageSelector and ImageDuplicator, which can be found in the 'image' category."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the ImageSelector node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ImageSelector node takes a list of selected indexes, starting with 1, separated by commas, and outputs only the selected images from the input images. It also supports range selection with left bound included and right bound excluded."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the ImageDuplicator node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ImageDuplicator node takes a number and duplicates input images by the given number of times."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are LatentSelector and LatentDuplicator nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "LatentSelector and LatentDuplicator nodes are similar to their image counterparts but are used for latents. They can be found in the 'latent' category."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What tips are provided for using ComfyUI-Image-Selector efficiently?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use ComfyUI-Image-Selector efficiently, it is recommended to avoid unnecessary VAE nodes and use 'encode/decode -> duplicator' instead of 'duplicator -> encode/decode' and 'selector -> encode/decode' instead of 'encode/decode -> selector' when possible."
+            }
+        ]
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-Background-Replacement?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Background-Replacement is a tool that allows users to instantly replace the background of an image and composite the primary subject or object onto the newly generated backgrounds."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What models are utilized in the example workflow of ComfyUI-Background-Replacement?"
+            },
+            {
+                "role": "assistant",
+                "content": "The example workflow of ComfyUI-Background-Replacement utilizes the SDXL-Turbo and ControlNet-LoRA Depth models, resulting in fast generation time."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can ComfyUI-Background-Replacement be installed?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-Background-Replacement, clone the repository or download and extract the files to: ComfyUI\\custom_nodes\\ComfyUI-Background-Replacement."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the two custom nodes available in ComfyUI-Background-Replacement?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Background-Replacement provides two custom nodes: Background Replacement and Image Composite, both located within the 'utils' submenu."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the inputs and outputs of the Background Replacement node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Background Replacement node takes an image as input and outputs a depth_image and a cropped_image. The depth_image is used as conditioning for ControlNet, while the cropped_image contains the main subject or object with an alpha channel."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the parameters available for the Background Replacement node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Background Replacement node has three parameters: depth_map_feather_threshold, depth_map_dilation_iterations, and depth_map_blur_radius. These parameters control the smoothness of the transition between the subject and background, the expansion of background edges, and the blurring of background edges, respectively."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the inputs and output of the Image Composite node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Image Composite node takes two inputs: background_image and overlay_image. It outputs a single composited_image, which is the result of combining the background and overlay images."
+            }
+        ]
+    }
+]

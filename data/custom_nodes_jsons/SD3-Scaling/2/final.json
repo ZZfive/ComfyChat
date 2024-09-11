@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is SD3-Scaling in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "SD3-Scaling is a set of tools for scaling images and latents appropriate to SD3 in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the SD3 Image Scale To Total Pixels custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SD3 Image Scale To Total Pixels custom node is a wrapper for the builtin ImageScaleToTotalPixels that works within the desired constraint of SD3 to operate on images whose width and height are divisible by 64."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "When should the SD3 Image Scale To Total Pixels node be used?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SD3 Image Scale To Total Pixels node should generally only be used when scaling an input image intended to be passed to a sampler (img2img) as the SD3-specific resolution only applies to sampler inputs."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the inputs for the SD3 Image Scale To Total Pixels node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The inputs for the SD3 Image Scale To Total Pixels node are `upscale_method` and `megapixels`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `megapixels` input specify?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `megapixels` input specifies the desired total megapixels of the resulting image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the output of the SD3 Image Scale To Total Pixels node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The output of the SD3 Image Scale To Total Pixels node is the scaled image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the SD3 Image Scale To Total Pixels node ensure the width and height are divisible by 64?"
+            },
+            {
+                "role": "assistant",
+                "content": "When scaling to a specific megapixel resolution, the resulting width and height are checked and reduced to the nearest value that is divisible by 64."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What may occur if either dimension needs to be reduced when using the SD3 Image Scale To Total Pixels node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some stretching may occur if either dimension needs to be reduced, but this probably won't be noticable if working at at least the megapixel range for the input image with SD3."
+            }
+        ]
+    }
+]

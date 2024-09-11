@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI_VisualStylePrompting?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_VisualStylePrompting is a custom node in ComfyUI that implements the basics of Visual Style Prompting, allowing users to generate images with reference to a VAE-encoded image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where should the 'Apply Visual Style Prompting' node be placed in a ComfyUI workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Apply Visual Style Prompting' node should be placed between your sampler and inputs in a ComfyUI workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'enabled' parameter in the 'Apply Visual Style Prompting' node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'enabled' parameter in the 'Apply Visual Style Prompting' node enables or disables the effect of the node. However, the node will still be hooked even after disabling unless it is removed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the 'denoise' parameter work in the 'Apply Visual Style Prompting' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'denoise' parameter in the 'Apply Visual Style Prompting' node works similarly to Img2Img, but is utilized with reference and/or init images. This feature is experimental."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'positive' and 'reference_cond' prompts in the 'Apply Visual Style Prompting' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the 'Apply Visual Style Prompting' node, the 'positive' and 'reference_cond' prompts are used to engineer the desired details from the image reference and the output. The 'positive' prompt focuses on the details wanted in the output, while the 'reference_cond' prompt describes the reference image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why does the 'Apply Visual Style Prompting' node always produce two outputs?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Apply Visual Style Prompting' node always produces two outputs because it utilizes the VAE Encode & Inpaint method, which needs to iteratively denoise on each step."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the reference latent be removed from the output in the 'Apply Visual Style Prompting' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "To remove the reference latent from the output in the 'Apply Visual Style Prompting' node, a Batch Index Select node can be used."
+            }
+        ]
+    }
+]

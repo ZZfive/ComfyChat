@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-CogVideoXWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-CogVideoXWrapper is a custom node or plugin for ComfyUI that adds support for CogVideoX models, allowing users to generate videos using text prompts."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which CogVideoX models are supported by ComfyUI-CogVideoXWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-CogVideoXWrapper supports the 5b model for basic text2vid, which can be automatically downloaded to 'ComfyUI/models/CogVideo/CogVideoX-5b'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the requirements for using ComfyUI-CogVideoXWrapper with onediff support?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use ComfyUI-CogVideoXWrapper with onediff support, you need to have Linux, torch 2.4.0, onediff, and nexfort installed. The first run will take around 5 minutes for compilation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the impact of using onediff with ComfyUI-CogVideoXWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "Using onediff with ComfyUI-CogVideoXWrapper can reduce sampling time by approximately 40%, reaching 4.23 s/it on a 4090 with 49 frames."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which version of diffusers is required for ComfyUI-CogVideoXWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-CogVideoXWrapper requires diffusers 0.30.1, which is specified in the requirements.txt file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the memory requirement for using ComfyUI-CogVideoXWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "The memory requirements for ComfyUI-CogVideoXWrapper depend mostly on the video length. VAE decoding takes the most VRAM, peaking at around 13-14GB momentarily, while sampling itself takes only about 5-6GB."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What additional features have been added to ComfyUI-CogVideoXWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-CogVideoXWrapper has added img2img support to attempt a vid2vid workflow, which works interestingly with some inputs. It has also added temporal tiling as a means of generating endless videos."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I find the original repository for CogVideo?"
+            },
+            {
+                "role": "assistant",
+                "content": "The original repository for CogVideo can be found at https://github.com/THUDM/CogVideo."
+            }
+        ]
+    }
+]

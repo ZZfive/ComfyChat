@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-ZeroShot-MTrans?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-ZeroShot-MTrans is an unofficial ComfyUI custom node for ZeST (Zero-Shot Material Transfer from a Single Image)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does ZeST do?"
+            },
+            {
+                "role": "assistant",
+                "content": "Given an input image and a single material exemplar image, ZeST can transfer the material from the exemplar onto the input image with accurate lighting cues while keeping everything else consistent."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the ComfyUI-ZeroShot-MTrans node implement?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-ZeroShot-MTrans node implements the illumination transfer part of ZeST, which is the red rect area in the paper figure."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the inputs and outputs of the ComfyUI-ZeroShot-MTrans node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The inputs are: target_image (the original image for inpaint), subject_mask (the mask for inpaint), and brighter (a value to adjust the brightness of the subject). The output is an IMAGE with the subject in luminosity (grey) mode, used as input for the inpaint node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some tips for using the ComfyUI-ZeroShot-MTrans node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some tips include: (1) For the output, the subject in middle grey is preferred. Adjust the brightness accordingly. (2) For the material image, it's suggested to remove all background and keep only the desired material. (3) Use IP-Adaptor strength, controlnet strength, and brighter to control the output first."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is there a sample workflow available for ComfyUI-ZeroShot-MTrans?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, you can download the zest_workflow.json from the repo for a quick start. The repo also provides a detailed usage image and sample images of the workflow, including the original input, material input, mask, subject grayout, and final output."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What dependencies does ComfyUI-ZeroShot-MTrans have?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-ZeroShot-MTrans depends on ControlNet, IP-Adaptor, and Segment Anything Model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-ZeroShot-MTrans是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-ZeroShot-MTrans是一个非官方的ComfyUI自定义节点，适用于零样本单图像材质迁移（ZeST）。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-ZeroShot-MTrans的作用是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-ZeroShot-MTrans的作用是将单独的材质样例图像的材质转移到输入图像上，同时具有准确的光照线索，并保持其他部分的细节一致。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-ZeroShot-MTrans实现了ZeST中的哪一部分功能？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-ZeroShot-MTrans实现了ZeST中的红色部分，即材质的明度转移功能。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用ComfyUI-ZeroShot-MTrans时需要哪些依赖项？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用ComfyUI-ZeroShot-MTrans时需要ControlNet、IP适配器和任意分割模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI-ZeroShot-MTrans的输入和输出是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-ZeroShot-MTrans的输入包括目标图像、主体蒙版和亮度调整参数。输出是亮度模式下的目标图像，可作为inpaint节点的输入。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "安装ComfyUI-ZeroShot-MTrans的步骤是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在ComfyUI Manager中安装或将代码克隆至ComfyUI/custom_nodes文件夹，然后重启ComfyUI即可使用ComfyUI-ZeroShot-MTrans节点。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何使用ComfyUI-ZeroShot-MTrans的工作流程？"
+            },
+            {
+                "role": "assistant",
+                "content": "可以直接下载仓库中的zest_workflow.json文件快速使用。工作流程包括使用IP-Adaptor和ControlNet节点，以及调整亮度参数来控制输出效果。"
+            }
+        ]
+    }
+]

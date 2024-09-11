@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-AutoCropBgTrim?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-AutoCropBgTrim is designed to automatically clean up the background of images by trimming unnecessary spaces and pixels, leaving only the main subject of the image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the features of ComfyUI-AutoCropBgTrim?"
+            },
+            {
+                "role": "assistant",
+                "content": "The main features include:\n- Automatically trims backgrounds.\n- Leaves only the main subject.\n- Generates a mask and an image output.\n- Adjustable padding for cropping."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does ComfyUI-AutoCropBgTrim generate a mask and image output?"
+            },
+            {
+                "role": "assistant",
+                "content": "The tool trims the background and generates a mask based on the trimmed area, providing both the trimmed image and the corresponding mask for further use."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the input types that ComfyUI-AutoCropBgTrim accepts?"
+            },
+            {
+                "role": "assistant",
+                "content": "The main input types are images (in torch tensor format) and masks (also in torch tensor format). Padding is an optional parameter for cropping."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended way to install ComfyUI-AutoCropBgTrim?"
+            },
+            {
+                "role": "assistant",
+                "content": "The recommended method is to clone the repository, navigate into the cloned directory, and install the dependencies using `pip install -r requirements.txt`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you provide an example of how to use ComfyUI-AutoCropBgTrim?"
+            },
+            {
+                "role": "assistant",
+                "content": "Certainly, here's an example of how to use the tool in Python:\n```python\nimport torch\nfrom PIL import Image\nfrom ComfyUI-AutoCropBgTrim import RonLayersTrimBgUltraV2\n# Load your image and mask\nimage = torch.load('path/to/image.pt')\nmask = torch.load('path/to/mask.pt')\n# Initialize the class\ncropper = RonLayersTrimBgUltraV2()\n# Set the padding (optional)\ncroppinganjio_trim = RonLayersTrimBgUltraV2()\npadding = 10\n# Run the cropping function\ncropped_image, cropped_mask, crop_box, box_preview = cropper.run(image, mask, padding)\n# Save or process the results\ncropped_image.save('path/to/cropped_image.png')\ncropped_mask.save('path/to/cropped_mask.png')\nbox_preview.save('path/to/box_preview.png')\n```"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I contribute to ComfyUI-AutoCropBgTrim?"
+            },
+            {
+                "role": "assistant",
+                "content": "To contribute, you can fork the repository, make your changes, and create a pull request to merge your changes."
+            }
+        ]
+    }
+]

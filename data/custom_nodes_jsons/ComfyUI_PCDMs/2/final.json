@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the benchmarks run for ComfyUI_PCDMs models?"
+            },
+            {
+                "role": "assistant",
+                "content": "The benchmarks are run to measure the performance of various models in ComfyUI_PCDMs, such as time per operator type, FLOP per operator type, feature memory read/written per operator type, and parameter memory per operator type."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which models were benchmarked for ComfyUI_PCDMs?"
+            },
+            {
+                "role": "assistant",
+                "content": "The models benchmarked for ComfyUI_PCDMs include EfficientNet-B0, EfficientNet-B1, EfficientNet-B2, MixNet-M, TF MobileNet-V3 Large 1.0, MobileNet-V3 (RW), MnasNet-A1, and MnasNet-B1."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between the unoptimized and optimized benchmarks?"
+            },
+            {
+                "role": "assistant",
+                "content": "The unoptimized benchmarks show the performance of the models without any optimizations applied, while the optimized benchmarks show the improved performance after applying optimizations to the models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "For the EfficientNet-B0 model, what percentage of time is spent on the Conv operator in the unoptimized version?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the unoptimized version of EfficientNet-B0, 60.5145% of the time is spent on the Conv operator."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How much parameter memory is used by the Conv operator in the optimized version of the MixNet-M model?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the optimized version of the MixNet-M model, the Conv operator uses 13.7059 MB of parameter memory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the total feature memory read for the unoptimized MnasNet-A1 model?"
+            },
+            {
+                "role": "assistant",
+                "content": "The total feature memory read for the unoptimized MnasNet-A1 model is 92.5406 MB."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "In the optimized version of MnasNet-B1, what percentage of the total FLOP is attributed to the Conv operator?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the optimized version of MnasNet-B1, the Conv operator accounts for 99.5466% of the total FLOP."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the MiDaS model?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of the MiDaS model is to compute depth from a single image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How many datasets was MiDaS trained on?"
+            },
+            {
+                "role": "assistant",
+                "content": "MiDaS was trained on up to 12 datasets."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some of the datasets MiDaS was trained on?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some of the datasets MiDaS was trained on include ReDWeb, DIML, Movies, MegaDepth, WSVD, TartanAir, HRWSI, ApolloScape, BlendedMVS, IRS, KITTI, and NYU Depth V2."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the main improvement of MiDaS v3.1 over MiDaS v3.0?"
+            },
+            {
+                "role": "assistant",
+                "content": "The main improvement of MiDaS v3.1 over MiDaS v3.0 is that the best model, BEiT_Large 512, with resolution 512x512, is on average about 28% more accurate than MiDaS v3.0."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the new models in MiDaS v3.1 based on?"
+            },
+            {
+                "role": "assistant",
+                "content": "The new models in MiDaS v3.1 are based on 5 different types of transformers: BEiT, Swin2, Swin, Next-ViT, and LeViT."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the optional arguments available for inference in MiDaS?"
+            },
+            {
+                "role": "assistant",
+                "content": "The optional arguments available for inference in MiDaS are --height, which allows users to explore different heights, and --square, which resizes the image to a square resolution."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the --side argument in MiDaS?"
+            },
+            {
+                "role": "assistant",
+                "content": "The --side argument in MiDaS is optional and causes both the input RGB image and the output depth map to be shown side-by-side for comparison."
+            }
+        ]
+    }
+]

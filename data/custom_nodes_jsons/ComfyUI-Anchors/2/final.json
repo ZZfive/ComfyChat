@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-Anchors?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Anchors is an extension that adds spatial anchors/waypoints to help users better navigate large workflows in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you jump between Anchor Nodes in ComfyUI-Anchors?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can jump between Anchor Nodes in ComfyUI-Anchors using the `a` and `d` keys."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What unexpected side-effect can be abused in ComfyUI-Anchors?"
+            },
+            {
+                "role": "assistant",
+                "content": "In ComfyUI-Anchors, the way Comfy's Litegraph's centerOnNode works doesn't account for collapsed nodes. So if you want to change the centering position when jumping to an Anchor, you can make the node nice and big, then collapse it."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is currently displayed on Anchors in ComfyUI-Anchors?"
+            },
+            {
+                "role": "assistant",
+                "content": "In ComfyUI-Anchors, Anchors currently show their coordinates using hacky widgets."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some planned features for ComfyUI-Anchors?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some planned features for ComfyUI-Anchors include showing a list of current Anchors (with names), allowing changing of iteration order, and potentially adding vector-based navigation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you set up the development environment for ComfyUI-Anchors?"
+            },
+            {
+                "role": "assistant",
+                "content": "To set up the development environment for ComfyUI-Anchors, clone the repo, run `pnpm install`, and then run `pnpm build`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the current typing setup for ComfyUI-Anchors development?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the current typing setup for ComfyUI-Anchors development, the development files (TS) reference Comfy as a sibling. To get the JS to run properly, the relative path is swapped in the dist for a different relative path based on where the JS is copied on `__init__`."
+            }
+        ]
+    }
+]

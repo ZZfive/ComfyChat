@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the SD-Advanced-Noise repository?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SD-Advanced-Noise repository contains experiments with generating latent noise directly in the stable diffusion VAE by mapping out per channel limits and giving the whole thing an offset."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some other noise-related repositories mentioned in the SD-Advanced-Noise README?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some other noise-related repositories mentioned are ComfyUI_Noise, noise_latent_perlinpinpin, comfy-plasma, and the WAS node suite."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is LatentGaussianNoise in the SD-Advanced-Noise repository?"
+            },
+            {
+                "role": "assistant",
+                "content": "LatentGaussianNoise is a type of noise generated using torch.random with scaling and per channel randomization. However, the author is unsure if it truly represents Gaussian noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Linearity/linear_encoder experiment in SD-Advanced-Noise demonstrate?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Linearity/linear_encoder experiment demonstrates that a change in the RGB channels creates a mostly linear change in the 4 latent channels (A/B/C/D) in the stable diffusion VAE."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the suggested next step for the Linearity/linear_encoder experiment?"
+            },
+            {
+                "role": "assistant",
+                "content": "The suggested next step for the Linearity/linear_encoder experiment is to plot at a higher precision and fit the data onto a polynomial."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does the SD-Advanced-Noise repository contain any decoders?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, the SD-Advanced-Noise repository contains some decoders, but they are considered proof of concept tier at best. TAESD is recommended as a better alternative."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is TAESD and how is it related to SD-Advanced-Noise?"
+            },
+            {
+                "role": "assistant",
+                "content": "TAESD is another repository that provides better decoders compared to the proof of concept decoders in the SD-Advanced-Noise repository."
+            }
+        ]
+    }
+]

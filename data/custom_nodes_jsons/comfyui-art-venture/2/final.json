@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is SDXL Prompt Styler in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "SDXL Prompt Styler is a custom node in ComfyUI that allows users to style prompts based on predefined templates stored in multiple JSON files."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does SDXL Prompt Styler handle negative prompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "If negative text is provided, SDXL Prompt Styler combines it with the 'negative_prompt' field from the template. If no negative text is supplied, it defaults to using the 'negative_prompt' from the JSON template."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should users do if they have made changes to the `sdxl_styles.json` file before updating?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users should backup their `sdxl_styles.json` file, create a new JSON file in the styles directory after updating, and move their custom styles into this new file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does SDXL Prompt Styler ensure the uniqueness of style names?"
+            },
+            {
+                "role": "assistant",
+                "content": "SDXL Prompt Styler detects duplicate style names and appends a suffix to ensure uniqueness."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What new feature allows SDXL Prompt Styler to load styles from multiple JSON files?"
+            },
+            {
+                "role": "assistant",
+                "content": "SDXL Prompt Styler now has the ability to load styles from multiple JSON files present in the specified directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What improvements have been made to error handling in SDXL Prompt Styler?"
+            },
+            {
+                "role": "assistant",
+                "content": "SDXL Prompt Styler has improved error handling for file reading, data validity, and template replacement functions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users install SDXL Prompt Styler in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can install SDXL Prompt Styler by navigating to the `ComfyUI/custom_nodes/` directory in a terminal, running the command `git clone https://github.com/twri/sdxl_prompt_styler.git`, and restarting ComfyUI."
+            }
+        ]
+    }
+]

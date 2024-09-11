@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the LoRA Tag Loader custom node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of the LoRA Tag Loader custom node in ComfyUI is to read LoRA tag(s) from text and load it into the checkpoint model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How should the LoRA tag be formatted in the positive prompt for the LoRA Tag Loader to extract it?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LoRA tag should be formatted as \"&lt;lora:CroissantStyle:0.8&gt;\" in the positive prompt for the LoRA Tag Loader to extract it."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the LoRA Tag Loader do with the extracted LoRA tag in the output STRING?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LoRA Tag Loader strips the LoRA tag(s) from the output STRING, which can then be forwarded to the CLIP Text Encoder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What happens when an extra weight is added to the LoRA tag in the format \"&lt;lora:CroissantStyle:0.8:0.7&gt;\"?"
+            },
+            {
+                "role": "assistant",
+                "content": "When an extra weight is added to the LoRA tag in the format \"&lt;lora:CroissantStyle:0.8:0.7&gt;\", it patches the unet with 0.8 and patches the text encoder with 0.7."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of adding an extra weight to the LoRA tag in the LoRA Tag Loader?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of adding an extra weight to the LoRA tag in the LoRA Tag Loader is to pass it as the equivalent of strength_clip in Lora Loader."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the LoRA Tag Loader custom node be installed in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install the LoRA Tag Loader custom node in ComfyUI, drop the \"comfyui_lora_tag_loader\" folder into the \"...\\ComfyUI\\ComfyUI\\custom_nodes\" directory and restart the UI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the relationship between the extra weight in the LoRA tag and the strength_clip in Lora Loader?"
+            },
+            {
+                "role": "assistant",
+                "content": "The extra weight in the LoRA tag is passed as the equivalent of strength_clip in Lora Loader."
+            }
+        ]
+    }
+]

@@ -1,0 +1,134 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the LoadImageWithSwitch node in ComfyUI-utils-nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LoadImageWithSwitch node in ComfyUI-utils-nodes modifies the official LoadImage node by adding a switch. When turned off, it will not load the image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the LoadImageMaskWithoutListDir node improve performance?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LoadImageMaskWithoutListDir node improves performance by avoiding the use of os.listdir when there are a lot of images in the input directory, as loading images with os.listdir can be slow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the maximum number of images that can be input into the ImageBatchOneOrMore node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ImageBatchOneOrMore node can input up to six images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What additional features does the ImageConcatenateOfUtils node have compared to the original ImageConcatenate node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ImageConcatenateOfUtils node adds the capability to upscale images and includes a check functionality for checking if the second image is empty or not."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the ColorCorrectOfUtils node extend the functionality of the original ColorCorrect node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ColorCorrectOfUtils node extends the functionality of the original ColorCorrect node by adding the ability to adjust the channels of red, green, and blue."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the SplitMask node in ComfyUI-utils-nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SplitMask node in ComfyUI-utils-nodes splits one mask into two masks of the same size according to the area of the submasks, selecting the two largest submasks if there are more than two areas."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the MaskFastGrow node differ from other mask growth nodes in terms of speed?"
+            },
+            {
+                "role": "assistant",
+                "content": "The MaskFastGrow node maintains consistent speed regardless of the grow value, while other mask growth nodes may slow down significantly with large grow values, such as above 20."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the three switches in the CheckpointLoaderSimpleWithSwitch node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The three switches in the CheckpointLoaderSimpleWithSwitch node control whether a specific component is loaded. When a switch is turned off, the corresponding component will not be loaded, potentially saving memory if the extra vae is used and the model's vae loading is closed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the ImageResizeTo8x node avoid pixel differences when pasting back using the ImageCompositeMasked node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ImageResizeTo8x node avoids pixel differences when pasting back using the ImageCompositeMasked node by cropping the resulting image size to 8 times the size, similar to the VAE encode node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the MatchImageRatioToPreset node in ComfyUI-utils-nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The MatchImageRatioToPreset node in ComfyUI-utils-nodes determines which standard SDXL training size is the closest match to the input image ratio, which is useful for subsequent image resizing and other processes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the UpscaleImageWithModelIfNeed node enhance the official UpscaleImageWithModel node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The UpscaleImageWithModelIfNeed node enhances the official UpscaleImageWithModel node by adding a judge that bypasses upscaling if the input image area exceeds a predefined threshold, which is a percentage of the SDXL standard size (1024x1024) area."
+            }
+        ]
+    }
+]

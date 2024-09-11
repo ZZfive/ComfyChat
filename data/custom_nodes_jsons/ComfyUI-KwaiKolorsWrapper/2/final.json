@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-KwaiKolorsWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-KwaiKolorsWrapper is a rudimentary wrapper that runs Kwai-Kolors text2image pipeline using diffusers in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the requirements for installing ComfyUI-KwaiKolorsWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-KwaiKolorsWrapper, you need to clone the repository to the 'ComfyUI/custom_nodes' folder and install the dependencies in requirements.txt, with a minimum required transformers version of 4.38.0."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you load the ChatGLM3 model in ComfyUI-KwaiKolorsWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "In ComfyUI-KwaiKolorsWrapper, you can load the ChatGLM3 model from a single safetensors file, and the configs are included in the repository."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where are the models for ComfyUI-KwaiKolorsWrapper downloaded from?"
+            },
+            {
+                "role": "assistant",
+                "content": "The models for ComfyUI-KwaiKolorsWrapper are automatically downloaded from https://huggingface.co/Kwai-Kolors/Kolors/tree/main."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the model folder structure for ComfyUI-KwaiKolorsWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "The model folder structure for ComfyUI-KwaiKolorsWrapper includes a model_index.json file, a scheduler folder with scheduler_config.json, a text_encoder folder with config.json and other files, and a unet folder with config.json and diffusion_pytorch_model.fp16.safetensors."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How much VRAM does the text encoder in ComfyUI-KwaiKolorsWrapper take?"
+            },
+            {
+                "role": "assistant",
+                "content": "The text encoder in ComfyUI-KwaiKolorsWrapper takes most of the VRAM, but can be quantized to fit approximately 13 GB for fp16, 8 GB for quant8, and 4 GB for quant4."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the expected VRAM usage for sampling a single image at 1024 resolution in ComfyUI-KwaiKolorsWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "The expected VRAM usage for sampling a single image at 1024 resolution in ComfyUI-KwaiKolorsWrapper is similar to SDXL."
+            }
+        ]
+    }
+]

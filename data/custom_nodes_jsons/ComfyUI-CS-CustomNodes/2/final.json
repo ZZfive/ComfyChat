@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the CS Transform node in ComfyUI do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The CS Transform node applies a series of transformations to an input image and mask. It includes scaling, rotation, and translation, all centered around a specified pivot point. The node ensures that the transformed image is properly accommodated within a canvas, which can be expanded if needed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What transformations does the CS Transform node apply?"
+            },
+            {
+                "role": "assistant",
+                "content": "The CS Transform node applies the following transformations: scaling, rotation, and translation. All transformations are centered around a specified pivot point."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the CS Transform node handle oversized images?"
+            },
+            {
+                "role": "assistant",
+                "content": "The CS Transform node can expand the canvas to ensure the transformed image is not cut off."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What options are available for displaying the transformed image in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The node provides an option to show the pivot point as a red dot on the transformed image. This can help visualize the pivot point's position after transformations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I add the CS Transform node to my ComfyUI pipeline?"
+            },
+            {
+                "role": "assistant",
+                "content": "To add the CS Transform node to your ComfyUI pipeline, place the `transform_node.py` file in the appropriate directory within your ComfyUI installation. Then, configure the inputs and execute the node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the required inputs for the CS Transform node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The required inputs for the CS Transform node are: `position_x`, `position_y`, `pivot_x`, `pivot_y`, `rotation`, `scale`, `canvas_width`, `canvas_height`, `expand_canvas`, and `show_pivot`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the outputs of the CS Transform node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The outputs of the CS Transform node are the transformed image and the transformed mask."
+            }
+        ]
+    }
+]

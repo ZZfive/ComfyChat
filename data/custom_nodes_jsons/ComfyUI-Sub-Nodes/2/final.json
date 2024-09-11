@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was the major refactor in ComfyUI-Sub-Nodes version 2.0.0?"
+            },
+            {
+                "role": "assistant",
+                "content": "In version 2.0.0 of ComfyUI-Sub-Nodes, the major refactor was using the new node expansion feature instead of spawning a sub executor."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What feature was added to the Input node in ComfyUI-Sub-Nodes version 2.0.0?"
+            },
+            {
+                "role": "assistant",
+                "content": "In version 2.0.0 of ComfyUI-Sub-Nodes, the Input node got a new feature where widgets are added for supported types, allowing the setting of default values."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What bug was fixed in ComfyUI-Sub-Nodes version 1.1.3?"
+            },
+            {
+                "role": "assistant",
+                "content": "In version 1.1.3 of ComfyUI-Sub-Nodes, a bug was fixed that made input/output loading less prone to race conditions and more responsive."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What bug was fixed in ComfyUI-Sub-Nodes version 1.1.2 regarding seed widgets?"
+            },
+            {
+                "role": "assistant",
+                "content": "In version 1.1.2 of ComfyUI-Sub-Nodes, a bug was fixed where converting a seed widget to an input created a slot of type INT instead of 'number'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What feature was added in ComfyUI-Sub-Nodes version 1.1.0 to improve widgets?"
+            },
+            {
+                "role": "assistant",
+                "content": "In version 1.1.0 of ComfyUI-Sub-Nodes, widgets were improved by no longer being duplicated as slots, using defaults and settings of the connected node in the subgraph, and allowing checkpoint selection directly on the node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What improvement was made in ComfyUI-Sub-Nodes version 1.0.0 regarding subgraphs?"
+            },
+            {
+                "role": "assistant",
+                "content": "In version 1.0.0 of ComfyUI-Sub-Nodes, subgraphs were improved to only rerun when a change to the workflow file was made, instead of always being executed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What issue was fixed in ComfyUI-Sub-Nodes version 1.0.0 related to encoding?"
+            },
+            {
+                "role": "assistant",
+                "content": "In version 1.0.0 of ComfyUI-Sub-Nodes, a fix was made to resolve encoding issues when running or loading subgraphs containing emoji."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-Sub-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Sub-Nodes allows users to create subgraph nodes in ComfyUI for better organization and reusability of workflows."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you create a subgraph in ComfyUI using ComfyUI-Sub-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "To create a subgraph, use 'VIV_Subgraph_Inputs' and 'VIV_Subgraph_Outputs' nodes to define the inputs and outputs respectively in a workflow. Save the workflow in a folder named 'subnodes' in the root of your ComfyUI install."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What can be passed between subgraphs in ComfyUI-Sub-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "ANY object can be passed between subgraphs in ComfyUI-Sub-Nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you call a subgraph in ComfyUI using ComfyUI-Sub-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "To call a subgraph, create a 'VIV_Subgraph' node and select your subgraph. You may need to hit the 'Refresh' button first. The inputs and outputs will be populated automatically."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What happens to progress bars and previews in a subgraph when using ComfyUI-Sub-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "Any progress bars and previews in the subgraph will show on the subgraph node, but any image previews will not."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be noted about previously saved workflows when using ComfyUI-Sub-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "Previously saved workflows will not work as subgraphs because this package adds extra keys to the normal save output to facilitate running the subgraph."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the current state of the ComfyUI-Sub-Nodes project?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-Sub-Nodes project is still very young and there are likely a good amount of bugs to be found. More quality of life improvements will be added as the developer has time and sanity to implement them."
+            }
+        ]
+    }
+]

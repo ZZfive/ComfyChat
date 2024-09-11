@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Fal-API-Flux?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Fal-API-Flux is a repository containing custom nodes for ComfyUI that integrate fal.ai FLUX.1 [dev] with Controlnets and LorasAPI for text-to-image generation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the important notes for using ComfyUI-Fal-API-Flux?"
+            },
+            {
+                "role": "assistant",
+                "content": "The important notes are: 1. This node is specifically designed to work with the \"FLUX.1 [dev] with LoRAs\" and \"FLUX.1 [dev] with Controlnets and Loras\" text-to-image model from fal.ai.\n2. Currently, the FLUX.1 model supports the use of only one LoRA at a time. While the node provides five LoRA input slots for future compatibility, only one should be used in the current version."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the main features of ComfyUI-Fal-API-Flux?"
+            },
+            {
+                "role": "assistant",
+                "content": "The main features are:\n1. Text-to-image generation using fal.ai's FLUX.1 [dev] model\n2. Support for a single LoRA model and ControlNet in the generation process\n3. Customizable generation parameters (image size, inference steps, guidance scale)\n4. Multiple image generation in a single request\n5. Seed support for reproducible results"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the prerequisites for using ComfyUI-Fal-API-Flux?"
+            },
+            {
+                "role": "assistant",
+                "content": "The prerequisites are: 1. ComfyUI installed and set up 2. Python 3.7+ 3. PyTorch 2.0.1 or later 4. A fal.ai API key with access to the FLUX.1 [dev] with Controlnets and Loras"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What steps are required for the installation of ComfyUI-Fal-API-Flux?"
+            },
+            {
+                "role": "assistant",
+                "content": "The steps required for installation are: 1. Clone this repository into your ComfyUI's `custom_nodes` directory 2. Navigate to the cloned directory 3. Install the required dependencies 4. Configure your API key 5. Restart ComfyUI if it's already running"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What nodes does ComfyUI-Fal-API-Flux provide?"
+            },
+            {
+                "role": "assistant",
+                "content": "The nodes provided are:\n1. \"Fal API Flux\": Main node for text-to-image generation using FLUX.1 [dev] with LoRAs.\n2. \"Fal API Flux with ControlNet\": Main node for text-to-image generation using FLUX.1 [dev] with Controlnets and Loras.\n3. \"Fal API Flux LoRA Config\": Node for configuring a LoRA model to use with FLUX.1 [dev].\n4. \"Fal API Flux ControlNet Config\": Node for configuring a ControlNet to use with FLUX.1 [dev].\n5. \"Fal API Flux ControlNet Union Config\": Node for configuring a ControlNet Union to use with FLUX.1 [dev]."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does ComfyUI-Fal-API-Flux support LoRA models?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Fal-API-Flux supports LoRA models by allowing users to add a \"Fal API Flux LoRA Config\" node, configure the LoRA URL and scale, and connect it to the \"Fal API Flux\" node using the `lora_1` input. It supports up to five LoRA input slots (lora_1 to lora_5), but currently only one LoRA can be used at a time."
+            }
+        ]
+    }
+]

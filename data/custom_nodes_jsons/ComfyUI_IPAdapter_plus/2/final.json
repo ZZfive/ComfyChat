@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the IPAdapter Unified Loader node in ComfyUI_IPAdapter_plus?"
+            },
+            {
+                "role": "assistant",
+                "content": "The IPAdapter Unified Loader node in ComfyUI_IPAdapter_plus loads the full stack of models needed for IPAdapter to function, including the ipadater and clip vision models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How should multiple IPAdapter Unified Loaders be connected in a chain?"
+            },
+            {
+                "role": "assistant",
+                "content": "Multiple IPAdapter Unified Loaders should always be daisy chained through the 'ipadapter' in/out. For the first unified loader, the 'ipadapter' input should never be connected to avoid loading models twice."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between the IPAdapter Unified Loader and the IPAdapter Model Loader?"
+            },
+            {
+                "role": "assistant",
+                "content": "The IPAdapter Unified Loader loads the full stack of models including the ipadater and clip vision models, while the IPAdapter Model Loader only loads the IPAdapter model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the IPAdapter Advanced node do in ComfyUI_IPAdapter_plus?"
+            },
+            {
+                "role": "assistant",
+                "content": "The IPAdapter Advanced node is a drop-in replacement for the old IPAdapter Apply node, containing all the options to fine-tune the IPAdapter models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'attn_mask' input in the IPAdapter Advanced node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'attn_mask' input in the IPAdapter Advanced node is used to define the area of influence of the IPAdapter models on the final image, with black zones not being affected and white zones getting maximum influence."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'weight_type' configuration parameter in the IPAdapter Advanced node control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'weight_type' parameter in the IPAdapter Advanced node controls how the IPAdapter is applied to the UNet block, which significantly impacts how the composition reacts to text prompting."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended 'weight' value for the IPAdapter Advanced node when using the default 'linear' weight_type?"
+            },
+            {
+                "role": "assistant",
+                "content": "For the default 'linear' weight_type in the IPAdapter Advanced node, a good starting point for the 'weight' parameter is 0.8."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI IPAdapter plus?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI IPAdapter plus is a reference implementation for IPAdapter models in ComfyUI. It allows easy transfer of the subject or style of reference images to generated images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can one support the development of ComfyUI IPAdapter plus and other ComfyUI projects?"
+            },
+            {
+                "role": "assistant",
+                "content": "One can support the development of ComfyUI IPAdapter plus and other ComfyUI projects through Github Sponsorship or PayPal donations. Sponsorships of $50+ can also be mentioned in the readme file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was added to ComfyUI IPAdapter plus on 2024/07/26?"
+            },
+            {
+                "role": "assistant",
+                "content": "On 2024/07/26, support for image batches and animation to the ClipVision Enhancer was added to ComfyUI IPAdapter plus."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the experimental ClipVision Enhancer node added on 2024/07/17?"
+            },
+            {
+                "role": "assistant",
+                "content": "The experimental ClipVision Enhancer node added on 2024/07/17 tries to catch small details by tiling the embeds, resulting in a slightly higher resolution visual embedding with no cost of performance."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'IPAdapter Precise Style Transfer' node added on 2024/06/28?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'IPAdapter Precise Style Transfer' node, added on 2024/06/28, allows for less bleeding of the embeds between the style and composition layers. It works better in SDXL than SD1.5."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can one find example workflows for IPAdapter functionalities in ComfyUI IPAdapter plus?"
+            },
+            {
+                "role": "assistant",
+                "content": "Example workflows for IPAdapter functionalities in ComfyUI IPAdapter plus can be found in the examples directory of the repository."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can one install ComfyUI IPAdapter plus?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI IPAdapter plus, one needs to download or git clone the repository inside the ComfyUI/custom_nodes/ directory or use the Manager. It always requires the latest version of ComfyUI."
+            }
+        ]
+    }
+]

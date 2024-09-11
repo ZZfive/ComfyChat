@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Prompter node in ZSuite?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Prompter node in ZSuite uses files to randomize pre-defined sorted subjects of random things, allowing users to customize prompts based on their wishes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the RF Node in ZSuite and what does it utilize for randomization?"
+            },
+            {
+                "role": "assistant",
+                "content": "The RF Node in ZSuite is a prototype node that utilizes RF ambient noise for robust randomization, enhancing the capabilities of the randomizer provider."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the RF Node in ZSuite capture and process data?"
+            },
+            {
+                "role": "assistant",
+                "content": "The RF Node captures data at a rate of 4096 bytes per cycle and processes it using the numpy library for normalization, ensuring the data is in a workable format."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is a server setup necessary for the RF Node in ZSuite?"
+            },
+            {
+                "role": "assistant",
+                "content": "A server setup is necessary because the RTL-SDR device communicates via TCP/IP, and the server acts as an intermediary, allowing ZSuite to access the data stream from the RTL-SDR device."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the configurable settings for the RF Node in ZSuite?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can customize default device parameters such as frequency, gain values, and samplerates by editing the ZS_Rtlsdr.py file located in the ZSuite directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the frequency range of the RTL-SDR device used in the RF Node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The frequency range of the RTL-SDR device used in the RF Node is typically between 5KHz and 1.7GHz."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do gain values impact the performance of the RTL-SDR device in the RF Node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Higher gain values may improve weak signal reception but can introduce noise, while auto (default) adjusts gain automatically to balance the signal quality."
+            }
+        ]
+    }
+]

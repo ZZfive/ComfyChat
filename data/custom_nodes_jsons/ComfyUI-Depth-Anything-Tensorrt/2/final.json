@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the term \"ComfyUI\" refer to in the context of this document?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI is a GUI that uses a stable diffusion model to generate images and videos. It has been customized to improve depth map generation, achieving speeds up to 14x faster than other methods."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can we specify the model and input size when using the Depth Anything TensorRT node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, the user can specify the appropriate engine to use, which is based on the model and input size specified in the table. The input size for the Depth Anything models is 518x518 pixels, and the image resolution is 1280x720 pixels."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Deep-Anything-TensorRT repository contribute to the ComfyUI Depth Anything TensorRT project?"
+            },
+            {
+                "role": "assistant",
+                "content": "The repository provides the onnx models that are used to build the TensorRT engines used by the ComfyUI Depth Anything TensorRT node. These models allow for ultra-fast depth map generation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the significance of the \"/folder\" folder in the installation process?"
+            },
+            {
+                "role": "assistant",
+                "content": "The \"/folder\" folder mentioned in the installation process likely refers to the location where the user should clone the Graphia repository, which is used in theCoolBox controller. This is necessary for the ComfyUI Depth Anything TensorRT project to function correctly."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Depth-Anything-L model perform alone on the RTX4090?"
+            },
+            {
+                "role": "assistant",
+                "content": "According to the benchmarks, the Depth-Anything-L model achieves a performance of 24 FPS on the RTX4090, which is slower than the other models tested on that GPU."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is it important to cache the TensorRT engine?"
+            },
+            {
+                "role": "assistant",
+                "content": "Caching the TensorRT engine in memory is important for performance optimization. It can result in faster processing times and reduced response times, as the engine does not need to be loaded from disk every time it is used."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which specific version of the Depth-Anything models is recommended for use with TensorRT?"
+            },
+            {
+                "role": "assistant",
+                "content": "Based on the benchmarks, the Depth-Anything-S and Depth-Anything-B models are recommended for use with TensorRT. They show the highest FPS for both the H100 and RTX4090 GPUs."
+            }
+        ]
+    }
+]

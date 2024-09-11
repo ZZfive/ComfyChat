@@ -1,0 +1,254 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What code of conduct has the ComfyUI-Bringing-Old-Photos-Back-to-Life project adopted?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-Bringing-Old-Photos-Back-to-Life project has adopted the Microsoft Open Source Code of Conduct."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I find the Microsoft Open Source Code of Conduct?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Microsoft Open Source Code of Conduct can be found at https://opensource.microsoft.com/codeofconduct/."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is there a FAQ available for the Microsoft Code of Conduct?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, there is a Microsoft Code of Conduct FAQ available at https://opensource.microsoft.com/codeofconduct/faq/."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Who can I contact with questions or concerns about the Microsoft Open Source Code of Conduct?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can contact opencode@microsoft.com with any questions or concerns about the Microsoft Open Source Code of Conduct."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does the ComfyUI-Bringing-Old-Photos-Back-to-Life project follow any code of conduct?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, the ComfyUI-Bringing-Old-Photos-Back-to-Life project follows the Microsoft Open Source Code of Conduct."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the email address for contacting Microsoft regarding the Open Source Code of Conduct?"
+            },
+            {
+                "role": "assistant",
+                "content": "The email address for contacting Microsoft regarding the Open Source Code of Conduct is opencode@microsoft.com."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Are there any resources available related to the Microsoft Open Source Code of Conduct adopted by the ComfyUI-Bringing-Old-Photos-Back-to-Life project?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, there are resources available related to the Microsoft Open Source Code of Conduct, including the Code of Conduct document at https://opensource.microsoft.com/codeofconduct/ and the FAQ at https://opensource.microsoft.com/codeofconduct/faq/."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Synchronized Batch Normalization in PyTorch?"
+            },
+            {
+                "role": "assistant",
+                "content": "Synchronized Batch Normalization in PyTorch is an implementation that differs from the built-in PyTorch BatchNorm. It reduces the mean and standard-deviation across all devices during training, whereas PyTorch's implementation normalizes the tensor on each device using the statistics only on that device."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is Synchronized BatchNorm important?"
+            },
+            {
+                "role": "assistant",
+                "content": "Synchronized BatchNorm is important because it helps in tasks where the batch size is usually very small, such as 1 per GPU. It has been proved to be significant in object detection tasks."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can Synchronized BatchNorm be used in PyTorch?"
+            },
+            {
+                "role": "assistant",
+                "content": "Synchronized BatchNorm can be used in PyTorch with a provided, customized data parallel wrapper or by monkey patching if you are using a customized data parallel module."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the implementation details of Synchronized BatchNorm?"
+            },
+            {
+                "role": "assistant",
+                "content": "The implementation is in pure-python, easy to use, uses unbiased variance to update the moving average, and requires that each module on different devices should invoke the batchnorm for exactly the same amount of times in each forward pass."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the known issues with Synchronized BatchNorm?"
+            },
+            {
+                "role": "assistant",
+                "content": "The known issues with Synchronized BatchNorm include a runtime error on backward pass due to a PyTorch Bug and a numeric error because the library does not fuse the normalization and statistics operations in C++ (nor CUDA)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Who are the authors of Synchronized BatchNorm?"
+            },
+            {
+                "role": "assistant",
+                "content": "The authors of Synchronized BatchNorm are Jiayuan Mao, Tete Xiao, and DTennant."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Under what license is Synchronized BatchNorm distributed?"
+            },
+            {
+                "role": "assistant",
+                "content": "Synchronized BatchNorm is distributed under the MIT License."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Microsoft's stance on security for their software products and services?"
+            },
+            {
+                "role": "assistant",
+                "content": "Microsoft takes the security of their software products and services seriously, including all source code repositories managed through their GitHub organizations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How should security vulnerabilities be reported to Microsoft?"
+            },
+            {
+                "role": "assistant",
+                "content": "Security vulnerabilities should be reported to the Microsoft Security Response Center (MSRC) at https://msrc.microsoft.com/create-report, not through public GitHub issues. Alternatively, they can be reported via email to secure@microsoft.com, ideally encrypted with the MSRC PGP key."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What information should be included when reporting a security vulnerability to Microsoft?"
+            },
+            {
+                "role": "assistant",
+                "content": "When reporting a security vulnerability, one should include the type of issue, full paths of related source files, location of affected source code, any special configurations required, step-by-step reproduction instructions, proof-of-concept or exploit code if possible, and impact of the issue."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How quickly should one expect a response from Microsoft after reporting a security issue?"
+            },
+            {
+                "role": "assistant",
+                "content": "One should receive a response from Microsoft within 24 hours after reporting a security issue."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What principle does Microsoft follow regarding coordinated vulnerability disclosure?"
+            },
+            {
+                "role": "assistant",
+                "content": "Microsoft follows the principle of Coordinated Vulnerability Disclosure."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some of the GitHub organizations managed by Microsoft?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some of the GitHub organizations managed by Microsoft include Microsoft, Azure, DotNet, AspNet, and Xamarin."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the expected language for communications with Microsoft regarding security vulnerabilities?"
+            },
+            {
+                "role": "assistant",
+                "content": "Microsoft prefers all communications regarding security vulnerabilities to be in English."
+            }
+        ]
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the LatentTravel node in ComfyUI_TravelSuite?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LatentTravel node in ComfyUI_TravelSuite is used to travel between different latent spaces using a range of blend and travel modes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the required inputs for the LatentTravel node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The required inputs for the LatentTravel node are two latent variables A and B, and an integer 'steps' representing the number of steps which includes the two input latents A and B."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'blend_mode' parameter in the LatentTravel node specify?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'blend_mode' parameter in the LatentTravel node specifies the method used for latent blending, such as 'lerp', 'slerp', 'add', 'multiply', 'divide', 'subtract', 'overlay', 'hard_light', 'soft_light', 'screen', 'linear_dodge', 'difference', 'exclusion', and 'random'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'travel_mode' parameter in the LatentTravel node determine?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'travel_mode' parameter in the LatentTravel node determines the travel interval model, such as 'linear', 'hinge', 'circle', 'norm', 'quadratic', 'cubic', 'quartic', and 'geometric'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'output_images' parameter in the LatentTravel node indicate?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'output_images' parameter in the LatentTravel node is a boolean indicating whether to output images, which requires VAE (Variational Autoencoder) input."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the outputs of the LatentTravel node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The outputs of the LatentTravel node are 'LATENTS' which are the resulting travel latents, 'IMAGES' which are tensor images if 'output_images=True', and 'FILEPATHS' which is a list of filepaths produced if 'write_images=True'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'filepath' parameter in the LatentTravel node define?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'filepath' parameter in the LatentTravel node is a string that defines the output path for the files, with the default path being 'output/travel'."
+            }
+        ]
+    }
+]

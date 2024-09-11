@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'pipeline-parallel-comfy' custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'pipeline-parallel-comfy' custom node provides extra APIs to run prompt requests with parallel execution of independent nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How should one install the 'pipeline-parallel-comfy' custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install, one should clone the repository into the 'ComfyUI/custom_nodes' folder using 'git clone https://github.com/DeJoker/pipeline-parallel-comfy' and then restart ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "List the usage instructions for the 'pipeline-parallel-comfy' API."
+            },
+            {
+                "role": "assistant",
+                "content": "/parallel/prompt operates same as comfyui /prompt, but must include the workflow_name parameter when used. To verify results, one can use 'curl localhost:8080/parallel/history' command."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Explain the implementation method of 'pipeline-parallel-comfy'."
+            },
+            {
+                "role": "assistant",
+                "content": "The implementation method of 'pipeline-parallel-comfy' involves locking independent nodes for thread Executor."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the future plans or to-do list for the 'pipeline-parallel-comfy' repository?"
+            },
+            {
+                "role": "assistant",
+                "content": "-支持多 workflow_name\n- 展示节点执行时间"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between using '/parallel/prompt' and '/prompt' in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Both commands operate similarly with the primary difference being that '/parallel/prompt' requires the workflow_name parameter to be included when calling the API, whereas '/prompt' does not."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is it necessary to restart ComfyUI after installing 'pipeline-parallel-comfy'?"
+            },
+            {
+                "role": "assistant",
+                "content": "Restarting ComfyUI is necessary to ensure that all changes, including the addition of the new custom node, are properly loaded and integrated into the software, allowing it to function as expected."
+            }
+        ]
+    }
+]

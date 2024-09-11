@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-SeqImageLoader?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SeqImageLoader is a simple JavaScript library that performantly and reliably breaks a video down into its individual frames using the new WebCodecs API."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which video format is currently supported by ComfyUI-SeqImageLoader?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SeqImageLoader currently only supports mp4 video files."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you check browser support for ComfyUI-SeqImageLoader?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can check browser support for ComfyUI-SeqImageLoader at https://caniuse.com/webcodecs."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Who are the original authors of the code used in ComfyUI-SeqImageLoader?"
+            },
+            {
+                "role": "assistant",
+                "content": "The original authors of the code used in ComfyUI-SeqImageLoader are the authors of the official WebCodecs demos and mp4box.js."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you use ComfyUI-SeqImageLoader in an HTML file?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use ComfyUI-SeqImageLoader in an HTML file, you need to import the library, provide a canvas element, and use the `getVideoFrames` function with a video URL or file blob."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the `onFrame` callback function in ComfyUI-SeqImageLoader?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `onFrame` callback function in ComfyUI-SeqImageLoader is used to process each VideoFrame object obtained from the video. It can be used to draw the frame on a canvas or perform other operations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be done after finishing the video processing with ComfyUI-SeqImageLoader?"
+            },
+            {
+                "role": "assistant",
+                "content": "After finishing the video processing with ComfyUI-SeqImageLoader, it is recommended to revoke the object URL created from the video file using `URL.revokeObjectURL(file)` to prevent memory leaks."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI-SeqImageLoader extension node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-SeqImageLoader extension node allows users to load frames from a video in bulk and perform masking and sketching on each frame through a GUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "In which category can the 'SequentialImageLoader' node be found in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'SequentialImageLoader' node can be found in the Image category in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between the 'SequentialImageLoader' node and the 'VideoFrameExtractor' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'SequentialImageLoader' node requires specifying a directory containing frames from a video, while the 'VideoFrameExtractor' node allows specifying a video file directly (currently only mp4 format is supported)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can a user access the Mask Editor in ComfyUI-SeqImageLoader?"
+            },
+            {
+                "role": "assistant",
+                "content": "After loading the frames, the user can right-click the node and select 'Open In MaskEditor' to access the Mask Editor."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Paste mask from prev' button in the Mask Editor?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Paste mask from prev' button in the Mask Editor allows users to paste the mask from the previous frame to the current frame."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the shortcut keys for Undo and Redo operations in the Mask Editor?"
+            },
+            {
+                "role": "assistant",
+                "content": "The shortcut keys for Undo and Redo operations in the Mask Editor are alt+Z and shift+alt+Z, respectively."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where does temporary frame data accumulate when using ComfyUI-SeqImageLoader?"
+            },
+            {
+                "role": "assistant",
+                "content": "Temporary frame data accumulates in the input/ directory when using ComfyUI-SeqImageLoader, and users should delete data that is no longer needed at an appropriate time."
+            }
+        ]
+    }
+]

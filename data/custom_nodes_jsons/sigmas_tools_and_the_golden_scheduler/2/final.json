@@ -1,0 +1,134 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of sigmas_tools_and_the_golden_scheduler?"
+            },
+            {
+                "role": "assistant",
+                "content": "sigmas_tools_and_the_golden_scheduler provides a set of custom nodes to mix sigmas and a custom scheduler that uses phi, allowing for the creation of custom formulas for scheduling."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Merge sigmas by average node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Merge sigmas by average node takes sigmas_1 and sigmas_2 as inputs and merges them with a custom weight."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Merge sigmas gradually node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Merge sigmas gradually node takes sigmas_1 and sigmas_2 as inputs and merges them by starting with sigmas_1 times the weight and sigmas_2 times 1-minus the weight, allowing for a transition from one sigma to another."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Multiply sigmas node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Multiply sigmas node simply multiplies the sigmas by a desired value."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Split and concatenate sigmas node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Split and concatenate sigmas node takes sigmas_1 and sigmas_2 as inputs and merges them by starting with sigmas_1 until the chosen step, then the rest with sigmas_2."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the Get sigmas as float node used for?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Get sigmas as float node gets the first and last step to be able to inject noise inside a latent with noise injection nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Graph sigmas node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Graph sigmas node creates a graph of the sigmas."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Aligned scheduler differ from Comfy's implementation?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Aligned scheduler takes into account the min/max sigmas of the model rather than those from the linked page, which might be beneficial with COSXL models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the Manual scheduler used for?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Manual scheduler uses eval() to create a custom schedule, allowing for the use of various mathematical functions and variables to define the schedule."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the formula for the Golden Scheduler?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Golden Scheduler uses the formula: (1-x/(steps-1))**phi*sigmax+(x/(steps-1))**phi*sigmin for x in range(steps), where x is the iteration variable for the steps."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which schedulers does the Golden Scheduler work well with?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Golden Scheduler works pretty well with dpmpp2m, euler and lms schedulers."
+            }
+        ]
+    }
+]

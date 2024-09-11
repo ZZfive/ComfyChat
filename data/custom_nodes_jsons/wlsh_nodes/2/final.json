@@ -1,0 +1,182 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the WLSH ComfyUI Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The WLSH ComfyUI Nodes are a set of custom nodes created for personal use to solve minor annoyances or implement various features in ComfyUI, such as nodes to read or write metadata to saved images and nodes to quickly generate latent images at resolutions by pixel count and aspect ratio."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'Checkpoint Loader with Name' node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Checkpoint Loader with Name' node is a regular checkpoint loader that provides the name of the loaded model as a string output for use in saving filenames."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'KSamplerAdvanced (WLSH)' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'KSamplerAdvanced (WLSH)' node is a modified version of the advanced KSampler that returns the 'denoising' option for experimentation and provides an INFO output that offers sampler settings for use in other nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'Empty Latent by Pixels' node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Empty Latent by Pixels' node quickly generates an empty latent by selecting an aspect ratio, an orientation (landscape or portrait), and the number of megapixels. It also provides the height and width as integers for plugging in elsewhere."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Image Load with Metadata' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Image Load with Metadata' node extracts image metadata from Auto1111-sourced images or from images saved with the nodes in the WLSH pack. It can then connect these outputs to other nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'Image Save with Prompt' node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Image Save with Prompt' node saves an image with prompt information embedded as a comment or exif data similar to how Auto1111 does it. It requires feeding it various pieces of information and specifying the filename syntax for replacement if desired."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'Alternating KSampler' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Alternating KSampler' node is a work in progress attempting to recreate the alternating prompts of Auto1111. It provides a prompt with the syntax '<foo|bar>' to alternate between 'foo' and 'bar' (and any number of others) before looping back around to the first entry. However, it is currently not functional due to sampling issues, but the prompt alternating logic works."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was added to the SDXL quick latent/quick resolution nodes on 2024-06-19?"
+            },
+            {
+                "role": "assistant",
+                "content": "Resolution aspect ratios were added to the SDXL quick latent/quick resolution nodes on 2024-06-19."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was added on 2024-03-19?"
+            },
+            {
+                "role": "assistant",
+                "content": "On 2024-03-19, the imports were fixed based on changes in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was added to ratio-based nodes on 2023-12-31?"
+            },
+            {
+                "role": "assistant",
+                "content": "Additional resolution options were added to ratio-based nodes on 2023-12-31."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was added to the outputs of the Image Scale by Shortside node on 2023-11-24?"
+            },
+            {
+                "role": "assistant",
+                "content": "Width and height were added to the outputs of the Image Scale by Shortside node on 2023-11-24."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was fixed in the Image Save with Prompt/Info & File node on 2023-11-22?"
+            },
+            {
+                "role": "assistant",
+                "content": "An issue with the Image Save with Prompt/Info & File node was fixed on 2023-11-22."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was fixed regarding the quick latent nodes on 2023-11-21?"
+            },
+            {
+                "role": "assistant",
+                "content": "An issue with integer width/height return from quick latent nodes was fixed on 2023-11-21."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What node was added on 2023-11-20?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Image Scale by Shortside node was added on 2023-11-20."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What node was added on 2023-10-30?"
+            },
+            {
+                "role": "assistant",
+                "content": "The unified SD1.5/SDXL CLIP-Text node was added on 2023-10-30."
+            }
+        ]
+    }
+]

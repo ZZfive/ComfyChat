@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the BreakFrames node in ComfyUI-MakeFrame?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BreakFrames node in ComfyUI-MakeFrame is used to break any animation file that OpenCV can process into individual frames."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the GetKeyFrames node in ComfyUI-MakeFrame do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The GetKeyFrames node in ComfyUI-MakeFrame processes scene detection on all given frames, rank-orders them, and returns the top N results. It also returns labeled images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the MakeGrid node in ComfyUI-MakeFrame arrange the given images?"
+            },
+            {
+                "role": "assistant",
+                "content": "The MakeGrid node in ComfyUI-MakeFrame plots the given images on a grid, calculating the number of rows and columns for the most even aspect ratio."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of creating a potentially massive image in the MakeGrid node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The MakeGrid node creates a potentially massive image for concurrent frame generation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the MakeGrid node handle image resizing?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the MakeGrid node, images are resized to be evenly divisible by rows, columns, and 8 (to prevent 'resize wobble')."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the MakeGrid node do with empty cells in the grid?"
+            },
+            {
+                "role": "assistant",
+                "content": "The MakeGrid node pads empty cells with repeats of the last image to avoid black space, which frustrates generation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the BreakGrid node in ComfyUI-MakeFrame?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BreakGrid node in ComfyUI-MakeFrame is used to break given image grid(s) back into individual images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is a good practice when using the BreakGrid node?"
+            },
+            {
+                "role": "assistant",
+                "content": "When using the BreakGrid node, it is good practice to use the rows and columns output from the MakeGrid node."
+            }
+        ]
+    }
+]

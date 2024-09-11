@@ -1,0 +1,146 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What's the difference between the 'added' and 'fixed' sections in the changelog?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'added' section includes updates that introduce new features or enhancements, while the 'fixed' section contains changes that resolve bugs or issues."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you provide examples of the new features in ComfyUI-Unprompted version 0.2.2 and version 0.2.1?"
+            },
+            {
+                "role": "assistant",
+                "content": "[Version 0.2.2] Added support for Unprompted v11.2.0. [Version 0.2.1] Resolved issues with `install.py` package upgrade logic."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'anything' input in ComfyUI-Unprompted?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'anything' input allows users to connect any node to it, and it will make this node accessible in the Unprompted string as a variable."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "In the new release, how does Unprompted support integration with ComfyUI Manager?"
+            },
+            {
+                "role": "assistant",
+                "content": "The support for ComfyUI Manager was added in a separate issue in version 0.1.1, indicating changes made specifically to improve compatibility with ComfyUI Manager."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the 'always_rerun' setting impact the functionality of ComfyUI-Unprompted?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'always_rerun' setting forces the node to re-run even when the input data hasn't changed, enhancing the ability to provide up-to-date outputs."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Unprompted?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Unprompted is a ComfyUI node designed to process input text using the Unprompted templating language. It is currently in an early alpha release state."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where are my Unprompted templates located?"
+            },
+            {
+                "role": "assistant",
+                "content": "Your Unprompted templates can be found in the `ComfyUI/venv/Lib/site-packages/unprompted/templates` folder. You can use this node to call files from this location, for instance, using the `[call common/examples/human/main]` command."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are `string_prefix` and `string_affix`?"
+            },
+            {
+                "role": "assistant",
+                "content": "`string_prefix` is used to add a specified string to the beginning of a main `string_field` box, while `string_affix` appends a specified string to the end. These features are primarily designed for convenience."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you edit images with the Unprompted node?"
+            },
+            {
+                "role": "assistant",
+                "content": "As of version 0.2.0, the Unprompted node supports image editing through the `anything` input. To edit an image, you can utilize the `set_anything_to` widget to set an image to a `comfy_var` variable, which is then referenced via the `[image_edit]` shortcode. For instance, to edit an image, you would use the following command:\n\n```\n[image_edit input=\"comfy_var\" add_noise=500]\n```\n\nEnsure that the `return_image_var` widget refers to `comfy_var` so that the changes are visible in the Preview Image node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I use ComfyUI-Unprompted to edit HTML or CSS files?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, ComfyUI-Unprompted is primarily designed for text-based operations. It does not support editing HTML or CSS directly; it is focused on processing textual inputs using the Unprompted templating language."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is it secure to use ComfyUI-Unprompted for sensitive data?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Unprompted and its Unprompted templating language are not specifically designed for securing sensitive data. Therefore, it is not recommended to use this node for handling sensitive information without first implementing additional security measures."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does ComfyUI-Unprompted handle wildcards?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Unprompted supports wildcards in its input strings. This can be useful for creating flexible and generic templates. Wildcards can be used in specific contexts, depending on the command or shortcode used with the data."
+            }
+        ]
+    }
+]

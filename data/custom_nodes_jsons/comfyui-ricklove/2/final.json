@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the command to extract frames from a video file using ffmpeg in comfyui-ricklove?"
+            },
+            {
+                "role": "assistant",
+                "content": "The command to extract frames from a video file using ffmpeg in comfyui-ricklove is: ffmpeg -i input.mp4 out%05d.png"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you convert HEIC files to PNG format in comfyui-ricklove?"
+            },
+            {
+                "role": "assistant",
+                "content": "In comfyui-ricklove, you can convert HEIC files to PNG format using the following command: find . -iname \"*.heic\" -exec heif-convert -q 100 {} {}.png \\;"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the command to convert a HEIC image to JPG format using ImageMagick in comfyui-ricklove?"
+            },
+            {
+                "role": "assistant",
+                "content": "The command to convert a HEIC image to JPG format using ImageMagick in comfyui-ricklove is: magick convert image.heic image.jpg"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you batch convert HEIF images to JPG format using ImageMagick in comfyui-ricklove?"
+            },
+            {
+                "role": "assistant",
+                "content": "To batch convert HEIF images to JPG format using ImageMagick in comfyui-ricklove, you can use the following command: convert *.heif -set filename:base \"%[basename]\" \"%[filename:base].jpg\""
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the command to convert HEIF images to PNG format using mogrify in comfyui-ricklove?"
+            },
+            {
+                "role": "assistant",
+                "content": "The command to convert HEIF images to PNG format using mogrify in comfyui-ricklove is: mogrify -format png *.heif"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Who created the misc ComfyUI nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The misc ComfyUI nodes were created by Rick Love."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of misc ComfyUI nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The misc ComfyUI nodes are custom nodes that extend the functionality of ComfyUI."
+            }
+        ]
+    }
+]

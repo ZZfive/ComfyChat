@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI Neural network latent upscale custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI Neural network latent upscale custom node is a custom node for ComfyUI that allows upscaling the latents quickly using a small neural network without needing to decode and encode with VAE."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can the ComfyUI_NNLatentUpscale node be found in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI_NNLatentUpscale node can be found in 'Add Node -> latent -> NNLatentUpscale' in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is the ComfyUI_NNLatentUpscale node meant to be used in a workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI_NNLatentUpscale node is meant to be used in a workflow where the initial image is generated in lower resolution, the latent is upscaled and the upscaled latent is fed back into the stable diffusion u-net for low noise diffusion pass (high-res fix)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How much faster is neural net latent upscaling compared to VAE decode -> upscale -> encode?"
+            },
+            {
+                "role": "assistant",
+                "content": "Compared to VAE decode -> upscale -> encode, the neural net latent upscale is about 20 - 50 times faster depending on the image resolution with minimal quality loss."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between neural net upscale and direct linear interpolation of the latent in terms of speed and quality?"
+            },
+            {
+                "role": "assistant",
+                "content": "Compared to direct linear interpolation of the latent, the neural net upscale is slower but has much better quality. Direct latent interpolation usually has very large artifacts."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the ComfyUI_NNLatentUpscale repository be installed?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install the ComfyUI_NNLatentUpscale repository, clone it in the ComfyUI 'custom_nodes' directory with the command: 'git clone https://github.com/Ttl/ComfyUi_NNLatentUpscale.git'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What dataset and resolution were used for evaluating the performance of ComfyUI_NNLatentUpscale?"
+            },
+            {
+                "role": "assistant",
+                "content": "The performance of ComfyUI_NNLatentUpscale was evaluated using the COCO 2017 validation images dataset, center cropped to 256x256 resolution."
+            }
+        ]
+    }
+]

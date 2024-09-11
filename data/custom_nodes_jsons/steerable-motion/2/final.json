@@ -1,0 +1,182 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the IPAdapter Unified Loader node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The IPAdapter Unified Loader node in ComfyUI loads the full stack of models needed for IPAdapter to function, including the IPAdapter and CLIP vision models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How should multiple unified loaders be connected in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Multiple unified loaders should always be daisy chained through the 'ipadapter' in/out. The 'ipadapter' input should never be connected for the first unified loader in the chain."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the IPAdapter Model Loader node in ComfyUI do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The IPAdapter Model Loader node in ComfyUI loads only the IPAdapter model, contrary to the Unified Loader which contains the full stack of models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the IPAdapter Advanced node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The IPAdapter Advanced node in ComfyUI is a drop-in replacement for the old IPAdapter Apply node. It contains all the options to fine-tune the IPAdapter models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'attn_mask' input in the IPAdapter Advanced node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'attn_mask' input in the IPAdapter Advanced node is used to define the area of influence of the IPAdapter models on the final image. Black zones won't be affected, while white zones will get maximum influence."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'weight_type' parameter in the IPAdapter Advanced node control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'weight_type' parameter in the IPAdapter Advanced node controls how the IPAdapter is applied to the UNet block. It hugely impacts how the composition reacts to the text prompting."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended 'weight' value for the 'linear' 'weight_type' in the IPAdapter Advanced node?"
+            },
+            {
+                "role": "assistant",
+                "content": "For the 'linear' 'weight_type' in the IPAdapter Advanced node, a good starting point for the 'weight' value is 0.8."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'combine_embeds' parameter in the IPAdapter Advanced node control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'combine_embeds' parameter in the IPAdapter Advanced node controls how the embeddings are combined when sending more than one reference image. Options include 'concat', 'average', and 'subtract'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI IPAdapter plus?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI IPAdapter plus is a reference implementation for IPAdapter models in ComfyUI. It allows for image-to-image conditioning, where the subject or style of a reference image can be easily transferred to a generated image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the requirements for using the ComfyUI IPAdapter plus extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI IPAdapter plus extension requires the latest version of ComfyUI. It also requires specific models and files to be placed in the correct directories, such as the CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors and ip-adapter_sd15.safetensors files."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some example workflows included in the ComfyUI IPAdapter plus extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI IPAdapter plus extension includes example workflows such as the IPAdapter Example workflow, which demonstrates how to use the extension for image-to-image conditioning. These workflows can be found in the examples directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the different weight types available in the IPAdapter Advanced node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The IPAdapter Advanced node offers different weight types for adjusting the influence of the reference image on the generated image. These weight types include Style transfer and Composition transfer for SDXL models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the recommended settings for using the ComfyUI IPAdapter plus extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "It is generally recommended to lower the weight to at least 0.8 and increase the number of steps when using the ComfyUI IPAdapter plus extension. Adjusting the weight type in the IPAdapter Advanced node can also help increase adherence to the prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI IPAdapter plus extension's sponsorships?"
+            },
+            {
+                "role": "assistant",
+                "content": "Sponsorships for the ComfyUI IPAdapter plus extension help support the development of the extension and keep it open and free for the community to use. Sponsorships allow the developer to dedicate more time to the project and add new features and updates."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some of the models that can be used with the ComfyUI IPAdapter plus extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI IPAdapter plus extension supports various models, including the IPAdapter base model, IPAdapter plus model, IPAdapter face model, and IPAdapter full-face model for SD15, as well as the corresponding models for SDXL. These models can be found on the Hugging Face platform."
+            }
+        ]
+    }
+]

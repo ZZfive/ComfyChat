@@ -1,0 +1,254 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is cg-use-everywhere?"
+            },
+            {
+                "role": "assistant",
+                "content": "cg-use-everywhere is a set of custom nodes for ComfyUI that allows users to connect a single input to multiple unconnected inputs of the same type across the workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Anything Everywhere' node in cg-use-everywhere?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Anything Everywhere' node in cg-use-everywhere allows users to connect a single input to any unconnected input of the same type anywhere in the workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users visualize the connections made by the 'Anything Everywhere' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can visualize the connections made by the 'Anything Everywhere' node by right-clicking on the background canvas and selecting 'Toggle UE Link Visibility'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between the 'Anything Everywhere' and 'Anything Everywhere?' nodes in cg-use-everywhere?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Anything Everywhere?' node adds two widgets - title_regex and input_regex, which allows users to control matching with regex rules, while the 'Anything Everywhere' node connects to any unconnected input of the same type without any specific matching rules."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users restrict the 'Anything Everywhere' node to send connections only to nodes of the same color or group?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can restrict the 'Anything Everywhere' node to send connections only to nodes of the same color or group by right-clicking on the node and selecting 'Group restrictions' or 'Color restrictions'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Seed Everywhere' node in cg-use-everywhere?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Seed Everywhere' node in cg-use-everywhere connects to any unconnected INT input with 'seed' in the input name, allowing users to use the same seed across multiple inputs."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users convert the virtual links created by UE nodes to real links in cg-use-everywhere?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can convert the virtual links created by UE nodes to real links by right-clicking on the node and selecting 'Convert to real links' for a single node, or by right-clicking the background and selecting 'Convert all UEs to real links' for all UE nodes in a workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the abbreviation 'UE' stand for in the context of ComfyUI nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the context of ComfyUI nodes, 'UE' stands for 'Use Everywhere'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do UE nodes function in a ComfyUI workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "When a UE node is placed into a ComfyUI workflow and its input is connected, every node with an unconnected input of the same type will act as if connected to it."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the types of inputs that UE nodes can automatically connect to in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "UE nodes can automatically connect to inputs of types CLIP, IMAGE, MODEL, VAE, CONDITIONING, LATENT, INT, MASK, CHECKPOINT, and a special node for SEEDs in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between UE and UE? nodes in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "UE? nodes are similar to UE nodes but they add two widgets, 'title' and 'input'. These widgets use Regular Expressions to determine which nodes the UE? node will send data to, based on the node title and the unconnected input name."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can UE or UE? nodes with multiple outputs have their outputs converted to a widget in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, only UE or UE? nodes with just one output can have the output converted to a widget in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why can't the title of a UE or UE? node be changed after converting its output to a widget?"
+            },
+            {
+                "role": "assistant",
+                "content": "The code gets the data type from the input, and if it's a widget, the data type is not available. Therefore, the hack is to get the data type from what comes after 'UE ' in the title, preventing the title from being changed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'title' and 'input' widgets in UE? nodes in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'title' and 'input' widgets in UE? nodes use Regular Expressions to match the node title and the unconnected input name, determining which nodes the UE? node will send data to."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be included with every image in the cg-use-everywhere folder?"
+            },
+            {
+                "role": "assistant",
+                "content": "Every image in the cg-use-everywhere folder should have its workflow saved with it."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of saving the workflow with each image in the cg-use-everywhere folder?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of saving the workflow with each image is to ensure that the same image can be generated again using the saved workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Are the images in the cg-use-everywhere folder generated using cg-use-everywhere?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, the images in the cg-use-everywhere folder are generated using cg-use-everywhere, and their respective workflows are saved with them."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does cg-use-everywhere do?"
+            },
+            {
+                "role": "assistant",
+                "content": "cg-use-everywhere is likely a custom node or plugin in ComfyUI that allows for the generation of images using saved workflows."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is it possible to recreate an image in the cg-use-everywhere folder?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, it is possible to recreate an image in the cg-use-everywhere folder by using the workflow that is saved with the image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What might happen if the workflow is not saved with an image in the cg-use-everywhere folder?"
+            },
+            {
+                "role": "assistant",
+                "content": "If the workflow is not saved with an image in the cg-use-everywhere folder, it may not be possible to generate the same image again."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can the workflows saved with images in the cg-use-everywhere folder be used for other images?"
+            },
+            {
+                "role": "assistant",
+                "content": "The workflows saved with images in the cg-use-everywhere folder are specific to those images and may not necessarily produce the same results for other images."
+            }
+        ]
+    }
+]

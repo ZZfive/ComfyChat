@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI Vectorscope CC?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI Vectorscope CC is a port of the SD Webui Vectorscope CC extension by Haoming02 for ComfyUI. It allows color adjustments similar to the original extension but without the color wheel interface."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the DiffusionCG node in ComfyUI Vectorscope CC?"
+            },
+            {
+                "role": "assistant",
+                "content": "The DiffusionCG node in ComfyUI Vectorscope CC allows recentering and normalizing latent noise during image generation. It has feature parity with the SD WebUI version, except for color adjusting features which can be used together with the VectorscopeCC node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the DiffusionCG node in ComfyUI Vectorscope CC differ from the original ComfyUI port?"
+            },
+            {
+                "role": "assistant",
+                "content": "Unlike the original ComfyUI port, the DiffusionCG node in ComfyUI Vectorscope CC has feature parity with the SD WebUI version, except for color adjusting features. It can be used in conjunction with the VectorscopeCC node for color adjustments."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the NormalizeLatent node in ComfyUI Vectorscope CC?"
+            },
+            {
+                "role": "assistant",
+                "content": "The NormalizeLatent node in ComfyUI Vectorscope CC is a deprecated node that enhances vibrancy and contrast of an image by normalizing latents. It works with both SD1.5 and SDXL latents and should be placed right before the VAEDecode node. However, it is now recommended to use normalization from the DiffusionCG node instead."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where should the NormalizeLatent node be placed in the node graph?"
+            },
+            {
+                "role": "assistant",
+                "content": "The NormalizeLatent node should be placed right before the VAEDecode node in the node graph."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is the NormalizeLatent node still recommended for use in ComfyUI Vectorscope CC?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, the NormalizeLatent node is deprecated in ComfyUI Vectorscope CC. It is now recommended to use the normalization feature from the DiffusionCG node instead."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which latent types are compatible with the NormalizeLatent node in ComfyUI Vectorscope CC?"
+            },
+            {
+                "role": "assistant",
+                "content": "The NormalizeLatent node in ComfyUI Vectorscope CC is compatible with both SD1.5 and SDXL latents."
+            }
+        ]
+    }
+]

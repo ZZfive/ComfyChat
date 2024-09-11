@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-RandomSize?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-RandomSize is a custom node in ComfyUI that randomly selects a height and width pair from a list in a config file to provide variety in generations of large numbers of images at once."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What presets are included in ComfyUI-RandomSize?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-RandomSize includes presets for 9 SD 1.5-friendly resolutions, 9 SDXL-friendly resolutions, and various resolutions centered around 512x512, 640x640, 768x768, 896x896, and 1024x1024."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you install ComfyUI-RandomSize?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-RandomSize, navigate to the custom_nodes directory in your ComfyUI installation path and run the command: git clone https://github.com/JerryOrbachJr/ComfyUI-RandomSize.git"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you use ComfyUI-RandomSize?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use ComfyUI-RandomSize, select a seed which represents the index of a size in the yaml file, set control after generate to fix the output, select a preset, and run your queue."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the seed represent in ComfyUI-RandomSize?"
+            },
+            {
+                "role": "assistant",
+                "content": "In ComfyUI-RandomSize, the seed represents the index of a size in the yaml file, starting with 0. The same seed will always give the same output."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you add custom presets in ComfyUI-RandomSize?"
+            },
+            {
+                "role": "assistant",
+                "content": "To add custom presets in ComfyUI-RandomSize, create a text file with the name of your choosing and extension '.yaml' in the custom_nodes/ComfyUI-RandomSize/sizes/custom directory. The first line should be 'sizes:', and every successive line should be a size in the format '- WIDTHxHEIGHT'. Restart Comfy to see your preset in the list."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be the format of each line in the custom preset file for ComfyUI-RandomSize?"
+            },
+            {
+                "role": "assistant",
+                "content": "Each line in the custom preset file for ComfyUI-RandomSize should be in the format '- WIDTHxHEIGHT', replacing WIDTH and HEIGHT with the desired pixel numbers, e.g., '- 768x512'."
+            }
+        ]
+    }
+]

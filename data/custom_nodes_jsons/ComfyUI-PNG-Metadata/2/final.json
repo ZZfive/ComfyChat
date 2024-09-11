@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-PNG-Metadata?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-PNG-Metadata is a set of custom nodes for ComfyUI that allows users to add custom metadata to PNG files, such as the prompt and settings used to generate the image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the metadata added by ComfyUI-PNG-Metadata be used?"
+            },
+            {
+                "role": "assistant",
+                "content": "The metadata added by ComfyUI-PNG-Metadata can be used to add 'parameters' metadata item compatible with AUTOMATIC1111 metadata."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you use the nodes provided by ComfyUI-PNG-Metadata?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use the nodes, you simply add them to your workflow and connect the inputs. This will automatically add the metadata to any standard 'save image' nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What nodes are provided in the ComfyUI-PNG-Metadata library?"
+            },
+            {
+                "role": "assistant",
+                "content": "The nodes provided in the ComfyUI-PNG-Metadata library are 'Set Metadata' and 'Set Metadata (All)'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the 'Set Metadata' node in ComfyUI-PNG-Metadata?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Set Metadata' node in ComfyUI-PNG-Metadata sets a single custom metadata field and optionally updates the 'parameters' field in PNG metadata."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the 'Set Metadata (All)' node in ComfyUI-PNG-Metadata?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Set Metadata (All)' node in ComfyUI-PNG-Metadata sets multiple metadata at once and writes them to the 'parameters' field in PNG metadata."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is a known issue with the node execution order in ComfyUI-PNG-Metadata?"
+            },
+            {
+                "role": "assistant",
+                "content": "Currently, the node execution order is not enforced in ComfyUI-PNG-Metadata. If Metadata nodes execute after the Save Image node, the metadata will not be written to the image. This will be fixed in a future release."
+            }
+        ]
+    }
+]

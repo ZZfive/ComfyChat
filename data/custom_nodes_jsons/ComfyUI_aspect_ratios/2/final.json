@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_aspect_ratiosはどのように作られましたか？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_aspect_ratiosは、sd-webui-arをもとにComfyUI用のアスペクト比セレクターとして作られました。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_aspect_ratiosの使用法を教えてください。"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUIでEmpty Latent ImageをAspect Ratios Nodeに置き換え、サイズやアスペクト比などのパラメータを設定して使用します。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "アスペクト比の設定ファイルはどこに作成されますか？"
+            },
+            {
+                "role": "assistant",
+                "content": "アスペクト比の設定ファイルaspect_ratios.txtは、ComfyUI\\custom_nodes\\ComfyUI_aspect_ratiosに作成されます。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "設定ファイルでのアスペクト比の指定方法を説明してください。"
+            },
+            {
+                "role": "assistant",
+                "content": "設定ファイルでは、UI에 표시されるアスペクト比と内部処理で使われる値を指定します。例えば、1:1のアスペクト比であれば、1:1, 1/1という形式で記述します。また、#でコメントを追加することができます。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "standardパラメータは何を設定しますか？"
+            },
+            {
+                "role": "assistant",
+                "content": "standardパラメータは、アスペクト比の基準となる寸法（幅か高さ）を設定します。widthに設定すると幅を基準に、高さが自動的に計算されます。heightに設定すると高さが基準になり、幅が自動的に計算されます。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "アスペクト比16:9はどのような意味ですか？"
+            },
+            {
+                "role": "assistant",
+                "content": "アスペクト比16:9は、幅が16、高さが9という比率を意味しています。シンプルに言えば、16:9 = 幅:高さです。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_aspect_ratiosを使用することでどのような利点がありますか？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_aspect_ratiosを使用することで、画像のアスペクト比を柔軟に設定できるようになり、様々なサイズの画像を簡単に生成できるようになります。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI_aspect_ratios?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_aspect_ratios is an aspect ratio selector for ComfyUI based on sd-webui-ar."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you replace 'Empty Latent Image' in ComfyUI_aspect_ratios?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can replace 'Empty Latent Image' with 'Aspect Ratios Node' in ComfyUI_aspect_ratios."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'size' parameter in ComfyUI_aspect_ratios refer to?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'size' parameter in ComfyUI_aspect_ratios refers to the reference size for the aspect ratio."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you configure the aspect ratios in ComfyUI_aspect_ratios?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can configure the aspect ratios in ComfyUI_aspect_ratios by editing the 'aspect_ratios.txt' file located in 'ComfyUI\\custom_nodes\\ComfyUI_aspect_ratios'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the format for specifying aspect ratios in the 'aspect_ratios.txt' file?"
+            },
+            {
+                "role": "assistant",
+                "content": "The format for specifying aspect ratios in the 'aspect_ratios.txt' file is 'displayed_ratio, processed_value # comment'. For example, '1:1, 1/1 # 1:1 ratio based on minimum dimension'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the 'standard' parameter affect the image dimensions in ComfyUI_aspect_ratios?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'standard' parameter in ComfyUI_aspect_ratios determines whether the reference size is based on width or height. If set to width, the width will be the reference, and if set to height, the height will be the reference."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does an aspect ratio of 16:9 represent in terms of width and height?"
+            },
+            {
+                "role": "assistant",
+                "content": "An aspect ratio of 16:9 represents a ratio where the width is 16 and the height is 9."
+            }
+        ]
+    }
+]

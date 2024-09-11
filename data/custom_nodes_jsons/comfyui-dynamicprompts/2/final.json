@@ -1,0 +1,182 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was fixed in version 0.2.1 of comfyui-dynamicprompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "In version 0.2.1 of comfyui-dynamicprompts, a bug was fixed due to a backwards incompatible change in the latest version of dynamicprompts that returns a SampleResult instead of a str."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What new feature was introduced in version 0.2.0 of comfyui-dynamicprompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "In version 0.2.0 of comfyui-dynamicprompts, nodes were updated to have settable seeds for reproducibility."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Who provided the inspiration for the settable seeds feature in version 0.2.0 of comfyui-dynamicprompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "The inspiration for the settable seeds feature in version 0.2.0 of comfyui-dynamicprompts came from @romeobuilderotti."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which version of dynamicprompts was comfyui-dynamicprompts upgraded to in version 0.2.0?"
+            },
+            {
+                "role": "assistant",
+                "content": "In version 0.2.0 of comfyui-dynamicprompts, dynamicprompts was upgraded to v0.30.1."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was changed in version 0.1.3 of comfyui-dynamicprompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "In version 0.1.3 of comfyui-dynamicprompts, wildcards in the ComfyUI root were supported for backwards compatibility."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where does the extension look for wildcards as of version 0.1.2 of comfyui-dynamicprompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "As of version 0.1.2 of comfyui-dynamicprompts, the extension looks for wildcards in custom_nodes/comfyui_dynamicprompts/wildcards."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was changed in version 0.1.1 of comfyui-dynamicprompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "In version 0.1.1 of comfyui-dynamicprompts, the code was changed to use relative imports, which fixed issue #1 on the GitHub repository."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-DynamicPrompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DynamicPrompts is a custom nodes library that integrates into your existing ComfyUI Library and provides nodes that enable the use of Dynamic Prompts in your ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which nodes are provided by the ComfyUI-DynamicPrompts library?"
+            },
+            {
+                "role": "assistant",
+                "content": "The nodes provided by the ComfyUI-DynamicPrompts library are: Random Prompts, Combinatorial Prompts, I'm Feeling Lucky, Magic Prompt, and Jinja2 Templates."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you install ComfyUI-DynamicPrompts using ComfyUI-Manager?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-DynamicPrompts using ComfyUI-Manager, first install ComfyUI-Manager if it isn't already. Then, press Install Custom Nodes from the ComfyUI-Manager menu, search for dynamicprompts, and click install."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the steps for manual installation of ComfyUI-DynamicPrompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "The manual installation of ComfyUI-DynamicPrompts involves cloning the repository, installing the required Python packages, running install.py, creating a wildcards directory, optionally downloading a wildcard collection, and restarting ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where does the ComfyUI-DynamicPrompts extension look for wildcard files?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-DynamicPrompts extension looks for wildcard files in custom_nodes/comfyui-dynamicprompts/wildcards."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What type of outputs do nodes in the ComfyUI-DynamicPrompts library produce?"
+            },
+            {
+                "role": "assistant",
+                "content": "All nodes in the ComfyUI-DynamicPrompts library produce a String output that can typically be passed into Clip Text Encode Prompts. Both positive and negative nodes are supported."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the behavior of the Combinatorial Prompt generation in ComfyUI-DynamicPrompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Combinatorial Prompt generation in ComfyUI-DynamicPrompts iterates through all possible values in a cycle. For example, A {red|green|blue} ball will generate the sequence: A red ball, A green ball, A blue ball, A red ball, and so on."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some known limitations of the current release of ComfyUI-DynamicPrompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "The current release of ComfyUI-DynamicPrompts has some known limitations such as non-configurable random seeds, inability to select the MagicPrompt model, absence of several other configuration features, and the only way to view the generated prompt is through console output."
+            }
+        ]
+    }
+]

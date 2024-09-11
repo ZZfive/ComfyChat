@@ -1,0 +1,194 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was added in the release for comfyui-audio-processing?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the release for comfyui-audio-processing, the following nodes were added: Load Audio From Path, Plot Waveform, Spectrogram, Inverse Spectrogram, Griffin Lim, Plot Spectrogram, Linear Filter Bank, Mel-scale Filter Bank, and Apply Filter Bank."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the \"Load Audio From Path\" node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The \"Load Audio From Path\" node allows the user to load audio from a local path instead of an uploaded audio file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the \"Plot Waveform\" node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The \"Plot Waveform\" node is used to plot the waveform of an `AUDIO` object."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the \"Spectrogram\" node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The \"Spectrogram\" node computes the spectrogram of a given `AUDIO` object."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the \"Inverse Spectrogram\" node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The \"Inverse Spectrogram\" node converts a complex-valued spectrogram to `AUDIO` using the Griffin-Lim algorithm."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the \"Plot Spectrogram\" node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The \"Plot Spectrogram\" node is used to plot the spectrogram of a `SPECT` object."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do linear and mel-scale filter banks differ?"
+            },
+            {
+                "role": "assistant",
+                "content": "The \"Linear Filter Bank\" and \"Mel-scale Filter Bank\" nodes create different kinds of filter banks. The linear filter bank creates a uniform interval between filters, while the mel-scale filter bank creates an interval that aligns with human perception of sound."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the \"Apply Filter Bank\" node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The \"Apply Filter Bank\" node allows the user to apply the specified filter bank to the spectrogram."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the \"Plot Filter Bank\" node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The \"Plot Filter Bank\" node is used to plot the `FILTER_BANK` object."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the plugin cg-noise do?"
+            },
+            {
+                "role": "assistant",
+                "content": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does cg-noise generate variations in images?"
+            },
+            {
+                "role": "assistant",
+                "content": "cg-noise generates variations in images by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the main functionalities of the audio workshop plugin?"
+            },
+            {
+                "role": "assistant",
+                "content": "The main functionalities of the audio workshop plugin include audio waveforms, spectrograms, filter banks, and related audio processing functionalities."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the plugin process audio data?"
+            },
+            {
+                "role": "assistant",
+                "content": "The plugin offers various processing functionalities, including generating waveforms, detailed spectrograms, and applying filter banks to transform the audio data."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the differences between complex-valued spectrograms and real-valued spectrograms?"
+            },
+            {
+                "role": "assistant",
+                "content": "Complex-valued spectrograms contain both the magnitude and phase information of the sound waves, while real-valued spectrograms only contain the magnitude information."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the Griffin-Lim algorithm used for?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Griffin-Lim algorithm is used to convert a real-valued spectrogram to its corresponding audio signal."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can a spectrogram be visualized?"
+            },
+            {
+                "role": "assistant",
+                "content": "A spectrogram can be visualized through the plugin's Plot Spectrogram function, which outputs an image of the spectrogram."
+            }
+        ]
+    }
+]

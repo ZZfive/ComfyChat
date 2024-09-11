@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does ComfyUI-Danbooru-To-WD do?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Danbooru-To-WD converts booru tags to a format suitable for Waifu Diffusion or Danbooru-based models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the conversion process work?"
+            },
+            {
+                "role": "assistant",
+                "content": "When you input tags into `booru_tags`, the node will convert them into a format compatible with Waifu Diffusion or Danbooru-based models. Alternatively, you can input a partial URL from a Booru site, and the node will recommend Animagine's preferred format. If a URL is specified, it will be prioritized."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The extension is a simple port from the WebUI, and it does not provide any major new features."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I input URLs to the `booru_url` field?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, you can input URLs to the `booru_url` field, and the extension will recommend Animagine's preferred format."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What happens if the specified URL is incorrect or the site returns JSON other than expected?"
+            },
+            {
+                "role": "assistant",
+                "content": "If the specified URL is incorrect or the site returns JSON other than expected, an error will occur."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What communication methods can ComfyUI-Danbooru-To-WD handle?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Danbooru-To-WD can handle both direct tag input (`booru_tags`) and URL input (`booru_url`). URLs from Booru sites will be converted to Animagine's preferred format."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the node handle URLs received from Booru sites?"
+            },
+            {
+                "role": "assistant",
+                "content": "When URLs are received from Booru sites, the node will recommend Animagine's preferred format, but only if the URL is specified. If a URL is specified, it will be prioritized over direct tag input."
+            }
+        ]
+    }
+]

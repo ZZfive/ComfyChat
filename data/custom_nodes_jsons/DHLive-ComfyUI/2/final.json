@@ -1,0 +1,266 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DHLive-ComfyUI 中的输入类型有什么约定？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 DHLive-ComfyUI 中，Numpy 类型输入一般是 cv2 的结果，使用 BGR 颜色空间，范围是 [0, 255]，形状是 (h, w, c)；而 Tensor 类型的输入使用 RGB 颜色空间，范围是 [0, 1]，形状是 (n, c, h, w)。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DHLive-ComfyUI 中的颜色转换和度量计算分别在哪个精度上进行？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 DHLive-ComfyUI 中，颜色转换在 float32 精度上进行，度量计算则在 float64 精度上进行。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DHLive-ComfyUI 中的 PSNR 和 SSIM 结果趋势是否一致？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，在 DHLive-ComfyUI 中，PSNR 和 SSIM 的结果趋势是一致的。通常情况下，PSNR 值高时，SSIM 值也会较高。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DHLive-ComfyUI 中的 SSIM 实现主要参考了哪个版本的实现？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 DHLive-ComfyUI 中，SSIM 的实现主要参考了 MATLAB 最原始的版本，该版本被用于 NTIRE17 比赛的 evaluation 代码。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DHLive-ComfyUI 中 PyTorch 实现与 MATLAB 实现的 PSNR 和 SSIM 结果对比如何？"
+            },
+            {
+                "role": "assistant",
+                "content": "根据表格数据，在 DHLive-ComfyUI 中，PyTorch 实现的 PSNR 和 SSIM 结果与 MATLAB 实现基本一致。在 GPU 运行上可能会有轻微差异。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DHLive-ComfyUI 支持在 PyTorch 版本中进行批量计算吗？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，DHLive-ComfyUI 支持在 PyTorch 版本中进行批量计算。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DHLive-ComfyUI 中以 '_pt' 结尾的度量代表什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 DHLive-ComfyUI 中，以 '_pt' 结尾的度量表示这是 PyTorch 的计算结果。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DHLive-ComfyUI 中的图像数据类型有什么约定？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 DHLive-ComfyUI 中，对图像数据类型的约定如下：Numpy 类型（通常是 cv2 的结果）使用 UINT8，表示 BGR，范围为 [0, 255]，形状为 (h, w, c)；而 float 类型，范围为 [0, 1]，形状为 (h, w, c)，通常作为中间结果。对于 Tensor 类型，float 类型表示 RGB，范围为 [0, 1]，形状为 (n, c, h, w)。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DHLive-ComfyUI 中如何区分 PyTorch 的结果？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 DHLive-ComfyUI 中，以 `_pt` 结尾的结果是 PyTorch 的结果。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DHLive-ComfyUI 中 PyTorch 版本的 SSIM 支持何种计算？"
+            },
+            {
+                "role": "assistant",
+                "content": "DHLive-ComfyUI 中的 PyTorch 版本支持批量（batch）计算。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DHLive-ComfyUI 中的颜色转换和度量计算分别在什么数据类型上进行？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 DHLive-ComfyUI 中，颜色转换在 float32 上进行，而度量（metric）计算在 float64 上进行。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DHLive-ComfyUI 中 PSNR 和 SSIM 的结果趋势是否一致？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，在 DHLive-ComfyUI 中，PSNR 和 SSIM 的结果趋势是一致的，通常 PSNR 高时，SSIM 也高。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DHLive-ComfyUI 中的 SSIM 实现参考了哪个版本？"
+            },
+            {
+                "role": "assistant",
+                "content": "DHLive-ComfyUI 中的 SSIM 实现参考了 MATLAB 最原始的版本，保持了一致性，具体可参考 NTIRE17 比赛的 evaluation 代码。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "DHLive-ComfyUI 中 PyTorch 实现的 PSNR 和 SSIM 与 MATLAB 实现相比如何？"
+            },
+            {
+                "role": "assistant",
+                "content": "DHLive-ComfyUI 中的 PyTorch 实现与 MATLAB 实现基本一致，但在 GPU 运行上可能会有稍许差异。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What library is used to train the diffusion model?"
+            },
+            {
+                "role": "assistant",
+                "content": "The diffusion model is trained using the 🤗 Diffusers library."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What dataset is the diffusion model trained on?"
+            },
+            {
+                "role": "assistant",
+                "content": "The diffusion model is trained on the `{{ dataset_name }}` dataset."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the learning rate used during training?"
+            },
+            {
+                "role": "assistant",
+                "content": "The learning rate used during training is {{ learning_rate }}."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the train batch size used during training?"
+            },
+            {
+                "role": "assistant",
+                "content": "The train batch size used during training is {{ train_batch_size }}."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the eval batch size used during training?"
+            },
+            {
+                "role": "assistant",
+                "content": "The eval batch size used during training is {{ eval_batch_size }}."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the optimizer used during training?"
+            },
+            {
+                "role": "assistant",
+                "content": "The optimizer used during training is AdamW with betas=({{ adam_beta1 }}, {{ adam_beta2 }}), weight_decay={{ adam_weight_decay }} and epsilon={{ adam_epsilon }}."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the lr_scheduler used during training?"
+            },
+            {
+                "role": "assistant",
+                "content": "The lr_scheduler used during training is {{ lr_scheduler }}."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the value of ema_inv_gamma during training?"
+            },
+            {
+                "role": "assistant",
+                "content": "The value of ema_inv_gamma during training is {{ ema_inv_gamma }}."
+            }
+        ]
+    }
+]

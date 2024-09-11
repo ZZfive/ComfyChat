@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does V-Express specifically address in portrait video generation?"
+            },
+            {
+                "role": "assistant",
+                "content": "V-Express addresses the challenge of balancing different control signals in portrait video generation, particularly focusing on audio signals which often struggle to be effective due to interference from stronger signals like pose and the input image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does V-Express improve the performance of weak conditions in portrait video generation?"
+            },
+            {
+                "role": "assistant",
+                "content": "V-Express improves the performance of weak conditions by proposing a simple method that progressively balances different control signals through a series of progressive drop operations. This enables effective control by weak conditions, enabling generation capabilities that account for pose, the input image, and the audio simultaneously."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Describe the workflow of V-Express in portrait video generation."
+            },
+            {
+                "role": "assistant",
+                "content": "The V-Express workflow involves the following steps: 1. Inputting the audio file and image to the V-Express model. 2. The model then performs audio conditioning, creating dropout masks based on audio features. 3. These masks are applied to the input image using the denoising UNet network. 4. Pose flags are generated using the v-KPS Guider. 5. Predicted Pose features are estimated using the reference network. 6. The generated mask, predicted Pose features, and audio condition are then used to modulate the image flow state achieved by the California State University, Long Beach. 7. The refined state that includes the image flow state and the modulated image is used to generate the video."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What tools and resources are needed for the installation and setup of V-Express with ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install and set up V-Express with ComfyUI, you need to: 1. Clone the repository into the Your ComfyUI root directory under the 'custom_nodes' folder. 2. Install the dependent Python packages from the repository's GitHub page. 3. Download the V-Express models and other needed models from the Hugging Face Model Hub. 4. Place the downloaded models in the 'model_ckpts' folder. 5. Put the necessary input files in the 'input' directory of Your ComfyUI root directory. 6. Set the 'output_path' parameter to the desired output video path."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the V-Express model structure include for portrait video generation?"
+            },
+            {
+                "role": "assistant",
+                "content": "The V-Express model structure for portrait video generation includes: 1. Audio conditioning using the audio_to_TKH_FI model. 2. Dropout operation. 3. Denoising UNet network for image input. 4. V-KPS Guider for pose flags prediction. 5. Reference network for Pose University. 6. California State University Long Beach for image flow state support. 7. Refine module for image flow state and modulated image refinement. 8. Calendar state design to implement dynamic flow and promote generation reliability."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the input instructions for V-Express with ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use V-Express with ComfyUI, you need to set the following input parameters: 1. audio_file_path: the path to the input audio file. 2. input_directory: the folder where you put the input files for portrait video generation. 3. input_format: wherein the input image or video file is in, e.g., 'default', 'dading', 'mokh,VSGG', 'mokh,VHGG', 'pb'', 'pskr'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the output instructions for V-Express with ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "For V-Express with ComfyUI, you need to set the output parameters as follows: 1. output_format: the format of the output video, e.g., 'default', 'dading', 'mokh,VSGG', 'mokh,VHGG', 'pb'', 'pskr'. 2. output_path: the folder where you want to save the output video file."
+            }
+        ]
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "comfyui_tag_filter の目的は何ですか？"
+            },
+            {
+                "role": "assistant",
+                "content": "comfyui_tag_filter は、WD14Tagger などが出力したタグを特定のカテゴリに分けて、カテゴリごとにフィルタリングして返すための ComfyUI のカスタムノードです。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "TagFilter ノードは何をしますか？"
+            },
+            {
+                "role": "assistant",
+                "content": "TagFilter ノードは、特定のカテゴリに属するタグだけを抽出します。例えば、expression カテゴリには smile や grin などのタグが含まれます。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "include_categories について説明してください。"
+            },
+            {
+                "role": "assistant",
+                "content": "include_categories は、含めたいカテゴリ名をカンマ区切りで指定するものです。例えば、expression を入力すると、expression カテゴリのタグだけが抽出されます。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "exclude_categories は何に使用されますか？"
+            },
+            {
+                "role": "assistant",
+                "content": "exclude_categories は、含むことを望まないカテゴリを指定するために使用されます。例えば、服のタグだけを取得したいが、色の指定は不要な場合、include_categories に cloth を入れ、exclude_categories に color を入力します。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "tag_category.json ファイルは何のために使用されますか？"
+            },
+            {
+                "role": "assistant",
+                "content": "tag_category.json ファイルは、AI によって自動仕分けされたタグのカテゴリ分けファイルで、どのタグがどのカテゴリに分類されているかを確認するために使用されます。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "TagRemover ノードの目的は何ですか？"
+            },
+            {
+                "role": "assistant",
+                "content": "TagRemover ノードは、プロンプトの中から指定されたタグを削除するために使用されます。TagFilter と組み合わせて使うことで、表情のタグだけを消す、色（color）タグだけを消す、といったことが可能です。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "TagReplace ノードはどのように機能しますか？"
+            },
+            {
+                "role": "assistant",
+                "content": "TagReplace ノードは、同じカテゴリのタグを置き換えます。例えば、long hair というタグを含むプロンプトを入力し、置き換えるタグに twintails を指定すると、long hair を twintails に置き換えることができます。"
+            }
+        ]
+    }
+]

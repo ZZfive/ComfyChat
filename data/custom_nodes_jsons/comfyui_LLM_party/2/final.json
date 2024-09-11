@@ -1,0 +1,758 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the main purpose of the ComfyUI LLM Party project?"
+            },
+            {
+                "role": "assistant",
+                "content": "The main purpose of the ComfyUI LLM Party project is to develop a complete set of nodes for LLM workflow construction based on ComfyUI as the front end, allowing users to quickly and conveniently build their own LLM workflows and easily integrate them into existing image workflows."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some key features of the ComfyUI LLM Party project?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some key features of the project include API integration or local large model integration, modular implementation for tool invocation, local knowledge base integration with RAG support, ability to invoke code interpreters, online queries including Google search support, and implementation of conditional statements within ComfyUI to categorize user queries and provide targeted responses."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What models are supported by the ComfyUI LLM Party project?"
+            },
+            {
+                "role": "assistant",
+                "content": "The project supports all API calls in OpenAI format, most of the local models supported by the transformer library AutoModelForCausalLM class, and model downloads from Baidu cloud."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users configure APIKEY in the ComfyUI LLM Party project?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can configure APIKEY using two methods: by entering the openai_api_key and base_url in the config.ini file in the project folder, or by entering them directly in the Large Language Model (LLM) node in the ComfyUI interface."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the future plans for the ComfyUI LLM Party project?"
+            },
+            {
+                "role": "assistant",
+                "content": "Future plans include more model adaptations, more ways to build agents, more automation features, more knowledge base management functions, and more tools and persona."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users support the ComfyUI LLM Party project?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can support the project by joining the community through discord, QQ group, or WeChat group, following updates on Bilibili or OpenArt accounts, and making donations via provided payment methods."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the text iterator node in the ComfyUI LLM Party project?"
+            },
+            {
+                "role": "assistant",
+                "content": "The text iterator node allows outputting only part of the characters at a time, safely splitting text according to Carriage Return and chunk size without dividing from the middle of the text. It enables entering super long text in batches."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI LLM Party是基于哪一个前端界面开发的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI LLM Party是基于ComfyUI这个极为简约的UI界面作为前端开发的。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI LLM Party的目的是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI LLM Party的目的是开发一套完整的用于LLM工作流搭建的节点库，让用户更便捷快速地搭建自己的LLM工作流，并且更方便地接入自己的图像工作流中。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "comfyui_LLM_party项目目前支持哪些类型的模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "comfyui_LLM_party项目目前支持所有openai格式的API调用，同时也兼容transformer库AutoModelForCausalLM类支持的大部分本地模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何安装和使用comfyui_LLM_party？"
+            },
+            {
+                "role": "assistant",
+                "content": "可以通过ComfyUI-Manager搜索安装，或者手动克隆GitHub仓库到custom_nodes目录下。安装好后，需要配置环境和API密钥，然后就可以在ComfyUI界面里通过右键菜单找到并使用LLM Party的节点了。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "comfyui_LLM_party项目目前实现了哪些主要功能？"
+            },
+            {
+                "role": "assistant",
+                "content": "comfyui_LLM_party支持API和本地大模型接入，模块化实现工具调用功能，支持大模型的回环链接，支持多种工具调用，支持将LLM当作一个工具节点使用等功能。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何为comfyui_LLM_party项目做出贡献？"
+            },
+            {
+                "role": "assistant",
+                "content": "可以通过加入QQ群、微信群或者Discord server参与讨论，也可以通过Star、Watch项目仓库以示支持。另外，如果觉得项目对你有帮助，也可以通过捐赠支持项目开发者。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "说说您对comfyui_LLM_party未来的期待？"
+            },
+            {
+                "role": "assistant",
+                "content": "comfyui_LLM_party计划进一步扩展模型适配范围，增加更多智能体搭建方式，实现更多自动化功能，如自动回复主流社交软件，未来还会推出更多的工具和人格面具。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the security file in comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "The security file is currently not enabled, but in the future, it will be used to report the security of different versions of the project."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which versions of comfyui_LLM_party are currently supported with security updates?"
+            },
+            {
+                "role": "assistant",
+                "content": "Versions 5.1.x and 4.0.x are currently supported with security updates, while versions 5.0.x and below 4.0 are not supported."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can people report a vulnerability in comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "The document does not specify the exact process for reporting vulnerabilities, but there will be a section dedicated to guiding users on how to report a vulnerability in the future."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What information will be provided regarding the reported vulnerabilities in comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "The document states that users will be informed about where to report vulnerabilities, how often they can expect updates on reported vulnerabilities, and what to expect if a vulnerability is accepted or declined."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is the security file currently enabled for comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, the security file is not currently enabled. The content provided is just an example, and the security file will be enabled in the future."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Supported Versions' section in the security file?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Supported Versions' section informs users about which versions of comfyui_LLM_party are currently being supported with security updates."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the ':white_check_mark:' symbol indicate in the 'Supported Versions' section?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ':white_check_mark:' symbol indicates that the specific version of comfyui_LLM_party is currently supported with security updates."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be included in the 'Describe the bug' section of a bug report for comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Describe the bug' section should contain a clear and concise description of what the bug is."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What information should be provided in the 'To Reproduce' section of a bug report for comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'To Reproduce' section should outline the steps to reproduce the bug behavior, such as where to navigate and what actions to take."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be included in the 'Expected behavior' section of a bug report for comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Expected behavior' section should provide a clear and concise description of what was expected to happen instead of the bug."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Are screenshots necessary in a bug report for comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "Screenshots are not always necessary, but they can be added to help explain the problem if applicable."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What desktop information should be provided in a bug report for comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "The bug report should include the desktop OS, browser, and version used when the bug was encountered."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What smartphone information should be provided in a bug report for comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "The bug report should include the smartphone device model, OS, browser, and version used when the bug was encountered."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What can be included in the 'Additional context' section of a bug report for comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "Any other context or information about the problem that may be helpful can be added in the 'Additional context' section of the bug report."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the custom issue template in comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of the custom issue template in comfyui_LLM_party is not explicitly stated in the provided text. The 'about' field is left blank, indicating that the specific purpose of this issue template has not been described."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the title of the custom issue template in comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "The title of the custom issue template in comfyui_LLM_party is not specified. The 'title' field is left blank, indicating that no title has been assigned to this issue template yet."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which labels are assigned to the custom issue template in comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "No labels are currently assigned to the custom issue template in comfyui_LLM_party. The 'labels' field is left blank, indicating that no labels have been specified for this issue template."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Who are the assignees for the custom issue template in comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "There are no assignees currently specified for the custom issue template in comfyui_LLM_party. The 'assignees' field is left blank, indicating that no one has been assigned to this issue template yet."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is the custom issue template in comfyui_LLM_party fully configured?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, the custom issue template in comfyui_LLM_party is not fully configured. The 'about', 'title', 'labels', and 'assignees' fields are all left blank, indicating that the necessary details for the issue template have not been filled in yet."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What information is missing from the custom issue template in comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "The custom issue template in comfyui_LLM_party is missing the following information: the purpose of the template ('about' field), the title of the template ('title' field), the labels associated with the template ('labels' field), and the assignees for the template ('assignees' field)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does the provided text contain all the necessary information about the custom issue template in comfyui_LLM_party?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, the provided text does not contain all the necessary information about the custom issue template in comfyui_LLM_party. The 'about', 'title', 'labels', and 'assignees' fields are all empty, indicating that crucial details about the issue template are missing."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the feature request template in the comfyui_LLM_party project?"
+            },
+            {
+                "role": "assistant",
+                "content": "The feature request template in the comfyui_LLM_party project is used to suggest an idea for the project in a clear and concise manner."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be included in the description of the problem in the feature request template?"
+            },
+            {
+                "role": "assistant",
+                "content": "The description of the problem in the feature request template should provide a clear and concise explanation of what the problem is, for example, 'I'm always frustrated when [...]'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be described in the 'Describe the solution you'd like' section of the feature request template?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the 'Describe the solution you'd like' section of the feature request template, you should provide a clear and concise description of what you want to happen."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be mentioned in the 'Describe alternatives you've considered' section of the feature request template?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the 'Describe alternatives you've considered' section of the feature request template, you should provide a clear and concise description of any alternative solutions or features you've considered."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What can be added in the 'Additional context' section of the feature request template?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the 'Additional context' section of the feature request template, you can add any other context or screenshots about the feature request."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is it necessary to assign labels when submitting a feature request using this template?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, assigning labels is not necessary when submitting a feature request using this template, as the 'labels' field is left blank."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is it required to assign the feature request to specific assignees when using this template?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, it is not required to assign the feature request to specific assignees when using this template, as the 'assignees' field is left blank."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Model Loaders and Model Chains in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "In ComfyUI, the Model Loaders and Model Chains nodes allow for customization of large model nodes, including specifying the model name, temperature, API_KEY, and base_url. They currently support openai type API interface calls."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can a user view the conversation history in a ComfyUI large model node?"
+            },
+            {
+                "role": "assistant",
+                "content": "In ComfyUI, a user can view the model's reply in the current round of conversation through 'assistant_response', or view the history of multiple rounds of conversation through 'history'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the 'is_memory' feature in a ComfyUI large model node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'is_memory' feature in a ComfyUI large model node determines whether the large model has memory. If it is set to 'disable' and then run, the model will clear the previous conversation records. If it is switched back to 'enable', the model will retain the conversation records in subsequent runs."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Load_File' node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Load_File' node in ComfyUI is used to read a file from a specified path. The user can place the desired file in the 'comfyui_LLM_party/file' path and then fill in the file name in this node. The output is a string that contains all the text information in the file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What kind of files can be read by the 'Load_File' node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Load_File' node in ComfyUI can read the following file formats: '.docx', '.txt', '.pdf', '.xlsx', '.csv', '.py', '.js', '.java', '.c', '.cpp', '.html', '.css', '.sql', '.r', '.swift'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Load_Folder' node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Load_Folder' node in ComfyUI accepts an absolute path of a folder and automatically reads all the files in that folder. The output is a string that contains all the text information in the folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Load_url_content' node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Load_url_content' node in ComfyUI can convert all web page content in a given URL into an md format output. The output is a string that contains all the text information on the web page."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI中的大模型节点支持哪些类型的API接口调用？"
+            },
+            {
+                "role": "assistant",
+                "content": "目前暂时只支持openai类型的API接口调用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何让大模型节点拥有记忆功能？"
+            },
+            {
+                "role": "assistant",
+                "content": "将大模型节点的is_memory改为disable，再运行，这时模型会清除之前的对话记录，再切换回enable，之后的运行中模型就会保留与你的对话记录。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何查看大模型节点的历史对话记录？"
+            },
+            {
+                "role": "assistant",
+                "content": "可以通过history来查看多轮对话的历史记录。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI中的本地LLM节点支持哪些模型？"
+            },
+            {
+                "role": "assistant",
+                "content": "目前支持GLM/Llama/Qwen，不过只有GLM的工具调用是完美适配的，其他两个需要大参数版本才能正常工具调用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "LVM模型加载器中的max_ctx参数是什么意思？"
+            },
+            {
+                "role": "assistant",
+                "content": "max_ctx是LVM模型的最大上下文长度，如果超过这个长度，模型会自动截断。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI中的加载文件节点支持哪些文件格式？"
+            },
+            {
+                "role": "assistant",
+                "content": "适配的文件格式为：'.docx'、'.txt'、'.pdf'、'.xlsx'、'.csv'、'.py', '.js', '.java', '.c', '.cpp', '.html', '.css', '.sql', '.r', '.swift'。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何使用ComfyUI中的谷歌搜索加载器节点？"
+            },
+            {
+                "role": "assistant",
+                "content": "可以输入你的google_api_key和cse_id来使用该节点，根据keyword搜索相关内容。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "当使用 GLM 模型时，出现错误代码 400 和提示 'API 调用参数有误'，可能的原因是什么？"
+            },
+            {
+                "role": "assistant",
+                "content": "当使用 GLM 模型时，如果出现此错误，很可能是温度参数设置不正确所致，需调整 LLM 的 temperature 参数。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在使用 comfyui_LLM_party 时，如何解决 GLM 模型的温度 BUG？"
+            },
+            {
+                "role": "assistant",
+                "content": "出现 GLM 模型温度 BUG 时，可以通过调整 LLM 的 temperature 参数来解决问题。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用 GLM 模型时，错误代码 400 代表什么意思？"
+            },
+            {
+                "role": "assistant",
+                "content": "错误代码 400 表示 API 调用参数有误，需要检查文档以确保参数设置正确。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "当 GLM 模型提示 'API 调用参数有误' 时，需要检查哪些内容？"
+            },
+            {
+                "role": "assistant",
+                "content": "当提示 'API 调用参数有误' 时，需要检查 LLM 的 temperature 参数设置是否正确，如有需要进行调整。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "调整 LLM 的哪个参数可以解决 GLM 模型的温度 BUG？"
+            },
+            {
+                "role": "assistant",
+                "content": "可以通过调整 LLM 的 temperature 参数来解决 GLM 模型的温度 BUG。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在使用 comfyui_LLM_party 中的 GLM 模型时，temperature 参数有什么作用？"
+            },
+            {
+                "role": "assistant",
+                "content": "在 GLM 模型中，temperature 参数用于控制生成文本的随机性和多样性。调整该参数可以解决温度相关的 BUG。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "当 GLM 模型出现错误代码 400 时，错误提示信息中通常会包含哪些内容?"
+            },
+            {
+                "role": "assistant",
+                "content": "错误提示信息中通常会包含类似 {'error': {'code': '1210', 'message': 'API 调用参数有误，请检查文档。'}} 的内容，指示具体的错误原因和建议采取的措施。"
+            }
+        ]
+    }
+]

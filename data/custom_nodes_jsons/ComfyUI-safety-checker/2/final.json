@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI-safety-checker node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-safety-checker node is designed to identify and handle Not Safe For Work (NSFW) content in images generated or processed using ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What type of model does the safety checker node utilize?"
+            },
+            {
+                "role": "assistant",
+                "content": "The safety checker node utilizes a pretrained CLIP-based model from CompVis, specifically designed for safety checks in images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the safety checker node handle detected NSFW images?"
+            },
+            {
+                "role": "assistant",
+                "content": "When the safety checker node detects NSFW content in an image, it replaces the image with a solid black placeholder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can the sensitivity level of the NSFW detection be adjusted?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, the sensitivity level of the NSFW detection in the ComfyUI-safety-checker node can be adjusted. The standard value is set at 0.5."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does a sensitivity level of 0.5 indicate in the safety checker node?"
+            },
+            {
+                "role": "assistant",
+                "content": "A sensitivity level of 0.5 in the ComfyUI-safety-checker node represents the detection threshold for explicit nudity."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is detected at a sensitivity level of 1.0 in the safety checker node?"
+            },
+            {
+                "role": "assistant",
+                "content": "At a sensitivity level of 1.0, the ComfyUI-safety-checker node is capable of detecting images containing lingerie or underwear."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the safety checker node be incorporated into a ComfyUI setup?"
+            },
+            {
+                "role": "assistant",
+                "content": "The safety checker node can be incorporated into a ComfyUI setup by connecting an image directly or via VAE Decode. The node processes the input images to identify any NSFW content."
+            }
+        ]
+    }
+]

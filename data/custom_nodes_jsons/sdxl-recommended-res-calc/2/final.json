@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is sdxl-recommended-res-calc?"
+            },
+            {
+                "role": "assistant",
+                "content": "sdxl-recommended-res-calc is a simple script and Custom Node in ComfyUI that calculates and automatically sets the recommended initial latent size for SDXL image generation and its Upscale Factor based on the desired Final Resolution output."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can sdxl-recommended-res-calc be installed in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "sdxl-recommended-res-calc can be installed in ComfyUI using ComfyUI Manager by searching for 'Recommended Resolution Calculator' and installing it. Alternatively, it can be installed manually by cloning the GitHub repository into the /ComfyUI/custom_nodes/ folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What inputs are required for using sdxl-recommended-res-calc in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use sdxl-recommended-res-calc in ComfyUI, you need to provide the desired target final resolution as inputs for DesiredXSIZE and DesiredYSIZE. The node will then calculate the recommended SDXL initial image size and the required upscale factor."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can sdxl-recommended-res-calc be used as a standalone script outside of ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, sdxl-recommended-res-calc can be used as a standalone script by downloading the repository, ensuring the .Py and .Bat files are in the same folder, and running the .Bat file (or .Sh file for Linux). The user inputs the desired final resolution, and the script provides the recommended SDXL initial image size and upscale factor."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is it important to use the recommended initial resolutions for SDXL image generation?"
+            },
+            {
+                "role": "assistant",
+                "content": "According to the SDXL paper references (Page 17), it is advised to avoid arbitrary resolutions and stick to the specific initial resolutions that SDXL was trained on. Using the recommended initial resolutions ensures better image quality and consistency."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What information does sdxl-recommended-res-calc provide as output?"
+            },
+            {
+                "role": "assistant",
+                "content": "sdxl-recommended-res-calc provides two key pieces of information as output: 1. The recommended initial input resolution according to SDXL suggestions, and 2. The amount of upscaling needed to reach the desired final resolution, including values for normal upscalers and upscalers that have been 4x scaled by an upscaling model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can one find usage examples and workflows for sdxl-recommended-res-calc in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Usage examples and workflows for sdxl-recommended-res-calc in ComfyUI can be found in the JSON and PNG files provided in the '_use-case-sdxl-example-comfyui-nodes' folder of the GitHub repository."
+            }
+        ]
+    }
+]

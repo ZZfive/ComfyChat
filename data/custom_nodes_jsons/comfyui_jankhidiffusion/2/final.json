@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI jank HiDiffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI jank HiDiffusion is an experimental implementation of HiDiffusion for ComfyUI, a GUI that uses stable diffusion models to generate images and videos."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the RAU-Net part in HiDiffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "The RAU-Net part is essentially Kohya Deep Shrink (AKA PatchModelAddDownscale). It scales down the image at the start of generation to let the model set up major details and then allows the model to refine and add detail once the scaling effect ends."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the main difference between RAU-Net and Deep Shrink?"
+            },
+            {
+                "role": "assistant",
+                "content": "The main difference is the downscale methods. RAU-Net uses convolution with stride/dilation and pool averaging to downscale while Deep Shrink usually uses bicubic downscaling."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does MSW-MSA attention enable high res generation by itself?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, MSW-MSA attention does not enable high res generation by itself."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the potential issues with using RAUNet component with ControlNet?"
+            },
+            {
+                "role": "assistant",
+                "content": "The RAUNet component may not work properly with ControlNet while the scaling effect is active."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ApplyMSWMSAAttentionSimple node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ApplyMSWMSAAttentionSimple node is a simplified version of the MSW-MSA attention node. It is used for performance improvement for SD 1.5 and may also improve generation quality at high res for both SD 1.5 and SDXL."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ApplyRAUNetSimple node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ApplyRAUNetSimple node is a simplified version of the ApplyRAUNet node. It helps avoid artifacts when generating at resolutions significantly higher than what the model normally supports."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was fixed in the 20240827 update of comfyui_jankhidiffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the 20240827 update of comfyui_jankhidiffusion, an issue with RAUNet model patching that could cause semi-non-deterministic output was fixed. However, the fix may also change seeds."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What changed in the 20240813 update of comfyui_jankhidiffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the 20240813 update of comfyui_jankhidiffusion, the RAUNet patch backend was refactored to work as a normal model patch. Additionally, users can now set the CA downscale factor and mode in the advanced node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was the previous default CA downscale mode in RAUNet before the 20240813 update?"
+            },
+            {
+                "role": "assistant",
+                "content": "Before the 20240813 update, the default CA downscale mode in RAUNet was always `avg_pool2d`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What changed in the 20240802 update of comfyui_jankhidiffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the 20240802 update of comfyui_jankhidiffusion, an issue where the two stage upscale setting didn't work properly in RAUNet was fixed. Additionally, the two stage upscale is no longer a toggle and allows choosing the scale method."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How might the 20240802 update of comfyui_jankhidiffusion affect previous behavior?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 20240802 update of comfyui_jankhidiffusion may change seeds. For previous behavior, users need to set the two stage upscale mode to `nearest-exact` in the advanced RAUNet node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What happens to existing workflows when advanced RAUNet node parameters change?"
+            },
+            {
+                "role": "assistant",
+                "content": "When advanced RAUNet node parameters change, it will break existing workflows."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What types of changes are included in the comfyui_jankhidiffusion change log?"
+            },
+            {
+                "role": "assistant",
+                "content": "The comfyui_jankhidiffusion change log includes only relatively significant changes to user-visible functionality."
+            }
+        ]
+    }
+]

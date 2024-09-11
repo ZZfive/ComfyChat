@@ -1,0 +1,182 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI_Stable_Makeup?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_Stable_Makeup is a node in ComfyUI that allows users to apply makeup to characters."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "From which repository is ComfyUI_Stable_Makeup derived?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_Stable_Makeup is derived from the Stable_Makeup repository by Xiaojiu-z."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users try different datasets with ComfyUI_Stable_Makeup?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can try different datasets by downloading additional SPIGA models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should users do if they encounter missing libraries while using ComfyUI_Stable_Makeup?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users should open the 'no need requirements.txt' file and install any missing libraries using pip."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where should the required models for ComfyUI_Stable_Makeup be stored?"
+            },
+            {
+                "role": "assistant",
+                "content": "The required models should be stored in the ComfyUI/models/stable_makeup folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which CLIP model is used by ComfyUI_Stable_Makeup?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_Stable_Makeup uses the 'openai/clip-vit-large-patch14' CLIP model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the SPIGA model in ComfyUI_Stable_Makeup?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SPIGA model is used for shape-preserving facial landmarks with graph attention networks in ComfyUI_Stable_Makeup."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "From which repository is the FaceLib component of ComfyUI_Stable_Makeup derived?"
+            },
+            {
+                "role": "assistant",
+                "content": "The FaceLib component of ComfyUI_Stable_Makeup is derived from the FaceLib repository by sajjjadayobi."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can the benchmark evaluator for ComfyUI_Stable_Makeup be found?"
+            },
+            {
+                "role": "assistant",
+                "content": "The benchmark evaluator for ComfyUI_Stable_Makeup can be found at ./eval/benchmark/evaluator.py."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the benchmark evaluator in ComfyUI_Stable_Makeup?"
+            },
+            {
+                "role": "assistant",
+                "content": "The benchmark evaluator in ComfyUI_Stable_Makeup allows extracting an extended report of metrics for each dataset."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How should the prediction file be structured for benchmark evaluation in ComfyUI_Stable_Makeup?"
+            },
+            {
+                "role": "assistant",
+                "content": "The prediction file for benchmark evaluation in ComfyUI_Stable_Makeup must follow the same data structure and file extension as the ground truth annotations available in ./data/annotations/<database_name>."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does each dictionary in the data structure represent in ComfyUI_Stable_Makeup?"
+            },
+            {
+                "role": "assistant",
+                "content": "In ComfyUI_Stable_Makeup, each dictionary in the data structure represents an image sample."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What information is included in each image sample dictionary in ComfyUI_Stable_Makeup?"
+            },
+            {
+                "role": "assistant",
+                "content": "Each image sample dictionary in ComfyUI_Stable_Makeup includes the relative image path, bounding box, headpose, landmark database ids, landmarks, and visibilities."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the benchmark in ComfyUI_Stable_Makeup be extended for other tasks?"
+            },
+            {
+                "role": "assistant",
+                "content": "The benchmark in ComfyUI_Stable_Makeup can be extended for other tasks by inheriting the class structure available in ./eval/benchmark/metrics/metrics.py and developing a new task file similar to the available ones for landmarks and headpose."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the available task files for extending the benchmark in ComfyUI_Stable_Makeup?"
+            },
+            {
+                "role": "assistant",
+                "content": "The available task files for extending the benchmark in ComfyUI_Stable_Makeup are landmarks and headpose."
+            }
+        ]
+    }
+]

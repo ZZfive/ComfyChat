@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-TeaNodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-TeaNodes is a collection of custom nodes that extend the functionality of ComfyUI, a graphical user interface that uses the Stable Diffusion model to generate images and videos."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Image Equalization CLAHE node do in ComfyUI-TeaNodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Image Equalization CLAHE node in ComfyUI-TeaNodes smoothly distributes the histogram of an image, making it easier for the ControlNet preprocessor to process the image, especially when the background of the image is removed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Image Size Approximation node in ComfyUI-TeaNodes work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Image Size Approximation node in ComfyUI-TeaNodes works by using a pixel count that retains the image ratio. This algorithm is not very sophisticated, but it is effective and helps stabilize the speed of image-to-image generation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Image Resize node in ComfyUI-TeaNodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Image Resize node in ComfyUI-TeaNodes resizes an image based on the size tuple received from the Size Approximation Node. It simplifies the resizing process by using a node socket instead of converting it into input from a widget."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Image Scale node in ComfyUI-TeaNodes do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Image Scale node in ComfyUI-TeaNodes multiplies the image size by a factor. As of the 20240425 update, it scales smoothly when multiplied by non-power-of-2 factors using the LANCZOS option, making it easier to save in-process scrap images at half or quarter resolution."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Crop To node in ComfyUI-TeaNodes help with image processing?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Crop To node in ComfyUI-TeaNodes crops an image to the same size as the reference image, eliminating issues with nodes that complain about bad tensor dimensions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the KorniaGamma node in ComfyUI-TeaNodes used for?"
+            },
+            {
+                "role": "assistant",
+                "content": "The KorniaGamma node in ComfyUI-TeaNodes is used for adjusting the brightness, contrast, and levels of an image. It is a powerful tool that utilizes image processing capabilities for better results."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Random & Non-Random Color Fill node in ComfyUI-TeaNodes do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Random & Non-Random Color Fill node in ComfyUI-TeaNodes fills an area based on the reference image size. The randomness is defined by the original color and a variance in hue, saturation, and value. The color input field works with most color string formats."
+            }
+        ]
+    }
+]

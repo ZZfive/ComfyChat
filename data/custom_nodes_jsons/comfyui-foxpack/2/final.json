@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-Foxpack?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Foxpack is a collection of nodes created to automate workflows. It was developed primarily for saving nodes within the workflows."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can one get started with ComfyUI-Foxpack?"
+            },
+            {
+                "role": "assistant",
+                "content": "To get started with ComfyUI-Foxpack, you need to install ComfyUI and then clone the ComfyUI-Foxpack repository into the `custom_modules` directory. After that, start up ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Smart Sampler Setup (SSS) in ComfyUI-Foxpack consist of?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Smart Sampler Setup (SSS) in ComfyUI-Foxpack consists of three nodes, including an optional override node. Two nodes are required to pass the name of the model into the selector, and there is also a node for multiline string literals where setups can be created."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is each setup noted in the Smart Sampler Setup?"
+            },
+            {
+                "role": "assistant",
+                "content": "Each setup in the Smart Sampler Setup (SSS) is noted as follows: `CFG/steps/scheduler/sampler`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the input requirements for the Setup Selector node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Setup Selector node requires the following inputs: checkpoint_name, checkpoint_setups, prefix, delmiter, and default_setup."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Base Sampler Setup node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Base Sampler Setup node sets the settings according to the setup specifications. CFG and Steps values cannot be increased or decreased. Scheduler and sampler can only be selected as specified in the setup, with the first value used if no match is found."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Override Sampler Setup node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Override Sampler Setup node is an optional node that allows you to overwrite the settings, which can be useful for testing different settings."
+            }
+        ]
+    }
+]

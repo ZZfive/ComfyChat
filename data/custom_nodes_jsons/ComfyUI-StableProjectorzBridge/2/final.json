@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the primary use of ComfyUI-StableProjectorzBridge?"
+            },
+            {
+                "role": "assistant",
+                "content": "The primary use of ComfyUI-StableProjectorzBridge is to enable Stable Projectorz to work directly with ComfyUI, facilitating the transfer of controlnet images/masks and inpaint images/masks between the two applications."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users install ComfyUI-StableProjectorzBridge?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can install ComfyUI-StableProjectorzBridge by using ComfyUI Manager, which is the easiest method, or by cloning it into the custom node folder within ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the general steps to use ComfyUI-StableProjectorzBridge?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use ComfyUI-StableProjectorzBridge, users need to:\n1. Create a workflow with Projector Controlnet Input as the input, and Projectorz Output as the output.\n2. Click on 'Gen Art' in Stable Projectorz.\n3. Following these steps should complete the basic use of the ComfyUI-StableProjectorzBridge."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which custom nodes enable Stable Projectorz to work directly with ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The custom nodes that enable Stable Projectorz to work directly with ComfyUI are ProjectorzParameter node and ProjectorzControlnetParameter node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What type of images/masks does the ProjectorzControlnetParameter node handle?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ProjectorzControlnetParameter node handles controlnet images/masks with the key format `key_prefix + '_controlnet' + extension`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What type of images/masks does the ProjectorzParameter node handle?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ProjectorzParameter node handles inpaint images/masks with the key format `key_prefix + '_inpaint' + extension`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do settings within Stable Projectorz become accessible?"
+            },
+            {
+                "role": "assistant",
+                "content": "Settings within Stable Projectorz become accessible by using the ProjectorzParameter node and ProjectorzControlnetParameter node, which serve as a bridge to allow ComfyUI to retrieve and manipulate these settings."
+            }
+        ]
+    }
+]

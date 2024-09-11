@@ -1,0 +1,542 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-sonar is a janky implementation of Sonar sampling (momentum-based sampling) for ComfyUI, along with an assortment of advanced noise tools."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What types of momentum based sampling does ComfyUI-sonar support?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-sonar currently supports Euler, Euler Ancestral, and DPM++ SDE sampling."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended way to use ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The most flexible way to use ComfyUI-sonar is with a custom sampler, and the ancestral version is personally recommended."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the SamplerSonarEuler node in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SamplerSonarEuler node is a custom sampler node in ComfyUI-sonar that combines Euler sampling and momentum and optionally guidance."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between the SamplerSonarEuler and SamplerSonarEulerAncestral nodes in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SamplerSonarEulerAncestral node is the ancestral version of the SamplerSonarEuler node, with the same features but using ancestral Euler."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the SonarGuidanceConfig node in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SonarGuidanceConfig node can be optionally plugged into the Sonar sampler nodes to provide guidance configuration."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended range for the guidance_factor when using the 'linear' guidance type in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "For the 'linear' guidance type in ComfyUI-sonar, reasonable values for the guidance_factor are more like 0.001 to 0.02."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Normalization node in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Normalization node in ComfyUI-sonar rebalances the noise to 1.0 strength and then scales it based on the factor of the node. It has three normalization settings: default, forced, and disabled."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the SONAR_CUSTOM_NOISE node work in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SONAR_CUSTOM_NOISE node in ComfyUI-sonar constitutes a chain of noise items. Most nodes add an item to the chain when using SONAR_CUSTOM_NOISE as input, with some exceptions treating it as a list or consuming the list."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the SonarCustomNoise node in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SonarCustomNoise node in ComfyUI-sonar allows chaining different types of noise together. The order of the nodes is not important, and it has parameters like factor, rescale, and noise_type to control the noise strength and type."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the NoisyLatentLike node work in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The NoisyLatentLike node in ComfyUI-sonar takes a reference latent and generates noise of the same shape. It has two main modes: generating and scaling the noise, or adding it to the input latent. It also has parameters like multiplier and inputs like custom_noise_opt, mul_by_sigmas_opt, and model_opt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the SamplerConfigOverride node in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SamplerConfigOverride node in ComfyUI-sonar can override configuration settings for other samplers, including the noise type. It can also override other settings like s_noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the SonarRepeatedNoise node work in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SonarRepeatedNoise node in ComfyUI-sonar is an experimental node that caches noise sampler results to speed up the generation process. It has a permute option to add random effects and a max_recycle setting to limit the number of times noise is reused."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the SonarScheduledNoise node in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SonarScheduledNoise node in ComfyUI-sonar allows switching between noise types based on the percentage of sampling. It is recommended to connect a fallback noise type, such as Gaussian noise, to avoid generating no noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the SonarGuidedNoise node work in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SonarGuidedNoise node in ComfyUI-sonar applies guidance to the raw noise, similar to the guidance described in the main README. It can be used with the SonarScheduledNoise node to apply guidance at certain times and has two modes: euler and linear."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the SonarRandomNoise node in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SonarRandomNoise node in ComfyUI-sonar randomly chooses between the noise types in the connected chain each time the noise sampler is called. It is generally not recommended to use rescale with this node, and the mix_count setting allows choosing and combining multiple types."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the main purpose of the SonarPowerNoise node in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SonarPowerNoise node in ComfyUI-sonar generates fractional Brownian motion (fBm) noise, which is versatile in producing various types of noise including gaussian, pink, 2D brownian noise, and all intermediates."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the 'alpha' parameter in the SonarPowerNoise node affect the generated noise?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the SonarPowerNoise node, 'alpha' is the main parameter. When 'alpha > 0', it amplifies low frequencies; 'alpha = 1' yields pink noise, and 'alpha = 2' produces brownian noise. For 'alpha < 0', it amplifies high frequencies."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does enabling the 'preview' option in the SonarPowerNoise node provide?"
+            },
+            {
+                "role": "assistant",
+                "content": "Enabling the 'preview' option in the SonarPowerNoise node provides a visual representation of the filter, including Fourier domain visualization, spatial visualization of the 2D kernel, and a sample of gaussian sample with shaped frequency spectrum."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the SonarPowerFilterNoise node differ from the SonarPowerNoise node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SonarPowerFilterNoise node allows you to connect a filter and a custom noise chain, enabling you to run any type of noise through the power noise filter."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'filter_norm_factor' parameter control in the SonarPowerFilterNoise node?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the SonarPowerFilterNoise node, the 'filter_norm_factor' parameter controls how much normalization is applied to the filter. '1.0' means fully normalized, '0.0' means no normalization."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the 'compose_mode' parameter in the SonarPowerFilter node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the SonarPowerFilter node, 'compose_mode' allows you to compose multiple filters. Composition occurs like 'current_filter OPERATION connected_filter'. For example, if you set 'compose_mode' to 'sub', you will get 'current_filter - connected_filter'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the SonarPreviewFilter node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SonarPreviewFilter node allows you to preview a filter. It does not modify the input filter."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the default noise type for SDE samplers in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The default noise type for SDE samplers in ComfyUI-sonar is Brownian."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the default noise type for non-SDE samplers in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The default noise type for non-SDE samplers in ComfyUI-sonar is Gaussian."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Green Test noise type in ComfyUI-sonar affect the generated images?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Green Test noise type in ComfyUI-sonar produces a very colorful effect on the generated images, but it's very strong and not really suitable for initial generation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What variations of the Highres Pyramid noise type are showcased in the ComfyUI-sonar examples?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-sonar examples showcase three variations of the Highres Pyramid noise type: default, area scaling, and bislerp scaling."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the Pyramid Mix noise type in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Pyramid Mix noise type in ComfyUI-sonar is a combination of positive and negative pyramid noise. The effect on the generation is mild compared to raw pyramid noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Pyramid Old noise type in ComfyUI-sonar differ from other pyramid noise types?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Pyramid Old noise type in ComfyUI-sonar may not actually be pyramid noise at all. Additionally, it is quite slow to generate as it effectively generates noise ~60x the latent size."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the Rainbow noise type in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Rainbow noise type in ComfyUI-sonar is a mix of Perlin and Green noise types. It has two variations: mild, which uses a relatively low proportion of green noise, and intense, which uses a higher proportion of green noise for a more extreme effect."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the noise types in ComfyUI-sonar be used to generate variations in images?"
+            },
+            {
+                "role": "assistant",
+                "content": "The noise types in ComfyUI-sonar can be used to generate variations in images by scheduling the noise type to kick in at a certain percentage and/or mixing it with other noise types."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'SONAR_CUSTOM_NOISE to NOISE' node in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'SONAR_CUSTOM_NOISE to NOISE' node in ComfyUI-sonar allows converting from Sonar's custom noise type to the built-in ComfyUI 'NOISE' type, which is used by 'SamplerCustomAdvanced' and possibly other nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'SonarPowerFilterNoise' node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'SonarPowerFilterNoise' node is one of the advanced power noise nodes added in the 20240521 update to ComfyUI-sonar."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "When was the 'SonarScheduledNoise' node added to ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'SonarScheduledNoise' node was added to ComfyUI-sonar in the 20240521 update."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'SonarAdvancedPyramidNoise' node allow users to do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'SonarAdvancedPyramidNoise' node in ComfyUI-sonar allows users to set parameters for the pyramid noise variants."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How has the noise generation in ComfyUI-sonar changed since the 20240227 update?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the 20240227 update, the noise generation functions in ComfyUI-sonar were refactored, which broke the existing seeds."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which node was added in the 20240314 update to ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'SonarPowerNoise' node was added in the 20240314 update to ComfyUI-sonar."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What improvement was made to the 'NoisyLatentLike' node in the 20240320 update?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the 20240320 update, the 'NoisyLatentLike' node in ComfyUI-sonar was improved to allow calculating strength with sigmas and injecting noise itself."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is FreeU Extreme in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "FreeU Extreme is a build-your-own FreeU kit in ComfyUI-sonar that allows you to apply a FreeU (v1 or v2) effect to input, output or middle blocks."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is required for FreeU Extreme to work properly in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use FreeU Extreme in ComfyUI-sonar, you need to have FreeU Advanced installed and enabled, otherwise connecting configs to the `middle` input will have no effect."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which targets are not available for input and middle in FreeU Extreme?"
+            },
+            {
+                "role": "assistant",
+                "content": "In FreeU Extreme, input and middle do not have a `skip` target, so configs targeting that will never match."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the `FreeUExtremeConfig` node in ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `FreeUExtremeConfig` node in ComfyUI-sonar is used to configure the settings for the FreeU Extreme effect. More documentation on this node is coming soon."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can one find documentation on filters for ComfyUI-sonar?"
+            },
+            {
+                "role": "assistant",
+                "content": "Documentation on filters for ComfyUI-sonar can be found in the advanced_power_noise.md file under the heading 'sonarpowerfilter'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the example provided in the documentation compare to the built-in FreeU V2 in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The example provided in the documentation is just for illustration purposes and no attempt was made to get a pretty generation. Users may get better results by enabling `hidden_mean` even for the skip connections."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is the example image provided in the documentation optimized for the best generation quality?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, the example image provided in the documentation is not optimized for the best generation quality. It is merely for example purposes, and users may achieve better results by enabling `hidden_mean` for skip connections."
+            }
+        ]
+    }
+]

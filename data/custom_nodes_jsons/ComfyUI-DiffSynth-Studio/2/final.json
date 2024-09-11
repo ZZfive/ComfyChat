@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-DiffSynth-Studio?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DiffSynth-Studio is an extension that makes DiffSynth-Studio available in ComfyUI, allowing users to generate images and videos using stable diffusion models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the prerequisites for running ComfyUI-DiffSynth-Studio?"
+            },
+            {
+                "role": "assistant",
+                "content": "To run ComfyUI-DiffSynth-Studio, you need to have ffmpeg installed and working in your command line. You also need to have Python 3.10 and PyTorch 2.3.0+cu121."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you install ComfyUI-DiffSynth-Studio?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-DiffSynth-Studio, you need to clone the repository into your ComfyUI/custom_nodes directory, navigate to the ComfyUI-DiffSynth-Studio directory, and run pip install -r requirements.txt. The weights will be downloaded from Hugging Face or Model Scope."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What learning resources are available for ComfyUI-DiffSynth-Studio?"
+            },
+            {
+                "role": "assistant",
+                "content": "There are tutorial videos available for learning how to use ComfyUI-DiffSynth-Studio, including a demo for Diffutoon and a video on running it on a 4090 GPU. You can also contact the developer via WeChat at aifsh_98 for more information."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the key nodes and workflows available in ComfyUI-DiffSynth-Studio?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DiffSynth-Studio includes the ExVideo node and workflow, image synthesis (coming soon), the Diffutoon node and workflow, video stylization, and Chinese models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the parameters for the ExVideo node in ComfyUI-DiffSynth-Studio?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ExVideo node parameters include image, svd_base_model, exvideo_model, num_frames, fps, num_inference_steps, if_upscale, and seed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the required and optional parameters for the Diffutoon node in ComfyUI-DiffSynth-Studio?"
+            },
+            {
+                "role": "assistant",
+                "content": "The required parameters for the Diffutoon node include source_video_path, sd_model_path, postive_prompt, negative_prompt, start, length, seed, cfg_scale, num_inference_steps, animatediff_batch_size, animatediff_stride, and vram_limit_level. The optional parameters are controlnet1, controlnet2, and controlnet3."
+            }
+        ]
+    }
+]

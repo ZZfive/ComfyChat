@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI auto nodes layout extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of the ComfyUI auto nodes layout extension is to apply a better nodes layout algorithm to ComfyUI workflow, mainly for visualization purposes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the existing 1-click auto-arrange graph in ComfyUI position the nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The existing 1-click auto-arrange graph in ComfyUI positions the nodes according to the level of dependencies using the default 'arrange()' function of LiteGraph.js."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the ideal outcome for the ComfyUI auto nodes layout extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ideal outcome for the ComfyUI auto nodes layout extension is to have all wires visible in terms of direction, flow, and connection to nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which type of graph do most ComfyUI workflows qualify as?"
+            },
+            {
+                "role": "assistant",
+                "content": "Most ComfyUI workflows can be qualified as directed acyclic graphs (DAGs)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What type of graph drawing algorithm does the ComfyUI auto nodes layout extension focus on?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI auto nodes layout extension focuses on hierarchical graph drawing, which is the most suitable for directed acyclic graphs."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is it recommended to remove reroute nodes before applying the auto nodes layout extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "Reroute nodes mess up ranks/depth in the graph, so it is recommended to remove them before applying the auto nodes layout extension. They can be re-added later if needed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the minimum required ComfyUI version to use the auto nodes layout extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use the auto nodes layout extension, a ComfyUI version later than PR comfyanonymous/ComfyUI#1273 or commit 'bc76b38' is required."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which graph layout algorithms are implemented in the ComfyUI auto nodes layout extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI auto nodes layout extension implements Dagre layout from dagrejs/dagre and ELK 'layered' layout from kieler/elkjs."
+            }
+        ]
+    }
+]

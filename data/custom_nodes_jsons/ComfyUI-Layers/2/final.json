@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the LayersSaver - Save Layer node in ComfyUI do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LayersSaver - Save Layer node in ComfyUI allows you to create layers of an image based on input masks and save them into a PSD file. It provides flexibility to include the original image and creates separate layers for each masked region."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the LayersSaver - Save Layer From Images node in ComfyUI do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LayersSaver - Save Layer From Images node in ComfyUI allows you to create layers of an image based on all the input images. Every image in the input batch will be saved as a separate layer in the output PSD."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the LayersSaver - Save Layer node handle the input image?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LayersSaver - Save Layer node processes a single input image with batch dimension removed. It also ensures the input image includes an alpha channel for transparency."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can the LayersSaver - Save Layer node include the original image in the PSD file?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, the LayersSaver - Save Layer node optionally includes the original image as a separate layer in the PSD file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the LayersSaver - Save Layer From Images node handle the input images?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LayersSaver - Save Layer From Images node processes an infinite batch dimension input image. It also ensures the input images include an alpha channel for transparency."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is the PSD filename generated in LayersSaver nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "In both LayersSaver nodes, if the filename is not specified, a unique PSD filename is generated based on the current timestamp."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install the LayersSaver nodes in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install the LayersSaver nodes in ComfyUI, clone the repository into your ComfyUI custom_nodes directory, install the required libraries (pytoshop and psd-tools), and restart ComfyUI to load the new nodes."
+            }
+        ]
+    }
+]

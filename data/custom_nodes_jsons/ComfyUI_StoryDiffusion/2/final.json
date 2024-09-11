@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_StoryDiffusion节点的主要方法来源于哪两个开源项目?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_StoryDiffusion节点的主要方法来源于StoryDiffusion和MS-Diffusion两个开源项目。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "如何安装ComfyUI_StoryDiffusion节点?"
+            },
+            {
+                "role": "assistant",
+                "content": "在/ComfyUI/custom_node目录下运行命令: git clone https://github.com/smthemex/ComfyUI_StoryDiffusion.git 。或者可以使用manage安装。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用ComfyUI_StoryDiffusion节点时需要安装哪些依赖?"
+            },
+            {
+                "role": "assistant",
+                "content": "需要运行pip install -r requirements.txt安装依赖。如果要使用photomake v2还需要运行pip install insightface==0.7.3。如果缺失模块，请单独使用pip install安装。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_StoryDiffusion节点支持哪些类型的扩散模型?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_StoryDiffusion节点支持所有基于SDXL的扩散模型和非SD模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "<Storydiffusion_Model_Loader>节点的repeo参数是什么意思?"
+            },
+            {
+                "role": "assistant",
+                "content": "<Storydiffusion_Model_Loader>节点的repeo参数用于填写扩散模型的绝对路径。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用双角色功能时，需要在prompt中使用哪种特殊格式?"
+            },
+            {
+                "role": "assistant",
+                "content": "使用双角色功能时，需要在prompt中使用[A]... [B]...的格式，其中有2个方括号。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_StoryDiffusion节点目前支持哪些模型?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_StoryDiffusion节点目前支持SDXL模型，可灵kolor模型，photomaker v1和v2模型等。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI_StoryDiffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_StoryDiffusion is an extension for ComfyUI that allows users to utilize the StoryDiffusion model within the ComfyUI interface."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you install ComfyUI_StoryDiffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI_StoryDiffusion, navigate to the ./ComfyUI/custom_node directory and run the command: git clone https://github.com/smthemex/ComfyUI_StoryDiffusion.git"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some of the updates made to ComfyUI_StoryDiffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some updates to ComfyUI_StoryDiffusion include adding an easy_function for debugging, supporting mps again, refactoring code about MS-diffusion, and introducing ControlNet for dual character co-images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What models are compatible with ComfyUI_StoryDiffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_StoryDiffusion supports all SDXL based diffusion models, such as G161222/RealVisXL_V4.0 and sd-community/sdxl-flash. It also supports non-SD models like stablediffusionapi/sdxl-unstable-diffusers-y and playground-v2.5-1024px-aesthetic."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you use dual role same frame function in ComfyUI_StoryDiffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use the dual role same frame function in ComfyUI_StoryDiffusion, you need to download the ms_adapter.bin file and a clip_vision model such as clip_g.safetensors. Place these files in the appropriate directories within the ComfyUI/models folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the <Storydiffusion_Model_Loader> node in ComfyUI_StoryDiffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "The <Storydiffusion_Model_Loader> node in ComfyUI_StoryDiffusion is used to load diffuser models, select community SDLX models, set character weights, and configure various model parameters."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you translate text into other languages using ComfyUI_StoryDiffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_StoryDiffusion provides examples of translating text into other languages using translation nodes. The translation nodes can be replaced with any translation node, and the example diagram shows how to use them."
+            }
+        ]
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you install the ComfyUI_node_Lilly custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install the ComfyUI_node_Lilly custom node, go to the ./custom_nodes directory and clone the git repository using the command: git clone https://github.com/kuriot/ComfyUI_node_Lilly.git. Alternatively, you can install it from the zip file available at https://github.com/lilly1987/ComfyUI_node_Lilly/archive/refs/heads/main.zip."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the wildcards feature in ComfyUI_node_Lilly?"
+            },
+            {
+                "role": "assistant",
+                "content": "The wildcards feature in ComfyUI_node_Lilly allows for generating variations in the text prompts used for image generation. It supports different patterns like sequences, single character matches, and file name matching to create diverse prompts."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you use the wildcards feature in Python scripts with ComfyUI_node_Lilly?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use the wildcards feature in Python scripts with ComfyUI_node_Lilly, you need to import the wildcards module, set the path to the wildcards file using w.card_path, and then call w.run() with the desired wildcard pattern. For example: import wildcards as w; w.card_path=os.path.dirname(__file__)+'\\wildcards\\**\\*.txt'; print(w.run('a{__b__|{c|}|{__d__|e|}|f|}g____ __my__'))."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the different nodes in ComfyUI that support the wildcards feature from ComfyUI_node_Lilly?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI_node_Lilly custom node includes support for wildcards in several ComfyUI nodes such as CLIPTextEncodeWildcards, SimpleSampler+modelVAE, SimpleSampler, SimpleSamplerVAE, VAELoaderText, LoraLoaderText, CheckpointLoaderSimpleText, random_sampler_node.py, and VAELoaderDecode.py."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you reload the wildcards data in ComfyUI_node_Lilly?"
+            },
+            {
+                "role": "assistant",
+                "content": "To reload the wildcards data in ComfyUI_node_Lilly, you can either call the wildcards.card_load() function or use the wildcards.run() function with the second argument set to True, like wildcards.run('{9$$-$$a|b|c}',True)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the format for using file name wildcards in ComfyUI_node_Lilly?"
+            },
+            {
+                "role": "assistant",
+                "content": "In ComfyUI_node_Lilly, file name wildcards support the following patterns: * matches everything, ? matches any single character, [seq] matches any character in seq, and [!seq] matches any character not in seq. This follows the convention used in the Python fnmatch module."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the CLIPTextEncodeWildcards node in ComfyUI_node_Lilly handle seed values?"
+            },
+            {
+                "role": "assistant",
+                "content": "The CLIPTextEncodeWildcards node in ComfyUI_node_Lilly has two variations: one without seed input and another with seed input. This allows for generating text encodings with or without considering a specific seed value."
+            }
+        ]
+    }
+]

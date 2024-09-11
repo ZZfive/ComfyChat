@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-OpenAINode?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-OpenAINode is a node for ComfyUI that allows users to hook into any local hosted LLM with OpenAI API support, run inference on a string, and get a string back."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-OpenAINode?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of ComfyUI-OpenAINode is to feed basic prompts through a locally hosted LLM and get generated text output based on the prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users get started with ComfyUI-OpenAINode?"
+            },
+            {
+                "role": "assistant",
+                "content": "To get started with ComfyUI-OpenAINode, users need to load up their chosen LLM and model in their preferred launcher, add the OpenAINode, enter the URL in the node, and alter the system_prefix and any stop tokens their model uses."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is promptmaster-mistral7b?"
+            },
+            {
+                "role": "assistant",
+                "content": "Promptmaster-mistral7b is a small 7B model on Hugging Face that is fine-tuned to output Stable Diffusion style prompts. It is a work in progress and may not always produce good results."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What dependencies are required for ComfyUI-OpenAINode?"
+            },
+            {
+                "role": "assistant",
+                "content": "The only dependency required for ComfyUI-OpenAINode is openai, which is necessary for API calls."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users install ComfyUI-OpenAINode?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-OpenAINode, users need to clone the GitHub repository to their custom nodes folder using 'git clone https://github.com/Electrofried/ComfyUI-OpenAINode' and then run 'pip -r install requirements.txt'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the seed input in ComfyUI-OpenAINode?"
+            },
+            {
+                "role": "assistant",
+                "content": "The seed input in ComfyUI-OpenAINode allows for a random seed to be input, which can cause ComfyUI to re-prompt the LLM each time a generation is run if the user wants to vary their prompt. If the seed is left fixed, ComfyUI will cache the results and use the same prompt each time until the input is changed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should users consider when running ComfyUI-OpenAINode locally?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users should take into account that running an LLM and Stable Diffusion simultaneously on the same machine can be taxing on resources. It is recommended to load the LLM to RAM (if there is enough) and run inference via CPU, allowing Stable Diffusion to use the full GPU, or to host the LLM inference on another computer and connect to it remotely."
+            }
+        ]
+    }
+]

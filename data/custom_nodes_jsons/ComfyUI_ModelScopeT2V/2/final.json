@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI_ModelScopeT2V?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_ModelScopeT2V is a custom node that allows native usage of ModelScope based Text To Video Models in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where should the ComfyUI_ModelScopeT2V repository be cloned?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI_ModelScopeT2V repository should be cloned in the /your/path/to/ComfyUI/custom_nodes directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where should the downloaded models be placed for ComfyUI_ModelScopeT2V?"
+            },
+            {
+                "role": "assistant",
+                "content": "The downloaded models should be placed in the `text2video` folder created in the ComfyUI `models` directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be done with the accompanying `open_clip_pytorch_model.bin` file?"
+            },
+            {
+                "role": "assistant",
+                "content": "The accompanying `open_clip_pytorch_model.bin` file should be placed in the `clip` folder under the `model` directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `enable_attn` option do in ComfyUI_ModelScopeT2V?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `enable_attn` option enables the temporal attention of the ModelScope model. If disabled, a 1.5 based model must be applied."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `enable_conv` option do in ComfyUI_ModelScopeT2V?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `enable_conv` option enables the temporal convolution modules of the ModelScope model, allowing leveraging of temporal convolutions with other modules like AnimateDiff when used with a 1.5 based model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the `temporal_attn_strength` and `temporal_conv_strength` options in ComfyUI_ModelScopeT2V?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `temporal_attn_strength` and `temporal_conv_strength` options control the strength of the temporal attention and convolution respectively, bringing the output closer to the dataset input without temporal properties."
+            }
+        ]
+    }
+]

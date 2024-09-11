@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-RK-Sampler?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-RK-Sampler provides batched Runge-Kutta solvers for efficient ODE computation, supporting most practical Explicit Runge-Kutta methods."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does ComfyUI-RK-Sampler support parallel processing?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-RK-Sampler uses parallel ODE solvers for fast batch processing, enabling simultaneous computations across multiple elements in a batch."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the PID controller in ComfyUI-RK-Sampler do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The PID controller in ComfyUI-RK-Sampler automatically determines the step size using proportional, integral, and derivative terms to optimize the integration process."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can user optimize the usage of ComfyUI-RK-Sampler?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can optimize the usage of ComfyUI-RK-Sampler by tuning the step size controller, selecting appropriate methods, and configuring the solver settings for their specific needs."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the best practice for choosing a step size controller in ComfyUI-RK-Sampler?"
+            },
+            {
+                "role": "assistant",
+                "content": "For normal to high CFG scales, users should try the \"adaptive_pid\" controller with varying CFG scaling, then use CFG tuning to further optimize results. If unsure about step count or CFG scale, incremental adjustments with adaptive controllers are recommended."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can ComfyUI-RK-Sampler handle high CFG scales?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, ComfyUI-RK-Sampler can handle high CFG scales, but the quality of results may depend on the specific model and solver method used."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the benefits of using ComfyUI-RK-Sampler over traditional methods?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-RK-Sampler offers fast batch processing, high-quality live previews, PID controller for adaptive step sizing, and support for more solvers."
+            }
+        ]
+    }
+]

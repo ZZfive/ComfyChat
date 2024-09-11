@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-sudo-latent-upscale?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-sudo-latent-upscale is a custom node in ComfyUI that performs direct upscaling in the latent space. It is inspired by city96/SD-Latent-Upscaler and Ttl/ComfyUi_NNLatentUpscale."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What models are supported by ComfyUI-sudo-latent-upscale?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-sudo-latent-upscale supports models for Stable Diffusion 1.5 and SDXL. The recommended models are SwinFIR and DRCT."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How was the SwinFIR4x6_mse_200k_1.5 model trained?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SwinFIR4x6_mse_200k_1.5 model was trained using the lamb optimizer with a learning rate of 3e-4, bf16 precision, a batch size of 150, and MSE loss with a weight of 0.08. It was trained on 2x4090 GPUs with ddp and gloo for 100k steps each."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What loss functions were used for training the DRCT-l_12x6_325k_l1_sdxl model?"
+            },
+            {
+                "role": "assistant",
+                "content": "The DRCT-l_12x6_325k_l1_sdxl model was trained using AdamW optimizer with a learning rate of 1e-4, bf16 precision, a batch size of 40, and L1 loss with a weight of 0.08."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some failure cases mentioned in the context of ComfyUI-sudo-latent-upscale?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some failure cases mentioned include instability issues with SSIM, incorrect scaling factors and image ranges, and convergence problems with certain network architectures like DITN, OmniSR, HAT, Fourier, GRL, and SwinFIR with Prodigy optimizer."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended batch size for training the DRCT-l_12x6_160k_l1_vaeDecode_l1_hfen_sdxl model?"
+            },
+            {
+                "role": "assistant",
+                "content": "The recommended batch size for training the DRCT-l_12x6_160k_l1_vaeDecode_l1_hfen_sdxl model is 3 due to the high VRAM requirements when training with VAE gradients."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What ideas are mentioned for potential future testing in ComfyUI-sudo-latent-upscale?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some ideas mentioned for potential future testing include using the Huber loss function, experimenting with different Conv2D implementations like MBConv, and applying dropout before the final convolution layer."
+            }
+        ]
+    }
+]

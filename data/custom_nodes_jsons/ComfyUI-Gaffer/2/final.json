@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Gaffer?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Gaffer is an extension or custom node for ComfyUI that implements IC-Light natively."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install ComfyUI-Gaffer?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install ComfyUI-Gaffer using ComfyUI Manager, or by cloning the repository into the custom_nodes directory of ComfyUI, or by downloading the zip file and copying the resulting folder to the custom_nodes directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which models are available for download for ComfyUI-Gaffer?"
+            },
+            {
+                "role": "assistant",
+                "content": "There are three models available for download: iclight_sd15_fc.safetensors for FG workflows, iclight_sd15_fcon.safetensors for FG workflows, and iclight_sd15_fbc.safetensors for BG workflows."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I control the overall brightness in ComfyUI-Gaffer?"
+            },
+            {
+                "role": "assistant",
+                "content": "The overall brightness can be controlled through the grayscale. You can refer to the grayscaler-compare workflow for an example."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Load ICLight Model node in ComfyUI-Gaffer?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Load ICLight Model node is used to load the ICLight model information. It takes the name of the ICLight model as input and outputs the ICLight model information."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the inputs and outputs of the Apply ICLight node in ComfyUI-Gaffer?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Apply ICLight node takes the base model, VAE, ICLight model information, position prompts, negative prompts, foreground image, optional background image, and multiplier as inputs. It outputs the model with ICLight, position prompts, negative prompts, and an empty latent image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Simple Light Source node in ComfyUI-Gaffer?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Simple Light Source node is used for creating a Lighting Preference. It takes light position, multiplier, start color, end color, width, and height as inputs and outputs the Lighting Preference image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Calculate Normal Map node in ComfyUI-Gaffer do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Calculate Normal Map node calculates the normal map based on a sequence of input images, an optional mask image, sigma value for Gaussian blur, and center input range. It outputs the normal map."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the Gray Scaler node used for in ComfyUI-Gaffer?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Gray Scaler node is used to scale the image area to gray according to the provided mask. It takes a transparent background image, a mask indicating areas to be converted to grey, and a multiplier as inputs, and outputs the gray background image."
+            }
+        ]
+    }
+]

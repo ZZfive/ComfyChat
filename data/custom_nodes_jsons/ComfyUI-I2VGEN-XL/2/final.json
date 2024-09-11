@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-I2VGEN-XL?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-I2VGEN-XL is an implementation of i2vgen-xl, which is a custom node for ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install ComfyUI-I2VGEN-XL?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-I2VGEN-XL, you need to clone the repo into the custom_nodes directory of your ComfyUI location and run 'pip install -r requirements.txt'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I fix the ValueError: attempted relative import beyond top-level package error when using ComfyUI-I2VGEN-XL?"
+            },
+            {
+                "role": "assistant",
+                "content": "To fix the ValueError: attempted relative import beyond top-level package error, you need to delete all content in the files '~/.cache/modelscope/hub/damo/i2vgen-xl/tools/__init__.py' and '~/.cache/modelscope/hub/damo/i2vgen-xl/tools/modules/__init__.py'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I resolve the CUDA out of memory issue when using ComfyUI-I2VGEN-XL?"
+            },
+            {
+                "role": "assistant",
+                "content": "To resolve the CUDA out of memory issue, you need to edit the file '~/.cache/modelscope/hub/damo/i2vgen-xl/ms_wrapper.py' and change 'self.model.to(gpu)' to 'self.model.half().to(gpu)'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I find an example of a base workflow for ComfyUI-I2VGEN-XL?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can find an example of a base workflow for ComfyUI-I2VGEN-XL in the 'workflow.json' file located at https://github.com/chaojie/ComfyUI-I2VGEN-XL/blob/main/workflow.json."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is there a visual representation of the base workflow for ComfyUI-I2VGEN-XL?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, there is a visual representation of the base workflow for ComfyUI-I2VGEN-XL. You can find it in the 'assets/base_wf.png' file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the GitHub repository for the i2vgen-xl implementation used in ComfyUI-I2VGEN-XL?"
+            },
+            {
+                "role": "assistant",
+                "content": "The GitHub repository for the i2vgen-xl implementation used in ComfyUI-I2VGEN-XL is https://github.com/ali-vilab/i2vgen-xl."
+            }
+        ]
+    }
+]

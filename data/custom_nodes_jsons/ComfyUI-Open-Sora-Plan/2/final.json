@@ -1,0 +1,578 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the primary goal of the Open-Sora Plan open-source community?"
+            },
+            {
+                "role": "assistant",
+                "content": "The primary goal of the Open-Sora Plan open-source community is to foster a collaborative initiative driven by the community, emphasizing a commitment to being free and void of exploitation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should contributors do before submitting a pull request to the Open-Sora Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "Before submitting a pull request, contributors should check the Open-Sora Plan GitHub to see if there are any open or closed pull requests related to their intended submission to avoid duplicating existing work."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the first step in contributing to the Open-Sora Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "The first step in contributing to the Open-Sora Plan is to fork the Open-Sora Plan repository and download the forked repository to your local machine."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is it important to add the original Open-Sora Plan repository as a remote?"
+            },
+            {
+                "role": "assistant",
+                "content": "Adding the original Open-Sora Plan repository as a remote is important to sync with the latest updates from the main repository."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be done before making any modifications to the code?"
+            },
+            {
+                "role": "assistant",
+                "content": "Before making any modifications, sync the code from the main repository to your local machine and push it back to your forked remote repository."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the format for commit messages in the Open-Sora Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "The commit message format includes both <type> and <summary> sections. The <type> can be docs, feat, fix, or refactor, and the <summary> should briefly describe your changes in English without ending with a period."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "From where is the Open-Sora Plan contributing guideline borrowed?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Open-Sora Plan contributing guideline is borrowed from Minisora, and the community appreciates MiniSora authors for their awesome templates."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the open-sora-Dataset?"
+            },
+            {
+                "role": "assistant",
+                "content": "The open-sora-Dataset is used to provide more dataset for ComfyUI-Open-Sora-Plan."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is the Sky dataset a conditioned dataset?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, the Sky dataset is an unconditioned dataset."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the structure of the sky_timelapse directory?"
+            },
+            {
+                "role": "assistant",
+                "content": "The sky_timelapse directory contains the following structure: readme, sky_test, sky_train, test_videofolder.py, and video_folder.py."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What dataset was used to test the code for ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "The UCF-101 dataset was used to test the code for ComfyUI-Open-Sora-Plan."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can the necessary files for the UCF-101 dataset be downloaded?"
+            },
+            {
+                "role": "assistant",
+                "content": "The necessary files for the UCF-101 dataset can be downloaded from the official UCF-101 website."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the assumed directory structure for the UCF-101 dataset in the code?"
+            },
+            {
+                "role": "assistant",
+                "content": "The code assumes a 'ucf101' directory with the following structure: UCF-101/ApplyEyeMakeup/v1.avi, ..., YoYo/v1.avi, ..."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is offline feature extraction currently available in ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "Offline feature extraction is not currently available in ComfyUI-Open-Sora-Plan, but it is mentioned as 'coming soon'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Open-Sora-Plan is used to evaluate the quality of generated videos using various video quality metrics."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which video quality metrics are supported by ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Open-Sora-Plan supports the following video quality metrics: CLIP-SCORE, FVD (Frechét Video Distance), SSIM (structural similarity index measure), LPIPS (learned perceptual image patch similarity), and PSNR (peak-signal-to-noise ratio)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the environment requirements for running ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "To run ComfyUI-Open-Sora-Plan, you need to install Pytorch (torch>=1.7.1), CLIP, clip-score from PyPi, lpips, scipy (scipy==1.7.3/1.9.3), numpy, pillow, torchvision>=0.8.2, ftfy, regex, and tqdm."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What pre-trained model is required for calculating FVD in ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "To calculate FVD in ComfyUI-Open-Sora-Plan, you need to download the FVD pre-trained model (either i3d_torchscript.pt or i3d_pretrained_400.pt) and place it in the FVD folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended minimum number of frames for calculating FVD in ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "When calculating FVD in ComfyUI-Open-Sora-Plan, the number of frames should be greater than 10, as the i3d model downsamples in the time dimension."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How should the data be structured for calculating CLIP-SCORE in ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "For calculating CLIP-SCORE in ComfyUI-Open-Sora-Plan, images should be stored in a single directory with .png or .jpg format, and text files should be in a separate directory with .txt format. The number of files in both directories should be equal, and they should be paired by file name."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How should the data be structured for calculating FVD, PSNR, SSIM, and LPIPS in ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "For calculating FVD, PSNR, SSIM, and LPIPS in ComfyUI-Open-Sora-Plan, generated images should be stored in one directory, and real images should be stored in another directory, with both directories containing corresponding .mp4 files."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Refiner for Video Caption in ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Refiner for Video Caption in ComfyUI-Open-Sora-Plan is used to transform short caption annotations from video datasets into long and detailed caption annotations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What extra details does the Refiner for Video Caption add to the captions?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Refiner for Video Caption adds detailed descriptions for background scenes, object attributes (including color, material, pose), and object-level spatial relationships."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the extra requirements for installing the Refiner for Video Caption?"
+            },
+            {
+                "role": "assistant",
+                "content": "The extra requirements for installing the Refiner for Video Caption include openai version 0.28.0, jsonlines version 4.0.0, nltk version 3.8.1, and installing the LLaMA-Accessory. Additionally, the weight of SPHINX needs to be downloaded to the ./ckpt/ folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the refining process be executed?"
+            },
+            {
+                "role": "assistant",
+                "content": "The refining process can be executed by running the demo_for_refiner.py file with the appropriate root path and OpenAI API key."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is an example of an original caption and its refined version?"
+            },
+            {
+                "role": "assistant",
+                "content": "An example of an original caption is: 'A red mustang parked in a showroom with american flags hanging from the ceiling.' Its refined version is: 'This scene depicts a red Mustang parked in a showroom with American flags hanging from the ceiling. The showroom likely serves as a space for showcasing and purchasing cars, and the Mustang is displayed prominently near the flags and ceiling. The scene also features a large window and other objects. Overall, it seems to take place in a car show or dealership.'"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What future improvements are planned for the Refiner for Video Caption?"
+            },
+            {
+                "role": "assistant",
+                "content": "Future improvements planned for the Refiner for Video Caption include adding GPT-3.5-Turbo for caption summarization, adding LLAVA-1.6, and providing more descriptions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the goal of the Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "The goal of the Open-Sora-Plan is to reproduce the OpenAI Sora through an open-source framework, enabling training of video generation models, including Unconditioned Video Generation, Class Video Generation, and Text-to-Video Generation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the key improvements in Open-Sora-Plan v1.0.0 compared to previous video generation models?"
+            },
+            {
+                "role": "assistant",
+                "content": "Open-Sora-Plan v1.0.0 introduces several improvements such as efficient training and inference with CausalVideoVAE, and joint image-video training for better quality."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What components are made publicly available as part of the Open-Sora-Plan open-source release?"
+            },
+            {
+                "role": "assistant",
+                "content": "The open-source release of Open-Sora-Plan includes a Hugging Face demo, all training scripts and sample scripts, both Diffusion Model and CausalVideoVAE, and both raw videos and captions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the CausalVideoVAE architecture ensure seamless application of pretrained weights from the Image VAE to the Video VAE?"
+            },
+            {
+                "role": "assistant",
+                "content": "The CausalVideoVAE architecture ensures seamless application of pretrained weights from the Image VAE to the Video VAE by converting Conv2D to CausalConv3D, enabling joint training of image and video data, and by employing a specific initialization method (tail initialization)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the two main drawbacks of the current released version of CausalVideoVAE (v1.0.0)?"
+            },
+            {
+                "role": "assistant",
+                "content": "The two main drawbacks of the current released version of CausalVideoVAE (v1.0.0) are motion blurring and gridding effect."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Open-Sora-Plan team plan to address the issue of limited video domain generation capability in their dataset?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Open-Sora-Plan team plans to continue collecting high-quality datasets and also welcomes recommendations from the open-source community to address the issue of limited video domain generation capability in their dataset."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the three main aspects the Open-Sora-Plan team will focus on in their upcoming work to further improve the model?"
+            },
+            {
+                "role": "assistant",
+                "content": "In their upcoming work, the Open-Sora-Plan team will focus on training support for dynamic resolution and duration, support for longer video generation, and enhanced conditional control."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Vector Quantized Variational AutoEncoders (VQ-VAE)?"
+            },
+            {
+                "role": "assistant",
+                "content": "Vector Quantized Variational AutoEncoders (VQ-VAE) is a type of autoencoder that uses a discrete latent representation. It is particularly useful for tasks that require discrete latent variables, such as text-to-speech and video generation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which class can be used to initialize a VQVAE model in ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "In ComfyUI-Open-Sora-Plan, the `VideoGPTVQVAE` class from the `opensora.models.ae` module can be used to initialize a VQVAE model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you train the VQVAE model?"
+            },
+            {
+                "role": "assistant",
+                "content": "To train the VQVAE model, you can use the `train_videogpt.sh` script. This script will train the model using the parameters specified in the script."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you load a pretrained VQVAE model?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can load a pretrained model using the `download_and_load_model` method. This method will download the checkpoint file and load the model. Alternatively, you can load a model from a checkpoint using the `load_from_checkpoint` method."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you encode a video using the VQVAE model?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can encode a video using the `encode` method of the VQVAE model. This method will return the encodings and embeddings of the video."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you reconstruct a video from its encodings?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can reconstruct a video from its encodings using the `decode` method of the VQVAE model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you test the VQVAE model?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can test the VQVAE model by reconstructing a video. The `examples/rec_video.py` script provides an example of how to do this."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What frame interpolation model is used in the ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-Open-Sora-Plan uses the AMT model for frame interpolation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can the pretrained weights for the AMT model be downloaded?"
+            },
+            {
+                "role": "assistant",
+                "content": "The pretrained weights for the AMT model can be downloaded from the AMT GitHub repository."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which AMT model is recommended for achieving the best performance in the ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "The largest model, AMT-G, is recommended for achieving the best performance in the ComfyUI-Open-Sora-Plan."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the command to run the frame interpolation script in the ComfyUI-Open-Sora-Plan?"
+            },
+            {
+                "role": "assistant",
+                "content": "The command to run the frame interpolation script is: python opensora/models/frame_interpolation/interpolation.py --ckpt /path/to/ckpt --niters 1 --input /path/to/input/video.mp4 --output_path /path/to/output/floder --frame_rate 30"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `--ckpt` setting specify in the frame interpolation script?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `--ckpt` setting specifies the pretrained model of AMT to be used for frame interpolation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `--niter` setting determine in the frame interpolation script?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `--niter` setting determines the iterations of interpolation. With $m$ input frames, `[N_ITER]` $=n$ corresponds to $2^n\times (m-1)+1$ output frames."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `--frame_rate` setting specify in the frame interpolation script?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `--frame_rate` setting specifies the frame rate of the output video in the frame interpolation script."
+            }
+        ]
+    }
+]

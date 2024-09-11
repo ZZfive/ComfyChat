@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Parler-TTS model architecture consist of?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Parler-TTS model architecture consists of three distinct stages: 1. Text encoder: maps text descriptions to hidden-state representations. 2. Parler-TTS decoder: a language model that auto-regressively generates audio tokens. 3. Audio codec: used to recover audio waveform from audio tokens."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is the Parler-TTS model trained?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Parler-TTS model is trained by loading the dataset, pre-computing audio tokens, and then training the model. The training includes loading multiple training datasets, metadatasets, configurations, and splits. After training, the model can be evaluated and generated audio samples can be stored."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the prerequisites for training the Parler-TTS model?"
+            },
+            {
+                "role": "assistant",
+                "content": "The prerequisites for training the Parler-TTS model include: 1. Installation of required libraries, such as PyTorch and Accelerate. 2. Finding or initializing the model to train, either a pre-trained model or a model from scratch. 3. Preparing the dataset, which includes speech data, text transcription of the speech data, and conditionning text description. 4. Configuring Accelerate to specify the number of GPUs and data type for training/inference."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can one initialize a model for training?"
+            },
+            {
+                "role": "assistant",
+                "content": "One can initialize a model for training by using the `init_model_600M.py` script. This script allows for initializing a model from scratch, using the `google/flan-t5-base` text model and `parler-tts/dac_44khZ_8kbps` audio model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Data-Speech library allow for?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Data-Speech library allows for annotating the speaker and utterance characteristics with natural language description. It is used to annotate the speech data used for training the Parler-TTS model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the `accelerate config` command?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `accelerate config` command is used to configure Accelerate, which is a library from Hugging Face that provides a command-line interface for running distributed machine learning experiments. It allows for specifying the number of GPUs and data type for training/inference."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the `wandb` library?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `wandb` (Weights & Biases) library is used for better tracking of the experiments' metrics and losses. It allows for logging the training and evaluation metrics to the `wandb` platform."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Parler-TTS?"
+            },
+            {
+                "role": "assistant",
+                "content": "Parler-TTS is a lightweight text-to-speech (TTS) model that can generate high-quality, natural sounding speech in the style of a given speaker."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is Parler-TTS built upon Parler_tts?"
+            },
+            {
+                "role": "assistant",
+                "content": "Parler-TTS is a custom node in ComfyUI, built upon the Parler_tts model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the updates included in the latest version of Parler-TTS?"
+            },
+            {
+                "role": "assistant",
+                "content": "The latest version of Parler-TTS includes bug fixes for compatibility with comfyUI and supports saving and viewing audio directly through the ComfyUI interface."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I install Parler-TTS?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install Parler-TTS, first ensure you have the required dependencies: 'transformers>=4.43.0'. Then, clone the Parler-TTS repository into your custom_node directory in ComfyUI using `git clone https://github.com/smthemex/ComfyUI_ParlerTTS.git`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the supported checkpoints for Parler-TTS?"
+            },
+            {
+                "role": "assistant",
+                "content": "The supported checkpoints for Parler-TTS include 'parler-tts-mini-jenny-30H', 'parler-tts-mini-v1', and 'parler-tts-large-v1'. These can be used by specifying the repo_id when cloning the repository."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does Parler-TTS handle voice descriptions?"
+            },
+            {
+                "role": "assistant",
+                "content": "Parler-TTS uses voice descriptions to control the style of the generated speech. The description must include the keyword 'Jenny' if using the parler-tts/parler-tts-mini-jenny-30H model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can Parler-TTS be used offline?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, Parler-TTS can be used offline by specifying the absolute address of the checkpoint in the repo_id when cloning the repository."
+            }
+        ]
+    }
+]

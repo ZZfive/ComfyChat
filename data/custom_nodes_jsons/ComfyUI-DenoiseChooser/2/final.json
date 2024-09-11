@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-DenoiseChooser?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DenoiseChooser is a custom node in ComfyUI that automatically chooses the appropriate denoise value based on whether the latent image is empty or not. It replaces the need for manual adjustment of the denoise value when switching between empty and upscaled latent images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does ComfyUI-DenoiseChooser do?"
+            },
+            {
+                "role": "assistant",
+                "content": "When the latent image is empty, ComfyUI-DenoiseChooser passes it straight through unaltered. If the latent image is not empty, the node outputs the denoise value. This allows for the automatic selection of the appropriate denoise value depending on the content of the latent image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does ComfyUI-DenoiseChooser work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The latent image is passed through the node. If it's empty (indicating it's from a 'Empty Latent Image' node), the node passes it through unaltered. If the latent image is not empty, the node outputs the denoise value."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the bonus feature of ComfyUI-DenoiseChooser?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DenoiseChooser accepts both values between 0-1 and 1-100 for denoising. If the input value is greater than 1, it gets divided by 100. This means that values like 0.75 and 75.0 will produce the same output."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does ComfyUI-DenoiseChooser support different input ranges for denoising?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DenoiseChooser knows how to handle different input ranges for denoising. It accepts values between 0-1 and 1-100. If the input value is greater than 1, it gets divided by 100, ensuring that the denoising process is consistent across different input ranges."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where is ComfyUI-DenoiseChooser placed in the ComfyUI interface?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DenoiseChooser is placed under the 'advanced' section in the 'Add Node' menu in the ComfyUI interface."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is ComfyUI-DenoiseChooser useful?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DenoiseChooser is useful because it automatically selects the appropriate denoise value depending on whether the latent image is empty or not. This saves time and effort by eliminating the need to manually adjust the denoise value every time the latent image changes."
+            }
+        ]
+    }
+]

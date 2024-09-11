@@ -1,0 +1,278 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Slothful Attention node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Slothful Attention node in ComfyUI allows controlling output images by reducing K and V samples on self-attentions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Near-sighted Tile node work in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Near-sighted Tile node in ComfyUI splits samples as Q for self-attention and serves K, V that are concatenated local and global samples by a given ratio. This may improve details of images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the Near-sighted Attention node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Near-sighted Attention node in ComfyUI combines the functionalities of Near-sighted Tile and Slothful Attention nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where should the comfyui_slothful_attention node be inserted in a ComfyUI workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "The comfyui_slothful_attention node should be inserted into the MODEL connection before the sampler in a ComfyUI workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What models has the comfyui_slothful_attention node been tested with?"
+            },
+            {
+                "role": "assistant",
+                "content": "The comfyui_slothful_attention node has been tested with SD1.5, SDXL and SSD-1B based models, and seems to work okay with LCM-lora, Lora, Controlnet or IPAdapter."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does changing the tile_size parameter in the Near-sighted Tile node affect the image?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the Near-sighted Tile node, smaller tile_size may improve image details but may break the consistency of the image. Larger global_ratio may prevent breaking consistency but decrease details."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be considered when using low tile_size and high slothful values together in the Near-sighted Attention node?"
+            },
+            {
+                "role": "assistant",
+                "content": "When using low tile_size and high slothful values together in the Near-sighted Attention node, it may cause a lack of K and V, which will decrease image quality."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the comparison shown in the document?"
+            },
+            {
+                "role": "assistant",
+                "content": "The comparison shows the results of using different pooling modes (1D and 2D) with and without the comfyui_slothful_attention custom node in ComfyUI, using two different models: SSD-1B based model with lcm-lora and SD 1.5 based model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the specific models used in the comparison?"
+            },
+            {
+                "role": "assistant",
+                "content": "The comparison uses two models: SSD-1B based model with lcm-lora (checkpoint: ssd-1b-animagine, lcm-lora: lcm-animagine) and SD 1.5 based model (checkpoint: Blazing Drive v10g)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What sampler and scheduler were used for the SSD-1B based model?"
+            },
+            {
+                "role": "assistant",
+                "content": "For the SSD-1B based model, the sampler used was lcm and the scheduler was normal."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How many steps and what cfg value were used for the SD 1.5 based model?"
+            },
+            {
+                "role": "assistant",
+                "content": "For the SD 1.5 based model, 16 steps were used with a cfg value of 5.0."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the different pooling modes compared in the document?"
+            },
+            {
+                "role": "assistant",
+                "content": "The document compares two pooling modes: AVG (average) and MAX (maximum), each in 1D and 2D variations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do the images generated with the tuned parameters compare to those without the comfyui_slothful_attention node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The document shows that images generated with the tuned parameters using the comfyui_slothful_attention node have improved quality and details compared to those generated without the node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between the 'Initial parameters' and 'Tuned parameters' columns in the comparison tables?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Initial parameters' column shows results with the blend value set to 0, while the 'Tuned parameters' column shows results with adjusted parameters for the comfyui_slothful_attention node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the tiling sizes comparison for the comfyui_slothful_attention custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The tiling sizes comparison for the comfyui_slothful_attention custom node demonstrates the effect of different global_ratio values and tile sizes on the generated images using the SD 1.5 based model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which checkpoint was used for the tiling sizes comparison?"
+            },
+            {
+                "role": "assistant",
+                "content": "The checkpoint used for the tiling sizes comparison was Blazing Drive v10g."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What sampler and scheduler were used in the tiling sizes comparison?"
+            },
+            {
+                "role": "assistant",
+                "content": "The sampler used in the tiling sizes comparison was euler_ancestral, and the scheduler was normal."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How many steps were used in the tiling sizes comparison?"
+            },
+            {
+                "role": "assistant",
+                "content": "12 steps were used in the tiling sizes comparison."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was the cfg value used in the tiling sizes comparison?"
+            },
+            {
+                "role": "assistant",
+                "content": "The cfg value used in the tiling sizes comparison was 5.0."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What seed value was used in the tiling sizes comparison?"
+            },
+            {
+                "role": "assistant",
+                "content": "The seed value used in the tiling sizes comparison was 1."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was the original image size used in the tiling sizes comparison?"
+            },
+            {
+                "role": "assistant",
+                "content": "The original image size used in the tiling sizes comparison was 1024x1536, but the sample images were shrinked to 512x768."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What global_ratio values were compared in the tiling sizes comparison?"
+            },
+            {
+                "role": "assistant",
+                "content": "The global_ratio values compared in the tiling sizes comparison were 0.0, 0.5, and 1.0."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What tile sizes were compared in the tiling sizes comparison?"
+            },
+            {
+                "role": "assistant",
+                "content": "The tile sizes compared in the tiling sizes comparison were 48, 32, and 24."
+            }
+        ]
+    }
+]

@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Load ELLA Model node in ComfyUI-ELLA?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Load ELLA Model node is used to load an ELLA model in ComfyUI-ELLA. It takes a 'name' parameter to specify the ELLA model to load and outputs the loaded ELLA model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the inputs required for the Apply ELLA node in ComfyUI-ELLA?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Apply ELLA node requires the following inputs: 'model' (loaded using Load Checkpoint or other model loaders), 'ella' (ELLA model loaded using Load ELLA Model node), 'positive' and 'negative' (both ELLA_EMBEDS)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the ELLA Encode node do in ComfyUI-ELLA?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ELLA Encode node in ComfyUI-ELLA takes an ELLA model (loaded using Load ELLA Model node and Set ELLA Timesteps) and ELLA_EMBEDS as inputs, and outputs 'conds' (CONDITIONING) for KSamplers."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the ELLA Text Encode node handle optional CLIP input in ComfyUI-ELLA?"
+            },
+            {
+                "role": "assistant",
+                "content": "If a CLIP model is provided to the ELLA Text Encode node along with 'text_clip' input, it will automatically concatenate the ELLA condition and CLIP condition in the output 'conds' (CONDITIONING) for KSamplers."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the T5 Text Encode node in ComfyUI-ELLA?"
+            },
+            {
+                "role": "assistant",
+                "content": "The T5 Text Encode node in ComfyUI-ELLA is used to encode a prompt ('text' input) using a T5 text encoder model. It outputs 'ella_embeds' (ELLA_EMBEDS) that can be used for further processing."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Combine CLIP & ELLA Embeds node do in ComfyUI-ELLA?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Combine CLIP & ELLA Embeds node in ComfyUI-ELLA takes 'cond' (CONDITIONING) and 'embeds' (ELLA_EMBEDS) as inputs and combines them to output 'embeds' (ELLA_EMBEDS)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the inputs and outputs of the Set ELLA Timesteps node in ComfyUI-ELLA?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Set ELLA Timesteps node in ComfyUI-ELLA takes the following inputs: 'model' (loaded using Load Checkpoint or other model loaders), 'ella' (ELLA model loaded using Load ELLA Model node), 'scheduler' (consistent with Ksamper), 'steps' (consistent with Ksamper), and 'denoise' (consistent with Ksamper). It outputs the ELLA model with timesteps injected."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-ELLA?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-ELLA is an implementation of ELLA (Equipping Diffusion Models with LLM for Enhanced Semantic Alignment) in ComfyUI, which is a GUI that uses a stable diffusion model to generate images and videos."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'ELLA Text Encode' node added in the 2024.4.30 update?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'ELLA Text Encode' node was added to automatically concatenate ella and clip conditions, simplifying the workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can LoRA trigger words be made effective in ComfyUI-ELLA?"
+            },
+            {
+                "role": "assistant",
+                "content": "To make LoRA trigger words effective, the ELLA output 'CONDITIONING' always needs to be linked to the 'conditioning_to' of the 'Conditioning (Concat)' node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be done if the quality of the image is unstable while multi-batching?"
+            },
+            {
+                "role": "assistant",
+                "content": "If the quality of the image is unstable while multi-batching, the CLIP concat should be added, which also supports LoRA trigger words as of the 2024.4.22 update."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the significance of the SIGMAS from the 'BasicScheduler' node or TIMESTEPS by the 'Set ELLA Timesteps' node in ComfyUI-ELLA?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SIGMAS from the 'BasicScheduler' node or TIMESTEPS by the 'Set ELLA Timesteps' node must be the same as the KSampler settings because of the introduction of Timestep-Aware Semantic Connector (TSC), which dynamically adapts semantics features over sampling time steps."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can ComfyUI-ELLA be installed?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-ELLA can be installed by downloading or cloning the repository inside the ComfyUI/custom_nodes/ directory and then installing the dependencies."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What models are required for ComfyUI-ELLA to function properly?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-ELLA requires ELLA Models and FLAN-T5 XL Text Encoder to be placed in the corresponding directories under models for proper functioning."
+            }
+        ]
+    }
+]

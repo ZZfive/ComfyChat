@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Yolo-Cropper?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Yolo-Cropper is a very simple node in ComfyUI designed to create image crops and masks using YoloV8. It is useful for generating square crops for images that require a 1:1 ratio input, such as 1024x1024."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of using YoloV8 with ComfyUI-Yolo-Cropper?"
+            },
+            {
+                "role": "assistant",
+                "content": "YoloV8 is used with ComfyUI-Yolo-Cropper for object detection. The node supports COCO 80 objects, including an extra feature for face detection."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does ComfyUI-Yolo-Cropper handle multiple object detections?"
+            },
+            {
+                "role": "assistant",
+                "content": "When multiple objects are detected by ComfyUI-Yolo-Cropper, it will return the largest bounding box among the detected objects."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the automatically downloaded models at first use?"
+            },
+            {
+                "role": "assistant",
+                "content": "The node will download the following two models automatically at first use:\n1. YoloV8 model: https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8l.pt\n2. Face detection model: https://huggingface.co/spaces/cc1234/stashface/resolve/main/.deepface/weights/yolov8n-face.pt"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can ComfyUI-Yolo-Cropper be installed?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-Yolo-Cropper in addition to an existing installation of ComfyUI, follow these steps:\n1. Navigate to the ComfyUI/custom_nodes directory in the terminal.\n2. Use the git clone command to download the ComfyUI-Yolo-Cropper repository: `git clone https://github.com/tooldigital/ComfyUI-Yolo-Cropper.git`\n3. Restart ComfyUI after the installation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the inputs required by ComfyUI-Yolo-Cropper?"
+            },
+            {
+                "role": "assistant",
+                "content": "The inputs for ComfyUI-Yolo-Cropper are:\n- image: Any input image\n- object: A dropdown list with COCO 80 objects, including face."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the outputs provided by ComfyUI-Yolo-Cropper?"
+            },
+            {
+                "role": "assistant",
+                "content": "The outputs for ComfyUI-Yolo-Cropper are:\n- bounding box: An array of values that include the x, y coordinates, width, and height of the detected object.\n- image yolo detections: An image showing all detected assets and bounding boxes.\n- image original crop: The original image cropped according to the actual bounding box.\n- image square crop: The original image cropped into a square shape starting from the center of the original bounding box.\n- mask original crop: A black and white mask cropped according to the actual bounding box.\n- mask square crop: A black and white mask cropped into a square shape starting from the center of the original bounding box."
+            }
+        ]
+    }
+]

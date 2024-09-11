@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI-CSV-prompt-builder node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of the ComfyUI-CSV-prompt-builder node is to create prompts using a .csv file, which can be updated each time a workflow is run."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the ComfyUI-CSV-prompt-builder node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The node reads the contents of the selected .csv file and displays fields for each column, allowing the user to specify how to select and output values for each column."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can the ComfyUI-CSV-prompt-builder node be used to create specific prompts for different scenarios?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, the node can be used to create specific prompts for different scenarios by updating the CSV file with the appropriate prompts and selecting the desired CSV file in the node dropdown."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the ComfyUI-CSV-prompt-builder node handle multiple CSV files?"
+            },
+            {
+                "role": "assistant",
+                "content": "The node can handle multiple CSV files by adding them to the 'prompt_sets' folder and setting appropriate file paths in the '_csv_config.json' file, enabling users to switch between CSV files through the dropdown."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the available modes for selecting output values in the ComfyUI-CSV-prompt-builder node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The available modes are 'Fixed', 'Randomize', and 'Cycle'. 'Fixed' outputs the value chosen in the '_val' field, 'Randomize' outputs a random value from the column, and 'Cycle' outputs values in order from top to bottom, repeating the column."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users ensure their CSV files are in the correct format for the ComfyUI-CSV-prompt-builder node?"
+            },
+            {
+                "role": "assistant",
+                "content": "CSV files must include column headers in the first row and at least one value under each header. They should also have a ' ribbon_animation ' header provided if the ribbon animation is to be used as the image defined with the Berliner Algorithm. Also, ensure to include the ' to_* ' fields for multiple possible modes to choose from."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the potential issues users might encounter when using the ComfyUI-CSV-prompt-builder node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Possible issues include the node's failed initialization due to an incorrect or missing CSV file in the 'prompt_sets' folder, file name mismatch between the CSV file and the dropdown selection, and CSV file format issues."
+            }
+        ]
+    }
+]
