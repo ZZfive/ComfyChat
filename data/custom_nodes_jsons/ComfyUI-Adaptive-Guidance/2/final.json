@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Adaptive Guidance in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Adaptive Guidance is an implementation in ComfyUI that calculates the cosine similarity between the u-net's conditional and unconditional output and sets CFG to 1.0 once the similarity crosses a specified threshold, effectively skipping negative prompt calculations and speeding up inference."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can one compare Adaptive Guidance vs. normal CFG in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "One can compare Adaptive Guidance vs. normal CFG in ComfyUI by importing the workflow provided in the link (workflows/AGExample.json?raw=1) into ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended threshold range for the AdaptiveGuidance node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Normally, the recommended threshold range for the AdaptiveGuidance node in ComfyUI should be kept quite high, between 0.99 and 1.0."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which sampler is the AdaptiveGuidance node compatible with in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The AdaptiveGuidance node in ComfyUI can be used with the SamplerCustomAdvanced."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What happens when the cosine similarity crosses the specified threshold in the AdaptiveGuidance node?"
+            },
+            {
+                "role": "assistant",
+                "content": "When the cosine similarity crosses the specified threshold in the AdaptiveGuidance node, it sets CFG to 1.0, effectively skipping negative prompt calculations and speeding up inference."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of setting uncond_zero_scale to > 0 in ComfyUI-Adaptive-Guidance?"
+            },
+            {
+                "role": "assistant",
+                "content": "Setting uncond_zero_scale to > 0 in ComfyUI-Adaptive-Guidance enables 'uncond zero' CFG after the normal CFG gets disabled, which seems to work slightly better than just running without CFG."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is the 'uncond zero' functionality stable in ComfyUI-Adaptive-Guidance?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, the 'uncond zero' functionality in ComfyUI-Adaptive-Guidance is unstable and will probably change, so using it means your workflows likely won't be perfectly reproducible."
+            }
+        ]
+    }
+]

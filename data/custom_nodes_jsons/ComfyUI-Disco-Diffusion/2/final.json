@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Disco-Diffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Disco-Diffusion is a modularized version of Disco Diffusion for use with ComfyUI, a GUI that uses stable diffusion models to generate images and videos."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you install ComfyUI-Disco-Diffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-Disco-Diffusion, clone the repository into your ComfyUI/custom_nodes folder, activate the virtualenv used with ComfyUI, navigate to the cloned folder, run pip install -r requirements.txt, and start ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What nodes are included in ComfyUI-Disco-Diffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Disco-Diffusion includes the following nodes: Guided Diffusion Loader, OpenAI CLIP Loader, Disco Diffusion, and Disco Diffusion Extra Settings."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you use ComfyUI-Disco-Diffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "The simplest usage is to connect the Guided Diffusion Loader and OpenAI CLIP Loader nodes into a Disco Diffusion node, then hook the Disco Diffusion node up to a Save Image node. Alternatively, you can substitute the OpenAI CLIP Loader for ComfyUI's CLIP Loader and CLIP Vision Loader."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the special syntax used in the Disco Diffusion node for writing prompts?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Disco Diffusion node uses a special syntax for writing prompts, where the leading number in front of each prompt indicates which step number in the generation the prompt should begin being used on. More than one prompt with the same number is concatenated into a list, ordered from top to bottom."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the trailing number at the end of each prompt in the Disco Diffusion node control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The trailing number at the end of each prompt in the Disco Diffusion node is optional and controls the weight of the prompt. You can also have negative weights, but the sum of all weights cannot equal 0."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What resources are available for learning more about the parameters in ComfyUI-Disco-Diffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Disco Diffusion Cheatsheet and the EZ Charts Guide are available resources for learning more about the parameters in ComfyUI-Disco-Diffusion."
+            }
+        ]
+    }
+]

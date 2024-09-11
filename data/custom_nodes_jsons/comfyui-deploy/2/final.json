@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the modal builder?"
+            },
+            {
+                "role": "assistant",
+                "content": "The modal builder is a standalone docker fast api app that takes in a snapshot of the machine and builds it as a new modal app, returning the deployment url."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can one run the modal builder locally?"
+            },
+            {
+                "role": "assistant",
+                "content": "To run the modal builder locally, one should execute \"docker build -t bennykok/comfydeploy-builder:dev . && docker run --env-file .env -p 8080:8080 bennykok/comfydeploy-builder:dev\"."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the environment variables required for the modal builder?"
+            },
+            {
+                "role": "assistant",
+                "content": "The environment variables required are MODAL_TOKEN_ID and MODAL_TOKEN_SECRET."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Describe the installation process for Fly.io on Mac/Linux."
+            },
+            {
+                "role": "assistant",
+                "content": "To install Fly.io on Mac/Linux, one must first ensure Homebrew is installed, and then run \"brew install flyctl\". If Homebrew is not installed, the install script \"curl -L https://fly.io/install.sh | sh\" can be used."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Who is the target audience for the modal builder?"
+            },
+            {
+                "role": "assistant",
+                "content": "The target audience for the modal builder is individuals or teams looking to deploy modal apps and require a simple process for generating deployment urls."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between running \"fly launch\" and \"fly deploy\"?"
+            },
+            {
+                "role": "assistant",
+                "content": "When deploying for the first time, one should run \"fly launch\". For subsequent deployments, \"fly deploy\" should be used."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of setting MODAL_TOKEN_ID and MODAL_TOKEN_SECRET in Fly.io?"
+            },
+            {
+                "role": "assistant",
+                "content": "Setting MODAL_TOKEN_ID and MODAL_TOKEN_SECRET in Fly.io is necessary to authenticate and authorize the deployment process."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install Comfy Deploy's plugin on my local machine?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install Comfy Deploy's plugin by cloning the repository from GitHub using the command: `git clone https://github.com/BennyKok/comfyui-deploy.git` in your custom_nodes directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I install ComfyUI Deploy using ComfyUI Manager?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, you can install ComfyUI Deploy using ComfyUI Manager by searching for 'ComfyUI Deploy' in the manager."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I add a ComfyDeploy node to my workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "After installing ComfyUI Deploy, you can add a ComfyDeploy node by clicking the plus icon in the ComfyUI interface and selecting the ComfyDeploy node from the list of available nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I set a name for my workflow in ComfyUI Deploy?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can set a name for your workflow by clicking on the 'Untitled' field in the ComfyDeploy node and entering a name for your workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I set up my API key for ComfyUI Deploy?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can set up your API key by opening the settings panel in ComfyUI and entering your API key in the provided field. If you don't have an API key, you can create one by following the link to 'Create API Key'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I deploy my workflow to ComfyUI's server?"
+            },
+            {
+                "role": "assistant",
+                "content": "After setting up your workflow and API key, you can deploy your workflow to ComfyUI's server by clicking the 'Deploy' button in the ComfyUI interface."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I check my deployed workflows?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can check your deployed workflows by visiting the 'your workflows here' link provided in the ComfyUI Deploy documentation."
+            }
+        ]
+    }
+]

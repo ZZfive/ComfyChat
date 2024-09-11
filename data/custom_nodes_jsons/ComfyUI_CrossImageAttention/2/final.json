@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Stable Diffusion and who proposed it?"
+            },
+            {
+                "role": "assistant",
+                "content": "Stable Diffusion is a text-to-image model that empowers people to create stunning art within seconds. It was proposed by Patrick Esser, Robin Rombach and the Stability AI team."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some key features of Stable Diffusion?"
+            },
+            {
+                "role": "assistant",
+                "content": "Stable Diffusion is a breakthrough in speed and quality, capable of running on consumer GPUs. It builds upon the work of the team at CompVis and Runway in their widely used latent diffusion model combined with insights from conditional diffusion models by Katherine Crowson, Dall-E 2 by Open AI, Imagen by Google Brain and many others."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What architecture does Stable Diffusion use?"
+            },
+            {
+                "role": "assistant",
+                "content": "Stable Diffusion has the same architecture as Latent Diffusion but uses a frozen CLIP Text Encoder instead of training the text encoder jointly with the diffusion model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I find an in-detail explanation of the Stable Diffusion model?"
+            },
+            {
+                "role": "assistant",
+                "content": "An in-detail explanation of the Stable Diffusion model can be found under the blog post 'Stable Diffusion with 🧨 Diffusers' on the Hugging Face website."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I use Stable Diffusion without relying on the Hugging Face Hub and passing an authentication token?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can download the weights of Stable Diffusion to a local path using 'git lfs install; git clone https://huggingface.co/runwayml/stable-diffusion-v1-5' and pass the local path to the cloned folder to 'from_pretrained'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some available pipelines for Stable Diffusion and what tasks can they perform?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some available pipelines for Stable Diffusion include 'pipeline_stable_diffusion.py' for Text-to-Image Generation, 'pipeline_stable_diffusion_img2img' for Image-to-Image Text-Guided Generation, and 'pipeline_stable_diffusion_inpaint' for Text-Guided Image Inpainting."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can Stable Diffusion work with different samplers?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, Stable Diffusion can work with a variety of different samplers such as the default PLMS scheduler, DDIM scheduler and K-LMS scheduler."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Define the model name and describe briefly how it works."
+            },
+            {
+                "role": "assistant",
+                "content": "The model name is {{ model_name | default('ComfyUI_CrossImageAttention') }}. This model is trained on the {{ dataset_name }} dataset using the {{ model_name | default('🤗 Diffusers') }} library. Cross-图像注意力模型通过捕获所有图像之间的内在联系来增强性能，提高图像和视频生成的质量。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How should this model be used?"
+            },
+            {
+                "role": "assistant",
+                "content": "# TODO: add an example code snippet for running ComfyUI_CrossImageAttention again\n"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the limitations and potential biases of this model?"
+            },
+            {
+                "role": "assistant",
+                "content": "[TODO: provide detailed examples of latent issues and potential remediations]"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you describe the training data used for this model?"
+            },
+            {
+                "role": "assistant",
+                "content": "[TODO: describe the data used to train the model]"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the training hyperparameters used to develop this model?"
+            },
+            {
+                "role": "assistant",
+                "content": "该模型的训练超参数有：\n- 学习率: {{ learning_rate }}\n- 训练数据批大小: {{ train_batch_size }}\n- 评估数据批大小: {{ eval_batch_size }}\n- 梯度累加步数: {{ gradient_accumulation_steps }}\n- 优化器: AdamW 与 betas=({{ adam_beta1 }}, {{ adam_beta2 }}), weight_decay={{ adam_weight_decay }}和epsilon={{ adam_epsilon }}的结合\n- 学习率调度器: {{ lr_scheduler }}\n- 学习率预热步数: {{ lr_warmup_steps }}\n- EMA 倒置gamma：{{ ema_inv_gamma }}\n- EMA 倒置power：{{ ema_power }}\n- EMA 倒置最大衰减次数：{{ ema_max_decay }}\n- 混合精度：{{ mixed_precision }}"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the results from training this model?"
+            },
+            {
+                "role": "assistant",
+                "content": "模型训练结果显示了模型在图像和视频生成任务上的最佳性能。\n\n📈 [TensorBoard 日志](https://huggingface.co/{{ repo_name }}/tensorboard?#scalars)"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is it feasible for a developer to fine-tune this ComfyUI_CrossImageAttention model with custom data?"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，开发者可以使用自己的定制或数据rase来细化ComfyUI_CrossImageAttention模型，以更好地适应特定的应用场景。如果一个用户希望将图像颜色更改为不同的主题颜色，那么他可以准备一系列的图像和期望的歧义点标签，用于训练模型，以便它可以学习如何将特定主题的颜色应用于图像。"
+            }
+        ]
+    }
+]

@@ -1,0 +1,278 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of comfyui_overly_complicated_sampling?"
+            },
+            {
+                "role": "assistant",
+                "content": "Comfyui_overly_complicated_sampling provides experimental and mathematically unsound (but fun!) sampling methods for ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the current status of comfyui_overly_complicated_sampling?"
+            },
+            {
+                "role": "assistant",
+                "content": "The current status of comfyui_overly_complicated_sampling is in flux, meaning it may be useful but is likely to change or break workflows frequently. It is mainly intended for advanced users."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some of the features offered by comfyui_overly_complicated_sampling?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some of the features offered by comfyui_overly_complicated_sampling include many different samplers, the ability to schedule samplers, CFG++ support for some samplers, native support for Restart sigmas, support for custom noise types, and immiscible noise for sampling and Restart."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the supported solver backends in comfyui_overly_complicated_sampling?"
+            },
+            {
+                "role": "assistant",
+                "content": "Comfyui_overly_complicated_sampling supports Diffrax, torchdiffeq, torchode and torchsde solver backends."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users get help with using comfyui_overly_complicated_sampling?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can create a question in the OCS Q&A Discussion on GitHub to get help with using comfyui_overly_complicated_sampling."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some of the nodes available in comfyui_overly_complicated_sampling?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some of the nodes available in comfyui_overly_complicated_sampling include OCS Sampler, OCS Group, and OCS Substeps."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the OCS Sampler node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The OCS Sampler node is the main sampler node in comfyui_overly_complicated_sampling, with an output suitable for connecting to a SamplerCustom. It has builtin support for Restart sampling."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the OCS Group node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The OCS Group node in comfyui_overly_complicated_sampling defines a group of substeps and allows scheduling samplers."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the OCS Substeps node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The OCS Substeps node in comfyui_overly_complicated_sampling defines the number of substeps and the method used for sampling the substeps."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the OCS Expressions in comfyui_overly_complicated_sampling?"
+            },
+            {
+                "role": "assistant",
+                "content": "OCS Expressions in comfyui_overly_complicated_sampling are used to define custom filtering operations and manipulate tensor and image data within the ComfyUI application."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How are variables like 'step', 'substep', and 'sigma_idx' used in OCS Expressions?"
+            },
+            {
+                "role": "assistant",
+                "content": "Variables like 'step', 'substep', and 'sigma_idx' are used as indexes in OCS Expressions, where 'step' represents the current step, 'substep' represents the current substep, and 'sigma_idx' represents the index of the current sigma value."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 't_noise' function in comfyui_overly_complicated_sampling?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 't_noise' function in comfyui_overly_complicated_sampling is used to generate un-normalized noise, which can be added to tensors to introduce randomness or variation in the image generation process."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the 't_scale' function be used to manipulate tensor data in comfyui_overly_complicated_sampling?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 't_scale' function in comfyui_overly_complicated_sampling can be used to scale a tensor by specifying the scale factor, scaling mode (e.g., bicubic, bilinear), and whether to use absolute or relative scaling values."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'img_taesd_encode' function in comfyui_overly_complicated_sampling?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'img_taesd_encode' function in comfyui_overly_complicated_sampling is used to encode an image batch into a latent tensor, which can be used for further processing or manipulation within the ComfyUI application."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the 'img_pil_resize' function be used to manipulate image data in comfyui_overly_complicated_sampling?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'img_pil_resize' function in comfyui_overly_complicated_sampling can be used to resize an image batch by specifying the target size, resampling mode (e.g., bicubic, lanczos), and whether to use absolute or relative scaling values."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'unsafe_tensor_method' and 'unsafe_torch' functions in comfyui_overly_complicated_sampling?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'unsafe_tensor_method' and 'unsafe_torch' functions in comfyui_overly_complicated_sampling provide access to low-level tensor operations and PyTorch functionality. However, they are disabled by default and should be used with caution, as enabling them can introduce security risks."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are OCS Filters in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "OCS Filters in ComfyUI allow changing sampler inputs/outputs, model input/outputs, generated noise and so on. They are configured by the advanced YAML/JSON parameter block in the node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which components support OCS Filters in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "OCS Filters are supported by OCS Substeps, OCS Group, OCS Sampler, and Immiscible components in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'when' key in a basic filter definition?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'when' key in a basic filter definition is an expression that is evaluated to determine whether the filter applies. It may be set to null, and if set, should evaluate to a boolean."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the built-in blend modes provided by OCS?"
+            },
+            {
+                "role": "assistant",
+                "content": "OCS provides built-in blend modes: 'lerp', 'a_only', and 'b_only'. If you have ComfyUI-bleh available, you can use any blend mode it supports."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'list' filter type in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'list' filter type in ComfyUI is a list of filters where the output of the previous filter is given to the next as input. The 'list' filter's blend applies to the output from the final filter in the list."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'bleh_enhance' filter type and what is its requirement?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'bleh_enhance' filter type is available if you have the ComfyUI-bleh node pack installed. It provides various enhancement modes for filters."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'sonar_power_filter' filter type and what is its requirement?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'sonar_power_filter' filter type is available if you have ComfyUI-sonar installed. It allows advanced power noise filtering capabilities."
+            }
+        ]
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the SideBySide Stereoscope node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SideBySide Stereoscope node generates side-by-side stereoscopic images from a base image and a corresponding depth map, creating a three-dimensional viewing experience."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is the Depth Map used in the SideBySide Stereoscope node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Depth Map is used to calculate the stereo effect in the generated images. It is assumed to be in the form of a texture with the same resolution as the input image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What dependencies does the SideBySide Stereoscope node have?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SideBySide Stereoscope node relies on the 'diffusers' and 'torch' packages, as well as the 'civitai' software library."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'randomBond' method in the SideBySide Node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'randomBond' method is used to generate a random team bond, which can be used to create a more synchronized look between the right and left images in the stereoscopic pair."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the right and left images of a stereoscopic pair be synchronized?"
+            },
+            {
+                "role": "assistant",
+                "content": "The right and left images of a stereoscopic pair can be synchronized using methods like 'randomBond' to ensure a consistent look and feel between the two images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the typical resolutions of depth maps that can be used with the SideBySide Node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Depth maps can be generated at various resolutions, typically ranging from 1024x1024 pixels to 6144x6144 pixels, depending on the computational resources available."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the expected range of the focus from 0 to 1 in the SideBySide Node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The focus parameter, used to adjust the intensity of the border between the two stereoscopy regions, should have a value between 0 and 1. A value of 0 makes the separator invisible, while a value of 1 makes it visible."
+            }
+        ]
+    }
+]

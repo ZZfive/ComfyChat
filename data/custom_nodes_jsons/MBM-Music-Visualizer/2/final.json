@@ -1,0 +1,446 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the '_v' field in the Prompt Sequence JSON specifications?"
+            },
+            {
+                "role": "assistant",
+                "content": "The '_v' field represents the version of the Prompt Sequence JSON file following Semantic Versioning 2.0.0 specifications."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'defaults' field contain in the Prompt Sequence JSON specifications?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'defaults' field contains a set of default values to use for optional values in the 'sequence', including default positive and negative prompts."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'sequence' field in the Prompt Sequence JSON specifications?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'sequence' field is a list of prompt data in order from top to bottom, containing optional positive and negative prompts and time codes for each item."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What happens if a positive or negative prompt is not provided for an item in the 'sequence' field?"
+            },
+            {
+                "role": "assistant",
+                "content": "If a positive or negative prompt is not provided for an item in the 'sequence' field, the default values from the 'defaults' field will be used."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'timecode' field represent in the Prompt Sequence JSON specifications?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'timecode' field represents the time code in seconds where a prompt should reach its max influence."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What value is supplied if the 'timecode' field is not provided in the Prompt Sequence JSON specifications?"
+            },
+            {
+                "role": "assistant",
+                "content": "If the 'timecode' field is not provided, -1 will be supplied to indicate no set time code."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can a prompt be set to use only the default values in the Prompt Sequence JSON specifications?"
+            },
+            {
+                "role": "assistant",
+                "content": "To set a prompt to use only the default values, provide an empty dictionary {} at the appropriate indexes in the 'sequence' field."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is MBM's Music Visualizer?"
+            },
+            {
+                "role": "assistant",
+                "content": "MBM's Music Visualizer is an image generation based music visualizer integrated into ComfyUI as custom nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which library is used by the Audio Loader node in MBM's Music Visualizer?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Audio Loader node in MBM's Music Visualizer uses the librosa library to load an audio file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Prompt Sequence Builder node in MBM's Music Visualizer do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Prompt Sequence Builder node in MBM's Music Visualizer stacks multiple ComfyUI prompts into a Prompt Sequence."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Prompt Sequence Interpolator node in MBM's Music Visualizer?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Prompt Sequence Interpolator node in MBM's Music Visualizer calculates additional sub-prompts within each set of prompts in Prompt Sequence to create a weighted interpolation transition between each."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Image Concatenator node in MBM's Music Visualizer do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Image Concatenator node in MBM's Music Visualizer combines multiple images into a single Tensor. Images are not visually combined and are still distinct."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you load a sequence of prompts from a JSON file in MBM's Music Visualizer?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can use the Prompt Sequence Loader node in MBM's Music Visualizer to load a sequence of prompts from a JSON file fitting the specifications."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the MUSIC_VIS data type in MBM's Music Visualizer?"
+            },
+            {
+                "role": "assistant",
+                "content": "The MUSIC_VIS data type in MBM's Music Visualizer is used for representing a music visualization with its relevant data."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you install MBM's Music Visualizer in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install MBM's Music Visualizer in ComfyUI, you need to enter ComfyUI's Python Environment, clone the MBM-Music-Visualizer repo into ComfyUI's custom_nodes directory, enter the MBM_MusicVisualizer directory, and run pip install -r .\requirements.txt to install the project's dependencies."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you preview the general flow of the visualization in MBM's Music Visualizer before committing to image generation for all frames?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can preview the general flow of the visualization in MBM's Music Visualizer by bypassing the Prompt Sequence Renderer and its outputs, or by setting the image_limit to 1 or higher to generate only a specific number of images. This will still produce complete charts for most data sources."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be included in the bug report title?"
+            },
+            {
+                "role": "assistant",
+                "content": "The title should briefly summarize the bug you are reporting."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be provided in the 'To Reproduce' section of the bug report?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'To Reproduce' section should include step-by-step instructions on how to reproduce the bug, such as going to a specific page, clicking on a particular button, scrolling to a certain point, and seeing the error."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What information should be included in the 'Expected behavior' section of the bug report?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Expected behavior' section should clearly and concisely describe what you anticipated would happen instead of the bug."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Should screenshots be added to the bug report?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, if applicable, screenshots should be added to the bug report to help explain the problem."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What desktop information should be provided when reporting a bug?"
+            },
+            {
+                "role": "assistant",
+                "content": "When reporting a bug, you should include the desktop operating system, browser, and version used."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What smartphone details should be provided in the bug report?"
+            },
+            {
+                "role": "assistant",
+                "content": "The smartphone details that should be included in the bug report are the device model, operating system, browser, and version."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is there a section for providing additional context about the bug?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, there is a section titled 'Additional context' where you can add any other relevant information about the problem."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Feature request' section in the MBM-Music-Visualizer project?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Feature request' section is used to suggest an idea for the MBM-Music-Visualizer project."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be included in the description of a problem related to a feature request?"
+            },
+            {
+                "role": "assistant",
+                "content": "The description should provide a clear and concise explanation of what the problem is, for example, 'I'm always frustrated when [...]'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be described when proposing a solution for a feature request?"
+            },
+            {
+                "role": "assistant",
+                "content": "The proposal should include a clear and concise description of what you want to happen."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be mentioned regarding alternative solutions or features considered?"
+            },
+            {
+                "role": "assistant",
+                "content": "The description should clearly and concisely explain any alternative solutions or features that have been considered."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What additional information can be added to provide more context for a feature request?"
+            },
+            {
+                "role": "assistant",
+                "content": "Any other relevant context or screenshots about the feature request can be added to provide more information."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What labels can be assigned to a feature request in the MBM-Music-Visualizer project?"
+            },
+            {
+                "role": "assistant",
+                "content": "The labels for a feature request can be specified in the 'labels' field."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Who can be assigned to work on a feature request in the MBM-Music-Visualizer project?"
+            },
+            {
+                "role": "assistant",
+                "content": "The assignees for a feature request can be specified in the 'assignees' field."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the MBM-Music-Visualizer pull request?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of the MBM-Music-Visualizer pull request is to optimize the code to improve the execution speed of the music visualizer."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What specific changes were made in the MBM-Music-Visualizer pull request?"
+            },
+            {
+                "role": "assistant",
+                "content": "The specific changes made in the MBM-Music-Visualizer pull request include optimizing the code to improve execution speed. Additional changes may be listed but are not specified in the provided text."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why were the changes made in the MBM-Music-Visualizer pull request?"
+            },
+            {
+                "role": "assistant",
+                "content": "The changes were made in the MBM-Music-Visualizer pull request to optimize the code and improve the execution speed of the music visualizer."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the expected outcome of the MBM-Music-Visualizer pull request?"
+            },
+            {
+                "role": "assistant",
+                "content": "The expected outcome of the MBM-Music-Visualizer pull request is an improvement in the execution speed of the music visualizer due to the optimized code."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does the MBM-Music-Visualizer pull request introduce new features?"
+            },
+            {
+                "role": "assistant",
+                "content": "The provided information does not specify if the MBM-Music-Visualizer pull request introduces new features. It focuses on optimizing the existing code to improve execution speed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is the MBM-Music-Visualizer pull request related to bug fixes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The provided information does not specify if the MBM-Music-Visualizer pull request is related to bug fixes. It mentions optimizing the code to improve execution speed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the main focus of the changes in the MBM-Music-Visualizer pull request?"
+            },
+            {
+                "role": "assistant",
+                "content": "The main focus of the changes in the MBM-Music-Visualizer pull request is on optimizing the code to improve the execution speed of the music visualizer."
+            }
+        ]
+    }
+]

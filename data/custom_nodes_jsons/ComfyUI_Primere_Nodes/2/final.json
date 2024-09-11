@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What version of gguf-py is required to use ComfyUI_Primere_Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The llama.cpp version of gguf-py is needed, not the pip version, as the pip version does not have the Python quantization code yet."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you convert your initial source model to FP16 or BF16?"
+            },
+            {
+                "role": "assistant",
+                "content": "To convert your initial source model to FP16 or BF16, run the following command: python convert.py --src E:\\models\\unet\\flux1-dev.safetensors"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What steps are needed to apply the provided patch to the llama.cpp repo?"
+            },
+            {
+                "role": "assistant",
+                "content": "First, check out tags/b3600 in the llama.cpp repo. Then, apply the provided patch using the command: git apply ..\\lcpp.patch"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you compile the llama-quantize binary?"
+            },
+            {
+                "role": "assistant",
+                "content": "Create a build directory, navigate to it, run cmake .., and then build the target llama-quantize using cmake --build . --config Debug -j10 --target llama-quantize"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you use the newly built llama-quantize binary to quantize your model?"
+            },
+            {
+                "role": "assistant",
+                "content": "Use the command: llama.cpp\\build\\bin\\Debug\\llama-quantize.exe E:\\models\\unet\\flux1-dev-BF16.gguf E:\\models\\unet\\flux1-dev-Q4_K_S.gguf Q4_K_S"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why shouldn't you use the diffusers UNET for flux?"
+            },
+            {
+                "role": "assistant",
+                "content": "The diffusers UNET won't work with flux due to q/k/v being merged into one qkv key. Instead, use the default/reference checkpoint format."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should you avoid quantizing with ComfyUI_Primere_Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "Avoid quantizing SDXL, SD1, or other Conv2D heavy models, as there is little to no benefit with these models. If you do quantize them, make sure to extract the UNET model first."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Primere nodes for ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Primere nodes for ComfyUI provide various workflows and configurations for generating images using different models and techniques, allowing users to customize their image generation process."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the key differences between the Minimal, Basic, Advanced, and Full workflows in the Primere nodes for ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Minimal workflow has limited features and supports only SD and SDXL models. The Basic workflow adds support for LCM, Turbo, Cascade, Playground, and Lightning models, as well as upscaling. The Advanced workflow further includes image save and refiners, while the Full workflow incorporates all features, including the recycler, styles, networks, and custom VAE."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which sampler and model are used in the Normal SD/SDXL workflow in the Primere nodes for ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Normal SD/SDXL workflow in the Primere nodes for ComfyUI uses the euler/karras sampler with 20 steps and a CFG of 8, utilizing the Photon V1 model for SD and the batchCOREALISMXL v40 model for SDXL."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the resolution of images generated using the SD model in the Basic workflow of the Primere nodes for ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the Basic workflow of the Primere nodes for ComfyUI, the resolution of images generated using the SD model is 768."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How many refiners are available in the Full workflow of the Primere nodes for ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Full workflow of the Primere nodes for ComfyUI includes 4 refiners for enhancing image details."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the average running time for generating an image using the SD model with the LCM sampler in the Basic workflow of the Primere nodes for ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the Basic workflow of the Primere nodes for ComfyUI, the average running time for generating an image using the SD model with the LCM sampler is 3 seconds."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which upscaler is used in the Advanced workflow of the Primere nodes for ComfyUI, and what is the upscaled resolution for SD images?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Advanced workflow of the Primere nodes for ComfyUI uses the Ultimate SD upscaler, and the upscaled resolution for SD images is approximately 10 megapixels."
+            }
+        ]
+    }
+]

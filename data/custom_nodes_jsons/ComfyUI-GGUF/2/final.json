@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What version of gguf-py is required for ComfyUI-GGUF to work?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-GGUF currently requires the llama.cpp version of gguf-py, not the pip version, as the pip version does not have the Python quantization code yet."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you convert your initial source model to FP16 or BF16?"
+            },
+            {
+                "role": "assistant",
+                "content": "To convert your initial source model to FP16 or BF16, run the command: python convert.py --src E:\\models\\unet\\flux1-dev.safetensors"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What steps are needed to apply the provided patch to the llama.cpp repository?"
+            },
+            {
+                "role": "assistant",
+                "content": "To apply the provided patch to the llama.cpp repository, first checkout the b3600 tag, then apply the lcpp.patch using the command: git apply ..\\lcpp.patch"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you compile the llama-quantize binary using cmake?"
+            },
+            {
+                "role": "assistant",
+                "content": "To compile the llama-quantize binary using cmake, create a build directory, run cmake .., then run cmake --build . --config Debug -j10 --target llama-quantize"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What command is used to quantize your model to the desired format using the newly built binary?"
+            },
+            {
+                "role": "assistant",
+                "content": "To quantize your model to the desired format using the newly built binary, run the command: llama.cpp\\build\\bin\\Debug\\llama-quantize.exe E:\\models\\unet\\flux1-dev-BF16.gguf E:\\models\\unet\\flux1-dev-Q4_K_S.gguf Q4_K_S"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why should you not use the diffusers UNET for flux?"
+            },
+            {
+                "role": "assistant",
+                "content": "You should not use the diffusers UNET for flux because it won't work due to q/k/v being merged into one qkv key. Instead, use the default/reference checkpoint format."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should you do before quantizing SDXL, SD1, or other Conv2D heavy models?"
+            },
+            {
+                "role": "assistant",
+                "content": "Before quantizing SDXL, SD1, or other Conv2D heavy models, make sure to extract the UNET model first. However, note that there is little to no benefit in quantizing these models."
+            }
+        ]
+    }
+]

@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the comfyui-upscale-by-model custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of the comfyui-upscale-by-model custom node is to allow upscaling an image by a factor using a model in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the steps performed by the comfyui-upscale-by-model node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The comfyui-upscale-by-model node performs the following steps: 1) Upscale the input image with the upscale model, 2) Check the size of the upscaled image and downscale it to the target size using the defined scaling method if necessary, 3) Return the upscaled image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What happens if the upscaled image size is larger than the target size?"
+            },
+            {
+                "role": "assistant",
+                "content": "If the upscaled image size is larger than the target size, the image is downscaled to the target size using the scaling method defined by the `rescale_method` parameter."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What happens if the upscaled image size is smaller than or equal to the target size?"
+            },
+            {
+                "role": "assistant",
+                "content": "If the upscaled image size is smaller than or equal to the target size, no further action is taken."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the input parameters for the comfyui-upscale-by-model node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The input parameters for the comfyui-upscale-by-model node are `upscale_model`, `image`, `upscale_by`, and `rescale_method`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `upscale_by` parameter define?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `upscale_by` parameter defines the factor by which the image should be upscaled."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the output of the comfyui-upscale-by-model node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The output of the comfyui-upscale-by-model node is the upscaled image, denoted by `IMAGE`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the comfyui-upscale-by-model custom node be installed?"
+            },
+            {
+                "role": "assistant",
+                "content": "The comfyui-upscale-by-model custom node can be installed by cloning its repository into ComfyUI's `custom_nodes` folder."
+            }
+        ]
+    }
+]

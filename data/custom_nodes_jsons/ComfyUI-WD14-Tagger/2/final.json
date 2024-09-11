@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI WD 1.4 Tagger?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI WD 1.4 Tagger is a [ComfyUI](https://github.com/comfyanonymous/ComfyUI) extension designed to interrogate booru tags from images. It leverages the functionality provided by [SmilingWolf/wd-v1-4-tags](https://huggingface.co/spaces/SmilingWolf/wd-v1-4-tags) and [toriato/stable-diffusion-webui-wd14-tagger](https://github.com/toriato/stable-diffusion-webui-wd14-tagger). All models created by [SmilingWolf](https://huggingface.co/SmilingWolf)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the installation steps for ComfyUI WD 1.4 Tagger?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI WD 1.4 Tagger, follow these steps:\n1. Use `git clone https://github.com/pythongosssss/ComfyUI-WD14-Tagger` into the `custom_nodes` folder. \n    - Example: `custom_nodes\\ComfyUI-WD14-Tagger`\n2. Open a Command Prompt/Terminal/etc.\n3. Navigate to the `custom_nodes\\ComfyUI-WD14-Tagger` folder created. \n    - Example: `cd C:\\ComfyUI_windows_portable\\ComfyUI\\custom_nodes\\ComfyUI-WD14-Tagger` or wherever it's installed.\n4. Install Python packages using either the Windows Standalone installation or Manual/non-Windows installation methods.\n    - **Windows Standalone Installation**: `../../../python_embeded/python.exe -s -m pip install -r requirements.txt`\n    - **Manual/non-Windows Installation**: `pip install -r requirements.txt`"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I use ComfyUI WD 1.4 Tagger?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use ComfyUI WD 1.4 Tagger, follow these steps:\n1. Add the node via `image` -> `WD14Tagger|pysssss`\n2. Models will be automatically downloaded at runtime if missing.\n3. The interrogation is supported on any node that is displaying an image, such as `LoadImage`, `SaveImage`, `PreviewImage` nodes.\n4. Simply right-click on the node or image you want to interrogate and select `WD14 Tagger` from the menu."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What settings are available for ComfyUI WD 1.4 Tagger?"
+            },
+            {
+                "role": "assistant",
+                "content": "The settings for ComfyUI WD 1.4 Tagger are organized in the `settings` section of `pysssss.json`. These settings allow you to customize the interrogation process by specifying details such as the interrogation model to use, the threshold for tags to be considered valid, the character threshold, and a list of tags to exclude."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I manually download models for offline use of ComfyUI WD 1.4 Tagger?"
+            },
+            {
+                "role": "assistant",
+                "content": "To manually download models for offline use of ComfyUI WD 1.4 Tagger, follow these steps:\n1. Create a `models` folder in the same folder as the `wd14tagger.py` file.\n2. Use URLs for models from the list in `pysssss.json`.\n3. Download `model.onnx` and name it with the model name, for example, `wd-v1-4-convnext-tagger-v2.onnx`.\n4. Download `selected_tags.csv` and name it with the model name, for example, `wd-v1-4-convnext-tagger-v2.csv`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the requirements for ComfyUI WD 1.4 Tagger?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI WD 1.4 Tagger requires the following:\n- `onnxruntime` (recommended, interrogation is still fast on CPU, included in requirements.txt)\n- or `onnxruntime-gpu` (allows use of GPU, many people have issues with this, if you try, I can't provide support for this)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I view the supported interrogation models for ComfyUI WD 1.4 Tagger?"
+            },
+            {
+                "role": "assistant",
+                "content": "To view the supported interrogation models for ComfyUI WD 1.4 Tagger, visit [WaifuDiffusion v1.4 Tags](https://huggingface.co/spaces/SmilingWolf/wd-v1-4-tags). The most popular model is `ConvNextV2`, and the newest model (as of the document's writing) is `MOAT`. You can try them out using the Tagger by specifying the model name in the `model` section of the Tagger's settings."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I update ComfyUI WD 1.4 Tagger?"
+            },
+            {
+                "role": "assistant",
+                "content": "The document does not provide specific instructions on how to update ComfyUI WD 1.4 Tagger. However, you can follow general update practices by checking the repository for any updates or new releases, cloning the latest version of the repository, and following the provided installation steps."
+            }
+        ]
+    }
+]

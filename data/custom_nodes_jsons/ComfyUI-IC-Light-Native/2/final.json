@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-IC-Light-Native?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-IC-Light-Native is a native implementation of IC-Light for ComfyUI, which allows users to generate and relight images using foreground and background models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you install ComfyUI-IC-Light-Native?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install ComfyUI-IC-Light-Native by downloading the repository and unpacking it into the custom_nodes folder in the ComfyUI installation directory, or by cloning it via GIT."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which models are available for download in ComfyUI-IC-Light-Native?"
+            },
+            {
+                "role": "assistant",
+                "content": "There are two models available for download in ComfyUI-IC-Light-Native: iclight_sd15_fc_unet_ldm for FG workflows and iclight_sd15_fbc_unet_ldm for BG workflows."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some recommended nodes to use with ComfyUI-IC-Light-Native?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some recommended nodes to use with ComfyUI-IC-Light-Native include ComfyUI-KJNodes for creating light maps, ComfyUI-Easy-Use for removing backgrounds, ComfyUI_essentials for image resizing, and ComfyUI-IC-Light for preserving high-frequency details."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be done to ensure the masked area's color is correct in ComfyUI-IC-Light-Native workflows?"
+            },
+            {
+                "role": "assistant",
+                "content": "To ensure the masked area's color is correct in ComfyUI-IC-Light-Native workflows, use the 'IC Light Apply Mask Grey' node before passing the image to the VAE."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some common issues encountered when using ComfyUI-IC-Light-Native?"
+            },
+            {
+                "role": "assistant",
+                "content": "Common issues when using ComfyUI-IC-Light-Native include using the wrong model for the workflow, such as using the BG model in an FG workflow or vice versa, which can result in runtime errors related to channel mismatches."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can high-frequency details be recovered from the original input image in ComfyUI-IC-Light-Native?"
+            },
+            {
+                "role": "assistant",
+                "content": "High-frequency details can be recovered from the original input image in ComfyUI-IC-Light-Native by using the 'DetailTransfer' node from the ComfyUI-IC-Light custom node pack."
+            }
+        ]
+    }
+]

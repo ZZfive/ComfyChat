@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the workflow involve?"
+            },
+            {
+                "role": "assistant",
+                "content": "The workflow blends SD1.5 visual styles and precision into SDXL1.0 compositions, removing artifacts and faulty image creation automatically in the same rendering pipeline."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What URL provides a video discussion on the workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "http://www.youtube.com/watch?v=efAi0WIDyIo"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which ComfyUI nodes are prerequisites for this workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "Custom nodes required include ComfyUI_Comfyroll_CustomNodes, WAS-node-suite-comfyui, and gcLatentTunnel."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What instructions are provided for installation?"
+            },
+            {
+                "role": "assistant",
+                "content": "Load \"SDXL+1.5_FixTune.json\" into the ComfyUI client."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Describe the workflow's main observations."
+            },
+            {
+                "role": "assistant",
+                "content": "The fixing and tuning sampler are improving pictures, acceptable for fixing faces and hands. The swapping clothes works flawlessly with good LORA, but the Hand LORA cannot turn an alien hand into a human one. Images reach a good quality after 2nd resampling, probably due to the prompt producing a near exact copy of the training image. Latent Upscale is discouraged as it grossly destroys image quality."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the names of the ComfyUI nodes used in the workflow examples?"
+            },
+            {
+                "role": "assistant",
+                "content": "Models + LORAS used include RevAnimated, AbsoluteReality, Vietnamese long dress Aodai, Better Hands, and Add Detail."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the best resampling method?"
+            },
+            {
+                "role": "assistant",
+                "content": "The best resampling method is Image Upscale even though Latent Upscale is faster."
+            }
+        ]
+    }
+]

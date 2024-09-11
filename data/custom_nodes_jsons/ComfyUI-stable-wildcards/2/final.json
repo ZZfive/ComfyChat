@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI Stable Wildcards?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of ComfyUI Stable Wildcards is to implement wildcard support using a seed to stabilize the output and allow greater reproducibility when saving workflows to reproduce images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How are wildcards supported in ComfyUI Stable Wildcards?"
+            },
+            {
+                "role": "assistant",
+                "content": "Wildcards are supported via brackets and pipes. For example, `A painting of a {boat|fish} in the {sea|lake}` will randomly select either 'boat' or 'fish' for the first pair of words, and either 'sea' or 'lake' for the second pair."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be included in the prompt to prevent words from running together when using wildcards in ComfyUI Stable Wildcards?"
+            },
+            {
+                "role": "assistant",
+                "content": "Spaces should be included around the `{}` brackets to prevent words from running together when using wildcards in ComfyUI Stable Wildcards."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the three inputs required by the ComfyUI Stable Wildcards node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI Stable Wildcards node requires three inputs: 1) a string for the prompt, 2) a seed to make the prompt reproducible, and 3) a version to allow for future changes without breaking backwards compatibility."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the output of the ComfyUI Stable Wildcards node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI Stable Wildcards node has one output: a string representing the final prompt with wildcards processed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why did the developer choose not to combine the wildcard feature with the CLIP node in ComfyUI Stable Wildcards?"
+            },
+            {
+                "role": "assistant",
+                "content": "The developer chose not to combine the wildcard feature with the CLIP node to keep the wildcard code and CLIP implementation separate and more re-usable."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the developer's opinion on implementing file wildcards in ComfyUI Stable Wildcards?"
+            },
+            {
+                "role": "assistant",
+                "content": "The developer believes that file wildcards are not an appropriate approach for creating repeatable output, as there is no guarantee that the file exists on another system and that the file content has not been modified."
+            }
+        ]
+    }
+]

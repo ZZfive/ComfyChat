@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-SceneGenerator?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SceneGenerator, JSON formatuQQ dosyalarından oluşturmak için kullanılan bir ComfyUI eklenti. Bu eklenti, verilen JSON yapılandırmasına göre sahneler oluşturur ve iki farklı görüntü çıktısı üretir: biri sadece ürünleri, diğeri de 'props'ları dahil eder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the ComfyUI-SceneGenerator work?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SceneGenerator, verilen JSON yapılandırmasını kullanarak sahne önizlemeleri oluşturur."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the two types of output possible with ComfyUI-SceneGenerator?"
+            },
+            {
+                "role": "assistant",
+                "content": "Kullanılabilen iki çıktı türü: sadece ürünleri ve ürünleri ve 'props'ları içeren."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How to install ComfyUI-SceneGenerator?"
+            },
+            {
+                "role": "assistant",
+                "content": "1. Bu kat ılbaca klonlayın: \n    ```sh\n    git clone https://github.com/username/ComfyUI-SceneGenerator.git\n    cd ComfyUI-SceneGenerator\n    ```\n2. Gerekli Python paketlerini yükleyin:\n    ```sh\n    pip install -r requirements.txt\n    ```\n3. `ComfyUI` kurulumunuzu güncelleyin ve bu eklentiyi tanıyacak şekilde yapılandırın."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you provide an example of a JSON file for ComfyUI-SceneGenerator?"
+            },
+            {
+                "role": "assistant",
+                "content": "Örnek JSONdosyası:\n```json\n{\n    \"json_img\": {\n        \"stage\": {\n            \"width\": 1024,\n            \"height\": 1024\n        },\n        \"json\": [\n            {\n                \"config\": {\n                    \"width\": 832,\n                    \"height\": 844,\n                    \"x\": -1221.8473873472615,\n                    \"y\": 65.87637986788866,\n                    \"z\": 0,\n                    \"flip\": \"[1,1]\",\n                    \"rotation\": 0,\n                    \"src\": \"https://example.com/image1.png\",\n                    \"name\": \"fire\",\n                    \"scale\": {\n                        \"x\": 0.7592784445653415,\n                        \"y\": 0.7592784445653414\n                    },\n                    \"p_type\": \"prop\"\n                }\n            },\n            {\n                \"config\": {\n                    \"width\": 169,\n                    \"height\": 600,\n                    \"x\": 458.3287536766208,\n                    \"y\": 196.23299366788603,\n                    \"z\": 3,\n                    \"flip\": \"[1,1]\",\n                    \"rotation\": 29,\n                    \"src\": \"https://example.com/image5.png\",\n                    \"name\": \"tube of cream\",\n                    \"scale\": {\n                        \"x\": 1.1271834266188345,\n                        \"y\": 1.1271834266188288\n                    },\n                    \"p_type\": \"product\"\n                }\n            }\n        ]\n    }\n}"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the `prop_type` field in the JSON file?"
+            },
+            {
+                "role": "assistant",
+                "content": "JSON dosyasında `p_type` alanı, örünümün içeriğini belirtir. Bu durumda, 'terminal' veya 'fake' giderin veya benzeri örünümleri belirtmektedir."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can I use custom background images with ComfyUI-SceneGenerator?"
+            },
+            {
+                "role": "assistant",
+                "content": "Evet. JSON yapılandırmasının `background` alanındaki sözlük, örünmeyi veya raporlamayı özelleştirmek için özel bir resmi belirtmelidir. Bu eklenti, bu metni sapammadık leyihe başka bir takım metinlerle birleştirip, örünümlere gösterdiği metni belirlemektir."
+            }
+        ]
+    }
+]

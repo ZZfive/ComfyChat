@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI is a user interface that uses the stable diffusion model to generate images and videos, and it can be extended with custom plugins to enhance its functionality."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ReActor FaceSwap Extension Node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ReActor FaceSwap Extension Node is a fast and simple face swap extension node for ComfyUI, based on the ReActor SD-WebUI Face Swap Extension."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the latest updates in ReActor Node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The latest update in ReActor Node includes support for GPEN 1024/2048 restoration models, improvement of the quality of swapped faces through ReActorFaceBoost Node, and fixes for RAM issues."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install ReActor Node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install ReActor Node in ComfyUI by following these steps: Cloning the repository, updating PIP, installing Insightface package, and running the installation script."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the inputs and outputs of the ReActor FaceSwap Node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The inputs of the ReActor FaceSwap Node are `input_image`, `source_image`, and `face_model`. The outputs are `IMAGE` containing the swapped image and `FACE_MODEL` containing the model of the swapped face."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between normal gpen and cp.setStyle_ model?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `cp.Style_` model is specialized for face swapping, whereas the normal gpen model is a general-purpose diffusion model that can generate images or videos of any content, including faces."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can ReActor FaceSwap support non-facial swaps?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, ReActor FaceSwap can support non-facial swaps, but it may not be as accurate as face swaps due to the fact that non-facial swaps may not involve complex image transformations like face swaps."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is cg-noise?"
+            },
+            {
+                "role": "assistant",
+                "content": "cg-noise is a custom node in ComfyUI that replaces KSampler and KSampler Advanced, allowing for small variations in the initial noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does cg-noise generate variations in the image?"
+            },
+            {
+                "role": "assistant",
+                "content": "cg-noise generates variations in images by using a weight `x` and two seeds. It generates the noise based on `random_based_on(variation_seed) * x + random_based_on(seed) * (1-x)`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the main function of the ReActorFaceSwap node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The main function of the `ReActorFaceSwap` node is to perform face swapping in images. It takes an input image and a source image as inputs and outputs the swapped image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the available options for face swapping in the ReActorFaceSwapOpt node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `ReActorFaceSwapOpt` node provides options for face swapping. This includes parameters like `useuallyAdultImage`, `les无烟化和 mangaLike namespace`, and `art generative style`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can custom face models be loaded and used in the ReActorFaceSwap node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Custom face models can be loaded using the `ReActorSaveFaceModel` and `ReActorLoadFaceModel` nodes. These nodes save face models as \"face_model\" and load them when needed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ReActor enhancing FaceModel?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `ReActorFaceBoost` node is used to enhance the quality of the swapped face. It applies additional face restoration to the generated faces before inserting them into the target image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the considerations for determining the face index in face swapping?"
+            },
+            {
+                "role": "assistant",
+                "content": "When performing face swapping, the user should specify the indices of the faces to be swapped in both the input and source images. These indices are specified as integers, where the smallest index represents the first face."
+            }
+        ]
+    }
+]

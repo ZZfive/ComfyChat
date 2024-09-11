@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI_fabric?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_fabric is a set of custom nodes for ComfyUI based on the paper 'FABRIC: Personalizing Diffusion Models with Iterative Feedback' that allows personalizing diffusion models using attention-based reference image conditioning."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install ComfyUI_fabric?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI_fabric, navigate to the 'ComfyUI/custom_nodes/' directory and run the command: git clone https://github.com/ssitu/ComfyUI_fabric"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'FABRIC Patch Model' node in ComfyUI_fabric?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'FABRIC Patch Model' node in ComfyUI_fabric is used to patch a model to use FABRIC, allowing it to be used in any sampler node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'KSampler FABRIC' node do in ComfyUI_fabric?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'KSampler FABRIC' node in ComfyUI_fabric has the same inputs as a KSampler but with full FABRIC inputs, enabling the use of FABRIC features in the sampling process."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'Batch Latents' node used for in ComfyUI_fabric?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Batch Latents' node in ComfyUI_fabric is a helper node for adding two latents together in a batch, which is useful for using multiple positive/negative latents in FABRIC."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be done if the input latent, pos_latents, and neg_latents are not the same size in ComfyUI_fabric?"
+            },
+            {
+                "role": "assistant",
+                "content": "If the input latent, pos_latents, and neg_latents are not the same size in ComfyUI_fabric, they will be resized to the size of the input latent using bilinear interpolation. However, it is recommended to resize them in pixel space or use a model to resize the latents for better results."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended percentage of steps to apply feedback in ComfyUI_fabric?"
+            },
+            {
+                "role": "assistant",
+                "content": "The researchers recommend applying feedback to the first half of the denoising steps in ComfyUI_fabric."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can out of memory errors be resolved when using ComfyUI_fabric?"
+            },
+            {
+                "role": "assistant",
+                "content": "To resolve out of memory errors when using ComfyUI_fabric, try switching cross attention methods or use a smaller batch of positive/negative latents. If using pytorch cross attention, the nightly version of pytorch can be tried for better memory efficiency."
+            }
+        ]
+    }
+]

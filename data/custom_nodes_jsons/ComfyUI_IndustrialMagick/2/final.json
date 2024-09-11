@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which ImageMagick version is required for using IndustrialMagick?"
+            },
+            {
+                "role": "assistant",
+                "content": "At least ImageMagick 7 is required for using IndustrialMagick in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `return_image` parameter in the `IndustrialMagick` node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "When the `return_image` parameter is set to true, the node reads from the file and returns an image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does IndustrialMagickImageIngest function within ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "IndustrialMagickImageIngest takes an image as input, saves it as a temporary file, and returns the path of this temporary file, which can then be used in the IndustrialMagick node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the `param_count` parameter in IndustrialMagick?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `param_count` parameter specifies the number of parameter fields to be displayed, ranging from 1 to 50."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the significance of the `param_x` field in IndustrialMagick?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `param_x` field represents a token parameter as used by Python's subprocess.run() method, which is a crucial component in building the subprocess call."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `error` output field in the IndustrialMagick node indicate?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `error` output field represents a string that signals the subprocess if it has failed, which is used to determine the completion status of the subprocess call."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `IndustrialMagick` node allow?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `IndustrialMagick` node enables the building of a subprocess call token by token and supports up to 50 tokens. It expects an absolute image path as the last parameter."
+            }
+        ]
+    }
+]

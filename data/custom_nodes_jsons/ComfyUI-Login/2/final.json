@@ -1,0 +1,182 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-Login?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Login is a custom node that uses a simple password to protect ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How secure is the protection offered by ComfyUI-Login?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Login offers only basic protection, and users should be aware that absolute security does not exist. It should be used at one's own risk."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users set up a new password in ComfyUI-Login?"
+            },
+            {
+                "role": "assistant",
+                "content": "For the first login, users can choose any password, which will be encrypted and stored in a file named 'PASSWORD' within the 'login' folder in the ComfyUI project directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should users do if they forget their password?"
+            },
+            {
+                "role": "assistant",
+                "content": "If a user forgets their password, they can reset it by deleting the 'PASSWORD' file in the 'login' folder and logging in again with a new password of their choice."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users remove the login feature from ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To disable the login feature, users can either manually delete the ComfyUI-Login folder in the 'custom_nodes' directory and restart ComfyUI or use the ComfyUI-Manager to uninstall it."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does ComfyUI-Login protect the server from unauthorized API calls?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Login protects the server from unauthorized API calls by providing a token that can be found in the console. Users can validate their API calls by adding an additional argument 'token' or by adding an Authorization Bearer header."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can users customize the login page in ComfyUI-Login?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, users can personalize their login page by modifying the 'login.html' file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Upload Image Incognito' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Upload Image Incognito' node allows users to upload images securely by encrypting the image and generating a random decryption key that is never saved on disk or on the server. The image is automatically deleted by default, and the node keeps the image in cache, deleting the physical file after the first prompt runs."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should I do if I forget my ComfyUI-Login password?"
+            },
+            {
+                "role": "assistant",
+                "content": "If you forget your ComfyUI-Login password, you can reset it by deleting the `PASSWORD` file found in the `<ComfyUI project folder>/login` directory. After deleting this file, you will be able to log in again using a new password of your choice."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I set up a new password for my first login in ComfyUI-Login?"
+            },
+            {
+                "role": "assistant",
+                "content": "For your first login in ComfyUI-Login, you may choose any password. This password will be encrypted and stored in a file named `PASSWORD` within the ComfyUI project folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What happens to my chosen password when I set it up for the first time in ComfyUI-Login?"
+            },
+            {
+                "role": "assistant",
+                "content": "When you set up your password for the first time in ComfyUI-Login, it will be encrypted and stored in a file named `PASSWORD` within the ComfyUI project folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I remove the login feature from ComfyUI-Login?"
+            },
+            {
+                "role": "assistant",
+                "content": "To remove the login feature from ComfyUI-Login, you can either use the ComfyUI-Manager to uninstall it, or manually delete the ComfyUI-Login folder located in the `ComfyUI/custom_nodes/` directory and then restart ComfyUI for the changes to take effect."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the two methods to disable the login feature in ComfyUI-Login?"
+            },
+            {
+                "role": "assistant",
+                "content": "The two methods to disable the login feature in ComfyUI-Login are: 1) Using the ComfyUI-Manager to uninstall it, or 2) Manually deleting the ComfyUI-Login folder located in the `ComfyUI/custom_nodes/` directory and then restarting ComfyUI for the changes to take effect."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where is the `PASSWORD` file located for ComfyUI-Login?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `PASSWORD` file for ComfyUI-Login is located within the `<ComfyUI project folder>/login` directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should I do after manually deleting the ComfyUI-Login folder to ensure the login feature is disabled?"
+            },
+            {
+                "role": "assistant",
+                "content": "After manually deleting the ComfyUI-Login folder located in the `ComfyUI/custom_nodes/` directory, you need to restart ComfyUI for the changes to take effect and ensure the login feature is disabled."
+            }
+        ]
+    }
+]

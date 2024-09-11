@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which nodes are used in ComfyUI-Keyframed extension to facilitate parameter/prompt keyframing?"
+            },
+            {
+                "role": "assistant",
+                "content": "The nodes in the extension support parameterizing animations whose prompts or other settings will change over time. The major nodes used are: `Keyframe`, `Curve`, `ParameterGroup`, `Keyframed Condition`, and `Schedule`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the basic object structure that ComfyUI-Keyframed nodes inherit from?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI nodes inherit from `keyframed` objects: `Keyframe`, `Curve`, and `ParameterGroup`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the supported interpolation methods in ComfyUI-Keyframed?"
+            },
+            {
+                "role": "assistant",
+                "content": "The supported interpolation methods are: null, previous, next, linear, sine_wave, eased_lerp, and exp_decay."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'schedule' node do in ComfyUI-Keyframed extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `schedule` node takes inputs from various nodes and combines them to facilitate transitions through a sequence of conditionings (i.e. prompts)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'keyframed-entangled-curves' node output?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `keyframed-entangled-curves` node outputs N sine wave curves whose phases are offset to be equally spaced and whose amplitudes are adjusted such that the sum of all curves is 1."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the 'schedule-prompt' node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `schedule-prompt` node combines the nodes `CLIPTextEncode`, `Keyframed Condition`, and `Set Keyframe` to facilitate transitioning through a sequence of conditionings, commonly called a 'schedule'. This node is used to manage the positive prompt and build a 'prompt schedule'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Schedule' node in ComfyUI-Keyframed?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `Schedule` node is used to facilitate the transition through a sequence of conditionings, allowing for smooth and enhanced animation processes by with KSampler. It essentially manages how prompts change over time, enabling more dynamic and nuanced animations."
+            }
+        ]
+    }
+]

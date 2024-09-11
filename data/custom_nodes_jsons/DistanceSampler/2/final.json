@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does DistanceSampler do?"
+            },
+            {
+                "role": "assistant",
+                "content": "DistanceSampler is a modification of the Heun sampler using a custom function based on normalized distances. It's designed to work better with fewer steps, starting with 4 and recommending 10. The CFG scale is at 8."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the recommended starting steps and CFG scale for DistanceSampler?"
+            },
+            {
+                "role": "assistant",
+                "content": "For DistanceSampler, the recommended starting steps are 4 with a CFG scale of 8."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the effect of using a CFG scale of 1.0 for 4-8 steps?"
+            },
+            {
+                "role": "assistant",
+                "content": "A CFG scale of 1.0 with 4-8 steps in DistanceSampler can result in interesting variations in the generated images or videos."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What options for schedulers does DistanceSampler use natively?"
+            },
+            {
+                "role": "assistant",
+                "content": "DistanceSampler uses native AYS, AYS30, and Simple schedulers for both the Heun and the Heun CFG++ versions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the recommended distances for the Heun scheduler?"
+            },
+            {
+                "role": "assistant",
+                "content": "For the Heun scheduler, only the standard 3 incredible long tail modes are included."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Heun CFG++' version?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Heun CFG++' version is an alternative Euler CFGpp version from ComfyUI, which may or may not be a correct implementation of the Heun modification, but can produce good results."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the DistanceSampler parameters 's' and 'e' be interpreted?"
+            },
+            {
+                "role": "assistant",
+                "content": "'S' represents the number of samples to start with, and 'e' represents the number of samples to end with. For example, 's4e1' means starting with 4 samples, ending with 1 sample (which gives the Heun configuration)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'presets_to_add' file?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'presets_to_add' file allows users to add or remove presets to the list of available settings for DistanceSampler."
+            }
+        ]
+    }
+]

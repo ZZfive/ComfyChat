@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_Pipeline_Tool主要用于什么目的？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_Pipeline_Tool是一个简单的下载工具，方便在ComfyUI中使用pipeline模型，主要用于快速尝试新模型。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_Pipeline_Tool是否支持魔搭？"
+            },
+            {
+                "role": "assistant",
+                "content": "是的，ComfyUI_Pipeline_Tool在2024-08-03的更新中加入了魔搭支持，只要模型可以找到，速度可以拉满。安装方式是使用pip install modelscope。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_Pipeline_Tool的0.23.0以上版本有什么改进？"
+            },
+            {
+                "role": "assistant",
+                "content": "0.23.0以上版本不再需要local_dir_use_symlinks属性，也支持LLM模型的下载。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用ComfyUI_Pipeline_Tool下载模型时，repo_id的格式应该如何填写？"
+            },
+            {
+                "role": "assistant",
+                "content": "repo_id的格式应该是xxxxx/xxxxx，填错将无法使用。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "ComfyUI_Pipeline_Tool有哪三种使用方法？"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_Pipeline_Tool有三种使用方法：用法一推荐使用新的cli方法，无需每次开启ComfyUI即可下载；用法二只需填写repo_id，一键下载模型的所有文件到指定目录；用法三可以下载单一文件，需要填写repo_id和所需的模型名。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "在ComfyUI_Pipeline_Tool中，ignore_patterns参数有什么作用？"
+            },
+            {
+                "role": "assistant",
+                "content": "ignore_patterns参数用于选择不下载哪些文件，建议对于文件超多超大的模型库，先选择big_files模式，只下载小文件和结构，然后用'用法二'下载对应的文件。默认是none，即下载所有文件。"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "使用ComfyUI_Pipeline_Tool的'用法一'时，get_single_model参数需要如何设置？"
+            },
+            {
+                "role": "assistant",
+                "content": "使用'用法一'时，get_single_model必须是空的才能使用。"
+            }
+        ]
+    }
+]

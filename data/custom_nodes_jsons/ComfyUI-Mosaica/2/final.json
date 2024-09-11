@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Mosaica used for?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Mosaica is used to create colorful mosaic images by computing label images and applying lookup tables."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does K-Means work in ComfyUI-Mosaica?"
+            },
+            {
+                "role": "assistant",
+                "content": "K-Means in ComfyUI-Mosaica generates an image using a stable diffusion model and applies the k-means clustering algorithm from scikit-learn. The average color of each cluster is then applied to the image's labels, creating a colorized image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the benefits of using Mean Shift over K-Means?"
+            },
+            {
+                "role": "assistant",
+                "content": "Mean Shift is slower than K-Means, especially for images greater than 512x512. However, it does not require specifying the number of clusters, which is an advantage."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Watershed node in ComfyUI-Mosaica?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Watershed node in ComfyUI-Mosaica uses the watershed segmentation algorithm to convert an image into a label image. It is useful when the image has a lot of intensity variation and does not account for the hue of the original image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is an image colorized in ComfyUI-Mosaica?"
+            },
+            {
+                "role": "assistant",
+                "content": "An image can be colorized in ComfyUI-Mosaica by applying a lookup table (LUT) to the label image obtained from clustering algorithms like mean shift. This can be done either using a randomly generated LUT or by loading a LUT from Matplotlib."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of applying an img2img with light denoising to a colorized label image?"
+            },
+            {
+                "role": "assistant",
+                "content": "Applying an img2img with light denoising to a colorized label image in ComfyUI-Mosaica is done to refine the colorization and make it appear more natural, blending the colors of the label image with the content of the generated image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What nodes are available in ComfyUI-Mosaica?"
+            },
+            {
+                "role": "assistant",
+                "content": "In ComfyUI-Mosaica, nodes are available for various tasks. These include applying the Mean Shift clustering algorithm to an image (Mean Shift), converting a label image into an RGB image by applying a LUT (Apply LUT To Label Image), generating a random LUT of RGB colors (Random LUT), and loading an RGB LUT from Matplotlib (Load LUT From Matplotlib)."
+            }
+        ]
+    }
+]

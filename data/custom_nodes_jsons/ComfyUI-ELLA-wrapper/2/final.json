@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-ELLA-wrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-ELLA-wrapper is a set of wrapper nodes for ComfyUI that allows users to utilize the Diffusers implementation of ELLA within the ComfyUI interface."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the two official Comfy ELLA nodes released by Tencent?"
+            },
+            {
+                "role": "assistant",
+                "content": "Tencent has released two official Comfy ELLA nodes that should be used instead of the ComfyUI-ELLA-wrapper. These nodes can be found at the GitHub repository: https://github.com/TencentQQGYLab/ComfyUI-ELLA"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users install ComfyUI-ELLA-wrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can install ComfyUI-ELLA-wrapper by either using the Manager's 'install from git' feature or cloning the repository to custom_nodes and running 'pip install -r requirements.txt'. For portable users, they need to run the command in the ComfyUI_windows_portable folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What models and files are auto-downloaded when using ComfyUI-ELLA-wrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "When using ComfyUI-ELLA-wrapper, the ELLA model (132MB) and google-flan-t5-xl (6GB) are automatically downloaded. The ELLA model can be found at https://huggingface.co/QQGYLab/ELLA/blob/main/ella-sd1.5-tsc-t5xl.safetensors, and google-flan-t5-xl can be found at https://huggingface.co/ybelkada/flan-t5-xl-sharded-bf16/tree/main."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the original repository for ELLA?"
+            },
+            {
+                "role": "assistant",
+                "content": "The original repository for ELLA is ELLA: Equip Diffusion Models with LLM for Enhanced Semantic Alignment, which can be found at https://github.com/ELLA-Diffusion/ELLA."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the main features of ELLA?"
+            },
+            {
+                "role": "assistant",
+                "content": "ELLA is a diffusion model equipped with LLM for enhanced semantic alignment. It allows for better image generation based on text prompts by using Large Language Models to improve the understanding of the prompt and generate more accurate images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users evaluate their generated images using DPG-Bench?"
+            },
+            {
+                "role": "assistant",
+                "content": "To evaluate generated images using DPG-Bench, users need to generate images according to the provided prompts, ensuring that the generated image's filename is the same as the prompt's filename. Then, they need to run the command 'bash dpg_bench/dist_eval.sh $YOUR_IMAGE_PATH $RESOLUTION' to conduct the evaluation."
+            }
+        ]
+    }
+]

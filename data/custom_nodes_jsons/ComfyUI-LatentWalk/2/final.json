@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI LatentWalk suite of nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI LatentWalk suite of nodes allows for different types of latent walks, offering flexibility in interpolation and blending across various latent spaces such as latent/VAE encoded space, noise space, and conditioning/CLIP encoded space."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the supported modes of travel in the ComfyUI LatentWalk nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The supported modes of travel in the ComfyUI LatentWalk nodes are: linear, circle, quadratic, cubic, quartic, geometric, hinge, and norm."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the supported blend modes in the ComfyUI LatentWalk nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The supported blend modes in the ComfyUI LatentWalk nodes are: lerp, slerp, add, multiply, divide, subtract, overlay, hard_light, soft_light, screen, linear_dodge, difference, exclusion, and random."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the LatentWalkVae node function in ComfyUI LatentWalk?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LatentWalkVae node in ComfyUI LatentWalk facilitates travel in the latent/VAE encoded space. It takes inputs such as start and end latent vectors, number of steps, factor, blend mode, travel mode, and a VAE model, and outputs a series of latent vectors and decoded images representing the transition."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the LatentWalkNoise node in ComfyUI LatentWalk?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LatentWalkNoise node in ComfyUI LatentWalk is used for traveling in the noise space of the advanced sampler. It outputs a batch of noise vectors and accumulated noise vectors for use in for-loop operations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the LatentWalkConditional node work in ComfyUI LatentWalk?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LatentWalkConditional node in ComfyUI LatentWalk is used for traveling in the conditioning/CLIP encoded space. It takes similar inputs as the LatentWalkVae node and outputs a batch of conditioning vectors."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the LatentWalkConditionalRandom node in ComfyUI LatentWalk?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LatentWalkConditionalRandom node in ComfyUI LatentWalk travels the conditioning/CLIP encoded space with random noise, normalizing the conditioning to have the same length as the start. It takes inputs such as start latent vector, distance multiplier, momentum, and steps, and outputs a batch of conditioning vectors."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the ComfyUI LatentWalk nodes be installed?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install the ComfyUI LatentWalk nodes, place the scripts in your ComfyUI 'custom_nodes' folder and restart the application."
+            }
+        ]
+    }
+]

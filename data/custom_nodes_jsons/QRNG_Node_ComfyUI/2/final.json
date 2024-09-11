@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the QRNG_Node_ComfyUI do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The QRNG_Node_ComfyUI is designed to take an array of random numbers from the ANU QRNG API and store them locally for generating quantum random number noise_seeds in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the installation process for QRNG_Node_ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install QRNG_Node_ComfyUI, first grab the .py file and add it to the custom nodes folder in ComfyUI's file structure. Next, obtain a free-tier API license from the ANU QRNG API by visiting https://quantumnumbers.anu.edu.au/. Open the qrng_node.py file and add your API key to line 11, then save the file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I use QRNG_Node_ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use QRNG_Node_ComfyUI, right-click the KSampler or KSampler(Advanced), select \"Convert noise_seed to input\", add and connect the qrng node to the new noise_seed input, and run generations as usual."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the limitations of using QRNG_Node_ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ANU QRNG API limits the use to 100 requests per month, with each request returning 1024 16-bit integers. These integers are combined into 64-bit integers by the back-end, resulting in 25,600 quantum randomly generated seeds per month. Upgrading the API key tier can allow for more extensive use."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is data conversion handled in QRNG_Node_ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "QRNG_Node_ComfyUI takes in an array of random numbers from the ANU QRNG API and converts them into noise_seeds for local storage, which can then be used in ComfyUI for generating quantum random number noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can QRNG_Node_ComfyUI generate a large number of seeds?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, QRNG_Node_ComfyUI generates a large number of seeds through its setup. Each request to the ANU QRNG API returns 1024 16-bit integers, which are then combined into 64-bit integers for local storage. This allows for 25,600 quantum randomly generated seeds per month."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What can be done to make better use of the API?"
+            },
+            {
+                "role": "assistant",
+                "content": "To make better use of the ANU QRNG API, users could implement a looping system where each generation uses a new, randomly generated seed. This would approach the API's limit of 100 requests per month, though it's important to note that this would require modifying the code of QRNG_Node_ComfyUI to include such a looping system."
+            }
+        ]
+    }
+]

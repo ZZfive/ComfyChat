@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI-Advanced-Latent-Control custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-Advanced-Latent-Control custom node helps to transform latent in different ways, providing various functionalities to manipulate and control the latent space in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Latent mirror node in ComfyUI-Advanced-Latent-Control do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Latent mirror node in ComfyUI-Advanced-Latent-Control can flip the latent and merge the original and flipped versions, allowing for transformations like vertical, horizontal, or both flips."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the input and output of the Latent shift node in ComfyUI-Advanced-Latent-Control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Latent shift node in ComfyUI-Advanced-Latent-Control takes a 'latent' as input and outputs a 'latent'. It shifts the latent along the x and y-axis based on the 'x_shift' and 'y_shift' field values."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the TSampler (Latent Control) node in ComfyUI-Advanced-Latent-Control work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The TSampler (Latent Control) node in ComfyUI-Advanced-Latent-Control allows combining various transforms with different parameters. It takes base KSampler fields as input and a 'transform_optional' field that can output from nodes like Mirror transform, Shift transform, Multiply transform, or Combine transforms."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Offset node in ComfyUI-Advanced-Latent-Control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Offset node in ComfyUI-Advanced-Latent-Control is used to apply a specific offset for transform nodes. It allows controlling which steps will be processed and the offset pattern."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Latent normalize node in ComfyUI-Advanced-Latent-Control help in fixing issues with modified latent space?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Latent normalize node in ComfyUI-Advanced-Latent-Control fixes issues when sampling a modified latent space by sequentially decoding and encoding the latent using VAE. It prevents poor image generation when the latent is multiplied by negative or large positive numbers."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Transform hijack node in ComfyUI-Advanced-Latent-Control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Transform hijack node in ComfyUI-Advanced-Latent-Control allows using transforms with any samplers. It takes 'latent' and 'transforms' as inputs and outputs the transformed 'latent'."
+            }
+        ]
+    }
+]

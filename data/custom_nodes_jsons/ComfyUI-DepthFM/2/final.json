@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-DepthFM?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DepthFM is an unofficial implementation of DepthFM for ComfyUI, which is a highly efficient and versatile depth estimation model developed by CompVis."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which versions of DepthFM are supported by ComfyUI-DepthFM?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DepthFM supports version V1.0, which allows for depth estimation in both images and videos."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 🌆DepthFM ModelLoader node in ComfyUI-DepthFM?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 🌆DepthFM ModelLoader node is used to load the DepthFM model. Users need to manually download the depthfm-v1 model and place it in the /ComfyUI/models/depthfm directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the recommended settings for the 🌆DepthFM node in ComfyUI-DepthFM?"
+            },
+            {
+                "role": "assistant",
+                "content": "For the 🌆DepthFM node, it is suggested to use 2-4 steps for normal estimation and 10 steps for more precise estimation. The ensemble_size parameter should be set between 2-4, with higher values requiring more memory. The image dimensions must be multiples of 64."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does the 🌆DepthFM Literative node in ComfyUI-DepthFM support both images and videos?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, the 🌆DepthFM Literative node supports simultaneous depth estimation for both images and videos. The recommended settings are similar to the 🌆DepthFM node, with 2-4 steps for normal estimation, 10 steps for precise estimation, and an ensemble_size between 2-4. The image or video dimensions must be multiples of 64."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the installation methods for ComfyUI-DepthFM?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DepthFM can be installed using the ComfyUI Manager (On The Way) or manually by cloning the repository, installing the requirements, and restarting ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which workflows are available in ComfyUI-DepthFM V1.0?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-DepthFM V1.0 includes two workflows: V1.0 DepthFM img for image depth estimation and V1.0 DepthFM Literative Video for video depth estimation. The coloring node used in these workflows comes from ComfyUI-Marigold and is not essential."
+            }
+        ]
+    }
+]

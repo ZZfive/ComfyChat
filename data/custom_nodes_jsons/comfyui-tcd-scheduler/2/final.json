@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-TCD-scheduler?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-TCD-scheduler is a custom node repository for ComfyUI that adds TCDScheduler, SamplerTCD Euler A, and SamplerTCD nodes to the Custom Sampler category, implementing Zheng et al.'s Trajectory Consistency Distillation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I start using ComfyUI-TCD-scheduler in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To start using ComfyUI-TCD-scheduler in ComfyUI, clone the repository into your custom_nodes folder and restart ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the current status of the SamplerTCD node in ComfyUI-TCD-scheduler?"
+            },
+            {
+                "role": "assistant",
+                "content": "Currently, SamplerTCD is a work in progress (WIP) and operates as DDIM with no gamma parameter. It is recommended to use SamplerTCD Euler A for the time being."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the special parameter of LCMScheduler in ComfyUI-TCD-scheduler?"
+            },
+            {
+                "role": "assistant",
+                "content": "The special parameter of LCMScheduler is gamma, which is used to control the stochasticity in every step. When gamma = 0, it represents deterministic sampling, whereas gamma = 1 indicates full stochastic sampling."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the default value of the gamma parameter in LCMScheduler?"
+            },
+            {
+                "role": "assistant",
+                "content": "The default value of the gamma parameter in LCMScheduler is 0.3. However, it is recommended to use a higher value when increasing the number of inference steps."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Who has helped with converting from sigmas to timestep and SamplerTCDEulerA in ComfyUI-TCD-scheduler?"
+            },
+            {
+                "role": "assistant",
+                "content": "Thanks are given to @laksjdjf for their help with converting from sigmas to timestep and SamplerTCDEulerA in ComfyUI-TCD-scheduler."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I learn more about samplers and schedulers related to ComfyUI-TCD-scheduler?"
+            },
+            {
+                "role": "assistant",
+                "content": "For those curious about learning more about samplers and schedulers, an article is recommended: https://www.felixsanz.dev/articles/complete-guide-to-samplers-in-stable-diffusion"
+            }
+        ]
+    }
+]

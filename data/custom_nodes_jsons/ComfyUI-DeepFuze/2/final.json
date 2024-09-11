@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the vocoder model implementations supported by Mozilla TTS?"
+            },
+            {
+                "role": "assistant",
+                "content": "The supported vocoder models include Melgan, MultiBand-Melgan, ParallelWaveGAN, and GAN-TTS (Discriminator Only)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can different vocoder models be adapted for training?"
+            },
+            {
+                "role": "assistant",
+                "content": "Mozilla TTS provides a flexible and modular framework that allows for the easy adaptation of different vocoder models for training."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the steps to train a new vocoder model?"
+            },
+            {
+                "role": "assistant",
+                "content": "To train a new vocoder model, all wav files need to be gathered into a folder and given to the `data_path` in `config.json`. Parameters need to be defined in `config.json`, and then training can be started using the command `CUDA_VISIBLE_DEVICES='0' python tts/bin/train_vocoder.py --config_path path/to/config.json`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can a previous training run be continued?"
+            },
+            {
+                "role": "assistant",
+                "content": "A previous training run can be continued by using the command `CUDA_VISIBLE_DEVICES='0' python tts/bin/train_vocoder.py --continue_path path/to/your/model/folder`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the process for fine-tuning a pre-trained model?"
+            },
+            {
+                "role": "assistant",
+                "content": "To fine-tune a pre-trained model, use the command `CUDA_VISIBLE_DEVICES='0' python tts/bin/train_vocoder.py --restore_path path/to/your/model.pth`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the benefit of using a modular framework for vocoder training?"
+            },
+            {
+                "role": "assistant",
+                "content": "The modular framework allows for easy adaptation of different vocoder models, which can enhance the versatility and efficiency of training."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can you explain the command `CUDA_VISIBLE_DEVICES='0' python tts/bin/train_vocoder.py --config_path path/to/config.json`?"
+            },
+            {
+                "role": "assistant",
+                "content": "This command is used to start the training of a vocoder model using the configurations specified in `config.json`. The `data_path` parameter should be set to the directory containing the wav files for training."
+            }
+        ]
+    }
+]

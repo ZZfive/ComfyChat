@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the image-resize-comfyui custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The image-resize-comfyui custom node provides various tools for resizing images without distorting proportions and without having to perform any calculations with the size of the original image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What happens if a mask is present when using the image-resize-comfyui node?"
+            },
+            {
+                "role": "assistant",
+                "content": "If a mask is present, it is resized and modified along with the image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you install the image-resize-comfyui custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install the image-resize-comfyui custom node, clone the repository into the ComfyUI/custom_nodes folder using the command 'git clone https://github.com/palant/image-resize-comfyui' and restart ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'action' setting in the image-resize-comfyui node determine?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'action' setting determines whether the image will only be resized while keeping its side ratio, cropped to match a specific side ratio, or padded to match a specific side ratio."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the 'smaller_side' setting in the image-resize-comfyui node work?"
+            },
+            {
+                "role": "assistant",
+                "content": "With 'smaller_side' set, the target size is determined by the smaller side of the image. For example, if the original image is 512x768 pixels and 'smaller_side' is set to 1024, the image will be resized to 1024x1536 pixels."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'resize_mode' setting in the image-resize-comfyui node control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'resize_mode' setting controls whether images already smaller or larger than the target size will be resized. In 'reduce size only' mode, images smaller than the target size will not be resized. In 'increase size only' mode, images larger than the target size will not be resized. In 'any' mode, the image is always resized."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the 'crop_pad_position' setting work in the image-resize-comfyui node?"
+            },
+            {
+                "role": "assistant",
+                "content": "If the image is cropped, the 'crop_pad_position' setting determines which side is cropped. If the image is padded, this setting determines where the padding is inserted. A value of 0.0 means cropping or padding is done on the right/bottom side, while a value of 1.0 means cropping or padding is done on the left/top side."
+            }
+        ]
+    }
+]

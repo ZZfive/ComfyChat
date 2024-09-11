@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of SDFXBridgeForComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "SDFXBridgeForComfyUI is a custom node designed for seamless integration between ComfyUI and SDFX, allowing users to make ComfyUI compatible with SDFX when running the ComfyUI instance on their local machines."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the prerequisite for installing SDFXBridgeForComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Before installing SDFXBridgeForComfyUI, users must have ComfyUI-Manager installed as it is a mandatory dependency for the proper functioning of SDFXBridgeForComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can users install the ComfyUI-Manager dependency?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can install the ComfyUI-Manager dependency by cloning the repository using the command 'git clone https://github.com/ltdrdata/ComfyUI-Manager.git' and then installing the requirements using 'cd ComfyUI-Manager && pip install -r requirements.txt'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the steps to install SDFXBridgeForComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install SDFXBridgeForComfyUI, users need to clone the repository into the ComfyUI custom_node directory using 'git clone https://github.com/sdfxai/SDFXBridgeForComfyUI.git', install dependencies using 'cd SDFXBridgeForComfyUI && pip install -r requirements.txt', and install SDFX by following its documentation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is the configuration file mandatory for using SDFXBridgeForComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, the configuration file named 'sdfx.config.example.json' is not mandatory for using SDFXBridgeForComfyUI. However, if users want to use it, they should rename it to 'sdfx.config.json' and customize it according to their needs."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can users find more information about the configuration file for SDFXBridgeForComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can find detailed explanations on how the configuration file works by reading the documentation at 'https://github.com/sdfxai/SDFXBridgeForComfyUI/blob/master/docs/sdfx_config.md'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Under which license is SDFXBridgeForComfyUI distributed?"
+            },
+            {
+                "role": "assistant",
+                "content": "SDFXBridgeForComfyUI is distributed under the AGPL-3.0 license."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the SDFX config file?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SDFX config file contains settings and paths for the SDFXBridgeForComfyUI application."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Are all parameters in the SDFX config file mandatory?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, none of the parameters in the SDFX config file are mandatory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'disable-xformers' parameter in the 'args' section indicate?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'disable-xformers' parameter is a boolean that indicates whether xformers are disabled in the SDFXBridgeForComfyUI application."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'paths' section in the SDFX config file?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'paths' section in the SDFX config file describes the different paths used in the SDFXBridgeForComfyUI application, such as media and model directories."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can the paths in the SDFX config file be specified as relative or absolute?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, the paths in the SDFX config file can be specified as either relative or absolute. If a path is defined as relative, it will be resolved relative to the location of the sdfx.config.json file."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'media' section under 'paths' in the SDFX config file?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'media' section under 'paths' in the SDFX config file specifies the directories for various media-related functions, such as galleries, input, output, workflows, templates, and temporary files."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is an example of a minimalist configuration for the SDFX config file?"
+            },
+            {
+                "role": "assistant",
+                "content": "An example of a minimalist configuration for the SDFX config file includes the 'args' section with parameters like 'disable-xformers', 'preview-method', 'listen', 'enable-cors-header', and 'port', and the 'paths' section with the 'media' subsection specifying directories for galleries, input, output, workflows, templates, and temporary files."
+            }
+        ]
+    }
+]

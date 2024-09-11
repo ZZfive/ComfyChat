@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ResolutionSelector custom node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ResolutionSelector custom node in ComfyUI enables easy selection of image resolutions for SDXL, SD15, and SD21 models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How are the width and height values returned by the ResolutionSelector node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The width and height values are returned as INT values by the ResolutionSelector node, which can be connected to latent image inputs or other inputs such as CLIPTextEncodeSDXL's width, height, target_width, and target_height."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the resolution list in ResolutionSelector based on?"
+            },
+            {
+                "role": "assistant",
+                "content": "The resolution list in ResolutionSelector is based on what is currently being used in the Fooocus SDXL Web UI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the ResolutionSelector node be used with older models like SD 1.5 or SD 2.1?"
+            },
+            {
+                "role": "assistant",
+                "content": "If using older models such as SD 1.5 or SD 2.1, the base_adjustment dropdown in the ResolutionSelector node can be used. This will reduce the returned width and height values to suit the selected model while maintaining the image aspect ratio."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you install the ResolutionSelector custom node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install the ResolutionSelector custom node in ComfyUI, change to the directory where ComfyUI is installed, then change to the custom_nodes directory. Clone the repo into custom_nodes using the command 'git clone https://github.com/bradsec/ComfyUI_ResolutionSelector.git', and then restart ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you access the ResolutionSelector node after installation?"
+            },
+            {
+                "role": "assistant",
+                "content": "After installing the ResolutionSelector custom node, you can access it by going to 'Add Node > utils > Resolution Selector' in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can you find hookup examples for using the ResolutionSelector node with SDXL and SD15 models?"
+            },
+            {
+                "role": "assistant",
+                "content": "Hookup examples for using the ResolutionSelector node with SDXL and SD15 models can be found in the documentation images named 'sdxl_hookup.png' and 'sd15_hookup.png' respectively."
+            }
+        ]
+    }
+]

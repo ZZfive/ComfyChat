@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is comfyui-animatediff?"
+            },
+            {
+                "role": "assistant",
+                "content": "comfyui-animatediff is an integration of AnimateDiff for ComfyUI, adapted from sd-webui-animatediff. It allows generating animated images using motion modules."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you use comfyui-animatediff?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use comfyui-animatediff, you need to clone the repo into the custom_nodes folder and download motion modules and place them under the comfyui-animatediff/models/ directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What types of modules can be used with comfyui-animatediff?"
+            },
+            {
+                "role": "assistant",
+                "content": "comfyui-animatediff supports original modules, community modules, and AnimateDiff v2 mm_sd_v15_v2.ckpt module. It also supports Motion LoRAs with the AnimateDiff v2 module."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the AnimateDiffLoraLoader node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The AnimateDiffLoraLoader node in comfyui-animatediff allows loading Motion LoRAs for use with AnimateDiff v2 module."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the sliding window feature work in comfyui-animatediff?"
+            },
+            {
+                "role": "assistant",
+                "content": "The sliding window feature in comfyui-animatediff divides frames into smaller batches with a slight overlap, enabling the generation of GIFs without a frame length limit. It is automatically activated when generating more than 16 frames."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the LoadVideo node used for in comfyui-animatediff?"
+            },
+            {
+                "role": "assistant",
+                "content": "The LoadVideo node in comfyui-animatediff is used to load a GIF or video as images, which is useful for loading a GIF as ControlNet input."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you generate animated images using starting and ending images in comfyui-animatediff?"
+            },
+            {
+                "role": "assistant",
+                "content": "To generate animated images using starting and ending images in comfyui-animatediff, you can use the LatentKeyframe and TimestampKeyframe nodes from ComfyUI-Advanced-ControlNet to apply different weights for each latent index, and use two ControlNet modules for the two images with weights reverted."
+            }
+        ]
+    }
+]

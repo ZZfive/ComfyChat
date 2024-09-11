@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Transceiver?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Transceiver is a python library that swiftly exchanges fundamental data structures, specifically numpy arrays, between processes to optimize AI inference tasks that utilize ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why was ComfyUI-Transceiver developed?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Transceiver was developed because when processing a large number of requests, the SaveImage and LoadImage nodes may be IO-limited, and using shared memory improves performance by passing images only through memory access, not through IO."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can ComfyUI-Transceiver be installed as ComfyUI custom nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-Transceiver as ComfyUI custom nodes, you need to clone the repository into the custom_nodes directory of ComfyUI, install the requirements, and launch ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Save Image Transceiver node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Save Image Transceiver node saves an image to shared memory. It requires an ImageTensor input and a name input, where the name is the shared memory identical name."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Load Image Transceiver node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Load Image Transceiver node loads an image from shared memory. It requires a name input, where the name is the shared memory identical name."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the name input in the Save Image Transceiver node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The name input in the Save Image Transceiver node is used as the shared memory identical name, which is required to save the image to shared memory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the name input in the Load Image Transceiver node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The name input in the Load Image Transceiver node is used as the shared memory identical name, which is required to load the image from shared memory."
+            }
+        ]
+    }
+]

@@ -1,0 +1,170 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-bleh?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-bleh is a collection of utility and model patching functions for ComfyUI, which also includes an improved previewer that allows previewing batches during generation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some features of ComfyUI-bleh?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some features of ComfyUI-bleh include better TAESD previews, allowing setting seed, timestep range and step interval for HyperTile, applying Kohya Deep Shrink to multiple blocks, discarding penultimate sigma, switching between samplers during sampling, applying arbitrary model patches at an interval or percentage of sampling, and ensuring a seed is set even when add_noise is turned off in a sampler."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the BlehModelPatchConditional node in ComfyUI-bleh?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BlehModelPatchConditional node in ComfyUI-bleh allows applying model patches conditionally, such as applyingHyperTile, Self Attention Guidance or other arbitrary model patches when the interval or start/end percentage match."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the BlehHyperTile node in ComfyUI-bleh differ from the original HyperTile node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BlehHyperTile node in ComfyUI-bleh adds the ability to set a seed and timestep range that HyperTile gets applied for, as well as setting an interval for HyperTile steps. It is also possible to set a negative interval value."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the BlehForceSeedSampler node in ComfyUI-bleh?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BlehForceSeedSampler node in ComfyUI-bleh wraps another sampler and ensures that the seed gets set, even when add_noise is turned off in samplers like euler_a."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the BlehDeepShrink node in ComfyUI-bleh differ from the built-in Deep Shrink node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BlehDeepShrink node in ComfyUI-bleh allows entering a comma-separated list of blocks to apply the downscale effect to, adds a start_fadeout_percent input to scale the downscale effect, and expands the options for upscale and downscale types with the ability to turn on antialiasing for bicubic and bilinear modes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the BlehInsaneChainSampler node in ComfyUI-bleh?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BlehInsaneChainSampler node in ComfyUI-bleh allows more conveniently switching between samplers during sampling by chaining a bunch of samplers together and manually setting the start/end steps."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-bleh?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-bleh is an extension for ComfyUI that adds various custom nodes and functionalities to enhance the image generation process."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some of the custom nodes added by ComfyUI-bleh?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some of the custom nodes added by ComfyUI-bleh include BlehBlockCFG, BlehBlockOps, BlehLatentOps, BlehRefinerAfter, BlehForceSeedSampler, BlehModelPatchConditional, BlehInsaneChainSampler, BlehDiscardPenultimateSigma, and BlehDeepShrink."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the BlehBlockCFG node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BlehBlockCFG node is a custom node in ComfyUI-bleh, but the specific usage and details are not mentioned in the provided text. It is recommended to refer to the README for more information."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the TAESD preview performance be improved in ComfyUI-bleh?"
+            },
+            {
+                "role": "assistant",
+                "content": "In ComfyUI-bleh, the TAESD previews can be made faster by dynamically setting the number of upscale layers to skip based on the preview size limits. Additionally, the max preview width and height can be set separately in the YAML config."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the BlehDeepShrink node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The BlehDeepShrink node is a custom node in ComfyUI-bleh that allows for upscaling and downscaling of images using various methods. It also provides the ability to set a higher downscale factor and enable antialiasing for bilinear and bicubic modes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the batch preview layout be improved in ComfyUI-bleh?"
+            },
+            {
+                "role": "assistant",
+                "content": "The batch preview layout in ComfyUI-bleh can be improved by adjusting the heuristics, adding a maxed_batch_step_mode setting, and fixing the reversed HyperTile default start and end step values."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the BlehInsaneChainSampler node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The specific function of the BlehInsaneChainSampler node in ComfyUI-bleh is not detailed in the provided text. It is recommended to refer to the README for more information on its usage and description."
+            }
+        ]
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-StyleGan?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-StyleGan is a basic support for StyleGAN2 and StyleGAN3 models in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can I find the original StyleGAN2 and StyleGAN3 models?"
+            },
+            {
+                "role": "assistant",
+                "content": "The original StyleGAN2 and StyleGAN3 models can be found at https://github.com/NVlabs/stylegan3."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where should I place the models to use with ComfyUI-StyleGan?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use models with ComfyUI-StyleGan, place them in the 'ComfyUI/models/stylegan/*.pkl' directory, creating the folder if it doesn't exist."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the installation requirements for ComfyUI-StyleGan?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-StyleGan requires CUDA Toolkit, ninja, and either GCC (Linux) or Visual Studio (Windows) for installation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the expected performance of ComfyUI-StyleGan after installation?"
+            },
+            {
+                "role": "assistant",
+                "content": "Once installed, ComfyUI-StyleGan can generate images at a rate of 64 images/sec on a 3090 with a large batch, though ComfyUI's tensor to PIL for previews may limit it to around 8 fps."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What message will I see when running a StyleGAN workflow for the first time?"
+            },
+            {
+                "role": "assistant",
+                "content": "When running a StyleGAN workflow for the first time, you will see a message indicating that PyTorch plugins are being built, which should take 30-60s."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which PyTorch plugins are set up for StyleGAN2 and StyleGAN3?"
+            },
+            {
+                "role": "assistant",
+                "content": "For StyleGAN2, the 'bias_act_plugin' and 'upfirdn2d_plugin' PyTorch plugins are set up. For StyleGAN3, the 'bias_act_plugin' and 'filtered_lrelu_plugin' are set up."
+            }
+        ]
+    }
+]

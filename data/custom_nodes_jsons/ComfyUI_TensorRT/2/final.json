@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI_TensorRT?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_TensorRT is a node that enables the best performance on NVIDIA RTX™ Graphics Cards (GPUs) for Stable Diffusion by leveraging NVIDIA TensorRT."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which models are supported by ComfyUI_TensorRT?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_TensorRT supports Stable Diffusion 1.5, 2.1, 3.0, SDXL, SDXL Turbo, Stable Video Diffusion, Stable Video Diffusion-XT, and AuraFlow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the VRAM requirements for running SDXL and SDXL Turbo with ComfyUI_TensorRT?"
+            },
+            {
+                "role": "assistant",
+                "content": "For SDXL and SDXL Turbo, a GPU with 12 GB or more VRAM is recommended for best performance due to its size and computational intensity."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the VRAM requirements for running Stable Video Diffusion (SVD) with ComfyUI_TensorRT?"
+            },
+            {
+                "role": "assistant",
+                "content": "For Stable Video Diffusion (SVD), a GPU with 16 GB or more VRAM is recommended."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the two types of TensorRT engines that can be built using ComfyUI_TensorRT?"
+            },
+            {
+                "role": "assistant",
+                "content": "You have the option to build either dynamic or static TensorRT engines using ComfyUI_TensorRT."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the advantages of using dynamic TensorRT engines in ComfyUI_TensorRT?"
+            },
+            {
+                "role": "assistant",
+                "content": "Dynamic engines support a range of resolutions and batch sizes, specified by the min and max parameters. Best performance will occur when using the optimal (opt) resolution and batch size."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the advantages of using static TensorRT engines in ComfyUI_TensorRT?"
+            },
+            {
+                "role": "assistant",
+                "content": "Static engines provide the same performance boost as the optimal settings for the dynamic engines, and require less VRAM."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you load TensorRT engines in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "TensorRT Engines are loaded using the TensorRT Loader node in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Are ComfyUI TensorRT engines compatible with ControlNets or LoRAs?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI TensorRT engines are not yet compatible with ControlNets or LoRAs. Compatibility will be enabled in a future update."
+            }
+        ]
+    }
+]

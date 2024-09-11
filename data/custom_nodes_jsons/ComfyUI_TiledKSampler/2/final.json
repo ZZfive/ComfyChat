@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI_TiledKSampler?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_TiledKSampler is a tiled sampler for ComfyUI that allows denoising larger images by splitting them into smaller tiles and denoising these tiles while minimizing seams in the end result."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does ComfyUI_TiledKSampler minimize seams in the final image?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_TiledKSampler minimizes seams by gradually denoising all tiles one step at a time and randomizing tile positions for every step."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the additional settings available in ComfyUI_TiledKSampler?"
+            },
+            {
+                "role": "assistant",
+                "content": "The additional settings in ComfyUI_TiledKSampler include tile_width, tile_height, and tiling_strategy."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which tiling strategy is best for hiding seams in images?"
+            },
+            {
+                "role": "assistant",
+                "content": "The random tiling strategy is exceptionally good at hiding seams in images, even when starting from complete noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the downside of the random tiling strategy?"
+            },
+            {
+                "role": "assistant",
+                "content": "The downside of the random tiling strategy is that it can unfavorably crop border tiles."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which tiling strategy is compatible with uni samplers and has no overhead between steps?"
+            },
+            {
+                "role": "assistant",
+                "content": "The padded tiling strategy is compatible with uni samplers and has no overhead between steps."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What features are included in the ComfyUI_TiledKSampler roadmap?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI_TiledKSampler roadmap includes features such as latent masks, image-wide control nets, T2I adaptors, area conditioning, area mask conditioning, and GLIGEN."
+            }
+        ]
+    }
+]

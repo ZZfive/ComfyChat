@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-Latent-Modifiers?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Latent-Modifiers is a repository of ComfyUI nodes that modify the latent during the diffusion process to control the diffusion process towards a quality the user expects."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the main features of the Latent Diffusion Mega Modifier in ComfyUI-Latent-Modifiers?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Latent Diffusion Mega Modifier in ComfyUI-Latent-Modifiers adds multiple parameters to control the diffusion process, such as Sharpness, Tonemap, Rescale, Extra Noise, Contrast, Combat CFG Drift, Divisive Norm, and Spectral Modulation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Sharpness parameter in the Latent Diffusion Mega Modifier work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Sharpness parameter in the Latent Diffusion Mega Modifier utilizes code from Fooocus's sampling process to sharpen the noise in the middle of the diffusion process, which can lead to more perceptual detail, especially at higher strengths."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Tonemap parameter in the Latent Diffusion Mega Modifier do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Tonemap parameter in the Latent Diffusion Mega Modifier clamps conditioning noise (CFG) using a user-chosen method, which can allow for the use of higher CFG values."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Contrast parameter in the Latent Diffusion Mega Modifier affect the image?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Contrast parameter in the Latent Diffusion Mega Modifier adjusts the contrast of the conditioning, which can lead to more pop-style results and effectively functions as a secondary CFG slider for stylization without changing subject pose and location much, if at all."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Spectral Modulation parameter in the Latent Diffusion Mega Modifier?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Spectral Modulation parameter in the Latent Diffusion Mega Modifier converts the latent to frequencies, clamps higher frequencies while boosting lower ones, and then converts it back to an image latent, effectively treating oversaturation or burning as a result of higher CFG values while not touching values around the median."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the current pipeline of the Latent Diffusion Mega Modifier?"
+            },
+            {
+                "role": "assistant",
+                "content": "The current pipeline of the Latent Diffusion Mega Modifier is: Add extra noise to conditioning -> Sharpen conditioning -> Convert to Noise Prediction -> Tonemap Noise Prediction -> Spectral Modification -> Modify contrast of noise prediction -> Rescale CFG -> Divisive Normalization -> Combat CFG Drift."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is the Latent Diffusion Mega Modifier used over other nodes in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Latent Diffusion Mega Modifier is used over other nodes in ComfyUI because the set_model_sampler_cfg_function hijack in ComfyUI can only utilize a single function, so multiple latent modification methods are bundled into one large function for processing simplicity."
+            }
+        ]
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the comfyui-optical-flow package?"
+            },
+            {
+                "role": "assistant",
+                "content": "The comfyui-optical-flow package contains three nodes that help compute optical flow between pairs of images, usually adjacent frames in a video, visualize the flow, and apply the flow to another image of the same dimensions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the three nodes included in the comfyui-optical-flow package?"
+            },
+            {
+                "role": "assistant",
+                "content": "The three nodes included in the comfyui-optical-flow package are: Compute optical flow, Apply optical flow, and Visualize optical flow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which methods can be used to compute optical flow in the 'Compute optical flow' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Compute optical flow' node can use either the DIS (Dense Inverse Search) medium or fine method, or Farneback to compute the optical flow between two images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Apply optical flow' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Apply optical flow' node takes an image and applies an optical flow to it, so that the motion matches the original image. This can be used to improve consistency between video frames in a vid2vid workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the 'Apply optical flow' node be used in a vid2vid workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "In a vid2vid workflow, the 'Apply optical flow' node can be used to apply the motion between the previous input frame and the current one to the previous output frame before using it as input to a sampler, which improves consistency between video frames."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Visualize optical flow' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Visualize optical flow' node takes an image and a flow and produces an image visualizing the flow on top of the image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the options for choosing the image to be used with the 'Visualize optical flow' node?"
+            },
+            {
+                "role": "assistant",
+                "content": "When using the 'Visualize optical flow' node, you can choose to use the 'prev', 'current', or an image you intend to apply the flow to."
+            }
+        ]
+    }
+]

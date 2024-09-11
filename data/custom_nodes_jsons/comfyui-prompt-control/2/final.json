@@ -1,0 +1,254 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI prompt control provides nodes for LoRA and prompt scheduling that make basic operations in ComfyUI completely prompt-controllable."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some things that can be controlled via the prompt using comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "Things that can be controlled via the prompt include prompt editing and filtering without multiple samplers, LoRA loading and scheduling, prompt masking and area control, SDXL parameters, and other miscellaneous things."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the syntax for LoRA loading in comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "LoRAs can be loaded by referring to the filename without extension, for example, '<lora:cats:1>'. will match both 'cats.safetensors' and 'sd15/animals/cats.safetensors'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the 'MASK' function work in comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'MASK' function allows specifying a region mask for a prompt. The values are specified as percentages or absolute pixel values. For example, 'MASK(x1 x2, y1 y2, weight, op)' specifies a region mask."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'PCScheduleSettings' node in comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'PCScheduleSettings' node returns an object representing default values for the 'SDXL' function and allows configuring 'MASK_SIZE' outside the prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'PromptControlSimple' node in comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'PromptControlSimple' node is a combination of 'PromptToSchedule', 'ScheduleToCond', 'ScheduleToModel', and 'FilterSchedule' nodes, providing a convenient way to output a model, positive and negative conds with or without filters applied."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is one of the known issues with comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "One known issue is that if execution is interrupted and LoRA scheduling is used, the models might be left in an undefined state until ComfyUI is restarted."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be done before reporting a bug for comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "Before reporting a bug for comfyui-prompt-control, you should verify that your ComfyUI is up to date, the extension is up to date, and the issue isn't in the \"Known Issues\" section in the README."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be included in the bug report for comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The bug report for comfyui-prompt-control should include a clear and concise description of the bug, information needed to trigger the problem, and a description of the expected behavior. If possible, a workflow to reproduce the problem should be attached."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of reporting a bug for comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of reporting a bug for comfyui-prompt-control is to inform the developers about the issue so that they can work on fixing it and improve the functionality of the extension."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What title should be used when reporting a bug for comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "When reporting a bug for comfyui-prompt-control, the title should be \"[BUG]\"."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be done if the issue with comfyui-prompt-control is already listed in the \"Known Issues\" section of the README?"
+            },
+            {
+                "role": "assistant",
+                "content": "If the issue with comfyui-prompt-control is already listed in the \"Known Issues\" section of the README, there is no need to report it again as the developers are already aware of the problem."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What information should be provided to help reproduce the bug in comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "To help reproduce the bug in comfyui-prompt-control, you should provide information needed to trigger the problem. If possible, attach a workflow to reproduce the problem."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be described regarding the expected behavior when reporting a bug for comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "When reporting a bug for comfyui-prompt-control, you should provide a description of what you expected to happen, as this helps the developers understand the intended functionality and identify the issue more easily."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'Feature request' in comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Feature request' in comfyui-prompt-control is used to suggest an idea for the project that users would like to see implemented."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be included in the 'Describe what's missing' section of a feature request?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the 'Describe what's missing' section of a feature request, users should provide a description of the feature or functionality they would like to see added to the comfyui-prompt-control project."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What additional information can be added to provide more context for a feature request?"
+            },
+            {
+                "role": "assistant",
+                "content": "Users can include any other relevant context or screenshots related to their feature request to provide more information and clarity about the requested feature."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be included in the title of a feature request?"
+            },
+            {
+                "role": "assistant",
+                "content": "The title of a feature request should begin with '[FR]' to indicate that it is a feature request."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What labels should be assigned to a feature request in comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "There are no specific labels mentioned that should be assigned to a feature request in comfyui-prompt-control."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Are there any assignees required for a feature request in comfyui-prompt-control?"
+            },
+            {
+                "role": "assistant",
+                "content": "No assignees are mentioned as being required for a feature request in comfyui-prompt-control."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the main purpose of the additional context section in a feature request?"
+            },
+            {
+                "role": "assistant",
+                "content": "The main purpose of the additional context section in a feature request is to provide any extra information, such as relevant details or screenshots, that can help better explain or illustrate the requested feature."
+            }
+        ]
+    }
+]

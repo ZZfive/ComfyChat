@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Comfyui-SAL-VTON?"
+            },
+            {
+                "role": "assistant",
+                "content": "Comfyui-SAL-VTON is a custom node for ComfyUI that allows users to virtually try on garments using the SAL-VTON model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What paper is Comfyui-SAL-VTON based on?"
+            },
+            {
+                "role": "assistant",
+                "content": "Comfyui-SAL-VTON is based on the paper 'Linking Garment with Person via Semantically Associated Landmarks for Virtual Try-On' by Keyu Y. Tingwei G. et al. (2023)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the installation steps for Comfyui-SAL-VTON?"
+            },
+            {
+                "role": "assistant",
+                "content": "The installation steps for Comfyui-SAL-VTON are: 1. Clone the repository into the 'custom_nodes' folder. 2. Navigate to the cloned folder and run 'pip install -r requirements.txt' in the ComfyUI venv. 3. Download the landmark, warp, and salvton models. 4. Create a 'salvton' folder in the ComfyUI 'models' directory and copy the downloaded models into it."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be the size of the garment image for optimal results with Comfyui-SAL-VTON?"
+            },
+            {
+                "role": "assistant",
+                "content": "The garment image should be 768x1024 pixels for optimal results with Comfyui-SAL-VTON."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can poor results be avoided when using Comfyui-SAL-VTON?"
+            },
+            {
+                "role": "assistant",
+                "content": "Poor results can be avoided by ensuring that the background of the person image is white. Consider using rembg or SAM to mask the image and replace the background with white."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the garment mask be generated for use with Comfyui-SAL-VTON?"
+            },
+            {
+                "role": "assistant",
+                "content": "The garment mask can be generated using SAM or rembg, as demonstrated in the provided workflow."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Who is credited for the original work that Comfyui-SAL-VTON is based on?"
+            },
+            {
+                "role": "assistant",
+                "content": "The original work that Comfyui-SAL-VTON is based on is credited to the authors of the paper 'Linking Garment with Person via Semantically Associated Landmarks for Virtual Try-On', and the inference code available on ModelScope."
+            }
+        ]
+    }
+]

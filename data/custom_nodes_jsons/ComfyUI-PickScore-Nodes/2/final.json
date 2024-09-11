@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-PickScore-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-PickScore-Nodes are image scoring nodes for ComfyUI that use PickScore to predict which images in a batch best match a given prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you install ComfyUI-PickScore-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-PickScore-Nodes, clone the repository to the `custom_nodes` directory using the command: `git clone https://github.com/Zuellni/ComfyUI-PickScore-Nodes custom_nodes/ComfyUI-PickScore-Nodes`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Loader node in ComfyUI-PickScore-Nodes do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Loader node in ComfyUI-PickScore-Nodes loads scoring models from Hugging Face or a given directory. By default, it uses the yuvalkirstain/PickScore_v1 model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the Processor node in ComfyUI-PickScore-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Processor node in ComfyUI-PickScore-Nodes takes images and text and converts them into inputs for the Selector node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Selector node in ComfyUI-PickScore-Nodes work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Selector node in ComfyUI-PickScore-Nodes selects up to `limit` images and passes them to other nodes along with latents/masks of the same shape. It interrupts processing if the `threshold` isn't reached."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is there an example workflow available for ComfyUI-PickScore-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, an example workflow for ComfyUI-PickScore-Nodes is embedded in the provided image and can be opened in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the default scoring model used by the Loader node in ComfyUI-PickScore-Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The default scoring model used by the Loader node in ComfyUI-PickScore-Nodes is yuvalkirstain/PickScore_v1 from Hugging Face."
+            }
+        ]
+    }
+]

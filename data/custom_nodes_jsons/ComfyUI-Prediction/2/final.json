@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Prediction is a fully customizable Classifier Free Guidance extension for ComfyUI, developed by RedHotTensors and released by Project RedRocket."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you install ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install ComfyUI-Prediction by cloning the repo into ComfyUI/custom_nodes or using ComfyUI-Manager."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Where can you find the custom nodes provided by ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "All custom nodes provided by ComfyUI-Prediction are located under Add Node > sampling > prediction."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the steps to set up a fully custom prediction in ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "To set up a fully custom prediction, you need to use the Sample Predictions node as your sampler, connect the sampler input to a sampler node like KSamplerSelect, connect the sigmas input to a scheduler node like BasicScheduler, chain one or more prompts using CLIP Text Encode and Conditioned Prediction nodes, and finally connect the result to the noise_prediction input of your Sample Predictions node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some of the primitive nodes available in ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some of the primitive nodes available in ComfyUI-Prediction include Conditioned Prediction, Combine Predictions, Scale Prediction, Switch Predictions, Scaled Guidance Prediction, and Characteristic Guidance Prediction."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some of the prebuilt nodes available in ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some of the prebuilt nodes available in ComfyUI-Prediction include Switch Early/Middle/Late Predictions, Interpolate Predictions, CFG Prediction, Perp-Neg Prediction, and Avoid and Erase Prediction (v2)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some of the sigma utility nodes available in ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some of the sigma utility nodes available in ComfyUI-Prediction include Select Sigmas, Split At Sigma, and Log Sigmas."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the limitations of ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Prediction does not currently support ControlNet, and regional prompting may work but is untested. Additionally, any other advanced features affecting conditioning are not likely to work."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the license for ComfyUI-Prediction?"
+            },
+            {
+                "role": "assistant",
+                "content": "The license for ComfyUI-Prediction is the same as ComfyUI, which is GPL 3.0."
+            }
+        ]
+    }
+]

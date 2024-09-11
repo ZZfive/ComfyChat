@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the function of the preprocess node in ComfyUI-MuseTalkUtils?"
+            },
+            {
+                "role": "assistant",
+                "content": "The preprocess node in ComfyUI-MuseTalkUtils rotates images and crops face images to prepare the input for video analysis."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the main tasks handled by the postprocess node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The postprocess node in ComchyUI-MuseTalkUtils is responsible for uncropping faces and rotating images to return the processed output to its original state."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the steps involved in MuseTalk's workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "MuseTalk's workflow includes uploading a video or image, setting the audio path, running the workflow, and then generating a video tutorial. This process can be done on a GPU with less than 5GB memory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the contents of the sample image shown in the workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "The sample image shown in the workflow is a depiction of the workflow steps, including opening a musetalk flow, uploading a video or image, setting audio paths, running the flow, and stopping the terminal. It also shows the video tutorial link and the minimum GPU requirement for smooth operation."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Explain the process of MuseTalk's training workflow."
+            },
+            {
+                "role": "assistant",
+                "content": "The MuseTalk training workflow involves uploading a video, running the training flow, and generating epoch files in the 'models\\musetalk\\musetalk' folder. One should monitor the loss value, which should decrease to 0.005 or lower to stop the training. The training flow demonstrates how to test the model, and this model can be run on a GPU with 16G memory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the `epoch_x.pth` files?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `epoch_x.pth` files in MuseTalk represent checkpoints of the training process, where `x` is the iteration number. These files are generated during the training workflow to store progress and allow for resuming training from where it left off."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the main features of ComfyUI-MuseTalkUtils?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-MuseTalkUtils provides essential preprocess and postprocess nodes for optimizing video analysis in ComfyUI. The preprocess node rotates and crops images, while the postprocess node restores the original state by uncropping faces and rotating images. This ensures high-quality video analysis."
+            }
+        ]
+    }
+]

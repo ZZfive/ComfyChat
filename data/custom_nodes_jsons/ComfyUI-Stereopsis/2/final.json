@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the primary goal of ComfyUI-Stereopsis?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Stereopsis aims to integrate a stereopsis effect within ComfyUI (Stable Diffusion) to create immersive media experiences compatible with VR headsets."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Side_by_side module contribute to the stereopsis effect in ComfyUI-Stereopsis?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Side_by_side module concatenates two images side by side into a single image, which is a crucial step in creating the stereopsis effect for VR headset compatibility."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can the Side_by_side module accept images of different heights?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, the Side_by_side module requires the input images to have the same height and channel depth, but there is no restriction on the images' width."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the role of PyTorch in the Side_by_side module?"
+            },
+            {
+                "role": "assistant",
+                "content": "PyTorch is used in the Side_by_side module for image manipulation, ensuring compatibility with other PyTorch-based pipelines and operations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the FrameDelay module contribute to creating the stereopsis effect?"
+            },
+            {
+                "role": "assistant",
+                "content": "The FrameDelay module introduces a delay effect in image sequences by repeating and inserting frames, which is essential for temporal adjustments in creating dynamic visual effects like stereopsis."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Does the FrameDelay module alter the overall batch size after frame insertion?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, the FrameDelay module maintains the original batch size after frame insertion, ensuring consistency and compatibility with subsequent processing stages."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the customizable parameters offered by the FrameDelay module?"
+            },
+            {
+                "role": "assistant",
+                "content": "The FrameDelay module allows users to select the frame to delay (selected_frame) and define the extent of the delay (frame_delay), providing flexibility in adjusting the delay effect."
+            }
+        ]
+    }
+]

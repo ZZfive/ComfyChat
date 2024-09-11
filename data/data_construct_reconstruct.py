@@ -485,15 +485,15 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
         return {"messages": messages}
 
     # llm生成的json数据不一定完全符合要求的结构，需要校验和解析，并记录结构有误的文件，便于手动调整
-    def check_parse_jsons_single(self, version: int, lang: str = "en",
+    def check_parse_jsons_single(self, version: int, lang: str = "en", force_fresh: bool = False, 
                                  local_custom_node_jsons_dir: str = "/root/code/ComfyChat/data/custom_nodes_jsons"):
         for node in os.listdir(local_custom_node_jsons_dir):
             node_version_dir = os.path.join(local_custom_node_jsons_dir, node, str(version))
             json_file_name = "final_zh.json" if lang == "zh" else "final.json"
-            if os.path.exists(node_version_dir) and os.path.isdir(node_version_dir) and len(os.listdir(node_version_dir)) > 0 and json_file_name not in os.listdir(node_version_dir):
+            if os.path.exists(node_version_dir) and os.path.isdir(node_version_dir) and len(os.listdir(node_version_dir)) > 0 and (json_file_name not in os.listdir(node_version_dir) or force_fresh):
                 messages = []
                 try:
-                    for item in os.path.isdir(node_version_dir):
+                    for item in os.listdir(node_version_dir):
                         if item.endswith('.json'):
                             try:
                                 qa_path = os.path.join(node_version_dir, item)
@@ -506,7 +506,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                                         if user_content is not None and assistant_content is not None:
                                             messages.append(self.construct_single_messages(user_content, assistant_content))
                                         else:
-                                            logger.info(f"{v}")
+                                            logger.info(f"{node_version_dir}:{v}")
                                 elif isinstance(qa, dict):
                                     keys = list(qa.keys())
                                     if isinstance(qa[keys[0]], list) and isinstance(qa[keys[0]][0], dict):
@@ -517,7 +517,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                                             if user_content is not None and assistant_content is not None:
                                                 messages.append(self.construct_single_messages(user_content, assistant_content))
                                             else:
-                                                logger.info(f"{v}")
+                                                logger.info(f"{node_version_dir}:{v}")
                                     elif isinstance(qa[keys[0]], str):
                                         if len(keys) % 2 == 0:
                                             for i in range(0, len(keys), 2):
@@ -531,6 +531,30 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
                     if messages:
                         save2json(messages, os.path.join(node_version_dir, json_file_name))
                         logger.info(f"{os.path.join(node_version_dir, json_file_name)} saved \n")
+
+    def check_parse_json_single1(self, json_path: str, save_path: str) -> None:
+        data = load4json(json_path)
+        questions = data["questions"]
+        answers = data["answers"]
+        assert len(questions) == len(answers)
+
+        messages = []
+        for i in range(len(questions)):
+            messages.append(self.construct_single_messages(questions[i]["question"], answers[i]["answer"]))
+        
+        save2json(messages, save_path)
+
+    def check_parse_json_single2(self, json_path: str, save_path: str) -> None:
+        data = load4json(json_path)["datasets"][0]
+        questions = data["questions"]
+        answers = data["answers"]
+        assert len(questions) == len(answers)
+
+        messages = []
+        for i in range(len(questions)):
+            messages.append(self.construct_single_messages(questions[i], answers[i]))
+        
+        save2json(messages, save_path)
 
     def constrcut_final_messages(self, version: int, save_path: str, lang: str = "en", kind: str = "single", shuffle: bool = False,
                                  seed: int = 42, local_custom_node_jsons_dir: str = "/root/code/ComfyChat/data/custom_nodes_jsons"):
@@ -562,7 +586,7 @@ class DataCollectAndMessagesGeneratePipelineWithComfyuiManager:
             raise ValueError("各自定义节点处理信息保存失败")
 
 
-# TODO 简化当前对四个开源社区的数据提炼过程
+# 简化当前对四个开源社区的数据提炼过程
 class DataCollectAndMessagesGeneratePipelineWithCommunityProject:
     community_projects_infos = {
         "ComfyUI-docs": {
@@ -907,9 +931,26 @@ if __name__ == "__main__":
     # pipeline.refresh_all_jsons(version=2)
     # pipeline.refresh_one_json("https://github.com/pzc163/Comfyui-CatVTON", version=2, model="siliconflow")
 
-    for k in pipeline.local_custom_node_infos:
-        if pipeline.local_custom_node_infos[k]["unsuccessful_files"] != []:
-            # print(k)
-            pipeline.refresh_one_json(k, version=2, model="openrouter")
+    # for k in pipeline.local_custom_node_infos:
+    #     if pipeline.local_custom_node_infos[k]["unsuccessful_files"] != []:
+    #         # print(k)
+    #         pipeline.refresh_one_json(k, version=2, model="openrouter")
+
+    # pipeline.check_parse_jsons_single(2)
+    # pipeline.check_parse_json_single2("/root/code/ComfyChat/data/custom_nodes_jsons/ComfyUI-textnodes/2/README.json",
+    #                                   "/root/code/ComfyChat/data/custom_nodes_jsons/ComfyUI-textnodes/2/final.json")
+
+    messages = []
+    paths = ["/root/code/ComfyChat/data/custom_nodes_jsons/comfyui-nodes-docs/2/DrawText+.json",
+             "/root/code/ComfyChat/data/custom_nodes_jsons/comfyui-nodes-docs/2/Export With Ffmpeg (mtb).json",
+             "/root/code/ComfyChat/data/custom_nodes_jsons/comfyui-nodes-docs/2/KSamplerVariationsStochastic+.json",
+             "/root/code/ComfyChat/data/custom_nodes_jsons/comfyui-nodes-docs/2/UNetSelfAttentionMultiply.json"]
+
+    for path in paths:
+        data = load4json(path)
+        for item in data:
+            messages.append(pipeline.construct_single_messages(item["question"], item["answer"]))
     
-    pipeline.save_infos()
+    save2json(messages, "temp_final.json")
+
+    # pipeline.save_infos()

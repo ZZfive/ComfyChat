@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is SD-Latent-Upscaler?"
+            },
+            {
+                "role": "assistant",
+                "content": "SD-Latent-Upscaler is a small neural network that can be used to upscale latents in a way that doesn't ruin the image, similar to an ESRGAN for latents."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can SD-Latent-Upscaler be installed in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install SD-Latent-Upscaler in ComfyUI, clone the repo to your custom_nodes folder using the command: git clone https://github.com/city96/SD-Latent-Upscaler custom_nodes/SD-Latent-Upscaler. Alternatively, download the comfy_latent_upscaler.py file to your ComfyUI/custom_nodes folder."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is SD-Latent-Upscaler currently supported in Auto1111?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, SD-Latent-Upscaler is currently not supported in Auto1111, but it should be possible to use it at the hires-fix part."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can SD-Latent-Upscaler be used for higher scale factors?"
+            },
+            {
+                "role": "assistant",
+                "content": "To achieve a higher scale factor (e.g., x4) with SD-Latent-Upscaler, simply chain two of the upscalers."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What changes were made in the Upscaler v2.0 model?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the Upscaler v2.0 model, the network architecture was changed to a bunch of Conv2d layers with an Upsample at the beginning, reducing the kernel size/padding and adding more layers. It was trained for 1M iterations on DIV2K + Flickr2K using AdamW + L1 loss and a OneCycleLR scheduler."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How was the Upscaler v1.0 model trained?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Upscaler v1.0 model was trained for 1M iterations on DIV2K + Flickr2K datasets."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What license is the SD-Latent-Upscaler model released under?"
+            },
+            {
+                "role": "assistant",
+                "content": "The SD-Latent-Upscaler model is released under the Apache2 license."
+            }
+        ]
+    }
+]

@@ -1,0 +1,186 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-UltraPixel?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-UltraPixel is a custom node in ComfyUI that utilizes the [UltraPixel algorithm](https://jingjingrenabc.github.io/ultrapixel/) to generate high-resolution images and videos."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the performance capabilities of ComfyUI-UltraPixel?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-UltraPixel can process images up to 4096x4096 with 16GB GPUs (for text2image) and up to 3840x4096 with 12GB GPUs (for controlnet)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the installation process of ComfyUI-UltraPixel differ from other nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-UltraPixel requires manual installation via git cloning and modification of the MMAutoencodingPipeline folder. Then you must install the requirements through pip in your conda/venv environment."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'UltraPixel Directory' input in the UltraPixel Load node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'UltraPixel Directory' input allows users to customize the directory where the UltraPixel and StableCascade model files are stored. By default, these files are stored in the 'ComfyUI/models/ultrapixel' directory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "List the steps for installing ComfyUI-UltraPixel."
+            },
+            {
+                "role": "assistant",
+                "content": [
+                    "git clone https://github.com/2kpr/ComfyUI-UltraPixel",
+                    "pip install -r requirements.txt",
+                    "Install the provided workflow json files by loading them in ComfyUI and hitting 'Queue Prompt'. The first node will download the necessary files."
+                ]
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can ControlNet be enabled in ComfyUI-UltraPixel?"
+            },
+            {
+                "role": "assistant",
+                "content": "To enable ControlNet, you need to load an image in ComfyUI, connect it to the 'controlnet_image' input of the 'UltraPixel Process' node. Additionally, you can attach a preview/save image node to the 'edge_preview' output of the 'UltraPixel Process' node to view ControlNet edge previews."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the main goal of the current version of ComfyUI-UltraPixel?"
+            },
+            {
+                "role": "assistant",
+                "content": "The main goal of the current version is to rewrite ComfyUI-UltraPixel for better integration with ComfyUI's native code, rather than merely serving as a modified wrapper around the original UltraPixel code."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why is it intermittently showing [STABLE DIFFUSION] [Any Address .idx] [Corrupt] error?"
+            },
+            {
+                "role": "assistant",
+                "content": "This issue is related to the download stage of the UltraPixel and StableCascade model files. The problem was addressed and fixed in a recent commit to the repository. You can refer to the [commit details](https://github.com/2kpr/ComfyUI-UltraPixel/commit/45d32bbe3777f1773dc0f74deea075d77b6d9278) for more information."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does GDF stand for?"
+            },
+            {
+                "role": "assistant",
+                "content": "GDF stands for Generic Diffusion Framework."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is the schedule defined in the GDF class?"
+            },
+            {
+                "role": "assistant",
+                "content": "The schedule in GDF is defined by the `CosineSchedule` class. It takes the `clamp_range` as input to define the range for which the schedule should be clamped."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the `VPScaler` class do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The `VPScaler` class in GDF is responsible for scaling the inputs to ensure that they are in a variance preserving form. It generates a and b values for input scaling."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is the loss calculated in the GDF framework?"
+            },
+            {
+                "role": "assistant",
+                "content": "The loss in GDF is calculated using Mean Squared Error (MSE) loss between the predicted output `pred` and the target `target`. The loss is adjusted using the `loss_weight` defined in the GDF instance."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What can you customize in the GDF framework?"
+            },
+            {
+                "role": "assistant",
+                "content": "With GDF, you can customize various aspects like the train schedule, sample schedule, input scaler, target, noise conditioning, and loss weighting strategies. This flexibility allows for the extension of the framework with custom components."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between the train schedule and the sample schedule in GDF?"
+            },
+            {
+                "role": "assistant",
+                "content": "The train schedule in GDF is different from the sample schedule because the training process requires different parameters and calculations compared to the sampling process. The sample schedule is tailored for generating new samples from the model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you extend the GDF framework with custom components?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can extend the GDF framework by creating new classes for custom schedulers, scalers, targets, and loss weights. These custom components can then be defined in a similar style to the existing ones, such as the VPScaler."
+            }
+        ]
+    }
+]

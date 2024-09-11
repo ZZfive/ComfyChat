@@ -1,0 +1,110 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI_ColorMod repo?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI_ColorMod repo contains nodes for image color manipulation, HDR, and tonemapping operations in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you install the ComfyUI_ColorMod nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install the ComfyUI_ColorMod nodes by git cloning the repo to your custom nodes folder or by installing it through the manager."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is it necessary to install the requirements for ComfyUI_ColorMod?"
+            },
+            {
+                "role": "assistant",
+                "content": "Installing the requirements is not strictly required, but most of the core nodes will be missing without them."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do the ColorMod nodes change the image color values?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ColorMod nodes come with a small visualization tool to show how the values will affect the image. The graph represents the input values on the horizontal axis and the remapped values on the vertical axis."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Should clipping be enabled when using ColorMod nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, clipping should be enabled (unless HDR images are being manipulated) to avoid odd behavior caused by passing values outside the expected range to the VAE/UNET."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the recommended workflow for HDR images in ComfyUI_ColorMod?"
+            },
+            {
+                "role": "assistant",
+                "content": "For the HDR workflow, you can use the provided Sample workflow (ColorModNarrowWF.json)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be considered when using HDR nodes in ComfyUI_ColorMod?"
+            },
+            {
+                "role": "assistant",
+                "content": "When using HDR nodes, be aware that different diffusion passes at different brightness levels can end up diverging, resulting in artifacts when recombining them. Controlnet and similar techniques are recommended to keep the inputs and outputs similar."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do tonemapping nodes behave differently for HDR and SDR images in ComfyUI_ColorMod?"
+            },
+            {
+                "role": "assistant",
+                "content": "Tonemapping nodes behave slightly differently for HDR and SDR images. For HDR tonemapping, setting a multiplier of 2-3 might result in better image quality."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is it recommended to use HDR images directly without tonemapping in ComfyUI_ColorMod?"
+            },
+            {
+                "role": "assistant",
+                "content": "Using HDR images directly without tonemapping is probably useless and has a chance to cause errors since the values are no longer in the expected [0.0, 1.0] range."
+            }
+        ]
+    }
+]

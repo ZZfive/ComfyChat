@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI Noise repo?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI Noise repo contains 6 nodes that allow for more control and flexibility over the noise in ComfyUI, enabling workflows with small variations to generations or finding the accompanying noise to some input image and prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the inputs and settings for the Noisy Latent Image node in ComfyUI Noise?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Noisy Latent Image node in ComfyUI Noise has the following settings: source (where to generate the noise, currently supports GPU and CPU), seed (the noise seed), width (image width), height (image height), and batch_size (batch size)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Duplicate Batch Index node in ComfyUI Noise work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Duplicate Batch Index node in ComfyUI Noise lets you duplicate a certain sample in the batch, which can be used to duplicate encoded images or noise generated from other nodes. Its settings include latents (the latents), batch_index (which sample in the latents to duplicate), and batch_size (the new batch size, i.e., how many times to duplicate the sample)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Slerp Latents node in ComfyUI Noise do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Slerp Latents node in ComfyUI Noise allows you to mix two latents together. Both input latents must share the same dimensions, or the node will ignore the mix factor and output the top slot instead. When it comes to other things attached to the latents, such as masks, only those of the top slot are passed on."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Get Sigma node in ComfyUI Noise?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Get Sigma node in ComfyUI Noise can be used to calculate the amount of noise a sampler expects when it starts denoising. It takes inputs and settings such as model, sampler_name, scheduler, steps, start_at_step, and end_at_step to determine the appropriate strength value for injecting noise."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Inject Noise node in ComfyUI Noise work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Inject Noise node in ComfyUI Noise allows you to inject noise into an image latent. It takes inputs such as latents (the latents to inject the noise into), noise (the noise), mask (determines where to inject noise), and strength (the strength of the noise)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Unsampler node in ComfyUI Noise do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Unsampler node in ComfyUI Noise does the reverse of a sampler. It calculates the noise that would generate the image given the model and the prompt. It takes inputs and settings such as model, steps, end_step, cfg, sampler_name, scheduler, normalize, positive prompt, negative prompt, and latent_image."
+            }
+        ]
+    }
+]

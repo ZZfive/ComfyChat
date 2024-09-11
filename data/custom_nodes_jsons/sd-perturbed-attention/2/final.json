@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is sd-perturbed-attention?"
+            },
+            {
+                "role": "assistant",
+                "content": "sd-perturbed-attention is an extension for ComfyUI and SD WebUI (Forge/reForge) that implements Perturbed-Attention Guidance and Smoothed Energy Guidance for stable diffusion models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which stable diffusion models are compatible with sd-perturbed-attention?"
+            },
+            {
+                "role": "assistant",
+                "content": "sd-perturbed-attention works with SD1.5 and SDXL models."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can sd-perturbed-attention be installed in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "sd-perturbed-attention can be installed in ComfyUI by cloning the GitHub repository into the ComfyUI/custom-nodes/ folder, installing it via ComfyUI Manager, or using comfy-cli."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the guidance nodes available in sd-perturbed-attention for ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The guidance nodes available in sd-perturbed-attention for ComfyUI are pag-basic, pag-advanced, and seg."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'scale' input parameter control in sd-perturbed-attention?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'scale' input parameter in sd-perturbed-attention controls the guidance scale, where higher values can increase the structural coherence of an image but may also cause oversaturation or distortion."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the 'adaptive_scale' input parameter affect the Perturbed-Attention Guidance in sd-perturbed-attention?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'adaptive_scale' input parameter in sd-perturbed-attention penalizes the Perturbed-Attention Guidance during late denoising stages, resulting in an overall speedup. A value of 0.0 means no penalty, while 1.0 completely removes the guidance."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'unet_block_list' input parameter in sd-perturbed-attention?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'unet_block_list' input parameter in sd-perturbed-attention allows users to select multiple U-Net layers separated by commas, replacing both 'unet_block' and 'unet_block_id'. It enables specifying indices for layers in SDXL U-Net using the dot symbol."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can sd-perturbed-attention be used with ComfyUI_TensorRT?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use sd-perturbed-attention with ComfyUI_TensorRT, users need to build static/dynamic TRT engines of the desired model, build static/dynamic TRT engines of the same model with fixed PAG injection in selected UNET blocks, and use the 'TensorRT Perturbed-Attention Guidance' node with two model inputs."
+            }
+        ]
+    }
+]

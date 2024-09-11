@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-OpenDiTWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-OpenDiTWrapper is a custom node or extension for ComfyUI, designed to integrate OpenDiT into the ComfyUI GUI for improved image and video generation capabilities."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the installation steps for ComfyUI-OpenDiTWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install ComfyUI-OpenDiTWrapper, first run `pip install -r requirements.txt` in a terminal. Then install xformers using `pip install xformers --no-deps`. For portable installations inside ComfyUI增加了 portabilityTWile -folder, run the portable version using `python_embeded\\python.exe -m pip install -r .\\ComfyUI\\custom_nodes\\ComfyUI-OpenDiTWrapper\\requirements.txt` and `python_embeded\\python.exe -m pip install xformers --no-deps`. Reference the original OpenDiT repository at: https://github.com/NUS-HPC-AI-Lab/OpenDiT/"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the VRAM requirements for operating ComfyUI-OpenDiTWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "The VRAM requirements for operating ComfyUI-OpenDiTWrapper are moderately high, with 15GB able to accommodate 48 frames at a resolution of 768x512. However, for fewer frames or smaller resolutions, VRAM usage can be as low as 10GB."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the NoSpecifyWavenet module in ComfyUI-OpenDiTWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "The NoSpecifyWavenet module in ComfyUI-OpenDiTWrapper is designed to provide fast wavenet integration without requiring that the generator architecture and dimensions be specified. This is achieved by using xff_4.0_smallopt-ff16-bf16-wl-4 parameters."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you run ComfyUI-OpenDiTWrapper?"
+            },
+            {
+                "role": "assistant",
+                "content": "To run ComfyUI-OpenDiTWrapper, you can refer to the specific instructions provided or embedded in the ComfyUI TA. These instructions generally require running certain commands in your terminal or using the pre-built ComfyUI interface."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can ComfyUI-OpenDiTWrapper be installed in the portable version of ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, ComfyUI-OpenDiTWrapper can indeed be installed in the portable version of ComfyUI. The installation process involves running specific commands within the portable directory. Refer to the instructions included in the repository or ComfyUI interface for precise installation details."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Explain the purpose and functioning of the `xformers` dependency in ComfyUI-OpenDiTWrapper."
+            },
+            {
+                "role": "assistant",
+                "content": "The `xformers` dependency in ComfyUI-OpenDiTWrapper ensures that the model can run with the latest and most efficient transformer-based models. This dependency allows the system to benefit from state-of-the-art processes and significantly reduces the computational requirements in comparison to traditional AI models. This results in reduced VRAM requirements, leading to a more efficient and portable tool."
+            }
+        ]
+    }
+]

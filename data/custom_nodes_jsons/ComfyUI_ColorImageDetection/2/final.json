@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI_ColorImageDetection nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_ColorImageDetection nodes are used for detecting color in images by leveraging RGB and LAB color spaces. They aim to distinguish colored images from black and white, including those with color tints."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install ComfyUI_ColorImageDetection nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install ComfyUI_ColorImageDetection nodes by either cloning the repo into `ComfyUI/custom_nodes`, installing with ComfyUI-Manager, or downloading the `.py` files into your `ComfyUI/custom_nodes` folder. Make sure `requirements.txt` is installed for full functionality."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the limitations of RGB and LAB color detection methods?"
+            },
+            {
+                "role": "assistant",
+                "content": "Both RGB and LAB color detection methods have challenges in reliably differentiating between color-tinted black and white pictures and fully colored images. RGB Color Detection tends to be more reliable for detecting color tints but operates slower, while LAB Color Detection offers faster processing times but may not be as effective for nuanced tint detection."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does RGB Color Detection work?"
+            },
+            {
+                "role": "assistant",
+                "content": "RGB Color Detection analyzes RGB color space deviations to determine image coloration. It offers customizable pixel percentage consideration for enhanced accuracy, which is especially useful for tinted images."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does LAB Color Detection work?"
+            },
+            {
+                "role": "assistant",
+                "content": "LAB Color Detection utilizes LAB color space, focusing on A and B channels differences to identify colored images, providing quicker analysis times."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which color detection method is more reliable for detecting color tints?"
+            },
+            {
+                "role": "assistant",
+                "content": "RGB Color Detection tends to be more reliable for detecting color tints compared to LAB Color Detection."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which color detection method offers faster processing times?"
+            },
+            {
+                "role": "assistant",
+                "content": "LAB Color Detection offers faster processing times compared to RGB Color Detection."
+            }
+        ]
+    }
+]

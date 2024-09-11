@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI-PromptAttention extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-PromptAttention extension is designed to address the issue of contextual words in a prompt affecting later or irrelevant parts of the prompt by utilizing attention masks to limit the transformer's attention to specific tokens."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is causal attention masking in the standard transformer implementation?"
+            },
+            {
+                "role": "assistant",
+                "content": "Causal attention masking is a built-in feature in the standard transformer implementation that masks out future tokens from the current token's attention, allowing the transformer to predict the next word without seeing the future."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the ComfyUI-PromptAttention extension work?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-PromptAttention extension allows users to specify relationships in the prompt using parentheses, `<` and `>` to denote relationships between words or parts of the prompt, making it so that specific properties only apply to certain elements of the prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the 'CLIP Directional Prompt Attention Encode' node in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'CLIP Directional Prompt Attention Encode' node is introduced in the ComfyUI-PromptAttention extension, allowing the use of `>` and `<` in the prompt to denote relationships between words or parts of the prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the limitations of the ComfyUI-PromptAttention extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-PromptAttention extension is not compatible with the SD XL update and is not updated due to its limited contribution. Additionally, replacing the causal attention mask with a full attention mask is experimental and not the intended use for which the model was trained."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the prerequisites for using the ComfyUI-PromptAttention extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use the ComfyUI-PromptAttention extension, users need to have `scikit-learn` and `matplotlib` installed in their ComfyUI environment."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between the ComfyUI-PromptAttention extension and the ComfyUI-Cutoff extension?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI-Cutoff extension tries to solve the issue of contextual words affecting irrelevant parts of the prompt through isolated prompt masking, while the ComfyUI-PromptAttention extension achieves this by using attention masks to limit the transformer's attention to specific tokens."
+            }
+        ]
+    }
+]

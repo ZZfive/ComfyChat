@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the ComfyUI_KSamplerTimer custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The purpose of the ComfyUI_KSamplerTimer custom node is to return the generation time of the KSampler, which can be useful for benchmarking or debugging."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is the generation time calculated in ComfyUI_KSamplerTimer?"
+            },
+            {
+                "role": "assistant",
+                "content": "The generation time in ComfyUI_KSamplerTimer is calculated based on the time for the entire batch."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the user install the ComfyUI_KSamplerTimer custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install the ComfyUI_KSamplerTimer custom node, the user needs to clone the project into the 'custom_nodes' directory of their ComfyUI install directory and then (re)start ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the outputs of the ComfyUI_KSamplerTimer custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The ComfyUI_KSamplerTimer custom node adds two outputs to the KSampler: GENERATION_TIME_STRING and GENERATION_TIME. GENERATION_TIME_STRING provides the time in seconds as a float string with 2 numbers after the comma, while GENERATION_TIME gives the time in seconds as a float."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the expected behavior of the generation time provided by ComfyUI_KSamplerTimer?"
+            },
+            {
+                "role": "assistant",
+                "content": "The generation time provided by ComfyUI_KSamplerTimer is for the whole batch. Users may need to divide this generation time by the batch size to get the average generation time."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some examples of how to use the ComfyUI_KSamplerTimer custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "Examples of how to use the ComfyUI_KSamplerTimer custom node can be found in the 'workflows' subdirectory."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the license of the ComfyUI_KSamplerTimer custom node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The license of the ComfyUI_KSamplerTimer custom node is MIT."
+            }
+        ]
+    }
+]

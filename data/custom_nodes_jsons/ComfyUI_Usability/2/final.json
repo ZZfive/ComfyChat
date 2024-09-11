@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does 'KLoadImageByPath' do?"
+            },
+            {
+                "role": "assistant",
+                "content": "KLoadImageByPath is used to load images by absolute path, and it generates a preview which will be automatically updated if the watchdog package is installed."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does 'KLoadImageByPathAdvanced' improve upon 'KLoadImageByPath'?"
+            },
+            {
+                "role": "assistant",
+                "content": "KLoadImageByPathAdvanced improves upon KLoadImageByPath by including additional options. It allows for the substitution of a prefix in the input path, which can be useful for eliminating the need to manually replace the mount point path of a file path on a remote server."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does 'KLoadImageDedup' do?"
+            },
+            {
+                "role": "assistant",
+                "content": "KLoadImageDedup is used to load images and prevent the creation of duplicate images if the image is already opened. This helps in maintaining a clean and organized image list."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'overwrite_option' in 'KLoadImageDedup'?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'overwrite_option' in 'KLoadImageDedup' allows for control over how new images are handled in relation to existing ones. It can prevent overwriting of old images, allow overwriting with the input filename, or allow overwriting with the last rename date of the input files."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How is image equality checked in 'KLoadImageDedup'?"
+            },
+            {
+                "role": "assistant",
+                "content": "Image equality in 'KLoadImageDedup' is checked by first verifying if images with the same name already exist in the input image list, considering variations in file names generated automatically by ComfyUI in case of name conflicts. Then, it compares the hashes of those images with the hash of the new input image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Describe the functionality of a 'KLoadImageByPathAdvanced'."
+            },
+            {
+                "role": "assistant",
+                "content": "KLoadImageByPathAdvanced is a custom node in ComfyUI that extends the functionality of KLoadImageByPath. It allows for additional customization in image loading processes, specifically it allows the substitution of a prefix in the input path. This is particularly useful in scenarios where the local file system path needs to be adjusted to match the local server filesystem, thus eliminating the need for manual path replacement."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI Usability and why is it important?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI Usability is a set of custom nodes developed with the intent of enhancing the convenience and usability of ComfyUI. It addresses issues such as image clutter by preventing duplicate image creation, automating the generation of image previews, and offering advanced loading options for improved workflow efficiency."
+            }
+        ]
+    }
+]

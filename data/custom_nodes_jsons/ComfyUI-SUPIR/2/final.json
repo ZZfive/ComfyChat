@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-SUPIR?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SUPIR is an upscaler wrapper node for ComfyUI that allows for image and video upscaling using the SUPIR model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the requirements for running ComfyUI-SUPIR?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-SUPIR requires a pretty new version of Pytorch (latest stable 2.0.0 works), and xformers is automatically detected and enabled if found, but it's not necessary. The memory requirements are directly related to the input image resolution."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I install ComfyUI-SUPIR?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can install ComfyUI-SUPIR by either using the manager and install from git, or cloning the repo to custom_nodes and running `pip install -r requirements.txt`."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the 'scale_by' setting in ComfyUI-SUPIR?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'scale_by' setting in ComfyUI-SUPIR node simply scales the input image, you can leave it at 1.0 and size your input with any other node as well."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the original repository for SUPIR?"
+            },
+            {
+                "role": "assistant",
+                "content": "The original repository for SUPIR is https://github.com/Fanghua-Yu/SUPIR."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the two models provided for SUPIR?"
+            },
+            {
+                "role": "assistant",
+                "content": "The two models provided for SUPIR are SUPIR-v0Q and SUPIR-v0F. SUPIR-v0Q is trained with default settings and provides high generalization and image quality in most cases, while SUPIR-v0F is trained with light degradation settings and its Stage1 encoder remains more details when facing light degradations."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is commercial use allowed for SUPIR?"
+            },
+            {
+                "role": "assistant",
+                "content": "No, SUPIR is made available for use, reproduction, and distribution strictly for non-commercial purposes only. For commercial use, permission must be obtained from Dr. Jinjin Gu."
+            }
+        ]
+    }
+]

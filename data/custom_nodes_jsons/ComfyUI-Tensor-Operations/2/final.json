@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Tensor-Operations?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Tensor-Operations is a repository containing nodes for ComfyUI that implement helpful operations on tensors, such as normalization."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was added to ComfyUI-Tensor-Operations on June 12th, 2024?"
+            },
+            {
+                "role": "assistant",
+                "content": "On June 12th, 2024, the 'Fast Image to Noise' node was added to ComfyUI-Tensor-Operations. This node generates a new image that is effectively a remix of the pixels in a source image, and is much faster than the 'Image to Noise' node in the WAS Node Suite."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What was included in the initial release of ComfyUI-Tensor-Operations on February 2nd, 2024?"
+            },
+            {
+                "role": "assistant",
+                "content": "In the initial release of ComfyUI-Tensor-Operations on February 2nd, 2024, the 'Image Match Normalize' and 'Latent Match Normalize' nodes were added."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'Image Match Normalize' node in ComfyUI-Tensor-Operations do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Image Match Normalize' node in ComfyUI-Tensor-Operations returns a normalized version of the target image using the mean and standard deviation of each color channel of the source image. It is used when you want the color and brightness of your image to match the color and brightness of another image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'Latent Match Normalize' node in ComfyUI-Tensor-Operations do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Latent Match Normalize' node in ComfyUI-Tensor-Operations returns a normalized version of the target latent using the mean and standard deviation of each channel of the source latent. Latents encode color information differently than images, and normalizing an image by instead normalizing its latent representation may result in a 'better' result that is closer to the coloring of the source."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'Fast Image to Noise' node in ComfyUI-Tensor-Operations do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Fast Image to Noise' node in ComfyUI-Tensor-Operations generates a new image by remixing the pixels of the source image randomly, optionally altering the brightness and making other tweaks. It is intended to match the functionality of the 'Image to Noise' node in the WAS Node Suite, but the results are not identical."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the speed of the 'Fast Image to Noise' node in ComfyUI-Tensor-Operations compare to the 'Image to Noise' node in the WAS Node Suite?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Fast Image to Noise' node in ComfyUI-Tensor-Operations is lightning fast in comparison to the 'Image to Noise' node in the WAS Node Suite, as it is all done on the GPU."
+            }
+        ]
+    }
+]

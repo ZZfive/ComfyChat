@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is LivePortraitKJ in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "LivePortraitKJ is a custom node in ComfyUI that uses the LivePortrait tool to perform face detection and image manipulation tasks."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the two alternative face detectors available in the updated version of LivePortraitKJ?"
+            },
+            {
+                "role": "assistant",
+                "content": "The two alternative face detectors available in the updated version of LivePortraitKJ are MediaPipe and face-alignment."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the face-alignment face detector improve detection compared to MediaPipe?"
+            },
+            {
+                "role": "assistant",
+                "content": "The face-alignment face detector can use the blazeface back camera model (or SFD), which is far better for detecting smaller faces than MediaPipe's blazeface short model."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some of the changes made in the rework of LivePortraitKJ?"
+            },
+            {
+                "role": "assistant",
+                "content": "The rework of LivePortraitKJ includes adding MediaPipe as an alternative to Insightface, proper Vid2vid with a smoothing algorithm, improved speed and efficiency, restructured nodes, auto skipping frames with no face detected, and better Mac support on MPS."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the significance of converting the landmark runner onnx model to a torch model in the update?"
+            },
+            {
+                "role": "assistant",
+                "content": "Converting the landmark runner onnx model to a torch model allows running LivePortraitKJ without onnxruntime, as it runs on GPU and is about as fast. This torch model is available on the MediaPipe cropper node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some example applications of LivePortraitKJ in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Some example applications of LivePortraitKJ in ComfyUI include real-time webcam feed manipulation, image-to-video conversion (Image2vid), and video-to-video conversion (Vid2Vid)."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between the Insightface and MediaPipe face detectors in terms of performance and licensing?"
+            },
+            {
+                "role": "assistant",
+                "content": "Insightface is strictly for NON-COMMERCIAL use, while MediaPipe is licensed under MIT and Apache-2.0. MediaPipe is a bit worse at detection and can't run on GPU in Windows, but it's much faster on CPU compared to Insightface."
+            }
+        ]
+    }
+]

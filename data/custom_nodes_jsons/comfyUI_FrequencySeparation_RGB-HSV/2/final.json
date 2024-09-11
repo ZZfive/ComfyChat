@@ -1,0 +1,146 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Frequency Separation Node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Frequency Separation Node splits an image into a High Frequency layer and a Low Frequency layer, either by using a standard RGB Gaussian Blur or subtract method, or by the Apply Image to HSV V channel only method."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Frequency Separation HSV node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Frequency Separation HSV node functions similarly to the RGB version but operates on the HSV color space instead of RGB."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Frequency Recombine Node do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Frequency Recombine Node combines the High Frequency layer and the Low Frequency layer produced by the Frequency Separation Nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Frequency Recombine HSV node?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Frequency Recombine HSV node recombines the High Frequency layer and Low Frequency layer from the Frequency Separation HSV node, similar to the RGB version."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can the Frequency Separation Nodes be useful?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Frequency Separation Nodes can be useful for independently manipulating the High Frequency (HF) and Low Frequency (LF) layers of an image, which can be applied to tasks such as color matching on the LF layers and custom blending of HF layers."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you customize blended HF layers using the Frequency Separation Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "Custom blended HF layers can be achieved by blending the original image's HF layer with the relit image's HF layer."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the input method for the Frequency Separation and Frequency Recombine HSV Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The input method for these nodes involves splitting an image into HF and LF layers using either a standard RGB Gaussan Blur or subtract method, or the Apply Image to HSV V channel only method, and then processing the two layers separately before combining them using the respective recombine node."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What challenges might someone who is not a professional coder face with these nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "Individuals who are not professional coders, like the author of these nodes, might struggle with coding and offering support or implementing additional features in the repository, making it more of a 'DIY' project rather than a well-maintained node library."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the process for installing the Frequency Separation and Recombine Nodes into comfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install these nodes, git clone the repository into the 'custom_nodes' folder of your comfyUI setup."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the significance of the question regarding the use of Frequency Separation and Recombine Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The question highlights the potential versatility and utility of the nodes beyond the initial intended applications, suggesting they may be useful for additional tasks not mentioned in the document."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What software or environment is necessary to use the Frequency Separation and Frequency Recombine Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The nodes are intended for use within the comfyUI environment, which likely requires a compatibility with GUI software that supports comfyUI extensions."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What types of images might be most effectively processed by the Frequency Separation and Recombine Nodes?"
+            },
+            {
+                "role": "assistant",
+                "content": "The best results from these nodes might be seen with images that have prominent high-frequency details and distinct low-frequency backgrounds, as the nodes are designed to separate the HF and LF components effectively."
+            }
+        ]
+    }
+]

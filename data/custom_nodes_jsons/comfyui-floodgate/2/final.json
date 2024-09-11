@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI Floodgate?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI Floodgate is an extension for ComfyUI that allows users to easily control the logic flow by toggling between different paths without reconnecting multiple nodes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the motivation behind developing Floodgate for ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "The motivation behind developing Floodgate is to provide a solution for easily switching between different workflows, such as Hires. Fix, without the need to connect and disconnect multiple nodes every time."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does Floodgate work in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "In ComfyUI, Floodgate works by connecting the output of a node to the source of the Floodgate node, then connecting each path to the desired remaining workflow. Users can toggle between the paths by clicking on the gate_open button."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Can Floodgate handle arbitrary types in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, Floodgate can connect any arbitrary types in ComfyUI, as long as the input and output types match."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Is it possible to use multiple Floodgates in one workflow in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "Yes, users can have multiple Floodgates in one workflow and control each Floodgate individually in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "At what stage is the logic flow parsed in ComfyUI Floodgate?"
+            },
+            {
+                "role": "assistant",
+                "content": "The logic flow is parsed during the queuing stage, not the execution stage, in ComfyUI Floodgate."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What should be considered when using boolean values with Floodgate in ComfyUI?"
+            },
+            {
+                "role": "assistant",
+                "content": "When using boolean values with Floodgate in ComfyUI, the value has to be already determined when pressing Queue Prompt, such as from the toggle or a primitive node. Using a node that outputs a boolean during execution will not work."
+            }
+        ]
+    }
+]

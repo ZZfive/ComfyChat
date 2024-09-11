@@ -1,0 +1,86 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is Comfy-Topaz?"
+            },
+            {
+                "role": "assistant",
+                "content": "Comfy-Topaz is a custom node for ComfyUI that integrates with Topaz Photo AI to enhance images, allowing traditionally asynchronous steps like upscaling, sharpening, and denoising to become part of ComfyUI workflows."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the requirements for using Comfy-Topaz?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use Comfy-Topaz, you need a licensed installation of Topaz Photo AI, which provides the `tpai.exe` file. The path to this file should be set in the ComfyUI settings under 'Topaz Photo AI (tpai.exe)'."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do you install Comfy-Topaz?"
+            },
+            {
+                "role": "assistant",
+                "content": "To install Comfy-Topaz, clone the repository into the `ComfyUI/custom_nodes` directory and restart ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the simplest way to use Comfy-Topaz?"
+            },
+            {
+                "role": "assistant",
+                "content": "The simplest way to use Comfy-Topaz is through the auto-pilot settings. By omitting the `upscale` and `sharpen` settings as inputs, Topaz Photo AI will auto-detect and apply appropriate settings."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you override auto-pilot settings in Comfy-Topaz?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can override auto-pilot settings by providing manual settings in Comfy-Topaz. A good starting point is to copy over parameters from the auto-pilot output and iterate from there."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What information is displayed on the output side of Comfy-Topaz?"
+            },
+            {
+                "role": "assistant",
+                "content": "On the output side of Comfy-Topaz, `autopilot_settings` shows what the auto-pilot settings were, and `settings` shows all the features used and adjustments made to generate the final image."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are some planned improvements for Comfy-Topaz?"
+            },
+            {
+                "role": "assistant",
+                "content": "Planned improvements for Comfy-Topaz include outputting `*Settings` nodes instead of JSON, adding a button to run auto-pilot analysis without applying settings, mapping generic parameter names to actual parameter names, and exposing more settings like denoise, face recovery, text recovery, and white balance/exposure adjustment."
+            }
+        ]
+    }
+]

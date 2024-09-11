@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI_DanTagGen?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI_DanTagGen is a node in ComfyUI that generates detail tags/core tags about the character you put in the prompts using Kohaku's DanTagGen Demo. It can also add extra elements into your prompt."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is DanTagGen?"
+            },
+            {
+                "role": "assistant",
+                "content": "DanTagGen (Danbooru Tag Generator) is an LLM model designed for generating Danbooru Tags with provided information. It aims to provide users a more convenient way to make prompts for Text2Image models trained on Danbooru datasets."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I find more information about the DanTagGen model architecture and training data?"
+            },
+            {
+                "role": "assistant",
+                "content": "More information about the DanTagGen model architecture and training data can be found in the HuggingFace Model card at https://huggingface.co/KBlueLeaf/DanTagGen-beta."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How do I use ComfyUI_DanTagGen in my workflow?"
+            },
+            {
+                "role": "assistant",
+                "content": "To use ComfyUI_DanTagGen, load the example workflow from https://github.com/huchenlei/ComfyUI_DanTagGen/blob/main/examples/dtg.json and connect the output to 'CLIP Text Encode (Prompt)' text input. You can right-click 'CLIP Text Encode (Prompt)' to convert in-node text input to external text input."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the available tag length options in ComfyUI_DanTagGen?"
+            },
+            {
+                "role": "assistant",
+                "content": "The available tag length options in ComfyUI_DanTagGen are very short (around 10 tags), short (around 20 tags), long (around 40 tags), and very long (around 60 tags). Short or long options are recommended."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the 'Ban tags' option in ComfyUI_DanTagGen do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The 'Ban tags' option in ComfyUI_DanTagGen allows you to specify a blacklist of tags that you don't want to see in the final prompt. Regex is supported."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the 'Temperature' option in ComfyUI_DanTagGen affect the output?"
+            },
+            {
+                "role": "assistant",
+                "content": "In ComfyUI_DanTagGen, a higher temperature setting results in a more dynamic result, while a lower temperature setting leads to better coherence between tags."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can I achieve faster inference with ComfyUI_DanTagGen?"
+            },
+            {
+                "role": "assistant",
+                "content": "For faster inference with ComfyUI_DanTagGen, you can install 'llama-cpp-python' yourself and download the gguf model from HuggingFace, then put them into the 'models' folder. Automatic installation/download scripts for llama-cpp-python and gguf models are a work in progress."
+            }
+        ]
+    }
+]

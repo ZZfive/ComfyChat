@@ -1,0 +1,134 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is ComfyUI-Image-Filters?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-Image-Filters is a set of image and matte filtering nodes for ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How can you fix import errors related to opencv or cv2 when using ComfyUI-Image-Filters?"
+            },
+            {
+                "role": "assistant",
+                "content": "You can fix import errors related to opencv or cv2 by running the 'import_error_install.bat' file, which uninstalls all versions of opencv-python before reinstalling the correct version, opencv-contrib-python."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Alpha Clean node in ComfyUI-Image-Filters do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Alpha Clean node in ComfyUI-Image-Filters cleans up holes and near-solid areas in a matte."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Alpha Matte node in ComfyUI-Image-Filters refine edges?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Alpha Matte node in ComfyUI-Image-Filters refines edges with closed-form matting. It is good for cleaning up SAM segments or hand drawn masks."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the difference between the Blur Image (Fast) and Blur Mask (Fast) nodes in ComfyUI-Image-Filters?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Blur Image (Fast) node is for blurring images, while the Blur Mask (Fast) node is for blurring masks. Both use opencv gaussian blur, which is >100x faster than comfy image blur."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the Enhance Detail node in ComfyUI-Image-Filters do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Enhance Detail node in ComfyUI-Image-Filters increases or decreases details in an image or batch of images using a guided filter."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Guided Filter Alpha node in ComfyUI-Image-Filters feather edges of a matte?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Guided Filter Alpha node in ComfyUI-Image-Filters feathers edges of a matte based on similar RGB colors using a guided filter. It works best with a strong color separation between foreground and background."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the Remap Range node in ComfyUI-Image-Filters?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Remap Range node in ComfyUI-Image-Filters fits the color range of an image to a new blackpoint and whitepoint (clamped). It is useful for clamping or thresholding soft mattes."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Clamp Outliers node in ComfyUI-Image-Filters help with stray noise?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Clamp Outliers node in ComfyUI-Image-Filters clamps latents that are more than n standard deviations away from 0, which could help with fireflies or stray noise that disrupt the VAE decode."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the AdaIN Latent/Image node used for in ComfyUI-Image-Filters?"
+            },
+            {
+                "role": "assistant",
+                "content": "The AdaIN Latent/Image node in ComfyUI-Image-Filters normalizes latents/images to the mean and std dev of a reference input. It is useful for getting rid of color shift from high denoise strength, or matching color to a reference in general."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "How does the Batch Normalize Latent/Image node in ComfyUI-Image-Filters remove brightness flickering?"
+            },
+            {
+                "role": "assistant",
+                "content": "The Batch Normalize Latent/Image node in ComfyUI-Image-Filters normalizes each frame in a batch to the overall mean and std dev, which helps remove overall brightness flickering."
+            }
+        ]
+    }
+]

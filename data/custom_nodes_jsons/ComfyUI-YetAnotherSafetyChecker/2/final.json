@@ -1,0 +1,98 @@
+[
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of ComfyUI-YetAnotherSafetyChecker?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-YetAnotherSafetyChecker is a simple node designed to filter out NSFW outputs in ComfyUI."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Which model does ComfyUI-YetAnotherSafetyChecker use for NSFW detection?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-YetAnotherSafetyChecker utilizes the AdamCodd/vit-base-nsfw-detector model for scoring the outputs."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "Why was the AdamCodd/vit-base-nsfw-detector model chosen for ComfyUI-YetAnotherSafetyChecker?"
+            },
+            {
+                "role": "assistant",
+                "content": "The AdamCodd/vit-base-nsfw-detector model was chosen because it is small, fast, and performed very well in testing."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the default threshold setting for ComfyUI-YetAnotherSafetyChecker?"
+            },
+            {
+                "role": "assistant",
+                "content": "The default threshold setting for ComfyUI-YetAnotherSafetyChecker is 0.8, which is considered a safe baseline."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What are the inputs and outputs of ComfyUI-YetAnotherSafetyChecker?"
+            },
+            {
+                "role": "assistant",
+                "content": "ComfyUI-YetAnotherSafetyChecker has 1 image input, 1 image output, a string output, a threshold slider, and a CUDA toggle."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the image output of ComfyUI-YetAnotherSafetyChecker show?"
+            },
+            {
+                "role": "assistant",
+                "content": "The image output of ComfyUI-YetAnotherSafetyChecker will output black unless the input falls below the selected threshold."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What is the purpose of the string output in ComfyUI-YetAnotherSafetyChecker?"
+            },
+            {
+                "role": "assistant",
+                "content": "The string output in ComfyUI-YetAnotherSafetyChecker outputs the score given to the image, intended to be used with a show text node to adjust the threshold setting."
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "user",
+                "content": "What does the CUDA toggle in ComfyUI-YetAnotherSafetyChecker do?"
+            },
+            {
+                "role": "assistant",
+                "content": "The CUDA toggle in ComfyUI-YetAnotherSafetyChecker allows the model to be loaded on the GPU for faster processing."
+            }
+        ]
+    }
+]
