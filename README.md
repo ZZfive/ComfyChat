@@ -94,8 +94,9 @@ ComfyUI-Manager](https://github.com/ltdrdata/ComfyUI-Manager)收集的自定义�
 
 
 ## 工作进度
- - [ ] 优化数据集，构建数据集v3
+ - [ ] 优化数据集
    - [ ] 搜集一些文档或从视频从提取数据进行构建
+   - [x] 基于comfyui-manager更新自定义节点类数据，与社区数据数据混合构建[v2_2数据集](data/message_jsons/v2/comfyui_data_v2_2.json)
  - [x] 对外界面构建
    - [x] 推理模块--基于gradio
    - [x] TTS模块--基于[GPT-SoVITS](https://github.com/RVC-Boss/GPT-SoVITS)
