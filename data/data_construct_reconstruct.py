@@ -955,79 +955,116 @@ if __name__ == "__main__":
 
     # pipeline.constrcut_final_messages(version=2, save_path="/root/code/ComfyChat/data/message_jsons/v2/custom_nodes_v2.json")
 
-    random.seed(42)
+    # random.seed(42)
 
-    comfychat_data = {
-        "questions": [
-            "Who are you?"
-            "What's your name?",
-            "Could you introduce yourself?",
-            "What is your identity?",
-            "Can you tell me more about who you are?",
-            "Please explain your role.",
-            "Who am I chatting with?",
-            "What's your purpose?",
-            "How would you describe yourself?",
-            "Tell me more about your capabilities."
-        ],
-        "answers": [
-            "I am ComfyChat, an LLM-based smart assistant ready to help you with your ComfyUI queries.",
-            "My name is ComfyChat, an LLM-based smart assistant ready to help you with your ComfyUI queries.",
-            "I am ComfyChat, an LLM-based smart assistant ready to help you with your ComfyUI queries.",
-            "My identity is ComfyChat, an intelligent assistant designed to answer your questions about ComfyUI.",
-            "As an LLM-based assistant, I am here to help you find answers to any questions you might have about ComfyUI.",
-            "My role is to provide you with assistance and information related to ComfyUI as an LLM-based intelligent assistant.",
-            "You're chatting with ComfyChat, a helpful AI designed to support you with ComfyUI-related inquiries.",
-            "My purpose is to offer guidance, information, and assistance on ComfyUI topics.",
-            "I'm an AI assistant based on LLM, dedicated to answering your questions and providing help with ComfyUI.",
-            "My capabilities include understanding your queries and providing accurate information about ComfyUI to the best of my knowledge."
-        ]
-    }
+    # comfychat_data = {
+    #     "questions": [
+    #         "Who are you?"
+    #         "What's your name?",
+    #         "Could you introduce yourself?",
+    #         "What is your identity?",
+    #         "Can you tell me more about who you are?",
+    #         "Please explain your role.",
+    #         "Who am I chatting with?",
+    #         "What's your purpose?",
+    #         "How would you describe yourself?",
+    #         "Tell me more about your capabilities."
+    #     ],
+    #     "answers": [
+    #         "I am ComfyChat, an LLM-based smart assistant ready to help you with your ComfyUI queries.",
+    #         "My name is ComfyChat, an LLM-based smart assistant ready to help you with your ComfyUI queries.",
+    #         "I am ComfyChat, an LLM-based smart assistant ready to help you with your ComfyUI queries.",
+    #         "My identity is ComfyChat, an intelligent assistant designed to answer your questions about ComfyUI.",
+    #         "As an LLM-based assistant, I am here to help you find answers to any questions you might have about ComfyUI.",
+    #         "My role is to provide you with assistance and information related to ComfyUI as an LLM-based intelligent assistant.",
+    #         "You're chatting with ComfyChat, a helpful AI designed to support you with ComfyUI-related inquiries.",
+    #         "My purpose is to offer guidance, information, and assistance on ComfyUI topics.",
+    #         "I'm an AI assistant based on LLM, dedicated to answering your questions and providing help with ComfyUI.",
+    #         "My capabilities include understanding your queries and providing accurate information about ComfyUI to the best of my knowledge."
+    #     ]
+    # }
 
-    comfyui_data = {
-        "questions": [
-            "What is ComfyUI, and what are its primary purposes?",
-            "What makes ComfyUI unique compared to other Stable Diffusion web UIs?",
-            "How can I install and set up ComfyUI for optimal performance?",
-            "What are the key features and functionalities offered by ComfyUI?",
-            "How can I leverage ComfyUI for various image generation and editing tasks?",
-            "What customization options does ComfyUI provide to enhance user experience?",
-            "How does ComfyUI ensure compatibility with different Stable Diffusion models and extensions?",
-            "What are the system requirements and dependencies for running ComfyUI?"
-        ],
-        "answers": [
-            "ComfyUI is an advanced web user interface for Stable Diffusion, designed to offer a customizable, user-friendly experience with a wide range of features for text-to-image and image-to-image generation, as well as in-painting and out-painting tasks.",
-            "ComfyUI differentiates itself by providing a highly customizable layout, support for advanced prompt editing, and numerous options for fine-tuning image generation processes, making it an adaptable solution for both beginners and experienced users.",
-            "To install ComfyUI, clone the GitHub repository, create a dedicated Python environment, install required dependencies, and configure settings to optimize performance based on your system specifications and preferences.",
-            "Key features and functionalities of ComfyUI include dynamic prompting, advanced prompt editing, support for various image-to-image and in-painting techniques, scriptable workflows, prompt templates, and compatibility with custom Stable Diffusion models.",
-            "Leverage ComfyUI's capabilities by utilizing its numerous tools and options to generate images from text prompts, apply desired styles to images, refine results through in-painting or out-painting, and automate tasks using custom scripts.",
-            "ComfyUI offers a wide array of customization options, including the ability to adjust widget positioning, apply different color themes, create and save custom workflows, and integrate external tools or extensions to enhance functionality.",
-            "ComfyUI ensures compatibility with various Stable Diffusion models and extensions by staying up-to-date with the latest advancements, providing continuous support, and offering clear documentation for integration and troubleshooting.",
-            "ComfyUI's system requirements include a modern web browser, Python 3.10 or higher, and the necessary dependencies, such as Git and pip. The recommended hardware depends on the complexity of your workflows, with higher VRAM GPUs and more RAM enabling smoother performance."
-        ]
-    }
+    # comfyui_data = {
+    #     "questions": [
+    #         "What is ComfyUI, and what are its primary purposes?",
+    #         "What makes ComfyUI unique compared to other Stable Diffusion web UIs?",
+    #         "How can I install and set up ComfyUI for optimal performance?",
+    #         "What are the key features and functionalities offered by ComfyUI?",
+    #         "How can I leverage ComfyUI for various image generation and editing tasks?",
+    #         "What customization options does ComfyUI provide to enhance user experience?",
+    #         "How does ComfyUI ensure compatibility with different Stable Diffusion models and extensions?",
+    #         "What are the system requirements and dependencies for running ComfyUI?"
+    #     ],
+    #     "answers": [
+    #         "ComfyUI is an advanced web user interface for Stable Diffusion, designed to offer a customizable, user-friendly experience with a wide range of features for text-to-image and image-to-image generation, as well as in-painting and out-painting tasks.",
+    #         "ComfyUI differentiates itself by providing a highly customizable layout, support for advanced prompt editing, and numerous options for fine-tuning image generation processes, making it an adaptable solution for both beginners and experienced users.",
+    #         "To install ComfyUI, clone the GitHub repository, create a dedicated Python environment, install required dependencies, and configure settings to optimize performance based on your system specifications and preferences.",
+    #         "Key features and functionalities of ComfyUI include dynamic prompting, advanced prompt editing, support for various image-to-image and in-painting techniques, scriptable workflows, prompt templates, and compatibility with custom Stable Diffusion models.",
+    #         "Leverage ComfyUI's capabilities by utilizing its numerous tools and options to generate images from text prompts, apply desired styles to images, refine results through in-painting or out-painting, and automate tasks using custom scripts.",
+    #         "ComfyUI offers a wide array of customization options, including the ability to adjust widget positioning, apply different color themes, create and save custom workflows, and integrate external tools or extensions to enhance functionality.",
+    #         "ComfyUI ensures compatibility with various Stable Diffusion models and extensions by staying up-to-date with the latest advancements, providing continuous support, and offering clear documentation for integration and troubleshooting.",
+    #         "ComfyUI's system requirements include a modern web browser, Python 3.10 or higher, and the necessary dependencies, such as Git and pip. The recommended hardware depends on the complexity of your workflows, with higher VRAM GPUs and more RAM enabling smoother performance."
+    #     ]
+    # }
     
-    data = []
+    # data = []
 
-    for q, a in zip(comfychat_data['questions'], comfychat_data['answers']):
-        data.append(pipeline.construct_single_messages(q, a))
+    # for q, a in zip(comfychat_data['questions'], comfychat_data['answers']):
+    #     data.append(pipeline.construct_single_messages(q, a))
 
-    for q, a in zip(comfyui_data['questions'], comfyui_data['answers']):
-        data.append(pipeline.construct_single_messages(q, a))
+    # for q, a in zip(comfyui_data['questions'], comfyui_data['answers']):
+    #     data.append(pipeline.construct_single_messages(q, a))
 
-    data = data * 3
+    # data = data * 3
 
-    community_en = load4json("/root/code/ComfyChat/data/message_jsons/v2/community_en.json")
-    custom_nodes_v2 = load4json("/root/code/ComfyChat/data/message_jsons/v2/custom_nodes_v2.json")
-    alpaca_gpt4_data_modification = load4json("/root/code/ComfyChat/data/message_jsons/v1/alpaca_gpt4_data_modification.json")
+    # community_en = load4json("/root/code/ComfyChat/data/message_jsons/v2/community_en.json")
+    # custom_nodes_v2 = load4json("/root/code/ComfyChat/data/message_jsons/v2/custom_nodes_v2.json")
+    # alpaca_gpt4_data_modification = load4json("/root/code/ComfyChat/data/message_jsons/v1/alpaca_gpt4_data_modification.json")
 
-    data.extend(community_en)
-    data.extend(custom_nodes_v2)
-    data.extend(alpaca_gpt4_data_modification)
+    # data.extend(community_en)
+    # data.extend(custom_nodes_v2)
+    # data.extend(alpaca_gpt4_data_modification)
     
-    random.shuffle(data)
-    print(len(data))
+    # random.shuffle(data)
+    # print(len(data))
 
-    save2json(data, "/root/code/ComfyChat/data/message_jsons/v2/comfyui_data_v2_2.json")
+    # save2json(data, "/root/code/ComfyChat/data/message_jsons/v2/comfyui_data_v2_2.json")
+
+    data = [
+    {
+        "question": "What are the three common models supported by ComfyUI?",
+        "answer": "The three common models supported by ComfyUI are: stable diffusion model, caching compressed diffusion model, and MAGNUS model. These models are used to generate images and videos."
+    },
+    {
+        "question": "What are the capabilities of the previous stable diffusion model?",
+        "answer": "The previous stable diffusion model has an O(n) computational complexity. This means it does not scale."
+    },
+    {
+        "question": "What is the computational complexity of the new diffusion model in ComfyUI?",
+        "answer": "The computational complexity of the new diffusion model in ComfyUI is O(n^2)."
+    },
+    {
+        "question": "What are the reporting capabilities of the new diffusion model?",
+        "answer": "The new diffusion model can generate 3D videos with internal compression and is reported to be faster for 4K and 8K videos."
+    },
+    {
+        "question": "What do the custom interpolators provided in the flexible node documentation page allow?",
+        "answer": "The custom interpolators provided in the flexible node documentation page allow parameters to be changed during ejection of the GPU image."
+    },
+    {
+        "question": "What are some common nodes provided by default with ComfyUI?",
+        "answer": "The common nodes provided by default with ComfyUI include properties marked in bold."
+    },
+    {
+        "question": "What is the primary function of custom nodes and plugins in ComfyUI?",
+        "answer": "Custom nodes and plugins are used to extend the functionality of ComfyUI."
+    }
+]
+
+    messages = []
+    for item in data:
+        messages.append(pipeline.construct_single_messages(item["question"], item["answer"]))
+    
+    save2json(messages, "temp.json")
 
     # pipeline.save_infos()

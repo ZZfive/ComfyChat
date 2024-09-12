@@ -25,4 +25,4 @@
  - community_zh.json--中文conversations（14914）；comflowy_zh.json和comfyui-nodes-docs.json两个文件组合
  - comfyui_data_v2_1.json--v2场景下的第一版数据集，直接将comfyui_data_v1.json和community_en.json混合，有48960条messages
  - custom_nodes_v2.json--对自定义节点数据更新后v2数据，相对于v1增加了很多新自定义节点，并且由于comfyui-nodes-docs项目在comfyui-manager中维护，该节点中的数据也包含了，共有40164条messages
- - comfyui_data_v2_2.json--将custom_nodes_v2.json与上述社区项目构建的数据和alpacha数据集混合后的最终的v2数据集，共有114450条messages
+ - comfyui_data_v2_2.json--将custom_nodes_v2.json与上述社区项目构建的数据和alpacha数据集混合后的最终的v2数据集，共有114479条messages
