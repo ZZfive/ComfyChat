@@ -24,12 +24,12 @@ from xtuner.utils import PROMPT_TEMPLATE, SYSTEM_TEMPLATE
 #                          PART 1  Settings                           #
 #######################################################################
 # Model
-pretrained_model_name_or_path = '/root/models/internlm2_5-7b-chat'
+pretrained_model_name_or_path = '/root/share/new_models/qwen/Qwen2-7B-Instruct'
 use_varlen_attn = False
 
 # Data
 alpaca_en_path = '/root/code/ComfyChat/data/message_jsons/v2/comfyui_data_v2_2.json'
-prompt_template = PROMPT_TEMPLATE.internlm2_chat
+prompt_template = PROMPT_TEMPLATE.qwen_chat
 max_length = 1024
 pack_to_max_length = True
 
@@ -37,7 +37,7 @@ pack_to_max_length = True
 sequence_parallel_size = 1
 
 # Scheduler & Optimizer
-batch_size = 6  # per_device
+batch_size = 5  # per_device
 accumulative_counts = 16
 accumulative_counts *= sequence_parallel_size
 dataloader_num_workers = 0
@@ -113,6 +113,7 @@ alpaca_en = dict(
 
 sampler = SequenceParallelSampler \
     if sequence_parallel_size > 1 else DefaultSampler
+
 train_dataloader = dict(
     batch_size=batch_size,
     num_workers=dataloader_num_workers,
