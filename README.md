@@ -34,6 +34,7 @@ Rough LLM Interpreter of ComfyUI
 6. 执行完上述操作后，正确设置[config.ini](server/config.ini)，'python demo.py'就能成功运行服务
 
 ## 模型地址
+- [zzfive/ComfyChat-Qwen2-7b-instruct-v2-2](https://huggingface.co/zzfive/ComfyChat-Qwen2-7b-instruct-v2-2)
 - [zzfive/ComfyChat-InternLM2.5-7b-v2-2](https://huggingface.co/zzfive/ComfyChat-InternLM2.5-7b-v2-2)
 - [zzfive/ComfyChat-InternLM2.5-7b-v2-1](https://huggingface.co/zzfive/ComfyChat-InternLM2.5-7b-v2-1)
 - [zzfive/ComfyChat-InternLM2-7b-v2-1](https://huggingface.co/zzfive/ComfyChat-InternLM2-7b-v2-1)
